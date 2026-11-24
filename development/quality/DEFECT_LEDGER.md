@@ -9294,3 +9294,11 @@ Fit supported furnishings around the gatehouse, refectory, archive, dormitory an
 ### DEV-726 · Monastery exterior runoff stopped at the forecourt sumps
 
 Fit a founded overflow at each gate sump and grade the two receiving swales into lower soil on either side of the forecourt. A separate uphill interceptor protects the service court. The public lane and thresholds retain their original datums. Northern slopes and the herb court have separate open drainage work. [Verification checkpoint](../levels/rebuild/monastery-ground-drainage-pass/checkpoint.json)
+
+### DEV-727 · Monastery herb-court collectors ended at isolated sumps
+
+Fit the eight roof collectors to clear buried conductors and two gravel galleries in the terrace between the raised beds. Access comes through two flush grates. The patch keeps the south cloister and crypt footings intact. [Verification checkpoint](../levels/rebuild/monastery-court-drainage-pass/checkpoint.json)
+
+### DEV-728 · Physical walking grates stopped the native foot probes
+
+The court's two cover assemblies specify a bounded shoe span inside the physical grate footprint. Native body collision, sight through the slots and ordinary floor-edge support retain their geometry checks. [Verification checkpoint](../levels/rebuild/monastery-court-drainage-pass/checkpoint.json)

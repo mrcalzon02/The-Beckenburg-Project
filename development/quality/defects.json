@@ -8053,6 +8053,28 @@
       "action": "Fit two founded overflow sills and grade three swales into surveyed lower soil. Preserve door approaches, van placement and original occupied datums.",
       "older_maps": "Trace the full runoff path in source and collision to a measured receiver. Review uphill slopes and enclosed courts independently.",
       "evidence": "development/levels/rebuild/monastery-ground-drainage-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-727",
+      "title": "Monastery herb-court roof collectors ended at isolated sumps",
+      "status": "MONASTERY_HERB_COURT_DRAINAGE_STAGED",
+      "affected": "WLD-10 enclosed herb court",
+      "symptom": "All eight eave outlets could fill isolated pans beside the cloister walls.",
+      "cause": "The original pan footings were solid and the courtyard had no below-grade collector.",
+      "action": "Create pierced pans, clear falling clay conductors and two infiltration galleries reached through flush grates among the raised beds. Recheck the central aisle and all existing routes.",
+      "older_maps": "Trace courtyard inlets through the installed geometry to their actual outlet or infiltration bed. Keep service penetrations clear of occupied foundation assemblies.",
+      "evidence": "development/levels/rebuild/monastery-court-drainage-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-728",
+      "title": "Authored Monastery walking grates stopped movement at narrow slots",
+      "status": "MONASTERY_COURT_WALKING_GRATES_STAGED",
+      "affected": "WLD-10 two flush inspection grates",
+      "symptom": "A player capsule stopped when a foot-support probe landed in a narrow cast-iron slot.",
+      "cause": "Literal native point support did not account for a shoe spanning adjacent grate bars.",
+      "action": "Bind bounded foot support to the two authored closed grate assemblies. Keep optical rays, body collision and non-grate floors on the original triangles.",
+      "older_maps": "Verify physically authored walking grates from multiple headings and preserve optical openings. Ordinary gaps and floor edges retain literal support.",
+      "evidence": "development/levels/rebuild/monastery-court-drainage-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

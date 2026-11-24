@@ -81,6 +81,7 @@ final class PackagedInvestigationLevel {
         var spaces = new ArrayList<NativeInvestigationScene.Space>();
         var rooms = new Room[HouseMap.ROOM_COUNT];
         var treads = new HashSet<String>();
+        var grates = new HashSet<String>();
         var doors = new ArrayList<NativeInvestigationDoor.Spec>();
         var portals = new ArrayList<Portal>();
         var sockets = new ArrayList<Socket>();
@@ -99,6 +100,7 @@ final class PackagedInvestigationLevel {
                     }
                 }
                 case "STEP" -> treads.add(row[1]);
+                case "GRATE" -> check(row.length == 2 && grates.add(row[1]), "Invalid native walking grate");
                 case "RITUAL" -> sockets.add(new Socket(profile.ritualPrefix() + row[1], "ritual", integer(row, 2),
                     number(row, 3), number(row, 4), number(row, 5), 0, row[1]));
                 case "COVER" -> sockets.add(new Socket(row[1], "hide", integer(row, 2),
@@ -133,7 +135,7 @@ final class PackagedInvestigationLevel {
             dock.z() + 2.4, van.floorY(), VanStaging.INTERIOR_HEIGHT, "van", "metal",
             new Vec(dock.x(), van.floorY(), dock.z()));
         for (int i = 0; i < rooms.length; i++) check(rooms[i] != null, "Missing native room owner " + i);
-        var scene = NativeInvestigationScene.read(model, modelHash, collision, collisionHash, treads, spaces, doors);
+        var scene = NativeInvestigationScene.read(model, modelHash, collision, collisionHash, treads, spaces, doors, grates);
         var nativeComponents = new HashSet<String>();
         for (int i = 0; i < scene.physics().componentCount(); i++) nativeComponents.add(scene.physics().componentName(i));
         for (var socket : sockets) if (socket.type().equals("native_story"))

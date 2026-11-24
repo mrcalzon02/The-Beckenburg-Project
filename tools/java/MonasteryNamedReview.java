@@ -53,7 +53,7 @@ final class MonasteryNamedReview {
         require(campaign.indexOf("WLD-10") == 18 && campaign.get(17).equals("WLD-09") && campaign.get(19).equals("WLD-11"),
             "Ordinary campaign order changed");
         for (var name : List.of("source-hashes.tsv","runtime-input.tsv","door-schedule.tsv","electrical-schedule.tsv",
-                                "monastery-with-ground-drainage.glb","monastery-with-ground-drainage.hcs2")) {
+                                "monastery-with-court-drainage.glb","monastery-with-court-drainage.hcs2")) {
             var resource = MonasteryNativeLevel.class.getResource(RESOURCE + name);
             require(resource != null && resource.getProtocol().equals("jar"), "Resource is outside the game archive " + name);
         }
@@ -117,6 +117,10 @@ final class MonasteryNamedReview {
         capture(map,new Vec(26,0,65),new Vec(24.55,-.056,63.2),captures.resolve("monastery-west-gate-overflow.png"));
         capture(map,new Vec(38,0,65),new Vec(39.45,-.056,63.2),captures.resolve("monastery-east-gate-overflow.png"));
         capture(map,new Vec(67.5,0,25),new Vec(70.45,-.06,27.1),captures.resolve("monastery-service-interceptor.png"));
+        verifyCourt(stage,map,report);
+        capture(map,new Vec(29,0,35.5),new Vec(26.88,-.042,35.5),captures.resolve("monastery-west-herb-court-grate.png"));
+        capture(map,new Vec(29,0,35.5),new Vec(31.12,-.042,35.5),captures.resolve("monastery-east-herb-court-grate.png"));
+        capture(map,new Vec(16.55,0,25),new Vec(15.7,.045,22.82),captures.resolve("monastery-herb-court-pipe-inlet.png"));
         if (!gpu) {
             BlackwaterNamedReview.solo(map,report);
             MonasteryPowerReview.live(scene,report,site);
@@ -133,7 +137,7 @@ final class MonasteryNamedReview {
                 var fields = row.split("\t");
                 double x = Double.parseDouble(fields[2]), y = Double.parseDouble(fields[3]), z = Double.parseDouble(fields[4]);
                 var hit = physics.firstOpticalHit(new Vec(x,y+.006,z),new Vec(x,y-.006,z));
-                require(hit != null && hit.component().equals("WLD-10 graded exterior ground")
+                require(hit != null && hit.component().equals("WLD-10 court and exterior ground")
                     && Math.abs(hit.fraction() - .5) < .035, "Runoff survey misses packaged ground at " + row);
                 profiles.computeIfAbsent(fields[0],name -> new ArrayList<>()).add(y);
             }
@@ -146,6 +150,52 @@ final class MonasteryNamedReview {
                 require(heights.get(i)-heights.get(i-1)<=.001, channel.getKey()+" has a raised bed");
             report.add(channel.getKey()+"_native_fall\t"+heights.size()+" surveyed native bed points");
         }
+    }
+
+    private static void verifyCourt(Path stage,HouseMap map,List<String> report) throws Exception {
+        var physics=map.nativeInvestigation().physics();
+        var conductors=new LinkedHashMap<String,List<Vec>>();
+        try (var rows=Files.newBufferedReader(stage.resolve("wld-10/court-drainage.tsv"))) {
+            require("inlet\tx\ty\tz".equals(rows.readLine()),"Invalid herb-court survey heading");
+            for (String row; (row=rows.readLine())!=null; ) {
+                var f=row.split("\t");
+                conductors.computeIfAbsent(f[0],name -> new ArrayList<>()).add(
+                    new Vec(Double.parseDouble(f[1]),Double.parseDouble(f[2]),Double.parseDouble(f[3])));
+            }
+        }
+        require(conductors.size()==8,"Incomplete herb-court network");
+        int spans=0;
+        for (var entry:conductors.entrySet()) {
+            var stations=entry.getValue();
+            var throat=stations.get(0);
+            require(physics.clearSight(new Vec(throat.x()+.012,.010,throat.z()),
+                new Vec(throat.x()+.012,-.20,throat.z())),entry.getKey()+" has a covered throat");
+            for (int i=1;i<stations.size();i++) {
+                var a=stations.get(i-1);
+                var b=stations.get(i);
+                var start=new Vec(a.x()+.06*(b.x()-a.x()),a.y()+.06*(b.y()-a.y()),a.z()+.06*(b.z()-a.z()));
+                var end=new Vec(a.x()+.94*(b.x()-a.x()),a.y()+.94*(b.y()-a.y()),a.z()+.94*(b.z()-a.z()));
+                require(a.y()>b.y() && physics.clearSight(start,end),entry.getKey()+" lost its clear falling conductor");
+                spans++;
+            }
+        }
+        for (double x:new double[]{26.88,31.12}) {
+            var start=new Vec(x+.025,.018,35.5);
+            var end=new Vec(start.x(),-2.04,start.z());
+            var bed=physics.firstOpticalHit(start,end);
+            String side=x<29?"west":"east";
+            require(bed!=null && bed.component().equals("Monastery "+side+" herb-court soakaway gravel filter bed region0")
+                && Math.abs(bed.fraction()-.94169)<.002,"Shaft cannot reach filter at "+x+": "+bed);
+        }
+        var route=List.of(new Vec(26.2,-.027,35.5),new Vec(29,0,35.5),new Vec(31.8,-.027,35.5));
+        var reverse=new ArrayList<>(route);
+        Collections.reverse(reverse);
+        for (double posture:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}) {
+            NativeSchoolInteriorReview.walk(map,route,posture,"running across both herb-court grates");
+            NativeSchoolInteriorReview.walk(map,reverse,posture,"return across both herb-court grates");
+        }
+        report.add("herb_court_roof_throats_and_falling_pipe_spans\t8 open inlets and "+spans+" clear falling spans");
+        report.add("herb_court_inspection_and_traversal\t2 native filter beds through clear shafts and four standing/crouch passes");
     }
 
     private static void capture(HouseMap map,Vec at,Vec target,Path image) throws Exception {

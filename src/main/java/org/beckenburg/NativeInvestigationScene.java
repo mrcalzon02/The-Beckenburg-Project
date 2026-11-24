@@ -50,10 +50,16 @@ record NativeInvestigationScene(AuthoredSitePhysics physics, GlbProps.Model mode
     static NativeInvestigationScene read(InputStream glb,String glbSha,InputStream collision,String collisionSha,
                                          Set<String> stairs,List<Space> spaces,
                                          List<NativeInvestigationDoor.Spec> frames)throws IOException{
+        return read(glb,glbSha,collision,collisionSha,stairs,spaces,frames,Set.of());
+    }
+
+    static NativeInvestigationScene read(InputStream glb,String glbSha,InputStream collision,String collisionSha,
+                                         Set<String> stairs,List<Space> spaces,List<NativeInvestigationDoor.Spec> frames,
+                                         Set<String> grates)throws IOException{
         var bytes=glb.readNBytes(16_000_001);
         if(bytes.length>16_000_000||!digest(bytes).equals(glbSha))
             throw new IOException("Native level GLB source hash mismatch or size exceeded");
-        var physics=AuthoredSitePhysics.read(collision,collisionSha,List.of(),stairs);
+        var physics=AuthoredSitePhysics.read(collision,collisionSha,List.of(),stairs,grates);
         String manifest=glbSha+"|"+collisionSha+"|"+stairs.stream().sorted().toList()+"|"+spaces;
         List<NativeInvestigationDoor> doors=new java.util.ArrayList<>();
         if(!frames.isEmpty()){
@@ -80,6 +86,7 @@ record NativeInvestigationScene(AuthoredSitePhysics physics, GlbProps.Model mode
             }
             manifest+="|native-hinges-v1|"+doors.stream().map(NativeInvestigationDoor::spec).toList();
         }
+        if(!grates.isEmpty())manifest+="|native-walking-grates-v1|"+grates.stream().sorted().toList();
         String revision=digest(manifest.getBytes(StandardCharsets.UTF_8));
         return new NativeInvestigationScene(physics,GlbProps.decodeLevel(bytes),spaces,doors,revision);
     }

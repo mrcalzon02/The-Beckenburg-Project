@@ -15,7 +15,7 @@ public final class AuthoredSitePhysics {
     public static final int SUPPORT=1,OPTICAL=2,BODY=4;
     public static final double MAX_GRADE=.20,RADIUS=.22,MAX_STEP=.25;
     private static final int MAX_BYTES=32_000_000,MAX_TRIANGLES=500_000,MAX_PARTS=16384,MAX_REFS=8_000_000;
-    private static final double CELL=2,CONTACT=.005;
+    private static final double CELL=2,CONTACT=.005,GRATE_REACH=.022;
     public record Triangle(Vec a,Vec b,Vec c,int flags,int component){}
     public record Support(double y,double grade,int triangle){}
     private record Part(String name,boolean closed,int first,int count,double[] bounds){}
@@ -26,10 +26,10 @@ public final class AuthoredSitePhysics {
     private final Map<Long,int[]> bins;
     private final List<Collider> blockers;
     private final String sha256;
-    private final boolean[] steps;
+    private final boolean[] steps,grates;
     private final boolean hasSteps;
 
-    private AuthoredSitePhysics(float[] xyz,byte[] flags,int[] owner,Part[] parts,List<Collider> blockers,String sha,Set<String> stairComponents)throws IOException{
+    private AuthoredSitePhysics(float[] xyz,byte[] flags,int[] owner,Part[] parts,List<Collider> blockers,String sha,Set<String> stairComponents,Set<String> grateComponents)throws IOException{
         this.xyz=xyz;this.flags=flags;this.owner=owner;this.parts=parts;this.blockers=List.copyOf(blockers);sha256=sha;
         steps=new boolean[parts.length];var unresolved=new HashSet<>(stairComponents);
         for(int p=0;p<parts.length;p++)if(stairComponents.contains(parts[p].name())){
@@ -41,17 +41,32 @@ public final class AuthoredSitePhysics {
         }
         if(!unresolved.isEmpty())throw new IOException("Unknown authored stair component: "+unresolved);
         hasSteps=!stairComponents.isEmpty();
+        grates=new boolean[parts.length];
+        var unresolvedGrates=new HashSet<>(grateComponents);
+        for(int p=0;p<parts.length;p++)if(grateComponents.contains(parts[p].name())){
+            var part=parts[p];
+            var bounds=part.bounds();
+            if(!unresolvedGrates.remove(part.name())||!part.closed()||steps[p]
+                    ||bounds[4]-bounds[1]>.05||bounds[3]-bounds[0]>.70||bounds[5]-bounds[2]>.70)
+                throw new IOException("Invalid authored walking grate "+part.name());
+            grates[p]=true;
+        }
+        if(!unresolvedGrates.isEmpty())throw new IOException("Unknown authored walking grate: "+unresolvedGrates);
         for(var b:blockers)if(!finite(b.x(),b.y(),b.z(),b.halfX(),b.halfZ(),b.height(),b.yaw())||b.halfX()<=0||b.halfZ()<=0||b.height()<=0)throw new IOException("Invalid movement-only blocker");
         long refs=0;
         for(int i=0;i<flags.length;i++){
-            int n=i*9;long dx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6])))-cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6])))+1;
-            long dz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8])))-cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8])))+1;
+            int n=i*9;
+            double pad=grates[owner[i]]?GRATE_REACH:0;
+            long dx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6]))+pad)-cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6]))-pad)+1;
+            long dz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8]))+pad)-cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8]))-pad)+1;
             refs+=dx*dz;if(refs>MAX_REFS)throw new IOException("Native geometry spatial budget exceeded");
         }
         var lists=new HashMap<Long,ArrayList<Integer>>();
         for(int i=0;i<flags.length;i++){
-            int n=i*9;int ax=cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6]))),bx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6])));
-            int az=cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8]))),bz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8])));
+            int n=i*9;
+            double pad=grates[owner[i]]?GRATE_REACH:0;
+            int ax=cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6]))-pad),bx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6]))+pad);
+            int az=cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8]))-pad),bz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8]))+pad);
             for(int x=ax;x<=bx;x++)for(int z=az;z<=bz;z++)lists.computeIfAbsent(key(x,z),k->new ArrayList<>()).add(i);
         }
         var result=new HashMap<Long,int[]>();for(var e:lists.entrySet())result.put(e.getKey(),e.getValue().stream().mapToInt(Integer::intValue).toArray());bins=Map.copyOf(result);
@@ -81,7 +96,7 @@ public final class AuthoredSitePhysics {
         // Separate or overlapping library pieces retain their exact surface
         // obstacles without being interpreted as one closed solid.
         var parts=new Part[]{new Part(partName,false,0,total,bounds)};
-        return new AuthoredSitePhysics(coords,allFlags,new int[total],parts,List.of(),"",Set.of());
+        return new AuthoredSitePhysics(coords,allFlags,new int[total],parts,List.of(),"",Set.of(),Set.of());
     }
 
     public static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers)throws IOException{
@@ -92,6 +107,10 @@ public final class AuthoredSitePhysics {
      * This does not infer stairs from component names or change optical/physical queries.
      */
     public static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers,Set<String> stairComponents)throws IOException{
+        return read(source,expectedSha,blockers,stairComponents,Set.of());
+    }
+    static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers,
+                                    Set<String> stairComponents,Set<String> grateComponents)throws IOException{
         Objects.requireNonNull(source);Objects.requireNonNull(blockers);
         stairComponents=Set.copyOf(stairComponents);
         byte[] data=source.readNBytes(MAX_BYTES+1);if(data.length>MAX_BYTES)throw new IOException("Native geometry byte budget exceeded");
@@ -121,7 +140,7 @@ public final class AuthoredSitePhysics {
                 parts[p]=new Part(name,closed==1,first,n,bounds);
             }
             if(cursor!=triangles||in.read()!=-1)throw new IOException("Truncated/trailing native geometry records");
-            return new AuthoredSitePhysics(xyz,flags,owner,parts,blockers,sha,stairComponents);
+            return new AuthoredSitePhysics(xyz,flags,owner,parts,blockers,sha,stairComponents,Set.copyOf(grateComponents));
         }catch(EOFException truncated){throw new IOException("Truncated native geometry",truncated);}
     }
     private static AuthoredSitePhysics hollowCreek;
@@ -168,9 +187,18 @@ public final class AuthoredSitePhysics {
                 tw=Math.max(tw,1e-5*Math.hypot(abx,abz)/Math.abs(den));
                 te=Math.max(te,1e-5*Math.hypot(acx-abx,acz-abz)/Math.abs(den));
             }
-            if(u< -tu||w< -tw||u+w>1+te)continue;
+            double y;
+            if(u< -tu||w< -tw||u+w>1+te){
+                if(!grates[owner[i]])continue;
+                var bounds=parts[owner[i]].bounds();
+                y=bounds[4];
+                // A shoe can span a narrow slot between the real bars, within
+                // the cover footprint. Optical and body tests keep the gaps.
+                if(x<bounds[0]||x>bounds[3]||z<bounds[2]||z>bounds[5]
+                        ||a.y()!=y||b.y()!=y||c.y()!=y
+                        ||pointTriangle(new Vec(x,y,z),a,b,c)>GRATE_REACH*GRATE_REACH)continue;
+            }else y=a.y()+u*(b.y()-a.y())+w*(c.y()-a.y());
             Vec normal=cross(sub(b,a),sub(c,a));if(normal.y()<=0)continue;double grade=Math.hypot(normal.x(),normal.z())/normal.y();if(grade>MAX_GRADE+1e-5)continue;
-            double y=a.y()+u*(b.y()-a.y())+w*(c.y()-a.y());
             if(Math.abs(y-previousY)<=maxDelta+1e-6&&(best==null||y>best.y()))best=new Support(y,grade,i);
         }return best;
     }

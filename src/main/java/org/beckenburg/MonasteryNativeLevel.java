@@ -27,7 +27,7 @@ final class MonasteryNativeLevel {
 
     private static PackagedInvestigationLevel.Source load() {
         var source = PackagedInvestigationLevel.load(new PackagedInvestigationLevel.Profile(
-            "wld-10", TITLE, "monastery-with-ground-drainage", new Dock(32, 0, 80, 0), "monastery-",
+            "wld-10", TITLE, "monastery-with-court-drainage", new Dock(32, 0, 80, 0), "monastery-",
             "stone", "stone", null, null));
         var level = source.level();
         if (source.scene().doors().size() != 13 || HidingBudget.candidates(level).size() != 3
