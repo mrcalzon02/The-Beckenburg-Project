@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 720" role="img" aria-labelledby="title desc">
+<title id="title">Monastery roof valley water paths</title>
+<desc id="desc">North-up roof plan and a transverse section of the four graded junctions, with downpipes and gravel outfalls.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+<path d="M0 0L7 4L0 8" fill="none" stroke="#23675b" stroke-width="1.4"/></marker></defs>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#273732}.title{font-size:32px;font-weight:650}
+.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.roof{fill:#e3e4dc;stroke:#756f63;stroke-width:1.2}.ridge{stroke:#9c9584;stroke-width:1}
+.valley{fill:none;stroke:#23675b;stroke-width:3;marker-end:url(#arrow)}.outlet{fill:#23675b;stroke:white;stroke-width:1.3}
+.lead{fill:none;stroke:#23675b;stroke-width:4}.label{paint-order:stroke;stroke:#e3e4dc;stroke-width:3}
+</style>
+<rect width="1080" height="720" fill="#f2ece1"/>
+<text class="title" x="26" y="47">Monastery of Ashen Bells · Roof valleys</text>
+<text class="body" x="27" y="76">Four opposing-eave valleys carried to seven founded outfalls. North up.</text>
+<rect x="24" y="92" width="627" height="603" rx="9" fill="#fbf7ec" stroke="#cfc3ad"/>
+<rect x="666" y="92" width="390" height="603" rx="9" fill="#fbf7ec" stroke="#cfc3ad"/>
+<rect class="roof" x="296.80" y="534.20" width="119.20" height="44.70"/>
+<path class="ridge" d="M296.80 556.55H416.00"/>
+<rect class="roof" x="177.60" y="280.90" width="44.70" height="208.60"/>
+<path class="ridge" d="M199.95 280.90V489.50"/>
+<rect class="roof" x="445.80" y="280.90" width="44.70" height="208.60"/>
+<path class="ridge" d="M468.15 280.90V489.50"/>
+<rect class="roof" x="177.60" y="236.20" width="312.90" height="44.70"/>
+<path class="ridge" d="M177.60 258.55H490.50"/>
+<rect class="roof" x="177.60" y="489.50" width="312.90" height="44.70"/>
+<path class="ridge" d="M177.60 511.85H490.50"/>
+<rect class="roof" x="177.60" y="131.90" width="149.00" height="104.30"/>
+<path class="ridge" d="M177.60 184.05H326.60"/>
+<rect class="roof" x="326.60" y="131.90" width="119.20" height="104.30"/>
+<path class="ridge" d="M326.60 184.05H445.80"/>
+<rect class="roof" x="490.50" y="340.50" width="134.10" height="149.00"/>
+<path class="ridge" d="M557.55 340.50V489.50"/>
+<rect class="roof" x="58.40" y="280.90" width="119.20" height="208.60"/>
+<path class="ridge" d="M118.00 280.90V489.50"/>
+<rect class="roof" x="490.50" y="236.20" width="74.50" height="104.30"/>
+<path class="ridge" d="M527.75 288.35L490.50 236.20"/>
+<path class="ridge" d="M527.75 288.35L490.50 340.50"/>
+<path class="ridge" d="M527.75 288.35L565.00 236.20"/>
+<path class="ridge" d="M527.75 288.35L565.00 340.50"/>
+<path class="valley" d="M356.40 534.20L296.80 534.20L293.22 540.83"/>
+<circle class="outlet" cx="293.22" cy="540.83" r="4"/>
+<path class="valley" d="M356.40 534.20L416.00 534.20L419.58 540.83"/>
+<circle class="outlet" cx="419.58" cy="540.83" r="4"/>
+<path class="valley" d="M177.60 385.20L177.60 280.90L171.57 277.70"/>
+<circle class="outlet" cx="171.57" cy="277.70" r="4"/>
+<path class="valley" d="M177.60 385.20L177.60 489.50L171.57 492.70"/>
+<circle class="outlet" cx="171.57" cy="492.70" r="4"/>
+<path class="valley" d="M490.50 340.50L490.50 489.50L496.53 492.70"/>
+<circle class="outlet" cx="496.53" cy="492.70" r="4"/>
+<path class="valley" d="M311.70 236.20L177.60 236.20L171.57 240.45"/>
+<circle class="outlet" cx="171.57" cy="240.45" r="4"/>
+<path class="valley" d="M311.70 236.20L445.80 236.20L449.38 230.17"/>
+<circle class="outlet" cx="449.38" cy="230.17" r="4"/>
+<text x="118.00" y="385.20" class="small label" text-anchor="middle">Dormitory</text>
+<text x="252.10" y="184.05" class="small label" text-anchor="middle">Archive</text>
+<text x="386.20" y="184.05" class="small label" text-anchor="middle">Vestry</text>
+<text x="565.00" y="422.45" class="small label" text-anchor="middle">Refectory</text>
+<text x="356.40" y="556.55" class="small label" text-anchor="middle">Gatehouse</text>
+<text x="527.75" y="288.35" class="small label" text-anchor="middle">Bell tower</text>
+<text x="334.05" y="385.20" class="small label" text-anchor="middle">Herb court</text>
+<path d="M48 648h74.5v-5M48 643v5" fill="none" stroke="#273732" stroke-width="1.5"/><text class="small" x="85" y="670" text-anchor="middle">10 m</text>
+<path d="M604 141v-24l-5 6m5-6l5 6" fill="none" stroke="#273732" stroke-width="1.5"/><text class="small" x="604" y="158" text-anchor="middle">N</text>
+<text class="head" x="688" y="127">Rainwater path</text>
+<path class="valley" d="M690 154h31"/><text class="body" x="735" y="160">Graded valley and outlet shoe</text>
+<circle class="outlet" cx="704" cy="188" r="5"/><text class="body" x="735" y="193">Pipe discharges into a gravel bed</text>
+<text class="head" x="688" y="244">Typical valley cross-section</text>
+<path d="M696 278L859 343L1025 278" stroke="#858477" stroke-width="10" fill="none"/>
+<path class="lead" d="M733 293L859 327L989 292"/>
+<text class="small" x="859" y="376" text-anchor="middle">Lead laps follow both original slate pitches.</text>
+<text class="head" x="688" y="428">Longitudinal falls</text>
+<text class="body" x="688" y="457">Gatehouse, dormitory and north range</text>
+<text class="small" x="688" y="480">A shallow central crown drains both ends.</text>
+<text class="body" x="688" y="515">Refectory</text>
+<text class="small" x="688" y="538">The single fall moves away from the tower.</text>
+<text class="body" x="688" y="601">Grade along each arm is 0.46%.</text>
+<text class="small" x="688" y="632">The seven outfalls sit beyond the door approaches.</text>
+<text class="small" x="688" y="655">Other roof junctions remain open for review.</text>
+</svg>

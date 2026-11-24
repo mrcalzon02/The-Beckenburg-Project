@@ -7932,6 +7932,17 @@
       "action": "Survey and fit paired iron grips on the four flights and a continuous grip around the bell landing. Verify mounting, native geometry, width, standing views, routes and the live memorial approach.",
       "older_maps": "Audit handrail fastening and clear width against each site's own built treads and landings.",
       "evidence": "development/levels/rebuild/monastery-handrail-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-716",
+      "title": "Four opposing-eave valleys at the Monastery lacked graded outlets",
+      "status": "MONASTERY_FOUR_OPPOSING_EAVE_VALLEYS_DRAINED_STAGED",
+      "affected": "WLD-10 gatehouse, dormitory, refectory and north range valleys",
+      "symptom": "Opposed slate pitches drained toward a shared low edge with no graded carrier or outfall.",
+      "cause": "The retained pitched wing roofs met at eaves without a drainage assembly.",
+      "action": "Fit lapped and graded liners, seven open downpipes with wall straps, and founded outfalls clear of doors. Check exported crossfalls, bores, outlet beds, and normal routes.",
+      "older_maps": "Audit opposing eaves at each measured building and take runoff to supported outfalls clear of stairs and door landings.",
+      "evidence": "development/levels/rebuild/monastery-valley-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

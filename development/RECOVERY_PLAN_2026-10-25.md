@@ -2339,3 +2339,7 @@ The operating-door commit eee9cb613e2ad5112030d5059f82f6206e4042a7 passed galler
 ### Monastery of Ashen Bells fitted bell and catacomb handrails
 
 Monastery refuge commit e018e64f56447257408ee5fb8b3ce0588f1b7dd2 passed gallery 45448853857 on draft PR 86. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526 and GPU acceptance 44863686455. The [handrail checkpoint](levels/rebuild/monastery-handrail-pass/checkpoint.json) attaches both sides of the four existing flights, verifies the turning landing and tread width, and repeats the live van-to-memorial route. Roof junction and drainage, utilities and furnishing precede named package acceptance.
+
+### Monastery of Ashen Bells opposing-eave valleys
+
+The stair handrail checkpoint f997ba37334f24d3570637ed047e7f3f063ad1ec passed gallery 45450867368 on draft PR 86. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526 and GPU acceptance 44863686455. The [valley checkpoint](levels/rebuild/monastery-valley-pass/checkpoint.json) records four graded valley assemblies, seven grounded outlets, matching export and runtime checks, and the live approach to the memorial chamber. Continue the tower flashings, gable corners and exposed eaves, then the supported service distribution and named case.

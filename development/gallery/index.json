@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12247,
+  "count": 12260,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116464,6 +116464,136 @@
       "height": 580,
       "bytes": 391632,
       "sha256": "6a6e173fc6c40abf6d9c0ed15100bea8be3882637e17766c47835a5f361e20ef"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/dormitory-valley.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/dormitory-valley.png",
+      "title": "Dormitory valley",
+      "kind": "Monastery of Ashen Bells exported roof valley inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1385680,
+      "sha256": "e1d9f06b7beaca47e51816830b7667b6cd3e45a526da9e2f25deda152c5518c6"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/gatehouse-split-fall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/gatehouse-split-fall.png",
+      "title": "Gatehouse split fall",
+      "kind": "Monastery of Ashen Bells exported roof valley inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1356041,
+      "sha256": "8588f9ea879328a07cfc1703fb708e3aa643dbcf6fba6e803ec8ab91318c57b0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/north-range-valley.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/north-range-valley.png",
+      "title": "North range valley",
+      "kind": "Monastery of Ashen Bells exported roof valley inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1271122,
+      "sha256": "dcdb15438b84e265041d605310dd3f4774e6551f984f0f20362986c1659a998f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/refectory-valley-and-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/refectory-valley-and-outfall.png",
+      "title": "Refectory valley and outfall",
+      "kind": "Monastery of Ashen Bells exported roof valley inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1358440,
+      "sha256": "ff016eafd0d9dd7a4d2131a9d40f70447edc77b703f4e56bb082c44a6a1a67c7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/roof-valley-overview.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/export-inspection/roof-valley-overview.png",
+      "title": "Roof valley overview",
+      "kind": "Monastery of Ashen Bells exported roof valley inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1194935,
+      "sha256": "d8eac56c25100b76c73fd66494d024cb14d808694845df25a8564eaa57d792ca"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/dormitory-south-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/dormitory-south-outfall.png",
+      "title": "Dormitory south outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 391850,
+      "sha256": "82053d2bdf6065178a877b64be51033ee20e64bd6c20d9527b6bc18d6153bb38"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/gatehouse-east-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/gatehouse-east-outfall.png",
+      "title": "Gatehouse east outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 393171,
+      "sha256": "9276cfe164d46d87a64a794f073ccc1ddceaf536b9f97a78ebba4c1a5a327514"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/north-range-east-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/north-range-east-outfall.png",
+      "title": "North range east outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 395692,
+      "sha256": "0f19d1976a60793a5fde43eeb8a36f989900292a7cb25cf928c830a695bcac2b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/refectory-south-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/opengl/refectory-south-outfall.png",
+      "title": "Refectory south outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 387402,
+      "sha256": "4c7d48fccae27e671e727a6bb23e7d5dcd715574a79388f63a8018fa4a9cf639"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/dormitory-south-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/dormitory-south-outfall.png",
+      "title": "Dormitory south outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 390366,
+      "sha256": "321a3b22cdae8fc7c5ef6679101a050a7596cb6bf2e0e74883afad17d93be483"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/gatehouse-east-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/gatehouse-east-outfall.png",
+      "title": "Gatehouse east outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 391471,
+      "sha256": "4383c82faa25fc4e8d0284d8bc3f702bcca79adb6c97ad3a86a8f6b106b34edd"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/north-range-east-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/north-range-east-outfall.png",
+      "title": "North range east outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 394924,
+      "sha256": "d3d71a0ce37b275e99088b0d6050d21b0fce6e06ae409c9e3e8edd8a9ea2a029"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/refectory-south-outfall.png",
+      "url": "development/levels/rebuild/monastery-valley-pass/wld-10/captures/software/refectory-south-outfall.png",
+      "title": "Refectory south outfall",
+      "kind": "Monastery of Ashen Bells roof outfall in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 385336,
+      "sha256": "5d0cd5efe12f900a79c07fcc32553ad588fe3072ce04e60081466bdbc40052b8"
     },
     {
       "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/array-edge-screen.png",

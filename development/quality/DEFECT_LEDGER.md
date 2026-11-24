@@ -9250,3 +9250,7 @@ The operating-door stage left the Monastery without sanctuary coverage. Three ca
 ### DEV-715 · Monastery stair handrails
 
 Both bell flights and both crypt flights lacked graspable, mounted hardware. The fitted revision adds iron grips on the existing string walls, coping and lining with a continuous outer rail at the bell turning landing. The stair floor, rail clearance, refuge volumes and actual door routes passed the staged regression. [Verification checkpoint](../levels/rebuild/monastery-handrail-pass/checkpoint.json)
+
+### DEV-716 · Monastery opposing-eave roof valleys
+
+Four trough junctions previously had no positive grade or outlets. The staged revision fits roof laps, hollow wall-mounted downpipes and seven founded gravel outfalls. Both runtime renderers verified the fitted components and retained movement furnished by the existing architecture. Tower steps, gable corners and exposed eaves still require review. [Verification checkpoint](../levels/rebuild/monastery-valley-pass/checkpoint.json)
