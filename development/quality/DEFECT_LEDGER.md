@@ -8982,3 +8982,7 @@ The clearing socket was at Y6 while its physical walking surface was at Y5.65. U
 ### DEV-649 Lookout rebuild lacked any walk-in safe zones
 
 The native Lookout arrival pass had no usable cover. Three floor-mounted walk-in cupboards now give protection from their threshold across the traversable interior. Check disabled cover and the full entry and exit in each site separately. [Evidence](../levels/rebuild/lookout-cover-pass/checkpoint.json)
+
+### DEV-650 House shrub regression loaded the wrong source revision
+
+The legacy shrub route ran against rebuilt House geometry. The regression now explicitly loads the source that owns its fixture coordinates. The crouch, sanctuary, haze and live LAN checks passed. [Evidence](../RECOVERY_PLAN_2026-10-25.md)

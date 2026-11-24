@@ -7206,6 +7206,17 @@
       "action": "Fit the canonical walk-in cupboards on supported floors. Verify entry, usable interior, spectral exclusion and loss of protection on exit.",
       "older_maps": "Walk each fitted safe-zone threshold and test supported interior positions, adjacent levels, disablement and live player protection.",
       "evidence": "development/levels/rebuild/lookout-cover-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-650",
+      "title": "House shrub regression loaded the wrong source revision",
+      "status": "LEGACY_FIXTURE_CORRECTED",
+      "affected": "CrouchAndOutdoorHidingTest",
+      "symptom": "The fixed legacy route coordinates ran against the rebuilt default House and the body sweep stopped before the shrub.",
+      "cause": "The regression constructed the currently selected House source even though the test route was laid out using the legacy geometry.",
+      "action": "Select the explicit legacy House source in the fixture, then rerun the crouch, sanctuary, haze and live LAN regressions.",
+      "older_maps": "Bind fixed-coordinate tests to the source revision that owns those coordinates.",
+      "evidence": "development/RECOVERY_PLAN_2026-10-25.md"
     }
   ],
   "audit_categories": [

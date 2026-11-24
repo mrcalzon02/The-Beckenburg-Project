@@ -2137,3 +2137,5 @@ Continue Lookout services, hiding and named packaged dispatch.
 ### Lookout walk-in safe zones
 
 The staged native source now has three fitted refuges with full usable-space protection. Software and RTX 5070 OpenGL checked entry, interior and exit. Four TCP peers used the exact staged case, including a live refuge entry and exit in the hut. The prior arrival checkpoint published at a88ce44720ea1bafa9f35b5a492e7539d5c76c70 and gallery run 45332690742 passed. Continue Lookout remote power and named packaged dispatch. [Checkpoint](levels/rebuild/lookout-cover-pass/checkpoint.json)
+
+Lookout cover published to draft PR 86 at 1aec71c601f2d77d098a78849bf58af7f1fa1684. The remote OpenGL capture matched its local SHA-256, and gallery run 45333875688 passed. The existing House shrub regression used legacy coordinates against the rebuilt default House. Selecting its actual legacy source restored the intended fixture. SafeAreaBarrierTest, HidingAreaHazeTest, CrouchAndOutdoorHidingTest and the four-peer LanSafeAreaBarrierTest passed. This compatibility check exercises the current shared game code with the correct geometry for each test.
