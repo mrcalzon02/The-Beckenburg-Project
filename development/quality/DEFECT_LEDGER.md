@@ -9266,3 +9266,7 @@ Five roof runs now drain to ten physically open outfalls beside supported piers.
 ### DEV-719 · Monastery service court and tower power
 
 A founded service-court generator, mounted main cabinet and supported conduit now supply four real fixtures on independently switched court and tower circuits. The ordinary host tripped and reset the breaker. Source restart and reconnect preserved the trip. Remaining room power and named acceptance are open. [Verification checkpoint](../levels/rebuild/monastery-power-pass/checkpoint.json)
+
+### DEV-720 · Monastery east-range power
+
+The service source now supplies independently switched refectory and east cloister circuits. Their supported fixtures, intact masonry sleeves, existing refuge geometry and door routes passed runtime review. [Verification checkpoint](../levels/rebuild/monastery-east-power-pass/checkpoint.json)

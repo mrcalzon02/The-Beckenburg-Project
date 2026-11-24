@@ -7976,6 +7976,17 @@
       "action": "Fit a founded source, cabinet, weather hood and two switched branches. Verify actual fixture output, host ghost trip, independent restart, reconnect and reset.",
       "older_maps": "Verify approved remote power against mounted equipment and replicated source and breaker state.",
       "evidence": "development/levels/rebuild/monastery-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-720",
+      "title": "Monastery refectory and east cloister lacked working distribution",
+      "status": "MONASTERY_REFECTORY_AND_EAST_CLOISTER_POWERED_STAGED",
+      "affected": "WLD-10 refectory and east cloister",
+      "symptom": "The commissioned service source did not supply these occupied rooms.",
+      "cause": "The first electrical stage served the court and tower base only.",
+      "action": "Add separately switched branches, supported wall and ceiling conduit and eight seated fixtures. Verify all previous loads and routes and a live independent switch sequence.",
+      "older_maps": "Trace room branches to the physical source and verify their switches individually.",
+      "evidence": "development/levels/rebuild/monastery-east-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

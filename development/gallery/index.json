@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12289,
+  "count": 12297,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116004,6 +116004,86 @@
       "height": 580,
       "bytes": 428940,
       "sha256": "facaacc7e0cdd273fb28b54e00155a63d59290a46b8921a93fcf0f18993c9039"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/east-cloister-isolated.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/east-cloister-isolated.png",
+      "title": "East cloister isolated",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 212283,
+      "sha256": "e6c2e5c246b9f98c7d134fd1cb12e6f701f09960daf88754f3c2bcb14dc690ac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/east-cloister-supplied.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/east-cloister-supplied.png",
+      "title": "East cloister supplied",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 293472,
+      "sha256": "00372899e49a63d0c16bd0a39f0a63cfee68423582f9d5a6a22fb22abbf51eb9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/refectory-isolated.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/refectory-isolated.png",
+      "title": "Refectory isolated",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 157870,
+      "sha256": "bec368106dc7dc6d58b9f9930fe3d6f07c851cf41f51612ff089228aa4ba7ec8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/refectory-supplied.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/opengl/refectory-supplied.png",
+      "title": "Refectory supplied",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 191689,
+      "sha256": "d3695b93414acc6e43f5d2256066cba8d346c4f51126623e25b9f919ae798dac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/east-cloister-isolated.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/east-cloister-isolated.png",
+      "title": "East cloister isolated",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 213972,
+      "sha256": "885948394e6b1885c04dff76a59f6b3165e94414f788bde3d26c6759fb48e2fc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/east-cloister-supplied.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/east-cloister-supplied.png",
+      "title": "East cloister supplied",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 305970,
+      "sha256": "e52a379032f5ba8c4d0fbe9d1e88b9d97abf7e6b3451f35a224def6ad390a75c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/refectory-isolated.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/refectory-isolated.png",
+      "title": "Refectory isolated",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 158691,
+      "sha256": "61c1f04b6411314140a4caf2bd0fb87961ba9939a63045e9a1087b8a10fd432a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/refectory-supplied.png",
+      "url": "development/levels/rebuild/monastery-east-power-pass/wld-10/captures/software/refectory-supplied.png",
+      "title": "Refectory supplied",
+      "kind": "Monastery of Ashen Bells east-range switched lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 201845,
+      "sha256": "5451d0155bd29d89d9e079f729c9d19b2f67bd0eef1d3809e953441a196ee73d"
     },
     {
       "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/archive-vestry-gable-step-lap.png",

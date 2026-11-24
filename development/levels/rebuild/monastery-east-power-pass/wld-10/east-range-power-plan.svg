@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 670" role="img" aria-labelledby="title desc">
+<title id="title">Monastery east-range circuit and switch plan</title>
+<desc id="desc">Existing service approach, east cloister and refectory with new conduits, fixtures and room switches.</desc>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#28362f}.title{font-size:29px;font-weight:650}
+.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.wire{fill:none;stroke:#216b5f;stroke-width:2.2;stroke-linecap:round}
+.sleeve{stroke:#945a36;stroke-width:3;fill:none}.lamp{fill:#ddb344;stroke:#896523}.switch{fill:#216b5f}
+</style>
+<rect width="1020" height="670" fill="#f1ecdf"/>
+<text x="27" y="48" class="title">Monastery of Ashen Bells · East-range power</text>
+<text x="28" y="76" class="body">The existing main board supplies separate refectory and east cloister switches.</text>
+<rect x="24" y="94" width="602" height="548" rx="8" fill="#faf6ec" stroke="#cfc3ad"/>
+<rect x="643" y="94" width="353" height="548" rx="8" fill="#faf6ec" stroke="#cfc3ad"/>
+<rect x="154.00" y="132.00" width="91.20" height="425.60" fill="#e9e3d5" stroke="#857b69"/>
+<rect x="245.20" y="253.60" width="273.60" height="304.00" fill="#e4e6db" stroke="#857b69"/>
+<rect x="245.20" y="132.00" width="152.00" height="121.60" fill="#ded8ca" stroke="#857b69"/>
+<rect x="397.20" y="132.00" width="121.60" height="121.60" fill="#edf0dd" stroke="#857b69"/>
+<text x="169.20" y="524.16" class="small">East cloister</text>
+<text x="382.00" y="524.16" class="small">Refectory</text>
+<text x="290.80" y="162.40" class="small">Bell tower</text>
+<text x="415.44" y="162.40" class="small">Service court</text>
+<polyline points="433.07,255.86 433.07,255.86" class="wire"/>
+<polyline points="242.94,429.62 242.94,429.62" class="wire"/>
+<polyline points="399.68,179.88 399.68,251.12" class="wire"/>
+<polyline points="399.68,251.12 433.07,251.12" class="wire"/>
+<polyline points="433.07,251.78 433.07,255.42" class="sleeve"/>
+<polyline points="433.07,256.08 433.07,256.08" class="wire"/>
+<polyline points="433.07,256.08 433.07,256.08" class="wire"/>
+<polyline points="433.07,256.08 433.07,484.64" class="wire"/>
+<polyline points="307.52,325.04 433.07,325.04 454.96,325.04" class="wire"/>
+<polyline points="307.52,325.04 307.52,325.04" class="wire"/>
+<polyline points="454.96,325.04 454.96,325.04" class="wire"/>
+<polyline points="307.52,484.64 433.07,484.64 454.96,484.64" class="wire"/>
+<polyline points="307.52,484.64 307.52,484.64" class="wire"/>
+<polyline points="454.96,484.64 454.96,484.64" class="wire"/>
+<polyline points="433.07,256.08 247.68,256.08" class="wire"/>
+<polyline points="247.68,256.08 247.68,429.62" class="wire"/>
+<polyline points="247.02,429.62 243.38,429.62" class="sleeve"/>
+<polyline points="242.72,429.62 242.72,429.62" class="wire"/>
+<polyline points="242.72,429.62 242.72,219.40" class="wire"/>
+<polyline points="242.72,429.62 242.72,502.12" class="wire"/>
+<polyline points="242.72,219.40 242.72,219.40" class="wire"/>
+<polyline points="242.72,312.12 242.72,312.12" class="wire"/>
+<polyline points="242.72,362.28 242.72,362.28" class="wire"/>
+<polyline points="242.72,502.12 242.72,502.12" class="wire"/>
+<circle class="switch" cx="433.07" cy="255.44" r="4.7"/>
+<circle class="switch" cx="243.36" cy="429.62" r="4.7"/>
+<circle class="lamp" cx="307.52" cy="325.04" r="4.7"/>
+<circle class="lamp" cx="454.96" cy="325.04" r="4.7"/>
+<circle class="lamp" cx="307.52" cy="484.64" r="4.7"/>
+<circle class="lamp" cx="454.96" cy="484.64" r="4.7"/>
+<circle class="lamp" cx="240.58" cy="219.40" r="4.7"/>
+<circle class="lamp" cx="240.58" cy="312.12" r="4.7"/>
+<circle class="lamp" cx="240.58" cy="362.28" r="4.7"/>
+<circle class="lamp" cx="240.58" cy="502.12" r="4.7"/>
+<path class="wire" d="M665 154h29"/><text x="708" y="158" class="body">Clipped feeder and branch conduit</text>
+<path class="sleeve" d="M665 184h29"/><text x="708" y="188" class="body">Sealed masonry crossing</text>
+<circle class="switch" cx="679" cy="212" r="5"/><text x="708" y="217" class="body">Room switch</text>
+<circle class="lamp" cx="679" cy="241" r="5"/><text x="708" y="246" class="body">Mounted light</text>
+<text x="666" y="319" class="head">MON-04 · Refectory</text>
+<text x="666" y="345" class="body">Four fixtures on the refectory ceiling.</text>
+<text x="666" y="368" class="body">Switch beside the receiving door.</text>
+<text x="666" y="432" class="head">MON-02 · East cloister</text>
+<text x="666" y="458" class="body">Four fixtures on the outer cloister wall.</text>
+<text x="666" y="481" class="body">The feed branches before the refectory switch.</text>
+<text x="666" y="556" class="small">The existing breaker isolates both branches.</text>
+<path d="M590 155v-22l-5 6m5-6l5 6" fill="none" stroke="#28362f"/><text x="590" y="173" class="small" text-anchor="middle">N</text>
+</svg>

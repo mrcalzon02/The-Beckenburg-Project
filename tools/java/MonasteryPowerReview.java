@@ -39,7 +39,11 @@ public final class MonasteryPowerReview {
     }
 
     static MonasteryDoorReview.Scene read(Path packet) throws Exception {
-        var base=MonasteryDoorReview.read(packet,packet,"monastery-with-service-power");
+        return read(packet,"monastery-with-service-power");
+    }
+
+    static MonasteryDoorReview.Scene read(Path packet,String stem) throws Exception {
+        var base=MonasteryDoorReview.read(packet,packet,stem);
         var level=base.level();
         var sockets=new ArrayList<>(level.sockets());
         for (var line:Files.readAllLines(packet.resolve("electrical-schedule.tsv"))) {
@@ -201,7 +205,7 @@ public final class MonasteryPowerReview {
         peer.awaitExact("ACCEPT|INTERACT|"+aim.name());
     }
 
-    private static void live(MonasteryDoorReview.Scene data,List<String> report) throws Exception {
+    static void live(MonasteryDoorReview.Scene data,List<String> report) throws Exception {
         var map=data.map();
         var replica=data.map();
         var generator=map.level().socket("generator",COURT);
@@ -273,6 +277,24 @@ public final class MonasteryPowerReview {
             use(map,engineer,at,towerSwitch);
             witness.awaitExact("LIGHTS|111111011110|1");
             require(!lights.on(COURT)&&!lights.on(TOWER)&&lights.supplied(),"Tower circuit affected main supply");
+            var refectorySwitch=map.level().socket("switch",4);
+            if (refectorySwitch!=null) {
+                var cloisterSwitch=map.level().socket("switch",2);
+                require(lights.on(4)&&lights.on(2),"Commissioned source failed to feed both new circuits");
+                at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(59.03,0,23),new Vec(64,0,23),new Vec(64,0,29));
+                at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,945);
+                at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(64,0,32.6),new Vec(62.36,0,32.6),new Vec(62.36,0,31.3));
+                use(map,engineer,at,refectorySwitch);
+                witness.awaitExact("LIGHTS|111101011110|1");
+                require(!lights.on(4)&&lights.on(2),"Refectory switch interrupted the unswitched cloister feed");
+                at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(62.36,0,35),new Vec(59,0,40));
+                at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,944);
+                at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(47,0,40),operator(cloisterSwitch));
+                use(map,engineer,at,cloisterSwitch);
+                witness.awaitExact("LIGHTS|110101011110|1");
+                require(!lights.on(2)&&!lights.on(4)&&lights.supplied(),"Cloister switch affected the main supply");
+                report.add("live_east_range_independent_switches\tPASS");
+            }
         }
         report.add("live_four_player_blackout\tPASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches");
     }

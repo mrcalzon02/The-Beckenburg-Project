@@ -2355,3 +2355,7 @@ Flashing checkpoint 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf passed gallery 4545
 ### Monastery of Ashen Bells service court and tower power
 
 Eave checkpoint 322a8045c5c8d275a27741f027e30e4b7cbd6604 remains local following an automatic upload rejection. The last verified draft remote head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still reports multiplayer acceptance 44863686526 and GPU acceptance 44863686455. The [service-power checkpoint](levels/rebuild/monastery-power-pass/checkpoint.json) records four wired loads, two independent switches and live ghost trip, restart, reconnect and reset. Continue room-by-room service distribution, remaining outfalls and named packaged acceptance.
+
+### Monastery of Ashen Bells east-range distribution
+
+The local service power checkpoint is 7d66dc139cf5ef42344802ca8465c00fab909413. Draft PR 86 remains at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf pending upload approval. The [east-range checkpoint](levels/rebuild/monastery-east-power-pass/checkpoint.json) supplies four refectory and four cloister lights through supported conduit and retains the ordinary breaker, route and live switch behavior. Remaining room distribution, outlying eaves and named packaged acceptance remain open.
