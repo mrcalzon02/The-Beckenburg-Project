@@ -84,6 +84,24 @@ record NativeInvestigationScene(AuthoredSitePhysics physics, GlbProps.Model mode
         return new NativeInvestigationScene(physics,GlbProps.decodeLevel(bytes),spaces,doors,revision);
     }
 
+    NativeInvestigationScene withSlidingDoor(NativeInvestigationDoor.Spec frame,InputStream source,double travel)
+            throws IOException {
+        var gate=frame.portal();
+        var a=spaces.stream().filter(space->space.id().equals(frame.roomA())).findFirst().orElseThrow();
+        var b=spaces.stream().filter(space->space.id().equals(frame.roomB())).findFirst().orElseThrow();
+        if(!a.accessible()||!b.accessible()||a.owner()!=gate.a()||b.owner()!=gate.b()
+                ||!Double.isFinite(travel)||Math.abs(travel)<gate.width()||Math.abs(travel)>4
+                ||doors.stream().anyMatch(d->d.spec().portal().id()==gate.id()||d.spec().frameId().equals(frame.frameId())))
+            throw new IOException("Invalid native gate travel or ownership for "+frame.frameId());
+        byte[] bytes=source.readNBytes(4_000_001);
+        if(bytes.length>4_000_000||!digest(bytes).equals(frame.leafSourceSha256()))
+            throw new IOException("Native sliding panel source hash mismatch or size exceeded");
+        var fitted=new java.util.ArrayList<>(doors);
+        fitted.add(NativeInvestigationDoor.slide(frame,GlbProps.decodeLevel(bytes),travel));
+        var manifest=revision+"|native-slide-v1|"+frame+"|"+travel;
+        return new NativeInvestigationScene(physics,model,spaces,fitted,digest(manifest.getBytes(StandardCharsets.UTF_8)));
+    }
+
     private static String digest(byte[] bytes){
         try{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes));}
         catch(NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}

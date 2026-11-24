@@ -2049,3 +2049,10 @@ Main was observed at cdf802b18731a4648edfb6d0c94aea3ed96e5325 with successful mu
 The [Ravenshade checkpoint](levels/rebuild/school-electrical-pass/checkpoint.json) verifies ordinary solo and four-peer LAN dispatch in the Windows package, all 156 supported route checks, 20 fitted doors, independent power, real breaker trip/reset and three physical cupboards. Same-source software and RTX 5070 capture checks passed. Continue complete room containment, evidence, ritual, progression and hardware acceptance before promotion.
 
 Main was observed at cb220372fb721fbe588f49d3dc488f6dbba1602d. Full multiplayer 44863686526 and GPU renderer acceptance 44863686455 passed there. The latest successful installer was 44863580794 at c238cff07d73d4e326b220521974aca5494078ed. The preceding exact draft gallery run 44509396374 passed at 476ee987a34620f109d6f59e1335e5ef8d1ae779. The held map parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+
+## Prison sally gate and measured stage dispatch
+
+The [Prison sally checkpoint](levels/rebuild/prison-sally-gate-pass/checkpoint.json) adds a mechanically operated yard gate, six wall bearings, two manual releases and a staged 15-owner case. Four TCP peers agree on the exact staged scene. The blackout fixture is controlled on the host for this scoped gate test. Native Prison electrical services and ordinary selection remain open. Wider Ravenshade package and live TCP checks passed again.
+
+Main was observed at cb220372fb721fbe588f49d3dc488f6dbba1602d with successful multiplayer 44863686526 and renderer 44863686455. The latest successful installer remained 44863580794 at c238cff07d73d4e326b220521974aca5494078ed. The preceding Prison checkpoint 613a967707274674693b7add8bb31221a610c31f passed gallery 45312402259. The held map parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.

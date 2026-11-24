@@ -80,6 +80,16 @@ public final class InteractionFocus {
             if(fitted!=null){
                 if(Math.hypot(r[0]-p.x(),r[2]-p.z())>5)continue;
                 boolean open=map.doorOpen(p.id());
+                if(fitted.sliding()){
+                    for(var release:map.level().sockets())if(release.type().equals("gate_release")
+                            &&release.style().equals(Integer.toString(p.id()))){
+                        double[] localRay=local(r,release.x(),release.y(),release.z(),0,1,1,1,0,0);
+                        double hit=box(localRay,new VanInteriorLayout.Bounds(-.085,-.09,-.035,.085,.09,.035));
+                        candidate(targets,Kind.DOOR,Integer.toString(p.id()),
+                            open?"Close gate manually":"Open gate manually",hit);
+                    }
+                    continue;
+                }
                 double distance=Double.POSITIVE_INFINITY;
                 for(var face:fitted.pose(open).model().triangles())
                     distance=Math.min(distance,triangle(r,face.a(),face.b(),face.c()));

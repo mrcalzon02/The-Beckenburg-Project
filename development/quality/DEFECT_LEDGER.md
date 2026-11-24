@@ -8782,6 +8782,26 @@ Fit a paired outward entrance set and the records leaf within the measured frame
 
 Check public and custody transitions separately. Audit appropriate secure leaves and manual release before dispatch. [DEV-624 evidence](../levels/rebuild/prison-public-entry-pass/checkpoint.json)
 
+### DEV-625 The Prison sally port had a yard opening without a working custody gate
+
+**Status** CORRECTED_IN_STAGED_GATE_REVIEW · **Affected** Prison sally port to exercise yard
+
+The measured 2.40 m aperture could neither close mechanically nor release from either side.
+
+Mount the rough steel panel on a wall-backed rail, fit two visible release controls and prove host operation in a controlled outage. Verify the real bars, openings and parked geometry.
+
+Audit other security barriers for accessible release on both sides during loss of power. [DEV-625 evidence](../levels/rebuild/prison-sally-gate-pass/checkpoint.json)
+
+### DEV-626 Three Prison stair guide stations described the wrong elevations
+
+**Status** GUIDE_CORRECTED_TO_EXISTING_STAIR_GEOMETRY · **Affected** Prison east and west cell flights and plant stair
+
+Reverse travel arrived on the existing first tread at approximately +0.179 m. The plant guide labelled the actual tread at Z24 m as the −3 m landing.
+
+Begin the cellhouse routes on the actual floors at Z47.1 m. Replay the plant flight directly between the supported lower and upper landings; retain all stair geometry.
+
+Compare every stair guide station to actual tread and landing elevations before using it as review evidence. [DEV-626 evidence](../levels/rebuild/prison-sally-gate-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11348,
+  "count": 11356,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110104,6 +110104,86 @@
       "height": 580,
       "bytes": 365531,
       "sha256": "05c8359520b27849895fb531414786e29792065455d3a7b1ed2dea84746e4da9"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-gate-closed-yard.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-gate-closed-yard.png",
+      "title": "Sally gate closed yard",
+      "kind": "Prison sally gate staged views in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 380051,
+      "sha256": "173970b0a6586da7efdf1b04b58be23f3b0c8d3bbf1ea262642d33383773ab1d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-gate-open-yard.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-gate-open-yard.png",
+      "title": "Sally gate open yard",
+      "kind": "Prison sally gate staged views in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 299325,
+      "sha256": "4c79eeb180e46dbca816da039a21a95fa55c857640d12a07f408391b08ed10b5"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-mechanism-closed.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-mechanism-closed.png",
+      "title": "Sally mechanism closed",
+      "kind": "Prison sally gate staged views in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 396108,
+      "sha256": "0593512e34b76af057a099641a6dba9b176a3c18566856a30463a9f8bbce63f1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-mechanism-open.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-mechanism-open.png",
+      "title": "Sally mechanism open",
+      "kind": "Prison sally gate staged views in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 381452,
+      "sha256": "606d55b49436a0b867707b20493001a82fd802829090b7847c4ccfc0126710b1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-gate-closed-yard.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-gate-closed-yard.png",
+      "title": "Sally gate closed yard",
+      "kind": "Prison sally gate staged views in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 380475,
+      "sha256": "c1df2fe74658ae907caade23b559802fed70774d5cc58dc89525d7e2127ea8a3"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-gate-open-yard.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-gate-open-yard.png",
+      "title": "Sally gate open yard",
+      "kind": "Prison sally gate staged views in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 299909,
+      "sha256": "3f0632ffb391cb25fdaa2c96778293d9b238e8af0c283e9b546fee59e86bb2d8"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-mechanism-closed.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-mechanism-closed.png",
+      "title": "Sally mechanism closed",
+      "kind": "Prison sally gate staged views in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 396348,
+      "sha256": "7999cb3cd13944786ddafe52444e61926794c4aa94930074e979029773fbf477"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-mechanism-open.png",
+      "url": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-mechanism-open.png",
+      "title": "Sally mechanism open",
+      "kind": "Prison sally gate staged views in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 381495,
+      "sha256": "9f54a6565a65d90dfe8ed9807be20ee4c44e9d3a122cb805eccc09846524eebc"
     },
     {
       "path": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",

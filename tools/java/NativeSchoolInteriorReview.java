@@ -169,7 +169,7 @@ public final class NativeSchoolInteriorReview {
         drawFrame(renderer,map,target);
     }
 
-    private static void drawFrame(SceneRenderer renderer,HouseMap map,Path target)throws Exception{
+    static void drawFrame(SceneRenderer renderer,HouseMap map,Path target)throws Exception{
         renderer.drawNetwork(map,List.of(),-1,0);
         var gpu=GpuWorldRenderer.active();
         if(gpu!=null){
@@ -205,7 +205,7 @@ public final class NativeSchoolInteriorReview {
         }
     }
 
-    private static final class Peer implements AutoCloseable {
+    static final class Peer implements AutoCloseable {
         private final java.util.concurrent.BlockingQueue<String> input=new java.util.concurrent.LinkedBlockingQueue<>();
         final LanClient client;
 
@@ -228,20 +228,20 @@ public final class NativeSchoolInteriorReview {
         @Override public void close(){client.close();}
     }
 
-    private static Vec body(String row){
+    static Vec body(String row){
         var fields=LanProtocol.parts(row);
         return new Vec(Double.parseDouble(fields.get(2))/1000,Double.parseDouble(fields.get(3))/1000,
             Double.parseDouble(fields.get(4))/1000);
     }
 
-    private static Vec step(Peer peer,int seat,int x,int z)throws Exception{
+    static Vec step(Peer peer,int seat,int x,int z)throws Exception{
         Thread.sleep(125);
         peer.client.step(x,z);
         peer.await("ACCEPT|STEP");
         return body(peer.await("BODY|"+seat+"|"));
     }
 
-    private static List<Integer> missionRoute(HouseMap map,int end){
+    static List<Integer> missionRoute(HouseMap map,int end){
         var queue=new java.util.ArrayDeque<Integer>();
         var predecessor=new HashMap<Integer,Integer>();
         int start=HouseMap.EXTRACTION_ROOM;
@@ -254,7 +254,7 @@ public final class NativeSchoolInteriorReview {
                 queue.add(neighbor);
             }
         }
-        require(predecessor.containsKey(end),"Assembly owner is disconnected");
+        require(predecessor.containsKey(end),"Mission owner is disconnected");
         var route=new ArrayList<Integer>();
         for(int room=end;room!=start;room=predecessor.get(room))route.add(room);
         Collections.reverse(route);
@@ -333,7 +333,7 @@ public final class NativeSchoolInteriorReview {
         }
     }
 
-    private static Object field(Object target,String name)throws Exception{
+    static Object field(Object target,String name)throws Exception{
         var declared=target.getClass().getDeclaredField(name);
         declared.setAccessible(true);
         return declared.get(target);

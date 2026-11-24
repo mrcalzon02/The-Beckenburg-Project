@@ -1327,3 +1327,12 @@ Ordinary solo selection spawns on the actual van deck. Four peers select School 
 The [public approach plan](prison-public-entry-pass/public-approach-plan.svg) marks the verified route from the canonical van over existing graded ground and forecourt into the measured reception doorway. The 1.80 m entrance opens out toward the forecourt. A separate 1.05 m door swings into records. Existing terrain, foundations, walls, floors and stairs retain their exact runtime bytes.
 
 The [Prison checkpoint](prison-public-entry-pass/checkpoint.json) verifies both doors against body, sight, carried objects, handle aim and acoustics, and matches the open poses in a second staged world. All four direction and posture combinations pass between van and reception. All 4,272 editable door triangles match the game across four poses. Assigned custody gates, two-sided manual release, physical mission graph, utilities and packaged selection are upcoming. The [29-location roster](prison-public-entry-pass/roster.json) records the scoped handoff.
+
+
+## Prison sally gate and staged connected case
+
+The [sally gate plan](prison-sally-gate-pass/sally-gate-plan.svg) fits a retained bar panel into the 2.40 m by 2.60 m yard aperture. The 2.53 m eastward travel parks over the solid pier on an overhead rail anchored to six measured bearings. Two manual releases are fixed to opposing sides of the west pier. All 1,052 prior collision components match byte for byte.
+
+The [Prison checkpoint](prison-sally-gate-pass/checkpoint.json) verifies the bar and gap geometry for bodies, objects, sight and sound. A hunter opened it from sally, walked into the yard, closed and reopened it there, and walked back in a four-peer TCP case. The review switched the host breaker off to isolate manual operation. The plant breaker and ghost-triggered outage remain a service pass. All 15 gameplay owners, the three ritual positions and 60 direction and posture combinations passed. Software and RTX 5070 rendered the same source, and the reopened Blender poses match 336 game triangles.
+
+The [29-location roster](prison-sally-gate-pass/roster.json) records the held sources. The remaining secure leaves, full services, room containment and ordinary packaged dispatch stay in progress.

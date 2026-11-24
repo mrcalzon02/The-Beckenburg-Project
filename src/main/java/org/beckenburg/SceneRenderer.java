@@ -2804,7 +2804,8 @@ public final class SceneRenderer {
                 var key=new NativeDoorGeometryKey(map.nativeInvestigation().revision(),portal.id(),open);
                 var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
                     var part=new ArrayList<Face>();
-                    imported(part,NativeInvestigationDoor.ASSET,door.pose(open).model(),0,0,0,1,1,1,0);
+                    imported(part,door.sliding()?"native-sliding-panel":NativeInvestigationDoor.ASSET,
+                        door.pose(open).model(),0,0,0,1,1,1,0);
                     var owned=new ArrayList<Face>();
                     own(owned,part,portal.a());
                     return List.copyOf(owned);
