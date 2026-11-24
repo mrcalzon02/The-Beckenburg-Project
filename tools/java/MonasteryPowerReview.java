@@ -207,19 +207,28 @@ public final class MonasteryPowerReview {
     }
 
     static void live(MonasteryDoorReview.Scene data,List<String> report) throws Exception {
-        var map=data.map();
-        var replica=data.map();
+        live(data,report,HouseMap.Site.USER);
+    }
+
+    static void live(MonasteryDoorReview.Scene data,List<String> report,HouseMap.Site site) throws Exception {
+        boolean named=site!=HouseMap.Site.USER;
+        var map=named?new HouseMap(site):data.map();
+        var replica=named?HouseMap.forNetworkRevision(site,map.level().revision()):data.map();
         var generator=map.level().socket("generator",COURT);
         var breaker=RoomLighting.breaker(map);
         var courtSwitch=map.level().socket("switch",COURT);
         var towerSwitch=map.level().socket("switch",TOWER);
-        try (var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+        try (var host=named
+                ?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),false,false,site)
+                :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
              var engineer=new Peer(host,false,"Monastery electrician");
              var witness=new Peer(host,false,"Court observer");
              var crew=new Peer(host,false,"Returning investigator");
              var ghost=new Peer(host,true,"Monastery spirit")) {
+            var authoritative=(HouseMap)NativeSchoolInteriorReview.field(host,"map");
+            require(authoritative.nativeInvestigation()==data.nativeScene(),"Host changed the selected map authority");
             for (var peer:List.of(engineer,witness,crew,ghost)) {
-                peer.awaitExact("SITE|USER|"+data.level().revision());
+                peer.awaitExact("SITE|"+site+"|"+data.level().revision());
                 peer.client.ready();
             }
             engineer.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -262,7 +271,7 @@ public final class MonasteryPowerReview {
                 await(events,"INFO|mission resumed");
                 resumed.view3D();
                 await(events,"ACCEPT|VIEW3D");
-                await(events,"SITE|USER|"+data.level().revision());
+                await(events,"SITE|"+site+"|"+data.level().revision());
                 await(events,"LIGHTS|111111111111|0");
                 await(events,"SOURCE|1");
             }
@@ -364,7 +373,9 @@ public final class MonasteryPowerReview {
         witness.awaitExact("LIGHTS|000000001100|1");
         require(lights.on(8)&&lights.on(9),"Bell switch cut the lower rooms");
         at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(58.8,6,22.3),new Vec(58.86,6,17));
-        for (var knot:bellStair.reversed()) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
+        var descent=new ArrayList<>(bellStair);
+        Collections.reverse(descent);
+        for (var knot:descent) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
         at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(51.4,0,26),new Vec(47,0,26),new Vec(47,0,17),new Vec(29,0,17));
         for (var knot:data.paths().get("L19")) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
         at=NorthwatchDoorRuntime.walk(engineer,at,operator(passage));

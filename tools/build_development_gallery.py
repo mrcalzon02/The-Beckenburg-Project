@@ -26,7 +26,10 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/monastery-vertical-power-pass/' in path:
+    if '/monastery-named-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Monastery of Ashen Bells named packaged review in the '+renderer+' game renderer'
+    elif '/monastery-vertical-power-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Monastery of Ashen Bells bell gallery and catacomb lighting in the '+renderer+' game renderer'
     elif '/monastery-west-power-pass/' in path:

@@ -99,13 +99,13 @@ final class BlackwaterNamedReview {
         report.forEach(System.out::println);
     }
 
-    private static void solo(HouseMap map, List<String> report) throws Exception {
+    static void solo(HouseMap map, List<String> report) throws Exception {
         var frames = new LinkedBlockingQueue<String>();
         try (var host = new LanHost("127.0.0.1", 0, GhostIdentity.Type.SPIRIT,
                 CustomContract.standard(1), false, true, map.site());
-             var client = new LanClient("127.0.0.1", host.port(), false, "Blackwater solo", "",
+             var client = new LanClient("127.0.0.1", host.port(), false, map.site() + " solo", "",
                  host.localOwnerCredential(), frames::offer)) {
-            WharfPowerChecks.await(frames, "SITE|BLACKWATER|" + map.level().revision());
+            WharfPowerChecks.await(frames, "SITE|" + map.site() + "|" + map.level().revision());
             client.ready();
             WharfPowerChecks.await(frames, "LOBBY|1|AI|1|WAITING");
             client.start();

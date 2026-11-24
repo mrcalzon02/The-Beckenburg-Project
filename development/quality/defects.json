@@ -8020,6 +8020,17 @@
       "action": "Fit three independent circuits via measured wall risers and sealed deck and pier sleeves, then verify the stair approaches and all fixture outputs.",
       "older_maps": "Verify actual floor and masonry bearings for interstorey feeders, preserving every stair and landing clearance.",
       "evidence": "development/levels/rebuild/monastery-vertical-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-724",
+      "title": "Monastery staged scene had no ordinary named archive dispatch",
+      "status": "MONASTERY_PACKAGED_NAMED_REVIEW_LOCKED",
+      "affected": "WLD-10 named solo and LAN review",
+      "symptom": "The verified room and circuit scene was only constructible by the staged USER reviewer.",
+      "cause": "The ordinary archives and named case registry lacked an exact Monastery payload.",
+      "action": "Embed the same render, physics, room, door and power resources. Bind the review flag, verify stable campaign order and exact network revision, and replay named solo and four-player power/route behavior.",
+      "older_maps": "Verify named users load the exact packaged scene through ordinary dispatch, with availability locked until applicable gates pass.",
+      "evidence": "development/levels/rebuild/monastery-named-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

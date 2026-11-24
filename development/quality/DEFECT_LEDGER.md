@@ -9282,3 +9282,7 @@ The west and south cloisters share a switched branch. The dormitory and gatehous
 ### DEV-723 · Monastery vertical distribution
 
 The bell gallery, catacomb passage and memorial chamber have supported risers, sealed sleeves and eight mounted lights. Runtime checks keep the original floors, handrails and door routes. The main source and separate room switches remain on the same host-authoritative breaker. [Verification checkpoint](../levels/rebuild/monastery-vertical-power-pass/checkpoint.json)
+
+### DEV-724 · Monastery named archive dispatch
+
+Both ordinary archives embed the exact staged room, door, electrical, collision and render resources. The named case keeps its ordinary dispatch lock, rejects stale revisions and passed named solo and live review. [Verification checkpoint](../levels/rebuild/monastery-named-pass/checkpoint.json)

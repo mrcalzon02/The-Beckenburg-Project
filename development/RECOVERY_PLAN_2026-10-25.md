@@ -2371,3 +2371,7 @@ North-range checkpoint 472297b8694591a378b2d06792a592b900ebeb96 is committed loc
 ### Monastery of Ashen Bells bell gallery and crypt distribution
 
 West-range checkpoint b52969a07c16d483513625db08c2971050dd6469 is local. The last verified draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf pending upload approval. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526 and GPU 44863686455. The [vertical distribution checkpoint](levels/rebuild/monastery-vertical-power-pass/checkpoint.json) closes the twelve staged switch positions and records live travel to the gallery and crypt controls. Outlying drainage, furnishings, authored tasks and ordinary packaged acceptance remain open.
+
+### Monastery of Ashen Bells named packaged review
+
+Vertical power checkpoint 869a8575c8d0c70bfe747cec1b56899ae558dd78 is local. The last verified draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf pending upload approval. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526 and GPU 44863686455. The [named Monastery checkpoint](levels/rebuild/monastery-named-pass/checkpoint.json) verifies exact embedded payloads, stable campaign and revision identity, both renderers and named solo and LAN. The installer, finishing, and full named investigation remain open.

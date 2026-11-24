@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12333,
+  "count": 12339,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116554,6 +116554,66 @@
       "height": 640,
       "bytes": 388325,
       "sha256": "92b816dc5caa77e7833ab9255d5a130489b568c1195ca239e0c9e11385890fa7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery of Ashen Bells named packaged review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 330688,
+      "sha256": "c9f7d78ce601d92a668a88cce7a0cabcf3508b71aeb29172b1a181c718ce6bed"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery of Ashen Bells named packaged review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 456939,
+      "sha256": "41ce304538e88718da82e4285e575f98765743d7fc4c75190d5a50a2185265b2"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery of Ashen Bells named packaged review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 322333,
+      "sha256": "2d5a02afc2dc4ded848d826eff52793a7d8aac9a3f787a962dcb38c65a12b4fe"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery of Ashen Bells named packaged review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 331945,
+      "sha256": "6703fc19ebd7eff6c2d20d51547aae220f34b14c13a9da69fe3f10c338291742"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery of Ashen Bells named packaged review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465604,
+      "sha256": "b568b6a04dd9ff538bfa2ce7448c9bfc033ed9a6d0b48eb0f3e3ec42f18bc821"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery of Ashen Bells named packaged review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 323719,
+      "sha256": "933eec1f4506eaaa5b4c5ccdba072341599983ef572a236c7fbd79482291019a"
     },
     {
       "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/archive-isolated.png",

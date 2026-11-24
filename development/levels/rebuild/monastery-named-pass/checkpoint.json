@@ -1,0 +1,95 @@
+{
+  "id": "WLD-10",
+  "status": "MONASTERY_PACKAGED_NAMED_REVIEW_LOCKED",
+  "prior_checkpoint": "development/levels/rebuild/monastery-vertical-power-pass/checkpoint.json",
+  "review_property": "beckenburg.review.monasteryNative",
+  "archive_hashes": {
+    "build/beckenburg-game.jar": {
+      "bytes": 396161882,
+      "sha256": "5d08650f003de6c4456aa7e92604bbacf1c25cb6eca916aed995e8875515cd30",
+      "main_class": "org.beckenburg.InvestigationGame"
+    },
+    "gpu-client/target/BeckenburgGPU.jar": {
+      "bytes": 414526150,
+      "sha256": "33d18c8595662e77816162d7a2c251152c093db7fb54891270b2ccbc4b7813f2",
+      "main_class": "org.beckenburg.gpu.GpuDesktop"
+    }
+  },
+  "software": {
+    "packaged_native_scene": "d4f49530604a2eac52112fec21b52fd241322533b6eb501cb6f668081a3d115a",
+    "named_network_revision": "d4f49530604a2eac52112fec21b52fd241322533b6eb501cb6f668081a3d115a-ccdcddefc81d1035",
+    "collision_sha256": "3f1cfef12fef3f47da39bede2e9d733f39c51edc24943245933dbe1b5316f40b",
+    "renderer": "Software",
+    "default_lock_review_flag_campaign_and_stale_revision": "PASS",
+    "retained_fitted_doors": "13",
+    "route_replays": "84",
+    "staged_switches": "12",
+    "staged_lamps": "36",
+    "founded_cupboards": "Three physical pockets and zero cover at maximum difficulty",
+    "named_solo_ai_cargo_apron_and_retreat": "PASS",
+    "live_east_range_independent_switches": "PASS",
+    "live_north_range_independent_switches": "PASS",
+    "live_west_range_independent_switches": "PASS",
+    "live_vertical_range_independent_switches": "PASS two bell flights and existing catacomb stairs",
+    "live_four_player_blackout": "PASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches"
+  },
+  "opengl": {
+    "packaged_native_scene": "d4f49530604a2eac52112fec21b52fd241322533b6eb501cb6f668081a3d115a",
+    "named_network_revision": "d4f49530604a2eac52112fec21b52fd241322533b6eb501cb6f668081a3d115a-ccdcddefc81d1035",
+    "collision_sha256": "3f1cfef12fef3f47da39bede2e9d733f39c51edc24943245933dbe1b5316f40b",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "default_lock_review_flag_campaign_and_stale_revision": "PASS",
+    "retained_fitted_doors": "13",
+    "route_replays": "84",
+    "staged_switches": "12",
+    "staged_lamps": "36",
+    "founded_cupboards": "Three physical pockets and zero cover at maximum difficulty"
+  },
+  "blackwater_loader_regression": {
+    "packaged_native_scene": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e",
+    "named_network_revision": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e-501c9f5565c03395",
+    "collision_sha256": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+    "water_revision": "d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "review_gate_archive_campaign_stale_revision": "PASS",
+    "retained_fitted_doors_both_states": "14"
+  },
+  "build_observation": "Maven -DskipTests still compiles GPU tests and failed on the existing cross-module AllLevelAtmosphereCapture reference. The OpenGL production archive used -Dmaven.test.skip=true and passed direct resource and named gameplay checks.",
+  "remaining_gates": [
+    "Outlying roof drainage, furnishings and authored search/encounter tasks",
+    "Official installer, named full investigation, evidence and extraction acceptance",
+    "Ordinary availability promotion after acceptance"
+  ],
+  "project_bytes_sha256": {
+    "build.cmd": "bf78a6eba1511e8b823f43a821c21cab5f21ab22723b793767b90717e230d6f2",
+    "build.sh": "74e44b231cf588f6fe55e8e05c051f4f184cbb5bca3a32afefee77185b5a4510",
+    "development/levels/rebuild/monastery-named-pass/blackwater-loader-regression.tsv": "6b5b63415a7d98a16da7cd9f9f98026cc7001d66cafdafbb9abae5009a495abe",
+    "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-arrival-van.png": "c9f7d78ce601d92a668a88cce7a0cabcf3508b71aeb29172b1a181c718ce6bed",
+    "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-lower-memorial.png": "41ce304538e88718da82e4285e575f98765743d7fc4c75190d5a50a2185265b2",
+    "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-public-gate.png": "2d5a02afc2dc4ded848d826eff52793a7d8aac9a3f787a962dcb38c65a12b4fe",
+    "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-arrival-van.png": "6703fc19ebd7eff6c2d20d51547aae220f34b14c13a9da69fe3f10c338291742",
+    "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-lower-memorial.png": "b568b6a04dd9ff538bfa2ce7448c9bfc033ed9a6d0b48eb0f3e3ec42f18bc821",
+    "development/levels/rebuild/monastery-named-pass/captures/software/monastery-named-public-gate.png": "933eec1f4506eaaa5b4c5ccdba072341599983ef572a236c7fbd79482291019a",
+    "development/levels/rebuild/monastery-named-pass/named-opengl.tsv": "4fafc354d4d981c31eb9d684cf3cb260b9e5dbf6e112b95206eb794e6d90cf0c",
+    "development/levels/rebuild/monastery-named-pass/named-software.tsv": "81c361c2d3e15406aa8a7c43ab282b3b394368596f38eb628d063e04ca24abf3",
+    "development/levels/rebuild/monastery-named-pass/README.md": "350f7d225796f29ac903212c0f1c50c6a8eed5120c97bdcc5e1f69e11fe9104b",
+    "development/levels/rebuild/monastery-named-pass/roster.json": "bf6244a206e16ab004a813f5eb39006623c503bd4e504434f05d970a1a2c3eb1",
+    "development/levels/rebuild/monastery-named-pass/source-hashes.tsv": "ec36d01cd1eadac6a0f0714254d486a077e98bb3d5cdd2f81b2979a2201845ec",
+    "development/levels/rebuild/monastery-vertical-power-pass/wld-10/door-schedule.tsv": "d926a95a190d13bb5eb7a1bac54a9fd4719e243f1f6f651e1a6cdedac973758e",
+    "development/levels/rebuild/monastery-vertical-power-pass/wld-10/electrical-schedule.tsv": "79f425a9671b9555ad834d0c5e357e1cb3544b2ae3902f443e56fc762d650f98",
+    "development/levels/rebuild/monastery-vertical-power-pass/wld-10/monastery-with-vertical-distribution.glb": "66c038125f7ece98c7ceca69b3f6df7dfa56af2d72c83b089e2caa6e37d1e916",
+    "development/levels/rebuild/monastery-vertical-power-pass/wld-10/monastery-with-vertical-distribution.hcs2": "3f1cfef12fef3f47da39bede2e9d733f39c51edc24943245933dbe1b5316f40b",
+    "development/levels/rebuild/monastery-vertical-power-pass/wld-10/runtime-input.tsv": "7d3e764391d992b1ad33d62c9f0aa9c25975a2dfa4317d97b1cd06309afe41c9",
+    "src/main/java/org/beckenburg/BlackwaterNativeLevel.java": "8ca2b16a9fb29eb486a705825ecf27bbe707f08ee020191b630a1fa1897f0c61",
+    "src/main/java/org/beckenburg/HouseMap.java": "68370a4512aff2a7fe4a5fa0f410926ae47c22031ee2ae05637bbc44ab8d245d",
+    "src/main/java/org/beckenburg/LevelPlans.java": "2fbe8339866930a220c52d4c66b2a515939a3c2091fb3379099b3650b12ae6e9",
+    "src/main/java/org/beckenburg/MissionSites.java": "3c4a22887f7ae6d92051d1d8e8783ebaecec02352a580fc4ff7166f474a3fc28",
+    "src/main/java/org/beckenburg/MonasteryNativeLevel.java": "b51f188367c9215ad4113e403f809ab4161d5cb93196583fb3a55a26ae3d6fc7",
+    "src/main/java/org/beckenburg/PackagedInvestigationLevel.java": "dfd1d5af1cafc1f66f1ce21b6a15de60fcd900da0eb18bc3fe39cef791e38316",
+    "src/main/java/org/beckenburg/SiteCatalog.java": "37dd173353d40095052b3a6c6fb68380ccd0dc936cd9a8a7d7e2b62a4485dc73",
+    "tools/java/BlackwaterNamedReview.java": "417bad3703b205f07cc7334a24585da191d7966b515d1a3ac14652070b0451ae",
+    "tools/java/MonasteryNamedReview.java": "89bcd90f6ac55125f81f273765e6fdf93c3f902f93773b02ec84293dea9dde54",
+    "tools/java/MonasteryPowerReview.java": "10a33445350667903637d6bffb2d77f92e8c842964ca5d4c0b7476f6e9591a75",
+    "tools/verify_monastery_named.py": "6edba083e334eee392873057f612011487e2de0f6314730a49ac8afd21fdf503"
+  }
+}
