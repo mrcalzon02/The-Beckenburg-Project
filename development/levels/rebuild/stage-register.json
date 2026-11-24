@@ -3578,12 +3578,14 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-cover-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-659",
             "DEV-658"
           ],
-          "next_action": "The native owner graph and three supported rituals pass. Fit physical safe zones, remote generator, breaker branch and mine lights."
+          "next_action": "The native owners, three ritual positions and three fitted walk-in safe zones pass. Fit the remote generator and switched mine lighting."
         },
         "S07": {
           "status": "IN_PROGRESS",

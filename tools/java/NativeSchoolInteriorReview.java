@@ -396,6 +396,81 @@ public final class NativeSchoolInteriorReview {
         return lights.sampleNormal(load.room(),load.x(),load.y()-.55,load.z(),0,1,0).energy();
     }
 
+    static void auditWalkInCover(HouseMap map,Path captures,List<String> evidence,String prefix)throws Exception{
+        var candidates=HidingBudget.candidates(map.level());
+        require(candidates.size()==3,"Expected three independently fitted cupboards");
+        map.configureHiding(100);
+        for(var pocket:candidates){
+            var outside=LevelClosets.world(pocket,0,0,1.32);
+            var approach=LevelClosets.world(pocket,0,0,LevelClosets.ENTRY_Z+.04);
+            var entry=LevelClosets.world(pocket,0,0,LevelClosets.ENTRY_Z-.04);
+            var rear=LevelClosets.world(pocket,0,0,-.27);
+            var left=LevelClosets.world(pocket,-.10,0,-.27);
+            var right=LevelClosets.world(pocket,.10,0,-.27);
+            require(!coverProtects(map,approach)&&coverProtects(map,entry),
+                pocket.id()+" protection must start at the actual opening");
+            walkCoverBothWays(map,List.of(map.spawn(pocket.room()),outside,approach,entry,rear,left),pocket.id()+" left");
+            walkCoverBothWays(map,List.of(entry,rear,right),pocket.id()+" right");
+            for(var at:List.of(entry,rear,left,right)){
+                require(coverProtects(map,at)&&coverProtects(map,new Vec(at.x(),at.y()+1.6,at.z())),
+                    pocket.id()+" usable interior left exposed at "+at);
+            }
+            int usableSamples=0;
+            for(int dx=-7;dx<=7;dx++)for(int dz=-5;dz<=5;dz++){
+                var at=LevelClosets.world(pocket,dx*.1,0,dz*.1);
+                if(!map.traversable(at.x(),at.y(),at.z(),HunterPosture.CROUCH_HEIGHT))continue;
+                require(coverProtects(map,at),pocket.id()+" unprotected usable floor "+at);
+                usableSamples++;
+            }
+            require(usableSamples>=18,pocket.id()+" has too little usable floor");
+            evidence.add(pocket.id()+"_protected_floor_samples\t"+usableSamples);
+            require(SafeAreaBarrier.blocks(map,approach,rear),pocket.id()+" admitted a spectral step");
+            var above=new Vec(rear.x(),rear.y()+2.22,rear.z());
+            var below=new Vec(rear.x(),rear.y()-1,rear.z());
+            require(!coverProtects(map,above)&&!coverProtects(map,below),pocket.id()+" leaks across floor or crown");
+            var back=LevelClosets.world(pocket,0,0,-.75);
+            require(!map.traversable(back.x(),back.y(),back.z())||map.resolveMove(rear,back.x(),back.z())==null,
+                pocket.id()+" back was walk-through");
+            int outsideHaze=captureStanding(map,outside,Math.PI-pocket.yaw(),captures.resolve(pocket.id()+"-enter.png"));
+            int insideHaze=captureStanding(map,rear,-pocket.yaw(),captures.resolve(pocket.id()+"-inside.png"));
+            require(outsideHaze>1000&&insideHaze>1000,pocket.id()+" safe-zone cue lost from entry or interior "+outsideHaze+" / "+insideHaze);
+            map.configureHiding(0);
+            require(!coverProtects(map,entry)&&!coverProtects(map,rear)&&!SafeAreaBarrier.blocks(map,approach,rear),
+                pocket.id()+" grants disabled cover");
+            map.configureHiding(100);
+        }
+        evidence.add(prefix+"_cover\t3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss");
+    }
+
+    private static void walkCoverBothWays(HouseMap map,List<Vec> guide,String label){
+        var reverse=new ArrayList<>(guide);
+        java.util.Collections.reverse(reverse);
+        for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            walk(map,guide,height,label);
+            walk(map,reverse,height,label+" return");
+        }
+    }
+
+    private static boolean coverProtects(HouseMap map,Vec at){
+        return SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z());
+    }
+
+    static int captureStanding(HouseMap map,Vec at,double yaw,Path output)throws Exception{
+        require(map.traversable(at.x(),at.y(),at.z()),"Unsupported standing view "+at);
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.x=at.x();
+        renderer.z=at.z();
+        renderer.eyeHeight=at.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=yaw;
+        renderer.pitch=-.18;
+        renderer.lamp=true;
+        renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(renderer,map,output);
+        return renderer.safeAreaPixels();
+    }
+
     static void auditHiding(HouseMap map,List<String> report){
         var hiding=HidingBudget.candidates(map.level());
         if(hiding.isEmpty())return;

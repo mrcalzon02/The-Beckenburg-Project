@@ -47,6 +47,8 @@ public final class NativeMineThresholdReview {
             case "RITUAL" -> sockets.add(new Socket("mine-"+row[1],"ritual",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),0,row[1]));
             case "TREAD" -> treads.add(row[1]);
+            case "COVER" -> sockets.add(new Socket(row[1],"hide",Integer.parseInt(row[2]),
+                d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
             case "POINT" -> routes.computeIfAbsent(row[1],id->new ArrayList<>()).add(point(row,2));
             case "SOURCE","DOCK" -> {}
             default -> throw new IOException("Unknown Mine field "+row[0]);
@@ -141,7 +143,12 @@ public final class NativeMineThresholdReview {
         }
         capture(map,new Vec(30.4,0,75),-.30,captures.resolve("mine-roadhead-and-van.png"));
         capture(map,map.spawn(4),0,captures.resolve("mine-lower-haul-stair.png"));
-        if(List.of(args).contains("--lan"))live(level,scene,evidence);
+        boolean refuges=!HidingBudget.candidates(level).isEmpty();
+        if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
+        if(List.of(args).contains("--lan")){
+            live(level,scene,evidence);
+            if(refuges)liveCover(level,scene,evidence);
+        }
         NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
         var output=packet.resolve("verification");
         Files.createDirectories(output);
@@ -229,6 +236,43 @@ public final class NativeMineThresholdReview {
             require(map.roomAt(at.x(),at.y(),at.z())==3,"Vent peer missed the return to the headhouse");
         }
         report.add("staged_tcp_mine\tFour peers, real cargo ramp, both closed stair doors reject crossing, both aimed opens replicate, level receiving landings followed by descent and return");
+    }
+
+    private static void liveCover(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
+        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+            var hunter=new Peer(host,false,"Assay investigator");
+            var observer=new Peer(host,false,"Observer");
+            var witness=new Peer(host,false,"Witness");
+            var ghost=new Peer(host,true,"Ghost")){
+            for(var peer:List.of(hunter,observer,witness,ghost)){
+                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.client.ready();
+            }
+            hunter.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            hunter.client.start();
+            hunter.await("INFO|mission started");
+            for(int room:NativeSchoolInteriorReview.missionRoute(map,1)){
+                hunter.client.move(room);
+                hunter.awaitExact("ACCEPT|MOVE|"+room);
+            }
+            hunter.client.view3D();
+            hunter.awaitExact("ACCEPT|VIEW3D");
+            var at=NativeSchoolInteriorReview.body(hunter.await("BODY|0|"));
+            require(at.equals(map.spawn(1)),"Hunter missed staged assay spawn");
+            for(int n=0;n<13;n++)at=NativeSchoolInteriorReview.step(hunter,0,0,100);
+            for(int n=0;n<15;n++)at=NativeSchoolInteriorReview.step(hunter,0,100,0);
+            require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Approach became protected before frame "+at);
+            for(int n=0;n<2;n++)at=NativeSchoolInteriorReview.step(hunter,0,100,0);
+            require(SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Hunter missed the full assay cupboard "+at);
+            hunter.client.hide();
+            hunter.awaitExact("HIDING|1");
+            hunter.client.hide();
+            hunter.awaitExact("HIDING|0");
+            for(int n=0;n<3;n++)at=NativeSchoolInteriorReview.step(hunter,0,-100,0);
+            require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Leaving the assay cupboard retained protection");
+        }
+        report.add("staged_tcp_mine_cover\tActual assay office approach and live cupboard entry, protection, concealment and exit");
     }
 
     private static void refused(Peer peer,int dx,int dz)throws Exception{

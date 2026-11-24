@@ -2155,3 +2155,7 @@ The prior named dispatch published at 590973af66a992e5333b3425ca57014bb69ca919 a
 ### Dead Man's Claim stair thresholds
 
 Lookout case commit 523905fd9493a727114c157231263417892e8bcf published to draft PR 86 with gallery run 45338423734 passing. The [Mine threshold checkpoint](levels/rebuild/mine-stair-threshold-pass/checkpoint.json) rebuilds both complete upper flights and full-width receiving landings inside the existing headhouse and shafts. Eight fitted frames match reopened editor poses and the actual game collision. Exact native software, RTX 5070 and four-peer LAN checks passed. Continue Mine handrails, cover, services and normal packaged dispatch.
+
+### Dead Man's Claim safe-zone fit
+
+Mine threshold commit 526e6d27f493ccdf2b184b3aa5e95ddd7b5fc12f published to draft PR 86. The exact remote cutaway matched by SHA-256 and gallery 45340169521 passed. The [Mine walk-in cover checkpoint](levels/rebuild/mine-cover-pass/checkpoint.json) verifies three full usable refuge spaces, actual assay entry/exit over TCP, replays of both rebuilt stairs, and RTX 5070 OpenGL. Continue mine handrails, remote power lighting and normal dispatch.

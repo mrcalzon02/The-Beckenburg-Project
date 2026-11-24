@@ -9018,3 +9018,7 @@ The guide points now use the measured receiving side of each nosing. Both direct
 ### DEV-658 Mine’s eight existing framed openings lacked operable leaves
 
 All eight frames received canonical leaves. The two stair sets swing toward the shared headhouse. The editor and runtime matched on all 16 positions, and players opened both stair doors over four-peer LAN. [Evidence](../levels/rebuild/mine-stair-threshold-pass/checkpoint.json)
+
+### DEV-659 Mine staged case lacked usable authored refuges
+
+Three grounded walk-in cupboards now serve the crew shack, assay office and wash-house. All 207 sampled usable positions are covered at maximum availability. A live hunter entered, hid and walked back out of the assay refuge. [Evidence](../levels/rebuild/mine-cover-pass/checkpoint.json)

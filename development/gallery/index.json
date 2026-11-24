@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11569,
+  "count": 11581,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111544,6 +111544,126 @@
       "height": 800,
       "bytes": 1039906,
       "sha256": "1470e898a02a9377f6bd51c10d514a6b3f0fdc6bd858f043b747f5c171a5f638"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-enter.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-enter.png",
+      "title": "Mine assay cupboard enter",
+      "kind": "Dead Man’s Claim walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 478140,
+      "sha256": "1417b24cf48891f23d1d9a3e293f18203669f9368af102e745611bcf455ab0ca"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-inside.png",
+      "title": "Mine assay cupboard inside",
+      "kind": "Dead Man’s Claim walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401965,
+      "sha256": "7675642ccac9f7f19facc17aef656ed98caba0398a638723c091854af1bec37c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-shack-cupboard-enter.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/mine-shack-cupboard-enter.png",
+      "title": "Mine shack cupboard enter",
+      "kind": "Dead Man’s Claim walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 467638,
+      "sha256": "ae8af1c8eb56d8a0782ce319d92ddedd03f6e6b43c898fe39684c68746faead4"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-shack-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/mine-shack-cupboard-inside.png",
+      "title": "Mine shack cupboard inside",
+      "kind": "Dead Man’s Claim walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 382926,
+      "sha256": "f44bbff795e7d330407083296d23e068cedddbe372d7f3b921f5845ccc4ed337"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-wash-cupboard-enter.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/mine-wash-cupboard-enter.png",
+      "title": "Mine wash cupboard enter",
+      "kind": "Dead Man’s Claim walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 477268,
+      "sha256": "cd0d871e3d3ad123844dfeb06f2527725832e4ec01c43e007e4f48d3ea9a8912"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-wash-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/mine-wash-cupboard-inside.png",
+      "title": "Mine wash cupboard inside",
+      "kind": "Dead Man’s Claim walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 393378,
+      "sha256": "f9a49572783860e78c08569317efa38b2ce524a9cc8fd60bd11ec0bb5760d091"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-assay-cupboard-enter.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-assay-cupboard-enter.png",
+      "title": "Mine assay cupboard enter",
+      "kind": "Dead Man’s Claim walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482774,
+      "sha256": "cee0bb10c9090f334fe90b475547bf89e39aa80216e996a4c5edc029b17ff7e7"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-assay-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-assay-cupboard-inside.png",
+      "title": "Mine assay cupboard inside",
+      "kind": "Dead Man’s Claim walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 400412,
+      "sha256": "b8ceda0700f6e435ae984e59225f10e60687a08ce251f9c863eb9ac34bef2755"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-shack-cupboard-enter.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-shack-cupboard-enter.png",
+      "title": "Mine shack cupboard enter",
+      "kind": "Dead Man’s Claim walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 473767,
+      "sha256": "e2a6f7a59d5f3c75a5742d89311d82e2fd46178d94e42f333f3a709fa7478313"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-shack-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-shack-cupboard-inside.png",
+      "title": "Mine shack cupboard inside",
+      "kind": "Dead Man’s Claim walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 382143,
+      "sha256": "36c7782c03406a82c48ae2b01f6e24d1dd18bee1462b2e2195009b2172b5d56c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-wash-cupboard-enter.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-wash-cupboard-enter.png",
+      "title": "Mine wash cupboard enter",
+      "kind": "Dead Man’s Claim walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482739,
+      "sha256": "aa4fe70870c33896296cbbcebf2d12fbb01573813817f60e3ae52abd949ed86f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-wash-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-wash-cupboard-inside.png",
+      "title": "Mine wash cupboard inside",
+      "kind": "Dead Man’s Claim walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 392531,
+      "sha256": "abe134edd80a3dc919867c3ec84cf8c3f7ae962aea53377e966f8ae8b66a6cfa"
     },
     {
       "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-closed.png",

@@ -7305,6 +7305,17 @@
       "action": "Use the canonical leaves on the measured openings. Both headhouse stair sets swing into the common level room. Verify editor pose parity and physical access, camera/aim, object and sound queries.",
       "older_maps": "Test swing into level receiving areas and inspect both loaded states in the world.",
       "evidence": "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-659",
+      "title": "Mine staged case lacked usable authored refuges",
+      "status": "THREE_MINE_WALK_IN_SAFE_ZONES_VERIFIED",
+      "affected": "Dead Man’s Claim surface shack, assay and wash buildings",
+      "symptom": "The staged route case provided no walk-in protection.",
+      "cause": "The first native threshold fit preceded safe-zone placement.",
+      "action": "Fit all three canonical recesses on actual room slabs and match protection to the full usable interior. Verify ghost exclusion, standing and crouched approach, LAN hide and physical exit.",
+      "older_maps": "Check threshold and usable area in each eligible cover room, and confirm zero availability on difficulty.",
+      "evidence": "development/levels/rebuild/mine-cover-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
