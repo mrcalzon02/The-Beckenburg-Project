@@ -16,7 +16,8 @@ public final class MonasteryEastPowerReview {
 
     public static void main(String[] args) throws Exception {
         var packet=Path.of(args[0]);
-        String range=List.of(args).contains("--west")?"west":List.of(args).contains("--north")?"north":"east";
+        String range=List.of(args).contains("--vertical")?"vertical":
+            List.of(args).contains("--west")?"west":List.of(args).contains("--north")?"north":"east";
         if (!List.of(args).contains("--gpu")) {
             review(packet,false,range);
             return;
@@ -59,7 +60,7 @@ public final class MonasteryEastPowerReview {
         var lighting=new RoomLighting();
         var fixture=new FixtureLighting(map);
         var lamps=map.level().sockets().stream().filter(s->s.type().equals("light")).toList();
-        int count=switch(range) { case "west" -> 28; case "north" -> 18; default -> 12; };
+        int count=switch(range) { case "vertical" -> 36; case "west" -> 28; case "north" -> 18; default -> 12; };
         require(lamps.size()==count,"Unexpected mounted light count");
         for (var lamp:lamps) {
             double on=energy(fixture,lighting,lamp);
@@ -78,7 +79,11 @@ public final class MonasteryEastPowerReview {
         }
         var captures=packet.resolve(gpu?"captures/opengl":"captures/software");
         Files.createDirectories(captures);
-        if (range.equals("west")) {
+        if (range.equals("vertical")) {
+            witness(map,lighting,captures,7,"bell-gallery",new Vec(58.86,6,21.75),new Vec(58.91,8.54,24.61),report);
+            witness(map,lighting,captures,8,"catacomb-passage",new Vec(23,-3,17.42),new Vec(21.8,-.50,20.48),report);
+            witness(map,lighting,captures,9,"memorial-chamber",new Vec(18,-3,9),new Vec(21.9,-.48,10.25),report);
+        } else if (range.equals("west")) {
             witness(map,lighting,captures,0,"gatehouse",new Vec(32,0,59),new Vec(27.4,2.56,59),report);
             witness(map,lighting,captures,1,"west-cloister",new Vec(11,0,34),new Vec(11,2.55,42.1),report);
             witness(map,lighting,captures,1,"south-cloister",new Vec(26,0,53),new Vec(32,2.55,53),report);

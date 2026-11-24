@@ -8009,6 +8009,17 @@
       "action": "Extend the unswitched feeder along existing walls and support three independent ceiling branches. Replay the original room routes and live switch sequence.",
       "older_maps": "Verify that individual room switches preserve unaffected supply and that feeder transitions use the actual building.",
       "evidence": "development/levels/rebuild/monastery-west-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-723",
+      "title": "Monastery bell gallery and crypt rooms lacked working distribution",
+      "status": "MONASTERY_ALL_INDOOR_CIRCUITS_STAGED",
+      "affected": "WLD-10 bell gallery, catacomb passage and memorial chamber",
+      "symptom": "The upper and lower stairs reached rooms without mounted power and working switches.",
+      "cause": "The first distribution passes served the ground floor and service court.",
+      "action": "Fit three independent circuits via measured wall risers and sealed deck and pier sleeves, then verify the stair approaches and all fixture outputs.",
+      "older_maps": "Verify actual floor and masonry bearings for interstorey feeders, preserving every stair and landing clearance.",
+      "evidence": "development/levels/rebuild/monastery-vertical-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

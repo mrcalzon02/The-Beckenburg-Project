@@ -178,7 +178,8 @@ public final class MonasteryPowerReview {
     }
 
     private static Vec operator(Socket control) {
-        return new Vec(control.x()+Math.sin(control.yaw())*1.18,0,control.z()+Math.cos(control.yaw())*1.18);
+        double floor=control.type().equals("switch")?control.y()-1.25:0;
+        return new Vec(control.x()+Math.sin(control.yaw())*1.18,floor,control.z()+Math.cos(control.yaw())*1.18);
     }
 
     private static String focusId(Socket socket) {
@@ -337,11 +338,46 @@ public final class MonasteryPowerReview {
                         witness.awaitExact("LIGHTS|000000011100|1");
                         require(lights.supplied()&&!lights.on(0)&&!lights.on(1)&&!lights.on(5),"Western switches altered main supply");
                         report.add("live_west_range_independent_switches\tPASS");
+                        if (map.level().socket("switch",7)!=null)
+                            liveVertical(data,map,replica,engineer,witness,lights,at,report);
                     }
                 }
             }
         }
         report.add("live_four_player_blackout\tPASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches");
+    }
+
+    private static void liveVertical(MonasteryDoorReview.Scene data,HouseMap map,HouseMap replica,
+                                     Peer engineer,Peer witness,RoomLighting lights,Vec start,
+                                     List<String> report) throws Exception {
+        var bell=map.level().socket("switch",7);
+        var passage=map.level().socket("switch",8);
+        var chamber=map.level().socket("switch",9);
+        require(lights.on(7)&&lights.on(8)&&lights.on(9),"A ground switch cut a vertical feeder");
+        var at=NorthwatchDoorRuntime.walk(engineer,start,new Vec(29.42,0,58.7),new Vec(32,0,58.7),
+            new Vec(32,0,54.9),new Vec(47,0,53),new Vec(47,0,44),new Vec(47,0,35),new Vec(47,0,26),
+            new Vec(51.4,0,26),new Vec(52.97,0,24.5));
+        var bellStair=data.paths().get("L16");
+        for (var knot:bellStair) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
+        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(58.8,6,22.3),operator(bell));
+        use(map,engineer,at,bell);
+        witness.awaitExact("LIGHTS|000000001100|1");
+        require(lights.on(8)&&lights.on(9),"Bell switch cut the lower rooms");
+        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(58.8,6,22.3),new Vec(58.86,6,17));
+        for (var knot:bellStair.reversed()) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
+        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(51.4,0,26),new Vec(47,0,26),new Vec(47,0,17),new Vec(29,0,17));
+        for (var knot:data.paths().get("L19")) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
+        at=NorthwatchDoorRuntime.walk(engineer,at,operator(passage));
+        use(map,engineer,at,passage);
+        witness.awaitExact("LIGHTS|000000000100|1");
+        require(lights.on(9),"Passage switch cut the memorial chamber");
+        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(23,-3,17.4),new Vec(21.25,-3,17.2),new Vec(18,-3,17.2));
+        at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,946);
+        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(18,-3,13.8),new Vec(20.25,-3,13.9),operator(chamber));
+        use(map,engineer,at,chamber);
+        witness.awaitExact("LIGHTS|000000000000|1");
+        require(lights.supplied()&&!lights.on(7)&&!lights.on(8)&&!lights.on(9),"Vertical switches altered main supply");
+        report.add("live_vertical_range_independent_switches\tPASS two bell flights and existing catacomb stairs");
     }
 
     private static void await(LinkedBlockingQueue<String> events,String frame) throws Exception {

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12321,
+  "count": 12333,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -117044,6 +117044,126 @@
       "height": 640,
       "bytes": 385336,
       "sha256": "5d0cd5efe12f900a79c07fcc32553ad588fe3072ce04e60081466bdbc40052b8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/bell-gallery-isolated.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/bell-gallery-isolated.png",
+      "title": "Bell gallery isolated",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 202302,
+      "sha256": "fd238e1e4a3f25e142bd6b8ef8a83d936b6ade21e1b2d67232a52668c241cd75"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/bell-gallery-supplied.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/bell-gallery-supplied.png",
+      "title": "Bell gallery supplied",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 317662,
+      "sha256": "0c80adc3d0e0fb273be5cc031779f99dbcd158a334d0950a31d5adef78ae1b0b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/catacomb-passage-isolated.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/catacomb-passage-isolated.png",
+      "title": "Catacomb passage isolated",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 201785,
+      "sha256": "8e5befb5f12d1e7f2de658640ec9e4779eaaa373aca159459fc42fb6f04ac437"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/catacomb-passage-supplied.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/catacomb-passage-supplied.png",
+      "title": "Catacomb passage supplied",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 244273,
+      "sha256": "3131116e9672c907b813533cadb8262d69f0df982ad0e908f7194391fefb21de"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/memorial-chamber-isolated.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/memorial-chamber-isolated.png",
+      "title": "Memorial chamber isolated",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 168770,
+      "sha256": "be075964b076c9319f36f56a3db06eda675d542393a46a757ffd2825f59a18dd"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/memorial-chamber-supplied.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/opengl/memorial-chamber-supplied.png",
+      "title": "Memorial chamber supplied",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 191086,
+      "sha256": "b995d6a99736dbbd6e423092cb7f0ec31a47dd496b8caba31c2f178d259c8296"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/bell-gallery-isolated.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/bell-gallery-isolated.png",
+      "title": "Bell gallery isolated",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 200781,
+      "sha256": "7d19aa01a7b3b070806bae4238c0c2d3ab7558893bead3d04a848e958ceff479"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/bell-gallery-supplied.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/bell-gallery-supplied.png",
+      "title": "Bell gallery supplied",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 338458,
+      "sha256": "1a30e6fe464550599c5024c8bd349541720a99577b431bf2b3191238bbdb5ec1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/catacomb-passage-isolated.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/catacomb-passage-isolated.png",
+      "title": "Catacomb passage isolated",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 200119,
+      "sha256": "f9128a40b32e0a36f8e135b27d21b190e37f2e2b796a6bab8e3fdb9198e342d0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/catacomb-passage-supplied.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/catacomb-passage-supplied.png",
+      "title": "Catacomb passage supplied",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 244229,
+      "sha256": "0501129a5c8f70824be31440a0debdc7d3fe039231462866cab8eb78d7c353e1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/memorial-chamber-isolated.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/memorial-chamber-isolated.png",
+      "title": "Memorial chamber isolated",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 171136,
+      "sha256": "79f58d172556294bfe665d6d28ae936caea2805ca2cb08b9cd419107c95bd3bc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/memorial-chamber-supplied.png",
+      "url": "development/levels/rebuild/monastery-vertical-power-pass/wld-10/captures/software/memorial-chamber-supplied.png",
+      "title": "Memorial chamber supplied",
+      "kind": "Monastery of Ashen Bells bell gallery and catacomb lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 197697,
+      "sha256": "8f8c8d1efd9c86b54f8f443ee3d2c0460fd5829db2f95a8c5f52d3b755fd4ea5"
     },
     {
       "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/dormitory-isolated.png",

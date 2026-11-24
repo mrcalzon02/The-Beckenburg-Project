@@ -9278,3 +9278,7 @@ A supported unswitched feeder now supplies the two independent north-range branc
 ### DEV-722 · Monastery western distribution
 
 The west and south cloisters share a switched branch. The dormitory and gatehouse have their own branches from the unswitched feeder. All ten fixtures bear on existing ceilings and the original route and door checks pass. [Verification checkpoint](../levels/rebuild/monastery-west-power-pass/checkpoint.json)
+
+### DEV-723 · Monastery vertical distribution
+
+The bell gallery, catacomb passage and memorial chamber have supported risers, sealed sleeves and eight mounted lights. Runtime checks keep the original floors, handrails and door routes. The main source and separate room switches remain on the same host-authoritative breaker. [Verification checkpoint](../levels/rebuild/monastery-vertical-power-pass/checkpoint.json)
