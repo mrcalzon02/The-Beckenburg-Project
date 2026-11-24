@@ -1390,3 +1390,13 @@ retained. The [checkpoint](asylum-interior-door-pass/checkpoint.json) verifies
 13 door sets, all 45 physical routes in both directions and postures, 26 reopened
 editor poses and a real four-peer day-room-to-spine door crossing. Room
 enclosures, redundant masonry, and the complete mission chain remain open.
+
+## Asylum ground spine shared masonry
+
+The [wall elevations](asylum-spine-masonry-pass/ground-spine-elevations.svg)
+show the ten rebuilt full-height runs and eight retained apertures. The same
+[construction checkpoint](asylum-spine-masonry-pass/checkpoint.json) links
+the editable scene, collision, standing views and isolated assembly view.
+Twenty-five overlapping or irregularly cut wall bodies were replaced.
+All 45 movement routes, 13 door sets, the transferred switch mount and
+full-height cupboard protection passed the exact packaged review.

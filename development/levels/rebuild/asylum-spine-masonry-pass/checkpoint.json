@@ -1,0 +1,183 @@
+{
+  "status": "ASYLUM_GROUND_SPINE_MASONRY_PACKAGED_OPT_IN",
+  "prior_commit": "923551251856c7027400ff9bf121055a9a00f878",
+  "native_scene_revision": "3f1d8cd6e9c61c841b12cbb6851065a86789df2c4665da19aaf976684dcda0a8",
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine.glb",
+    "native": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine.hcs2",
+    "blend": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine.blend",
+    "glb_sha256": "a59e9aa466273899fc1547aff13ee34a09510f39d6d6d3f065974f5857ff5cad",
+    "native_sha256": "7665c48575f72992cbc7d2499bd63e02f49cd9e3a292e12183a5a9d68d7b43f9",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-spine-masonry-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-spine-masonry-pass/verification/staged-admission.tsv",
+    "staged_room_bindings": "development/levels/rebuild/asylum-spine-masonry-pass/mission.tsv",
+    "blend_sha256": "a7f63d997060844ac12cc3a12ce724702f748a3f140b62d9fb4d854371a0c04a",
+    "staged_services": "development/levels/rebuild/asylum-spine-masonry-pass/services.tsv",
+    "staged_electrical_installation": "development/levels/rebuild/asylum-spine-masonry-pass/electrical.json",
+    "aperture_measurements": "development/levels/rebuild/asylum-interior-door-pass/architectural-apertures.tsv",
+    "ground_spine_masonry": "development/levels/rebuild/asylum-spine-masonry-pass/masonry.json"
+  },
+  "rebuilt_masonry_runs": 10,
+  "retired_overlapping_bodies": 25,
+  "unchanged_native_components": 862,
+  "unchanged_header_openings": 8,
+  "adjacent_slab_contacts": 284,
+  "bidirectional_wall_sight_checks": 3408,
+  "fitted_door_sets": 13,
+  "matching_editor_poses": 26,
+  "matching_leaf_triangles": 29904,
+  "physical_routes": 45,
+  "direction_posture_replays": 180,
+  "lan_peers": 4,
+  "verified": [
+    "Ground slab-to-ceiling wall solids used the retained jamb limits and preserve the eight actual openings.",
+    "All 120 new wall triangles match the exact visual export and native collision.",
+    "The previously mounted spine switch has three face contacts on the same plane without moving its runtime socket.",
+    "Packaged LAN doors, ramp, cover and ghost breaker trip and hunter reset on the same revision.",
+    "Standing software and RTX 5070 views and isolated structural Blender review."
+  ],
+  "still_open": [
+    "Remaining upper-floor and peripheral shared masonry, including roof-adjacent and stair receiver walls.",
+    "Complete evidence, ritual, rescue and extraction and default-release acceptance."
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/arrival.tsv",
+      "bytes": 9041,
+      "sha256": "dcb706c01e80d3646b41a910358365554a8480520f4842256c1b219c348af4b2"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine-fitted.blend",
+      "bytes": 1315617,
+      "sha256": "059896b70a5988c56b5fc26d018179c5f28301b67293e72b2be04a2ac6f6c8b0"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine.blend",
+      "bytes": 1093714,
+      "sha256": "a7f63d997060844ac12cc3a12ce724702f748a3f140b62d9fb4d854371a0c04a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine.glb",
+      "bytes": 3703036,
+      "sha256": "a59e9aa466273899fc1547aff13ee34a09510f39d6d6d3f065974f5857ff5cad"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/asylum-spine.hcs2",
+      "bytes": 1210938,
+      "sha256": "7665c48575f72992cbc7d2499bd63e02f49cd9e3a292e12183a5a9d68d7b43f9"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/door-survey.tsv",
+      "bytes": 1894,
+      "sha256": "d6f57e067cd12eeb7c9771b2773dceeb11336243afa211359a4ff433e542537d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/electrical.json",
+      "bytes": 19168,
+      "sha256": "518cf66a92a73e2a1ffa42997b38d07afd363f594d1be6478f7008bc2db26feb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/ground-spine-elevations.svg",
+      "bytes": 4309,
+      "sha256": "a560ad044f863cfa9c70f33bd05f8614c43fd1430eb42e686349e2e9ab6d7a69"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/masonry.json",
+      "bytes": 4443,
+      "sha256": "7da168a2e7d1b0a17aeb50443dfadd30538bbc55cf47fcaa070be131fa8868a7"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/mission.tsv",
+      "bytes": 524,
+      "sha256": "9f5386bc53f4a42ade52f3d3124709def54bc2ebc9d702e5d459a8706e7a0008"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/roster.json",
+      "bytes": 27693,
+      "sha256": "c6d04c273485a624e6cf3b375dcfbf03fc522d95f211baa84e7548d2af2d0fb4"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/services.tsv",
+      "bytes": 2793,
+      "sha256": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/verified-cargo-guide.tsv",
+      "bytes": 186,
+      "sha256": "b48b89d0b671837c6b6edb24ae00b8f0515aa6d70d1c7dbbae5d18781ebb1d13"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/wall-runs.tsv",
+      "bytes": 349,
+      "sha256": "6382a7fcf4259bf7837f266bc53e14a4e11b4845338205ba69ecf52d3ddd7576"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/verification/editable-door-poses.tsv",
+      "bytes": 606,
+      "sha256": "88789ae0dd140a86d3547cb78ef246f7f2a6b47e0175bec7f16164caefa956e3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/verification/opengl.tsv",
+      "bytes": 2054,
+      "sha256": "a8a9452eeb3a5d79451871b0e8639863023c4c93be9a0d66b923f9220754344a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/verification/staged-admission.tsv",
+      "bytes": 2501,
+      "sha256": "a704204f2e474cbf4486a5a0988b94f0eaa61749754e45aebdcb5d4b0f6ef2e2"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-477-open.png",
+      "bytes": 538843,
+      "sha256": "ef227078fb5d7ecca274691d3c6434b70c1c35b407296f28860de9c76946c378"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-480-open.png",
+      "bytes": 456141,
+      "sha256": "79b9b526706aaaa848c69341049eff87d6eea118a1ef6c61743e5d3d457b1f01"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-spine-north.png",
+      "bytes": 459230,
+      "sha256": "4070d1d4d76572cee3a2410a9c7421cd06cc0876840d773e00b5365e5a393dbe"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-spine-south.png",
+      "bytes": 400743,
+      "sha256": "192faeda73f88339d63cfef1a2ed9258f4538035791665eb602f66c6b90d34c8"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-477-open.png",
+      "bytes": 538440,
+      "sha256": "f07ef38f23bc7dabb2b625305aa169dd69f4bf6574f581bd8ec0fdb736bfa1e2"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-480-open.png",
+      "bytes": 432621,
+      "sha256": "4b6208ef38b90fcfe5fccaff94cb0d6facc750166ce438141e385b4896648928"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-spine-north.png",
+      "bytes": 433207,
+      "sha256": "e7febf3e5882a6af71a1e2d5cf2c32edc790234093c82b53d4448bc37060c540"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-spine-south.png",
+      "bytes": 382199,
+      "sha256": "16ee01743e0143cd38db29106a7c321c58d7f19b36dbcf1ec587739ecaa0ec12"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/structure/asylum-spine-sectional.png",
+      "bytes": 422950,
+      "sha256": "ab22df8c5e6f3d146d6e4cb4e567a70cddb5a93d3f3f941564f507e25b421c91"
+    }
+  ]
+}

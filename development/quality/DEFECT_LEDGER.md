@@ -8945,3 +8945,7 @@ Seven owner transitions remained open even though each had both jambs, a header 
 ### DEV-641 Asylum shared ward and spine walls contain redundant coplanar segments
 
 Several coincident wall bodies cover the same run. The spine west segment overlaps the day east segment from Z40 to Z44.30 at X25.92–26.08. Adjacent room shells retained ownership copies when their shared wall was built. Replace overlapping runs with single shared masonry sections while preserving their fitted jambs and electrical mounting faces. Inspect shared partitions and corners; verify any replacement from both sides with collision, renders and retained routes. [Evidence](../levels/rebuild/asylum-interior-door-pass/checkpoint.json)
+
+### DEV-642 Inherited route cuts left scalloped jamb edges on the Asylum ground spine
+
+Mesh triangles confirmed irregular cuts inside the last 20 mm of nominal jamb faces. The ground spine now uses ten solid wall runs between measured openings with full-depth slab support and the retained headers. Audit other floors and sites individually for older cuts and duplicated wall bodies. [Evidence](../levels/rebuild/asylum-spine-masonry-pass/checkpoint.json)

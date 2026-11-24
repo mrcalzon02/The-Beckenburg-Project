@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11436,
+  "count": 11445,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -82344,6 +82344,96 @@
       "height": 580,
       "bytes": 544099,
       "sha256": "ebba0f747bc13a664c6649ce455ff7df0d72086dc0da2d7e4b6bc0be648e376a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-477-open.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-477-open.png",
+      "title": "Asylum 477 open",
+      "kind": "Asylum rebuilt ground spine in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 538843,
+      "sha256": "ef227078fb5d7ecca274691d3c6434b70c1c35b407296f28860de9c76946c378"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-480-open.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-480-open.png",
+      "title": "Asylum 480 open",
+      "kind": "Asylum rebuilt ground spine in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 456141,
+      "sha256": "79b9b526706aaaa848c69341049eff87d6eea118a1ef6c61743e5d3d457b1f01"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-spine-north.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-spine-north.png",
+      "title": "Asylum spine north",
+      "kind": "Asylum rebuilt ground spine in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 459230,
+      "sha256": "4070d1d4d76572cee3a2410a9c7421cd06cc0876840d773e00b5365e5a393dbe"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-spine-south.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/asylum-spine-south.png",
+      "title": "Asylum spine south",
+      "kind": "Asylum rebuilt ground spine in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 400743,
+      "sha256": "192faeda73f88339d63cfef1a2ed9258f4538035791665eb602f66c6b90d34c8"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-477-open.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-477-open.png",
+      "title": "Asylum 477 open",
+      "kind": "Asylum rebuilt ground spine in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 538440,
+      "sha256": "f07ef38f23bc7dabb2b625305aa169dd69f4bf6574f581bd8ec0fdb736bfa1e2"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-480-open.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-480-open.png",
+      "title": "Asylum 480 open",
+      "kind": "Asylum rebuilt ground spine in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 432621,
+      "sha256": "4b6208ef38b90fcfe5fccaff94cb0d6facc750166ce438141e385b4896648928"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-spine-north.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-spine-north.png",
+      "title": "Asylum spine north",
+      "kind": "Asylum rebuilt ground spine in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 433207,
+      "sha256": "e7febf3e5882a6af71a1e2d5cf2c32edc790234093c82b53d4448bc37060c540"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-spine-south.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/opengl/asylum-spine-south.png",
+      "title": "Asylum spine south",
+      "kind": "Asylum rebuilt ground spine in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 382199,
+      "sha256": "16ee01743e0143cd38db29106a7c321c58d7f19b36dbcf1ec587739ecaa0ec12"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-spine-masonry-pass/captures/structure/asylum-spine-sectional.png",
+      "url": "development/levels/rebuild/asylum-spine-masonry-pass/captures/structure/asylum-spine-sectional.png",
+      "title": "Asylum spine sectional",
+      "kind": "Asylum isolated native ground spine construction review",
+      "width": 1440,
+      "height": 540,
+      "bytes": 422950,
+      "sha256": "ab22df8c5e6f3d146d6e4cb4e567a70cddb5a93d3f3f941564f507e25b421c91"
     },
     {
       "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",

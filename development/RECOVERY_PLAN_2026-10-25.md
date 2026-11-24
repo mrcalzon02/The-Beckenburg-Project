@@ -2103,3 +2103,11 @@ checks the packaged day-to-spine door through live movement on four peers. The
 previous power capture checkpoint 6a641448cfac492818dec8d12ed2abc58c88c632 passed gallery 45323133183.
 Main stays cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526
 and GPU 44863686455 green. Continue remaining enclosure and playable case checks.
+
+The [Asylum ground spine construction checkpoint](levels/rebuild/asylum-spine-masonry-pass/checkpoint.json)
+replaces 25 overlapping or irregularly cut wall pieces with ten full-height runs.
+The exact package passed 45 physical routes and the four-peer movement, cover and
+breaker scenario. Previous checkpoint 923551251856c7027400ff9bf121055a9a00f878 passed
+gallery 45324950991. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with
+multiplayer 44863686526 and GPU 44863686455 passing. Continue upper and peripheral
+masonry and the full case chain.

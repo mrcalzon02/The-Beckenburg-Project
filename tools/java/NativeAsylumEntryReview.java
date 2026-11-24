@@ -96,6 +96,7 @@ final class NativeAsylumEntryReview {
         vehicleApproach.addAll(walks.get("L20").subList(1,walks.get("L20").size()));
         NativeSchoolInteriorReview.auditHiding(map,report);
         auditCoverThresholds(map,report);
+        auditMasonry(map,table(root.resolve("wall-runs.tsv")),captures,report);
         for(var cupboard:HidingBudget.candidates(map.level()))captureCupboard(map,cupboard,captures);
         if(powered)NativeSchoolInteriorReview.auditPower(map,captures,report,"asylum",new Vec(40,-3,27.25),Math.PI);
         if(connected){
@@ -117,6 +118,53 @@ final class NativeAsylumEntryReview {
             .map(v->v.x()+"\t"+v.y()+"\t"+v.z()).toList());
         NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
         report.forEach(System.out::println);
+    }
+
+    private static void auditMasonry(HouseMap map,List<String[]> rows,Path captures,List<String> report)throws Exception{
+        if(rows.isEmpty())return;
+        if(rows.size()!=11||!List.of(rows.get(0)).equals(List.of("side","x0","x1","z0","z1","sill","head")))
+            throw new AssertionError("Expected all ten rebuilt ground spine wall runs");
+        var physics=map.nativeInvestigation().physics();
+        int bearing=0,occlusion=0;
+        for(var row:rows.subList(1,rows.size())){
+            boolean west=row[0].equals("west");
+            double x0=d(row,1),x1=d(row,2),start=d(row,3),end=d(row,4);
+            double sill=d(row,5),head=d(row,6);
+            int stations=(int)Math.ceil((end-start)/.24);
+            for(int i=0;i<=stations;i++){
+                double z=start+.02+(end-start-.04)*i/stations;
+                var support=physics.support(west?x1+.025:x0-.025,z,sill,.035);
+                if(support==null||Math.abs(support.y()-sill)>.03)
+                    throw new AssertionError("Missing ground-spine slab at "+row[0]+" "+z);
+                bearing++;
+                for(double height:new double[]{.07,.45,1.2,2.15,2.25,head-sill-.08}){
+                    var near=new Vec(x0-.04,sill+height,z);
+                    var far=new Vec(x1+.04,sill+height,z);
+                    if(physics.clearSight(near,far)||physics.clearSight(far,near))
+                        throw new AssertionError("Spine masonry leaks at "+row[0]+" "+z+" "+height);
+                    occlusion+=2;
+                }
+            }
+        }
+        for(int direction:new int[]{-1,1}){
+            double z=direction<0?46.8:17.4;
+            var camera=new Vec(27.5,0,z);
+            if(!map.traversable(camera.x(),camera.y(),camera.z()))
+                throw new AssertionError("No standing view of the spine at "+camera);
+            var renderer=new SceneRenderer();
+            renderer.setRenderSize(880,580);
+            renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+            renderer.x=camera.x();
+            renderer.z=camera.z();
+            renderer.eyeHeight=HunterPosture.STANDING_EYE;
+            renderer.yaw=direction<0?Math.PI:0;
+            renderer.pitch=-.06;
+            renderer.lamp=true;
+            renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+            NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve("asylum-spine-"+(direction<0?"north":"south")+".png"));
+        }
+        report.add("continuous_ground_spine\t"+(rows.size()-1)+" solid wall runs; "+bearing
+            +" adjacent slab contacts and "+occlusion+" bidirectional wall sight checks");
     }
 
     private static void auditCoverThresholds(HouseMap map,List<String> report){

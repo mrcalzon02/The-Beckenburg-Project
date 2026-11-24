@@ -1,0 +1,28 @@
+measure	result
+native_scene_revision	3f1d8cd6e9c61c841b12cbb6851065a86789df2c4665da19aaf976684dcda0a8
+packaged_solo_case	Ordinary Asylum selection and supported cargo spawn
+ASYLUM-z-58-30	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-x-35-52	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-z-54-39.5	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-z-50-27.5	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-court-day-N	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-court-ground-south-a-S	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L09	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L25	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L33	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L40	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L44	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L55	Fitted sweep, movement, acoustics, sight, objects and second staged world
+ASYLUM-L71	Fitted sweep, movement, acoustics, sight, objects and second staged world
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+full_cupboard_safe_thresholds	Three usable interiors, full protection height, hunter crossing both ways and zero protection with cover disabled
+continuous_ground_spine	10 solid wall runs; 284 adjacent slab contacts and 3408 bidirectional wall sight checks
+plant_breaker_and_independent_room_switches	12 controls and 26 fitted loads
+global_breaker_blackout	26 extinguished loads and 504271 altered pixels
+staged_mission_owners	All 15 supported spawns and three retained ritual mounts
+supported_cargo_and_admission	180 direction and posture replays over 45 physical routes
+tcp_asylum_day_cupboard	Hunter moved into the day-room cupboard, crouched, hid, revealed and exited
+tcp_asylum_day_spine_door	Closed collision refused the crossing; aimed opening and both physical crossings replicated
+tcp_asylum_live_breaker	Ghost-induced breaker trip, physical plant approach and aimed reset
+packaged_tcp_asylum_case	Four peers, actual ramp discharge, closed court threshold refusal and live door crossing in both directions
+extraction_owner	Van interior 14 and paved forecourt 13
