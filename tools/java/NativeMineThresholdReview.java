@@ -5,12 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
-import org.beckenburg.LevelDefinition.Dock;
-import org.beckenburg.LevelDefinition.Portal;
-import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 import org.beckenburg.NativeSchoolInteriorReview.Peer;
@@ -33,48 +29,34 @@ public final class NativeMineThresholdReview {
     private static void review(String[] args)throws Exception{
         var packet=Path.of(args[0]);
         var arrival=rows(packet.resolve("arrival.tsv"));
-        var source=arrival.get(0);
-        var staging=arrival.get(1);
-        var dock=new Dock(d(staging,1),d(staging,2),d(staging,3),d(staging,4));
-        var spaces=new ArrayList<NativeInvestigationScene.Space>();
-        var treads=new HashSet<String>();
-        var sockets=new ArrayList<Socket>();
         var routes=new LinkedHashMap<String,List<Vec>>();
-        for(var row:arrival)switch(row[0]){
-            case "SPACE" -> spaces.add(new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),d(row,6),d(row,7),d(row,8),
-                Boolean.parseBoolean(row[9]),Boolean.parseBoolean(row[10])));
-            case "RITUAL" -> sockets.add(new Socket("mine-"+row[1],"ritual",Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),0,row[1]));
-            case "TREAD" -> treads.add(row[1]);
-            case "COVER" -> sockets.add(new Socket(row[1],"hide",Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
-            case "SERVICE" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
-                d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
-            case "POINT" -> routes.computeIfAbsent(row[1],id->new ArrayList<>()).add(point(row,2));
-            case "SOURCE","DOCK" -> {}
-            default -> throw new IOException("Unknown Mine field "+row[0]);
+        var stories=new ArrayList<String[]>();
+        for(var row:arrival){
+            if(row[0].equals("POINT"))routes.computeIfAbsent(row[1],id->new ArrayList<>()).add(point(row,2));
+            if(row[0].equals("STORY"))stories.add(row);
         }
-        var doors=new ArrayList<NativeInvestigationDoor.Spec>();
-        for(var row:rows(packet.resolve("door-survey.tsv"))){
-            var portal=new Portal(Integer.parseInt(row[0]),Integer.parseInt(row[4]),Integer.parseInt(row[5]),
-                d(row,6),d(row,7),d(row,8),d(row,9),row[10].equals("z"),"door",1);
-            doors.add(new NativeInvestigationDoor.Spec(row[1],row[2],row[3],portal,d(row,11),d(row,12),d(row,13),
-                Integer.parseInt(row[14]),Integer.parseInt(row[15]),Integer.parseInt(row[16]),row[17]));
-        }
-        NativeInvestigationScene scene;
-        try(var model=Files.newInputStream(Path.of(source[1]));var physics=Files.newInputStream(Path.of(source[3]))){
-            scene=NativeInvestigationScene.read(model,source[2],physics,source[4],treads,spaces,doors);
-        }
-        var portals=new ArrayList<>(doors.stream().map(NativeInvestigationDoor.Spec::portal).toList());
-        var rooms=bind(scene,dock,rows(packet.resolve("mission.tsv")),portals);
+        var source=arrival.get(0);
         var sumpDocument=packet.resolve("mine-sump.water");
         var water=Files.isRegularFile(sumpDocument)?dev.mrcalzon.water.WaterDocument.read(Files.newInputStream(sumpDocument))
             :WorldWater.load("wld-05");
-        var level=new LevelDefinition("wld-05",scene.revision(),"Dead Man's Claim",rooms,portals,
-            List.of(),List.of(),List.of(),sockets,List.of(),dock,"industrial",water);
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        var guest=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        MineNativeLevel.Source authored;
+        try(var model=Files.newInputStream(Path.of(source[1]));var physics=Files.newInputStream(Path.of(source[3]))){
+            authored=MineNativeLevel.read(arrival,rows(packet.resolve("door-survey.tsv")),rows(packet.resolve("mission.tsv")),
+                model,physics,water);
+        }
+        var site=List.of(args).contains("--named")?HouseMap.Site.MINE:HouseMap.Site.USER;
+        var level=authored.level();
+        var scene=authored.scene();
+        var doors=authored.doors();
+        if(site==HouseMap.Site.MINE){
+            var selection=MissionSites.byId("WLD-05");
+            require(selection.location()==SiteCatalog.Location.MINE&&selection.playable(),"Mine unavailable through named selection");
+            var selected=new HouseMap(site);
+            require(selected.level().equals(level)&&selected.nativeInvestigation().revision().equals(scene.revision()),
+                "Named Mine does not use the exact authored stage and water");
+        }
+        var map=reviewMap(site,level,scene);
+        var guest=reviewMap(site,level,scene);
         require(map.valid(),"Disconnected Mine case owners");
         require(RitualSites.valid(map),"Unsupported Mine ritual position");
         boolean gpu=List.of(args).contains("--gpu");
@@ -122,9 +104,10 @@ public final class NativeMineThresholdReview {
             "staged_case_revision\t"+level.revision(),"supported_case_owners\t14 supported owners and actual cargo van",
             "fitted_thresholds\t8 fitted sets, four standing/crouched body tests per state, sight, aim, sound and object behavior",
             "physical_routes\t"+routes.size()+" routes with exact native standing/crouched replay in both directions"));
+        if(site==HouseMap.Site.MINE)evidence.add("named_mine_packaged_selection\tOrdinary mission roster, named HouseMap and network revision load the exact staged scene and water");
         evidence.add("joined_mine_loop\tFour complete walks from cargo through haul and vent stairs, then back to the cargo deck");
-        for(var site:RitualSites.all(map))
-            evidence.add("mine_"+site.rite().name().toLowerCase(java.util.Locale.ROOT)+"\t"+site.room()+" "+site.x()+" "+site.y()+" "+site.z());
+        for(var riteSite:RitualSites.all(map))
+            evidence.add("mine_"+riteSite.rite().name().toLowerCase(java.util.Locale.ROOT)+"\t"+riteSite.room()+" "+riteSite.x()+" "+riteSite.y()+" "+riteSite.z());
         var former=Path.of("development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2");
         AuthoredSitePhysics previous;
         try(var raw=Files.newInputStream(former)){
@@ -160,15 +143,19 @@ public final class NativeMineThresholdReview {
         var switchFeet=packet.resolve("switches.tsv");
         if(map.hasGenerator())auditPower(map,captures,evidence);
         if(Files.isRegularFile(switchFeet))auditSwitches(map,rows(switchFeet),captures,evidence);
+        if(!stories.isEmpty())auditCase(map,stories,captures,evidence);
         if(List.of(args).contains("--lan")){
-            live(level,scene,evidence);
-            if(Files.isRegularFile(switchFeet))liveSwitches(level,scene,rows(switchFeet),evidence);
-            if(refuges)liveCover(level,scene,evidence);
+            live(site,level,scene,evidence);
+            if(Files.isRegularFile(switchFeet))liveSwitches(site,level,scene,rows(switchFeet),evidence);
+            if(refuges)liveCover(site,level,scene,evidence);
+            if(!stories.isEmpty())liveStories(site,level,scene,stories,evidence);
         }
         NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
         var output=packet.resolve("verification");
         Files.createDirectories(output);
-        Files.write(output.resolve(gpu?"opengl.tsv":"native-review.tsv"),evidence);
+        boolean named=site==HouseMap.Site.MINE;
+        String name=(named?"named-":"")+(gpu?"opengl.tsv":"native-review.tsv");
+        Files.write(output.resolve(name),evidence);
         evidence.forEach(System.out::println);
     }
 
@@ -317,6 +304,80 @@ public final class NativeMineThresholdReview {
         report.add("mine_sump_water\tNine exact wall-contained wet samples, four dry outside probes, blocked standing and crouched guard crossings, and visible native water");
     }
 
+    private static InteractionFocus.Target storyFocus(HouseMap map,int seat,Vec at,Vec target,String doc){
+        double dx=target.x()-at.x(),dz=target.z()-at.z();
+        double yaw=Math.atan2(dx,dz),pitch=Math.atan2(target.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        var focus=InteractionFocus.pick(map,new LooseClutter.Observer(seat,at.x(),at.y(),at.z(),yaw,pitch,true),List.of());
+        require(focus!=null&&focus.kind()==InteractionFocus.Kind.INTERFACE&&focus.id().equals("STORY_"+doc),
+            "Unreachable Mine document "+doc+" from "+at+" / "+focus);
+        return focus;
+    }
+
+    private static void auditCase(HouseMap map,List<String[]> stories,Path captures,List<String> report)throws Exception{
+        require(stories.size()==2&&SiteCaseFiles.forSite(map.level().id()).reference().equals("BB / WLD-05"),
+            "Mine case briefing or records missing");
+        for(var row:stories){
+            var at=point(row,10);
+            var target=point(row,13);
+            int room=Integer.parseInt(row[3]);
+            walkBoth(map,List.of(map.spawn(room),at),"Mine document "+row[2]);
+            storyFocus(map,0,at,target,row[2]);
+            var image=new java.awt.image.BufferedImage(880,580,java.awt.image.BufferedImage.TYPE_INT_RGB);
+            var g=image.createGraphics();
+            try{SiteStories.draw(g,880,580,map,row[2]);}finally{g.dispose();}
+            javax.imageio.ImageIO.write(image,"png",captures.resolve("mine-record-"+row[2]+".png").toFile());
+        }
+        for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            require(map.resolveMove(new Vec(52.0,-6,13.1),52.0,12.18,h)==null
+                    &&map.resolveMove(new Vec(49.92,-6,10.64),50.79,10.64,h)==null,
+                "Player crossed into sealed hoist display");
+        }
+        require(map.roomAt(52,-6,10.7)==-1&&map.roomAt(49,-6,14)==8,
+            "Sealed scenery was assigned playable ownership or removed the legal lift approach");
+        capture(map,new Vec(49,-6,14),2.45,captures.resolve("mine-collapsed-hoist.png"));
+        report.add("mine_case_records\tTwo physical readable records, an authored dispatch briefing, and a fixed two-sided hoist barrier");
+    }
+
+    private static void liveStories(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String[]> stories,
+            List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        try(var host=reviewHost(map);
+            var first=new Peer(host,false,"Mine assay");
+            var second=new Peer(host,false,"Mine rescue");
+            var witness=new Peer(host,false,"Mine witness");
+            var ghost=new Peer(host,true,"Mine ghost")){
+            for(var peer:List.of(first,second,witness,ghost)){
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
+                peer.client.ready();
+            }
+            first.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            first.client.start();
+            first.await("INFO|mission started");
+            for(int seat=0;seat<stories.size();seat++){
+                var row=stories.get(seat);
+                var peer=seat==0?first:second;
+                int room=Integer.parseInt(row[3]);
+                for(int owner:NativeSchoolInteriorReview.missionRoute(map,room)){
+                    peer.client.move(owner);
+                    peer.awaitExact("ACCEPT|MOVE|"+owner);
+                }
+                peer.client.view3D();
+                peer.awaitExact("ACCEPT|VIEW3D");
+                var start=NativeSchoolInteriorReview.body(peer.await("BODY|"+seat+"|"));
+                require(start.equals(map.spawn(room)),"Incorrect Mine story room spawn");
+                var at=walkPeer(peer,seat,start,d(row,10),d(row,12));
+                var target=point(row,13);
+                var focus=storyFocus(map,seat,at,target,row[2]);
+                double dx=target.x()-at.x(),dz=target.z()-at.z();
+                double yaw=Math.atan2(dx,dz),pitch=Math.atan2(target.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+                peer.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+                peer.client.interact(focus,yaw,pitch);
+                peer.awaitExact("INTERACTED|INTERFACE|STORY_"+row[2]);
+            }
+        }
+        report.add("staged_tcp_mine_records\tBoth physically aimed case records opened through the real four-peer host");
+    }
+
     private static void capture(HouseMap map,Vec at,double yaw,Path target)throws Exception{
         require(map.traversable(at.x(),at.y(),at.z()),"Unsupported standing Mine capture "+at);
         var renderer=new SceneRenderer();
@@ -335,16 +396,16 @@ public final class NativeMineThresholdReview {
         target.addAll(target.isEmpty()?use:use.subList(1,use.size()));
     }
 
-    private static void live(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        var clientMap=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+    private static void live(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        var clientMap=reviewMap(site,level,scene);
+        try(var host=reviewHost(map);
             var scout=new Peer(host,false,"Roadhead");
             var haul=new Peer(host,false,"Haul");
             var vent=new Peer(host,false,"Ventilation");
             var ghost=new Peer(host,true,"Ghost")){
             for(var peer:List.of(scout,haul,vent,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
                 peer.client.ready();
             }
             scout.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -510,7 +571,7 @@ public final class NativeMineThresholdReview {
             List<String> report)throws Exception{
         ghost.client.viewGhost3D();
         ghost.awaitExact("ACCEPT|GVIEW3D");
-        ghost.awaitExact("SITE|USER|"+map.level().revision());
+        ghost.awaitExact("SITE|"+map.site()+"|"+map.level().revision());
         ghost.await("GPOSE|");
         NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
         var generator=map.level().socket("generator",13);
@@ -559,16 +620,16 @@ public final class NativeMineThresholdReview {
         operator.awaitExact("ACCEPT|INTERACT|"+focus.name());
     }
 
-    private static void liveSwitches(LevelDefinition level,NativeInvestigationScene scene,List<String[]> positions,
+    private static void liveSwitches(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String[]> positions,
             List<String> report)throws Exception{
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+        var map=reviewMap(site,level,scene);
+        try(var host=reviewHost(map);
             var assay=new Peer(host,false,"Assay");
             var lower=new Peer(host,false,"Lower workings");
             var witness=new Peer(host,false,"Witness");
             var ghost=new Peer(host,true,"Ghost")){
             for(var peer:List.of(assay,lower,witness,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
                 peer.client.ready();
             }
             assay.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -607,7 +668,7 @@ public final class NativeMineThresholdReview {
                 awaitReconnect(frames,"INFO|mission resumed");
                 resumed.view3D();
                 awaitReconnect(frames,"ACCEPT|VIEW3D");
-                awaitReconnect(frames,"SITE|USER|"+level.revision());
+                awaitReconnect(frames,"SITE|"+site+"|"+level.revision());
                 awaitReconnect(frames,"LIGHTS|111111111011|0");
                 awaitReconnect(frames,"SOURCE|1");
                 var feet=NativeSchoolInteriorReview.body(awaitReconnect(frames,"BODY|1|"));
@@ -640,41 +701,51 @@ public final class NativeMineThresholdReview {
         throw new AssertionError("Missing Mine resume frame "+prefix);
     }
 
-    private static void liveCover(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
-            var hunter=new Peer(host,false,"Assay investigator");
-            var observer=new Peer(host,false,"Observer");
-            var witness=new Peer(host,false,"Witness");
+    private static void liveCover(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        var fullCover=new CustomContract(3,100,150,100,100,100,100,100,CustomContract.Sprint.LIMITED,100,true,true);
+        map.configureHiding(100);
+        try(var host=reviewHost(map,fullCover);
+            var crew=new Peer(host,false,"Crew house");
+            var assay=new Peer(host,false,"Assay office");
+            var wash=new Peer(host,false,"Wash house");
             var ghost=new Peer(host,true,"Ghost")){
-            for(var peer:List.of(hunter,observer,witness,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+            var hunters=List.of(crew,assay,wash);
+            for(var peer:List.of(crew,assay,wash,ghost)){
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
                 peer.client.ready();
             }
-            hunter.awaitExact("LOBBY|3|HUMAN|4|WAITING");
-            hunter.client.start();
-            hunter.await("INFO|mission started");
-            for(int room:NativeSchoolInteriorReview.missionRoute(map,1)){
-                hunter.client.move(room);
-                hunter.awaitExact("ACCEPT|MOVE|"+room);
+            crew.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            crew.client.start();
+            crew.await("INFO|mission started");
+            var owners=List.of(0,1,11);
+            for(int seat=0;seat<hunters.size();seat++){
+                var hunter=hunters.get(seat);
+                int owner=owners.get(seat);
+                var refuge=level.socket("hide",owner);
+                for(int room:NativeSchoolInteriorReview.missionRoute(map,owner)){
+                    hunter.client.move(room);
+                    hunter.awaitExact("ACCEPT|MOVE|"+room);
+                }
+                hunter.client.view3D();
+                hunter.awaitExact("ACCEPT|VIEW3D");
+                var at=NativeSchoolInteriorReview.body(hunter.await("BODY|"+seat+"|"));
+                require(at.equals(map.spawn(owner)),"Hunter missed Mine refuge room "+owner);
+                var approach=LevelClosets.world(refuge,0,0,1.18);
+                at=walkPeer(hunter,seat,at,approach.x(),approach.z());
+                require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Protection leaked past a refuge opening "+owner);
+                var entry=LevelClosets.world(refuge,0,0,.22);
+                at=walkPeer(hunter,seat,at,entry.x(),entry.z());
+                require(SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Failed to cross the native Mine refuge "+owner);
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|1");
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|0");
+                at=walkPeer(hunter,seat,at,approach.x(),approach.z());
+                require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Protection persisted outside the refuge "+owner);
             }
-            hunter.client.view3D();
-            hunter.awaitExact("ACCEPT|VIEW3D");
-            var at=NativeSchoolInteriorReview.body(hunter.await("BODY|0|"));
-            require(at.equals(map.spawn(1)),"Hunter missed staged assay spawn");
-            for(int n=0;n<13;n++)at=NativeSchoolInteriorReview.step(hunter,0,0,100);
-            for(int n=0;n<15;n++)at=NativeSchoolInteriorReview.step(hunter,0,100,0);
-            require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Approach became protected before frame "+at);
-            for(int n=0;n<2;n++)at=NativeSchoolInteriorReview.step(hunter,0,100,0);
-            require(SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Hunter missed the full assay cupboard "+at);
-            hunter.client.hide();
-            hunter.awaitExact("HIDING|1");
-            hunter.client.hide();
-            hunter.awaitExact("HIDING|0");
-            for(int n=0;n<3;n++)at=NativeSchoolInteriorReview.step(hunter,0,-100,0);
-            require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Leaving the assay cupboard retained protection");
         }
-        report.add("staged_tcp_mine_cover\tActual assay office approach and live cupboard entry, protection, concealment and exit");
+        report.add("staged_tcp_mine_cover\tThree physical walk-in refuges each accept live entry, hiding, reveal and exit at maximum cover");
     }
 
     private static void refused(Peer peer,int dx,int dz)throws Exception{
@@ -694,42 +765,18 @@ public final class NativeMineThresholdReview {
         peer.awaitExact("ACCEPT|INTERACT|Open door");
     }
 
-    private static List<Room> bind(NativeInvestigationScene scene,Dock dock,List<String[]> lines,List<Portal> portals){
-        var rooms=new Room[HouseMap.ROOM_COUNT];
-        for(var row:lines)switch(row[0]){
-            case "ANCHOR" -> {
-                int id=Integer.parseInt(row[1]);
-                var at=point(row,3);
-                var zone=scene.spaceAt(at.x(),at.y(),at.z());
-                require(zone!=null&&zone.owner()==id&&zone.id().equals(row[2])
-                    &&scene.physics().traversable(at,HunterPosture.STANDING_HEIGHT),"Unsupported Mine owner "+row[2]+" "+at+" / "+zone);
-                rooms[id]=new Room(id,zone.id(),zone.x0(),zone.z0(),zone.x1(),zone.z1(),zone.floor(),zone.height(),
-                    zone.outside()?"native-outdoor":"concrete",zone.outside()?"outdoor":"mine",at);
-            }
-            case "TRANSITION" -> {
-                var at=point(row,4);
-                var support=scene.physics().support(at.x(),at.z(),at.y(),.08);
-                require(support!=null&&Math.abs(support.y()-at.y())<.07,"Unsupported Mine transition "+row[1]);
-                int a=Integer.parseInt(row[2]),b=Integer.parseInt(row[3]);
-                boolean along=row[8].equals("z");
-                if(!row[9].equals("stair")){
-                    double dx=along?0:.65,dz=along?.65:0;
-                    int near=scene.ownerAt(at.x()-dx,at.y(),at.z()-dz),far=scene.ownerAt(at.x()+dx,at.y(),at.z()+dz);
-                    require(a==near&&b==far||a==far&&b==near,"Mine transition "+row[1]+" touches "+near+" and "+far);
-                    require(scene.physics().clearSight(new Vec(at.x()-dx,at.y()+1.2,at.z()-dz),
-                        new Vec(at.x()+dx,at.y()+1.2,at.z()+dz)),"Blocked Mine opening "+row[1]);
-                }
-                portals.add(new Portal(Integer.parseInt(row[1]),a,b,at.x(),at.y(),at.z(),d(row,7),along,row[9],1.0));
-            }
-            default -> throw new IllegalArgumentException("Unknown Mine mission record "+row[0]);
-        }
-        var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
-        var lip=van.world(0,VanStaging.FRONT);
-        double y=van.floorY();
-        portals.add(new Portal(719,13,14,lip.x(),y,lip.z(),VanStaging.RAMP_HALF_WIDTH*2,true,"trail",1));
-        rooms[14]=new Room(14,"Expedition van",dock.x()-1.26,dock.z()-3,dock.x()+1.26,dock.z()+2.4,
-            y,VanStaging.INTERIOR_HEIGHT,"van","metal",new Vec(dock.x(),y,dock.z()));
-        return List.of(rooms);
+    private static HouseMap reviewMap(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene){
+        return site==HouseMap.Site.MINE?HouseMap.forNetworkRevision(site,level.revision()):new HouseMap(site,level,null,scene);
+    }
+
+    private static LanHost reviewHost(HouseMap map)throws IOException{
+        return reviewHost(map,CustomContract.standard(3));
+    }
+
+    private static LanHost reviewHost(HouseMap map,CustomContract contract)throws IOException{
+        return map.site()==HouseMap.Site.MINE
+            ?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,false,false,map.site())
+            :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,map);
     }
 
     private static void walkBoth(HouseMap map,List<Vec> points,String id){

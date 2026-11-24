@@ -49,6 +49,13 @@ public final class SiteCaseFiles {
                 "ACCESS: The hut and ranger store have walk-in refuges. The contour return reaches the roadhead. The tower is an optional branch with one stair approach.",
                 "SERVICES: The roadhead shelter holds the diesel generator and breaker. Starting the engine leaves a tripped breaker open.",
                 "RECORDS: Read the ranger transcript on the lower circuit. The optional cab log preserves later bearings. Gather instrument evidence for the current case."));
+            case "wld-05" -> new File("BB / WLD-05",identity.title(),identity.address(),List.of(
+                "The assay office recorded ore grades and crew wages. Surface stores and the wash house served the haul workings.",
+                "Late 2022: A return party checked both stair approaches. The crew tally carries unresolved entries."),
+                List.of("OBJECTIVE: Identify the current threat and carry out the appropriate rite before withdrawing to the van.",
+                "ACCESS: The haul stairs and ventilation stairs connect the headhouse and workings. The collapsed hoist bay is sealed behind a fixed guard.",
+                "SERVICES: The roadhead generator and breaker supply the working lights. The lower sump is guarded.",
+                "RECORDS: The assay ledger and rescue tally describe past work and the return party. Collect instrument evidence for the current case."));
             default -> {
                 var story=WorldLore.SITES.stream().filter(s->s.id().equals(id)).findFirst().orElse(null);
                 yield new File("BB / "+id.toUpperCase(java.util.Locale.ROOT),story==null?identity.title():story.title(),identity.address(),

@@ -13,7 +13,8 @@ public final class SiteCatalog {
         HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK"),"beckenburg.review.hollowCreek"),
         SEACLIFF(MissionSites.title("SEACLIFF"),SeacliffNativeLevel.REVIEW_PROPERTY),
         BLACKPINE(MissionSites.title("BLACKPINE"),BlackpineLevel.REVIEW_PROPERTY),
-        LOOKOUT(MissionSites.title("LOOKOUT"),LookoutNativeLevel.REVIEW_PROPERTY);
+        LOOKOUT(MissionSites.title("LOOKOUT"),LookoutNativeLevel.REVIEW_PROPERTY),
+        MINE(MissionSites.title("MINE"),MineNativeLevel.REVIEW_PROPERTY);
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

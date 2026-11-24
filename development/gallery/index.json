@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11666,
+  "count": 11680,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111544,6 +111544,146 @@
       "height": 800,
       "bytes": 1039906,
       "sha256": "1470e898a02a9377f6bd51c10d514a6b3f0fdc6bd858f043b747f5c171a5f638"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/mine-assay-powered.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/mine-assay-powered.png",
+      "title": "Mine assay powered",
+      "kind": "Dead Man’s Claim named case in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 199764,
+      "sha256": "79301ee42524e5360abe40ec605dfeaa0f9a177cfa3490232db9bac510009eb4"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/mine-assay-tripped.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/mine-assay-tripped.png",
+      "title": "Mine assay tripped",
+      "kind": "Dead Man’s Claim named case in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 150133,
+      "sha256": "0efeda8f1e53f0a3920c229da00c082a90271fa0cb8c195cef80b6877cf51033"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/mine-collapsed-hoist.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/mine-collapsed-hoist.png",
+      "title": "Mine collapsed hoist",
+      "kind": "Dead Man’s Claim named case in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 336530,
+      "sha256": "1804c47423a71e8fea9387c750cc368b899fc69e636973352fb5bc174b829839"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/mine-lower-haul-stair.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/mine-lower-haul-stair.png",
+      "title": "Mine lower haul stair",
+      "kind": "Dead Man’s Claim named case in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 326413,
+      "sha256": "44e94e3c02d0da8a016a63025d3c1bc95b266837f92173c9df506c3461802535"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/mine-record-ASSAY_LEDGER.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/mine-record-ASSAY_LEDGER.png",
+      "title": "Mine record assay ledger",
+      "kind": "Dead Man’s Claim named case in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 11039,
+      "sha256": "05f8dbfa644f301c58b8bb529af0295d61ce543aedd17b950bc7e6a62d6522f0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/mine-record-RESCUE_TALLY.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/mine-record-RESCUE_TALLY.png",
+      "title": "Mine record rescue tally",
+      "kind": "Dead Man’s Claim named case in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 10968,
+      "sha256": "9f089ebb9bd2ab01f29bebd937124efb46658834375c1a7dfe49ac75eeeaf772"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-assay-powered.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-assay-powered.png",
+      "title": "Mine assay powered",
+      "kind": "Dead Man’s Claim named case in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 188225,
+      "sha256": "3dbbf54a94126f2d823b7ed3b88736ab0432ac227308dcbfffd2555ebdaa74d0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-assay-tripped.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-assay-tripped.png",
+      "title": "Mine assay tripped",
+      "kind": "Dead Man’s Claim named case in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 150992,
+      "sha256": "b73143b0d03e867509dab2d408f3abe7cd2ab9f785a9c3eb46a7515ce414871e"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-collapsed-hoist.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-collapsed-hoist.png",
+      "title": "Mine collapsed hoist",
+      "kind": "Dead Man’s Claim named case in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 335953,
+      "sha256": "ffa599488ee4878b13144374c087564d89df6899f2a1ce33d54ef04dc744cb95"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-lower-haul-stair.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-lower-haul-stair.png",
+      "title": "Mine lower haul stair",
+      "kind": "Dead Man’s Claim named case in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 319918,
+      "sha256": "5b45348d1e00cc68da61bc27d9429fb0243d070b355a84cc19b395e5881c175a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-record-ASSAY_LEDGER.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-record-ASSAY_LEDGER.png",
+      "title": "Mine record assay ledger",
+      "kind": "Dead Man’s Claim named case in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 11039,
+      "sha256": "05f8dbfa644f301c58b8bb529af0295d61ce543aedd17b950bc7e6a62d6522f0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-record-RESCUE_TALLY.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/opengl/mine-record-RESCUE_TALLY.png",
+      "title": "Mine record rescue tally",
+      "kind": "Dead Man’s Claim named case in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 10968,
+      "sha256": "9f089ebb9bd2ab01f29bebd937124efb46658834375c1a7dfe49ac75eeeaf772"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/structure/mine-assay-station.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/structure/mine-assay-station.png",
+      "title": "Mine assay station",
+      "kind": "Dead Man’s Claim supported case furnishings and hoist cutaway",
+      "width": 1280,
+      "height": 870,
+      "bytes": 1018141,
+      "sha256": "5da56fd80f55232d1629a36d1674247a8de8d20d54d62bd08bd4e31f39d146a5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-case-pass/captures/structure/mine-closed-hoist.png",
+      "url": "development/levels/rebuild/mine-case-pass/captures/structure/mine-closed-hoist.png",
+      "title": "Mine closed hoist",
+      "kind": "Dead Man’s Claim supported case furnishings and hoist cutaway",
+      "width": 1280,
+      "height": 870,
+      "bytes": 1188446,
+      "sha256": "217a2fd64fd8e114ac714533dc59d0747512c612be8aada25d26192e3da41af2"
     },
     {
       "path": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-enter.png",

@@ -121,6 +121,14 @@ done
 for table in arrival door-survey mission; do
     cp "$lookout_packet/$table.tsv" "build/classes/org/beckenburg/sites/lookout-$table.tsv"
 done
+mine_packet=development/levels/rebuild/mine-case-pass
+for extension in glb hcs2; do
+    cp "$mine_packet/mine-case.$extension" "build/classes/org/beckenburg/sites/mine-case.$extension"
+done
+for table in arrival door-survey mission; do
+    cp "$mine_packet/$table.tsv" "build/classes/org/beckenburg/sites/mine-$table.tsv"
+done
+cp "$mine_packet/mine-sump.water" build/classes/org/beckenburg/sites/mine-sump.water
 asylum_packet=development/levels/rebuild/asylum-flight-rails-pass
 for extension in glb hcs2; do
     cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"

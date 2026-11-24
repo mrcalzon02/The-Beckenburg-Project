@@ -1483,3 +1483,7 @@ The stores and crew roofs share one continuous fall. The wash and assay roofs sh
 ### Dead Man’s Claim underground water containment
 
 The formed lower well owns a bounded water document rendered by the shared game module. The guard is bolted to the continuous slab. The reused pump is isolated off the active circuit, and its fixed service run reaches the east wall. Physical wall and bed checks, visible water in both renderers, dry routes, and all retained multiplayer tests pass on the exact stage. [Sump checkpoint](mine-sump-pass/checkpoint.json)
+
+### Dead Man’s Claim named case review
+
+The ordinary mission roster loads Dead Man’s Claim from both package builders under the Mine review setting. Six runtime payloads match their source bytes. Software, RTX 5070 OpenGL and packaged LAN scenarios verify the supported rooms, the two physical records, the sealed hoist exhibit, all three refuges with maximum cover, lighting, the guarded sump, camera evidence, three rites and van retreat. The default release gate remains in place. [Case checkpoint](mine-case-pass/checkpoint.json)

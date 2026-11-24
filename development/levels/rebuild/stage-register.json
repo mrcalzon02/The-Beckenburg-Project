@@ -3567,6 +3567,7 @@
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-case-pass/checkpoint.json",
             "development/levels/rebuild/mine-sump-pass/checkpoint.json",
             "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
@@ -3575,6 +3576,7 @@
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-667",
             "DEV-666",
             "DEV-665",
             "DEV-664",
@@ -3592,6 +3594,7 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-case-pass/checkpoint.json",
             "development/levels/rebuild/mine-sump-pass/checkpoint.json",
             "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
@@ -3605,12 +3608,13 @@
             "DEV-659",
             "DEV-658"
           ],
-          "next_action": "The exact staged rooms, physical stairs, power, refuges and immutable water document pass. Integrate into ordinary named game selection, add final case furnishings and verify remaining gameplay gates."
+          "next_action": "Named package verified exact doors, stairs, power, reconnect, all three live refuges at maximum budget, and bounded water. Review remaining atmosphere and release gates independently."
         },
         "S07": {
           "status": "IN_PROGRESS",
           "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
+            "development/levels/rebuild/mine-case-pass/checkpoint.json",
             "development/levels/rebuild/furnishings/wld-05/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
             "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
@@ -3623,7 +3627,7 @@
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "The assay bench, dispatch bench, sorting and tool storage, idle hoist and rockfall use measured floor and tabletop supports. Complete the visual detail review."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3633,11 +3637,13 @@
           "next_action": "Complete prerequisite stage"
         },
         "S09": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "development/levels/rebuild/mine-case-pass/checkpoint.json"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "The physically placed assay ledger and return tally both open in named four-player gameplay. Evaluate final environment and encounter presentation."
         },
         "S10": {
           "status": "NOT_AUDITED",
@@ -3650,14 +3656,16 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-case-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-668",
             "DEV-656",
             "DEV-657",
             "DEV-658"
           ],
-          "next_action": "Exact native stage passes 19 routes, cargo circuit, eight leaves and four-peer stair-door replay. Complete normal packaged dispatch and case."
+          "next_action": "Named review package passes software, RTX 5070 OpenGL and bounded LAN evidence, camera, rites and retreat. Preserve the default gate pending release promotion."
         }
       },
       "arrival_bearing_pass": {

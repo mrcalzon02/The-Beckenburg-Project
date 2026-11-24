@@ -9054,3 +9054,11 @@ Seven cap-backed pitched roof surfaces feed six collectors, each with an open th
 ### DEV-666 Lower Mine workings lacked a bounded water sump
 
 A formed well in the lower service area has four closed walls, a fixed guard and 0.63 metres of contained water on its actual bed. Native tests detect all four walls and stop both player postures at the guard. The retained pump is isolated. The entire lower stair circuit and all three refuges remain usable. [Evidence](../levels/rebuild/mine-sump-pass/checkpoint.json)
+
+### DEV-667 Mine case lacked supported work records and bounded hoist context
+
+The assay and crew records are supported on measured benches and open through physical aim. The inactive hoist sits behind fixed guards in a volume excluded from playable ownership. [Evidence](../levels/rebuild/mine-case-pass/checkpoint.json)
+
+### DEV-668 Mine could not be selected as an exact named case
+
+The named review package binds the ordinary mission entry to the exact native geometry, water and room metadata. Four-player tests exercised all three refuges at maximum allowance, both records, local EMF, camera view, power and reconnect, all three rites and physical retreat. The default release gate remains in place. [Evidence](../levels/rebuild/mine-case-pass/checkpoint.json)

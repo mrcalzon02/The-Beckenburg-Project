@@ -2183,3 +2183,7 @@ Slab commit 28002e5c3c05efdee322475fb0a28a0aafbff3ac is verified on draft PR 86.
 ### Mine lower water containment
 
 Surface runoff commit 767b627910d5e1325703c1837f5668ce48daf3e3 is verified on draft PR 86. Gallery 45349856750 passed. The [sump checkpoint](levels/rebuild/mine-sump-pass/checkpoint.json) forms an off-route lower well with a physical liner, guard, and actual runtime water. The staged state preserves movements, powered fixtures and refuges in software, RTX 5070 OpenGL and four-peer tests. Finish the Mine case and verified named game selection.
+
+### Mine named case and bounded gameplay
+
+Sump commit a3fe1043c8f7c07aaf8ceb5c5699bdc0de424ee5 is verified on draft PR 86. Gallery 45350833936 passed. The [named case checkpoint](levels/rebuild/mine-case-pass/checkpoint.json) verifies the packaged Mine alongside the exact staged source, all three live refuges at maximum allowance, evidence, physical records, closed hoist scenery, rites and retreat. The default release gate remains locked pending the remaining map and release checks.

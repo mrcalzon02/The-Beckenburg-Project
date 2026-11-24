@@ -7393,6 +7393,28 @@
       "action": "Form a walled sump outside the stair routes, anchor the surrounding guard and bind an exact wet placement over the physical invert. Reuse the source pump as isolated machinery.",
       "older_maps": "Verify every intended low-point water body against actual floor, guard, volume and renderer bounds. Keep all mandatory routes on dry, supported surfaces.",
       "evidence": "development/levels/rebuild/mine-sump-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-667",
+      "title": "Mine case lacked supported work records and bounded hoist context",
+      "status": "NAMED_MINE_RECORDS_AND_CLOSED_HOIST_VERIFIED",
+      "affected": "Dead Man’s Claim assay office, crew house and lift bay",
+      "symptom": "The playable Mine stage lacked measured record placements and a bounded collapsed hoist exhibit.",
+      "cause": "Prior construction stages stopped at the physical rooms, utilities and circulation.",
+      "action": "Fit indexed assets to real slab or table supports, install the fixed hoist guard, and bind each physical record to normal aiming and reading.",
+      "older_maps": "Verify all record props are actually supported and readable. Keep inactive context separated from legal search space.",
+      "evidence": "development/levels/rebuild/mine-case-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-668",
+      "title": "Mine could not be selected as an exact named case",
+      "status": "NAMED_REVIEW_PACKAGE_AND_BOUNDED_CASE_VERIFIED",
+      "affected": "Dead Man’s Claim ordinary mission dispatch",
+      "symptom": "The Mine could only be exercised through a staged user level and lacked named host loading.",
+      "cause": "The mission entry had no packaged native scene, water, or authored bindings.",
+      "action": "Bind WLD-05 to the packaged Mine definition and retain the established review gate. Reverify ordinary selection and exact LAN revision.",
+      "older_maps": "Exercise actual packaged selection and verify resource identities before a named map is promoted.",
+      "evidence": "development/levels/rebuild/mine-case-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
