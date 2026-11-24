@@ -2247,3 +2247,7 @@ Distribution commit 39963cc5075b41027982abb3cb394ec000f7d78a and gallery 4538188
 ### Named Cemetery and Vale Mortuary case review
 
 Furnishings commit ca5575a62da8c86fa49b1a76f91079ab1ff930e1 and gallery 45384071028 passed on held draft PR 86. The [named case checkpoint](levels/rebuild/cemetery-named-pass/checkpoint.json) binds separate named launches to the exact reviewed physical payloads. Software and RTX 5070 replayed the map routes, doors, full refuges and lighting. Actual solo AI, four-player LAN, local camera, EMF and bounded ritual outcomes passed. Public release and broader site acceptance remain open. Continue Northwatch's physical site boundaries and the shared runtime checks.
+
+### Northwatch station boundary and retained routes
+
+Named Cemetery and Mortuary commit a881aeb79bd3b9ea1c12f067259c1eabb8123465 and gallery 45387394833 passed on held draft PR 86. The [Northwatch checkpoint](levels/rebuild/northwatch-boundary-pass/checkpoint.json) adds a surveyed continuous exterior, founded windbreak and fitted road gate. Software and RTX 5070 verify physical boundary stops at the fitted windbreak and gate and retain the existing van, routes, supports and interior cuts. Continue completed doors and room acoustics on this exact stage.

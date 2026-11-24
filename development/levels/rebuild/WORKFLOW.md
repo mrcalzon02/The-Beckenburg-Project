@@ -1503,3 +1503,9 @@ Both underground archives now have a fitted reading desk and a readable memorial
 Both variants load the checked furnishings, ground, rooms, collision and door schedules through normal solo and LAN selection. The Cemetery retains its original campaign position and the mortuary is a review alternative. The review package covers the continuous van-to-archive route, a chapel camera and van feed, local EMF, the three rite stations, independent power states and the full walk-in safe zones. [Named checkpoint](cemetery-named-pass/checkpoint.json) / [Active roster](cemetery-named-pass/roster.json)
 
 Continue the next physical roster pass at Northwatch. The Cemetery still needs finish and release acceptance.
+
+### Northwatch founded perimeter and canonical arrival
+
+The station now has 92 founded windbreak bays, a closed vehicle gate behind the canonical van and a continuous exterior road and valley. The new mesh matches all 1,004 existing rim edges. Both terrain cuts and all 426 native parts are retained. Software and OpenGL repeat 20 links and three complete journeys, including the cargo-to-laboratory route. The three bare edges showed continuous exterior grade and visible movement stops in the native review. [Perimeter checkpoint](northwatch-boundary-pass/checkpoint.json) / [Active roster](northwatch-boundary-pass/roster.json)
+
+Continue operating leaves in the actual frames and the native room and acoustic bindings, then power and walk-in protection.

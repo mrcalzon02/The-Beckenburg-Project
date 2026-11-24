@@ -7635,6 +7635,39 @@
       "action": "Package both exact maps, share the authored scene reader, and verify normal solo AI and named LAN case actions behind the scene review flag.",
       "older_maps": "Verify packaged identity and exact source agreement along with real local and TCP walks before opening public selection.",
       "evidence": "development/levels/rebuild/cemetery-named-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-689",
+      "title": "Northwatch movement stopped at bare exterior terrain edges",
+      "status": "NORTHWATCH_FOUNDED_STATION_PERIMETER_AND_RETAINED_JOURNEYS_VERIFIED",
+      "affected": "WLD-08 Northwatch exterior and roadhead",
+      "symptom": "The roadhead, array north bank and west flank stopped movement despite clear standing sight.",
+      "cause": "The saved terrain stopped at a finite rim without a visible perimeter.",
+      "action": "Continue the exact rim, found the windbreak on surveyed soil and fit a real closed road gate while preserving the original deck and all routes.",
+      "older_maps": "Check terrain continuity, physically visible limits and actual fit of reused assemblies.",
+      "evidence": "development/levels/rebuild/northwatch-boundary-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-690",
+      "title": "The first Northwatch exterior grade exceeded the walking limit",
+      "status": "WEST_EXTERIOR_GRADE_MEASURED_AND_REFIT",
+      "affected": "WLD-08 Northwatch exterior and roadhead",
+      "symptom": "The first joined west bank fell outside the supported walking slope at x=-8 and z=53.",
+      "cause": "The landscape blend rose to its distant grade too quickly beside the retained rim.",
+      "action": "Increase the transition distance from 13 to 23 m and verify the exact new exterior support against the previous raw edge.",
+      "older_maps": "Check terrain continuity, physically visible limits and actual fit of reused assemblies.",
+      "evidence": "development/levels/rebuild/northwatch-boundary-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-691",
+      "title": "The inherited vehicle gate had overlapping coplanar slat faces",
+      "status": "INSTALLED_NORTHWATCH_GATE_SLATS_REFIT",
+      "affected": "WLD-08 Northwatch exterior and roadhead",
+      "symptom": "Forty-one board joints shared overlapping front and back planes, with a maximum overlap of 65 mm at the source center joint.",
+      "cause": "The library gate fit its source road by overlapping separate timber slats.",
+      "action": "Trim only the placed instance to shared butt joints. Preserve the source, its UVs, and the visible closed gate function.",
+      "older_maps": "Check terrain continuity, physically visible limits and actual fit of reused assemblies.",
+      "evidence": "development/levels/rebuild/northwatch-boundary-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

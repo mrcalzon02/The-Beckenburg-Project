@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11987,
+  "count": 11996,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114914,6 +114914,96 @@
       "height": 960,
       "bytes": 1466197,
       "sha256": "f8f09e4747e3056270126359b1a0c335a709b80c7df691d65d9343425a6dfca7"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/array-edge-screen.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/array-edge-screen.png",
+      "title": "Array edge screen",
+      "kind": "Northwatch closed physical perimeter in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 310517,
+      "sha256": "c5fc439f2189343f0ddae9c8ac3c85d4c1de393b612be55804c2914d4cab4aab"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/continued-lane-and-station.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/continued-lane-and-station.png",
+      "title": "Continued lane and station",
+      "kind": "Northwatch closed physical perimeter in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 273867,
+      "sha256": "3cedd4f836a947e1591c444f75440a528fdba4b8f1d7328f040884e077f1fb86"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/array-edge-screen.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/array-edge-screen.png",
+      "title": "Array edge screen",
+      "kind": "Northwatch closed physical perimeter in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 306268,
+      "sha256": "c3435ab07d399db4d48fed54cd6c6aa6fcfedf043dc47c7e88b676cc206128d7"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/continued-lane-and-station.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/continued-lane-and-station.png",
+      "title": "Continued lane and station",
+      "kind": "Northwatch closed physical perimeter in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 264580,
+      "sha256": "76b99f934d65041638faa365ab5fb6514a5f4d5d1a5ecbcb7928e2aaf45e6efc"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/road-gate-from-apron.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/road-gate-from-apron.png",
+      "title": "Road gate from apron",
+      "kind": "Northwatch closed physical perimeter in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 343542,
+      "sha256": "071e7bae6fcf9e3b7bc5c4df6b1b141d02fc4b0b2a961e8504bbdff5a6051e46"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/road-gate-from-apron.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/road-gate-from-apron.png",
+      "title": "Road gate from apron",
+      "kind": "Northwatch closed physical perimeter in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 346987,
+      "sha256": "82fee0cfb4ae8e22fbf2f3fe2d4ca42399fa16b4691c3ac6ed9770fab6e9f6cd"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/array-windbreak.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/array-windbreak.png",
+      "title": "Array windbreak",
+      "kind": "Northwatch founded windbreak, road gate and joined valley construction",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1012928,
+      "sha256": "42841ea9288cb335a7bd24c4fb50d5ac530efdd58716541b7bb8dbc36d74e18f"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/roadhead-and-vehicle-gate.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/roadhead-and-vehicle-gate.png",
+      "title": "Roadhead and vehicle gate",
+      "kind": "Northwatch founded windbreak, road gate and joined valley construction",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1623484,
+      "sha256": "1649c46c5c895aff19dac9da346bb42ffaae91a36e4e8faa1a259c6285e1aa7e"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/station-perimeter.png",
+      "url": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/station-perimeter.png",
+      "title": "Station perimeter",
+      "kind": "Northwatch founded windbreak, road gate and joined valley construction",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1624340,
+      "sha256": "d795c60774e83afbe8cc96b1d435f58a83b9c574a39294da7f4f85eb509c67bf"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",

@@ -9142,3 +9142,15 @@ The inherited detail was 45 mm above the top. Four measured contacts seat the pl
 ### DEV-688 Cemetery variants had no named packaged dispatch
 
 The standard site selectors now resolve each variant and native revision under the Cemetery review flag. Both source packages preserve their exact model, collision and schedules. Solo and four-peer cases verified dispatch and field actions. [Exact package evidence](../levels/rebuild/cemetery-named-pass/checkpoint.json)
+
+### DEV-689 Northwatch movement stopped at bare exterior terrain edges
+
+The roadhead, array north bank and west flank stopped movement despite clear standing sight. Continue the exact rim, found the windbreak on surveyed soil and fit a real closed road gate while preserving the original deck and all routes. [Evidence](../levels/rebuild/northwatch-boundary-pass/checkpoint.json)
+
+### DEV-690 The first Northwatch exterior grade exceeded the walking limit
+
+The first joined west bank fell outside the supported walking slope at x=-8 and z=53. Increase the transition distance from 13 to 23 m and verify the exact new exterior support against the previous raw edge. [Evidence](../levels/rebuild/northwatch-boundary-pass/checkpoint.json)
+
+### DEV-691 The inherited vehicle gate had overlapping coplanar slat faces
+
+Forty-one board joints shared overlapping front and back planes, with a maximum overlap of 65 mm at the source center joint. Trim only the placed instance to shared butt joints. Preserve the source, its UVs, and the visible closed gate function. [Evidence](../levels/rebuild/northwatch-boundary-pass/checkpoint.json)
