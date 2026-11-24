@@ -2347,3 +2347,7 @@ The stair handrail checkpoint f997ba37334f24d3570637ed047e7f3f063ad1ec passed ga
 ### Monastery of Ashen Bells tower and gable flashings
 
 Valley checkpoint 325435d53579537e5b4c98a46241bac5d2e03c8c passed gallery 45453098279 on draft PR 86. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526 and GPU acceptance 44863686455. The [flashing checkpoint](levels/rebuild/monastery-flashing-pass/checkpoint.json) shows three tower and four cloister junctions, a descending handoff to the refectory valley, preserved routes and the live memorial approach. Continue the archive–vestry lap, exposed eaves and supported utilities before named packaged acceptance.
+
+### Monastery of Ashen Bells gate and herb court eaves
+
+Flashing checkpoint 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf passed gallery 45454967742 on draft PR 86. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526 and GPU acceptance 44863686455. The [eave checkpoint](levels/rebuild/monastery-eave-pass/checkpoint.json) records five fitted gutters, open pipes and gravel beds, the archive–vestry lap and a live walk from the van to the memorial chamber. Continue the outlying roof edges and supported service distribution before named packaged acceptance.

@@ -9258,3 +9258,7 @@ Four trough junctions previously had no positive grade or outlets. The staged re
 ### DEV-717 · Monastery tower and cloister roof flashings
 
 Three tower abutments and four cloister gable shoulders now have measured lead folds and lapped ends. The west tower apron connects into the refectory valley. The staged software and OpenGL scenes agree on the new folds and preserved doors, refuges and routes. The archive–vestry seam and exposed eaves remain separate work. [Verification checkpoint](../levels/rebuild/monastery-flashing-pass/checkpoint.json)
+
+### DEV-718 · Monastery gate and herb court eaves
+
+Five roof runs now drain to ten physically open outfalls beside supported piers. The archive–vestry roof step has a fitted lap. Both game renderers and the live memorial arrival replay passed with the same doors, stairs and refuge sites. Outlying and tower eaves remain open. [Verification checkpoint](../levels/rebuild/monastery-eave-pass/checkpoint.json)

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12269,
+  "count": 12279,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116004,6 +116004,106 @@
       "height": 580,
       "bytes": 428940,
       "sha256": "facaacc7e0cdd273fb28b54e00155a63d59290a46b8921a93fcf0f18993c9039"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/archive-vestry-gable-step-lap.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/archive-vestry-gable-step-lap.png",
+      "title": "Archive vestry gable step lap",
+      "kind": "Monastery of Ashen Bells exported gate and herb court eave inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1315690,
+      "sha256": "a590e99760130e81546625640243b4820fcea6665061fd1cba81f3e5e3f84b74"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/gatehouse-fascia-and-lateral-outlets.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/gatehouse-fascia-and-lateral-outlets.png",
+      "title": "Gatehouse fascia and lateral outlets",
+      "kind": "Monastery of Ashen Bells exported gate and herb court eave inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1381411,
+      "sha256": "9024da7c79249663d84d381bfdeb2b9a556702f6253434ce3295164dad0be363"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/herb-court-eave-network.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/herb-court-eave-network.png",
+      "title": "Herb court eave network",
+      "kind": "Monastery of Ashen Bells exported gate and herb court eave inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1403756,
+      "sha256": "a83c03d844820856ce4a1ceea6874b2f1133cef02432771248ec7a2616db2dab"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/northern-herb-court-gutter-and-soakaway.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/export-inspection/northern-herb-court-gutter-and-soakaway.png",
+      "title": "Northern herb court gutter and soakaway",
+      "kind": "Monastery of Ashen Bells exported gate and herb court eave inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1207992,
+      "sha256": "85b6ad3a3a9ba6c8413165721a025545b3fec7c99bd46327610500f20e0a353b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/opengl/north-herb-court-eave.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/opengl/north-herb-court-eave.png",
+      "title": "North herb court eave",
+      "kind": "Monastery of Ashen Bells fitted eave gutter in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 384439,
+      "sha256": "7dcd5e4c070fe3499458c9fb8b378e0dfd9b6e5ceb2a4d956f1cf45fbc3f344c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/opengl/public-gate-eave.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/opengl/public-gate-eave.png",
+      "title": "Public gate eave",
+      "kind": "Monastery of Ashen Bells fitted eave gutter in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 398356,
+      "sha256": "5f2a504fc23c51923e15bd613cba38522fab8a54deae1c057cc17221a349cdb9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/opengl/south-herb-court-eave.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/opengl/south-herb-court-eave.png",
+      "title": "South herb court eave",
+      "kind": "Monastery of Ashen Bells fitted eave gutter in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 350722,
+      "sha256": "61148e167e5ad1bb16d90d504ffd2a427a867276431eb98ecf6e0f701f5ec14b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/software/north-herb-court-eave.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/software/north-herb-court-eave.png",
+      "title": "North herb court eave",
+      "kind": "Monastery of Ashen Bells fitted eave gutter in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 385851,
+      "sha256": "b05cfef62ac1c426d3f27d70e726de13318314fbb826d5c363eb36cf43a31648"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/software/public-gate-eave.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/software/public-gate-eave.png",
+      "title": "Public gate eave",
+      "kind": "Monastery of Ashen Bells fitted eave gutter in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 401394,
+      "sha256": "b4158f13d375f1c9dca7c11c298dfe2baae11a1f057eaccf1df566262b0274a1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/software/south-herb-court-eave.png",
+      "url": "development/levels/rebuild/monastery-eave-pass/wld-10/captures/software/south-herb-court-eave.png",
+      "title": "South herb court eave",
+      "kind": "Monastery of Ashen Bells fitted eave gutter in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 351681,
+      "sha256": "f49ab177caef670f58fa9cfdc62ac0f1253a67dfc6c5b77535946f1161738097"
     },
     {
       "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/north-cloister-gable-pair.png",

@@ -7954,6 +7954,17 @@
       "action": "Fit folded profiles to measured slate and wall faces, lap the shallow ends, and connect the west tower gutter to the existing valley. Verify native geometry and routes.",
       "older_maps": "Measure lower roof and receiving face separately at each abutment. Use saddles or wall laps appropriate to the actual pitch.",
       "evidence": "development/levels/rebuild/monastery-flashing-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-718",
+      "title": "Monastery gate and cloister eaves drained onto door approaches",
+      "status": "MONASTERY_GATE_AND_HERB_COURT_EAVES_DRAINED_STAGED",
+      "affected": "WLD-10 public gate, four herb court eaves and archive\u2013vestry roof join",
+      "symptom": "Exposed roof faces shed toward the gate or herb court without collectors, and the north range still had an unflashed roof step.",
+      "cause": "The valley and tower stages addressed collecting junctions but left these exposed faces and the north range step untreated.",
+      "action": "Fit five graded gutter runs with open notches, supported pipes and founded gravel beds. Lap the roof step and replay ordinary access and hiding.",
+      "older_maps": "Audit eaves above arrival, doors or stairs and trace each supported outlet to its discharge.",
+      "evidence": "development/levels/rebuild/monastery-eave-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
