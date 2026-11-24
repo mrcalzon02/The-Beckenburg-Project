@@ -2195,3 +2195,7 @@ Mine case commit 195c7f11c59ad83e64a1f18d3c7bdc7692a22210 is verified on draft P
 ### Drowned Fisherman's Wharf tide and staged arrival
 
 Wharf foundation commit 39ebf8dc7c73ddb047597c57696c62b12943e675 is verified on draft PR 86. Gallery 45356280331 passed. The [tidal checkpoint](levels/rebuild/wharf-tidal-pass/checkpoint.json) adds an opaque bed below the retained terrain, aligns shared water across the harbor at Y−1.45 m and excludes the dry cellar and both immersed stair cells. Staged software and RTX 5070 checks passed nineteen walks in both directions and both postures, canonical cargo/ramp arrival and undercroft water exclusion. Landward containment, fitted door leaves, room and acoustic graph, working services, walk-in cover, and named dispatch remain open.
+
+### Drowned Fisherman's Wharf landward enclosure
+
+Tidal commit 740cd177631c2f492776f053df01d9a7de610e36 is verified on draft PR 86. Gallery 45358990271 passed. The [landward checkpoint](levels/rebuild/wharf-landward-pass/checkpoint.json) verifies twenty-two founded runs, two bonded cottage returns and a visible closed gate behind the van. Passed software and RTX 5070 replay of the nineteen approach/stair routes, the canonical van ramp, dry undercroft and physical boundary controls. Continue with operating leaves, acoustics, services, walk-in cover and named dispatch.

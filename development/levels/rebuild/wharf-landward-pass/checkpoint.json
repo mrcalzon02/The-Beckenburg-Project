@@ -1,0 +1,142 @@
+{
+  "status": "WHARF_LANDWARD_PHYSICAL_CONTAINMENT_AND_STAGED_ARRIVAL_VERIFIED",
+  "prior_commit": "740cd177631c2f492776f053df01d9a7de610e36",
+  "prior_gallery": 45358990271,
+  "scope": "Staged Wharf landward enclosure with retained tide, canonical arrival and dry routes",
+  "measured_terrain_support_probes": 1386,
+  "retaining_runs": 22,
+  "road_gate_reservation": [
+    28.0,
+    83.45,
+    36.0,
+    83.45
+  ],
+  "new_native_components": 27,
+  "preserved_native_components": 661,
+  "software": {
+    "scene_revision": "ab5decebbc9c639300a00e4b63f4074a34bcc7436783621cad2d61428fc49656",
+    "water_revision": "bdcf9556462c6fbe6bd70a6b29d1684ec9c4882407a1cc724bf52e774519ed0f",
+    "dry_samples": "4930",
+    "immersed_wall_rays_blocked": "2664",
+    "submerged_bed_samples": "12",
+    "water_blocked_otherwise_supported_bed_samples": "9",
+    "routes_replayed_both_directions_and_postures": "19",
+    "canonical_cargo_and_ramp": "passed",
+    "crossdock_rail_blocked_crossings": "14",
+    "retaining_and_gate_body_contacts": "698",
+    "jump_apex_body_contacts": "698",
+    "supported_boundary_crossings_blocked": "680",
+    "formerly_open_crossings_closed": "10",
+    "gate_bar_gap_and_bonded_return_controls": "6",
+    "connected_walkable_samples_inside_landward_perimeter": "11967",
+    "foreground_tide_pixels": "304137",
+    "shore_boardwalk_tide_pixels": "251151",
+    "dry_undercroft_tide_pixels": "0",
+    "renderer": "Software"
+  },
+  "opengl": {
+    "scene_revision": "ab5decebbc9c639300a00e4b63f4074a34bcc7436783621cad2d61428fc49656",
+    "water_revision": "bdcf9556462c6fbe6bd70a6b29d1684ec9c4882407a1cc724bf52e774519ed0f",
+    "dry_samples": "4930",
+    "immersed_wall_rays_blocked": "2664",
+    "submerged_bed_samples": "12",
+    "water_blocked_otherwise_supported_bed_samples": "9",
+    "routes_replayed_both_directions_and_postures": "19",
+    "canonical_cargo_and_ramp": "passed",
+    "crossdock_rail_blocked_crossings": "14",
+    "retaining_and_gate_body_contacts": "698",
+    "jump_apex_body_contacts": "698",
+    "supported_boundary_crossings_blocked": "680",
+    "formerly_open_crossings_closed": "10",
+    "gate_bar_gap_and_bonded_return_controls": "6",
+    "connected_walkable_samples_inside_landward_perimeter": "11967",
+    "foreground_tide_pixels": "304136",
+    "shore_boardwalk_tide_pixels": "251147",
+    "dry_undercroft_tide_pixels": "0",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  },
+  "exports": {
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.blend": "25caf3d69e72b2179780fdecb8c7ba89c557ad6c1db8a0edce77db5477030d8d",
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.glb": "45deb8c1d36a7414adbef9d8617b816807e1c6916f7bbcaa7e8bc887ca89e672",
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.hcs2": "533b9f7789981c36269f7cfb41991c944409a27b83e25aea76a63f022f3ab9a0",
+    "development/levels/rebuild/wharf-landward-pass/wharf-tide.water": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc"
+  },
+  "evidence_sha256": {
+    "development/levels/rebuild/wharf-landward-pass/construction.json": "29783c329490d44222dbc56b46468351cb2f98602a3eac4b34a4982873973385",
+    "development/levels/rebuild/wharf-landward-pass/verification/runtime.tsv": "36c9792f09923a83159dd30ddf743a208a59e3b3f86186b226f47ca4e6a31330",
+    "development/levels/rebuild/wharf-landward-pass/verification/opengl.tsv": "e9853c2b5f8cf19e8273eb17bc8ed7f3a230aff53075fd8f224460c825030c8e",
+    "development/levels/rebuild/wharf-landward-pass/review-input.tsv": "3d28f335c72857659d881774f729c3c5e0dd97000bca0bd8fbdd384d61d69980",
+    "tools/build_wharf_landward.py": "6ddf8ad47d0b2ae3b96b5bc3d1bbdd22ab43038b332560319a2313b27387bea3",
+    "tools/verify_wharf_tide.py": "623b8e7dc5d6e019b2b671547e41b33d59b5807beefefb87e7ae68f51b9ca111",
+    "tools/java/WharfTideReview.java": "a89eece85896e735a21f38a816920a804701cb2d184aaa6bb093f0eebe7f4654",
+    "tools/java/WharfLandwardChecks.java": "9f6ea751b8228f8b70d1e56b435daff3d4e3c41d817128ee122c103f01896826"
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/opengl/wharf-canonical-arrival.png",
+      "sha256": "d712e3ee4a3ed0bb11617f05fc8d8a02b6a2f9410fa476fd5dfa0dc1f6bf5651",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/opengl/wharf-crossdock-tide.png",
+      "sha256": "4db1f5de1d56c5a643270cf9fc4bcf5078a92ea2c98808920995e0cffc032485",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/opengl/wharf-dry-undercroft.png",
+      "sha256": "cf48fd5f125da3539a2134666a86505f9ca2a73eb54b65069fcf9eafe1cdcb88",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/opengl/wharf-landward-gate.png",
+      "sha256": "48a43dc26cb709ddbda1e50d838cfc7694e276888fe1654b90084ae0dfbaac88",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/opengl/wharf-retaining-wall.png",
+      "sha256": "4635b0d67b5fb874703f400c6a3525e68be0bcb128d86ac89aefeffeea9a3f57",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/opengl/wharf-shore-boardwalk.png",
+      "sha256": "382a2ce0f768e08f079b9873ad23e5130b98e7f5c707c1fd3c7b9c4f17af2ad7",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/structure/wharf-landward-enclosure.png",
+      "sha256": "628720e69ad107292c305d2e4073bc76ecc36210073f586c7b70fd4941b82512",
+      "type": "WorkBench inspection of the reopened enclosure"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/wharf-canonical-arrival.png",
+      "sha256": "eca7e97011b32b8b476ab5c696323eecc58a31ab287e29518100c215c04b3abf",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/wharf-crossdock-tide.png",
+      "sha256": "28c75730cbd191b80f3b93ca506dfd55bbcd1d8de1b80585a83d4a8841bcaf9d",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/wharf-dry-undercroft.png",
+      "sha256": "cc2843e057e6195862d30c75861fc3a2dd7e937375b15fb0567a436ed7e7965d",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/wharf-landward-gate.png",
+      "sha256": "7075dee9ee2c7ec4147736589089d13ccf3f85564daeef4c2ec1cb348d13a399",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/wharf-retaining-wall.png",
+      "sha256": "ece5807b2eaa0b02d7389c8f3ee90133b459488f73fd01081f4a77e9e4e6a434",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-landward-pass/captures/wharf-shore-boardwalk.png",
+      "sha256": "8b198306a4fd72d328c87742b5d78d292a3e16de730473c0213b49ec29330ad2",
+      "type": "Software game renderer"
+    }
+  ],
+  "open": "Fit and exercise all eight door leaves with the authored room and acoustic graph. Install the site electricity and full walk-in refuges, then verify multiplayer and named entry."
+}

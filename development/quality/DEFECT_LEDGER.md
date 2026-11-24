@@ -9070,3 +9070,7 @@ Source provenance ties thirty pile and beam components to old circulation links.
 ### DEV-670 Wharf lacked a continuous submerged bed and tidal water outside the dry works
 
 The continuous lower bed follows measured shore slopes below the saved cut. Eight shared water placements meet inside the retaining-wall thickness and exclude the connected cellar and stair cells. Both renderers show outdoor water and a dry undercroft. Both player postures are blocked on otherwise standable submerged beds. The canonical cargo and ramp passed live movement in the staged game. [Evidence](../levels/rebuild/wharf-tidal-pass/checkpoint.json)
+
+### DEV-671 Wharf arrival road and cottage shoulders led outside the playable landward enclosure
+
+Raw native collision previously supported the unobstructed road up to Z86 and supported escape near both van shoulders. The new enclosure uses twenty-two surveyed retaining runs, cottage masonry returns, and an eight-metre gate reservation. The actual gate bars stop player bodies while their openings pass sight and appropriately small objects. All sampled walking and jump-height crossings stop at the installed geometry. [Evidence](../levels/rebuild/wharf-landward-pass/checkpoint.json)

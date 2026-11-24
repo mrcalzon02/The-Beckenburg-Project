@@ -40,12 +40,16 @@ public final class WharfTideReview {
         var packet = Path.of(args[0]);
         var output = Path.of(args[1]);
         var dock = new Dock(32, 0, 74, 0);
+        boolean landward = List.of(args).contains("--landward");
+        String stem = landward ? "enclosed-wharf" : "tidal-wharf";
         var routes = new LinkedHashMap<String, List<Vec>>();
         var spaces = new ArrayList<NativeInvestigationScene.Space>();
         var rooms = new ArrayList<Room>();
         var sockets = new ArrayList<Socket>();
         var steps = new java.util.HashSet<String>();
         var rays = new ArrayList<double[]>();
+        var landChecks = new ArrayList<WharfLandwardChecks.Station>();
+        var landRing = new ArrayList<Vec>();
         for (String row : Files.readAllLines(Path.of(args[2]))) {
             var tab = row.split("\t");
             switch (tab[0]) {
@@ -65,6 +69,9 @@ public final class WharfTideReview {
                 case "STEP" -> steps.add(tab[1]);
                 case "RITUAL" -> sockets.add(new Socket("wharf-"+tab[1],"ritual",Integer.parseInt(tab[2]),
                         d(tab,3),d(tab,4),d(tab,5),0,tab[1]));
+                case "EDGE_LIMIT" -> landRing.add(new Vec(d(tab,1),0,d(tab,2)));
+                case "EDGE" -> landChecks.add(new WharfLandwardChecks.Station(
+                        d(tab, 1),d(tab, 2),d(tab, 3),d(tab, 4),d(tab, 5)));
                 case "WALL" -> rays.add(new double[] {d(tab, 1),d(tab, 2),d(tab, 3),d(tab, 4),d(tab, 5)});
                 default -> throw new IllegalArgumentException("Unknown review row");
             }
@@ -75,8 +82,8 @@ public final class WharfTideReview {
         try (var input = Files.newInputStream(packet.resolve("wharf-tide.water"))) {
             water = WaterDocument.read(input);
         }
-        try (var model = Files.newInputStream(packet.resolve("tidal-wharf.glb"));
-             var physics = Files.newInputStream(packet.resolve("tidal-wharf.hcs2"))) {
+        try (var model = Files.newInputStream(packet.resolve(stem+".glb"));
+             var physics = Files.newInputStream(packet.resolve(stem+".hcs2"))) {
             scene = NativeInvestigationScene.read(model, args[3], physics, args[4], steps, spaces);
         }
         var level = new LevelDefinition("wld-06", scene.revision(), "Drowned Fisherman's Wharf",
@@ -152,6 +159,7 @@ public final class WharfTideReview {
             }
         }
         evidence.add("crossdock_rail_blocked_crossings\t14");
+        if(landward)WharfLandwardChecks.audit(map,scene.physics(),landChecks,landRing,evidence);
 
         Files.createDirectories(output.resolve("captures"));
         boolean gpu = GpuWorldRenderer.active()!=null;
@@ -165,6 +173,10 @@ public final class WharfTideReview {
                 captures.resolve("wharf-dry-undercroft.png"),true);
         capture(map,new Vec(27,0,67.7),.67,-.12,captures.resolve("wharf-canonical-arrival.png"),true);
         require(visibleWater>2500 && pierWater>1000 && undercroft==0,"Water draw or dry-cell occlusion mismatch");
+        if(landward){
+            capture(map,new Vec(32,0,80.9),0,-.12,captures.resolve("wharf-landward-gate.png"),true);
+            capture(map,new Vec(24,0,71.4),-1.18,-.09,captures.resolve("wharf-retaining-wall.png"),true);
+        }
         evidence.add("foreground_tide_pixels\t"+visibleWater);
         evidence.add("shore_boardwalk_tide_pixels\t"+pierWater);
         evidence.add("dry_undercroft_tide_pixels\t"+undercroft);

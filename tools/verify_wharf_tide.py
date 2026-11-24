@@ -62,27 +62,49 @@ def inputs():
     return rows
 
 
+def landward_checks(construction):
+    for x,z in construction["landward_alignment"]:
+        yield ("EDGE_LIMIT",x,z)
+    spans = list(construction["constructed_spans"])
+    spans.append(dict(a=[28.,83.45], b=[36.,83.45], outward=[0.,1.], ground_y_max=0.))
+    for span in spans:
+        x0, z0 = span["a"]
+        x1, z1 = span["b"]
+        nx, nz = span["outward"]
+        count = max(2, math.ceil(math.hypot(x1-x0, z1-z0)/.30))
+        for i in range(count+1):
+            t = i/count
+            yield ("EDGE", x0+t*(x1-x0), z0+t*(z1-z0), nx, nz, span["ground_y_max"])
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu", action="store_true")
+    parser.add_argument("--landward", action="store_true")
     args = parser.parse_args()
+    stage = BASE / "wharf-landward-pass" if args.landward else STAGE
+    stem = "enclosed-wharf" if args.landward else "tidal-wharf"
     java = Path("C:/Program Files/Java/jdk-17/bin")
     jar = ROOT / "build/beckenburg-game.jar"
     gpu = ROOT / "gpu-client/target/BeckenburgGPU.jar"
-    contract = read(STAGE / "construction.json")["exports"]
-    glb = contract[(STAGE / "tidal-wharf.glb").relative_to(ROOT).as_posix()]
-    native = contract[(STAGE / "tidal-wharf.hcs2").relative_to(ROOT).as_posix()]
+    construction = read(stage / "construction.json")
+    contract = construction["exports"]
+    glb = contract[(stage / f"{stem}.glb").relative_to(ROOT).as_posix()]
+    native = contract[(stage / f"{stem}.hcs2").relative_to(ROOT).as_posix()]
     BUILD.mkdir(parents=True, exist_ok=True)
-    table = STAGE / "review-input.tsv"
-    table.write_bytes("".join("\t".join(map(str, row)) + "\n" for row in inputs()).encode())
+    table = stage / "review-input.tsv"
+    rows = inputs()
+    if args.landward:
+        rows.extend(landward_checks(construction))
+    table.write_bytes("".join("\t".join(map(str, row)) + "\n" for row in rows).encode())
     helpers = [ROOT / "tools/java" / name for name in
-               ("WharfTideReview.java", "NativeSchoolInteriorReview.java", "NativeSchoolDoorReview.java")]
+               ("WharfTideReview.java", "WharfLandwardChecks.java", "NativeSchoolInteriorReview.java", "NativeSchoolDoorReview.java")]
     subprocess.run([str(java / "javac.exe"), "-encoding", "UTF-8", "-cp", str(jar),
                     "-d", str(BUILD), *map(str, helpers)], cwd=ROOT, check=True)
     classpath = os.pathsep.join(map(str, (BUILD, jar, gpu) if args.gpu else (BUILD, jar)))
     subprocess.run([str(java / "java.exe"), "-Djava.awt.headless=true", "-Xmx3g", "-cp", classpath,
-                    "org.beckenburg.WharfTideReview", str(STAGE), str(STAGE), str(table), glb, native,
-                    *(["--gpu"] if args.gpu else [])], cwd=ROOT, check=True)
+                    "org.beckenburg.WharfTideReview", str(stage), str(stage), str(table), glb, native,
+                    *(["--gpu"] if args.gpu else []), *(["--landward"] if args.landward else [])], cwd=ROOT, check=True)
 
 
 if __name__ == "__main__":

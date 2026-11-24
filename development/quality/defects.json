@@ -7437,6 +7437,17 @@
       "action": "Loft a continuous low bed using surveyed shore profiles. Bind tide placements at the wall centerlines. Check that the shared game rejects movement in the tide and accepts the complete dry circulation.",
       "older_maps": "Review actual underwater bed, dry construction bounds, playable exits and water renderer agreement for every location with shoreline or flooded infrastructure.",
       "evidence": "development/levels/rebuild/wharf-tidal-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-671",
+      "title": "Wharf arrival road and cottage shoulders led outside the playable landward enclosure",
+      "status": "NATIVE_LANDWARD_CONTAINMENT_AND_STAGE_ARRIVAL_VERIFIED",
+      "affected": "Drowned Fisherman's Wharf van roadhead and landward shoreline",
+      "symptom": "Before construction, supported walking continued past both van shoulders and reached Z86 behind staging.",
+      "cause": "The saved terrain ended on a playable grade without a supported landward wall or road closure.",
+      "action": "Fit bonded returns, grounded retaining runs, iron guards and a fixed road gate. Continue the land and road beyond the gate for visible context. Check exact collision, gate gaps, jump-height clearance and connected ground.",
+      "older_maps": "Walk both shoulders and the road beyond each van, check real wing-wall joins and include an open-edge negative control.",
+      "evidence": "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

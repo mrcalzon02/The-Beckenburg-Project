@@ -3730,7 +3730,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "39ebf8dc7c73ddb047597c57696c62b12943e675",
+          "source_sha": "740cd177631c2f492776f053df01d9a7de610e36",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3765,7 +3765,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
             "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
             "development/levels/rebuild/wharf-foundation-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-tidal-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-tidal-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -3791,13 +3792,14 @@
             "DEV-416",
             "DEV-579",
             "DEV-669",
-            "DEV-670"
+            "DEV-670",
+            "DEV-671"
           ],
-          "next_action": "Fit and test the landward perimeter and road gate, then bind the Wharf's physical door leaves, room and acoustic graph, powered services and full walk-in refuges before named dispatch."
+          "next_action": "Fit and exercise all eight door leaves with the authored room and acoustic graph. Install the site electricity and full walk-in refuges, then verify multiplayer and named entry."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "39ebf8dc7c73ddb047597c57696c62b12943e675",
+          "source_sha": "740cd177631c2f492776f053df01d9a7de610e36",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3816,7 +3818,8 @@
             "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
             "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
             "development/levels/rebuild/wharf-foundation-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-tidal-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-tidal-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -3832,22 +3835,25 @@
             "DEV-405",
             "DEV-406",
             "DEV-669",
-            "DEV-670"
+            "DEV-670",
+            "DEV-671"
           ],
-          "next_action": "Fit and test the landward perimeter and road gate, then bind the Wharf's physical door leaves, room and acoustic graph, powered services and full walk-in refuges before named dispatch."
+          "next_action": "Fit and exercise all eight door leaves with the authored room and acoustic graph. Install the site electricity and full walk-in refuges, then verify multiplayer and named entry."
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "39ebf8dc7c73ddb047597c57696c62b12943e675",
+          "source_sha": "740cd177631c2f492776f053df01d9a7de610e36",
           "evidence": [
             "development/levels/rebuild/wharf-foundation-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-tidal-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-tidal-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-669",
-            "DEV-670"
+            "DEV-670",
+            "DEV-671"
           ],
-          "next_action": "Fit and test the landward perimeter and road gate, then bind the Wharf's physical door leaves, room and acoustic graph, powered services and full walk-in refuges before named dispatch."
+          "next_action": "Fit and exercise all eight door leaves with the authored room and acoustic graph. Install the site electricity and full walk-in refuges, then verify multiplayer and named entry."
         },
         "S06": {
           "status": "NOT_AUDITED",
