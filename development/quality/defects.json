@@ -7877,6 +7877,17 @@
       "action": "Install the sleeve and continuous steel bore under surveyed grade, fit the small transition benches and supports, and keep the established downstream isolation leaf.",
       "older_maps": "Trace utility volumes from exact end to end, including the local transition cuts, cover, access exclusion and original maintenance controls.",
       "evidence": "development/levels/rebuild/dam-carrier-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-711",
+      "title": "Blackwater Dam generator lacked an exhaust and weather air inlet",
+      "status": "DAM_GENERATOR_EXHAUST_AND_BAFFLED_AIR_STAGED",
+      "affected": "WLD-09 switchgear north wall and auxiliary generator",
+      "symptom": "The existing mounted source had no supported connection to outside air.",
+      "cause": "The first power pass commissioned only the electrical supply and local branches.",
+      "action": "Open sized service sleeves in the north wall, fit a muffler-backed flue and supported downturned exhaust, and install a separate fixed weather louver.",
+      "older_maps": "Verify service penetrations, paired mounting contacts, and clear air passages against the same player collision and optical surfaces.",
+      "evidence": "development/levels/rebuild/dam-ventilation-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

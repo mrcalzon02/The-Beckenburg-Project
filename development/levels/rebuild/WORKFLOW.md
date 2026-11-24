@@ -1579,3 +1579,7 @@ The north headpond uses the existing landscape depression. A dry ring encloses i
 ### Blackwater Hydroelectric Dam covered carrier
 
 The reservoir intake now opens into a covered conduit that skirts the investigation compound and terminates behind the existing closed tailrace gate. Both renderer runs and the shared collision agree on the open bore and route exclusion. Ten terrain triangles needed local trimming at the founded terminal benches. Five joined routes, the perimeter, three refuges, all operating doors and the four-player blackout replay passed on the exact export. [Plan and section](dam-carrier-pass/wld-09/carrier-plan-and-section.svg) · [Checkpoint](dam-carrier-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam generator ventilation
+
+The switchgear wall now carries the installed generator exhaust and weather air louver. Both renderers see the same fitted wall and confirm separation from personnel. The exact scene retains the carrier, five physical routes, perimeter and live power behavior. [Ventilation section](dam-ventilation-pass/wld-09/ventilation-elevation.svg) · [Checkpoint](dam-ventilation-pass/checkpoint.json)

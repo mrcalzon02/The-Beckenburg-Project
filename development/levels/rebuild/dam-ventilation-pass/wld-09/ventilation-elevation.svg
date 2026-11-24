@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 575" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwater Dam generator ventilation</title>
+  <desc id="desc">North switchgear elevation and section showing the separate muffler flue and weather louver in the fitted wall, with the finished floor and soffit preserved.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#e7eee6;font-size:15px}
+    .title{font-size:26px;font-weight:bold}.muted{fill:#a8bdbb}
+    .concrete{fill:#485652;stroke:#8e9f94;stroke-width:2}
+    .steel{fill:none;stroke:#d9ad78;stroke-width:8;stroke-linejoin:round}
+  </style>
+  <rect width="860" height="575" fill="#172729"/>
+  <text x="33" y="44" class="title">Blackwater Dam generator ventilation</text>
+  <text x="33" y="72" class="muted">Measured north wall · Switchgear floor −6.00 m</text>
+  <!-- X = 65 + 57 times (world X − 39.5), height = 388 − 72 times (world Y + 6). -->
+  <text x="65" y="115">North elevation facing the room</text>
+  <rect x="65" y="172" width="326" height="216" class="concrete"/>
+  <path d="M117.4 248V132Q117.4 121 106.5 121H101V143" class="steel"/>
+  <path d="M105 238h25m-25-41h25" stroke="#c5b39a" stroke-width="4"/>
+  <circle cx="117.4" cy="247.5" r="8" fill="#b59067"/>
+  <rect x="313.5" y="265" width="46.7" height="50" fill="#252d2b" stroke="#a8b9a8" stroke-width="3"/>
+  <path d="M315 310h43m-43-7h43m-43-7h43m-43-7h43m-43-7h43m-43-7h43"
+        stroke="#a8b9a8" stroke-width="3"/>
+  <text x="134" y="145">Downturned exhaust</text>
+  <text x="283" y="343">Weather louver</text>
+  <text x="64" y="421" class="muted">Finished floor −6.00 m</text>
+  <text x="470" y="115">Section through the flue</text>
+  <rect x="617" y="172" width="21" height="216" class="concrete"/>
+  <path d="M723 318V254Q723 248 716 248H586Q575 248 575 237V127Q575 121 568 121H547Q540 121 540 127V144"
+        class="steel"/>
+  <rect x="692" y="318" width="72" height="65" rx="4" fill="#55654d" stroke="#a5b49f" stroke-width="2"/>
+  <path d="M582 238h35m-35-41h35" stroke="#c5b39a" stroke-width="4"/>
+  <text x="470" y="199" class="muted">North bank</text>
+  <text x="681" y="199" class="muted">Switchgear</text>
+  <text x="663" y="409">Existing generator</text>
+  <path d="M471 447h45" class="steel"/>
+  <text x="528" y="453">Fitted muffler and exhaust route</text>
+  <text x="65" y="509" class="muted">The louver uses angled blades. Its opening remains outside the personnel route.</text>
+</svg>

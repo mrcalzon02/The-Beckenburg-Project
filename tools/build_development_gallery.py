@@ -26,7 +26,10 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/dam-carrier-pass/' in path:
+    if '/dam-ventilation-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Blackwater Dam fitted generator exhaust and weather louver in the '+renderer+' game renderer'
+    elif '/dam-carrier-pass/' in path:
         if '/structure/' in path:
             kind='Blackwater Dam '+('isolated carrier and sluice cutaway' if 'cutaway' in path
                                      else 'assembled covered carrier terminal structural source')

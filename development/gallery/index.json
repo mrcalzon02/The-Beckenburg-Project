@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12175,
+  "count": 12179,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -113514,6 +113514,46 @@
       "height": 850,
       "bytes": 1263618,
       "sha256": "2ef47eca1d09a81071af7991b868b1020c5e518cd4213dea68e996bfd907377f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/opengl/generator-flue-and-intake-inside.png",
+      "url": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/opengl/generator-flue-and-intake-inside.png",
+      "title": "Generator flue and intake inside",
+      "kind": "Blackwater Dam fitted generator exhaust and weather louver in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 392232,
+      "sha256": "4462bfe8204024f7ff0fc70525843cd5ccb2ae3d36dd06e1039d1bc5f4b5debb"
+    },
+    {
+      "path": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/opengl/generator-ventilation-outside.png",
+      "url": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/opengl/generator-ventilation-outside.png",
+      "title": "Generator ventilation outside",
+      "kind": "Blackwater Dam fitted generator exhaust and weather louver in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 365860,
+      "sha256": "010a65398d934ec0ecac663164e30e603a20d0013056ce7fcbd02ae299a2ecdc"
+    },
+    {
+      "path": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/software/generator-flue-and-intake-inside.png",
+      "url": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/software/generator-flue-and-intake-inside.png",
+      "title": "Generator flue and intake inside",
+      "kind": "Blackwater Dam fitted generator exhaust and weather louver in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 394440,
+      "sha256": "700f6bd27aab5c0b1001ac9866f972202d00fc923dd8291e20883504b67d7c29"
+    },
+    {
+      "path": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/software/generator-ventilation-outside.png",
+      "url": "development/levels/rebuild/dam-ventilation-pass/wld-09/captures/software/generator-ventilation-outside.png",
+      "title": "Generator ventilation outside",
+      "kind": "Blackwater Dam fitted generator exhaust and weather louver in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 364928,
+      "sha256": "7406399dba48558c6ced55878828fa68b0946aaa4913554be91ea28bf3763939"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",

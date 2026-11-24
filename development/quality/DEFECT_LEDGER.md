@@ -9230,3 +9230,7 @@ The north basin now shows water at the surveyed contour, with an actual screened
 ### DEV-710 · Blackwater Dam covered hydraulic connection
 
 A 150.3 m closed steel carrier now joins the actual intake to the channel receiver. Its supported covers fit two bounded cuts and the original isolation gate closes the receiving chamber. Both renderer runs verify 4,275 clear bore rays and player exclusion. [Evidence](../levels/rebuild/dam-carrier-pass/checkpoint.json)
+
+### DEV-711 · Blackwater Dam generator ventilation
+
+The generator has a muffler-backed flue with supported exterior riser and a separate angled weather louver. The wall sleeves preserve the established floor, backing surfaces, room and portal schedule. Both renderers verify clear service passages, straight-ray occlusion and player exclusion. [Evidence](../levels/rebuild/dam-ventilation-pass/checkpoint.json)
