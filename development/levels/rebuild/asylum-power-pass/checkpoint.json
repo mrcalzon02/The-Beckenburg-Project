@@ -1,0 +1,167 @@
+{
+  "status": "ASYLUM_POWER_AND_WALK_IN_COVER_STAGED",
+  "prior_commit": "a8cca33a00a839f71b053eed61a2b2957a323406",
+  "native_scene_revision": "434ddc918bce2600c55dbfc1a89bb7a502f97dcb50524c5107eacd78857ba72d",
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/asylum-power-pass/asylum-power.glb",
+    "native": "development/levels/rebuild/asylum-power-pass/asylum-power.hcs2",
+    "blend": "development/levels/rebuild/asylum-power-pass/asylum-power.blend",
+    "glb_sha256": "edd86035872657d97d325b7aca5b69871c1923758784d28aaebb94e2e0e12d21",
+    "native_sha256": "f85345bbd5d065a07d012577a9afb5958fe5fee7f3bd06b141546829ed934ed4",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-power-pass/asylum-power-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-power-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-power-pass/verification/staged-admission.tsv",
+    "staged_room_bindings": "development/levels/rebuild/asylum-power-pass/mission.tsv",
+    "blend_sha256": "53928f58911531194fad2137ddcf7d0f4f29b0a3ec6b6c87f46fb3323d4047fa",
+    "staged_services": "development/levels/rebuild/asylum-power-pass/services.tsv",
+    "staged_electrical_installation": "development/levels/rebuild/asylum-power-pass/electrical.json"
+  },
+  "physical_routes": 45,
+  "direction_posture_replays": 180,
+  "live_peers": 4,
+  "verified": [
+    "Six fitted architectural door sets and 12 matched editor poses totaling 12,816 triangles",
+    "Twelve independent controls and 26 fitted loads with ghost-induced global breaker trip and hunter reset",
+    "Full-depth active protection begins at the entrance of each founded cupboard; standing and crouched crossing replays through all three actual thresholds",
+    "Four peers in packaged Asylum opt-in through cargo ramp, day-room doorway, cupboard concealment and basement breaker interaction",
+    "Solo packaged entry and software and RTX 5070 OpenGL review"
+  ],
+  "still_open": [
+    "Remaining fitted interior leaves and enclosure review",
+    "Complete evidence, ritual, rescue and extraction; default-release acceptance"
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/arrival.tsv",
+      "bytes": 9025,
+      "sha256": "39c57e7de182d37a4c8af74160be69a53e3df17218253e02809f74682dfe30df"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/asylum-power-fitted.blend",
+      "bytes": 1295249,
+      "sha256": "9bb02a240587f6102c791a267de33efddcdc5edb9cec8b44ae3a4f656f9bdfd5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/asylum-power.blend",
+      "bytes": 1093701,
+      "sha256": "53928f58911531194fad2137ddcf7d0f4f29b0a3ec6b6c87f46fb3323d4047fa"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/asylum-power.glb",
+      "bytes": 3686220,
+      "sha256": "edd86035872657d97d325b7aca5b69871c1923758784d28aaebb94e2e0e12d21"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/asylum-power.hcs2",
+      "bytes": 1241645,
+      "sha256": "f85345bbd5d065a07d012577a9afb5958fe5fee7f3bd06b141546829ed934ed4"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/door-survey.tsv",
+      "bytes": 871,
+      "sha256": "0ada92b19e2fd6804781cd73a9528d94d9967d89226e7d9b6fb9e61fb2819888"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/electrical.json",
+      "bytes": 18882,
+      "sha256": "f1ebe9bab6b09681f49c9cb6852d29fa929a892ac158987a1299baf954b5052c"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/mission.tsv",
+      "bytes": 831,
+      "sha256": "1aadb972841b181ebdf50eee09b488ea940b75fd98620ff4ee7bd536543a5fba"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/plant-and-cover-plan.svg",
+      "bytes": 2212,
+      "sha256": "769b52dcda4e3433c274eb7bdff71cf5c2e514492fe7379d2aeaeffadab71ca4"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/roster.json",
+      "bytes": 27407,
+      "sha256": "ae97a205f5a5685f6829628cc63b96abecb89ab786148a2599f9e4fb13ac7728"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/services.tsv",
+      "bytes": 2793,
+      "sha256": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/verified-cargo-guide.tsv",
+      "bytes": 186,
+      "sha256": "b48b89d0b671837c6b6edb24ae00b8f0515aa6d70d1c7dbbae5d18781ebb1d13"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/verification/editable-door-poses.tsv",
+      "bytes": 302,
+      "sha256": "0fe5ea5a267a55717a80758516589037de8a128a7b75c9ffdb0686aa25c6b934"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/verification/opengl.tsv",
+      "bytes": 1315,
+      "sha256": "e24ad815ff51dc4fd63443f225021b8584b350f49938b659493fa677da4f56cf"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/verification/staged-admission.tsv",
+      "bytes": 1643,
+      "sha256": "e60b10b7f6c6bd06638b5b5e15b3684ed28582cfb94e8f0def6c0ce825b59c1f"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-day-cupboard.png",
+      "bytes": 455975,
+      "sha256": "a646b0f6a546af9c5f23e59bfd7f6983b0c5794655038417431e42c075b66c06"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-blackout.png",
+      "bytes": 212545,
+      "sha256": "fd4a74b7bd1eb8a6fd0ddb6906307b0900e00eaf265abb745622f5c85aa77303"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-cupboard.png",
+      "bytes": 495929,
+      "sha256": "d4b57ef5246f7b0d9d09171c66f6305023e695f8fb3e44a690ede459beeac4ff"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-powered.png",
+      "bytes": 337456,
+      "sha256": "77eff0b4bf2ac7ca0f2ca4f6bf3b82c877972ac67b0def3276d367f655331b8c"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-records-cupboard.png",
+      "bytes": 560012,
+      "sha256": "626d2e17fce11bb8d72efafb859042009b16167933071f70fa9e2abe29e29a57"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-day-cupboard.png",
+      "bytes": 456916,
+      "sha256": "d268537b9bfb8d9648b286fb5730ddadf332d5d8b81835ff2945193a72422d7a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-blackout.png",
+      "bytes": 213127,
+      "sha256": "bd05f82a3b1af3132a430a2a01690c0bf5fd6b4b4a6c7d5eb13e344e679fcaa5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-cupboard.png",
+      "bytes": 482362,
+      "sha256": "6fa58430916923853e5cab6dc41363d05b8137916dcbd9f56098ad13075800ae"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-powered.png",
+      "bytes": 343806,
+      "sha256": "b1b0d12f5d76485fdb3a91533210186622b9ea33269cbad58ad0319dda9f494a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-records-cupboard.png",
+      "bytes": 544099,
+      "sha256": "ebba0f747bc13a664c6649ce455ff7df0d72086dc0da2d7e4b6bc0be648e376a"
+    }
+  ]
+}

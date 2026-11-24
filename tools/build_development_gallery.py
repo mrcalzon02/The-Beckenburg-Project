@@ -26,7 +26,10 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/asylum-patient-court-pass/' in path:
+    if '/asylum-power-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Asylum plant power and walk-in cupboard protection in the '+renderer+' game renderer'
+    elif '/asylum-patient-court-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Asylum fitted patient court in the '+renderer+' game renderer'
     elif '/asylum-admission-pass/' in path:

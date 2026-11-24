@@ -4,15 +4,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
-import org.beckenburg.LevelDefinition.Dock;
-import org.beckenburg.LevelDefinition.Portal;
-import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 
 final class NativeAsylumEntryReview {
+    private static List<String[]> table(Path path)throws Exception{
+        if(!Files.isRegularFile(path))return List.of();
+        return Files.readAllLines(path).stream().map(line->line.split("\t",-1)).toList();
+    }
+
     private static double d(String[] row,int index){return Double.parseDouble(row[index]);}
 
     public static void main(String[] args)throws Exception{
@@ -34,47 +35,39 @@ final class NativeAsylumEntryReview {
         Files.createDirectories(output);
         Files.createDirectories(captures);
         var rows=Files.readAllLines(root.resolve("arrival.tsv")).stream().map(line->line.split("\\t",-1)).toList();
-        var source=rows.get(0);
-        var placement=rows.get(1);
-        var dock=new Dock(d(placement,1),d(placement,2),d(placement,3),d(placement,4));
-        var spaces=new ArrayList<NativeInvestigationScene.Space>();
-        var stairs=new HashSet<String>();
-        var sockets=new ArrayList<Socket>();
+        var file=rows.get(0);
+        var mission=table(root.resolve("mission.tsv"));
+        var services=table(root.resolve("services.tsv"));
+        boolean connected=!mission.isEmpty(),powered=!services.isEmpty();
         var walks=new LinkedHashMap<String,List<Vec>>();
-        for(var row:rows)switch(row[0]){
-            case "SPACE" -> spaces.add(new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),d(row,6),d(row,7),d(row,8),Boolean.parseBoolean(row[9]),Boolean.parseBoolean(row[10])));
-            case "RITUAL" -> sockets.add(new Socket("asylum-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),0,row[1]));
-            case "TREAD" -> stairs.add(row[1]);
-            case "POINT" -> walks.computeIfAbsent(row[1],key->new ArrayList<>()).add(new Vec(d(row,2),d(row,3),d(row,4)));
-            default -> {}
+        for(var row:rows)if(row[0].equals("POINT"))
+            walks.computeIfAbsent(row[1],key->new ArrayList<>()).add(new Vec(d(row,2),d(row,3),d(row,4)));
+        AsylumNativeLevel.Source packet;
+        try(var model=Files.newInputStream(Path.of(file[1]));var collision=Files.newInputStream(Path.of(file[3]))){
+            packet=AsylumNativeLevel.read(rows,table(root.resolve("door-survey.tsv")),mission,services,model,collision);
         }
-        var doors=new ArrayList<NativeInvestigationDoor.Spec>();
-        for(var line:Files.readAllLines(root.resolve("door-survey.tsv"))){
-            var f=line.split("\\t",-1);
-            var portal=new Portal(Integer.parseInt(f[0]),Integer.parseInt(f[4]),Integer.parseInt(f[5]),
-                d(f,6),d(f,7),d(f,8),d(f,9),f[10].equals("z"),"door",1);
-            doors.add(new NativeInvestigationDoor.Spec(f[1],f[2],f[3],portal,d(f,11),d(f,12),d(f,13),
-                Integer.parseInt(f[14]),Integer.parseInt(f[15]),Integer.parseInt(f[16]),f[17]));
+        var scene=packet.scene();
+        var definition=packet.definition();
+        var doors=packet.doors();
+        var dock=definition.dock();
+        boolean packaged=List.of(args).contains("--packaged");
+        if(packaged){
+            if(new HouseMap(HouseMap.Site.ASYLUM).level().equals(definition))
+                throw new AssertionError("Asylum review must be opt-in");
+            System.setProperty(AsylumNativeLevel.REVIEW_PROPERTY,"true");
         }
-        NativeInvestigationScene scene;
-        try(var model=Files.newInputStream(Path.of(source[1]));var collision=Files.newInputStream(Path.of(source[3]))){
-            scene=NativeInvestigationScene.read(model,source[2],collision,source[4],stairs,spaces,doors);
+        var map=packaged?new HouseMap(HouseMap.Site.ASYLUM):new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene);
+        var guest=packaged?HouseMap.forNetworkRevision(HouseMap.Site.ASYLUM,definition.revision())
+            :new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene);
+        if(packaged){
+            if(!map.level().equals(definition)||!guest.level().equals(definition))
+                throw new AssertionError("Asylum package differs from surveyed source");
+            NativeSchoolInteriorReview.auditSolo(SiteCatalog.Location.ASYLUM,definition);
         }
-        var old=LevelPlans.buildSource(HouseMap.Site.ASYLUM);
-        var mission=root.resolve("mission.tsv");
-        boolean connected=Files.isRegularFile(mission);
-        var portals=new ArrayList<>(doors.stream().map(NativeInvestigationDoor.Spec::portal).toList());
-        var owners=connected?NativeAsylumMissionReview.bind(scene,dock,
-            Files.readAllLines(mission).stream().map(line->line.split("\t",-1)).toList(),portals):old.rooms();
-        var definition=new LevelDefinition("asylum",scene.revision(),old.title(),owners,
-            portals,List.of(),List.of(),List.of(),sockets,List.of(),dock,old.ambience(),old.water(),old.sounds());
-        var map=new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene);
-        var guest=new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene);
         var report=new ArrayList<String>();
         report.add("measure\tresult");
         report.add("native_scene_revision\t"+scene.revision());
+        if(packaged)report.add("packaged_solo_case\tOrdinary Asylum selection and supported cargo spawn");
         for(var door:doors){
             if(!NativeSchoolInteriorReview.sweep(scene.physics(),door))throw new AssertionError("Swing "+door.frameId());
             var portal=door.portal();
@@ -99,13 +92,18 @@ final class NativeAsylumEntryReview {
             new Vec(outside.x(),0,72),new Vec(32,0,72)));
         vehicleApproach.addAll(walks.get("L19").subList(1,walks.get("L19").size()));
         vehicleApproach.addAll(walks.get("L20").subList(1,walks.get("L20").size()));
+        NativeSchoolInteriorReview.auditHiding(map,report);
+        auditCoverThresholds(map,report);
+        for(var cupboard:HidingBudget.candidates(map.level()))captureCupboard(map,cupboard,captures);
+        if(powered)NativeSchoolInteriorReview.auditPower(map,captures,report,"asylum",new Vec(40,-3,27.25),Math.PI);
         if(connected){
             NativeAsylumMissionReview.audit(map,report);
             for(var guide:walks.entrySet())
                 verifyWalk(map,guide.getKey().equals("L19")?vehicleApproach:guide.getValue(),"Asylum "+guide.getKey());
             report.add("supported_cargo_and_admission\t"+4*walks.size()+" direction and posture replays over "+walks.size()+" physical routes");
             if(List.of(args).contains("--lan"))
-                NativeAsylumMissionReview.live(new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene),report);
+                NativeAsylumMissionReview.live(packaged?new HouseMap(HouseMap.Site.ASYLUM)
+                    :new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene),packaged,report);
         }else{
             verifyWalk(map,vehicleApproach,"Asylum van and admission");
             for(String guide:List.of("L22","L23","L24"))verifyWalk(map,walks.get(guide),"Asylum "+guide);
@@ -117,6 +115,51 @@ final class NativeAsylumEntryReview {
             .map(v->v.x()+"\t"+v.y()+"\t"+v.z()).toList());
         NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
         report.forEach(System.out::println);
+    }
+
+    private static void auditCoverThresholds(HouseMap map,List<String> report){
+        var cupboards=HidingBudget.candidates(map.level());
+        if(cupboards.isEmpty())return;
+        map.configureHiding(100);
+        for(var socket:cupboards){
+            // Points are just before and after the leaf plane, well outside the old central pocket.
+            var outside=LevelClosets.world(socket,0,0,.68);
+            var entry=LevelClosets.world(socket,0,0,.51);
+            var rear=LevelClosets.world(socket,0,0,-.44);
+            if(SafeAreaBarrier.protectedAt(map,outside.x(),outside.y(),outside.z())
+                    ||!SafeAreaBarrier.protectedAt(map,entry.x(),entry.y(),entry.z())
+                    ||!SafeAreaBarrier.protectedAt(map,rear.x(),rear.y(),rear.z())
+                    ||!SafeAreaBarrier.blocks(map,outside,entry))
+                throw new AssertionError("Incorrect cupboard protection at actual threshold "+socket.id());
+            var interior=LevelClosets.world(socket,0,0,-.24);
+            verifyWalk(map,List.of(outside,entry,interior),socket.id()+" protected physical volume");
+        }
+        map.configureHiding(0);
+        for(var socket:cupboards){
+            var entry=LevelClosets.world(socket,0,0,.51);
+            var outside=LevelClosets.world(socket,0,0,.68);
+            if(SafeAreaBarrier.protectedAt(map,entry.x(),entry.y(),entry.z())||SafeAreaBarrier.blocks(map,outside,entry))
+                throw new AssertionError("Disabled cupboard still protects "+socket.id());
+        }
+        map.configureHiding(70);
+        report.add("full_cupboard_safe_thresholds\tThree usable interiors, hunter crossing both ways and zero protection with cover disabled");
+    }
+
+    private static void captureCupboard(HouseMap map,LevelDefinition.Socket cupboard,Path captures)throws Exception{
+        var camera=LevelClosets.world(cupboard,.14,0,1.9);
+        if(!map.traversable(camera.x(),camera.y(),camera.z()))
+            throw new AssertionError("No supported standing view of "+cupboard.id());
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.x=camera.x();
+        renderer.z=camera.z();
+        renderer.eyeHeight=camera.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=Math.atan2(cupboard.x()-camera.x(),cupboard.z()-camera.z());
+        renderer.pitch=-.08;
+        renderer.lamp=true;
+        renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve(cupboard.id()+".png"));
     }
 
     private static void verifyWalk(HouseMap map,List<Vec> route,String name){

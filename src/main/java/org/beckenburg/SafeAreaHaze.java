@@ -17,9 +17,13 @@ public final class SafeAreaHaze {
             double x,double eye,double z,double yaw,double pitch,double clock,HouseMap map){
         var shells=new java.util.ArrayList<Shell>();
         for(var socket:HidingBudget.candidates(map.level()))if(HidingBudget.available(map.level(),socket,map.hidingDensity())){
-            if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity()))
-                shells.add(new Pocket(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),Math.hypot(.35,.31),1.65,2.02),socket.yaw(),.35,.31));
-            else if(socket.type().equals("outdoor-hide")&&OutdoorHiding.available(map.level(),socket,map.hidingDensity())){
+            if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity())){
+                double halfZ=(LevelClosets.ENTRY_Z-LevelClosets.BACK_Z)*.5;
+                var center=LevelClosets.world(socket,0,0,(LevelClosets.ENTRY_Z+LevelClosets.BACK_Z)*.5);
+                var veil=new SafeAreaBarrier.Volume(center.x(),center.y(),center.z(),
+                    Math.hypot(LevelClosets.HALF_X,halfZ),1.65,LevelClosets.HEAD);
+                shells.add(new Pocket(veil,socket.yaw(),LevelClosets.HALF_X,halfZ));
+            }else if(socket.type().equals("outdoor-hide")&&OutdoorHiding.available(map.level(),socket,map.hidingDensity())){
                 // Mark the actual refuge asset so opaque leaves cannot hide the cue.
                 // Eligibility and concealment still use the authored standing/crouch pocket.
                 double radius=.36,coverHeight=1.15,shoulder=.70;

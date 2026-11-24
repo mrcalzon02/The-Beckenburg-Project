@@ -45,53 +45,52 @@ class PrisonElectrical(Assembly):
         super().effect(key.replace("college-","prison-"),kind,owner,xyz,yaw,style.replace("EM-","PR-"))
 
 
-def install(assembly,zone):
-    main_x=38.0
+def install(assembly,zone,main_x=38.0,probe_z=23.3,site="Prison",circuit="PR-MAIN"):
     toward=point(0,0,-1)
     low=Vector((0,0,-1))
-    wall,_,receiver=assembly.measured(point(main_x,-1.45,23.3),toward,1.8,"Prison plant distribution wall")
+    wall,_,receiver=assembly.measured(point(main_x,-1.45,probe_z),toward,1.8,f"{site} plant distribution wall")
     wall_z=-wall.y
-    floor,_,bearing=assembly.measured(point(main_x,-2.62,wall_z+.35),low,.6,"Prison plant distribution slab")
+    floor,_,bearing=assembly.measured(point(main_x,-2.62,wall_z+.35),low,.6,f"{site} plant distribution slab")
     assert abs(floor.z+3)<.002
     for x in (main_x-1.05,main_x+1.05):
-        back,_,_=assembly.measured(point(x,-1.45,23.3),toward,1.8,"Prison board back rail")
-        base,_,_=assembly.measured(point(x,-2.62,wall_z+.35),low,.6,"Prison board end bearing")
+        back,_,_=assembly.measured(point(x,-1.45,probe_z),toward,1.8,f"{site} board back rail")
+        base,_,_=assembly.measured(point(x,-2.62,wall_z+.35),low,.6,f"{site} board end bearing")
         assert abs(back.y-wall.y)<.004 and abs(base.z-floor.z)<.004
     origin=(main_x,-2.94,wall_z+.18)
-    assembly.box("Prison distribution slab plinth",
+    assembly.box(f"{site} distribution slab plinth",
                  [main_x-1.22,wall_z,main_x+1.22,wall_z+.68],-3,-2.94,
                  assembly.concrete,"Founded distribution plinth",zone["id"])
     for y in (-2.53,-1.51):
-        assembly.box("Prison distribution backing rail",
+        assembly.box(f"{site} distribution backing rail",
                      [main_x-1.16,wall_z,main_x+1.16,wall_z+.17],y,y+.08,
                      assembly.mount,"Wall anchored distribution rail",zone["id"])
-    pieces=assembly.place(BANK,Matrix.Translation(point(*origin)),"Prison utility distribution",
+    pieces=assembly.place(BANK,Matrix.Translation(point(*origin)),f"{site} utility distribution",
                          "Mounted utility breaker bank",zone["id"])
     minimum,maximum=bounds(pieces)
-    assembly.effect("prison-main-breaker","breaker",11,(main_x,-2.1,maximum[2]+.02),0,"PR-MAIN")
+    assembly.effect(f"{site.lower()}-main-breaker","breaker",zone["owner"],(main_x,-2.1,maximum[2]+.02),0,circuit)
     terminals=[main_x+t for t in (-.61,.15,.91)]
     duct_z=origin[2]-.04
     drops=[]
     cabinet=bvh(pieces)
     for i,x in enumerate(terminals,1):
-        assembly.raceway(f"Prison distribution terminal {i}",
+        assembly.raceway(f"{site} distribution terminal {i}",
                          [(x,-.856,duct_z),(x,-.48,duct_z)],.017)
         bpy.context.view_layer.update()
         drop=bvh(assembly.built[-1:])
-        assert cabinet.overlap(drop),f"Prison distribution terminal {i}"
+        assert cabinet.overlap(drop),f"{site} distribution terminal {i}"
         drops.append(drop)
-    assembly.raceway("Prison distribution manifold",
+    assembly.raceway(f"{site} distribution manifold",
                      [(terminals[0]-.03,-.48,duct_z),(terminals[-1]+.03,-.48,duct_z)],.025)
     bpy.context.view_layer.update()
     manifold=bvh(assembly.built[-1:])
     assert all(manifold.overlap(drop) for drop in drops)
     supply_x=terminals[1]
-    feed,_,feed_receiver=assembly.measured(point(supply_x,-.23,duct_z),toward,.45,"Prison utility feed box")
+    feed,_,feed_receiver=assembly.measured(point(supply_x,-.23,duct_z),toward,.45,f"{site} utility feed box")
     assert abs(feed.y-wall.y)<.004
-    assembly.box("Prison utility feed box",[supply_x-.065,wall_z,supply_x+.065,wall_z+.075],-.29,-.17,
+    assembly.box(f"{site} utility feed box",[supply_x-.065,wall_z,supply_x+.065,wall_z+.075],-.29,-.17,
                  assembly.mount,"Wall backed utility feed box",zone["id"])
     start=len(assembly.built)
-    assembly.raceway("Prison incoming distribution riser",
+    assembly.raceway(f"{site} incoming distribution riser",
                      [(supply_x,-.492,duct_z),(supply_x,-.23,duct_z),(supply_x,-.23,wall_z+.03)],.019)
     bpy.context.view_layer.update()
     assert manifold.overlap(bvh(assembly.built[start:start+1]))

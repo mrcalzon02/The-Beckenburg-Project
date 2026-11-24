@@ -8929,3 +8929,11 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
+
+### DEV-638 Asylum electrical switch candidates fell on openings
+
+Nominal socket coordinates did not intersect intact backing masonry. Validate wall backing and mount the upper-spine and quiet-lobby controls on their intact wall runs. Resolve wall-backed positions from the fitted source before commissioning circuits. [Evidence](../levels/rebuild/asylum-power-pass/checkpoint.json)
+
+### DEV-639 Cupboard protection was smaller than the walk-in enclosure
+
+The central hiding pocket and visible veil were sized independently of the physical cupboard interior. Use the entrance, sides and back of the physical cupboard for the protected floor footprint and render the matching veil. Test actual walk-in thresholds, full depth, adjacent floors and disabled cover. [Evidence](../levels/rebuild/asylum-power-pass/checkpoint.json)

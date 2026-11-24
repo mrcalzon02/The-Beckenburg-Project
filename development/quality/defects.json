@@ -7074,6 +7074,28 @@
       "action": "Bind the gameplay link to X18, check both adjacent owners and replay the supported route on the retained ground.",
       "older_maps": "Verify the exact portal coordinate, both owners and movement even where the historic link name is retained.",
       "evidence": "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-638",
+      "title": "Asylum electrical switch candidates fell on openings",
+      "status": "BINDING_CORRECTED_TO_ACTUAL_OPEN_GROUNDS_CONNECTION",
+      "affected": "Asylum outdoor room ownership between grounds and entry",
+      "symptom": "Two proposed room controls lacked a continuous wall face at the switch plate.",
+      "cause": "Nominal socket coordinates did not intersect intact backing masonry.",
+      "action": "Validate wall backing and mount the upper-spine and quiet-lobby controls on their intact wall runs.",
+      "older_maps": "Resolve wall-backed positions from the fitted source before commissioning circuits.",
+      "evidence": "development/levels/rebuild/asylum-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-639",
+      "title": "Cupboard protection was smaller than the walk-in enclosure",
+      "status": "BINDING_CORRECTED_TO_ACTUAL_OPEN_GROUNDS_CONNECTION",
+      "affected": "Budgeted walk-in cupboard safe zones on built investigation maps",
+      "symptom": "Walking into visible cupboard space did not protect the hunter until reaching a small inner rectangle.",
+      "cause": "The central hiding pocket and visible veil were sized independently of the physical cupboard interior.",
+      "action": "Use the entrance, sides and back of the physical cupboard for the protected floor footprint and render the matching veil.",
+      "older_maps": "Test actual walk-in thresholds, full depth, adjacent floors and disabled cover.",
+      "evidence": "development/levels/rebuild/asylum-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

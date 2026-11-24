@@ -1373,3 +1373,9 @@ The [Asylum checkpoint](asylum-admission-pass/checkpoint.json) verifies four ind
 The [patient court and stair plan](asylum-patient-court-pass/patient-court-plan.svg) fits two outward-opening sets to the measured day-room and south-ward openings. All saved static GLB and HCS2 bytes are retained. The route corrections use the real cargo deck and the two lower stair landings. The grounds-to-entry boundary now matches the verified crossing at X18.
 
 The [checkpoint](asylum-patient-court-pass/checkpoint.json) verifies six door sets, 12 reopened editor poses and 12,816 runtime triangles. All 45 physical routes pass both directions standing and crouched. The 15 gameplay owners and three supported ritual mounts connect on the exact source. In a staged four-peer case one hunter walked off the canonical ramp and another met the closed court leaf, opened it and crossed to the court and back. Software and RTX 5070 rendered the same source. Plant commissioning, further fitted interior doors and normal dispatch remain open in the [29-location roster](asylum-patient-court-pass/roster.json).
+
+The [Asylum power and walk-in cover checkpoint](asylum-power-pass/checkpoint.json)
+links the fitted Blender source, runtime mesh and collision, doorway survey,
+plant and cover drawing, circuits and captures. The packaged opt-in launches in
+solo and four-peer LAN. All three cupboard thresholds were replayed using the
+physics hull. Remaining interior leaves and full case acceptance are open.

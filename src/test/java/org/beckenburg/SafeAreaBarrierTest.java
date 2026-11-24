@@ -58,6 +58,23 @@ public final class SafeAreaBarrierTest {
         counters.advance(map,GhostIdentity.Type.SPIRIT,domain,ghost.pose(),146);check(map.temporarySafeAreas().isEmpty(),"expired ward stops protection");
         var upper=map.spawn(6);var upperWard=SafeAreaBarrier.settledWard(map,new SceneRenderer.WorldMark(upper.x(),upper.z(),upper.y()+.045,HunterCounters.Kind.WARD));
         check(upperWard!=null&&Math.abs(upperWard.y()-upper.y())<1e-8,"ward haze and seal use actual upstairs support");
+        map.configureHiding(100);
+        for(var pocket:HidingBudget.candidates(map.level()))if(pocket.type().equals("hide")){
+            var beyond=LevelClosets.world(pocket,.25,0,.68);
+            var entrance=LevelClosets.world(pocket,.25,0,.51);
+            var rear=LevelClosets.world(pocket,.43,0,-.44);
+            check(!SafeAreaBarrier.protectedAt(map,beyond.x(),beyond.y(),beyond.z()),"The room side of the threshold stays exposed");
+            check(SafeAreaBarrier.protectedAt(map,entrance.x(),entrance.y(),entrance.z())
+                &&SafeAreaBarrier.protectedAt(map,rear.x(),rear.y(),rear.z()),"Ordinary entry and rear corners share the full cover zone");
+            check(SafeAreaBarrier.blocks(map,beyond,entrance),"Spectral movement cannot cross the entrance plane");
+            check(!SafeAreaBarrier.blocks(map,new Vec(beyond.x(),beyond.y()+3.4,beyond.z()),
+                new Vec(entrance.x(),entrance.y()+3.4,entrance.z())),"Cupboard cover does not leak across floors");
+        }
+        map.configureHiding(0);
+        for(var pocket:HidingBudget.candidates(map.level()))if(pocket.type().equals("hide")){
+            var inside=LevelClosets.world(pocket,0,0,.51);
+            check(!SafeAreaBarrier.protectedAt(map,inside.x(),inside.y(),inside.z()),"Disabled cupboard does not grant protection");
+        }
         try(var fixture=AuthoredTestSupport.userFixture()){
             for(var site:HouseMap.Site.values()){var m=fixture.map(site);for(int room=0;room<m.interiorRoomCount();room++){
                 var p=SafeAreaBarrier.ghostSpawn(m,room);check(p!=null&&!SafeAreaBarrier.protectedAt(m,p.x(),p.y(),p.z()),"safe valid ghost spawn "+site+" "+room);

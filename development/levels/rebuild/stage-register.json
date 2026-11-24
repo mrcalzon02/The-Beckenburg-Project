@@ -473,11 +473,15 @@
           "next_action": "Complete remaining individual interior leaf and enclosure checks."
         },
         "S06": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/asylum-power-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-638"
+          ],
+          "next_action": "Extend fitted electrical service inspection to remaining enclosure and release checks."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -489,13 +493,15 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/asylum-power-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-370",
-            "DEV-371"
+            "DEV-371",
+            "DEV-639"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Three founded cupboard candidates verified; continue remaining rooms and individual furniture placement."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -522,12 +528,13 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
-            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
+            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json",
+            "development/levels/rebuild/asylum-power-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-637"
           ],
-          "next_action": "Verify complete electrically commissioned case launch and real evidence, ritual, rescue and extraction."
+          "next_action": "Complete the native evidence, ritual, rescue and extraction case, then review default release selection."
         }
       },
       "arrival_bearing_pass": {

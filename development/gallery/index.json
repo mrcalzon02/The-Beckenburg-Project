@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11398,
+  "count": 11408,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81964,6 +81964,106 @@
       "height": 580,
       "bytes": 331686,
       "sha256": "fbd07113acc868904821b19f64073b610f7524a38a4f3166adc41001c455f146"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-day-cupboard.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/asylum-day-cupboard.png",
+      "title": "Asylum day cupboard",
+      "kind": "Asylum plant power and walk-in cupboard protection in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 455975,
+      "sha256": "a646b0f6a546af9c5f23e59bfd7f6983b0c5794655038417431e42c075b66c06"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-blackout.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-blackout.png",
+      "title": "Asylum plant blackout",
+      "kind": "Asylum plant power and walk-in cupboard protection in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 212545,
+      "sha256": "fd4a74b7bd1eb8a6fd0ddb6906307b0900e00eaf265abb745622f5c85aa77303"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-cupboard.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-cupboard.png",
+      "title": "Asylum plant cupboard",
+      "kind": "Asylum plant power and walk-in cupboard protection in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 495929,
+      "sha256": "d4b57ef5246f7b0d9d09171c66f6305023e695f8fb3e44a690ede459beeac4ff"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-powered.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/asylum-plant-powered.png",
+      "title": "Asylum plant powered",
+      "kind": "Asylum plant power and walk-in cupboard protection in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 337456,
+      "sha256": "77eff0b4bf2ac7ca0f2ca4f6bf3b82c877972ac67b0def3276d367f655331b8c"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/asylum-records-cupboard.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/asylum-records-cupboard.png",
+      "title": "Asylum records cupboard",
+      "kind": "Asylum plant power and walk-in cupboard protection in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 560012,
+      "sha256": "626d2e17fce11bb8d72efafb859042009b16167933071f70fa9e2abe29e29a57"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-day-cupboard.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-day-cupboard.png",
+      "title": "Asylum day cupboard",
+      "kind": "Asylum plant power and walk-in cupboard protection in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 456916,
+      "sha256": "d268537b9bfb8d9648b286fb5730ddadf332d5d8b81835ff2945193a72422d7a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-blackout.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-blackout.png",
+      "title": "Asylum plant blackout",
+      "kind": "Asylum plant power and walk-in cupboard protection in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 213127,
+      "sha256": "bd05f82a3b1af3132a430a2a01690c0bf5fd6b4b4a6c7d5eb13e344e679fcaa5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-cupboard.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-cupboard.png",
+      "title": "Asylum plant cupboard",
+      "kind": "Asylum plant power and walk-in cupboard protection in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482362,
+      "sha256": "6fa58430916923853e5cab6dc41363d05b8137916dcbd9f56098ad13075800ae"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-powered.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-plant-powered.png",
+      "title": "Asylum plant powered",
+      "kind": "Asylum plant power and walk-in cupboard protection in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 343806,
+      "sha256": "b1b0d12f5d76485fdb3a91533210186622b9ea33269cbad58ad0319dda9f494a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-records-cupboard.png",
+      "url": "development/levels/rebuild/asylum-power-pass/captures/opengl/asylum-records-cupboard.png",
+      "title": "Asylum records cupboard",
+      "kind": "Asylum plant power and walk-in cupboard protection in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 544099,
+      "sha256": "ebba0f747bc13a664c6649ce455ff7df0d72086dc0da2d7e4b6bc0be648e376a"
     },
     {
       "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",

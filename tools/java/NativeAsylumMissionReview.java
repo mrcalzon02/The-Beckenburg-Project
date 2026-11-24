@@ -1,64 +1,11 @@
 package org.beckenburg;
 
-import java.io.IOException;
 import java.util.List;
-import org.beckenburg.LevelDefinition.Dock;
-import org.beckenburg.LevelDefinition.Portal;
-import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Vec;
 import org.beckenburg.NativeSchoolInteriorReview.Peer;
 
 final class NativeAsylumMissionReview {
     private NativeAsylumMissionReview(){}
-
-    private static Vec point(String[] row,int x){
-        return new Vec(Double.parseDouble(row[x]),Double.parseDouble(row[x+1]),Double.parseDouble(row[x+2]));
-    }
-
-    static List<Room> bind(NativeInvestigationScene scene,Dock dock,List<String[]> records,List<Portal> portals)
-            throws IOException{
-        var owners=new Room[HouseMap.ROOM_COUNT];
-        var physics=scene.physics();
-        for(var row:records)switch(row[0]){
-            case "ANCHOR" -> {
-                int owner=Integer.parseInt(row[1]);
-                var feet=point(row,3);
-                var room=scene.spaceAt(feet.x(),feet.y(),feet.z());
-                if(owners[owner]!=null||room==null||room.owner()!=owner||!room.id().equals(row[2])||!room.accessible()
-                        ||!physics.traversable(feet,HunterPosture.STANDING_HEIGHT))
-                    throw new IOException("Invalid Asylum anchor "+row[2]+" "+feet);
-                owners[owner]=new Room(owner,room.id(),room.x0(),room.z0(),room.x1(),room.z1(),room.floor(),room.height(),
-                    room.outside()?"ground":"stone",room.outside()?"outdoor":"masonry",feet);
-            }
-            case "TRANSITION" -> {
-                var at=point(row,5);
-                int a=Integer.parseInt(row[3]),b=Integer.parseInt(row[4]);
-                boolean along=row[9].equals("z");
-                var support=physics.support(at.x(),at.z(),at.y(),.055);
-                if(support==null||Math.abs(support.y()-at.y())>.05)
-                    throw new IOException("No existing support for Asylum transition "+row[2]+" "+at);
-                if(row[10].equals("trail")){
-                    double dx=along?0:.68,dz=along?.68:0;
-                    int near=scene.ownerAt(at.x()-dx,at.y(),at.z()-dz);
-                    int far=scene.ownerAt(at.x()+dx,at.y(),at.z()+dz);
-                    if(!((a==near&&b==far)||(a==far&&b==near)))
-                        throw new IOException("Asylum opening did not separate the named owners "+row[2]+" "+near+"/"+far);
-                }
-                portals.add(new Portal(Integer.parseInt(row[1]),a,b,at.x(),at.y(),at.z(),
-                    Double.parseDouble(row[8]),along,row[10],1));
-            }
-            default -> throw new IOException("Unknown Asylum mission record "+row[0]);
-        }
-        var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
-        double y=dock.y()+VanStaging.FLOOR_Y;
-        var lip=van.world(0,VanStaging.FRONT);
-        portals.add(new Portal(486,13,14,lip.x(),y,lip.z(),VanStaging.RAMP_HALF_WIDTH*2,
-            Math.abs(Math.sin(dock.yaw()))<.5,"trail",1));
-        owners[14]=new Room(14,"Expedition van",dock.x()-4,dock.z()-1.3,dock.x()+4,dock.z()+1.3,
-            y,VanStaging.INTERIOR_HEIGHT,"van","metal",new Vec(dock.x(),y,dock.z()));
-        for(int id=0;id<owners.length;id++)if(owners[id]==null)throw new IOException("Missing Asylum owner "+id);
-        return List.of(owners);
-    }
 
     private static void require(boolean condition,String label){
         if(!condition)throw new AssertionError(label);
@@ -73,9 +20,12 @@ final class NativeAsylumMissionReview {
         report.add("staged_mission_owners\tAll 15 supported spawns and three retained ritual mounts");
     }
 
-    static void live(HouseMap map,List<String> report)throws Exception{
-        var clientMap=new HouseMap(HouseMap.Site.ASYLUM,map.level(),null,map.nativeInvestigation());
-        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+    static void live(HouseMap map,boolean packaged,List<String> report)throws Exception{
+        var clientMap=packaged?HouseMap.forNetworkRevision(HouseMap.Site.ASYLUM,map.level().revision())
+            :new HouseMap(HouseMap.Site.ASYLUM,map.level(),null,map.nativeInvestigation());
+        var contract=CustomContract.standard(3);
+        try(var host=packaged?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,false,false,HouseMap.Site.ASYLUM)
+                :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,map);
             var scout=new Peer(host,false,"Scout");
             var walker=new Peer(host,false,"Walker");
             var witness=new Peer(host,false,"Witness");
@@ -123,11 +73,64 @@ final class NativeAsylumMissionReview {
             require(clientMap.roomAt(at.x(),at.y(),at.z())==12,"Walker missed the real patient court "+at);
             for(int i=0;i<4;i++)at=NativeSchoolInteriorReview.step(walker,1,0,100);
             require(clientMap.roomAt(at.x(),at.y(),at.z())==2,"Walker missed the day room on return "+at);
+            if(map.level().socket("hide",2)!=null){
+                useDayCupboard(map,walker);
+                report.add("tcp_asylum_day_cupboard\tHunter moved into the day-room cupboard, crouched, hid, revealed and exited");
+            }
             ghost.client.viewGhost3D();
             ghost.awaitExact("ACCEPT|GVIEW3D");
             ghost.awaitExact(source);
             ghost.await("GPOSE|");
+            if(map.level().socket("breaker",11)!=null){
+                NativeSchoolInteriorReview.ghostTrip(host,scout,ghost);
+                restorePower(map,witness,scout,host);
+                report.add("tcp_asylum_live_breaker\tGhost-induced breaker trip, physical plant approach and aimed reset");
+            }
         }
-        report.add("staged_tcp_asylum_case\tFour peers, actual ramp discharge, closed court threshold refusal and live door crossing in both directions");
+        report.add((packaged?"packaged":"staged")+"_tcp_asylum_case\tFour peers, actual ramp discharge, closed court threshold refusal and live door crossing in both directions");
     }
+
+    private static void useDayCupboard(HouseMap map,Peer walker)throws Exception{
+        for(int step=0;step<19;step++)NativeSchoolInteriorReview.step(walker,1,-100,0);
+        Vec at=null;
+        for(int step=0;step<27;step++)at=NativeSchoolInteriorReview.step(walker,1,0,100);
+        var cupboard=map.level().socket("hide",2);
+        require(at!=null&&LevelClosets.inside(cupboard,at.x(),at.y(),at.z()),"The live hunter missed the day-room pocket "+at);
+        walker.client.crouch(true);
+        walker.awaitExact("HIDING|0");
+        walker.client.hide();
+        walker.awaitExact("HIDING|1");
+        walker.client.hide();
+        walker.awaitExact("HIDING|0");
+        walker.client.crouch(false);
+        walker.awaitExact("HIDING|0");
+        for(int step=0;step<6;step++)at=NativeSchoolInteriorReview.step(walker,1,0,-100);
+        require(!LevelClosets.inside(cupboard,at.x(),at.y(),at.z()),"The live hunter never left the fitted pocket");
+    }
+
+    private static void restorePower(HouseMap map,Peer operator,Peer witness,LanHost host)throws Exception{
+        for(int room:NativeSchoolInteriorReview.missionRoute(map,11)){
+            operator.client.move(room);
+            operator.awaitExact("ACCEPT|MOVE|"+room);
+        }
+        operator.client.view3D();
+        operator.awaitExact("ACCEPT|VIEW3D");
+        var at=NativeSchoolInteriorReview.body(operator.await("BODY|2|"));
+        require(at.equals(map.spawn(11)),"Wrong Asylum plant arrival");
+        for(int step=0;step<13;step++)at=NativeSchoolInteriorReview.step(operator,2,0,-100);
+        var panel=RoomLighting.breaker(map);
+        double dx=panel.x()-at.x(),dz=panel.z()-at.z();
+        double yaw=Math.atan2(dx,dz);
+        double pitch=Math.atan2(panel.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        var eye=new LooseClutter.Observer(2,at.x(),at.y(),at.z(),yaw,pitch,true);
+        var focus=InteractionFocus.pick(map,eye,List.of());
+        require(focus!=null&&focus.kind()==InteractionFocus.Kind.BREAKER&&focus.id().equals(panel.id()),
+            "No physical focus at the Asylum plant breaker from "+at+" "+focus);
+        operator.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+        operator.client.interact(focus,yaw,pitch);
+        operator.awaitExact("ACCEPT|INTERACT|Electrical breaker");
+        witness.awaitExact("LIGHTS|111111111111|1");
+        require(((RoomLighting)NativeSchoolInteriorReview.field(host,"lights")).supplied(),"Asylum plant did not restore power");
+    }
+
 }

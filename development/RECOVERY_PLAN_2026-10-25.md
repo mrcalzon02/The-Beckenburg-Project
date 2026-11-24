@@ -2091,3 +2091,8 @@ Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with passing full multipla
 The [patient court checkpoint](levels/rebuild/asylum-patient-court-pass/checkpoint.json) verifies six fitted native door sets, all 15 supported owners and 180 traversals across 45 routes. Four staged peers agreed on the selected source, and real movement crossed the ramp and day-room doors. Electrical commissioning and ordinary dispatch remain open.
 
 Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526 and GPU 44863686455 passing. Installer 44863580794 passed at c238cff07d73d4e326b220521974aca5494078ed. The preceding Asylum admission checkpoint 857e69ed2b4bb0e970af8d6f9c8fa334ed5c7715 passed gallery 45320164112. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+The subsequent [Asylum power and cover checkpoint](levels/rebuild/asylum-power-pass/checkpoint.json)
+commissions the physical plant and packaged opt-in dispatch and verifies three
+usable cupboard thresholds. A complete evidence-to-extraction case and release
+acceptance remain open.

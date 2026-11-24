@@ -55,6 +55,7 @@ public final class SafeAreaBarrier {
     }
     public static boolean protectedAt(HouseMap map,double x,double y,double z){
         if(overlapsBody(van(map.van()),x,y,z))return true;
+        if(LevelClosets.protectedAt(map.level(),x,y,z,map.hidingDensity()))return true;
         for(var area:map.temporarySafeAreas())if(overlapsBody(area,x,y,z))return true;
         return false;
     }
@@ -63,6 +64,7 @@ public final class SafeAreaBarrier {
     }
     public static boolean blocks(HouseMap map,Vec from,Vec to){
         if(crossesBody(van(map.van()),from,to))return true;
+        if(LevelClosets.blocks(map.level(),from,to,map.hidingDensity()))return true;
         for(var area:map.temporarySafeAreas())if(crossesBody(area,from,to))return true;
         return false;
     }
