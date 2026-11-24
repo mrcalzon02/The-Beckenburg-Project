@@ -9170,3 +9170,7 @@ The existing generator and water shed now has a slab-supported source, anchored 
 ### DEV-695 Northwatch west rooms lacked switched electrical supply
 
 The lab, radio and records now receive separate switched loads from the measured shed main. Closed cable sleeves join the actual walls while preserving their full collision and the operating doorways. Both renderers verified the local switch, source and breaker states. TCP verified walking to each switch through existing doors and the witness receiving only the targeted room change. [Evidence](../levels/rebuild/northwatch-distribution-pass/checkpoint.json)
+
+### DEV-696 Northwatch surface interiors lacked branch power
+
+The cold store, dorm, mess and array shelter now receive separately switched loads. The buried trunk follows the measured array grade and posts no obstacle on the walking surface. Both renderers and the live host verify local switching, clearance, the shared source and main breaker. [Evidence](../levels/rebuild/northwatch-surface-power-pass/checkpoint.json)

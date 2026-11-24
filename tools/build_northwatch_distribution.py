@@ -117,20 +117,20 @@ def install(assembly):
                 canonical_assets={key:sha(ASSETS/(key+".glb")) for key in ("light_switch_1","level_utility_light")})
 
 
-def build():
-    parent=json.loads((PARENT/"checkpoint.json").read_bytes())
+def build(parent_dir=PARENT, output=OUT, rooms=ROOMS, fit=install, stem="station-with-distribution"):
+    parent=json.loads((parent_dir/"checkpoint.json").read_bytes())
     for name,digest in (parent["exports"]|parent["evidence"]).items():
         assert sha(ROOT/name)==digest,name
     old={Path(name).suffix[1:]:ROOT/name for name in parent["exports"]}
     bpy.ops.wm.open_mainfile(filepath=str(old["blend"]))
     bpy.context.preferences.filepaths.save_version=0
     assembly=Assembly()
-    receipt=install(assembly)
+    receipt=fit(assembly)
     for obj in assembly.built:
         obj.name="Northwatch distribution "+obj.name.removeprefix("College ")
-    OUT.mkdir(parents=True,exist_ok=True)
-    paths={ext:OUT/f"station-with-distribution.{ext}" for ext in ("blend","glb","hcs2")}
-    fragment=ROOT/"build/northwatch-distribution-fragment.glb"
+    output.mkdir(parents=True,exist_ok=True)
+    paths={ext:output/f"{stem}.{ext}" for ext in ("blend","glb","hcs2")}
+    fragment=ROOT/"build"/f"{stem}-fragment.glb"
     export(fragment,assembly.built)
     append(old["glb"],fragment,paths["glb"],reuse_embedded_images=True)
     fragment.unlink()
@@ -145,16 +145,16 @@ def build():
     for name,expected in added:
         mesh=records(bpy.context.scene.objects[name])
         assert match_geometry([face for face,_ in expected],[face for face,_ in mesh]),name
-    prior=PARENT/"wld-08"
+    prior=parent_dir/"wld-08"
     rows=[("SERVICE",s["id"],s["type"],s["room"],*s["position"],s["yaw"],s["style"]) for s in assembly.sockets]
-    for name,_,_,_,route in ROOMS:
+    for name,_,_,_,route in rooms:
         rows.extend(("POINT",f"Northwatch-switch-{name}",*p) for p in route)
-    (OUT/"runtime-input.tsv").write_bytes((prior/"runtime-input.tsv").read_bytes()
+    (output/"runtime-input.tsv").write_bytes((prior/"runtime-input.tsv").read_bytes()
         +"".join("\t".join(map(str,row))+"\n" for row in rows).encode())
-    (OUT/"door-schedule.tsv").write_bytes((prior/"door-schedule.tsv").read_bytes())
+    (output/"door-schedule.tsv").write_bytes((prior/"door-schedule.tsv").read_bytes())
     receipt.update(exports={p.relative_to(ROOT).as_posix():sha(p) for p in paths.values()},
         previous_scene=parent["native_scene_revision"],retained_collision_parts=len(before),added_collision_parts=len(added))
-    (OUT/"construction.json").write_text(json.dumps(receipt,indent=2)+"\n",encoding="utf-8",newline="\n")
+    (output/"construction.json").write_text(json.dumps(receipt,indent=2)+"\n",encoding="utf-8",newline="\n")
     print("PASS Northwatch",len(receipt["anchors"]),"surveyed clips and",len(receipt["sleeves"]),"sealed transitions",len(added),"new native parts")
 
 

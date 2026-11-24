@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 915 670" role="img">
+<title>Northwatch ground-floor service and buried array feeder plan</title>
+<style>
+text{fill:#253641;font:16px sans-serif}.title{font-size:26px;font-weight:700}.small{font-size:13px}
+.room{fill:#e2eaef;stroke:#5c7486;stroke-width:1.8}.ground{fill:#edf2e7;stroke:#dae1d5}
+.existing,.feeder,.buried,.sleeve,.branch,.door,.guide{fill:none}
+.existing{stroke:#b8a891;stroke-width:2}.feeder{stroke:#9a6323;stroke-width:3}
+.buried{stroke:#4a596a;stroke-width:3;stroke-dasharray:7 4}.sleeve{stroke:#904938;stroke-width:4}
+.branch{stroke:#aa773c;stroke-width:2}.door{stroke:#386b9a;stroke-width:5}
+.guide{stroke:#2d7970;stroke-width:2;stroke-dasharray:4 3}
+.switch{fill:#506573;stroke:#253945}.lamp{fill:#fcdf7b;stroke:#82622e}
+</style><rect width="915" height="670" fill="#f9fbfa"/>
+<text class="title" x="40.00" y="43.00">Northwatch surface electrical service</text>
+<text class="" x="40.00" y="68.00">Ground floor · north up</text>
+<rect class="ground" x="543.50" y="105.00" width="211.50" height="181.80"/>
+<rect class="ground" x="261.50" y="286.80" width="282.00" height="303.00"/>
+<rect class="room" x="50.00" y="105.00" width="211.50" height="181.80"/>
+<text class="small" x="57.99" y="273.67">Generator shed</text>
+<rect class="room" x="261.50" y="145.40" width="141.00" height="141.40"/>
+<text class="small" x="269.49" y="273.67">Radio</text>
+<rect class="room" x="402.50" y="145.40" width="141.00" height="141.40"/>
+<text class="small" x="410.49" y="273.67">Records</text>
+<rect class="room" x="50.00" y="286.80" width="211.50" height="181.80"/>
+<text class="small" x="57.99" y="455.47">Lab</text>
+<rect class="room" x="50.00" y="468.60" width="211.50" height="121.20"/>
+<text class="small" x="57.99" y="576.67">Cold store</text>
+<rect class="room" x="543.50" y="286.80" width="211.50" height="181.80"/>
+<text class="small" x="551.49" y="455.47">Dorm</text>
+<rect class="room" x="543.50" y="468.60" width="211.50" height="121.20"/>
+<text class="small" x="551.49" y="576.67">Mess</text>
+<rect class="room" x="755.00" y="105.00" width="94.00" height="121.20"/>
+<text class="small" x="762.99" y="213.07">Array shelter</text>
+<polyline class="door" points="145.18,471.06 166.32,471.06"/>
+<polyline class="door" points="643.08,471.06 655.42,471.06"/>
+<polyline class="door" points="546.37,433.00 546.37,443.60"/>
+<polyline class="door" points="757.87,160.30 757.87,170.90"/>
+<polyline class="existing" points="258.21,157.01 264.79,157.01"/>
+<polyline class="existing" points="399.21,157.01 405.79,157.01"/>
+<polyline class="existing" points="202.75,283.97 202.75,289.63"/>
+<polyline class="existing" points="129.90,289.52 129.90,289.52"/>
+<polyline class="existing" points="264.66,197.92 264.66,197.92"/>
+<polyline class="existing" points="405.66,197.92 405.66,197.92"/>
+<polyline class="existing" points="166.32,107.93 202.75,107.93 202.75,107.93"/>
+<polyline class="existing" points="202.75,107.93 202.75,157.01 202.75,283.97"/>
+<polyline class="existing" points="202.75,157.01 258.21,157.01"/>
+<polyline class="existing" points="264.79,157.01 399.21,157.01"/>
+<polyline class="existing" points="202.75,289.63 202.75,289.73 129.90,289.73"/>
+<polyline class="existing" points="129.90,289.73 129.90,289.52"/>
+<polyline class="existing" points="129.90,289.52 129.90,289.52"/>
+<polyline class="existing" points="129.90,289.52 129.90,361.54 167.50,361.54"/>
+<polyline class="existing" points="264.91,157.01 264.91,197.92"/>
+<polyline class="existing" points="264.91,197.92 264.66,197.92"/>
+<polyline class="existing" points="264.66,197.92 264.66,197.92"/>
+<polyline class="existing" points="264.66,197.92 332.00,197.92 332.00,185.80"/>
+<polyline class="existing" points="405.79,157.01 405.91,157.01 405.91,197.92"/>
+<polyline class="existing" points="405.91,197.92 405.66,197.92"/>
+<polyline class="existing" points="405.66,197.92 405.66,197.92"/>
+<polyline class="existing" points="405.66,197.92 473.00,197.92 473.00,185.80"/>
+<polyline class="buried" points="544.21,163.58 690.38,163.58 754.29,163.58 754.29,141.36"/>
+<polyline class="buried" points="690.38,163.58 690.38,286.19"/>
+<polyline class="branch" points="179.84,471.32 179.84,471.32"/>
+<polyline class="branch" points="546.66,417.09 546.66,417.09"/>
+<polyline class="branch" points="670.99,471.32 670.99,471.32"/>
+<polyline class="branch" points="758.16,149.84 758.16,149.84"/>
+<polyline class="sleeve" points="202.75,465.77 202.75,471.43"/>
+<polyline class="sleeve" points="719.75,465.77 719.75,471.43"/>
+<polyline class="sleeve" points="539.97,163.58 544.21,163.58"/>
+<polyline class="branch" points="544.21,163.58 544.21,163.58"/>
+<polyline class="sleeve" points="690.38,286.19 690.38,289.83"/>
+<polyline class="branch" points="690.38,286.19 690.38,286.19"/>
+<polyline class="sleeve" points="754.29,141.36 758.53,141.36"/>
+<polyline class="branch" points="754.29,141.36 754.29,141.36"/>
+<polyline class="feeder" points="202.75,289.68 202.75,465.77"/>
+<polyline class="feeder" points="405.91,157.01 539.98,157.01 539.98,163.58"/>
+<polyline class="feeder" points="690.38,289.83 690.38,309.02 719.75,309.02 719.75,465.77"/>
+<polyline class="branch" points="202.75,471.43 202.75,471.83 179.84,471.83"/>
+<polyline class="branch" points="179.84,471.83 179.84,471.32"/>
+<polyline class="branch" points="179.84,471.32 179.84,471.32"/>
+<polyline class="branch" points="179.84,471.32 179.84,531.22 149.88,531.22"/>
+<polyline class="branch" points="690.38,309.02 569.35,309.02 569.35,417.09 547.14,417.09"/>
+<polyline class="branch" points="547.14,417.09 546.66,417.09"/>
+<polyline class="branch" points="546.66,417.09 546.66,417.09"/>
+<polyline class="branch" points="546.66,417.09 649.25,417.09 649.25,347.40"/>
+<polyline class="branch" points="719.75,471.43 719.75,471.83 670.99,471.83"/>
+<polyline class="branch" points="670.99,471.83 670.99,471.32"/>
+<polyline class="branch" points="670.99,471.32 670.99,471.32"/>
+<polyline class="branch" points="670.99,471.32 670.99,529.20 649.25,529.20"/>
+<polyline class="branch" points="758.52,141.36 758.64,141.36 758.64,149.84"/>
+<polyline class="branch" points="758.64,149.84 758.16,149.84"/>
+<polyline class="branch" points="758.16,149.84 758.16,149.84"/>
+<polyline class="branch" points="758.16,149.84 802.00,149.84 802.00,187.82"/>
+<polyline class="guide" points="155.75,471.06 155.75,481.93 155.75,498.90 179.84,498.90 179.84,483.14"/>
+<polyline class="guide" points="649.25,471.06 649.25,481.83 649.25,498.90 670.99,498.90 670.99,483.14"/>
+<polyline class="guide" points="546.37,438.30 558.89,438.30 575.23,438.30 575.23,417.09 560.42,417.09"/>
+<polyline class="guide" points="757.87,165.60 770.39,165.60 785.55,165.60 785.55,149.84 771.92,149.84"/>
+<circle class="switch" cx="179.84" cy="471.03" r="4.4"/>
+<circle class="lamp" cx="149.88" cy="531.22" r="4.4"/>
+<circle class="switch" cx="546.33" cy="417.09" r="4.4"/>
+<circle class="lamp" cx="649.25" cy="347.40" r="4.4"/>
+<circle class="switch" cx="670.99" cy="471.03" r="4.4"/>
+<circle class="lamp" cx="649.25" cy="529.20" r="4.4"/>
+<circle class="switch" cx="757.83" cy="149.84" r="4.4"/>
+<circle class="lamp" cx="802.00" cy="187.82" r="4.4"/>
+<path class="existing" d="M49 619h26"/>
+<text class="small" x="83.00" y="622.00">Earlier feeders</text>
+<path class="feeder" d="M309 619h26"/>
+<text class="small" x="343.00" y="622.00">Surface feeder</text>
+<path class="buried" d="M569 619h26"/>
+<text class="small" x="603.00" y="622.00">Buried trunk</text>
+<path class="sleeve" d="M49 642h26"/>
+<text class="small" x="83.00" y="645.00">Closed wall sleeve</text>
+<path class="branch" d="M309 642h26"/>
+<text class="small" x="343.00" y="645.00">Local circuit</text>
+<path class="guide" d="M569 642h26"/>
+<text class="small" x="603.00" y="645.00">Door-to-switch guide</text>
+</svg>

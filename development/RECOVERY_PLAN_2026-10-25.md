@@ -2267,3 +2267,7 @@ Refuge commit 68a3806416a5e81a9d3166ea96f607decc038be5 and gallery 45393163408 p
 ### Northwatch west room distribution
 
 Shed commit 55b38faee64d2b218d7be2c26baedf89cca814d3 and gallery 45395381907 passed on held draft PR 86. The [west distribution checkpoint](levels/rebuild/northwatch-distribution-pass/checkpoint.json) adds a supported supply and independent switch for the lab, radio and records. Software, OpenGL and live TCP verify fixture response, breaker loss, reconnect and clearance through existing doors. Continue remaining building and tunnel distribution, water service, furnishing and named case integration.
+
+### Northwatch occupied surface electrical service
+
+West distribution commit b9f7405f2da2bcb892b4c545cc49410d569c591d and gallery 45397319766 passed on held draft PR 86. The [surface electrical checkpoint](levels/rebuild/northwatch-surface-power-pass/checkpoint.json) adds the cold store, dorm, mess and array shelter through an unchanged building shell and grade. Software, OpenGL and live TCP verify all fitted interior surface circuits, the breaker and physical access. Continue heated tunnel service, exterior loads, water, furnishings and named case integration.

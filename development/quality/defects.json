@@ -7712,6 +7712,17 @@
       "action": "Add supported overhead feeders, closed sleeves and separately switched ceiling loads with door-side approaches.",
       "older_maps": "Check continuous raceway, intact walls, local switch isolation, sighted approach and master trip.",
       "evidence": "development/levels/rebuild/northwatch-distribution-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-696",
+      "title": "Four Northwatch surface interiors lacked usable branch power",
+      "status": "NORTHWATCH_STAGED_OCCUPIED_SURFACE_ELECTRICAL_VERIFIED",
+      "affected": "WLD-08 cold store, dorm, mess and array shelter",
+      "symptom": "Existing lights, local switches and physical service to the remaining surface rooms were missing.",
+      "cause": "The earlier main served the shed, lab, radio and records before distribution crossed the array.",
+      "action": "Install supported overhead feeders, a grade-verified buried trunk, exterior risers and independent loads.",
+      "older_maps": "Check continuous feeder, full enclosure, all accessible room controls and independent branch/master loss.",
+      "evidence": "development/levels/rebuild/northwatch-surface-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

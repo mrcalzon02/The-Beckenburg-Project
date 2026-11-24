@@ -15,12 +15,20 @@ final class NorthwatchDistributionReview {
         new Circuit("radio",3,new Vec(22,0,18.3)),
         new Circuit("records",4,new Vec(34.2,0,18.5)));
 
+    private static final Circuit STORE=new Circuit("store",6,new Vec(14,0,47));
+    private static final Circuit DORM=new Circuit("dorm",1,new Vec(55,0,35));
+    private static final Circuit MESS=new Circuit("mess",2,new Vec(55,0,46.5));
+    private static final Circuit SHELTER=new Circuit("shelter",9,new Vec(64.4,0,13.4));
+    private static final List<Circuit> SURFACE=List.of(STORE,DORM,MESS,SHELTER);
     private NorthwatchDistributionReview() {}
 
     static void audit(HouseMap map,Map<String,List<Vec>> routes,Path captures,List<String> report)throws Exception {
         var lighting=new RoomLighting();
         var fixtures=new FixtureLighting(map);
-        for(var circuit:CIRCUITS) {
+        var fitted=new java.util.ArrayList<>(CIRCUITS);
+        boolean surface=routes.containsKey("Northwatch-switch-store");
+        if(surface)fitted.addAll(SURFACE);
+        for(var circuit:fitted) {
             int owner=circuit.owner();
             Socket control=map.level().socket("switch",owner);
             Socket lamp=map.level().socket("light",owner);
@@ -42,16 +50,17 @@ final class NorthwatchDistributionReview {
             lighting.setSourceRunning(false);
             double stopped=energy(fixtures,lighting,lamp);
             lighting.setSourceRunning(true);
+            boolean capture=!surface||SURFACE.contains(circuit);
             Path on=captures.resolve("northwatch-"+circuit.room()+"-supplied.png");
             Path off=captures.resolve("northwatch-"+circuit.room()+"-tripped.png");
-            render(map,lighting,circuit,lamp,on);
+            if(capture)render(map,lighting,circuit,lamp,on);
             lighting.setBreaker(false);
             double tripped=energy(fixtures,lighting,lamp);
-            render(map,lighting,circuit,lamp,off);
+            if(capture)render(map,lighting,circuit,lamp,off);
             lighting.setBreaker(true);
             require(supplied>1.5*switched && Math.abs(stopped-tripped)<.001 && supplied>2*tripped,
                 "Wrong branch response in "+circuit.room()+": "+supplied+" / "+switched+" / "+stopped+" / "+tripped);
-            assertVisible(on,off,circuit,report);
+            if(capture)assertVisible(on,off,circuit,report);
             report.add(circuit.room()+"_circuit_energy\t"+supplied+" supplied, "+switched+" switch off, "
                 +stopped+" source stopped, "+tripped+" breaker tripped");
         }
@@ -64,12 +73,46 @@ final class NorthwatchDistributionReview {
             new Vec(11,0,16),new Vec(7,0,16),new Vec(7,0,25.05));
         at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,840);
         at=switchRoom(map,leader,witness,lighting,at,routes,CIRCUITS.get(0),report);
+        boolean surface=routes.containsKey("Northwatch-switch-store");
+        if(surface) {
+            var labFeet=at;
+            at=NorthwatchDoorRuntime.walk(leader,at,new Vec(8.8,0,29.25),new Vec(7,0,29.25),
+                new Vec(7,0,35),new Vec(10,0,35),new Vec(11,0,43.2));
+            at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,842);
+            at=switchRoom(map,leader,witness,lighting,at,routes,STORE,report);
+            at=NorthwatchDoorRuntime.walk(leader,at,new Vec(13.05,0,47),new Vec(11,0,47),
+                new Vec(11,0,45.32),new Vec(11,0,43.2),new Vec(10,0,35),new Vec(7,0,35),
+                new Vec(7,0,29.25),new Vec(8.8,0,29.25),labFeet);
+        }
         at=NorthwatchDoorRuntime.walk(leader,at,new Vec(8.8,0,29.25),new Vec(7,0,29.25),new Vec(7,0,16),new Vec(11,0,16),
             new Vec(13.35,0,16.05),new Vec(13.35,0,19));
         at=switchRoom(map,leader,witness,lighting,at,routes,CIRCUITS.get(1),report);
         at=NorthwatchDoorRuntime.walk(leader,at,new Vec(21.44,0,18.4),new Vec(23,0,19),new Vec(31.3,0,19));
         at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,846);
-        switchRoom(map,leader,witness,lighting,at,routes,CIRCUITS.get(2),report);
+        at=switchRoom(map,leader,witness,lighting,at,routes,CIRCUITS.get(2),report);
+        if(surface)visitEast(map,replica,scene,leader,witness,lighting,at,routes,report);
+    }
+
+    private static void visitEast(HouseMap map,HouseMap replica,NativeInvestigationScene scene,Peer leader,
+                                  Peer witness,RoomLighting lights,Vec at,Map<String,List<Vec>> routes,
+                                  List<String> report)throws Exception {
+        at=NorthwatchDoorRuntime.walk(leader,at,new Vec(33.44,0,18.4),new Vec(38,0,19),new Vec(38,0,24.7));
+        at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,847);
+        at=NorthwatchDoorRuntime.walk(leader,at,new Vec(38,0,41),new Vec(43.2,0,41));
+        at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,851);
+        at=switchRoom(map,leader,witness,lights,at,routes,DORM,report);
+        at=NorthwatchDoorRuntime.walk(leader,at,new Vec(46.7,0,38.9),new Vec(46.7,0,41),
+            new Vec(53,0,41),new Vec(53,0,43.25));
+        at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,850);
+        at=switchRoom(map,leader,witness,lights,at,routes,MESS,report);
+        at=NorthwatchDoorRuntime.walk(leader,at,new Vec(54.85,0,47),new Vec(53,0,47),
+            new Vec(53,0,45.31),new Vec(53,0,41),new Vec(55,0,41),
+            new Vec(55,0,28),new Vec(53,0,28),new Vec(53,0,27.4));
+        at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,849);
+        at=NorthwatchDoorRuntime.walk(leader,at,new Vec(53,0,16),new Vec(53,0,13.5),
+            new Vec(53.5,0,14),new Vec(61.1,0,14));
+        at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,853);
+        switchRoom(map,leader,witness,lights,at,routes,SHELTER,report);
     }
 
     private static Vec switchRoom(HouseMap map,Peer leader,Peer witness,RoomLighting lights,Vec at,

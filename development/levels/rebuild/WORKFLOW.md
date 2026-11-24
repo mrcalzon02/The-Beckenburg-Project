@@ -1527,3 +1527,7 @@ The retained shed now supports the station source and breaker and the first comm
 ### Northwatch west room distribution
 
 Three branches now follow the supported ceilings and connect to measured door-side switches. The lab approach clears the open double leaves before turning. Both renderers verify the four fitted circuits, all retained doors and routes and three full refuges. TCP verified the actual powered walk from the van through each receiving doorway. [Service plan](northwatch-distribution-pass/west-service-plan.svg) / [Checkpoint](northwatch-distribution-pass/checkpoint.json)
+
+### Northwatch occupied surface electrical service
+
+All eight occupied surface interiors now have useful light from the fitted shed source. The retained structures receive the new feeders at closed sleeves, ceiling saddles and exterior risers, with tested routes through actual doors. The tunnel circuits and exterior loads remain open. [Surface plan](northwatch-surface-power-pass/surface-service-plan.svg) / [Checkpoint](northwatch-surface-power-pass/checkpoint.json)
