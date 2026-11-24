@@ -8978,3 +8978,7 @@ The east porch connected through an always-open portal and the south porch serve
 ### DEV-648 Lookout clearing ritual was above the terrace datum
 
 The clearing socket was at Y6 while its physical walking surface was at Y5.65. Use the measured clearing elevation and verify all three physical ritual positions are supported. Recheck installed socket height after terrain or slab edits. [Evidence](../levels/rebuild/lookout-native-arrival-pass/checkpoint.json)
+
+### DEV-649 Lookout rebuild lacked any walk-in safe zones
+
+The native Lookout arrival pass had no usable cover. Three floor-mounted walk-in cupboards now give protection from their threshold across the traversable interior. Check disabled cover and the full entry and exit in each site separately. [Evidence](../levels/rebuild/lookout-cover-pass/checkpoint.json)

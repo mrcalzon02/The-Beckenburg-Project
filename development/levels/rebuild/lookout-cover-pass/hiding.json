@@ -1,0 +1,86 @@
+{
+  "exports": {
+    "blend": "5893319200a6e5a0c5e3187fb9669f2481fa5f499b5774a54f86a7cad3819ff3",
+    "glb": "af0f99c396c1d8b11974930e031891ca11d509c03bfc2b878b7083d0abe68044",
+    "hcs2": "bf430a594ec73d564a025905b1fb8ebc020ce06b30525086b5eab8d2b94f19b5"
+  },
+  "retained_components": 374,
+  "cupboard_components": 3,
+  "cupboards": [
+    {
+      "id": "lookout-hut-cupboard",
+      "space": "hut",
+      "owner": 3,
+      "position": [
+        5.5,
+        6,
+        19
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          4.9,
+          6.0,
+          18.15
+        ],
+        [
+          6.202,
+          8.309999,
+          19.85
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "lookout-store-cupboard",
+      "space": "store",
+      "owner": 5,
+      "position": [
+        48.5,
+        6,
+        35
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          47.798,
+          6.0,
+          34.150002
+        ],
+        [
+          49.099998,
+          8.309999,
+          35.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "lookout-cab-cupboard",
+      "space": "cab",
+      "owner": 10,
+      "position": [
+        28.05,
+        15,
+        3.25
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          27.199999,
+          15.0,
+          2.65
+        ],
+        [
+          28.9,
+          17.309999,
+          3.952
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ]
+}

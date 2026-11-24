@@ -343,3 +343,6 @@ development/levels/rebuild/college-doors-pass/** -text whitespace=cr-at-eol
 development/levels/rebuild/college-containment-pass/** -text whitespace=cr-at-eol
 development/levels/rebuild/college-services-pass/** -text whitespace=cr-at-eol
 development/levels/rebuild/college-residence-pass/** -text whitespace=cr-at-eol
+
+# Fitted Lookout safe areas and receipts bind the native export bytes.
+development/levels/rebuild/lookout-cover-pass/** -text

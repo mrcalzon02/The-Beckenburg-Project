@@ -7195,6 +7195,17 @@
       "action": "Use the measured clearing elevation and verify all three physical ritual positions are supported.",
       "older_maps": "Recheck installed socket height after terrain or slab edits.",
       "evidence": "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-649",
+      "title": "Lookout rebuild lacked any walk-in safe zones",
+      "status": "NATIVE_WALK_IN_SAFE_ZONES_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout hut, ranger store and tower cabin",
+      "symptom": "The staged scene contained no usable cover candidates.",
+      "cause": "The arrival pass commissioned doors, area ownership and ritual positions before fitting cover.",
+      "action": "Fit the canonical walk-in cupboards on supported floors. Verify entry, usable interior, spectral exclusion and loss of protection on exit.",
+      "older_maps": "Walk each fitted safe-zone threshold and test supported interior positions, adjacent levels, disablement and live player protection.",
+      "evidence": "development/levels/rebuild/lookout-cover-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

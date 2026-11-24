@@ -26,9 +26,13 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/lookout-native-arrival-pass/' in path:
+    if '/lookout-cover-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
-        kind='Widow’s Peak Lookout staged doorway and arrival in the '+renderer+' game renderer'
+        subject='full walk-in safe zone' if '-cupboard-' in path else 'retained arrival and doors'
+        kind='Widow’s Peak Lookout '+subject+' in the '+renderer+' game renderer'
+    elif '/lookout-native-arrival-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Widowâ€™s Peak Lookout staged doorway and arrival in the '+renderer+' game renderer'
     elif '/asylum-flight-rails-pass/' in path:
         if '/structure/' in path:
             kind='Asylum main stair handrail structural cutaway'

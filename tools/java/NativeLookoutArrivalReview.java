@@ -47,6 +47,8 @@ public final class NativeLookoutArrivalReview {
             case "TREAD" -> treads.add(row[1]);
             case "RITUAL" -> sockets.add(new Socket("lookout-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),0,row[1]));
+            case "COVER" -> sockets.add(new Socket(row[1],"hide",Integer.parseInt(row[2]),
+                d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
             case "POINT" -> paths.computeIfAbsent(row[1],ignored->new ArrayList<>()).add(point(row,2));
             case "SOURCE","DOCK" -> {}
             default -> throw new IOException("Unknown Lookout arrival record "+row[0]);
@@ -125,12 +127,63 @@ public final class NativeLookoutArrivalReview {
             "ritual_sites\tThree supported, separately owned physical installation points"));
         captureStanding(host,new Vec(28,0,72),0,captures.resolve("lookout-cargo-approach.png"));
         captureStanding(host,new Vec(33,15,5),0,captures.resolve("lookout-deck-view.png"));
+        if(!HidingBudget.candidates(level).isEmpty())reviewCover(host,captures,evidence);
         if(List.of(args).contains("--lan"))live(level,scene,evidence);
         Files.write(output.resolve(gpu?"opengl.tsv":"native-arrival.tsv"),evidence);
         evidence.forEach(System.out::println);
     }
 
-    private static void captureStanding(HouseMap map,Vec at,double yaw,Path output)throws Exception{
+    private static void reviewCover(HouseMap map,Path captures,List<String> evidence)throws Exception{
+        var candidates=HidingBudget.candidates(map.level());
+        require(candidates.size()==3,"Expected three independently fitted Lookout cupboards");
+        map.configureHiding(100);
+        for(var pocket:candidates){
+            var outside=LevelClosets.world(pocket,0,0,1.32);
+            var approach=LevelClosets.world(pocket,0,0,LevelClosets.ENTRY_Z+.04);
+            var entry=LevelClosets.world(pocket,0,0,LevelClosets.ENTRY_Z-.04);
+            var rear=LevelClosets.world(pocket,0,0,-.27);
+            var left=LevelClosets.world(pocket,-.10,0,-.27);
+            var right=LevelClosets.world(pocket,.10,0,-.27);
+            require(!protectedAt(map,approach)&&protectedAt(map,entry),
+                pocket.id()+" protection must start at the actual opening");
+            replay(map,List.of(map.spawn(pocket.room()),outside,approach,entry,rear,left),pocket.id()+" left");
+            replay(map,List.of(entry,rear,right),pocket.id()+" right");
+            for(var at:List.of(entry,rear,left,right)){
+                require(protectedAt(map,at)&&protectedAt(map,new Vec(at.x(),at.y()+1.6,at.z())),
+                    pocket.id()+" usable interior left exposed at "+at);
+            }
+            int usableSamples=0;
+            for(int dx=-7;dx<=7;dx++)for(int dz=-5;dz<=5;dz++){
+                var at=LevelClosets.world(pocket,dx*.1,0,dz*.1);
+                if(!map.traversable(at.x(),at.y(),at.z(),HunterPosture.CROUCH_HEIGHT))continue;
+                require(protectedAt(map,at),pocket.id()+" unprotected usable floor "+at);
+                usableSamples++;
+            }
+            require(usableSamples>=18,pocket.id()+" has too little usable floor");
+            evidence.add(pocket.id()+"_protected_floor_samples\t"+usableSamples);
+            require(SafeAreaBarrier.blocks(map,approach,rear),pocket.id()+" admitted a spectral step");
+            var above=new Vec(rear.x(),rear.y()+2.22,rear.z());
+            var below=new Vec(rear.x(),rear.y()-1,rear.z());
+            require(!protectedAt(map,above)&&!protectedAt(map,below),pocket.id()+" leaks across floor or crown");
+            var back=LevelClosets.world(pocket,0,0,-.75);
+            require(!map.traversable(back.x(),back.y(),back.z())||map.resolveMove(rear,back.x(),back.z())==null,
+                pocket.id()+" back was walk-through");
+            int outsideHaze=captureStanding(map,outside,Math.PI-pocket.yaw(),captures.resolve(pocket.id()+"-enter.png"));
+            int insideHaze=captureStanding(map,rear,-pocket.yaw(),captures.resolve(pocket.id()+"-inside.png"));
+            require(outsideHaze>1000&&insideHaze>1000,pocket.id()+" safe-zone cue lost from entry or interior "+outsideHaze+" / "+insideHaze);
+            map.configureHiding(0);
+            require(!protectedAt(map,entry)&&!protectedAt(map,rear)&&!SafeAreaBarrier.blocks(map,approach,rear),
+                pocket.id()+" grants disabled cover");
+            map.configureHiding(100);
+        }
+        evidence.add("lookout_cover\t3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss");
+    }
+
+    private static boolean protectedAt(HouseMap map,Vec at){
+        return SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z());
+    }
+
+    private static int captureStanding(HouseMap map,Vec at,double yaw,Path output)throws Exception{
         require(map.traversable(at.x(),at.y(),at.z()),"Unsupported standing view "+at);
         var renderer=new SceneRenderer();
         renderer.setRenderSize(880,580);
@@ -143,6 +196,7 @@ public final class NativeLookoutArrivalReview {
         renderer.lamp=true;
         renderer.setLampHardware(EquipmentTiers.Tier.III,false);
         NativeSchoolInteriorReview.drawFrame(renderer,map,output);
+        return renderer.safeAreaPixels();
     }
 
     private static void live(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
@@ -219,6 +273,20 @@ public final class NativeLookoutArrivalReview {
             for(int i=0;i<11;i++)feet=NativeSchoolInteriorReview.step(witness,2,0,-100);
             require(map.roomAt(feet.x(),feet.y(),feet.z())==3&&Math.abs(feet.y()-6)<.025,
                 "Witness missed the hut return "+feet);
+            if(map.level().socket("hide",3)!=null){
+                for(int i=0;i<21;i++)feet=NativeSchoolInteriorReview.step(witness,2,0,-100);
+                for(int i=0;i<18;i++)feet=NativeSchoolInteriorReview.step(witness,2,-100,0);
+                require(!protectedAt(map,feet),"Hut chamber granted cover before the cupboard "+feet);
+                for(int i=0;i<2;i++)feet=NativeSchoolInteriorReview.step(witness,2,-100,0);
+                require(protectedAt(map,feet),"Live hunter crossed the cupboard threshold without protection "+feet);
+                witness.client.hide();
+                witness.awaitExact("HIDING|1");
+                witness.client.hide();
+                witness.awaitExact("HIDING|0");
+                for(int i=0;i<3;i++)feet=NativeSchoolInteriorReview.step(witness,2,100,0);
+                require(!protectedAt(map,feet),"Live hunter retained protection outside the cupboard "+feet);
+                report.add("tcp_lookout_cover\tHunter walked into hut safe zone, hid, revealed, and physically left it");
+            }
         }
         report.add("tcp_lookout_review\tFour peers on the exact staged source, real ramp exit, fitted cabin-deck crossing and south hut stair return");
     }

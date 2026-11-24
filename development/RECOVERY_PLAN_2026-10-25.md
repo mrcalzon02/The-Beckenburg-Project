@@ -2133,3 +2133,7 @@ and the climb to the +15 m observation deck. The exact staged case passed
 four-peer door and arrival checks. The preceding Asylum main-stair commit
 8c36ac6db9195baef60dbfb056380cd680f979a2 passed gallery 45329964464.
 Continue Lookout services, hiding and named packaged dispatch.
+
+### Lookout walk-in safe zones
+
+The staged native source now has three fitted refuges with full usable-space protection. Software and RTX 5070 OpenGL checked entry, interior and exit. Four TCP peers used the exact staged case, including a live refuge entry and exit in the hut. The prior arrival checkpoint published at a88ce44720ea1bafa9f35b5a492e7539d5c76c70 and gallery run 45332690742 passed. Continue Lookout remote power and named packaged dispatch. [Checkpoint](levels/rebuild/lookout-cover-pass/checkpoint.json)

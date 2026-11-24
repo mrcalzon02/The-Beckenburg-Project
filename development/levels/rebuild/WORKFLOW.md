@@ -1429,3 +1429,7 @@ standing captures. All 17 routes and the joined cargo-to-observation deck
 journey pass in both directions and both postures. Four TCP peers confirmed
 physical cargo departure and the cabin and south hut door movements.
 Named dispatch, power, cover and release gates remain open.
+
+## Lookout walk-in safe zones
+
+Three canonical cupboards fit the existing hut, ranger store and observation cabin. Twelve measured bearing points per cupboard meet their own floor. The new source retains all 374 prior static components. The standing and crouched walkthroughs verified the actual opening and rear on all three cupboards. All 207 sampled usable floor positions were protected. The cue is visible on both renderers and the four-peer case replay verified a hunter crossing the hut threshold, hiding, revealing and walking back out. Power and named packaged dispatch remain open. [Checkpoint](lookout-cover-pass/checkpoint.json)

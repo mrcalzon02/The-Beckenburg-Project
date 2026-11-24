@@ -120,10 +120,10 @@ class SchoolElectrical(Assembly):
                 "incoming_receiver":{"component":receiver.name,"at":world(backing)}}
 
 
-def cupboards(assembly,zones,positions=CUPBOARDS,site="school"):
+def cupboards(assembly,zones,positions=CUPBOARDS,site="school",floor_roles=("floor",)):
     key="level_hiding_cupboard_worn"
     originals=bvh([obj for obj in assembly.scene.objects if obj.type=="MESH" and obj.name in assembly.originals
-                   and obj.get("role")!="floor"])
+                   and obj.get("role") not in floor_roles])
     bearings=bvh([obj for obj in assembly.scene.objects if obj.type=="MESH" and obj.name in assembly.originals])
     installed=[]
     for room,x,z,yaw in positions:
@@ -141,7 +141,7 @@ def cupboards(assembly,zones,positions=CUPBOARDS,site="school"):
         if originals.overlap(bvh(pieces)):
             candidates=[]
             for obj in assembly.scene.objects:
-                if obj.type=="MESH" and obj.name in assembly.originals and obj.get("role")!="floor":
+                if obj.type=="MESH" and obj.name in assembly.originals and obj.get("role") not in floor_roles:
                     if bvh([obj]).overlap(bvh(pieces)):
                         candidates.append((obj.name,obj.get("role"),bounds([obj])))
             raise AssertionError((name,candidates))
