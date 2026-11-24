@@ -7426,6 +7426,17 @@
       "action": "Remove proven route-derived supports. Retain the 156 assessed grid piles and fit transfer girders, anchored grade beams and marine piles to the actual deck frame and cell floors.",
       "older_maps": "Check base and room construction for route-derived understructure. Recheck supported contacts, both stair directions, openings and walls after replacing it.",
       "evidence": "development/levels/rebuild/wharf-foundation-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-670",
+      "title": "Wharf lacked a continuous submerged bed and tidal water outside the dry works",
+      "status": "WHARF_TIDE_DRY_CELL_AND_STAGED_CANONICAL_ARRIVAL_VERIFIED",
+      "affected": "Drowned Fisherman's Wharf shore, submerged foundations and undercroft",
+      "symptom": "The existing geographical cut left visible holes under pile buildings and the exported scene had no tidal water.",
+      "cause": "The punched terrain was composed with the dock and cellar but never received a lower estuary surface or a water placement fitted to the retaining walls.",
+      "action": "Loft a continuous low bed using surveyed shore profiles. Bind tide placements at the wall centerlines. Check that the shared game rejects movement in the tide and accepts the complete dry circulation.",
+      "older_maps": "Review actual underwater bed, dry construction bounds, playable exits and water renderer agreement for every location with shoreline or flooded infrastructure.",
+      "evidence": "development/levels/rebuild/wharf-tidal-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

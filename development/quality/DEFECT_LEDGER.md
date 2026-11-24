@@ -9066,3 +9066,7 @@ The named review package binds the ordinary mission entry to the exact native ge
 ### DEV-669 Wharf route-era piles persisted alongside the dock framing and stair cells
 
 Source provenance ties thirty pile and beam components to old circulation links. The rebuilt deck bears on the measured pile grid and seats into the cast stair cells. Shared native collision passed all eighteen links and both sides of all eight fitted frames. [Evidence](../levels/rebuild/wharf-foundation-pass/checkpoint.json)
+
+### DEV-670 Wharf lacked a continuous submerged bed and tidal water outside the dry works
+
+The continuous lower bed follows measured shore slopes below the saved cut. Eight shared water placements meet inside the retaining-wall thickness and exclude the connected cellar and stair cells. Both renderers show outdoor water and a dry undercroft. Both player postures are blocked on otherwise standable submerged beds. The canonical cargo and ramp passed live movement in the staged game. [Evidence](../levels/rebuild/wharf-tidal-pass/checkpoint.json)

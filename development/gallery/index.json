@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11683,
+  "count": 11692,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114284,6 +114284,96 @@
       "height": 970,
       "bytes": 1565019,
       "sha256": "90c37b99a57f947c0a613cd47b90da3721ba861ed4d7f69ad388e74235aea112"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-canonical-arrival.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-canonical-arrival.png",
+      "title": "Wharf canonical arrival",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 327611,
+      "sha256": "21a529cfac180a9b49b9977ea0b4a440a76e6c8fa3ade3a3036764d450c3d08e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-crossdock-tide.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-crossdock-tide.png",
+      "title": "Wharf crossdock tide",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 167413,
+      "sha256": "4db1f5de1d56c5a643270cf9fc4bcf5078a92ea2c98808920995e0cffc032485"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-dry-undercroft.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-dry-undercroft.png",
+      "title": "Wharf dry undercroft",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 273592,
+      "sha256": "cf48fd5f125da3539a2134666a86505f9ca2a73eb54b65069fcf9eafe1cdcb88"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-shore-boardwalk.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-shore-boardwalk.png",
+      "title": "Wharf shore boardwalk",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 298781,
+      "sha256": "382a2ce0f768e08f079b9873ad23e5130b98e7f5c707c1fd3c7b9c4f17af2ad7"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/structure/wharf-estuary-and-shore.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/structure/wharf-estuary-and-shore.png",
+      "title": "Wharf estuary and shore",
+      "kind": "Wharf native estuary and surveyed mean tide",
+      "width": 1560,
+      "height": 980,
+      "bytes": 1890476,
+      "sha256": "ed2496ab7abcf83a7192acd74b29c7803084b4df9885654056b266b51c43598b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-canonical-arrival.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-canonical-arrival.png",
+      "title": "Wharf canonical arrival",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 326700,
+      "sha256": "5350ee0375b8aa67016228f2d6b258c401f0ffbe1d12f0ee2ae697e3b5baaa4d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-crossdock-tide.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-crossdock-tide.png",
+      "title": "Wharf crossdock tide",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 166471,
+      "sha256": "28c75730cbd191b80f3b93ca506dfd55bbcd1d8de1b80585a83d4a8841bcaf9d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-dry-undercroft.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-dry-undercroft.png",
+      "title": "Wharf dry undercroft",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 273033,
+      "sha256": "cc2843e057e6195862d30c75861fc3a2dd7e937375b15fb0567a436ed7e7965d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-shore-boardwalk.png",
+      "url": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-shore-boardwalk.png",
+      "title": "Wharf shore boardwalk",
+      "kind": "Wharf tide, dry undercroft and canonical arrival in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 299887,
+      "sha256": "8b198306a4fd72d328c87742b5d78d292a3e16de730473c0213b49ec29330ad2"
     },
     {
       "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",

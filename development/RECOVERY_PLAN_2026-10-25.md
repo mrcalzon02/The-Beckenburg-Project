@@ -2191,3 +2191,7 @@ Sump commit a3fe1043c8f7c07aaf8ceb5c5699bdc0de424ee5 is verified on draft PR 86.
 ### Drowned Fisherman's Wharf pile grid and undercroft foundation
 
 Mine case commit 195c7f11c59ad83e64a1f18d3c7bdc7692a22210 is verified on draft PR 86. Gallery 45354170752 passed. The [Wharf foundation checkpoint](levels/rebuild/wharf-foundation-pass/checkpoint.json) removes thirty route-derived components, verifies 156 regular deck piles, and fits anchored grade beams and transfer girders below the existing stair cells. The shared collision kernel passed the complete approach and stair network in both postures. Whole-site containment, shore water, canonical van placement and shared gameplay remain open.
+
+### Drowned Fisherman's Wharf tide and staged arrival
+
+Wharf foundation commit 39ebf8dc7c73ddb047597c57696c62b12943e675 is verified on draft PR 86. Gallery 45356280331 passed. The [tidal checkpoint](levels/rebuild/wharf-tidal-pass/checkpoint.json) adds an opaque bed below the retained terrain, aligns shared water across the harbor at Y−1.45 m and excludes the dry cellar and both immersed stair cells. Staged software and RTX 5070 checks passed nineteen walks in both directions and both postures, canonical cargo/ramp arrival and undercroft water exclusion. Landward containment, fitted door leaves, room and acoustic graph, working services, walk-in cover, and named dispatch remain open.
