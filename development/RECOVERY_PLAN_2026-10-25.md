@@ -2311,3 +2311,7 @@ Door commit ca2cec31cf1e2a3998ae297d98189dda022864a5 and gallery 45425138901 pas
 ### Blackwater Dam auxiliary switchgear and north turbine bay
 
 Refuge commit de8eca0565808b69ad557e546d1f313ac5eed860 passed gallery 45428104353 on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d continues to report full multiplayer and GPU acceptance success. The [auxiliary power checkpoint](levels/rebuild/dam-power-pass/checkpoint.json) records the exact new stage, both renderer power states, and a live four-peer host blackout and reconnect. Continue service distribution and upstream works before the named package gate.
+
+### Blackwater Dam headpond, screened intake and west wing foundation
+
+Auxiliary power commit 7be36391f215fb65152813a19c1fdaf0c4a2ce97 and gallery 45431430388 passed on draft PR 86. The [reservoir checkpoint](levels/rebuild/dam-reservoir-pass/checkpoint.json) records wet and dry shared-renderer checks, a supported intake and west slab bearing, and retained live blackout and source recovery. Continue the covered carrier, remaining utilities, and named packaged gate.

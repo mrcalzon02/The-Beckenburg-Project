@@ -1571,3 +1571,7 @@ Three supported enclosures leave the fitted doors, stairs and retained routes cl
 ### Blackwater Hydroelectric Dam auxiliary power
 
 The measured switchgear slab and partition determine the generator, cabinet, wall panels, clips and 4 fixtures. The native source retains 628 prior parts, all 14 door fits and the three refuges. The exact stage repeats 16 van and control routes and exercises real TCP power events through three closed leaves and a blackout. Continue the remaining electrical and mechanical supports and the upstream reservoir connection. [Service plan](dam-power-pass/wld-09/switchgear-plan.svg) · [Checkpoint](dam-power-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam north headpond and west foundations
+
+The north headpond uses the existing landscape depression. A dry ring encloses it beyond the playable boundary and the screened intake sits on supported construction. The west office and control slabs now bear on a continuous plinth tying the banks to the stair core. Both renderers verify the wet and dry states and all fourteen doors. The native route and perimeter replays, all three refuge thresholds and the final four-peer power replay pass. Build the covered carrier between the two hydraulic terminals next. [Shoreline plan](dam-reservoir-pass/wld-09/headpond-plan.svg) · [Checkpoint](dam-reservoir-pass/checkpoint.json)

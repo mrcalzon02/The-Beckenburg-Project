@@ -9222,3 +9222,7 @@ Actual cupboards now use the surveyed office, workshop and switchgear slabs. Pro
 ### DEV-707 · Blackwater Dam auxiliary supply and switching
 
 The switchgear slab carries the existing generator and distribution models. Supported raceways and four real fixtures serve two separately switched branches. Both renderers verify all four load states, and the live host verifies ghost trip, blackout access, source restart without reset, reconnect and the aimed breaker reset. Remaining distribution and mechanical services are open. [Evidence](../levels/rebuild/dam-power-pass/checkpoint.json)
+
+### DEV-708 and DEV-709 · Blackwater headpond and west wing support
+
+The north basin now shows water at the surveyed contour, with an actual screened and founded intake. The older exposed void under the west wing was reproduced in the source and is now occupied by the bank-keyed bearing plinth. Runtime rays close along the full tested faces. The cap, original floor levels, doors and established journeys remain verifiable. [Evidence](../levels/rebuild/dam-reservoir-pass/checkpoint.json)

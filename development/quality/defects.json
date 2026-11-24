@@ -7844,6 +7844,28 @@
       "action": "Seat the canonical generator and switchboard on the actual slab, fit two routes and four fixtures, then verify the existing ghost trip, restart, reconnect, and physical breaker reset.",
       "older_maps": "Verify each circuit against its fitted load, exact support and uninterrupted blackout approach. Preserve breaker independence on source restart.",
       "evidence": "development/levels/rebuild/dam-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-708",
+      "title": "Blackwater Dam upstream headpond and screened intake were absent",
+      "status": "DAM_NATURAL_HEADPOND_AND_FOUNDED_SCREENED_INTAKE_STAGED",
+      "affected": "WLD-09 north valley outside the playable perimeter",
+      "symptom": "The north basin stayed dry and the dam lacked a visible, controlled intake.",
+      "cause": "The prior water authority contained only the isolated downstream stilling reach.",
+      "action": "Fit the water to one connected surveyed depression. Install the founding, cover, concrete training walls and physical rack. The carrier ends at a sealed flange.",
+      "older_maps": "Verify wet shore contours against native banks, dry land and both renderers. Audit contact and movement without assigning unexplorable basins to rooms.",
+      "evidence": "development/levels/rebuild/dam-reservoir-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-709",
+      "title": "Blackwater Dam west office and control slabs lacked below-grade bearing",
+      "status": "DAM_WEST_WING_CONTINUOUS_PLINTH_STAGED",
+      "affected": "WLD-09 west office and control foundations",
+      "symptom": "An exposed void under the upper wing made the office and control floor slabs visibly unsupported from the exterior.",
+      "cause": "The saved terrain cut continued beneath both full upper rooms, but the previous shell stopped at the slab edge.",
+      "action": "Fit a continuous bank-keyed foundation, enclosed structural fill, slab cap and wall stems joined to the stair core. Verify matching before/after captures and old open rays.",
+      "older_maps": "Inspect all elevated exterior slabs from their actual lower ground and test foundation continuity along the full cut perimeter.",
+      "evidence": "development/levels/rebuild/dam-reservoir-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

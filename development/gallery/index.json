@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12154,
+  "count": 12166,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -113164,6 +113164,126 @@
       "height": 580,
       "bytes": 371695,
       "sha256": "8b54321f991b81c708bd1bfec9f82bf278337da9117379ffb6a5e837bdbe09a8"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/headpond-dry-control.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/headpond-dry-control.png",
+      "title": "Headpond dry control",
+      "kind": "Blackwater Dam matched dry terrain control in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 256346,
+      "sha256": "41a0a13298438099f1c995ca195f73ca4b5e7c50b213a3a4adf36ee2262ddf2b"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/headpond-intake.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/headpond-intake.png",
+      "title": "Headpond intake",
+      "kind": "Blackwater Dam headpond or retained tailrace in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 319262,
+      "sha256": "c2f317e0612c62d327160a0302bc48039cd77a8387d6bf81fc80b18630570eb6"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/headpond-shoreline.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/headpond-shoreline.png",
+      "title": "Headpond shoreline",
+      "kind": "Blackwater Dam headpond or retained tailrace in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 289379,
+      "sha256": "b56c54419feb04a38a067b0a86225fe34422188abba2798f6c49a58ce77d8527"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/retained-tailrace.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/opengl/retained-tailrace.png",
+      "title": "Retained tailrace",
+      "kind": "Blackwater Dam headpond or retained tailrace in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 307307,
+      "sha256": "60c2e670cecef7cffe1003c2b81397fc54d1ffbd51eda00b9765c9d14441d8c7"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/headpond-dry-control.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/headpond-dry-control.png",
+      "title": "Headpond dry control",
+      "kind": "Blackwater Dam matched dry terrain control in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 254398,
+      "sha256": "0f4def7685e99aca214d3a8dada8e6ae7a58d3c93372cb4ef533705a3c1174c3"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/headpond-intake.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/headpond-intake.png",
+      "title": "Headpond intake",
+      "kind": "Blackwater Dam headpond or retained tailrace in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 317933,
+      "sha256": "6255e1c778253e59fe3730a592677761a87c80dae56cca86b13dd3cb95c54d6d"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/headpond-shoreline.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/headpond-shoreline.png",
+      "title": "Headpond shoreline",
+      "kind": "Blackwater Dam headpond or retained tailrace in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 288539,
+      "sha256": "76f27acbd42f0a54b12ccc494bede145bf8a4426be8570c2ce1577a947135eed"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/retained-tailrace.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/software/retained-tailrace.png",
+      "title": "Retained tailrace",
+      "kind": "Blackwater Dam headpond or retained tailrace in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 305193,
+      "sha256": "8970bac0faff33fb1f684f3ab4a15b9975e5d77666d9ec0744f5fab66ee032df"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/headpond-terrain-and-compound.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/headpond-terrain-and-compound.png",
+      "title": "Headpond terrain and compound",
+      "kind": "Blackwater Dam built headpond and foundation structural source",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1276328,
+      "sha256": "0a369497d102feb14b67876e22a086cb09930a0e6fdcae8850b2040248337eb6"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/intake-screen-and-abutments.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/intake-screen-and-abutments.png",
+      "title": "Intake screen and abutments",
+      "kind": "Blackwater Dam built headpond and foundation structural source",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1101451,
+      "sha256": "ad8f4509f54b4bb95f6db7e80d12724ec753fd7fbd58a5966478760cb326ca5e"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/west-wing-before.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/west-wing-before.png",
+      "title": "West wing before",
+      "kind": "Blackwater Dam prior unsupported west wing source",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1096895,
+      "sha256": "be574b8fd5d94cbd1022d4b4f38b34a9fba3f3edc242c4c6e2ee13f2a774215a"
+    },
+    {
+      "path": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/west-wing-founded.png",
+      "url": "development/levels/rebuild/dam-reservoir-pass/wld-09/captures/structure/west-wing-founded.png",
+      "title": "West wing founded",
+      "kind": "Blackwater Dam built headpond and foundation structural source",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1011749,
+      "sha256": "10e6b6043f91e264111b3c942b98e104016675ba8c51e41ab84180efcabb9f49"
     },
     {
       "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-downstream.png",

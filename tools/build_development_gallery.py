@@ -26,7 +26,15 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/dam-power-pass/' in path:
+    if '/dam-reservoir-pass/' in path:
+        if '/structure/' in path:
+            kind='Blackwater Dam '+('prior unsupported west wing source' if 'west-wing-before' in path
+                                     else 'built headpond and foundation structural source')
+        else:
+            renderer='OpenGL' if '/opengl/' in path else 'software'
+            kind='Blackwater Dam '+('matched dry terrain control' if 'dry-control' in path
+                                     else 'headpond or retained tailrace')+' in the '+renderer+' game renderer'
+    elif '/dam-power-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Blackwater Dam '+('fitted equipment with investigator flashlight' if '-inspection.png' in path
                                  else 'paired auxiliary power state')+' in the '+renderer+' game renderer'
