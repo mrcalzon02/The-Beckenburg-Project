@@ -2359,3 +2359,7 @@ Eave checkpoint 322a8045c5c8d275a27741f027e30e4b7cbd6604 remains local following
 ### Monastery of Ashen Bells east-range distribution
 
 The local service power checkpoint is 7d66dc139cf5ef42344802ca8465c00fab909413. Draft PR 86 remains at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf pending upload approval. The [east-range checkpoint](levels/rebuild/monastery-east-power-pass/checkpoint.json) supplies four refectory and four cloister lights through supported conduit and retains the ordinary breaker, route and live switch behavior. Remaining room distribution, outlying eaves and named packaged acceptance remain open.
+
+### Monastery of Ashen Bells north-range distribution
+
+East-range checkpoint f3a2196482d0aceaedd151cb9ffbd34f43f369f7 is committed locally. The last verified draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526 and GPU 44863686455. The [north-range checkpoint](levels/rebuild/monastery-north-power-pass/checkpoint.json) adds two independent branches, six mounted lights, and four-player interaction at both rooms with the east circuit off. Continue remaining room distribution, furnishing and named package work.

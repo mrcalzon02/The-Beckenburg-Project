@@ -24,7 +24,6 @@ from verify_college_services import bvh, match_geometry
 BASE=ROOT/"development/levels/rebuild"
 PRIOR=BASE/"monastery-power-pass"
 STAGE=BASE/"monastery-east-power-pass"
-OUT=STAGE/"wld-10"
 STEM="monastery-with-east-distribution"
 STATUS="MONASTERY_REFECTORY_AND_EAST_CLOISTER_POWERED_STAGED"
 REFECTORY=dict(id="refectory",owner=4,y=0,height=3)
@@ -125,14 +124,15 @@ def install(assembly):
     return fixings
 
 
-def build():
-    roster=json.loads((PRIOR/"roster.json").read_bytes())
+def export_stage(prior_stage,stage,stem,status,install,circuits,builder):
+    out=stage/'wld-10'
+    roster=json.loads((prior_stage/"roster.json").read_bytes())
     row=next(s for s in roster["active_sources"] if s["id"]=="WLD-10")
-    prior=PRIOR/"wld-10"
+    prior=prior_stage/"wld-10"
     source=ROOT/row["construction"]
     schedule=("runtime-input.tsv","door-schedule.tsv","handrail-schedule.tsv","valley-schedule.tsv",
               "flashing-schedule.tsv","eave-schedule.tsv","electrical-schedule.tsv")
-    authority=json.loads((PRIOR/"checkpoint.json").read_bytes())["project_bytes_sha256"]
+    authority=json.loads((prior_stage/"checkpoint.json").read_bytes())["project_bytes_sha256"]
     for p in (source,*(ROOT/row[k] for k in ("glb","native","blend","layout")),*(prior/n for n in schedule)):
         assert sha(p)==authority[rel(p)],p
     meta=json.loads(source.read_bytes())
@@ -140,9 +140,9 @@ def build():
     bpy.context.preferences.filepaths.save_version=0
     assembly=Assembly()
     fixings=install(assembly)
-    OUT.mkdir(parents=True,exist_ok=True)
-    blend,model,collision=(OUT/(STEM+ext) for ext in (".blend",".glb",".hcs2"))
-    fragment=ROOT/"build/monastery-east-power-addition.glb"
+    out.mkdir(parents=True,exist_ok=True)
+    blend,model,collision=(out/(stem+ext) for ext in (".blend",".glb",".hcs2"))
+    fragment=ROOT/"build"/(stem+"-addition.glb")
     export(fragment,assembly.built)
     append(ROOT/row["glb"],fragment,model,reuse_embedded_images=True)
     added=native_write(ROOT/row["native"],collision,set(),assembly.built,
@@ -155,30 +155,30 @@ def build():
     for name,faces in added:
         assert match_geometry([face for face,_ in faces],[face for face,_ in records(objects[name])]),name
     for name in schedule[:-1]:
-        (OUT/name).write_bytes((prior/name).read_bytes())
+        (out/name).write_bytes((prior/name).read_bytes())
     electrical=[line.split("\t") for line in (prior/schedule[-1]).read_text(encoding="utf-8").splitlines()]
     electrical.extend((s["id"],s["type"],s["room"],*s["position"],s["yaw"],s["style"]) for s in assembly.sockets)
-    write_tsv(OUT/schedule[-1],electrical)
-    assert (OUT/schedule[-1]).read_bytes().startswith((prior/schedule[-1]).read_bytes())
-    meta.update(status=STATUS,before_construction=rel(source),before_construction_sha256=sha(source),
+    write_tsv(out/schedule[-1],electrical)
+    assert (out/schedule[-1]).read_bytes().startswith((prior/schedule[-1]).read_bytes())
+    meta.update(status=status,before_construction=rel(source),before_construction_sha256=sha(source),
                 before_layout=row["layout"],before_layout_sha256=sha(ROOT/row["layout"]),
                 source_glb=row["glb"],source_glb_sha256=row["glb_sha256"],
                 source_physics=row["native"],source_physics_sha256=sha(ROOT/row["native"]),
                 glb_sha256=sha(model),physics_sha256=sha(collision),blend_sha256=sha(blend),
-                builder=rel(Path(__file__)),builder_sha256=sha(Path(__file__)),
+                builder=rel(builder),builder_sha256=sha(builder),
                 retained_native_records=len(before),removed_source_meshes=[],new_interface_parts=[n for n,_ in added],
                 fixings=fixings,loads=meta["loads"]+assembly.loads,controllers=meta["controllers"]+assembly.controllers,
                 services=meta["services"]+assembly.sockets,raceways=meta["raceways"]+assembly.routes,
-                added_circuits=["MON-04","MON-02"],fixture_source_sha256=sha(ASSETS/"level_utility_light.glb"))
-    construction=OUT/"construction.json"
+                added_circuits=circuits,fixture_source_sha256=sha(ASSETS/"level_utility_light.glb"))
+    construction=out/"construction.json"
     write(construction,meta)
     row.update(construction=rel(construction),glb=rel(model),native=rel(collision),blend=rel(blend),
                glb_sha256=sha(model),native_sha256=sha(collision))
-    next(s for s in roster["sites"] if s["id"]=="WLD-10")["decision"]=STATUS
-    roster["baseline"]=rel(PRIOR/"roster.json")
-    write(STAGE/"roster.json",roster)
+    next(s for s in roster["sites"] if s["id"]=="WLD-10")["decision"]=status
+    roster["baseline"]=rel(prior_stage/"roster.json")
+    write(stage/"roster.json",roster)
     print("PASS",len(fixings),"measured fixings,",len(added),"matched components,",len(assembly.loads),"new lights")
 
 
 if __name__=="__main__":
-    build()
+    export_stage(PRIOR,STAGE,STEM,STATUS,install,["MON-04","MON-02"],Path(__file__))

@@ -9270,3 +9270,7 @@ A founded service-court generator, mounted main cabinet and supported conduit no
 ### DEV-720 · Monastery east-range power
 
 The service source now supplies independently switched refectory and east cloister circuits. Their supported fixtures, intact masonry sleeves, existing refuge geometry and door routes passed runtime review. [Verification checkpoint](../levels/rebuild/monastery-east-power-pass/checkpoint.json)
+
+### DEV-721 · Monastery archive and vestry power
+
+A supported unswitched feeder now supplies the two independent north-range branches. Six ceiling fixtures and their own wall switches run through sealed masonry sleeves. Existing doors, refuges and routes passed again. [Verification checkpoint](../levels/rebuild/monastery-north-power-pass/checkpoint.json)

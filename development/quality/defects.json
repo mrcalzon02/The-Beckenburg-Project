@@ -7987,6 +7987,17 @@
       "action": "Add separately switched branches, supported wall and ceiling conduit and eight seated fixtures. Verify all previous loads and routes and a live independent switch sequence.",
       "older_maps": "Trace room branches to the physical source and verify their switches individually.",
       "evidence": "development/levels/rebuild/monastery-east-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-721",
+      "title": "Monastery archive and vestry lacked a permanent electric supply",
+      "status": "MONASTERY_ARCHIVE_AND_VESTRY_POWERED_STAGED",
+      "affected": "WLD-10 north cloister feeder, archive and vestry",
+      "symptom": "Neither north-range room had fitted fixtures powered from the site's main breaker.",
+      "cause": "Prior wall-mounted services ran only through the east range.",
+      "action": "Fit an unswitched north feeder and independently controlled archive and vestry ceiling branches through sealed stone sleeves.",
+      "older_maps": "Audit shared feeders and verify that each local switch preserves neighbouring circuits.",
+      "evidence": "development/levels/rebuild/monastery-north-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

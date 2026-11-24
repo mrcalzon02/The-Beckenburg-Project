@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12297,
+  "count": 12305,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116554,6 +116554,86 @@
       "height": 640,
       "bytes": 388325,
       "sha256": "92b816dc5caa77e7833ab9255d5a130489b568c1195ca239e0c9e11385890fa7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/archive-isolated.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/archive-isolated.png",
+      "title": "Archive isolated",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 204111,
+      "sha256": "32f71ed9b55b0fe967f0b6294b828ac284feb6d191941fb85c0846c76e3aeaa1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/archive-supplied.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/archive-supplied.png",
+      "title": "Archive supplied",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 246717,
+      "sha256": "66e7c83d60e0b2e62fc795c5e8575c8ce43b6b22b697e7633304b5446cce1fe8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/vestry-isolated.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/vestry-isolated.png",
+      "title": "Vestry isolated",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 161038,
+      "sha256": "a23ec30d7d288d8acddd2985c36cd10cc28a09d5544e99f65d19778f7d5ce56d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/vestry-supplied.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/vestry-supplied.png",
+      "title": "Vestry supplied",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 202407,
+      "sha256": "b9e2b3038089f987a67bd320c4250c660a042628362f4634a72ef51f1b695eec"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/archive-isolated.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/archive-isolated.png",
+      "title": "Archive isolated",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 204878,
+      "sha256": "b6d28a9bb944cb67e52a7af708c7bdc20f1707573798d36a9233034802b9b67e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/archive-supplied.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/archive-supplied.png",
+      "title": "Archive supplied",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 250804,
+      "sha256": "7f9374b421264cec0f9333f08fc7763097a3e5eb0f72f1efe8d6b5cdc9899fde"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/vestry-isolated.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/vestry-isolated.png",
+      "title": "Vestry isolated",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 162126,
+      "sha256": "f5519b4aadb109c7c02cd5a28ae3dc09cbd9422f350514d79af1a9bface0365b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/vestry-supplied.png",
+      "url": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/software/vestry-supplied.png",
+      "title": "Vestry supplied",
+      "kind": "Monastery of Ashen Bells archive and vestry lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 207676,
+      "sha256": "503c832bde1e7dd320badb66ab083ef1ff7c2571f78d05eb8b327195488ab7a7"
     },
     {
       "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/generator-and-main-board.png",

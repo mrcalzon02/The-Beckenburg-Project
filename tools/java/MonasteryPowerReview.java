@@ -178,7 +178,7 @@ public final class MonasteryPowerReview {
     }
 
     private static Vec operator(Socket control) {
-        return new Vec(control.x()+Math.sin(control.yaw())*1.18,0,control.z());
+        return new Vec(control.x()+Math.sin(control.yaw())*1.18,0,control.z()+Math.cos(control.yaw())*1.18);
     }
 
     private static String focusId(Socket socket) {
@@ -294,6 +294,25 @@ public final class MonasteryPowerReview {
                 witness.awaitExact("LIGHTS|110101011110|1");
                 require(!lights.on(2)&&!lights.on(4)&&lights.supplied(),"Cloister switch affected the main supply");
                 report.add("live_east_range_independent_switches\tPASS");
+                var vestry=map.level().socket("switch",10);
+                if (vestry!=null) {
+                    var archive=map.level().socket("switch",3);
+                    require(lights.on(3)&&lights.on(10),"East switch interrupted the unswitched north feed");
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(47,0,40),new Vec(47,0,32),new Vec(47,0,24),
+                        new Vec(47,0,17),new Vec(36,0,17));
+                    at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,939);
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(36,0,14),operator(vestry));
+                    use(map,engineer,at,vestry);
+                    witness.awaitExact("LIGHTS|110101011100|1");
+                    require(!lights.on(10)&&lights.on(3),"Vestry switch affected archive supply");
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(34.42,0,9),new Vec(30,0,9));
+                    at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,940);
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(18,0,9),new Vec(16.22,0,12.3),operator(archive));
+                    use(map,engineer,at,archive);
+                    witness.awaitExact("LIGHTS|110001011100|1");
+                    require(!lights.on(3)&&lights.supplied(),"Archive switch changed the main supply");
+                    report.add("live_north_range_independent_switches\tPASS");
+                }
             }
         }
         report.add("live_four_player_blackout\tPASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches");
