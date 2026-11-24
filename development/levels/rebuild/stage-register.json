@@ -3581,14 +3581,16 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-service-yard-pass/checkpoint.json",
             "development/levels/rebuild/mine-cover-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-662",
             "DEV-659",
             "DEV-658"
           ],
-          "next_action": "The native owners, three ritual positions and three fitted walk-in safe zones pass. Fit the remote generator and switched mine lighting."
+          "next_action": "Service-yard generator, breaker and local lighting pass the staged native and LAN checks. Route supported downstream feeders and fit the working lights and switches. Verify blackouts and restored power in the workings."
         },
         "S07": {
           "status": "IN_PROGRESS",

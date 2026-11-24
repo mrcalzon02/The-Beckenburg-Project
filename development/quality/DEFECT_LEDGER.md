@@ -9030,3 +9030,7 @@ Continuous grips now bear into the existing shaft walls at 32 checked brackets. 
 ### DEV-661 Lower workings stair had open sides and no guards
 
 Two continuous guards are bolted onto measured tread and landing surfaces. Standing and crouched bodies can climb and descend and are stopped at both guarded sides. [Evidence](../levels/rebuild/mine-handrail-pass/checkpoint.json)
+
+### DEV-662 Mine had no reachable remote power source or working distribution
+
+The van-facing shed now houses a supported generator, distribution bank and powered yard lamp. In the staged four-peer case, a ghost trips the breaker. The generator can stop and restart while it stays tripped. A player must reset the breaker at the fitted panel. Working-area distribution remains open. [Evidence](../levels/rebuild/mine-service-yard-pass/checkpoint.json)

@@ -7338,6 +7338,17 @@
       "action": "Bolt the dual guards to the actual treads and landings. Check sideways body collision and end turns over both levels.",
       "older_maps": "Inspect unsupported elevated walking edges and verify physical guard plus head and body clearance.",
       "evidence": "development/levels/rebuild/mine-handrail-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-662",
+      "title": "Mine had no reachable remote power source or working distribution",
+      "status": "MINE_YARD_SOURCE_AND_LOCAL_BRANCH_VERIFIED_DOWNSTREAM_OPEN",
+      "affected": "Dead Man’s Claim service yard and mine workings",
+      "symptom": "The staged mine had no supported generator, physical trip reset or circuit lighting.",
+      "cause": "A service-yard source and supported branches had not been fitted to the rebuilt site.",
+      "action": "Fit the independent generator and distribution bank on a grounded shed slab. Wire the supported yard lamp and verify a live ghost trip and physical reset. Carry the feeder onward to fitted working loads.",
+      "older_maps": "Walk to physical source and breaker controls on every remote site and exercise independent source and trip state against real loads.",
+      "evidence": "development/levels/rebuild/mine-service-yard-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

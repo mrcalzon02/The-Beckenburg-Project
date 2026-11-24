@@ -2163,3 +2163,7 @@ Mine threshold commit 526e6d27f493ccdf2b184b3aa5e95ddd7b5fc12f published to draf
 ### Dead Man's Claim stair handrails
 
 Mine cover commit aa9f14277e6e0c2ccba1adca0d505a2081ffad54 is verified on draft PR 86 and gallery 45340794692 passed. The [rail checkpoint](levels/rebuild/mine-handrail-pass/checkpoint.json) installs continuous wall rails on the four enclosed flights and two physical guards on the lower workings stair. Native movement, RTX 5070 rendering and exact staged four-peer door and safe-zone behavior passed. Continue with Mine power and named package selection.
+
+### Mine service-yard supply
+
+Rail and guard commit 94cd83feff55fd338cfb899a37d9c0e4203b8d59 is verified on draft PR 86. Development gallery run 45342025663 passed. The [service-yard checkpoint](levels/rebuild/mine-service-yard-pass/checkpoint.json) adds a reachable, supported generator and breaker with a working local lamp. Software and RTX 5070 OpenGL passed on the exact stage. Four TCP peers verified a ghost trip, independent generator stop and restart, and aimed breaker reset. Continue with supported feeders and switched loads in the workings, then enclosure, drainage and named game acceptance.

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11593,
+  "count": 11599,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111784,6 +111784,66 @@
       "height": 880,
       "bytes": 758207,
       "sha256": "b59617e45286ef2f2e54b4d6aeb80f347327667f0d0279588bdd22f73a2d74f8"
+    },
+    {
+      "path": "development/levels/rebuild/mine-service-yard-pass/captures/mine-yard-powered.png",
+      "url": "development/levels/rebuild/mine-service-yard-pass/captures/mine-yard-powered.png",
+      "title": "Mine yard powered",
+      "kind": "Dead Man’s Claim service yard in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 348778,
+      "sha256": "d67c27b974ada9fb0b276ba3086ba95e7066fe4749b01f7fc555eba1568b3534"
+    },
+    {
+      "path": "development/levels/rebuild/mine-service-yard-pass/captures/mine-yard-tripped.png",
+      "url": "development/levels/rebuild/mine-service-yard-pass/captures/mine-yard-tripped.png",
+      "title": "Mine yard tripped",
+      "kind": "Dead Man’s Claim service yard in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 242647,
+      "sha256": "0f31e541b516ac773a6ef439eab67a0a15310763fa30666e179bc608b70c0b79"
+    },
+    {
+      "path": "development/levels/rebuild/mine-service-yard-pass/captures/opengl/mine-yard-powered.png",
+      "url": "development/levels/rebuild/mine-service-yard-pass/captures/opengl/mine-yard-powered.png",
+      "title": "Mine yard powered",
+      "kind": "Dead Man’s Claim service yard in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 327733,
+      "sha256": "bdcc5069114891ad0069e364bba63272bf578c27e23b0b3c968e6bed5e5c49ee"
+    },
+    {
+      "path": "development/levels/rebuild/mine-service-yard-pass/captures/opengl/mine-yard-tripped.png",
+      "url": "development/levels/rebuild/mine-service-yard-pass/captures/opengl/mine-yard-tripped.png",
+      "title": "Mine yard tripped",
+      "kind": "Dead Man’s Claim service yard in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 232975,
+      "sha256": "cca2bb2998fdcd62f2785c0c4eb5dd50b2c6f0586ec14d9a61883c3423b44c72"
+    },
+    {
+      "path": "development/levels/rebuild/mine-service-yard-pass/captures/structure/service-yard-framing-cutaway.png",
+      "url": "development/levels/rebuild/mine-service-yard-pass/captures/structure/service-yard-framing-cutaway.png",
+      "title": "Service yard framing cutaway",
+      "kind": "Dead Man’s Claim service shed structural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1141676,
+      "sha256": "305d974f6858b44f6bfe7a8ddef8a742fe6bbee955528c8d8cbe71f73875f8f2"
+    },
+    {
+      "path": "development/levels/rebuild/mine-service-yard-pass/captures/structure/service-yard-van-side.png",
+      "url": "development/levels/rebuild/mine-service-yard-pass/captures/structure/service-yard-van-side.png",
+      "title": "Service yard van side",
+      "kind": "Dead Man’s Claim service shed structural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1096533,
+      "sha256": "331943eac8e341ebc9694e2b5985e99e4884edb3f4783c84aa803752e87e4ee4"
     },
     {
       "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-closed.png",

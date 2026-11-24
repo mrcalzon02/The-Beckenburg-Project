@@ -1463,3 +1463,7 @@ The crew shack, assay office and wash-house now have three canonical cupboards s
 ## Mine handholds and lower stair guards
 
 Continuous wall-mounted rails follow both flights of each enclosed shaft and their middle landings. The exposed lower flight uses tread-mounted guards with intermediate rails and bolted plates. The passes measured 32 wall mounts and 72 lower tread bearing points. All 19 routes, both landings and the full van circuit still pass. [Handrail checkpoint](mine-handrail-pass/checkpoint.json)
+
+### Dead Man's Claim service-yard source
+
+A formed slab bears on the saved service yard and slopes into the opening. Timber framing supports the weather roof, plant backing and clipped lamp conduit. Both approaches reach the open front on existing ground. The staged Mine passes 21 routes, the retained safe zones and the live source/trip/reset scenario. Downstream feeders and working lamps remain open. [Service-yard evidence](mine-service-yard-pass/checkpoint.json)
