@@ -58,7 +58,7 @@ final class CemeteryDistributionReview {
         capture(map,level.socket("light",0),map.spawn(0),captures,report);
         int secondary=annex?9:6;
         capture(map,level.socket("light",secondary),map.spawn(secondary),captures,report);
-        if(!gpu)live(level,scene,feet,report,annex);
+        if(!gpu)live(map.site(),level,scene,feet,report,annex);
     }
 
     private static List<Vec> approach(HouseMap map,int owner,Vec target) {
@@ -126,9 +126,9 @@ final class CemeteryDistributionReview {
         report.add("standing_"+load.id()+"\t"+changed+" changed pixels, "+mean+" mean RGB increase");
     }
 
-    private static void live(LevelDefinition level,NativeInvestigationScene scene,Map<Integer,Vec> feet,
+    private static void live(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,Map<Integer,Vec> feet,
                              List<String> report,boolean annex)throws Exception {
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var map=site==HouseMap.Site.USER?new HouseMap(site,level,null,scene):HouseMap.forNetworkRevision(site,level.revision());
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
             var cottage=new Peer(host,false,"Cottage electrician");
             var archive=new Peer(host,false,"Archive electrician");
@@ -136,7 +136,7 @@ final class CemeteryDistributionReview {
             var ghost=new Peer(host,true,"Cemetery ghost")) {
             var crew=List.of(cottage,archive,third);
             for(var peer:List.of(cottage,archive,third,ghost)) {
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             cottage.awaitExact("LOBBY|3|HUMAN|4|WAITING");

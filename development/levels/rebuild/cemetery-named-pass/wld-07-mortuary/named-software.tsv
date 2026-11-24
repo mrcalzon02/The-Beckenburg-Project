@@ -1,0 +1,53 @@
+check	result
+native_scene_revision	440e537b0a1c755b1748a10ba688aff6ac9c43794014556b9ec39660262d86a2
+stage_revision	440e537b0a1c755b1748a10ba688aff6ac9c43794014556b9ec39660262d86a2-2fc0305f3bdb7ac6
+actual_fitted_doors	17
+bound_native_room_volumes	26
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	27
+physical_open_transitions	3
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	Software
+wld-07-mortuary-cottage-cupboard_protected_floor_samples	69
+wld-07-mortuary-tool-cupboard_protected_floor_samples	69
+wld-07-mortuary-mort-office-cupboard_protected_floor_samples	69
+cemetery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+wld-07-mortuary-cottage-cupboard_live_entry_hide_reveal_exit	PASS
+wld-07-mortuary-tool-cupboard_live_entry_hide_reveal_exit	PASS
+annex_staff_doors_aimed_and_crossed_to_office	PASS
+wld-07-mortuary-mort-office-cupboard_live_entry_hide_reveal_exit	PASS
+caretaker_lamp_energy	3.446046006200377 supplied, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+caretaker_lamp_visible_response	441373 changed pixels; 6.692582941483804 mean RGB increase
+four_peer_caretaker_supply	PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset
+fixture_cemetery-load-chapel	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-cottage	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-tool	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-west-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-east-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-ossuary	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-chamber	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-hall	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-reception	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-viewing	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-transfer	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-bay	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-office	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-cold	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-prep	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+standing_cemetery-load-chapel	290628 changed pixels, 1.3884724399164055 mean RGB increase
+standing_cemetery-load-mort-viewing	296500 changed pixels, 1.1323066875653083 mean RGB increase
+four_peer_independent_circuits	PASS aimed cottage and archive toggles with independent restoration, also cold store and preparation
+archive_ritual_clearance	81 supported positions in both postures
+mortuary_furnished_working_aisles	PASS viewing, preparation, cold storage and receiving
+standing_aim_MEMORIAL_REGISTER	PASS
+standing_aim_VISITOR_REGISTER	PASS
+four_peer_record_MEMORIAL_REGISTER	PASS
+four_peer_record_VISITOR_REGISTER	PASS
+solo_ai_named_van_retreat	PASS
+named_chapel_camera	PASS physical placement, blocked exterior view, shared van feed
+normal_named_van_to_archive	PASS ramp, three aimed doors, west stair and reading
+named_pavilion_emf	10/10 local, 2/10 in van
+named_rite_BANISHMENT	PASS actual installation, van refusal and result on all four peers
+named_rite_CLEANSING	PASS actual installation, van refusal and result on all four peers
+named_rite_ABSOLUTION	PASS actual installation, van refusal and result on all four peers
+named_solo_and_network_revision_match	PASS

@@ -2243,3 +2243,7 @@ The caretaker power commit 1dc79552d5058e88477726a60ebaf100674181a2 and gallery 
 ### Cemetery and mortuary physical case furnishings
 
 Distribution commit 39963cc5075b41027982abb3cb394ec000f7d78a and gallery 45381880440 passed on held draft PR 86. The [case furnishings checkpoint](levels/rebuild/cemetery-furnishings-pass/checkpoint.json) binds the newly supported record and furniture geometry to verified staging. The archive desks and reception register are operable through the ordinary reading action. Checked aisles, ritual clearance, doors, refuges and circuits stay usable. Continue with normal named solo and LAN dispatch and actual case actions.
+
+### Named Cemetery and Vale Mortuary case review
+
+Furnishings commit ca5575a62da8c86fa49b1a76f91079ab1ff930e1 and gallery 45384071028 passed on held draft PR 86. The [named case checkpoint](levels/rebuild/cemetery-named-pass/checkpoint.json) binds separate named launches to the exact reviewed physical payloads. Software and RTX 5070 replayed the map routes, doors, full refuges and lighting. Actual solo AI, four-player LAN, local camera, EMF and bounded ritual outcomes passed. Public release and broader site acceptance remain open. Continue Northwatch's physical site boundaries and the shared runtime checks.

@@ -15,7 +15,9 @@ public final class SiteCatalog {
         BLACKPINE(MissionSites.title("BLACKPINE"),BlackpineLevel.REVIEW_PROPERTY),
         LOOKOUT(MissionSites.title("LOOKOUT"),LookoutNativeLevel.REVIEW_PROPERTY),
         MINE(MissionSites.title("MINE"),MineNativeLevel.REVIEW_PROPERTY),
-        WHARF(WharfNativeLevel.TITLE,WharfNativeLevel.REVIEW_PROPERTY);
+        WHARF(WharfNativeLevel.TITLE,WharfNativeLevel.REVIEW_PROPERTY),
+        CEMETERY(CemeteryNativeLevel.TITLE,CemeteryNativeLevel.REVIEW_PROPERTY),
+        MORTUARY(CemeteryNativeLevel.ANNEX_TITLE,CemeteryNativeLevel.REVIEW_PROPERTY);
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

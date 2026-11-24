@@ -1,0 +1,250 @@
+SOURCE	3a52ff674e6360c2ee8964c17ad162749dea2aec57dd21a48db3232554c10052	95dd97f96ef50c9e0df86feaa722ca414feded898e89f61fa6c5477ff9929d20
+SPACE	stage	13	13	72	60	86	0	3	true	Cemetery-lane van apron
+SPACE	entry	12	5	55	60	72	0	3	true	Lychgate and entry court
+SPACE	avenue	7	24	20	32	60	0	3	true	Main cemetery avenue
+SPACE	chapel	0	6	38	24	56	0	3	false	Ruined chapel
+SPACE	cottage	1	32	38	46	56	0	3	false	Caretaker cottage
+SPACE	garden	7	6	20	24	38	0	3	true	Memorial garden
+SPACE	east-graves	7	32	20	51	38	0	3	true	East grave plots
+SPACE	old-graves	7	16	4	40	20	0	3	true	Old numbered markers
+SPACE	tool	2	46	42	54	52	0	3	false	Caretaker tool store
+SPACE	west-stair	3	6	12	16	20	0	3	false	West ossuary vestibule
+SPACE	east-stair	4	40	12	50	20	0	3	false	East ossuary vestibule
+SPACE	ossuary	5	14	12	42	20	-3	2.85	false	Ossuary passage
+SPACE	chamber	6	16	0	28	12	-3	3	false	Memorial record chamber
+SPACE	mort-reception	8	60	54	72	64	0	3	false	Vale Mortuary reception
+SPACE	mort-viewing	9	60	40	72	54	0	3	false	Viewing room
+SPACE	mort-prep	11	72	40	84	50	0	3	false	Preparation room
+SPACE	mort-cold	11	72	50	84	58	0	3	false	Cold storage
+SPACE	mort-office	10	76	58	84	66	0	3	false	Mortuary office
+SPACE	mort-bay	10	60	64	72	76	0	3	false	Discreet service bay
+SPACE	mort-hall	8	56	40	60	64	0	3	false	Mortuary side hall
+SPACE	mort-transfer	10	72	58	76	66	0	3	false	Staff transfer vestibule
+SPACE	receiving-yard	13	60	76	76	85	0	3	true	Discreet south receiving yard
+SPACE	west-stair-flight	3	8.5	14.9	14	17.1	-3	2.92	false	west-stair lower flight
+SPACE	east-stair-flight	4	42	14.9	47.5	17.1	-3	2.92	false	east-stair lower flight
+ANCHOR	0	chapel	15	0	47
+ANCHOR	1	cottage	39	0	47
+ANCHOR	2	tool	50	0	47
+ANCHOR	3	west-stair	7.5	0	16
+ANCHOR	4	east-stair	48.5	0	16
+ANCHOR	5	ossuary	28	-3	16
+ANCHOR	6	chamber	22	-3	6
+ANCHOR	12	entry	28	0	66
+ANCHOR	13	stage	25	0	74
+ANCHOR	7	avenue	28	0	40
+ANCHOR	8	mort-reception	66	0	59
+ANCHOR	9	mort-viewing	66	0	47
+ANCHOR	10	mort-bay	66	0	70
+ANCHOR	11	mort-cold	78	0	54
+RITUAL	banishment	6	22.0	-3	6.0
+RITUAL	cleansing	1	39.0	0	47.0
+RITUAL	absolution	7	15.0	0	29.0
+TREAD	162:L14 flight0 step1
+TREAD	163:L14 flight0 step2
+TREAD	164:L14 flight0 step3
+TREAD	165:L14 flight0 step4
+TREAD	166:L14 flight0 step5
+TREAD	167:L14 flight0 step6
+TREAD	168:L14 flight0 step7
+TREAD	169:L14 flight0 step8
+TREAD	170:L14 flight0 step9
+TREAD	171:L14 flight0 step10
+TREAD	172:L14 flight0 step11
+TREAD	173:L14 flight0 step12
+TREAD	174:L14 flight0 step13
+TREAD	175:L14 flight0 step14
+TREAD	176:L14 flight0 step15
+TREAD	177:L14 flight0 step16
+TREAD	178:L14 flight0 step17
+TREAD	180:L15 flight0 step1
+TREAD	181:L15 flight0 step2
+TREAD	182:L15 flight0 step3
+TREAD	183:L15 flight0 step4
+TREAD	184:L15 flight0 step5
+TREAD	185:L15 flight0 step6
+TREAD	186:L15 flight0 step7
+TREAD	187:L15 flight0 step8
+TREAD	188:L15 flight0 step9
+TREAD	189:L15 flight0 step10
+TREAD	190:L15 flight0 step11
+TREAD	191:L15 flight0 step12
+TREAD	192:L15 flight0 step13
+TREAD	193:L15 flight0 step14
+TREAD	194:L15 flight0 step15
+TREAD	195:L15 flight0 step16
+TREAD	196:L15 flight0 step17
+POINT	L01	28.0	0	78.0
+POINT	L01	28.0	0	72.0
+POINT	L01	28.0	0	66.0
+POINT	L02	28.0	0	66.0
+POINT	L02	28.0	0	60.0
+POINT	L02	28.0	0	40.0
+POINT	L03	28	0	66
+POINT	L03	23	0	62
+POINT	L03	15	0	62
+POINT	L03	15	0	56
+POINT	L03	15	0	47
+POINT	L04	28	0	66
+POINT	L04	33	0	62
+POINT	L04	39	0	62
+POINT	L04	39	0	56
+POINT	L04	39	0	47
+POINT	L05	15	0	47
+POINT	L05	15	0	38
+POINT	L05	15	0	29
+POINT	L06	15.0	0	29.0
+POINT	L06	24.0	0	29.0
+POINT	L06	28.0	0	40.0
+POINT	L07	28.0	0	40.0
+POINT	L07	32.0	0	29.0
+POINT	L07	41.0	0	29.0
+POINT	L08	41	0	29
+POINT	L08	39	0	34
+POINT	L08	39	0	38
+POINT	L08	39	0	47
+POINT	L09	15.0	0	29.0
+POINT	L09	20.0	0	20.0
+POINT	L09	28.0	0	12.0
+POINT	L10	28.0	0	12.0
+POINT	L10	36.0	0	20.0
+POINT	L10	41.0	0	29.0
+POINT	L11	39.0	0	47.0
+POINT	L11	46.0	0	47.0
+POINT	L11	50.0	0	47.0
+POINT	L12	15	0	29
+POINT	L12	11.5	0	24
+POINT	L12	7.5	0	23
+POINT	L12	7.5	0	20
+POINT	L12	7.5	0	16
+POINT	L12	8.5	0	16
+POINT	L13	41	0	29
+POINT	L13	45	0	24
+POINT	L13	48.5	0	23
+POINT	L13	48.5	0	20
+POINT	L13	48.5	0	16
+POINT	L13	47.5	0	16
+POINT	L14	8.5	0	16
+POINT	L14	14.2	-3	16
+POINT	L14	28	-3	16
+POINT	L15	28	-3	16
+POINT	L15	41.8	-3	16
+POINT	L15	47.5	0	16
+POINT	L16	28.0	-3	16.0
+POINT	L16	22.0	-3	12.0
+POINT	L16	22.0	-3	6.0
+POINT	mort-16	28	0	66
+POINT	mort-16	46	0	66
+POINT	mort-16	58	0	66
+POINT	mort-16	58	0	64
+POINT	mort-16	58	0	59
+POINT	mort-16	60	0	59
+POINT	mort-16	66	0	59
+POINT	mort-17	66.0	0	59.0
+POINT	mort-17	66.0	0	47.0
+POINT	mort-18	66	0	47
+POINT	mort-18	66	0	54
+POINT	mort-18	66	0	59
+POINT	mort-18	69	0	60.5
+POINT	mort-18	72	0	60.5
+POINT	mort-18	74	0	60.5
+POINT	mort-18	74	0	58
+POINT	mort-18	74	0	54
+POINT	mort-18	78	0	54
+POINT	mort-18	78	0	50
+POINT	mort-18	78	0	45
+POINT	mort-19	78.0	0	45.0
+POINT	mort-19	78.0	0	54.0
+POINT	mort-20	78	0	54
+POINT	mort-20	74	0	54
+POINT	mort-20	74	0	58
+POINT	mort-20	74	0	62
+POINT	mort-20	76	0	62
+POINT	mort-20	80	0	62
+POINT	mort-21	80	0	62
+POINT	mort-21	76	0	62
+POINT	mort-21	74	0	62
+POINT	mort-21	74	0	60.5
+POINT	mort-21	72	0	60.5
+POINT	mort-21	69	0	60.5
+POINT	mort-21	66	0	59
+POINT	mort-22	66	0	59
+POINT	mort-22	69	0	60.5
+POINT	mort-22	72	0	60.5
+POINT	mort-22	74	0	60.5
+POINT	mort-22	74	0	65
+POINT	mort-22	72	0	65
+POINT	mort-22	69	0	65
+POINT	mort-22	66	0	70
+POINT	mort-23	58	0	59
+POINT	mort-23	66	0	59
+POINT	mort-24	58	0	47
+POINT	mort-24	66	0	47
+POINT	mort-25	28	0	74.372
+POINT	mort-25	32	0	74.372
+POINT	mort-25	37	0	77
+POINT	mort-25	41	0	80
+POINT	mort-25	51	0	80
+POINT	mort-25	61	0	81
+POINT	mort-25	66	0	81
+POINT	mort-25	66	0	76
+POINT	mort-25	66	0	70
+OPEN	900	13	12	28	0	72	z	2	trail
+OPEN	901	12	7	28	0	59.9	z	2	trail
+OPEN	902	3	5	14	-3	16	x	1.5	stair
+OPEN	903	4	5	42	-3	16	x	1.5	stair
+OPEN	904	5	6	22	-3	12	z	1.5	arch
+COVER	wld-07-mortuary-cottage-cupboard	1	33.45	0.0	44.3	-1.5707963267948966
+COVER	wld-07-mortuary-tool-cupboard	2	52.55	0.0	49.7	1.5707963267948966
+COVER	wld-07-mortuary-mort-office-cupboard	10	82.55	0.0	63.2	1.5707963267948966
+SPACE	caretaker-work-yard	12	45.5	56.75	52.3	63.2	0	2.9	true	Caretaker work yard
+SPACE	caretaker-plant	12	46.6	53.2	52.2	56.8	0.2	2.7	false	Screened caretaker power shelter
+SERVICE	cemetery-generator	generator	12	50.885	0.657	54.291	0.0	CT-MAIN
+SERVICE	cemetery-breaker	breaker	12	48.45	1.082	53.905	0.0	CT-MAIN
+SERVICE	cemetery-service-light	light	12	49.519999	2.638	55.640001	0	native-string
+POINT	caretaker-service	28	0	66
+POINT	caretaker-service	39	0	62
+POINT	caretaker-service	46	0.0	62
+POINT	caretaker-service	49.4	-0.000823	60
+POINT	caretaker-service	49.4	0.023196	58.4
+POINT	caretaker-service	49.4	0.2	56.8
+POINT	caretaker-service	49.4	0.2	55.85
+SERVICE	cemetery-switch-00	switch	0	16.65	1.25	55.879002	3.141592653589793	CT-00
+SERVICE	cemetery-switch-01	switch	1	40.5	1.25	55.879002	3.141592653589793	CT-01
+SERVICE	cemetery-switch-02	switch	2	46.120998	1.25	48.400002	1.5707963267948966	CT-02
+SERVICE	cemetery-switch-03	switch	3	9.4	1.25	19.879	3.141592653589793	CT-03
+SERVICE	cemetery-switch-04	switch	4	46.400002	1.25	19.879	3.141592653589793	CT-04
+SERVICE	cemetery-switch-05	switch	5	28.9	-1.75	12.081	0.0	CT-05
+SERVICE	cemetery-switch-06	switch	6	23.4	-1.75	11.919	3.141592653589793	CT-06
+SERVICE	cemetery-switch-08	switch	8	56.081001	1.25	62.299999	1.5707963267948966	CT-08
+SERVICE	cemetery-switch-09	switch	9	60.120998	1.25	48.349998	1.5707963267948966	CT-09
+SERVICE	cemetery-switch-10	switch	10	75.878998	1.25	60.450001	-1.5707963267948966	CT-10
+SERVICE	cemetery-switch-11	switch	11	75.400002	1.25	57.879002	3.141592653589793	CT-11
+SERVICE	cemetery-load-chapel	light	0	15.9	2.656	45.799999	0	native-string
+SERVICE	cemetery-load-cottage	light	1	39.099998	2.656	47.700001	0	native-string
+SERVICE	cemetery-load-tool	light	2	50.0	2.656	45.099998	0	native-string
+SERVICE	cemetery-load-west-stair	light	3	8.5	2.656	18.5	0	native-string
+SERVICE	cemetery-load-east-stair	light	4	47.400002	2.656	18.4	0	native-string
+SERVICE	cemetery-load-ossuary	light	5	28.700001	-0.484	16.6	0	native-string
+SERVICE	cemetery-load-chamber	light	6	22.0	-0.484	6.35	0	native-string
+SERVICE	cemetery-load-mort-hall	light	8	58.0	2.656	57.0	0	native-string
+SERVICE	cemetery-load-mort-reception	light	8	66.300003	2.656	59.700001	0	native-string
+SERVICE	cemetery-load-mort-viewing	light	9	66.0	2.656	46.0	0	native-string
+SERVICE	cemetery-load-mort-transfer	light	10	74.0	2.656	61.299999	0	native-string
+SERVICE	cemetery-load-mort-bay	light	10	64.0	2.656	70.5	0	native-string
+SERVICE	cemetery-load-mort-office	light	10	79.300003	2.656	61.299999	0	native-string
+SERVICE	cemetery-load-mort-cold	light	11	77.300003	2.656	53.799999	0	native-string
+SERVICE	cemetery-load-mort-prep	light	11	78.099998	2.656	45.400002	0	native-string
+SWITCH_FEET	0	16.65	0.0	54.8
+SWITCH_FEET	1	40.5	0.0	54.8
+SWITCH_FEET	2	47.25	0.0	48.4
+SWITCH_FEET	3	9.4	0.0	19.13
+SWITCH_FEET	4	46.4	0.0	19.13
+SWITCH_FEET	5	28.9	-3.0	13.25
+SWITCH_FEET	6	23.4	-3.0	10.8
+SWITCH_FEET	8	57	0.0	62.3
+SWITCH_FEET	9	61.2	0.0	48.35
+SWITCH_FEET	10	74.9	0.0	60.45
+SWITCH_FEET	11	75.4	0.0	56.7
+STORY	cemetery-story-memorial_register	MEMORIAL_REGISTER	6	level_trace_journal	18.719999313354492	-2.2095000743865967	6.599999904632568	0	0.88	20.2	-3	6.6	18.745001	-2.17694	6.617
+STORY	cemetery-story-visitor_register	VISITOR_REGISTER	8	level_story_letters	69.59464263916016	0.9100600481033325	56.500221252441406	0	0.88	68.13	0	56.5	69.625	0.9369	56.516998

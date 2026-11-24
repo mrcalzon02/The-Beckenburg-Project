@@ -20,12 +20,12 @@ final class CemeteryRefugeReview {
         var approaches=annex?Map.of(10,List.of(new Vec(69,0,65),BAY_THRESHOLD,TRANSFER,new Vec(74,0,62),
                                              OFFICE_THRESHOLD,OFFICE)):Map.<Integer,List<Vec>>of();
         NativeSchoolInteriorReview.auditWalkInCover(map,captures,report,"cemetery",approaches);
-        if(!gpu) live(level,scene,annex,report);
+        if(!gpu) live(map.site(),level,scene,annex,report);
     }
 
-    private static void live(LevelDefinition level,NativeInvestigationScene scene,boolean annex,List<String> report)
+    private static void live(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,boolean annex,List<String> report)
             throws Exception {
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var map=site==HouseMap.Site.USER?new HouseMap(site,level,null,scene):HouseMap.forNetworkRevision(site,level.revision());
         var contract=new CustomContract(3,100,150,100,100,100,100,100,CustomContract.Sprint.LIMITED,100,true,true);
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,map);
             var first=new Peer(host,false,"Caretaker observer");
@@ -34,7 +34,7 @@ final class CemeteryRefugeReview {
             var ghost=new Peer(host,true,"Cemetery ghost")){
             var hunters=List.of(first,second,third);
             for(var peer:List.of(first,second,third,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             first.awaitExact("LOBBY|3|HUMAN|4|WAITING");

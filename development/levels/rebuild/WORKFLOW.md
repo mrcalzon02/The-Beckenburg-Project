@@ -1497,3 +1497,9 @@ The next pass fits local case materials to actual supported furniture and binds 
 ### Cemetery archive and Vale Mortuary rough case furnishings
 
 Both underground archives now have a fitted reading desk and a readable memorial register. The annex has a visitor registry and working space at the viewing, preparation, cold and receiving furnishings. The measured archive square remained clear at 81 positions in both postures. The staged game review repeated the existing routes, doors, refuge entries and electrical controls. Four-player LAN read the physical records. The next milestone is normal named dispatch and case actions. [Furnishings checkpoint](cemetery-furnishings-pass/checkpoint.json) / [Active roster](cemetery-furnishings-pass/roster.json)
+
+### Named Cemetery and Vale Mortuary package review
+
+Both variants load the checked furnishings, ground, rooms, collision and door schedules through normal solo and LAN selection. The Cemetery retains its original campaign position and the mortuary is a review alternative. The review package covers the continuous van-to-archive route, a chapel camera and van feed, local EMF, the three rite stations, independent power states and the full walk-in safe zones. [Named checkpoint](cemetery-named-pass/checkpoint.json) / [Active roster](cemetery-named-pass/roster.json)
+
+Continue the next physical roster pass at Northwatch. The Cemetery still needs finish and release acceptance.

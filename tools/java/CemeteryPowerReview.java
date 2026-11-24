@@ -52,7 +52,7 @@ final class CemeteryPowerReview {
         lights.setBreaker(false);
         render(map,lights,off);
         contrast(on,off,report);
-        if(!gpu)live(level,scene,route,generator,breaker,report);
+        if(!gpu)live(map.site(),level,scene,route,generator,breaker,report);
     }
 
     private static void render(HouseMap map,RoomLighting lights,Path image)throws Exception{
@@ -84,16 +84,16 @@ final class CemeteryPowerReview {
         report.add("caretaker_lamp_visible_response\t"+count+" changed pixels; "+mean+" mean RGB increase");
     }
 
-    private static void live(LevelDefinition level,NativeInvestigationScene scene,List<Vec> route,Socket generator,
+    private static void live(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<Vec> route,Socket generator,
                              Socket breaker,List<String> report)throws Exception{
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var map=site==HouseMap.Site.USER?new HouseMap(site,level,null,scene):HouseMap.forNetworkRevision(site,level.revision());
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
             var operator=new Peer(host,false,"Caretaker electrician");
             var witness=new Peer(host,false,"Caretaker witness");
             var reconnecting=new Peer(host,false,"Caretaker crew");
             var ghost=new Peer(host,true,"Cemetery ghost")){
             for(var peer:List.of(operator,witness,reconnecting,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             operator.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -129,7 +129,7 @@ final class CemeteryPowerReview {
                 WharfPowerChecks.await(frames,"INFO|mission resumed");
                 resumed.view3D();
                 WharfPowerChecks.await(frames,"ACCEPT|VIEW3D");
-                WharfPowerChecks.await(frames,"SITE|USER|"+level.revision());
+                WharfPowerChecks.await(frames,"SITE|"+map.site()+"|"+level.revision());
                 WharfPowerChecks.await(frames,"LIGHTS|111111111111|0");
                 WharfPowerChecks.await(frames,"SOURCE|1");
             }

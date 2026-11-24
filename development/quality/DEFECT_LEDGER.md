@@ -9138,3 +9138,7 @@ The memorial register now has a desk in the archive, and the visitor register si
 ### DEV-687 Mortuary viewing plaque floated above its pedestal
 
 The inherited detail was 45 mm above the top. Four measured contacts seat the placed plaque on the actual pedestal. The original model library remains the source for this assembly. [Fitted instance and standing views](../levels/rebuild/cemetery-furnishings-pass/checkpoint.json)
+
+### DEV-688 Cemetery variants had no named packaged dispatch
+
+The standard site selectors now resolve each variant and native revision under the Cemetery review flag. Both source packages preserve their exact model, collision and schedules. Solo and four-peer cases verified dispatch and field actions. [Exact package evidence](../levels/rebuild/cemetery-named-pass/checkpoint.json)

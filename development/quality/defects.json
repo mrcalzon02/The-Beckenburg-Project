@@ -7624,6 +7624,17 @@
       "action": "Seat the plaque on four measured contacts in the installed instance and verify standing view and exact GLB/collision agreement.",
       "older_maps": "Inspect inherited decorative subassemblies for actual contact when fitting reused furniture.",
       "evidence": "development/levels/rebuild/cemetery-furnishings-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-688",
+      "title": "Cemetery variants had no named packaged dispatch",
+      "status": "CEMETERY_AND_MORTUARY_NAMED_PACKAGED_CASES_VERIFIED_UNDER_REVIEW_GATE",
+      "affected": "WLD-07 Cemetery and WLD-07-MORTUARY additive site",
+      "symptom": "The furnished maps and their fitted services and doors could only run in the staged authoring slot.",
+      "cause": "No packaged registration shared the exact source and site revision with the normal selectors.",
+      "action": "Package both exact maps, share the authored scene reader, and verify normal solo AI and named LAN case actions behind the scene review flag.",
+      "older_maps": "Verify packaged identity and exact source agreement along with real local and TCP walks before opening public selection.",
+      "evidence": "development/levels/rebuild/cemetery-named-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

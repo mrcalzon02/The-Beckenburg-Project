@@ -137,6 +137,14 @@ for table in room-layout door-schedule; do
     cp "$wharf_packet/$table.tsv" "build/classes/org/beckenburg/sites/wharf-$table.tsv"
 done
 cp development/levels/rebuild/wharf-landward-pass/wharf-tide.water build/classes/org/beckenburg/sites/wharf-tide.water
+for site in wld-07 wld-07-mortuary; do
+    cemetery_packet="development/levels/rebuild/cemetery-furnishings-pass/$site"
+    cemetery_resource="build/classes/org/beckenburg/sites/$site"
+    mkdir -p "$cemetery_resource"
+    for payload in furnished-grounds.glb furnished-grounds.hcs2 room-layout.tsv door-schedule.tsv; do
+        cp "$cemetery_packet/$payload" "$cemetery_resource/$payload"
+    done
+done
 asylum_packet=development/levels/rebuild/asylum-flight-rails-pass
 for extension in glb hcs2; do
     cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"

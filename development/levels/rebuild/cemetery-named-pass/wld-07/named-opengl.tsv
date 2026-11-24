@@ -1,0 +1,28 @@
+check	result
+native_scene_revision	7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07
+stage_revision	7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07-893e3ae9633bec4a
+actual_fitted_doors	7
+bound_native_room_volumes	18
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	17
+physical_open_transitions	8
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+wld-07-cottage-cupboard_protected_floor_samples	69
+wld-07-chapel-cupboard_protected_floor_samples	69
+wld-07-tool-cupboard_protected_floor_samples	69
+cemetery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+caretaker_lamp_energy	3.446046006200377 supplied, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+caretaker_lamp_visible_response	399915 changed pixels; 6.263103448275862 mean RGB increase
+fixture_cemetery-load-chapel	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-cottage	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-tool	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-west-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-east-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-ossuary	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-chamber	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+standing_cemetery-load-chapel	250866 changed pixels, 0.8348223615464995 mean RGB increase
+standing_cemetery-load-chamber	171903 changed pixels, 0.3532954545454545 mean RGB increase
+archive_ritual_clearance	81 supported positions in both postures
+standing_aim_MEMORIAL_REGISTER	PASS
+named_solo_and_network_revision_match	PASS

@@ -5,11 +5,11 @@ import java.nio.file.Path;
 import java.util.List;
 import javax.imageio.ImageIO;
 import org.beckenburg.LevelDefinition.Vec;
+import org.beckenburg.CemeteryNativeLevel.Story;
 import org.beckenburg.NativeSchoolInteriorReview.Peer;
 
 /** Confirms the placed registers can be approached and read through the game. */
 final class CemeteryFurnishingsReview {
-    record Story(String id,int owner,Vec reading,Vec contact) {}
 
     private CemeteryFurnishingsReview() {}
 
@@ -48,7 +48,7 @@ final class CemeteryFurnishingsReview {
             capture(map,story,captures);
             report.add("standing_aim_"+story.id()+"\tPASS");
         }
-        if(!gpu)live(map.level(),scene,stories,report);
+        if(!gpu)live(map.site(),map.level(),scene,stories,report);
     }
 
     private static void capture(HouseMap map,Story story,Path captures)throws Exception {
@@ -73,16 +73,16 @@ final class CemeteryFurnishingsReview {
                 "No Cemetery record image encoder");
     }
 
-    private static void live(LevelDefinition level,NativeInvestigationScene scene,List<Story> stories,
+    private static void live(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<Story> stories,
                              List<String> report)throws Exception {
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var map=site==HouseMap.Site.USER?new HouseMap(site,level,null,scene):HouseMap.forNetworkRevision(site,level.revision());
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
             var archive=new Peer(host,false,"Memorial reader");
             var reception=new Peer(host,false,"Registry reader");
             var witness=new Peer(host,false,"Cemetery witness");
             var ghost=new Peer(host,true,"Cemetery ghost")) {
             for(var peer:List.of(archive,reception,witness,ghost)) {
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             archive.awaitExact("LOBBY|3|HUMAN|4|WAITING");

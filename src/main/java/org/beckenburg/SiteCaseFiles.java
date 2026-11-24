@@ -63,6 +63,7 @@ public final class SiteCaseFiles {
                 "ACCESS: Follow shore street to the cottages and quay. The cross-dock joins the piers. Both guarded stairs lead to the dry undercroft. Stay on the decks at the water's edge.",
                 "SERVICES: The shore-street generator and breaker supply six room circuits. Refuge cupboards stand in the cottages and net shed.",
                 "RECORDS: Read the boathouse departure tally and fish house crossing sheet. Collect evidence of the current haunting using your instruments."));
+            case "wld-07","wld-07-mortuary" -> cemeteryFile(id,identity);
             default -> {
                 var story=WorldLore.SITES.stream().filter(s->s.id().equals(id)).findFirst().orElse(null);
                 yield new File("BB / "+id.toUpperCase(java.util.Locale.ROOT),story==null?identity.title():story.title(),identity.address(),
@@ -71,6 +72,19 @@ public final class SiteCaseFiles {
             }
         };
     }
+    private static File cemeteryFile(String id,SiteStories.Identity identity){
+        boolean annex=id.equals("wld-07-mortuary");
+        return new File(annex?"BB / WLD-07 / VALE":"BB / WLD-07",identity.title(),identity.address(),
+            List.of(identity.history(),
+                "Late 2022: Search parties separated last sightings from memorial entries while families waited for word."),
+            List.of("OBJECTIVE: Investigate the current threat, carry out the appropriate rite, and return to the van.",
+                annex?"ACCESS: Enter the mortuary through the visitor hall or receiving bay. The cemetery has two stairs into the ossuary."
+                     :"ACCESS: The chapel links the forecourt and memorial garden. Both stair pavilions descend to the ossuary.",
+                "SERVICES: The caretaker shelter houses the generator and breaker behind the cottage. Starting the generator leaves a tripped breaker open.",
+                annex?"RECORDS: Read the memorial register in the lower archive and the visitor register at Vale reception."
+                     :"RECORDS: Read the memorial register in the lower archive. Collect current evidence with your instruments."));
+    }
+
     public static List<String> page(HouseMap map,int page,List<String> status){
         var f=forSite(map.level().id());
         return switch(Math.floorMod(page,3)){
