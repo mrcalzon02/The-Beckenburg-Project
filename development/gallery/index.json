@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12219,
+  "count": 12247,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116004,6 +116004,286 @@
       "height": 580,
       "bytes": 428940,
       "sha256": "facaacc7e0cdd273fb28b54e00155a63d59290a46b8921a93fcf0f18993c9039"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-lower-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-lower-flight.png",
+      "title": "Bell lower flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 366190,
+      "sha256": "360446ef51110dc0ce189c7760ca633babc4cee57c330ae4d469940e8a5a9afd"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-turning-landing.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-turning-landing.png",
+      "title": "Bell turning landing",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 376571,
+      "sha256": "414a2972fc0b8a97b58b4e24546f9544c09c835a2f826fd0f95293881c9f1105"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-upper-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-upper-flight.png",
+      "title": "Bell upper flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 379918,
+      "sha256": "0e7527e690c050f58cf9fc94b0a142e56ab548ece3f1ae2c0a159a0098323d5b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/east-catacomb-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/east-catacomb-flight.png",
+      "title": "East catacomb flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 357388,
+      "sha256": "4670dbafa62cd3511040186b54a6aff3b2368e15d582e73a348976504a5b714b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-archive-cupboard-disabled.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-archive-cupboard-disabled.png",
+      "title": "Monastery archive cupboard disabled",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 379451,
+      "sha256": "af1f374f89ddbec9dd4538b9b4268fb9e4eaef13d020c36cf20adf4b942b3b18"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 480219,
+      "sha256": "f5106c81d1facba3788d917df3115ffbcf31e644700601c00fd77c06284856a9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398376,
+      "sha256": "98750fe5c59ba12214a41bd7773a6e7eb8b4d35265a1fc65f8ab0e8c25c0e9c4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-chamber-cupboard-disabled.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-chamber-cupboard-disabled.png",
+      "title": "Monastery chamber cupboard disabled",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 378316,
+      "sha256": "89cc37fe56a8bc3d171b34eb42442de4541427c89bbea1cd948fd58a4e6131ab"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 474815,
+      "sha256": "85d270d4c53309fa99aefb04db38ddcfbc1c7c7b231ece5dc30f011d4ac53612"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 390906,
+      "sha256": "c6deb5fd1f4cb7f96d32da87191a478689d62afa8f67705576d53667830e880f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-dorm-cupboard-disabled.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-dorm-cupboard-disabled.png",
+      "title": "Monastery dorm cupboard disabled",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 372064,
+      "sha256": "b41bf3869890d558ca63b008e4f3eda5451c855d5e9974a9fdc1af24b89d5c7d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 483177,
+      "sha256": "8008f61ca5ed4f8ca100c8ecc6fe16daf7c6ad006f55a658ee98d301b61fde73"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 391112,
+      "sha256": "d4f1c576f6609d9912041cfb8971bc1c5fb5d7e1969f8dccc5fcead6233b8656"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/west-catacomb-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/west-catacomb-flight.png",
+      "title": "West catacomb flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 384594,
+      "sha256": "3aa84e5a848ef66dd56f0f446495a4d661dddb9adae4e922668142c9754d7ddc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/bell-lower-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/bell-lower-flight.png",
+      "title": "Bell lower flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 370986,
+      "sha256": "de9388faea44fec144788be290a2575cad5d138b713a89dfdf62641cf150616d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/bell-turning-landing.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/bell-turning-landing.png",
+      "title": "Bell turning landing",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 374289,
+      "sha256": "552b60af76b1ffeb40d608c8f7fc22613444ab3496f6af6313be38f77248c461"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/bell-upper-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/bell-upper-flight.png",
+      "title": "Bell upper flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 391889,
+      "sha256": "b42adaca26398ca1a9d6f0459722c86b3e6aa75bcb3adf68a86186e2d7ca979c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/east-catacomb-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/east-catacomb-flight.png",
+      "title": "East catacomb flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 358581,
+      "sha256": "c183078f7f94da1afc1ea14b50417b211240747565a17a1f88a14b92335a49c3"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-archive-cupboard-disabled.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-archive-cupboard-disabled.png",
+      "title": "Monastery archive cupboard disabled",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 381006,
+      "sha256": "f94599c6c0fdee6a3caed2d8a0cef5ec15143cf5cf3a8abb9c05cdb775799a36"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 475705,
+      "sha256": "5a12520f3b9db9a2a26b40c23b3c00fb25284fa7f93ad226cf3c69b3c37157ac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398884,
+      "sha256": "990de29fc75ab7db0a8287398254e319c793e0b779f880b2461b7a6dc4a0f88f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-chamber-cupboard-disabled.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-chamber-cupboard-disabled.png",
+      "title": "Monastery chamber cupboard disabled",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 379913,
+      "sha256": "47e8cd5cf32a67176617a71b83082e639cf292a8304ce21cf66291c66aeaa303"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 469813,
+      "sha256": "907ac7ec325a644ec93ee8f8c1db6c1ed34384afc327fc2c98d55a237bd7cc97"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 392465,
+      "sha256": "41c5fb2b8a2f2f746906e749bd95f43fabbd658c00dba2490c08f417884b61a9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-dorm-cupboard-disabled.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-dorm-cupboard-disabled.png",
+      "title": "Monastery dorm cupboard disabled",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 372882,
+      "sha256": "46f7b0553ad8c16a7097a1f63a7780d1a2abd34907970822ccd5c9d3e26cb48a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 477684,
+      "sha256": "723b2683db012f137c956f0b6698acd64930e3ee55c859a446492535e85bd140"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery of Ashen Bells retained walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 391632,
+      "sha256": "6a6e173fc6c40abf6d9c0ed15100bea8be3882637e17766c47835a5f361e20ef"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/west-catacomb-flight.png",
+      "url": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/software/west-catacomb-flight.png",
+      "title": "West catacomb flight",
+      "kind": "Monastery of Ashen Bells fitted stair handrail in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 388325,
+      "sha256": "92b816dc5caa77e7833ab9255d5a130489b568c1195ca239e0c9e11385890fa7"
     },
     {
       "path": "development/levels/rebuild/monastery-refuge-pass/wld-10/captures/opengl/monastery-archive-cupboard-disabled.png",

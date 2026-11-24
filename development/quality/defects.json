@@ -7921,6 +7921,17 @@
       "action": "Fit three floor-supported full-volume cupboards. Replay the preserved doors, stairs and cargo approaches, then verify full coverage, graphics and live entry and exit at both densities.",
       "older_maps": "Verify that each authored refuge covers its full usable interior with protection starting at its physical opening.",
       "evidence": "development/levels/rebuild/monastery-refuge-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-715",
+      "title": "Monastery bell tower and catacomb stair flights lacked handrails",
+      "status": "MONASTERY_FOUR_STAIR_FLIGHTS_WITH_FOUNDED_HANDRAILS_STAGED",
+      "affected": "WLD-10 lower and upper bell tower stairs, turning landing and both catacomb flights",
+      "symptom": "The original stone guards enclose the wells, but the pitch and turning landing had no supported handholds.",
+      "cause": "The architectural stair revision installed treads and enclosure before its finish hardware.",
+      "action": "Survey and fit paired iron grips on the four flights and a continuous grip around the bell landing. Verify mounting, native geometry, width, standing views, routes and the live memorial approach.",
+      "older_maps": "Audit handrail fastening and clear width against each site's own built treads and landings.",
+      "evidence": "development/levels/rebuild/monastery-handrail-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

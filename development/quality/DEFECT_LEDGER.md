@@ -9246,3 +9246,7 @@ Thirteen original frames now carry fitted, replicated leaves. The four cloister 
 ### DEV-714 · Monastery walk-in refuges
 
 The operating-door stage left the Monastery without sanctuary coverage. Three canonical cupboards now sit clear of existing circulation on the archive, dormitory and lower memorial floors. The staged runtime verifies full protection and cue bounds, entrance and exit, 0% cover, and preserved stair and door routes. Audit older levels against their own physical refuge thresholds. [Verification checkpoint](../levels/rebuild/monastery-refuge-pass/checkpoint.json)
+
+### DEV-715 · Monastery stair handrails
+
+Both bell flights and both crypt flights lacked graspable, mounted hardware. The fitted revision adds iron grips on the existing string walls, coping and lining with a continuous outer rail at the bell turning landing. The stair floor, rail clearance, refuge volumes and actual door routes passed the staged regression. [Verification checkpoint](../levels/rebuild/monastery-handrail-pass/checkpoint.json)

@@ -44,7 +44,10 @@ public final class MonasteryRefugeReview {
     }
 
     private static void review(Path packet, boolean gpu) throws Exception {
-        var data = MonasteryDoorReview.read(packet, packet, "monastery-with-refuges");
+        review(packet, gpu, MonasteryDoorReview.read(packet, packet, "monastery-with-refuges"));
+    }
+
+    static void review(Path packet, boolean gpu, MonasteryDoorReview.Scene data) throws Exception {
         var map = data.map();
         require(map.valid() && RitualSites.valid(map), "Monastery spawn or ritual ownership changed");
         var report = new ArrayList<>(List.of("check\tresult",

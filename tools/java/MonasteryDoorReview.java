@@ -150,7 +150,7 @@ public final class MonasteryDoorReview {
         report.forEach(System.out::println);
     }
 
-    private static void live(Scene data,List<String> report)throws Exception {
+    static void live(Scene data,List<String> report)throws Exception {
         var map=data.map();
         var replica=data.map();
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
