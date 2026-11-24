@@ -10,7 +10,7 @@ from verify_blackwater_named import CLASSES as SHARED_REVIEW_CLASSES
 from verify_northwatch_named import jdk
 
 ROOT = Path(__file__).resolve().parents[1]
-STAGE = ROOT / "development/levels/rebuild/monastery-court-drainage-pass"
+STAGE = ROOT / "development/levels/rebuild/monastery-north-drainage-pass"
 GAME = ROOT / "build/beckenburg-game.jar"
 GPU = ROOT / "gpu-client/target/BeckenburgGPU.jar"
 RESOURCE = "org/beckenburg/sites/wld-10/"

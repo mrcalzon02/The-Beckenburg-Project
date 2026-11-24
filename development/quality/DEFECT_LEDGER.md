@@ -9302,3 +9302,11 @@ Fit the eight roof collectors to clear buried conductors and two gravel gallerie
 ### DEV-728 · Physical walking grates stopped the native foot probes
 
 The court's two cover assemblies specify a bounded shoe span inside the physical grate footprint. Native body collision, sight through the slots and ordinary floor-edge support retain their geometry checks. [Verification checkpoint](../levels/rebuild/monastery-court-drainage-pass/checkpoint.json)
+
+### DEV-729 · Monastery northern roof sumps lacked downhill outlets
+
+Fit three existing roof sumps to overflow sills and two separate graded northern soil receivers. Verify footing elevations and walking routes against the packaged terrain. [Verification checkpoint](../levels/rebuild/monastery-north-drainage-pass/checkpoint.json)
+
+### DEV-730 · Detached GLB terrain buffers accumulated across saved revisions
+
+The northern terrain replacement prunes inactive static mesh data. A direct binary comparison covers the remaining live mesh accessors, material and texture bindings, and transforms. [Verification checkpoint](../levels/rebuild/monastery-north-drainage-pass/checkpoint.json)

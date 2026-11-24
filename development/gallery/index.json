@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12450,
+  "count": 12501,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -117724,6 +117724,516 @@
       "height": 640,
       "bytes": 323719,
       "sha256": "933eec1f4506eaaa5b4c5ccdba072341599983ef572a236c7fbd79482291019a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489953,
+      "sha256": "8d484812e5bd44c004b16b2bf11f8899d75240d2aaa8a29e1af08e55d4ce2f54"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 415318,
+      "sha256": "5e1be068b007b6fbb4e048da9ad84be5f88f1078763e710b5e933b859e44441d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-archive-reading-table.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-archive-reading-table.png",
+      "title": "Monastery archive reading table",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 391601,
+      "sha256": "6fa16994d819c8e9174c308e7a6b677875b68841c40097403798d6da93b83a2b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 474803,
+      "sha256": "10c3346f84e830ef76c52501314de27c8b55ce362ce1f7dad2d6555cc146a834"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402285,
+      "sha256": "5ed26c8d0250511d9450ca7a921146640fea505c73349356b18b02b4de13dd79"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 485981,
+      "sha256": "4d95d582c2ccaf40829c93318afc8dd5ea786ff2bbeb2b6f7590b06e573298c7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 395650,
+      "sha256": "ac61a9cb2cbea8094ff27254abfc081e331564c5ad50eb47ad2873dbede640ac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-dormitory-beds.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-dormitory-beds.png",
+      "title": "Monastery dormitory beds",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 388055,
+      "sha256": "d383f366ecc597d1362e0748e8dfe1810a865871c88fa99a0d28a0af687625bf"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-east-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-east-gate-overflow.png",
+      "title": "Monastery east gate overflow",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 372596,
+      "sha256": "e96eb41faaf9fa981d69bd6ff0781b1ce6ae8aaa375b05ebcb84a53b4f28b9f4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-east-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-east-herb-court-grate.png",
+      "title": "Monastery east herb court grate",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 363007,
+      "sha256": "901ce3a5ea4da640e1bb25151b06113d8e8bb72bd2fb4b419d3fb5236958fd45"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-east-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-east-north-roof-spillway.png",
+      "title": "Monastery east north roof spillway",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 380708,
+      "sha256": "601f30416654c5b088cbda724aae867005e5d7bd89b69947bd68272157caf089"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-gatehouse-porter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-gatehouse-porter.png",
+      "title": "Monastery gatehouse porter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 420130,
+      "sha256": "a3f5a022cfe34438248a0cfc5ba663a49d719663a961333fe4a8a48f71115b91"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-herb-court-pipe-inlet.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-herb-court-pipe-inlet.png",
+      "title": "Monastery herb court pipe inlet",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 387156,
+      "sha256": "c7f8bcba7fd3d25fb9547eff8dfe2f20c36c8dc14ef3a3a611357f9946bed876"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 330688,
+      "sha256": "c9f7d78ce601d92a668a88cce7a0cabcf3508b71aeb29172b1a181c718ce6bed"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 456939,
+      "sha256": "41ce304538e88718da82e4285e575f98765743d7fc4c75190d5a50a2185265b2"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 322333,
+      "sha256": "2d5a02afc2dc4ded848d826eff52793a7d8aac9a3f787a962dcb38c65a12b4fe"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-north-low-ground-receiver.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-north-low-ground-receiver.png",
+      "title": "Monastery north low ground receiver",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 305478,
+      "sha256": "7a468bdc7226bff5a1d5f79b0b40ceaac0e7c546c9b5169019881bd00a5ed600"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-refectory-tables.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-refectory-tables.png",
+      "title": "Monastery refectory tables",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 371342,
+      "sha256": "c92d41b92c1acb853eabd46ea59dc73cd80446b9c8c5a0a324e6aad1cd79cbcc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-service-interceptor.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-service-interceptor.png",
+      "title": "Monastery service interceptor",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 321962,
+      "sha256": "0d0960e2705e5d3817f66d5cecf16173e7adfb8e45b5947b8918c4742323da4c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-vestry-wash-trough.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-vestry-wash-trough.png",
+      "title": "Monastery vestry wash trough",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 418659,
+      "sha256": "405c6740b8f6e0920ff286d30b0e63365e3f3acd5899006b41dae058797e5bbc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-west-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-west-gate-overflow.png",
+      "title": "Monastery west gate overflow",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 374142,
+      "sha256": "97a8599c47296b5b807a0fb224182aed785579c17549f0a23ac5f426eb4e6c2f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-west-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-west-herb-court-grate.png",
+      "title": "Monastery west herb court grate",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 363120,
+      "sha256": "7622ee58879ea2812b89096863a76843530f53641905fc0de1c43a3a4ae0e3f0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-west-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/opengl/monastery-west-north-roof-spillway.png",
+      "title": "Monastery west north roof spillway",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 376938,
+      "sha256": "de472de4233ac34ab4a91f225d5d5bc8b5f9cc0f1ac5679e3af3509891400e4e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489694,
+      "sha256": "27a280227f0a92b2319a62de0b629f196084fece62aa32ba138ddb6e4e9eebc0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 414794,
+      "sha256": "f1dfb2e0f0141dd7fefba5e82b72825755c95d596d1d9a51ab9c86a228725f34"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-archive-reading-table.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-archive-reading-table.png",
+      "title": "Monastery archive reading table",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 396272,
+      "sha256": "a7f02cab0d5bc9af4749f853241d00739c083d7cd844d84678f0ef7064d20aa4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 469813,
+      "sha256": "907ac7ec325a644ec93ee8f8c1db6c1ed34384afc327fc2c98d55a237bd7cc97"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401363,
+      "sha256": "060ee824fe55670d9489a074438f2c6a03539c4f7cbd87eecb7c99122864cf3c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482325,
+      "sha256": "7ebb7556d607340679eb42a25586d1a0a131821f10c22748bd00e3ad0b6c6238"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401303,
+      "sha256": "45b67238e67a562cd07cc6ad201701f136c33b75e4d777bb81f4998688ec4d53"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-dormitory-beds.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-dormitory-beds.png",
+      "title": "Monastery dormitory beds",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 389103,
+      "sha256": "2fda405ac3fbbcd8c3ac2b1ac34f57ab7d8c016b9068c5743dd9c297ec2ab1c6"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-east-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-east-gate-overflow.png",
+      "title": "Monastery east gate overflow",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 376903,
+      "sha256": "7f509bb2994956d39cd362e5a0dad12c7a988e7fd76c71c49a724a0aae258f74"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-east-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-east-herb-court-grate.png",
+      "title": "Monastery east herb court grate",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 363203,
+      "sha256": "0f4ee26165af7601766df67882d553668ee0313eaa68238604c81402cfed75be"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-east-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-east-north-roof-spillway.png",
+      "title": "Monastery east north roof spillway",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 379102,
+      "sha256": "4a5f6216195bb6111adf6f6c298edda60e19f837c6877ea17329002660402f6b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-gatehouse-porter.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-gatehouse-porter.png",
+      "title": "Monastery gatehouse porter",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 419827,
+      "sha256": "9b2284acfee0fb9081f50f76565beaea02eca8f8afd7f353ecb4f7512c768cbe"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-herb-court-pipe-inlet.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-herb-court-pipe-inlet.png",
+      "title": "Monastery herb court pipe inlet",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 390008,
+      "sha256": "609294bf888d5097783dbfcaa611a928232783907f16240f672af7fe38f14bbc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 331945,
+      "sha256": "6703fc19ebd7eff6c2d20d51547aae220f34b14c13a9da69fe3f10c338291742"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465604,
+      "sha256": "b568b6a04dd9ff538bfa2ce7448c9bfc033ed9a6d0b48eb0f3e3ec42f18bc821"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 323719,
+      "sha256": "933eec1f4506eaaa5b4c5ccdba072341599983ef572a236c7fbd79482291019a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-north-low-ground-receiver.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-north-low-ground-receiver.png",
+      "title": "Monastery north low ground receiver",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 304298,
+      "sha256": "478991f2198a2318e628b44782fbfea8bf2dd1dc8bcfe14b1618ae3f9ca24afe"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-refectory-tables.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-refectory-tables.png",
+      "title": "Monastery refectory tables",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 380485,
+      "sha256": "a5f0ae2169b01b01e8243ba7c585dc135ecc35016eb9660796c4e9a552fd6d58"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-service-interceptor.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-service-interceptor.png",
+      "title": "Monastery service interceptor",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 323276,
+      "sha256": "8ae2b9507340b5a60131e22053448c59eacbbf5100566c0f8054fd981260c6e3"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-vestry-wash-trough.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-vestry-wash-trough.png",
+      "title": "Monastery vestry wash trough",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 430240,
+      "sha256": "ba1550864f2536edeff4db0e4b0d8de6bcdbd338f6c497fec59e55cfb2d4431f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-west-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-west-gate-overflow.png",
+      "title": "Monastery west gate overflow",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 376960,
+      "sha256": "60a0fb43f7e83854991b12ba042551b514b20d6d46c0288787330a618f492c0e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-west-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-west-herb-court-grate.png",
+      "title": "Monastery west herb court grate",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 362951,
+      "sha256": "8cf6649b154e49eb1b83e2a63aaed00bc011bd0c35794baeb2e3fe5febbdedfb"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-west-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/software/monastery-west-north-roof-spillway.png",
+      "title": "Monastery west north roof spillway",
+      "kind": "Monastery of Ashen Bells packaged navigation and drainage review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 374827,
+      "sha256": "be32839038ae3a0366a5ab2b009172974becaf28a87798538b02a38ef43261ed"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-complete-site-and-arrival.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-complete-site-and-arrival.png",
+      "title": "Monastery complete site and arrival",
+      "kind": "Monastery of Ashen Bells northern hillside interceptors and roof spillways",
+      "width": 1320,
+      "height": 880,
+      "bytes": 1067307,
+      "sha256": "3bf6de4de6b870468a2c01adb861faff50ca97b4b7e09b6876dab8079dcad909"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-east-vestry-fitted-overflow.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-east-vestry-fitted-overflow.png",
+      "title": "Monastery east vestry fitted overflow",
+      "kind": "Monastery of Ashen Bells northern hillside interceptors and roof spillways",
+      "width": 1320,
+      "height": 880,
+      "bytes": 1074976,
+      "sha256": "730ce9c95c9c0c2b85f7ebc950566853fc725a1fe6ae20769be95b6b5c010ba5"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-north-interceptors-and-outfalls.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-north-interceptors-and-outfalls.png",
+      "title": "Monastery north interceptors and outfalls",
+      "kind": "Monastery of Ashen Bells northern hillside interceptors and roof spillways",
+      "width": 1320,
+      "height": 880,
+      "bytes": 1275756,
+      "sha256": "cf296da76966f912d1684d3c7bc1c53ec66c96eb84c531f99a558d11f7893c08"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-west-fitted-overflow.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-west-fitted-overflow.png",
+      "title": "Monastery west fitted overflow",
+      "kind": "Monastery of Ashen Bells northern hillside interceptors and roof spillways",
+      "width": 1320,
+      "height": 880,
+      "bytes": 1159509,
+      "sha256": "9bbe2443501401c0b133d1accf85442d21cbd260c01d180123f1d794e847018b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-west-hillside-collector.png",
+      "url": "development/levels/rebuild/monastery-north-drainage-pass/captures/structure/monastery-west-hillside-collector.png",
+      "title": "Monastery west hillside collector",
+      "kind": "Monastery of Ashen Bells northern hillside interceptors and roof spillways",
+      "width": 1320,
+      "height": 880,
+      "bytes": 1238404,
+      "sha256": "c3e268677da4924744f0133f9e6c1aa6ca256a2019f43e74cbb554baacd90e3f"
     },
     {
       "path": "development/levels/rebuild/monastery-north-power-pass/wld-10/captures/opengl/archive-isolated.png",

@@ -8075,6 +8075,28 @@
       "action": "Bind bounded foot support to the two authored closed grate assemblies. Keep optical rays, body collision and non-grate floors on the original triangles.",
       "older_maps": "Verify physically authored walking grates from multiple headings and preserve optical openings. Ordinary gaps and floor edges retain literal support.",
       "evidence": "development/levels/rebuild/monastery-court-drainage-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-729",
+      "title": "Monastery's northern roof sumps lacked downhill outlets",
+      "status": "MONASTERY_NORTHERN_SLOPE_DRAINED_STAGED",
+      "affected": "WLD-10 western hillside and archive/vestry range",
+      "symptom": "Three north-side roof outlets ended in isolated gravel sumps beside the ranges.",
+      "cause": "The roof pass fitted collectors and founded sumps while the earlier exterior pass addressed the public and service terraces.",
+      "action": "Fit overflow sills and grade the surveyed exterior soil to two downslope receiving areas. Preserve the bearing contact strip at the ranges.",
+      "older_maps": "Measure both source and receiving grade. Recheck foundation contact after any near-wall earthwork.",
+      "evidence": "development/levels/rebuild/monastery-north-drainage-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-730",
+      "title": "Detached terrain bytes accumulated in Monastery static GLB",
+      "status": "MONASTERY_INACTIVE_STATIC_BUFFERS_REMOVED",
+      "affected": "WLD-10 packaged scene",
+      "symptom": "The unpruned replacement retains multiple superseded ground buffers and exceeds the native archive byte limit.",
+      "cause": "The static append pipeline disconnects retired nodes but preserves their original resources.",
+      "action": "Prune only inactive mesh and accessor data after assembly. Verify retained live bytes, material bindings, transform paths and matched render/collision geometry.",
+      "older_maps": "Recheck exact active resource identities when repeated terrain replacements approach the scene limit.",
+      "evidence": "development/levels/rebuild/monastery-north-drainage-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
