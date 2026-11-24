@@ -2171,3 +2171,7 @@ Rail and guard commit 94cd83feff55fd338cfb899a37d9c0e4203b8d59 is verified on dr
 ### Mine working distribution
 
 Mine service commit c790f5b5fc270e266bbad68593c56f1fd147c10d is verified on draft PR 86. Gallery 45343459683 passed. The [distribution checkpoint](levels/rebuild/mine-distribution-pass/checkpoint.json) verifies twelve room switches and thirteen loads in software and RTX 5070 OpenGL, plus a live lower-room reconnect with the breaker tripped. Rebuild the coincident lower chamber landing and floor pieces as one slab, then complete enclosure, drainage and named game acceptance.
+
+### Mine lower and ore-west slabs
+
+Distribution commit cbd2604dd753fa8e3597d876731bccbf5855b251 is verified on draft PR 86. Gallery 45345977593 passed. The [slab checkpoint](levels/rebuild/mine-lower-slabs-pass/checkpoint.json) replaces eighteen pieces with continuous supported floor slabs and guards the original stair opening. Native scene checks cover 3,168 floor and opening probes, plus the full routes, both posture classes, powered rooms and walk-in refuges. Continue the whole-site enclosure and drainage pass before normal named game acceptance.

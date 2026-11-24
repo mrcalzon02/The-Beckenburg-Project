@@ -9040,3 +9040,9 @@ The [distribution follow-up](../levels/rebuild/mine-distribution-pass/checkpoint
 ### DEV-663 Lower Mine landing has coincident walking surfaces
 
 At X5, Z26.7, the lower slab and two leftover stair-landing meshes each return the same Y−10.00 m top face. An additional route-era bearing remains at the first riser. The powered view records the visible speckling before replacement. [Reproduction checkpoint](../levels/rebuild/mine-distribution-pass/checkpoint.json)
+
+The [slab replacement](../levels/rebuild/mine-lower-slabs-pass/checkpoint.json) removes eighteen components, including the old landing overlaps and route-era bearing. The chamber floor and ore-west slab now each have one walking surface at the former duplicate locations. The lower fixture and service drop keep their original soffit datum.
+
+### DEV-664 Ore-west upper stair aperture lacked edge guards
+
+The stair rails descend with the flight. Eleven anchored posts now carry a separate three-sided guard for the surrounding upper floor. Standing and crouched bodies were stopped at all three edges and left through the actual high landing. [Evidence](../levels/rebuild/mine-lower-slabs-pass/checkpoint.json)

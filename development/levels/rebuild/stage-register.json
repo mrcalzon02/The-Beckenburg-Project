@@ -3563,11 +3563,13 @@
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
             "development/levels/rebuild/mine-handrail-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json",
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-664",
             "DEV-663",
             "DEV-660",
             "DEV-661",
@@ -3576,12 +3578,13 @@
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Resolve the measured lower slab and landing overlap as a complete floor assembly. Then complete enclosure, drainage and finish checks."
+          "next_action": "The two receiving slabs, measured stair opening, reinforced soffit, founded columns and continuous three-sided upper guard are verified. Complete whole-site enclosure, drainage and finish checks."
         },
         "S06": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
             "development/levels/rebuild/mine-distribution-pass/checkpoint.json",
             "development/levels/rebuild/mine-service-yard-pass/checkpoint.json",
             "development/levels/rebuild/mine-cover-pass/checkpoint.json",

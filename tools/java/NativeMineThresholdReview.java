@@ -147,6 +147,8 @@ public final class NativeMineThresholdReview {
         capture(map,map.spawn(4),0,captures.resolve("mine-lower-haul-stair.png"));
         if(Files.isRegularFile(packet.resolve("rail-probes.tsv")))
             auditRails(map,scene,packet,captures,evidence);
+        var slabProbes=packet.resolve("slab-probes.tsv");
+        if(Files.isRegularFile(slabProbes))auditSlabs(map,scene,rows(slabProbes),captures,evidence);
         boolean refuges=!HidingBudget.candidates(level).isEmpty();
         if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
         var switchFeet=packet.resolve("switches.tsv");
@@ -187,6 +189,38 @@ public final class NativeMineThresholdReview {
         capture(map,new Vec(5,-10,26.53),0,captures.resolve("mine-lower-guard-approach.png"));
         capture(map,new Vec(28.35,-3,40.60),0,captures.resolve("mine-haul-wall-handrails.png"));
         report.add("staged_rail_collision\t10 actual grip cross-sections; lower guards block a sideways standing or crouched capsule while retaining the walking lane");
+    }
+
+    private static void auditSlabs(HouseMap map,NativeInvestigationScene scene,List<String[]> probes,
+            Path captures,List<String> report)throws Exception{
+        var physics=scene.physics();
+        int opening=0;
+        for(var row:probes){
+            var at=point(row,1);
+            var support=physics.support(at.x(),at.z(),at.y(),.003);
+            boolean expected=Boolean.parseBoolean(row[4]);
+            require(expected?support!=null&&Math.abs(support.y()-at.y())<.001:support==null,
+                "Slab or real opening differs from the authored assembly: "+row[0]+" "+at+" / "+support);
+            if(!expected)opening++;
+        }
+        require(probes.size()==3168&&opening>=35,"Incomplete lower-chamber floor and stair-opening sample set");
+        for(int i=0;i<3;i++){
+            double x=i==0?4.065:i==1?5.935:5;
+            double z=i<2?30.2:27.315;
+            double dx=i<2?.075:0,dz=i<2?0:.075;
+            for(double y:new double[]{-4.945,-5.44})
+                require(!physics.clearSight(new Vec(x-dx,y,z-dz),new Vec(x+dx,y,z+dz)),
+                    "Missing backed upper opening rail "+i+" / "+y);
+            var outside=i==0?new Vec(3.67,-6,z):i==1?new Vec(6.33,-6,z):new Vec(x,-6,26.92);
+            for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                require(map.traversable(outside.x(),outside.y(),outside.z(),height),"No upper guard-side walking clearance");
+                require(map.resolveMove(outside,x,z,height)==null,"Player crossed a physical upper shaft guard");
+            }
+        }
+        capture(map,new Vec(8.5,-6,32.65),-1.86,captures.resolve("mine-ore-west-shaft-guard.png"));
+        capture(map,new Vec(7.75,-10,25.6),-.70,captures.resolve("mine-lower-landing-slab.png"));
+        report.add("lower_and_ore_west_slab_probes\t"+probes.size()+" native probes, "+opening+
+            " open tread-bay points, six physical rail intersections, both-posture guard rejection on three sides");
     }
 
     private static void capture(HouseMap map,Vec at,double yaw,Path target)throws Exception{
@@ -321,8 +355,12 @@ public final class NativeMineThresholdReview {
             var sw=map.level().socket("switch",room);
             var load=map.level().socket("light",room);
             require(sw!=null&&load!=null,"Missing physical Mine switch or connected fixture for "+room);
-            // The shaft occupies the middle of the haul chamber. Follow the clear west aisle.
-            var guide=room==4?List.of(map.spawn(room),new Vec(22,-6,31),at):List.of(map.spawn(room),at);
+            // The stairs occupy the haul center and ore-west edge. Use the actual side aisles.
+            var guide=switch(room){
+                case 4 -> List.of(map.spawn(room),new Vec(22,-6,31),at);
+                case 5 -> List.of(map.spawn(room),new Vec(8,-6,26.56),new Vec(3.4,-6,26.56),at);
+                default -> List.of(map.spawn(room),at);
+            };
             walkBoth(map,guide,sw.id()+" operating position");
             var focus=powerFocus(map,at,sw);
             require(focus!=null&&focus.kind()==InteractionFocus.Kind.SWITCH&&focus.id().equals(Integer.toString(room)),

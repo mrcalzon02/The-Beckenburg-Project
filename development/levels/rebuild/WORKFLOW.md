@@ -1471,3 +1471,7 @@ A formed slab bears on the saved service yard and slopes into the opening. Timbe
 ### Dead Man’s Claim working circuits
 
 A buried run feeds the surface buildings and headhouse. The underground trunk uses measured haul shaft brackets and transfers beneath the existing passage lintels. A sleeve at the fixed lower-chamber wall carries the final drop. Each of the twelve controls operates its room light, and the shed lamp follows main supply. The staged source, reset, and lower switch state survived a real ghost trip and reconnect. [Distribution checkpoint](mine-distribution-pass/checkpoint.json)
+
+### Dead Man’s Claim lower receiving slabs
+
+Eighteen coplanar landing and floor pieces were replaced by two continuous slabs at the original floor heights. The ore-west slab bears on girders, end walls and eight founded columns, with a reinforced opening for the existing flight. The upper edge guard protects three sides and leaves the upper landing clear. The real aisle now loops around the opening to reach the west switch. Native movement, full lighting and walk-in cover pass on the revised stage. [Slab checkpoint](mine-lower-slabs-pass/checkpoint.json)

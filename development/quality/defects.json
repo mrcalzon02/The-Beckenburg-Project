@@ -7353,13 +7353,24 @@
     {
       "id": "DEV-663",
       "title": "Lower Mine landing has coincident walking surfaces",
-      "status": "OPEN_MEASURED_COPLANAR_LOWER_STAIR_LANDING",
+      "status": "CONTINUOUS_LOWER_AND_UPPER_RECEIVING_SLABS_VERIFIED",
       "affected": "Dead Man’s Claim lower workings stair foot",
       "symptom": "Orange floor pattern flickers at the foot of the lower working stair. Top faces coincide at elevation -10.00 m.",
       "cause": "Two leftover route-era landing pieces overlay the chamber slab at the same walking datum. A separate route bearing persists near the first riser.",
-      "action": "Reconstruct one supported chamber floor and receiving landing datum, remove the legacy pieces, and retest both flights, rail foot bearing and visible floor depth.",
+      "action": "Replace eighteen old slab and landing components with a continuous lower slab and a formed upper slab. Verify the single surface at each former overlap, mounted rails and both stair routes.",
       "older_maps": "Check exported stair landings and neighboring floors for coplanar assemblies, discontinuities, and route-shaped physical remnants.",
-      "evidence": "development/levels/rebuild/mine-distribution-pass/checkpoint.json"
+      "evidence": "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-664",
+      "title": "Ore-west upper stair aperture lacked edge guards",
+      "status": "THREE_SIDED_UPPER_SHAFT_GUARD_VERIFIED",
+      "affected": "Dead Man’s Claim ore-west floor over the lower works",
+      "symptom": "The tread rails descended with the flight, leaving upper-level walking edges open beside the bay.",
+      "cause": "Guard construction covered the lower flight alone. The surrounding upper walking slab lacked edge protection.",
+      "action": "Install bolted upper guards on three sides of the formed opening, clear the actual high receiving landing, and verify standing and crouched approaches and physical collision.",
+      "older_maps": "Check deck-side guards in addition to rails on open treads. Verify the actual stair mouth stays open while every accessible drop edge has real collision.",
+      "evidence": "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
