@@ -2096,3 +2096,10 @@ The subsequent [Asylum power and cover checkpoint](levels/rebuild/asylum-power-p
 commissions the physical plant and packaged opt-in dispatch and verifies three
 usable cupboard thresholds. A complete evidence-to-extraction case and release
 acceptance remain open.
+
+The [Asylum interior door checkpoint](levels/rebuild/asylum-interior-door-pass/checkpoint.json)
+adds seven operable sets to existing measured openings, replays 45 routes and
+checks the packaged day-to-spine door through live movement on four peers. The
+previous power capture checkpoint 6a641448cfac492818dec8d12ed2abc58c88c632 passed gallery 45323133183.
+Main stays cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526
+and GPU 44863686455 green. Continue remaining enclosure and playable case checks.

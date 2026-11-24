@@ -1379,3 +1379,14 @@ links the fitted Blender source, runtime mesh and collision, doorway survey,
 plant and cover drawing, circuits and captures. The packaged opt-in launches in
 solo and four-peer LAN. All three cupboard thresholds were replayed using the
 physics hull. Remaining interior leaves and full case acceptance are open.
+
+## Asylum ward, spine and chapel door fittings
+
+The [ground-floor plan](asylum-interior-door-pass/interior-threshold-plan.svg)
+locates seven new fitted door sets at measured jambs, headers and supported
+sills. Ground routes cross these thresholds. The outdoor grounds connection
+stays open on grade. The source floor, stair, terrain and service exports are
+retained. The [checkpoint](asylum-interior-door-pass/checkpoint.json) verifies
+13 door sets, all 45 physical routes in both directions and postures, 26 reopened
+editor poses and a real four-peer day-room-to-spine door crossing. Room
+enclosures, redundant masonry, and the complete mission chain remain open.

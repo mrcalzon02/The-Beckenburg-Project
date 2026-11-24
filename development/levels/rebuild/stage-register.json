@@ -464,13 +464,16 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/asylum-admission-pass/checkpoint.json",
-            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
+            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json",
+            "development/levels/rebuild/asylum-interior-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-633",
-            "DEV-635"
+            "DEV-635",
+            "DEV-640",
+            "DEV-641"
           ],
-          "next_action": "Complete remaining individual interior leaf and enclosure checks."
+          "next_action": "Thirteen door sets fitted. Check the remaining room enclosures and remove redundant shared wall masonry on the measured runs."
         },
         "S06": {
           "status": "IN_PROGRESS",
@@ -529,12 +532,13 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json",
-            "development/levels/rebuild/asylum-power-pass/checkpoint.json"
+            "development/levels/rebuild/asylum-power-pass/checkpoint.json",
+            "development/levels/rebuild/asylum-interior-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-637"
           ],
-          "next_action": "Complete the native evidence, ritual, rescue and extraction case, then review default release selection."
+          "next_action": "Packaged four-peer door, breaker and cover confirmed. Exercise actual evidence, ritual, rescue and extraction before default release selection."
         }
       },
       "arrival_bearing_pass": {

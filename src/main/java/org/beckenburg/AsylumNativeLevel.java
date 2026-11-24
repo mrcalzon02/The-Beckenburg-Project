@@ -52,7 +52,7 @@ final class AsylumNativeLevel {
                 var collision=resource("power.hcs2")){
                 var source=read(rows(arrival),rows(schedule),rows(mission),rows(services),model,collision);
                 var level=source.definition();
-                if(source.doors().size()!=6||level.portals().size()!=17||level.socket("breaker",11)==null
+                if(source.doors().size()!=13||level.portals().size()!=17||level.socket("breaker",11)==null
                         ||HidingBudget.candidates(level).size()!=3)
                     throw new IOException("Incomplete Asylum review packet");
                 return source;

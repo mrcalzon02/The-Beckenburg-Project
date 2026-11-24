@@ -68,17 +68,19 @@ final class NativeAsylumEntryReview {
         report.add("measure\tresult");
         report.add("native_scene_revision\t"+scene.revision());
         if(packaged)report.add("packaged_solo_case\tOrdinary Asylum selection and supported cargo spawn");
+        boolean interiorFittings=doors.stream().anyMatch(door->door.portal().id()>=476);
         for(var door:doors){
             if(!NativeSchoolInteriorReview.sweep(scene.physics(),door))throw new AssertionError("Swing "+door.frameId());
             var portal=door.portal();
             int side=portal.id()==470?1:-1;
+            boolean capture=interiorFittings?portal.id()>=476:connected?portal.id()>=474:portal.id()==470||portal.id()==473;
             NativeSchoolInteriorReview.audit(map,door,false);
-            if(connected?portal.id()>=474:portal.id()==470||portal.id()==473)
+            if(capture)
                 NativeSchoolInteriorReview.render(map,portal,captures.resolve("asylum-"+portal.id()+"-closed.png"),side);
             map.toggleDoor(portal.id());
             guest.applyDoorSnapshot(map.doorSnapshot());
             NativeSchoolInteriorReview.audit(guest,door,true);
-            if(connected?portal.id()>=474:portal.id()==470||portal.id()==473)
+            if(capture)
                 NativeSchoolInteriorReview.render(map,portal,captures.resolve("asylum-"+portal.id()+"-open.png"),side);
             report.add(door.frameId()+"\tFitted sweep, movement, acoustics, sight, objects and second staged world");
         }

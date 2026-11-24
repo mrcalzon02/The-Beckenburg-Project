@@ -7078,8 +7078,8 @@
     {
       "id": "DEV-638",
       "title": "Asylum electrical switch candidates fell on openings",
-      "status": "BINDING_CORRECTED_TO_ACTUAL_OPEN_GROUNDS_CONNECTION",
-      "affected": "Asylum outdoor room ownership between grounds and entry",
+      "status": "CORRECTED_TO_VERIFIED_WALL_MOUNTS",
+      "affected": "Asylum upper spine and quiet lobby electrical switch mounts",
       "symptom": "Two proposed room controls lacked a continuous wall face at the switch plate.",
       "cause": "Nominal socket coordinates did not intersect intact backing masonry.",
       "action": "Validate wall backing and mount the upper-spine and quiet-lobby controls on their intact wall runs.",
@@ -7089,13 +7089,35 @@
     {
       "id": "DEV-639",
       "title": "Cupboard protection was smaller than the walk-in enclosure",
-      "status": "BINDING_CORRECTED_TO_ACTUAL_OPEN_GROUNDS_CONNECTION",
+      "status": "FULL_THRESHOLD_VOLUME_VERIFIED",
       "affected": "Budgeted walk-in cupboard safe zones on built investigation maps",
       "symptom": "Walking into visible cupboard space did not protect the hunter until reaching a small inner rectangle.",
       "cause": "The central hiding pocket and visible veil were sized independently of the physical cupboard interior.",
-      "action": "Use the entrance, sides and back of the physical cupboard for the protected floor footprint and render the matching veil.",
+      "action": "Use the entrance, sides, back and header of the cupboard for the protected volume and matching veil.",
       "older_maps": "Test actual walk-in thresholds, full depth, adjacent floors and disabled cover.",
       "evidence": "development/levels/rebuild/asylum-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-640",
+      "title": "Asylum contained open gameplay transitions in door-shaped enclosures",
+      "status": "FIXED_VERIFIED",
+      "affected": "Asylum powered native revision and retained rough masonry where stated",
+      "symptom": "Seven owner transitions remained open even though each had both jambs, a header and floor at the doorway.",
+      "cause": "The links still used trail portals from the staged route binding.",
+      "action": "Use the measured opening and actual adjoining spaces for canonical operable leaves; remove the corresponding always-open edges.",
+      "older_maps": "Re-audit exterior trails and indoor door semantics independently in other maps.",
+      "evidence": "development/levels/rebuild/asylum-interior-door-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-641",
+      "title": "Asylum shared ward and spine walls contain redundant coplanar segments",
+      "status": "OPEN",
+      "affected": "Asylum powered native revision and retained rough masonry where stated",
+      "symptom": "Several coincident wall bodies cover the same run. The spine west segment overlaps the day east segment from Z40 to Z44.30 at X25.92–26.08.",
+      "cause": "Adjacent room shells retained ownership copies when their shared wall was built.",
+      "action": "Replace overlapping runs with single shared masonry sections while preserving their fitted jambs and electrical mounting faces.",
+      "older_maps": "Inspect shared partitions and corners; verify any replacement from both sides with collision, renders and retained routes.",
+      "evidence": "development/levels/rebuild/asylum-interior-door-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -119,7 +119,7 @@ for extension in glb hcs2; do
     cp "$asylum_packet/asylum-power.$extension" "build/classes/org/beckenburg/sites/asylum-power.$extension"
 done
 for table in arrival door-survey mission services; do
-    cp "$asylum_packet/$table.tsv" "build/classes/org/beckenburg/sites/asylum-$table.tsv"
+    cp "development/levels/rebuild/asylum-interior-door-pass/$table.tsv" "build/classes/org/beckenburg/sites/asylum-$table.tsv"
 done
 # Licensed in-game subset, not the upstream paid PSX asset archive.
 mkdir -p build/classes/org/beckenburg/models

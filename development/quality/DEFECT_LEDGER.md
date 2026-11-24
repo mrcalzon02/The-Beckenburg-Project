@@ -8937,3 +8937,11 @@ Nominal socket coordinates did not intersect intact backing masonry. Validate wa
 ### DEV-639 Cupboard protection was smaller than the walk-in enclosure
 
 The central hiding pocket and visible veil were sized independently of the physical cupboard interior. Use the entrance, sides and back of the physical cupboard for the protected floor footprint and render the matching veil. Test actual walk-in thresholds, full depth, adjacent floors and disabled cover. [Evidence](../levels/rebuild/asylum-power-pass/checkpoint.json)
+
+### DEV-640 Asylum contained open gameplay transitions in door-shaped enclosures
+
+Seven owner transitions remained open even though each had both jambs, a header and floor at the doorway. The links still used trail portals from the staged route binding. Use the measured opening and actual adjoining spaces for canonical operable leaves; remove the corresponding always-open edges. Re-audit exterior trails and indoor door semantics independently in other maps. [Evidence](../levels/rebuild/asylum-interior-door-pass/checkpoint.json)
+
+### DEV-641 Asylum shared ward and spine walls contain redundant coplanar segments
+
+Several coincident wall bodies cover the same run. The spine west segment overlaps the day east segment from Z40 to Z44.30 at X25.92–26.08. Adjacent room shells retained ownership copies when their shared wall was built. Replace overlapping runs with single shared masonry sections while preserving their fitted jambs and electrical mounting faces. Inspect shared partitions and corners; verify any replacement from both sides with collision, renders and retained routes. [Evidence](../levels/rebuild/asylum-interior-door-pass/checkpoint.json)

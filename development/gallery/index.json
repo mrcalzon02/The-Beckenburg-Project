@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11408,
+  "count": 11436,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81884,6 +81884,286 @@
       "height": 580,
       "bytes": 350693,
       "sha256": "984bfebf09986b4dd47d6f08f1b344bc245f61a69d282120a6b8c6eb7431fd0d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-closed.png",
+      "title": "Asylum 476 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 565292,
+      "sha256": "38ed0678dabd44ef3bc0ebf4a76a94ed6820967c37014251883546c37eef75fe"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-open.png",
+      "title": "Asylum 476 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 529692,
+      "sha256": "f7082e0487c21d216015f837d75156c11924cc6346ae3f2adabfd0ae8a9e205d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-477-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-477-closed.png",
+      "title": "Asylum 477 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 481435,
+      "sha256": "becf162cdf682d4a7717a144f601f4d0b49c49257fcb61820478fc01640005f6"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-477-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-477-open.png",
+      "title": "Asylum 477 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 565839,
+      "sha256": "89398313c8cfe2c91fc41b06674f9ddaee1f4578b13c948724ccd622c5191674"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-478-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-478-closed.png",
+      "title": "Asylum 478 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 558415,
+      "sha256": "d1a1b4d1e69e9eaa7d915cd67dbb0e6ed340d45659d65cb03ba4637045dffca7"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-478-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-478-open.png",
+      "title": "Asylum 478 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 460155,
+      "sha256": "eadd444ef98afd211801cdf9b115ec6c73fb08544e27e381f70c426f0a3586b4"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-479-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-479-closed.png",
+      "title": "Asylum 479 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 392400,
+      "sha256": "9bfa5b53f3b8f7b3fab23deb5610e2929cf489fe9be4118c41eb3cc33d1efce8"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-479-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-479-open.png",
+      "title": "Asylum 479 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 466258,
+      "sha256": "8b25d654a87be04b225442214b584ad36f40b35027d964f69a871eb5c6a75204"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-480-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-480-closed.png",
+      "title": "Asylum 480 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 587077,
+      "sha256": "8857ca105cb63d15743f7d6d6c3c3d3800bd0df58ecaf7d9aea96ae5aa755fde"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-480-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-480-open.png",
+      "title": "Asylum 480 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 466377,
+      "sha256": "8a73bfc05f613d47be06fed8ccab20b67da42afdb0d5b38c82ae32f7f67ac39a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-481-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-481-closed.png",
+      "title": "Asylum 481 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 569613,
+      "sha256": "31c8c4cb2458ea1f900ba95e2148ed5f82d92ad76c568704256d25d064990f42"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-481-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-481-open.png",
+      "title": "Asylum 481 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 520067,
+      "sha256": "6987f0854399de09003d6f6f701ad00f2e6bd690e4831583d0fe03e06fd91ee5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-482-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-482-closed.png",
+      "title": "Asylum 482 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 500919,
+      "sha256": "820503e254eaae566ae0e514f71dae23cc747d7a35dccdab84301b8c92c11c63"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-482-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-482-open.png",
+      "title": "Asylum 482 open",
+      "kind": "Asylum fitted interior and chapel doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 536067,
+      "sha256": "d0c8d26349db2ec4ff64f360a65264e3986cb12f50e7cf859948219e57c3eb81"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-476-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-476-closed.png",
+      "title": "Asylum 476 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 528954,
+      "sha256": "5bbfd9a4ab66fbdf42ff6eead811696cb3202537bb58c8dbc5eead0dd2693351"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-476-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-476-open.png",
+      "title": "Asylum 476 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 511169,
+      "sha256": "783bb80b27e8416b825b0c9131b3f86e3293f84ae05fdfbc91217a99844dc105"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-477-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-477-closed.png",
+      "title": "Asylum 477 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 526193,
+      "sha256": "b5db573bd54512b6b3913805bd42551c67954096e44a96801250f95b4ae3c7ad"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-477-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-477-open.png",
+      "title": "Asylum 477 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 537814,
+      "sha256": "b8ef81e618ee53b6922e37a93d5573f0deee41d12acc39c5f2aa55e0d941c4b3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-478-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-478-closed.png",
+      "title": "Asylum 478 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 495674,
+      "sha256": "6103e1f295ec87dd082a6328787bc0456f4c6eb966f1c592f0b9540e68d4acdb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-478-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-478-open.png",
+      "title": "Asylum 478 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 389621,
+      "sha256": "39d430a4bd876085165a49ce6413e555c9207483350b05cd13b75fb1a95ba8b3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-479-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-479-closed.png",
+      "title": "Asylum 479 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 494435,
+      "sha256": "6b3cb5c95f404133aab25715dcf9d211b76f12aee4fafebab2a754ff5bc9a02b"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-479-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-479-open.png",
+      "title": "Asylum 479 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 451974,
+      "sha256": "2d3153508ba92d5ba9eca3c23e9552958fd7ccf2928c9677efb394ef8025b951"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-480-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-480-closed.png",
+      "title": "Asylum 480 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 559683,
+      "sha256": "0679beeac3fbb46fd0b43e0447dbe05c768ce8bdff471fa9b2aa5c107a0ce3e9"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-480-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-480-open.png",
+      "title": "Asylum 480 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 429074,
+      "sha256": "271e4db088199e4ae5bad1909dd30eb30a5245a4cfc6338db3cc800cf0d6c796"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-481-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-481-closed.png",
+      "title": "Asylum 481 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 516291,
+      "sha256": "ae5ad7e6205c4b12db6902d26299aab5d5f40f75bad65885014fbeb379714411"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-481-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-481-open.png",
+      "title": "Asylum 481 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 473887,
+      "sha256": "79f69ea9bd24e355cc858f672868312a240b1a05a30f9a5bc6ac116d3fc119b8"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-482-closed.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-482-closed.png",
+      "title": "Asylum 482 closed",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 496642,
+      "sha256": "e34b7220de2d927c933b005e82e4d08c31f7cfe3a02e84ec0d142363a6cf4b56"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-482-open.png",
+      "url": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-482-open.png",
+      "title": "Asylum 482 open",
+      "kind": "Asylum fitted interior and chapel doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 535947,
+      "sha256": "ff49e5504cf45b38932ecfad17a869a5acb58467165e0022d09f3293def080e4"
     },
     {
       "path": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-474-closed.png",

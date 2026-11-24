@@ -74,8 +74,12 @@ final class NativeAsylumMissionReview {
             for(int i=0;i<4;i++)at=NativeSchoolInteriorReview.step(walker,1,0,100);
             require(clientMap.roomAt(at.x(),at.y(),at.z())==2,"Walker missed the day room on return "+at);
             if(map.level().socket("hide",2)!=null){
-                useDayCupboard(map,walker);
+                at=useDayCupboard(map,walker);
                 report.add("tcp_asylum_day_cupboard\tHunter moved into the day-room cupboard, crouched, hid, revealed and exited");
+            }
+            if(map.level().portals().stream().anyMatch(portal->portal.id()==477&&portal.door())){
+                walkDaySpineDoor(clientMap,walker,witness,at);
+                report.add("tcp_asylum_day_spine_door\tClosed collision refused the crossing; aimed opening and both physical crossings replicated");
             }
             ghost.client.viewGhost3D();
             ghost.awaitExact("ACCEPT|GVIEW3D");
@@ -90,7 +94,7 @@ final class NativeAsylumMissionReview {
         report.add((packaged?"packaged":"staged")+"_tcp_asylum_case\tFour peers, actual ramp discharge, closed court threshold refusal and live door crossing in both directions");
     }
 
-    private static void useDayCupboard(HouseMap map,Peer walker)throws Exception{
+    private static Vec useDayCupboard(HouseMap map,Peer walker)throws Exception{
         for(int step=0;step<19;step++)NativeSchoolInteriorReview.step(walker,1,-100,0);
         Vec at=null;
         for(int step=0;step<27;step++)at=NativeSchoolInteriorReview.step(walker,1,0,100);
@@ -106,6 +110,31 @@ final class NativeAsylumMissionReview {
         walker.awaitExact("HIDING|0");
         for(int step=0;step<6;step++)at=NativeSchoolInteriorReview.step(walker,1,0,-100);
         require(!LevelClosets.inside(cupboard,at.x(),at.y(),at.z()),"The live hunter never left the fitted pocket");
+        return at;
+    }
+
+    private static void walkDaySpineDoor(HouseMap map,Peer walker,Peer witness,Vec at)throws Exception{
+        var door=map.level().portals().stream().filter(portal->portal.id()==477).findFirst().orElseThrow();
+        while(at.z()>door.z()+.16)at=NativeSchoolInteriorReview.step(walker,1,0,-100);
+        require(Math.abs(at.z()-door.z())<=.16,"Approach did not meet the doorsill "+at);
+        while(at.x()<door.x()-.60)at=NativeSchoolInteriorReview.step(walker,1,100,0);
+        Thread.sleep(125);
+        walker.client.step(100,0);
+        walker.awaitExact("REJECT|blocked by world collision");
+        double yaw=Math.atan2(door.x()-at.x(),door.z()-at.z());
+        var observer=new LooseClutter.Observer(1,at.x(),at.y(),at.z(),yaw,-.11,true);
+        var focus=InteractionFocus.pick(map,observer,List.of());
+        require(focus!=null&&focus.kind()==InteractionFocus.Kind.DOOR&&focus.id().equals("477"),
+            "No aimed interaction at the fitted day-spine door "+at);
+        walker.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+        walker.client.interact(focus,yaw,-.11);
+        walker.awaitExact("ACCEPT|INTERACT|Open door");
+        var state=witness.awaitExact("DOORS|474,477");
+        map.applyDoorSnapshot(state.substring("DOORS|".length()));
+        for(int i=0;i<4;i++)at=NativeSchoolInteriorReview.step(walker,1,100,0);
+        require(map.roomAt(at.x(),at.y(),at.z())==0,"Live hunter failed to enter the spine "+at);
+        for(int i=0;i<4;i++)at=NativeSchoolInteriorReview.step(walker,1,-100,0);
+        require(map.roomAt(at.x(),at.y(),at.z())==2,"Live hunter failed to return to the day room "+at);
     }
 
     private static void restorePower(HouseMap map,Peer operator,Peer witness,LanHost host)throws Exception{
