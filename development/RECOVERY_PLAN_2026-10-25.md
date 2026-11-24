@@ -2143,3 +2143,7 @@ Lookout cover published to draft PR 86 at 1aec71c601f2d77d098a78849bf58af7f1fa16
 ### Lookout roadhead supply
 
 The [powered native checkpoint](levels/rebuild/lookout-power-pass/checkpoint.json) adds the supported roadhead shelter, generator, breaker and four electrical branches. The actual ghost trip, source restart and independent breaker reset passed with four TCP peers. Standing and crouched movement and existing cover were rechecked against the exact source. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with successful published multiplayer and GPU checks. Continue named package dispatch and full case checks.
+
+### Lookout normal package review
+
+Remote source 620982236738d88c91e59e50541476dea6b574b2 published to draft PR 86. The power capture verified by SHA-256 and gallery run 45335746208 passed. The [named dispatch checkpoint](levels/rebuild/lookout-dispatch-pass/checkpoint.json) binds the verified map to the preserved WLD-04 campaign identity. Windows package assembly, solo selection, four named TCP peers, RTX 5070 runtime and five shared sanctuary regressions passed. The flag remains required until the remaining story, evidence and release gates pass.

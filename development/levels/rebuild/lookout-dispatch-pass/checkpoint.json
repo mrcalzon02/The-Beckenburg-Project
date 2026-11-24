@@ -1,0 +1,253 @@
+{
+  "status": "LOOKOUT_NAMED_PACKAGED_REVIEW_VERIFIED",
+  "source_commit": "620982236738d88c91e59e50541476dea6b574b2",
+  "site_id": "WLD-04",
+  "package_site": "LOOKOUT",
+  "review_property": "beckenburg.review.lookoutNative",
+  "scene_revision": "91ea8e89d5dd0d3aff0c27ba22d7e1424a4021629d9a27c25fbfe4cac7ba4872",
+  "case_revision": "91ea8e89d5dd0d3aff0c27ba22d7e1424a4021629d9a27c25fbfe4cac7ba4872-a4a920ea94819bd0",
+  "power_checkpoint": "development/levels/rebuild/lookout-power-pass/checkpoint.json",
+  "package_sha256": "49ffde438c0de3afcf97278ad84d97249b59f59c6221731316e4b6d369278c2a",
+  "package_bytes": 380752067,
+  "package_build": "Windows build.cmd package",
+  "verification": {
+    "measure": "result",
+    "native_scene_revision": "91ea8e89d5dd0d3aff0c27ba22d7e1424a4021629d9a27c25fbfe4cac7ba4872",
+    "staged_case_revision": "91ea8e89d5dd0d3aff0c27ba22d7e1424a4021629d9a27c25fbfe4cac7ba4872-a4a920ea94819bd0",
+    "supported_case_owners": "14 supported owners and the canonical extraction van",
+    "fitted_thresholds": "7 supported sweeps and host/guest states with body, object, aim, sight and sound",
+    "physical_routes": "18 routes replayed both ways standing and crouched",
+    "cargo_to_observation_deck": "Complete 15m climb and return from the physical cargo floor",
+    "ritual_sites": "Three supported, separately owned physical installation points",
+    "lookout-hut-cupboard_protected_floor_samples": "69",
+    "lookout-store-cupboard_protected_floor_samples": "69",
+    "lookout-cab-cupboard_protected_floor_samples": "69",
+    "lookout_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "lookout-service-light": "3.41261391344303 supplied / 0.9000000000000001 source disabled / 0.9000000000000001 breaker tripped",
+    "lookout-hut-light-1": "2.69961391344303 supplied / 0.187 source disabled / 0.187 breaker tripped",
+    "lookout-hut-light-2": "2.69961391344303 supplied / 0.187 source disabled / 0.187 breaker tripped",
+    "lookout-store-light-1": "2.69961391344303 supplied / 0.187 source disabled / 0.187 breaker tripped",
+    "lookout-cab-light-1": "2.6996139134430326 supplied / 0.187 source disabled / 0.187 breaker tripped",
+    "power_mounts": "Two physical plant controls and three room switches reached by ordinary standing/crouched movement and aimed interaction",
+    "packaged_solo": "Named Lookout selected through the ordinary solo launcher and loaded exact source at cargo",
+    "tcp_lookout_power": "Actual ghost trip, uninterrupted physical walk from cargo to the roadhead shelter, generator stop/restart, physical breaker reset and view resync",
+    "tcp_lookout_cover": "Hunter walked into hut safe zone, hid, revealed, and physically left it",
+    "tcp_lookout_review": "Four peers on the exact named package, real ramp exit, fitted cabin-deck crossing and south hut stair return"
+  },
+  "game_and_test_source_compiles": true,
+  "shared_regressions": [
+    "HidingBudgetTest",
+    "SafeAreaBarrierTest",
+    "HidingAreaHazeTest",
+    "CrouchAndOutdoorHidingTest",
+    "LanSafeAreaBarrierTest"
+  ],
+  "renderer_frames_matched_previous_exactly": 38,
+  "corresponding_gallery_frames": [
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-601-closed.png",
+      "bytes": 380528,
+      "sha256": "69f3c259d6b71ac155b2524a5847c652a052becd7d0105e707da8f978c58c583"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-601-open.png",
+      "bytes": 373446,
+      "sha256": "f8e1914da2c8e787a12b5f65d70cf4d52754a071acf9162b268517f6991c3a5a"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-603-closed.png",
+      "bytes": 378309,
+      "sha256": "925bc6a83a9ff191a597bd7ce669d28583cc95f00dff28cedf8dcbe9f65d3f16"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-603-open.png",
+      "bytes": 305559,
+      "sha256": "f7abea2ab811bb3e4b3275739a8cc624f8130e9f6e1596c2160bb89d7aee7310"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-606-closed.png",
+      "bytes": 395140,
+      "sha256": "beafb31d4ae1cfaa3a201d66a4af66076a13076b349b9a9acee59a77e9241fc3"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-606-open.png",
+      "bytes": 364439,
+      "sha256": "3d7d05a3b1dbdd2098c1818604cc84232b2dcd9f31ca01f4a0d46dadc063f411"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-cab-cupboard-enter.png",
+      "bytes": 575313,
+      "sha256": "c9e8a781084ecd000858f8be381c329f6830a82e3afbbcb90d8aafb43b07648b"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-cab-cupboard-inside.png",
+      "bytes": 469739,
+      "sha256": "4a7f8952714bbc571c7d2f3aa63fef0abd0c6d165e758bb80ba505504992904c"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-cargo-approach.png",
+      "bytes": 473502,
+      "sha256": "2bf20469b71a5a152786d4bbdf86c873ea0985c0a55a4aea232e1896b07e9ce6"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-deck-view.png",
+      "bytes": 225857,
+      "sha256": "2d6470d1c85b8c77054af41bbe0299c25b943b01db89518ebbe4e27423dc03f4"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-hut-cupboard-enter.png",
+      "bytes": 482162,
+      "sha256": "0eb4266dc915c88ca97c76feab1d1bf27efbb779df16c107d99483301875f8e9"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-hut-cupboard-inside.png",
+      "bytes": 405107,
+      "sha256": "24e2fedb2d77e99da3ef7cc43cb27da915e1e414fb75865d9ddebe284f806080"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-power-hut-outage.png",
+      "bytes": 159619,
+      "sha256": "c0697e384a37b72f82352616e0a8f7a65fe486c972e7d3cd64e2997350904eca"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-power-hut.png",
+      "bytes": 231935,
+      "sha256": "5f2d8db3b0fd38acd49f030d408cd439c3e864816df621862f7764b058028708"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-power-plant-outage.png",
+      "bytes": 272523,
+      "sha256": "4fdcd45dd823b02a2f86e347c4c3867c266ec283b46218d32d4d62b4116bcdc4"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-power-plant.png",
+      "bytes": 376414,
+      "sha256": "c2ba056f965fc96a19381f1b4c6960413724d581af4ccb2e2972a1610ac16cc5"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-power-roadhead.png",
+      "bytes": 267564,
+      "sha256": "c9646f58048644ae39bbdd918091ed4e3c58da32ebae77851b80238aa3b3671a"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-store-cupboard-enter.png",
+      "bytes": 488745,
+      "sha256": "f8807cc9f065e4c60d294143d9096a545b91c8bcd2357e3430f29b75be047c6d"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/lookout-store-cupboard-inside.png",
+      "bytes": 440543,
+      "sha256": "54129b7b07e1e27402a5fcd91bade7ecd1c0200f5dd009e395db1b60bb811973"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-601-closed.png",
+      "bytes": 407660,
+      "sha256": "de8df28a745b1522a9f2763b17577aaf53950305c8375a711604c0168311431c"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-601-open.png",
+      "bytes": 361639,
+      "sha256": "d25ac97c3816a8fa4d273b16f633c130b4a6ed84d72f021a3d3bc36417e99ca1"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-603-closed.png",
+      "bytes": 377967,
+      "sha256": "46dca770cb14ca987cbe742fecb90aabb1ea3e1ac9f7421d7a14ec2a8d15b695"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-603-open.png",
+      "bytes": 304228,
+      "sha256": "c6204de5e5dcd46e4268d6695bb2c124191e609ac58d3f8309518f50aaccf98d"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-606-closed.png",
+      "bytes": 418485,
+      "sha256": "73d29e4ff30eff849683c498f46b321c270e403f9dc693082c99be198361d188"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-606-open.png",
+      "bytes": 373970,
+      "sha256": "c56c78955bdea95d540aad54cd94f79d3d655db56a03963044ab3ad7ed664ed3"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-cab-cupboard-enter.png",
+      "bytes": 559901,
+      "sha256": "5c24d8fdec9e0e1f99dcd6c096fd62a10536a27739deb2fbf977ecaaf914b810"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-cab-cupboard-inside.png",
+      "bytes": 480821,
+      "sha256": "02fcf752fb4d8a1c5ba3d7c334be3ae0c79841ca7f5e3300a15703abac3ede02"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-cargo-approach.png",
+      "bytes": 476770,
+      "sha256": "56c0b5dd3d7d97df0fe9ee917d78246b5d365b0c31f847cda3c23f581acdff11"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-deck-view.png",
+      "bytes": 227398,
+      "sha256": "9f0344aa37dd76a974d963bcdc4c6b48370b9b3977becef013f971d3a028f713"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-hut-cupboard-enter.png",
+      "bytes": 487583,
+      "sha256": "7b2ba77a02f2b445241e8596b237ce9ea6fa173d946bc2d19eea41cb26e9a7cf"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-hut-cupboard-inside.png",
+      "bytes": 406764,
+      "sha256": "96c8e54f8b6fb3659ff9ba4ca434311e952e5babf176f4d877d7f0d25197bce2"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-power-hut-outage.png",
+      "bytes": 159859,
+      "sha256": "b1e1e258bf9a8d064e228827fe36288ccf5015c9458746c3dcffe9c05c8c888f"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-power-hut.png",
+      "bytes": 227189,
+      "sha256": "53791a34e8567198199965472530738e7709ac681c89d0db4df44894c27f5481"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-power-plant-outage.png",
+      "bytes": 275316,
+      "sha256": "34e6bf230e3a9f27f99320edd13de0b6c69304717749b21e42aab50e46058f23"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-power-plant.png",
+      "bytes": 368138,
+      "sha256": "5ef3d9cc6ac2212ca7efd2ddb8b04e6cc064652404212f5ba491a88d90e9483b"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-power-roadhead.png",
+      "bytes": 259351,
+      "sha256": "a475264e4371b17cf63c302e0b413c02405dac3ed42f20b7a5e4a535d6f8a0dd"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-store-cupboard-enter.png",
+      "bytes": 490923,
+      "sha256": "5b3a764615d570995cdbb63f219753e9ed16330f8f0e85b0cf3f8481e923a076"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-power-pass/captures/opengl/lookout-store-cupboard-inside.png",
+      "bytes": 441441,
+      "sha256": "6fbe28b1ccb8b10ac475e7fb67f92c6d6d0b4c5d4eddfd47f9696cf2155f8f4a"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/lookout-dispatch-pass/verification/native-arrival.tsv",
+      "bytes": 2038,
+      "sha256": "0304a40da10c4256aa3771d17518a29214d865378df0e5f9bdbe5b47cdce9bf5"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-dispatch-pass/verification/opengl.tsv",
+      "bytes": 1656,
+      "sha256": "88fdb92c19ca11d72a3d1b7d156041eee67db69485c504416dab3de76e76342e"
+    }
+  ],
+  "still_open": [
+    "Review flag remains required for selection. Complete production case, site-specific evidence and encounters, direct reconnect and release acceptance."
+  ]
+}

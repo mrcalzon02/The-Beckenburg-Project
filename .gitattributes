@@ -349,3 +349,6 @@ development/levels/rebuild/lookout-cover-pass/** -text
 
 # The native power package binds exact render, physics and evidence bytes.
 development/levels/rebuild/lookout-power-pass/** -text
+
+# Named Lookout package review binds exact evidence exports.
+development/levels/rebuild/lookout-dispatch-pass/** -text

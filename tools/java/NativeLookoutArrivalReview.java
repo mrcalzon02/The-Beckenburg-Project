@@ -5,12 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
-import org.beckenburg.LevelDefinition.Dock;
-import org.beckenburg.LevelDefinition.Portal;
-import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 import org.beckenburg.NativeSchoolInteriorReview.Peer;
@@ -32,50 +28,30 @@ public final class NativeLookoutArrivalReview {
 
     private static void review(String[] args)throws Exception{
         var packet=Path.of(args[0]);
+        var evidenceFolder=List.of(args).stream().filter(s->s.startsWith("--output=")).findFirst()
+            .map(s->Path.of(s.substring("--output=".length()))).orElse(packet);
         var arrival=table(packet.resolve("arrival.tsv"));
-        var source=arrival.get(0);
-        var vanRow=arrival.get(1);
-        var dock=new Dock(d(vanRow,1),d(vanRow,2),d(vanRow,3),d(vanRow,4));
-        var spaces=new ArrayList<NativeInvestigationScene.Space>();
-        var treads=new HashSet<String>();
-        var sockets=new ArrayList<Socket>();
         var paths=new LinkedHashMap<String,List<Vec>>();
-        for(var row:arrival)switch(row[0]){
-            case "SPACE" -> spaces.add(new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),d(row,6),d(row,7),d(row,8),
-                Boolean.parseBoolean(row[9]),Boolean.parseBoolean(row[10])));
-            case "TREAD" -> treads.add(row[1]);
-            case "RITUAL" -> sockets.add(new Socket("lookout-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),0,row[1]));
-            case "SERVICE" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
-                d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
-            case "COVER" -> sockets.add(new Socket(row[1],"hide",Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
-            case "POINT" -> paths.computeIfAbsent(row[1],ignored->new ArrayList<>()).add(point(row,2));
-            case "SOURCE","DOCK" -> {}
-            default -> throw new IOException("Unknown Lookout arrival record "+row[0]);
+        for(var row:arrival)if(row[0].equals("POINT"))
+            paths.computeIfAbsent(row[1],ignored->new ArrayList<>()).add(point(row,2));
+        var manifest=arrival.get(0);
+        LookoutNativeLevel.Source source;
+        try(var model=Files.newInputStream(Path.of(manifest[1]));var collision=Files.newInputStream(Path.of(manifest[3]))){
+            source=LookoutNativeLevel.read(arrival,table(packet.resolve("door-survey.tsv")),
+                table(packet.resolve("mission.tsv")),model,collision);
         }
-        var frames=new ArrayList<NativeInvestigationDoor.Spec>();
-        for(var row:table(packet.resolve("door-survey.tsv"))){
-            var portal=new Portal(Integer.parseInt(row[0]),Integer.parseInt(row[4]),Integer.parseInt(row[5]),
-                d(row,6),d(row,7),d(row,8),d(row,9),row[10].equals("z"),"door",1);
-            frames.add(new NativeInvestigationDoor.Spec(row[1],row[2],row[3],portal,d(row,11),d(row,12),d(row,13),
-                Integer.parseInt(row[14]),Integer.parseInt(row[15]),Integer.parseInt(row[16]),row[17]));
-        }
-        NativeInvestigationScene scene;
-        try(var model=Files.newInputStream(Path.of(source[1]));var collision=Files.newInputStream(Path.of(source[3]))){
-            scene=NativeInvestigationScene.read(model,source[2],collision,source[4],treads,spaces,frames);
-        }
-        var portals=new ArrayList<>(frames.stream().map(NativeInvestigationDoor.Spec::portal).toList());
-        var rooms=owners(scene,dock,table(packet.resolve("mission.tsv")),portals);
-        var level=new LevelDefinition("wld-04",scene.revision(),"Widow's Peak Fire Lookout",rooms,portals,
-            List.of(),List.of(),List.of(),sockets,List.of(),dock,"woodland");
-        var host=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        var guest=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        boolean packaged=List.of(args).contains("--packaged");
+        var level=source.level();
+        var scene=source.scene();
+        var frames=source.doors();
+        var host=packaged?new HouseMap(HouseMap.Site.LOOKOUT):new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var guest=packaged?HouseMap.forNetworkRevision(HouseMap.Site.LOOKOUT,level.revision())
+            :new HouseMap(HouseMap.Site.USER,level,null,scene);
+        require(host.level().equals(level),"Packaged site loaded different source coordinates");
         require(host.valid(),"Disconnected Lookout case owners");
         require(RitualSites.valid(host),"Unsupported route to an authored Lookout ritual socket");
         boolean gpu=List.of(args).contains("--gpu");
-        var captures=packet.resolve(gpu?"captures/opengl":"captures");
+        var captures=evidenceFolder.resolve(gpu?"captures/opengl":"captures");
         Files.createDirectories(captures);
         for(var frame:frames){
             int id=frame.portal().id();
@@ -117,7 +93,7 @@ public final class NativeLookoutArrivalReview {
         }
         replay(host,towerJourney,"cargo to observation deck");
 
-        var output=packet.resolve("verification");
+        var output=evidenceFolder.resolve("verification");
         Files.createDirectories(output);
         NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
         var evidence=new ArrayList<>(List.of("measure\tresult","native_scene_revision\t"+scene.revision(),
@@ -131,7 +107,13 @@ public final class NativeLookoutArrivalReview {
         captureStanding(host,new Vec(33,15,5),0,captures.resolve("lookout-deck-view.png"));
         if(!HidingBudget.candidates(level).isEmpty())reviewCover(host,captures,evidence);
         if(host.hasGenerator())reviewPower(host,captures,evidence);
-        if(List.of(args).contains("--lan"))live(level,scene,evidence);
+        if(packaged){
+            require(MissionSites.byId("WLD-04").location()==SiteCatalog.Location.LOOKOUT
+                &&SiteCatalog.Location.LOOKOUT.playable(),"The normal mission board did not offer Lookout");
+            NativeSchoolInteriorReview.auditSolo(SiteCatalog.Location.LOOKOUT,level);
+            evidence.add("packaged_solo\tNamed Lookout selected through the ordinary solo launcher and loaded exact source at cargo");
+        }
+        if(List.of(args).contains("--lan"))live(level,scene,packaged,evidence);
         Files.write(output.resolve(gpu?"opengl.tsv":"native-arrival.tsv"),evidence);
         evidence.forEach(System.out::println);
     }
@@ -269,16 +251,19 @@ public final class NativeLookoutArrivalReview {
         return renderer.safeAreaPixels();
     }
 
-    private static void live(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        var clientMap=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+    private static void live(LevelDefinition level,NativeInvestigationScene scene,boolean packaged,List<String> report)throws Exception{
+        var site=packaged?HouseMap.Site.LOOKOUT:HouseMap.Site.USER;
+        var map=packaged?new HouseMap(site):new HouseMap(site,level,null,scene);
+        var clientMap=packaged?HouseMap.forNetworkRevision(site,level.revision()):new HouseMap(site,level,null,scene);
+        var contract=CustomContract.standard(3);
+        try(var host=packaged?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,false,false,site)
+                :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,map);
             var scout=new Peer(host,false,"Roadhead");
             var lookout=new Peer(host,false,"Lookout");
             var witness=new Peer(host,false,"Witness");
             var ghost=new Peer(host,true,"Ghost")){
             for(var peer:List.of(scout,lookout,witness,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
                 peer.client.ready();
             }
             scout.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -359,14 +344,15 @@ public final class NativeLookoutArrivalReview {
                 report.add("tcp_lookout_cover\tHunter walked into hut safe zone, hid, revealed, and physically left it");
             }
         }
-        report.add("tcp_lookout_review\tFour peers on the exact staged source, real ramp exit, fitted cabin-deck crossing and south hut stair return");
+        report.add("tcp_lookout_review\tFour peers on the exact "+(packaged?"named package":"staged source")
+            +", real ramp exit, fitted cabin-deck crossing and south hut stair return");
     }
 
     private static void livePower(HouseMap map,LanHost host,Peer operator,Peer witness,Peer ghost,Vec at,
             List<String> report)throws Exception{
         ghost.client.viewGhost3D();
         ghost.awaitExact("ACCEPT|GVIEW3D");
-        ghost.awaitExact("SITE|USER|"+map.level().revision());
+        ghost.awaitExact("SITE|"+map.site()+"|"+map.level().revision());
         ghost.await("GPOSE|");
         NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
 
@@ -403,47 +389,6 @@ public final class NativeLookoutArrivalReview {
         player.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
         player.client.interact(target,yaw,pitch);
         player.awaitExact("ACCEPT|INTERACT|"+target.name());
-    }
-
-    private static List<Room> owners(NativeInvestigationScene scene,Dock dock,List<String[]> rows,List<Portal> portals)
-            throws IOException{
-        var result=new Room[HouseMap.ROOM_COUNT];
-        for(var row:rows)switch(row[0]){
-            case "ANCHOR" -> {
-                int id=Integer.parseInt(row[1]);
-                var at=point(row,3);
-                var space=scene.spaceAt(at.x(),at.y(),at.z());
-                if(space==null||space.owner()!=id||!space.id().equals(row[2])
-                        ||!scene.physics().traversable(at,HunterPosture.STANDING_HEIGHT))
-                    throw new IOException("Unsupported Lookout owner "+row[2]+" at "+at+" / "+space);
-                result[id]=new Room(id,space.id(),space.x0(),space.z0(),space.x1(),space.z1(),space.floor(),space.height(),
-                    space.outside()?"native-outdoor":"wood",space.outside()?"outdoor":"timber",at);
-            }
-            case "TRANSITION" -> {
-                var at=point(row,4);
-                var floor=scene.physics().support(at.x(),at.z(),at.y(),.07);
-                if(floor==null||Math.abs(floor.y()-at.y())>.06)
-                    throw new IOException("Unsupported Lookout transition "+row[1]+" "+at);
-                int a=Integer.parseInt(row[2]),b=Integer.parseInt(row[3]);
-                boolean along=row[8].equals("z");
-                if(row[9].equals("trail")){
-                    double dx=along?0:.68,dz=along?.68:0;
-                    int near=scene.ownerAt(at.x()-dx,at.y(),at.z()-dz);
-                    int far=scene.ownerAt(at.x()+dx,at.y(),at.z()+dz);
-                    if(!(a==near&&b==far||a==far&&b==near))
-                        throw new IOException("No Lookout owner interface at "+row[1]+": "+near+" and "+far);
-                }
-                portals.add(new Portal(Integer.parseInt(row[1]),a,b,at.x(),at.y(),at.z(),d(row,7),along,row[9],1));
-            }
-            default -> throw new IOException("Unknown Lookout mission record "+row[0]);
-        }
-        var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
-        var lip=van.world(0,VanStaging.FRONT);
-        double y=van.floorY();
-        portals.add(new Portal(619,13,14,lip.x(),y,lip.z(),VanStaging.RAMP_HALF_WIDTH*2,true,"trail",1));
-        result[14]=new Room(14,"Expedition van",dock.x()-1.26,dock.z()-3,dock.x()+1.26,dock.z()+2.4,
-            y,VanStaging.INTERIOR_HEIGHT,"van","metal",new Vec(dock.x(),y,dock.z()));
-        return List.of(result);
     }
 
     private static void replay(HouseMap map,List<Vec> guide,String label){

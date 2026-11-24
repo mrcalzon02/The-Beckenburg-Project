@@ -4,7 +4,7 @@ import java.util.*;
 public final class MissionSites {
     private MissionSites(){}
     public record Entry(String id,String title,String region,String scale,String description,String imageKey,String imageCaption){
-        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(id);}catch(IllegalArgumentException planned){return null;}}
+        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(id.equals("WLD-04")?"LOOKOUT":id);}catch(IllegalArgumentException planned){return null;}}
         public boolean headquarters(){return id.equals("CASTLE");}
         public boolean playable(){var site=location();return site!=null&&site.playable();}
         public String status(){return headquarters()?"HEADQUARTERS / NO INVESTIGATION":playable()?"AVAILABLE":"IN DEVELOPMENT / NOT DISPATCHABLE";}
@@ -50,6 +50,7 @@ public final class MissionSites {
         return byId(switch(id){
             case "BLACKPINE" -> "WLD-01";
             case "HOLLOW_CREEK" -> "WLD-02";
+            case "LOOKOUT" -> "WLD-04";
             default -> id;
         }).title();
     }

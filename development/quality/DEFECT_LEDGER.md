@@ -8994,3 +8994,7 @@ The existing roadhead now has a founded equipment shelter with mounted diesel co
 ### DEV-652 Lookout shelter entrance lip caught the movement capsule
 
 A formed bevel joins the existing apron to the shelter floor. The distinct floor finish clears the saved ground surface and stands fully supported. The native routes and four-peer crossing passed. [Evidence](../levels/rebuild/lookout-power-pass/checkpoint.json)
+
+### DEV-653 Lookout required the custom-site harness to launch
+
+The exact powered Lookout now loads through its named mission-board and LAN selection with the review flag. The normal solo launcher and four-peer native replay pass on the packaged JAR. [Evidence](../levels/rebuild/lookout-dispatch-pass/checkpoint.json)

@@ -3393,12 +3393,14 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
-            "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+            "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json",
+            "development/levels/rebuild/lookout-dispatch-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-645"
+            "DEV-645",
+            "DEV-653"
           ],
-          "next_action": "Native route and staged LAN case pass. Integrate named packaged dispatch and exact services, then test the full case."
+          "next_action": "Named package review passed in solo and four-player LAN. Complete case behavior and public release gates."
         }
       },
       "arrival_bearing_pass": {

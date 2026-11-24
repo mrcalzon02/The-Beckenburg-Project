@@ -7239,6 +7239,17 @@
       "action": "Use one founded slab with a low formed bevel and a distinct finish datum. Verify exact ground contact, both renderer views and ordinary body movement.",
       "older_maps": "Check slab-to-ground height changes, actual swept body clearance and coincident surfaces.",
       "evidence": "development/levels/rebuild/lookout-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-653",
+      "title": "Lookout required the custom-site harness to launch",
+      "status": "NAMED_LOCAL_AND_LAN_PACKAGE_REVIEW_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout native case",
+      "symptom": "The powered Lookout had no selectable identity in the normal mission launch path.",
+      "cause": "Only the standalone native review harness could load the verified resource tables.",
+      "action": "Bind the existing WLD-04 mission-board identity to the packaged native scene and verify normal solo and LAN dispatch under the review flag.",
+      "older_maps": "Preserve saved campaign identities and require named launch from each packaged native source.",
+      "evidence": "development/levels/rebuild/lookout-dispatch-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

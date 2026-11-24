@@ -41,7 +41,7 @@ public final class LevelPlans {
     }
     public static LevelDefinition build(HouseMap.Site site) {
         var source=buildSource(site);
-        if(site==HouseMap.Site.SEACLIFF||site==HouseMap.Site.BLACKPINE)return source;
+        if(site==HouseMap.Site.SEACLIFF||site==HouseMap.Site.BLACKPINE||site==HouseMap.Site.LOOKOUT)return source;
         if(site==HouseMap.Site.ASYLUM&&AsylumNativeLevel.reviewEnabled())
             return LevelAuthoringSession.apply(site,source,AsylumNativeLevel::definition);
         if(site==HouseMap.Site.PRISON&&PrisonNativeLevel.reviewEnabled())
@@ -54,7 +54,7 @@ public final class LevelPlans {
     }
     static boolean editableTemplate(HouseMap.Site site) {
         return site!=HouseMap.Site.USER && site!=HouseMap.Site.HOLLOW_CREEK
-            && site!=HouseMap.Site.SEACLIFF && site!=HouseMap.Site.BLACKPINE;
+            && site!=HouseMap.Site.SEACLIFF && site!=HouseMap.Site.BLACKPINE && site!=HouseMap.Site.LOOKOUT;
     }
 
     /** Unmodified shipped authoring source; shared by editor and gameplay. */
@@ -64,6 +64,7 @@ public final class LevelPlans {
             case "HOUSE" -> HouseSourceVersions.selected();
             case "HOLLOW_CREEK" -> HollowCreekLevel.build();
             case "SEACLIFF" -> SeacliffNativeLevel.definition();
+            case "LOOKOUT" -> LookoutNativeLevel.definition();
             case "BLACKPINE" -> BlackpineLevel.build();
             case "MANSION" -> wing("mansion","Blackthorn Manor",10,20,26,38,3.6,
                 new String[]{"Grand staircase hall","Library","Dining hall","Scullery","Ballroom","Drawing room","Morning room","Upper gallery","Master suite","Servants corridor","Attic archive","Wine cellar"},"parquet","estate");
