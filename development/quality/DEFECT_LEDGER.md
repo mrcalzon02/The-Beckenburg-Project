@@ -9078,3 +9078,7 @@ Raw native collision previously supported the unobstructed road up to Z86 and su
 ### DEV-672 Wharf frames lacked operating door leaves and fitted acoustic room transitions
 
 Eight site-fitted frames now carry the shared door leaves in the staged game. Both renderers passed the open and closed body, object, sight, sound and snapshot checks. A four-peer TCP case opened the west cottage door after a physical rejection with it shut, and the witness saw the state change. [Evidence](../levels/rebuild/wharf-door-pass/checkpoint.json)
+
+### DEV-673 Wharf lacked physical walk-in safe areas
+
+Both cottages and the net shed now have a real fitted walk-in refuge. Each refuge covers all 69 sampled usable positions and passed live entry, hiding, reveal and exit. [Evidence](../levels/rebuild/wharf-cover-pass/checkpoint.json)

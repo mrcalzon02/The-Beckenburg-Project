@@ -7459,6 +7459,17 @@
       "action": "Fit the shared hinged leaves to all eight measured frames. Bind supported room and stair crossings, run open and closed checks, and exercise staged live interaction and replication.",
       "older_maps": "Validate each door against its retained frames and both nearby rooms. Exercise sound, object, line-of-sight and host-authoritative crossing.",
       "evidence": "development/levels/rebuild/wharf-door-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-673",
+      "title": "Wharf lacked physical walk-in safe areas",
+      "status": "WHARF_THREE_LIVE_WALK_IN_SAFE_AREAS_VERIFIED",
+      "affected": "Both Wharf cottages and the net shed",
+      "symptom": "The staged Wharf offered no fitted safe-zone volume.",
+      "cause": "The native case had room, door and acoustic bindings before fitted refuge meshes and sockets.",
+      "action": "Fit three ground-supported cupboard instances and test actual thresholds, both rear sides, head height, disabled coverage and live use.",
+      "older_maps": "Exercise the entire accessible volume and real threshold for every hiding candidate.",
+      "evidence": "development/levels/rebuild/wharf-cover-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

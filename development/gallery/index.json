@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11717,
+  "count": 11729,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114254,6 +114254,126 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-enter.png",
+      "title": "Wharf cottage a cupboard enter",
+      "kind": "Wharf full walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 473607,
+      "sha256": "9c953f311af3303851fee7d15ac0f9a9e28a56744c38efc5d118966bfd363b60"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-inside.png",
+      "title": "Wharf cottage a cupboard inside",
+      "kind": "Wharf full walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 397401,
+      "sha256": "a8c464f195fe86e31b6d82a4be245c79ddcaaf43ca1bc72490f94f1a565c299a"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-b-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-b-cupboard-enter.png",
+      "title": "Wharf cottage b cupboard enter",
+      "kind": "Wharf full walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 485718,
+      "sha256": "7752125523668852c1155182aad58ce8970be52b88db4e062f6541cb5fec0ba4"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-b-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-b-cupboard-inside.png",
+      "title": "Wharf cottage b cupboard inside",
+      "kind": "Wharf full walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398846,
+      "sha256": "8989236883b067650d7858202cbdffcb5dcc99fca2f1d1b017dc4ceb74587115"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-net-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-net-cupboard-enter.png",
+      "title": "Wharf net cupboard enter",
+      "kind": "Wharf full walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 484787,
+      "sha256": "94360c22f48d9b2ebb9419e48ffbd92fb20fb96f61be07cef36ad0185c75b31f"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-net-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-net-cupboard-inside.png",
+      "title": "Wharf net cupboard inside",
+      "kind": "Wharf full walk-in safe zone in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 412944,
+      "sha256": "6710f4d1656ddd495473c83ea679d842cbe7cbfabd363249d16b9fdeda6dc327"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-a-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-a-cupboard-enter.png",
+      "title": "Wharf cottage a cupboard enter",
+      "kind": "Wharf full walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 468342,
+      "sha256": "2f912b2bacd69f6f5f0be8550346458252e3a26d11ca506ff421bdf7d10ae5c9"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-a-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-a-cupboard-inside.png",
+      "title": "Wharf cottage a cupboard inside",
+      "kind": "Wharf full walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 397038,
+      "sha256": "ca360289078348f0032ddcb4ce73ad8011dd107feb20616368767b7e3a8dea00"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-b-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-b-cupboard-enter.png",
+      "title": "Wharf cottage b cupboard enter",
+      "kind": "Wharf full walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 481017,
+      "sha256": "b0b25148ed7d5ab7ecea75ccdd2d93ef0d200716327dd71b26a4fbb9a269d398"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-b-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-b-cupboard-inside.png",
+      "title": "Wharf cottage b cupboard inside",
+      "kind": "Wharf full walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 399140,
+      "sha256": "93439e9eda0b8d1d6b7008390b9863b55aa8956052f249a648626f62719d48ac"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-net-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/wharf-net-cupboard-enter.png",
+      "title": "Wharf net cupboard enter",
+      "kind": "Wharf full walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479783,
+      "sha256": "a42a79355e7a25078f1cf18e6b1d3cb0734115b33dd334d8a96789eb63c173be"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-net-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-cover-pass/captures/wharf-net-cupboard-inside.png",
+      "title": "Wharf net cupboard inside",
+      "kind": "Wharf full walk-in safe zone in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 413446,
+      "sha256": "7aa6b6bfb6140e62a6a7afb4c7601e49e0c23b4dd1dddbfd5886cf7d1d3c89cf"
     },
     {
       "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-closed.png",

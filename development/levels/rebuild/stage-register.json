@@ -3861,14 +3861,16 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "07e33bbf0d49cb578cec841b4dc80938f8ddfd3b",
+          "source_sha": "7bd96d75823e5615c2cfb499a22eb9e06ad827e3",
           "evidence": [
-            "development/levels/rebuild/wharf-door-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-door-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-cover-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-672"
+            "DEV-672",
+            "DEV-673"
           ],
-          "next_action": "Fit powered services and full walk-in refuges. Install and verify case evidence, rituals, navigation and named dispatch against this staged room and door authority."
+          "next_action": "Install the Wharf electrical source, distribution and case evidence before named game dispatch."
         },
         "S07": {
           "status": "IN_PROGRESS",

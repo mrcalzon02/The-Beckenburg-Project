@@ -1,0 +1,86 @@
+{
+  "cupboards": [
+    {
+      "id": "wharf-cottage-a-cupboard",
+      "space": "cottage-a",
+      "owner": 0,
+      "position": [
+        5.45,
+        0.0,
+        46
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          4.849999,
+          0.0,
+          45.150002
+        ],
+        [
+          6.152,
+          2.31,
+          46.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "wharf-cottage-b-cupboard",
+      "space": "cottage-b",
+      "owner": 1,
+      "position": [
+        58.55,
+        0.0,
+        46
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          57.848,
+          0.0,
+          45.150002
+        ],
+        [
+          59.149998,
+          2.31,
+          46.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "wharf-net-cupboard",
+      "space": "net",
+      "owner": 3,
+      "position": [
+        54.5,
+        0.0,
+        21.5
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          53.798,
+          0.0,
+          20.65
+        ],
+        [
+          55.099998,
+          2.31,
+          22.35
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "retained_collision_parts": 688,
+  "added_collision_parts": 3,
+  "exports": {
+    "development/levels/rebuild/wharf-cover-pass/wharf-cover.blend": "940c1f8580604c208eac6a06e77c370eba23416d95b69d16534745bd2e565fb1",
+    "development/levels/rebuild/wharf-cover-pass/wharf-cover.glb": "7edeb2854fad758b05ece7ad9a801de0cbbe4c780916396031d1674985bbb27a",
+    "development/levels/rebuild/wharf-cover-pass/wharf-cover.hcs2": "419091e3663ea505e12d83263e97f44d01e4350f9c862a69a5032d0d24f65070"
+  }
+}

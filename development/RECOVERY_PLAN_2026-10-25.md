@@ -2203,3 +2203,7 @@ Tidal commit 740cd177631c2f492776f053df01d9a7de610e36 is verified on draft PR 86
 ### Drowned Fisherman's Wharf doors and room graph
 
 Landward enclosure commit 07e33bbf0d49cb578cec841b4dc80938f8ddfd3b is published on the held draft PR 86. The [door checkpoint](levels/rebuild/wharf-door-pass/checkpoint.json) verifies eight fitted doors, ten physical open portals, canonical cargo access and a connected graph of fifteen stable owners. Software, RTX 5070 and staged live cottage-door checks passed. Continue powered services, live walk-in refuge coverage and named dispatch.
+
+### Drowned Fisherman's Wharf walk-in refuges
+
+Door commit 7bd96d75823e5615c2cfb499a22eb9e06ad827e3 was verified on draft PR 86. Gallery 45362440723 passed. The [refuge checkpoint](levels/rebuild/wharf-cover-pass/checkpoint.json) verifies three fitted volumes, 207 covered usable floor samples, two renderers, and entry, hide, reveal and exit for all three in live TCP. Continue Wharf electricity and case/named review.

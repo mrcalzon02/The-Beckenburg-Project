@@ -97,7 +97,9 @@ def build_inputs(layout):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--gpu",action="store_true")
+    parser.add_argument("--cover",action="store_true")
     args=parser.parse_args()
+    stage=BASE/"wharf-cover-pass" if args.cover else STAGE
     java=Path("C:/Program Files/Java/jdk-17/bin")
     jar=ROOT/"build/beckenburg-game.jar"
     gpu=ROOT/"gpu-client/target/BeckenburgGPU.jar"
@@ -105,17 +107,23 @@ def main():
     physics=LAND/"enclosed-wharf.hcs2"
     exports=read(LAND/"checkpoint.json")["exports"]
     hashes=[exports[p.relative_to(ROOT).as_posix()] for p in (glb,physics)]
-    STAGE.mkdir(exist_ok=True)
+    stage.mkdir(exist_ok=True)
     BUILD.mkdir(parents=True,exist_ok=True)
-    rows, doors = build_inputs(read(SOURCE/"authored-layout.json"))
-    tsv(STAGE/"room-layout.tsv",rows)
-    tsv(STAGE/"door-schedule.tsv",doors)
+    if args.cover:
+        glb=stage/"wharf-cover.glb"
+        physics=stage/"wharf-cover.hcs2"
+        exports=read(stage/"construction.json")["exports"]
+        hashes=[exports[p.relative_to(ROOT).as_posix()] for p in (glb,physics)]
+    else:
+        rows, doors = build_inputs(read(SOURCE/"authored-layout.json"))
+        tsv(stage/"room-layout.tsv",rows)
+        tsv(stage/"door-schedule.tsv",doors)
     helpers=[ROOT/"tools/java"/f for f in ("WharfDoorReview.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java")]
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(BUILD),*map(str,helpers)],
                    cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(BUILD,jar,gpu) if args.gpu else (BUILD,jar)))
     subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
-                    "org.beckenburg.WharfDoorReview",str(STAGE),str(glb),hashes[0],str(physics),hashes[1],
+                    "org.beckenburg.WharfDoorReview",str(stage),str(glb),hashes[0],str(physics),hashes[1],
                     str(LAND/"wharf-tide.water"),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
 
 

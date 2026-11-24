@@ -1,0 +1,185 @@
+{
+  "status": "WHARF_THREE_FULL_WALK_IN_SAFE_ZONES_AND_FOUR_PEER_USE_VERIFIED",
+  "previous_commit": "7bd96d75823e5615c2cfb499a22eb9e06ad827e3",
+  "previous_gallery": 45362440723,
+  "walk_in_refuges": [
+    "wharf-cottage-a-cupboard",
+    "wharf-cottage-b-cupboard",
+    "wharf-net-cupboard"
+  ],
+  "protected_usable_floor_samples": 207,
+  "exact_fit": {
+    "cupboards": [
+      {
+        "id": "wharf-cottage-a-cupboard",
+        "space": "cottage-a",
+        "owner": 0,
+        "position": [
+          5.45,
+          0.0,
+          46
+        ],
+        "yaw": -1.5707963267948966,
+        "bounds": [
+          [
+            4.849999,
+            0.0,
+            45.150002
+          ],
+          [
+            6.152,
+            2.31,
+            46.849998
+          ]
+        ],
+        "base_contacts": 12,
+        "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+      },
+      {
+        "id": "wharf-cottage-b-cupboard",
+        "space": "cottage-b",
+        "owner": 1,
+        "position": [
+          58.55,
+          0.0,
+          46
+        ],
+        "yaw": 1.5707963267948966,
+        "bounds": [
+          [
+            57.848,
+            0.0,
+            45.150002
+          ],
+          [
+            59.149998,
+            2.31,
+            46.849998
+          ]
+        ],
+        "base_contacts": 12,
+        "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+      },
+      {
+        "id": "wharf-net-cupboard",
+        "space": "net",
+        "owner": 3,
+        "position": [
+          54.5,
+          0.0,
+          21.5
+        ],
+        "yaw": 1.5707963267948966,
+        "bounds": [
+          [
+            53.798,
+            0.0,
+            20.65
+          ],
+          [
+            55.099998,
+            2.31,
+            22.35
+          ]
+        ],
+        "base_contacts": 12,
+        "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+      }
+    ],
+    "retained_collision_parts": 688,
+    "added_collision_parts": 3,
+    "exports": {
+      "development/levels/rebuild/wharf-cover-pass/wharf-cover.blend": "940c1f8580604c208eac6a06e77c370eba23416d95b69d16534745bd2e565fb1",
+      "development/levels/rebuild/wharf-cover-pass/wharf-cover.glb": "7edeb2854fad758b05ece7ad9a801de0cbbe4c780916396031d1674985bbb27a",
+      "development/levels/rebuild/wharf-cover-pass/wharf-cover.hcs2": "419091e3663ea505e12d83263e97f44d01e4350f9c862a69a5032d0d24f65070"
+    }
+  },
+  "software": {
+    "wharf-cottage-b-cupboard_protected_floor_samples": "69",
+    "wharf-cottage-a-cupboard_protected_floor_samples": "69",
+    "wharf-net-cupboard_protected_floor_samples": "69",
+    "wharf_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "wharf-cottage-a-cupboard_live_entry_hide_reveal_exit": "PASS",
+    "wharf-cottage-b-cupboard_live_entry_hide_reveal_exit": "PASS",
+    "wharf-net-cupboard_live_entry_hide_reveal_exit": "PASS"
+  },
+  "opengl": {
+    "wharf-cottage-b-cupboard_protected_floor_samples": "69",
+    "wharf-cottage-a-cupboard_protected_floor_samples": "69",
+    "wharf-net-cupboard_protected_floor_samples": "69",
+    "wharf_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss"
+  },
+  "evidence_sha256": {
+    "development/levels/rebuild/wharf-cover-pass/construction.json": "9cb10892efba6558f120b4f5cf65fdf6be4bee475b0fc46ffdc57497637157ce",
+    "development/levels/rebuild/wharf-cover-pass/room-layout.tsv": "de5b03a8dc05ee1bb57d51231e7b8175b3f72febad165fccf62281fcb4515efd",
+    "development/levels/rebuild/wharf-cover-pass/door-schedule.tsv": "0f5bd05208f580731ddc4456b1d652b4608477ebadd2edf9af1d0fd70f1685e7",
+    "development/levels/rebuild/wharf-cover-pass/cover-software.tsv": "5f80ea948f7dfa60738be1c1528de63374ba5fe0d15cfa2866273ca9b6a34bcc",
+    "development/levels/rebuild/wharf-cover-pass/cover-opengl.tsv": "e535891cef95b43c5455e8053c1346da70f1b03bcf6dc2cdc9f2e6717a42b36c",
+    "tools/build_wharf_cover.py": "4e03b91400a39a33794b0a23d04c7ec88b84df6950c31a165c14ac7c7e4b60ce",
+    "tools/java/WharfDoorReview.java": "fe0e40ea7edde5fd3795459ee9d4036c87225471ff412700fe9e94f51950cbcc",
+    "tools/verify_wharf_doors.py": "d4cb67d6ddc24d031226a0e6ec80ce34d0d833b9364a32b7595139520825fa67"
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-enter.png",
+      "sha256": "9c953f311af3303851fee7d15ac0f9a9e28a56744c38efc5d118966bfd363b60",
+      "type": "RTX 5070 OpenGL"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-inside.png",
+      "sha256": "a8c464f195fe86e31b6d82a4be245c79ddcaaf43ca1bc72490f94f1a565c299a",
+      "type": "RTX 5070 OpenGL"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-b-cupboard-enter.png",
+      "sha256": "7752125523668852c1155182aad58ce8970be52b88db4e062f6541cb5fec0ba4",
+      "type": "RTX 5070 OpenGL"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-b-cupboard-inside.png",
+      "sha256": "8989236883b067650d7858202cbdffcb5dcc99fca2f1d1b017dc4ceb74587115",
+      "type": "RTX 5070 OpenGL"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-net-cupboard-enter.png",
+      "sha256": "94360c22f48d9b2ebb9419e48ffbd92fb20fb96f61be07cef36ad0185c75b31f",
+      "type": "RTX 5070 OpenGL"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-net-cupboard-inside.png",
+      "sha256": "6710f4d1656ddd495473c83ea679d842cbe7cbfabd363249d16b9fdeda6dc327",
+      "type": "RTX 5070 OpenGL"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-a-cupboard-enter.png",
+      "sha256": "2f912b2bacd69f6f5f0be8550346458252e3a26d11ca506ff421bdf7d10ae5c9",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-a-cupboard-inside.png",
+      "sha256": "ca360289078348f0032ddcb4ce73ad8011dd107feb20616368767b7e3a8dea00",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-b-cupboard-enter.png",
+      "sha256": "b0b25148ed7d5ab7ecea75ccdd2d93ef0d200716327dd71b26a4fbb9a269d398",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-cottage-b-cupboard-inside.png",
+      "sha256": "93439e9eda0b8d1d6b7008390b9863b55aa8956052f249a648626f62719d48ac",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-net-cupboard-enter.png",
+      "sha256": "a42a79355e7a25078f1cf18e6b1d3cb0734115b33dd334d8a96789eb63c173be",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-cover-pass/captures/wharf-net-cupboard-inside.png",
+      "sha256": "7aa6b6bfb6140e62a6a7afb4c7601e49e0c23b4dd1dddbfd5886cf7d1d3c89cf",
+      "type": "Software"
+    }
+  ],
+  "open": "Install the Wharf electrical source, distribution and case evidence before named game dispatch."
+}

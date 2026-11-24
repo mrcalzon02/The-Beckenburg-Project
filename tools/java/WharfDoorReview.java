@@ -52,6 +52,7 @@ public final class WharfDoorReview {
                 }
                 case "TREAD" -> steps.add(r[1]);
                 case "ANCHOR" -> anchors.add(new Anchor(id(r,1),r[2],vec(r,3)));
+                case "COVER" -> sockets.add(new Socket(r[1],"hide",id(r,2),d(r,3),d(r,4),d(r,5),d(r,6),"walk-in-cupboard"));
                 case "RITUAL" -> sockets.add(new Socket("wharf-"+r[1],"ritual",id(r,2),d(r,3),d(r,4),d(r,5),0,r[1]));
                 case "POINT" -> paths.computeIfAbsent(r[1],ignored->new ArrayList<>()).add(vec(r,2));
                 case "TRANSITION" -> portals.add(new Portal(id(r,1),id(r,3),id(r,4),d(r,5),d(r,6),d(r,7),
@@ -120,9 +121,19 @@ public final class WharfDoorReview {
             }
         }
         boolean gpu=GpuWorldRenderer.active()!=null;
-        if (!gpu) auditLive(level,scene);
+        boolean cover=!HidingBudget.candidates(level).isEmpty();
+        if (!gpu&&!cover) auditLive(level,scene);
         var captures=folder.resolve(gpu?"captures/opengl":"captures");
         Files.createDirectories(captures);
+        if(cover){
+            var evidence=new ArrayList<String>();
+            NativeSchoolInteriorReview.auditWalkInCover(host,captures,evidence,"wharf");
+            if(!gpu)auditLiveCover(level,scene,evidence);
+            Files.writeString(folder.resolve(gpu?"cover-opengl.tsv":"cover-software.tsv"),
+                              String.join("\n",evidence)+"\n");
+            evidence.forEach(System.out::println);
+            return;
+        }
         for(var frame:leaves) {
             var p=frame.portal();
             if(!List.of(810,814,817).contains(p.id()))continue;
@@ -141,6 +152,64 @@ public final class WharfDoorReview {
             "physically_checked_open_portals\t"+openings.size(),
             "four_peer_tcp_cottage_door\t"+(gpu?"covered by software TCP run":"PASS"),
             "renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"))+"\n");
+    }
+
+    private static void auditLiveCover(LevelDefinition level,NativeInvestigationScene scene,List<String> report)
+            throws Exception {
+        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        map.configureHiding(100);
+        var full=new CustomContract(3,100,150,100,100,100,100,100,CustomContract.Sprint.LIMITED,100,true,true);
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,full,map);
+            var one=new NativeSchoolInteriorReview.Peer(host,false,"West Cottage");
+            var two=new NativeSchoolInteriorReview.Peer(host,false,"East Cottage");
+            var three=new NativeSchoolInteriorReview.Peer(host,false,"Net Shed");
+            var ghost=new NativeSchoolInteriorReview.Peer(host,true,"Wharf Ghost")) {
+            var hunters=List.of(one,two,three);
+            for(var peer:List.of(one,two,three,ghost)){
+                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.client.ready();
+            }
+            one.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            one.client.start();
+            one.await("INFO|mission started");
+            var owners=List.of(0,1,3);
+            for(int seat=0;seat<hunters.size();seat++){
+                var hunter=hunters.get(seat);
+                int owner=owners.get(seat);
+                var cover=level.socket("hide",owner);
+                for(int room:NativeSchoolInteriorReview.missionRoute(map,owner)){
+                    hunter.client.move(room);
+                    hunter.awaitExact("ACCEPT|MOVE|"+room);
+                }
+                hunter.client.view3D();
+                hunter.awaitExact("ACCEPT|VIEW3D");
+                var feet=NativeSchoolInteriorReview.body(hunter.await("BODY|"+seat+"|"));
+                require(feet.equals(map.spawn(owner)),"Live hunter missed refuge room "+owner);
+                var approach=LevelClosets.world(cover,0,0,1.18);
+                var interior=LevelClosets.world(cover,0,0,.22);
+                feet=walkCoverPeer(hunter,seat,feet,approach);
+                require(!SafeAreaBarrier.protectedAt(map,feet.x(),feet.y(),feet.z()),"Protection before the physical doorway");
+                feet=walkCoverPeer(hunter,seat,feet,interior);
+                require(SafeAreaBarrier.protectedAt(map,feet.x(),feet.y(),feet.z()),"No protection inside refuge");
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|1");
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|0");
+                feet=walkCoverPeer(hunter,seat,feet,approach);
+                require(!SafeAreaBarrier.protectedAt(map,feet.x(),feet.y(),feet.z()),"Protection after exiting");
+                report.add(cover.id()+"_live_entry_hide_reveal_exit\tPASS");
+            }
+        }
+    }
+
+    private static Vec walkCoverPeer(NativeSchoolInteriorReview.Peer peer,int seat,Vec at,Vec target)throws Exception {
+        for(int step=0;step<60;step++){
+            double dx=target.x()-at.x(),dz=target.z()-at.z(),distance=Math.hypot(dx,dz);
+            if(distance<.165)return at;
+            double scale=Math.min(100/distance,310);
+            at=NativeSchoolInteriorReview.step(peer,seat,(int)Math.round(dx*scale),(int)Math.round(dz*scale));
+        }
+        throw new AssertionError("Wharf hunter cannot reach "+target+" from "+at);
     }
 
     private static void auditOpening(HouseMap map,Portal p) {
