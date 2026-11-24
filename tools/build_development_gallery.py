@@ -26,7 +26,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/mine-case-pass/' in path:
+    if '/wharf-foundation-pass/' in path:
+        kind='Wharf undercroft and pile grid cutaway' if 'undercroft' in p.name else 'Wharf native deck and pier foundation review'
+    elif '/mine-case-pass/' in path:
         if '/structure/' in path:
             kind='Dead Man’s Claim supported case furnishings and hoist cutaway'
         else:

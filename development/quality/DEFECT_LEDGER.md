@@ -9062,3 +9062,7 @@ The assay and crew records are supported on measured benches and open through ph
 ### DEV-668 Mine could not be selected as an exact named case
 
 The named review package binds the ordinary mission entry to the exact native geometry, water and room metadata. Four-player tests exercised all three refuges at maximum allowance, both records, local EMF, camera view, power and reconnect, all three rites and physical retreat. The default release gate remains in place. [Evidence](../levels/rebuild/mine-case-pass/checkpoint.json)
+
+### DEV-669 Wharf route-era piles persisted alongside the dock framing and stair cells
+
+Source provenance ties thirty pile and beam components to old circulation links. The rebuilt deck bears on the measured pile grid and seats into the cast stair cells. Shared native collision passed all eighteen links and both sides of all eight fitted frames. [Evidence](../levels/rebuild/wharf-foundation-pass/checkpoint.json)

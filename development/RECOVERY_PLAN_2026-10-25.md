@@ -2187,3 +2187,7 @@ Surface runoff commit 767b627910d5e1325703c1837f5668ce48daf3e3 is verified on dr
 ### Mine named case and bounded gameplay
 
 Sump commit a3fe1043c8f7c07aaf8ceb5c5699bdc0de424ee5 is verified on draft PR 86. Gallery 45350833936 passed. The [named case checkpoint](levels/rebuild/mine-case-pass/checkpoint.json) verifies the packaged Mine alongside the exact staged source, all three live refuges at maximum allowance, evidence, physical records, closed hoist scenery, rites and retreat. The default release gate remains locked pending the remaining map and release checks.
+
+### Drowned Fisherman's Wharf pile grid and undercroft foundation
+
+Mine case commit 195c7f11c59ad83e64a1f18d3c7bdc7692a22210 is verified on draft PR 86. Gallery 45354170752 passed. The [Wharf foundation checkpoint](levels/rebuild/wharf-foundation-pass/checkpoint.json) removes thirty route-derived components, verifies 156 regular deck piles, and fits anchored grade beams and transfer girders below the existing stair cells. The shared collision kernel passed the complete approach and stair network in both postures. Whole-site containment, shore water, canonical van placement and shared gameplay remain open.

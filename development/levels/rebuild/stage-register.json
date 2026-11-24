@@ -3730,7 +3730,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
+          "source_sha": "195c7f11c59ad83e64a1f18d3c7bdc7692a22210",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3763,7 +3763,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
-            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-foundation-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -3787,13 +3788,14 @@
             "DEV-414",
             "DEV-415",
             "DEV-416",
-            "DEV-579"
+            "DEV-579",
+            "DEV-669"
           ],
-          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
+          "next_action": "Fit shoreline water and seabed at the surveyed tidal datum, close accessible site edges and seal the undercroft below the waterline. Verify actual van arrival and room, door, acoustic, power and walk-in refuge behavior in the same runtime scene."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
+          "source_sha": "195c7f11c59ad83e64a1f18d3c7bdc7692a22210",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3810,7 +3812,8 @@
             "development/levels/rebuild/deck-fit-pass/wld-06/construction.json",
             "development/levels/rebuild/deck-fit-pass/README.md",
             "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
-            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
+            "development/levels/rebuild/wharf-foundation-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -3824,16 +3827,21 @@
             "DEV-403",
             "DEV-404",
             "DEV-405",
-            "DEV-406"
+            "DEV-406",
+            "DEV-669"
           ],
-          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
+          "next_action": "Fit shoreline water and seabed at the surveyed tidal datum, close accessible site edges and seal the undercroft below the waterline. Verify actual van arrival and room, door, acoustic, power and walk-in refuge behavior in the same runtime scene."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "195c7f11c59ad83e64a1f18d3c7bdc7692a22210",
+          "evidence": [
+            "development/levels/rebuild/wharf-foundation-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-669"
+          ],
+          "next_action": "Fit shoreline water and seabed at the surveyed tidal datum, close accessible site edges and seal the undercroft below the waterline. Verify actual van arrival and room, door, acoustic, power and walk-in refuge behavior in the same runtime scene."
         },
         "S06": {
           "status": "NOT_AUDITED",

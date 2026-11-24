@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11680,
+  "count": 11683,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114254,6 +114254,36 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-deck-and-shore.png",
+      "url": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-deck-and-shore.png",
+      "title": "Wharf deck and shore",
+      "kind": "Wharf native deck and pier foundation review",
+      "width": 1520,
+      "height": 970,
+      "bytes": 1836005,
+      "sha256": "1acecf8fa546562e7a90e0539def9570b74586a67268e285cb673b3d4545b04c"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-founded-undercroft.png",
+      "url": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-founded-undercroft.png",
+      "title": "Wharf founded undercroft",
+      "kind": "Wharf undercroft and pile grid cutaway",
+      "width": 1520,
+      "height": 970,
+      "bytes": 1717330,
+      "sha256": "487f286adda3d275be6e22d48c9fefb77876f8b28b5d684629746a3a1f22536e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-pier-pile-bays.png",
+      "url": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-pier-pile-bays.png",
+      "title": "Wharf pier pile bays",
+      "kind": "Wharf native deck and pier foundation review",
+      "width": 1520,
+      "height": 970,
+      "bytes": 1565019,
+      "sha256": "90c37b99a57f947c0a613cd47b90da3721ba861ed4d7f69ad388e74235aea112"
     },
     {
       "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",

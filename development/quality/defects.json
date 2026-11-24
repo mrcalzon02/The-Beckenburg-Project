@@ -7415,6 +7415,17 @@
       "action": "Bind WLD-05 to the packaged Mine definition and retain the established review gate. Reverify ordinary selection and exact LAN revision.",
       "older_maps": "Exercise actual packaged selection and verify resource identities before a named map is promoted.",
       "evidence": "development/levels/rebuild/mine-case-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-669",
+      "title": "Wharf route-era piles persisted alongside the dock framing and stair cells",
+      "status": "WHARF_NATIVE_FOUNDATION_AND_TRAVERSAL_VERIFIED",
+      "affected": "Drowned Fisherman's Wharf crossdock, piers and dry undercroft",
+      "symptom": "Old piles follow circulation guides across the crossdock and quayside. The deck and stair cells lack a continuous understructure where the excavation interrupts the pile grid.",
+      "cause": "A prior foundation generator placed piles along route links. The later dock grid and stair-cell excavation kept those pile components.",
+      "action": "Remove proven route-derived supports. Retain the 156 assessed grid piles and fit transfer girders, anchored grade beams and marine piles to the actual deck frame and cell floors.",
+      "older_maps": "Check base and room construction for route-derived understructure. Recheck supported contacts, both stair directions, openings and walls after replacing it.",
+      "evidence": "development/levels/rebuild/wharf-foundation-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
