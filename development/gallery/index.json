@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11996,
+  "count": 12008,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115004,6 +115004,126 @@
       "height": 900,
       "bytes": 1624340,
       "sha256": "d795c60774e83afbe8cc96b1d435f58a83b9c574a39294da7f4f85eb509c67bf"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-closed.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-closed.png",
+      "title": "Court radio closed",
+      "kind": "Northwatch fitted operating door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 389992,
+      "sha256": "6095970fdafd968dca5165beba02df163d7c26a80aae73057ac2e7b79e0180df"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-open.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-open.png",
+      "title": "Court radio open",
+      "kind": "Northwatch fitted operating door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 348039,
+      "sha256": "b1110f891efd91943023e3ef140e21810a057ed555b87bf6dffaeb6ae6240a3d"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/lower-tunnel-door-closed.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/lower-tunnel-door-closed.png",
+      "title": "Lower tunnel door closed",
+      "kind": "Northwatch fitted operating door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 383742,
+      "sha256": "23307176e317516caf34bb9ce7942e028275cdc19a333066d94bfe0a29d23d2c"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/lower-tunnel-door-open.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/lower-tunnel-door-open.png",
+      "title": "Lower tunnel door open",
+      "kind": "Northwatch fitted operating door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 346233,
+      "sha256": "4ad43ee3f30b33814415affb681d20302b90c6ea8eb5c4f54a4627a792af6d81"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/court-radio-closed.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/court-radio-closed.png",
+      "title": "Court radio closed",
+      "kind": "Northwatch fitted operating door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 391600,
+      "sha256": "5e6f9fd465677b7acfd758cad6563db5269cbc251433f901aeab2bb58a037cca"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/court-radio-open.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/court-radio-open.png",
+      "title": "Court radio open",
+      "kind": "Northwatch fitted operating door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 349529,
+      "sha256": "17a317109117c8687bc058527a1ccfbeaf5b045397c8f96db2e2472c00347bc9"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/lower-tunnel-door-closed.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/lower-tunnel-door-closed.png",
+      "title": "Lower tunnel door closed",
+      "kind": "Northwatch fitted operating door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 386766,
+      "sha256": "ae59d3e8eb88c0ed1d58a748e943cd37ad030b0aded11b754953128be218d2fe"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/lower-tunnel-door-open.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/lower-tunnel-door-open.png",
+      "title": "Lower tunnel door open",
+      "kind": "Northwatch fitted operating door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 331037,
+      "sha256": "1c6435bb31353c05dfeb71d314b5470a1ea869ec2c9d86f325f3eac6dfd12344"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/radio-generator-closed.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/radio-generator-closed.png",
+      "title": "Radio generator closed",
+      "kind": "Northwatch fitted operating door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 389987,
+      "sha256": "88f87e8e04517493430bda2807b6c96c98914d639c8732d2de84c2e75eb2b7a1"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/radio-generator-open.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/radio-generator-open.png",
+      "title": "Radio generator open",
+      "kind": "Northwatch fitted operating door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 352963,
+      "sha256": "26448bfc778acf81eb20cb7d5f14eebb7bcea3684f3a93bdbc0363b88dd5fffc"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/radio-generator-closed.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/radio-generator-closed.png",
+      "title": "Radio generator closed",
+      "kind": "Northwatch fitted operating door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387942,
+      "sha256": "43daf0effc62f7aba14b4997d91dbbc90821b484a55d74f1ff250558a7479977"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/radio-generator-open.png",
+      "url": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/radio-generator-open.png",
+      "title": "Radio generator open",
+      "kind": "Northwatch fitted operating door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 351979,
+      "sha256": "6b4e61048b851162a1316f4dae438c6ca84763b87e02ada251a5981fe21de067"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",

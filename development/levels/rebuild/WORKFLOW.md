@@ -1509,3 +1509,9 @@ Continue the next physical roster pass at Northwatch. The Cemetery still needs f
 The station now has 92 founded windbreak bays, a closed vehicle gate behind the canonical van and a continuous exterior road and valley. The new mesh matches all 1,004 existing rim edges. Both terrain cuts and all 426 native parts are retained. Software and OpenGL repeat 20 links and three complete journeys, including the cargo-to-laboratory route. The three bare edges showed continuous exterior grade and visible movement stops in the native review. [Perimeter checkpoint](northwatch-boundary-pass/checkpoint.json) / [Active roster](northwatch-boundary-pass/roster.json)
 
 Continue operating leaves in the actual frames and the native room and acoustic bindings, then power and walk-in protection.
+
+### Northwatch operating leaves and acoustic ownership
+
+Northwatch now fits all 16 existing frames, including both tunnel doors. The retained geometry is unchanged. The shared game review binds the actual receiving floors and stair bays to 15 connected owners. Both renderers replay 20 links, three joined routes and van retreat. Four-player TCP physically opens both doors from van to generator and validates the replicated state. [Door checkpoint](northwatch-door-pass/checkpoint.json) / [Active roster](northwatch-door-pass/roster.json)
+
+Continue the supported generator and power routes and full walk-in safe zones.

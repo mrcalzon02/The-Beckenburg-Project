@@ -9154,3 +9154,7 @@ The first joined west bank fell outside the supported walking slope at x=-8 and 
 ### DEV-691 The inherited vehicle gate had overlapping coplanar slat faces
 
 Forty-one board joints shared overlapping front and back planes, with a maximum overlap of 65 mm at the source center joint. Trim only the placed instance to shared butt joints. Preserve the source, its UVs, and the visible closed gate function. [Evidence](../levels/rebuild/northwatch-boundary-pass/checkpoint.json)
+
+### DEV-692 Northwatch frames had no operating leaves
+
+All sixteen leaves now fit the existing surface and tunnel reveals. Standing and crouched motion, sight, object passage and room acoustics use their live state. Four TCP peers verified the physical van-to-generator approach through the actual courtyard and radio doors. [Evidence](../levels/rebuild/northwatch-door-pass/checkpoint.json)

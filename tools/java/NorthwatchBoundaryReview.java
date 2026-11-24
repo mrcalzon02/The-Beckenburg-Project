@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import org.beckenburg.LevelDefinition.Dock;
+import org.beckenburg.LevelDefinition.Portal;
 import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
@@ -34,6 +35,8 @@ public final class NorthwatchBoundaryReview {
 
     private static void review(String[] args,boolean gpu)throws Exception {
         Path path=Path.of(args[0]);
+        boolean fitted=List.of(args).contains("--doors");
+        Path boundary=fitted?Path.of(args[5]):path;
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var sockets=new ArrayList<Socket>();
@@ -42,6 +45,8 @@ public final class NorthwatchBoundaryReview {
         var arrivals=new ArrayList<Vec>();
         var controls=new ArrayList<Vec>();
         var footings=new ArrayList<String[]>();
+        var portals=new ArrayList<Portal>();
+        var frames=new ArrayList<NativeInvestigationDoor.Spec>();
         for(String line:Files.readAllLines(path.resolve("runtime-input.tsv"))) {
             var row=line.split("\\t");
             switch(row[0]) {
@@ -57,6 +62,8 @@ public final class NorthwatchBoundaryReview {
                             zone.floor(),zone.height(),outside?"native-outdoor":"metal",outside?"outdoor":"metal",feet);
                     }
                 }
+                case "OPEN" -> portals.add(new Portal(Integer.parseInt(row[1]),Integer.parseInt(row[2]),
+                    Integer.parseInt(row[3]),d(row,4),d(row,5),d(row,6),d(row,8),row[7].equals("z"),row[9],1));
                 case "TREAD" -> treads.add(row[1]);
                 case "RITUAL" -> sockets.add(new Socket("northwatch-"+row[1],"ritual",Integer.parseInt(row[2]),
                     d(row,3),d(row,4),d(row,5),0,row[1]));
@@ -66,13 +73,22 @@ public final class NorthwatchBoundaryReview {
                 default -> throw new AssertionError("Unexpected site review row "+row[0]);
             }
         }
-        for(String line:Files.readAllLines(path.resolve("boundary-stations.tsv")))footings.add(line.split("\\t"));
+        for(String line:Files.readAllLines(boundary.resolve("boundary-stations.tsv")))footings.add(line.split("\\t"));
+        if(fitted) {
+            for(String line:Files.readAllLines(path.resolve("door-schedule.tsv"))) {
+                var r=line.split("\\t");
+                var p=new Portal(n(r,0),n(r,4),n(r,5),d(r,6),d(r,7),d(r,8),d(r,9),r[10].equals("z"),"door",1);
+                portals.add(p);
+                frames.add(new NativeInvestigationDoor.Spec(r[1],r[2],r[3],p,d(r,11),d(r,12),d(r,13),
+                    n(r,14),n(r,15),n(r,16),r[17]));
+            }
+        }
         NativeInvestigationScene scene;
         AuthoredSitePhysics prior;
-        try(var model=Files.newInputStream(path.resolve("bounded-station.glb"));
-            var collision=Files.newInputStream(path.resolve("bounded-station.hcs2"));
+        try(var model=Files.newInputStream(boundary.resolve("bounded-station.glb"));
+            var collision=Files.newInputStream(boundary.resolve("bounded-station.hcs2"));
             var original=Files.newInputStream(Path.of(args[3]))) {
-            scene=NativeInvestigationScene.read(model,args[1],collision,args[2],treads,spaces);
+            scene=NativeInvestigationScene.read(model,args[1],collision,args[2],treads,spaces,frames);
             prior=AuthoredSitePhysics.read(original,args[4],List.of(),treads);
         }
 
@@ -80,11 +96,23 @@ public final class NorthwatchBoundaryReview {
         var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
         rooms[14]=new Room(14,"Expedition van",30.74,73,33.26,78.4,van.floorY(),VanStaging.INTERIOR_HEIGHT,
             "van","metal",new Vec(32,van.floorY(),76));
+        if(fitted) {
+            var toe=van.world(0,VanStaging.FRONT);
+            portals.add(new Portal(905,13,14,toe.x(),van.floorY(),toe.z(),VanStaging.RAMP_HALF_WIDTH*2,
+                true,"trail",1));
+        }
         var level=new LevelDefinition("wld-08",scene.revision(),"Northwatch Research Station",
-            List.of(rooms),List.of(),List.of(),List.of(),List.of(),sockets,List.of(),dock,"polar");
+            List.of(rooms),portals,List.of(),List.of(),List.of(),sockets,List.of(),dock,"polar");
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         require(RitualSites.valid(map),"New perimeter affected a ritual approach or supported floor");
 
+        var captures=path.resolve(gpu?"captures/opengl":"captures");
+        Files.createDirectories(captures);
+        if(fitted) {
+            require(map.valid(),"The 15 native owners are disconnected or an anchor is obstructed");
+            var replica=new HouseMap(HouseMap.Site.USER,level,null,scene);
+            NorthwatchDoorRuntime.review(map,replica,frames,captures);
+        }
         var physics=scene.physics();
         int pastEdge=0;
         for(int i=0;i<controls.size();i+=2) {
@@ -158,20 +186,31 @@ public final class NorthwatchBoundaryReview {
         }
         require(map.roomAt(32,van.floorY(),76)==14,"Van launch position changed");
 
-        var captures=path.resolve(gpu?"captures/opengl":"captures");
-        Files.createDirectories(captures);
-        render(map,physics,new Vec(37,0,79.5),new Vec(32,1.3,85.2),"road-gate-from-apron",captures);
-        render(map,physics,new Vec(32,-.5,96),new Vec(32,1.2,84),"continued-lane-and-station",captures);
-        render(map,physics,new Vec(57,0,5.0),new Vec(60,1.1,-.4),"array-edge-screen",captures);
-        var rows=List.of("check\tresult","scene_revision\t"+scene.revision(),
+        if(!fitted) {
+            render(map,physics,new Vec(37,0,79.5),new Vec(32,1.3,85.2),"road-gate-from-apron",captures);
+            render(map,physics,new Vec(32,-.5,96),new Vec(32,1.2,84),"continued-lane-and-station",captures);
+            render(map,physics,new Vec(57,0,5.0),new Vec(60,1.1,-.4),"array-edge-screen",captures);
+        }
+        var rows=new ArrayList<>(List.of("check\tresult","scene_revision\t"+scene.revision(),
             "renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"),
             "body_contacts_at_perimeter\t"+bodies,"jump_height_contacts\t"+jumps,
             "standing_optical_contacts\t"+optic,"supported_crossings_blocked\t"+supported,
             "original_invisible_edges_with_exterior_ground\t"+pastEdge,
             "canonical_ramp_retreat_both_postures\tPASS",
             "measured_tread_datums\t"+(surveyed.size()-1),
-            "walked_authored_links_and_journeys_both_postures\t"+routes.size());
-        Files.writeString(path.resolve(gpu?"boundary-opengl.tsv":"boundary-software.tsv"),String.join("\n",rows)+"\n");
+            "walked_authored_links_and_journeys_both_postures\t"+routes.size()));
+        if(fitted) {
+            rows.add("working_doors\t"+frames.size());
+            rows.add("connected_supported_owners\t"+level.rooms().size());
+            rows.add("optics_object_passage_room_acoustics_and_replica_state\tPASS");
+            NorthwatchDoorRuntime.transits(map,portals);
+            if(!gpu) {
+                NorthwatchDoorRuntime.live(level,scene);
+                rows.add("four_peer_van_to_generator_two_aimed_doors\tPASS");
+            }
+        }
+        String stem=fitted?"doors":"boundary";
+        Files.writeString(path.resolve(stem+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",rows)+"\n");
         rows.forEach(System.out::println);
     }
 
@@ -216,6 +255,7 @@ public final class NorthwatchBoundaryReview {
         NativeSchoolInteriorReview.drawFrame(view,map,captures.resolve(name+".png"));
     }
 
+    private static int n(String[] row,int i){return Integer.parseInt(row[i]);}
     private static double d(String[] row,int i){return Double.parseDouble(row[i]);}
     private static Vec point(String[] row,int i){return new Vec(d(row,i),d(row,i+1),d(row,i+2));}
     private static void require(boolean pass,String message){if(!pass)throw new AssertionError(message);}

@@ -89,22 +89,24 @@ def prepare():
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--gpu",action="store_true")
+    parser.add_argument("--doors",action="store_true")
     args=parser.parse_args()
-    meta=prepare()
+    review=ROOT/"development/levels/rebuild/northwatch-door-pass/wld-08" if args.doors else PACKET
+    meta=json.loads((PACKET/"construction.json").read_bytes()) if args.doors else prepare()
     build=ROOT/"build/northwatch-boundary-review"
     build.mkdir(parents=True,exist_ok=True)
     java=Path("C:/Program Files/Java/jdk-17/bin")
     jar=ROOT/"build/beckenburg-game.jar"
     gpu=ROOT/"gpu-client/target/BeckenburgGPU.jar"
     tools=ROOT/"tools/java"
-    names=("NorthwatchBoundaryReview.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java")
+    names=("NorthwatchBoundaryReview.java","NorthwatchDoorRuntime.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryRefugeReview.java")
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(build),
                     *(str(tools/name) for name in names)],cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(build,jar,gpu) if args.gpu else (build,jar)))
     subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
-                    "org.beckenburg.NorthwatchBoundaryReview",str(PACKET),meta["glb_sha256"],meta["physics_sha256"],
+                    "org.beckenburg.NorthwatchBoundaryReview",str(review),meta["glb_sha256"],meta["physics_sha256"],
                     str(ROOT/meta["source_physics"]),meta["source_physics_sha256"],
-                    *(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
+                    *([str(PACKET),"--doors"] if args.doors else []),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
 
 
 if __name__ == "__main__":

@@ -7668,6 +7668,17 @@
       "action": "Trim only the placed instance to shared butt joints. Preserve the source, its UVs, and the visible closed gate function.",
       "older_maps": "Check terrain continuity, physically visible limits and actual fit of reused assemblies.",
       "evidence": "development/levels/rebuild/northwatch-boundary-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-692",
+      "title": "Northwatch\u2019s fitted wall openings had no operating leaves",
+      "status": "NORTHWATCH_STAGED_NATIVE_DOORS_AND_ROOM_ACOUSTICS_VERIFIED",
+      "affected": "WLD-08 above-ground prefabs and the two lower tunnel openings",
+      "symptom": "Sixteen measured frames remained permanently traversable and had no physical or network door state.",
+      "cause": "The station was still bound to the architectural shell and perimeter only.",
+      "action": "Fit the canonical operating leaves on the measured receiving faces, map supported rooms and stair bays and replay the actual narrow approach in TCP.",
+      "older_maps": "Check fitted leaves at real wall reveals, including supported clearance, acoustics and both network states.",
+      "evidence": "development/levels/rebuild/northwatch-door-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -26,7 +26,10 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/northwatch-boundary-pass/' in path:
+    if '/northwatch-door-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Northwatch fitted operating door in the '+renderer+' game renderer'
+    elif '/northwatch-boundary-pass/' in path:
         if '/structure/' in path:
             kind='Northwatch founded windbreak, road gate and joined valley construction'
         else:

@@ -2251,3 +2251,7 @@ Furnishings commit ca5575a62da8c86fa49b1a76f91079ab1ff930e1 and gallery 45384071
 ### Northwatch station boundary and retained routes
 
 Named Cemetery and Mortuary commit a881aeb79bd3b9ea1c12f067259c1eabb8123465 and gallery 45387394833 passed on held draft PR 86. The [Northwatch checkpoint](levels/rebuild/northwatch-boundary-pass/checkpoint.json) adds a surveyed continuous exterior, founded windbreak and fitted road gate. Software and RTX 5070 verify physical boundary stops at the fitted windbreak and gate and retain the existing van, routes, supports and interior cuts. Continue completed doors and room acoustics on this exact stage.
+
+### Northwatch doors and native room connections
+
+Perimeter commit c4ea36264f5125deae4be7c85cfdfebf8f617485 and gallery 45390262508 passed on held draft PR 86. The [Northwatch door checkpoint](levels/rebuild/northwatch-door-pass/checkpoint.json) uses the same exported static shell and mounts working leaves at sixteen measured frames. Named acceptance remains open. Native software and RTX 5070 confirm door states, rooms and existing routes, and four-player TCP reached the actual generator floor from the cargo deck through two aimed doors. Continue walk-in safe zones and electrical service.
