@@ -1,0 +1,130 @@
+{
+  "status": "NATIVE_PRISON_PACKAGED_POWER_AND_PHYSICAL_HIDING",
+  "prior_commit": "03f1e11f42532a185a8c0e6f0be2f4ff10126dbd",
+  "native_scene_revision": "ba7e72b6631fe1f7c30a734235d0c96fe3523616145571962f884a500dd86d8f",
+  "review_property": "beckenburg.review.prisonNative",
+  "roster": "development/levels/rebuild/prison-hiding-pass/roster.json",
+  "retained_components": 1138,
+  "physical_cupboards": 3,
+  "floor_bearing_contacts_per_cupboard": 12,
+  "stable_gameplay_owners": 15,
+  "measured_route_replays": 60,
+  "verified_modes": [
+    "Standing and crouched entry and exit at minimum and maximum cover density",
+    "Real cupboard backs block sight and zero density grants zero usable cover",
+    "Ordinary solo launch and four-peer LAN with real records walk, crouch, hide, reveal and exit",
+    "Plant and sally gate round-trip on the same release candidate",
+    "Windows RTX 5070 and software capture, and all 4608 retained door triangles match reopened Blender"
+  ],
+  "still_open": [
+    "Remaining custody doors and security route verification",
+    "Full evidence, ritual, rescue, extraction and progression",
+    "Room-by-room containment, storytelling, hardware performance and release acceptance"
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/hiding.json",
+      "bytes": 1749,
+      "sha256": "87294ac0842f77823124b838e9e68492e1a9c7494ca38164d047461b81bb6fc9"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/hiding-room-plans.svg",
+      "bytes": 2186,
+      "sha256": "afabc409e6cf4ebe2a57afda0d0280492252ffaf963a74bcc4f6bb7d29965916"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/prison-hiding.blend",
+      "bytes": 1243731,
+      "sha256": "f16da9aa23994e67a7db40524c9f8da9dacbbbe4483b61ac6cab77dc4855ba63"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/prison-hiding-fitted.blend",
+      "bytes": 1445692,
+      "sha256": "dc34e674ac2a6fc54c883bd13787a8f7d13367ff2f505c066cf88f1fe1016eb6"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/prison-hiding.glb",
+      "bytes": 4343280,
+      "sha256": "92013b7d68304cbd6f47526f2aebcfc355344eac7af170f2a7d325747c01038a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/prison-hiding.hcs2",
+      "bytes": 1410246,
+      "sha256": "d960878cc89ac7a25be3804214621b9a0a1849512c4860700dfc7a60879f2947"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/arrival.tsv",
+      "bytes": 5342,
+      "sha256": "a95853d905d92a43c9300e8c8848a5aa7cfaa554dfb67bfc910b5a51d46df0cc"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/gate.tsv",
+      "bytes": 311,
+      "sha256": "2cdbeb22df9c20131f4236bac4072680437feef91d2558a58bb48c11b71a00aa"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/door-survey.tsv",
+      "bytes": 281,
+      "sha256": "35c3febfdef458b1b804c6dd26334430dffec09003ac398367dee9202d4f2523"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/mission.tsv",
+      "bytes": 3899,
+      "sha256": "ed5fb9cee1fd55af8e8eb3f67a48a8fe3acca342a4dfc452fbf81481d52436a2"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/services.tsv",
+      "bytes": 2831,
+      "sha256": "043b00352c6ced18c3b32b6376511691cd755327a00316358bd37ce2acd5cbbb"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/verification/editable-door-poses.tsv",
+      "bytes": 172,
+      "sha256": "9fae8631fb49e1847e0b32f5600d638797f98e7738c335f29dc031a52ba321da"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/verification/opengl.tsv",
+      "bytes": 1143,
+      "sha256": "5e21554137840cf6c7f63b9e35ff9fcd2c42766707327f827e8731808f0ae8e0"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/verification/staged-approach.tsv",
+      "bytes": 1496,
+      "sha256": "640af55faa41be208b9ff2c9f00561307c7b579c2a2c09d5f193b74dcdc7beda"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-chapel-cupboard.png",
+      "bytes": 447494,
+      "sha256": "8703103b91ad4e6611dd2a109be6556d9990bb008c44462fde52da2aed519ce3"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-plant-cupboard.png",
+      "bytes": 439694,
+      "sha256": "2d147ddeabf9e9fb7b150f647362d744856702abe400e1282b741fd72cbebab8"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-records-cupboard.png",
+      "bytes": 584828,
+      "sha256": "ddf64a0520e45527310d5ef6910f01e9746a55b2978530f659dd8e10d02ae86c"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/prison-chapel-cupboard.png",
+      "bytes": 445799,
+      "sha256": "be2a9a55cf67b5940437fe4e42157e0f31742ff45897af047011b18f68862bfb"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/prison-plant-cupboard.png",
+      "bytes": 439098,
+      "sha256": "a3047dac4240c88102c78ff10be1d80d3a3abf8f50322d54f931d207384083fd"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/prison-records-cupboard.png",
+      "bytes": 590728,
+      "sha256": "0c804ff48877f384d0fea30a7552467f51b5e93f06244f91579d97717ba6446c"
+    }
+  ]
+}

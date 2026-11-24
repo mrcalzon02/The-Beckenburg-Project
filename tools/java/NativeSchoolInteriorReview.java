@@ -392,10 +392,10 @@ public final class NativeSchoolInteriorReview {
         return lights.sampleNormal(load.room(),load.x(),load.y()-.55,load.z(),0,1,0).energy();
     }
 
-    private static void auditHiding(HouseMap map,List<String> report){
+    static void auditHiding(HouseMap map,List<String> report){
         var hiding=HidingBudget.candidates(map.level());
         if(hiding.isEmpty())return;
-        require(hiding.size()==HidingBudget.MAXIMUM,"Wrong physical School hiding budget");
+        require(hiding.size()==HidingBudget.MAXIMUM,"Wrong authored hiding budget");
         var solo=new InvestigationSession(map,InvestigationSession.Role.OBSERVER,101);
         for(var cabinet:hiding){
             var pocket=LevelClosets.world(cabinet,0,0,0);

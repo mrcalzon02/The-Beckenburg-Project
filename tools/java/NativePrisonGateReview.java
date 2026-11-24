@@ -129,6 +129,10 @@ final class NativePrisonGateReview {
                 restorePower(peerMap,scout,witness,lights);
                 report.add("tcp_ghost_trip_and_plant_reset\tGhost triggered the outage and a hunter physically reset the native Prison breaker");
             }
+            if(map.level().socket("hide",9)!=null){
+                useRecordsCupboard(peerMap,witness);
+                report.add("tcp_records_hiding\tHunter walked into the physical records cupboard, crouched, hid, revealed and walked out");
+            }
         }
         report.add("tcp_blackout_gate_release\tA hunter opened from sally, closed and reopened from the yard, and walked the actual threshold twice.");
     }
@@ -164,6 +168,32 @@ final class NativePrisonGateReview {
         scout.await("ACCEPT|INTERACT|Electrical breaker");
         witness.await("LIGHTS|111111111111|1");
         require(lights.supplied()&&map.doorOpen(GATE),"Reset must restore power and leave the manual gate position");
+    }
+
+    private static void useRecordsCupboard(HouseMap map,NativeSchoolInteriorReview.Peer hunter)throws Exception{
+        for(int room:NativeSchoolInteriorReview.missionRoute(map,9)){
+            hunter.client.move(room);
+            hunter.awaitExact("ACCEPT|MOVE|"+room);
+        }
+        hunter.client.view3D();
+        hunter.awaitExact("ACCEPT|VIEW3D");
+        var at=NativeSchoolInteriorReview.body(hunter.await("BODY|1|"));
+        require(at.equals(map.spawn(9)),"Wrong physical records spawn");
+        for(int n=0;n<2;n++)at=NativeSchoolInteriorReview.step(hunter,1,100,0);
+        for(int n=0;n<6;n++)at=NativeSchoolInteriorReview.step(hunter,1,0,-100);
+        var pocket=map.level().socket("hide",9);
+        require(LevelClosets.inside(pocket,at.x(),at.y(),at.z()),"TCP hunter missed the cabinet pocket at "+at);
+        hunter.client.crouch(true);
+        hunter.awaitExact("HIDING|0");
+        hunter.client.hide();
+        hunter.awaitExact("HIDING|1");
+        hunter.client.hide();
+        hunter.awaitExact("HIDING|0");
+        hunter.client.crouch(false);
+        hunter.awaitExact("HIDING|0");
+        for(int n=0;n<6;n++)at=NativeSchoolInteriorReview.step(hunter,1,0,100);
+        require(map.roomAt(at.x(),at.y(),at.z())==9&&!LevelClosets.inside(pocket,at.x(),at.y(),at.z()),
+            "TCP hunter did not physically leave the cupboard");
     }
 
     private static Vec steps(NativeSchoolInteriorReview.Peer operator,int count,int dx,int dz)throws Exception{

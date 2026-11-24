@@ -2063,3 +2063,10 @@ Main was observed at cb220372fb721fbe588f49d3dc488f6dbba1602d with successful mu
 The [Prison electrical checkpoint](levels/rebuild/prison-plant-pass/checkpoint.json) verifies opt-in ordinary solo and four-peer LAN launch, a ghost-driven breaker trip, both manual gate controls in the outage and physical plant reset. Twelve independent circuits feed 26 mounted lights. The exact packaged source passed the software and RTX 5070 capture checks. Custody and room detail, full case acceptance and release promotion remain open.
 
 Main was observed at cb220372fb721fbe588f49d3dc488f6dbba1602d with successful multiplayer 44863686526 and renderer 44863686455. The latest successful installer was 44863580794 at c238cff07d73d4e326b220521974aca5494078ed. The preceding Prison gate checkpoint 560238beadd50eee07fb0a554ed7dd11812763e1 passed gallery 45314688019. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+
+## Prison hiding in the powered case
+
+The [Prison hiding checkpoint](levels/rebuild/prison-hiding-pass/checkpoint.json) proves three supported physical pockets, the shared hiding allowance and a live TCP records entry, concealment and exit. The final powered review package passed the gate and panel sequence again. Remaining custody details, complete case progression and release acceptance stay open.
+
+Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with passing full multiplayer 44863686526 and GPU acceptance 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. The preceding powered Prison checkpoint 03f1e11f42532a185a8c0e6f0be2f4ff10126dbd passed gallery 45316645893. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.

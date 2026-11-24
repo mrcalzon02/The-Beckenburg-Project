@@ -32,6 +32,22 @@ final class NativePrisonEntryReview {
         try{review(args);}finally{stop.invoke(null);}
     }
 
+    private static void renderCupboard(HouseMap map,LevelDefinition.Socket cabinet,Path captures)throws Exception{
+        var camera=LevelClosets.world(cabinet,.15,0,1.9);
+        check(map.traversable(camera.x(),camera.y(),camera.z()),"No standing view of "+cabinet.id());
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.x=camera.x();
+        renderer.z=camera.z();
+        renderer.eyeHeight=camera.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=Math.atan2(cabinet.x()-camera.x(),cabinet.z()-camera.z());
+        renderer.pitch=-.08;
+        renderer.lamp=true;
+        renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve(cabinet.id()+".png"));
+    }
+
     private static void review(String[] args)throws Exception{
         var packet=Path.of(args[0]);
         var rows=table(packet.resolve("arrival.tsv"));
@@ -84,6 +100,8 @@ final class NativePrisonEntryReview {
             report.add(spec.frameId()+"\tClosed/open/guest body, sight, aim, acoustics and object checks passed");
         }
         if(!gate.isEmpty())NativePrisonGateReview.audit(map,guest,captures,report);
+        NativeSchoolInteriorReview.auditHiding(map,report);
+        for(var cabinet:HidingBudget.candidates(map.level()))renderCupboard(map,cabinet,captures);
         if(!services.isEmpty())
             NativeSchoolInteriorReview.auditPower(map,captures,report,"prison",new Vec(38,-3,24.95),Math.PI);
         if(!records.isEmpty()){

@@ -105,9 +105,9 @@ done
 for table in circulation door-schedule mission; do
     cp "$school_packet/$table.tsv" "build/classes/org/beckenburg/sites/school-$table.tsv"
 done
-prison_packet=development/levels/rebuild/prison-plant-pass
+prison_packet=development/levels/rebuild/prison-hiding-pass
 for extension in glb hcs2; do
-    cp "$prison_packet/prison-plant.$extension" "build/classes/org/beckenburg/sites/prison-plant.$extension"
+    cp "$prison_packet/prison-hiding.$extension" "build/classes/org/beckenburg/sites/prison-hiding.$extension"
 done
 for table in arrival door-survey mission gate services; do
     cp "$prison_packet/$table.tsv" "build/classes/org/beckenburg/sites/prison-$table.tsv"

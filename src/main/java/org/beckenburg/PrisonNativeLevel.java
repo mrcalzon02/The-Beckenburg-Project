@@ -49,13 +49,13 @@ final class PrisonNativeLevel {
                 var mission=resource("mission.tsv");
                 var gate=resource("gate.tsv");
                 var services=resource("services.tsv");
-                var model=resource("plant.glb");
-                var collision=resource("plant.hcs2");
+                var model=resource("hiding.glb");
+                var collision=resource("hiding.hcs2");
                 var leaf=resource("sally-moving-panel.glb")){
                 var source=read(rows(arrival),rows(doors),rows(mission),rows(gate),rows(services),model,collision,leaf);
                 var level=source.definition();
                 if(source.scene().doors().size()!=3||level.portals().size()!=15
-                    ||level.socket("breaker",11)==null)
+                    ||level.socket("breaker",11)==null||HidingBudget.candidates(level).size()!=3)
                     throw new IOException("Incomplete Prison review packet");
                 return source;
             }catch(IOException failure){

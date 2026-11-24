@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11368,
+  "count": 11374,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110064,6 +110064,66 @@
       "height": 1000,
       "bytes": 61389,
       "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-chapel-cupboard.png",
+      "url": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-chapel-cupboard.png",
+      "title": "Prison chapel cupboard",
+      "kind": "Prison physical cupboard review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 447494,
+      "sha256": "8703103b91ad4e6611dd2a109be6556d9990bb008c44462fde52da2aed519ce3"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-plant-cupboard.png",
+      "url": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-plant-cupboard.png",
+      "title": "Prison plant cupboard",
+      "kind": "Prison physical cupboard review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 439694,
+      "sha256": "2d147ddeabf9e9fb7b150f647362d744856702abe400e1282b741fd72cbebab8"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-records-cupboard.png",
+      "url": "development/levels/rebuild/prison-hiding-pass/captures/opengl/prison-records-cupboard.png",
+      "title": "Prison records cupboard",
+      "kind": "Prison physical cupboard review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 584828,
+      "sha256": "ddf64a0520e45527310d5ef6910f01e9746a55b2978530f659dd8e10d02ae86c"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/prison-chapel-cupboard.png",
+      "url": "development/levels/rebuild/prison-hiding-pass/captures/prison-chapel-cupboard.png",
+      "title": "Prison chapel cupboard",
+      "kind": "Prison physical cupboard review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 445799,
+      "sha256": "be2a9a55cf67b5940437fe4e42157e0f31742ff45897af047011b18f68862bfb"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/prison-plant-cupboard.png",
+      "url": "development/levels/rebuild/prison-hiding-pass/captures/prison-plant-cupboard.png",
+      "title": "Prison plant cupboard",
+      "kind": "Prison physical cupboard review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 439098,
+      "sha256": "a3047dac4240c88102c78ff10be1d80d3a3abf8f50322d54f931d207384083fd"
+    },
+    {
+      "path": "development/levels/rebuild/prison-hiding-pass/captures/prison-records-cupboard.png",
+      "url": "development/levels/rebuild/prison-hiding-pass/captures/prison-records-cupboard.png",
+      "title": "Prison records cupboard",
+      "kind": "Prison physical cupboard review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 590728,
+      "sha256": "0c804ff48877f384d0fea30a7552467f51b5e93f06244f91579d97717ba6446c"
     },
     {
       "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-blackout.png",

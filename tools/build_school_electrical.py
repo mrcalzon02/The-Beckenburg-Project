@@ -120,16 +120,16 @@ class SchoolElectrical(Assembly):
                 "incoming_receiver":{"component":receiver.name,"at":world(backing)}}
 
 
-def cupboards(assembly,zones):
+def cupboards(assembly,zones,positions=CUPBOARDS,site="school"):
     key="level_hiding_cupboard_worn"
     originals=bvh([obj for obj in assembly.scene.objects if obj.type=="MESH" and obj.name in assembly.originals
                    and obj.get("role")!="floor"])
     bearings=bvh([obj for obj in assembly.scene.objects if obj.type=="MESH" and obj.name in assembly.originals])
     installed=[]
-    for room,x,z,yaw in CUPBOARDS:
+    for room,x,z,yaw in positions:
         zone=zones[room]
         floor=zone["y"]
-        name=f"school-{room}-cupboard"
+        name=f"{site}-{room}-cupboard"
         transform=Matrix.Translation(point(x,floor,z)) @ Matrix.Rotation(-yaw,4,"Z")
         pieces=assembly.place(key,transform,name,"founded accessible cupboard",room)
         lo,hi=bounds(pieces)

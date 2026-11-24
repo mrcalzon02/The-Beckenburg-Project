@@ -8822,6 +8822,16 @@ Mount a fixture over the real aisle in front of the grounded distribution bank a
 
 Check the operator side of the mounted breaker under only the actual fitted plant circuit. [DEV-628 evidence](../levels/rebuild/prison-plant-pass/checkpoint.json)
 
+### DEV-629 The first Prison records cupboard placement overlapped the rebuilt north wall
+
+**Status** CORRECTED_WITH_MEASURED_FLOOR_AND_WALL_CLEARANCE · **Affected** Prison records office physical hiding fit
+
+The initial placement overlapped the north structural partition at Z62.24 m.
+
+Move the cupboard forward against the surveyed finish. Check all 12 support contacts and verify the native body pocket, sight closure and live host concealment.
+
+Compare the rear of each cupboard to the actual fitted face and use the native mover for both directions. [DEV-629 evidence](../levels/rebuild/prison-hiding-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

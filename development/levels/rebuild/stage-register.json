@@ -2333,12 +2333,13 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json",
-            "development/levels/rebuild/prison-plant-pass/checkpoint.json"
+            "development/levels/rebuild/prison-plant-pass/checkpoint.json",
+            "development/levels/rebuild/prison-hiding-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-628"
           ],
-          "next_action": "Complete remaining plant, plumbing and ventilation details plus physically supported hiding fixtures."
+          "next_action": "Complete custody interlocks and remaining plant, plumbing and ventilation details."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -2350,13 +2351,15 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/prison-hiding-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-370",
-            "DEV-371"
+            "DEV-371",
+            "DEV-629"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Inspect remaining supports, room objects and clearance at every search route."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2384,12 +2387,13 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json",
-            "development/levels/rebuild/prison-plant-pass/checkpoint.json"
+            "development/levels/rebuild/prison-plant-pass/checkpoint.json",
+            "development/levels/rebuild/prison-hiding-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-627"
           ],
-          "next_action": "Verify complete evidence, rescue and extraction, room-by-room containment, controlled Windows hardware performance and release acceptance."
+          "next_action": "Verify all required evidence and rituals, rescue, extraction and progression, and the hardware and release gates."
         }
       },
       "arrival_bearing_pass": {

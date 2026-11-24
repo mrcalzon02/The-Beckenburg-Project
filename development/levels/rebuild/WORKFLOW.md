@@ -1345,3 +1345,10 @@ The [plant plan and circuit schedule](prison-plant-pass/plant-power-plan.svg) ti
 The [checkpoint](prison-plant-pass/checkpoint.json) verifies the ordinary Windows game launcher under `-Dbeckenburg.review.prisonNative=true`. Solo starts on the actual cargo deck. In a four-peer normal LAN case, the ghost trips the shared breaker, a hunter operates the sally gate from both sides without supply, and another walks the plant aisle and restores power using the physical panel. The independent review peer receives the live gate snapshots. The 60 route replays and three ritual mounts pass again. All 4,608 game door triangles match the six fitted poses from the reopened editable scene. Software and RTX 5070 show the same source powered and blacked out.
 
 Remaining Prison work covers additional custody leaves, physical hiding, detailed containment and full investigation and hardware acceptance.
+
+
+## Prison physical hiding and normal case replay
+
+The [room plans](prison-hiding-pass/hiding-room-plans.svg) locate three canonical cupboards in records, chapel and plant. Each has twelve points supported by its floor. The export retains all 1,138 earlier components. The records cupboard clears the finished masonry, filing cabinet and door approach.
+
+The [checkpoint](prison-hiding-pass/checkpoint.json) verifies standing and crouched entry in both directions, back-panel sight closure and the combined zero-cover setting. In the normal four-peer case, a live hunter walked into the records pocket, crouched, hid, revealed and walked out. The same package passed solo selection, 60 route checks, the live ghost trip and manual sally operation, and an aimed plant reset. RTX 5070 and software show the same three physical cupboards. The updated [29-location roster](prison-hiding-pass/roster.json) points to this source.

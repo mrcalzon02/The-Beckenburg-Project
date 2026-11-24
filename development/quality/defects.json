@@ -6975,6 +6975,17 @@
       "action": "Mount a fixture over the real aisle in front of the grounded distribution bank and the second farther into the room. Re-export and repeat software and RTX powered and blackout readbacks.",
       "older_maps": "Check the operator side of the mounted breaker under only the actual fitted plant circuit.",
       "evidence": "development/levels/rebuild/prison-plant-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-629",
+      "title": "The first Prison records cupboard placement overlapped the rebuilt north wall",
+      "status": "CORRECTED_WITH_MEASURED_FLOOR_AND_WALL_CLEARANCE",
+      "affected": "Prison records office physical hiding fit",
+      "symptom": "The initial placement overlapped the north structural partition at Z62.24 m.",
+      "cause": "The first position used the room boundary and omitted the actual finished masonry thickness.",
+      "action": "Move the cupboard forward against the surveyed finish. Check all 12 support contacts and verify the native body pocket, sight closure and live host concealment.",
+      "older_maps": "Compare the rear of each cupboard to the actual fitted face and use the native mover for both directions.",
+      "evidence": "development/levels/rebuild/prison-hiding-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
