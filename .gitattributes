@@ -361,3 +361,6 @@ development/levels/rebuild/mine-stair-threshold-pass/** -text
 
 # Mine walk-in shelter native geometry and checksummed verification.
 development/levels/rebuild/mine-cover-pass/** -text
+
+# Mine rail export and evidence hashes.
+development/levels/rebuild/mine-handrail-pass/** -text

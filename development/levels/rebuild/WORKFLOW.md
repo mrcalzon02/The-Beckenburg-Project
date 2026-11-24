@@ -1459,3 +1459,7 @@ The [staged checkpoint](mine-stair-threshold-pass/checkpoint.json) binds 14 area
 ## Mine walk-in safe zones
 
 The crew shack, assay office and wash-house now have three canonical cupboards seated on their actual slabs. The covered area runs from each physical opening through every sampled walkable portion of the enclosure, with normal hunter entry at the threshold. The [checkpoint](mine-cover-pass/checkpoint.json) records 36 support contacts and 207 usable floor samples, four-player assay entry and exit, and all 19 routes replayed with the additional geometry. Six prior Lookout software views matched after sharing the verification code. The [roster](mine-cover-pass/roster.json) retains the other current sites.
+
+## Mine handholds and lower stair guards
+
+Continuous wall-mounted rails follow both flights of each enclosed shaft and their middle landings. The exposed lower flight uses tread-mounted guards with intermediate rails and bolted plates. The passes measured 32 wall mounts and 72 lower tread bearing points. All 19 routes, both landings and the full van circuit still pass. [Handrail checkpoint](mine-handrail-pass/checkpoint.json)

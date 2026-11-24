@@ -9022,3 +9022,11 @@ All eight frames received canonical leaves. The two stair sets swing toward the 
 ### DEV-659 Mine staged case lacked usable authored refuges
 
 Three grounded walk-in cupboards now serve the crew shack, assay office and wash-house. All 207 sampled usable positions are covered at maximum availability. A live hunter entered, hid and walked back out of the assay refuge. [Evidence](../levels/rebuild/mine-cover-pass/checkpoint.json)
+
+### DEV-660 Mine haul and ventilation flights lacked fitted handrails
+
+Continuous grips now bear into the existing shaft walls at 32 checked brackets. The full native routes and door clearances still pass. [Evidence](../levels/rebuild/mine-handrail-pass/checkpoint.json)
+
+### DEV-661 Lower workings stair had open sides and no guards
+
+Two continuous guards are bolted onto measured tread and landing surfaces. Standing and crouched bodies can climb and descend and are stopped at both guarded sides. [Evidence](../levels/rebuild/mine-handrail-pass/checkpoint.json)

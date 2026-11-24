@@ -2159,3 +2159,7 @@ Lookout case commit 523905fd9493a727114c157231263417892e8bcf published to draft 
 ### Dead Man's Claim safe-zone fit
 
 Mine threshold commit 526e6d27f493ccdf2b184b3aa5e95ddd7b5fc12f published to draft PR 86. The exact remote cutaway matched by SHA-256 and gallery 45340169521 passed. The [Mine walk-in cover checkpoint](levels/rebuild/mine-cover-pass/checkpoint.json) verifies three full usable refuge spaces, actual assay entry/exit over TCP, replays of both rebuilt stairs, and RTX 5070 OpenGL. Continue mine handrails, remote power lighting and normal dispatch.
+
+### Dead Man's Claim stair handrails
+
+Mine cover commit aa9f14277e6e0c2ccba1adca0d505a2081ffad54 is verified on draft PR 86 and gallery 45340794692 passed. The [rail checkpoint](levels/rebuild/mine-handrail-pass/checkpoint.json) installs continuous wall rails on the four enclosed flights and two physical guards on the lower workings stair. Native movement, RTX 5070 rendering and exact staged four-peer door and safe-zone behavior passed. Continue with Mine power and named package selection.

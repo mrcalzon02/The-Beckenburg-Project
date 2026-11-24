@@ -7316,6 +7316,28 @@
       "action": "Fit all three canonical recesses on actual room slabs and match protection to the full usable interior. Verify ghost exclusion, standing and crouched approach, LAN hide and physical exit.",
       "older_maps": "Check threshold and usable area in each eligible cover room, and confirm zero availability on difficulty.",
       "evidence": "development/levels/rebuild/mine-cover-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-660",
+      "title": "Mine haul and ventilation flights lacked fitted handrails",
+      "status": "WALL_MOUNTED_SHAFT_HANDRAILS_VERIFIED",
+      "affected": "All four enclosed Mine shaft flights",
+      "symptom": "The continuous walls around both flights had no physical handholds.",
+      "cause": "The first enclosed-shaft pass predated handrail fitting.",
+      "action": "Fit continuous wall-mounted rails, aligned through both half landings. Verify exact bearing, side width and staged movement.",
+      "older_maps": "Inspect shaft handhold continuity and original support faces independently in each map.",
+      "evidence": "development/levels/rebuild/mine-handrail-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-661",
+      "title": "Lower workings stair had open sides and no guards",
+      "status": "TREAD_MOUNTED_LOWER_STAIR_GUARDS_VERIFIED",
+      "affected": "Mine lower working chamber stair",
+      "symptom": "Both sides dropped away and offered no reliable backing surfaces for wall fixings.",
+      "cause": "The retained stair was built as an open flight with unsupported edges.",
+      "action": "Bolt the dual guards to the actual treads and landings. Check sideways body collision and end turns over both levels.",
+      "older_maps": "Inspect unsupported elevated walking edges and verify physical guard plus head and body clearance.",
+      "evidence": "development/levels/rebuild/mine-handrail-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

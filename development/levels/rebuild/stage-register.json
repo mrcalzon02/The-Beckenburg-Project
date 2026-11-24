@@ -3563,16 +3563,19 @@
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-handrail-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json",
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-660",
+            "DEV-661",
             "DEV-656",
             "DEV-658",
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Both Mine upper flights and full receiving landings were rebuilt. Eight actual doorways are fitted. Fit the handrails and complete enclosure inspection."
+          "next_action": "Both shaft handrails and lower guards are mounted and verified. Complete whole-site enclosure, lighting, drainage and finish checks."
         },
         "S06": {
           "status": "IN_PROGRESS",

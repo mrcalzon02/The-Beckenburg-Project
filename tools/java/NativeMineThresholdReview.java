@@ -143,6 +143,8 @@ public final class NativeMineThresholdReview {
         }
         capture(map,new Vec(30.4,0,75),-.30,captures.resolve("mine-roadhead-and-van.png"));
         capture(map,map.spawn(4),0,captures.resolve("mine-lower-haul-stair.png"));
+        if(Files.isRegularFile(packet.resolve("rail-probes.tsv")))
+            auditRails(map,scene,packet,captures,evidence);
         boolean refuges=!HidingBudget.candidates(level).isEmpty();
         if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
         if(List.of(args).contains("--lan")){
@@ -154,6 +156,31 @@ public final class NativeMineThresholdReview {
         Files.createDirectories(output);
         Files.write(output.resolve(gpu?"opengl.tsv":"native-review.tsv"),evidence);
         evidence.forEach(System.out::println);
+    }
+
+    private static void auditRails(HouseMap map,NativeInvestigationScene scene,Path packet,Path captures,List<String> report)
+            throws Exception{
+        var tested=rows(packet.resolve("rail-probes.tsv"));
+        require(tested.size()==10,"Mine must check both guards and both rail sides on each shaft flight");
+        for(var row:tested){
+            var center=point(row,1);
+            boolean acrossX=row[4].equals("z");
+            double dx=acrossX?.065:0,dz=acrossX?0:.065;
+            require(!scene.physics().clearSight(new Vec(center.x()-dx,center.y(),center.z()-dz),
+                new Vec(center.x()+dx,center.y(),center.z()+dz)),"Missing physical Mine grip "+row[0]+" at "+center);
+        }
+        double z=30.55;
+        var low=scene.physics().support(5,z,-8,.40);
+        require(low!=null,"Missing lower stair support at guard check");
+        var at=new Vec(5,low.y(),z);
+        for(double posture:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            require(map.traversable(at.x(),at.y(),at.z(),posture),"Lower stair no longer clears the player");
+            require(map.resolveMove(at,4.27,z,posture)==null&&map.resolveMove(at,5.73,z,posture)==null,
+                "A player crossed the lower stair guard");
+        }
+        capture(map,new Vec(5,-10,26.53),0,captures.resolve("mine-lower-guard-approach.png"));
+        capture(map,new Vec(28.35,-3,40.60),0,captures.resolve("mine-haul-wall-handrails.png"));
+        report.add("staged_rail_collision\t10 actual grip cross-sections; lower guards block a sideways standing or crouched capsule while retaining the walking lane");
     }
 
     private static void capture(HouseMap map,Vec at,double yaw,Path target)throws Exception{
