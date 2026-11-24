@@ -8108,6 +8108,28 @@
       "action": "Fit the canonical well with a continuous liner and coping. Ground indexed benches, rocks and vegetation, and feather the original terrain bands with a mapped surface finish.",
       "older_maps": "Verify real root contacts, partner stone joints, kept route clearance and separate visual foliage and solid collision.",
       "evidence": "development/levels/rebuild/monastery-landscape-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-732",
+      "title": "Monastery native furnishings had no movable belongings",
+      "status": "MONASTERY_NATIVE_LOOSE_BELONGINGS_VERIFIED_NAMED_REVIEW_LOCKED",
+      "affected": "WLD-10 gatehouse, archive, refectory, bell gallery and memorial chamber",
+      "symptom": "The native scene provided furnished rooms but seeded no movable objects. The legacy nominal-floor contact would also miss embedded tables and shelves.",
+      "cause": "Loose clutter was seeded from legacy furniture slots. Native static geometry carries its own collision components and floor elevations.",
+      "action": "Seat six canonical worn meshes on measured supports and bind the seeds to the packaged site revision. Use the native collision sweep for object contact.",
+      "older_maps": "Confirm separate source-mesh seating, movement ownership, support changes, and reset when converting more sites.",
+      "evidence": "development/levels/rebuild/monastery-loose-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-733",
+      "title": "Legacy loose-clutter regression cannot find an open throwing lane",
+      "status": "BASELINE_REPRODUCED_PENDING_ROUTE_FIXTURE_AUDIT",
+      "affected": "LooseClutterTest legacy throwing exercise",
+      "symptom": "The legacy assertion reports no real open throwing lane after the House, Farmhouse and School placement checks.",
+      "cause": "The same test fails with the parent LooseClutter source. The older test's assumed lane needs an architectural and interaction audit.",
+      "action": "Locate a demonstrably open lane through normal movement and repeat the collision and contact assertions there.",
+      "older_maps": "Audit old throwing test coordinates against current physical layouts.",
+      "evidence": "development/levels/rebuild/monastery-loose-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

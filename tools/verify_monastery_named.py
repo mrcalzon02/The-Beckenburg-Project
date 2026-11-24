@@ -10,11 +10,11 @@ from verify_blackwater_named import CLASSES as SHARED_REVIEW_CLASSES
 from verify_northwatch_named import jdk
 
 ROOT = Path(__file__).resolve().parents[1]
-STAGE = ROOT / "development/levels/rebuild/monastery-landscape-pass"
+STAGE = ROOT / "development/levels/rebuild/monastery-loose-pass"
 GAME = ROOT / "build/beckenburg-game.jar"
 GPU = ROOT / "gpu-client/target/BeckenburgGPU.jar"
 RESOURCE = "org/beckenburg/sites/wld-10/"
-CLASSES = (*SHARED_REVIEW_CLASSES, "MonasteryNamedReview", "MonasteryPowerReview", "MonasteryDoorReview")
+CLASSES = (*SHARED_REVIEW_CLASSES, "MonasteryNamedReview", "MonasteryLooseReview", "MonasteryPowerReview", "MonasteryDoorReview")
 
 
 def verify_archive(path, main_class):

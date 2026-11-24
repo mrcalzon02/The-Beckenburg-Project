@@ -1,0 +1,33 @@
+check	result
+packaged_native_scene	87f9b5c74187008f7ba8694f100c1f74f215f79fdefb51644daebeb1514c2c08
+named_network_revision	87f9b5c74187008f7ba8694f100c1f74f215f79fdefb51644daebeb1514c2c08-e8f366d380bc94dc
+collision_sha256	b6eb26142eda17d261e83d583c20ab8111afba84bcfca83f24c95248204466d1
+renderer	Software
+default_lock_review_flag_campaign_and_stale_revision	PASS
+retained_fitted_doors	13
+route_replays	84
+staged_switches	12
+staged_lamps	36
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+monastery-archive-cupboard_protected_floor_samples	69
+monastery-dorm-cupboard_protected_floor_samples	69
+monastery-chamber-cupboard_protected_floor_samples	69
+monastery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+west gate overflow_native_fall	58 surveyed native bed points
+east gate overflow_native_fall	68 surveyed native bed points
+service court interceptor_native_fall	93 surveyed native bed points
+western hillside interceptor_native_fall	223 surveyed native bed points
+vestry east and north interceptor_native_fall	207 surveyed native bed points
+herb_court_roof_throats_and_falling_pipe_spans	8 open inlets and 24 clear falling spans
+herb_court_inspection_and_traversal	2 native filter beds through clear shafts and four standing/crouch passes
+landscape_court_well_and_routes	Actual well masonry collision and standing/crouched aisle approach in both directions
+native_loose_support_and_reset	PASS six supported seeds, upper and lower floor drops, tabletop drop, tumbling contact and fresh mission reset
+named_solo_ai_cargo_apron_and_retreat	PASS
+REFECTORY_RATION_SHEET_live_reading	PASS walked to record and opened its reading interface
+native_loose_live_owner_throw_and_privacy	PASS actual interaction, ghost redaction, rejected remote drop, rotation, tabletop and floor contacts
+live_east_range_independent_switches	PASS
+ASHEN_BELLS_REGISTER_live_reading	PASS walked to record and opened its reading interface
+live_north_range_independent_switches	PASS
+live_west_range_independent_switches	PASS
+live_vertical_range_independent_switches	PASS two bell flights and existing catacomb stairs
+live_four_player_blackout	PASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches

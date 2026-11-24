@@ -124,6 +124,7 @@ final class MonasteryNamedReview {
         capture(map,new Vec(16.55,0,25),new Vec(15.7,.045,22.82),captures.resolve("monastery-herb-court-pipe-inlet.png"));
         captureNorth(map,captures);
         verifyLandscape(map,captures,report);
+        MonasteryLooseReview.review(map,captures,report);
         if (!gpu) {
             BlackwaterNamedReview.solo(map,report);
             MonasteryPowerReview.live(scene,report,site);
@@ -240,7 +241,7 @@ final class MonasteryNamedReview {
         capture(map,at,target,image,true);
     }
 
-    private static void capture(HouseMap map,Vec at,Vec target,Path image) throws Exception {
+    static void capture(HouseMap map,Vec at,Vec target,Path image) throws Exception {
         capture(map,at,target,image,false);
     }
 

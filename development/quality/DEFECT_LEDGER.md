@@ -8912,6 +8912,34 @@ Bind the gameplay link to X18, check both adjacent owners and replay the support
 
 Verify the exact portal coordinate, both owners and movement even where the historic link name is retained. [DEV-637 evidence](../levels/rebuild/asylum-patient-court-pass/checkpoint.json)
 
+### DEV-732 — Monastery native furnishings had no movable belongings
+
+**Status:** MONASTERY_NATIVE_LOOSE_BELONGINGS_VERIFIED_NAMED_REVIEW_LOCKED · **Affected:** WLD-10 gatehouse, archive, refectory, bell gallery and memorial chamber
+
+The native scene provided furnished rooms but seeded no movable objects. The legacy nominal-floor contact would also miss embedded tables and shelves.
+
+Cause / uncertainty: Loose clutter was seeded from legacy furniture slots. Native static geometry carries its own collision components and floor elevations.
+
+Fix / next action: Seat six canonical worn meshes on measured supports and bind the seeds to the packaged site revision. Use the native collision sweep for object contact.
+
+Evidence and verification: development/levels/rebuild/monastery-loose-pass/checkpoint.json
+
+Older-map obligation: Confirm separate source-mesh seating, movement ownership, support changes, and reset when converting more sites.
+
+### DEV-733 — Legacy loose-clutter regression cannot find an open throwing lane
+
+**Status:** BASELINE_REPRODUCED_PENDING_ROUTE_FIXTURE_AUDIT · **Affected:** LooseClutterTest legacy throwing exercise
+
+The legacy assertion reports no real open throwing lane after the House, Farmhouse and School placement checks.
+
+Cause / uncertainty: The same test fails with the parent LooseClutter source. The older test's assumed lane needs an architectural and interaction audit.
+
+Fix / next action: Locate a demonstrably open lane through normal movement and repeat the collision and contact assertions there.
+
+Evidence and verification: development/levels/rebuild/monastery-loose-pass/checkpoint.json
+
+Older-map obligation: Audit old throwing test coordinates against current physical layouts.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

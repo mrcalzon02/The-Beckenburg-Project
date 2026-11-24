@@ -84,6 +84,18 @@ public final class SiteStories {
   case "MENDING"->new Document(id,"Inherited mending tin",List.of(place.address(),"A faded tin, wooden thread bobbins, crossed scissors and carefully saved needles. The lid has been kept with it.","Useful things outlived the people who first bought them; the household kept repairing instead of replacing."));
   case "BOOTS"->new Document(id,"Work boots by the laundry",List.of(place.address(),"Mud-darkened leather, worn soles and re-laced eyelets. Left beside the washing area to dry before the next day's work."));
   default->throw new IllegalArgumentException("Unknown readable object");};}
+ static String nativeBelonging(String site,String id){
+  if(site.equals("wld-10"))return switch(id){
+   case "PORTER_DELIVERY_LEDGER" -> "The porter's clothbound ledger has a square of clean fabric where a gate key used to rest.";
+   case "ARCHIVE_BRASS_CANDLESTICK" -> "A brass holder kept within reach of the archive desk. Old wax has gathered around its foot.";
+   case "REFECTORY_COMMON_MUG" -> "A chipped mug left beside the common table's ration sheet.";
+   case "REFECTORY_EXTRA_BOWL" -> "A spare blue bowl set out between the last two places in the refectory.";
+   case "BELL_RINGER_TEA_TIN" -> "A dented tea tin beside the bell gallery's wall. A strip of felt muffles the lid.";
+   case "MEMORIAL_OIL_BOTTLE" -> "A corked stoneware bottle beside the old memorial stalls. The dry rim still smells faintly of lamp oil.";
+   default -> throw new IllegalArgumentException("Unknown native belonging "+id);
+  };
+  throw new IllegalArgumentException("Unknown native belongings for "+site);
+ }
  private static Document monasteryDocument(String site,String id,String title,List<String> lines){
   if(!site.equals("wld-10"))throw new IllegalArgumentException("Unknown readable object");
   return new Document(id,title,lines);

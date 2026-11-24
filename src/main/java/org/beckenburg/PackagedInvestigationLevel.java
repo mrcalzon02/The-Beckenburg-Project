@@ -85,6 +85,8 @@ final class PackagedInvestigationLevel {
         var doors = new ArrayList<NativeInvestigationDoor.Spec>();
         var portals = new ArrayList<Portal>();
         var sockets = new ArrayList<Socket>();
+        var looseSupports = new LinkedHashMap<Socket,String>();
+        var looseIds = new HashSet<String>();
         for (var row : layout) {
             switch (row[0]) {
                 case "ROOM", "SPACE" -> {
@@ -110,6 +112,18 @@ final class PackagedInvestigationLevel {
                     SiteStories.document(profile.id(), row[2]);
                     sockets.add(new Socket(row[1], "native_story", integer(row, 3),
                         number(row, 5), number(row, 6), number(row, 7), number(row, 8), row[2]));
+                }
+                case "LOOSE" -> {
+                    check(row.length==9 && looseIds.add(row[1]) && looseIds.size()<=120,"Invalid native belonging");
+                    int owner=integer(row,2);
+                    var kind=LooseClutter.Kind.valueOf(row[3]);
+                    var at=point(row,5);
+                    double yaw=number(row,8);
+                    check(owner>=0 && owner<HouseMap.ROOM_COUNT && Double.isFinite(yaw),"Invalid native belonging placement");
+                    SiteStories.nativeBelonging(profile.id(),row[1]);
+                    var socket=new Socket(row[1],"native_loose",owner,at.x(),at.y(),at.z(),yaw,kind.name());
+                    sockets.add(socket);
+                    looseSupports.put(socket,row[4]);
                 }
                 case "OPEN" -> portals.add(new Portal(integer(row, 1), integer(row, 2), integer(row, 3), number(row, 4),
                     number(row, 5), number(row, 6), number(row, 7), row[8].equals("z"), row[9], 1));
@@ -140,6 +154,14 @@ final class PackagedInvestigationLevel {
         for (int i = 0; i < scene.physics().componentCount(); i++) nativeComponents.add(scene.physics().componentName(i));
         for (var socket : sockets) if (socket.type().equals("native_story"))
             check(nativeComponents.contains(socket.id()), "Missing native readable component " + socket.id());
+        for (var entry : looseSupports.entrySet()) {
+            var item=entry.getKey();
+            var bearing=scene.physics().support(item.x(),item.z(),item.y(),.006);
+            check(bearing!=null && scene.physics().componentName(scene.physics().triangle(bearing.triangle()).component())
+                .equals(entry.getValue()),"Missing physical support for "+item.id());
+            check(scene.spaces().stream().anyMatch(s->s.accessible() && s.owner()==item.room()
+                && s.contains(item.x(),item.y(),item.z())),"Belonging outside its authored space "+item.id());
+        }
         var level = new LevelDefinition(profile.id(), scene.revision(), profile.title(), List.of(rooms), portals, List.of(),
             List.of(), List.of(), sockets, List.of(), dock, "highland", water);
         return new Source(level, scene);

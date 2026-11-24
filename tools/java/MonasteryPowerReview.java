@@ -229,8 +229,12 @@ public final class MonasteryPowerReview {
         var breaker=RoomLighting.breaker(map);
         var courtSwitch=map.level().socket("switch",COURT);
         var towerSwitch=map.level().socket("switch",TOWER);
+        // A phasing ghost can stage the trip from the cloister while the
+        // engineer still encounters the original closed refectory door.
+        var ghostType=map.clutter().authoredItem("REFECTORY_COMMON_MUG")==null
+            ?GhostIdentity.Type.SPIRIT:GhostIdentity.Type.WRAITH;
         try (var host=named
-                ?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),false,false,site)
+                ?new LanHost("127.0.0.1",0,ghostType,CustomContract.standard(3),false,false,site)
                 :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
              var engineer=new Peer(host,false,"Monastery electrician");
              var witness=new Peer(host,false,"Court observer");
@@ -252,6 +256,11 @@ public final class MonasteryPowerReview {
             ghost.client.viewGhost3D();
             ghost.awaitExact("ACCEPT|GVIEW3D");
             ghost.await("GPOSE|");
+            if(authoritative.clutter().authoredItem("REFECTORY_COMMON_MUG")!=null) {
+                // Trip the building from the cloister without scattering the refectory before the pickup exercise.
+                ghost.client.ghost(GhostDomain.Action.DRIFT,2);
+                ghost.await("ACCEPT|GHOST|DRIFT|");
+            }
             NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
             for (int i=0;i<15;i++) at=NativeSchoolInteriorReview.step(engineer,0,0,-100);
             at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(32,0,68));
@@ -313,6 +322,10 @@ public final class MonasteryPowerReview {
                     at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(62.36,0,36.95),new Vec(54.45,0,37.8),
                         new Vec(54.45,0,34.64),new Vec(54.88,0,34.64));
                     read(map,engineer,at,rationSheet,report);
+                    if(authoritative.clutter().authoredItem("REFECTORY_COMMON_MUG")!=null) {
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(54.93,0,34.91));
+                        MonasteryLooseReview.live(authoritative,engineer,witness,ghost,at,report);
+                    }
                     at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(54.45,0,34.64),new Vec(54.45,0,38.15),
                         new Vec(59,0,40));
                 } else {

@@ -2395,3 +2395,7 @@ Herb-court checkpoint e260acb3b8cf25357c9fe8e6c9cc8e1163454be7 is local. The las
 ### Monastery of Ashen Bells landscape and herb court
 
 Northern drainage checkpoint 1c8f7ff4358a6488b4025adea0cf5e7dfa959da5 is local. The last verified draft head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526, GPU 44863686455 and Pages 44863686232. The [landscape checkpoint](levels/rebuild/monastery-landscape-pass/checkpoint.json) grounds the canonical well and benches, plants the court and arrival shoulders, and replaces the flat ground colors without changing physical terrain. Continue the perimeter horizon and building finishes, loose props, authored encounters, full named investigation and installer.
+
+### Monastery of Ashen Bells movable belongings
+
+The [movable-belongings checkpoint](levels/rebuild/monastery-loose-pass/checkpoint.json) extends landscape commit d498b8f3622d3f8c96cf29db13a0383f0546614f. The six supported seeds use the existing estate model and surfaces. See the checkpoint for local test results and DEV-733 for a pre-existing legacy throwing test failure. The last verified draft head was 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Continue the perimeter and building finishes, authored encounters, full named investigation and installer.

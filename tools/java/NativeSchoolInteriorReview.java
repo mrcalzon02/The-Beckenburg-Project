@@ -225,7 +225,7 @@ public final class NativeSchoolInteriorReview {
             return awaitMatching(frame::equals,frame,5000);
         }
 
-        private String awaitMatching(java.util.function.Predicate<String> match,String expected,long timeoutMs)throws Exception{
+        String awaitMatching(java.util.function.Predicate<String> match,String expected,long timeoutMs)throws Exception{
             long until=System.nanoTime()+java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(timeoutMs);
             while(System.nanoTime()<until){
                 String row=input.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
@@ -383,9 +383,10 @@ public final class NativeSchoolInteriorReview {
         var mutex=field(host,"mutex");
         int room;
         synchronized(mutex){
-            room=((GhostDomain)field(host,"ghost")).room();
+            var domain=(GhostDomain)field(host,"ghost");
+            room=domain.room();
             long seed=0;
-            while(!new GhostHauntingFolio(seed).choose(GhostDomain.Action.DISTURB,GhostIdentity.Type.SPIRIT,room,1)
+            while(!new GhostHauntingFolio(seed).choose(GhostDomain.Action.DISTURB,domain.type(),room,1)
                     .entry().id().equals("lightning_static"))seed++;
             var folio=field(host,"hauntingFolio");
             ((java.util.Random)field(folio,"random")).setSeed(seed);
