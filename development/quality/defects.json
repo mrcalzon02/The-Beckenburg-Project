@@ -7375,13 +7375,24 @@
     {
       "id": "DEV-665",
       "title": "Mine flat roof caps and exterior yard had no runoff route",
-      "status": "MINE_SURFACE_RUNOFF_VERIFIED_UNDERGROUND_SUMP_OPEN",
+      "status": "MINE_SURFACE_RUNOFF_VERIFIED",
       "affected": "Dead Man’s Claim surface camp, shaft covers and service apron",
       "symptom": "Flat roof caps and a level roadhead lacked planned runoff between roof edges and the lower terrain.",
       "cause": "The existing caps covered the building and shaft geometry without pitched weather layers, collectors or a lower runoff bed.",
-      "action": "Fit supported pitched roofs and open collectors to the fixed caps. Carry water downhill in hollow conduits to two sculpted off-route beds and verify native geometry and retained play routes.",
+      "action": "Pitched cap-backed roof assemblies and two sculpted filter beds pass native checks. Underground containment is tracked separately as DEV-666.",
       "older_maps": "Check where rain from roof edges and high terrain reaches grade. Preserve real thresholds and drainage paths in shared terrain and native collision.",
       "evidence": "development/levels/rebuild/mine-drainage-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-666",
+      "title": "Lower Mine workings lacked a bounded water sump",
+      "status": "NATIVE_LOWER_SUMP_AND_DRY_ROUTE_CONTAINMENT_VERIFIED",
+      "affected": "Dead Man’s Claim lower workings drainage bay",
+      "symptom": "The lower floor lacked a physically contained low-point basin in the original workings.",
+      "cause": "The original layout stopped at a continuous emergence floor and had no formed sump volume, water walls or upper guard.",
+      "action": "Form a walled sump outside the stair routes, anchor the surrounding guard and bind an exact wet placement over the physical invert. Reuse the source pump as isolated machinery.",
+      "older_maps": "Verify every intended low-point water body against actual floor, guard, volume and renderer bounds. Keep all mandatory routes on dry, supported surfaces.",
+      "evidence": "development/levels/rebuild/mine-sump-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -1479,3 +1479,7 @@ Eighteen coplanar landing and floor pieces were replaced by two continuous slabs
 ### Dead Man’s Claim surface runoff
 
 The stores and crew roofs share one continuous fall. The wash and assay roofs share another. The shaft and headhouse roofs meet at a fitted flashing, and six open gutters carry runoff into buried conductors. The downhill terrain beds are saved and reloaded through the same native surface that drives movement. None of the 1,153 excavation controls changed. The lower sump and underground water checks remain open. [Drainage checkpoint](mine-drainage-pass/checkpoint.json)
+
+### Dead Man’s Claim underground water containment
+
+The formed lower well owns a bounded water document rendered by the shared game module. The guard is bolted to the continuous slab. The reused pump is isolated off the active circuit, and its fixed service run reaches the east wall. Physical wall and bed checks, visible water in both renderers, dry routes, and all retained multiplayer tests pass on the exact stage. [Sump checkpoint](mine-sump-pass/checkpoint.json)

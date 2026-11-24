@@ -2179,3 +2179,7 @@ Distribution commit cbd2604dd753fa8e3597d876731bccbf5855b251 is verified on draf
 ### Mine surface roof and yard drainage
 
 Slab commit 28002e5c3c05efdee322475fb0a28a0aafbff3ac is verified on draft PR 86. Gallery 45347122474 passed. The [drainage checkpoint](levels/rebuild/mine-drainage-pass/checkpoint.json) adds supported roof pitch, six open gutters and two filter beds in a reloaded saved terrain layer. Native software, RTX 5070 OpenGL and staged four-player routes, switching and cover pass. Fit underground sump containment and continue case and named game acceptance.
+
+### Mine lower water containment
+
+Surface runoff commit 767b627910d5e1325703c1837f5668ce48daf3e3 is verified on draft PR 86. Gallery 45349856750 passed. The [sump checkpoint](levels/rebuild/mine-sump-pass/checkpoint.json) forms an off-route lower well with a physical liner, guard, and actual runtime water. The staged state preserves movements, powered fixtures and refuges in software, RTX 5070 OpenGL and four-peer tests. Finish the Mine case and verified named game selection.

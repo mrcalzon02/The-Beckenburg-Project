@@ -68,8 +68,11 @@ public final class NativeMineThresholdReview {
         }
         var portals=new ArrayList<>(doors.stream().map(NativeInvestigationDoor.Spec::portal).toList());
         var rooms=bind(scene,dock,rows(packet.resolve("mission.tsv")),portals);
+        var sumpDocument=packet.resolve("mine-sump.water");
+        var water=Files.isRegularFile(sumpDocument)?dev.mrcalzon.water.WaterDocument.read(Files.newInputStream(sumpDocument))
+            :WorldWater.load("wld-05");
         var level=new LevelDefinition("wld-05",scene.revision(),"Dead Man's Claim",rooms,portals,
-            List.of(),List.of(),List.of(),sockets,List.of(),dock,"industrial");
+            List.of(),List.of(),List.of(),sockets,List.of(),dock,"industrial",water);
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var guest=new HouseMap(HouseMap.Site.USER,level,null,scene);
         require(map.valid(),"Disconnected Mine case owners");
@@ -151,6 +154,7 @@ public final class NativeMineThresholdReview {
         if(Files.isRegularFile(slabProbes))auditSlabs(map,scene,rows(slabProbes),captures,evidence);
         var drainageProbes=packet.resolve("drainage-probes.tsv");
         if(Files.isRegularFile(drainageProbes))auditDrainage(map,scene,rows(drainageProbes),captures,evidence);
+        if(Files.isRegularFile(sumpDocument))auditSump(map,scene,captures,evidence);
         boolean refuges=!HidingBudget.candidates(level).isEmpty();
         if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
         var switchFeet=packet.resolve("switches.tsv");
@@ -196,14 +200,17 @@ public final class NativeMineThresholdReview {
     private static void auditSlabs(HouseMap map,NativeInvestigationScene scene,List<String[]> probes,
             Path captures,List<String> report)throws Exception{
         var physics=scene.physics();
-        int opening=0;
+        int opening=0, sump=0;
         for(var row:probes){
             var at=point(row,1);
             var support=physics.support(at.x(),at.z(),at.y(),.003);
             boolean expected=Boolean.parseBoolean(row[4]);
             require(expected?support!=null&&Math.abs(support.y()-at.y())<.001:support==null,
                 "Slab or real opening differs from the authored assembly: "+row[0]+" "+at+" / "+support);
-            if(!expected)opening++;
+            if(!expected){
+                if(at.y()<-9)sump++;
+                else opening++;
+            }
         }
         require(probes.size()==3168&&opening>=35,"Incomplete lower-chamber floor and stair-opening sample set");
         for(int i=0;i<3;i++){
@@ -223,6 +230,7 @@ public final class NativeMineThresholdReview {
         capture(map,new Vec(7.75,-10,25.6),-.70,captures.resolve("mine-lower-landing-slab.png"));
         report.add("lower_and_ore_west_slab_probes\t"+probes.size()+" native probes, "+opening+
             " open tread-bay points, six physical rail intersections, both-posture guard rejection on three sides");
+        if(sump>0)report.add("mine_sump_slab_cut\t"+sump+" intentional open points in the real lower slab well");
     }
 
     private static void auditDrainage(HouseMap map,NativeInvestigationScene scene,List<String[]> probes,
@@ -262,6 +270,51 @@ public final class NativeMineThresholdReview {
         capture(map,new Vec(28,0,73.52),1.83,captures.resolve("mine-roadhead-weathering.png"));
         capture(map,new Vec(38.05,0,58.4),-2.30,captures.resolve("mine-shaft-weathering.png"));
         report.add("mine_runoff_geometry\t28 physical roof surface locations, six open gutter throats and adjacent pans, six saved terrain samples with verified downhill fall");
+    }
+
+    private static void auditSump(HouseMap map,NativeInvestigationScene scene,Path captures,List<String> report)
+            throws Exception{
+        var water=WorldWater.module(map.level().water()).bodies();
+        require(water.size()==1&&water.get(0).id().equals("mine-lower-sump"),"Wrong immutable Mine water document");
+        var reservoir=water.get(0);
+        var physics=scene.physics();
+        double cy=reservoir.y(), cx=18.345, cz=38.475;
+        for(double x:new double[]{17.56,18.345,19.13})for(double z:new double[]{37.68,38.475,39.27}){
+            var bed=physics.support(x,z,-11.12,.012);
+            require(reservoir.wet(x,z)&&Math.abs(reservoir.depth(x,z)-.63)<.002&&bed!=null
+                &&Math.abs(bed.y()+11.12)<.002,"Mine water lacks an exact contained bed");
+            require(!map.traversable(x,-11.12,z),"Mine water is playable through its basin");
+        }
+        for(double[] p:new double[][]{{17.21,cz},{19.46,cz},{cx,37.22},{cx,39.72}}){
+            require(!reservoir.wet(p[0],p[1]),"Mine water projects beyond the contained well");
+            require(!physics.clearSight(new Vec(cx,cy,cz),new Vec(p[0],cy,p[1])),"An actual Mine sump wall is missing");
+        }
+        var starts=List.of(new Vec(cx,-10,36.86),new Vec(cx,-10,40.13),new Vec(16.65,-10,37.37));
+        var limits=List.of(new Vec(cx,-10,37.205),new Vec(cx,-10,39.75),new Vec(17.064,-10,37.37));
+        for(int i=0;i<starts.size();i++){
+            var at=starts.get(i);var border=limits.get(i);
+            for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                require(map.traversable(at.x(),at.y(),at.z(),h),"No dry Mine sump inspection aisle "+at);
+                require(map.resolveMove(at,border.x(),border.z(),h)==null,"A player crossed a sump safety rail "+border);
+            }
+        }
+        for(double[] edge:new double[][]{{17.064,38.4,.06,0},{19.62,38.4,.06,0},
+                                         {18.35,37.205,0,.06},{18.35,39.75,0,.06}}){
+            for(double y:new double[]{-8.91,-9.43})
+                require(!physics.clearSight(new Vec(edge[0]-edge[2],y,edge[1]-edge[3]),
+                    new Vec(edge[0]+edge[2],y,edge[1]+edge[3])),"Missing physical sump guard");
+        }
+        var r=new SceneRenderer();
+        r.setRenderSize(880,580);
+        r.setPsxPreset(PsxPipeline.Preset.OFF);
+        r.x=17.1;r.z=35.6;r.eyeHeight=-10+HunterPosture.STANDING_EYE;
+        require(map.traversable(r.x,-10,r.z),"Sump standing capture lies outside a real aisle");
+        r.yaw=.42;r.pitch=-.49;r.lamp=true;
+        r.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(r,map,captures.resolve("mine-sump-water.png"));
+        require(r.waterStatistics!=null&&r.waterStatistics.pixels()>150,
+                "The shared water renderer did not draw the actual Mine basin "+r.waterStatistics);
+        report.add("mine_sump_water\tNine exact wall-contained wet samples, four dry outside probes, blocked standing and crouched guard crossings, and visible native water");
     }
 
     private static void capture(HouseMap map,Vec at,double yaw,Path target)throws Exception{

@@ -9050,3 +9050,7 @@ The stair rails descend with the flight. Eleven anchored posts now carry a separ
 ### DEV-665 Mine flat roof caps and exterior yard had no runoff route
 
 Seven cap-backed pitched roof surfaces feed six collectors, each with an open throat and a supported downpipe. Two lower filter beds are carved into saved terrain outside door and stair routes. Direct native tests covered the roofs, the six actual openings and adjacent pan faces, and downhill terrain. Underground sump containment remains open. [Evidence](../levels/rebuild/mine-drainage-pass/checkpoint.json)
+
+### DEV-666 Lower Mine workings lacked a bounded water sump
+
+A formed well in the lower service area has four closed walls, a fixed guard and 0.63 metres of contained water on its actual bed. Native tests detect all four walls and stop both player postures at the guard. The retained pump is isolated. The entire lower stair circuit and all three refuges remain usable. [Evidence](../levels/rebuild/mine-sump-pass/checkpoint.json)

@@ -3531,6 +3531,7 @@
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-sump-pass/checkpoint.json",
             "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3547,6 +3548,7 @@
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-666",
             "DEV-665",
             "DEV-390",
             "DEV-391",
@@ -3559,12 +3561,13 @@
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Roof and yard runoff reach two off-route filter beds in the saved terrain, with all excavation controls and the existing yard routes verified. Fit the underground sump and verify water containment."
+          "next_action": "Surface runoff and physically contained lower groundwater pass the staged render and landscape replays. Verify named dispatch and complete landscape closeout."
         },
         "S05": {
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-sump-pass/checkpoint.json",
             "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
             "development/levels/rebuild/mine-handrail-pass/checkpoint.json",
@@ -3572,6 +3575,7 @@
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-666",
             "DEV-665",
             "DEV-664",
             "DEV-663",
@@ -3582,12 +3586,13 @@
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Surface weather roofs, braces, gutters, paired seams and the haul apron are verified on the native stage. Continue lower workings sump and case finish before named acceptance."
+          "next_action": "The upper and lower slabs, formed sump, fixed guards, and pitched roof assemblies pass the staged checks. Fit remaining case structures and inspect ordinary native play."
         },
         "S06": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-sump-pass/checkpoint.json",
             "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
             "development/levels/rebuild/mine-distribution-pass/checkpoint.json",
@@ -3600,7 +3605,7 @@
             "DEV-659",
             "DEV-658"
           ],
-          "next_action": "The service source, twelve switched branches, all thirteen lamps, ghost trip, and live lower-room switch reconnect are verified on the native stage. Repeat power, safe-zone and evidence behavior through named map selection."
+          "next_action": "The exact staged rooms, physical stairs, power, refuges and immutable water document pass. Integrate into ordinary named game selection, add final case furnishings and verify remaining gameplay gates."
         },
         "S07": {
           "status": "IN_PROGRESS",

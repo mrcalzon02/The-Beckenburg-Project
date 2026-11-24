@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11656,
+  "count": 11666,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112594,6 +112594,106 @@
       "height": 920,
       "bytes": 1434801,
       "sha256": "fe9baa67f2c590b2a1ad2c704d108e0c240356e3ad9a3f1e9bfc975ac6efe43a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/mine-lower-guard-approach.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/mine-lower-guard-approach.png",
+      "title": "Mine lower guard approach",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 393730,
+      "sha256": "989a43ea8b9ef2ab18032c73bcb62a3d9a087a0397464d43d6647075e7ec6522"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/mine-lower-landing-slab.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/mine-lower-landing-slab.png",
+      "title": "Mine lower landing slab",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 386351,
+      "sha256": "7eaf49a1e03a95c5061916bf348359064e7a591f8cf85dea77a76077acf7f5c4"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/mine-lower-powered.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/mine-lower-powered.png",
+      "title": "Mine lower powered",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 195519,
+      "sha256": "73c5d9d77baa53978c235e61348fc47299778b4926fe12143beca2b1a4d81439"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/mine-sump-water.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/mine-sump-water.png",
+      "title": "Mine sump water",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 366481,
+      "sha256": "f7fe0d4b61aca1a85a7398152a1841dc449cdc2282111f691d7fbfef288b388d"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-guard-approach.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-guard-approach.png",
+      "title": "Mine lower guard approach",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387614,
+      "sha256": "845031a82c9e23eeae74e5ee81c02fc02dfe1901b4d5ecb935643e91a87e3917"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-landing-slab.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-landing-slab.png",
+      "title": "Mine lower landing slab",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 383233,
+      "sha256": "94a1295bba12729c17d40096113382f614d25c1026ef5a6e9566ffb64935cac0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-powered.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-powered.png",
+      "title": "Mine lower powered",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 187014,
+      "sha256": "5e8e904a275fd636e3ef12b50ba5a84ae1f22bc49fd2b828398925020ee17e6d"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-tripped.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-lower-tripped.png",
+      "title": "Mine lower tripped",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 152928,
+      "sha256": "6c79de17451c7e836babfcccf1a6f0a4a94ef8043b2a8a4ecb868e50709bc80f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-sump-water.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/opengl/mine-sump-water.png",
+      "title": "Mine sump water",
+      "kind": "Dead Man’s Claim contained Mine sump and lower chamber in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 366704,
+      "sha256": "0827559c4f41c5b993c7436d52df74bbaa4b516cebeae484911e6cef7f21902b"
+    },
+    {
+      "path": "development/levels/rebuild/mine-sump-pass/captures/structure/mine-lower-sump-cutaway.png",
+      "url": "development/levels/rebuild/mine-sump-pass/captures/structure/mine-lower-sump-cutaway.png",
+      "title": "Mine lower sump cutaway",
+      "kind": "Dead Man’s Claim formed lower sump structure",
+      "width": 1360,
+      "height": 960,
+      "bytes": 1466197,
+      "sha256": "f8f09e4747e3056270126359b1a0c335a709b80c7df691d65d9343425a6dfca7"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
