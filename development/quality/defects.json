@@ -7536,6 +7536,17 @@
       "action": "Relocate the founded return beyond both service shoulders and keep the actual receiving door approach and saved grade.",
       "older_maps": "Check both directions and both shoulders after adding physical boundary returns.",
       "evidence": "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-680",
+      "title": "Cemetery frames had no operating door leaves and two mortuary openings were unscheduled",
+      "status": "CEMETERY_AND_MORTUARY_STAGED_DOORS_AND_ROOM_ACOUSTICS_VERIFIED",
+      "affected": "Cemetery and mortuary buildings, stairs and staff areas",
+      "symptom": "Listed frames showed open passages only. The viewing/reception and cold/preparation interfaces were also missing from the doorway schedule.",
+      "cause": "Earlier structure review retained physical openings without a native runtime door/room binding.",
+      "action": "Measure and fit 24 existing frames, bind room acoustics, verify open/closed movement and exact replicated state, and recover the two omitted openings from their actual jambs.",
+      "older_maps": "Compare every runtime leaf and acoustic portal with actual frame geometry, including legacy openings and shared gameplay-owner rooms.",
+      "evidence": "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

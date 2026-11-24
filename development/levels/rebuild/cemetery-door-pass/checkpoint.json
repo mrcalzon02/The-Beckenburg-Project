@@ -1,0 +1,92 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_STAGED_DOORS_AND_ROOM_ACOUSTICS_VERIFIED",
+  "previous_commit": "fa9b1e1495a114fc985641b011d726b25b315ffd",
+  "previous_gallery": 45373857791,
+  "sites": {
+    "WLD-07": {
+      "boundary_exports": {
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.blend": "032dd29b957f926582a3aae01c40fe160bfc4c32b5d78618baa7d60a88a48a55",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.glb": "ba66ad066c2781e775220d961850c40dca36e5469b845b33e43970754760d316",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.hcs2": "f0c45a79c99c72e30902c0580d6f9bce680f0c5e7b309c810db3eccc03aa729e"
+      },
+      "doors": 7,
+      "native_scene_revision": "9dcb37c26f63a625cbbe8a36726ecb4aad69cf65d73bd775c5ba75580184db91",
+      "evidence": {
+        "development/levels/rebuild/cemetery-door-pass/wld-07/doors-software.tsv": "ed1de99e73f009be813264dc88db66bf881922e121aa593ef4990dfe9cf4a4fc",
+        "development/levels/rebuild/cemetery-door-pass/wld-07/doors-opengl.tsv": "417d22f303bd3c4dbd7ba28f30ffb9fad6d3d756920b1933358214a78b15b000",
+        "development/levels/rebuild/cemetery-door-pass/wld-07/frame-survey.json": "9e16db547be4611f19fb496d73c44eaeefa40a39ef06a4bb1dd212718f4a42ed",
+        "development/levels/rebuild/cemetery-door-pass/wld-07/room-layout.tsv": "606508183689c8ed2d5d797641cdec25342502673bc08adbc48bfe6ab0b32438",
+        "development/levels/rebuild/cemetery-door-pass/wld-07/door-schedule.tsv": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "boundary_exports": {
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.blend": "ad027a89adb48e2f4f6bdccd9067bc63e79ad811fd59e59124ab96948a2c8d5b",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.glb": "0d6b5130715c65987fd9e394e3088610d44a11637d0c3afcce41ae65ffeafa65",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.hcs2": "412e2e4b406a97aa3ece75c32a34141fe3a3a15b67ca7cc8eb202f45665d9b17"
+      },
+      "doors": 17,
+      "native_scene_revision": "73ecfaad3726caf3775a7dbbc47e551ac6ee163747341c8df09b7ab5b6ef24c0",
+      "evidence": {
+        "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/doors-software.tsv": "1627edea1bb30dc7c99a56382d768d0e137a3a8c7847516489a069f98ec46d5e",
+        "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/doors-opengl.tsv": "c555e8daa92db3f3b63f5e8f904ef43aad7bc64851c84ef7f264b6504ca2c76f",
+        "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/frame-survey.json": "46d382ec94963822e68691226c2b5a5c56ac69ff636eb7fa659b94543ff1f6a4",
+        "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/room-layout.tsv": "f39cf6421a00adad282f8ef8076e0d0f3819f31e882d172ebceab05d6ab5bfa9",
+        "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/door-schedule.tsv": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77"
+      }
+    }
+  },
+  "door_asset": "assets/runtime/models/door_1_loose.glb",
+  "door_asset_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "formerly_unlisted": [
+    {
+      "rooms": [
+        "viewing",
+        "reception"
+      ],
+      "center": [
+        66,
+        0,
+        54
+      ],
+      "jamb_depth": 0.16,
+      "lintel": 2.45
+    },
+    {
+      "rooms": [
+        "cold storage",
+        "preparation"
+      ],
+      "center": [
+        78,
+        0,
+        50
+      ],
+      "jamb_depth": 0.16,
+      "lintel": 2.45
+    }
+  ],
+  "stair_guide_adjustment": {
+    "original_west": [
+      14,
+      -3,
+      16
+    ],
+    "replay_west": [
+      14.2,
+      -3,
+      16
+    ],
+    "original_east": [
+      42,
+      -3,
+      16
+    ],
+    "replay_east": [
+      41.8,
+      -3,
+      16
+    ]
+  },
+  "remaining": "Fit installed services and full walk-in refuges, then continue normal-use subspaces, case and named mission approval. Required annex roof, materials, drains and landscape refinements stay open."
+}

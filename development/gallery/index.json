@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11799,
+  "count": 11827,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110804,6 +110804,286 @@
       "height": 980,
       "bytes": 1875415,
       "sha256": "8783bcbf75a1ce2a242cea75d57bc0e857064fccf90ad44cd840b8238f8fa6ae"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/caretaker-cottage-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/caretaker-cottage-closed.png",
+      "title": "Caretaker cottage closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398171,
+      "sha256": "0fc67259e363a0d11178c70fbdefa17bb071666410cbd41f3d23edcce3adfa2e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/caretaker-cottage-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/caretaker-cottage-open.png",
+      "title": "Caretaker cottage open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 323383,
+      "sha256": "82ce79ea697a574fb0820e46d3b9011a48280851acc643f78548017460c17e51"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-preparation-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-preparation-closed.png",
+      "title": "Mortuary preparation closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 362563,
+      "sha256": "4f28d880fd714f8fa72d46988356c65cd48bd5f50993fe1ea911eed5b7cc2e9e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-preparation-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-preparation-open.png",
+      "title": "Mortuary preparation open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 340189,
+      "sha256": "68a1579f2a9a1cae1454399bb14e48add3d7dcc24c17996ecea4c496aba9e377"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-receiving-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-receiving-closed.png",
+      "title": "Mortuary receiving closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 385210,
+      "sha256": "06a29e65916d092e708cbefa893a3b9576dc245647ee5598772319b01003d80b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-receiving-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-receiving-open.png",
+      "title": "Mortuary receiving open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 312554,
+      "sha256": "9f2ef3e7a6236eb0c07664d9045f204858796b65b367e65e49ba5e1242ff3af6"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-viewing-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-viewing-closed.png",
+      "title": "Mortuary viewing closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 361797,
+      "sha256": "5fd093af5a3ffcfd88ef88c8264595fc145cda6a272960b0a64fc6674ae5ac74"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-viewing-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/mortuary-viewing-open.png",
+      "title": "Mortuary viewing open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 314345,
+      "sha256": "f622460bdc03a2bbe10dcfa874d18fd20df3ee47fb2cf586eb01f3cadf67e5fb"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/caretaker-cottage-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/caretaker-cottage-closed.png",
+      "title": "Caretaker cottage closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398744,
+      "sha256": "7251d51b8a2bda8cfe131a3f30e0fc71420b56dcfafaa065ab9771c225798c3c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/caretaker-cottage-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/caretaker-cottage-open.png",
+      "title": "Caretaker cottage open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 323654,
+      "sha256": "d731b03e37d9123300e12a6f52e3a6ca6b89fbbf07e6948ca43c43b22b46c520"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-preparation-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-preparation-closed.png",
+      "title": "Mortuary preparation closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 363418,
+      "sha256": "344d2fcdab983192b1a85ff39b243b6f47ac29f9a174494a8cfa1fd463f4e3c8"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-preparation-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-preparation-open.png",
+      "title": "Mortuary preparation open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 338931,
+      "sha256": "972a2621683c27b9f34d9d95b77f02bd61eca14f2f50f5a2c83371b7337c2071"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-receiving-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-receiving-closed.png",
+      "title": "Mortuary receiving closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 379794,
+      "sha256": "a19de29909f4c2a639b1cce91e264e461937129e8cfe1bd4d337be198febb0cc"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-receiving-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-receiving-open.png",
+      "title": "Mortuary receiving open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 308906,
+      "sha256": "d94277c923c95a099b01c999400b024fe7cf1fe7050ce9ea8fe720db253f7892"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-viewing-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-viewing-closed.png",
+      "title": "Mortuary viewing closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 362649,
+      "sha256": "d99cb1d6e1fdb7a1fd233ef935e2914a63abe17bd1f1c9c27a41c6a629f8ac8e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-viewing-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/mortuary-viewing-open.png",
+      "title": "Mortuary viewing open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 313667,
+      "sha256": "7c945106e86258e78dbf39fb5fe5ca0ec282e2bfb08554f4b48d7ea77588b2e1"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/west-ossuary-stair-pavilion-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/west-ossuary-stair-pavilion-closed.png",
+      "title": "West ossuary stair pavilion closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 397137,
+      "sha256": "74c407b617d2ea64f42b4a3d351183dd2b7d6019abe948b39e2e109893334e9b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/west-ossuary-stair-pavilion-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/opengl/west-ossuary-stair-pavilion-open.png",
+      "title": "West ossuary stair pavilion open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 289661,
+      "sha256": "64c4afa069f085daa83cc86d525613e00f84307abff640d42261683b2ec0cb1c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/west-ossuary-stair-pavilion-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/west-ossuary-stair-pavilion-closed.png",
+      "title": "West ossuary stair pavilion closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 396436,
+      "sha256": "7468810c73b4aed9fccae75bdf79c491bb254d9666fc9f91d7a9b7f135e5ab09"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/west-ossuary-stair-pavilion-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/west-ossuary-stair-pavilion-open.png",
+      "title": "West ossuary stair pavilion open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 287966,
+      "sha256": "a224f84c902312d81f848bfd007c907c1a519d6fa0cb97ce3c58e9dde90d0c5a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/caretaker-cottage-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/caretaker-cottage-closed.png",
+      "title": "Caretaker cottage closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398171,
+      "sha256": "0fc67259e363a0d11178c70fbdefa17bb071666410cbd41f3d23edcce3adfa2e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/caretaker-cottage-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/caretaker-cottage-open.png",
+      "title": "Caretaker cottage open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 324397,
+      "sha256": "a76983689caf51a3d806cedebe8d5599d5be30b52061f2e4e579aacd1bed4cc7"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/caretaker-cottage-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/caretaker-cottage-closed.png",
+      "title": "Caretaker cottage closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398744,
+      "sha256": "7251d51b8a2bda8cfe131a3f30e0fc71420b56dcfafaa065ab9771c225798c3c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/caretaker-cottage-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/caretaker-cottage-open.png",
+      "title": "Caretaker cottage open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 324815,
+      "sha256": "d374c215c8256744c9fa5f938feec56b549bf1cd58105177927a93686e60ad0d"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/west-ossuary-stair-pavilion-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/west-ossuary-stair-pavilion-closed.png",
+      "title": "West ossuary stair pavilion closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 397137,
+      "sha256": "74c407b617d2ea64f42b4a3d351183dd2b7d6019abe948b39e2e109893334e9b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/west-ossuary-stair-pavilion-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/opengl/west-ossuary-stair-pavilion-open.png",
+      "title": "West ossuary stair pavilion open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 289661,
+      "sha256": "64c4afa069f085daa83cc86d525613e00f84307abff640d42261683b2ec0cb1c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/west-ossuary-stair-pavilion-closed.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/west-ossuary-stair-pavilion-closed.png",
+      "title": "West ossuary stair pavilion closed",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 396436,
+      "sha256": "7468810c73b4aed9fccae75bdf79c491bb254d9666fc9f91d7a9b7f135e5ab09"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/west-ossuary-stair-pavilion-open.png",
+      "url": "development/levels/rebuild/cemetery-door-pass/wld-07/captures/west-ossuary-stair-pavilion-open.png",
+      "title": "West ossuary stair pavilion open",
+      "kind": "Cemetery and Vale Mortuary operating doors in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 287966,
+      "sha256": "a224f84c902312d81f848bfd007c907c1a519d6fa0cb97ce3c58e9dde90d0c5a"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",

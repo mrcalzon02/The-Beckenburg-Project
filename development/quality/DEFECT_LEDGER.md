@@ -9106,3 +9106,7 @@ The new surveyed masonry and canonical gates stop supported movement at visible 
 ### DEV-679 First mortuary boundary return crossed the receiving lane
 
 The first layout blocked both directions and 47 full-footprint positions on the existing service approach. The wall now bears on the outer bank south of the drive. All 10,500 cemetery and mortuary samples pass after the correction. [Regression and verification](../levels/rebuild/cemetery-boundary-pass/checkpoint.json)
+
+### DEV-680 Cemetery frames lacked leaves and two mortuary openings were unscheduled
+
+Seven cemetery frames and 17 annex frames now have working staged leaves. The viewing/reception and cold/preparation openings use their measured 160 mm jamb depth. Both software and RTX 5070 replayed 42 complete paths in standing and crouched postures. Four-peer LAN verified aimed operation and physical crossing at the cottage and the annex preparation door. [Evidence](../levels/rebuild/cemetery-door-pass/checkpoint.json)

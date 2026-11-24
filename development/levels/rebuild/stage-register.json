@@ -4088,25 +4088,31 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "a9169804fa1b99df2323a32161f4c2b23286e29f",
+          "source_sha": "fa9b1e1495a114fc985641b011d726b25b315ffd",
           "evidence": [
             "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json",
-            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-543",
             "DEV-544",
             "DEV-678",
-            "DEV-679"
+            "DEV-679",
+            "DEV-680"
           ],
-          "next_action": "Preserve verified boundary clearance. Finish cottage and annex envelope, door leaves, measured thresholds, room ownership and acoustics."
+          "next_action": "Keep measured door and vault landing replays. Finish cottage and annex roof, interior partitions and material joins."
         },
         "S06": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "fa9b1e1495a114fc985641b011d726b25b315ffd",
+          "evidence": [
+            "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-680"
+          ],
+          "next_action": "Measure full walk-in refuge placement and power plant/distribution. Verify native live cover and each circuit, then complete case and named review."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -6710,26 +6716,32 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "a9169804fa1b99df2323a32161f4c2b23286e29f",
+          "source_sha": "fa9b1e1495a114fc985641b011d726b25b315ffd",
           "evidence": [
             "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json",
-            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-543",
             "DEV-544",
             "DEV-545",
             "DEV-678",
-            "DEV-679"
+            "DEV-679",
+            "DEV-680"
           ],
-          "next_action": "Preserve verified boundary clearance. Finish cottage and annex envelope, door leaves, measured thresholds, room ownership and acoustics."
+          "next_action": "Keep measured door and vault landing replays. Finish cottage and annex roof, interior partitions and material joins."
         },
         "S06": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "fa9b1e1495a114fc985641b011d726b25b315ffd",
+          "evidence": [
+            "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-680"
+          ],
+          "next_action": "Measure full walk-in refuge placement and power plant/distribution. Verify native live cover and each circuit, then complete case and named review."
         },
         "S07": {
           "status": "IN_PROGRESS",

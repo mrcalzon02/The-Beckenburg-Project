@@ -2223,3 +2223,7 @@ Distribution commit 01c6e583ad13eb6a51c398dd8a1a38b5caeec883 is verified on draf
 ### Cemetery and mortuary physical boundaries
 
 Wharf case commit a9169804fa1b99df2323a32161f4c2b23286e29f and gallery run 45370891387 passed on held draft PR 86. The [cemetery and mortuary boundary checkpoint](levels/rebuild/cemetery-boundary-pass/checkpoint.json) adds surveyed masonry and canonical gates, with separate mortuary receiving access. Exact native and software/RTX 5070 checks verify physical stops, original cargo and ramp access, and all 38 ordinary links and four existing stair chains. Next fit operating building doors and their acoustics, and resolve service, refuges, furnishing, landscape/drainage and the annex roof.
+
+### Cemetery and mortuary operating doors and acoustics
+
+Boundary commit fa9b1e1495a114fc985641b011d726b25b315ffd and gallery 45373857791 are verified on held draft PR 86. The [staged door checkpoint](levels/rebuild/cemetery-door-pass/checkpoint.json) reuses the exact enclosed terrain and its building geometry with seven base and 17 annex leaves. Both renderers checked the whole route, each door's body and optical state, room adjacency/acoustics, and client snapshots. Separate four-peer cases used the physical cottage and mortuary preparation doors. Continue fitted walk-in refuges and power, normal-use subspaces, and named mission acceptance.
