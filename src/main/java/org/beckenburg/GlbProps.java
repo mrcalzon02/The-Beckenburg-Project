@@ -521,10 +521,10 @@ public final class GlbProps {
             if(material.explicitOrigin()!=null)vehicleUvMaterials.set(vehicleUvMaterials.size()-1,material.explicitOrigin().equals("TOP_LEFT"));
             materialNames.add(material.name());diffuseFactors.add(material.color());if("monitoring_screen_mp_1".equals(resourceName)&&"crt_screen_mp_2".equals(material.name()))vanCrtMaterial=materialIds[i];
         }
-        var finishes=new java.util.IdentityHashMap<org.beckenburg.editor.EditorGlbReader.Primitive,LevelWallFinish.Finish>();
+        var finishes=new java.util.IdentityHashMap<org.beckenburg.editor.EditorGlbReader.Primitive,LevelSurfaceFinish.Selection>();
         if(resourceName==null){
             for(var primitive:source.primitives()){
-                var finish=LevelWallFinish.finish(source.nodeName(primitive.node()),source.materials().get(primitive.material()));
+                var finish=LevelSurfaceFinish.finish(source.nodeName(primitive.node()),source.materials().get(primitive.material()));
                 if(finish!=null)finishes.put(primitive,finish);
             }
         }
@@ -538,7 +538,7 @@ public final class GlbProps {
             int material=primitive.material();
             var triangle=new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[material]);
             var finish=finishes.get(primitive);
-            result.add(finish==null?triangle:LevelWallFinish.apply(triangle,finish,source.materials().get(material)));
+            result.add(finish==null?triangle:LevelSurfaceFinish.apply(triangle,finish,source.materials().get(material)));
         }
         return new Model(List.copyOf(result));
     }

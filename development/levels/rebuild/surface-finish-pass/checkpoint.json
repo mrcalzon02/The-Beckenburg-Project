@@ -1,0 +1,23 @@
+{
+  "status": "NATIVE_WALL_FLOOR_CEILING_AND_STAIR_FINISH_VERIFIED",
+  "source_roster": "development/levels/rebuild/mourning-marsh-native-pass/roster.json",
+  "native_exports": 25,
+  "texture_counts": {
+    "walls": 61103,
+    "floors": 5929,
+    "ceilings": 7576,
+    "decks": 222,
+    "stairs": 13312,
+    "existing_textured_triangles": 255784
+  },
+  "exports_with_new_stair_faces": 24,
+  "packages": {
+    "build/beckenburg-game.jar": "e25b01372dc5760cafb273086ef49913168ca7f76a5c9295a394c3cfbbfe6c01",
+    "gpu-client/target/BeckenburgGPU.jar": "a16a9accdc5889cba27b209cd657c217ee7845dc33dd1d75de6bb009edde33ff"
+  },
+  "checks": [
+    "Every source triangle position, existing textured material and unaffected UV retained",
+    "Software and RTX 5070 standing images verified as visually different from the previous wall-only pass",
+    "Both packages retain the Marsh owner, four-step route replays per route, door states, optical rails and all refuge volumes"
+  ]
+}

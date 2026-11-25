@@ -9409,3 +9409,8 @@ The paired game packages bind the surveyed settlement, seven fitted doors and th
 ### DEV-741 · A supported step at the Marsh’s causeway turn stalled the case
 
 A live hunter crossed onto supported terrain at x 40.060 and z 72.001 outside the original causeway volume. The widened owner follows the existing approach. The exact stance and cargo-to-chapel case verify the repair. [Evidence](../levels/rebuild/mourning-marsh-native-pass/checkpoint.json)
+
+
+### DEV-742 · Native floors, ceilings and stairs rendered flat
+
+The shared [surface finish checkpoint](../levels/rebuild/surface-finish-pass/checkpoint.json) records metre-scaled materials on the original built faces and standing previews from both game renderers.

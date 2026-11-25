@@ -2439,3 +2439,8 @@ The [Red Mesa checkpoint](levels/rebuild/red-mesa-native-pass/checkpoint.json) f
 ### Mourning Marsh native mission
 
 The [Marsh checkpoint](levels/rebuild/mourning-marsh-native-pass/checkpoint.json) follows 20923573. Software and RTX 5070 verify the exact package, and the three-peer case reaches the chapel after opening seven fitted doors. The live causeway ownership defect is repaired on the existing grade. Red Mesa retains its exact scene revision through the shared loader. Main cb220372fb721fbe588f49d3dc488f6dbba1602d has passing multiplayer 44863686526 and GPU 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. Draft 86 remains held against map/house-default at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf.
+
+
+### Native architectural surface finishes
+
+The [surface checkpoint](levels/rebuild/surface-finish-pass/checkpoint.json) follows the verified Mourning Marsh case. Both packages show the new surfaces and repeat the Marsh route and refuge checks. The 25-export audit preserves geometry and existing authored textures. The held draft and pinned remote acceptance results remain as recorded in the Marsh checkpoint. Continue source-only mission integration and final installer acceptance.

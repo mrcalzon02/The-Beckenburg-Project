@@ -8,12 +8,12 @@ import org.beckenburg.GlbProps.Vertex;
 import org.beckenburg.editor.EditorGlbReader;
 import org.beckenburg.editor.EditorMeshPipeline;
 
-/** Audits actual wall materials and proves the finish pass leaves source surfaces intact. */
+/** Audits all architectural finishes and checks that the original mesh is intact. */
 final class WallFinishRosterReview {
     private WallFinishRosterReview() {}
 
     public static void main(String[] args) throws Exception {
-        System.out.println("site\ttriangles\tfinished_wall_triangles\twall_materials\texisting_textured_triangles");
+        System.out.println("site\ttriangles\twalls\tfloors\tceilings\tdecks\tstairs\texisting_textured_triangles");
         for (int i = 0; i < args.length; i += 2) {
             audit(args[i], Path.of(args[i + 1]));
         }
@@ -25,7 +25,8 @@ final class WallFinishRosterReview {
         var textured = GlbProps.decodeLevel(bytes).triangles();
         check(original.faces().size() == textured.size(), name + " triangle count changed");
         var finishes = new HashSet<Integer>();
-        int applied = 0, retained = 0;
+        int retained = 0;
+        var applied = new java.util.HashMap<String, Integer>();
         for (int i = 0; i < textured.size(); i++) {
             var source = original.faces().get(i);
             var primitive = source.primitive();
@@ -34,7 +35,9 @@ final class WallFinishRosterReview {
             var before = primitive.world();
             int offset = source.triangle() * 3;
             var corners = List.of(triangle.a(), triangle.b(), triangle.c());
-            boolean finished = GlbProps.materialName(triangle.material()).startsWith("Native architectural wall ");
+            String binding = GlbProps.materialName(triangle.material());
+            String prefix = "Native architectural ";
+            boolean finished = binding.startsWith(prefix);
             for (int j = 0; j < 3; j++) {
                 var prior = before.get(primitive.indices().get(offset + j));
                 var next = corners.get(j);
@@ -46,21 +49,25 @@ final class WallFinishRosterReview {
                 check(finished, name + " plain structural wall remains at " + original.nodeName(primitive.node()));
             if (finished) {
                 check(!material.hasTexture(), name + " replaced an authored texture");
-                check(GlbProps.textureWidth(triangle.material()) == 128, name + " wall image absent");
+                check(GlbProps.textureWidth(triangle.material()) == 128, name + " surface image absent");
                 finishes.add(triangle.material());
-                applied++;
+                applied.merge(binding.substring(prefix.length(), binding.indexOf(' ', prefix.length())), 1, Integer::sum);
             } else {
                 check(GlbProps.materialName(triangle.material()).equals(material.name()), name + " source material changed");
                 if (material.hasTexture()) retained++;
             }
         }
-        check(applied > 0, name + " has no finished walls");
+        for (String required : List.of("wall", "floor", "ceiling"))
+            check(applied.containsKey(required), name + " has no finished " + required);
         for (int id : finishes) {
             var samples = new HashSet<Integer>();
             for (int i = 0; i < 16; i++) samples.add(GlbProps.sample(id, i / 16.0, i / 19.0));
-            check(samples.size() > 3, name + " wall texture is flat");
+            check(samples.size() > 3, name + " surface texture is flat");
         }
-        System.out.printf("%s\t%d\t%d\t%d\t%d%n", name, textured.size(), applied, finishes.size(), retained);
+        System.out.printf("%s\t%d", name, textured.size());
+        for (String kind : List.of("wall", "floor", "ceiling", "deck", "stair"))
+            System.out.printf("\t%d", applied.getOrDefault(kind, 0));
+        System.out.printf("\t%d%n", retained);
     }
 
     private static boolean wallSized(GlbProps.Triangle face) {

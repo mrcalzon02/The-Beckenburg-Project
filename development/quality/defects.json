@@ -8218,6 +8218,17 @@
       "action": "Assign the existing widened turn to the causeway owner and exercise normal-length movement. Retain the saved terrain, stair and collision.",
       "older_maps": "Test the usable width of arrival turns at normal hunter speed, including both sides of every ownership seam.",
       "evidence": "development/levels/rebuild/mourning-marsh-native-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-742",
+      "title": "Plain native floors, ceilings and stairs remained after the wall pass",
+      "status": "NATIVE_ARCHITECTURAL_SURFACE_FINISH_VERIFIED",
+      "affected": "The 25 native source exports, including the Vale Mortuary annex",
+      "symptom": "Visible decks, stair faces and ceiling slabs used flat diffuse values despite textured walls.",
+      "cause": "The native material fallback previously projected coordinates for vertical wall faces only.",
+      "action": "Reuse existing timber, stone and tile images in a measured finish set, project the actual references by face orientation, and inspect both final renderers.",
+      "older_maps": "Check floor and ceiling faces at standing height along with wall panels. Preserve existing material maps and keep source guidance out of the geometry pipeline.",
+      "evidence": "development/levels/rebuild/surface-finish-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

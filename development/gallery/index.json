@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12713,
+  "count": 12721,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -123534,6 +123534,86 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/opengl/asylum-ward-corridor.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/opengl/asylum-ward-corridor.png",
+      "title": "Asylum ward corridor",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 1087728,
+      "sha256": "6174fec41356acc976cc0be8e94e70ddae3a657983f4641b85853e9c5508dbfd"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/opengl/marsh-chapel-door.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/opengl/marsh-chapel-door.png",
+      "title": "Marsh chapel door",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 946017,
+      "sha256": "416456353685b631823d8c36c680fb7cb05c03fbb7543b5b886b36c05cc05de4"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/opengl/marsh-levee-stair.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/opengl/marsh-levee-stair.png",
+      "title": "Marsh levee stair",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 377596,
+      "sha256": "edf43f4e8e3b09e100d3daba4a21a33505f38192f23abf9f3591c4287374d8f7"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/opengl/monastery-memorial-crypt.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/opengl/monastery-memorial-crypt.png",
+      "title": "Monastery memorial crypt",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 1030989,
+      "sha256": "24345acc20f9ff11d344335e8b40f48b13826bc2f0fbc6616bbc04847c0aa670"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/software/asylum-ward-corridor.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/software/asylum-ward-corridor.png",
+      "title": "Asylum ward corridor",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 1091043,
+      "sha256": "f1fe9fb826dfe805bc15994f65fb3a3d0c8769830e0c0f00eec89f2c8ad1ef84"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/software/marsh-chapel-door.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/software/marsh-chapel-door.png",
+      "title": "Marsh chapel door",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 944198,
+      "sha256": "c37868b94fda031ab9cddf59321b1bfb5ebf8821aff936632646b5c300a991be"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/software/marsh-levee-stair.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/software/marsh-levee-stair.png",
+      "title": "Marsh levee stair",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 378923,
+      "sha256": "552d18ced9f9d5fa4b0128299a238dcb1e7d2cc12fe90ba9919aea31f4e255e0"
+    },
+    {
+      "path": "development/levels/rebuild/surface-finish-pass/captures/software/monastery-memorial-crypt.png",
+      "url": "development/levels/rebuild/surface-finish-pass/captures/software/monastery-memorial-crypt.png",
+      "title": "Monastery memorial crypt",
+      "kind": "Beckenburg wall, floor, ceiling and stair finishes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 1029651,
+      "sha256": "c658a418bfe8e05023907d25a159f5c140510c4e89949779beb9b99324987eb0"
     },
     {
       "path": "development/levels/rebuild/wall-finish-pass/captures/opengl/asylum-ward-corridor.png",

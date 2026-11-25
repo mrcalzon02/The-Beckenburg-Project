@@ -1638,3 +1638,8 @@ The [native checkpoint](red-mesa-native-pass/checkpoint.json) keeps the saved la
 ### Mourning Marsh playable native review
 
 The [Mourning Marsh checkpoint](mourning-marsh-native-pass/checkpoint.json) uses the saved levee, seven-riser approach stair, continuous piled boardwalk, and fourteen supported owners. All seven leaves and all fourteen routes work in both postures and directions. The live case crosses every working door and enters the three full walk-in refuges before chapel absolution. The native wall finish now recognizes the painted plank facades. Finish shared water, the perimeter, pump and electrical services, story, and installer gates.
+
+
+### Reusable floor, ceiling and stair finishes
+
+The [architectural texture set](surface-finish-pass/checkpoint.json) adds planks, tile, flagstones, ceiling plaster and matching stair materials to the shared native renderer. Both packages repeat the Marsh route and refuge checks. Existing geometry and authored surfaces retain their coordinates and material bindings.
