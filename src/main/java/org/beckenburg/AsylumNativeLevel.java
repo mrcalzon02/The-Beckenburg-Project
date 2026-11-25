@@ -85,12 +85,17 @@ final class AsylumNativeLevel {
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var stairs=new HashSet<String>();
         var sockets=new ArrayList<Socket>();
+        String[] perimeter=null;
         for(var row:rows)switch(row[0]){
             case "SPACE" -> spaces.add(new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),d(row,6),d(row,7),d(row,8),Boolean.parseBoolean(row[9]),Boolean.parseBoolean(row[10])));
             case "RITUAL" -> sockets.add(new Socket("asylum-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),0,row[1]));
             case "TREAD" -> stairs.add(row[1]);
+            case "PERIMETER" -> {
+                if(perimeter!=null||row.length!=4)throw new IOException("Invalid Asylum perimeter record");
+                perimeter=row;
+            }
             case "SOURCE","DOCK","POINT" -> {}
             default -> throw new IOException("Unknown Asylum circulation record "+row[0]);
         }
@@ -102,6 +107,16 @@ final class AsylumNativeLevel {
                 Integer.parseInt(f[14]),Integer.parseInt(f[15]),Integer.parseInt(f[16]),f[17]));
         }
         var scene=NativeInvestigationScene.read(model,source[2],collision,source[4],stairs,spaces,doors);
+        if(perimeter!=null){
+            double x=d(perimeter,2),z=d(perimeter,3);
+            var bearing=scene.physics().support(x-1,z-1,0,2);
+            if(bearing==null)throw new IOException("Unsupported Asylum perimeter approach");
+            double eye=bearing.y()+1.2;
+            var hit=scene.physics().firstOpticalHit(new Vec(x-1,eye,z-1),new Vec(x-1,eye,z+1));
+            if(hit==null||!hit.component().equals(perimeter[1]))
+                throw new IOException("Asylum perimeter record did not identify a fitted gate leaf");
+            sockets.add(new Socket("asylum-fitted-perimeter","native_perimeter",13,x,bearing.y(),z,0,"estate-enclosure"));
+        }
         for(var row:services)
             sockets.add(new Socket(row[0],row[1],Integer.parseInt(row[2]),d(row,3),d(row,4),d(row,5),d(row,6),row[7]));
         var old=LevelPlans.buildSource(HouseMap.Site.ASYLUM);

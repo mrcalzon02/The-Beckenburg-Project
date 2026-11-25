@@ -8964,6 +8964,30 @@ Use the enclosed Monastery scenery as its jump collision authority. A running ju
 
 Audit airborne extent independently of standing movement when adding real outside ground and barriers. [DEV-735 evidence](../levels/rebuild/monastery-perimeter-pass/checkpoint.json)
 
+### DEV-736 — St. Dymphna’s road and gardens ended at the raw terrain rim
+
+**Status** ASYLUM_FITTED_ENCLOSURE_NATIVE_REVIEW · **Affected** Asylum northern treatment edge, service yard, garden and van approach
+
+The estate plan reserved walls and a gate but the old scene had no ground or optical barrier beyond the road. Its northeast planning chord crossed a retained treatment footprint.
+
+The last hospital source package finished the interior handrails and case routes. It retained the geographic edge of the earlier earthworks.
+
+Extend the 971-edge perimeter joint, survey the northeast return around the built wing and fit a closed carriage gate to X 32 m from the actual van approach.
+
+Fit visible perimeter construction to the saved terrain and accepted buildings before running body, optical and jump sweeps. [DEV-736 evidence](../levels/rebuild/asylum-enclosure-pass/checkpoint.json)
+
+### DEV-737 — St. Dymphna jumps inherited the nominal room rectangle
+
+**Status** ASYLUM_ENCLOSURE_DRIVES_AIRBORNE_COLLISION · **Affected** Asylum native review at the estate road
+
+A jump would hit the inherited room bounds before reaching the surveyed outer gate.
+
+The older Asylum archive lacked a fitted perimeter marker. Airborne checks therefore used the fallback room rectangle.
+
+Validate the exact named gate leaf in the packaged collision scene and use that scene for jump collision, with a running jump as regression coverage.
+
+Audit airborne and grounded boundaries independently when extending a named native scene. [DEV-737 evidence](../levels/rebuild/asylum-enclosure-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

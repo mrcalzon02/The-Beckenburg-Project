@@ -2409,3 +2409,8 @@ The [perimeter checkpoint](levels/rebuild/monastery-perimeter-pass/checkpoint.js
 ### Continuous native investigations
 
 The [Monastery case](levels/rebuild/monastery-investigation-pass/checkpoint.json) is committed locally at 082189ab. Banishment completes in the real memorial chamber. The [St. Dymphna case](levels/rebuild/asylum-continuous-case-pass/checkpoint.json) verifies a separate complete absolution on the same package. Both use real 3D TCP movement through operating leaves and stairs, with all three assigned refuges tested live per site. The software Blackwater route, power and refuge recheck passed. Native selection still requires the review flags. Installer, remaining map gates and publication on the held draft branch remain open.
+
+
+### St. Dymphna estate enclosure
+
+The [estate checkpoint](levels/rebuild/asylum-enclosure-pass/checkpoint.json) follows locally verified case ab5d9cbd. The ordinary software and RTX 5070 OpenGL archives carry the same measured enclosure and pass the physical boundary, old-archive negative controls and supported jump. Software repeats the full TCP absolution and all three walk-in refuges. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still shows multiplayer 44863686526 and OpenGL 44863686455 passing. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. Held draft PR 86 remains at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf against map/house-default. Final treatments, other rites, installer and publication remain open.

@@ -337,6 +337,12 @@ for path in sorted(set(paths)):
     elif '/lookout-native-arrival-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Widowâ€™s Peak Lookout staged doorway and arrival in the '+renderer+' game renderer'
+    elif '/asylum-enclosure-pass/' in path:
+        if '/structure/' in path:
+            kind='Native St. Dymphna estate enclosure and carriage road'
+        else:
+            renderer='OpenGL' if '/opengl/' in path else 'software'
+            kind='St. Dymphna enclosure in the '+renderer+' game renderer'
     elif '/asylum-flight-rails-pass/' in path:
         if '/structure/' in path:
             kind='Asylum main stair handrail structural cutaway'

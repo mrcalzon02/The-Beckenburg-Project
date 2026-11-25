@@ -1608,3 +1608,8 @@ The [live case transcript](monastery-investigation-pass/case.tsv) records the ex
 ### St. Dymphna continuous native investigation
 
 One [packaged TCP case](asylum-continuous-case-pass/case.tsv) replaces the gaps between earlier separate route exercises with an uninterrupted playthrough. The hunter walks off the van, opens seven actual leaves, crosses the patient court, and uses both the main and service stairs in both directions. Standing and crouched protection works in the records, day-room and plant refuges. The hunter reads the ward, prepares the anchor and completes absolution in the day room. The same software archive independently repeats the [Blackwater packaged check](asylum-continuous-case-pass/blackwater-software-recheck.tsv). The native review gates remain in place.
+
+
+### St. Dymphna founded hospital enclosure
+
+The [measured enclosure](asylum-enclosure-pass/enclosure-plan.svg) joins 971 retained terrain edges. Its northeast retaining wall follows the saved treatment wing, and a fixed eight-metre carriage gate closes the actual van road at Z 92.4 m. Both archives passed 4,838 supported perimeter sweeps and 152 road support probes. The running hunter jumps against the physical gate and lands inside it. The prior archive reproduces the open edge and the invisible airborne limit. The full three-peer through-case again finished ABSOLVED and verified standing and crouched protection in the records, day-room and plant refuges. [Checkpoint](asylum-enclosure-pass/checkpoint.json)

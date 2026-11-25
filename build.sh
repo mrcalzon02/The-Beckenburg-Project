@@ -166,7 +166,7 @@ for payload in monastery-with-perimeter.glb monastery-with-perimeter.hcs2 runtim
     cp "$monastery_packet/$payload" "$monastery_resource/$payload"
 done
 cp development/levels/rebuild/monastery-perimeter-pass/source-hashes.tsv "$monastery_resource/source-hashes.tsv"
-asylum_packet=development/levels/rebuild/asylum-flight-rails-pass
+asylum_packet=development/levels/rebuild/asylum-enclosure-pass
 for extension in glb hcs2; do
     cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"
 done

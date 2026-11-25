@@ -8152,6 +8152,28 @@
       "action": "Use the enclosed Monastery scenery as its jump collision authority. A running jump now reaches the real closed gate and lands on the existing grade.",
       "older_maps": "Audit airborne extent independently of standing movement when adding real outside ground and barriers.",
       "evidence": "development/levels/rebuild/monastery-perimeter-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-736",
+      "title": "St. Dymphna’s road and gardens ended at the raw terrain rim",
+      "status": "ASYLUM_FITTED_ENCLOSURE_NATIVE_REVIEW",
+      "affected": "Asylum northern treatment edge, service yard, garden and van approach",
+      "symptom": "The estate plan reserved walls and a gate but the old scene had no ground or optical barrier beyond the road. Its northeast planning chord crossed a retained treatment footprint.",
+      "cause": "The last hospital source package finished the interior handrails and case routes. It retained the geographic edge of the earlier earthworks.",
+      "action": "Extend the 971-edge perimeter joint, survey the northeast return around the built wing and fit a closed carriage gate to X 32 m from the actual van approach.",
+      "older_maps": "Fit visible perimeter construction to the saved terrain and accepted buildings before running body, optical and jump sweeps.",
+      "evidence": "development/levels/rebuild/asylum-enclosure-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-737",
+      "title": "St. Dymphna jumps inherited the nominal room rectangle",
+      "status": "ASYLUM_ENCLOSURE_DRIVES_AIRBORNE_COLLISION",
+      "affected": "Asylum native review at the estate road",
+      "symptom": "A jump would hit the inherited room bounds before reaching the surveyed outer gate.",
+      "cause": "The older Asylum archive lacked a fitted perimeter marker. Airborne checks therefore used the fallback room rectangle.",
+      "action": "Validate the exact named gate leaf in the packaged collision scene and use that scene for jump collision, with a running jump as regression coverage.",
+      "older_maps": "Audit airborne and grounded boundaries independently when extending a named native scene.",
+      "evidence": "development/levels/rebuild/asylum-enclosure-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

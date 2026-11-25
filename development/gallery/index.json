@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12684,
+  "count": 12691,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81884,6 +81884,76 @@
       "height": 580,
       "bytes": 350693,
       "sha256": "984bfebf09986b4dd47d6f08f1b344bc245f61a69d282120a6b8c6eb7431fd0d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/opengl/asylum-canonical-van-from-road.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/opengl/asylum-canonical-van-from-road.png",
+      "title": "Asylum canonical van from road",
+      "kind": "St. Dymphna enclosure in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 428130,
+      "sha256": "1435d4d023eaeaf53694ace650c83e62df7bce266429603dbf12a043c4493590"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/opengl/asylum-fitted-carriage-gate.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/opengl/asylum-fitted-carriage-gate.png",
+      "title": "Asylum fitted carriage gate",
+      "kind": "St. Dymphna enclosure in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 291805,
+      "sha256": "661e563db0f61396a11753811325a5dbffca353b328bfdaa2f1fa4ad2cd1249f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/software/asylum-canonical-van-from-road.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/software/asylum-canonical-van-from-road.png",
+      "title": "Asylum canonical van from road",
+      "kind": "St. Dymphna enclosure in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 429559,
+      "sha256": "79a153fb678a5fc8e0dfbbface808b5940b6d1c507bcd94db0f668a0493099f3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/software/asylum-fitted-carriage-gate.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/software/asylum-fitted-carriage-gate.png",
+      "title": "Asylum fitted carriage gate",
+      "kind": "St. Dymphna enclosure in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 294778,
+      "sha256": "d8d536b5bee13b6ae096f74cb1ab24df0953881f1e9e1cac22be032ec838bbc3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-carriage-gate-and-piers.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-carriage-gate-and-piers.png",
+      "title": "Asylum carriage gate and piers",
+      "kind": "Native St. Dymphna estate enclosure and carriage road",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1090631,
+      "sha256": "13b64826e01b80b149ec6c75fb2ccd7578ef88b54ddfea80f90aee2ebdecfa26"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-east-service-wall.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-east-service-wall.png",
+      "title": "Asylum east service wall",
+      "kind": "Native St. Dymphna estate enclosure and carriage road",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1073511,
+      "sha256": "24cf769054b5f43826015ad631eee202f89b7088183b10b957f5893dab3211d0"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-estate-and-road.png",
+      "url": "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-estate-and-road.png",
+      "title": "Asylum estate and road",
+      "kind": "Native St. Dymphna estate enclosure and carriage road",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1247823,
+      "sha256": "68e11539a7e35532576358e321b7111cc4345d27d5ed308889cd96f13ed10cde"
     },
     {
       "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-main-stair-lower.png",

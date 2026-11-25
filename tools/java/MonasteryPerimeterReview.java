@@ -26,7 +26,8 @@ public final class MonasteryPerimeterReview {
         }
     }
 
-    static List<String> audit(AuthoredSitePhysics physics, Path survey) throws Exception {
+    static List<String> auditRing(AuthoredSitePhysics physics, Path survey, String site,
+                                  java.util.function.DoubleBinaryOperator grade) throws Exception {
         int sight = 0, capsule = 0, swept = 0, seams = 0;
         var rows=Files.readAllLines(survey);
         for(var row:rows.subList(1,rows.size())){
@@ -40,13 +41,13 @@ public final class MonasteryPerimeterReview {
             for(int i=0;i<=intervals;i++){
                 double t=(double)i/intervals;
                 double x=x0+t*(x1-x0), z=z0+t*(z1-z0);
-                double y=Math.max(ground(physics,x+nx*.96,z+nz*.96),ground(physics,x-nx*.96,z-nz*.96));
+                double y=Math.max(grade.applyAsDouble(x+nx*.96,z+nz*.96),grade.applyAsDouble(x-nx*.96,z-nz*.96));
                 for(double eye:new double[]{.64,1.34}){
                     var from=new Vec(x+nx*.94,y+eye,z+nz*.94);
                     var to=new Vec(x-nx*.94,y+eye,z-nz*.94);
                     var intercept=physics.firstOpticalHit(from,to);
-                    require(intercept!=null && (intercept.component().startsWith("Monastery estate ")
-                            ||intercept.component().startsWith("Monastery outer ")),
+                    require(intercept!=null && (intercept.component().startsWith(site+" estate ")
+                            ||intercept.component().startsWith(site+" outer ")),
                         "Open perimeter ray at "+span+" "+from+" to "+to+" hit="+intercept);
                     sight++;
                 }
@@ -70,6 +71,13 @@ public final class MonasteryPerimeterReview {
                 if(i==0 || i==intervals)seams++;
             }
         }
+        require(swept>500,"Too few supported approach controls");
+        return List.of("perimeter_optical_rays\t"+sight,"perimeter_body_probes\t"+capsule,
+            "supported_perimeter_sweeps\t"+swept,"perimeter_span_endpoints\t"+seams);
+    }
+
+    static List<String> audit(AuthoredSitePhysics physics, Path survey) throws Exception {
+        var report=new java.util.ArrayList<>(auditRing(physics,survey,"Monastery",(x,z)->ground(physics,x,z)));
         // The surveyed estate barrier sits past the actual staged van and the
         // old terrain seam. Both the retained road and its new extension bear.
         int road=0;
@@ -81,9 +89,8 @@ public final class MonasteryPerimeterReview {
             road++;
         }
         require(!physics.clearSight(new Vec(32,1.2,93),new Vec(32,1.2,95)),"Outer gate did not close the road");
-        require(swept>500,"Too few supported approach controls");
-        return List.of("perimeter_optical_rays\t"+sight,"perimeter_body_probes\t"+capsule,
-            "supported_perimeter_sweeps\t"+swept,"perimeter_span_endpoints\t"+seams,"road_support_probes\t"+road);
+        report.add("road_support_probes\t"+road);
+        return report;
     }
 
     static String playBoundary(HouseMap map){

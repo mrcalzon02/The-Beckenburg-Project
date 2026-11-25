@@ -41,7 +41,6 @@ OUTER = [(-55,-31),(-22,-47),(28,-53),(81,-49),(116,-32),(141,19),
          (-15,143),(-41,123),(-60,93),(-65,43)]
 ROAD_WEST = [(28,94),(28,108),(29.8,126),(31,154)]
 ROAD_EAST = [(36,94),(36,108),(37.8,126),(38,151)]
-ROAD = ROAD_WEST + ROAD_EAST[::-1]
 
 
 def outside_grade(x,z,rim):
@@ -60,28 +59,35 @@ def outside_grade(x,z,rim):
 
 
 def make_apron(ground,soil,road):
+    return fit_terrain_extension(ground,soil,road,OUTER,ROAD_WEST,ROAD_EAST,outside_grade,
+        "Monastery fitted exterior terrain","Existing approach joins the western slope, northern ridge and eastern ravine",
+        (range(-60,145,4),range(-48,151,4)))
+
+
+def fit_terrain_extension(ground, soil, road, outer, west_road, east_road, grade, name, role, grid):
+    road_outline = west_road + east_road[::-1]
     rim,*cuts = surveyed_terrain_loops(ground)
-    points = list(rim)+[(x,z,outside_grade(x,z,rim)) for x,z in OUTER]
+    points = list(rim)+[(x,z,grade(x,z,rim)) for x,z in outer]
     constraints = [(i,(i+1)%len(rim)) for i in range(len(rim))]
-    constraints += [(len(rim)+i,len(rim)+(i+1)%len(OUTER)) for i in range(len(OUTER))]
+    constraints += [(len(rim)+i,len(rim)+(i+1)%len(outer)) for i in range(len(outer))]
     road_edges=[]
-    for side in (ROAD_WEST,ROAD_EAST):
+    for side in (west_road,east_road):
         start,=[i for i,p in enumerate(points) if p[:2]==side[0]]
         end,=[i for i,p in enumerate(points) if p[:2]==side[-1]]
         inner=list(range(len(points),len(points)+len(side)-2))
-        points.extend((x,z,outside_grade(x,z,rim)) for x,z in side[1:-1])
+        points.extend((x,z,grade(x,z,rim)) for x,z in side[1:-1])
         road_edges.extend(zip([start,*inner],[*inner,end]))
     constraints_and_road=constraints+road_edges
-    for z in range(-48,151,4):
-        for x in range(-60,145,4):
-            if not inside(OUTER,x,z) or inside(rim,x,z):
+    for z in grid[1]:
+        for x in grid[0]:
+            if not inside(outer,x,z) or inside(rim,x,z):
                 continue
             if min((x-p[0])**2+(z-p[1])**2 for p in rim)<.24:
                 continue
             if any(distance_to_edge_squared((x,z),points[a],points[b])<.03
                    for a,b in constraints_and_road[len(rim):]):
                 continue
-            points.append((x,z,outside_grade(x,z,rim)))
+            points.append((x,z,grade(x,z,rim)))
     _,_,triangles,original,_,_ = delaunay_2d_cdt(
         [Vector(p[:2]) for p in points],constraints_and_road,[],0,1e-7)
     assert all(len(ids)==1 for ids in original)
@@ -90,7 +96,7 @@ def make_apron(ground,soil,road):
     for face in triangles:
         polygon = [vertices[v] for v in face]
         x,z = (sum(p[i] for p in polygon)/3 for i in (0,1))
-        if not inside(OUTER,x,z) or inside(rim,x,z):
+        if not inside(outer,x,z) or inside(rim,x,z):
             continue
         faces.append(face[::-1] if loop_area(polygon)>0 else face)
     incidence = Counter(tuple(sorted((a,b))) for face in faces for a,b in zip(face,face[1:]+face[:1]))
@@ -99,19 +105,19 @@ def make_apron(ground,soil,road):
     joined_edges={tuple(sorted(original[i][0] for i in pair)) for pair in incidence}
     assert all(tuple(sorted(edge)) in joined_edges for edge in road_edges), "Unconstrained road finish"
     area=sum(abs(loop_area([vertices[v] for v in face])) for face in faces)
-    assert abs(area-(abs(loop_area(OUTER))-abs(loop_area(rim))))<.001
-    mesh = bpy.data.meshes.new("Monastery fitted exterior terrain")
+    assert abs(area-(abs(loop_area(outer))-abs(loop_area(rim))))<.001
+    mesh = bpy.data.meshes.new(name)
     mesh.from_pydata([(x,-z,y) for x,z,y in vertices],[],faces)
     mesh.materials.append(soil)
     mesh.materials.append(road)
     mesh.update()
     for face in mesh.polygons:
         x,z = face.center.x,-face.center.y
-        if inside(ROAD,x,z):
+        if inside(road_outline,x,z):
             face.material_index = 1
     obj = bpy.data.objects.new(mesh.name,mesh)
     bpy.context.scene.collection.objects.link(obj)
-    obj["role"] = "Existing approach joins the western slope, northern ridge and eastern ravine"
+    obj["role"] = role
     return obj,dict(exterior_seam_edges=len(rim),preserved_interior_edges=[len(p) for p in cuts],
                     exterior_area_m2=round(area,2),new_faces=len(faces),road_boundary_constraints=len(road_edges))
 
