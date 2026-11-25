@@ -11,7 +11,7 @@ public final class SiteCatalog {
         ACADEMY(MissionSites.title("ACADEMY")), COLLEGE(MissionSites.title("COLLEGE")),
         CHURCH(MissionSites.title("CHURCH")), USER("User authored level"),
         HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK"),"beckenburg.review.hollowCreek"),
-        SEACLIFF(MissionSites.title("SEACLIFF"),SeacliffNativeLevel.REVIEW_PROPERTY),
+        SEACLIFF(MissionSites.title("SEACLIFF")),
         BLACKPINE(MissionSites.title("BLACKPINE"),BlackpineLevel.REVIEW_PROPERTY),
         LOOKOUT(MissionSites.title("LOOKOUT")),
         MINE(MissionSites.title("MINE")),

@@ -19,13 +19,9 @@ public final class SeacliffDispatchTest {
 
     private static HouseMap select() throws Exception {
         var location = SiteCatalog.Location.SEACLIFF;
-        System.clearProperty(SeacliffNativeLevel.REVIEW_PROPERTY);
-        check(!SiteCatalog.playable(SITE) && !List.of(SiteCatalog.soloLocations()).contains(location),
-            "Public selection exposed the held Battery");
-        System.setProperty(SeacliffNativeLevel.REVIEW_PROPERTY, "true");
         check(SiteCatalog.playable(SITE) && List.of(SiteCatalog.soloLocations()).contains(location),
-            "Review selection omitted the Battery");
-        check(MissionSites.campaign().stream().noneMatch(entry -> entry.id().equals("WLD-17")), "Review selection unlocked the campaign chapter");
+            "Regular selection omitted the Battery");
+        check(MissionSites.campaign().stream().noneMatch(entry -> entry.id().equals("WLD-17")), "Solo availability added a campaign chapter");
 
         var map = new HouseMap(SiteCatalog.mapFor(location));
         check(map.level().id().equals("wld-17") && map.valid() && RitualSites.valid(map), "Battery mission is invalid");
@@ -39,7 +35,7 @@ public final class SeacliffDispatchTest {
         check(map.roomAt(anchor.x(), anchor.y(), anchor.z()) == solo.anchorRoom()
             && map.traversable(anchor.x(), anchor.y(), anchor.z()), "Solo case anchor is unsupported");
         AuthoredTestSupport.checkSoloLauncher(location, map);
-        System.out.println("PASS packaged review selection and native solo case " + map.level().revision());
+        System.out.println("PASS regular selection and native solo case " + map.level().revision());
         try {
             HouseMap.forNetworkRevision(SITE, "unavailable-battery-revision");
         } catch (IllegalArgumentException expected) {

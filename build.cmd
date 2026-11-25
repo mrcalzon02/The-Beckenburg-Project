@@ -111,8 +111,8 @@ for /f "usebackq delims=" %%S in ("assets\runtime\site-geometry.txt") do (
   copy /Y "assets\runtime\sites\%%S" "build\classes\org\beckenburg\sites\%%S" >nul || exit /b 1
 )
 rem Package the verified native review sources with the normal game resources.
-for %%S in (glb hcs2) do copy /Y development\levels\rebuild\seacliff-dispatch-pass\wld-17\battery-cupboards.%%S build\classes\org\beckenburg\sites\seacliff-native.%%S >nul || exit /b 1
-copy /Y development\levels\rebuild\seacliff-dispatch-pass\verification\runtime.tsv build\classes\org\beckenburg\sites\seacliff-runtime.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\seacliff-room-services\battery.%%S build\classes\org\beckenburg\sites\seacliff-native.%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\seacliff-room-services\runtime.tsv build\classes\org\beckenburg\sites\seacliff-runtime.tsv >nul || exit /b 1
 for %%S in (glb hcs2) do copy /Y development\levels\rebuild\college-residence-pass\college\college-residence.%%S build\classes\org\beckenburg\sites\college-native.%%S >nul || exit /b 1
 copy /Y development\levels\rebuild\college-residence-pass\verification\runtime.tsv build\classes\org\beckenburg\sites\college-runtime.tsv >nul || exit /b 1
 for %%S in (glb hcs2) do copy /Y development\levels\rebuild\school-electrical-pass\school-electrical.%%S build\classes\org\beckenburg\sites\school-electrical.%%S >nul || exit /b 1
