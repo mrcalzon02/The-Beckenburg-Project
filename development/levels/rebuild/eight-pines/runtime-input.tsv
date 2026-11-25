@@ -1,0 +1,110 @@
+SOURCE	4bf181b6a0e7188b6db54617357d7e676a68cebd8ca3a65c92dd1df379832d61	0d9ec4696e697bb6b70f42912c92bb667c1c9c0afd418c2e84a57aa1006eee56
+DOCK	26.0	0	68.0	0
+ROOM	stage	13	18	62	34	74	0	3	true	Roadside van bay	26	0	64
+SPACE	entry	13	18	52	34	62	0	3	true
+ROOM	court	12	16	20	36	42	0	3	true	Uneven parking court	26	0	31
+SPACE	westwalk	12	13	20	16	48	0	3	true
+SPACE	eastwalk	12	36	20	39	48	0	3	true
+SPACE	northwalk	12	13	17	39	20	0	3	true
+ROOM	office	4	13	42	23	50	0	3	false	Reception and key desk	18	0	46
+ROOM	manager	9	6	40	13	50	0	3	false	Manager apartment	9.5	0	45
+ROOM	laundry	10	39	40	46	46	0	3	false	Linen and laundry	42	0	43
+ROOM	plant	11	39	46	46	52	0	3	false	Heating and service room	42.5	0	49
+SPACE	service	12	46	20	56	54	0	3	true
+ROOM	room1	0	6	20	13	25	0	3	false	West guest room 1	10.8	0	22.5
+ROOM	room5	5	39	20	46	25	0	3	false	East guest room 5	41.2	0	22.5
+ROOM	room2	1	6	25	13	30	0	3	false	West guest room 2	10.8	0	27.5
+ROOM	room6	6	39	25	46	30	0	3	false	East guest room 6	41.2	0	27.5
+ROOM	room3	2	6	30	13	35	0	3	false	West guest room 3	10.8	0	32.5
+ROOM	room7	7	39	30	46	35	0	3	false	East guest room 7	41.2	0	32.5
+ROOM	room4	3	6	35	13	40	0	3	false	West guest room 4	10.8	0	37.5
+ROOM	room8	8	39	35	46	40	0	3	false	East guest room 8	41.2	0	37.5
+SPACE	office drive	13	16.8	50	34	57	0	3	true
+SPACE	rear drive	12	23	42	39	52	0	3	true
+SPACE	north service return	12	38.5	17	52	23	0	3	true
+SPACE	south service return	12	34	51	53	57	0	3	true
+OPEN	930	13	12	26	0	51	2.4	z	trail
+RITUAL	banishment	12	26.0	0	31.0
+RITUAL	cleansing	10	42	0	43.0
+RITUAL	absolution	4	18.0	0	46.0
+SERVICE	pines-generator	generator	11	44.200001	0.56	47.919999	0	EP-MAIN
+SERVICE	pines-breaker	breaker	11	41.150002	0.89	51.104999	3.141592653589793	EP-MAIN
+SERVICE	pines-office-switch	switch	4	20.200001	1.25	49.758999	3.141592653589793	EP-04
+SERVICE	pines-office-light	light	4	21.0	2.35	49.576	0	native-string
+SERVICE	pines-manager-switch	switch	9	6.241	1.25	43.0	1.5707963267948966	EP-09
+SERVICE	pines-manager-light	light	9	6.424	2.35	44.599998	0	native-string
+SERVICE	pines-laundry-switch	switch	10	45.758999	1.25	42.0	-1.5707963267948966	EP-10
+SERVICE	pines-laundry-light	light	10	45.576	2.35	44.0	0	native-string
+SERVICE	pines-plant-switch	switch	11	43.799999	1.25	51.758999	3.141592653589793	EP-11
+SERVICE	pines-plant-light	light	11	44.599998	2.35	51.576	0	native-string
+SERVICE	pines-room1-switch	switch	0	6.241	1.25	21.5	1.5707963267948966	EP-00
+SERVICE	pines-room1-light	light	0	6.424	2.35	23.35	0	native-string
+SERVICE	pines-room2-switch	switch	1	6.241	1.25	26.5	1.5707963267948966	EP-01
+SERVICE	pines-room2-light	light	1	6.424	2.35	28.35	0	native-string
+SERVICE	pines-room3-switch	switch	2	6.241	1.25	31.5	1.5707963267948966	EP-02
+SERVICE	pines-room3-light	light	2	6.424	2.35	33.349998	0	native-string
+SERVICE	pines-room4-switch	switch	3	6.241	1.25	36.5	1.5707963267948966	EP-03
+SERVICE	pines-room4-light	light	3	6.424	2.35	38.349998	0	native-string
+SERVICE	pines-room5-switch	switch	5	45.758999	1.25	21.5	-1.5707963267948966	EP-05
+SERVICE	pines-room5-light	light	5	45.576	2.35	23.35	0	native-string
+SERVICE	pines-room6-switch	switch	6	45.758999	1.25	26.5	-1.5707963267948966	EP-06
+SERVICE	pines-room6-light	light	6	45.576	2.35	28.35	0	native-string
+SERVICE	pines-room7-switch	switch	7	45.758999	1.25	31.5	-1.5707963267948966	EP-07
+SERVICE	pines-room7-light	light	7	45.576	2.35	33.349998	0	native-string
+SERVICE	pines-room8-switch	switch	8	45.758999	1.25	36.5	-1.5707963267948966	EP-08
+SERVICE	pines-room8-light	light	8	45.576	2.35	38.349998	0	native-string
+COVER	pines-manager-cupboard	9	7.55	0	48.0	-1.5707963267948966
+COVER	pines-room2-cupboard	1	7.45	0	28.8	-1.5707963267948966
+COVER	pines-room6-cupboard	6	44.55	0	28.8	1.5707963267948966
+POINT	route-01	26.0	0	64.372
+POINT	route-01	26.0	0	57.0
+POINT	route-02	26	0	57
+POINT	route-02	18	0	57
+POINT	route-02	18	0	46
+POINT	route-03	26.0	0	57.0
+POINT	route-03	26.0	0	31.0
+POINT	route-04	18	0	46
+POINT	route-04	18	0	41
+POINT	route-04	14.5	0	41
+POINT	route-04	14.5	0	34
+POINT	route-05	18	0	46
+POINT	route-05	18	0	45
+POINT	route-05	9.5	0	45
+POINT	route-06	14.5	0	34.0
+POINT	route-06	26.0	0	18.5
+POINT	route-07	26.0	0	18.5
+POINT	route-07	37.5	0	34.0
+POINT	route-08	37.5	0	34.0
+POINT	route-08	26.0	0	31.0
+POINT	route-09	26.0	0	31.0
+POINT	route-09	14.5	0	34.0
+POINT	route-10	37.5	0	34
+POINT	route-10	37.5	0	43
+POINT	route-10	42.5	0	43
+POINT	route-11	42.5	0	43.0
+POINT	route-11	42.5	0	49.0
+POINT	route-12	42.5	0	49
+POINT	route-12	51	0	49
+POINT	route-12	51	0	37
+POINT	route-13	50	0	50
+POINT	route-13	50	0	56
+POINT	route-13	26	0	56
+POINT	route-14	50	0	22
+POINT	route-14	50	0	18
+POINT	route-14	26	0	18
+POINT	route-15	14.5	0	22.5
+POINT	route-15	9.5	0	22.5
+POINT	route-16	14.5	0	27.5
+POINT	route-16	9.5	0	27.5
+POINT	route-17	14.5	0	32.5
+POINT	route-17	9.5	0	32.5
+POINT	route-18	14.5	0	37.5
+POINT	route-18	9.5	0	37.5
+POINT	route-19	37.5	0	22.5
+POINT	route-19	42.5	0	22.5
+POINT	route-20	37.5	0	27.5
+POINT	route-20	42.5	0	27.5
+POINT	route-21	37.5	0	32.5
+POINT	route-21	42.5	0	32.5
+POINT	route-22	37.5	0	37.5
+POINT	route-22	42.5	0	37.5

@@ -1,0 +1,436 @@
+{
+  "source": "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json",
+  "exports": {
+    "blend": "6a4a106e618d3fb50396fb593d4c6d4c226249decaf39830bbdb1fbb67e4035a",
+    "glb": "4bf181b6a0e7188b6db54617357d7e676a68cebd8ca3a65c92dd1df379832d61",
+    "hcs2": "0d9ec4696e697bb6b70f42912c92bb667c1c9c0afd418c2e84a57aa1006eee56"
+  },
+  "retained_components": 171,
+  "pockets": [
+    {
+      "id": "pines-manager-cupboard",
+      "space": "manager",
+      "owner": 9,
+      "position": [
+        7.55,
+        0,
+        48.0
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          6.95,
+          0.0,
+          47.150002
+        ],
+        [
+          8.252,
+          2.31,
+          48.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "pines-room2-cupboard",
+      "space": "room2",
+      "owner": 1,
+      "position": [
+        7.45,
+        0,
+        28.8
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          6.849999,
+          0.0,
+          27.949999
+        ],
+        [
+          8.151999,
+          2.31,
+          29.65
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "pines-room6-cupboard",
+      "space": "room6",
+      "owner": 6,
+      "position": [
+        44.55,
+        0,
+        28.8
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          43.848,
+          0.0,
+          27.949999
+        ],
+        [
+          45.149998,
+          2.31,
+          29.65
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "pines-manager-cupboard",
+      "type": "hide",
+      "room": 9,
+      "position": [
+        7.55,
+        0,
+        48.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "pines-room2-cupboard",
+      "type": "hide",
+      "room": 1,
+      "position": [
+        7.45,
+        0,
+        28.8
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "pines-room6-cupboard",
+      "type": "hide",
+      "room": 6,
+      "position": [
+        44.55,
+        0,
+        28.8
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "pines-generator",
+      "type": "generator",
+      "room": 11,
+      "position": [
+        44.200001,
+        0.56,
+        47.919999
+      ],
+      "yaw": 0,
+      "style": "EP-MAIN"
+    },
+    {
+      "id": "pines-breaker",
+      "type": "breaker",
+      "room": 11,
+      "position": [
+        41.150002,
+        0.89,
+        51.104999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EP-MAIN"
+    },
+    {
+      "id": "pines-office-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        20.200001,
+        1.25,
+        49.758999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EP-04"
+    },
+    {
+      "id": "pines-office-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        21.0,
+        2.35,
+        49.576
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-manager-switch",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        6.241,
+        1.25,
+        43.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-09"
+    },
+    {
+      "id": "pines-manager-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        6.424,
+        2.35,
+        44.599998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-laundry-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        45.758999,
+        1.25,
+        42.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-10"
+    },
+    {
+      "id": "pines-laundry-light",
+      "type": "light",
+      "room": 10,
+      "position": [
+        45.576,
+        2.35,
+        44.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-plant-switch",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        43.799999,
+        1.25,
+        51.758999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EP-11"
+    },
+    {
+      "id": "pines-plant-light",
+      "type": "light",
+      "room": 11,
+      "position": [
+        44.599998,
+        2.35,
+        51.576
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room1-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        6.241,
+        1.25,
+        21.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-00"
+    },
+    {
+      "id": "pines-room1-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        6.424,
+        2.35,
+        23.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room2-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        6.241,
+        1.25,
+        26.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-01"
+    },
+    {
+      "id": "pines-room2-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        6.424,
+        2.35,
+        28.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room3-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        6.241,
+        1.25,
+        31.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-02"
+    },
+    {
+      "id": "pines-room3-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        6.424,
+        2.35,
+        33.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room4-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        6.241,
+        1.25,
+        36.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-03"
+    },
+    {
+      "id": "pines-room4-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        6.424,
+        2.35,
+        38.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room5-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        45.758999,
+        1.25,
+        21.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-05"
+    },
+    {
+      "id": "pines-room5-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        45.576,
+        2.35,
+        23.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room6-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        45.758999,
+        1.25,
+        26.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-06"
+    },
+    {
+      "id": "pines-room6-light",
+      "type": "light",
+      "room": 6,
+      "position": [
+        45.576,
+        2.35,
+        28.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room7-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        45.758999,
+        1.25,
+        31.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-07"
+    },
+    {
+      "id": "pines-room7-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        45.576,
+        2.35,
+        33.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room8-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        45.758999,
+        1.25,
+        36.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-08"
+    },
+    {
+      "id": "pines-room8-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        45.576,
+        2.35,
+        38.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ]
+}

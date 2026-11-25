@@ -139,6 +139,8 @@ if not exist build\classes\org\beckenburg\sites\wld-11 mkdir build\classes\org\b
 for %%S in (marsh-review.glb marsh-review.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\mourning-marsh-native-pass\%%S build\classes\org\beckenburg\sites\wld-11\%%S >nul || exit /b 1
 if not exist build\classes\org\beckenburg\sites\wld-12 mkdir build\classes\org\beckenburg\sites\wld-12 || exit /b 1
 for %%S in (railway.glb railway.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\gallows-pass\%%S build\classes\org\beckenburg\sites\wld-12\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-16 mkdir build\classes\org\beckenburg\sites\wld-16 || exit /b 1
+for %%S in (motor-lodge.glb motor-lodge.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\eight-pines\%%S build\classes\org\beckenburg\sites\wld-16\%%S >nul || exit /b 1
 if not exist build\classes\org\beckenburg\sites\wld-15 mkdir build\classes\org\beckenburg\sites\wld-15 || exit /b 1
 for %%S in (vessel.glb vessel.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\saint-elara\%%S build\classes\org\beckenburg\sites\wld-15\%%S >nul || exit /b 1
 if not exist build\classes\org\beckenburg\sites\wld-14 mkdir build\classes\org\beckenburg\sites\wld-14 || exit /b 1

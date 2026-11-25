@@ -1659,3 +1659,7 @@ The [native scene](morrow-point/construction.json) retains the coast, six measur
 ### MV Saint Elara native mission
 
 The [vessel source](saint-elara/construction.json) uses the measured shore shelf, fixed gangway, vessel decks and port stair receivers. Seven fitted doors follow the actual thresholds. All four flights have steel handrails seated on their treads, and the pump hatch has supported side guards. The engine deck has a floor-mounted source, breaker and switched lamp. Three walk-in cupboards serve the galley, net store and hold. The regular game loads the vessel in Solo and LAN with the canonical van and three installed ritual positions. Complete hull containment, additional room circuits and end-to-end case acceptance remain open.
+
+### Eight Pines Motor Lodge native mission
+
+The [lodge scene](eight-pines/construction.json) uses the built parking court, covered walks, fourteen fitted doors, eight guest rooms and the existing service rooms. The plant has a supported generator and breaker. The guest rooms, office, manager's room, laundry and plant have individually switched lamps with wall-mounted conduits. The manager's room and two guest rooms have walk-in safe zones. Solo and LAN use the regular map catalog. Full location-specific encounter and perimeter acceptance remain open.
