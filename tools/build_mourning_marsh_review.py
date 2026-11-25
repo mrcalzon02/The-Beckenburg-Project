@@ -6,19 +6,21 @@ from pathlib import Path
 import sys
 
 import bpy
+from mathutils import Matrix
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly
+from build_college_electrical import Assembly, bounds, point, world
 from build_college_grounds import import_scene
 from build_lookout_native_arrival import table
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from compose_room_terrain import split_native
 from review_roster_macroterrain import records
-from verify_college_services import match_geometry
+from build_roster_foundations import material
+from verify_college_services import bvh, match_geometry
 
 BASE = ROOT / "development/levels/rebuild"
 SOURCE = BASE / "canyon-marsh-pass/wld-11"
@@ -53,6 +55,116 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def south_crossing_guards(assembly):
+    finish=material("Marsh treated boardwalk guard timber",(.26,.21,.145))
+    deck=bvh([obj for obj in assembly.scene.objects if obj.type=="MESH"
+              and "continuous settlement boardwalk" in obj.name])
+    z=61.87
+    for side,a,b in (("west",28.14,38.62),("east",41.38,51.86)):
+        bays=math.ceil((b-a)/1.85)
+        for i in range(bays+1):
+            x=a+(b-a)*i/bays
+            for px in (x-.055,x+.055):
+                for pz in (z-.054,z+.054):
+                    hit,normal,_,_=deck.ray_cast(point(px,1.35,pz),point(0,-1,0),.24)
+                    assert hit is not None and abs(hit.z-1.2)<.004 and normal.z>.98,(px,pz)
+            assembly.box(f"Marsh south {side} guard post {i}",(x-.055,z-.055,x+.055,z+.055),
+                         1.17,2.28,finish,"boardwalk edge post fixed to deck","south-deck")
+        for part,y in (("mid rail",1.72),("handrail",2.23)):
+            assembly.box(f"Marsh south {side} guard {part}",(a-.045,z-.05,b+.045,z+.05),
+                         y-.045,y+.045,finish,"guard at the lower water edge","south-deck")
+
+
+def pump_services(assembly, zone):
+    floor=zone["y"]
+    for asset,kind,x,z,control in (
+        ("level_trace_generator_refined","generator",61.6,61.85,.56),
+        ("level_electrical_bank_worn","breaker",58.9,63.28,.89),
+    ):
+        parts=assembly.place(asset,Matrix.Translation(point(x,floor+.06,z)) @ Matrix.Rotation(math.pi,4,"Z"),
+                             f"Mourning Marsh {kind}","pump shelter electrical equipment","pump")
+        low,high=bounds(parts)
+        for px in (low[0]-.03,high[0]+.03):
+            for pz in (low[2]-.03,high[2]+.03):
+                hit,_,_=assembly.measured(point(px,floor+.17,pz),point(0,-1,0),.26,kind)
+                assert abs(hit.z-floor)<.004
+        assembly.box(f"Mourning Marsh {kind} plinth",(low[0]-.03,low[2]-.03,high[0]+.03,high[2]+.03),
+                     floor,floor+.06,assembly.concrete,"equipment secured above the deck","pump")
+        hit,_,_,_=bvh(parts).ray_cast(point(x,floor+control,low[2]-.9),point(0,0,1),1.8)
+        assert hit is not None,kind
+        px,py,pz=world(hit)
+        assembly.effect("marsh-"+kind,kind,zone["owner"],(px,py,pz-.016),math.pi,"MM-MAIN")
+    assembly.raceway("Marsh shelter feeder",((61.6,1.72,62.1),(63.85,1.72,62.1),
+                     (63.85,3.7,62.1),(63.85,3.7,63.5),(58.9,3.7,63.5)),.016)
+    pump_fixture(assembly,zone)
+
+
+def pump_fixture(assembly,zone):
+    # Use the existing compact pump model and keep its support and ports on
+    # the pump shelter's raised deck, away from the cleansing position.
+    asset="level_blockout_cinder_sump_pump"
+    source=ROOT/"development/levels/primitive-props-v1/models"/(asset+".glb")
+    before=set(assembly.scene.objects)
+    bpy.ops.import_scene.gltf(filepath=str(source))
+    imported=set(assembly.scene.objects)-before
+    assembly.assets[asset]=[(obj.data,obj.matrix_world.copy()) for obj in sorted(imported,key=lambda o:o.name)
+                            if obj.type=="MESH"]
+    for obj in imported:
+        bpy.data.objects.remove(obj,do_unlink=True)
+    parts=assembly.place(asset,Matrix.Identity(4),"Mourning Marsh pump",
+                         "founded settlement transfer pump","pump")
+    x,z,floor=61.5,55.7,zone["y"]
+    low,high=bounds(parts)
+    scale=min(1.72/(high[0]-low[0]),.95/(high[2]-low[2]),1.0)
+    frame=Matrix.Translation(point(x-scale*(low[0]+high[0])/2,floor+.08-scale*low[1],
+                                  z-scale*(low[2]+high[2])/2)) @ Matrix.Scale(scale,4)
+    for part in parts:
+        part.matrix_world=frame @ part.matrix_world
+    bpy.context.view_layer.update()
+    low,high=bounds(parts)
+    for px in (low[0]-.04,high[0]+.04):
+        for pz in (low[2]-.04,high[2]+.04):
+            hit,_,_=assembly.measured(point(px,floor+.18,pz),point(0,-1,0),.27,"pump footing")
+            assert abs(hit.z-floor)<.004
+    assembly.box("Mourning Marsh pump foundation",(low[0]-.04,low[2]-.04,high[0]+.04,high[2]+.04),
+                 floor,floor+.08,assembly.concrete,"pump plinth seated on original deck","pump")
+    assert len(parts)==1,"Expected one fitted pump casing"
+    part=parts[0]
+    casing=bvh(parts)
+    face=None
+    for tx,py in ((x-.28,.48),(x+.28,.48),(x-.28,.31),(x+.28,.31),(x,.18),(x,.12)):
+        face,_,_,_=casing.ray_cast(point(tx,floor+py,high[2]+.9),point(0,0,-1),2)
+        if face is not None:break
+    assert face is not None,"Pump has no reachable casing"
+    part.name=part.name.removeprefix("College ")
+    px,py,pz=world(face)
+    assembly.effect(part.name,"native-device",zone["owner"],(px,py,pz+.045),0,"WATER_PUMP")
+    assembly.raceway("Marsh pump outlet and wall riser",((high[0]-.15,floor+.28,z),(63.83,floor+.28,z),
+                      (63.83,floor+.75,z),(63.97,floor+.75,z)),.055)
+
+
+def room_lights(assembly,zones):
+    branches=(
+        ("house-a",26.92,43.1,41.3,1),
+        ("house-b",53.08,43.1,41.3,-1),
+        ("chapel",26.92,22.2,20.4,1),
+        ("warehouse",33.1,28.0,29.8,-1),
+        ("shack",53.08,27.5,29.6,-1),
+        ("pump",53.08,60.9,62.7,-1),
+    )
+    for room,x,sz,lz,dx in branches:
+        zone=zones[room]
+        assembly.switch(zone,x,sz,dx,0)
+        assembly.sockets[-1].update(id=f"marsh-{room}-switch",style=f"MM-{room.upper()}")
+        drop=assembly.routes[-1]["points"][-1]
+        assembly.mounted_lamp(zone,f"marsh-{room}-light",point(x,zone["y"]+2.35,lz),
+                              point(dx,0,0),1.7,point(0,0,1))
+        wall_x,height,z=assembly.loads[-1]["mount"]
+        join=(wall_x-dx*.028,drop[1],z)
+        assert abs(drop[0]-join[0])<.012,room
+        assembly.raceway(f"Marsh {room} circuit",(drop,join,(join[0],height+.12,join[2])),.012)
+
+
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
     source = {ext: SOURCE / f"canyon-marsh.{ext}" for ext in ("blend", "glb", "hcs2")}
@@ -68,6 +180,10 @@ def build():
     bpy.context.preferences.filepaths.save_version = 0
     assembly = Assembly()
     refuges = cupboards(assembly, zones, REFUGES, site="marsh", floor_roles=("floor",))
+    cupboard_parts=set(assembly.built)
+    south_crossing_guards(assembly)
+    pump_services(assembly,zones["pump"])
+    room_lights(assembly,zones)
     for piece in assembly.built:
         piece.name = piece.name.removeprefix("College ")
     target = {ext: OUT / f"marsh-review.{ext}" for ext in source}
@@ -75,7 +191,7 @@ def build():
     export(addition, assembly.built)
     append(source["glb"], addition, target["glb"], reuse_embedded_images=True)
     parts = native_write(source["hcs2"], target["hcs2"], set(), assembly.built,
-                         open_components={obj.name for obj in assembly.built})
+                         open_components={obj.name for obj in assembly.built if obj in cupboard_parts or obj.get("source_asset")})
     retained = split_native(source["hcs2"])
     assert split_native(target["hcs2"])[:len(retained)] == retained
     bpy.ops.file.pack_all()
@@ -97,6 +213,10 @@ def build():
         rows.append(("OPEN", i, OWNERS[a][0], OWNERS[b][0], x, y, z, width, axis, kind))
     for rite in layout["rituals"]:
         rows.append(("RITUAL", rite["rite"].lower(), OWNERS[rite["zone"]][0], *rite["point"]))
+    for service in assembly.sockets:
+        if service["type"]!="hide":
+            rows.append(("SERVICE",service["id"],service["type"],service["room"],*service["position"],
+                         service["yaw"],service["style"]))
     for pocket in refuges:
         rows.append(("COVER", pocket["id"], pocket["owner"], *pocket["position"], pocket["yaw"]))
     for path in layout["links"]:
@@ -121,6 +241,7 @@ def build():
         "site": "WLD-11", "source": str(layout_path.relative_to(ROOT).as_posix()),
         "geometry_sha256": {ext: sha(path) for ext, path in target.items()},
         "retained_native_components": len(retained), "refuges": refuges,
+        "services":[s for s in assembly.sockets if s["type"]!="hide"],
     }
     (OUT / "construction.json").write_bytes((json.dumps(record, indent=2) + "\n").encode())
     print("PASS retained", len(retained), "native parts; refuge floor contacts",
