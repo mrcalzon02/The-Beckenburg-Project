@@ -521,8 +521,24 @@ public final class GlbProps {
             if(material.explicitOrigin()!=null)vehicleUvMaterials.set(vehicleUvMaterials.size()-1,material.explicitOrigin().equals("TOP_LEFT"));
             materialNames.add(material.name());diffuseFactors.add(material.color());if("monitoring_screen_mp_1".equals(resourceName)&&"crt_screen_mp_2".equals(material.name()))vanCrtMaterial=materialIds[i];
         }
-        var result=new ArrayList<Triangle>();for(var face:source.faces()){var primitive=face.primitive();int i=face.triangle()*3;
-            var a=primitive.world().get(primitive.indices().get(i));var b=primitive.world().get(primitive.indices().get(i+1));var c=primitive.world().get(primitive.indices().get(i+2));result.add(new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[primitive.material()]));
+        var finishes=new java.util.IdentityHashMap<org.beckenburg.editor.EditorGlbReader.Primitive,LevelWallFinish.Finish>();
+        if(resourceName==null){
+            for(var primitive:source.primitives()){
+                var finish=LevelWallFinish.finish(source.nodeName(primitive.node()),source.materials().get(primitive.material()));
+                if(finish!=null)finishes.put(primitive,finish);
+            }
+        }
+        var result=new ArrayList<Triangle>(source.faces().size());
+        for(var face:source.faces()){
+            var primitive=face.primitive();
+            int i=face.triangle()*3;
+            var a=primitive.world().get(primitive.indices().get(i));
+            var b=primitive.world().get(primitive.indices().get(i+1));
+            var c=primitive.world().get(primitive.indices().get(i+2));
+            int material=primitive.material();
+            var triangle=new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[material]);
+            var finish=finishes.get(primitive);
+            result.add(finish==null?triangle:LevelWallFinish.apply(triangle,finish,source.materials().get(material)));
         }
         return new Model(List.copyOf(result));
     }

@@ -13,9 +13,9 @@ import org.beckenburg.editor.EditorMeshPipeline.*;
 public final class EditorGlbReader {
     private EditorGlbReader(){}
     public static final class Material {
-        private final int index;private final String name,alpha,origin,defaultOrigin;private final byte[] png;private final double[] color;private final int wrapS,wrapT;private final double cutoff;
-        private Material(int index,String name,byte[] png,double[] color,int wrapS,int wrapT,String alpha,double cutoff,String origin,String defaultOrigin){this.index=index;this.name=name;this.png=png.clone();this.color=color.clone();this.wrapS=wrapS;this.wrapT=wrapT;this.alpha=alpha;this.cutoff=cutoff;this.origin=origin;this.defaultOrigin=defaultOrigin;}
-        public int index(){return index;}public String name(){return name;}public byte[] png(){return png.clone();}public double[] color(){return color.clone();}public int wrapS(){return wrapS;}public int wrapT(){return wrapT;}public String alpha(){return alpha;}public double cutoff(){return cutoff;}public String explicitOrigin(){return origin;}public String defaultOrigin(){return defaultOrigin;}
+        private final int index;private final String name,alpha,origin,defaultOrigin;private final byte[] png;private final double[] color;private final int wrapS,wrapT;private final double cutoff;private final boolean textured;
+        private Material(int index,String name,byte[] png,double[] color,int wrapS,int wrapT,String alpha,double cutoff,String origin,String defaultOrigin,boolean textured){this.textured=textured;this.index=index;this.name=name;this.png=png.clone();this.color=color.clone();this.wrapS=wrapS;this.wrapT=wrapT;this.alpha=alpha;this.cutoff=cutoff;this.origin=origin;this.defaultOrigin=defaultOrigin;}
+        public boolean hasTexture(){return textured;}public int index(){return index;}public String name(){return name;}public byte[] png(){return png.clone();}public double[] color(){return color.clone();}public int wrapS(){return wrapS;}public int wrapT(){return wrapT;}public String alpha(){return alpha;}public double cutoff(){return cutoff;}public String explicitOrigin(){return origin;}public String defaultOrigin(){return defaultOrigin;}
         public EditorMeshMaterial nativeMaterial()throws IOException{try{return new EditorMeshMaterial(key(index),name.isBlank()?"Material "+index:name,png,new EditorMeshMaterial.Color(color[0],color[1],color[2],color[3]),wrapS,wrapT,EditorMeshMaterial.Alpha.valueOf(alpha),cutoff,EditorMeshMaterial.Origin.valueOf(origin==null?defaultOrigin:origin),Map.of("sourceMaterialIndex",Integer.toString(index)));}catch(IllegalArgumentException invalid){throw new IOException("Source material exceeds native authoring capabilities",invalid);}}
     }
     public record Primitive(int node,int primitive,int positionAccessor,List<Vertex> local,List<Vertex> world,List<Integer> indices,int material,List<Long> positionIds,List<Long> faceIds){
@@ -31,6 +31,7 @@ public final class EditorGlbReader {
         public String fingerprint(){return fingerprint;}
         public byte[] trailing(){var view=ByteBuffer.wrap(original).order(ByteOrder.LITTLE_ENDIAN);int binHeader=20+view.getInt(12);return Arrays.copyOfRange(original,binHeader+8+view.getInt(binHeader),original.length);}
         public byte[] original(){return original.clone();}public byte[] binary(){return binary.clone();}public Map<String,Object> root(){return root;}public List<Material> materials(){return materials;}public List<Primitive> primitives(){return primitives;}public double[] world(int node){return world[node]==null?null:world[node].clone();}
+        public String nodeName(int index){return String.valueOf(obj(arr(root.get("nodes")).get(index)).getOrDefault("name",""));}
         public String partLabel(String part){try{if(!part.startsWith("glb_node_"))return part;int index=Integer.parseInt(part.substring(9));return "Node "+index+": "+String.valueOf(obj(arr(root.get("nodes")).get(index)).getOrDefault("name",part));}catch(RuntimeException invalid){return part;}}
         public List<EditorMeshMaterial> nativeMaterials()throws IOException{
             var found=nativeMaterials;if(found!=null)return found;var result=new ArrayList<EditorMeshMaterial>();for(var m:materials)result.add(m.nativeMaterial());try{EditorMeshMaterial.validateTable(result);}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material budget",bad);}nativeMaterials=List.copyOf(result);return nativeMaterials;
@@ -104,7 +105,7 @@ public final class EditorGlbReader {
             }
             String alpha=String.valueOf(material.getOrDefault("alphaMode","OPAQUE"));if(!Set.of("OPAQUE","MASK","BLEND").contains(alpha))throw new IOException("Unsupported glTF alpha mode");double cutoff=material.containsKey("alphaCutoff")?num(material.get("alphaCutoff")):.5;if(!Double.isFinite(cutoff)||cutoff<0||cutoff>1)throw new IOException("Invalid alpha cutoff");String origin=null;
             if(material.get("extras") instanceof Map<?,?> extra&&extra.get("beckenburgUvOrigin")!=null){origin=String.valueOf(extra.get("beckenburgUvOrigin"));if(!Set.of("TOP_LEFT","BOTTOM_LEFT").contains(origin))throw new IOException("Unknown authored material UV origin");}
-            materials.add(new Material(i,String.valueOf(material.getOrDefault("name","")),png,vec(pbr.get("baseColorFactor"),1,1,1,1),wrapS,wrapT,alpha,cutoff,origin,"Beckenburg EditorAssetPipeline".equals(obj(root.get("asset")).get("generator"))?"BOTTOM_LEFT":"TOP_LEFT"));
+            materials.add(new Material(i,String.valueOf(material.getOrDefault("name","")),png,vec(pbr.get("baseColorFactor"),1,1,1,1),wrapS,wrapT,alpha,cutoff,origin,"Beckenburg EditorAssetPipeline".equals(obj(root.get("asset")).get("generator"))?"BOTTOM_LEFT":"TOP_LEFT",textured[i]));
         }
         double[][] world=sceneTransforms(root,nodes);var primitives=new ArrayList<Primitive>();int faces=0,declaredVertices=0;
         for(int ni=0;ni<nodes.size();ni++){

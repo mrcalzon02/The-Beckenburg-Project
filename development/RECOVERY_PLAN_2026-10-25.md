@@ -2424,3 +2424,8 @@ The [Blackwater checkpoint](levels/rebuild/dam-investigation-pass/checkpoint.jso
 ### Northwatch continuous native investigation
 
 The [station checkpoint](levels/rebuild/northwatch-investigation-pass/checkpoint.json) follows Blackwater 63bcece7 on the same ordinary Windows archive. Its three real peers observe the archive witness, ward, both tunnel stairs, three refuges, five fitted leaves and laboratory banishment. The paired RTX 5070 archive repeats both named renderer reviews from the archived payloads. Held draft and installer status follow the Blackwater checkpoint.
+
+
+### Native wall finishes
+
+The [roster wall finish](levels/rebuild/wall-finish-pass/checkpoint.json) follows the local Mine case 7d040328. The ordinary package and RTX 5070 package render the textured ward, turbine hall and crypt from supported standing positions. The audit covers all 25 native packets, and the four specialized sites pass focused checks. Main cb220372fb721fbe588f49d3dc488f6dbba1602d has passing multiplayer 44863686526 and OpenGL 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. The held draft remains at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Continue playable integration of the source-only sites and retain final installer acceptance.

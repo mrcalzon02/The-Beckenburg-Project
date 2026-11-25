@@ -1623,3 +1623,8 @@ The [packaged live case](dam-investigation-pass/case.tsv) follows one hunter fro
 ### Northwatch continuous investigation
 
 The [packaged live case](northwatch-investigation-pass/case.tsv) reaches the archive through the built station, takes the exterior array route to the shelter and dormitory, then crosses the heated service tunnel on the two fitted stairs. Five leaves and all three walk-in refuges work along the same case, which finishes banished at the laboratory. The current RTX OpenGL archive repeats both the [Northwatch](northwatch-investigation-pass/northwatch-opengl.tsv) and [Blackwater](northwatch-investigation-pass/blackwater-opengl.tsv) named scene reviews. [Checkpoint](northwatch-investigation-pass/checkpoint.json)
+
+
+### Native walls across the roster
+
+The [wall finish checkpoint](wall-finish-pass/checkpoint.json) verifies plaster, concrete, masonry and timber on 25 native map exports, including the mortuary annex. Both local packages render the physical walls. Texture projection follows world dimensions and the original mesh positions, source textures and collision stay intact. The four dedicated sites retain their wall surfaces. Source-only levels still need runtime integration.

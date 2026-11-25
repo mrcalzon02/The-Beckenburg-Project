@@ -9390,3 +9390,8 @@ The northern terrain replacement prunes inactive static mesh data. A direct bina
 ### DEV-731 · Monastery arrival and garden lacked founded landmarks and planting
 
 Dress the real terrace and stone beds with surveyed asset placements. Fit the canonical well with continuous stone and coping. Keep native terrain, runoff and ordinary walking clearance while softening the surface finish. [Verification checkpoint](../levels/rebuild/monastery-landscape-pass/checkpoint.json)
+
+
+### DEV-738 · Native structural walls rendered as flat colour
+
+The game now textures plain native wall assemblies with metre-based coordinates. The roster audit counts 61,147 newly textured wall faces across 25 source exports. Standing Asylum, Blackwater and Monastery views pass in both renderers. [Evidence](../levels/rebuild/wall-finish-pass/checkpoint.json)

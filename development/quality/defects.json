@@ -8174,6 +8174,17 @@
       "action": "Validate the exact named gate leaf in the packaged collision scene and use that scene for jump collision, with a running jump as regression coverage.",
       "older_maps": "Audit airborne and grounded boundaries independently when extending a named native scene.",
       "evidence": "development/levels/rebuild/asylum-enclosure-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-738",
+      "title": "Native structural walls rendered as flat colour",
+      "status": "NATIVE_WALL_FINISH_VERIFIED_IN_BOTH_RENDERERS",
+      "affected": "Twenty-five native Beckenburg exports, including the Vale Mortuary annex",
+      "symptom": "Full-height neutral shell panels appeared flat, including the Asylum ward spine and the concrete bays of the Blackwater turbine hall.",
+      "cause": "Plain structural materials used the native GLB decoder white texture placeholder, and the Blender exports supplied no authored UVs for these plain materials.",
+      "action": "Assign plaster, masonry, timber and concrete images to plain vertical architectural faces with metre-based UVs. Check all 25 source exports and both game renderers.",
+      "older_maps": "Preserve authored texture bindings. Check the existing Castle, House, Blackpine and Hollow Creek surface paths separately.",
+      "evidence": "development/levels/rebuild/wall-finish-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

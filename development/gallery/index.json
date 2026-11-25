@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12691,
+  "count": 12697,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -123374,6 +123374,66 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/wall-finish-pass/captures/opengl/asylum-ward-corridor.png",
+      "url": "development/levels/rebuild/wall-finish-pass/captures/opengl/asylum-ward-corridor.png",
+      "title": "Asylum ward corridor",
+      "kind": "Beckenburg wall finish at player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 939849,
+      "sha256": "4edc0c92374897d83cf7266c9418d1522e18b786f6a3b050e664e5d5928a24e5"
+    },
+    {
+      "path": "development/levels/rebuild/wall-finish-pass/captures/opengl/blackwater-turbine-hall.png",
+      "url": "development/levels/rebuild/wall-finish-pass/captures/opengl/blackwater-turbine-hall.png",
+      "title": "Blackwater turbine hall",
+      "kind": "Beckenburg wall finish at player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 579845,
+      "sha256": "b72757fbe4f72f4ad026fb11a02f0faa75526a0c5c49077a73d86a9bd4bf6b64"
+    },
+    {
+      "path": "development/levels/rebuild/wall-finish-pass/captures/opengl/monastery-memorial-crypt.png",
+      "url": "development/levels/rebuild/wall-finish-pass/captures/opengl/monastery-memorial-crypt.png",
+      "title": "Monastery memorial crypt",
+      "kind": "Beckenburg wall finish at player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 549352,
+      "sha256": "47761dbcbde7946a36367799fa4b615ebe4b7c9c50bd0223ff03614950bd31c8"
+    },
+    {
+      "path": "development/levels/rebuild/wall-finish-pass/captures/software/asylum-ward-corridor.png",
+      "url": "development/levels/rebuild/wall-finish-pass/captures/software/asylum-ward-corridor.png",
+      "title": "Asylum ward corridor",
+      "kind": "Beckenburg wall finish at player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 944025,
+      "sha256": "8c96b40db7e3e60e59279bf948fc10a2a4ef7b8895b7e94ddf8e4df7f1961e73"
+    },
+    {
+      "path": "development/levels/rebuild/wall-finish-pass/captures/software/blackwater-turbine-hall.png",
+      "url": "development/levels/rebuild/wall-finish-pass/captures/software/blackwater-turbine-hall.png",
+      "title": "Blackwater turbine hall",
+      "kind": "Beckenburg wall finish at player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 590055,
+      "sha256": "594655401f45f21e2e8ada31fcc63f4ca2a5c68e5ee55daaaf725130b9f8ba03"
+    },
+    {
+      "path": "development/levels/rebuild/wall-finish-pass/captures/software/monastery-memorial-crypt.png",
+      "url": "development/levels/rebuild/wall-finish-pass/captures/software/monastery-memorial-crypt.png",
+      "title": "Monastery memorial crypt",
+      "kind": "Beckenburg wall finish at player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 549274,
+      "sha256": "98c14a724f4b2fbc9401c8c77edbeeddefd1155e437f26d35727a927b3d58186"
     },
     {
       "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-bench-CROSSING_SHEET.png",
