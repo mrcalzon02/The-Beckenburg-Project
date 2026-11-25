@@ -84,6 +84,7 @@ def room_power(assembly,zones):
         ("servicehouse",(11.2,61.7),(11.2,63.4),(-1,0)),
         ("head",(30,43.15),(32,43.15),(0,-1)),
         ("shop",(52.8,49.6),(52.8,51.3),(1,0)),
+        ("exit",(5.15,53.4),(5.15,51.5),(-1,0)),
         ("records",(20.8,44),(20.8,46.3),(1,0)),
         ("west",(9.2,36),(9.2,37.1),(-1,0)),
         ("exhibit",(54.8,24),(54.8,25.7),(1,0)),
@@ -95,15 +96,57 @@ def room_power(assembly,zones):
         zone=zones[room]
         label=f"cinder-{room}"
         assembly.switch(zone,*switch,dx,dz)
-        assembly.sockets[-1].update(id=label+"-switch",style=f"C6-{zone['owner']:02d}")
+        circuit=f"C6-{zone['owner']:02d}"
+        assembly.sockets[-1].update(id=label+"-switch",style=circuit)
+        assembly.controllers[-1].update(id=label+"-switch",circuit=circuit)
         drop=assembly.routes[-1]["points"][-1]
         toward=point(dx,0,dz)
         assembly.mounted_lamp(zone,label+"-light",point(lamp[0],zone["y"]+2.35,lamp[1]),
                               toward,1.7,point(-dz,0,dx))
+        assembly.loads[-1]["circuit"]=circuit
         x,y,z=assembly.loads[-1]["mount"]
         target=(x-.028*dx,drop[1],z-.028*dz)
         assert abs((target[0]-drop[0])*dx+(target[2]-drop[2])*dz)<.012,room
         assembly.raceway("Cinder "+room+" lamp circuit",(drop,target,(target[0],y+.12,target[2])),.012)
+
+
+def gallery_power(assembly, zone, switch_segment):
+    floor=zone["y"]
+    room=zone["id"]
+    circuit=f"C6-{zone['owner']:02d}"
+
+    def polar(radius, angle):
+        return 32+radius*math.cos(angle),28+radius*math.sin(angle)
+
+    switch_angle=(switch_segment+.5)*math.tau/64
+    dx,dz=math.cos(switch_angle),math.sin(switch_angle)
+    assembly.switch(zone,*polar(9.15,switch_angle),dx,dz)
+    switch=f"cinder-{room}-switch"
+    assembly.sockets[-1].update(id=switch,style=circuit)
+    assembly.controllers[-1].update(id=switch,circuit=circuit)
+    drop=assembly.routes[-1]["points"][-1]
+    mount_height=None
+    for lamp in range(8):
+        angle=switch_angle+lamp*math.tau/8
+        x,z=polar(9.15,angle)
+        assembly.mounted_lamp(zone,f"cinder-{room}-lamp-{lamp+1}",
+                              point(x,floor+2.3,z),point(0,1,0),.65,
+                              point(-math.sin(angle),0,math.cos(angle)))
+        fixture=assembly.loads[-1]
+        fixture["circuit"]=circuit
+        ceiling=fixture["mount"][1]
+        if mount_height is None:
+            mount_height=ceiling-.032
+        assert abs(mount_height+.032-ceiling)<.008, room
+    # A continuous ceiling raceway stays on the annular roof and away
+    # from the guarded shaft, door heads and receiving slabs.
+    loop=[]
+    for join in range(17):
+        x,z=polar(9.15,switch_angle+join*math.tau/16)
+        loop.append((x,mount_height,z))
+    assembly.raceway(f"Cinder {room} ceiling feeder",loop,.016)
+    assembly.raceway(f"Cinder {room} switch branch",
+                      (drop,(drop[0],mount_height,drop[2]),loop[0]),.014)
 
 
 def build():
@@ -123,6 +166,8 @@ def build():
     pockets=cupboards(assembly,zones,REFUGES,site="cinder",floor_roles=("floor","constructed continuous room or arcade floor"))
     main_supply(assembly,zones["plant"])
     room_power(assembly,zones)
+    gallery_power(assembly,zones["upperring"],29)
+    gallery_power(assembly,zones["lowring"],2)
     for obj in assembly.built:
         obj.name=obj.name.removeprefix("College ")
     target={ext:OUT/f"facility.{ext}" for ext in source}
@@ -138,7 +183,9 @@ def build():
     dock=layout["staging"]
     rows=[("SOURCE",sha(target["glb"]),sha(target["hcs2"])),("DOCK",*dock["point"],dock["yaw"])]
     for key,z in zones.items():
-        outside=str(z["kind"] in ("outside","staging")).lower()
+        # The shell source retains its original annulus zoning. The built
+        # retaining walls and roof make these two areas indoor gameplay rooms.
+        outside=str(z["kind"] in ("outside","staging") and key not in ("upperring","lowring")).lower()
         body=(key,owners[key],*z["bounds"],z["y"],z["height"],outside)
         rows.append(("ROOM",*body,z["name"],*ANCHORS[key][1:]) if key in ANCHORS else ("SPACE",*body))
     rows.extend(("SPACE",key,owner,*area,datum,height,str(outside).lower())
@@ -171,7 +218,8 @@ def build():
     table(OUT/"door-schedule.tsv",doors)
     (OUT/"construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
-        retained_components=len(prior),pockets=pockets,services=assembly.sockets),indent=2)+"\n",
+        retained_components=len(prior),pockets=pockets,services=assembly.sockets,
+        controllers=assembly.controllers,fixtures=assembly.loads),indent=2)+"\n",
         encoding="utf-8",newline="\n")
 
 

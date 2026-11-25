@@ -1,4 +1,4 @@
-SOURCE	246f70bf634bee0644808e286c97a20a79eab3622a21836df2a1294e3871727b	045d3f7a3eacd76fa3f486dd83334407457bb07b9a3451aa9446cb76cf76b484
+SOURCE	69c89dea006c1a84ff391de4d6fc48f3a7568e01914731a4654478575a38c4a8	1a72a636516906dfaa7f069a75c866311ced7f3c24913947b9d93ea4cc7ba13e
 DOCK	32.0	0	90.0	0
 ROOM	stage	13	24	84	40	96	0	3	true	Service road van apron	32	0	86
 SPACE	entry	13	24	70	40	84	0	3	true
@@ -7,8 +7,8 @@ ROOM	yard	12	28	54	52	70	0	3	true	Fenced maintenance yard	40	0	62
 ROOM	head	1	28	42	40	54	0	3	false	Access headhouse	34	0	48
 ROOM	shop	2	40	42	54	54	0	3	false	Maintenance workshop	47	0	48
 ROOM	exit	3	4	42	10	62	0	3	false	Hillside emergency exit	7	0	52
-ROOM	upperring	6	22	18	42	38	-4	3	true	Upper shaft gallery	23	-4	28
-ROOM	lowring	9	22	18	42	38	-8	3	true	Lower shaft gallery	41	-8	28
+ROOM	upperring	6	22	18	42	38	-4	3	false	Upper shaft gallery	23	-4	28
+ROOM	lowring	9	22	18	42	38	-8	3	false	Lower shaft gallery	41	-8	28
 ROOM	west	5	8	26	22	38	-4	3	false	Upper west access	18	-4	32
 ROOM	records	4	8	38	22	52	-4	3	false	Maintenance records	15	-4	45
 ROOM	exhibit	7	42	18	56	38	-4	3	false	Inert control equipment room	48	-4	26.5
@@ -162,6 +162,8 @@ SERVICE	cinder-head-switch	switch	1	30.0	1.25	42.241001	0.0	C6-01
 SERVICE	cinder-head-light	light	1	32.0	2.35	42.424	0	native-string
 SERVICE	cinder-shop-switch	switch	2	53.758999	1.25	49.599998	-1.5707963267948966	C6-02
 SERVICE	cinder-shop-light	light	2	53.576	2.35	51.299999	0	native-string
+SERVICE	cinder-exit-switch	switch	3	4.081	1.25	53.400002	1.5707963267948966	C6-03
+SERVICE	cinder-exit-light	light	3	4.264	2.35	51.5	0	native-string
 SERVICE	cinder-records-switch	switch	4	21.919001	-2.75	44.0	-1.5707963267948966	C6-04
 SERVICE	cinder-records-light	light	4	21.736	-1.65	46.299999	0	native-string
 SERVICE	cinder-west-switch	switch	5	8.241	-2.75	36.0	1.5707963267948966	C6-05
@@ -174,6 +176,24 @@ SERVICE	cinder-crew-switch	switch	10	21.759001	-6.75	33.5	-1.5707963267948966	C6
 SERVICE	cinder-crew-light	light	10	21.576	-5.65	35.400002	0	native-string
 SERVICE	cinder-plant-switch	switch	11	55.918999	-6.75	46.5	-1.5707963267948966	C6-11
 SERVICE	cinder-plant-light	light	11	55.736	-5.65	48.200001	0	native-string
+SERVICE	cinder-upperring-switch	switch	6	22.312342	-2.75	30.426632	1.8162332528565994	C6-06
+SERVICE	cinder-upperring-lamp-1	light	6	23.124214	-1.484	30.223269	0	native-string
+SERVICE	cinder-upperring-lamp-2	light	6	24.151783	-1.484	23.295959	0	native-string
+SERVICE	cinder-upperring-lamp-3	light	6	29.776731	-1.484	19.124214	0	native-string
+SERVICE	cinder-upperring-lamp-4	light	6	36.704041	-1.484	20.151783	0	native-string
+SERVICE	cinder-upperring-lamp-5	light	6	40.875786	-1.484	25.776731	0	native-string
+SERVICE	cinder-upperring-lamp-6	light	6	39.848217	-1.484	32.704041	0	native-string
+SERVICE	cinder-upperring-lamp-7	light	6	34.22327	-1.484	36.875786	0	native-string
+SERVICE	cinder-upperring-lamp-8	light	6	27.295959	-1.484	35.848217	0	native-string
+SERVICE	cinder-lowring-switch	switch	9	41.68766	-6.75	30.426634	-1.8162332528565992	C6-09
+SERVICE	cinder-lowring-lamp-1	light	9	40.875786	-5.484	30.223269	0	native-string
+SERVICE	cinder-lowring-lamp-2	light	9	36.704041	-5.484	35.848217	0	native-string
+SERVICE	cinder-lowring-lamp-3	light	9	29.776731	-5.484	36.875786	0	native-string
+SERVICE	cinder-lowring-lamp-4	light	9	24.151783	-5.484	32.704041	0	native-string
+SERVICE	cinder-lowring-lamp-5	light	9	23.124214	-5.484	25.776731	0	native-string
+SERVICE	cinder-lowring-lamp-6	light	9	27.295959	-5.484	20.151783	0	native-string
+SERVICE	cinder-lowring-lamp-7	light	9	34.22327	-5.484	19.124214	0	native-string
+SERVICE	cinder-lowring-lamp-8	light	9	39.848217	-5.484	23.295959	0	native-string
 COVER	cinder-servicehouse-cupboard	0	12	0	66.1	-1.5707963267948966
 COVER	cinder-records-cupboard	4	10.2	-4	48	-1.5707963267948966
 COVER	cinder-crew-cupboard	10	20.1	-8	33.0	1.5707963267948966
