@@ -114,12 +114,21 @@ public final class CastleLevelEdits {
     private List<CastleHubArchitecturalPlan.Deck> cachedDecks=List.of();
     private List<CastleHubArchitecturalPlan.Roof> cachedRoofs=List.of();
     private List<Surface> cachedOpenings=List.of();
+    private List<Surface> cachedCellarTreads=List.of();
     public synchronized List<Surface> openings(){ensureGeometryCache();return cachedOpenings;}
     public synchronized boolean floorOpening(double x,double z,double height){
         ensureGeometryCache();
         for(var s:cachedOpenings)if(Math.abs(s.base()-height)<1e-7
             &&x>s.x0()&&x<s.x1()&&z>s.z0()&&z<s.z1())return true;
         return false;
+    }
+    synchronized double cellarTreadHeight(double x,double z){
+        ensureGeometryCache();
+        double elevation=Double.NEGATIVE_INFINITY;
+        for(var tread:cachedCellarTreads)
+            if(x>=tread.x0()&&x<=tread.x1()&&z>=tread.z0()&&z<=tread.z1()
+                &&!floorOpening(x,z,tread.base()))elevation=Math.max(elevation,tread.base());
+        return Double.isFinite(elevation)?elevation:Double.NaN;
     }
     public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
     /** Ordered references to just the editable objects requested by a hierarchy page. */
@@ -147,13 +156,18 @@ public final class CastleLevelEdits {
         List<CastleHubArchitecturalPlan.Deck> deckList=new ArrayList<>();
         List<CastleHubArchitecturalPlan.Roof> roofList=new ArrayList<>();
         List<Surface> openingList=new ArrayList<>();
+        List<Surface> cellarTreads=new ArrayList<>();
         for(var surface:surfaces.values())switch(surface.kind()){
             case WALL -> wallList.add(surface.wall());
-            case FLOOR -> deckList.add(surface.deck());
+            case FLOOR -> {
+                deckList.add(surface.deck());
+                if(surface.id().startsWith("cellar-step-"))cellarTreads.add(surface);
+            }
             case ROOF -> roofList.add(surface.roof());
             case VOID -> openingList.add(surface);
         }
         cachedOpenings=List.copyOf(openingList);
+        cachedCellarTreads=List.copyOf(cellarTreads);
         for(var marker:CastleHubArchitecturalPlan.walls())
             if(marker.hasDoor())wallList.add(marker);
         cachedWalls=List.copyOf(wallList);

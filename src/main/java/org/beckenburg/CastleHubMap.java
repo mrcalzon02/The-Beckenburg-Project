@@ -180,7 +180,10 @@ public final class CastleHubMap {
         return groundTraversable(x,z,0,false);
     }
     private boolean groundTraversable(double x,double z,double elevation,boolean includeResident){
-        if(CastleCellar.onFlight(x,z)&&Math.abs(elevation-CastleCellar.stairHeight(z))>.01)return false;
+        if(CastleCellar.onFlight(x,z)){
+            double tread=CastleCellar.stairHeight(x,z);
+            if(!Double.isFinite(tread)||Math.abs(elevation-tread)>.01)return false;
+        }
         if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
         if(CastleHubArchitecturalPlan.onStairs(x,z)&&elevation+.10<CastleHubArchitecturalPlan.stairHeight(x,z))return false;
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
@@ -234,8 +237,8 @@ public final class CastleHubMap {
     private boolean cellarTraversable(double x,double z,double elevation){
         if(!CastleCellar.active()||elevation<CastleCellar.FLOOR-.01)return false;
         var edits=CastleLevelEdits.current();double r=.21;
-        double expected=CastleCellar.onFlight(x,z)?CastleCellar.stairHeight(z):CastleCellar.FLOOR;
-        if(Math.abs(elevation-expected)>.01)return false;
+        double expected=CastleCellar.onFlight(x,z)?CastleCellar.stairHeight(x,z):CastleCellar.FLOOR;
+        if(!Double.isFinite(expected)||Math.abs(elevation-expected)>.01)return false;
         for(double dx:new double[]{-r,r})for(double dz:new double[]{-r,r})
             if(!edits.floorSupports(x+dx,z+dz,elevation)
                 &&!(Math.abs(elevation)<.18&&groundSupports(x+dx,z+dz)))return false;

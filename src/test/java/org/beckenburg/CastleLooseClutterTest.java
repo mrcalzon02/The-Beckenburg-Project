@@ -24,8 +24,36 @@ public final class CastleLooseClutterTest {
             var hit=map.clutter().aimed(o);if(hit!=null&&hit.id()==s.id())return o;
         }throw new AssertionError("No real reachable pickup view for object "+s.id());
     }
+    private static void checkCellarTreadEdits(CastleLevelEdits scene, CastleHubMap map, CastleClutterWorld world) {
+        var snapshot = scene.snapshot();
+        var tread = scene.surfaceById("cellar-step-11");
+        double x = tread.cx(), z = tread.cz(), y = tread.base();
+        double before = y + .10, after = y - .10;
+        check(world.support(x,z,before,after) == y && map.traversable(x,z,y),
+            "The default native tread supports both the body and a loose object");
+        try {
+            scene.removeSurface(tread.id());
+            check(world.support(x,z,before,after) < -99,
+                "Removed native cellar tread still supports a loose object");
+            check(!map.traversable(x,z,y) && Double.isNaN(CastleCellar.stairHeight(z)),
+                "Removed native cellar tread still supplies a standing height");
+
+            double raised = y + .012;
+            scene.put(new CastleLevelEdits.Surface(tread.id(),tread.kind(),
+                tread.x0(),tread.z0(),tread.x1(),tread.z1(),raised,tread.height(),tread.material()));
+            check(CastleCellar.stairHeight(z) == raised && world.support(x,z,before,after) == raised,
+                "Reinstalled cellar tread did not update support to its saved height");
+            check(map.traversable(x,z,raised) && !map.traversable(x,z,y),
+                "Player standing height does not follow the authored tread");
+        } finally {
+            scene.restore(snapshot);
+        }
+        check(CastleCellar.stairHeight(z) == y, "Restoring the native scene did not restore the tread height");
+    }
+
     public static void main(String[] args)throws Exception{
         System.setProperty("user.home",Files.createTempDirectory("castle-loose-").toString());var scene=CastleLevelEdits.current();var original=scene.snapshot();var map=new CastleHubMap();var objects=map.clutter();var world=new CastleClutterWorld(map);
+        checkCellarTreadEdits(scene,map,world);
         check(objects.states().size()==6,"Missing authored native loose-body sockets: "+objects.states());var initial=objects.states();
         check(Math.abs(world.support(17.5,25.75,2.4,2.0)-2.21)<.002,"Small object uses the smooth navigation incline instead of the rendered upper stair tread");
         for(int tick=0;tick<100;tick++)check(objects.advance(List.of()).isEmpty(),"Protected hub clutter damages a player");
