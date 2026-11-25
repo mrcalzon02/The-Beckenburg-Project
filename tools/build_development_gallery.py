@@ -279,73 +279,73 @@ for path in sorted(set(paths)):
         kind='Beckenburg wall finish at player height in the '+renderer+' game renderer'
     elif '/mine-case-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim supported case furnishings and hoist cutaway'
+            kind='Dead Man’s Claim supported case furnishings and hoist cutaway'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim named case in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim named case in the '+renderer+' game renderer'
     elif '/mine-sump-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim formed lower sump structure'
+            kind='Dead Man’s Claim formed lower sump structure'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim contained Mine sump and lower chamber in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim contained Mine sump and lower chamber in the '+renderer+' game renderer'
     elif '/mine-drainage-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim roof runoff and terrain drainage construction'
+            kind='Dead Man’s Claim roof runoff and terrain drainage construction'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim surface drainage and retained routes in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim surface drainage and retained routes in the '+renderer+' game renderer'
     elif '/mine-lower-slabs-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim lower and ore-west slabs structural cutaway'
+            kind='Dead Man’s Claim lower and ore-west slabs structural cutaway'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim rebuilt lower chambers in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim rebuilt lower chambers in the '+renderer+' game renderer'
     elif '/mine-distribution-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim haul shaft electrical raceway structural cutaway'
+            kind='Dead Man’s Claim haul shaft electrical raceway structural cutaway'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim working electrical distribution in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim working electrical distribution in the '+renderer+' game renderer'
     elif '/mine-service-yard-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim service shed structural review'
+            kind='Dead Man’s Claim service shed structural review'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim service yard in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim service yard in the '+renderer+' game renderer'
     elif '/mine-handrail-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim stair handrail structural cutaway'
+            kind='Dead Man’s Claim stair handrail structural cutaway'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim stair handrails in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim stair handrails in the '+renderer+' game renderer'
     elif '/mine-cover-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
-        kind='Dead Manâ€™s Claim walk-in safe zone in the '+renderer+' game renderer'
+        kind='Dead Man’s Claim walk-in safe zone in the '+renderer+' game renderer'
     elif '/mine-stair-threshold-pass/' in path:
         if '/structure/' in path:
-            kind='Dead Manâ€™s Claim headhouse structural cutaway'
+            kind='Dead Man’s Claim headhouse structural cutaway'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
-            kind='Dead Manâ€™s Claim fitted stairs and doorways in the '+renderer+' game renderer'
+            kind='Dead Man’s Claim fitted stairs and doorways in the '+renderer+' game renderer'
     elif '/lookout-case-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         subject='readable record' if '-story-' in p.name else 'verified case view'
-        kind='Widowâ€™s Peak Lookout '+subject+' in the '+renderer+' game renderer'
+        kind='Widow’s Peak Lookout '+subject+' in the '+renderer+' game renderer'
     elif '/lookout-power-pass/' in path:
         if '/structure/' in path:
-            kind='Widowâ€™s Peak Lookout roadhead shelter structural review'
+            kind='Widow’s Peak Lookout roadhead shelter structural review'
         else:
             renderer='OpenGL' if '/opengl/' in path else 'software'
             subject='electrical service' if 'lookout-power-' in p.name else 'retained arrival and cover'
-            kind='Widowâ€™s Peak Lookout '+subject+' in the '+renderer+' game renderer'
+            kind='Widow’s Peak Lookout '+subject+' in the '+renderer+' game renderer'
     elif '/lookout-cover-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         subject='full walk-in safe zone' if '-cupboard-' in path else 'retained arrival and doors'
-        kind='Widowâ€™s Peak Lookout '+subject+' in the '+renderer+' game renderer'
+        kind='Widow’s Peak Lookout '+subject+' in the '+renderer+' game renderer'
     elif '/lookout-native-arrival-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
-        kind='WidowÃ¢â‚¬â„¢s Peak Lookout staged doorway and arrival in the '+renderer+' game renderer'
+        kind='Widowâ€™s Peak Lookout staged doorway and arrival in the '+renderer+' game renderer'
     elif '/asylum-enclosure-pass/' in path:
         if '/structure/' in path:
             kind='Native St. Dymphna estate enclosure and carriage road'
