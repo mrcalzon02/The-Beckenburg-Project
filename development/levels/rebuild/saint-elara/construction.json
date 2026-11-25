@@ -1,9 +1,9 @@
 {
   "source": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
   "exports": {
-    "blend": "d27c106953f7e2ce12fd656ee45957dca4a3c597ecd864c088af6f42150d815c",
-    "glb": "099e3c74099ae8b04ba3a40688af4618911a4d9598e8bf2a120034f44d8c5eb7",
-    "hcs2": "fc37eaf9a448a99faf77e129a5dd0cd78b5328f9fbc3e7bebdc51a7a43083d78"
+    "blend": "0d7ecc5135211a2bbcc04ac699baf30b45bb2e83bbfa84f41343a882e005975f",
+    "glb": "99d2b13178dc505bfcc211b9f17ed1fb893e45ab5933d2889afe4a54aade1141",
+    "hcs2": "5d2d46945be9e684ebe68998b8bea81a6a68a51fceb6f6adc9309ed9984d8766"
   },
   "retained_components": 407,
   "pockets": [
@@ -167,6 +167,508 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "elara-galley-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        31.919001,
+        1.25,
+        38.650002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "SE-GALLEY"
+    },
+    {
+      "id": "elara-galley-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        31.736,
+        2.35,
+        36.799999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-mess-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        39.918999,
+        1.25,
+        38.549999
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "SE-MESS"
+    },
+    {
+      "id": "elara-mess-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        39.736,
+        2.35,
+        36.75
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-processing-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        24.121,
+        1.25,
+        25.15
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "SE-PROCESSING"
+    },
+    {
+      "id": "elara-processing-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        24.304001,
+        2.35,
+        27.049999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-hold-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        39.919003,
+        -1.75,
+        16.1
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "SE-HOLD"
+    },
+    {
+      "id": "elara-hold-light",
+      "type": "light",
+      "room": 6,
+      "position": [
+        39.736,
+        -0.65,
+        13.9
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-pump-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        39.918999,
+        -1.75,
+        2.65
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "SE-PUMP"
+    },
+    {
+      "id": "elara-pump-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        39.736,
+        -0.65,
+        0.9
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-crew-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        39.918999,
+        4.25,
+        36.150002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "SE-CREW"
+    },
+    {
+      "id": "elara-crew-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        39.736,
+        5.35,
+        38.150002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-bridge-switch",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        24.121,
+        7.25,
+        23.15
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "SE-BRIDGE"
+    },
+    {
+      "id": "elara-bridge-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        24.304001,
+        8.35,
+        21.1
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "elara-net-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        24.121,
+        4.25,
+        15.4
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "SE-NET"
+    },
+    {
+      "id": "elara-net-light",
+      "type": "light",
+      "room": 10,
+      "position": [
+        24.304001,
+        5.35,
+        17.15
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "elara-engine-switch",
+      "circuit": "SE-ENGINE",
+      "space": "engine",
+      "room": 3,
+      "at": [
+        39.918999,
+        -1.75,
+        29.0
+      ],
+      "support": "Wall engine E",
+      "feet": [
+        38.8,
+        -3,
+        29
+      ]
+    },
+    {
+      "id": "elara-galley-switch",
+      "circuit": "SE-GALLEY",
+      "space": "galley",
+      "room": 1,
+      "at": [
+        31.919001,
+        1.25,
+        38.650002
+      ],
+      "support": "Wall galley E",
+      "feet": [
+        31.05,
+        0,
+        38.65
+      ]
+    },
+    {
+      "id": "elara-mess-switch",
+      "circuit": "SE-MESS",
+      "space": "mess",
+      "room": 2,
+      "at": [
+        39.918999,
+        1.25,
+        38.549999
+      ],
+      "support": "Wall mess E",
+      "feet": [
+        38.95,
+        0,
+        38.55
+      ]
+    },
+    {
+      "id": "elara-processing-switch",
+      "circuit": "SE-PROCESSING",
+      "space": "processing",
+      "room": 4,
+      "at": [
+        24.121,
+        1.25,
+        25.15
+      ],
+      "support": "Saint Elara processing stair bulkhead end pier region0",
+      "feet": [
+        24.85,
+        0,
+        25.15
+      ]
+    },
+    {
+      "id": "elara-hold-switch",
+      "circuit": "SE-HOLD",
+      "space": "hold",
+      "room": 6,
+      "at": [
+        39.919003,
+        -1.75,
+        16.1
+      ],
+      "support": "Wall hold E",
+      "feet": [
+        38.95,
+        -3,
+        16.1
+      ]
+    },
+    {
+      "id": "elara-pump-switch",
+      "circuit": "SE-PUMP",
+      "space": "pump",
+      "room": 7,
+      "at": [
+        39.918999,
+        -1.75,
+        2.65
+      ],
+      "support": "Wall pump E",
+      "feet": [
+        38.95,
+        -3,
+        2.65
+      ]
+    },
+    {
+      "id": "elara-crew-switch",
+      "circuit": "SE-CREW",
+      "space": "crew",
+      "room": 8,
+      "at": [
+        39.918999,
+        4.25,
+        36.150002
+      ],
+      "support": "Wall crew E",
+      "feet": [
+        38.95,
+        3,
+        36.15
+      ]
+    },
+    {
+      "id": "elara-bridge-switch",
+      "circuit": "SE-BRIDGE",
+      "space": "bridge",
+      "room": 9,
+      "at": [
+        24.121,
+        7.25,
+        23.15
+      ],
+      "support": "Saint Elara bridge deck port bulkhead bridge stair door preceding pier region0",
+      "feet": [
+        24.85,
+        6,
+        23.15
+      ]
+    },
+    {
+      "id": "elara-net-switch",
+      "circuit": "SE-NET",
+      "space": "net",
+      "room": 10,
+      "at": [
+        24.121,
+        4.25,
+        15.4
+      ],
+      "support": "Saint Elara net store port bulkhead end pier region0",
+      "feet": [
+        24.85,
+        3,
+        15.4
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "elara-engine-light",
+      "room": 3,
+      "space": "engine",
+      "circuit": "SE-ENGINE",
+      "mount": [
+        39.919998,
+        -0.62,
+        30.5
+      ],
+      "emitter": [
+        39.736,
+        -0.62,
+        30.5
+      ],
+      "support": "Wall engine E"
+    },
+    {
+      "id": "elara-galley-light",
+      "room": 1,
+      "space": "galley",
+      "circuit": "SE-GALLEY",
+      "mount": [
+        31.92,
+        2.35,
+        36.799999
+      ],
+      "emitter": [
+        31.736,
+        2.35,
+        36.799999
+      ],
+      "support": "Wall galley E"
+    },
+    {
+      "id": "elara-mess-light",
+      "room": 2,
+      "space": "mess",
+      "circuit": "SE-MESS",
+      "mount": [
+        39.919998,
+        2.35,
+        36.75
+      ],
+      "emitter": [
+        39.736,
+        2.35,
+        36.75
+      ],
+      "support": "Wall mess E"
+    },
+    {
+      "id": "elara-processing-light",
+      "room": 4,
+      "space": "processing",
+      "circuit": "SE-PROCESSING",
+      "mount": [
+        24.120001,
+        2.35,
+        27.049999
+      ],
+      "emitter": [
+        24.304001,
+        2.35,
+        27.049999
+      ],
+      "support": "Saint Elara processing stair bulkhead end pier region0"
+    },
+    {
+      "id": "elara-hold-light",
+      "room": 6,
+      "space": "hold",
+      "circuit": "SE-HOLD",
+      "mount": [
+        39.919998,
+        -0.65,
+        13.9
+      ],
+      "emitter": [
+        39.736,
+        -0.65,
+        13.9
+      ],
+      "support": "Wall hold E"
+    },
+    {
+      "id": "elara-pump-light",
+      "room": 7,
+      "space": "pump",
+      "circuit": "SE-PUMP",
+      "mount": [
+        39.919998,
+        -0.65,
+        0.9
+      ],
+      "emitter": [
+        39.736,
+        -0.65,
+        0.9
+      ],
+      "support": "Wall pump E"
+    },
+    {
+      "id": "elara-crew-light",
+      "room": 8,
+      "space": "crew",
+      "circuit": "SE-CREW",
+      "mount": [
+        39.919998,
+        5.35,
+        38.150002
+      ],
+      "emitter": [
+        39.736,
+        5.35,
+        38.150002
+      ],
+      "support": "Wall crew E"
+    },
+    {
+      "id": "elara-bridge-light",
+      "room": 9,
+      "space": "bridge",
+      "circuit": "SE-BRIDGE",
+      "mount": [
+        24.120001,
+        8.35,
+        21.1
+      ],
+      "emitter": [
+        24.304001,
+        8.35,
+        21.1
+      ],
+      "support": "Saint Elara bridge deck port bulkhead bridge stair door preceding pier region0"
+    },
+    {
+      "id": "elara-net-light",
+      "room": 10,
+      "space": "net",
+      "circuit": "SE-NET",
+      "mount": [
+        24.120001,
+        5.35,
+        17.15
+      ],
+      "emitter": [
+        24.304001,
+        5.35,
+        17.15
+      ],
+      "support": "Saint Elara net store port bulkhead end pier region0"
     }
   ]
 }

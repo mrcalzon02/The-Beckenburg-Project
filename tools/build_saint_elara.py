@@ -89,12 +89,45 @@ def engine_power(assembly, zone):
                         0 if sign == 1 else math.pi,"SE-MAIN")
     assembly.switch(zone,38.8,29,1,0)
     assembly.sockets[-1].update(id="elara-engine-switch",style="SE-ENGINE")
+    assembly.controllers[-1].update(id="elara-engine-switch",circuit="SE-ENGINE")
     assembly.mounted_lamp(zone,"elara-engine-light",point(38.8,-.62,30.5),
                           point(1,0,0),1.5,point(0,0,1))
+    assembly.loads[-1]["circuit"]="SE-ENGINE"
     assembly.raceway("Saint Elara engine feeder",((36.9,-2.42,26.3),(39.72,-2.42,26.3),
         (39.72,-.37,26.3),(39.72,-.37,38.9),(37.5,-.37,38.9),(37.5,-1.25,38.9)),.016)
     assembly.raceway("Saint Elara engine lamp branch",((39.72,-.37,29),(39.72,-.37,30.5),
         (39.72,-.58,30.5)),.012)
+
+
+def compartment_lights(assembly, zones):
+    # Switches sit on the approach side of each compartment. Keep the
+    # gangway, door swings, refuge entrances and hatch landings clear.
+    branches = (
+        ("galley", 31.05, 38.65, 36.80, 1),
+        ("mess", 38.95, 38.55, 36.75, 1),
+        ("processing", 24.85, 25.15, 27.05, -1),
+        ("hold", 38.95, 16.10, 13.90, 1),
+        ("pump", 38.95, 2.65, .90, 1),
+        ("crew", 38.95, 36.15, 38.15, 1),
+        ("bridge", 24.85, 23.15, 21.10, -1),
+        ("net", 24.85, 15.40, 17.15, -1),
+    )
+    for room, x, switch_z, lamp_z, dx in branches:
+        zone = zones[room]
+        floor = zone["y"]
+        assembly.switch(zone,x,switch_z,dx,0)
+        circuit = f"SE-{room.upper()}"
+        assembly.sockets[-1].update(id=f"elara-{room}-switch",style=circuit)
+        assembly.controllers[-1].update(id=f"elara-{room}-switch",circuit=circuit)
+        drop = assembly.routes[-1]["points"][-1]
+        assembly.mounted_lamp(zone,f"elara-{room}-light",point(x,floor+2.35,lamp_z),
+                              point(dx,0,0),1.7,point(0,0,1))
+        assembly.loads[-1]["circuit"]=circuit
+        lamp_x,lamp_y,lamp_z = assembly.loads[-1]["mount"]
+        offset_x = lamp_x-.028*dx
+        assert abs(offset_x-drop[0]) < .012, room
+        assembly.raceway(f"Saint Elara {room} branch",
+                         (drop,(offset_x,drop[1],lamp_z),(offset_x,lamp_y+.12,lamp_z)),.012)
 
 
 def pump_guards(assembly):
@@ -146,6 +179,7 @@ def build():
     assembly=Assembly()
     pockets=cupboards(assembly,zones,REFUGES,site="elara",floor_roles=("floor",))
     engine_power(assembly,zones["engine"])
+    compartment_lights(assembly,zones)
     pump_guards(assembly)
     flight_rails(assembly)
     for obj in assembly.built:
@@ -198,7 +232,8 @@ def build():
     table(OUT/"door-schedule.tsv",doors)
     (OUT/"construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
-        retained_components=len(prior),pockets=pockets,services=assembly.sockets),indent=2)+"\n",
+        retained_components=len(prior),pockets=pockets,services=assembly.sockets,
+        controllers=assembly.controllers,fixtures=assembly.loads),indent=2)+"\n",
         encoding="utf-8",newline="\n")
 
 
