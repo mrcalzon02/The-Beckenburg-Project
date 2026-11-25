@@ -1,4 +1,4 @@
-SOURCE	69c89dea006c1a84ff391de4d6fc48f3a7568e01914731a4654478575a38c4a8	1a72a636516906dfaa7f069a75c866311ced7f3c24913947b9d93ea4cc7ba13e
+SOURCE	e77709bdd95a2aa89ffdf2f85ad3e295393360eb09d652a963e6fe36557eb44a	161bf0e2f6f3800206c51082f3ef9a1c0710907250b78b7cf632ca0fae8db361
 DOCK	32.0	0	90.0	0
 ROOM	stage	13	24	84	40	96	0	3	true	Service road van apron	32	0	86
 SPACE	entry	13	24	70	40	84	0	3	true
@@ -194,6 +194,7 @@ SERVICE	cinder-lowring-lamp-5	light	9	23.124214	-5.484	25.776731	0	native-string
 SERVICE	cinder-lowring-lamp-6	light	9	27.295959	-5.484	20.151783	0	native-string
 SERVICE	cinder-lowring-lamp-7	light	9	34.22327	-5.484	19.124214	0	native-string
 SERVICE	cinder-lowring-lamp-8	light	9	39.848217	-5.484	23.295959	0	native-string
+SERVICE	Cinder lower crew emergency telephone	native-device	10	13.7	-7.179	33.77500199999999	0	PHONE
 COVER	cinder-servicehouse-cupboard	0	12	0	66.1	-1.5707963267948966
 COVER	cinder-records-cupboard	4	10.2	-4	48	-1.5707963267948966
 COVER	cinder-crew-cupboard	10	20.1	-8	33.0	1.5707963267948966

@@ -1,9 +1,9 @@
 {
   "source": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
   "exports": {
-    "blend": "7dd38f5674f65556131f99b53dbd6037c7f4d6c8c146d49eb96f73dd0235ef03",
-    "glb": "69c89dea006c1a84ff391de4d6fc48f3a7568e01914731a4654478575a38c4a8",
-    "hcs2": "1a72a636516906dfaa7f069a75c866311ced7f3c24913947b9d93ea4cc7ba13e"
+    "blend": "2853008332febc3eaed573a410018caefd95cef76dfd6c0596cf6796332a941d",
+    "glb": "e77709bdd95a2aa89ffdf2f85ad3e295393360eb09d652a963e6fe36557eb44a",
+    "hcs2": "161bf0e2f6f3800206c51082f3ef9a1c0710907250b78b7cf632ca0fae8db361"
   },
   "retained_components": 615,
   "pockets": [
@@ -599,6 +599,18 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "Cinder lower crew emergency telephone",
+      "type": "native-device",
+      "room": 10,
+      "position": [
+        13.7,
+        -7.179,
+        33.77500199999999
+      ],
+      "yaw": 0,
+      "style": "PHONE"
     }
   ],
   "controllers": [
@@ -1249,6 +1261,192 @@
         23.295959
       ],
       "support": "WLD-18 lowring enclosed gallery ceiling"
+    }
+  ],
+  "workrooms": [
+    {
+      "name": "surface maintenance bench",
+      "room": "shop",
+      "asset": "level_work_repair_bench",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "bounds": [
+        [
+          48.375,
+          0.0,
+          43.001499
+        ],
+        [
+          50.824997,
+          1.645,
+          43.998501
+        ]
+      ],
+      "pivot": [
+        49.599998474121094,
+        0.0,
+        43.39649963378906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "surface duty desk",
+      "room": "servicehouse",
+      "asset": "level_workbench_worn",
+      "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+      "bounds": [
+        [
+          22.9,
+          0.0,
+          56.247498
+        ],
+        [
+          24.699999,
+          1.22,
+          56.952499
+        ]
+      ],
+      "pivot": [
+        23.799999237060547,
+        0.0,
+        56.58749771118164
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "west standby bunk",
+      "room": "crew",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          11.137501,
+          -8.0,
+          35.127502
+        ],
+        [
+          12.0625,
+          -7.18,
+          37.172501
+        ]
+      ],
+      "pivot": [
+        11.600000381469727,
+        -8.0,
+        36.150001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "east standby bunk",
+      "room": "crew",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          15.6875,
+          -8.0,
+          35.127502
+        ],
+        [
+          16.612499,
+          -7.18,
+          37.172501
+        ]
+      ],
+      "pivot": [
+        16.149999618530273,
+        -8.0,
+        36.150001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "crew equipment locker",
+      "room": "crew",
+      "asset": "level_work_crew_footlocker",
+      "sha256": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+      "bounds": [
+        [
+          18.202002,
+          -8.0,
+          36.336246
+        ],
+        [
+          19.198,
+          -7.11927,
+          37.063755
+        ]
+      ],
+      "pivot": [
+        18.700000762939453,
+        -8.0,
+        36.77875518798828
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "crew emergency telephone",
+      "room": "crew",
+      "stand": {
+        "asset": "level_event_side_table_worn",
+        "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+        "bounds": [
+          [
+            13.47,
+            -8.0,
+            33.450001
+          ],
+          [
+            13.929999,
+            -7.245,
+            33.850002
+          ]
+        ],
+        "pivot": [
+          13.699999809265137,
+          -8.0,
+          33.650001525878906
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "device": {
+        "asset": "level_event_phone_worn",
+        "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+        "bounds": [
+          [
+            13.558,
+            -7.244,
+            33.540001
+          ],
+          [
+            13.842,
+            -7.076881,
+            33.760002
+          ]
+        ],
+        "pivot": [
+          13.699999809265137,
+          -7.24399995803833,
+          33.650001525878906
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": [
+          "Mine case crew telephone stand 01"
+        ]
+      }
     }
   ]
 }

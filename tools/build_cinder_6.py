@@ -11,8 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point, world
+from build_college_electrical import bounds, point, world
 from build_lookout_native_arrival import table
+from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from review_roster_macroterrain import sha
@@ -149,6 +150,34 @@ def gallery_power(assembly, zone, switch_segment):
                       (drop,(drop[0],mount_height,drop[2]),loop[0]),.014)
 
 
+def fit_workrooms(case):
+    furnishings=[]
+    for asset,name,zone,x,y,z in (
+        ("level_work_repair_bench","surface maintenance bench","shop",49.6,0,43.5),
+        ("level_workbench_worn","surface duty desk","servicehouse",23.8,0,56.6),
+        ("level_trace_camp_bed","west standby bunk","crew",11.6,-8,36.15),
+        ("level_trace_camp_bed","east standby bunk","crew",16.15,-8,36.15),
+        ("level_work_crew_footlocker","crew equipment locker","crew",18.7,-8,36.7),
+    ):
+        _,placement=case.fit(asset,name,zone,x,y,z)
+        furnishings.append(dict(name=name,room=zone,**placement))
+
+    x,y,z=13.7,-8,33.65
+    table,placement=case.fit("level_event_side_table_worn","crew telephone stand","crew",x,y,z)
+    top,normal,_,_=bvh(table).ray_cast(point(x,y+1.55,z),DOWN,1.5)
+    assert top is not None and normal.z>.98,"Emergency telephone needs a supported stand"
+    phone,installation=case.fit("level_event_phone_worn","crew emergency telephone","crew",x,top.z+.001,z,support=table)
+    assert len(phone)==1
+    phone[0].name="Cinder lower crew emergency telephone"
+    low,high=bounds(phone)
+    face,_,_,_=bvh(phone).ray_cast(point(x,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert face is not None,"Emergency telephone needs an exposed casing"
+    px,py,pz=world(face)
+    case.effect(phone[0].name,"native-device",10,(px,py,pz+.035),0,"PHONE")
+    furnishings.append(dict(name="crew emergency telephone",room="crew",stand=placement,device=installation))
+    return furnishings
+
+
 def build():
     OUT.mkdir(parents=True,exist_ok=True)
     source={ext:SOURCE/f"surveyed-thresholds.{ext}" for ext in ("blend","glb","hcs2")}
@@ -162,14 +191,15 @@ def build():
     zones={z["id"]:{**z,"owner":owners[z["id"]]} for z in layout["zones"]}
     bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
     bpy.context.preferences.filepaths.save_version=0
-    assembly=Assembly()
+    assembly=Case()
     pockets=cupboards(assembly,zones,REFUGES,site="cinder",floor_roles=("floor","constructed continuous room or arcade floor"))
     main_supply(assembly,zones["plant"])
     room_power(assembly,zones)
     gallery_power(assembly,zones["upperring"],29)
     gallery_power(assembly,zones["lowring"],2)
+    workrooms=fit_workrooms(assembly)
     for obj in assembly.built:
-        obj.name=obj.name.removeprefix("College ")
+        obj.name=obj.name.removeprefix("College ").replace("Mine case ","Cinder ",1)
     target={ext:OUT/f"facility.{ext}" for ext in source}
     addition=ROOT/"build/cinder-6-installation.glb"
     export(addition,assembly.built)
@@ -219,7 +249,7 @@ def build():
     (OUT/"construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
         retained_components=len(prior),pockets=pockets,services=assembly.sockets,
-        controllers=assembly.controllers,fixtures=assembly.loads),indent=2)+"\n",
+        controllers=assembly.controllers,fixtures=assembly.loads,workrooms=workrooms),indent=2)+"\n",
         encoding="utf-8",newline="\n")
 
 
