@@ -1,0 +1,87 @@
+{
+  "site": "WLD-11",
+  "source": "development/levels/rebuild/canyon-marsh-pass/wld-11/authored-layout.json",
+  "geometry_sha256": {
+    "blend": "3fd751c7b7eda1698a79a49b56dcb8ca281747a9f5ab095fcd59394568af9a50",
+    "glb": "04dad79374c6e6ebf84edfc76d1cde0e32230c8c146cc1d52ff5362b5692f2d0",
+    "hcs2": "7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71"
+  },
+  "retained_native_components": 356,
+  "refuges": [
+    {
+      "id": "marsh-house-a-cupboard",
+      "space": "house-a",
+      "owner": 0,
+      "position": [
+        13.5,
+        1.2,
+        49
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          12.9,
+          1.2,
+          48.150002
+        ],
+        [
+          14.202,
+          3.51,
+          49.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "marsh-house-b-cupboard",
+      "space": "house-b",
+      "owner": 1,
+      "position": [
+        64.5,
+        1.2,
+        49
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          63.798,
+          1.2,
+          48.150002
+        ],
+        [
+          65.099998,
+          3.51,
+          49.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "marsh-chapel-cupboard",
+      "space": "chapel",
+      "owner": 2,
+      "position": [
+        15.5,
+        1.2,
+        17.5
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          14.65,
+          1.2,
+          16.9
+        ],
+        [
+          16.35,
+          3.51,
+          18.202
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ]
+}

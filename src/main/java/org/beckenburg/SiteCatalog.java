@@ -21,7 +21,8 @@ public final class SiteCatalog {
         NORTHWATCH(NorthwatchNativeLevel.TITLE,NorthwatchNativeLevel.REVIEW_PROPERTY),
         BLACKWATER(BlackwaterNativeLevel.TITLE,BlackwaterNativeLevel.REVIEW_PROPERTY),
         MONASTERY(MonasteryNativeLevel.TITLE,MonasteryNativeLevel.REVIEW_PROPERTY),
-        RED_MESA(MissionSites.title("RED_MESA"),RedMesaNativeLevel.REVIEW_PROPERTY);
+        RED_MESA(MissionSites.title("RED_MESA"),RedMesaNativeLevel.REVIEW_PROPERTY),
+        MOURNING_MARSH(MissionSites.title("MOURNING_MARSH"),MourningMarshNativeLevel.REVIEW_PROPERTY);
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

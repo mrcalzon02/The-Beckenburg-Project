@@ -9400,3 +9400,12 @@ The game now textures plain native wall assemblies with metre-based coordinates.
 ### DEV-739 · Red Mesa construction had no native mission dispatch
 
 The native package connects the existing campaign slot to the surveyed canyon. Four operating leaves, 64 movement replays and three walk-in refuges pass in both renderers. The continuous three-peer case reaches the upper chamber and completes absolution. [Evidence](../levels/rebuild/red-mesa-native-pass/checkpoint.json)
+
+
+### DEV-740 · Mourning Marsh’s built settlement had no native dispatch
+
+The paired game packages bind the surveyed settlement, seven fitted doors and three supported refuges to its original campaign slot. The live case travels through the warehouse and completes absolution in the chapel. [Evidence](../levels/rebuild/mourning-marsh-native-pass/checkpoint.json)
+
+### DEV-741 · A supported step at the Marsh’s causeway turn stalled the case
+
+A live hunter crossed onto supported terrain at x 40.060 and z 72.001 outside the original causeway volume. The widened owner follows the existing approach. The exact stance and cargo-to-chapel case verify the repair. [Evidence](../levels/rebuild/mourning-marsh-native-pass/checkpoint.json)

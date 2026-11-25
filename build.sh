@@ -152,6 +152,13 @@ for payload in red-mesa-review.glb red-mesa-review.hcs2 runtime-input.tsv door-s
     cp "$red_mesa_packet/$payload" "$red_mesa_resource/$payload"
 done
 
+mourning_marsh_packet=development/levels/rebuild/mourning-marsh-native-pass
+mourning_marsh_resource=build/classes/org/beckenburg/sites/wld-11
+mkdir -p "$mourning_marsh_resource"
+for payload in marsh-review.glb marsh-review.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$mourning_marsh_packet/$payload" "$mourning_marsh_resource/$payload"
+done
+
 northwatch_packet=development/levels/rebuild/northwatch-furnishing-pass/wld-08
 northwatch_resource=build/classes/org/beckenburg/sites/wld-08
 mkdir -p "$northwatch_resource"

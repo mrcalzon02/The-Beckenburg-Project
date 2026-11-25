@@ -1,0 +1,92 @@
+SOURCE	04dad79374c6e6ebf84edfc76d1cde0e32230c8c146cc1d52ff5362b5692f2d0	7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71
+DOCK	32.0	0	82.0	0
+ROOM	house-a	0	12	38	28	54	1.2	3	false	West stilt house	20	1.2	46
+ROOM	house-b	1	52	38	66	54	1.2	3	false	East stilt house	59	1.2	46
+ROOM	chapel	2	12	16	28	34	1.2	3	false	Settlement chapel	20	1.2	25
+ROOM	main	3	28	14	32	62	1.2	3	true	Main settlement boardwalk	30	1.2	38
+ROOM	warehouse	4	32	14	48	36	1.2	3	false	Flooded warehouse dry deck	40	1.2	25
+ROOM	service	5	48	14	52	62	1.2	3	true	Service boardwalk	50	1.2	38
+ROOM	shack	6	52	18	64	32	1.2	3	false	Fishing shack	58	1.2	25
+ROOM	ferry	7	28	-6	40	8	1.2	3	true	Ferry stage	34	1.2	1
+ROOM	pump	8	52	54	64	64	1.2	3	false	Pump / wash shelter	58	1.2	59
+ROOM	south-deck	9	28	56	52	62	1.2	3	true	South crossing deck	40	1.2	59
+ROOM	north-deck	10	28	8	52	14	1.2	3	true	North crossing deck	40	1.2	11
+ROOM	levee-landing	11	37.7	62	42.3	70	0	3	true	Founded levee stair landing	39.98	0	67.1
+ROOM	entry	12	24	62	40	76	0	3	true	Raised causeway landing	32	0	72
+ROOM	stage	13	24	76	40	88	0	3	true	Causeway van apron	32	0	77
+SPACE	causeway-turn	12	37.7	70	42.3	74	0	3	true
+TREAD	Mourning Marsh wide approach stair riser 01 region0
+TREAD	Mourning Marsh wide approach stair riser 02 region0
+TREAD	Mourning Marsh wide approach stair riser 03 region0
+TREAD	Mourning Marsh wide approach stair riser 04 region0
+TREAD	Mourning Marsh wide approach stair riser 05 region0
+TREAD	Mourning Marsh wide approach stair riser 06 region0
+TREAD	Mourning Marsh wide approach stair riser 07 region0
+OPEN	950	13	12	32	0	76	2	z	trail
+OPEN	951	12	11	39.98	0	70	2	z	trail
+OPEN	952	11	9	39.98	0.9	62.7	2.1	z	stair
+OPEN	953	9	3	30	1.2	56	2	z	trail
+OPEN	954	9	5	50	1.2	56	2	z	trail
+OPEN	955	3	10	30	1.2	14	2	z	trail
+OPEN	956	5	10	50	1.2	14	2	z	trail
+OPEN	957	10	7	34	1.2	8	2	z	trail
+RITUAL	banishment	4	40.0	1.2	25.0
+RITUAL	cleansing	8	58.0	1.2	59.0
+RITUAL	absolution	2	20.0	1.2	25.0
+COVER	marsh-house-a-cupboard	0	13.5	1.2	49	-1.5707963267948966
+COVER	marsh-house-b-cupboard	1	64.5	1.2	49	1.5707963267948966
+COVER	marsh-chapel-cupboard	2	15.5	1.2	17.5	0
+POINT	L01	32	0	78.372
+POINT	L01	32	0	76
+POINT	L01	32	0	72
+POINT	L02	32	0	72
+POINT	L02	39.98	0	72
+POINT	L02	39.98	0	70.17
+POINT	L02	39.98	0	65.46
+POINT	L02	39.98	1.2	62
+POINT	L02	39.98	1.2	59
+POINT	L02	40	1.2	59
+POINT	L03	40	1.2	59
+POINT	L03	30	1.2	59
+POINT	L03	30	1.2	38
+POINT	L04	40	1.2	59
+POINT	L04	50	1.2	59
+POINT	L04	50	1.2	38
+POINT	L05	30	1.2	38
+POINT	L05	30	1.2	11
+POINT	L05	40	1.2	11
+POINT	L06	40	1.2	11
+POINT	L06	50	1.2	11
+POINT	L06	50	1.2	38
+POINT	L07	30.0	1.2	38.0
+POINT	L07	30.0	1.2	46.0
+POINT	L07	28.0	1.2	46.0
+POINT	L07	20.0	1.2	46.0
+POINT	L08	50.0	1.2	38.0
+POINT	L08	50.0	1.2	46.0
+POINT	L08	52.0	1.2	46.0
+POINT	L08	59.0	1.2	46.0
+POINT	L09	30.0	1.2	38.0
+POINT	L09	30.0	1.2	25.0
+POINT	L09	28.0	1.2	25.0
+POINT	L09	20.0	1.2	25.0
+POINT	L10	30.0	1.2	38.0
+POINT	L10	30.0	1.2	25.0
+POINT	L10	32.0	1.2	25.0
+POINT	L10	40.0	1.2	25.0
+POINT	L11	40.0	1.2	25.0
+POINT	L11	48.0	1.2	25.0
+POINT	L11	50.0	1.2	25.0
+POINT	L11	50.0	1.2	38.0
+POINT	L12	50.0	1.2	38.0
+POINT	L12	50.0	1.2	25.0
+POINT	L12	52.0	1.2	25.0
+POINT	L12	58.0	1.2	25.0
+POINT	L13	40.0	1.2	11.0
+POINT	L13	34.0	1.2	8.0
+POINT	L13	34.0	1.2	1.0
+POINT	L14	50.0	1.2	38.0
+POINT	L14	50.0	1.2	58.0
+POINT	L14	52.0	1.2	58.0
+POINT	L14	58.0	1.2	58.0
+POINT	L14	58.0	1.2	59.0

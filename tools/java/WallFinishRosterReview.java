@@ -41,7 +41,8 @@ final class WallFinishRosterReview {
                 check(samePosition(prior, next), name + " surface moved");
                 if (!finished) check(prior.u() == next.u() && prior.v() == next.v(), name + " source UV changed");
             }
-            if (!material.hasTexture() && material.name().startsWith("Neutral shell") && wallSized(triangle))
+            if (!material.hasTexture() && (material.name().startsWith("Neutral shell")
+                || material.name().equals("Marsh painted timber facades")) && wallSized(triangle))
                 check(finished, name + " plain structural wall remains at " + original.nodeName(primitive.node()));
             if (finished) {
                 check(!material.hasTexture(), name + " replaced an authored texture");

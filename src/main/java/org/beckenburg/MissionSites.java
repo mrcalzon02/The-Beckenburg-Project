@@ -4,7 +4,7 @@ import java.util.*;
 public final class MissionSites {
     private MissionSites(){}
     public record Entry(String id,String title,String region,String scale,String description,String imageKey,String imageCaption){
-        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
+        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; case "WLD-11" -> "MOURNING_MARSH"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
         public boolean headquarters(){return id.equals("CASTLE");}
         public boolean playable(){var site=location();return site!=null&&site.playable();}
         public String status(){return headquarters()?"HEADQUARTERS / NO INVESTIGATION":playable()?"AVAILABLE":"IN DEVELOPMENT / NOT DISPATCHABLE";}
@@ -61,6 +61,7 @@ public final class MissionSites {
             case "NORTHWATCH" -> "WLD-08";
             case "BLACKWATER" -> "WLD-09";
             case "MONASTERY" -> "WLD-10";
+            case "MOURNING_MARSH" -> "WLD-11";
             default -> id;
         }).title();
     }

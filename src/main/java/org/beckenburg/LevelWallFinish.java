@@ -15,7 +15,7 @@ final class LevelWallFinish {
     private static final Pattern WALL = Pattern.compile(
         "(?:^|[ _-])(?:walls?|partitions?|headers?|lintels?|retaining|parapets?|facades?|ashlar|lining|cladding|envelope|bulkheads?)(?:$|[ _.\\-])");
     private static final Pattern MASONRY = Pattern.compile("masonry|(?:lime|sand)stone|ashlar|brick|crypt stone");
-    private static final Pattern TIMBER = Pattern.compile("timber boarding|wood siding|wooden cladding");
+    private static final Pattern TIMBER = Pattern.compile("timber boarding|timber facades?|wood siding|wooden cladding");
     private static final Pattern CONCRETE = Pattern.compile("concrete|cement|tunnel dark lining");
 
     enum Finish {
