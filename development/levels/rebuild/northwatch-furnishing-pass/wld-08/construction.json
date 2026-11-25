@@ -6,6 +6,26 @@
       "measured_floor_bearings": 4
     },
     {
+      "room": "radio",
+      "name": "relay operator bench",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "dorm",
+      "name": "west crew bunk",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "dorm",
+      "name": "east crew bunk",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "mess",
+      "name": "crew mess bench",
+      "measured_floor_bearings": 4
+    },
+    {
       "room": "records",
       "name": "relay log desk",
       "measured_floor_bearings": 4
@@ -78,6 +98,118 @@
         20.049999237060547
       ],
       "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "radio",
+      "name": "relay operator bench",
+      "nearest_route": "J02",
+      "minimum_route_margin": 4.6475,
+      "asset": "level_workbench_worn",
+      "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+      "bounds": [
+        [
+          26.75,
+          0.0,
+          13.6475
+        ],
+        [
+          28.549999,
+          1.22,
+          14.3525
+        ]
+      ],
+      "pivot": [
+        27.649999618530273,
+        0.0,
+        13.987500190734863
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "dorm",
+      "name": "west crew bunk",
+      "nearest_route": "L18",
+      "minimum_route_margin": 4.2275,
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          47.487499,
+          0.0,
+          28.727501
+        ],
+        [
+          48.412502,
+          0.82,
+          30.772499
+        ]
+      ],
+      "pivot": [
+        47.95000076293945,
+        0.0,
+        29.75
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "dorm",
+      "name": "east crew bunk",
+      "nearest_route": "J03",
+      "minimum_route_margin": 0.5875,
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          55.587498,
+          0.0,
+          38.577499
+        ],
+        [
+          56.512501,
+          0.82,
+          40.622498
+        ]
+      ],
+      "pivot": [
+        56.04999923706055,
+        0.0,
+        39.599998474121094
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "mess",
+      "name": "crew mess bench",
+      "nearest_route": "J03",
+      "minimum_route_margin": 2.325,
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          48.924999,
+          0.0,
+          51.342697
+        ],
+        [
+          50.674999,
+          0.88,
+          51.95731
+        ]
+      ],
+      "pivot": [
+        49.79999923706055,
+        0.0,
+        51.682308197021484
+      ],
+      "yaw": 0,
       "scale": 1,
       "support": "measured existing slab"
     },
@@ -277,6 +409,34 @@
       "yaw": 0,
       "scale": 1,
       "support": "measured existing slab"
+    },
+    {
+      "room": "radio",
+      "name": "station relay radio",
+      "asset": "level_event_radio_worn",
+      "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+      "bounds": [
+        [
+          27.490717,
+          0.946,
+          13.926001
+        ],
+        [
+          27.809282,
+          1.39641,
+          14.074
+        ]
+      ],
+      "pivot": [
+        27.659282684326172,
+        0.9459999203681946,
+        13.991000175476074
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": [
+        "Northwatch relay operator bench 01"
+      ]
     }
   ],
   "documents": [
@@ -366,11 +526,11 @@
     }
   ],
   "exports": {
-    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.blend": "d3c512ff9980b75093df33a5f9bf0042b5dddb231376afda5b67c49f35712e34",
-    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb": "9eee9ba13ea80761b5e1f4dd79a6e91b77eaacfc3591883756aeac2cd2c6dbae",
-    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2": "0291baa5c2f17f2646ca80e90624fd228ead54c50d14f1c3e007fd52fcf8bdde"
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.blend": "fe9ef93a75b05c1f4f634b6d389c898d89493ac6b24d9cfb5a0e16c184a7f72b",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb": "2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909"
   },
   "previous_scene": "94e9f5f3c77d07e72a55cf969fcb9650a8fb2fb966c998e1e4c91ed30ad9c5e7",
   "retained_collision_parts": 1135,
-  "added_collision_parts": 10
+  "added_collision_parts": 15
 }

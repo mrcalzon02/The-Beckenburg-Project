@@ -306,5 +306,6 @@ POINT	Northwatch-switch-fuel-and-heat-worksheet	11	0	16
 POINT	Northwatch-switch-fuel-and-heat-worksheet	7	0	16
 POINT	Northwatch-switch-fuel-and-heat-worksheet	5.1	0	16
 POINT	Northwatch-switch-fuel-and-heat-worksheet	5.1	0	20.18
+SERVICE	Northwatch distribution Northwatch station relay radio	native-device	3	27.65	1.011	14.103138	0	RADIO
 STORY	northwatch-winter-relay-log	WINTER_RELAY_LOG	4	level_trace_journal	35.86000061035156	0.7409999966621399	14.819999694824219	0	0.62	35.86	0	16.1	35.877998	0.76394	14.832
 STORY	northwatch-fuel-and-heat-worksheet	FUEL_AND_HEAT_WORKSHEET	5	level_story_letters	3.546229124069214	0.9231899976730347	20.18015480041504	0	0.62	5.1	0	20.18	3.568	0.9421	20.191999

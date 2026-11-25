@@ -6,7 +6,7 @@ import sys
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from build_northwatch_distribution import BASE, build
-from build_college_electrical import point, world
+from build_college_electrical import bounds, point, world
 from build_mine_case import Case, DOWN
 from verify_college_services import bvh
 
@@ -14,6 +14,10 @@ PARENT=BASE/"northwatch-water-pass"
 OUT=BASE/"northwatch-furnishing-pass/wld-08"
 PIECES=(
     ("generator","service workbench","level_work_repair_bench",3.46,20.05,math.pi/2),
+    ("radio","relay operator bench","level_workbench_worn",27.65,14.0,0),
+    ("dorm","west crew bunk","level_trace_camp_bed",47.95,29.75,0),
+    ("dorm","east crew bunk","level_trace_camp_bed",56.05,39.6,0),
+    ("mess","crew mess bench","level_camp_bench",49.8,51.65,0),
     ("records","relay log desk","level_student_desk",35.86,14.85,0),
     ("store","cold-store shelving","shelf_mp_6",3.0,49.8,math.pi/2),
     ("mess","mess table","dinner_table_1",49.8,50.85,0),
@@ -83,7 +87,19 @@ def install(case):
             o.name=o.name.replace("Mine case ","Northwatch ")
             o["role"]="supported station furnishing"
 
-    rows=[]
+    desk=furnishings["radio"]
+    top,normal,_,_=bvh(desk).ray_cast(point(27.65,1.65,14),DOWN,1.60)
+    assert top is not None and normal.z>.98,"Relay bench needs a supported transmitter"
+    radio,installation=case.fit("level_event_radio_worn","station relay radio","radio",
+                                27.65,top.z+.001,14,support=desk)
+    assert len(radio)==1 and not obstructions.overlap(bvh(radio))
+    radio[0].name="Northwatch station relay radio"
+    low,high=bounds(radio)
+    face,_,_,_=bvh(radio).ray_cast(point(27.65,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert face is not None,"The relay radio needs an exposed casing"
+    x,y,z=world(face)
+    rows=[("SERVICE","Northwatch distribution "+radio[0].name,"native-device",3,x,y,z+.035,0,"RADIO")]
+    placements.append(dict(room="radio",name="station relay radio",**installation))
     documents=[]
     for name,room,owner,asset,(x,z),feet,walk in RECORDS:
         desk=furnishings[room]
