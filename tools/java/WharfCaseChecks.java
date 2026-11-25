@@ -19,15 +19,6 @@ final class WharfCaseChecks {
     }
 
     static void auditDispatch(LevelDefinition level, NativeInvestigationScene scene) {
-        String key = WharfNativeLevel.REVIEW_PROPERTY;
-        String enabled = System.getProperty(key);
-        try {
-            System.clearProperty(key);
-            require(!MissionSites.byId("WLD-06").playable() && !SiteCatalog.playable(HouseMap.Site.WHARF),
-                    "The Wharf review gate did not hold");
-        } finally {
-            if (enabled != null) System.setProperty(key, enabled);
-        }
         var location = MissionSites.byId("WLD-06").location();
         require(location == SiteCatalog.Location.WHARF && List.of(SiteCatalog.soloLocations()).contains(location)
                 && SiteCatalog.mapFor(location) == HouseMap.Site.WHARF, "Named Wharf dispatch is unavailable");

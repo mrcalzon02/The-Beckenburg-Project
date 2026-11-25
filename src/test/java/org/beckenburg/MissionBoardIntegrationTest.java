@@ -24,7 +24,8 @@ public final class MissionBoardIntegrationTest {
         var catalog=CampaignBoardPanel.catalog();
         check(catalog.size()==22,"all saved campaign ordinals retained");
         for(int i=0;i<expected.size();i++)check(catalog.get(i).map()==expected.get(i),"saved chapter map retained at "+i);
-        var rebuilt=List.of(SiteCatalog.Location.MINE,SiteCatalog.Location.NORTHWATCH,
+        var rebuilt=List.of(SiteCatalog.Location.LOOKOUT,SiteCatalog.Location.MINE,SiteCatalog.Location.WHARF,
+            SiteCatalog.Location.CEMETERY,SiteCatalog.Location.NORTHWATCH,
             SiteCatalog.Location.BLACKWATER,SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,
             SiteCatalog.Location.MOURNING_MARSH,SiteCatalog.Location.GREYWATER);
         for(int i=9;i<22;i++){
@@ -56,7 +57,7 @@ public final class MissionBoardIntegrationTest {
             check(picture[0].isVisible(),"site pictures card opens");
             picture[0].select("SCHOOL");check(!dispatch.isEnabled(),"browsing locked School cannot bypass story checkpoint");
             picture[0].select("WLD-02");check(!dispatch.isEnabled(),"browsing remote concept cannot dispatch");
-            picture[0].select("WLD-06");check(!dispatch.isEnabled(),"named Wharf cannot bypass its review gate");
+            picture[0].select("WLD-06");check(!dispatch.isEnabled(),"playable Wharf still requires campaign progress");
             picture[0].select("WLD-13");check(!dispatch.isEnabled(),"playable Greywater still requires campaign progress");
             picture[0].select("CASTLE");check(!dispatch.isEnabled(),"headquarters cannot become an investigation");
             picture[0].select("HOUSE");check(dispatch.isEnabled(),"unlocked House remains dispatchable");

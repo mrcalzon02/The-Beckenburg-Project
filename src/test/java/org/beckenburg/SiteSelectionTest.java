@@ -19,7 +19,9 @@ public final class SiteSelectionTest {
             SiteCatalog.Location.FARMHOUSE,SiteCatalog.Location.SCHOOL,SiteCatalog.Location.MANSION,
             SiteCatalog.Location.PRISON,SiteCatalog.Location.ASYLUM,SiteCatalog.Location.ACADEMY,
             SiteCatalog.Location.COLLEGE,SiteCatalog.Location.CHURCH,
-            SiteCatalog.Location.MINE,SiteCatalog.Location.NORTHWATCH,SiteCatalog.Location.BLACKWATER,
+            SiteCatalog.Location.LOOKOUT,SiteCatalog.Location.MINE,SiteCatalog.Location.WHARF,
+            SiteCatalog.Location.CEMETERY,SiteCatalog.Location.MORTUARY,SiteCatalog.Location.NORTHWATCH,
+            SiteCatalog.Location.BLACKWATER,
             SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,SiteCatalog.Location.MOURNING_MARSH,
             SiteCatalog.Location.GREYWATER);
         ok(SiteCatalog.soloLocations().length==builtins.size()+1,

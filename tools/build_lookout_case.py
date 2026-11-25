@@ -101,7 +101,12 @@ def build(out):
     hashes={ext:sha(f) for ext,f in targets.items()}
     rows=[("SOURCE",targets["glb"].relative_to(ROOT).as_posix(),hashes["glb"],
            targets["hcs2"].relative_to(ROOT).as_posix(),hashes["hcs2"])]
-    rows.extend(line.split("\t") for line in (BASE/"arrival.tsv").read_text().splitlines()[1:])
+    for line in (BASE/"arrival.tsv").read_text().splitlines()[1:]:
+        row = line.split("\t")
+        if row == ["POINT", "L14B", "27", "15", "5"]:
+            # Follow the clear aisle beyond the inner swing before turning to the deck.
+            rows.append(("POINT", "L14B", 25.5, 15, 5))
+        rows.append(row)
     rows.extend(sockets)
     table(out/"arrival.tsv",rows)
     for filename in ("door-survey.tsv","mission.tsv"):

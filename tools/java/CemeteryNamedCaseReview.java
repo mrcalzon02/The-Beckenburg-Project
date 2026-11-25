@@ -12,15 +12,6 @@ final class CemeteryNamedCaseReview {
     static void audit(HouseMap map,CemeteryNativeLevel.Source source,List<String> report,boolean gpu)
             throws Exception {
         String id=map.level().id();
-        String property=CemeteryNativeLevel.REVIEW_PROPERTY;
-        String before=System.getProperty(property);
-        try {
-            System.clearProperty(property);
-            require(!MissionSites.byId("WLD-07").playable()&&!MissionSites.byId("WLD-07-MORTUARY").playable(),
-                "Cemetery variants escaped their review gate");
-        } finally {
-            if(before!=null)System.setProperty(property,before);
-        }
         var location=MissionSites.byId(id.toUpperCase(java.util.Locale.ROOT)).location();
         require(location!=null&&List.of(SiteCatalog.soloLocations()).contains(location)&&SiteCatalog.mapFor(location)==map.site()
             &&MissionSites.title(map.site().name()).equals(map.level().title()),"Named Cemetery selection is unavailable");
