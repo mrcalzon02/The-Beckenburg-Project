@@ -10,8 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point
+from build_college_electrical import bounds, point, world
+from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
+from build_roster_foundations import material
 from review_roster_macroterrain import sha
 from verify_college_electrical import native_records
 from verify_college_services import bvh
@@ -75,6 +77,46 @@ def director_log(assembly,table,x,z):
     assembly.effect(book.name,"native_story",2,(x,high[1],z),0,"SEACLIFF_DIRECTOR_LOG")
 
 
+def fit_battery_fixtures(case):
+    shelf, records = case.fit("shelf_mp_6","records shelving","records",30.4,0,15.85)
+    assert shelf
+    x,y,z=37.5,7,12.7
+    stand, table = case.fit("level_event_side_table_worn","director telephone stand","director",x,y,z)
+    top, normal, _, _ = bvh(stand).ray_cast(point(x,y+1.55,z),DOWN,1.5)
+    assert top is not None and normal.z>.98,"Director telephone needs a supported table"
+    phone, handset = case.fit("level_event_phone_worn","director telephone","director",x,top.z+.001,z,
+                             support=stand)
+    assert len(phone)==1
+    phone[0].name="Seacliff director telephone"
+    low, high=bounds(phone)
+    hit, _, _, _ = bvh(phone).ray_cast(point(x,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert hit is not None,"Director telephone needs a reachable casing"
+    px,py,pz=world(hit)
+    case.effect(phone[0].name,"native-device",2,(px,py,pz+.035),0,"PHONE")
+
+    x,z=38.85,15.71
+    pump, installation=case.fit("level_blockout_cinder_sump_pump","casemate sump pump","pump",x,0,z,scale=.82)
+    assert len(pump)==1
+    pump[0].name="Seacliff casemate sump pump"
+    low,high=bounds(pump)
+    body=bvh(pump)
+    contact=None
+    for offset,fraction in ((-.27,.55),(.27,.55),(-.27,.35),(.27,.35),(0,.22)):
+        height=low[1]+fraction*(high[1]-low[1])
+        contact,_,_,_=body.ray_cast(point(x+offset,height,high[2]+.88),point(0,0,-1),1.75)
+        if contact is not None:break
+    assert contact is not None,"Sump pump needs an accessible casing"
+    px,py,pz=world(contact)
+    case.effect(pump[0].name,"native-device",11,(px,py,pz+.04),0,"WATER_PUMP")
+    wall,_,_=case.measured(point(x,.53,z-.61),point(0,0,-1),1.2,"Sump room north wall")
+    _,_,back=world(wall)
+    pipe=material("Seacliff galvanized sump discharge",(.29,.32,.32))
+    case.tube("Seacliff sump discharge pipe",(x,.28,z),(x,.28,back+.06),.05,pipe)
+    case.tube("Seacliff sump discharge riser",(x,.28,back+.06),(x,.53,back+.06),.05,pipe)
+    case.tube("Seacliff sump wall union",(x,.53,back+.06),(x,.53,back),.058,pipe)
+    return dict(telephone=handset,telephone_stand=table,sump_pump=installation,records_shelf=records)
+
+
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
     source = {ext: BASE / "wld-17" / f"battery-cupboards.{ext}" for ext in ("blend", "glb", "hcs2")}
@@ -90,7 +132,7 @@ def build():
             max(v.x for v in vertices), max(-v.y for v in vertices))
     rows.append("	".join(map(str, ("SPACE", "arrival-switchback-court", 13,
                                     *edge, foot, 2.3, "True"))))
-    assembly = Assembly()
+    assembly = Case()
     for space, owner, floor, switch, lamp, (dx, dz) in BRANCHES:
         print("Mounting Seacliff", space, flush=True)
         zone = dict(id=space, owner=owner, y=floor, height=3)
@@ -108,8 +150,9 @@ def build():
         assembly.sockets[-2]["id"] = f"battery-{space}-switch"
         assembly.sockets[-2]["style"] = f"BATTERY-{space.upper()}"
     fitout_rooms(assembly)
+    fittings=fit_battery_fixtures(assembly)
     for piece in assembly.built:
-        piece.name = piece.name.replace("College ", "Seacliff ", 1)
+        piece.name = piece.name.replace("College ", "Seacliff ", 1).replace("Mine case ","Seacliff ",1)
     target = {ext: OUT / f"battery.{ext}" for ext in source}
     addition = ROOT / "build/seacliff-room-branches.glb"
     export(addition, assembly.built)
@@ -132,7 +175,7 @@ def build():
     (OUT / "runtime.tsv").write_text("\n".join(rows) + "\n", encoding="utf-8", newline="\n")
     (OUT / "circuits.json").write_text(json.dumps(dict(
         source=source["blend"].relative_to(ROOT).as_posix(),
-        installed=assembly.sockets, lights=assembly.loads, conduit=assembly.routes,
+        installed=assembly.sockets, lights=assembly.loads, conduit=assembly.routes, fitted_rooms=fittings,
         exports={ext: sha(path) for ext,path in target.items()}), indent=2)+"\n",
         encoding="utf-8", newline="\n")
 

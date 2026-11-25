@@ -252,6 +252,30 @@
       ],
       "yaw": 0,
       "style": "SEACLIFF_DIRECTOR_LOG"
+    },
+    {
+      "id": "Seacliff director telephone",
+      "type": "native-device",
+      "room": 2,
+      "position": [
+        37.5,
+        7.821,
+        12.825
+      ],
+      "yaw": 0,
+      "style": "PHONE"
+    },
+    {
+      "id": "Seacliff casemate sump pump",
+      "type": "native-device",
+      "room": 11,
+      "position": [
+        39.119999,
+        0.493845,
+        16.278062
+      ],
+      "yaw": 0,
+      "style": "WATER_PUMP"
     }
   ],
   "lights": [
@@ -818,9 +842,109 @@
       "visible": true
     }
   ],
+  "fitted_rooms": {
+    "telephone": {
+      "asset": "level_event_phone_worn",
+      "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+      "bounds": [
+        [
+          37.358002,
+          7.756,
+          12.59
+        ],
+        [
+          37.641998,
+          7.923119,
+          12.809999
+        ]
+      ],
+      "pivot": [
+        37.5,
+        7.75600004196167,
+        12.699999809265137
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": [
+        "Mine case director telephone stand 01"
+      ]
+    },
+    "telephone_stand": {
+      "asset": "level_event_side_table_worn",
+      "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+      "bounds": [
+        [
+          37.27,
+          7.0,
+          12.5
+        ],
+        [
+          37.73,
+          7.755,
+          12.9
+        ]
+      ],
+      "pivot": [
+        37.5,
+        7.0,
+        12.699999809265137
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    "sump_pump": {
+      "asset": "level_blockout_cinder_sump_pump",
+      "sha256": "6c54c4c59ff5f80a8d985f5f4a3e7a3baea244178d267f0c1128c71c27b207b5",
+      "bounds": [
+        [
+          37.898796,
+          0.0,
+          15.0048
+        ],
+        [
+          39.801197,
+          0.8979,
+          16.415199
+        ]
+      ],
+      "pivot": [
+        38.74749755859375,
+        -0.004100000020116568,
+        15.710000038146973
+      ],
+      "yaw": 0,
+      "scale": 0.82,
+      "support": "measured existing slab"
+    },
+    "records_shelf": {
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          29.989998,
+          0.0,
+          15.74
+        ],
+        [
+          30.810001,
+          1.29,
+          15.96
+        ]
+      ],
+      "pivot": [
+        30.40000343322754,
+        5.042526751708465e-08,
+        15.84999942779541
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    }
+  },
   "exports": {
-    "blend": "da7f5c7a7ec5bb2fb85c583d405f227d8dd7ad1e0a6094bea4344fa6c7c4f9e9",
-    "glb": "e5adf9ee23f5f0c22adf2d1733bf8fce9816675a983be8b13ce2384484e7d12f",
-    "hcs2": "61d932d1aee5017707ed7d69235ccbbf9e754a5630eeeca0b3d8d12002c4b741"
+    "blend": "a8b0db3488446046275aab2157ce006a5be436d81576435ac5cdc6dd6b160178",
+    "glb": "04c4c47fd884a1e931bf8c283a31f3ec9b0fb40558544b0a1cb8bd7fca7c925f",
+    "hcs2": "829d5fe47ccfd35aed7da4089b76e65e0a6d94f18c8a330a95060ce8b3252079"
   }
 }

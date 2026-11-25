@@ -1,4 +1,4 @@
-SOURCE	development/levels/rebuild/seacliff-room-services/battery.glb	e5adf9ee23f5f0c22adf2d1733bf8fce9816675a983be8b13ce2384484e7d12f	development/levels/rebuild/seacliff-room-services/battery.hcs2	61d932d1aee5017707ed7d69235ccbbf9e754a5630eeeca0b3d8d12002c4b741
+SOURCE	development/levels/rebuild/seacliff-room-services/battery.glb	04c4c47fd884a1e931bf8c283a31f3ec9b0fb40558544b0a1cb8bd7fca7c925f	development/levels/rebuild/seacliff-room-services/battery.hcs2	829d5fe47ccfd35aed7da4089b76e65e0a6d94f18c8a330a95060ce8b3252079
 DOCK	32.0	0	88.0	0
 FRAME	420	WLD-17-gallery-north-stair	30	4	26	1.5	25.88	26.12	2.3	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
 SPACE	stage	13	24	82	40	94	0	3	True
@@ -307,3 +307,5 @@ SOCKET	battery-records-light	light	10	29.0	2.36	14.264	0	native-string
 SOCKET	battery-pump-switch	switch	11	41.0	1.25	14.081	0.0	BATTERY-PUMP
 SOCKET	battery-pump-light	light	11	39.0	2.36	14.264	0	native-string
 SOCKET	Seacliff director plotting log	native_story	2	35.25	7.98801	14.5	0	SEACLIFF_DIRECTOR_LOG
+SOCKET	Seacliff director telephone	native-device	2	37.5	7.821	12.825	0	PHONE
+SOCKET	Seacliff casemate sump pump	native-device	11	39.119999	0.493845	16.278062	0	WATER_PUMP
