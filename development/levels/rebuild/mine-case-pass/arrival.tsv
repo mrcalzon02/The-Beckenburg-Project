@@ -1,4 +1,4 @@
-SOURCE	development/levels/rebuild/mine-case-pass/mine-case.glb	13f9cc7f9587ef918ebb7e4aaf4eefa3dbc824deb6915bd9e6146b3997fd615a	development/levels/rebuild/mine-case-pass/mine-case.hcs2	1a2a153cd1697bffbb6f87ffbadf5ead1608792fc4b211869fc2384fbfd57d79
+SOURCE	development/levels/rebuild/mine-case-pass/mine-case.glb	fef1de7f0fd426305b22a89c9d8a11c3583e635e2a32731dc05eac6a70aa6d8e	development/levels/rebuild/mine-case-pass/mine-case.hcs2	6b4407d2bb1807127044085c9b1caa0fa049149621a12b10cf37d375a96f2920
 DOCK	28.0	0	82.0	0
 SPACE	stage	13	20	76	36	88	0	3	true	true
 SPACE	entry	13	20	62	40	76	0	3	true	true
@@ -266,4 +266,5 @@ SERVICE	mine-wash-light	light	11	47.0	2.656	39.0	0	native-string
 SPACE	sump-well	9	17.29	37.4	19.4	39.55	-11.12	1.12	false	true
 STORY	mine-story-assay_ledger	ASSAY_LEDGER	1	level_story_letters	50.21683883666992	0.9102400541305542	48.65013122558594	0	0.52	50.22	0	49.589999999999996	50.247	0.9245400428771973	48.674
 STORY	mine-story-rescue_tally	RESCUE_TALLY	0	level_trace_journal	13.319999694824219	0.9105000495910645	48.54999923706055	0	0.52	13.32	0	49.489999999999995	13.347	0.9297400712966919	48.574
+SERVICE	Mine emergency telephone	native-device	0	14.02	0.9755	48.674999	0	PHONE
 SPACE	sealed-hoist-relic	8	50.57	8.075	53.925	12.38	-6	2.85	false	false

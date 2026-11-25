@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/"tools"),str(ROOT/"development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import ASSETS, Assembly, bounds, point
+from build_college_electrical import ASSETS, Assembly, bounds, point, world
 from build_lookout_native_arrival import table
 from build_mine_distribution import samples
 from build_prison_sally_gate import export
@@ -78,6 +78,7 @@ def build(out):
     a=Case()
     details=[]
     story=[]
+    devices=[]
     for name,zone,room,x,z,doc,record in (
             ("assay bench","assay",1,50.55,48.65,"ASSAY_LEDGER","level_story_letters"),
             ("crew dispatch bench","shack",0,13.65,48.55,"RESCUE_TALLY","level_trace_journal")):
@@ -88,6 +89,18 @@ def build(out):
         top=hit.z+.0005
         if room==1:
             _,receipt=a.fit("level_blockout_assay_balance","assay balance",zone,x+.39,top,z,scale=.47,support=wood)
+            details.append(receipt)
+        if zone=="shack":
+            phone_x=x+.37
+            phone,receipt=a.fit("level_event_phone_worn","emergency telephone",zone,phone_x,top,z,support=wood)
+            assert len(phone)==1, "The emergency telephone needs one selectable casing"
+            phone[0].name="Mine emergency telephone"
+            low,high=bounds(phone)
+            face,_,_,_=bvh(phone).ray_cast(point(phone_x,low[1]+.065,high[2]+.8),
+                                          point(0,0,-1),1.6)
+            assert face is not None, "The emergency telephone needs an exposed front"
+            fx,fy,fz=world(face)
+            devices.append(("SERVICE",phone[0].name,"native-device",room,fx,fy,fz+.035,0,"PHONE"))
             details.append(receipt)
         px=x-.33
         paper,receipt=a.fit(record,doc.lower(),zone,px,top,z,scale=.52,support=wood)
@@ -149,7 +162,7 @@ def build(out):
         assert match_geometry(triangles(part),[t for t,_ in records(bpy.context.scene.objects[part[0]])]),part[0]
     hashes={ext:sha(f) for ext,f in targets.items()}
     start=("SOURCE",targets["glb"].relative_to(ROOT).as_posix(),hashes["glb"],targets["hcs2"].relative_to(ROOT).as_posix(),hashes["hcs2"])
-    rows=[start,*[line.split("\t") for line in (BASE/"arrival.tsv").read_text().splitlines()[1:]],*story]
+    rows=[start,*[line.split("\t") for line in (BASE/"arrival.tsv").read_text().splitlines()[1:]],*story,*devices]
     rows.append(("SPACE","sealed-hoist-relic",8,50.57,8.075,53.925,12.38,-6,2.85,"false","false"))
     table(out/"arrival.tsv",rows)
     for file in ("door-survey.tsv","mission.tsv","rail-probes.tsv","switches.tsv","drainage-probes.tsv","slab-probes.tsv","mine-sump.water"):
