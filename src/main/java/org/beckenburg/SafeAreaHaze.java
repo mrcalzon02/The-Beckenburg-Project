@@ -24,14 +24,7 @@ public final class SafeAreaHaze {
                     Math.hypot(LevelClosets.HALF_X,halfZ),1.65,LevelClosets.HEAD);
                 shells.add(new Pocket(veil,socket.yaw(),LevelClosets.HALF_X,halfZ));
             }else if(socket.type().equals("outdoor-hide")&&OutdoorHiding.available(map.level(),socket,map.hidingDensity())){
-                // Mark the actual refuge asset so opaque leaves cannot hide the cue.
-                // Eligibility and concealment still use the authored standing/crouch pocket.
-                double radius=.36,coverHeight=1.15,shoulder=.70;
-                for(var prop:map.level().props())if(prop.mesh().equals("level_shrub_refuge")&&Math.hypot(prop.x()-socket.x(),prop.z()-socket.z())<.2){
-                    var b=SceneRenderer.castleBounds(prop.mesh());radius=Math.hypot(b[3]/2,b[5]/2)*prop.scale()+.04;
-                    coverHeight=Math.max(1.15,prop.y()+b[1]+b[4]*prop.scale()-socket.y()+.12);shoulder=coverHeight*.90;
-                }
-                shells.add(new Dome(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),radius,shoulder,coverHeight)));
+                shells.add(new Dome(OutdoorHiding.footprint(map.level(),socket)));
             }
         }
         return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,shells);
