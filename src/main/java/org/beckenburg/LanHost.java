@@ -1968,8 +1968,8 @@ public final class LanHost implements AutoCloseable {
                     GhostDomain.Resolution result=ghost.dispatch(new GhostDomain.Command(action,room,++hostGhostActionSequence,GhostDomain.Source.HUMAN));
                     if(!result.applied())throw new IllegalArgumentException(result.reason());
                     actionCadence.completed(tick,result);
-                    reply(peer,"ACCEPT|GHOST|"+action+"|"+result.energy());
                     ghostPose.syncRoom(ghost.room());
+                    reply(peer,"ACCEPT|GHOST|"+action+"|"+result.energy());
                     onGhostTravel(from,ghost.room());
                     resolveGhostAction(result);
                     if(peer.ghostWorldMode)reply(peer,ghostPose.frame(tick));
