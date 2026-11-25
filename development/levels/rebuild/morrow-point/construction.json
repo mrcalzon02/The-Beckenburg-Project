@@ -1,11 +1,12 @@
 {
   "source": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
   "exports": {
-    "blend": "360a4440132d1dd37a6d87159070b910954a4c7d21276fb07584a05da37bd245",
-    "glb": "2f86d1c55087f0304a4ff496ecdf3db1b16a84d9e995d71dfadcd2ed89b38260",
-    "hcs2": "a9027a73c0f67c745e171655683400a8b399996cc8f2b3a1c235a59e005ecaf7"
+    "blend": "66686191422d8bd9cb6730563c7b98deb1e6d467552b9f38e548e26b27a4373c",
+    "glb": "a8137b41cf97de44167f88e042c1d12ddc80503fa1535861ecb83fcf1a2641a2",
+    "hcs2": "98c5f8d72777396080509213b31bb2e2fdbdc57ffddae29beec92d96b2c5d270"
   },
-  "retained_components": 734,
+  "retained_components": 733,
+  "replaced_component": "Round shell tower5",
   "refuges": [
     {
       "id": "morrow-sitting-cupboard",
@@ -167,6 +168,30 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "morrow-beacon-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        31.55,
+        19.25,
+        12.891
+      ],
+      "yaw": 0,
+      "style": "MP-BEACON"
+    },
+    {
+      "id": "morrow-beacon",
+      "type": "light",
+      "room": 10,
+      "position": [
+        33.35,
+        19.78,
+        12.205
+      ],
+      "yaw": 3.141592653589793,
+      "style": "fixed-beacon"
     }
   ]
 }

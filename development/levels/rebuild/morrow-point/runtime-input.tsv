@@ -1,4 +1,4 @@
-SOURCE	2f86d1c55087f0304a4ff496ecdf3db1b16a84d9e995d71dfadcd2ed89b38260	a9027a73c0f67c745e171655683400a8b399996cc8f2b3a1c235a59e005ecaf7
+SOURCE	a8137b41cf97de44167f88e042c1d12ddc80503fa1535861ecb83fcf1a2641a2	98c5f8d72777396080509213b31bb2e2fdbdc57ffddae29beec92d96b2c5d270
 DOCK	32.0	0	84.0	0
 ROOM	stage	13	24	78	40	90	0	3	true	Roadhead van apron	32	0	80
 SPACE	entry	13	24	66	40	78	0	3	true
@@ -221,6 +221,8 @@ SERVICE	morrow-generator	generator	11	55.299999	0.56	35.521001	0	MP-MAIN
 SERVICE	morrow-breaker	breaker	11	51.200001	0.89	44.595998	0	MP-MAIN
 SERVICE	morrow-oil-house-switch	switch	11	53.0	1.25	34.081001	0.0	MP-OIL
 SERVICE	morrow-oil-house-light	light	11	53.900002	2.42	34.264	0	native-string
+SERVICE	morrow-beacon-switch	switch	10	31.55	19.25	12.891	0	MP-BEACON
+SERVICE	morrow-beacon	light	10	33.35	19.78	12.205	3.141592653589793	fixed-beacon
 COVER	morrow-sitting-cupboard	1	18.25	0	51.4	-1.5707963267948966
 COVER	morrow-study-cupboard	7	30.5	3.2	50.4	-1.5707963267948966
 COVER	morrow-generator-cupboard	11	56.3	0	42.4	1.5707963267948966

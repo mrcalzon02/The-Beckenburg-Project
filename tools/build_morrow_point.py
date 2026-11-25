@@ -4,6 +4,7 @@ import math
 from pathlib import Path
 import sys
 
+import bmesh
 import bpy
 from mathutils import Matrix
 
@@ -15,7 +16,8 @@ from build_college_electrical import Assembly, bounds, point, world
 from build_lookout_native_arrival import table
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
-from review_roster_macroterrain import sha
+from build_roster_foundations import material
+from review_roster_macroterrain import records, sha
 from verify_college_electrical import native_records
 from verify_college_services import bvh
 
@@ -80,6 +82,85 @@ def power(assembly, zone):
                           point(0, 0, -1), 1.5, point(1, 0, 0))
     assembly.raceway("Morrow oil-house branch", ((55.3, .62, 35.0), (55.3, .62, 34.31),
         (55.3, 2.66, 34.31), (48.25, 2.66, 34.31), (48.25, 2.66, 44.35), (51.2, 2.66, 44.35), (51.2, 1.8, 44.35)), .016)
+
+
+def crown_segment(assembly, name, angles, height, radii, surface, role):
+    lo, hi = height
+    inner, outer = radii
+    a, b = angles
+    corners = [(radius, angle) for radius, angle in ((inner,a),(outer,a),(outer,b),(inner,b))]
+    vertices = [point(32+radius*math.cos(angle), y, 10+radius*math.sin(angle))
+                for y in (lo, hi) for radius, angle in corners]
+    faces = [(3,2,1,0),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
+    mesh = bpy.data.meshes.new(name)
+    mesh.from_pydata(vertices, [], faces)
+    bm = bmesh.new()
+    bm.from_mesh(mesh)
+    bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
+    bm.to_mesh(mesh)
+    bm.free()
+    mesh.materials.append(surface)
+    obj = bpy.data.objects.new(name, mesh)
+    assembly.scene.collection.objects.link(obj)
+    obj["role"] = role
+    obj["zone"] = "tower5"
+    assembly.built.append(obj)
+
+
+def lantern_crown(assembly, stone):
+    iron = material("Morrow painted iron lantern frames", (.11,.16,.16))
+    brass = material("Morrow antique brass optical housing", (.55,.34,.12))
+    optics = material("Morrow amber lens prisms", (.67,.42,.16))
+    glass = material("Morrow light blue weather glazing", (.48,.65,.71))
+    surface = glass.node_tree.nodes.get("Principled BSDF")
+    surface.inputs["Base Color"].default_value = (.48,.65,.71,1)
+    surface.inputs["Alpha"].default_value = .16
+    glass.surface_render_method = "BLENDED"
+    span = math.tau/24
+    thickness = (4.42,4.58)
+    for i in range(24):
+        a, b = (i-.5)*span, (i+.5)*span
+        crown_segment(assembly,f"Morrow lantern masonry sill {i:02}",(a,b),(18,19.02),
+                      thickness,stone,"lantern load-bearing sill")
+        crown_segment(assembly,f"Morrow lantern roof ring {i:02}",(a,b),(21.22,21.60),
+                      thickness,stone,"lantern roof bearing ring")
+        crown_segment(assembly,f"Morrow lantern mullion {i:02}",(a-.013,a+.013),(19.02,21.22),
+                      thickness,iron,"lantern roof support mullion")
+        crown_segment(assembly,f"Morrow lantern pane {i:02}",(a+.012,b-.012),(19.02,21.22),
+                      (4.48,4.51),glass,"lantern safety glazing")
+    x, y, z = 33.35, 18, 12.65
+    control_x, control_z = 31.55, 12.75
+    slab = bvh([obj for obj in assembly.scene.objects if obj.type=="MESH" and "floor tower5" in obj.name.lower()])
+    stands = ((x-.37,z-.36,x+.37,z+.36),
+              (control_x-.075,control_z-.14,control_x+.075,control_z+.14))
+    for x0,z0,x1,z1 in stands:
+        for px in (x0,x1):
+            for pz in (z0,z1):
+                hit,normal,_,_ = slab.ray_cast(point(px,y+.15,pz),point(0,-1,0),.25)
+                assert hit is not None and abs(hit.z-y)<.004 and normal.z>.98, (px,pz)
+    assembly.box("Morrow beacon bolted base",stands[0],y,y+.11,iron,
+                 "founded lantern equipment","tower5")
+    assembly.tube("Morrow beacon pedestal",(x,y+.11,z),(x,19.48,z),.14,iron)
+    assembly.tube("Morrow beacon lens drum",(x,19.78,z+.25),(x,19.78,z-.25),.30,brass)
+    for i,(offset,radius) in enumerate(((0,.30),(.035,.26),(.070,.21),(.105,.15),(.14,.09))):
+        assembly.tube(f"Morrow beacon optical prism {i}",(x,19.78,z-.24-offset),
+                      (x,19.78,z-.28-offset),radius,optics)
+    assembly.box("Morrow beacon control pedestal",stands[1],y,19.33,iron,
+                 "supported lantern control","tower5")
+    plate = (control_x,19.25,control_z+.141)
+    assembly.place("light_switch_1",Matrix.Translation(point(*plate)),
+                   "Morrow lantern switch","supported lantern switch","tower5")
+    assembly.raceway("Morrow lantern feeder",((control_x,19.25,control_z),(control_x,18.035,control_z),
+                        (x-.13,18.035,z),(x-.13,19.48,z)),.019)
+    assembly.effect("morrow-beacon-switch","switch",10,plate,0,"MP-BEACON")
+    assembly.effect("morrow-beacon","light",10,(x,19.78,z-.445),math.pi,"fixed-beacon")
+
+
+def crown_collision(obj):
+    faces = records(obj)
+    if obj.get("role") == "lantern safety glazing":
+        return [(points, 4) for points, _ in faces]  # Body only, optical rays pass through glass.
+    return faces
 
 
 def tower_guards(assembly, contract):
@@ -148,20 +229,28 @@ def build():
     zones = {z["id"]: {**z, "owner": ownership[z["id"]]} for z in layout["zones"]}
     bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
     bpy.context.preferences.filepaths.save_version = 0
+    rough_crown = "Round shell tower5"
+    old_crown = bpy.data.objects[rough_crown]
+    stone = old_crown.data.materials[0]
+    bpy.data.objects.remove(old_crown, do_unlink=True)
+    bpy.context.view_layer.update()
     assembly = Assembly()
     refuges = cupboards(assembly, zones, POCKETS, site="morrow", floor_roles=("floor",))
     power(assembly, zones["generator"])
     stair = tower_guards(assembly, contract)
     lantern_guard(assembly)
+    lantern_crown(assembly, stone)
     for obj in assembly.built:
         obj.name = obj.name.replace("College ", "", 1)
     target = {ext: OUT / f"lightstation.{ext}" for ext in source}
     addition = ROOT / "build/morrow-point-installation.glb"
     export(addition, assembly.built)
-    append(source["glb"], addition, target["glb"], reuse_embedded_images=True)
-    native_write(source["hcs2"], target["hcs2"], set(), assembly.built,
-                 open_components={p.name for p in assembly.built if p.get("source_asset")})
-    prior = native_records(source["hcs2"])
+    append(source["glb"], addition, target["glb"], remove_mesh_names=[rough_crown], reuse_embedded_images=True)
+    native_write(source["hcs2"], target["hcs2"], {rough_crown}, assembly.built,
+                 open_components={p.name for p in assembly.built if p.get("source_asset")}, mesh_records=crown_collision)
+    before = native_records(source["hcs2"])
+    prior = [part for part in before if part[0].split(":",1)[-1] != rough_crown]
+    assert len(before)-len(prior)==1
     assert native_records(target["hcs2"])[:len(prior)] == prior
     bpy.ops.file.pack_all()
     bpy.ops.wm.save_as_mainfile(filepath=str(target["blend"]), compress=True)
@@ -219,7 +308,7 @@ def build():
     table(OUT / "door-schedule.tsv", doors)
     (OUT / "construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(), exports={k: sha(p) for k,p in target.items()},
-        retained_components=len(prior), refuges=refuges, services=assembly.sockets), indent=2)+"\n",
+        retained_components=len(prior), replaced_component=rough_crown, refuges=refuges, services=assembly.sockets), indent=2)+"\n",
         encoding="utf-8", newline="\n")
 
 
