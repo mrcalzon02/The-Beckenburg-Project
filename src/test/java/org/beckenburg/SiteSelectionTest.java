@@ -23,7 +23,7 @@ public final class SiteSelectionTest {
             SiteCatalog.Location.CEMETERY,SiteCatalog.Location.MORTUARY,SiteCatalog.Location.NORTHWATCH,
             SiteCatalog.Location.BLACKWATER,
             SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,SiteCatalog.Location.MOURNING_MARSH,
-            SiteCatalog.Location.GREYWATER,SiteCatalog.Location.GALLOWS);
+            SiteCatalog.Location.GREYWATER,SiteCatalog.Location.GALLOWS,SiteCatalog.Location.MORROW);
         ok(SiteCatalog.soloLocations().length==builtins.size()+1,
             "all playable maps and the separate USER authoring slot remain indexed");
         int ready=0;

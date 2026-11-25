@@ -4,7 +4,7 @@ import java.util.*;
 public final class MissionSites {
     private MissionSites(){}
     public record Entry(String id,String title,String region,String scale,String description,String imageKey,String imageCaption){
-        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; case "WLD-11" -> "MOURNING_MARSH"; case "WLD-12" -> "GALLOWS"; case "WLD-13" -> "GREYWATER"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
+        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; case "WLD-11" -> "MOURNING_MARSH"; case "WLD-12" -> "GALLOWS"; case "WLD-13" -> "GREYWATER"; case "WLD-14" -> "MORROW"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
         public boolean headquarters(){return id.equals("CASTLE");}
         public boolean playable(){var site=location();return site!=null&&site.playable();}
         public String status(){return headquarters()?"HEADQUARTERS / NO INVESTIGATION":playable()?"AVAILABLE":"IN DEVELOPMENT / NOT DISPATCHABLE";}
@@ -35,7 +35,9 @@ public final class MissionSites {
         new Entry("WLD-10",MonasteryNativeLevel.TITLE,"Highland Frontier","Medium-large / remote cloister","A compact enclosed monastery wraps a high garden, with a detached bell stair on the east and catacombs below the north range. Its service path and terraces distinguish it from the urban academy.","wld-10","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-11","Mourning Marsh","Coastal Territories","Medium / stilt settlement","A small settlement straddles a main raised boardwalk and a parallel service boardwalk. Homes, chapel and warehouse are reachable on dry supported decks; flooded terrain is a visible boundary.","wld-11","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-12","Gallows Pass Railway","Highland Frontier","Medium-large / linear railway with return","A bounded railway cutting runs past derailed coaches to a tunnel. A maintenance siding path parallels the track, while a guarded trestle has a service walkway beneath its deck.","wld-12","STATIC BLOCKOUT VIEW"),
-        new Entry("WLD-13","Greywater Cannery","Coastal Territories","Medium-large / industrial wilderness","A shore-side processing hall connects cold stores, boiler plant and shipping dock. Workers housing sits along the forest edge, linked by a short service-yard loop.","wld-13","STATIC BLOCKOUT VIEW"));
+        new Entry("WLD-13","Greywater Cannery","Coastal Territories","Medium-large / industrial wilderness","A shore-side processing hall connects cold stores, boiler plant and shipping dock. Workers housing sits along the forest edge, linked by a short service-yard loop.","wld-13","STATIC BLOCKOUT VIEW"),
+        new Entry("WLD-14","Morrow Point Lightstation","Coastal Territories","Medium / vertical lightstation",
+            "The keeper house joins a lighthouse by a covered passage. Two house stairs reach the upstairs rooms, and a separate delivery court serves the oil house.","wld-14","NATIVE SITE VIEW"));
     public static List<Entry> all(){return ALL;}
     /** Campaign progression is saved by ordinal; browsing order must never reorder it. */
     public static List<Entry> campaign(){
@@ -64,6 +66,7 @@ public final class MissionSites {
             case "MOURNING_MARSH" -> "WLD-11";
             case "GALLOWS" -> "WLD-12";
             case "GREYWATER" -> "WLD-13";
+            case "MORROW" -> "WLD-14";
             default -> id;
         }).title();
     }

@@ -1651,3 +1651,7 @@ The [Greywater checkpoint](greywater-native-pass/checkpoint.json) packages the s
 ### Gallows Pass Railway native mission
 
 The [railway source](gallows-pass/construction.json) preserves the authored station, sidings, tunnel and trestle. Eleven fitted leaves and the two built trestle flights connect fourteen supported field owners and the van. The signal house has a grounded source and lighting circuit, and the signal house, track store and maintenance refuge have walk-in cover. All eighteen route guides passed ordinary movement checks in both directions and postures. Full perimeter, room-by-room distribution, and additional location-specific encounters remain open.
+
+### Morrow Point Lightstation native mission
+
+The [native scene](morrow-point/construction.json) retains the coast, six measured door frames, the keeper-house stairs, the circular tower and its founded stair supports. Fitted helical rails and a separate guard around the lantern shaft bear on the actual treads and deck. The oil house has a generator, breaker and switched light. Walk-in hiding cupboards serve the sitting room, study and oil house. The regular solo and LAN entries use the current map. Campaign ordinals are unchanged. The van-to-lantern climb reached +18 m through the existing tower sill. Full lighthouse lantern fit-out, perimeter and complete case acceptance remain open.

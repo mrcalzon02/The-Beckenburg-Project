@@ -166,6 +166,13 @@ for member in railway.glb railway.hcs2 runtime-input.tsv door-schedule.tsv; do
     cp "$gallows_packet/$member" "$gallows_resource/$member"
 done
 
+morrow_packet=development/levels/rebuild/morrow-point
+morrow_resource=build/classes/org/beckenburg/sites/wld-14
+mkdir -p "$morrow_resource"
+for member in lightstation.glb lightstation.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$morrow_packet/$member" "$morrow_resource/$member"
+done
+
 greywater_packet=development/levels/rebuild/greywater-native-pass
 greywater_resource=build/classes/org/beckenburg/sites/wld-13
 mkdir -p "$greywater_resource"
