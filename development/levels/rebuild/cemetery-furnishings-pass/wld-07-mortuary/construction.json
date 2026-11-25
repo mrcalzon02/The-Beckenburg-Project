@@ -1,11 +1,11 @@
 {
   "exports": {
-    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.blend": "5ecad7192f500328a29f5185a2e1f69cd2f9d4cc58d4fd83ab116c3bb1675f4e",
-    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.glb": "3a52ff674e6360c2ee8964c17ad162749dea2aec57dd21a48db3232554c10052",
-    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.hcs2": "95dd97f96ef50c9e0df86feaa722ca414feded898e89f61fa6c5477ff9929d20"
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.blend": "e036a72881339ac4199378f27cc05d62e2a1b03320327656c452cda3e63c2b6d",
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.glb": "50b13ad6feaac78123357a402b966d8fc7081f587769833f0e9a1a747a0d277d",
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.hcs2": "3dcbda073a08bd12ff81296893691229e22df0a28c3095ef18ff3174fe3213de"
   },
   "retained_native_parts": 689,
-  "added_native_parts": 9,
+  "added_native_parts": 15,
   "supported_records": [
     {
       "document": "MEMORIAL_REGISTER",
@@ -276,6 +276,108 @@
       "yaw": 1.5707963267948966,
       "scale": 1,
       "support": "measured existing slab"
+    }
+  ],
+  "services": [
+    {
+      "socket": [
+        "SERVICE",
+        "Cemetery caretaker telephone",
+        "native-device",
+        1,
+        34.549999,
+        0.821,
+        40.628,
+        0,
+        "PHONE"
+      ],
+      "details": {
+        "table": {
+          "asset": "level_event_side_table_worn",
+          "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+          "bounds": [
+            [
+              34.32,
+              0.0,
+              40.299999
+            ],
+            [
+              34.779999,
+              0.755,
+              40.700001
+            ]
+          ],
+          "pivot": [
+            34.54999923706055,
+            0.0,
+            40.5
+          ],
+          "yaw": 0,
+          "scale": 1,
+          "support": "measured existing slab"
+        },
+        "telephone": {
+          "asset": "level_event_phone_worn",
+          "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+          "bounds": [
+            [
+              34.408001,
+              0.756,
+              40.389999
+            ],
+            [
+              34.691998,
+              0.923119,
+              40.610001
+            ]
+          ],
+          "pivot": [
+            34.54999923706055,
+            0.7559999823570251,
+            40.5
+          ],
+          "yaw": 0,
+          "scale": 1,
+          "support": [
+            "Mine case caretaker telephone table 01"
+          ]
+        },
+        "face": [
+          34.549999,
+          0.821,
+          40.59
+        ]
+      }
+    },
+    {
+      "socket": [
+        "SERVICE",
+        "vale-prep-basin",
+        "water-basin",
+        11,
+        76.65,
+        0.86,
+        40.68,
+        0,
+        "preparation-wash"
+      ],
+      "details": {
+        "bounds": [
+          [
+            76.32,
+            0.0,
+            40.43
+          ],
+          [
+            76.980003,
+            1.136,
+            40.93
+          ]
+        ],
+        "floor": 0,
+        "wall": 40.080002,
+        "room": "mort-prep"
+      }
     }
   ]
 }

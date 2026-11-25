@@ -1,4 +1,4 @@
-SOURCE	3a52ff674e6360c2ee8964c17ad162749dea2aec57dd21a48db3232554c10052	95dd97f96ef50c9e0df86feaa722ca414feded898e89f61fa6c5477ff9929d20
+SOURCE	50b13ad6feaac78123357a402b966d8fc7081f587769833f0e9a1a747a0d277d	3dcbda073a08bd12ff81296893691229e22df0a28c3095ef18ff3174fe3213de
 SPACE	stage	13	13	72	60	86	0	3	true	Cemetery-lane van apron
 SPACE	entry	12	5	55	60	72	0	3	true	Lychgate and entry court
 SPACE	avenue	7	24	20	32	60	0	3	true	Main cemetery avenue
@@ -248,3 +248,5 @@ SWITCH_FEET	10	74.9	0.0	60.45
 SWITCH_FEET	11	75.4	0.0	56.7
 STORY	cemetery-story-memorial_register	MEMORIAL_REGISTER	6	level_trace_journal	18.719999313354492	-2.2095000743865967	6.599999904632568	0	0.88	20.2	-3	6.6	18.745001	-2.17694	6.617
 STORY	cemetery-story-visitor_register	VISITOR_REGISTER	8	level_story_letters	69.59464263916016	0.9100600481033325	56.500221252441406	0	0.88	68.13	0	56.5	69.625	0.9369	56.516998
+SERVICE	Cemetery caretaker telephone	native-device	1	34.549999	0.821	40.628	0	PHONE
+SERVICE	vale-prep-basin	water-basin	11	76.65	0.86	40.68	0	preparation-wash

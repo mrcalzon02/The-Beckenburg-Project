@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 import bpy
-from mathutils import Vector
+from mathutils import Matrix, Vector
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from append_static_glb import append
@@ -13,6 +13,7 @@ from build_circulation_construction import native_write
 from build_college_electrical import bounds, point, world
 from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
+from build_roster_foundations import material
 from compose_room_terrain import split_native
 from prepare_cemetery_doors import BASE, ROOT, load
 from review_roster_macroterrain import records, sha
@@ -82,6 +83,44 @@ def fit_record(case, spec):
                      reading_stance=feet, aim=world(contact), furniture=furniture, record=placement)
 
 
+def caretaker_phone(case):
+    x,z=34.55,40.50
+    table,furniture=case.fit("level_event_side_table_worn","caretaker telephone table","cottage",x,0,z)
+    hit,n,_,_=bvh(table).ray_cast(point(x,1.6,z),DOWN,1.5)
+    assert hit is not None and n.z>.98,"Caretaker telephone table has no top"
+    parts,placement=case.fit("level_event_phone_worn","caretaker telephone","cottage",
+                             x,hit.z+.001,z,support=table)
+    assert len(parts)==1,"Expected one loaded telephone casing"
+    phone=parts[0]
+    low,high=bounds(parts)
+    face,_,_,_=bvh(parts).ray_cast(point(x,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert face is not None,"Telephone casing is not targetable"
+    px,py,pz=world(face)
+    phone.name="Cemetery caretaker telephone"
+    socket=("SERVICE",phone.name,"native-device",1,px,py,pz+.038,0,"PHONE")
+    return socket,dict(table=furniture,telephone=placement,face=[px,py,pz])
+
+
+def preparation_basin(case):
+    zone="mort-prep"
+    x,z=76.65,40.68
+    basin=case.place("level_bath_basin",Matrix.Translation(point(x,0,z)),
+                     "Cemetery preparation basin","deck-supported preparation basin",zone)
+    for u in (x-.08,x+.08):
+        for v in (z-.08,z+.08):
+            hit,normal,_,_=case.support_surfaces.ray_cast(point(u,.16,v),DOWN,.24)
+            assert hit is not None and abs(hit.z)<.004 and normal.z>.98,(u,v)
+    wall,_,_=case.measured(point(x,.6,40.45),point(0,0,-1),.52,"Mortuary north plumbing wall")
+    _,_,back=world(wall)
+    copper=material("Vale Mortuary wet-service copper",(.32,.19,.105))
+    drain=material("Vale Mortuary sealed drain iron",(.15,.17,.17))
+    case.tube("Mortuary basin wall riser",(x,.13,back+.04),(x,.97,back+.04),.017,copper)
+    case.tube("Mortuary basin union",(x,.97,back+.04),(x,.97,z-.14),.017,copper)
+    case.tube("Mortuary basin low waste union",(x,.25,z-.09),(x,.25,back+.028),.027,drain)
+    socket=("SERVICE","vale-prep-basin","water-basin",11,x,.86,z,0,"preparation-wash")
+    return socket,dict(bounds=bounds(basin),floor=0,wall=back,room=zone)
+
+
 def build(site, authority):
     assert all(sha(ROOT / name) == digest for name, digest in authority["exports"].items())
     assert all(sha(ROOT / name) == digest for name, digest in authority["evidence"].items())
@@ -100,6 +139,8 @@ def build(site, authority):
                 receipt["bounds"] = bounds(pieces)
             furnishing_receipts.append(dict(space=zone, function=name, **receipt))
     fitted = [fit_record(case, item) for item in ((MEMORIAL, VISITORS) if annex else (MEMORIAL,))]
+    services=[caretaker_phone(case)]
+    if annex:services.append(preparation_basin(case))
     for obj in case.built:
         obj.name = obj.name.replace("Mine case ", "Cemetery ", 1)
         if obj["role"] != "desktop-supported readable record":
@@ -129,12 +170,13 @@ def build(site, authority):
     (folder / "room-layout.tsv").write_bytes(
         ("\t".join(header) + "\n").encode()
         + (source / "room-layout.tsv").read_bytes()
-        + "".join("\t".join(map(str, row)) + "\n" for row, _ in fitted).encode())
+        + "".join("\t".join(map(str, row)) + "\n" for row, _ in (*fitted,*services)).encode())
     (folder / "door-schedule.tsv").write_bytes((source / "door-schedule.tsv").read_bytes())
     paths = [target.with_suffix(ext) for ext in (".blend", ".glb", ".hcs2")]
     receipt = dict(exports={path.relative_to(ROOT).as_posix(): sha(path) for path in paths},
                    retained_native_parts=len(before), added_native_parts=len(added),
-                   supported_records=[record for _, record in fitted], furnishings=furnishing_receipts)
+                   supported_records=[record for _, record in fitted], furnishings=furnishing_receipts,
+                   services=[dict(socket=row,details=detail) for row,detail in services])
     (folder / "construction.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8", newline="\n")
     print("PASS", site, len(before), "retained parts", len(added), "new parts", len(fitted), "record surfaces")
 
