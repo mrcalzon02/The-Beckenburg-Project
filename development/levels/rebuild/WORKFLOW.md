@@ -1663,3 +1663,7 @@ The [vessel source](saint-elara/construction.json) uses the measured shore shelf
 ### Eight Pines Motor Lodge native mission
 
 The [lodge scene](eight-pines/construction.json) uses the built parking court, covered walks, fourteen fitted doors, eight guest rooms and the existing service rooms. The plant has a supported generator and breaker. The guest rooms, office, manager's room, laundry and plant have individually switched lamps with wall-mounted conduits. The manager's room and two guest rooms have walk-in safe zones. Solo and LAN use the regular map catalog. Full location-specific encounter and perimeter acceptance remain open.
+
+### Site Cinder-6 native mission
+
+The [facility scene](cinder-6/construction.json) keeps the surface approaches, escape stair and two guarded underground galleries. Eleven fitted doors serve their existing openings, including the lower escape connector. The lower plant has a supported generator and breaker, and nine occupied rooms have mounted switches and lamps. Walk-in cupboards serve the service house, records room and crew quarters. The regular catalog exposes the same native scene and collision to Solo and LAN. Full perimeter and whole-case acceptance remain open.

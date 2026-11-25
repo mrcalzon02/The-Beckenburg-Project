@@ -27,7 +27,8 @@ public final class SiteCatalog {
         GALLOWS(MissionSites.title("GALLOWS")),
         MORROW(MissionSites.title("MORROW")),
         ELARA(MissionSites.title("ELARA")),
-        PINES(MissionSites.title("PINES"));
+        PINES(MissionSites.title("PINES")),
+        CINDER(MissionSites.title("CINDER"));
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

@@ -43,7 +43,7 @@ public final class LevelPlans {
         var source=buildSource(site);
         if(site==HouseMap.Site.SEACLIFF||site==HouseMap.Site.BLACKPINE||site==HouseMap.Site.LOOKOUT||site==HouseMap.Site.MINE||site==HouseMap.Site.WHARF
             ||site==HouseMap.Site.CEMETERY||site==HouseMap.Site.MORTUARY||site==HouseMap.Site.NORTHWATCH||site==HouseMap.Site.BLACKWATER
-            ||site==HouseMap.Site.MONASTERY||site==HouseMap.Site.RED_MESA||site==HouseMap.Site.MOURNING_MARSH||site==HouseMap.Site.GREYWATER||site==HouseMap.Site.GALLOWS||site==HouseMap.Site.MORROW||site==HouseMap.Site.ELARA||site==HouseMap.Site.PINES)return source;
+            ||site==HouseMap.Site.MONASTERY||site==HouseMap.Site.RED_MESA||site==HouseMap.Site.MOURNING_MARSH||site==HouseMap.Site.GREYWATER||site==HouseMap.Site.GALLOWS||site==HouseMap.Site.MORROW||site==HouseMap.Site.ELARA||site==HouseMap.Site.PINES||site==HouseMap.Site.CINDER)return source;
         if(site==HouseMap.Site.ASYLUM&&AsylumNativeLevel.reviewEnabled())
             return LevelAuthoringSession.apply(site,source,AsylumNativeLevel::definition);
         if(site==HouseMap.Site.PRISON&&PrisonNativeLevel.reviewEnabled())
@@ -58,7 +58,7 @@ public final class LevelPlans {
         return site!=HouseMap.Site.USER && site!=HouseMap.Site.HOLLOW_CREEK
             && site!=HouseMap.Site.SEACLIFF && site!=HouseMap.Site.BLACKPINE && site!=HouseMap.Site.LOOKOUT && site!=HouseMap.Site.MINE && site!=HouseMap.Site.WHARF
             && site!=HouseMap.Site.CEMETERY && site!=HouseMap.Site.MORTUARY && site!=HouseMap.Site.NORTHWATCH && site!=HouseMap.Site.BLACKWATER
-            && site!=HouseMap.Site.MONASTERY && site!=HouseMap.Site.RED_MESA && site!=HouseMap.Site.MOURNING_MARSH && site!=HouseMap.Site.GREYWATER && site!=HouseMap.Site.GALLOWS && site!=HouseMap.Site.MORROW && site!=HouseMap.Site.ELARA && site!=HouseMap.Site.PINES;
+            && site!=HouseMap.Site.MONASTERY && site!=HouseMap.Site.RED_MESA && site!=HouseMap.Site.MOURNING_MARSH && site!=HouseMap.Site.GREYWATER && site!=HouseMap.Site.GALLOWS && site!=HouseMap.Site.MORROW && site!=HouseMap.Site.ELARA && site!=HouseMap.Site.PINES && site!=HouseMap.Site.CINDER;
     }
 
     /** Unmodified shipped authoring source; shared by editor and gameplay. */
@@ -77,6 +77,7 @@ public final class LevelPlans {
             case "MONASTERY" -> MonasteryNativeLevel.packaged().level();
             case "RED_MESA" -> RedMesaNativeLevel.definition();
             case "MOURNING_MARSH" -> MourningMarshNativeLevel.definition();
+            case "CINDER" -> CinderNativeLevel.definition();
             case "PINES" -> PinesNativeLevel.definition();
             case "ELARA" -> ElaraNativeLevel.definition();
             case "MORROW" -> MorrowNativeLevel.definition();

@@ -1,0 +1,179 @@
+"""Fit the Site Cinder-6 plant, room lighting and native investigation bindings."""
+import json
+import math
+from pathlib import Path
+import sys
+
+import bpy
+from mathutils import Matrix
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
+from append_static_glb import append
+from build_circulation_construction import native_write
+from build_college_electrical import Assembly, bounds, point, world
+from build_lookout_native_arrival import table
+from build_prison_sally_gate import export
+from build_school_electrical import cupboards
+from review_roster_macroterrain import sha
+from verify_college_electrical import native_records
+from verify_college_services import bvh
+
+BASE = ROOT / "development/levels/rebuild"
+SOURCE = BASE / "flush-porch-and-threshold-pass/wld-18"
+OUT = BASE / "cinder-6"
+ANCHORS = {
+    "servicehouse": (0, 19, 0, 62), "head": (1, 34, 0, 48), "shop": (2, 47, 0, 48),
+    "exit": (3, 7, 0, 52), "records": (4, 15, -4, 45), "west": (5, 18, -4, 32),
+    "upperring": (6, 23, -4, 28), "exhibit": (7, 48, -4, 26.5), "east": (8, 48, -8, 28),
+    "lowring": (9, 41, -8, 28), "crew": (10, 18, -8, 32), "plant": (11, 49, -8, 45),
+    "yard": (12, 40, 0, 62), "stage": (13, 32, 0, 86),
+}
+CHILDREN = {"entry": 13, "pump": 10, "escape-lower-connector": 3}
+RECEIVERS = (
+    ("service forecourt",13,(16.6,70,40,84),0,3,True),
+    ("west stair head",1,(16.7,46.9,28,49.1),0,3,False),
+    ("west flight",5,(16.5,31.6,19.5,47.25),-4,3.95,False),
+    ("east flight",7,(50.5,36.8,53.5,47.25),-4,3.95,False),
+    ("escape flight",3,(4.75,33.15,7.25,48.1),-4,3.98,False),
+    ("east switchback",8,(43.7,27.6,52.4,35.5),-8,3.96,False),
+    ("west crew flight",10,(11.4,27.6,19.32,30.43),-8,3.98,False),
+)
+OPENINGS = (
+    (13,12,36,0,70,2,"z","trail"), (1,5,18,-2,40,1.5,"z","stair"),
+    (5,4,15,-4,38,1.7,"z","trail"),(2,7,52,-2,44,1.5,"z","stair"),
+    (7,8,51,-5.2,32,1.6,"z","stair"),(10,5,15.5,-6.1,29,1.6,"x","stair"),
+    (8,11,49,-8,38,1.6,"z","trail"),
+)
+EXTERIOR = {1:"service forecourt",3:"yard",4:"west stair head",6:"yard",
+            7:"upperring",8:"upperring",9:"lowring",10:"lowring"}
+SWINGS = (1,-1,-1,1,-1,1,1,-1,1,1,-1)
+REFUGES = (("servicehouse",12,66.1,-math.pi/2),("records",10.2,48,-math.pi/2),
+           ("crew",20.1,33.0,math.pi/2))
+
+
+def main_supply(assembly, zone):
+    floor=zone["y"]
+    for asset, kind, x, z, yaw, y in (
+        ("level_trace_generator_refined","generator",49.2,40.2,math.pi,.56),
+        ("level_electrical_bank_worn","breaker",53.2,51.1,math.pi,.89),
+    ):
+        parts=assembly.place(asset,Matrix.Translation(point(x,floor+.06,z)) @ Matrix.Rotation(yaw,4,"Z"),
+                             f"Cinder {kind}","founded lower plant equipment","plant")
+        low,high=bounds(parts)
+        assert abs(low[1]-floor-.06)<.004
+        for px in (low[0],high[0]):
+            for pz in (low[2],high[2]):
+                hit,_,_=assembly.measured(point(px,floor+.18,pz),point(0,-1,0),.30,kind+" slab")
+                assert abs(hit.z-floor)<.006
+        assembly.box(f"Cinder {kind} plinth",(low[0]-.04,low[2]-.04,high[0]+.04,high[2]+.04),
+                     floor,floor+.06,assembly.concrete,"equipment slab foundation","plant")
+        sign=1 if kind=="generator" else -1
+        hit,_,_,_=bvh(parts).ray_cast(point(x,floor+y,high[2]+1 if sign==1 else low[2]-1),
+                                      point(0,0,-sign),2)
+        assert hit is not None,kind
+        px,py,pz=world(hit)
+        assembly.effect("cinder-"+kind,kind,zone["owner"],(px,py,pz+.015*sign),
+                        0 if sign==1 else math.pi,"C6-MAIN")
+    assembly.raceway("Cinder lower plant main feeder",((49.2,-7.42,40.2),(55.71,-7.42,40.2),
+        (55.71,-5.25,40.2),(55.71,-5.25,51.70),(53.2,-5.25,51.70),(53.2,-6.15,51.38)),.017)
+
+
+def room_power(assembly,zones):
+    branches=(
+        ("servicehouse",(11.2,61.7),(11.2,63.4),(-1,0)),
+        ("head",(30,43.15),(32,43.15),(0,-1)),
+        ("shop",(52.8,49.6),(52.8,51.3),(1,0)),
+        ("records",(20.8,44),(20.8,46.3),(1,0)),
+        ("west",(9.2,36),(9.2,37.1),(-1,0)),
+        ("exhibit",(54.8,24),(54.8,25.7),(1,0)),
+        ("east",(54.8,24),(54.8,25.7),(1,0)),
+        ("crew",(20.8,33.5),(20.8,35.4),(1,0)),
+        ("plant",(54.8,46.5),(54.8,48.2),(1,0)),
+    )
+    for room,switch,lamp,(dx,dz) in branches:
+        zone=zones[room]
+        label=f"cinder-{room}"
+        assembly.switch(zone,*switch,dx,dz)
+        assembly.sockets[-1].update(id=label+"-switch",style=f"C6-{zone['owner']:02d}")
+        drop=assembly.routes[-1]["points"][-1]
+        toward=point(dx,0,dz)
+        assembly.mounted_lamp(zone,label+"-light",point(lamp[0],zone["y"]+2.35,lamp[1]),
+                              toward,1.7,point(-dz,0,dx))
+        x,y,z=assembly.loads[-1]["mount"]
+        target=(x-.028*dx,drop[1],z-.028*dz)
+        assert abs((target[0]-drop[0])*dx+(target[2]-drop[2])*dz)<.012,room
+        assembly.raceway("Cinder "+room+" lamp circuit",(drop,target,(target[0],y+.12,target[2])),.012)
+
+
+def build():
+    OUT.mkdir(parents=True,exist_ok=True)
+    source={ext:SOURCE/f"surveyed-thresholds.{ext}" for ext in ("blend","glb","hcs2")}
+    contract=json.loads((SOURCE/"construction.json").read_bytes())
+    layout_path=SOURCE/"authored-layout.json"
+    for ext,key in (("blend","blend_sha256"),("glb","glb_sha256"),("hcs2","physics_sha256")):
+        assert sha(source[ext])==contract[key]
+    assert sha(layout_path)==contract["layout_sha256"]
+    layout=json.loads(layout_path.read_bytes())
+    owners={**CHILDREN,**{name: row[0] for name,row in ANCHORS.items()}}
+    zones={z["id"]:{**z,"owner":owners[z["id"]]} for z in layout["zones"]}
+    bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
+    bpy.context.preferences.filepaths.save_version=0
+    assembly=Assembly()
+    pockets=cupboards(assembly,zones,REFUGES,site="cinder",floor_roles=("floor","constructed continuous room or arcade floor"))
+    main_supply(assembly,zones["plant"])
+    room_power(assembly,zones)
+    for obj in assembly.built:
+        obj.name=obj.name.removeprefix("College ")
+    target={ext:OUT/f"facility.{ext}" for ext in source}
+    addition=ROOT/"build/cinder-6-installation.glb"
+    export(addition,assembly.built)
+    append(source["glb"],addition,target["glb"],reuse_embedded_images=True)
+    native_write(source["hcs2"],target["hcs2"],set(),assembly.built,
+                 open_components={p.name for p in assembly.built if p.get("source_asset")})
+    prior=native_records(source["hcs2"])
+    assert native_records(target["hcs2"])[:len(prior)]==prior
+    bpy.ops.file.pack_all()
+    bpy.ops.wm.save_as_mainfile(filepath=str(target["blend"]),compress=True)
+    dock=layout["staging"]
+    rows=[("SOURCE",sha(target["glb"]),sha(target["hcs2"])),("DOCK",*dock["point"],dock["yaw"])]
+    for key,z in zones.items():
+        outside=str(z["kind"] in ("outside","staging")).lower()
+        body=(key,owners[key],*z["bounds"],z["y"],z["height"],outside)
+        rows.append(("ROOM",*body,z["name"],*ANCHORS[key][1:]) if key in ANCHORS else ("SPACE",*body))
+    rows.extend(("SPACE",key,owner,*area,datum,height,str(outside).lower())
+                for key,owner,area,datum,height,outside in RECEIVERS)
+    rows.extend(("TREAD",name) for name in contract["stair_components"])
+    for i,p in enumerate(OPENINGS,930):
+        rows.append(("OPEN",i,*p))
+    for rite in layout["rituals"]:
+        rows.append(("RITUAL",rite["rite"].lower(),owners[rite["zone"]],*rite["point"]))
+    for socket in assembly.sockets:
+        if socket["type"]!="hide":
+            rows.append(("SERVICE",socket["id"],socket["type"],socket["room"],*socket["position"],
+                         socket["yaw"],socket["style"]))
+    for pocket in pockets:
+        rows.append(("COVER",pocket["id"],pocket["owner"],*pocket["position"],pocket["yaw"]))
+    for route in layout["links"]:
+        rows.extend(("POINT",route["id"],*p) for p in route["points"])
+    table(OUT/"runtime-input.tsv",rows)
+    leaf=sha(ROOT/"assets/runtime/models/door_1_loose.glb")
+    doors=[]
+    for i,door in enumerate(layout["authored_doorways"]):
+        a=door["rooms"][0]
+        b=door["rooms"][1] if len(door["rooms"])==2 else EXTERIOR[i]
+        x,y,z=door["frame_center"]
+        other=owners[b] if b in owners else next(r[1] for r in RECEIVERS if r[0]==b)
+        width=door["clear_width"]
+        doors.append((1500+i,door["id"],a,b,owners[a],other,x,y,z,width,
+                      door["axis"],*door["frame_span"],door["clear_height"],
+                      2 if width>=1.7 else 1,1,SWINGS[i],leaf))
+    table(OUT/"door-schedule.tsv",doors)
+    (OUT/"construction.json").write_text(json.dumps(dict(
+        source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
+        retained_components=len(prior),pockets=pockets,services=assembly.sockets),indent=2)+"\n",
+        encoding="utf-8",newline="\n")
+
+
+if __name__=="__main__":
+    build()

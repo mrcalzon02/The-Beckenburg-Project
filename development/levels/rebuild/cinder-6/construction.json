@@ -1,0 +1,364 @@
+{
+  "source": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
+  "exports": {
+    "blend": "67d76d93a4e54e4c16cfdf13dd36fab915028d9b41bad2b7ceb5ee77f8029962",
+    "glb": "246f70bf634bee0644808e286c97a20a79eab3622a21836df2a1294e3871727b",
+    "hcs2": "045d3f7a3eacd76fa3f486dd83334407457bb07b9a3451aa9446cb76cf76b484"
+  },
+  "retained_components": 615,
+  "pockets": [
+    {
+      "id": "cinder-servicehouse-cupboard",
+      "space": "servicehouse",
+      "owner": 0,
+      "position": [
+        12,
+        0,
+        66.1
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          11.4,
+          0.0,
+          65.25
+        ],
+        [
+          12.702,
+          2.31,
+          66.949997
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "cinder-records-cupboard",
+      "space": "records",
+      "owner": 4,
+      "position": [
+        10.2,
+        -4,
+        48
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          9.599999,
+          -4.0,
+          47.150002
+        ],
+        [
+          10.901999,
+          -1.69,
+          48.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "cinder-crew-cupboard",
+      "space": "crew",
+      "owner": 10,
+      "position": [
+        20.1,
+        -8,
+        33.0
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          19.398001,
+          -8.0,
+          32.150002
+        ],
+        [
+          20.700001,
+          -5.69,
+          33.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "cinder-servicehouse-cupboard",
+      "type": "hide",
+      "room": 0,
+      "position": [
+        12,
+        0,
+        66.1
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "cinder-records-cupboard",
+      "type": "hide",
+      "room": 4,
+      "position": [
+        10.2,
+        -4,
+        48
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "cinder-crew-cupboard",
+      "type": "hide",
+      "room": 10,
+      "position": [
+        20.1,
+        -8,
+        33.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "cinder-generator",
+      "type": "generator",
+      "room": 11,
+      "position": [
+        49.200001,
+        -7.44,
+        40.520001
+      ],
+      "yaw": 0,
+      "style": "C6-MAIN"
+    },
+    {
+      "id": "cinder-breaker",
+      "type": "breaker",
+      "room": 11,
+      "position": [
+        53.200001,
+        -7.11,
+        50.854999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "C6-MAIN"
+    },
+    {
+      "id": "cinder-servicehouse-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        10.241,
+        1.25,
+        61.700001
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "C6-00"
+    },
+    {
+      "id": "cinder-servicehouse-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        10.424,
+        2.35,
+        63.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-head-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        30.0,
+        1.25,
+        42.241001
+      ],
+      "yaw": 0.0,
+      "style": "C6-01"
+    },
+    {
+      "id": "cinder-head-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        32.0,
+        2.35,
+        42.424
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-shop-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        53.758999,
+        1.25,
+        49.599998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-02"
+    },
+    {
+      "id": "cinder-shop-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        53.576,
+        2.35,
+        51.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-records-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        21.919001,
+        -2.75,
+        44.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-04"
+    },
+    {
+      "id": "cinder-records-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        21.736,
+        -1.65,
+        46.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-west-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        8.241,
+        -2.75,
+        36.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "C6-05"
+    },
+    {
+      "id": "cinder-west-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        8.424,
+        -1.65,
+        37.099998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-exhibit-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        55.918999,
+        -2.75,
+        24.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-07"
+    },
+    {
+      "id": "cinder-exhibit-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        55.736,
+        -1.65,
+        25.700001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-east-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        55.918999,
+        -6.75,
+        24.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-08"
+    },
+    {
+      "id": "cinder-east-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        55.736,
+        -5.65,
+        25.700001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-crew-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        21.759001,
+        -6.75,
+        33.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-10"
+    },
+    {
+      "id": "cinder-crew-light",
+      "type": "light",
+      "room": 10,
+      "position": [
+        21.576,
+        -5.65,
+        35.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-plant-switch",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        55.918999,
+        -6.75,
+        46.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-11"
+    },
+    {
+      "id": "cinder-plant-light",
+      "type": "light",
+      "room": 11,
+      "position": [
+        55.736,
+        -5.65,
+        48.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ]
+}
