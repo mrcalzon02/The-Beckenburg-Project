@@ -5,13 +5,13 @@ from pathlib import Path
 import sys
 
 import bpy
-from mathutils import Vector
+from mathutils import Matrix, Vector
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from append_static_glb import append
 from build_circulation_construction import native_write
 from build_college_containment import MeshParts
-from build_college_electrical import bounds, point, world
+from build_college_electrical import Assembly, bounds, point, world
 from build_college_grounds import import_scene
 from build_dam_carrier import BASE, ROOT, shell
 from build_dam_spillway_gallery import validate_solid
@@ -155,6 +155,42 @@ def fit():
         combustion_air_and_exhaust_are_separate=True,ambient_airflow_simulated=False)
 
 
+
+def furnish():
+    assembly = Assembly()
+    installed = []
+    for asset, zone, label, x, y, z in (
+        ("level_workbench_worn", "control", "dispatch desk", 12.5, 0, 37.1),
+        ("level_workbench_worn", "office", "shift records desk", 12.5, 0, 25.5),
+        ("level_work_repair_bench", "workshop", "maintenance bench", 39.8, -6, 54.2),
+    ):
+        parts = assembly.place(asset, Matrix.Translation(point(x,y,z)),
+                               label, "floor-bearing dam furnishings", zone)
+        low, high = bounds(parts)
+        assert abs(low[1]-y)<.008, (label,low)
+        for px in (low[0]+.025,high[0]-.025):
+            for pz in (low[2]+.025,high[2]-.025):
+                contact, _, _ = assembly.measured(point(px,y+.18,pz),point(0,-1,0),.25,label)
+                assert abs(contact.z-y)<.008, (label,contact)
+        installed.append(dict(asset=asset,zone=zone,label=label,bounds=[low,high]))
+        if zone=="control":
+            hit, normal, _, _ = bvh(parts).ray_cast(point(x,y+1.6,z),point(0,-1,0),1.5)
+            assert hit is not None and normal.z>.98, "Dispatch desk needs a supported radio"
+            radio = assembly.place("level_event_radio_worn",Matrix.Translation(point(x,hit.z+.002,z)),
+                                   "dispatch radio","working control-room radio",zone)
+            assert len(radio)==1
+            radio[0].name="Blackwater dispatch radio"
+            base, top = bounds(radio)
+            assert abs(base[1]-hit.z)<.012, (base,hit)
+            face, _, _, _ = bvh(radio).ray_cast(point(x,base[1]+.075,top[2]+.8),point(0,0,-1),1.6)
+            assert face is not None, "Dispatch radio needs an exposed casing"
+            fx, fy, fz = world(face)
+            device = ("DEVICE",radio[0].name,"RADIO",0,fx,fy,fz+.035,0)
+    for part in assembly.built:
+        part.name=part.name.replace("College ","Blackwater ",1)
+    return assembly.built, installed, device
+
+
 def build():
     roster=json.loads((PARENT/"roster.json").read_bytes())
     row=next(r for r in roster["active_sources"] if r["id"]=="WLD-09")
@@ -168,12 +204,15 @@ def build():
     bpy.ops.wm.open_mainfile(filepath=str(ROOT/row["blend"]))
     bpy.context.preferences.filepaths.save_version=0
     built,service=fit()
+    furniture, furnishing_schedule, device = furnish()
+    built.extend(furniture)
     OUT.mkdir(parents=True,exist_ok=True)
     files={ext:OUT/f"{STEM}.{ext}" for ext in ("glb","hcs2","blend")}
     fragment=ROOT/"build/dam-ventilation-fragment.glb"
     export(fragment,built)
     append(ROOT/row["glb"],fragment,files["glb"],remove_mesh_names={WALL},reuse_embedded_images=True)
-    added=native_write(ROOT/row["native"],files["hcs2"],{WALL},built)
+    added=native_write(ROOT/row["native"],files["hcs2"],{WALL},built,
+                       open_components={obj.name for obj in furniture})
     previous=split_native(ROOT/row["native"])
     retained=[part for part in previous if part[0].split(":",1)[-1]!=WALL]
     assert len(previous)-len(retained)==1
@@ -184,13 +223,17 @@ def build():
     for name,tris in added:
         assert match_geometry([f for f,_ in tris],[f for f,_ in records(objects[name])]),name
     for path in schedules:
-        (OUT/path.name).write_bytes(path.read_bytes())
+        content=path.read_bytes()
+        if path.name=="runtime-input.tsv":
+            content=content.rstrip(b"\r\n")+b"\n"+"\t".join(map(str,device)).encode("utf-8")+b"\n"
+        (OUT/path.name).write_bytes(content)
     meta.update(status=STATUS,previous_construction=rel(prior),builder=rel(Path(__file__)),builder_sha256=sha(Path(__file__)),
                 source_glb=row["glb"],source_glb_sha256=row["glb_sha256"],
                 source_physics=row["native"],source_physics_sha256=row["native_sha256"],
                 glb_sha256=sha(files["glb"]),blend_sha256=sha(files["blend"]),physics_sha256=sha(files["hcs2"]),
                 removed_source_meshes=[WALL],retained_native_records=len(retained),
-                new_interface_parts=[name for name,_ in added],generator_ventilation=service)
+                new_interface_parts=[name for name,_ in added],generator_ventilation=service,
+                furnishings=furnishing_schedule,dispatch_radio=list(device))
     write(OUT/"construction.json",meta)
     row.update(construction=rel(OUT/"construction.json"),glb=rel(files["glb"]),native=rel(files["hcs2"]),
                blend=rel(files["blend"]),glb_sha256=meta["glb_sha256"],native_sha256=meta["physics_sha256"])
