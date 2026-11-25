@@ -6,19 +6,21 @@ from pathlib import Path
 import sys
 
 import bpy
+from mathutils import Matrix
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly
+from build_college_electrical import Assembly, bounds, point, world
 from build_college_grounds import import_scene
 from build_lookout_native_arrival import table
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from compose_room_terrain import split_native
 from review_roster_macroterrain import records
-from verify_college_services import match_geometry
+from build_roster_foundations import material
+from verify_college_services import bvh, match_geometry
 
 BASE = ROOT / "development/levels/rebuild"
 SOURCE = BASE / "canyon-marsh-pass/wld-03"
@@ -37,7 +39,7 @@ TRANSITION_SPACES = (
     ("shelter-stair", "lower-path", (10.4, 32.9, 13.6, 46), 0, 5.8),
     ("upper-stair", "upper-path", (22.1, 18.3, 25.15, 32.8), 4, 6.0),
     ("upper-bridge", "upper-path", (47.8, 11.95, 66, 15.25), 8, 3),
-    ("lower-ledge", "lower-path", (12, 32.2, 55.25, 44.15), 4, 2.6),
+    ("lower-ledge", "lower-path", (12, 32.2, 55.75, 44.25), 4, 2.6),
     ("gallery-stair", "lower-cave", (56.1, 26.5, 57.9, 33.5), 4, 4),
 )
 
@@ -78,6 +80,87 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def guard_lower_ledge(assembly):
+    rail=material("Red Mesa powder-coated expedition rail",(.18,.16,.13))
+    deck=bvh([assembly.scene.objects["Red Mesa full lower cave floor and landing region0"]])
+    span=(((47.64,44.10),(55.60,44.10)),((55.60,44.10),(55.60,40.21)))
+    seen=set()
+    for index,(a,b) in enumerate(span,1):
+        length=math.dist(a,b)
+        bays=math.ceil(length/1.95)
+        for post in range(bays+1):
+            t=post/bays
+            x,z=(a[i]+t*(b[i]-a[i]) for i in range(2))
+            if (x,z) in seen:continue
+            seen.add((x,z))
+            for px in (x-.055,x+.055):
+                for pz in (z-.055,z+.055):
+                    hit,n,_,_=deck.ray_cast(point(px,4.14,pz),point(0,-1,0),.23)
+                    assert hit is not None and abs(hit.z-4)<.004 and n.z>.98,(px,pz)
+            assembly.box(f"Red Mesa lower ledge post {index}-{post}",
+                         (x-.055,z-.055,x+.055,z+.055),3.96,5.10,rail,
+                         "supported lower landing guard post","lower-ledge")
+        x0,x1=sorted((a[0],b[0]))
+        z0,z1=sorted((a[1],b[1]))
+        for edge,y in (("mid",4.52),("top",5.04)):
+            assembly.box(f"Red Mesa lower ledge {edge} rail {index}",
+                         (x0-.04,z0-.04,x1+.04,z1+.04),y-.045,y+.045,rail,
+                         "fixed lower landing edge guard","lower-ledge")
+
+
+def expedition_supply(assembly,zone):
+    equipment=(
+        ("level_trace_generator_refined","generator",16.35,56.5,.56),
+        ("level_electrical_bank_worn","breaker",18.45,56.45,.89),
+    )
+    for asset,kind,x,z,control_y in equipment:
+        pieces=assembly.place(asset,Matrix.Translation(point(x,.06,z)) @ Matrix.Rotation(math.pi,4,"Z"),
+                               f"Red Mesa shelter {kind}","expedition electrical equipment","shelter")
+        low,high=bounds(pieces)
+        assert abs(low[1]-.06)<.004
+        for px in (low[0]-.03,high[0]+.03):
+            for pz in (low[2]-.03,high[2]+.03):
+                hit,_,_=assembly.measured(point(px,.17,pz),point(0,-1,0),.26,kind)
+                assert abs(hit.z)<.004
+        assembly.box(f"Red Mesa {kind} pad",(low[0]-.03,low[2]-.03,high[0]+.03,high[2]+.03),
+                     0,.06,assembly.concrete,"sealed plant equipment foundation","shelter")
+        face,_,_,_=bvh(pieces).ray_cast(point(x,control_y,low[2]-.9),point(0,0,1),1.8)
+        assert face is not None,kind
+        px,py,pz=world(face)
+        assembly.effect("red-mesa-"+kind,kind,zone["owner"],(px,py,pz-.018),math.pi,"RM-MAIN")
+    assembly.raceway("Red Mesa service feeder",((16.35,.55,56.7),(16.35,.55,57.88),
+                      (16.35,2.55,57.88),(18.45,2.55,57.88),(18.45,1.88,56.90)),.018)
+
+
+def room_services(assembly,zones):
+    branches=(
+        ("shelter",(18.85,49.0),((18.85,47.4),),(1,0)),
+        ("wash",(58.85,49.4),((58.85,51.0),),(1,0)),
+        ("gallery",(48.95,26.1),((48.95,24.25),(48.95,35.2)),(-1,0)),
+        ("fork",(74.85,30.4),((74.85,32.3),),(1,0)),
+        ("chamber",(80.85,11.0),((80.85,9.2),(80.85,15.9)),(1,0)),
+        ("lower-cave",(60.7,38.9),((62.5,38.9),),(0,1)),
+        ("alcove",(58.85,46.7),((58.85,48.6),),(1,0)),
+    )
+    for room,switch,lights,(dx,dz) in branches:
+        zone=zones[room]
+        assembly.switch(zone,*switch,dx,dz)
+        name="red-mesa-"+room
+        assembly.sockets[-1].update(id=name+"-switch",style=f"RM-{zone['owner']:02d}")
+        drop=assembly.routes[-1]["points"][-1]
+        junctions=[drop]
+        for i,(x,z) in enumerate(lights,1):
+            assembly.mounted_lamp(zone,f"{name}-light-{i}",point(x,zone["y"]+2.38,z),
+                                  point(dx,0,dz),1.75,point(-dz,0,dx))
+            mx,my,mz=assembly.loads[-1]["mount"]
+            junction=(mx-dx*.028,drop[1],mz-dz*.028)
+            assert abs((junction[0]-drop[0])*dx+(junction[2]-drop[2])*dz)<.012,room
+            junctions.append(junction)
+            assembly.raceway(f"Red Mesa {room} lamp drop {i}",(junction,(junction[0],my+.12,junction[2])),.012)
+        junctions.sort(key=lambda p:p[2] if dx else p[0])
+        assembly.raceway(f"Red Mesa {room} distribution",junctions,.012)
+
+
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
     source = {ext: SOURCE / f"canyon-marsh.{ext}" for ext in ("blend", "glb", "hcs2")}
@@ -92,6 +175,10 @@ def build():
     bpy.context.preferences.filepaths.save_version = 0
     assembly = Assembly()
     refuges = cupboards(assembly, zones, REFUGES, site="red-mesa", floor_roles=("floor",))
+    cupboard_parts=set(assembly.built)
+    guard_lower_ledge(assembly)
+    expedition_supply(assembly,zones["shelter"])
+    room_services(assembly,zones)
     for piece in assembly.built:
         piece.name = piece.name.removeprefix("College ")
     target = {ext: OUT / f"red-mesa-review.{ext}" for ext in source}
@@ -99,7 +186,7 @@ def build():
     export(addition, assembly.built)
     append(source["glb"], addition, target["glb"], reuse_embedded_images=True)
     parts = native_write(source["hcs2"], target["hcs2"], set(), assembly.built,
-                         open_components={obj.name for obj in assembly.built})
+                         open_components={obj.name for obj in assembly.built if obj in cupboard_parts or obj.get("source_asset")})
     retained = split_native(source["hcs2"])
     assert split_native(target["hcs2"])[:len(retained)] == retained
     bpy.ops.file.pack_all()
@@ -121,6 +208,10 @@ def build():
         rows.append(("OPEN", i, OWNERS[a][0], OWNERS[b][0], x, y, z, width, axis, kind))
     for rite in layout["rituals"]:
         rows.append(("RITUAL", rite["rite"].lower(), OWNERS[rite["zone"]][0], *rite["point"]))
+    for service in assembly.sockets:
+        if service["type"]!="hide":
+            rows.append(("SERVICE",service["id"],service["type"],service["room"],*service["position"],
+                         service["yaw"],service["style"]))
     for pocket in refuges:
         rows.append(("COVER", pocket["id"], pocket["owner"], *pocket["position"], pocket["yaw"]))
     for path in layout["links"]:
@@ -144,6 +235,7 @@ def build():
         "site": "WLD-03", "source": str(layout_path.relative_to(ROOT).as_posix()),
         "geometry_sha256": {ext: sha(path) for ext, path in target.items()},
         "retained_native_components": len(retained), "refuges": refuges,
+        "services":[s for s in assembly.sockets if s["type"]!="hide"],
     }
     (OUT / "construction.json").write_bytes((json.dumps(record, indent=2) + "\n").encode())
     print("PASS retained", len(retained), "native parts; refuge floor contacts",

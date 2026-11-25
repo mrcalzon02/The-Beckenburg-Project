@@ -2,9 +2,9 @@
   "site": "WLD-03",
   "source": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
   "geometry_sha256": {
-    "blend": "1d6a336ed698c050f656f90de5d58e2acc731ba70eedbe80cacc502ccdbc540e",
-    "glb": "9a9e1da271bcc6c082a8c3e65726af9bc99b36c8574ae35f912724786f847917",
-    "hcs2": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef"
+    "blend": "06daa6aeaa6c1be743b89a12998e17feb589cb155539667f5106be35694f11fb",
+    "glb": "51483795f7be434045fe0009a92fa987eddd33a8221e64b2b6683b0d41ab4192",
+    "hcs2": "07e7278b423dcc02e136343e3ebc3b96a19f4a685844648f228564dd92c391d8"
   },
   "retained_native_components": 246,
   "refuges": [
@@ -82,6 +82,224 @@
       ],
       "base_contacts": 12,
       "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "red-mesa-generator",
+      "type": "generator",
+      "room": 0,
+      "position": [
+        16.35,
+        0.56,
+        56.177
+      ],
+      "yaw": 3.141592653589793,
+      "style": "RM-MAIN"
+    },
+    {
+      "id": "red-mesa-breaker",
+      "type": "breaker",
+      "room": 0,
+      "position": [
+        18.450001,
+        0.89,
+        56.202001
+      ],
+      "yaw": 3.141592653589793,
+      "style": "RM-MAIN"
+    },
+    {
+      "id": "red-mesa-shelter-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        19.919001,
+        1.25,
+        49.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-00"
+    },
+    {
+      "id": "red-mesa-shelter-light-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        19.736,
+        2.38,
+        47.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-wash-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        59.918999,
+        1.25,
+        49.400002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-01"
+    },
+    {
+      "id": "red-mesa-wash-light-1",
+      "type": "light",
+      "room": 1,
+      "position": [
+        59.736,
+        2.38,
+        51.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-gallery-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        48.120998,
+        9.25,
+        26.1
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "RM-04"
+    },
+    {
+      "id": "red-mesa-gallery-light-1",
+      "type": "light",
+      "room": 4,
+      "position": [
+        48.303997,
+        10.38,
+        24.25
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-gallery-light-2",
+      "type": "light",
+      "room": 4,
+      "position": [
+        48.303997,
+        10.38,
+        35.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-fork-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        75.918999,
+        9.25,
+        30.4
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-06"
+    },
+    {
+      "id": "red-mesa-fork-light-1",
+      "type": "light",
+      "room": 6,
+      "position": [
+        75.736,
+        10.38,
+        32.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-chamber-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        81.918999,
+        9.25,
+        11.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-07"
+    },
+    {
+      "id": "red-mesa-chamber-light-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        81.736,
+        10.38,
+        9.2
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-chamber-light-2",
+      "type": "light",
+      "room": 7,
+      "position": [
+        81.736,
+        10.38,
+        15.9
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-lower-cave-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        60.700001,
+        5.25,
+        39.879002
+      ],
+      "yaw": 3.141592653589793,
+      "style": "RM-08"
+    },
+    {
+      "id": "red-mesa-lower-cave-light-1",
+      "type": "light",
+      "room": 8,
+      "position": [
+        62.5,
+        6.38,
+        39.696003
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-alcove-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        59.918999,
+        9.25,
+        46.700001
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-10"
+    },
+    {
+      "id": "red-mesa-alcove-light-1",
+      "type": "light",
+      "room": 10,
+      "position": [
+        59.736,
+        10.38,
+        48.599998
+      ],
+      "yaw": 0,
+      "style": "native-string"
     }
   ]
 }

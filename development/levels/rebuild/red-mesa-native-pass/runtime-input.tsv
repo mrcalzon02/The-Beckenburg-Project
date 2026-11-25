@@ -1,4 +1,4 @@
-SOURCE	9a9e1da271bcc6c082a8c3e65726af9bc99b36c8574ae35f912724786f847917	9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef
+SOURCE	51483795f7be434045fe0009a92fa987eddd33a8221e64b2b6683b0d41ab4192	07e7278b423dcc02e136343e3ebc3b96a19f4a685844648f228564dd92c391d8
 DOCK	34.0	0	86.0	0
 ROOM	shelter	0	4	46	20	58	0	3	false	Modern expedition shelter	12	0	52
 ROOM	wash	1	48	46	60	58	0	3	false	Expedition sample shelter	54	0	52
@@ -17,7 +17,7 @@ ROOM	stage	13	26	80	42	92	0	3	true	Canyon-road van apron	34	0	81
 SPACE	shelter-stair	2	10.4	32.9	13.6	46	0	5.8	true
 SPACE	upper-stair	3	22.1	18.3	25.15	32.8	4	6.0	true
 SPACE	upper-bridge	3	47.8	11.95	66	15.25	8	3	true
-SPACE	lower-ledge	2	12	32.2	55.25	44.15	4	2.6	true
+SPACE	lower-ledge	2	12	32.2	55.75	44.25	4	2.6	true
 SPACE	gallery-stair	8	56.1	26.5	57.9	33.5	4	4	true
 TREAD	132:L13 flight0 step1
 TREAD	133:L13 flight0 step2
@@ -110,6 +110,24 @@ OPEN	960	4	10	54	8	40	1.6	z	trail
 RITUAL	banishment	0	12.0	0	52.0
 RITUAL	cleansing	1	54.0	0	52.0
 RITUAL	absolution	7	74.0	8	13.0
+SERVICE	red-mesa-generator	generator	0	16.35	0.56	56.177	3.141592653589793	RM-MAIN
+SERVICE	red-mesa-breaker	breaker	0	18.450001	0.89	56.202001	3.141592653589793	RM-MAIN
+SERVICE	red-mesa-shelter-switch	switch	0	19.919001	1.25	49.0	-1.5707963267948966	RM-00
+SERVICE	red-mesa-shelter-light-1	light	0	19.736	2.38	47.400002	0	native-string
+SERVICE	red-mesa-wash-switch	switch	1	59.918999	1.25	49.400002	-1.5707963267948966	RM-01
+SERVICE	red-mesa-wash-light-1	light	1	59.736	2.38	51.0	0	native-string
+SERVICE	red-mesa-gallery-switch	switch	4	48.120998	9.25	26.1	1.5707963267948966	RM-04
+SERVICE	red-mesa-gallery-light-1	light	4	48.303997	10.38	24.25	0	native-string
+SERVICE	red-mesa-gallery-light-2	light	4	48.303997	10.38	35.200001	0	native-string
+SERVICE	red-mesa-fork-switch	switch	6	75.918999	9.25	30.4	-1.5707963267948966	RM-06
+SERVICE	red-mesa-fork-light-1	light	6	75.736	10.38	32.299999	0	native-string
+SERVICE	red-mesa-chamber-switch	switch	7	81.918999	9.25	11.0	-1.5707963267948966	RM-07
+SERVICE	red-mesa-chamber-light-1	light	7	81.736	10.38	9.2	0	native-string
+SERVICE	red-mesa-chamber-light-2	light	7	81.736	10.38	15.9	0	native-string
+SERVICE	red-mesa-lower-cave-switch	switch	8	60.700001	5.25	39.879002	3.141592653589793	RM-08
+SERVICE	red-mesa-lower-cave-light-1	light	8	62.5	6.38	39.696003	0	native-string
+SERVICE	red-mesa-alcove-switch	switch	10	59.918999	9.25	46.700001	-1.5707963267948966	RM-10
+SERVICE	red-mesa-alcove-light-1	light	10	59.736	10.38	48.599998	0	native-string
 COVER	red-mesa-shelter-cupboard	0	5.5	0	55	-1.5707963267948966
 COVER	red-mesa-wash-cupboard	1	58.5	0	55	1.5707963267948966
 COVER	red-mesa-chamber-cupboard	7	75	8	5.5	0
