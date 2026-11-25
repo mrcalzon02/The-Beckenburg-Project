@@ -1,11 +1,23 @@
 {
   "source": "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json",
   "exports": {
-    "blend": "6a4a106e618d3fb50396fb593d4c6d4c226249decaf39830bbdb1fbb67e4035a",
-    "glb": "4bf181b6a0e7188b6db54617357d7e676a68cebd8ca3a65c92dd1df379832d61",
-    "hcs2": "0d9ec4696e697bb6b70f42912c92bb667c1c9c0afd418c2e84a57aa1006eee56"
+    "blend": "d5e86041138e7aa9a80cba21777c500f458a4f6b92004145e3349ca2b24aa4cf",
+    "glb": "6e29fa9ba05f23bf298c46ef15bfc4946f3a33d64558ede05c1e23609f3a6d58",
+    "hcs2": "50f94be7ba2df82006958f429181526842a79bc629e2581bf04b0282b29a543d"
   },
-  "retained_components": 171,
+  "retained_components": 161,
+  "replaced_placeholders": [
+    "level_blockout_motel_guest_bed.001",
+    "level_blockout_motel_guest_bed.002",
+    "level_blockout_motel_guest_bed.003",
+    "level_blockout_motel_guest_bed.004",
+    "level_blockout_motel_guest_bed.005",
+    "level_blockout_motel_guest_bed.006",
+    "level_blockout_motel_guest_bed.007",
+    "level_blockout_motel_guest_bed.008",
+    "level_blockout_motel_laundry_unit.001",
+    "level_blockout_motel_reception_counter.001"
+  ],
   "pockets": [
     {
       "id": "pines-manager-cupboard",
@@ -431,6 +443,394 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "Eight Pines guest register 01",
+      "type": "native_story",
+      "room": 4,
+      "position": [
+        21.35,
+        0.934677,
+        46.1
+      ],
+      "yaw": 0,
+      "style": "PINES_GUEST_REGISTER"
+    }
+  ],
+  "furniture": [
+    {
+      "room": "office",
+      "asset": "table_large_2",
+      "use": "reception counter",
+      "bounds": [
+        [
+          20.924999,
+          0.0,
+          45.297222
+        ],
+        [
+          21.775002,
+          0.906667,
+          46.902779
+        ]
+      ]
+    },
+    {
+      "room": "office",
+      "asset": "armchair_1",
+      "use": "waiting chair",
+      "bounds": [
+        [
+          14.685419,
+          0.0,
+          47.925003
+        ],
+        [
+          15.314582,
+          0.677767,
+          48.875
+        ]
+      ]
+    },
+    {
+      "room": "manager",
+      "asset": "bed_2",
+      "use": "manager bed",
+      "bounds": [
+        [
+          7.795673,
+          0.0,
+          41.025002
+        ],
+        [
+          8.904328,
+          2.114364,
+          43.175003
+        ]
+      ]
+    },
+    {
+      "room": "manager",
+      "asset": "level_lived_linen_press_worn",
+      "use": "linen press",
+      "bounds": [
+        [
+          11.224999,
+          0.0,
+          48.463547
+        ],
+        [
+          12.075,
+          1.576364,
+          48.936455
+        ]
+      ]
+    },
+    {
+      "room": "laundry",
+      "asset": "level_laundry_washer_worn",
+      "use": "washer",
+      "bounds": [
+        [
+          43.299999,
+          0.0,
+          40.73637
+        ],
+        [
+          44.099998,
+          0.868699,
+          41.363628
+        ]
+      ]
+    },
+    {
+      "room": "laundry",
+      "asset": "level_laundry_shelf_worn",
+      "use": "linen shelf",
+      "bounds": [
+        [
+          43.868748,
+          -0.0,
+          45.005367
+        ],
+        [
+          44.731251,
+          0.549788,
+          45.294636
+        ]
+      ]
+    },
+    {
+      "room": "room1",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.934815,
+          0.0,
+          20.91
+        ],
+        [
+          9.065186,
+          1.025406,
+          23.09
+        ]
+      ]
+    },
+    {
+      "room": "room1",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          20.822346
+        ],
+        [
+          10.25,
+          0.685713,
+          21.377655
+        ]
+      ]
+    },
+    {
+      "room": "room2",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.937937,
+          0.0,
+          25.91
+        ],
+        [
+          9.062063,
+          2.143866,
+          28.09
+        ]
+      ]
+    },
+    {
+      "room": "room2",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          25.822346
+        ],
+        [
+          10.25,
+          0.685713,
+          26.377655
+        ]
+      ]
+    },
+    {
+      "room": "room3",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.934815,
+          0.0,
+          30.91
+        ],
+        [
+          9.065186,
+          1.025406,
+          33.09
+        ]
+      ]
+    },
+    {
+      "room": "room3",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          30.822346
+        ],
+        [
+          10.25,
+          0.685713,
+          31.377655
+        ]
+      ]
+    },
+    {
+      "room": "room4",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.937937,
+          0.0,
+          35.909996
+        ],
+        [
+          9.062063,
+          2.143866,
+          38.09
+        ]
+      ]
+    },
+    {
+      "room": "room4",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          35.822342
+        ],
+        [
+          10.25,
+          0.685713,
+          36.377655
+        ]
+      ]
+    },
+    {
+      "room": "room5",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.937939,
+          0.0,
+          20.91
+        ],
+        [
+          44.062061,
+          2.143866,
+          23.09
+        ]
+      ]
+    },
+    {
+      "room": "room5",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          20.822346
+        ],
+        [
+          42.350002,
+          0.685713,
+          21.377655
+        ]
+      ]
+    },
+    {
+      "room": "room6",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.934814,
+          0.0,
+          25.91
+        ],
+        [
+          44.065186,
+          1.025406,
+          28.09
+        ]
+      ]
+    },
+    {
+      "room": "room6",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          25.822346
+        ],
+        [
+          42.350002,
+          0.685713,
+          26.377655
+        ]
+      ]
+    },
+    {
+      "room": "room7",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.937939,
+          0.0,
+          30.91
+        ],
+        [
+          44.062061,
+          2.143866,
+          33.09
+        ]
+      ]
+    },
+    {
+      "room": "room7",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          30.822346
+        ],
+        [
+          42.350002,
+          0.685713,
+          31.377655
+        ]
+      ]
+    },
+    {
+      "room": "room8",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.934814,
+          0.0,
+          35.91
+        ],
+        [
+          44.065186,
+          1.025406,
+          38.09
+        ]
+      ]
+    },
+    {
+      "room": "room8",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          35.822342
+        ],
+        [
+          42.350002,
+          0.685713,
+          36.377655
+        ]
+      ]
     }
   ]
 }

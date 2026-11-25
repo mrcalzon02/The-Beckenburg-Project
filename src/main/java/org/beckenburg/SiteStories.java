@@ -27,6 +27,8 @@ public final class SiteStories {
    "An insulated research station kept weather and radio logs. After the first attacks the remaining crew rationed heat and tried to re-establish a safe link.");
   case "wld-10"->new Identity(MonasteryNativeLevel.TITLE,"Highland Frontier mountain road",
    "The monastery kept a daily bell register and ran a communal refectory. In late 2022 the gatehouse began taking in travellers, and the refectory recorded the extra places at supper.");
+  case "wld-16"->new Identity("Eight Pines Motor Lodge","Highway 6, Beckenburg outskirts",
+   "Eight roadside rooms shared a reception desk, linen room and heating plant. When traffic stopped in late 2022, the manager kept a register of stranded travellers.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
@@ -77,6 +79,13 @@ public final class SiteStories {
    "The kitchen copy lists bread, dry peas, and the number of people expected for supper.",
    "A second hand adds places for the travellers sleeping in the north range. Two bowls are marked for collection by people who could not join the common table.",
    "The cook pencilled tomorrow's bread count in the margin. The line for delivery from the road is empty."));
+  case "PINES_GUEST_REGISTER"->{
+   if(!site.equals("wld-16"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Eight Pines guest register",List.of(
+    "Late 2022. West wing keys are on their hooks. Move arriving families to the east wing when the west rooms fill.",
+    "If the heating trips again, use the laundry door to reach the plant. Keep the loading aisle clear for clean blankets.",
+    "The last party wrote an expected arrival time beside their room numbers. No arrival was entered."));
+  }
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):

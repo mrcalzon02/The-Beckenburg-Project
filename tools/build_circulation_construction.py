@@ -18,8 +18,8 @@ from export_roster_collision import face_keys
 BASE=ROOT/'development/levels/rebuild';OUT=BASE/'circulation-construction-pass';RAIL=ROOT/'development/levels/primitive-props-v1/models/level_blockout_guardrail.glb'
 ROUTES={'WLD-06':{'L07':[[32,0,45],[22,0,45],[22,0,39],[14,0,39],[14,0,29],[22,0,29],[22,0,23]],'L14':[[12,0,19],[16,0,19],[16,0,28],[16,0,29],[14,0,29],[14,0,33],[18,0,33]],'L15':[[18,0,33],[14,0,33],[14,0,39],[22,0,39],[22,0,45],[32,0,45]]},'WLD-08':{'L13':[[11,0,17],[11,0,16],[7,0,16],[7,0,26],[7,0,35],[11,0,35]]},'WLD-13':{'L09':[[36,0,41],[36,0,28],[30,0,28],[30,0,26],[30,0,20]]}}
 WALLS={'generator':{'E':[(19,2.2)],'S':[(7,2.4)]},'lab':{'N':[(7,2.4)],'E':[(35,2.2)],'S':[(11,2.2)]}}
-def native_write(source,target,removed,built,open_components=()):
- keep=[p for p in split_native(source) if p[0].split(':',1)[-1] not in removed];parts=[(o.name,records(o)) for o in built];stream=io.BytesIO();stream.write(struct.pack('>III',0x48435332,len(keep)+len(parts),sum(p[1] for p in keep)+sum(len(ts) for _,ts in parts)))
+def native_write(source,target,removed,built,open_components=(),mesh_records=records):
+ keep=[p for p in split_native(source) if p[0].split(':',1)[-1] not in removed];parts=[(o.name,mesh_records(o)) for o in built];stream=io.BytesIO();stream.write(struct.pack('>III',0x48435332,len(keep)+len(parts),sum(p[1] for p in keep)+sum(len(ts) for _,ts in parts)))
  for _,_,raw in keep:stream.write(raw)
  for name,ts in parts:
   raw=name.encode();stream.write(struct.pack('>H',len(raw))+raw+struct.pack('>BI',int(name not in open_components),len(ts)))

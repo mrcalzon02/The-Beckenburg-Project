@@ -15,7 +15,7 @@ from build_college_electrical import Assembly, bounds, point, world
 from build_lookout_native_arrival import table
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
-from review_roster_macroterrain import sha
+from review_roster_macroterrain import records, sha
 from verify_college_electrical import native_records
 from verify_college_services import bvh
 
@@ -94,6 +94,98 @@ def room_power(assembly, zones):
         assembly.raceway(f"Eight Pines {room} light circuit",(drop,endpoint,(endpoint[0],y+.12,endpoint[2])),.012)
 
 
+def room_furniture(assembly, zones):
+    placements = [
+        ("office", "reception counter", "table_large_2", 21.35, 46.1, .85, 2.18),
+        ("office", "waiting chair", "armchair_1", 15.0, 48.4, .95, .95),
+        ("manager", "manager bed", "bed_2", 8.35, 42.1, 1.55, 2.15),
+        ("manager", "linen press", "level_lived_linen_press_worn", 11.65, 48.7, .85, .60),
+        ("laundry", "washer", "level_laundry_washer_worn", 43.7, 41.05, .80, .75),
+        ("laundry", "linen shelf", "level_laundry_shelf_worn", 44.3, 45.15, 1.65, .60),
+    ]
+    for number in range(1, 9):
+        east = number > 4
+        center = 22.5 + (number - 1) % 4 * 5
+        room = f"room{number}"
+        placements.extend([
+            (room, "guest bed", "bed_1" if number in (1, 3, 6, 8) else "bed_2",
+             43.5 if east else 8.5, center - .50, 1.72, 2.18),
+            (room, "bedside table", "bedside_table_1",
+             42.05 if east else 9.95, center - 1.40, .60, .58),
+        ])
+
+    installed = []
+    for room, name, asset, x, z, width, depth in placements:
+        zone = zones[room]
+        parts = assembly.place(asset, Matrix.Identity(4), f"Eight Pines {room} {name}",
+                               "fixed room furniture", room)
+        low, high = bounds(parts)
+        turn = (high[0] - low[0] > high[2] - low[2]) != (width > depth)
+        rotation = Matrix.Rotation(math.pi / 2 if turn else 0, 4, "Z")
+        for part in parts:
+            part.matrix_world = rotation @ part.matrix_world
+        bpy.context.view_layer.update()
+        low, high = bounds(parts)
+        model_width, model_depth = high[0] - low[0], high[2] - low[2]
+        scale = min(width / model_width, depth / model_depth, 1.15)
+        y = zone["y"]
+        transform = Matrix.Translation(point(
+            x - scale * (high[0] + low[0]) / 2, y - scale * low[1],
+            z - scale * (high[2] + low[2]) / 2)) @ Matrix.Scale(scale, 4)
+        half_x, half_z = model_width * scale / 2, model_depth * scale / 2
+        x0, z0, x1, z1 = zone["bounds"]
+        assert x0 + .27 < x - half_x < x + half_x < x1 - .27, (room, name)
+        assert z0 + .27 < z - half_z < z + half_z < z1 - .27, (room, name)
+        for px in (x - half_x, x + half_x):
+            for pz in (z - half_z, z + half_z):
+                hit, _, _ = assembly.measured(point(px, y + .17, pz), point(0, -1, 0), .28,
+                                              f"{room} {name} slab")
+                assert abs(hit.z - y) < .006, (room, name, hit)
+        for part in parts:
+            part.matrix_world = transform @ part.matrix_world
+        bpy.context.view_layer.update()
+        low, high = bounds(parts)
+        assert abs(low[1] - y) < .004
+        installed.append(dict(room=room, asset=asset, use=name, bounds=[low, high]))
+        if name=="reception counter":
+            guest_register(assembly,zone["owner"],parts,x,z,high[1])
+    return installed
+
+
+def guest_register(assembly, owner, counter, x, z, top):
+    hit, normal, _, _ = bvh(counter).ray_cast(point(x,top+.1,z),point(0,-1,0),.35)
+    assert hit is not None and normal.z>.98, ("Guest register needs a flat counter",hit,normal)
+    parts = assembly.place("notebook_1",Matrix.Identity(4),"Eight Pines guest register",
+                           "readable guest register","office")
+    low, high = bounds(parts)
+    scale = min(.32/(high[0]-low[0]),.30/(high[2]-low[2]),1.0)
+    transform = Matrix.Translation(point(x-scale*(high[0]+low[0])/2,hit.z+.002-scale*low[1],
+                                         z-scale*(high[2]+low[2])/2)) @ Matrix.Scale(scale,4)
+    for part in parts:
+        part.matrix_world = transform @ part.matrix_world
+    bpy.context.view_layer.update()
+    # Register every visible mesh part so the ray can resolve the same document.
+    for part in parts:
+        part.name=part.name.removeprefix("College ")
+        _, upper = bounds([part])
+        assembly.effect(part.name,"native_story",owner,(x,upper[1],z),0,"PINES_GUEST_REGISTER")
+
+
+def collision_records(obj):
+    # The engine rejects zero-area faces after world coordinates become floats.
+    # A few of the existing decorative GLBs have collapsed seam triangles.
+    valid = []
+    for points, flags in records(obj):
+        ax, ay, az, bx, by, bz, cx, cy, cz = points
+        ux, uy, uz = bx-ax, by-ay, bz-az
+        vx, vy, vz = cx-ax, cy-ay, cz-az
+        area_squared = (uy*vz-uz*vy)**2 + (uz*vx-ux*vz)**2 + (ux*vy-uy*vx)**2
+        if area_squared >= 1e-24:
+            valid.append((points, flags))
+    assert valid, obj.name
+    return valid
+
+
 def build():
     OUT.mkdir(parents=True,exist_ok=True)
     source={ext:SOURCE/f"fitted-approaches.{ext}" for ext in ("blend","glb","hcs2")}
@@ -107,19 +199,29 @@ def build():
     zones={z["id"]:{**z,"owner":owners[z["id"]]} for z in layout["zones"]}
     bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
     bpy.context.preferences.filepaths.save_version=0
+    placeholders={"level_blockout_motel_reception_counter.001", "level_blockout_motel_laundry_unit.001",
+                  *(f"level_blockout_motel_guest_bed.{n:03d}" for n in range(1,9))}
+    for name in sorted(placeholders):
+        obj=bpy.data.objects[name]
+        assert obj.get("role")=="placed source-library furnishing", name
+        bpy.data.objects.remove(obj,do_unlink=True)
+    bpy.context.view_layer.update()
     assembly=Assembly()
     pockets=cupboards(assembly,zones,REFUGES,site="pines",floor_roles=("floor","constructed continuous room or arcade floor"))
     plant_power(assembly,zones["plant"])
     room_power(assembly,zones)
+    furniture=room_furniture(assembly,zones)
     for obj in assembly.built:
         obj.name=obj.name.removeprefix("College ")
     target={ext:OUT/f"motor-lodge.{ext}" for ext in source}
     addition=ROOT/"build/eight-pines-installation.glb"
     export(addition,assembly.built)
-    append(source["glb"],addition,target["glb"],reuse_embedded_images=True)
-    native_write(source["hcs2"],target["hcs2"],set(),assembly.built,
-                 open_components={p.name for p in assembly.built if p.get("source_asset")})
-    prior=native_records(source["hcs2"])
+    append(source["glb"],addition,target["glb"],remove_mesh_names=sorted(placeholders),reuse_embedded_images=True)
+    native_write(source["hcs2"],target["hcs2"],placeholders,assembly.built,
+                 open_components={p.name for p in assembly.built if p.get("source_asset")}, mesh_records=collision_records)
+    source_records=native_records(source["hcs2"])
+    prior=[record for record in source_records if record[0].split(":",1)[-1] not in placeholders]
+    assert len(source_records)-len(prior)==len(placeholders)
     assert native_records(target["hcs2"])[:len(prior)]==prior
     bpy.ops.file.pack_all()
     bpy.ops.wm.save_as_mainfile(filepath=str(target["blend"]),compress=True)
@@ -158,7 +260,7 @@ def build():
     table(OUT/"door-schedule.tsv",doors)
     (OUT/"construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
-        retained_components=len(prior),pockets=pockets,services=assembly.sockets),indent=2)+"\n",
+        retained_components=len(prior),replaced_placeholders=sorted(placeholders),pockets=pockets,services=assembly.sockets,furniture=furniture),indent=2)+"\n",
         encoding="utf-8",newline="\n")
 
 
