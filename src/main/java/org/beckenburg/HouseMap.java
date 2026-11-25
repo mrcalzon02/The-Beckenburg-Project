@@ -176,8 +176,8 @@ public final class HouseMap {
         }
         int room=roomAt(x,eyeY-1.3,z);return room>=0&&!outside(room);
     }
+    private static final int POSITION_EDGE_MARGIN=3;
     record HorizontalBounds(int minX,int maxX,int minZ,int maxZ){}
-    HorizontalBounds horizontalBounds(){return horizontalBounds;}
     private static HorizontalBounds horizontalBounds(LevelDefinition level,NativeInvestigationScene scene){
         double minX=Double.POSITIVE_INFINITY,minZ=Double.POSITIVE_INFINITY;
         double maxX=Double.NEGATIVE_INFINITY,maxZ=Double.NEGATIVE_INFINITY;
@@ -190,13 +190,13 @@ public final class HouseMap {
             minX=Math.min(minX,space.x0());maxX=Math.max(maxX,space.x1());
             minZ=Math.min(minZ,space.z0());maxZ=Math.max(maxZ,space.z1());
         }
-        // Keep the previous margin for nearby equipment and allow the full
-        // authored footprint, including rooms on the negative side of zero.
-        return new HorizontalBounds(Math.min(0,(int)Math.floor(minX)-3),(int)Math.ceil(maxX)+3,
-                                    Math.min(0,(int)Math.floor(minZ)-3),(int)Math.ceil(maxZ)+3);
+        return new HorizontalBounds((int)Math.floor(minX),(int)Math.ceil(maxX),
+                                    (int)Math.floor(minZ),(int)Math.ceil(maxZ));
     }
-    public int width(){return horizontalBounds.maxX();}
-    public int height(){return horizontalBounds.maxZ();}
+    int networkMinX(){return Math.min(0,horizontalBounds.minX()-POSITION_EDGE_MARGIN);}
+    int networkMinZ(){return Math.min(0,horizontalBounds.minZ()-POSITION_EDGE_MARGIN);}
+    public int width(){return horizontalBounds.maxX()+POSITION_EDGE_MARGIN;}
+    public int height(){return horizontalBounds.maxZ()+POSITION_EDGE_MARGIN;}
     public int cellWidth(){return 8;}
     public int cellHeight(){return 6;}
     public double ceilingHeight(){return level.room(0).height();}
@@ -445,7 +445,10 @@ public final class HouseMap {
         // A fitted physical perimeter can extend beyond the nominal gameplay rooms.
         boolean physicalPerimeter=nativeInvestigation!=null &&
             (site==Site.MONASTERY || level.socket("native_perimeter",13)!=null);
-        if(!grounded && !physicalPerimeter && (x<.22||z<.22||x>width()-.22||z>height()-.22))return false;
+        double minX=nativeInvestigation==null?0:Math.min(0,horizontalBounds.minX());
+        double minZ=nativeInvestigation==null?0:Math.min(0,horizontalBounds.minZ());
+        if(!grounded&&!physicalPerimeter
+            &&(x<minX+.22||z<minZ+.22||x>width()-.22||z>height()-.22))return false;
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
         if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(envelope!=null&&envelope.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;

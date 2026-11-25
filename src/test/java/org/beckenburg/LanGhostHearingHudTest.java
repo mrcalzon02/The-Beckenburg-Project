@@ -24,6 +24,10 @@ public final class LanGhostHearingHudTest {
         var map=new HouseMap(HouseMap.Site.GREYWATER);
         var spawn=map.spawn(9);
         ok(spawn.x()<0&&map.roomAt(spawn.x(),spawn.y(),spawn.z())==9,"Expected Greywater forest return");
+        ok(map.airborneClear(spawn.x(),spawn.y()+.35,spawn.z(),HunterPosture.STANDING_HEIGHT),
+            "Authored forest return has clearance above its negative-coordinate floor");
+        ok(!map.airborneClear(-31,.35,spawn.z(),HunterPosture.STANDING_HEIGHT),
+            "Opening signed coordinates does not remove the outer bound");
         String site="SITE|"+map.site()+"|"+map.level().revision();
         ghostView.onEvent(site);
         ghostView.onEvent(new LanGhostSpatial(map,9).frame(64));

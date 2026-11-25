@@ -29,12 +29,10 @@ public final class LanProtocol {
         return number;
     }
     static double worldX(HouseMap map,String value){
-        var bounds=map.horizontalBounds();
-        return integer(value,bounds.minX()*1000,bounds.maxX()*1000)/1000.0;
+        return integer(value,map.networkMinX()*1000,map.width()*1000)/1000.0;
     }
     static double worldZ(HouseMap map,String value){
-        var bounds=map.horizontalBounds();
-        return integer(value,bounds.minZ()*1000,bounds.maxZ()*1000)/1000.0;
+        return integer(value,map.networkMinZ()*1000,map.height()*1000)/1000.0;
     }
     public static long sequence(String value) {
         if(value==null||!value.matches("[0-9]{1,15}"))throw new IllegalArgumentException("invalid sequence");
