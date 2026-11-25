@@ -523,8 +523,9 @@ public final class GlbProps {
         }
         var finishes=new java.util.IdentityHashMap<org.beckenburg.editor.EditorGlbReader.Primitive,LevelSurfaceFinish.Selection>();
         if(resourceName==null){
+            boolean ship=source.materials().stream().anyMatch(material->material.name().equals("Saint Elara painted bulkheads"));
             for(var primitive:source.primitives()){
-                var finish=LevelSurfaceFinish.finish(source.nodeName(primitive.node()),source.materials().get(primitive.material()));
+                var finish=LevelSurfaceFinish.finish(source.nodeName(primitive.node()),source.materials().get(primitive.material()),ship);
                 if(finish!=null)finishes.put(primitive,finish);
             }
         }

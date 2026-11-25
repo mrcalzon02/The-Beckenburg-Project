@@ -23,7 +23,11 @@ final class LevelSurfaceFinish {
     private static final Pattern STAIR_FITTING = Pattern.compile("handrail|guard|retaining side|bearing|jamb|lintel|soffit|stair bench");
     private static final Pattern FLOOR = Pattern.compile("(?:^|[ _-])(?:floors?|decks?|boardwalks?|slabs?)(?:$|[ _.\\-])");
     private static final Pattern TILED = Pattern.compile("wash|kitchen|bath|ward|clinic|staff-wc|hydrotherapy");
-    private static final Pattern STONE_FLOOR = Pattern.compile("crypt|cave|gallery|vault|nave|concrete|stone|turbine|cellar|tunnel");
+    private static final Pattern STONE_FLOOR = Pattern.compile("crypt|cave|vault|nave|ossuary|stone");
+    private static final Pattern HARD_FLOOR = Pattern.compile(
+        "concrete|cement|boiler|processing|refrigerated|floor cold|plant|turbine|shaft|cellar|tunnel|casemate|magazine|pump");
+    private static final Pattern STONE_WALL = Pattern.compile("foundation stone|harbour stone|headland stone|coping");
+    private static final Pattern STEEL = Pattern.compile("bulkheads|deck steel|welded steel|galvanized cladding");
 
     private enum Kind { WALL, FLOOR, CEILING, DECK, STAIR }
 
@@ -32,12 +36,17 @@ final class LevelSurfaceFinish {
         CONCRETE(Kind.WALL, "floor_ceiling_1_1.png", 2.75, 2.75, 2.0),
         MASONRY(Kind.WALL, "wall_1_plain_0.png", 3.1, 2.1, 2.8),
         TIMBER(Kind.WALL, "wall_1_1.png", 1.8, 1.8, 2.1),
+        PAINTED_STEEL(Kind.WALL, "floor_ceiling_3_1.png", 2.35, 2.65, 1.08),
         FLOORBOARDS(Kind.FLOOR, "floor_ceiling_1_0.png", 1.9, 2.8, 1.85),
         FLOOR_TILE(Kind.FLOOR, "floor_ceiling_2_0.png", 2.4, 2.4, 1.25),
         FLAGSTONES(Kind.FLOOR, "floor_ceiling_2_0.png", 4.8, 4.8, 1.0),
+        SCREED(Kind.FLOOR, "floor_ceiling_3_1.png", 3.4, 3.4, 1.35),
+        STEEL_DECK(Kind.DECK, "floor_ceiling_3_1.png", 1.28, 1.28, .9),
         CEILING(Kind.CEILING, "floor_ceiling_2_1.png", 2.8, 2.8, .8),
+        STEEL_CEILING(Kind.CEILING, "floor_ceiling_3_1.png", 2.35, 2.65, 1.0),
         BOARDWALK(Kind.DECK, "floor_ceiling_1_0.png", 2.3, 2.8, 1.85),
         TIMBER_STAIRS(Kind.STAIR, "floor_ceiling_1_0.png", 2.3, 1.9, 1.5),
+        STEEL_STAIRS(Kind.STAIR, "floor_ceiling_3_1.png", 1.28, 1.28, .92),
         STONE_STAIRS(Kind.STAIR, "floor_ceiling_1_1.png", 1.7, 1.7, 1.45);
 
         private final Kind kind;
@@ -70,13 +79,31 @@ final class LevelSurfaceFinish {
                     }
                 }
                 for (int i = 0; i < samples.length; i++) {
-                    samples[i] = Math.max(.55, Math.min(1.42, 1 + contrast * (samples[i] / mean - 1)));
+                    double grain = 1 + contrast * (samples[i] / mean - 1);
+                    samples[i] = Math.max(.55, Math.min(1.42, grain * detail(i % 128, i / 128)));
                 }
                 luminance = samples;
                 return samples;
             } catch (IOException bad) {
                 throw new UncheckedIOException(bad);
             }
+        }
+        private double detail(int x, int y) {
+            if (this == PAINTED_STEEL || this == STEEL_CEILING) {
+                if (x == 0 || y == 0) return .77;
+                if (x == 1 || y == 1) return 1.10;
+            }
+            if (this == STEEL_DECK || this == STEEL_STAIRS) {
+                int row = y / 16;
+                int across = (x + (row % 2) * 8) % 16 - 8;
+                int along = y % 16 - 8;
+                if ((row % 2) != 0) along = -along;
+                if (Math.abs(across + along) <= 1 && Math.abs(across - along) < 11)
+                    return 1.17;
+                if (across + along == 2 && Math.abs(across - along) < 10)
+                    return .84;
+            }
+            return 1;
         }
     }
 
@@ -87,44 +114,55 @@ final class LevelSurfaceFinish {
 
     record Selection(Finish horizontal, Finish wall) {}
 
-    static Selection finish(String nodeName, Material material) {
+    static Selection finish(String nodeName, Material material, boolean ship) {
         if (material.hasTexture() || !material.alpha().equals("OPAQUE")) return null;
         String node = nodeName.toLowerCase(Locale.ROOT);
         String name = material.name().toLowerCase(Locale.ROOT);
-        Finish horizontal = horizontalFinish(node, name);
-        Finish wall = wallFinish(node, name);
+        Finish horizontal = horizontalFinish(node, name, ship);
+        Finish wall = wallFinish(node, name, ship);
         return horizontal == null && wall == null ? null : new Selection(horizontal, wall);
     }
 
-    private static Finish horizontalFinish(String node, String name) {
+    private static Finish horizontalFinish(String node, String name, boolean ship) {
         boolean wall = WALL.matcher(node).find() || name.contains("timber facades");
         if (node.contains("terrain") || name.startsWith("cyan supported route")) return null;
         boolean timber = name.contains("timber") || name.contains("plank") || node.contains("timber");
-        if (!wall && STAIR.matcher(node).find() && !STAIR_FITTING.matcher(node).find())
-            return timber ? Finish.TIMBER_STAIRS : Finish.STONE_STAIRS;
-        if (!wall && (node.contains("ceiling") || node.contains("roof"))) return Finish.CEILING;
+        boolean steel = STEEL.matcher(name).find() || ship && name.startsWith("interior floors");
+        if (!wall && STAIR.matcher(node).find() && !STAIR_FITTING.matcher(node).find()) {
+            if (timber) return Finish.TIMBER_STAIRS;
+            return steel || ship && name.contains("stair") ? Finish.STEEL_STAIRS : Finish.STONE_STAIRS;
+        }
+        if (!wall && (node.contains("ceiling") || node.contains("roof")))
+            return steel ? Finish.STEEL_CEILING : Finish.CEILING;
         if (!wall && FLOOR.matcher(node).find()) {
             if (node.contains("boardwalk") || name.contains("settlement boardwalk")) return Finish.BOARDWALK;
+            if (steel) return Finish.STEEL_DECK;
+            if (timber) return Finish.FLOORBOARDS;
             if (TILED.matcher(node).find()) return Finish.FLOOR_TILE;
+            if (HARD_FLOOR.matcher(node).find() || HARD_FLOOR.matcher(name).find()) return Finish.SCREED;
             if (STONE_FLOOR.matcher(node).find() || STONE_FLOOR.matcher(name).find()) return Finish.FLAGSTONES;
             return Finish.FLOORBOARDS;
         }
         return null;
     }
 
-    private static Finish wallFinish(String node, String name) {
+    private static Finish wallFinish(String node, String name, boolean ship) {
+        boolean wall = WALL.matcher(node).find();
         if (name.startsWith("neutral shell")) {
+            if (ship && wall) return Finish.PAINTED_STEEL;
             if (node.matches(".*(?:crypt|vault|nave|ossuary|retaining).*")) return Finish.MASONRY;
             if (node.matches(".*(?:barn|stall|stores|shack|cabin|shed).*")) return Finish.TIMBER;
             if (node.matches(".*(?:shaft|tunnel|cellar|sally|cell-|turbine|spillway).*")) return Finish.CONCRETE;
             return Finish.PLASTER;
         }
-        if (TIMBER.matcher(name).find()) return Finish.TIMBER;
-        if (MASONRY.matcher(name).find()) return Finish.MASONRY;
+        if (TIMBER.matcher(name).find() || wall && name.contains("shelter planking")) return Finish.TIMBER;
+        if (MASONRY.matcher(name).find() || wall && STONE_WALL.matcher(name).find()) return Finish.MASONRY;
+        if (wall && STEEL.matcher(name).find() && !name.contains("structure")) return Finish.PAINTED_STEEL;
         boolean concreteShell = name.contains("reinforced concrete") || name.contains("architectural concrete")
             || name.contains("cast concrete") || name.contains("tunnel dark lining");
         if (concreteShell || name.contains("retained envelope")
-            || WALL.matcher(node).find() && CONCRETE.matcher(name).find()) return Finish.CONCRETE;
+            || wall && CONCRETE.matcher(name).find()) return Finish.CONCRETE;
+        if (wall && name.contains("floor with timber edges")) return Finish.PLASTER;
         return name.contains("wall finish") || name.contains("plaster") ? Finish.PLASTER : null;
     }
 
@@ -185,6 +223,7 @@ final class LevelSurfaceFinish {
             }
             case DECK -> {
                 if (!horizontal) return triangle;
+                if (ny < 0 && finish == Finish.STEEL_DECK) finish = Finish.STEEL_CEILING;
             }
             case STAIR -> {
                 if (!horizontal && (spanY < .03 || spanY > .42)) return triangle;
