@@ -1,4 +1,4 @@
-"""Fit Wharf records to existing work surfaces and extend the exact native scene."""
+"""Fit the Wharf records, cottage furnishings and working devices into the native scene."""
 import json
 from pathlib import Path
 import sys
@@ -8,7 +8,7 @@ import bpy
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import point, world
+from build_college_electrical import bounds, point, world
 from build_lookout_native_arrival import table
 from build_mine_case import Case, DOWN, ROOT
 from build_prison_sally_gate import export
@@ -20,6 +20,40 @@ from verify_college_services import bvh, match_geometry
 BASE = ROOT / "development/levels/rebuild"
 SOURCE = BASE / "wharf-distribution-pass"
 OUTPUT = BASE / "wharf-case-pass"
+
+
+
+def cottage_furnishings(case):
+    services, receipt = [], []
+    for zone, owner, label, kind, x, z in (
+        ("cottage-a", 0, "Fisherman telephone", "PHONE", 9.4, 44.2),
+        ("cottage-b", 1, "Marine radio", "RADIO", 54.6, 44.2),
+    ):
+        supports, table_receipt = case.fit("level_event_side_table_worn", label + " table", zone, x, 0, z)
+        contact, normal, _, _ = bvh(supports).ray_cast(point(x, 1.65, z), DOWN, 1.6)
+        assert contact is not None and normal.z > .98, label
+        parts, device_receipt = case.fit(f"level_event_{kind.lower()}_worn", label, zone, x,
+                                         contact.z + .001, z, support=supports)
+        assert len(parts) == 1, label
+        parts[0].name = "Wharf " + label
+        low, high = bounds(parts)
+        face, _, _, _ = bvh(parts).ray_cast(point(x, low[1] + .065, high[2] + .8),
+                                            point(0, 0, -1), 1.6)
+        assert face is not None, label
+        px, py, pz = world(face)
+        services.append(("SERVICE", parts[0].name, "native-device", owner, px, py, pz + .035, 0, kind))
+        receipt.append(dict(zone=zone, table=table_receipt, device=device_receipt))
+    for asset, zone, label, x, z in (
+        ("level_trace_camp_bed", "cottage-a", "West cottage bunk", 8.5, 49.2),
+        ("level_trace_camp_bed", "cottage-b", "East cottage bunk", 55.5, 49.2),
+        ("level_camp_bench", "cottage-a", "West cottage seat", 16.4, 44.2),
+        ("level_camp_bench", "cottage-b", "East cottage seat", 47.6, 44.2),
+    ):
+        _, placement = case.fit(asset, label, zone, x, 0, z)
+        receipt.append(dict(zone=zone, label=label, **placement))
+    for part in case.built:
+        part.name = part.name.replace("Mine case ", "Wharf ", 1)
+    return services, receipt
 
 
 def build():
@@ -54,6 +88,8 @@ def build():
         receipt.append(dict(document=doc, owner=owner, zone=zone, top_m=surface.z,
                             approach=approach, aim=aim, **placement))
 
+    services, cottage_receipt = cottage_furnishings(case)
+
     OUTPUT.mkdir(exist_ok=True)
     targets = {ext: OUTPUT / f"wharf-case.{ext}" for ext in ("blend", "glb", "hcs2")}
     fragment = ROOT / "build/wharf-case-fragment.glb"
@@ -73,14 +109,15 @@ def build():
         assert match_geometry(triangles(part), [face for face, _ in rendered]), part[0]
 
     table(OUTPUT / "room-layout.tsv",
-          [("SOURCE", sha(targets["glb"]), sha(targets["hcs2"])), *(line.split("\t") for line in (SOURCE / "room-layout.tsv").read_text().splitlines()), *story])
+          [("SOURCE", sha(targets["glb"]), sha(targets["hcs2"])), *(line.split("\t") for line in (SOURCE / "room-layout.tsv").read_text().splitlines()), *story, *services])
     (OUTPUT / "door-schedule.tsv").write_bytes((SOURCE / "door-schedule.tsv").read_bytes())
     result = dict(exports={path.relative_to(ROOT).as_posix(): sha(path) for path in targets.values()},
                   prior_exports=authority["exports"], retained_parts=len(prior),
-                  added_parts=len(current) - len(prior), supported_records=receipt)
+                  added_parts=len(current) - len(prior), supported_records=receipt,
+                  cottage_furnishings=cottage_receipt)
     (OUTPUT / "construction.json").write_text(json.dumps(result, indent=2) + "\n",
                                                encoding="utf-8", newline="\n")
-    print(f"PASS Wharf records on two surveyed benches; {len(prior)} exact retained collision parts")
+    print(f"PASS Wharf records, cottage furnishing and mounted devices; {len(prior)} exact retained collision parts")
 
 
 if __name__ == "__main__":
