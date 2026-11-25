@@ -46,12 +46,9 @@ public final class BlackpineDispatchTest {
 
     private static HouseMap select() throws Exception {
         var location = SiteCatalog.Location.BLACKPINE;
-        System.clearProperty(BlackpineLevel.REVIEW_PROPERTY);
-        check(!SiteCatalog.playable(SITE) && !List.of(SiteCatalog.soloLocations()).contains(location),
-            "Public Blackpine selection appeared");
-        System.setProperty(BlackpineLevel.REVIEW_PROPERTY, "true");
+        var entry = MissionSites.byId("WLD-01");
         check(SiteCatalog.playable(SITE) && List.of(SiteCatalog.soloLocations()).contains(location)
-            && !MissionSites.byId("WLD-01").playable(), "Held Blackpine selectors and campaign disagree");
+            && entry.location() == location && entry.playable(), "Blackpine is missing from the normal selectors");
         var map = new HouseMap(SiteCatalog.mapFor(location));
         check(map.valid() && map.hasGenerator() && RitualSites.valid(map)
             && HidingBudget.candidates(map.level()).size() == HidingBudget.MAXIMUM,
@@ -61,7 +58,7 @@ public final class BlackpineDispatchTest {
         check(map.roomAt(feet.x(), feet.y(), feet.z()) == solo.anchorRoom()
             && map.traversable(feet.x(), feet.y(), feet.z()), "Solo camp has no supported investigation anchor");
         AuthoredTestSupport.checkSoloLauncher(location, map);
-        System.out.println("PASS packaged Blackpine review selection and solo case " + map.level().revision());
+        System.out.println("PASS regular Blackpine selection and solo case " + map.level().revision());
         return map;
     }
 

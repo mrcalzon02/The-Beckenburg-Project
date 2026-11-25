@@ -21,29 +21,19 @@ public final class HollowCreekDispatchTest {
         peer.awaitExact("ACCEPT|STEP");
     }
 
-    private static void checkReviewSelection() {
-        String property = "beckenburg.review.hollowCreek";
-        String previous = System.getProperty(property);
-        try {
-            System.clearProperty(property);
-            HollowCreekRuntimeTest.check(!SiteCatalog.playable(SITE), "Hollow Creek was publicly promoted");
-            System.setProperty(property, "true");
-            HollowCreekRuntimeTest.check(SiteCatalog.playable(SITE)
-                && List.of(SiteCatalog.soloLocations()).contains(SiteCatalog.Location.HOLLOW_CREEK),
-                "The draft is missing Hollow Creek in normal solo or LAN selection");
-            HollowCreekRuntimeTest.check(!MissionSites.byId("WLD-02").playable(), "Review unlocked a campaign chapter");
-            var solo = new InvestigationSession(new HouseMap(SiteCatalog.mapFor(SiteCatalog.Location.HOLLOW_CREEK)),
-                InvestigationSession.Role.OBSERVER, 101);
-            HollowCreekRuntimeTest.check(solo.anchorRoom() >= 0 && solo.anchorRoom() < HouseMap.EXTRACTION_ROOM,
-                "Normal solo case did not get an investigation anchor");
-        } finally {
-            if (previous == null) System.clearProperty(property);
-            else System.setProperty(property, previous);
-        }
+    private static void checkSelection() {
+        var entry = MissionSites.byId("WLD-02");
+        HollowCreekRuntimeTest.check(entry.location() == SiteCatalog.Location.HOLLOW_CREEK && entry.playable()
+            && SiteCatalog.playable(SITE) && List.of(SiteCatalog.soloLocations()).contains(entry.location()),
+            "Hollow Creek is missing from the normal selectors");
+        var solo = new InvestigationSession(new HouseMap(SiteCatalog.mapFor(entry.location())),
+            InvestigationSession.Role.OBSERVER, 101);
+        HollowCreekRuntimeTest.check(solo.anchorRoom() >= 0 && solo.anchorRoom() < HouseMap.EXTRACTION_ROOM,
+            "Normal solo case did not get an investigation anchor");
     }
 
     public static void main(String[] args) throws Exception {
-        checkReviewSelection();
+        checkSelection();
         var map = new HouseMap(SITE);
         String site = "SITE|HOLLOW_CREEK|" + map.level().revision();
         try (var host = new LanHost("127.0.0.1", 0, GhostIdentity.Type.SPIRIT,

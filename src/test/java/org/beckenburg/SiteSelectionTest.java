@@ -19,6 +19,7 @@ public final class SiteSelectionTest {
             SiteCatalog.Location.FARMHOUSE,SiteCatalog.Location.SCHOOL,SiteCatalog.Location.MANSION,
             SiteCatalog.Location.PRISON,SiteCatalog.Location.ASYLUM,SiteCatalog.Location.ACADEMY,
             SiteCatalog.Location.COLLEGE,SiteCatalog.Location.CHURCH,
+            SiteCatalog.Location.BLACKPINE,SiteCatalog.Location.HOLLOW_CREEK,
             SiteCatalog.Location.SEACLIFF,SiteCatalog.Location.LOOKOUT,SiteCatalog.Location.MINE,SiteCatalog.Location.WHARF,
             SiteCatalog.Location.CEMETERY,SiteCatalog.Location.MORTUARY,SiteCatalog.Location.NORTHWATCH,
             SiteCatalog.Location.BLACKWATER,
@@ -60,13 +61,12 @@ public final class SiteSelectionTest {
             ok(selectable==builtins.stream().anyMatch(location->location.name().equals(candidate.name())),
                 "multiplayer availability must match playable authored catalogue: "+candidate);
         }
-        ok(multiplayerReady==ready && !SiteCatalog.playable(HouseMap.Site.HOLLOW_CREEK),
-            "Hollow Creek prototype cannot crash the lobby or be dispatched as complete");
+        ok(multiplayerReady==ready,"the Solo and LAN catalogs agree on built-ins");
         ok(!SiteCatalog.playable(HouseMap.Site.USER)&&UserLevelLibrary.activeId()==null,
             "USER is unavailable without an explicitly selected authored project");
         ok(!SiteCatalog.Conditions.BLACKOUT.initiallyPowered(),"blackout starts powerless");
         ok(SiteCatalog.Conditions.FOGBOUND.fogMultiplier()>SiteCatalog.Conditions.STANDARD.fogMultiplier(),
             "weather modifies 3D environment");
-        System.out.println("PASS: all built-in dispatch sources with real headless rendering; unselected USER and Hollow Creek remain unavailable");
+        System.out.println("PASS: all built-in dispatch sources with real headless rendering; unselected USER remains unavailable");
     }
 }

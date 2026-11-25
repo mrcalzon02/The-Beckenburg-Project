@@ -1667,3 +1667,8 @@ The [lodge scene](eight-pines/construction.json) uses the built parking court, c
 ### Site Cinder-6 native mission
 
 The [facility scene](cinder-6/construction.json) keeps the surface approaches, escape stair and two guarded underground galleries. Eleven fitted doors serve their existing openings, including the lower escape connector. The lower plant has a supported generator and breaker, and nine occupied rooms have mounted switches and lamps. Walk-in cupboards serve the service house, records room and crew quarters. The regular catalog exposes the same native scene and collision to Solo and LAN. Full perimeter and whole-case acceptance remain open.
+
+
+### Complete local investigation picker
+
+Blackpine and Camp Hollow Creek use the regular Solo and LAN selectors with their existing native maps. The campaign still uses the same 22 saved ordinals and progress locks. The map board now includes Seacliff Battery, both woodland sites, all other investigation locations and Castle headquarters. Catalog availability records local launch and rendering. Final per-site construction, gameplay and publication acceptance stays with the stage register.

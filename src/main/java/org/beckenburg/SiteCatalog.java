@@ -10,9 +10,9 @@ public final class SiteCatalog {
         ASYLUM(MissionSites.title("ASYLUM")), SCHOOL(MissionSites.title("SCHOOL")), FARMHOUSE(MissionSites.title("FARMHOUSE")),
         ACADEMY(MissionSites.title("ACADEMY")), COLLEGE(MissionSites.title("COLLEGE")),
         CHURCH(MissionSites.title("CHURCH")), USER("User authored level"),
-        HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK"),"beckenburg.review.hollowCreek"),
+        HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK")),
         SEACLIFF(MissionSites.title("SEACLIFF")),
-        BLACKPINE(MissionSites.title("BLACKPINE"),BlackpineLevel.REVIEW_PROPERTY),
+        BLACKPINE(MissionSites.title("BLACKPINE")),
         LOOKOUT(MissionSites.title("LOOKOUT")),
         MINE(MissionSites.title("MINE")),
         WHARF(WharfNativeLevel.TITLE),
@@ -30,15 +30,12 @@ public final class SiteCatalog {
         PINES(MissionSites.title("PINES")),
         CINDER(MissionSites.title("CINDER"));
         public final String label;
-        private final String reviewProperty;
         private volatile Boolean geometryValidated;
-        Location(String label){this(label,null);}
-        Location(String label,String reviewProperty){this.label=label;this.reviewProperty=reviewProperty;}
+        Location(String label){this.label=label;}
         /** Authoring availability is static per build. Do not rebuild a complete
          * 15-room level every time Swing paints a combo-box label. */
         public synchronized boolean playable(){
             if(this==USER)return UserLevelLibrary.activeId()!=null;
-            if(reviewProperty!=null&&!Boolean.getBoolean(reviewProperty))return false;
             if(geometryValidated!=null)return geometryValidated;
             try{geometryValidated=LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
             catch(IllegalArgumentException unavailable){geometryValidated=false;}
@@ -66,9 +63,7 @@ public final class SiteCatalog {
         @Override public String toString(){return label;}
     }
     static Location[] soloLocations(){
-        return java.util.Arrays.stream(Location.values())
-            .filter(location->location.reviewProperty==null||location.playable())
-            .toArray(Location[]::new);
+        return Location.values();
     }
     public static void requirePlayable(Location chosen){
         if(!Objects.requireNonNull(chosen).playable())
@@ -78,7 +73,7 @@ public final class SiteCatalog {
      * Multiplayer lists the entire HouseMap.Site authoring roster, which can
      * contain native prototypes before they receive a public contract entry.
      * Never throw during lobby construction or silently advertise an
-     * unfinished prototype (for example HOLLOW_CREEK) as an active mission.
+     * uncatalogued site as an active mission.
      */
     public static boolean playable(HouseMap.Site site){
         Objects.requireNonNull(site,"site");

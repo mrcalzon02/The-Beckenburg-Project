@@ -24,7 +24,7 @@ public final class MissionBoardIntegrationTest {
         var catalog=CampaignBoardPanel.catalog();
         check(catalog.size()==22,"all saved campaign ordinals retained");
         for(int i=0;i<expected.size();i++)check(catalog.get(i).map()==expected.get(i),"saved chapter map retained at "+i);
-        var rebuilt=List.of(SiteCatalog.Location.LOOKOUT,SiteCatalog.Location.MINE,SiteCatalog.Location.WHARF,
+        var rebuilt=List.of(SiteCatalog.Location.BLACKPINE,SiteCatalog.Location.HOLLOW_CREEK,SiteCatalog.Location.LOOKOUT,SiteCatalog.Location.MINE,SiteCatalog.Location.WHARF,
             SiteCatalog.Location.CEMETERY,SiteCatalog.Location.NORTHWATCH,
             SiteCatalog.Location.BLACKWATER,SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,
             SiteCatalog.Location.MOURNING_MARSH,SiteCatalog.Location.GREYWATER,SiteCatalog.Location.GALLOWS);
@@ -36,7 +36,10 @@ public final class MissionBoardIntegrationTest {
         for(var location:rebuilt)check(SiteCatalog.playable(SiteCatalog.mapFor(location)),"rebuilt map available in LAN");
         check(catalog.get(14).map()==SiteCatalog.Location.WHARF,"Wharf retains its saved chapter ordinal");
         for(var site:HouseMap.Site.values())check(!MissionSites.title(site.name()).isBlank(),"lobby can label every authoring enum");
-        check(!SiteCatalog.playable(HouseMap.Site.HOLLOW_CREEK),"lore alias does not unlock prototype geometry");
+        check(catalog.get(9).map()==SiteCatalog.Location.BLACKPINE,"Blackpine retains its saved chapter ordinal");
+        check(catalog.get(10).map()==SiteCatalog.Location.HOLLOW_CREEK,"Hollow Creek retains its saved chapter ordinal");
+        check(MissionSites.all().size()==29,"the map board covers the full roster and the mortuary annex");
+        for(var entry:MissionSites.all())check(entry.headquarters()||entry.playable(),"map board uses the playable site "+entry.id());
         for(var entry:MissionSites.all())try(var in=MissionBoardPanel.class.getResourceAsStream(
                 "/org/beckenburg/mission-board/"+entry.imageKey()+".png")){
             check(in!=null,"packaged site picture missing: "+entry.id());
@@ -56,7 +59,7 @@ public final class MissionBoardIntegrationTest {
             check(picture[0]!=null&&tab!=null,"pictures reachable from actual campaign UI");tab.doClick();
             check(picture[0].isVisible(),"site pictures card opens");
             picture[0].select("SCHOOL");check(!dispatch.isEnabled(),"browsing locked School cannot bypass story checkpoint");
-            picture[0].select("WLD-02");check(!dispatch.isEnabled(),"browsing remote concept cannot dispatch");
+            picture[0].select("WLD-02");check(!dispatch.isEnabled(),"playable Hollow Creek still requires campaign progress");
             picture[0].select("WLD-06");check(!dispatch.isEnabled(),"playable Wharf still requires campaign progress");
             picture[0].select("WLD-13");check(!dispatch.isEnabled(),"playable Greywater still requires campaign progress");
             picture[0].select("CASTLE");check(!dispatch.isEnabled(),"headquarters cannot become an investigation");

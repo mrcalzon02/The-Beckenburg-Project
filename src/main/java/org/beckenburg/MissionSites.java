@@ -4,7 +4,7 @@ import java.util.*;
 public final class MissionSites {
     private MissionSites(){}
     public record Entry(String id,String title,String region,String scale,String description,String imageKey,String imageCaption){
-        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; case "WLD-11" -> "MOURNING_MARSH"; case "WLD-12" -> "GALLOWS"; case "WLD-13" -> "GREYWATER"; case "WLD-14" -> "MORROW"; case "WLD-15" -> "ELARA"; case "WLD-16" -> "PINES"; case "WLD-18" -> "CINDER"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
+        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-01" -> "BLACKPINE"; case "WLD-02" -> "HOLLOW_CREEK"; case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; case "WLD-11" -> "MOURNING_MARSH"; case "WLD-12" -> "GALLOWS"; case "WLD-13" -> "GREYWATER"; case "WLD-14" -> "MORROW"; case "WLD-15" -> "ELARA"; case "WLD-16" -> "PINES"; case "WLD-17" -> "SEACLIFF"; case "WLD-18" -> "CINDER"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
         public boolean headquarters(){return id.equals("CASTLE");}
         public boolean playable(){var site=location();return site!=null&&site.playable();}
         public String status(){return headquarters()?"HEADQUARTERS / NO INVESTIGATION":playable()?"AVAILABLE":"IN DEVELOPMENT / NOT DISPATCHABLE";}
@@ -42,6 +42,8 @@ public final class MissionSites {
             "A fixed gangway boards a former fish-processing vessel. The port stairs connect the machinery deck, crew cabins and bridge.","wld-15","NATIVE SITE VIEW"),
         new Entry("WLD-16","Eight Pines Motor Lodge","Beckenburg district","Small / roadside lodge",
             "Two rows of guest rooms face the parking court. Covered walks link the office, laundry and service rooms.","wld-16","NATIVE SITE VIEW"),
+        new Entry("WLD-17",SeacliffNativeLevel.TITLE,"Coastal Territories","Medium-large / coastal battery",
+            "A cliff road climbs to a fortified courtyard. Casemate stairs connect the magazines, records rooms and lower plant.","wld-17","NATIVE SITE VIEW"),
         new Entry("WLD-18","Site Cinder-6","Highland Frontier","Medium-large / underground installation",
             "A surface service yard connects to two underground levels around a guarded shaft. Stair bays link records, crew quarters and the plant.","wld-18","NATIVE SITE VIEW"));
     public static List<Entry> all(){return ALL;}
@@ -56,7 +58,6 @@ public final class MissionSites {
         // USER is an authoring slot, not a campaign chapter or a built-in site.
         // Labeling a lobby must work before a user project has been selected.
         if("USER".equals(id))return "User authored level";
-        if("SEACLIFF".equals(id))return SeacliffNativeLevel.TITLE;
         return byId(switch(id){
             case "BLACKPINE" -> "WLD-01";
             case "HOLLOW_CREEK" -> "WLD-02";
@@ -75,6 +76,7 @@ public final class MissionSites {
             case "MORROW" -> "WLD-14";
             case "ELARA" -> "WLD-15";
             case "PINES" -> "WLD-16";
+            case "SEACLIFF" -> "WLD-17";
             case "CINDER" -> "WLD-18";
             default -> id;
         }).title();
