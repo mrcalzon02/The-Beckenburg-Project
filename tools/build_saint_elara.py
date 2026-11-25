@@ -11,8 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point, world
+from build_college_electrical import bounds, point, world
 from build_lookout_native_arrival import table
+from build_mine_case import Case
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from review_roster_macroterrain import sha
@@ -163,6 +164,41 @@ def flight_rails(assembly):
             assembly.raceway(f"Saint Elara flight {route} {side} handrail",centers,.037)
 
 
+def fit_operating_compartments(case):
+    fittings=[]
+    for asset,label,room,x,y,z,yaw in (
+        ("level_blockout_ship_wheelhouse_console","wheelhouse console","bridge",32.6,6,19.5,0),
+        ("level_blockout_ship_chart_cabinet","chart cabinet","bridge",37.6,6,20.25,0),
+        ("level_blockout_ship_crew_berth","standby berth","crew",36.8,3,37.9,0),
+        ("level_blockout_ship_galley_range","galley range","galley",30.2,0,32.65,-math.pi/2),
+        ("level_camp_bench","mess wall bench","mess",37.6,0,31.45,0),
+    ):
+        _,fit=case.fit(asset,label,room,x,y,z,yaw=yaw)
+        fittings.append(dict(name=label,room=room,**fit))
+
+    x,y,z=37.0,-3,-.68
+    pump,fit=case.fit("level_blockout_ship_bilge_pump","bilge pump","pump",x,y,z)
+    assert len(pump)==1,"Expected an individual pump casing"
+    pump[0].name="Saint Elara bilge pump"
+    low,high=bounds(pump)
+    casing=bvh(pump)
+    face=None
+    for fraction in (.52,.38,.7,.24):
+        height=low[1]+fraction*(high[1]-low[1])
+        face,_,_,_=casing.ray_cast(point(x,height,high[2]+.8),point(0,0,-1),1.6)
+        if face is not None:break
+    assert face is not None,"Bilge pump needs an accessible casing"
+    px,py,pz=world(face)
+    case.effect(pump[0].name,"native-device",7,(px,py,pz+.035),0,"WATER_PUMP")
+    wall,_,_=case.measured(point(39.1,y+.67,z),point(1,0,0),1.0,"Bilge pump starboard fixing")
+    wx,_,_=world(wall)
+    pipe_y=low[1]+.34*(high[1]-low[1])
+    case.raceway("Saint Elara bilge discharge",((high[0]-.12,pipe_y,z),(wx-.05,pipe_y,z),
+                  (wx-.05,y+.67,z),(wx,y+.67,z)),.042)
+    fittings.append(dict(name="bilge pump",room="pump",discharge_wall=wx,**fit))
+    return fittings
+
+
 def build():
     OUT.mkdir(parents=True,exist_ok=True)
     source={ext:SOURCE/f"coast-entrances.{ext}" for ext in ("blend","glb","hcs2")}
@@ -176,14 +212,15 @@ def build():
     zones={z["id"]:{**z,"owner":owners[z["id"]]} for z in layout["zones"]}
     bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
     bpy.context.preferences.filepaths.save_version=0
-    assembly=Assembly()
+    assembly=Case()
     pockets=cupboards(assembly,zones,REFUGES,site="elara",floor_roles=("floor",))
     engine_power(assembly,zones["engine"])
     compartment_lights(assembly,zones)
     pump_guards(assembly)
     flight_rails(assembly)
+    fittings=fit_operating_compartments(assembly)
     for obj in assembly.built:
-        obj.name=obj.name.removeprefix("College ")
+        obj.name=obj.name.removeprefix("College ").replace("Mine case ","Saint Elara ",1)
     target={ext:OUT/f"vessel.{ext}" for ext in source}
     addition=ROOT/"build/saint-elara-installation.glb"
     export(addition,assembly.built)
@@ -233,7 +270,7 @@ def build():
     (OUT/"construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
         retained_components=len(prior),pockets=pockets,services=assembly.sockets,
-        controllers=assembly.controllers,fixtures=assembly.loads),indent=2)+"\n",
+        controllers=assembly.controllers,fixtures=assembly.loads,compartment_furnishings=fittings),indent=2)+"\n",
         encoding="utf-8",newline="\n")
 
 

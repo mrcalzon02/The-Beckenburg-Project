@@ -1,4 +1,4 @@
-SOURCE	99d2b13178dc505bfcc211b9f17ed1fb893e45ab5933d2889afe4a54aade1141	5d2d46945be9e684ebe68998b8bea81a6a68a51fceb6f6adc9309ed9984d8766
+SOURCE	03112abbfdac30cf3cc487a8d0f1f896d41d6f4a475430b98a9d0d24b05d8299	93a9ccc4fe0882ee82a2518e9127c17aac116e184fbd7c24c4ecd2de01ff17df
 DOCK	32.0	0	86.0	0
 ROOM	stage	13	24	80	40	92	0	3	true	Quayside van apron	32	0	82
 SPACE	entry	13	24	76	40	80	0	3	true
@@ -139,6 +139,7 @@ SERVICE	elara-bridge-switch	switch	9	24.121	7.25	23.15	1.5707963267948966	SE-BRI
 SERVICE	elara-bridge-light	light	9	24.304001	8.35	21.1	0	native-string
 SERVICE	elara-net-switch	switch	10	24.121	4.25	15.4	1.5707963267948966	SE-NET
 SERVICE	elara-net-light	light	10	24.304001	5.35	17.15	0	native-string
+SERVICE	Saint Elara bilge pump	native-device	7	37.0	-2.376	-0.259019	0	WATER_PUMP
 COVER	elara-galley-cupboard	1	25.35	0	37.5	-1.5707963267948966
 COVER	elara-net-cupboard	10	38.25	3	12	1.5707963267948966
 COVER	elara-hold-cupboard	6	25.25	-3	11	-1.5707963267948966

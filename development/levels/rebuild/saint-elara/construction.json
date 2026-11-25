@@ -1,9 +1,9 @@
 {
   "source": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
   "exports": {
-    "blend": "0d7ecc5135211a2bbcc04ac699baf30b45bb2e83bbfa84f41343a882e005975f",
-    "glb": "99d2b13178dc505bfcc211b9f17ed1fb893e45ab5933d2889afe4a54aade1141",
-    "hcs2": "5d2d46945be9e684ebe68998b8bea81a6a68a51fceb6f6adc9309ed9984d8766"
+    "blend": "51a0eeed28e611cab111ac4c85d8803da893d86ada29450659aa9e7f2a6fbb6c",
+    "glb": "03112abbfdac30cf3cc487a8d0f1f896d41d6f4a475430b98a9d0d24b05d8299",
+    "hcs2": "93a9ccc4fe0882ee82a2518e9127c17aac116e184fbd7c24c4ecd2de01ff17df"
   },
   "retained_components": 407,
   "pockets": [
@@ -359,6 +359,18 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "Saint Elara bilge pump",
+      "type": "native-device",
+      "room": 7,
+      "position": [
+        37.0,
+        -2.376,
+        -0.259019
+      ],
+      "yaw": 0,
+      "style": "WATER_PUMP"
     }
   ],
   "controllers": [
@@ -669,6 +681,165 @@
         17.15
       ],
       "support": "Saint Elara net store port bulkhead end pier region0"
+    }
+  ],
+  "compartment_furnishings": [
+    {
+      "name": "wheelhouse console",
+      "room": "bridge",
+      "asset": "level_blockout_ship_wheelhouse_console",
+      "sha256": "c7eb37d1af08049db59ec1f1bd2fbc61f14bef7d805b5e6e5f93ad7a2f4b38e4",
+      "bounds": [
+        [
+          31.509998,
+          6.0,
+          19.035
+        ],
+        [
+          33.689999,
+          7.89,
+          19.965
+        ]
+      ],
+      "pivot": [
+        32.599998474121094,
+        5.980000019073486,
+        19.5
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "chart cabinet",
+      "room": "bridge",
+      "asset": "level_blockout_ship_chart_cabinet",
+      "sha256": "1b0ec6c412d78a89612f24dbb70be6bc938c7ee7af66184c236500766b7f573c",
+      "bounds": [
+        [
+          36.769997,
+          6.0,
+          19.869999
+        ],
+        [
+          38.43,
+          7.66,
+          20.629999
+        ]
+      ],
+      "pivot": [
+        37.599998474121094,
+        5.929999828338623,
+        20.264999389648438
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "standby berth",
+      "room": "crew",
+      "asset": "level_blockout_ship_crew_berth",
+      "sha256": "f9551f7808c939022bc258f771012bb3eb7c51e9a95f196bd75a3b660a228680",
+      "bounds": [
+        [
+          35.739998,
+          3.0,
+          36.835003
+        ],
+        [
+          37.860001,
+          4.82,
+          38.965
+        ]
+      ],
+      "pivot": [
+        36.79999923706055,
+        3.0,
+        37.900001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "galley range",
+      "room": "galley",
+      "asset": "level_blockout_ship_galley_range",
+      "sha256": "9941847bd8de15860cb415c04bd76f28259bf5412d96fa559cc62eaef0b1c8c3",
+      "bounds": [
+        [
+          29.792501,
+          0.0,
+          32.055
+        ],
+        [
+          30.607502,
+          1.57,
+          33.245003
+        ]
+      ],
+      "pivot": [
+        30.192501068115234,
+        0.0,
+        32.650001525878906
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "mess wall bench",
+      "room": "mess",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          36.724998,
+          0.0,
+          31.142696
+        ],
+        [
+          38.474998,
+          0.88,
+          31.757307
+        ]
+      ],
+      "pivot": [
+        37.599998474121094,
+        0.0,
+        31.48230743408203
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "bilge pump",
+      "room": "pump",
+      "discharge_wall": 39.919998,
+      "asset": "level_blockout_ship_bilge_pump",
+      "sha256": "bc3ef26193f5e1a77ebf1ac8b4f71da2a9a42cb768c4eed5fb7a828cf93193b3",
+      "bounds": [
+        [
+          36.09,
+          -3.0,
+          -1.335
+        ],
+        [
+          37.91,
+          -1.8,
+          -0.025
+        ]
+      ],
+      "pivot": [
+        36.98500061035156,
+        -3.005000114440918,
+        -0.6800000071525574
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
     }
   ]
 }
