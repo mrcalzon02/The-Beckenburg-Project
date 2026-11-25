@@ -81,15 +81,22 @@ public final class InteractionFocus {
         }
         var nativeScene=map.nativeInvestigation();
         if (nativeScene!=null) {
-            var nearby=map.level().sockets().stream().filter(socket->socket.type().equals("native_story")
-                && Math.hypot(r[0]-socket.x(),r[2]-socket.z())<=2).toList();
+            var nearby=map.level().sockets().stream().filter(socket->(socket.type().equals("native_story")
+                ||socket.type().equals(HauntedFixtures.NATIVE_DEVICE_SOCKET))
+                &&Math.hypot(r[0]-socket.x(),r[2]-socket.z())<=2).toList();
             if (!nearby.isEmpty()) {
                 var start=new LevelDefinition.Vec(r[0],r[1],r[2]);
                 var end=new LevelDefinition.Vec(r[0]+2*r[3],r[1]+2*r[4],r[2]+2*r[5]);
                 var hit=nativeScene.physics().firstOpticalHit(start,end);
-                if (hit!=null) for (var socket:nearby) if (socket.id().equals(hit.component()))
-                    candidate(targets,Kind.INTERFACE,"STORY_"+socket.style(),
-                        SiteStories.document(map.level().id(),socket.style()).title(),hit.fraction()*2);
+                if (hit!=null) for (var socket:nearby) if (socket.id().equals(hit.component())){
+                    if(socket.type().equals("native_story"))
+                        candidate(targets,Kind.INTERFACE,"STORY_"+socket.style(),
+                            SiteStories.document(map.level().id(),socket.style()).title(),hit.fraction()*2);
+                    else{
+                        var device=map.fixtures().nativeDevice(hit.component());
+                        if(device!=null)candidate(targets,Kind.FIXTURE,""+device.id(),label(device.kind().name()),hit.fraction()*2);
+                    }
+                }
             }
         }
         for(var p:map.level().portals())if(p.door()){

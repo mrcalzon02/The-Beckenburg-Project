@@ -455,6 +455,18 @@
       ],
       "yaw": 0,
       "style": "PINES_GUEST_REGISTER"
+    },
+    {
+      "id": "Eight Pines laundry washer 01",
+      "type": "native-device",
+      "room": 10,
+      "position": [
+        43.700001,
+        0.57,
+        41.40365
+      ],
+      "yaw": 0,
+      "style": "WASHING_MACHINE"
     }
   ],
   "furniture": [

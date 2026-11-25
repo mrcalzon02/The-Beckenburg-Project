@@ -54,6 +54,7 @@ SERVICE	pines-room7-light	light	7	45.576	2.35	33.349998	0	native-string
 SERVICE	pines-room8-switch	switch	8	45.758999	1.25	36.5	-1.5707963267948966	EP-08
 SERVICE	pines-room8-light	light	8	45.576	2.35	38.349998	0	native-string
 SERVICE	Eight Pines guest register 01	native_story	4	21.35	0.934677	46.1	0	PINES_GUEST_REGISTER
+SERVICE	Eight Pines laundry washer 01	native-device	10	43.700001	0.57	41.40365	0	WASHING_MACHINE
 COVER	pines-manager-cupboard	9	7.55	0	48.0	-1.5707963267948966
 COVER	pines-room2-cupboard	1	7.45	0	28.8	-1.5707963267948966
 COVER	pines-room6-cupboard	6	44.55	0	28.8	1.5707963267948966

@@ -4,6 +4,43 @@ import org.beckenburg.LevelDefinition.Vec;
 /** Physical optics, surface depth, authentic traces and volume intersections. */
 public final class OpticalEvidenceTest {
     static void check(boolean good,String why){if(!good)throw new AssertionError(why);}
+    private static void checkNativeResidue(){
+        var map=new HouseMap(HouseMap.Site.MORROW);
+        var traces=new UvEvidenceMarks();
+        int room=10;
+        var spawn=map.spawn(room);
+        var viewer=new LanWorld.Body(spawn.x(),spawn.y(),spawn.z(),0,room);
+        var pose=new LanGhostSpatial.Pose(room,spawn.x(),spawn.y(),spawn.z(),0);
+        traces.leave(map,new LanGhostSpatial.Pose(9,spawn.x(),spawn.y(),spawn.z(),0),9);
+        check(traces.visible(map,viewer,EquipmentTiers.Tier.I,9,true).isEmpty(),
+            "A lower room cannot claim an upstairs landing mark");
+        traces.leaveAtSpawn(map,room,10);
+        var original=traces.visible(map,viewer,EquipmentTiers.Tier.I,10,true);
+        check(original.size()==1&&Math.abs(original.get(0).y()-spawn.y()-UvSurfaceDecal.DEPTH)<1e-7,
+            "Solo residue uses the physical lantern-floor spawn");
+        traces.leave(map,pose,11);
+        check(traces.visible(map,viewer,EquipmentTiers.Tier.I,11,true).equals(original),
+            "A stationary ghost cannot flood the UV feed");
+        traces.leave(map,pose,115);
+        var fresh=traces.visible(map,viewer,EquipmentTiers.Tier.I,115,true);
+        check(fresh.size()==1&&fresh.get(0).born()==115,
+            "A ghost that remains on the upper deck can leave fresh evidence");
+        check(traces.visible(map,viewer,EquipmentTiers.Tier.I,206,true).isEmpty(),
+            "The physical mark fades when there is no current residue");
+
+        map=new HouseMap(HouseMap.Site.PINES);
+        room=4;
+        spawn=map.spawn(room);
+        map.setTemporarySafeAreas(List.of(SafeAreaBarrier.ward(spawn.x(),spawn.y(),spawn.z())));
+        var displaced=SafeAreaBarrier.ghostSpawn(map,room);
+        check(displaced!=null&&!displaced.equals(spawn),"An authored safe area moves the ghost off its usual position");
+        var actual=new LanWorld.Body(displaced.x(),displaced.y(),displaced.z(),0,room);
+        traces=new UvEvidenceMarks();
+        traces.leaveAtSpawn(map,room,10);
+        var residue=traces.visible(map,actual,EquipmentTiers.Tier.I,10,true);
+        check(residue.size()==1&&residue.get(0).x()==displaced.x()&&residue.get(0).z()==displaced.z(),
+            "Fresh UV residue follows the actual ghost position outside the safe area");
+    }
     public static void main(String[] args)throws Exception{
         var scene=new SceneRenderer();double base=scene.lampBeam(4,0),previous=base;
         for(var tier:EquipmentTiers.Tier.values()){
@@ -32,6 +69,7 @@ public final class OpticalEvidenceTest {
         check(traces.visible(map,body,EquipmentTiers.Tier.I,11,false).isEmpty(),"unpowered UV reveals nothing");
         check(traces.visible(map,new LanWorld.Body(body.x(),floor,body.z(),180,0),EquipmentTiers.Tier.I,11,true).isEmpty(),"wrong-facing UV cannot reveal behind the hunter");
         check(traces.visible(map,body,EquipmentTiers.Tier.I,111,true).isEmpty()&&traces.visible(map,body,EquipmentTiers.Tier.II,111,true).size()==1,"tier sensitivity extends genuine residue, not false positives");
+        checkNativeResidue();
         var contact=new StructuredLightVolume.Contact(1,0,0,0,2,10);
         var beam=new StructuredLightVolume.Beam(new Vec(0,1,0),new Vec(0,1,4));
         var interval=StructuredLightVolume.intersection(beam,contact);check(interval!=null&&interval[0]>.4&&interval[1]<.6,"intersection is confined to capsule");

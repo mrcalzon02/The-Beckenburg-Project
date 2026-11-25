@@ -57,7 +57,6 @@ public final class InvestigationSession {
     }
     private final String missionId=UUID.randomUUID().toString();
     private final int anchorRoom;
-    private final int[] spectralTrace=new int[HouseMap.ROOM_COUNT];
     private int saltRoom=-1,saltTick=-1;
     /** Actual placed solo salt model, at the accepted gameplay location and rotation. */
     public record PlacedSalt(int room,double x,double y,double z,double headingRadians){}
@@ -192,7 +191,6 @@ public final class InvestigationSession {
         };
         missionWeather=new MissionWeather(season,MissionWeather.Mode.FIXED,
             EvidenceSignals.Weather.CLEAR,1,seed);
-        java.util.Arrays.fill(spectralTrace,-100000);
         this.wards=(role==Role.CLERIC?3:2)+HunterProgression.extraWards(level);
         this.anchorRoom=random.nextInt(map.interiorRoomCount());
         this.ghost=new GhostDomain(map,anchorRoom,assignedGhost);
@@ -309,11 +307,9 @@ public final class InvestigationSession {
             stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,feed));
             // Ambient fear is felt through stress and audio, never a repeating text hint.
         }
-        if(ghost.room()>=0&&ghost.room()<spectralTrace.length){
-            if(haunted&&GhostTraits.of(ghost.type()).leavesUv()){
-                spectralTrace[ghost.room()]=ticks;
-                uvEvidence.leave(map,new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),standingY(map.centerX(ghost.room()),map.centerZ(ghost.room())),map.centerZ(ghost.room()),0),ticks);
-            }
+        if(ghost.room()>=0&&ghost.room()<HouseMap.ROOM_COUNT){
+            if(haunted&&GhostTraits.of(ghost.type()).leavesUv())
+                uvEvidence.leaveAtSpawn(map,ghost.room(),ticks);
             uvHardware.advancePower(ticks);
             if(saltRoom==ghost.room()&&ticks>saltTick&&GhostTraits.saltAffects(ghost.type())){
                 ghost.reveal(30);ghost.slowFor(26);

@@ -149,6 +149,15 @@ def room_furniture(assembly, zones):
         installed.append(dict(room=room, asset=asset, use=name, bounds=[low, high]))
         if name=="reception counter":
             guest_register(assembly,zone["owner"],parts,x,z,high[1])
+        if name=="washer":
+            assert len(parts)==1
+            part=parts[0]
+            part.name=part.name.removeprefix("College ")
+            ray_y=y+.57
+            hit, _, _, _=bvh(parts).ray_cast(point(x,ray_y,high[2]+.9),point(0,0,-1),1.8)
+            assert hit is not None, "Washer needs a reachable interaction face"
+            px,py,pz=world(hit)
+            assembly.effect(part.name,"native-device",zone["owner"],(px,py,pz+.045),0,"WASHING_MACHINE")
     return installed
 
 
