@@ -56,10 +56,18 @@ public final class CountyCampaignMapPanelTest {
                 "choosing locked School cannot dispatch it");
             map.select("WLD-06");
             check(contracts.getSelectedIndex() == 14 && !deploy.isEnabled(),
-                "coastal planned node may be viewed but cannot dispatch");
+                "coastal campaign node remains progression-locked");
             map.select("HOUSE");
             check(contracts.getSelectedIndex() == 0 && deploy.isEnabled(),
                 "available House selection remains deployable");
+            for (var location : MissionSites.all()) map.nodeScreenPoint(location.id());
+            map.select("WLD-15");
+            check(map.selected().id().equals("WLD-15") && contracts.isSelectionEmpty() && !deploy.isEnabled(),
+                "Solo/LAN pins must clear the previously unlocked campaign selection");
+            deploy.doClick();
+            check(deployments[0] == 0, "A field-only pin cannot reuse the last selected chapter");
+            map.select("HOUSE");
+            check(contracts.getSelectedIndex() == 0 && deploy.isEnabled(), "Selecting a chapter restores its own launch");
             var zoom = named(board, "campaign.county.zoom.in", JButton.class);
             var reset = named(board, "campaign.county.zoom.reset", JButton.class);
             check(zoom != null && reset != null, "map zoom controls exist");

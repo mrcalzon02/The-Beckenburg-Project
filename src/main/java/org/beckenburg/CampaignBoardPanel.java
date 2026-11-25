@@ -85,17 +85,15 @@ public final class CampaignBoardPanel extends JPanel {
         depot=new CampaignStorePanel(profile,this::refreshLedger);
         caseArchive=new CampaignArchivePanel(profile);
         countyMap=new CountyCampaignMapPanel(profile::chapterUnlocked);
-        countyMap.onSelection(site->{
-            for(int i=0;i<entries.size();i++)if(entries.get(i).name().equals(site.title())){
-                contracts.setSelectedIndex(i);return;
-            }
+        countyMap.onSelection(site -> {
+            selectChapter(site);
+            if (!sitePictures.selected().equals(site)) sitePictures.select(site.id());
         });
         pages.add(split,"contracts");pages.add(countyMap,"county");pages.add(depot,"depot");pages.add(caseArchive,"archive");
         pages.add(sitePictures,"sites");
-        sitePictures.onSelection(site->{
-            int index=-1;
-            for(int i=0;i<entries.size();i++)if(entries.get(i).name().equals(site.title())){index=i;break;}
-            if(index<0)contracts.clearSelection();else contracts.setSelectedIndex(index);
+        sitePictures.onSelection(site -> {
+            selectChapter(site);
+            if (!site.headquarters() && !countyMap.selected().equals(site)) countyMap.select(site.id());
         });
         pages.setBackground(new Color(13,17,24));
         add(pages,BorderLayout.CENTER);
@@ -145,7 +143,7 @@ public final class CampaignBoardPanel extends JPanel {
         JButton menu=button("MAIN MENU");menu.setName("campaign.back");menu.addActionListener(e->actions.menu());
         controls.add(back);controls.add(menu);controls.add(deploy);
         contractsTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"contracts"));
-        countyTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"county"));
+        countyTab.addActionListener(event->showCountyMap());
         picturesTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"sites"));
         shopTab.addActionListener(event->{
             depot.refresh();((CardLayout)pages.getLayout()).show(pages,"depot");
@@ -190,8 +188,13 @@ public final class CampaignBoardPanel extends JPanel {
     }
     /** In-world Castle map board enters the county atlas directly, not a menu list. */
     public void showCountyMap(){
+        selectChapter(countyMap.selected());
         countyMap.refreshState();
         ((CardLayout)pages.getLayout()).show(pages,"county");
+    }
+    private void selectChapter(MissionSites.Entry site){
+        int chapter=MissionSites.campaign().indexOf(site);
+        if(chapter<0)contracts.clearSelection();else contracts.setSelectedIndex(chapter);
     }
     private void updateSelection(){
         Entry entry=contracts.getSelectedValue();

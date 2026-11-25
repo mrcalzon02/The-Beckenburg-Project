@@ -1672,3 +1672,7 @@ The [facility scene](cinder-6/construction.json) keeps the surface approaches, e
 ### Complete local investigation picker
 
 Blackpine and Camp Hollow Creek use the regular Solo and LAN selectors with their existing native maps. The campaign still uses the same 22 saved ordinals and progress locks. The map board now includes Seacliff Battery, both woodland sites, all other investigation locations and Castle headquarters. Catalog availability records local launch and rendering. Final per-site construction, gameplay and publication acceptance stays with the stage register.
+
+### Castle county map roster
+
+The Castle briefing-room board now has a pin and a dossier for the full native roster. Six added pins cover the Vale Mortuary annex, lightstation, wreck, lodge, battery and underground facility. Later Solo and LAN sites can be browsed from the Castle board, while the saved campaign retains exactly 22 chapters and its existing launch locks.

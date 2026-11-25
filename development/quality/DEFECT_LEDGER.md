@@ -9422,3 +9422,7 @@ The [Greywater checkpoint](../levels/rebuild/greywater-native-pass/checkpoint.js
 ### DEV-744 · Gallows Pass apron and receiving areas
 
 The [railway runtime schedule](../levels/rebuild/gallows-pass/runtime-input.tsv) puts the apron spawn beyond the ramp and binds the existing signal-house, carriage, siding and maintenance approaches to the correct gameplay rooms. Routed normal movement through both trestle flights and the tunnel to the track store.
+
+### DEV-745 · Missing Castle county map pins
+
+The Castle county map now shows Castle headquarters and all 28 investigations. Selecting a Solo or LAN location clears the previously active campaign contract. The [county panel check](../../src/test/java/org/beckenburg/CountyCampaignMapPanelTest.java) covers every pin and verifies that selecting a field-only location cannot launch the previous chapter.

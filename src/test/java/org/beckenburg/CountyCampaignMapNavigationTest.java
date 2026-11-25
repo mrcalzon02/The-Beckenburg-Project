@@ -95,6 +95,12 @@ public final class CountyCampaignMapNavigationTest {
             check(map.selected().id().equals("WLD-06") && selections.get() == 2,
                 "castle focus cannot select or deploy a field chapter");
             check(map.zoomFactor() > 1, "castle point focuses headquarters without dispatch");
+            picker.setSelectedItem(MissionSites.byId("WLD-07-MORTUARY"));
+            check(map.selected().id().equals("WLD-07-MORTUARY") && selections.get() == 3,
+                "Field-only annex can be selected with the county finder");
+            Point annex = map.nodeScreenPoint("WLD-07-MORTUARY");
+            check(new Rectangle(0, 0, canvas.getWidth(), canvas.getHeight()).contains(annex),
+                "Annex finder brings the actual pin into view");
         });
         System.out.println("PASS county navigation: cluster focus, site chooser, live labels, clamped pan, reset, castle safety");
     }

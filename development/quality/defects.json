@@ -8251,6 +8251,17 @@
       "action": "Move the spawn to supported apron ground clear of the ramp. Bind the actual receiving areas and fitted doorway approaches with shared runtime ownership.",
       "older_maps": "Check full-width normal movement across ramp lips, receiving platforms and exterior door approaches as well as guide centerlines.",
       "evidence": "development/levels/rebuild/gallows-pass/runtime-input.tsv"
+    },
+    {
+      "id": "DEV-745",
+      "title": "Castle county board omitted six native investigations",
+      "status": "CASTLE_COUNTY_ROSTER_AND_CHAPTER_LOCKS_VERIFIED",
+      "affected": "Castle briefing-room county map and campaign location browsing",
+      "symptom": "The Vale Mortuary annex and WLD-14 through WLD-18 were available in the game but did not have county pins or entries in the Castle map finder.",
+      "cause": "The county atlas registry and selection reused the saved campaign sequence as their location list.",
+      "action": "Give the atlas a marker for every site and preserve the campaign ordinal table for launch authorization. Clear the contract selection when browsing a field-only site.",
+      "older_maps": "Keep existing pins and validate coverage and saved campaign dispatch independently after adding map-board locations.",
+      "evidence": "src/test/java/org/beckenburg/CountyCampaignMapPanelTest.java"
     }
   ],
   "audit_categories": [
