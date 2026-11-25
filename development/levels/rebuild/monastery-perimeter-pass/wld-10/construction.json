@@ -476,9 +476,9 @@
     }
   ],
   "model_budget": {
-    "triangles": 193621,
-    "declared_vertices": 305609,
-    "bytes": 12186072
+    "triangles": 194593,
+    "declared_vertices": 307407,
+    "bytes": 12240000
   },
   "prior_native_parts": 1634,
   "matched_new_parts": [
@@ -523,11 +523,19 @@
     "Monastery outer east gate brace 3",
     "Monastery outer east hinge strap 1",
     "Monastery outer east hinge strap 2",
-    "Monastery outer gate centre astragal"
+    "Monastery outer gate centre astragal",
+    "Monastery bell oak post 52.19",
+    "Monastery bell oak post 54.21",
+    "Monastery bell bearing beam",
+    "Monastery bell rope pulley beam",
+    "Monastery bell hanger",
+    "Monastery cast bronze bell",
+    "Monastery bell pull rope"
   ],
+  "bell_pull": "Monastery bell pull rope",
   "geometry": {
-    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.blend": "2420032398d4348ea014b08558fbeb9ddb9aac00ef1f8c98048ef277d025d5c4",
-    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.glb": "161b0e40eda32863bb6923f45f5c849189e98405a805adc0fbe0dfdb0287b3bf",
-    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.hcs2": "76d9fe80f8e17967c43e4d17f1a9015462c0720fdadafbefba1c808b41dcc264"
+    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.blend": "221e9b7e827b2819fb8019f21b33b1700aa75ea03f00724580610b86596fe196",
+    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.glb": "9e8d963c56b79d37ebc228136c33a95d5d6156f7ed4561f9ee5fdce6c308a288",
+    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.hcs2": "8c3ba6101d6b55d505df53c5f902edfb5cf7d24beb382f18cf952a88d7a5fd5a"
   }
 }

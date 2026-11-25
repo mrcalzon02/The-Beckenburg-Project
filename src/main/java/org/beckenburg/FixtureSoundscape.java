@@ -3,11 +3,11 @@ package org.beckenburg;
 public final class FixtureSoundscape {
  private FixtureSoundscape(){}
  public static final int RATE=16000;
- public enum Sound { TELEPHONE,BEDSIDE_BELL,OLD_FIRE_GONG,SMOKE_ALARM,RADIO,BOOM_BOX,RUNNING_WATER,WASHER,TV_STATIC }
+ public enum Sound { TELEPHONE,BEDSIDE_BELL,OLD_FIRE_GONG,SMOKE_ALARM,RADIO,BOOM_BOX,RUNNING_WATER,WASHER,TV_STATIC,TOWER_BELL }
  public static Sound sound(HauntedFixtures.Kind kind){return switch(kind.name()){
   case "PHONE"->Sound.TELEPHONE;case "ALARM_CLOCK"->Sound.BEDSIDE_BELL;case "FIRE_ALARM"->Sound.OLD_FIRE_GONG;case "SMOKE_ALARM"->Sound.SMOKE_ALARM;
-  case "RADIO"->Sound.RADIO;case "BOOM_BOX"->Sound.BOOM_BOX;case "WASHING_MACHINE"->Sound.WASHER;case "TELEVISION"->Sound.TV_STATIC;default->Sound.RUNNING_WATER;};}
- public static int frames(Sound kind){return RATE*switch(kind){case TELEPHONE->4;case RADIO,BOOM_BOX,WASHER->8;case SMOKE_ALARM->3;default->2;};}
+  case "RADIO"->Sound.RADIO;case "BOOM_BOX"->Sound.BOOM_BOX;case "WASHING_MACHINE"->Sound.WASHER;case "TELEVISION"->Sound.TV_STATIC;case "TOWER_BELL"->Sound.TOWER_BELL;default->Sound.RUNNING_WATER;};}
+ public static int frames(Sound kind){return RATE*switch(kind){case TELEPHONE->4;case RADIO,BOOM_BOX,WASHER->8;case SMOKE_ALARM->3;case TOWER_BELL->5;default->2;};}
  private static final int[] RADIO_NOTES={60,64,67,71,69,64,62,67,65,69,72,69,67,64,62,59},BOOM_NOTES={48,55,60,58,53,60,65,63,55,62,67,65,53,60,58,55};
  private static double noise(long frame){long h=frame*0x9e3779b97f4a7c15L+0x4245434bL;h^=h>>>29;h*=0xbf58476d1ce4e5b9L;return ((h>>>40)&0xffffff)/8388607.5-1;}
  private static double sine(double hz,double time){return Math.sin(Math.PI*2*hz*time);}
@@ -19,6 +19,12 @@ public final class FixtureSoundscape {
    case TELEPHONE -> {double beat=t%1.0;if(t<2&&beat<.68)v=(sine(425,t)*.22+sine(655,t)*.16)*(0.45+0.55*Math.abs(sine(22,t)))*envelope(beat,.68);}
    case BEDSIDE_BELL -> {double a=t%.11;v=(sine(1650,t)*.19+sine(2267,t)*.13+sine(3401,t)*.07)*Math.exp(-a*17);}
    case OLD_FIRE_GONG -> {double a=t%.15;v=(sine(718,t)*.21+sine(1133,t)*.13+sine(1977,t)*.07)*Math.exp(-a*11);}
+   case TOWER_BELL -> {
+    double strike=Math.min(t/.004,1);
+    v=strike*(sine(196,t)*.22*Math.exp(-t*1.45)+sine(394,t)*.153*Math.exp(-t*1.9)
+      +sine(468,t)*.12*Math.exp(-t*2.4)+sine(603,t)*.07*Math.exp(-t*3.6)
+      +sine(796,t)*.04*Math.exp(-t*8.2)+noise(n)*.028*Math.exp(-t*58));
+   }
    case SMOKE_ALARM -> {double beat=t%.5;if(t<1.5&&beat<.28)v=(triangle(2850,t)*.30+triangle(3100,t)*.09)*envelope(beat,.28);}
    case RADIO,BOOM_BOX -> {
     // Two newly composed eight-bar phrases. These are not transcriptions of existing songs.

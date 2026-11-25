@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 
 import bpy
+import math
 from mathutils import Vector
 from mathutils.geometry import delaunay_2d_cdt
 
@@ -15,6 +16,7 @@ from append_static_glb import append
 from build_circulation_construction import native_write
 from build_college_containment import distance_to_edge_squared, inside, loop_area, station, surveyed_terrain_loops
 from build_college_grounds import import_scene, terrain_tree
+from build_college_electrical import point
 from build_deliberate_entrances import write
 from build_mine_drainage import mesh_object, slab
 from build_monastery import rel
@@ -27,7 +29,7 @@ from compose_room_terrain import split_native
 from prepare_cemetery_doors import write_tsv
 from prune_static_glb import compact
 from review_roster_macroterrain import records, sha
-from verify_college_services import match_geometry
+from verify_college_services import bvh, match_geometry
 
 PRIOR = BASE/"monastery-loose-pass"
 STAGE = BASE/"monastery-perimeter-pass"
@@ -238,6 +240,50 @@ def make_boundary(ground,apron,plan,stone,timber,iron):
     return parts,receipt
 
 
+def turned_bell_part(name, x, z, profile, mat, role):
+    segments=24
+    verts=[point(x+r*math.cos(i*math.tau/segments),y,z+r*math.sin(i*math.tau/segments))
+           for y,r in profile for i in range(segments)]
+    faces=[]
+    for row in range(len(profile)):
+        a,b=row*segments,((row+1)%len(profile))*segments
+        for i in range(segments):
+            j=(i+1)%segments
+            faces.append((a+i,a+j,b+j,b+i))
+    return mesh_object(name,verts,faces,mat,role)
+
+
+def fit_bell():
+    floor=bvh([obj for obj in bpy.context.scene.objects if obj.type=="MESH"
+               and "bell floor around upper stair well" in obj.name])
+    oak=material("Monastery weathered bell frame oak",(.19,.115,.061))
+    bronze=material("Monastery dark cast bell bronze",(.33,.209,.090))
+    hemp=material("Monastery twisted bell rope hemp",(.34,.24,.13))
+    parts=[]
+    for x in (52.19,54.21):
+        base=(x-.16,27.77,x+.16,28.09)
+        for px in (base[0],base[2]):
+            for z in (base[1],base[3]):
+                hit,n,_,_=floor.ray_cast(point(px,6.18,z),point(0,-1,0),.27)
+                assert hit is not None and abs(hit.z-6)<.005 and n.z>.98,(px,z)
+        parts.append(fixed_slab(f"Monastery bell oak post {x}",base,6,8.56,oak,"floor-founded bell bearing"))
+    parts.append(fixed_slab("Monastery bell bearing beam",(52.03,27.76,54.37,28.10),
+                            8.48,8.74,oak,"crossbeam on bell posts"))
+    parts.append(fixed_slab("Monastery bell rope pulley beam",(53.13,26.70,53.27,27.94),
+                            8.56,8.69,oak,"bell rope pulley support"))
+    parts.append(fixed_slab("Monastery bell hanger",(53.10,27.82,53.30,28.04),
+                            8.37,8.51,bronze,"fixed bell hanger"))
+    parts.append(turned_bell_part("Monastery cast bronze bell",53.2,27.93,
+        ((8.43,.105),(8.43,.17),(8.35,.248),(8.16,.295),(8.05,.345),(7.99,.425),
+         (7.94,.425),(7.94,.365),(8.03,.315),(8.16,.25),(8.35,.19),(8.37,.105)),
+        bronze,"hollow cast bell on supported frame"))
+    rope=turned_bell_part("Monastery bell pull rope",53.2,26.83,
+        ((7.07,.018),(7.12,.049),(7.34,.049),(7.43,.020),(8.60,.020),(8.60,.008),(7.07,.008)),
+        hemp,"reachable bell pull on supported pulley beam")
+    parts.append(rope)
+    return parts,rope.name
+
+
 def build():
     prior=json.loads((PRIOR/"checkpoint.json").read_bytes())
     roster=json.loads((PRIOR/"roster.json").read_bytes())
@@ -257,7 +303,8 @@ def build():
     iron=material("Monastery carriage gate forged straps",(.052,.054,.050))
     walls,rows=make_boundary(ground,apron,plan,stone,wood,iron)
     assert old_ground==records(ground)
-    additions=[apron,*walls]
+    bell,rope=fit_bell()
+    additions=[apron,*walls,*bell]
     OUT.mkdir(parents=True,exist_ok=True)
     model,collision,blend=(OUT/(STEM+ext) for ext in (".glb",".hcs2",".blend"))
     fragment=ROOT/"build/monastery-perimeter-fragment.glb"
@@ -267,7 +314,11 @@ def build():
     compact(intermediate,model)
     budget=audit_level_budget(model)
     assert budget["bytes"]<16_000_000
-    native=native_write(source["native"],collision,set(),additions,open_components={apron.name})
+    def optical_rope(obj):
+        triangles=records(obj)
+        return [(face,2) for face,_ in triangles] if obj.name==rope else triangles
+    native=native_write(source["native"],collision,set(),additions,
+                        open_components={apron.name,rope},mesh_records=optical_rope)
     previous,merged=split_native(source["native"]),split_native(collision)
     assert merged[:len(previous)]==previous and len(merged)==len(previous)+len(additions)
     bpy.ops.file.pack_all()
@@ -280,11 +331,14 @@ def build():
         if p.is_file():
             assert sha(p)==prior["project_bytes_sha256"][rel(p)],p
             (OUT/p.name).write_bytes(p.read_bytes())
+    runtime=OUT/"runtime-input.tsv"
+    with runtime.open("a",encoding="utf-8",newline="\n") as manifest:
+        manifest.write(f"DEVICE\t{rope}\tTOWER_BELL\t7\t53.2\t7.25\t26.765\t0\n")
     write_tsv(OUT/"boundary-survey.tsv",[("span","x0","z0","x1","z1","stations","clearance","footing_low","crest_min","crest_max"),
               *((r["name"],*r["start"],*r["end"],r["stations"],r["exposed_height"],r["foundation_low"],*r["crest"]) for r in rows)])
     receipt=dict(status=STATUS,prior=rel(PRIOR/"checkpoint.json"),plan=rel(PLAN),plan_sha256=sha(PLAN),
                  surveyed_terrain=survey,boundary=rows,model_budget=budget,prior_native_parts=len(previous),
-                 matched_new_parts=[name for name,_ in native],geometry={rel(p):sha(p) for p in (blend,model,collision)})
+                 matched_new_parts=[name for name,_ in native], bell_pull=rope, geometry={rel(p):sha(p) for p in (blend,model,collision)})
     construction=OUT/"construction.json"
     write(construction,receipt)
     row.update(construction=rel(construction),blend=rel(blend),glb=rel(model),native=rel(collision),

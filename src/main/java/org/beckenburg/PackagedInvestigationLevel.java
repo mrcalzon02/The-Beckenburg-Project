@@ -113,6 +113,12 @@ final class PackagedInvestigationLevel {
                     sockets.add(new Socket(row[1], "native_story", integer(row, 3),
                         number(row, 5), number(row, 6), number(row, 7), number(row, 8), row[2]));
                 }
+                case "DEVICE" -> {
+                    check(row.length==8,"Invalid installed device");
+                    var kind=HauntedFixtures.Kind.valueOf(row[2]);
+                    sockets.add(new Socket(row[1],HauntedFixtures.NATIVE_DEVICE_SOCKET,integer(row,3),
+                        number(row,4),number(row,5),number(row,6),number(row,7),kind.name()));
+                }
                 case "LOOSE" -> {
                     check(row.length==9 && looseIds.add(row[1]) && looseIds.size()<=120,"Invalid native belonging");
                     int owner=integer(row,2);
@@ -152,8 +158,8 @@ final class PackagedInvestigationLevel {
         var scene = NativeInvestigationScene.read(model, modelHash, collision, collisionHash, treads, spaces, doors, grates);
         var nativeComponents = new HashSet<String>();
         for (int i = 0; i < scene.physics().componentCount(); i++) nativeComponents.add(scene.physics().componentName(i));
-        for (var socket : sockets) if (socket.type().equals("native_story"))
-            check(nativeComponents.contains(socket.id()), "Missing native readable component " + socket.id());
+        for (var socket : sockets) if (socket.type().equals("native_story")||socket.type().equals(HauntedFixtures.NATIVE_DEVICE_SOCKET))
+            check(nativeComponents.contains(socket.id()), "Missing native interaction component " + socket.id());
         for (var entry : looseSupports.entrySet()) {
             var item=entry.getKey();
             var bearing=scene.physics().support(item.x(),item.z(),item.y(),.006);

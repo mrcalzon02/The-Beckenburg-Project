@@ -3,9 +3,9 @@ import java.util.*;
 import org.beckenburg.LevelDefinition.*;
 /** Authored event fixtures. Only accepted host events or physical player use change state. */
 public final class HauntedFixtures {
-    public enum Kind { PHONE,ALARM_CLOCK,FIRE_ALARM,RADIO,BOOM_BOX,SINK_BATH,SINK_KITCHEN,WASHING_MACHINE,SMOKE_ALARM,TELEVISION,TABLE_LAMP,LIGHT_SWITCH;
-        public String mesh(){if(this==LIGHT_SWITCH)return "light_switch_1";return name().startsWith("SINK")||(this==WASHING_MACHINE||this==TELEVISION||this==TABLE_LAMP)?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
-        public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM,SMOKE_ALARM->LanSound.Cue.FIRE_BELL;case TABLE_LAMP,LIGHT_SWITCH->LanSound.Cue.SWITCH;case WASHING_MACHINE,TELEVISION->LanSound.Cue.ELECTRIC_HUM;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;default->LanSound.Cue.RUNNING_WATER;};}
+    public enum Kind { PHONE,ALARM_CLOCK,FIRE_ALARM,RADIO,BOOM_BOX,SINK_BATH,SINK_KITCHEN,WASHING_MACHINE,SMOKE_ALARM,TELEVISION,TABLE_LAMP,LIGHT_SWITCH,TOWER_BELL;
+        public String mesh(){if(this==LIGHT_SWITCH)return "light_switch_1";return name().startsWith("SINK")||(this==WASHING_MACHINE||this==TELEVISION||this==TABLE_LAMP||this==TOWER_BELL)?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
+        public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM,SMOKE_ALARM->LanSound.Cue.FIRE_BELL;case TABLE_LAMP,LIGHT_SWITCH->LanSound.Cue.SWITCH;case WASHING_MACHINE,TELEVISION->LanSound.Cue.ELECTRIC_HUM;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;case TOWER_BELL->LanSound.Cue.TOWER_BELL;default->LanSound.Cue.RUNNING_WATER;};}
     }
     public record State(int id,Kind kind,int room,double x,double y,double z,double yaw,double scale,boolean active,int water,int until,int revision){}
     public record Sound(State source,LanSound.Cue cue){}
@@ -26,10 +26,10 @@ public final class HauntedFixtures {
                 if(s.type().equals(NATIVE_BASIN_SOCKET))add(Kind.SINK_BATH,s.room(),s.x(),s.y(),s.z(),s.yaw());
                 if(s.type().equals(NATIVE_DEVICE_SOCKET)){
                     Kind kind=Kind.valueOf(s.style());
-                    if(kind!=Kind.WASHING_MACHINE&&kind!=Kind.RADIO)throw new IllegalArgumentException("Unsupported native device: "+kind);
+                    if(kind!=Kind.WASHING_MACHINE&&kind!=Kind.RADIO&&kind!=Kind.TOWER_BELL)throw new IllegalArgumentException("Unsupported native device: "+kind);
                     add(kind,s.room(),s.x(),s.y(),s.z(),s.yaw());
                     var fixture=fixtures.get(fixtures.size()-1);
-                    fixture.mains=true;
+                    fixture.mains=kind!=Kind.TOWER_BELL;
                     fixture.embedded=true;
                     nativeDevices.put(s.id(),fixture);
                 }
@@ -87,12 +87,21 @@ public final class HauntedFixtures {
     public synchronized void toggleFocused(int id,LooseClutter.Observer o,int tick){
         var target=InteractionFocus.pick(map,o,List.of());
         if(!o.exposed()||target==null||target.kind()!=InteractionFocus.Kind.FIXTURE||!target.id().equals(""+id))throw new IllegalArgumentException("look directly at the fixture");
-        Fixture f=get(id);if(f.mains&&!powered)throw new IllegalArgumentException(switch(f.kind){case WASHING_MACHINE->"Washing machine has no mains power";case RADIO->"Radio has no mains power";default->"Television has no mains power";});f.active=!f.active;f.until=0;f.revision++;
+        Fixture f=get(id);if(f.mains&&!powered)throw new IllegalArgumentException(switch(f.kind){case WASHING_MACHINE->"Washing machine has no mains power";case RADIO->"Radio has no mains power";default->"Television has no mains power";});
+        if(f.kind==Kind.TOWER_BELL){ring(f,tick);return;}
+        f.active=!f.active;f.until=0;f.revision++;
     }
     public synchronized void toggle(int id,LooseClutter.Observer o,int tick){
         toggleFocused(id,o,tick);
     }
-    public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if(f.mains&&!powered)return;if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");f.active=true;f.until=tick+200;f.revision++;}
+    private static void ring(Fixture f,int tick){
+        if(f.active)return;
+        f.active=true;f.until=tick+42;f.revision++;
+    }
+    public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if(f.mains&&!powered)return;if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");
+        if(f.kind==Kind.TOWER_BELL){ring(f,tick);return;}
+        f.active=true;f.until=tick+200;f.revision++;
+    }
     public synchronized void witness(GhostDomain.Resolution event,int tick,int requested){
         if(!event.applied()||!(event.action()==GhostDomain.Action.DISTURB||event.action()==GhostDomain.Action.MANIFEST||event.action()==GhostDomain.Action.SIGNATURE))return;
         if(requested>0){activate(requested,event.room(),tick);return;}

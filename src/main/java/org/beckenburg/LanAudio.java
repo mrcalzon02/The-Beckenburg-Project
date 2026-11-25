@@ -291,6 +291,7 @@ public final class LanAudio implements AutoCloseable {
             case RITUAL_START,RITUAL_END->12000;case IMPACT->7500;
             case GHOST_DRIFT->9300;
             case TOY_WINDUP->4800;
+            case TOWER_BELL->SAMPLE_RATE*4;
             case DOTS_MOTOR->6800;case DOTS_STOP->2400;
             case SPARK->1600;case INCENSE_BURN->5500;
             case FIRELIGHT_IGNITE->3400;case FIRELIGHT_OUT->2600;
@@ -383,6 +384,7 @@ public final class LanAudio implements AutoCloseable {
                 case MONITOR_HUM->.20*Math.sin(2*Math.PI*220*t)+.12*Math.sin(2*Math.PI*440*t)+.08*noise;
                 case PHONE_RING->(.36*Math.sin(2*Math.PI*440*t)+.28*Math.sin(2*Math.PI*480*t))*(Math.sin(t*60)>-.3?1:.18);
                 case ALARM_BELL->(.40*Math.sin(2*Math.PI*1700*t)+.22*Math.sin(2*Math.PI*2317*t))*Math.exp(-Math.floorMod(i,1800)/850.0);
+                case TOWER_BELL->FixtureSoundscape.sample(FixtureSoundscape.Sound.TOWER_BELL,i)/32768.0;
                 case FIRE_BELL->.55*Math.sin(2*Math.PI*1250*t)*Math.exp(-Math.floorMod(i,3000)/1400.0)+.20*Math.sin(2*Math.PI*1823*t);
                 case RADIO_PLAY->.17*noise+.28*Math.sin(2*Math.PI*(switch((int)(t*8)%4){case 0->220;case 1->261.63;case 2->329.63;default->293.66;})*t)+.12*Math.sin(2*Math.PI*110*t);
                 case RUNNING_WATER->.50*noise*(.65+.35*Math.sin(t*71))+.12*Math.sin(2*Math.PI*(820+260*Math.sin(t*19))*t);
