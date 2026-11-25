@@ -80,6 +80,7 @@ public final class HouseMap {
         return true;
     }
     private final VanStaging van;
+    private final HorizontalBounds horizontalBounds;
     public HouseMap(){this(Site.HOUSE);}
     public HouseMap(Site site){
         this(site,LevelPlans.build(site));
@@ -141,6 +142,7 @@ public final class HouseMap {
         this.nativeInvestigation=nativeInvestigation;
         nativeSite=nativeInvestigation!=null?nativeInvestigation.physics():HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
+        horizontalBounds=horizontalBounds(level,nativeInvestigation);
         // Fixture anchors must be fixed before door state or difficulty can change.
         // Author access against every potential cupboard, then restore the default.
         configureHiding(100);fixtures=new HauntedFixtures(this);configureHiding(70);
@@ -174,8 +176,27 @@ public final class HouseMap {
         }
         int room=roomAt(x,eyeY-1.3,z);return room>=0&&!outside(room);
     }
-    public int width(){return (int)Math.ceil(level.rooms().stream().mapToDouble(Room::x1).max().orElse(100))+3;}
-    public int height(){return (int)Math.ceil(level.rooms().stream().mapToDouble(Room::z1).max().orElse(100))+3;}
+    record HorizontalBounds(int minX,int maxX,int minZ,int maxZ){}
+    HorizontalBounds horizontalBounds(){return horizontalBounds;}
+    private static HorizontalBounds horizontalBounds(LevelDefinition level,NativeInvestigationScene scene){
+        double minX=Double.POSITIVE_INFINITY,minZ=Double.POSITIVE_INFINITY;
+        double maxX=Double.NEGATIVE_INFINITY,maxZ=Double.NEGATIVE_INFINITY;
+        for(var room:level.rooms()){
+            minX=Math.min(minX,room.x0());maxX=Math.max(maxX,room.x1());
+            minZ=Math.min(minZ,room.z0());maxZ=Math.max(maxZ,room.z1());
+        }
+        if(scene!=null)for(var space:scene.spaces()){
+            if(!space.accessible())continue;
+            minX=Math.min(minX,space.x0());maxX=Math.max(maxX,space.x1());
+            minZ=Math.min(minZ,space.z0());maxZ=Math.max(maxZ,space.z1());
+        }
+        // Keep the previous margin for nearby equipment and allow the full
+        // authored footprint, including rooms on the negative side of zero.
+        return new HorizontalBounds(Math.min(0,(int)Math.floor(minX)-3),(int)Math.ceil(maxX)+3,
+                                    Math.min(0,(int)Math.floor(minZ)-3),(int)Math.ceil(maxZ)+3);
+    }
+    public int width(){return horizontalBounds.maxX();}
+    public int height(){return horizontalBounds.maxZ();}
     public int cellWidth(){return 8;}
     public int cellHeight(){return 6;}
     public double ceilingHeight(){return level.room(0).height();}

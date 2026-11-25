@@ -95,9 +95,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 map.applyWindowSnapshot(p.get(1));
             }else if(p.size()==7&&p.get(0).equals("GPOSE")){
                 int next=LanProtocol.integer(p.get(1),0,HouseMap.EXTRACTION_ROOM-1);
-                double x=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;
+                double x=LanProtocol.worldX(map,p.get(2));
                 double y=LanProtocol.integer(p.get(3),-50000,50000)/1000.0;
-                double z=LanProtocol.integer(p.get(4),0,map.height()*1000)/1000.0;
+                double z=LanProtocol.worldZ(map,p.get(4));
                 LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
                 if(map.roomAt(x,y,z)!=next)throw new IllegalArgumentException("inconsistent spectral coordinates");
@@ -113,9 +113,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     // new hunter cues still require the open host gate.
                 }
             }else if(p.size()==7&&p.get(0).equals("GCOMPANION")){
-                double x=LanProtocol.integer(p.get(1),0,map.width()*1000)/1000.0;
+                double x=LanProtocol.worldX(map,p.get(1));
                 double y=LanProtocol.integer(p.get(2),-50000,50000)/1000.0;
-                double z=LanProtocol.integer(p.get(3),0,map.height()*1000)/1000.0;
+                double z=LanProtocol.worldZ(map,p.get(3));
                 int heading=LanProtocol.integer(p.get(4),0,359);
                 boolean ancient=LanProtocol.integer(p.get(5),0,1)==1;
                 int sentTick=LanProtocol.integer(p.get(6),0,99999999);
