@@ -130,7 +130,8 @@ public final class InvestigationSession {
     private final FieldEquipment uvHardware=new FieldEquipment();
     public boolean uvPowered(){return uvHardware.powered("UV_LIGHT");}
     public java.util.List<UvEvidenceMarks.Mark> uvVisible(double x,double y,double z,double yaw){
-        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),EquipmentTiers.Tier.I,ticks,uvPowered());
+        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),
+            EquipmentTiers.Tier.I,ticks,uvPowered(),crouched);
     }
     public void rechargeUvAtVan(double x,double y,double z){
         if(map.roomAt(x,y,z)!=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("UV service requires van rack");
@@ -418,11 +419,8 @@ public final class InvestigationSession {
             case THERMOMETER->scan(Instrument.THERMOMETER,x,y,z);
             case SPIRIT_BOX->scan(Instrument.SPIRIT_BOX,x,y,z);
             case UV_LAMP->{
-                int room=map.roomAt(x,y,z);
                 try{uvHardware.setPower("UV_LIGHT",!uvPowered());}catch(IllegalArgumentException empty){log("UV battery empty. Service at the van rack.");yield false;}
-                boolean residue=!uvVisible(x,y,z,yaw).isEmpty();
-                log(residue?"UV: transient spectral residue detected in "+map.roomName(room)+"."
-                    :"UV: no fresh traces in "+map.roomName(room)+".");
+                log(uvPowered()?"UV light on.":"UV light off.");
                 yield true;
             }
             case PHOTO_CAMERA->{

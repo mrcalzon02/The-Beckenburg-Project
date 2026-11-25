@@ -1308,9 +1308,7 @@ public final class LanHost implements AutoCloseable {
                         case "UV_LIGHT" -> {
                             boolean enabled=gear.toggle(id);
                             notifyHunters("GEARFX|"+peer.slot+"|UV_LIGHT|"+(enabled?1:0));
-                            int persistence=90+gear.owned(id).ordinal()*35;
-                            reading=enabled&&!uvEvidence.visible(map,world.body(peer.slot),gear.owned(id),tick,true).isEmpty()
-                                ?"UV light / genuine surface trace":"UV light / no visible trace";
+                            reading=enabled?"UV light on":"UV light off";
                         }
                         case "FLASHLIGHT","HEAD_GEAR","FIRELIGHT" -> {
                             LanPortableLights.Light placed=portableLights.at(peer.slot,id);
@@ -2973,7 +2971,9 @@ public final class LanHost implements AutoCloseable {
                 if(tick%10==0&&recorders[seat].recording())sendRecorderState(seat);
                 if(tick%3==0&&seats[seat]!=null){
                     reply(seats[seat],"UVTRACE|RESET");
-                    for(var mark:uvEvidence.visible(map,world.body(seat),equipment[seat].owned("UV_LIGHT"),tick,equipment[seat].powered("UV_LIGHT")))reply(seats[seat],mark.frame());
+                    for(var mark:uvEvidence.visible(map,world.body(seat),equipment[seat].owned("UV_LIGHT"),
+                            tick,equipment[seat].powered("UV_LIGHT"),world.crouched(seat)))
+                        reply(seats[seat],mark.frame());
                 }
             }
             // Powered device gauges receive real host charge updates once per second.

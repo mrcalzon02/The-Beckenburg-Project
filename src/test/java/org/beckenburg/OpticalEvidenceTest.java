@@ -41,6 +41,35 @@ public final class OpticalEvidenceTest {
         check(residue.size()==1&&residue.get(0).x()==displaced.x()&&residue.get(0).z()==displaced.z(),
             "Fresh UV residue follows the actual ghost position outside the safe area");
     }
+    private static void checkStairResidue(){
+        var map=new HouseMap(HouseMap.Site.MORROW);
+        var stairs=map.nativeInvestigation().physics();
+        var upper=stairs.support(45,43.85,1.78,.03);
+        var lower=stairs.support(45,45.95,.89,.03);
+        check(upper!=null&&lower!=null&&upper.y()-lower.y()>.5,"Need two actual stair treads of different heights");
+        var view=new LanWorld.Body(45,upper.y(),43.85,0,5);
+        var traces=new UvEvidenceMarks();
+        traces.leave(map,new LanGhostSpatial.Pose(5,45,lower.y(),45.95,0),20);
+        check(traces.visible(map,view,EquipmentTiers.Tier.II,20,true).size()==1,
+            "A clear view from a higher stair can see residue in beam range");
+        check(traces.visible(map,view,EquipmentTiers.Tier.I,20,true).isEmpty(),
+            "A standing hunter is outside the starter lamp's range");
+        check(traces.visible(map,view,EquipmentTiers.Tier.I,20,true,true).size()==1,
+            "The same lamp reaches the tread from crouched eye height");
+    }
+
+    private static void checkFittedDoorOcclusion(){
+        var map=new HouseMap(HouseMap.Site.MORROW);
+        var porch=new LanWorld.Body(30,0,55.04,180,12);
+        var traces=new UvEvidenceMarks();
+        traces.leave(map,new LanGhostSpatial.Pose(0,30,0,52.97,0),20);
+        check(!map.doorOpen(1200)&&traces.visible(map,porch,EquipmentTiers.Tier.I,20,true).isEmpty(),
+            "The fitted keeper door hides residue behind its closed leaves");
+        map.toggleDoor(1200,System.nanoTime()-1_000_000_000L);
+        check(traces.visible(map,porch,EquipmentTiers.Tier.I,20,true).size()==1,
+            "Opening the keeper door lets a real trace show through");
+    }
+
     public static void main(String[] args)throws Exception{
         var scene=new SceneRenderer();double base=scene.lampBeam(4,0),previous=base;
         for(var tier:EquipmentTiers.Tier.values()){
@@ -70,6 +99,8 @@ public final class OpticalEvidenceTest {
         check(traces.visible(map,new LanWorld.Body(body.x(),floor,body.z(),180,0),EquipmentTiers.Tier.I,11,true).isEmpty(),"wrong-facing UV cannot reveal behind the hunter");
         check(traces.visible(map,body,EquipmentTiers.Tier.I,111,true).isEmpty()&&traces.visible(map,body,EquipmentTiers.Tier.II,111,true).size()==1,"tier sensitivity extends genuine residue, not false positives");
         checkNativeResidue();
+        checkStairResidue();
+        checkFittedDoorOcclusion();
         var contact=new StructuredLightVolume.Contact(1,0,0,0,2,10);
         var beam=new StructuredLightVolume.Beam(new Vec(0,1,0),new Vec(0,1,4));
         var interval=StructuredLightVolume.intersection(beam,contact);check(interval!=null&&interval[0]>.4&&interval[1]<.6,"intersection is confined to capsule");

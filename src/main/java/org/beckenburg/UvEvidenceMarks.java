@@ -38,12 +38,23 @@ public final class UvEvidenceMarks {
         if(marks.size()>MAX_MARKS)marks.remove(0);
     }
     public List<Mark> visible(HouseMap map,LanWorld.Body viewer,EquipmentTiers.Tier tier,int tick,boolean powered){
-        if(!powered)return List.of();double range=HandheldLighting.uv(tier).reach();
-        int age=90+tier.ordinal()*35;double heading=Math.toRadians(viewer.heading());
-        return marks.stream().filter(m->{double dx=m.x()-viewer.x(),dz=m.z()-viewer.z(),distance=Math.hypot(dx,dz);
-            return tick>=m.born()&&tick-m.born()<=age&&Math.abs(m.y()-viewer.y())<.5
-                &&Math.sqrt(distance*distance+1.6*1.6)<range
-                &&(distance<.1||(dx*Math.sin(heading)+dz*Math.cos(heading))/distance>.60)
-                &&map.clearLineOfSight(viewer.x(),viewer.y()+1.62,viewer.z(),m.x(),m.y()+.06,m.z());}).toList();
+        return visible(map,viewer,tier,tick,powered,false);
+    }
+    public List<Mark> visible(HouseMap map,LanWorld.Body viewer,EquipmentTiers.Tier tier,int tick,
+                              boolean powered,boolean crouched){
+        if(!powered)return List.of();
+        double range=HandheldLighting.uv(tier).reach();
+        double eye=viewer.y()+HunterPosture.eye(crouched);
+        double heading=Math.toRadians(viewer.heading()),sin=Math.sin(heading),cos=Math.cos(heading);
+        int age=90+tier.ordinal()*35;
+        // The renderer narrows this set to the local beam pitch.
+        return marks.stream().filter(mark->{
+            double dx=mark.x()-viewer.x(),dz=mark.z()-viewer.z(),dy=mark.y()-eye;
+            double distance=Math.hypot(dx,dz);
+            return tick>=mark.born()&&tick-mark.born()<=age
+                &&distance*distance+dy*dy<range*range
+                &&(distance<.1||(dx*sin+dz*cos)/distance>.60)
+                &&map.clearLineOfSight(viewer.x(),eye,viewer.z(),mark.x(),mark.y()+.06,mark.z());
+        }).toList();
     }
 }
