@@ -78,6 +78,7 @@ def power(assembly, boiler):
         assembly.effect("greywater-" + label, label, boiler["owner"],
                         (contact[0], contact[1], contact[2]+.015), 0, "GW-MAIN")
     assembly.switch(boiler, 22.1, 27.1, 0, -1)
+    assembly.sockets[-1].update(id="greywater-boiler-switch",style="GW-BOILER")
     assembly.mounted_lamp(boiler, "greywater-boiler-light", point(18, 2.35, 27.15),
                           point(0, 0, -1), 1.25, point(1, 0, 0))
     # The feeder and lamp branch run along the north boiler wall above head height.
@@ -88,6 +89,55 @@ def power(assembly, boiler):
                                     (22.1, 2.35, 26.15), (18, 2.35, 26.15)]),
     ):
         assembly.raceway("Greywater " + name, run, .017)
+
+
+def room_services(assembly, zones):
+    branches=(
+        ("wash",22.95,49.3,(47.2,52.0),1),
+        ("cold",62.9,33.5,(29.1,35.8),1),
+        ("office",25.15,18.5,(21.4,),-1),
+        ("stores",46.85,21.0,(23.1,),1),
+        ("bunk",6.85,55.7,(47.1,58.5),1),
+        ("mess",-6.85,31.6,(28.8,38.5),-1),
+        ("processing",46.85,31.1,(29,39.1,48.25,53.3),1),
+        ("gallery",25.15,33.0,(30.4,38.45),-1),
+    )
+    for room,x,switch_z,lamps,dx in branches:
+        zone=zones[room]
+        floor=zone["y"]
+        assembly.switch(zone,x,switch_z,dx,0)
+        assembly.sockets[-1].update(id=f"greywater-{room}-switch",style=f"GW-{room.upper()}")
+        drop=assembly.routes[-1]["points"][-1]
+        junctions=[drop]
+        for number,lamp_z in enumerate(lamps,1):
+            key=f"greywater-{room}-light-{number}"
+            assembly.mounted_lamp(zone,key,point(x,floor+2.36,lamp_z),point(dx,0,0),1.85,point(0,0,1))
+            wall_x,height,z=assembly.loads[-1]["mount"]
+            junction=(wall_x-dx*.028,drop[1],z)
+            assert abs(junction[0]-drop[0])<.012,(room,key,junction,drop)
+            junctions.append(junction)
+            assembly.raceway(f"Greywater {room} lamp drop {number}",(junction,(junction[0],height+.095,z)),.012)
+        junctions.sort(key=lambda p:p[2])
+        assembly.raceway(f"Greywater {room} raceway",junctions,.012)
+
+
+def dispatch_log(assembly):
+    desk=assembly.scene.objects["level_blockout_headmaster_desk.001"]
+    x,z=27.15,14.64
+    hit,normal,_,_=bvh([desk]).ray_cast(point(x,1.02,z),point(0,-1,0),.34)
+    assert hit is not None and normal.z>.98
+    parts=assembly.place("notebook_1",Matrix.Identity(4),"dispatch log","readable loading log","office")
+    assert len(parts)==1
+    book=parts[0]
+    book.name="Greywater dispatch log"
+    low,high=bounds(parts)
+    scale=min(.35/(high[0]-low[0]),.29/(high[2]-low[2]),1)
+    t=Matrix.Translation(point(x-scale*(low[0]+high[0])/2,hit.z+.002-scale*low[1],
+                               z-scale*(low[2]+high[2])/2))
+    book.matrix_world=t @ Matrix.Scale(scale,4) @ book.matrix_world
+    bpy.context.view_layer.update()
+    _,high=bounds(parts)
+    assembly.effect(book.name,"native_story",OWNERS["office"][0],(x,high[1],z),0,"GREYWATER_DISPATCH_LOG")
 
 
 def build():
@@ -107,6 +157,8 @@ def build():
     assembly = Assembly()
     refuges = cupboards(assembly, zones, REFUGES, site="greywater", floor_roles=("floor",))
     power(assembly, zones["boiler"])
+    room_services(assembly,zones)
+    dispatch_log(assembly)
     for piece in assembly.built:
         piece.name = piece.name.removeprefix("College ")
     target = {ext: OUT / f"greywater-review.{ext}" for ext in source}

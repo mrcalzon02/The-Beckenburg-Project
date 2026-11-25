@@ -2,9 +2,9 @@
   "site": "WLD-13",
   "source": "development/levels/rebuild/workyard-station-pass/wld-13/authored-layout.json",
   "geometry_sha256": {
-    "blend": "04b894af8a3bbb1248e6618b0bf45df11f734a886142f2e90a60d2520aef3cfc",
-    "glb": "81cfe77559fca5d53a08b0fab9aeb5bd70c2343270ca809f9c27ba5fc199637e",
-    "hcs2": "d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae"
+    "blend": "5c0f1aec17ae20701157a5acba5be88677a44054546e390d8a29bb159e9a5dd4",
+    "glb": "ed7d50c69686f2d95b4feaed42582b6017cc3690bb8b2c1214d6e6b8c724b259",
+    "hcs2": "69014139c1a2725f4e606d65617342d2450e3da28c505923bafc7628306b6a85"
   },
   "retained_native_components": 419,
   "refuges": [
@@ -114,7 +114,7 @@
       "style": "GW-MAIN"
     },
     {
-      "id": "college-switch-02",
+      "id": "greywater-boiler-switch",
       "type": "switch",
       "room": 2,
       "position": [
@@ -123,7 +123,7 @@
         26.240999
       ],
       "yaw": 0.0,
-      "style": "EM-02"
+      "style": "GW-BOILER"
     },
     {
       "id": "greywater-boiler-light",
@@ -136,6 +136,306 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "greywater-wash-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        23.759001,
+        1.25,
+        49.299999
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "GW-WASH"
+    },
+    {
+      "id": "greywater-wash-light-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        23.576,
+        2.36,
+        47.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-wash-light-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        23.576,
+        2.36,
+        52.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-cold-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        63.758999,
+        1.25,
+        33.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "GW-COLD"
+    },
+    {
+      "id": "greywater-cold-light-1",
+      "type": "light",
+      "room": 1,
+      "position": [
+        63.576,
+        2.36,
+        29.1
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-cold-light-2",
+      "type": "light",
+      "room": 1,
+      "position": [
+        63.576,
+        2.36,
+        35.799999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-office-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        24.240999,
+        1.25,
+        18.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "GW-OFFICE"
+    },
+    {
+      "id": "greywater-office-light-1",
+      "type": "light",
+      "room": 3,
+      "position": [
+        24.424,
+        2.36,
+        21.4
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-stores-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        47.758999,
+        1.25,
+        21.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "GW-STORES"
+    },
+    {
+      "id": "greywater-stores-light-1",
+      "type": "light",
+      "room": 5,
+      "position": [
+        47.576,
+        2.36,
+        23.1
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-bunk-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        7.759,
+        1.25,
+        55.700001
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "GW-BUNK"
+    },
+    {
+      "id": "greywater-bunk-light-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        7.576,
+        2.36,
+        47.099998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-bunk-light-2",
+      "type": "light",
+      "room": 7,
+      "position": [
+        7.576,
+        2.36,
+        58.5
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-mess-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        -7.879,
+        1.25,
+        31.6
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "GW-MESS"
+    },
+    {
+      "id": "greywater-mess-light-1",
+      "type": "light",
+      "room": 8,
+      "position": [
+        -7.696,
+        2.36,
+        28.799999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-mess-light-2",
+      "type": "light",
+      "room": 8,
+      "position": [
+        -7.696,
+        2.36,
+        38.5
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-processing-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        47.758999,
+        1.25,
+        31.1
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "GW-PROCESSING"
+    },
+    {
+      "id": "greywater-processing-light-1",
+      "type": "light",
+      "room": 4,
+      "position": [
+        47.576,
+        2.36,
+        29.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-processing-light-2",
+      "type": "light",
+      "room": 4,
+      "position": [
+        47.576,
+        2.36,
+        39.099998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-processing-light-3",
+      "type": "light",
+      "room": 4,
+      "position": [
+        47.576,
+        2.36,
+        48.25
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-processing-light-4",
+      "type": "light",
+      "room": 4,
+      "position": [
+        47.576,
+        2.36,
+        53.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-gallery-switch",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        24.240999,
+        4.25,
+        33.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "GW-GALLERY"
+    },
+    {
+      "id": "greywater-gallery-light-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        24.424,
+        5.36,
+        30.4
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "greywater-gallery-light-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        24.424,
+        5.36,
+        38.450001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "Greywater dispatch log",
+      "type": "native_story",
+      "room": 3,
+      "position": [
+        27.15,
+        0.81801,
+        14.64
+      ],
+      "yaw": 0,
+      "style": "GREYWATER_DISPATCH_LOG"
     }
   ]
 }

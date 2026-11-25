@@ -1,4 +1,4 @@
-SOURCE	81cfe77559fca5d53a08b0fab9aeb5bd70c2343270ca809f9c27ba5fc199637e	d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae
+SOURCE	ed7d50c69686f2d95b4feaed42582b6017cc3690bb8b2c1214d6e6b8c724b259	69014139c1a2725f4e606d65617342d2450e3da28c505923bafc7628306b6a85
 DOCK	32.0	0	82.0	0
 ROOM	wash	0	8	44	24	56	0	3	false	Workers washroom	16	0	50
 ROOM	cold	1	48	26	64	44	0	3	false	Refrigerated stores	56	0	35
@@ -42,8 +42,33 @@ RITUAL	cleansing	0	16.0	0	50.0
 RITUAL	absolution	8	0.0	0	35.0
 SERVICE	greywater-generator	generator	2	12.4	0.56	28.420001	0	GW-MAIN
 SERVICE	greywater-breaker	breaker	2	19.799999	0.89	26.644999000000002	0	GW-MAIN
-SERVICE	college-switch-02	switch	2	22.1	1.25	26.240999	0.0	EM-02
+SERVICE	greywater-boiler-switch	switch	2	22.1	1.25	26.240999	0.0	GW-BOILER
 SERVICE	greywater-boiler-light	light	2	18.0	2.35	26.424	0	native-string
+SERVICE	greywater-wash-switch	switch	0	23.759001	1.25	49.299999	-1.5707963267948966	GW-WASH
+SERVICE	greywater-wash-light-1	light	0	23.576	2.36	47.200001	0	native-string
+SERVICE	greywater-wash-light-2	light	0	23.576	2.36	52.0	0	native-string
+SERVICE	greywater-cold-switch	switch	1	63.758999	1.25	33.5	-1.5707963267948966	GW-COLD
+SERVICE	greywater-cold-light-1	light	1	63.576	2.36	29.1	0	native-string
+SERVICE	greywater-cold-light-2	light	1	63.576	2.36	35.799999	0	native-string
+SERVICE	greywater-office-switch	switch	3	24.240999	1.25	18.5	1.5707963267948966	GW-OFFICE
+SERVICE	greywater-office-light-1	light	3	24.424	2.36	21.4	0	native-string
+SERVICE	greywater-stores-switch	switch	5	47.758999	1.25	21.0	-1.5707963267948966	GW-STORES
+SERVICE	greywater-stores-light-1	light	5	47.576	2.36	23.1	0	native-string
+SERVICE	greywater-bunk-switch	switch	7	7.759	1.25	55.700001	-1.5707963267948966	GW-BUNK
+SERVICE	greywater-bunk-light-1	light	7	7.576	2.36	47.099998	0	native-string
+SERVICE	greywater-bunk-light-2	light	7	7.576	2.36	58.5	0	native-string
+SERVICE	greywater-mess-switch	switch	8	-7.879	1.25	31.6	1.5707963267948966	GW-MESS
+SERVICE	greywater-mess-light-1	light	8	-7.696	2.36	28.799999	0	native-string
+SERVICE	greywater-mess-light-2	light	8	-7.696	2.36	38.5	0	native-string
+SERVICE	greywater-processing-switch	switch	4	47.758999	1.25	31.1	-1.5707963267948966	GW-PROCESSING
+SERVICE	greywater-processing-light-1	light	4	47.576	2.36	29.0	0	native-string
+SERVICE	greywater-processing-light-2	light	4	47.576	2.36	39.099998	0	native-string
+SERVICE	greywater-processing-light-3	light	4	47.576	2.36	48.25	0	native-string
+SERVICE	greywater-processing-light-4	light	4	47.576	2.36	53.299999	0	native-string
+SERVICE	greywater-gallery-switch	switch	11	24.240999	4.25	33.0	1.5707963267948966	GW-GALLERY
+SERVICE	greywater-gallery-light-1	light	11	24.424	5.36	30.4	0	native-string
+SERVICE	greywater-gallery-light-2	light	11	24.424	5.36	38.450001	0	native-string
+SERVICE	Greywater dispatch log	native_story	3	27.15	0.81801	14.64	0	GREYWATER_DISPATCH_LOG
 COVER	greywater-wash-cupboard	0	10	0	53.5	-1.5707963267948966
 COVER	greywater-cold-cupboard	1	62.4	0	39	1.5707963267948966
 COVER	greywater-bunk-cupboard	7	-5.5	0	58	-1.5707963267948966

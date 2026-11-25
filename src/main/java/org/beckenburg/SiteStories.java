@@ -31,6 +31,8 @@ public final class SiteStories {
    "Eight roadside rooms shared a reception desk, linen room and heating plant. When traffic stopped in late 2022, the manager kept a register of stranded travellers.");
   case "wld-17"->new Identity("Seacliff Battery","Headland service road, Coastal Territories",
    "A coastal watch station with a raised director room and lower living and service quarters. Its crew kept a separate record of ships and cliff-road traffic.");
+  case "wld-13"->new Identity("Greywater Cannery","Forest-road loading gate, Coastal Territories",
+   "The cannery's dock, cold stores, packing floor, and staff buildings operated as one shift. The last departure was never signed off.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
@@ -94,6 +96,13 @@ public final class SiteStories {
     "Late 2022. The morning watch logged two vessels beyond the headland. By evening the road party had still not returned.",
     "Keep someone at the gallery door when the lower crew changes watch. The new stair lamp is on the west side of the landing.",
     "The last watch left a pair of bearings for the relief crew. The space for the time of their arrival is blank."));
+  }
+  case "GREYWATER_DISPATCH_LOG"->{
+   if(!site.equals("wld-13"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Greywater dispatch log",List.of(
+    "Last outbound shift, late 2022. Mark each crate at the packing door before sending it to the dock.",
+    "The refrigeration belt stopped at dusk. The night crew moved the remaining stock to the cold room by hand, then checked the boiler.",
+    "The driver signed in at the gate. No one signed the load out."));
   }
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
