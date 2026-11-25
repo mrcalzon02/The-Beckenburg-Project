@@ -12,9 +12,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point, world
+from build_college_electrical import bounds, point, world
 from build_college_grounds import import_scene
 from build_lookout_native_arrival import table
+from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from compose_room_terrain import split_native
@@ -161,6 +162,30 @@ def room_services(assembly,zones):
         assembly.raceway(f"Red Mesa {room} distribution",junctions,.012)
 
 
+def fit_shelters(case):
+    desk,placement=case.fit("level_workbench_worn","expedition communications bench","shelter",7.65,0,47.7)
+    top,normal,_,_=bvh(desk).ray_cast(point(7.65,1.65,47.7),DOWN,1.6)
+    assert top is not None and normal.z>.98,"Expedition radio needs a measured desk surface"
+    radio,device=case.fit("level_event_radio_worn","expedition base radio","shelter",7.65,top.z+.001,47.7,support=desk)
+    assert len(radio)==1
+    radio[0].name="Red Mesa expedition base radio"
+    low,high=bounds(radio)
+    face,_,_,_=bvh(radio).ray_cast(point(7.65,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert face is not None,"Expedition radio needs an accessible casing"
+    x,y,z=world(face)
+    case.effect(radio[0].name,"native-device",0,(x,y,z+.035),0,"RADIO")
+    fittings=[dict(room="shelter",name="expedition base radio",desk=placement,radio=device)]
+    for asset,name,zone,x,z in (
+        ("level_camp_bench","expedition rest bench","shelter",8.2,56.20),
+        ("level_work_crew_footlocker","expedition gear chest","shelter",6.8,50.4),
+        ("level_work_repair_bench","sample sorting bench","wash",52.1,55.9),
+        ("shelf_mp_6","sample storage rack","wash",50.5,47.65),
+    ):
+        _,placement=case.fit(asset,name,zone,x,0,z)
+        fittings.append(dict(room=zone,name=name,**placement))
+    return fittings
+
+
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
     source = {ext: SOURCE / f"canyon-marsh.{ext}" for ext in ("blend", "glb", "hcs2")}
@@ -173,14 +198,15 @@ def build():
     zones = {z["id"]: {**z, "owner": OWNERS[z["id"]][0]} for z in layout["zones"]}
     bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
     bpy.context.preferences.filepaths.save_version = 0
-    assembly = Assembly()
+    assembly = Case()
     refuges = cupboards(assembly, zones, REFUGES, site="red-mesa", floor_roles=("floor",))
     cupboard_parts=set(assembly.built)
     guard_lower_ledge(assembly)
     expedition_supply(assembly,zones["shelter"])
     room_services(assembly,zones)
+    fittings=fit_shelters(assembly)
     for piece in assembly.built:
-        piece.name = piece.name.removeprefix("College ")
+        piece.name = piece.name.removeprefix("College ").replace("Mine case ","Red Mesa ",1)
     target = {ext: OUT / f"red-mesa-review.{ext}" for ext in source}
     addition = ROOT / "build/red-mesa-refuges.glb"
     export(addition, assembly.built)
@@ -236,6 +262,7 @@ def build():
         "geometry_sha256": {ext: sha(path) for ext, path in target.items()},
         "retained_native_components": len(retained), "refuges": refuges,
         "services":[s for s in assembly.sockets if s["type"]!="hide"],
+        "shelter_furnishings":fittings,
     }
     (OUT / "construction.json").write_bytes((json.dumps(record, indent=2) + "\n").encode())
     print("PASS retained", len(retained), "native parts; refuge floor contacts",

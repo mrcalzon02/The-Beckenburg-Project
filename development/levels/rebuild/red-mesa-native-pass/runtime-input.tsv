@@ -1,4 +1,4 @@
-SOURCE	51483795f7be434045fe0009a92fa987eddd33a8221e64b2b6683b0d41ab4192	07e7278b423dcc02e136343e3ebc3b96a19f4a685844648f228564dd92c391d8
+SOURCE	6e7719e5d7a12d6ee0410ad26eb8cba717b73c51aa4beab81f545552be99f2fb	a0efc3684305df4e21536f13d682ce4a12a5f74a845dd6f132943025fa802c48
 DOCK	34.0	0	86.0	0
 ROOM	shelter	0	4	46	20	58	0	3	false	Modern expedition shelter	12	0	52
 ROOM	wash	1	48	46	60	58	0	3	false	Expedition sample shelter	54	0	52
@@ -128,6 +128,7 @@ SERVICE	red-mesa-lower-cave-switch	switch	8	60.700001	5.25	39.879002	3.141592653
 SERVICE	red-mesa-lower-cave-light-1	light	8	62.5	6.38	39.696003	0	native-string
 SERVICE	red-mesa-alcove-switch	switch	10	59.918999	9.25	46.700001	-1.5707963267948966	RM-10
 SERVICE	red-mesa-alcove-light-1	light	10	59.736	10.38	48.599998	0	native-string
+SERVICE	Red Mesa expedition base radio	native-device	0	7.65	1.011	47.803138999999994	0	RADIO
 COVER	red-mesa-shelter-cupboard	0	5.5	0	55	-1.5707963267948966
 COVER	red-mesa-wash-cupboard	1	58.5	0	55	1.5707963267948966
 COVER	red-mesa-chamber-cupboard	7	75	8	5.5	0
