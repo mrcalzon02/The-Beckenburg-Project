@@ -268,6 +268,9 @@ for path in sorted(set(paths)):
             kind='Wharf tide, dry undercroft and canonical arrival in the '+renderer+' game renderer'
     elif '/wharf-foundation-pass/' in path:
         kind='Wharf undercroft and pile grid cutaway' if 'undercroft' in p.name else 'Wharf native deck and pier foundation review'
+    elif '/red-mesa-native-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Red Mesa native mission from player height in the '+renderer+' game renderer'
     elif '/wall-finish-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Beckenburg wall finish at player height in the '+renderer+' game renderer'

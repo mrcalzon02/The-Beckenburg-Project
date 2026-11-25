@@ -1628,3 +1628,8 @@ The [packaged live case](northwatch-investigation-pass/case.tsv) reaches the arc
 ### Native walls across the roster
 
 The [wall finish checkpoint](wall-finish-pass/checkpoint.json) verifies plaster, concrete, masonry and timber on 25 native map exports, including the mortuary annex. Both local packages render the physical walls. Texture projection follows world dimensions and the original mesh positions, source textures and collision stay intact. The four dedicated sites retain their wall surfaces. Source-only levels still need runtime integration.
+
+
+### Red Mesa playable native review
+
+The [native checkpoint](red-mesa-native-pass/checkpoint.json) keeps the saved landform and all 246 prior collision components. Three fitted cupboards have 36 verified floor contacts. Both renderers pass the four operating frames and 64 route replays. In the live case a hunter leaves the van, enters all three refuges, climbs the built +4 m and +8 m stair bays and crosses the bridge to finish absolution. Finish the canyon edges, drainage, working services, room use and release gates.

@@ -1,0 +1,87 @@
+{
+  "site": "WLD-03",
+  "source": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
+  "geometry_sha256": {
+    "blend": "1d6a336ed698c050f656f90de5d58e2acc731ba70eedbe80cacc502ccdbc540e",
+    "glb": "9a9e1da271bcc6c082a8c3e65726af9bc99b36c8574ae35f912724786f847917",
+    "hcs2": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef"
+  },
+  "retained_native_components": 246,
+  "refuges": [
+    {
+      "id": "red-mesa-shelter-cupboard",
+      "space": "shelter",
+      "owner": 0,
+      "position": [
+        5.5,
+        0,
+        55
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          4.9,
+          0.0,
+          54.150002
+        ],
+        [
+          6.202,
+          2.31,
+          55.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "red-mesa-wash-cupboard",
+      "space": "wash",
+      "owner": 1,
+      "position": [
+        58.5,
+        0,
+        55
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          57.798,
+          0.0,
+          54.150002
+        ],
+        [
+          59.099998,
+          2.31,
+          55.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "red-mesa-chamber-cupboard",
+      "space": "chamber",
+      "owner": 7,
+      "position": [
+        75,
+        8,
+        5.5
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          74.150002,
+          8.0,
+          4.9
+        ],
+        [
+          75.849998,
+          10.309999,
+          6.202
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ]
+}

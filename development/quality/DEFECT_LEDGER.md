@@ -9395,3 +9395,8 @@ Dress the real terrace and stone beds with surveyed asset placements. Fit the ca
 ### DEV-738 · Native structural walls rendered as flat colour
 
 The game now textures plain native wall assemblies with metre-based coordinates. The roster audit counts 61,147 newly textured wall faces across 25 source exports. Standing Asylum, Blackwater and Monastery views pass in both renderers. [Evidence](../levels/rebuild/wall-finish-pass/checkpoint.json)
+
+
+### DEV-739 · Red Mesa construction had no native mission dispatch
+
+The native package connects the existing campaign slot to the surveyed canyon. Four operating leaves, 64 movement replays and three walk-in refuges pass in both renderers. The continuous three-peer case reaches the upper chamber and completes absolution. [Evidence](../levels/rebuild/red-mesa-native-pass/checkpoint.json)

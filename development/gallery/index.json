@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12697,
+  "count": 12705,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -122544,6 +122544,86 @@
       "height": 640,
       "bytes": 379417,
       "sha256": "61d3149b2e203eccb169ac5f7f1c7b101e6e241da9308df6b36df4105166f0a5"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-chamber-bridge.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-chamber-bridge.png",
+      "title": "Red mesa chamber bridge",
+      "kind": "Red Mesa native mission from player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 473420,
+      "sha256": "784073b5462c7d46ba8b2c2f3a9e20be3627c7242d99c4fc27ac5a21036bc604"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-chamber-refuge.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-chamber-refuge.png",
+      "title": "Red mesa chamber refuge",
+      "kind": "Red Mesa native mission from player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 692273,
+      "sha256": "62e7503dfa8cfca6e44d73745c572ee0cf2a439268bb2b01481efb8b16d761ed"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-shelter-stair.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-shelter-stair.png",
+      "title": "Red mesa shelter stair",
+      "kind": "Red Mesa native mission from player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 633320,
+      "sha256": "9ef00cc8dd67bb74aa101d4fb5fea83256f7b1fd0d8deb93ccad0f0dd0d84f11"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-van-apron.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/opengl/red-mesa-van-apron.png",
+      "title": "Red mesa van apron",
+      "kind": "Red Mesa native mission from player height in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 376311,
+      "sha256": "c49fca3fc0b83115d55c5eae1713c20d200b49b327d56da21340ae6d2b8e09ff"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-chamber-bridge.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-chamber-bridge.png",
+      "title": "Red mesa chamber bridge",
+      "kind": "Red Mesa native mission from player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 476070,
+      "sha256": "7f7c8906b505a53ee27a4b4214600c62b9d13d90a6a89c704e122fb0ae8534fe"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-chamber-refuge.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-chamber-refuge.png",
+      "title": "Red mesa chamber refuge",
+      "kind": "Red Mesa native mission from player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 691696,
+      "sha256": "9f69a7a67a4824c54f8feabed9b1688b3a6f4a372364f7deb2da777adf5720d6"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-shelter-stair.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-shelter-stair.png",
+      "title": "Red mesa shelter stair",
+      "kind": "Red Mesa native mission from player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 634079,
+      "sha256": "4488b756c832ba213e2a77ed3b6c2cef440e9055db6cf4bbbf2313c48531eff8"
+    },
+    {
+      "path": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-van-apron.png",
+      "url": "development/levels/rebuild/red-mesa-native-pass/captures/software/red-mesa-van-apron.png",
+      "title": "Red mesa van apron",
+      "kind": "Red Mesa native mission from player height in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 375068,
+      "sha256": "81e4cc8d11cd2da69684dc791cf8ebfbe560464242f5ffc531bd039b468ee914"
     },
     {
       "path": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",

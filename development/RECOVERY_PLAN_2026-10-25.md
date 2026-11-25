@@ -2429,3 +2429,8 @@ The [station checkpoint](levels/rebuild/northwatch-investigation-pass/checkpoint
 ### Native wall finishes
 
 The [roster wall finish](levels/rebuild/wall-finish-pass/checkpoint.json) follows the local Mine case 7d040328. The ordinary package and RTX 5070 package render the textured ward, turbine hall and crypt from supported standing positions. The audit covers all 25 native packets, and the four specialized sites pass focused checks. Main cb220372fb721fbe588f49d3dc488f6dbba1602d has passing multiplayer 44863686526 and OpenGL 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. The held draft remains at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Continue playable integration of the source-only sites and retain final installer acceptance.
+
+
+### Red Mesa native mission
+
+The [Red Mesa checkpoint](levels/rebuild/red-mesa-native-pass/checkpoint.json) follows 6d677a92. Exact ordinary and RTX package payloads pass the geometry and route checks. Three TCP peers finish absolution through the native entry. The default site selection and three campaign and board regressions pass. Main cb220372fb721fbe588f49d3dc488f6dbba1602d has successful multiplayer 44863686526 and GPU 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. Draft 86 remains held against map/house-default at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Continue the perimeter, services and release gates locally.

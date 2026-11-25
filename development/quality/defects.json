@@ -8185,6 +8185,17 @@
       "action": "Assign plaster, masonry, timber and concrete images to plain vertical architectural faces with metre-based UVs. Check all 25 source exports and both game renderers.",
       "older_maps": "Preserve authored texture bindings. Check the existing Castle, House, Blackpine and Hollow Creek surface paths separately.",
       "evidence": "development/levels/rebuild/wall-finish-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-739",
+      "title": "Red Mesa construction had no native mission dispatch",
+      "status": "RED_MESA_PACKAGED_NATIVE_REVIEW_AND_ABSOLUTION_VERIFIED",
+      "affected": "Red Mesa Ancestral Caves, WLD-03",
+      "symptom": "The built canyon and caves could be inspected as source geometry while the ordinary campaign entry could not dispatch them.",
+      "cause": "The source lacked a packaged contract linking the surveyed region floors, jambs and supports to game scene ownership, spawns and rite positions.",
+      "action": "Bind the unchanged canyon and terrain to the existing campaign index, add four fitted leaves and three measured refuge enclosures, and validate the ordinary van and live case.",
+      "older_maps": "Test other source-only packets from initial cargo arrival through supported room ownership and mounted openings before enabling named review.",
+      "evidence": "development/levels/rebuild/red-mesa-native-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

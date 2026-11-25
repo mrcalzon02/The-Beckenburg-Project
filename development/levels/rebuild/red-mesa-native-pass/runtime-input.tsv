@@ -1,0 +1,203 @@
+SOURCE	9a9e1da271bcc6c082a8c3e65726af9bc99b36c8574ae35f912724786f847917	9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef
+DOCK	34.0	0	86.0	0
+ROOM	shelter	0	4	46	20	58	0	3	false	Modern expedition shelter	12	0	52
+ROOM	wash	1	48	46	60	58	0	3	false	Expedition sample shelter	54	0	52
+ROOM	lower-path	2	4	22	20	46	4	3	true	Lower switchback terrace	12	4	33.5
+ROOM	upper-path	3	20	10	48	22	8	3	true	Upper switchback terrace	34	8	16
+ROOM	gallery	4	48	22	66	40	8	3	false	Cave entrance gallery	55	8	31
+ROOM	dwellings	5	20	22	48	40	8	3	true	Fictional cliff-dwelling terrace	34	8	31
+ROOM	fork	6	66	22	76	40	8	3	false	Branching cave junction	71	8	31
+ROOM	chamber	7	66	4	82	22	8	3	false	Dry side chamber	74	8	13
+ROOM	lower-cave	8	48	22	66	40	4	4	false	Lower cave chamber	55	4	31
+ROOM	return	9	48	4	66	22	4	3	true	Rock-arch return shelf	57	4	14
+ROOM	alcove	10	48	40	60	52	8	3	false	Expedition records alcove	54	8	46
+ROOM	floor	11	20	40	48	66	0	3	true	Canyon floor	34	0	53
+ROOM	entry	12	26	66	42	80	0	3	true	Canyon mouth	34	0	73
+ROOM	stage	13	26	80	42	92	0	3	true	Canyon-road van apron	34	0	81
+SPACE	shelter-stair	2	10.4	32.9	13.6	46	0	5.8	true
+SPACE	upper-stair	3	22.1	18.3	25.15	32.8	4	6.0	true
+SPACE	upper-bridge	3	47.8	11.95	66	15.25	8	3	true
+SPACE	lower-ledge	2	12	32.2	55.25	44.15	4	2.6	true
+SPACE	gallery-stair	8	56.1	26.5	57.9	33.5	4	4	true
+TREAD	132:L13 flight0 step1
+TREAD	133:L13 flight0 step2
+TREAD	134:L13 flight0 step3
+TREAD	135:L13 flight0 step4
+TREAD	136:L13 flight0 step5
+TREAD	137:L13 flight0 step6
+TREAD	138:L13 flight0 step7
+TREAD	139:L13 flight0 step8
+TREAD	140:L13 flight0 step9
+TREAD	141:L13 flight0 step10
+TREAD	142:L13 flight0 step11
+TREAD	143:L13 flight0 step12
+TREAD	144:L13 flight0 step13
+TREAD	145:L13 flight0 step14
+TREAD	146:L13 flight0 step15
+TREAD	147:L13 flight0 step16
+TREAD	148:L13 flight0 step17
+TREAD	149:L13 flight0 step18
+TREAD	150:L13 flight0 step19
+TREAD	151:L13 flight0 step20
+TREAD	152:L13 flight0 step21
+TREAD	153:L13 flight0 step22
+TREAD	154:L13 flight0 step23
+TREAD	Red Mesa shelter hillside stair lower landing region0
+TREAD	Red Mesa shelter hillside stair middle landing region0
+TREAD	Red Mesa shelter hillside stair upper landing region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 01 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 02 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 03 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 04 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 05 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 06 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 07 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 08 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 09 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 10 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 11 region0
+TREAD	Red Mesa shelter hillside stair flight 1 riser 12 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 01 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 02 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 03 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 04 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 05 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 06 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 07 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 08 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 09 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 10 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 11 region0
+TREAD	Red Mesa shelter hillside stair flight 2 riser 12 region0
+TREAD	Red Mesa upper terrace hillside stair lower landing region0
+TREAD	Red Mesa upper terrace hillside stair middle landing region0
+TREAD	Red Mesa upper terrace hillside stair upper landing region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 01 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 02 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 03 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 04 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 05 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 06 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 07 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 08 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 09 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 10 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 11 region0
+TREAD	Red Mesa upper terrace hillside stair flight 1 riser 12 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 01 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 02 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 03 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 04 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 05 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 06 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 07 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 08 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 09 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 10 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 11 region0
+TREAD	Red Mesa upper terrace hillside stair flight 2 riser 12 region0
+OPEN	950	13	12	34	0	80	2	z	trail
+OPEN	951	12	11	34	0	66	2	z	trail
+OPEN	952	11	0	20	0	52	1.6	x	trail
+OPEN	953	11	1	48	0	52	1.6	x	trail
+OPEN	954	2	3	23.625	6	25.15	1.6	z	stair
+OPEN	955	3	5	34	8	22	2	z	trail
+OPEN	956	4	6	66	8	31	1.6	x	trail
+OPEN	957	6	7	71	8	22	1.6	z	trail
+OPEN	958	4	8	57	6	30	1.6	z	stair
+OPEN	959	8	9	57	4	22	1.6	z	trail
+OPEN	960	4	10	54	8	40	1.6	z	trail
+RITUAL	banishment	0	12.0	0	52.0
+RITUAL	cleansing	1	54.0	0	52.0
+RITUAL	absolution	7	74.0	8	13.0
+COVER	red-mesa-shelter-cupboard	0	5.5	0	55	-1.5707963267948966
+COVER	red-mesa-wash-cupboard	1	58.5	0	55	1.5707963267948966
+COVER	red-mesa-chamber-cupboard	7	75	8	5.5	0
+POINT	L01	34	0	82.372
+POINT	L01	34	0	80
+POINT	L01	34	0	73
+POINT	L02	34.0	0	73.0
+POINT	L02	34.0	0	66.0
+POINT	L02	34.0	0	53.0
+POINT	L03	34	0	53
+POINT	L03	22	0	52
+POINT	L03	20	0	52
+POINT	L03	12	0	52
+POINT	L04	12	0	52
+POINT	L04	12	0	46
+POINT	L04	12	0	44.77
+POINT	L04	12	2	40.88
+POINT	L04	12	2	39.23
+POINT	L04	12	4	35.34
+POINT	L04	12	4	34
+POINT	L04	12	4	33.5
+POINT	L05	34	0	53
+POINT	L05	46	0	52
+POINT	L05	48	0	52
+POINT	L05	54	0	52
+POINT	L06	54	0	52
+POINT	L06	48	0	52
+POINT	L06	46	0	52
+POINT	L06	34	0	53
+POINT	L07	12	4	33.5
+POINT	L07	14.9	4	32.0
+POINT	L07	20.3	4	32.65
+POINT	L07	23.625	4	32.46
+POINT	L07	23.625	4	29.94
+POINT	L07	23.625	6	26.05
+POINT	L07	23.625	6	24.4
+POINT	L07	23.625	8	20.51
+POINT	L07	23.625	8	18.45
+POINT	L07	28	8	16
+POINT	L07	34	8	16
+POINT	L08	34	8	16
+POINT	L08	34	8	22
+POINT	L08	34	8	31
+POINT	L09	34	8	31
+POINT	L09	47	8	31
+POINT	L09	48	8	31
+POINT	L09	52.3	8	31
+POINT	L09	55	8	31
+POINT	L10	55	8	31
+POINT	L10	55	8	34.7
+POINT	L10	55.6	8	35.0
+POINT	L10	64.5	8	35.0
+POINT	L10	64.7	8	31
+POINT	L10	66	8	31
+POINT	L10	71	8	31
+POINT	L11	71.0	8	31.0
+POINT	L11	71.0	8	22.0
+POINT	L11	74.0	8	13.0
+POINT	L12	74	8	13
+POINT	L12	68	8	13.6
+POINT	L12	66	8	13.6
+POINT	L12	49	8	13.6
+POINT	L12	47.85	8	13.6
+POINT	L12	43.8	8	14.3
+POINT	L12	34	8	16
+POINT	L13	57	8	33.5
+POINT	L13	57	4	26.32
+POINT	L14	55.0	4.0	31.0
+POINT	L14	55.0	4.0	23.5
+POINT	L14	56.5	4.0	23.0
+POINT	L14	57.0	4.0	22.5
+POINT	L14	57.0	4.0	14.0
+POINT	L15	57	4	14
+POINT	L15	57	4	22
+POINT	L15	57	4	23.6
+POINT	L15	52	4	24.8
+POINT	L15	52	4	40
+POINT	L15	52	4	42.35
+POINT	L15	46.2	4	42.35
+POINT	L15	44.0	4	42.25
+POINT	L15	32	4	42.05
+POINT	L15	24.6	4	41.38
+POINT	L15	21.82	4	40.88
+POINT	L15	18.7	4	38.58
+POINT	L15	15.05	4	34.6
+POINT	L15	15.05	4	32.9
+POINT	L15	12	4	32.9
+POINT	L15	12	4	33.5
+POINT	L16	55.0	8.0	31.0
+POINT	L16	54.0	8.0	40.0
+POINT	L16	54.0	8.0	46.0

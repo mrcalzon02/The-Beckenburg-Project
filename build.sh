@@ -145,6 +145,13 @@ for site in wld-07 wld-07-mortuary; do
         cp "$cemetery_packet/$payload" "$cemetery_resource/$payload"
     done
 done
+red_mesa_packet=development/levels/rebuild/red-mesa-native-pass
+red_mesa_resource=build/classes/org/beckenburg/sites/wld-03
+mkdir -p "$red_mesa_resource"
+for payload in red-mesa-review.glb red-mesa-review.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$red_mesa_packet/$payload" "$red_mesa_resource/$payload"
+done
+
 northwatch_packet=development/levels/rebuild/northwatch-furnishing-pass/wld-08
 northwatch_resource=build/classes/org/beckenburg/sites/wld-08
 mkdir -p "$northwatch_resource"
