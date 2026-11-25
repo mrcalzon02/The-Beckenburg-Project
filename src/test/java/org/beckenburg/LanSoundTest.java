@@ -17,26 +17,26 @@ public final class LanSoundTest {
     public static void main(String[] args){
         HouseMap map=new HouseMap();
         int room=4;
-        double cx=map.centerX(room),cz=map.centerZ(room);
-        LanWorld.Body facingNorth=new LanWorld.Body(cx,cz,0,room);
+        double cx=map.centerX(room),cy=map.spawn(room).y(),cz=map.centerZ(room);
+        LanWorld.Body facingNorth=new LanWorld.Body(cx,cy,cz,0,room);
         LanSound.CueEvent ahead=LanSound.project(map,facingNorth,room,cx,cz+1.5,LanSound.Cue.WHISPER,15);
         ok(ahead!=null&&ahead.pan()==0,"source ahead centered");
         // Hall X offsets cross native stairs into other floors/rooms. Use its
         // real flat Z axis with a rotated listener to test full stereo pan.
-        LanWorld.Body facingEast=new LanWorld.Body(cx,map.spawn(room).y(),cz,90,room);
+        LanWorld.Body facingEast=new LanWorld.Body(cx,cy,cz,90,room);
         LanSound.CueEvent right=LanSound.project(map,facingEast,room,cx,cz+2,LanSound.Cue.DISTURB,15);
         LanSound.CueEvent left=LanSound.project(map,facingEast,room,cx,cz-2,LanSound.Cue.DISTURB,15);
         ok(right!=null&&right.pan()==100&&left!=null&&left.pan()==-100,"listener-relative stereo pan");
-        ok(map.roomAt(cx,cz)==room,"valid origin");
+        ok(map.roomAt(cx,cy,cz)==room,"valid origin");
         ok(LanSound.project(map,facingNorth,HouseMap.EXTRACTION_ROOM,cx,cz,LanSound.Cue.WHISPER,0)==null,"safe van not valid ghost source");
-        LanWorld.Body van=new LanWorld.Body(map.centerX(HouseMap.EXTRACTION_ROOM),map.centerZ(HouseMap.EXTRACTION_ROOM),0,HouseMap.EXTRACTION_ROOM);
+        LanWorld.Body van=new LanWorld.Body(map.centerX(HouseMap.EXTRACTION_ROOM),map.van().floorY(),map.centerZ(HouseMap.EXTRACTION_ROOM),0,HouseMap.EXTRACTION_ROOM);
         ok(LanSound.project(map,van,room,cx,cz,LanSound.Cue.WHISPER,15)==null,"van is acoustically excluded");
         ok(LanSound.project(map,facingNorth,room,Double.NaN,cz,LanSound.Cue.STRIKE,15)==null,"reject non-finite source");
         ok(LanSound.decode(right.frame()).equals(right),"wire frame roundtrip");
         // The same physical cue is sharper in hard corridors than soft bedrooms.
         // The underlying room bed and doors are independently modeled.
         int hall=4,bedroom=6;
-        var hallBody=new LanWorld.Body(map.centerX(hall),map.centerZ(hall),0,hall);
+        var hallBody=new LanWorld.Body(map.centerX(hall),map.spawn(hall).y(),map.centerZ(hall),0,hall);
         var bedBody=new LanWorld.Body(map.centerX(bedroom),map.spawn(bedroom).y(),map.centerZ(bedroom),0,bedroom);
         var hard=LanSound.project(map,hallBody,hall,map.centerX(hall),map.centerZ(hall),
             LanSound.Cue.DISTURB,30);

@@ -16,11 +16,13 @@ public final class LanAcoustics {
      * Doors attenuate in their actual state; a stair opening never acts like a solid deck. */
     public static int physicalEdgeCost(HouseMap map,int from,int to){
         if(!valid(map,from)||!valid(map,to))return Integer.MAX_VALUE;
+        boolean closedCargoShutter=(from==HouseMap.EXTRACTION_ROOM||to==HouseMap.EXTRACTION_ROOM)
+            &&map.van().cargoDoorClosed();
         int best=Integer.MAX_VALUE;
         for(LevelDefinition.Portal portal:map.level().portals()){
             if(!portal.joins(from,to))continue;
             int loss=Math.max(1,(int)Math.ceil(portal.loss()));
-            if(portal.door()&&!map.doorOpen(portal.id()))loss+=2;
+            if(closedCargoShutter||portal.door()&&!map.doorOpen(portal.id()))loss+=2;
             if(portal.kind().equals("window")&&!map.windowOpen(portal.id()))loss+=2;
             loss+=Math.max(absorption(map.level().room(from).acoustic()),
                 absorption(map.level().room(to).acoustic()));
