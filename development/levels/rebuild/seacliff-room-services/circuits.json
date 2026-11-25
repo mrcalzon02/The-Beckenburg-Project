@@ -26,6 +26,30 @@
       "style": "native-string"
     },
     {
+      "id": "battery-director-stair-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        29.041,
+        5.25,
+        24.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "BATTERY-DIRECTOR-STAIR"
+    },
+    {
+      "id": "battery-director-stair-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        29.224001,
+        6.36,
+        22.450001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
       "id": "battery-director-switch",
       "type": "switch",
       "room": 2,
@@ -216,6 +240,18 @@
       ],
       "yaw": 0,
       "style": "native-string"
+    },
+    {
+      "id": "Seacliff director plotting log",
+      "type": "native_story",
+      "room": 2,
+      "position": [
+        35.25,
+        7.98801,
+        14.5
+      ],
+      "yaw": 0,
+      "style": "SEACLIFF_DIRECTOR_LOG"
     }
   ],
   "lights": [
@@ -235,6 +271,23 @@
         26.304001
       ],
       "support": "Battery gallery passage north face end pier region0"
+    },
+    {
+      "id": "battery-director-stair-light",
+      "room": 1,
+      "space": "director-stair",
+      "circuit": "EM-01",
+      "mount": [
+        29.040001,
+        6.36,
+        22.450001
+      ],
+      "emitter": [
+        29.224001,
+        6.36,
+        22.450001
+      ],
+      "support": "Battery west return region0"
     },
     {
       "id": "battery-director-light",
@@ -408,6 +461,45 @@
           35.599998,
           6.44,
           26.148000999999997
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          29.069,
+          5.302,
+          24.5
+        ],
+        [
+          29.069,
+          6.77000015258789,
+          24.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery director-stair lamp branch",
+      "points": [
+        [
+          29.069,
+          6.77000015258789,
+          24.5
+        ],
+        [
+          29.068001,
+          6.77000015258789,
+          22.450001
+        ],
+        [
+          29.068001,
+          6.44,
+          22.450001
         ]
       ],
       "radius": 0.012,
@@ -727,8 +819,8 @@
     }
   ],
   "exports": {
-    "blend": "b23ca45182abd967b3c0abdc1d06ea39f09e04ef5e1110c4a10ec6eb67b245d5",
-    "glb": "62ac8c2d78f84737978a54be8a27064697708882f771074095c70ec361fb650c",
-    "hcs2": "14f68358ae4f640ccc5e1e479df57025ed2a309d515584e6ca56c2f92f41c066"
+    "blend": "da7f5c7a7ec5bb2fb85c583d405f227d8dd7ad1e0a6094bea4344fa6c7c4f9e9",
+    "glb": "e5adf9ee23f5f0c22adf2d1733bf8fce9816675a983be8b13ce2384484e7d12f",
+    "hcs2": "61d932d1aee5017707ed7d69235ccbbf9e754a5630eeeca0b3d8d12002c4b741"
   }
 }

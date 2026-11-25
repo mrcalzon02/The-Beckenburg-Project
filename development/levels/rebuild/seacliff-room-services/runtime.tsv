@@ -1,4 +1,4 @@
-SOURCE	development/levels/rebuild/seacliff-room-services/battery.glb	62ac8c2d78f84737978a54be8a27064697708882f771074095c70ec361fb650c	development/levels/rebuild/seacliff-room-services/battery.hcs2	14f68358ae4f640ccc5e1e479df57025ed2a309d515584e6ca56c2f92f41c066
+SOURCE	development/levels/rebuild/seacliff-room-services/battery.glb	e5adf9ee23f5f0c22adf2d1733bf8fce9816675a983be8b13ce2384484e7d12f	development/levels/rebuild/seacliff-room-services/battery.hcs2	61d932d1aee5017707ed7d69235ccbbf9e754a5630eeeca0b3d8d12002c4b741
 DOCK	32.0	0	88.0	0
 FRAME	420	WLD-17-gallery-north-stair	30	4	26	1.5	25.88	26.12	2.3	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
 SPACE	stage	13	24	82	40	94	0	3	True
@@ -288,6 +288,8 @@ SOCKET	records-cupboard	hide	10	26.5	0	15.45	0	walk-in-cupboard
 SPACE	arrival-switchback-court	13	30.75	56.0	41.25	58.0	2.0	2.3	True
 SOCKET	battery-gallery-switch	switch	0	38.0	5.25	26.121	0.0	BATTERY-GALLERY
 SOCKET	battery-gallery-light	light	0	35.599998	6.36	26.304001	0	native-string
+SOCKET	battery-director-stair-switch	switch	1	29.041	5.25	24.5	1.5707963267948966	BATTERY-DIRECTOR-STAIR
+SOCKET	battery-director-stair-light	light	1	29.224001	6.36	22.450001	0	native-string
 SOCKET	battery-director-switch	switch	2	38.599998	8.25	25.919001	3.141592653589793	BATTERY-DIRECTOR
 SOCKET	battery-director-light	light	2	37.0	9.36	25.736	0	native-string
 SOCKET	battery-west-switch	switch	3	15.0	5.25	39.918999	3.141592653589793	BATTERY-WEST
@@ -304,3 +306,4 @@ SOCKET	battery-records-switch	switch	10	31.0	1.25	14.081	0.0	BATTERY-RECORDS
 SOCKET	battery-records-light	light	10	29.0	2.36	14.264	0	native-string
 SOCKET	battery-pump-switch	switch	11	41.0	1.25	14.081	0.0	BATTERY-PUMP
 SOCKET	battery-pump-light	light	11	39.0	2.36	14.264	0	native-string
+SOCKET	Seacliff director plotting log	native_story	2	35.25	7.98801	14.5	0	SEACLIFF_DIRECTOR_LOG
