@@ -1,0 +1,9 @@
+# Blackwater Dam continuous investigation
+
+The ordinary Windows game archive carries the fitted [Blackwater native scene](../dam-named-pass/checkpoint.json). One investigator starts on the cargo deck. A second hunter observes the same case over TCP, and a third peer plays the Shade. Replay with `python tools/verify_blackwater_named.py --investigation`. The driver checks the archived payload digests before running the three peers and writes `build/blackwater-named/investigation.tsv`.
+
+The hunter follows the crest to the control and records doors, returns to the west stair entrance, lands on the −6 m turbine floor, and operates the switchgear and workshop doors. The west stair uses its own intermediate landing and lower exit. The east switchback connects the turbine floor to the −10 m level, where the hunter opens the return-gallery door and the valve-room door. The witness applies all eight door updates after the closed leaves stop movement. The native source defines each door, tread and receiving floor.
+
+The records, switchgear and workshop refuges are each 1.58 m wide, 1.14 m deep and 2.02 m high. The previous [measured refuge check](../dam-refuge-pass/checkpoint.json) sampled the full width, depth and height. This case verifies protection at two depths on entering each fitted enclosure, standing and crouched. The conceal and reveal commands work inside, the spectral sweep stops at the protected space, and protection clears after walking out.
+
+At the workshop anchor the witness receives the EMF observation, and the host accepts the Shade identification and prepared ward. Cleansing is refused at the anchor. The actual lower valve installation accepts it and all three peers receive the result. The tested artifact and remaining acceptance are recorded in [checkpoint.json](checkpoint.json). Earlier [named renderer and power evidence](../dam-named-pass/checkpoint.json) covers the same Blackwater scene revision.

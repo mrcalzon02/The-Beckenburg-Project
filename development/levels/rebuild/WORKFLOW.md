@@ -1613,3 +1613,8 @@ One [packaged TCP case](asylum-continuous-case-pass/case.tsv) replaces the gaps 
 ### St. Dymphna founded hospital enclosure
 
 The [measured enclosure](asylum-enclosure-pass/enclosure-plan.svg) joins 971 retained terrain edges. Its northeast retaining wall follows the saved treatment wing, and a fixed eight-metre carriage gate closes the actual van road at Z 92.4 m. Both archives passed 4,838 supported perimeter sweeps and 152 road support probes. The running hunter jumps against the physical gate and lands inside it. The prior archive reproduces the open edge and the invisible airborne limit. The full three-peer through-case again finished ABSOLVED and verified standing and crouched protection in the records, day-room and plant refuges. [Checkpoint](asylum-enclosure-pass/checkpoint.json)
+
+
+### Blackwater Hydroelectric Dam continuous investigation
+
+The [packaged live case](dam-investigation-pass/case.tsv) follows one hunter from the cargo deck through eight fitted doors and two switchbacks to the lower valve installation. All three fitted refuges protect the hunter from the threshold to the rear while standing and crouched. The witness receives the workshop EMF observation, the host accepts the anchor ward, and all three peers receive the cleansing result. [Checkpoint](dam-investigation-pass/checkpoint.json)

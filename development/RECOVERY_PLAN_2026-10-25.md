@@ -2414,3 +2414,8 @@ The [Monastery case](levels/rebuild/monastery-investigation-pass/checkpoint.json
 ### St. Dymphna estate enclosure
 
 The [estate checkpoint](levels/rebuild/asylum-enclosure-pass/checkpoint.json) follows locally verified case ab5d9cbd. The ordinary software and RTX 5070 OpenGL archives carry the same measured enclosure and pass the physical boundary, old-archive negative controls and supported jump. Software repeats the full TCP absolution and all three walk-in refuges. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still shows multiplayer 44863686526 and OpenGL 44863686455 passing. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. Held draft PR 86 remains at 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf against map/house-default. Final treatments, other rites, installer and publication remain open.
+
+
+### Blackwater Dam continuous native investigation
+
+The [Blackwater checkpoint](levels/rebuild/dam-investigation-pass/checkpoint.json) follows 9efa2310 and uses the same ordinary Windows archive. All seven Blackwater archive entries matched the existing source manifest. A continuous three-peer case operated eight leaves and used both switchbacks. The three walk-in refuges worked while standing and crouched. The fitted lower valve rite settled as CLEANSED. The held draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Readback on main cb220372fb721fbe588f49d3dc488f6dbba1602d showed passing multiplayer 44863686526 and OpenGL 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. This checkpoint is local.

@@ -14,7 +14,7 @@ GAME = ROOT / "build/beckenburg-game.jar"
 GPU = ROOT / "gpu-client/target/BeckenburgGPU.jar"
 RESOURCE = "org/beckenburg/sites/wld-09/"
 CLASSES = (
-    "BlackwaterNamedReview", "NativeSchoolInteriorReview", "NativeSchoolDoorReview",
+    "BlackwaterNamedReview", "BlackwaterInvestigationReview", "NativeSchoolInteriorReview", "NativeSchoolDoorReview",
     "CemeteryRefugeReview", "WharfPowerChecks", "NorthwatchDoorRuntime",
     "NorthwatchPowerReview", "NorthwatchDistributionReview", "NorthwatchWaterReview", "NorthwatchFurnishingReview",
 )
@@ -33,7 +33,9 @@ def check_archive():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--gpu", action="store_true")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--gpu", action="store_true")
+    mode.add_argument("--investigation", action="store_true")
     args = parser.parse_args()
     check_archive()
     classes = ROOT / "build/blackwater-named" / ("opengl" if args.gpu else "software")
@@ -47,10 +49,15 @@ def main():
         native = ROOT / ".lwjgl/3.3.3+5/x64"
         if os.name == "nt" and native.is_dir():
             command.append("-Dorg.lwjgl.librarypath=" + str(native))
-    command.extend(("-cp", cp, "org.beckenburg.BlackwaterNamedReview", str(STAGE)))
+    if args.investigation:
+        report = classes.parent / "investigation.tsv"
+        report.unlink(missing_ok=True)
+        command.extend(("-cp", cp, "org.beckenburg.BlackwaterInvestigationReview", str(report)))
+    else:
+        command.extend(("-cp", cp, "org.beckenburg.BlackwaterNamedReview", str(STAGE)))
     if args.gpu:
         command.append("--gpu")
-    subprocess.run(command, cwd=ROOT, check=True)
+    subprocess.run(command, cwd=ROOT, check=True, timeout=660)
 
 
 if __name__ == "__main__":
