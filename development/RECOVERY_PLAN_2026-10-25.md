@@ -2404,3 +2404,8 @@ The [movable-belongings checkpoint](levels/rebuild/monastery-loose-pass/checkpoi
 ### Monastery of Ashen Bells estate perimeter
 
 The [perimeter checkpoint](levels/rebuild/monastery-perimeter-pass/checkpoint.json) extends commit 3bea79c5f5668c3113366d685a0024643b10eb5e with a terrain-backed estate enclosure and fixed carriage gate beyond the van. It records the local physical and packaged tests. Readback showed the held draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports passing multiplayer 44863686526 and OpenGL 44863686455. Pinned installer run 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. The branch-filtered release workflow separately returned failing run 39745875504 on efe6028e18d8784bc67b7a3e55bbd517b1f8286f. Continue final materials, directional scenery, authored encounters, full investigation and installer acceptance.
+
+
+### Continuous native investigations
+
+The [Monastery case](levels/rebuild/monastery-investigation-pass/checkpoint.json) is committed locally at 082189ab. Banishment completes in the real memorial chamber. The [St. Dymphna case](levels/rebuild/asylum-continuous-case-pass/checkpoint.json) verifies a separate complete absolution on the same package. Both use real 3D TCP movement through operating leaves and stairs, with all three assigned refuges tested live per site. The software Blackwater route, power and refuge recheck passed. Native selection still requires the review flags. Installer, remaining map gates and publication on the held draft branch remain open.

@@ -1603,3 +1603,8 @@ Both named renderer reviews passed 5,048 supported boundary sweeps, over-gate an
 ### Monastery of Ashen Bells full named investigation
 
 The [live case transcript](monastery-investigation-pass/case.tsv) records the exact perimeter revision from cargo to the lower banishment circle. Three real TCP clients confirm instrument observations, identified Wraith, refectory anchor ward, rejected remote rite, guarded lower rite, BANISHED result and payout. All three walk-in refuges admit standing and crouched movement, conceal only inside their fitted interiors and reject a spectral sweep. The solo retreat and other perimeter checks remain linked in the [source checkpoint](monastery-perimeter-pass/checkpoint.json).
+
+
+### St. Dymphna continuous native investigation
+
+One [packaged TCP case](asylum-continuous-case-pass/case.tsv) replaces the gaps between earlier separate route exercises with an uninterrupted playthrough. The hunter walks off the van, opens seven actual leaves, crosses the patient court, and uses both the main and service stairs in both directions. Standing and crouched protection works in the records, day-room and plant refuges. The hunter reads the ward, prepares the anchor and completes absolution in the day room. The same software archive independently repeats the [Blackwater packaged check](asylum-continuous-case-pass/blackwater-software-recheck.tsv). The native review gates remain in place.
