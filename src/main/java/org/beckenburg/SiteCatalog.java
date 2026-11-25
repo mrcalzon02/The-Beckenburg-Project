@@ -23,7 +23,8 @@ public final class SiteCatalog {
         MONASTERY(MonasteryNativeLevel.TITLE),
         RED_MESA(MissionSites.title("RED_MESA")),
         MOURNING_MARSH(MissionSites.title("MOURNING_MARSH")),
-        GREYWATER(MissionSites.title("GREYWATER"));
+        GREYWATER(MissionSites.title("GREYWATER")),
+        GALLOWS(MissionSites.title("GALLOWS"));
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

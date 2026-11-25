@@ -1647,3 +1647,7 @@ The [architectural texture set](surface-finish-pass/checkpoint.json) adds planks
 ### Greywater Cannery gameplay
 
 The [Greywater checkpoint](greywater-native-pass/checkpoint.json) packages the surveyed Cannery in its existing campaign slot. It binds both store door faces to the actual higher opening, connects the real loading and inspection routes, and installs three walk-in cupboards and a boiler service circuit. The named mission, Dead Man's Claim, Northwatch, Blackwater, Monastery, Red Mesa, and Mourning Marsh appear in the regular solo and LAN pickers. Campaign unlocks still follow the saved chapter order.
+
+### Gallows Pass Railway native mission
+
+The [railway source](gallows-pass/construction.json) preserves the authored station, sidings, tunnel and trestle. Eleven fitted leaves and the two built trestle flights connect fourteen supported field owners and the van. The signal house has a grounded source and lighting circuit, and the signal house, track store and maintenance refuge have walk-in cover. All eighteen route guides passed ordinary movement checks in both directions and postures. Full perimeter, room-by-room distribution, and additional location-specific encounters remain open.

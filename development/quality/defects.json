@@ -8240,6 +8240,17 @@
       "action": "Retire the two overlapping pieces in Blender, the static display mesh, and the native collider. Measure the leaf sweep and replay the real cross-room route.",
       "older_maps": "Check that shell trim is clear of the actual swept leaf and the supported crossing before packaging a fitted doorway.",
       "evidence": "development/levels/rebuild/greywater-native-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-744",
+      "title": "Gallows Pass dock and receiving floors lost gameplay ownership",
+      "status": "NATIVE_ROUTE_AND_DOCK_VERIFIED",
+      "affected": "Gallows Pass Railway WLD-12",
+      "symptom": "The apron spawn intersected the van ramp. Several fitted doors and the siding return reached supported floor without the corresponding gameplay owner.",
+      "cause": "Initial railway room bindings stopped at rough zoning rectangles before the fitted forecourt and return geometry.",
+      "action": "Move the spawn to supported apron ground clear of the ramp. Bind the actual receiving areas and fitted doorway approaches with shared runtime ownership.",
+      "older_maps": "Check full-width normal movement across ramp lips, receiving platforms and exterior door approaches as well as guide centerlines.",
+      "evidence": "development/levels/rebuild/gallows-pass/runtime-input.tsv"
     }
   ],
   "audit_categories": [

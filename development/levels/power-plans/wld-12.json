@@ -1,7 +1,7 @@
 {
   "id": "WLD-12",
   "title": "Gallows Pass Railway",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Signal-house supply and lamp installed in the native mission",
   "generator_required": true,
   "generator_location_intent": "Rail service/refuge support yard outside the track clearance",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,24 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-12/layout.json"
+  "source_layout": "development/levels/layouts/wld-12/layout.json",
+  "generator_placement": "Floor-mounted in the east service corner of the signal house, off the cutting and platform.",
+  "runtime_source": "development/levels/rebuild/gallows-pass/runtime-input.tsv",
+  "fitted_models_and_coordinates": "development/levels/rebuild/gallows-pass/construction.json",
+  "installed_circuits": [
+    {
+      "id": "GP-MAIN",
+      "owner": "signal",
+      "source": "gallows-generator",
+      "breaker": "gallows-breaker"
+    },
+    {
+      "id": "GP-SIGNAL",
+      "owner": "signal",
+      "switch": "gallows-signal-switch",
+      "loads": [
+        "gallows-signal-light"
+      ]
+    }
+  ]
 }

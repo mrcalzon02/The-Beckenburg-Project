@@ -271,6 +271,8 @@ for path in sorted(set(paths)):
     elif '/surface-finish-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Beckenburg wall, floor, ceiling and stair finishes in the '+renderer+' game renderer'
+    elif '/gallows-pass/' in path:
+        kind='Gallows Pass Railway in the game renderer at player height'
     elif '/greywater-native-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Greywater Cannery player-height mission view in the '+renderer+' game renderer'

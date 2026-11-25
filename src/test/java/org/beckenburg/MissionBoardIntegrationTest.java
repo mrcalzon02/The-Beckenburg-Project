@@ -27,7 +27,7 @@ public final class MissionBoardIntegrationTest {
         var rebuilt=List.of(SiteCatalog.Location.LOOKOUT,SiteCatalog.Location.MINE,SiteCatalog.Location.WHARF,
             SiteCatalog.Location.CEMETERY,SiteCatalog.Location.NORTHWATCH,
             SiteCatalog.Location.BLACKWATER,SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,
-            SiteCatalog.Location.MOURNING_MARSH,SiteCatalog.Location.GREYWATER);
+            SiteCatalog.Location.MOURNING_MARSH,SiteCatalog.Location.GREYWATER,SiteCatalog.Location.GALLOWS);
         for(int i=9;i<22;i++){
             var chapter=catalog.get(i);
             check(chapter.playable()==rebuilt.stream().anyMatch(location->location==chapter.map()),"available remote geometry at chapter "+i);

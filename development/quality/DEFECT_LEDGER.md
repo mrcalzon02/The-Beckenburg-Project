@@ -9418,3 +9418,7 @@ The shared [surface finish checkpoint](../levels/rebuild/surface-finish-pass/che
 ### DEV-743 · Overlapping Greywater cold-store headers
 
 The [Greywater checkpoint](../levels/rebuild/greywater-native-pass/checkpoint.json) records the fitted leaf sweep and the player crossing between the processing floor and cold store after retiring the two obsolete headers.
+
+### DEV-744 · Gallows Pass apron and receiving areas
+
+The [railway runtime schedule](../levels/rebuild/gallows-pass/runtime-input.tsv) puts the apron spawn beyond the ramp and binds the existing signal-house, carriage, siding and maintenance approaches to the correct gameplay rooms. Routed normal movement through both trestle flights and the tunnel to the track store.

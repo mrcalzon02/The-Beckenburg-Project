@@ -1,0 +1,431 @@
+{
+  "source": "development/levels/rebuild/workyard-station-pass/wld-12/authored-layout.json",
+  "exports": {
+    "blend": "39a9e66acba025cd5d06fa86dff3e1ee781433396c71a4abff12eb739fce25ee",
+    "glb": "d5d5d0fa6ae055fde143d493ec11861f3cb43160d9cc1f88c2dd71182f9f4e55",
+    "hcs2": "f0e0659079aaa246b7ebe382b11698847e908d349c036c77d5e1d5506c252f1e"
+  },
+  "unchanged_components": 253,
+  "cover": [
+    {
+      "id": "gallows-signal-cupboard",
+      "space": "signal",
+      "owner": 4,
+      "position": [
+        15,
+        0,
+        72.5
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          14.4,
+          0.0,
+          71.650002
+        ],
+        [
+          15.702,
+          2.31,
+          73.349998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "gallows-store-cupboard",
+      "space": "store",
+      "owner": 3,
+      "position": [
+        61.5,
+        0,
+        24
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          60.798,
+          0.0,
+          23.15
+        ],
+        [
+          62.099998,
+          2.31,
+          24.85
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "gallows-refuge-cupboard",
+      "space": "refuge",
+      "owner": 5,
+      "position": [
+        49.5,
+        0,
+        3.0
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          48.798,
+          0.0,
+          2.15
+        ],
+        [
+          50.099998,
+          2.31,
+          3.85
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "furnishings": [
+    {
+      "label": "Signal operator desk",
+      "room": "signal",
+      "asset": "level_workbench_worn",
+      "origin": [
+        17.2,
+        0,
+        64.2
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          16.300001,
+          0.0,
+          63.859997
+        ],
+        [
+          18.1,
+          1.22,
+          64.564995
+        ]
+      ]
+    },
+    {
+      "label": "West carriage seats",
+      "room": "coach-a",
+      "asset": "level_camp_bench",
+      "origin": [
+        18.1,
+        0,
+        48.1
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          17.225,
+          0.0,
+          47.760387
+        ],
+        [
+          18.975,
+          0.88,
+          48.375
+        ]
+      ]
+    },
+    {
+      "label": "West carriage rear seats",
+      "room": "coach-a",
+      "asset": "level_camp_bench",
+      "origin": [
+        21.9,
+        0,
+        60.1
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          21.025,
+          0.0,
+          59.824997
+        ],
+        [
+          22.775,
+          0.88,
+          60.43961
+        ]
+      ]
+    },
+    {
+      "label": "East carriage seats",
+      "room": "coach-b",
+      "asset": "level_camp_bench",
+      "origin": [
+        46.1,
+        0,
+        48.1
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          45.224998,
+          0.0,
+          47.760387
+        ],
+        [
+          46.974998,
+          0.88,
+          48.375
+        ]
+      ]
+    },
+    {
+      "label": "East carriage rear seats",
+      "room": "coach-b",
+      "asset": "level_camp_bench",
+      "origin": [
+        49.9,
+        0,
+        60.1
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          49.025002,
+          0.0,
+          59.824997
+        ],
+        [
+          50.775002,
+          0.88,
+          60.43961
+        ]
+      ]
+    },
+    {
+      "label": "Track repair bench",
+      "room": "store",
+      "asset": "level_work_repair_bench",
+      "origin": [
+        58,
+        0,
+        17.3
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          56.775002,
+          0.0,
+          16.904999
+        ],
+        [
+          59.224998,
+          1.645,
+          17.901999
+        ]
+      ]
+    },
+    {
+      "label": "Maintenance crew chest",
+      "room": "refuge",
+      "asset": "level_work_crew_footlocker",
+      "origin": [
+        43.6,
+        0,
+        2.15
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          43.101997,
+          0.0,
+          1.707492
+        ],
+        [
+          44.098,
+          0.88073,
+          2.435
+        ]
+      ]
+    },
+    {
+      "asset": "development/levels/primitive-props-v1/models/level_blockout_rail_straight_track_bay.glb",
+      "sha256": "acca1830d50edab9cdc53ede2ee35ed29b1cee78c01d98a5e56cfe1322020d2e",
+      "name": "Track bay",
+      "origin": [
+        37.4,
+        -0.01,
+        61.5
+      ],
+      "bounds": [
+        [
+          36.330002,
+          0.0,
+          59.665001
+        ],
+        [
+          38.470001,
+          0.425,
+          63.334999
+        ]
+      ]
+    },
+    {
+      "asset": "development/levels/primitive-props-v1/models/level_blockout_rail_straight_track_bay.glb",
+      "sha256": "acca1830d50edab9cdc53ede2ee35ed29b1cee78c01d98a5e56cfe1322020d2e",
+      "name": "Track bay",
+      "origin": [
+        37.4,
+        -0.01,
+        65.17
+      ],
+      "bounds": [
+        [
+          36.330002,
+          0.0,
+          63.334999
+        ],
+        [
+          38.470001,
+          0.425,
+          67.004997
+        ]
+      ]
+    },
+    {
+      "asset": "development/levels/primitive-props-v1/models/level_blockout_rail_straight_track_bay.glb",
+      "sha256": "acca1830d50edab9cdc53ede2ee35ed29b1cee78c01d98a5e56cfe1322020d2e",
+      "name": "Track bay",
+      "origin": [
+        37.4,
+        -0.01,
+        68.84
+      ],
+      "bounds": [
+        [
+          36.330002,
+          0.0,
+          67.004997
+        ],
+        [
+          38.470001,
+          0.425,
+          70.674995
+        ]
+      ]
+    },
+    {
+      "asset": "development/levels/primitive-props-v1/models/level_blockout_rail_straight_track_bay.glb",
+      "sha256": "acca1830d50edab9cdc53ede2ee35ed29b1cee78c01d98a5e56cfe1322020d2e",
+      "name": "Track bay",
+      "origin": [
+        37.4,
+        -0.01,
+        72.51
+      ],
+      "bounds": [
+        [
+          36.330002,
+          0.0,
+          70.675003
+        ],
+        [
+          38.470001,
+          0.425,
+          74.345001
+        ]
+      ]
+    },
+    {
+      "asset": "development/levels/primitive-props-v1/models/level_blockout_signal_hut_lever_bank.glb",
+      "sha256": "f95e4ceb6cf62e7e0b6770a82fbdc7cd0cdf623bf27830d8eee688e0e9a5183e",
+      "name": "Mechanical lever frame",
+      "origin": [
+        24.7,
+        -0.035,
+        64.3
+      ],
+      "bounds": [
+        [
+          23.690001,
+          0.0,
+          63.890003
+        ],
+        [
+          25.710001,
+          2.005,
+          64.710007
+        ]
+      ]
+    },
+    {
+      "asset": "development/levels/primitive-props-v1/refinement/level_blockout_refined_rail_mechanical_semaphore.glb",
+      "sha256": "ecd31f76ba4babc1682f0f1fad4a83252a0c346136933df4d38a51c12c4a0d7d",
+      "name": "Approach semaphore",
+      "origin": [
+        39.1,
+        0,
+        68.8
+      ],
+      "bounds": [
+        [
+          38.114998,
+          0.0,
+          68.555
+        ],
+        [
+          39.674999,
+          3.375,
+          69.045006
+        ]
+      ]
+    }
+  ],
+  "service": [
+    {
+      "id": "gallows-generator",
+      "type": "generator",
+      "room": 4,
+      "position": [
+        24.0,
+        0.56,
+        74.07900099999999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "GP-MAIN"
+    },
+    {
+      "id": "gallows-breaker",
+      "type": "breaker",
+      "room": 4,
+      "position": [
+        26.1,
+        0.89,
+        75.203994
+      ],
+      "yaw": 3.141592653589793,
+      "style": "GP-MAIN"
+    },
+    {
+      "id": "gallows-signal-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        23.0,
+        1.25,
+        75.878998
+      ],
+      "yaw": 3.141592653589793,
+      "style": "GP-SIGNAL"
+    },
+    {
+      "id": "gallows-signal-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        24.4,
+        2.42,
+        75.695999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ]
+}

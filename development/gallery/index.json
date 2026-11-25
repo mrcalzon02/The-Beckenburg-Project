@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12729,
+  "count": 12731,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -113684,6 +113684,26 @@
       "height": 640,
       "bytes": 364928,
       "sha256": "7406399dba48558c6ced55878828fa68b0946aaa4913554be91ea28bf3763939"
+    },
+    {
+      "path": "development/levels/rebuild/gallows-pass/captures/gallows-cutting.png",
+      "url": "development/levels/rebuild/gallows-pass/captures/gallows-cutting.png",
+      "title": "Gallows cutting",
+      "kind": "Gallows Pass Railway in the game renderer at player height",
+      "width": 880,
+      "height": 580,
+      "bytes": 357888,
+      "sha256": "c4bb77f4897f1c07d2db2a75014c0f5b27f552db929dd3357faf380a9f53fdb1"
+    },
+    {
+      "path": "development/levels/rebuild/gallows-pass/captures/gallows-trestle.png",
+      "url": "development/levels/rebuild/gallows-pass/captures/gallows-trestle.png",
+      "title": "Gallows trestle",
+      "kind": "Gallows Pass Railway in the game renderer at player height",
+      "width": 880,
+      "height": 580,
+      "bytes": 606604,
+      "sha256": "57dac817c0de9a1d65427a15f04bf6dc69f091f40461b1cdf5511a5dc791825f"
     },
     {
       "path": "development/levels/rebuild/greywater-native-pass/captures/opengl/greywater-bunk-door.png",
