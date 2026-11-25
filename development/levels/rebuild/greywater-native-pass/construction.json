@@ -2,9 +2,9 @@
   "site": "WLD-13",
   "source": "development/levels/rebuild/workyard-station-pass/wld-13/authored-layout.json",
   "geometry_sha256": {
-    "blend": "5c0f1aec17ae20701157a5acba5be88677a44054546e390d8a29bb159e9a5dd4",
-    "glb": "ed7d50c69686f2d95b4feaed42582b6017cc3690bb8b2c1214d6e6b8c724b259",
-    "hcs2": "69014139c1a2725f4e606d65617342d2450e3da28c505923bafc7628306b6a85"
+    "blend": "43688ed9849fbe85cb66a9a596b77c62f2a99cef438fee20e079513c4eb35405",
+    "glb": "08aa018ec0e21a15cef390be8b6664902fafb4a44ba97d422d3c6f85d04d6a4e",
+    "hcs2": "13e8dcc3f44895f72f1461e76b6a4f16d8a28a836e153037b8ad64f101220a25"
   },
   "retained_native_components": 419,
   "refuges": [
@@ -87,6 +87,156 @@
   "removed_headers": [
     "Header cold W",
     "Header processing E"
+  ],
+  "workroom_fittings": [
+    {
+      "room": "bunk",
+      "name": "crew bunk",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          4.0375,
+          0.0,
+          45.7775
+        ],
+        [
+          4.9625,
+          0.82,
+          47.822498
+        ]
+      ],
+      "pivot": [
+        4.5,
+        0.0,
+        46.79999923706055
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "mess",
+      "name": "crew mess table",
+      "asset": "dinner_table_1",
+      "sha256": "482303ac80e40371c9ffe2462a9fad6e946f66c7aebc8417b6b2c2c73400086a",
+      "bounds": [
+        [
+          2.749999,
+          0.0,
+          28.85
+        ],
+        [
+          4.45,
+          0.86,
+          29.950001
+        ]
+      ],
+      "pivot": [
+        3.5999977588653564,
+        -1.8531864043325186e-08,
+        29.399999618530273
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "mess",
+      "name": "crew mess seats",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          2.725,
+          0.0,
+          30.112696
+        ],
+        [
+          4.475,
+          0.88,
+          30.727306
+        ]
+      ],
+      "pivot": [
+        3.5999999046325684,
+        0.0,
+        30.452306747436523
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "cold",
+      "name": "cold stock shelf",
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          59.389999,
+          0.0,
+          27.120001
+        ],
+        [
+          60.210003,
+          1.29,
+          27.34
+        ]
+      ],
+      "pivot": [
+        59.80000305175781,
+        5.042526751708465e-08,
+        27.229999542236328
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "stores",
+      "name": "packing workbench",
+      "asset": "level_work_repair_bench",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "bounds": [
+        [
+          45.125,
+          0.0,
+          16.251499
+        ],
+        [
+          47.574997,
+          1.645,
+          17.248499
+        ]
+      ],
+      "pivot": [
+        46.349998474121094,
+        0.0,
+        16.646499633789062
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "wash",
+      "name": "workers washbasin",
+      "floor": 0,
+      "wall": 44.240002,
+      "bounds": [
+        [
+          20.27,
+          0.0,
+          44.57
+        ],
+        [
+          20.93,
+          1.136,
+          45.07
+        ]
+      ]
+    }
   ],
   "service_sockets": [
     {
@@ -436,6 +586,18 @@
       ],
       "yaw": 0,
       "style": "GREYWATER_DISPATCH_LOG"
+    },
+    {
+      "id": "Greywater workers washbasin",
+      "type": "native-device",
+      "room": 0,
+      "position": [
+        20.6,
+        0.86,
+        44.82
+      ],
+      "yaw": 0,
+      "style": "SINK_BATH"
     }
   ]
 }

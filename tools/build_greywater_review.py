@@ -12,10 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point, world
+from build_college_electrical import bounds, point, world
 from build_college_grounds import import_scene
 from build_lookout_native_arrival import table
+from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
+from build_roster_foundations import material
 from build_school_electrical import cupboards
 from compose_room_terrain import split_native
 from review_roster_macroterrain import records
@@ -140,6 +142,39 @@ def dispatch_log(assembly):
     assembly.effect(book.name,"native_story",OWNERS["office"][0],(x,high[1],z),0,"GREYWATER_DISPATCH_LOG")
 
 
+def workrooms(case):
+    fittings=[]
+    for asset, name, room, x, z in (
+        ("level_trace_camp_bed", "crew bunk", "bunk", 4.5, 46.8),
+        ("dinner_table_1", "crew mess table", "mess", 3.6, 29.4),
+        ("level_camp_bench", "crew mess seats", "mess", 3.6, 30.42),
+        ("shelf_mp_6", "cold stock shelf", "cold", 59.8, 27.23),
+        ("level_work_repair_bench", "packing workbench", "stores", 46.35, 16.75),
+    ):
+        _, receipt=case.fit(asset,name,room,x,0,z)
+        fittings.append(dict(room=room,name=name,**receipt))
+
+    x,z=20.6,44.82
+    parts=case.place("level_bath_basin",Matrix.Translation(point(x,0,z)),
+                     "washroom basin","floor-bearing washbasin","wash")
+    assert len(parts)==1
+    parts[0].name="Greywater workers washbasin"
+    for px in (x-.08,x+.08):
+        for pz in (z-.08,z+.08):
+            contact,normal,_,_=case.support_surfaces.ray_cast(point(px,.16,pz),DOWN,.24)
+            assert contact is not None and abs(contact.z)<.004 and normal.z>.98,(px,pz)
+    wall,_,_=case.measured(point(x,.65,z-.27),point(0,0,-1),.52,"Washroom plumbing wall")
+    _,_,back=world(wall)
+    copper=material("Greywater oxidized washroom supply",(.29,.16,.09))
+    iron=material("Greywater painted iron waste",(.17,.18,.17))
+    case.tube("Greywater basin supply riser",(x,.13,back+.035),(x,.97,back+.035),.017,copper)
+    case.tube("Greywater basin feed union",(x,.97,back+.035),(x,.97,z-.14),.017,copper)
+    case.tube("Greywater basin waste union",(x,.25,z-.09),(x,.25,back+.026),.027,iron)
+    case.effect(parts[0].name,"native-device",OWNERS["wash"][0],(x,.86,z),0,"SINK_BATH")
+    fittings.append(dict(room="wash",name="workers washbasin",floor=0,wall=back,bounds=bounds(parts)))
+    return fittings
+
+
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
     source = {ext: SOURCE / f"workyard-station.{ext}" for ext in ("blend", "glb", "hcs2")}
@@ -154,13 +189,14 @@ def build():
     bpy.context.preferences.filepaths.save_version = 0
     for name in RETIRED:
         bpy.data.objects.remove(bpy.data.objects[name], do_unlink=True)
-    assembly = Assembly()
+    assembly = Case()
     refuges = cupboards(assembly, zones, REFUGES, site="greywater", floor_roles=("floor",))
     power(assembly, zones["boiler"])
     room_services(assembly,zones)
     dispatch_log(assembly)
+    fittings = workrooms(assembly)
     for piece in assembly.built:
-        piece.name = piece.name.removeprefix("College ")
+        piece.name = piece.name.removeprefix("College ").replace("Mine case ", "Greywater ", 1)
     target = {ext: OUT / f"greywater-review.{ext}" for ext in source}
     addition = ROOT / "build/greywater-refuges.glb"
     export(addition, assembly.built)
@@ -218,6 +254,7 @@ def build():
         "site": "WLD-13", "source": str(layout_path.relative_to(ROOT).as_posix()),
         "geometry_sha256": {ext: sha(path) for ext, path in target.items()},
         "retained_native_components": len(retained), "refuges": refuges, "removed_headers": sorted(RETIRED),
+        "workroom_fittings": fittings,
         "service_sockets": [s for s in assembly.sockets if s["type"] != "hide"],
     }
     (OUT / "construction.json").write_bytes((json.dumps(record, indent=2) + "\n").encode())
