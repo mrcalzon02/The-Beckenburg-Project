@@ -15,10 +15,9 @@ final class RedMesaNativeReview {
 
     public static void main(String[] args) throws Exception {
         var entry = MissionSites.byId("WLD-03");
-        require(entry.location() == SiteCatalog.Location.RED_MESA && !entry.playable(),
-            "The native Red Mesa review gate or mission identity changed");
+        require(entry.location() == SiteCatalog.Location.RED_MESA,
+            "The native Red Mesa mission identity changed");
         require(MissionSites.campaign().get(11).equals(entry), "Red Mesa campaign ordinal shifted");
-        System.setProperty(RedMesaNativeLevel.REVIEW_PROPERTY, "true");
         require(entry.playable() && SiteCatalog.playable(SITE)
             && SiteCatalog.mapFor(entry.location()) == SITE, "Solo and LAN disagree on Red Mesa");
         var map = new HouseMap(SITE);

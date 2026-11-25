@@ -8229,6 +8229,17 @@
       "action": "Reuse existing timber, stone and tile images in a measured finish set, project the actual references by face orientation, and inspect both final renderers.",
       "older_maps": "Check floor and ceiling faces at standing height along with wall panels. Preserve existing material maps and keep source guidance out of the geometry pipeline.",
       "evidence": "development/levels/rebuild/surface-finish-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-743",
+      "title": "Greywater cold-store headers obstructed the native fitted door",
+      "status": "NATIVE_CROSSING_AND_CASE_VERIFIED",
+      "affected": "Greywater Cannery WLD-13",
+      "symptom": "Two inherited headers overlapped below the surveyed lintels and intersected the fitted leaf across the processing-to-cold-store opening.",
+      "cause": "Obsolete header geometry from the two room shells persisted across the built height correction.",
+      "action": "Retire the two overlapping pieces in Blender, the static display mesh, and the native collider. Measure the leaf sweep and replay the real cross-room route.",
+      "older_maps": "Check that shell trim is clear of the actual swept leaf and the supported crossing before packaging a fitted doorway.",
+      "evidence": "development/levels/rebuild/greywater-native-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

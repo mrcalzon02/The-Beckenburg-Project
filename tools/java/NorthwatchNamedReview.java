@@ -30,11 +30,6 @@ final class NorthwatchNamedReview {
         var report=new ArrayList<String>(List.of("check\tresult"));
         var entry=MissionSites.byId("WLD-08");
         var location=entry.location();
-        System.clearProperty(NorthwatchNativeLevel.REVIEW_PROPERTY);
-        require(location==SiteCatalog.Location.NORTHWATCH&&!entry.playable()
-              &&!List.of(SiteCatalog.soloLocations()).contains(location)
-              &&!SiteCatalog.playable(HouseMap.Site.NORTHWATCH),"Northwatch escaped the disabled review gate");
-        System.setProperty(NorthwatchNativeLevel.REVIEW_PROPERTY,"true");
         require(entry.playable()&&List.of(SiteCatalog.soloLocations()).contains(location)
               &&SiteCatalog.mapFor(location)==HouseMap.Site.NORTHWATCH&&SiteCatalog.playable(HouseMap.Site.NORTHWATCH),
               "Named solo/LAN entries must use the same authored scene");

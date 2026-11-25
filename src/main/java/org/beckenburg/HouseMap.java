@@ -7,7 +7,7 @@ import org.beckenburg.LevelDefinition.*;
 public final class HouseMap {
     public static final int COLS=3,ROWS=5,INDOOR_ROOMS=12,ROOM_COUNT=15;
     public static final int WIDTH=128,HEIGHT=128,GRAND_WIDTH=128,GRAND_HEIGHT=128,EXTRACTION_ROOM=14;
-    public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH,HOLLOW_CREEK,USER,SEACLIFF,BLACKPINE,LOOKOUT,MINE,WHARF,CEMETERY,MORTUARY,NORTHWATCH,BLACKWATER,MONASTERY,RED_MESA,MOURNING_MARSH }
+    public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH,HOLLOW_CREEK,USER,SEACLIFF,BLACKPINE,LOOKOUT,MINE,WHARF,CEMETERY,MORTUARY,NORTHWATCH,BLACKWATER,MONASTERY,RED_MESA,MOURNING_MARSH,GREYWATER }
     private final Site site;
     private volatile List<SafeAreaBarrier.Volume> temporarySafeAreas=List.of();
     public List<SafeAreaBarrier.Volume> temporarySafeAreas(){return temporarySafeAreas;}
@@ -102,6 +102,7 @@ public final class HouseMap {
             case MONASTERY -> MonasteryNativeLevel.sceneFor(definition);
             case RED_MESA -> RedMesaNativeLevel.sceneFor(definition);
             case MOURNING_MARSH -> MourningMarshNativeLevel.sceneFor(definition);
+            case GREYWATER -> GreywaterNativeLevel.sceneFor(definition);
             default -> CollegeNativeLevel.sceneFor(site,definition);
         });
     }

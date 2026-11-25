@@ -271,6 +271,9 @@ for path in sorted(set(paths)):
     elif '/surface-finish-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Beckenburg wall, floor, ceiling and stair finishes in the '+renderer+' game renderer'
+    elif '/greywater-native-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Greywater Cannery player-height mission view in the '+renderer+' game renderer'
     elif '/mourning-marsh-native-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Mourning Marsh native mission from player height in the '+renderer+' game renderer'

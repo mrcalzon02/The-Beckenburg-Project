@@ -159,6 +159,13 @@ for payload in marsh-review.glb marsh-review.hcs2 runtime-input.tsv door-schedul
     cp "$mourning_marsh_packet/$payload" "$mourning_marsh_resource/$payload"
 done
 
+greywater_packet=development/levels/rebuild/greywater-native-pass
+greywater_resource=build/classes/org/beckenburg/sites/wld-13
+mkdir -p "$greywater_resource"
+for payload in greywater-review.glb greywater-review.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$greywater_packet/$payload" "$greywater_resource/$payload"
+done
+
 northwatch_packet=development/levels/rebuild/northwatch-furnishing-pass/wld-08
 northwatch_resource=build/classes/org/beckenburg/sites/wld-08
 mkdir -p "$northwatch_resource"

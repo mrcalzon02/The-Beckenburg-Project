@@ -71,6 +71,8 @@ final class SurveyedNativeLevel {
                 case "TREAD" -> treads.add(row[1]);
                 case "RITUAL" -> sockets.add(new Socket(prefix + "-" + row[1], "ritual", n(row, 2), d(row, 3),
                     d(row, 4), d(row, 5), 0, row[1]));
+                case "SERVICE" -> sockets.add(new Socket(row[1], row[2], n(row, 3), d(row, 4),
+                    d(row, 5), d(row, 6), d(row, 7), row[8]));
                 case "COVER" -> sockets.add(new Socket(row[1], "hide", n(row, 2), d(row, 3), d(row, 4),
                     d(row, 5), d(row, 6), "walk-in-cupboard"));
                 case "SOURCE", "DOCK", "POINT" -> { }

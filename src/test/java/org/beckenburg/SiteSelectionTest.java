@@ -18,9 +18,12 @@ public final class SiteSelectionTest {
         Set<SiteCatalog.Location> builtins=EnumSet.of(SiteCatalog.Location.HOUSE,
             SiteCatalog.Location.FARMHOUSE,SiteCatalog.Location.SCHOOL,SiteCatalog.Location.MANSION,
             SiteCatalog.Location.PRISON,SiteCatalog.Location.ASYLUM,SiteCatalog.Location.ACADEMY,
-            SiteCatalog.Location.COLLEGE,SiteCatalog.Location.CHURCH);
+            SiteCatalog.Location.COLLEGE,SiteCatalog.Location.CHURCH,
+            SiteCatalog.Location.MINE,SiteCatalog.Location.NORTHWATCH,SiteCatalog.Location.BLACKWATER,
+            SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,SiteCatalog.Location.MOURNING_MARSH,
+            SiteCatalog.Location.GREYWATER);
         ok(SiteCatalog.soloLocations().length==builtins.size()+1,
-            "nine built-in families and the separate USER authoring slot remain indexed");
+            "all playable maps and the separate USER authoring slot remain indexed");
         int ready=0;
         Set<String> sourceIds=new HashSet<>();
         for(SiteCatalog.Location location:SiteCatalog.Location.values()){
@@ -45,7 +48,7 @@ public final class SiteSelectionTest {
         }
         ok(ready==builtins.size(),"every current built-in is checked");
         // The multiplayer map roster includes authoring-only prototypes that
-        // are not yet entries in the nine-site public mission catalogue.
+        // are not yet available in the public mission catalogue.
         // Iterating it must NEVER break lobby construction or expose a
         // prototype merely because its HouseMap enum value exists.
         int multiplayerReady=0;
@@ -62,6 +65,6 @@ public final class SiteSelectionTest {
         ok(!SiteCatalog.Conditions.BLACKOUT.initiallyPowered(),"blackout starts powerless");
         ok(SiteCatalog.Conditions.FOGBOUND.fogMultiplier()>SiteCatalog.Conditions.STANDARD.fogMultiplier(),
             "weather modifies 3D environment");
-        System.out.println("PASS: nine built-in dispatch sources with real headless rendering; unselected USER and Hollow Creek remain unavailable");
+        System.out.println("PASS: all built-in dispatch sources with real headless rendering; unselected USER and Hollow Creek remain unavailable");
     }
 }

@@ -39,14 +39,9 @@ final class BlackwaterNamedReview {
     private static void review(Path stage, boolean gpu) throws Exception {
         var entry = MissionSites.byId("WLD-09");
         var location = entry.location();
-        System.clearProperty(BlackwaterNativeLevel.REVIEW_PROPERTY);
-        require(location == SiteCatalog.Location.BLACKWATER && !entry.playable()
-            && !List.of(SiteCatalog.soloLocations()).contains(location)
-            && !SiteCatalog.playable(HouseMap.Site.BLACKWATER), "Blackwater escaped the review lock");
-        System.setProperty(BlackwaterNativeLevel.REVIEW_PROPERTY, "true");
         require(entry.playable() && List.of(SiteCatalog.soloLocations()).contains(location)
             && SiteCatalog.mapFor(location) == HouseMap.Site.BLACKWATER && SiteCatalog.playable(HouseMap.Site.BLACKWATER),
-            "Blackwater named review flag did not enable both entries");
+            "Blackwater is missing from the named multiplayer or solo entries");
         var campaign = MissionSites.campaign().stream().map(MissionSites.Entry::id).toList();
         require(campaign.indexOf("WLD-09") == 17 && campaign.get(16).equals("WLD-08") && campaign.get(18).equals("WLD-10"),
             "Published campaign position changed");

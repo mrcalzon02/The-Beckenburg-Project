@@ -34,20 +34,9 @@ final class MonasteryNamedReview {
         var entry = MissionSites.byId("WLD-10");
         var location = entry.location();
         var site = HouseMap.Site.MONASTERY;
-        System.clearProperty(MonasteryNativeLevel.REVIEW_PROPERTY);
-        require(location == SiteCatalog.Location.MONASTERY && !entry.playable()
-            && !List.of(SiteCatalog.soloLocations()).contains(location) && !SiteCatalog.playable(site),
-            "Monastery escaped the default dispatch lock");
-        try {
-            SiteCatalog.requirePlayable(location);
-            throw new AssertionError("Unapproved dispatch accepted");
-        } catch (IllegalArgumentException expected) {
-            require(expected.getMessage().contains("has no shipped level geometry"), expected.getMessage());
-        }
-        System.setProperty(MonasteryNativeLevel.REVIEW_PROPERTY, "true");
         require(entry.playable() && List.of(SiteCatalog.soloLocations()).contains(location)
             && SiteCatalog.mapFor(location) == site && SiteCatalog.playable(site),
-            "Review property did not enable the named multiplayer and solo entries");
+            "Monastery is missing from the named multiplayer or solo entries");
         require(MissionSites.title(site.name()).equals(MonasteryNativeLevel.TITLE), "Changed stable site title");
         var campaign = MissionSites.campaign().stream().map(MissionSites.Entry::id).toList();
         require(campaign.indexOf("WLD-10") == 18 && campaign.get(17).equals("WLD-09") && campaign.get(19).equals("WLD-11"),

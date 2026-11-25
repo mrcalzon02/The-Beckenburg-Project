@@ -24,7 +24,15 @@ public final class MissionBoardIntegrationTest {
         var catalog=CampaignBoardPanel.catalog();
         check(catalog.size()==22,"all saved campaign ordinals retained");
         for(int i=0;i<expected.size();i++)check(catalog.get(i).map()==expected.get(i),"saved chapter map retained at "+i);
-        for(int i=9;i<22;i++)check(!catalog.get(i).playable(),"remote chapters remain locked by default");
+        var rebuilt=List.of(SiteCatalog.Location.MINE,SiteCatalog.Location.NORTHWATCH,
+            SiteCatalog.Location.BLACKWATER,SiteCatalog.Location.MONASTERY,SiteCatalog.Location.RED_MESA,
+            SiteCatalog.Location.MOURNING_MARSH,SiteCatalog.Location.GREYWATER);
+        for(int i=9;i<22;i++){
+            var chapter=catalog.get(i);
+            check(chapter.playable()==rebuilt.stream().anyMatch(location->location==chapter.map()),"available remote geometry at chapter "+i);
+        }
+        check(SiteCatalog.soloLocations().length>=expected.size()+rebuilt.size(),"rebuilt missions appear in solo");
+        for(var location:rebuilt)check(SiteCatalog.playable(SiteCatalog.mapFor(location)),"rebuilt map available in LAN");
         check(catalog.get(14).map()==SiteCatalog.Location.WHARF,"Wharf retains its saved chapter ordinal");
         for(var site:HouseMap.Site.values())check(!MissionSites.title(site.name()).isBlank(),"lobby can label every authoring enum");
         check(!SiteCatalog.playable(HouseMap.Site.HOLLOW_CREEK),"lore alias does not unlock prototype geometry");
@@ -49,6 +57,7 @@ public final class MissionBoardIntegrationTest {
             picture[0].select("SCHOOL");check(!dispatch.isEnabled(),"browsing locked School cannot bypass story checkpoint");
             picture[0].select("WLD-02");check(!dispatch.isEnabled(),"browsing remote concept cannot dispatch");
             picture[0].select("WLD-06");check(!dispatch.isEnabled(),"named Wharf cannot bypass its review gate");
+            picture[0].select("WLD-13");check(!dispatch.isEnabled(),"playable Greywater still requires campaign progress");
             picture[0].select("CASTLE");check(!dispatch.isEnabled(),"headquarters cannot become an investigation");
             picture[0].select("HOUSE");check(dispatch.isEnabled(),"unlocked House remains dispatchable");
             dispatch.doClick();check(launches.get()==1,"real campaign dispatch action retained");

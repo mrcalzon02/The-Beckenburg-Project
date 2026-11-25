@@ -1643,3 +1643,7 @@ The [Mourning Marsh checkpoint](mourning-marsh-native-pass/checkpoint.json) uses
 ### Reusable floor, ceiling and stair finishes
 
 The [architectural texture set](surface-finish-pass/checkpoint.json) adds planks, tile, flagstones, ceiling plaster and matching stair materials to the shared native renderer. Both packages repeat the Marsh route and refuge checks. Existing geometry and authored surfaces retain their coordinates and material bindings.
+
+### Greywater Cannery gameplay
+
+The [Greywater checkpoint](greywater-native-pass/checkpoint.json) packages the surveyed Cannery in its existing campaign slot. It binds both store door faces to the actual higher opening, connects the real loading and inspection routes, and installs three walk-in cupboards and a boiler service circuit. The named mission, Dead Man's Claim, Northwatch, Blackwater, Monastery, Red Mesa, and Mourning Marsh appear in the regular solo and LAN pickers. Campaign unlocks still follow the saved chapter order.

@@ -14,15 +14,16 @@ public final class SiteCatalog {
         SEACLIFF(MissionSites.title("SEACLIFF"),SeacliffNativeLevel.REVIEW_PROPERTY),
         BLACKPINE(MissionSites.title("BLACKPINE"),BlackpineLevel.REVIEW_PROPERTY),
         LOOKOUT(MissionSites.title("LOOKOUT"),LookoutNativeLevel.REVIEW_PROPERTY),
-        MINE(MissionSites.title("MINE"),MineNativeLevel.REVIEW_PROPERTY),
+        MINE(MissionSites.title("MINE")),
         WHARF(WharfNativeLevel.TITLE,WharfNativeLevel.REVIEW_PROPERTY),
         CEMETERY(CemeteryNativeLevel.TITLE,CemeteryNativeLevel.REVIEW_PROPERTY),
         MORTUARY(CemeteryNativeLevel.ANNEX_TITLE,CemeteryNativeLevel.REVIEW_PROPERTY),
-        NORTHWATCH(NorthwatchNativeLevel.TITLE,NorthwatchNativeLevel.REVIEW_PROPERTY),
-        BLACKWATER(BlackwaterNativeLevel.TITLE,BlackwaterNativeLevel.REVIEW_PROPERTY),
-        MONASTERY(MonasteryNativeLevel.TITLE,MonasteryNativeLevel.REVIEW_PROPERTY),
-        RED_MESA(MissionSites.title("RED_MESA"),RedMesaNativeLevel.REVIEW_PROPERTY),
-        MOURNING_MARSH(MissionSites.title("MOURNING_MARSH"),MourningMarshNativeLevel.REVIEW_PROPERTY);
+        NORTHWATCH(NorthwatchNativeLevel.TITLE),
+        BLACKWATER(BlackwaterNativeLevel.TITLE),
+        MONASTERY(MonasteryNativeLevel.TITLE),
+        RED_MESA(MissionSites.title("RED_MESA")),
+        MOURNING_MARSH(MissionSites.title("MOURNING_MARSH")),
+        GREYWATER(MissionSites.title("GREYWATER"));
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

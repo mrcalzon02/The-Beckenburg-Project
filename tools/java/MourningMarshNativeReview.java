@@ -15,10 +15,9 @@ final class MourningMarshNativeReview {
 
     public static void main(String[] args) throws Exception {
         var entry = MissionSites.byId("WLD-11");
-        require(entry.location() == SiteCatalog.Location.MOURNING_MARSH && !entry.playable(),
-            "The native Mourning Marsh review gate or mission identity changed");
+        require(entry.location() == SiteCatalog.Location.MOURNING_MARSH,
+            "The native Mourning Marsh mission identity changed");
         require(MissionSites.campaign().get(19).equals(entry), "Mourning Marsh campaign ordinal shifted");
-        System.setProperty(MourningMarshNativeLevel.REVIEW_PROPERTY, "true");
         require(entry.playable() && SiteCatalog.playable(SITE)
             && SiteCatalog.mapFor(entry.location()) == SITE, "Solo and LAN disagree on Mourning Marsh");
         var map = new HouseMap(SITE);

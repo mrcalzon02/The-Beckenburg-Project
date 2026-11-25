@@ -9414,3 +9414,7 @@ A live hunter crossed onto supported terrain at x 40.060 and z 72.001 outside th
 ### DEV-742 · Native floors, ceilings and stairs rendered flat
 
 The shared [surface finish checkpoint](../levels/rebuild/surface-finish-pass/checkpoint.json) records metre-scaled materials on the original built faces and standing previews from both game renderers.
+
+### DEV-743 · Overlapping Greywater cold-store headers
+
+The [Greywater checkpoint](../levels/rebuild/greywater-native-pass/checkpoint.json) records the fitted leaf sweep and the player crossing between the processing floor and cold store after retiring the two obsolete headers.
