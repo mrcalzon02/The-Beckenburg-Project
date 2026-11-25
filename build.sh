@@ -166,6 +166,13 @@ for member in railway.glb railway.hcs2 runtime-input.tsv door-schedule.tsv; do
     cp "$gallows_packet/$member" "$gallows_resource/$member"
 done
 
+elara_packet=development/levels/rebuild/saint-elara
+elara_resource=build/classes/org/beckenburg/sites/wld-15
+mkdir -p "$elara_resource"
+for member in vessel.glb vessel.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$elara_packet/$member" "$elara_resource/$member"
+done
+
 morrow_packet=development/levels/rebuild/morrow-point
 morrow_resource=build/classes/org/beckenburg/sites/wld-14
 mkdir -p "$morrow_resource"

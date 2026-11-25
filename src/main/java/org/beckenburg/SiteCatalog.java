@@ -25,7 +25,8 @@ public final class SiteCatalog {
         MOURNING_MARSH(MissionSites.title("MOURNING_MARSH")),
         GREYWATER(MissionSites.title("GREYWATER")),
         GALLOWS(MissionSites.title("GALLOWS")),
-        MORROW(MissionSites.title("MORROW"));
+        MORROW(MissionSites.title("MORROW")),
+        ELARA(MissionSites.title("ELARA"));
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

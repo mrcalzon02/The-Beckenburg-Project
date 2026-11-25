@@ -1,0 +1,172 @@
+{
+  "source": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
+  "exports": {
+    "blend": "d27c106953f7e2ce12fd656ee45957dca4a3c597ecd864c088af6f42150d815c",
+    "glb": "099e3c74099ae8b04ba3a40688af4618911a4d9598e8bf2a120034f44d8c5eb7",
+    "hcs2": "fc37eaf9a448a99faf77e129a5dd0cd78b5328f9fbc3e7bebdc51a7a43083d78"
+  },
+  "retained_components": 407,
+  "pockets": [
+    {
+      "id": "elara-galley-cupboard",
+      "space": "galley",
+      "owner": 1,
+      "position": [
+        25.35,
+        0,
+        37.5
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          24.75,
+          0.0,
+          36.650002
+        ],
+        [
+          26.052,
+          2.31,
+          38.349998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "elara-net-cupboard",
+      "space": "net",
+      "owner": 10,
+      "position": [
+        38.25,
+        3,
+        12
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          37.548,
+          3.0,
+          11.15
+        ],
+        [
+          38.849998,
+          5.31,
+          12.85
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "elara-hold-cupboard",
+      "space": "hold",
+      "owner": 6,
+      "position": [
+        25.25,
+        -3,
+        11
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          24.65,
+          -3.0,
+          10.15
+        ],
+        [
+          25.952,
+          -0.69,
+          11.85
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "elara-galley-cupboard",
+      "type": "hide",
+      "room": 1,
+      "position": [
+        25.35,
+        0,
+        37.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "elara-net-cupboard",
+      "type": "hide",
+      "room": 10,
+      "position": [
+        38.25,
+        3,
+        12
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "elara-hold-cupboard",
+      "type": "hide",
+      "room": 6,
+      "position": [
+        25.25,
+        -3,
+        11
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "elara-generator",
+      "type": "generator",
+      "room": 3,
+      "position": [
+        36.900002,
+        -2.44,
+        26.62
+      ],
+      "yaw": 0,
+      "style": "SE-MAIN"
+    },
+    {
+      "id": "elara-breaker",
+      "type": "breaker",
+      "room": 3,
+      "position": [
+        37.5,
+        -2.11,
+        38.655001999999996
+      ],
+      "yaw": 3.141592653589793,
+      "style": "SE-MAIN"
+    },
+    {
+      "id": "elara-engine-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        39.918999,
+        -1.75,
+        29.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "SE-ENGINE"
+    },
+    {
+      "id": "elara-engine-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        39.736,
+        -0.62,
+        30.5
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ]
+}

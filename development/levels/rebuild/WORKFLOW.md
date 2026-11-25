@@ -1655,3 +1655,7 @@ The [railway source](gallows-pass/construction.json) preserves the authored stat
 ### Morrow Point Lightstation native mission
 
 The [native scene](morrow-point/construction.json) retains the coast, six measured door frames, the keeper-house stairs, the circular tower and its founded stair supports. Fitted helical rails and a separate guard around the lantern shaft bear on the actual treads and deck. The oil house has a generator, breaker and switched light. Walk-in hiding cupboards serve the sitting room, study and oil house. The regular solo and LAN entries use the current map. Campaign ordinals are unchanged. The van-to-lantern climb reached +18 m through the existing tower sill. Full lighthouse lantern fit-out, perimeter and complete case acceptance remain open.
+
+### MV Saint Elara native mission
+
+The [vessel source](saint-elara/construction.json) uses the measured shore shelf, fixed gangway, vessel decks and port stair receivers. Seven fitted doors follow the actual thresholds. All four flights have steel handrails seated on their treads, and the pump hatch has supported side guards. The engine deck has a floor-mounted source, breaker and switched lamp. Three walk-in cupboards serve the galley, net store and hold. The regular game loads the vessel in Solo and LAN with the canonical van and three installed ritual positions. Complete hull containment, additional room circuits and end-to-end case acceptance remain open.
