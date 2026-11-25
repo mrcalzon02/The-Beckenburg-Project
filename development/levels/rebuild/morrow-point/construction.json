@@ -1,9 +1,9 @@
 {
   "source": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
   "exports": {
-    "blend": "66686191422d8bd9cb6730563c7b98deb1e6d467552b9f38e548e26b27a4373c",
-    "glb": "a8137b41cf97de44167f88e042c1d12ddc80503fa1535861ecb83fcf1a2641a2",
-    "hcs2": "98c5f8d72777396080509213b31bb2e2fdbdc57ffddae29beec92d96b2c5d270"
+    "blend": "0ea98cb4238748fe40def0b69ed83114700d65561f8f7e0540a625649e6fe74d",
+    "glb": "b895d2ea72375c2f78ce97cd72a9ccd0666705614f15bae23fa6b04e313f95e8",
+    "hcs2": "b7cb938c578bfbfa2bf0e076f86c6f55ad1898a26aa1dd13ff37252d5a16fc7f"
   },
   "retained_components": 733,
   "replaced_component": "Round shell tower5",
@@ -165,6 +165,354 @@
         53.900002,
         2.42,
         34.264
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-foyer-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        31.919001,
+        1.25,
+        51.599998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MP-FOYER"
+    },
+    {
+      "id": "morrow-foyer-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        31.736,
+        2.35,
+        53.099998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-sitting-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        16.080999,
+        1.25,
+        47.700001
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "MP-SITTING"
+    },
+    {
+      "id": "morrow-sitting-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        16.264,
+        2.35,
+        45.900002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-kitchen-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        41.918999,
+        1.25,
+        51.900002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MP-KITCHEN"
+    },
+    {
+      "id": "morrow-kitchen-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        41.736,
+        2.35,
+        50.099998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-workroom-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        16.080999,
+        1.25,
+        36.700001
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "MP-WORKROOM"
+    },
+    {
+      "id": "morrow-workroom-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        16.264,
+        2.35,
+        34.900002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-store-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        41.918999,
+        1.25,
+        35.099998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MP-STORE"
+    },
+    {
+      "id": "morrow-store-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        41.736,
+        2.35,
+        36.799999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-stairs-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        45.849998,
+        1.25,
+        53.918999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "MP-STAIRS"
+    },
+    {
+      "id": "morrow-stairs-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        44.049999,
+        2.35,
+        53.736
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-bed-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        27.919001,
+        4.45,
+        48.900002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MP-BED"
+    },
+    {
+      "id": "morrow-bed-light",
+      "type": "light",
+      "room": 6,
+      "position": [
+        27.736,
+        5.55,
+        50.599998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-study-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        41.879002,
+        4.45,
+        49.799999
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MP-STUDY"
+    },
+    {
+      "id": "morrow-study-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        41.696003,
+        5.55,
+        51.5
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-upper-hall-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        44.049999,
+        5.55,
+        53.736
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-0-east-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        36.222298,
+        2.43,
+        10.274837
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-0-east-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        36.403915,
+        1.25,
+        10.286658
+      ],
+      "yaw": -1.6357963267948967,
+      "style": "MP-TOWER-8"
+    },
+    {
+      "id": "morrow-tower-0-west-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        27.7777,
+        2.43,
+        9.725163
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-1-east-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        36.222298,
+        6.03,
+        10.274837
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-1-west-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        27.7777,
+        6.03,
+        9.725163
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-2-east-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        36.222298,
+        9.63,
+        10.274837
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-2-west-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        27.7777,
+        9.63,
+        9.725163
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-3-east-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        36.222298,
+        13.23,
+        10.274837
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-3-east-switch",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        36.403915,
+        12.05,
+        10.286658
+      ],
+      "yaw": -1.6357963267948967,
+      "style": "MP-TOWER-9"
+    },
+    {
+      "id": "morrow-tower-3-west-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        27.7777,
+        13.23,
+        9.725163
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-4-east-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        36.222298,
+        16.83,
+        10.274837
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "morrow-tower-4-west-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        27.7777,
+        16.83,
+        9.725163
       ],
       "yaw": 0,
       "style": "native-string"

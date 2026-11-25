@@ -84,6 +84,75 @@ def power(assembly, zone):
         (55.3, 2.66, 34.31), (48.25, 2.66, 34.31), (48.25, 2.66, 44.35), (51.2, 2.66, 44.35), (51.2, 1.8, 44.35)), .016)
 
 
+def keeper_lights(assembly, zones):
+    branches=(
+        ("foyer",(31.1,51.6),(31.1,53.1),(1,0)),
+        ("sitting",(17.1,47.7),(17.1,45.9),(-1,0)),
+        ("kitchen",(40.9,51.9),(40.9,50.1),(1,0)),
+        ("workroom",(17.1,36.7),(17.1,34.9),(-1,0)),
+        ("store",(40.9,35.1),(40.9,36.8),(1,0)),
+        ("stairs",(45.85,52.9),(44.05,52.9),(0,1)),
+        ("bed",(26.9,48.9),(26.9,50.6),(1,0)),
+        ("study",(40.9,49.8),(40.9,51.5),(1,0)),
+    )
+    for room,switch,lamp,(dx,dz) in branches:
+        zone=zones[room]
+        assembly.switch(zone,*switch,dx,dz)
+        assembly.sockets[-1].update(id=f"morrow-{room}-switch",style=f"MP-{room.upper()}")
+        drop=assembly.routes[-1]["points"][-1]
+        assembly.mounted_lamp(zone,f"morrow-{room}-light",point(lamp[0],zone["y"]+2.35,lamp[1]),
+                              point(dx,0,dz),1.7,point(-dz,0,dx))
+        x,y,z=assembly.loads[-1]["mount"]
+        join=(x-.028*dx,drop[1],z-.028*dz)
+        assert abs((drop[0]-join[0])*dx+(drop[2]-join[2])*dz)<.012,room
+        assembly.raceway(f"Morrow {room} branch",(drop,join,(join[0],y+.12,join[2])),.012)
+    upper=zones["upperhall"]
+    assembly.mounted_lamp(upper,"morrow-upper-hall-light",point(44.05,upper["y"]+2.35,52.9),
+                          point(0,0,1),1.7,point(1,0,0))
+
+
+def tower_lights(assembly, zones):
+    # Work on the built cylindrical shell. Its inner and outer faces use
+    # the same winding on the retained source, so check both normal signs.
+    for level in range(5):
+        zone=zones[f"tower{level}"]
+        y=zone["y"]
+        for side in ("east","west"):
+            angle=.065+(math.pi if side=="west" else 0)
+            dx,dz=math.cos(angle),math.sin(angle)
+            direction=point(dx,0,dz)
+            vertical=point(0,1,0)
+            lateral=direction.cross(vertical)
+            radius=3.1
+            x,z=32+radius*dx,10+radius*dz
+            key=f"morrow-tower-{level}-{side}"
+            contact=assembly.contact(point(x,y+2.43,z),direction,1.88)
+            assert contact is not None and abs(contact[1].dot(direction))>.98,key
+            face,_,wall=contact
+            for h in (-.565,.565):
+                for w in (-.110,.110):
+                    corner=assembly.contact(face+vertical*h+lateral*w-direction*.18,direction,.26)
+                    assert corner is not None and abs((corner[0]-face).dot(direction))<.009,key
+            frame=Matrix.Translation(face-direction*.001) @ Matrix((vertical,lateral,direction)).transposed().to_4x4()
+            assembly.fixture(zone,key+"-light",face,wall.name,frame,-direction)
+            feeder=face-direction*.023
+            attachment=None
+            if level in (0,3) and side=="east":
+                hit=assembly.contact(point(x,y+1.25,z),direction,1.88)
+                assert hit is not None and hit[2]==wall,key
+                socket=hit[0]-direction*.002
+                yaw=math.atan2(-dx,-dz)
+                assembly.place("light_switch_1",Matrix.Translation(socket) @ Matrix.Rotation(yaw,4,"Z"),
+                               key+"-switch","supported tower control","tower")
+                assembly.effect(key+"-switch","switch",zone["owner"],world(socket),yaw,f"MP-TOWER-{zone['owner']}")
+                attachment=world(hit[0]-direction*.023+vertical*.054)
+            if attachment is not None:
+                assembly.raceway(key+" switch drop",(attachment,world(feeder)),.014)
+            start=world(feeder+vertical*.55)
+            end=world(feeder+vertical*1.11)
+            assembly.raceway(key+" wall feeder",(start,end),.013)
+
+
 def crown_segment(assembly, name, angles, height, radii, surface, role):
     lo, hi = height
     inner, outer = radii
@@ -237,6 +306,8 @@ def build():
     assembly = Assembly()
     refuges = cupboards(assembly, zones, POCKETS, site="morrow", floor_roles=("floor",))
     power(assembly, zones["generator"])
+    keeper_lights(assembly,zones)
+    tower_lights(assembly,zones)
     stair = tower_guards(assembly, contract)
     lantern_guard(assembly)
     lantern_crown(assembly, stone)

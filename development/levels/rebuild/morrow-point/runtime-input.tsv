@@ -1,4 +1,4 @@
-SOURCE	a8137b41cf97de44167f88e042c1d12ddc80503fa1535861ecb83fcf1a2641a2	98c5f8d72777396080509213b31bb2e2fdbdc57ffddae29beec92d96b2c5d270
+SOURCE	b895d2ea72375c2f78ce97cd72a9ccd0666705614f15bae23fa6b04e313f95e8	b7cb938c578bfbfa2bf0e076f86c6f55ad1898a26aa1dd13ff37252d5a16fc7f
 DOCK	32.0	0	84.0	0
 ROOM	stage	13	24	78	40	90	0	3	true	Roadhead van apron	32	0	80
 SPACE	entry	13	24	66	40	78	0	3	true
@@ -221,6 +221,35 @@ SERVICE	morrow-generator	generator	11	55.299999	0.56	35.521001	0	MP-MAIN
 SERVICE	morrow-breaker	breaker	11	51.200001	0.89	44.595998	0	MP-MAIN
 SERVICE	morrow-oil-house-switch	switch	11	53.0	1.25	34.081001	0.0	MP-OIL
 SERVICE	morrow-oil-house-light	light	11	53.900002	2.42	34.264	0	native-string
+SERVICE	morrow-foyer-switch	switch	0	31.919001	1.25	51.599998	-1.5707963267948966	MP-FOYER
+SERVICE	morrow-foyer-light	light	0	31.736	2.35	53.099998	0	native-string
+SERVICE	morrow-sitting-switch	switch	1	16.080999	1.25	47.700001	1.5707963267948966	MP-SITTING
+SERVICE	morrow-sitting-light	light	1	16.264	2.35	45.900002	0	native-string
+SERVICE	morrow-kitchen-switch	switch	2	41.918999	1.25	51.900002	-1.5707963267948966	MP-KITCHEN
+SERVICE	morrow-kitchen-light	light	2	41.736	2.35	50.099998	0	native-string
+SERVICE	morrow-workroom-switch	switch	3	16.080999	1.25	36.700001	1.5707963267948966	MP-WORKROOM
+SERVICE	morrow-workroom-light	light	3	16.264	2.35	34.900002	0	native-string
+SERVICE	morrow-store-switch	switch	4	41.918999	1.25	35.099998	-1.5707963267948966	MP-STORE
+SERVICE	morrow-store-light	light	4	41.736	2.35	36.799999	0	native-string
+SERVICE	morrow-stairs-switch	switch	5	45.849998	1.25	53.918999	3.141592653589793	MP-STAIRS
+SERVICE	morrow-stairs-light	light	5	44.049999	2.35	53.736	0	native-string
+SERVICE	morrow-bed-switch	switch	6	27.919001	4.45	48.900002	-1.5707963267948966	MP-BED
+SERVICE	morrow-bed-light	light	6	27.736	5.55	50.599998	0	native-string
+SERVICE	morrow-study-switch	switch	7	41.879002	4.45	49.799999	-1.5707963267948966	MP-STUDY
+SERVICE	morrow-study-light	light	7	41.696003	5.55	51.5	0	native-string
+SERVICE	morrow-upper-hall-light	light	5	44.049999	5.55	53.736	0	native-string
+SERVICE	morrow-tower-0-east-light	light	8	36.222298	2.43	10.274837	0	native-string
+SERVICE	morrow-tower-0-east-switch	switch	8	36.403915	1.25	10.286658	-1.6357963267948967	MP-TOWER-8
+SERVICE	morrow-tower-0-west-light	light	8	27.7777	2.43	9.725163	0	native-string
+SERVICE	morrow-tower-1-east-light	light	8	36.222298	6.03	10.274837	0	native-string
+SERVICE	morrow-tower-1-west-light	light	8	27.7777	6.03	9.725163	0	native-string
+SERVICE	morrow-tower-2-east-light	light	9	36.222298	9.63	10.274837	0	native-string
+SERVICE	morrow-tower-2-west-light	light	9	27.7777	9.63	9.725163	0	native-string
+SERVICE	morrow-tower-3-east-light	light	9	36.222298	13.23	10.274837	0	native-string
+SERVICE	morrow-tower-3-east-switch	switch	9	36.403915	12.05	10.286658	-1.6357963267948967	MP-TOWER-9
+SERVICE	morrow-tower-3-west-light	light	9	27.7777	13.23	9.725163	0	native-string
+SERVICE	morrow-tower-4-east-light	light	9	36.222298	16.83	10.274837	0	native-string
+SERVICE	morrow-tower-4-west-light	light	9	27.7777	16.83	9.725163	0	native-string
 SERVICE	morrow-beacon-switch	switch	10	31.55	19.25	12.891	0	MP-BEACON
 SERVICE	morrow-beacon	light	10	33.35	19.78	12.205	3.141592653589793	fixed-beacon
 COVER	morrow-sitting-cupboard	1	18.25	0	51.4	-1.5707963267948966
