@@ -11,8 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point, world
+from build_college_electrical import bounds, point, world
 from build_lookout_native_arrival import table
+from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from review_roster_macroterrain import sha
@@ -137,6 +138,44 @@ def signal_radio(assembly, desk):
     assembly.effect(radio[0].name,"native-device",OWNERS["signal"][0],(px,py,pz+.035),0,"RADIO")
 
 
+def signal_register(case,desk):
+    x,z=17.56,64.16
+    top,normal,_,_=bvh(desk).ray_cast(point(x,1.45,z),DOWN,.75)
+    assert top is not None and normal.z>.98,"The register needs a real desktop"
+    book,fit=case.fit("level_trace_journal","signal register","signal",x,top.z+.001,z,scale=.56,support=desk)
+    assert len(book)==1, "Expected a single readable journal"
+    book[0].name="Gallows signal register"
+    page,_,_,_=bvh(book).ray_cast(point(x+.028,top.z+.12,z+.022),DOWN,.135)
+    assert page is not None,"The signal register needs an exposed page surface"
+    aim=world(page)
+    case.effect(book[0].name,"native_story",4,aim,0,"GALLOWS_SIGNAL_REGISTER")
+    return dict(label="signal register",room="signal",aim=aim,**fit)
+
+
+def refuge_fittings(case):
+    fittings=[]
+    for asset,label,room,x,z in (
+        ("level_work_repair_bench","Tunnel maintenance bench","refuge",42.15,9.85),
+        ("shelf_mp_6","Track spares shelf","store",61.5,18.35),
+    ):
+        _,fit=case.fit(asset,label,room,x,0,z)
+        fittings.append(dict(label=label,room=room,**fit))
+    x,z=49.4,8.85
+    stand,base=case.fit("level_event_side_table_worn","Tunnel telephone stand","refuge",x,0,z)
+    top,normal,_,_=bvh(stand).ray_cast(point(x,1.65,z),DOWN,1.6)
+    assert top is not None and normal.z>.98,"The tunnel phone needs a real stand"
+    phone,placement=case.fit("level_event_phone_worn","Tunnel telephone","refuge",x,top.z+.001,z,support=stand)
+    assert len(phone)==1
+    phone[0].name="Gallows tunnel telephone"
+    low,high=bounds(phone)
+    hit,_,_,_=bvh(phone).ray_cast(point(x,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert hit is not None,"The tunnel phone needs an exposed casing"
+    px,py,pz=world(hit)
+    case.effect(phone[0].name,"native-device",5,(px,py,pz+.035),0,"PHONE")
+    fittings.append(dict(label="tunnel telephone",room="refuge",stand=base,phone=placement))
+    return fittings
+
+
 def furnishings(assembly):
     installed = []
     for asset, zone, label, x, z, yaw in (
@@ -158,6 +197,7 @@ def furnishings(assembly):
                 assert abs(hit.z) < .006 and normal.z > .98, (label, px, pz, support.name)
         if label=="Signal operator desk":
             signal_radio(assembly,parts)
+            installed.append(signal_register(assembly,parts))
         installed.append(dict(label=label, room=zone, asset=asset, origin=[x, 0, z], yaw=yaw,
                               bounds=[low, high]))
     return installed
@@ -232,13 +272,13 @@ def build():
     zones = {z["id"]: {**z, "owner": OWNERS.get(z["id"], (7,))[0]} for z in layout["zones"]}
     bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
     bpy.context.preferences.filepaths.save_version = 0
-    assembly = Assembly()
+    assembly = Case()
     refuges = cupboards(assembly, zones, REFUGES, site="gallows", floor_roles=("floor",))
     power(assembly, zones["signal"])
     room_lighting(assembly,zones)
-    installed = furnishings(assembly) + railway_kit(assembly)
+    installed = furnishings(assembly) + refuge_fittings(assembly) + railway_kit(assembly)
     for piece in assembly.built:
-        piece.name = piece.name.replace("College ", "Gallows ", 1)
+        piece.name = piece.name.replace("College ", "Gallows ", 1).replace("Mine case ","Gallows ",1)
     target = {ext: OUT / f"railway.{ext}" for ext in source}
     addition = ROOT / "build/gallows-native-installation.glb"
     export(addition, assembly.built)

@@ -97,6 +97,13 @@ public final class SiteStories {
     "Keep someone at the gallery door when the lower crew changes watch. The new stair lamp is on the west side of the landing.",
     "The last watch left a pair of bearings for the relief crew. The space for the time of their arrival is blank."));
   }
+  case "GALLOWS_SIGNAL_REGISTER"->{
+   if(!site.equals("wld-12"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Gallows signal register",List.of(
+    "The passenger service is suspended. Leave the approach signal at danger until the permanent-way crew reports back.",
+    "The crew checked in on the tunnel refuge telephone before inspecting the trestle. Spare rail fittings are in the track stores.",
+    "The last line is a request to send a replacement lamp. There is no signature in the return column."));
+  }
   case "GREYWATER_DISPATCH_LOG"->{
    if(!site.equals("wld-13"))throw new IllegalArgumentException("Unknown readable object");
    yield new Document(id,"Greywater dispatch log",List.of(
