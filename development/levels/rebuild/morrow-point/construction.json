@@ -1,9 +1,9 @@
 {
   "source": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
   "exports": {
-    "blend": "0ea98cb4238748fe40def0b69ed83114700d65561f8f7e0540a625649e6fe74d",
-    "glb": "b895d2ea72375c2f78ce97cd72a9ccd0666705614f15bae23fa6b04e313f95e8",
-    "hcs2": "b7cb938c578bfbfa2bf0e076f86c6f55ad1898a26aa1dd13ff37252d5a16fc7f"
+    "blend": "c90aed7eb8b62874cb05280a8225b56db4bbccb763d8f1f922451e54c3ee47e5",
+    "glb": "a5237915e7215ff80617387962d696741d51367448afa748fa57067a604ebd56",
+    "hcs2": "cc0bc2824c2e3671882e05f436f6633cc2d79efbdcd2e4a02bc9ee8503ffb5d1"
   },
   "retained_components": 733,
   "replaced_component": "Round shell tower5",
@@ -540,6 +540,182 @@
       ],
       "yaw": 3.141592653589793,
       "style": "fixed-beacon"
+    },
+    {
+      "id": "Morrow lightstation radio",
+      "type": "native-device",
+      "room": 7,
+      "position": [
+        38.849998,
+        4.211,
+        51.753139999999995
+      ],
+      "yaw": 0,
+      "style": "RADIO"
+    },
+    {
+      "id": "Morrow keeper washbasin 01",
+      "type": "native-device",
+      "room": 2,
+      "position": [
+        39.45,
+        0.86,
+        42.81
+      ],
+      "yaw": 0,
+      "style": "SINK_BATH"
+    }
+  ],
+  "keeper_furnishings": [
+    {
+      "room": "kitchen",
+      "name": "keeper kitchen table",
+      "asset": "dinner_table_1",
+      "sha256": "482303ac80e40371c9ffe2462a9fad6e946f66c7aebc8417b6b2c2c73400086a",
+      "bounds": [
+        [
+          34.149998,
+          0.0,
+          50.450001
+        ],
+        [
+          35.849998,
+          0.86,
+          51.549999
+        ]
+      ],
+      "pivot": [
+        34.999996185302734,
+        -1.8531864043325186e-08,
+        51.0
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "kitchen",
+      "name": "keeper kitchen bench",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          34.125,
+          0.0,
+          51.752697
+        ],
+        [
+          35.875,
+          0.88,
+          52.36731
+        ]
+      ],
+      "pivot": [
+        35.0,
+        0.0,
+        52.092308044433594
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "store",
+      "name": "dry stores shelving",
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          39.189999,
+          0.0,
+          31.140001
+        ],
+        [
+          40.010002,
+          1.29,
+          31.360001
+        ]
+      ],
+      "pivot": [
+        39.60000228881836,
+        5.042526751708465e-08,
+        31.25
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "study",
+      "name": "lightstation radio",
+      "desk": {
+        "asset": "level_workbench_worn",
+        "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+        "bounds": [
+          [
+            37.949997,
+            3.2,
+            51.297501
+          ],
+          [
+            39.75,
+            4.42,
+            52.002502
+          ]
+        ],
+        "pivot": [
+          38.849998474121094,
+          3.200000047683716,
+          51.63750076293945
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "device": {
+        "asset": "level_event_radio_worn",
+        "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+        "bounds": [
+          [
+            38.690716,
+            4.146,
+            51.576004
+          ],
+          [
+            39.009281,
+            4.59641,
+            51.724003
+          ]
+        ],
+        "pivot": [
+          38.85927963256836,
+          4.145999908447266,
+          51.6410026550293
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": [
+          "Mine case signal records desk 01"
+        ]
+      }
+    },
+    {
+      "room": "kitchen",
+      "name": "Morrow keeper washbasin 01",
+      "wall": 42.080002,
+      "floor": 0,
+      "bounds": [
+        [
+          39.119999,
+          0.0,
+          42.560001
+        ],
+        [
+          39.780003,
+          1.136,
+          43.060001
+        ]
+      ]
     }
   ]
 }

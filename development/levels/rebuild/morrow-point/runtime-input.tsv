@@ -1,4 +1,4 @@
-SOURCE	b895d2ea72375c2f78ce97cd72a9ccd0666705614f15bae23fa6b04e313f95e8	b7cb938c578bfbfa2bf0e076f86c6f55ad1898a26aa1dd13ff37252d5a16fc7f
+SOURCE	a5237915e7215ff80617387962d696741d51367448afa748fa57067a604ebd56	cc0bc2824c2e3671882e05f436f6633cc2d79efbdcd2e4a02bc9ee8503ffb5d1
 DOCK	32.0	0	84.0	0
 ROOM	stage	13	24	78	40	90	0	3	true	Roadhead van apron	32	0	80
 SPACE	entry	13	24	66	40	78	0	3	true
@@ -252,6 +252,8 @@ SERVICE	morrow-tower-4-east-light	light	9	36.222298	16.83	10.274837	0	native-str
 SERVICE	morrow-tower-4-west-light	light	9	27.7777	16.83	9.725163	0	native-string
 SERVICE	morrow-beacon-switch	switch	10	31.55	19.25	12.891	0	MP-BEACON
 SERVICE	morrow-beacon	light	10	33.35	19.78	12.205	3.141592653589793	fixed-beacon
+SERVICE	Morrow lightstation radio	native-device	7	38.849998	4.211	51.753139999999995	0	RADIO
+SERVICE	Morrow keeper washbasin 01	native-device	2	39.45	0.86	42.81	0	SINK_BATH
 COVER	morrow-sitting-cupboard	1	18.25	0	51.4	-1.5707963267948966
 COVER	morrow-study-cupboard	7	30.5	3.2	50.4	-1.5707963267948966
 COVER	morrow-generator-cupboard	11	56.3	0	42.4	1.5707963267948966

@@ -12,8 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
 from append_static_glb import append
 from build_circulation_construction import native_write
-from build_college_electrical import Assembly, bounds, point, world
+from build_college_electrical import bounds, point, world
 from build_lookout_native_arrival import table
+from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
 from build_school_electrical import cupboards
 from build_roster_foundations import material
@@ -285,6 +286,51 @@ def points_at_lantern():
     return [(34.8, 18, 10.8), (33.2, 18, 10.8)]
 
 
+def fit_keeper_rooms(case):
+    furnishings=[]
+    for asset,label,room,x,z in (
+        ("dinner_table_1","keeper kitchen table","kitchen",35.0,51.0),
+        ("level_camp_bench","keeper kitchen bench","kitchen",35.0,52.06),
+        ("shelf_mp_6","dry stores shelving","store",39.6,31.25),
+    ):
+        _,fit=case.fit(asset,label,room,x,0,z)
+        furnishings.append(dict(room=room,name=label,**fit))
+
+    x,y,z=38.85,3.2,51.65
+    desk,fit=case.fit("level_workbench_worn","signal records desk","study",x,y,z)
+    top,normal,_,_=bvh(desk).ray_cast(point(x,y+1.65,z),DOWN,1.6)
+    assert top is not None and normal.z>.98,"Signal radio needs a measured desk surface"
+    radio,device=case.fit("level_event_radio_worn","lightstation radio","study",x,top.z+.001,z,support=desk)
+    assert len(radio)==1
+    radio[0].name="Morrow lightstation radio"
+    low,high=bounds(radio)
+    hit,_,_,_=bvh(radio).ray_cast(point(x,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert hit is not None,"Signal radio needs an accessible casing"
+    rx,ry,rz=world(hit)
+    case.effect(radio[0].name,"native-device",7,(rx,ry,rz+.035),0,"RADIO")
+    furnishings.append(dict(room="study",name="lightstation radio",desk=fit,device=device))
+
+    x,z=39.45,42.81
+    basin=case.place("level_bath_basin",Matrix.Translation(point(x,0,z)),
+                     "Morrow keeper washbasin","floor-bearing keeper washbasin","kitchen")
+    assert len(basin)==1
+    for px in (x-.08,x+.08):
+        for pz in (z-.08,z+.08):
+            at,normal,_,_=case.support_surfaces.ray_cast(point(px,.16,pz),DOWN,.24)
+            assert at is not None and abs(at.z)<.004 and normal.z>.98,(px,pz)
+    face,_,_=case.measured(point(x,.65,z-.28),point(0,0,-1),.51,"Keeper plumbing wall")
+    _,_,back=world(face)
+    copper=material("Morrow oxidized kitchen copper",(.29,.16,.09))
+    iron=material("Morrow cast sink waste",(.17,.175,.17))
+    case.tube("Morrow kitchen water inlet",(x,.13,back+.035),(x,.97,back+.035),.017,copper)
+    case.tube("Morrow kitchen feed union",(x,.97,back+.035),(x,.97,z-.14),.017,copper)
+    case.tube("Morrow kitchen waste union",(x,.25,z-.09),(x,.25,back+.026),.027,iron)
+    name=basin[0].name.removeprefix("College ")
+    case.effect(name,"native-device",2,(x,.86,z),0,"SINK_BATH")
+    furnishings.append(dict(room="kitchen",name=name,wall=back,floor=0,bounds=bounds(basin)))
+    return furnishings
+
+
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
     source = {ext: SOURCE / f"coast-entrances.{ext}" for ext in ("blend", "glb", "hcs2")}
@@ -303,7 +349,7 @@ def build():
     stone = old_crown.data.materials[0]
     bpy.data.objects.remove(old_crown, do_unlink=True)
     bpy.context.view_layer.update()
-    assembly = Assembly()
+    assembly = Case()
     refuges = cupboards(assembly, zones, POCKETS, site="morrow", floor_roles=("floor",))
     power(assembly, zones["generator"])
     keeper_lights(assembly,zones)
@@ -311,8 +357,9 @@ def build():
     stair = tower_guards(assembly, contract)
     lantern_guard(assembly)
     lantern_crown(assembly, stone)
+    furnishings=fit_keeper_rooms(assembly)
     for obj in assembly.built:
-        obj.name = obj.name.replace("College ", "", 1)
+        obj.name = obj.name.removeprefix("College ").replace("Mine case ","Morrow ",1)
     target = {ext: OUT / f"lightstation.{ext}" for ext in source}
     addition = ROOT / "build/morrow-point-installation.glb"
     export(addition, assembly.built)
@@ -379,7 +426,7 @@ def build():
     table(OUT / "door-schedule.tsv", doors)
     (OUT / "construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(), exports={k: sha(p) for k,p in target.items()},
-        retained_components=len(prior), replaced_component=rough_crown, refuges=refuges, services=assembly.sockets), indent=2)+"\n",
+        retained_components=len(prior), replaced_component=rough_crown, refuges=refuges, services=assembly.sockets, keeper_furnishings=furnishings), indent=2)+"\n",
         encoding="utf-8", newline="\n")
 
 
