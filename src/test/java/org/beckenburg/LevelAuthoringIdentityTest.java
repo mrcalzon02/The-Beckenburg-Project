@@ -19,7 +19,7 @@ public final class LevelAuthoringIdentityTest {
         var home=Files.createTempDirectory("mission-identity-");
         String previous=System.getProperty("user.home");System.setProperty("user.home",home.toString());
         try{
-            for(var builtIn:HouseMap.Site.values())if(builtIn!=HouseMap.Site.USER&&builtIn!=HouseMap.Site.HOLLOW_CREEK){
+            for(var builtIn:HouseMap.Site.values())if(LevelPlans.editableTemplate(builtIn)){
                 var baseline=new LevelAuthoringSession(builtIn);baseline.validate();
                 check(baseline.props().equals(LevelPlans.buildSource(builtIn).props()),"Opening "+builtIn+" preserves all shipped native props");
             }

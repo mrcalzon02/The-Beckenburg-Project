@@ -17,13 +17,15 @@ public final class LanGhostHidingBoundaryTest {
                     "van must not appear as a DRIFT destination");
 
         int closets=0,shrubs=0;
-        for(int density=0;density<=100;density++){
-            map.configureHiding(density);
-            for(var socket:map.level().sockets())if(socket.type().equals("hide")||socket.type().equals("outdoor-hide")){
-                boolean available=socket.type().equals("hide")?LevelClosets.available(map.level(),socket.room(),density):OutdoorHiding.available(map.level(),socket,density);
-                check(LanGhostSpatial.hidingPocketAt(map,socket.room(),socket.x(),socket.y(),socket.z())==available,
-                    "spectral cover must match actual budgeted/visible pocket "+density+" / "+socket.id());
-                if(density==100&&available){if(socket.type().equals("hide"))closets++;else shrubs++;}
+        for(var site : new HouseMap[]{map,new HouseMap(HouseMap.Site.BLACKPINE)}){
+            for(int density=0;density<=100;density++){
+                site.configureHiding(density);
+                for(var socket:site.level().sockets())if(socket.type().equals("hide")||socket.type().equals("outdoor-hide")){
+                    boolean available=socket.type().equals("hide")?LevelClosets.available(site.level(),socket.room(),density):OutdoorHiding.available(site.level(),socket,density);
+                    check(LanGhostSpatial.hidingPocketAt(site,socket.room(),socket.x(),socket.y(),socket.z())==available,
+                        "spectral cover must match actual budgeted/visible pocket "+density+" / "+socket.id());
+                    if(density==100&&available){if(socket.type().equals("hide"))closets++;else shrubs++;}
+                }
             }
         }
         check(closets>0&&shrubs>0,"both indoor and outdoor concealment require protection");

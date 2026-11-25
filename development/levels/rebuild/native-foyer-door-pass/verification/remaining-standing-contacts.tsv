@@ -1,0 +1,111 @@
+site	link	segment	direction	x	y	z	reason	component
+ACADEMY	L40:2/right	0	pose	17.0	0.0	43.88	PHYSICAL_COMPONENT	ACADEMY L66 single flight tread1
+ACADEMY	L40:2/right	1	pose	16.75	0.0	43.88	PHYSICAL_COMPONENT	ACADEMY mounted stair guard 50
+ACADEMY	L40:2/right	2	pose	15.25	0.0	43.88	PHYSICAL_COMPONENT	ACADEMY mounted stair guard 53
+ACADEMY	L40:2/right	3	pose	15.0	0.0	43.88	PHYSICAL_COMPONENT	ACADEMY L66 single flight tread1
+ACADEMY	L48:0/left	4	pose	10.805770071872502	3.5999999046325684	14.176825913752998	PHYSICAL_COMPONENT	297:Wall student-wc S.001
+ACADEMY	L48:0/left	5	pose	10.618270071872502	3.5999999046325684	14.020575913752998	PHYSICAL_COMPONENT	297:Wall student-wc S.001
+ACADEMY	L64:0/right	6	pose	34.23129942314911	3.5999999046325684	16.23129942314911	PHYSICAL_COMPONENT	Flat route shell Wall upper-north N.001
+ACADEMY	L64:0/right	7	pose	34.397966089815775	3.5999999046325684	16.064632756482442	PHYSICAL_COMPONENT	Flat route shell Wall upper-north N.001
+ASYLUM	L16:1/left	8	pose	25.956	3.3999998569488525	24.657999999999998	PHYSICAL_COMPONENT	Flat route shell Wall upper-wc E.001
+ASYLUM	L16:1/left	9	pose	26.105999999999998	3.3999998569488525	24.858	PHYSICAL_COMPONENT	Flat route shell Wall upper-wc E.001
+ASYLUM	L16:1/left	10	pose	26.256	3.3999998569488525	25.058	PHYSICAL_COMPONENT	Flat route shell Wall upper-wc E.001
+ASYLUM	L22:2/left	11	pose	34.75	0.0	52.43	PHYSICAL_COMPONENT	ASYLUM-x-35-52 indexed jambs and head
+ASYLUM	L22:2/left	12	pose	35.0	0.0	52.43	PHYSICAL_COMPONENT	ASYLUM-x-35-52 indexed jambs and head
+ASYLUM	L22:2/left	13	pose	35.25	0.0	52.43	PHYSICAL_COMPONENT	ASYLUM-x-35-52 indexed jambs and head
+ASYLUM	L22:2/right	14	pose	34.75	0.0	51.57	PHYSICAL_COMPONENT	ASYLUM-x-35-52 indexed jambs and head
+ASYLUM	L22:2/right	15	pose	35.0	0.0	51.57	PHYSICAL_COMPONENT	ASYLUM-x-35-52 indexed jambs and head
+ASYLUM	L22:2/right	16	pose	35.25	0.0	51.57	PHYSICAL_COMPONENT	ASYLUM-x-35-52 indexed jambs and head
+ASYLUM	L23:1/left	17	pose	39.07	0.0	53.75	PHYSICAL_COMPONENT	ASYLUM-z-54-39.5 indexed jambs and head
+ASYLUM	L23:1/left	18	pose	39.07	0.0	54.0	PHYSICAL_COMPONENT	ASYLUM-z-54-39.5 indexed jambs and head
+ASYLUM	L23:1/left	19	pose	39.07	0.0	54.25	PHYSICAL_COMPONENT	ASYLUM-z-54-39.5 indexed jambs and head
+ASYLUM	L23:1/right	20	pose	39.93	0.0	53.75	PHYSICAL_COMPONENT	ASYLUM-z-54-39.5 indexed jambs and head
+ASYLUM	L23:1/right	21	pose	39.93	0.0	54.0	PHYSICAL_COMPONENT	ASYLUM-z-54-39.5 indexed jambs and head
+ASYLUM	L23:1/right	22	pose	39.93	0.0	54.25	PHYSICAL_COMPONENT	ASYLUM-z-54-39.5 indexed jambs and head
+ASYLUM	L27:0/left	23	pose	12.57	0.0	28.75	PHYSICAL_COMPONENT	ASYLUM-court-ground-south-a-S indexed exterior jambs and head
+ASYLUM	L27:0/left	24	pose	12.57	0.0	29.0	PHYSICAL_COMPONENT	ASYLUM-court-ground-south-a-S indexed exterior jambs and head
+ASYLUM	L27:0/right	25	pose	13.43	0.0	28.75	PHYSICAL_COMPONENT	ASYLUM-court-ground-south-a-S indexed exterior jambs and head
+ASYLUM	L27:0/right	26	pose	13.43	0.0	29.0	PHYSICAL_COMPONENT	ASYLUM-court-ground-south-a-S indexed exterior jambs and head
+ASYLUM	L27:1/left	27	pose	12.57	0.0	29.0	PHYSICAL_COMPONENT	ASYLUM-court-ground-south-a-S indexed exterior jambs and head
+ASYLUM	L27:1/right	28	pose	13.43	0.0	29.0	PHYSICAL_COMPONENT	ASYLUM-court-ground-south-a-S indexed exterior jambs and head
+ASYLUM	L37:0/right	29	pose	44.025635179398314	0.0	25.717937025463296	PHYSICAL_COMPONENT	Flat route shell Wall clinical-soiled N.001
+ASYLUM	L37:0/right	30	pose	43.80341295717609	0.0	25.829048136574407	PHYSICAL_COMPONENT	Flat route shell Wall clinical-soiled N.001
+ASYLUM	L37:0/right	31	pose	43.581190734953864	0.0	25.94015924768552	PHYSICAL_COMPONENT	Flat route shell Wall clinical-soiled N.001
+ASYLUM	L37:0/right	32	pose	43.35896851273164	0.0	26.051270358796632	PHYSICAL_COMPONENT	Flat route shell Wall clinical-soiled N.001
+ASYLUM	L37:0/right	33	pose	43.13674629050942	0.0	26.162381469907743	PHYSICAL_COMPONENT	Flat route shell Wall clinical-soiled N.001
+ASYLUM	L39:0/right	34	pose	41.89800500352221	0.0	30.24248076263067	PHYSICAL_COMPONENT	Flat route shell Wall treatment N
+ASYLUM	L40:0/left	35	pose	44.75751923736932	0.0	33.10199499647779	PHYSICAL_COMPONENT	248:Wall hydro-change W.001
+ASYLUM	L40:0/left	36	pose	44.97491054171715	0.0	32.99329934430388	PHYSICAL_COMPONENT	248:Wall hydro-change W.001
+ASYLUM	L41:1/left	37	pose	49.02927741742312	0.0	33.137389249243554	PHYSICAL_COMPONENT	250:Wall hydro-change E.001
+ASYLUM	L41:1/left	38	pose	49.19594408408978	0.0	33.30405591591022	PHYSICAL_COMPONENT	250:Wall hydro-change E.001
+ASYLUM	L42:0/left	39	pose	49.19594408408978	0.0	36.69594408408978	PHYSICAL_COMPONENT	Flat route shell Wall hydro-bath W.001
+ASYLUM	L42:0/left	40	pose	49.02927741742312	0.0	36.862610750756446	PHYSICAL_COMPONENT	Flat route shell Wall hydro-bath W.001
+ASYLUM	L43:1/left	41	pose	44.75751923736933	0.0	36.89800500352221	PHYSICAL_COMPONENT	Flat route shell Wall treatment E.001
+ASYLUM	L56:0/left	42	pose	48.30405591591022	0.0	12.195944084089785	PHYSICAL_COMPONENT	Flat route shell Wall quiet-lobby N.001
+ASYLUM	L56:0/left	43	pose	48.137389249243554	0.0	12.029277417423119	PHYSICAL_COMPONENT	Flat route shell Wall quiet-lobby N.001
+PRISON	L034:1/left	44	pose	14.592090069535178	0.0	52.01694893524568	PHYSICAL_COMPONENT	Flat route shell Wall a-lower-gallery S
+PRISON	L034:1/left	45	pose	14.458756736201844	0.0	52.216948935245675	PHYSICAL_COMPONENT	Flat route shell Wall a-lower-gallery S
+PRISON	L050:1/right	46	pose	53.40790993046482	0.0	52.01694893524568	PHYSICAL_COMPONENT	Flat route shell Wall b-lower-gallery S.001
+PRISON	L050:1/right	47	pose	53.54124326379815	0.0	52.216948935245675	PHYSICAL_COMPONENT	Flat route shell Wall b-lower-gallery S.001
+PRISON	L068:0/left	48	pose	17.75	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:0/left	49	pose	18.0	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:0/right	50	pose	17.75	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:0/right	51	pose	18.0	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/left	52	pose	18.0	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/left	53	pose	18.25	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/right	54	pose	18.0	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/right	55	pose	18.25	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L085:3/left	56	pose	30.33	0.0	22.25	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L085:3/left	57	pose	30.33	0.0	22.0	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L085:3/right	58	pose	29.67	0.0	22.25	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L085:3/right	59	pose	29.67	0.0	22.0	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L103:0/right	60	pose	31.741243263798154	0.0	12.016948935245674	PHYSICAL_COMPONENT	Flat route shell Wall medical-link E
+PRISON	L103:0/right	61	pose	31.87457659713149	0.0	12.216948935245675	PHYSICAL_COMPONENT	Flat route shell Wall medical-link E
+PRISON	L103:0/right	62	pose	32.00790993046482	0.0	12.416948935245674	PHYSICAL_COMPONENT	Flat route shell Wall medical-link E
+WLD-17	route-03:0/right	63	pose	39.883582899982564	2.0	55.53433159993024	NO_FOOT_SUPPORT_0.0_-0.22	-
+WLD-17	route-10:0/left	64	pose	30.48	4.0	22.75	PHYSICAL_COMPONENT	163:route-10 flight0 step2
+WLD-17	route-10:0/left	65	pose	30.48	4.0	22.5	PHYSICAL_COMPONENT	163:route-10 flight0 step2
+WLD-17	route-10:0/left	66	pose	30.48	4.0	22.25	PHYSICAL_COMPONENT	163:route-10 flight0 step2
+WLD-17	route-10:0/left	67	pose	30.48	4.0	22.0	NO_FOOT_SUPPORT_0.0_-0.22	-
+WLD-17	route-10:0/right	68	pose	29.52	4.0	22.0	NO_FOOT_SUPPORT_0.0_-0.22	-
+WLD-17	route-11:3/left	69	pose	19.52	0.0	16.0	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-11:3/left	70	pose	19.52	0.0	16.25	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-11:3/left	71	pose	19.52	0.0	16.5	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-11:3/left	72	pose	19.52	0.0	16.75	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-12:3/left	73	pose	55.52	0.0	16.0	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-17	route-12:3/left	74	pose	55.52	0.0	16.25	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-17	route-12:3/left	75	pose	55.52	0.0	16.5	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-17	route-12:3/left	76	pose	55.52	0.0	16.75	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-18	route-02:1/left	77	pose	19.48	7.000000135093387E-9	70.0	PHYSICAL_COMPONENT	WLD-18 clean servicehouse S end
+WLD-18	route-02:1/left	78	pose	19.48	0.0	69.75	PHYSICAL_COMPONENT	WLD-18 clean servicehouse S end
+WLD-18	route-02:1/right	79	pose	18.52	7.000000135093387E-9	70.0	PHYSICAL_COMPONENT	WLD-18 clean servicehouse S pier0
+WLD-18	route-02:1/right	80	pose	18.52	0.0	69.75	PHYSICAL_COMPONENT	WLD-18 clean servicehouse S pier0
+WLD-18	route-08:1/left	81	pose	7.93	-4.0	33.15	PHYSICAL_COMPONENT	Cinder escape full-depth service frame
+WLD-18	route-08:1/right	82	pose	6.970000000000001	-4.0	34.0	PHYSICAL_COMPONENT	WLD-18 constant-cell guard route-08 flight -0.83 0
+WLD-18	route-08:2/left	83	pose	7.45	-4.0	32.67	NO_CENTRE_SUPPORT	-
+WLD-18	route-08:2/left	84	pose	7.208333333333334	-4.0	32.67	NO_CENTRE_SUPPORT	-
+WLD-18	route-08:2/left	85	pose	6.966666666666667	-4.0	32.67	NO_FOOT_SUPPORT_0.22_0.0	-
+WLD-18	route-08:2/left	86	pose	6.725	-4.0	32.67	PHYSICAL_COMPONENT	WLD-18 covered escape connector wall 32.56 region0
+WLD-18	route-08:2/left	87	pose	6.483333333333333	-4.0	32.67	PHYSICAL_COMPONENT	WLD-18 covered escape connector wall 32.56 region0
+WLD-18	route-08:2/left	88	pose	6.241666666666667	-4.0	32.67	PHYSICAL_COMPONENT	WLD-18 covered escape connector wall 32.56 region0
+WLD-18	route-08:2/left	89	pose	6.0	-4.0	32.67	PHYSICAL_COMPONENT	WLD-18 covered escape connector wall 32.56 region0
+WLD-18	route-09:2/left	90	pose	9.795121951219512	0.0	56.48	PHYSICAL_COMPONENT	WLD-18 clean exit E end
+WLD-18	route-09:2/left	91	pose	10.043902439024391	0.0	56.48	PHYSICAL_COMPONENT	WLD-18 clean servicehouse W end
+WLD-18	route-09:2/left	92	pose	10.292682926829269	0.0	56.48	PHYSICAL_COMPONENT	WLD-18 clean servicehouse W end
+WLD-18	route-09:2/right	93	pose	9.795121951219512	0.0	55.52	PHYSICAL_COMPONENT	WLD-18 clean exit E pier0
+WLD-18	route-09:2/right	94	pose	10.043902439024391	0.0	55.52	PHYSICAL_COMPONENT	WLD-18 clean servicehouse W pier0
+WLD-18	route-09:2/right	95	pose	10.292682926829269	0.0	55.52	PHYSICAL_COMPONENT	WLD-18 clean servicehouse W pier0
+WLD-18	route-11:0/left	96	pose	18.0	-4.0	32.48	PHYSICAL_COMPONENT	Rebuilt stair WLD-18 route-07 flight0 part1
+WLD-18	route-11:0/left	97	pose	18.25	-4.0	32.48	PHYSICAL_COMPONENT	Rebuilt stair WLD-18 route-07 flight0 part1
+WLD-18	route-11:0/left	98	pose	18.5	-4.0	32.48	PHYSICAL_COMPONENT	Rebuilt stair WLD-18 route-07 flight0 part1
+WLD-18	route-11:0/left	99	pose	18.75	-4.0	32.48	PHYSICAL_COMPONENT	Rebuilt stair WLD-18 route-07 flight0 part1
+WLD-18	route-12:1/right	100	pose	42.02	-4.0	27.25	PHYSICAL_COMPONENT	WLD-18-x-42-28-y-4 indexed jambs and head
+WLD-18	route-12:1/right	101	pose	42.02	-4.0	27.0	PHYSICAL_COMPONENT	WLD-18 clean exhibit W pier0
+WLD-18	route-12:1/right	102	pose	42.02	-4.0	26.75	PHYSICAL_COMPONENT	WLD-18 clean exhibit W pier0
+WLD-18	route-12:1/right	103	pose	42.02	-4.0	26.5	PHYSICAL_COMPONENT	WLD-18 clean exhibit W pier0
+WLD-18	route-15:2/left	104	pose	42.02	-8.0	26.0	PHYSICAL_COMPONENT	WLD-18 clean east W pier0
+WLD-18	route-15:2/left	105	pose	42.02	-8.0	26.25	PHYSICAL_COMPONENT	WLD-18 clean east W pier0
+WLD-18	route-15:2/left	106	pose	42.02	-8.0	26.5	PHYSICAL_COMPONENT	WLD-18 clean east W pier0
+WLD-18	route-15:2/left	107	pose	42.02	-8.0	26.75	PHYSICAL_COMPONENT	WLD-18 clean east W pier0
+WLD-18	route-15:2/left	108	pose	42.02	-8.0	27.0	PHYSICAL_COMPONENT	WLD-18 clean east W pier0
+WLD-18	route-15:2/left	109	pose	42.02	-8.0	27.25	PHYSICAL_COMPONENT	WLD-18-x-42-28-y-8 indexed jambs and head

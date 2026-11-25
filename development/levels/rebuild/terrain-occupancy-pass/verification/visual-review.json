@@ -1,0 +1,45 @@
+{
+  "status": "NATIVE_CONSTRUCTION_REVIEW_OPEN_NOT_FINISHED_MAP_ACCEPTANCE",
+  "sheets": [
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",
+      "sha256": "245041f0f431fdeefebe00787f96792cfc50a37e16f41dcb273b5dfe9ac4ab15",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-02.png",
+      "sha256": "917131623e3447ffb50e17a4d33d833c3e27ae028e18f640d5b0c34a6bf2d83b",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-01.png",
+      "sha256": "4bd43047a8d78f720a8754b620f7e2210ac713425168483875c7dd326771bd31",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-02.png",
+      "sha256": "2ad650ad8824805bc2ad14ebdb2998a6420f88c29bc81c4aff4e9a60ef3b92de",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-03.png",
+      "sha256": "4a4451bc6446eb6adc1ace5a618ff4b2ab8fa2732c1abe5734968ec70cc11eb2",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-04.png",
+      "sha256": "7520ada42b36f6887bcc3b358082d3366dfdeaac652b71fa9d3fb65939118335",
+      "observed": true
+    }
+  ],
+  "actual_native_frames": 25,
+  "construction_score_out_of_5": 3,
+  "finish_score_out_of_5": 1,
+  "findings": [
+    "Paired intact room exports visibly remove terrain in Red Mesa, lookout/dam interiors and the battery. Some frames are limited to plain close walls and floors; no finished-room acceptance.",
+    "Tower perimeter earth slivers replaced by a rough retaining collar with circulation openings; texture/edge refinement remains.",
+    "Battery after-view exposes unresolved black floor regions requiring actual floor/shaft/material inspection; original source geometry retained.",
+    "Cave and dam land masses still need credible retaining/rock roofs, boundary shaping, physical edges and terrain finish.",
+    "Source-only native views with neutral150W fill; no installed-fixture, runtime, canonical van arrival or multiplayer/hardware acceptance."
+  ]
+}

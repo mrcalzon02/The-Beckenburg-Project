@@ -1,7 +1,7 @@
 {
   "id": "WLD-04",
   "title": "Widow's Peak Fire Lookout",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "fitted and verified in native staged case; named package case verification pending",
   "generator_required": true,
   "generator_location_intent": "Ground-level lookout service shelter, separate from the tower stair",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,24 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-04/layout.json"
+  "source_layout": "development/levels/layouts/wld-04/layout.json",
+  "installed_source": {
+    "room": "Roadhead service shelter",
+    "floor_y": 0.018,
+    "bounds": [
+      34,
+      66,
+      39.6,
+      69.6
+    ],
+    "documents": "development/levels/rebuild/lookout-power-pass/electrical.json",
+    "verify": "development/levels/rebuild/lookout-power-pass/checkpoint.json",
+    "circuits": [
+      "WP-MAIN diesel and distribution",
+      "WP-YARD open service shelter",
+      "WP-03 maintenance hut",
+      "WP-05 ranger store",
+      "WP-10 observation cabin"
+    ]
+  }
 }

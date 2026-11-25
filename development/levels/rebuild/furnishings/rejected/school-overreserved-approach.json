@@ -1,0 +1,146 @@
+{
+  "site": "SCHOOL",
+  "status": "REVISE_UNPLACED_REQUIREMENTS",
+  "source_layout": "development/levels/rebuild/school/rough-layout.json",
+  "source_layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+  "structure_glb_sha256": "92d3742f39901e4bde984372cfb2b23f11ef20062e825be55fbb7b5874bff91e",
+  "furnished_glb_sha256": "1eab97dd15a5b7a50e6f588549fcd919fbae09fa5d02d1839b53812682ed6893",
+  "native_sha256": "1a67cb5b396c77dbf5768215160b277634e25b313cf7ecab0d51e3088a929fd0",
+  "requests": 6,
+  "placements": [
+    {
+      "id": "SCHOOL:class-a:0:0",
+      "zone": "class-a",
+      "purpose": "Class A: 24 desks and teaching area - existing source rough allocates footprint/function, refinement later",
+      "recipe": "level_blockout_student_desk",
+      "asset": "level_blockout_student_desk",
+      "source_sha256": "8b81ec9782fe083ed4357e27bb14da4deeee4db206be8d0fa7d7954a199c8d80",
+      "bounds": [
+        18.575000762939453,
+        -32.45100021362305,
+        0.0,
+        19.780000686645508,
+        -31.751001358032227,
+        1.034999966621399
+      ],
+      "rect": [
+        18.574999971985818,
+        31.751000010132785,
+        19.78,
+        32.450999998211856
+      ],
+      "floor_y": 0,
+      "yaw": 1.5707963267948966,
+      "triangles": 108
+    },
+    {
+      "id": "SCHOOL:class-b:1:0",
+      "zone": "class-b",
+      "purpose": "Class B: 24 desks and teaching area - existing source rough allocates footprint/function, refinement later",
+      "recipe": "level_blockout_student_desk",
+      "asset": "level_blockout_student_desk",
+      "source_sha256": "8b81ec9782fe083ed4357e27bb14da4deeee4db206be8d0fa7d7954a199c8d80",
+      "bounds": [
+        11.991999626159668,
+        -13.425000190734863,
+        3.5999999046325684,
+        12.692000389099121,
+        -12.220000267028809,
+        4.634999752044678
+      ],
+      "rect": [
+        11.992000002384186,
+        12.22,
+        12.691999990463257,
+        13.425000028014184
+      ],
+      "floor_y": 3.6,
+      "yaw": 0,
+      "triangles": 108
+    },
+    {
+      "id": "SCHOOL:science:2:0",
+      "zone": "science",
+      "purpose": "Shared practical science teaching - existing source rough allocates footprint/function, refinement later",
+      "recipe": "level_blockout_science_instrument_table",
+      "asset": "level_blockout_science_instrument_table",
+      "source_sha256": "37ad81a14c0dbcc369602bc756422a4be2d5cbd09dc3d01633cba1002b5387a9",
+      "bounds": [
+        11.765999794006348,
+        -13.0600004196167,
+        0.0,
+        13.595999717712402,
+        -12.220000267028809,
+        1.598637342453003
+      ],
+      "rect": [
+        11.765999991416932,
+        12.22,
+        13.596000034332276,
+        13.059999973773957
+      ],
+      "floor_y": 0,
+      "yaw": 0,
+      "triangles": 244
+    },
+    {
+      "id": "SCHOOL:dining:3:0",
+      "zone": "dining",
+      "purpose": "Dining: two classes in one sitting - existing source rough allocates footprint/function, refinement later",
+      "recipe": "level_blockout_school_cafeteria_table",
+      "asset": "level_blockout_school_cafeteria_table",
+      "source_sha256": "019b3d3218e8b1e740e206fb7859fe549a24ff82c92ec88ea82f94f09081d849",
+      "bounds": [
+        31.2760009765625,
+        -35.779998779296875,
+        0.0,
+        33.555999755859375,
+        -33.98999786376953,
+        0.8650000095367432
+      ],
+      "rect": [
+        31.276000005722047,
+        33.990000038146974,
+        33.55599997711182,
+        35.78
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "triangles": 108
+    }
+  ],
+  "issues": [
+    {
+      "request": {
+        "zone": "change-a",
+        "recipe": "level_blockout_school_locker_bank",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Changing group A lockers and bench - existing source rough allocates footprint/function, refinement later"
+      },
+      "issue": "No supported position clear of authored routes, doors, rituals and prior furniture"
+    },
+    {
+      "request": {
+        "zone": "office",
+        "recipe": "level_blockout_headmaster_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Administration work room - existing source rough allocates footprint/function, refinement later"
+      },
+      "issue": "No supported position clear of authored routes, doors, rituals and prior furniture"
+    }
+  ],
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "8616d6bdbd7fae55e94fb4fd0bf235523f992e325b6f4bf241c279e23089f03c"
+}

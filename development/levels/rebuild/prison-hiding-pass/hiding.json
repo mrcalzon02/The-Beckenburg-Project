@@ -1,0 +1,86 @@
+{
+  "cupboards": [
+    {
+      "id": "prison-records-cupboard",
+      "space": "records",
+      "owner": 9,
+      "position": [
+        20.8,
+        0,
+        62.94
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          19.949999,
+          0.0,
+          62.34
+        ],
+        [
+          21.65,
+          2.31,
+          63.641998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "prison-chapel-cupboard",
+      "space": "chapel",
+      "owner": 6,
+      "position": [
+        66.1,
+        0,
+        34.94
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          65.25,
+          0.0,
+          34.34
+        ],
+        [
+          66.949997,
+          2.31,
+          35.641998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "prison-plant-cupboard",
+      "space": "plant",
+      "owner": 11,
+      "position": [
+        43.7,
+        -3,
+        22.76
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          42.850002,
+          -3.0,
+          22.16
+        ],
+        [
+          44.549999,
+          -0.69,
+          23.462
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "preserved_components": 1138,
+  "added_components": 3,
+  "exports": {
+    "blend": "f16da9aa23994e67a7db40524c9f8da9dacbbbe4483b61ac6cab77dc4855ba63",
+    "glb": "92013b7d68304cbd6f47526f2aebcfc355344eac7af170f2a7d325747c01038a",
+    "hcs2": "d960878cc89ac7a25be3804214621b9a0a1849512c4860700dfc7a60879f2947"
+  }
+}

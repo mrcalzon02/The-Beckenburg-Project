@@ -1,0 +1,18 @@
+check	result
+native_scene_revision	2ec56e5ee7dc0d393a3614bc1de24929c2a0a8844cc199a2de24c5996dbe4951
+stage_revision	2ec56e5ee7dc0d393a3614bc1de24929c2a0a8844cc199a2de24c5996dbe4951-0d109e2d1fcee534
+actual_fitted_doors	17
+bound_native_room_volumes	24
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	26
+physical_open_transitions	3
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	Software
+wld-07-mortuary-cottage-cupboard_protected_floor_samples	69
+wld-07-mortuary-tool-cupboard_protected_floor_samples	69
+wld-07-mortuary-mort-office-cupboard_protected_floor_samples	69
+cemetery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+wld-07-mortuary-cottage-cupboard_live_entry_hide_reveal_exit	PASS
+wld-07-mortuary-tool-cupboard_live_entry_hide_reveal_exit	PASS
+annex_staff_doors_aimed_and_crossed_to_office	PASS
+wld-07-mortuary-mort-office-cupboard_live_entry_hide_reveal_exit	PASS

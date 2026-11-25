@@ -1,0 +1,68 @@
+{
+  "retained_native_records": 73,
+  "closed_parts": 50,
+  "door_profile_rays": 63,
+  "door_sill_rays": 84,
+  "cover_soffit_rays": 18,
+  "roof_cover_rays": 27,
+  "old_shortcuts_closed": 0,
+  "glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+  "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+  "saved_editor_terrain_exact": true,
+  "van_triangle_count": 2689,
+  "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/overview.png",
+      "sha256": "9b555950a1aafc9bcdcfe78a66faf4904fbdc8ed62afb3675cbb1eb44c0b38b9",
+      "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/arrival.png",
+      "sha256": "94c34b298917494932efb8e64ab91d59b1880d44cbe46b160a8a3545b4bc65e9",
+      "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/chapel.png",
+      "sha256": "96e04a845e7c74223d03d6144b326f37accf9e99db80b21616cc6a60c8e3691b",
+      "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-entry.png",
+      "sha256": "55ce9ecb638afe2cb8e2c8578c77870791e3af5b5addeb7b60ada6273694b6b9",
+      "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/vault.png",
+      "sha256": "23640020113dd6e068b53e2c6b40744d48f0a30c2948331c9d74c2cbdd2da14c",
+      "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-cutaway.png",
+      "sha256": "33f60171a5c0fb3428adc46a593971fbfee079236683027a2050a62d22a91ac9",
+      "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+      "hidden": [
+        "Ceiling cap west-stair",
+        "Wall west-stair W",
+        "Wall ossuary S",
+        "Wall ossuary W",
+        "WLD-07 west-stair S pier 0 region0",
+        "WLD-07 west-stair S lintel 0 region0",
+        "WLD-07 west-stair S 1 frame",
+        "WLD-07 west-stair S return region0",
+        "WLD-07 ossuary full deck region0",
+        "WLD-07 west-stair south stair enclosure region0",
+        "WLD-07 west-stair west slope",
+        "WLD-07 west-stair east slope",
+        "WLD-07 west-stair north masonry gable",
+        "WLD-07 west-stair south masonry gable",
+        "WLD-07 saved ground"
+      ]
+    }
+  ]
+}

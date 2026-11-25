@@ -1,0 +1,47 @@
+{
+  "id": "WLD-03",
+  "source_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world",
+  "source_height_sha256": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+  "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "program": [
+    {
+      "link": "L04",
+      "points": [
+        [
+          12.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L07",
+      "points": [
+        [
+          12.0,
+          4,
+          34.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    }
+  ],
+  "new_basement_punches": [],
+  "method": "Actual editor non-destructive grade layers and persistent footprint topology punches; retain source landforms/source16bitPNG and previous holes; no room-pad snapping or render-only hole."
+}

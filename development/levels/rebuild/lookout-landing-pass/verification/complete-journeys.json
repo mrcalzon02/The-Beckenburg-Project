@@ -1,0 +1,104 @@
+{
+  "physics_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be",
+  "journeys": [
+    {
+      "site": "WLD-04",
+      "variant": "after",
+      "link": "J01",
+      "segments": "39",
+      "legacy_forward": "BLOCKED_SEGMENT_5_AT_31_OF_33",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_1_OF_39",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to the lookout deck",
+      "links": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L12",
+        "L13",
+        "L14",
+        "L14B",
+        "L15"
+      ]
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after",
+      "link": "J02",
+      "segments": "17",
+      "legacy_forward": "BLOCKED_SEGMENT_5_AT_31_OF_33",
+      "legacy_reverse": "BLOCKED_SEGMENT_2_AT_3_OF_9",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to the ranger ruin",
+      "links": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L07"
+      ]
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after",
+      "link": "J03",
+      "segments": "18",
+      "legacy_forward": "BLOCKED_SEGMENT_0_AT_72_OF_74",
+      "legacy_reverse": "BLOCKED_SEGMENT_2_AT_25_OF_40",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Clearing to the roadhead via the ranger rooms",
+      "links": [
+        "L07",
+        "L08",
+        "L09",
+        "L10"
+      ]
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after",
+      "link": "J04",
+      "segments": "17",
+      "legacy_forward": "BLOCKED_SEGMENT_2_AT_1_OF_39",
+      "legacy_reverse": "BLOCKED_SEGMENT_1_AT_3_OF_9",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Tower halfway landing to the maintenance hut",
+      "links": [
+        "-L13",
+        "-L12",
+        "L05"
+      ]
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after",
+      "link": "J05",
+      "segments": "25",
+      "legacy_forward": "BLOCKED_SEGMENT_0_AT_72_OF_74",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_72_OF_74",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Clearing loop through the ruin, store and contour return",
+      "links": [
+        "L07",
+        "L08",
+        "L09",
+        "L11"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/verify_lookout_landings.py": "7de2156da54693b7d3684d7d8b4bd253c5d13d5e1e9e537ce3c50ca3e80e45a1"
+  },
+  "evidence_sha256": {
+    "complete-journey-input.tsv": "c99469173b458e15bc55a77c1baa4607106ce098c229fa189cabcc344d97cce2",
+    "complete-journey-sweeps.tsv": "a01685dde18c7e0481f90d62ffecc22e601f797e5039a7bdce56cb92370d5a62"
+  }
+}

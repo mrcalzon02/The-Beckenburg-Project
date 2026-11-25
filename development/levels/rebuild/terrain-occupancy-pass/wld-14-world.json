@@ -1,0 +1,339 @@
+{
+  "id": "WLD-14",
+  "source": {
+    "id": "WLD-14",
+    "source_glb": "development/levels/rebuild/deck-fit-pass/wld-14/deck-terrain.glb",
+    "source_glb_sha256": "c0e3bade34567c01a69c809ccf6e0e6d0857946a23d9084c8935fc37e5fcd12e",
+    "layout": "development/levels/rebuild/wld-14/rough-layout.json",
+    "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+    "intrusions": [
+      {
+        "id": "tower0",
+        "bounds": [
+          27.5,
+          5.5,
+          36.5,
+          14.5
+        ],
+        "floor_y": 0.0,
+        "height": 3.6,
+        "samples": 232,
+        "occupied_terrain_samples": 12,
+        "height_range": [
+          0.079345703125,
+          0.7786979675292969
+        ],
+        "examples": [
+          [
+            28.75,
+            0.39698028564453125,
+            7.25
+          ],
+          [
+            29.25,
+            0.3693885803222656,
+            6.75
+          ],
+          [
+            31.75,
+            0.3487586975097656,
+            5.75
+          ],
+          [
+            32.25,
+            0.3643836975097656,
+            5.75
+          ],
+          [
+            33.75,
+            0.45423126220703125,
+            6.25
+          ]
+        ]
+      }
+    ]
+  },
+  "source_world_preserved": {
+    "development/levels/rebuild/wld-14/terrain-world/adaptive-topology.bin": "32ac39aa3f3748b4c139c32ca19db0d7f18e4470d42e0035243f93e6b2a66d79",
+    "development/levels/rebuild/wld-14/terrain-world/authored-cuts.tsv": "34b6cd08f7c845fe43e2dbee8b5a8ae0f6fc10be15e0e0ae084cc20ee0d0f6c0",
+    "development/levels/rebuild/wld-14/terrain-world/source-provenance.json": "a7f3c26b747301a06465ecef15865ce6a1f9f9e33b3a2e58e4eacffe0764861e",
+    "development/levels/rebuild/wld-14/terrain-world/terrain-physics.hcs2": "a775357a9e410201f13339e2b96eaa61338ef5f894bb16e76b419b9eec2bb279",
+    "development/levels/rebuild/wld-14/terrain-world/tile_0_0.png": "8099d45bfb8351aad146d87bf77654f925f260170fd11b5d0b2ce377ef85d7e2",
+    "development/levels/rebuild/wld-14/terrain-world/verification.json": "191a797cba05c3728638204851a9c020d8eff34aabba8ef2defd6616aeba94a9",
+    "development/levels/rebuild/wld-14/terrain-world/world.properties": "98454c988372034ae608d76197025b4a659da7cbecbc5ba553cb38c887d54e3b",
+    "development/levels/rebuild/wld-14/terrain-world/scene-package/scene.bin": "94ab8792935c941a7c5a689db2cb5b92767117b632f0f2cbc3ad797ac3657b8f",
+    "development/levels/rebuild/wld-14/terrain-world/scene-package/meshes/site.obj": "188226af78c91d9f4e46539669554a0754d0d358d1177d9d2e3ef7f94f1ca729"
+  },
+  "new_cuts": [
+    [
+      30.5,
+      5.5,
+      33.5,
+      5.75,
+      "occupied-room-tower0"
+    ],
+    [
+      29.75,
+      5.75,
+      34.25,
+      6.0,
+      "occupied-room-tower0"
+    ],
+    [
+      29.5,
+      6.0,
+      34.5,
+      6.25,
+      "occupied-room-tower0"
+    ],
+    [
+      29.0,
+      6.25,
+      35.0,
+      6.5,
+      "occupied-room-tower0"
+    ],
+    [
+      28.75,
+      6.5,
+      35.25,
+      6.75,
+      "occupied-room-tower0"
+    ],
+    [
+      28.5,
+      6.75,
+      35.5,
+      7.0,
+      "occupied-room-tower0"
+    ],
+    [
+      28.25,
+      7.0,
+      35.75,
+      7.25,
+      "occupied-room-tower0"
+    ],
+    [
+      28.25,
+      7.25,
+      35.75,
+      7.5,
+      "occupied-room-tower0"
+    ],
+    [
+      28.0,
+      7.5,
+      36.0,
+      7.75,
+      "occupied-room-tower0"
+    ],
+    [
+      27.75,
+      7.75,
+      36.25,
+      8.0,
+      "occupied-room-tower0"
+    ],
+    [
+      27.75,
+      8.0,
+      36.25,
+      8.25,
+      "occupied-room-tower0"
+    ],
+    [
+      27.75,
+      8.25,
+      36.25,
+      8.5,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      8.5,
+      36.5,
+      8.75,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      8.75,
+      36.5,
+      9.0,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      9.0,
+      36.5,
+      9.25,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      9.25,
+      36.5,
+      9.5,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      9.5,
+      36.5,
+      9.75,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      9.75,
+      36.5,
+      10.0,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      10.0,
+      36.5,
+      10.25,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      10.25,
+      36.5,
+      10.5,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      10.5,
+      36.5,
+      10.75,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      10.75,
+      36.5,
+      11.0,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      11.0,
+      36.5,
+      11.25,
+      "occupied-room-tower0"
+    ],
+    [
+      27.5,
+      11.25,
+      36.5,
+      11.5,
+      "occupied-room-tower0"
+    ],
+    [
+      27.75,
+      11.5,
+      36.25,
+      11.75,
+      "occupied-room-tower0"
+    ],
+    [
+      27.75,
+      11.75,
+      36.25,
+      12.0,
+      "occupied-room-tower0"
+    ],
+    [
+      27.75,
+      12.0,
+      36.25,
+      12.25,
+      "occupied-room-tower0"
+    ],
+    [
+      28.0,
+      12.25,
+      36.0,
+      12.5,
+      "occupied-room-tower0"
+    ],
+    [
+      28.25,
+      12.5,
+      35.75,
+      12.75,
+      "occupied-room-tower0"
+    ],
+    [
+      28.25,
+      12.75,
+      35.75,
+      13.0,
+      "occupied-room-tower0"
+    ],
+    [
+      28.5,
+      13.0,
+      35.5,
+      13.25,
+      "occupied-room-tower0"
+    ],
+    [
+      28.75,
+      13.25,
+      35.25,
+      13.5,
+      "occupied-room-tower0"
+    ],
+    [
+      29.0,
+      13.5,
+      35.0,
+      13.75,
+      "occupied-room-tower0"
+    ],
+    [
+      29.5,
+      13.75,
+      34.5,
+      14.0,
+      "occupied-room-tower0"
+    ],
+    [
+      29.75,
+      14.0,
+      34.25,
+      14.25,
+      "occupied-room-tower0"
+    ],
+    [
+      30.5,
+      14.25,
+      33.5,
+      14.5,
+      "occupied-room-tower0"
+    ]
+  ],
+  "world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world",
+  "saved_world_files": {
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/adaptive-topology.bin": "088884317adf03607e508073e4b9241802ae317d5de3f9d7f483d3d92c7c5abb",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/authored-cuts.tsv": "bcc330cc4df2627367905e144c938f3104fa25d2035cbaaf7fe909b0f7e294d5",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/source-provenance.json": "7cae55752610336cadd513ad47f50bb16a669d2b363f7e1dbf3366f27fee9a45",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/terrain-physics.hcs2": "9d62211db36826eefe2e8d8155f804aa6b2dab33af3b78bc5e083b6919f92616",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/tile_0_0.png": "8099d45bfb8351aad146d87bf77654f925f260170fd11b5d0b2ce377ef85d7e2",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/verification.json": "6acf0a65db18725e42598916e1ecf84eb9bfc5b6356d4da6310c201e2f81bb28",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/world.properties": "98454c988372034ae608d76197025b4a659da7cbecbc5ba553cb38c887d54e3b",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/scene-package/.scene.bin.editor.previous": "7badf97104653e572b7212eb300cb0faf0d247ded2a23159c2df3a0c6df007c3",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/scene-package/scene.bin": "1165e03fd4fcef10deeeb3a63b265ebbb6849e6d74d0cb81979ae8a89c0eba5b",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/scene-package/meshes/site.obj": "b43ae764c54cfca755854b1418c598e3873c247f8661dd94f53eac0141166385"
+  },
+  "author_sha256": "e62ecb637915437e8b64c6d4e135d6bfa56e0f3b90fe50a57d20823c92e1b431",
+  "builder_sha256": "db4dd450ad3cca03c56f69c0dfff55f1ec348a80db2fe1166b717285451e1082",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "ACTUAL_SAVED_OCCUPIED_ROOM_EXCAVATION_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "remaining": "Independent terrain/native/room coverage and route regression checks; foundation/rock/retaining/collar edges, remaining outdoor conflicts and runtime integration."
+}

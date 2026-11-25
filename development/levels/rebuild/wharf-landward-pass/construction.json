@@ -1,0 +1,575 @@
+{
+  "site": "WLD-06",
+  "roster_authority": "development/levels/rebuild/wharf-tidal-pass/roster.json",
+  "preserved_previous": {
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.blend": "ca5201d133f89ff988061f61b5deed2a8abbf3cb35be0945262f042597ac5c52",
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.glb": "53cd80d825ac313e67e3bb19277b0be213d0b1fbd7d0c397369866091ba7a1f4",
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.hcs2": "af8f8b4474406b1fcb215a9cde8b50745c2e02008a6a2bc3e52ac091465eb145",
+    "development/levels/rebuild/wharf-tidal-pass/wharf-tide.water": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc"
+  },
+  "builder_sha256": "6ddf8ad47d0b2ae3b96b5bc3d1bbdd22ab43038b332560319a2313b27387bea3",
+  "landward_alignment": [
+    [
+      4.42,
+      54.23
+    ],
+    [
+      5.6,
+      55.1
+    ],
+    [
+      6.8,
+      58.2
+    ],
+    [
+      8.95,
+      60.76
+    ],
+    [
+      11.1,
+      62.55
+    ],
+    [
+      14.7,
+      64.7
+    ],
+    [
+      17.35,
+      66.45
+    ],
+    [
+      20.6,
+      68.95
+    ],
+    [
+      20.8,
+      75.0
+    ],
+    [
+      21.1,
+      81.3
+    ],
+    [
+      22.15,
+      83.45
+    ],
+    [
+      28,
+      83.45
+    ],
+    [
+      36,
+      83.45
+    ],
+    [
+      41.9,
+      83.45
+    ],
+    [
+      43.15,
+      81.3
+    ],
+    [
+      43.25,
+      75.0
+    ],
+    [
+      43.45,
+      68.9
+    ],
+    [
+      46.25,
+      66.3
+    ],
+    [
+      49.25,
+      64.45
+    ],
+    [
+      52.95,
+      62.3
+    ],
+    [
+      55.1,
+      59.75
+    ],
+    [
+      58.15,
+      56.85
+    ],
+    [
+      59.7,
+      54.78
+    ],
+    [
+      59.58,
+      54.23
+    ]
+  ],
+  "road_gate_reservation": [
+    28.0,
+    83.45,
+    36.0,
+    83.45
+  ],
+  "constructed_spans": [
+    {
+      "name": "Wharf landward retaining span 1",
+      "a": [
+        4.42,
+        54.23
+      ],
+      "b": [
+        5.6,
+        55.1
+      ],
+      "outward": [
+        -0.5934316883623756,
+        0.804884358928275
+      ],
+      "ground_y_min": -0.22964,
+      "ground_y_max": -0.10682,
+      "footing_bottom_y": -0.47964,
+      "ground_probes": 27,
+      "guard_crest_y": 1.8181800000000001
+    },
+    {
+      "name": "Wharf landward retaining span 2",
+      "a": [
+        5.6,
+        55.1
+      ],
+      "b": [
+        6.8,
+        58.2
+      ],
+      "outward": [
+        -0.9325680982740896,
+        0.36099410255771197
+      ],
+      "ground_y_min": -0.13561,
+      "ground_y_max": -0.05005,
+      "footing_bottom_y": -0.38561,
+      "ground_probes": 54,
+      "guard_crest_y": 1.8749500000000001
+    },
+    {
+      "name": "Wharf landward retaining span 3",
+      "a": [
+        6.8,
+        58.2
+      ],
+      "b": [
+        8.95,
+        60.76
+      ],
+      "outward": [
+        -0.7657637889314262,
+        0.6431219321103785
+      ],
+      "ground_y_min": -0.06683,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.31683,
+      "ground_probes": 54,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 4",
+      "a": [
+        8.95,
+        60.76
+      ],
+      "b": [
+        11.1,
+        62.55
+      ],
+      "outward": [
+        -0.6398327439690997,
+        0.768514189683556
+      ],
+      "ground_y_min": -0.00273,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.25273,
+      "ground_probes": 45,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 5",
+      "a": [
+        11.1,
+        62.55
+      ],
+      "b": [
+        14.7,
+        64.7
+      ],
+      "outward": [
+        -0.5127411190260198,
+        0.8585432690668217
+      ],
+      "ground_y_min": -0.00797,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.25797,
+      "ground_probes": 66,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 6",
+      "a": [
+        14.7,
+        64.7
+      ],
+      "b": [
+        17.35,
+        66.45
+      ],
+      "outward": [
+        -0.5510615347417097,
+        0.8344646097517326
+      ],
+      "ground_y_min": -0.00458,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.25458,
+      "ground_probes": 51,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 7",
+      "a": [
+        17.35,
+        66.45
+      ],
+      "b": [
+        20.6,
+        68.95
+      ],
+      "outward": [
+        -0.6097107608496923,
+        0.7926239891046
+      ],
+      "ground_y_min": -0.00242,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.25242,
+      "ground_probes": 66,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 8",
+      "a": [
+        20.6,
+        68.95
+      ],
+      "b": [
+        20.8,
+        75.0
+      ],
+      "outward": [
+        -0.9994540366753351,
+        0.033039802865300234
+      ],
+      "ground_y_min": 0.0,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.25,
+      "ground_probes": 96,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 9",
+      "a": [
+        20.8,
+        75.0
+      ],
+      "b": [
+        21.1,
+        81.3
+      ],
+      "outward": [
+        -0.9988681377244376,
+        0.047565149415449544
+      ],
+      "ground_y_min": -0.09707,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.34707,
+      "ground_probes": 99,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 10",
+      "a": [
+        21.1,
+        81.3
+      ],
+      "b": [
+        22.15,
+        83.45
+      ],
+      "outward": [
+        -0.8985675159864327,
+        0.4388352985049997
+      ],
+      "ground_y_min": -0.17882,
+      "ground_y_max": -0.06588,
+      "footing_bottom_y": -0.42882,
+      "ground_probes": 39,
+      "guard_crest_y": 1.85912
+    },
+    {
+      "name": "Wharf landward retaining span 11",
+      "a": [
+        22.15,
+        83.45
+      ],
+      "b": [
+        28,
+        83.45
+      ],
+      "outward": [
+        -0.0,
+        1.0
+      ],
+      "ground_y_min": -0.17406,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.42406,
+      "ground_probes": 93,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 12",
+      "a": [
+        36,
+        83.45
+      ],
+      "b": [
+        41.9,
+        83.45
+      ],
+      "outward": [
+        -0.0,
+        1.0
+      ],
+      "ground_y_min": -0.17914,
+      "ground_y_max": 0.0,
+      "footing_bottom_y": -0.42913999999999997,
+      "ground_probes": 93,
+      "guard_crest_y": 1.925
+    },
+    {
+      "name": "Wharf landward retaining span 13",
+      "a": [
+        41.9,
+        83.45
+      ],
+      "b": [
+        43.15,
+        81.3
+      ],
+      "outward": [
+        0.8645071866841934,
+        0.5026204573745296
+      ],
+      "ground_y_min": -0.17967,
+      "ground_y_max": -0.10204,
+      "footing_bottom_y": -0.42967,
+      "ground_probes": 42,
+      "guard_crest_y": 1.8229600000000001
+    },
+    {
+      "name": "Wharf landward retaining span 14",
+      "a": [
+        43.15,
+        81.3
+      ],
+      "b": [
+        43.25,
+        75.0
+      ],
+      "outward": [
+        0.9998740474835989,
+        0.015871016626724025
+      ],
+      "ground_y_min": -0.13335,
+      "ground_y_max": -0.00841,
+      "footing_bottom_y": -0.38334999999999997,
+      "ground_probes": 99,
+      "guard_crest_y": 1.91659
+    },
+    {
+      "name": "Wharf landward retaining span 15",
+      "a": [
+        43.25,
+        75.0
+      ],
+      "b": [
+        43.45,
+        68.9
+      ],
+      "outward": [
+        0.9994629430332294,
+        0.03276927682076212
+      ],
+      "ground_y_min": -0.01011,
+      "ground_y_max": -0.00014,
+      "footing_bottom_y": -0.26011,
+      "ground_probes": 96,
+      "guard_crest_y": 1.92486
+    },
+    {
+      "name": "Wharf landward retaining span 16",
+      "a": [
+        43.45,
+        68.9
+      ],
+      "b": [
+        46.25,
+        66.3
+      ],
+      "outward": [
+        0.6804510993672794,
+        0.7327934916262977
+      ],
+      "ground_y_min": -0.05133,
+      "ground_y_max": -4e-05,
+      "footing_bottom_y": -0.30133,
+      "ground_probes": 63,
+      "guard_crest_y": 1.92496
+    },
+    {
+      "name": "Wharf landward retaining span 17",
+      "a": [
+        46.25,
+        66.3
+      ],
+      "b": [
+        49.25,
+        64.45
+      ],
+      "outward": [
+        0.5248887029964593,
+        0.8511708697239907
+      ],
+      "ground_y_min": -0.03609,
+      "ground_y_max": -0.00452,
+      "footing_bottom_y": -0.28609,
+      "ground_probes": 57,
+      "guard_crest_y": 1.92048
+    },
+    {
+      "name": "Wharf landward retaining span 18",
+      "a": [
+        49.25,
+        64.45
+      ],
+      "b": [
+        52.95,
+        62.3
+      ],
+      "outward": [
+        0.5024173645398087,
+        0.8646252319987389
+      ],
+      "ground_y_min": -0.00853,
+      "ground_y_max": 0.01598,
+      "footing_bottom_y": -0.25853,
+      "ground_probes": 69,
+      "guard_crest_y": 1.9409800000000001
+    },
+    {
+      "name": "Wharf landward retaining span 19",
+      "a": [
+        52.95,
+        62.3
+      ],
+      "b": [
+        55.1,
+        59.75
+      ],
+      "outward": [
+        0.7645223227757785,
+        0.644597252536441
+      ],
+      "ground_y_min": 0.0,
+      "ground_y_max": 0.01114,
+      "footing_bottom_y": -0.25,
+      "ground_probes": 54,
+      "guard_crest_y": 1.93614
+    },
+    {
+      "name": "Wharf landward retaining span 20",
+      "a": [
+        55.1,
+        59.75
+      ],
+      "b": [
+        58.15,
+        56.85
+      ],
+      "outward": [
+        0.6890616286058434,
+        0.724702747326835
+      ],
+      "ground_y_min": -0.00578,
+      "ground_y_max": 0.00198,
+      "footing_bottom_y": -0.25578,
+      "ground_probes": 69,
+      "guard_crest_y": 1.9269800000000001
+    },
+    {
+      "name": "Wharf landward retaining span 21",
+      "a": [
+        58.15,
+        56.85
+      ],
+      "b": [
+        59.7,
+        54.78
+      ],
+      "outward": [
+        0.8004637977282396,
+        0.5993811045791182
+      ],
+      "ground_y_min": -0.07988,
+      "ground_y_max": -0.00435,
+      "footing_bottom_y": -0.32988,
+      "ground_probes": 42,
+      "guard_crest_y": 1.92065
+    },
+    {
+      "name": "Wharf landward retaining span 22",
+      "a": [
+        59.7,
+        54.78
+      ],
+      "b": [
+        59.58,
+        54.23
+      ],
+      "outward": [
+        0.9770157614099909,
+        -0.2131670752167317
+      ],
+      "ground_y_min": -0.09439,
+      "ground_y_max": -0.06519,
+      "footing_bottom_y": -0.34439,
+      "ground_probes": 12,
+      "guard_crest_y": 1.85981
+    }
+  ],
+  "founded_spans_probes": 1386,
+  "asset_fit": {
+    "gate": "site-fitted iron frame and masonry piers",
+    "activation": "fixed closed boundary"
+  },
+  "landward_context": "Wharf rising landward bank and continuing road",
+  "added_parts": 27,
+  "retained_native_parts": 661,
+  "shoreline_diagnostic": {
+    "path": "development/levels/rebuild/wharf-landward-pass/captures/structure/wharf-landward-enclosure.png",
+    "sha256": "628720e69ad107292c305d2e4073bc76ecc36210073f586c7b70fd4941b82512"
+  },
+  "exports": {
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.blend": "25caf3d69e72b2179780fdecb8c7ba89c557ad6c1db8a0edce77db5477030d8d",
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.glb": "45deb8c1d36a7414adbef9d8617b816807e1c6916f7bbcaa7e8bc887ca89e672",
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.hcs2": "533b9f7789981c36269f7cfb41991c944409a27b83e25aea76a63f022f3ab9a0",
+    "development/levels/rebuild/wharf-landward-pass/wharf-tide.water": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc"
+  }
+}

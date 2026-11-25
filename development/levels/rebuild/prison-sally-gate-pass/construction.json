@@ -1,0 +1,96 @@
+{
+  "asset": "development/levels/primitive-props-v1/models/level_blockout_prison_sally_gate.glb",
+  "asset_sha256": "957a63a8a769ebe53c6032ea4074c65ef131733d8452ac779cfc37b8aac09df3",
+  "mount_brackets": [
+    {
+      "component": "PRISON-court-sally-N indexed exterior jambs and head",
+      "contact": [
+        32.549999,
+        2.705,
+        58.253334
+      ]
+    },
+    {
+      "component": "PRISON-court-sally-N indexed exterior jambs and head",
+      "contact": [
+        33.700001,
+        2.705,
+        58.253334
+      ]
+    },
+    {
+      "component": "PRISON-court-sally-N indexed exterior jambs and head",
+      "contact": [
+        34.650002,
+        2.705,
+        58.253334
+      ]
+    },
+    {
+      "component": "PRISON court-door sally N end",
+      "contact": [
+        35.650002,
+        2.705,
+        58.240002
+      ]
+    },
+    {
+      "component": "PRISON court-door sally N end",
+      "contact": [
+        36.650002,
+        2.705,
+        58.240002
+      ]
+    },
+    {
+      "component": "PRISON court-door sally N end",
+      "contact": [
+        37.73,
+        2.705,
+        58.240002
+      ]
+    }
+  ],
+  "release_controls": [
+    {
+      "id": "sally-release-sally",
+      "owner": 2,
+      "at": [
+        32.44,
+        1.3,
+        58.3090016784668
+      ],
+      "depth": 0.03500000000000014,
+      "wall": "PRISON court-door sally N pier0",
+      "receiver": [
+        32.439999,
+        1.3,
+        58.240002
+      ]
+    },
+    {
+      "id": "sally-release-yard",
+      "owner": 12,
+      "at": [
+        32.44,
+        1.3,
+        57.931
+      ],
+      "depth": 0.03500000000000014,
+      "wall": "PRISON court-door sally N pier0",
+      "receiver": [
+        32.439999,
+        1.3,
+        58.0
+      ]
+    }
+  ],
+  "travel_m": 2.53,
+  "retained_components": 1052,
+  "added_components": 13,
+  "exports": {
+    "blend": "c8ef03d54268520cc690f62ea710fc67b3957efce7135deb80b647d5879919ef",
+    "glb": "13ed2e3157dd601b7ac40fe9f5fe10b177e1e1dbd0bcfce8ed56d3a0f9b74cf3",
+    "hcs2": "7e6b21cf6061627488a561c7cb42c16381253de3b7169f9e68f3c96447ba0c8d"
+  }
+}

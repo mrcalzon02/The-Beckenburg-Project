@@ -1,0 +1,252 @@
+{
+  "tested_links": 34,
+  "changed_links": 0,
+  "changed_sites": 0,
+  "changes": [],
+  "decisions": [
+    {
+      "site": "ACADEMY",
+      "link": "L01",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L03",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L43",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "591",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L19",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L20",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L27",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "358",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L32",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "62",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L53",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L54",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L62",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "48",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L63",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L71",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1665",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L72",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L73",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L74",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L76",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L01",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1463",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L10",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "360",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L14",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1272",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L15",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "19",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L18",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "15",
+      "points": ""
+    },
+    {
+      "site": "WLD-11",
+      "link": "L01",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-11",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "27",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L01",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "852",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L04",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "106",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L06",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "525",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L09",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "508",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L13",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "623",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L14",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "23",
+      "points": ""
+    }
+  ],
+  "source_hashes": {
+    "tools/design_flat_routes.py": "879176e07522bd8ebfedfbf96960e4a6b05f3e82d35d01463512a8e3822ad495",
+    "tools/java/FlatRouteDesigner.java": "5ca83fa688a6e45a8b50e43ca56e691cc4f4d00fc95dd1d00ddea9f5d733951a",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115"
+  },
+  "scope": "Geometry and production physics unchanged. Required source movement and complete route widths, not runtime map acceptance."
+}

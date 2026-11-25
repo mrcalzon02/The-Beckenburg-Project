@@ -1,7 +1,7 @@
 {
   "id": "WLD-01",
   "title": "Blackpine Logging Camp",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Packaged review verified at the installed shed; full acceptance remains open",
   "generator_required": true,
   "generator_location_intent": "Existing logging-camp generator/service power area; preserve its actual circuit plan",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,7 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-01/layout.json"
+  "source_layout": "development/levels/layouts/wld-01/layout.json",
+  "verified_checkpoint": "development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json",
+  "fixture_schedule": "development/levels/rebuild/blackpine-dispatch-pass/verification/installed-circuits.tsv"
 }

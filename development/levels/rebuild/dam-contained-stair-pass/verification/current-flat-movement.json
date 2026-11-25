@@ -1,0 +1,132 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-09": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 12
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6690,
+        "valid_standing": 6177,
+        "invalid_standing": 513,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 111,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 27,
+          "NO_FOOT_SUPPORT_0.22_0.0": 33,
+          "NO_CENTRE_SUPPORT": 342
+        },
+        "physical_components": [
+          [
+            "DAM-HALL-x-64-35--6 indexed frame",
+            18
+          ],
+          [
+            "WLD-09 middle landing column 68.22 34.25 region0",
+            18
+          ],
+          [
+            "349:level_blockout_hydro_turbine.001",
+            12
+          ],
+          [
+            "WLD-09 middle landing column 65.78 35.75 region0",
+            9
+          ],
+          [
+            "WLD-09 middle landing column 68.22 35.75 region0",
+            9
+          ],
+          [
+            "WLD-09 middle landing column 65.78 34.25 region0",
+            9
+          ],
+          [
+            "WLD-09 rim column 68.22 31.5 region0",
+            9
+          ],
+          [
+            "352:level_blockout_workbench.001",
+            8
+          ],
+          [
+            "DAM-HALL-z-48-68-0 indexed frame",
+            4
+          ],
+          [
+            "WLD-09 contained lower flight 66.17 guard 0",
+            3
+          ],
+          [
+            "WLD-09 contained lower flight 67.83 guard 0",
+            3
+          ],
+          [
+            "WLD-09 contained upper flight 66.17 guard 4",
+            3
+          ],
+          [
+            "WLD-09 contained upper flight 67.83 guard 4",
+            3
+          ],
+          [
+            "WLD-09 hall E pier0 region0",
+            3
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-interface-construction-pass/wld-09/construction.json",
+        "contract_sha256": "498b8258a7da69d0c3e8a17bbc21f09e91fe5f4796483daadd49c51367955039",
+        "layout": "development/levels/rebuild/stair-interface-construction-pass/wld-09/authored-layout.json",
+        "layout_sha256": "643a67d094ad723b6f0c1e37acf8e19e3693162e423b2d49cfa38d7da3b1c34f",
+        "native": "development/levels/rebuild/stair-interface-construction-pass/wld-09/joined-stairs.hcs2",
+        "native_sha256": "cffb44ad8ea7af2199350eea2ea985004ceb77c970be27eaea00979912979a67"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/dam-contained-stair-pass/wld-09/construction.json",
+        "contract_sha256": "dd0cc09142848efaa9a644874f4b4a6c15cf39eb8c5ba5d463e29f512332f92c",
+        "layout": "development/levels/rebuild/dam-contained-stair-pass/wld-09/authored-layout.json",
+        "layout_sha256": "ed50e02889d4c5af4afa03b83aa484ac466723d6ef47d00bea9863228cd100c1",
+        "native": "development/levels/rebuild/dam-contained-stair-pass/wld-09/contained-hall.hcs2",
+        "native_sha256": "55fcff00baae6c3f933f911163f815f23b65a41e587f19f1ba2d0373a8231b49"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [
+    {
+      "site": "WLD-09",
+      "link": "EAST-CATWALK"
+    }
+  ],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/stair-interface-construction-pass/roster.json": "ada0719dcb98cd21ffad6609d5c9ef0448bfa5ecc197b8e89a6f33029447559d"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-failure-contacts.tsv": "b46593e84adc020c46c987203247a6e70e4466e2b62e13dcde2737be404c1477",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-failure-input.tsv": "2267e9bf28ab776051e959a8e0bb88feca5442909628e7bb29bdcbd898725bbf",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-lane-input.tsv": "c717cbadcede29223a5641925328c909f8e602b95c5f77caa9a97a50f6414ddf",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-lane-names.tsv": "b133e44acc2f34f064b38f6ec400490c74d4896eb2a834ee4c65aba0480bcb82",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-lanes.tsv": "5f8d80d813eefe970542f5165814b0cbe70d072da2f9b9d77173f86ccd31bf7d",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-links.tsv": "b05f420a920a240e6bbfa131c963cd1a270e9cd245d6c54ea96e8dbb8865a4ef",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-names.tsv": "481f24c9758b89bf50bb8bc54d7191acb63ac54734bd69afd8c9b4b6b0a05d17",
+    "development/levels/rebuild/dam-contained-stair-pass/verification/current-flat-paths.tsv": "d32a340218679678e08857312429a4b4910c0e363dd7f1285c655ffb498d6f11"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

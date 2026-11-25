@@ -1,0 +1,80 @@
+{
+  "shared_original_cemetery_zones": 13,
+  "all_shared_measured_coordinates_identical_at_seed": true,
+  "seed_ref": "de4edf80de20b86f9ac42f6a616913e109505894",
+  "worlds": {
+    "wld-07": {
+      "verification": {
+        "site": "wld-07",
+        "cutout_leaves": 1168,
+        "new_cutouts": 0,
+        "clear_hole_probes": 344,
+        "triangles": 5491,
+        "source_height_sha256": "5b71777b8278d446d2478aed7539f5b68a66ff98dfba9034b087e6e2a86a2d89",
+        "physics_sha256": "0e8f951caa10fc934e02430c5e02bf646ecaefd9125efe45b0af24969e0f557b",
+        "obj_sha256": "186d2693a34a48e524933284bf0d8079e52158fbe77888a17132be7310be863c",
+        "source_heights_unchanged_by_punch": true,
+        "disk_reopen_verified": true,
+        "unpunched_optical_negative_verified": true,
+        "punched_body_clear_and_unpunched_body_blocked": true,
+        "status": "SAVED_EDITOR_TERRAIN_CANDIDATE_NOT_LOCATION_ACCEPTED"
+      },
+      "provenance": {
+        "source_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+        "source_glb": "development/levels/rebuild/structures/wld-07-mortuary/rough-shell.glb",
+        "source_glb_sha256": "a4943c387d7120757e3c8d2be3011e3d9dd8c0ce7986cec29b2ce749413fe099",
+        "source_layout": "development/levels/layout-expansions/wld-07-mortuary/layout.json",
+        "source_layout_sha256": "d6c6c8a4c083cffc3e14d2a4c1cadb93d364eaa05d7897dcf4987573cf33b148",
+        "cut_layout": "development/levels/rebuild/wld-07/rough-layout.json",
+        "cut_definition_sha256": "112d9ba4c462c38adadf7f4af64090ade7df7f31744539c9b948f56a92e22e27",
+        "sampler_sha256": "22562058716727becd4eba8d4a3543634a26d3a0c2fb59d612fa5a8942063a48",
+        "grid_metres": 2,
+        "cut_grid_metres": 0.25,
+        "edge_and_void_resampling": "Quarter-metre cells classify immutable source footprint; current authored foundations/entrances supply persistent cut requests; no final terrain/edge acceptance",
+        "nearest_fallback_samples": 2247,
+        "cuts": 344
+      },
+      "raw_height_matches_prior_annex_source": true,
+      "grading_program_sha256": "9f649d4d10cd0ada8a5d0301a41cce0dec15103f5eede46640798baf58b7014c",
+      "grading_document_sha256": "c131d3123913137d7d2593f14c9f3eb5770096c4414942ee5b1a16756bfffa73"
+    },
+    "wld-07-mortuary": {
+      "verification": {
+        "site": "wld-07-mortuary",
+        "cutout_leaves": 2303,
+        "new_cutouts": 0,
+        "clear_hole_probes": 693,
+        "triangles": 9014,
+        "source_height_sha256": "5b71777b8278d446d2478aed7539f5b68a66ff98dfba9034b087e6e2a86a2d89",
+        "physics_sha256": "48d4774a8605c733244c10e394f1143b21b8bd762cbe5d6e1edd503878bc7a6a",
+        "obj_sha256": "4c883f72221b726d9d99055bc62dc72b8a3b8699fd1d78df8d306384cdc5aab3",
+        "source_heights_unchanged_by_punch": true,
+        "disk_reopen_verified": true,
+        "unpunched_optical_negative_verified": true,
+        "punched_body_clear_and_unpunched_body_blocked": true,
+        "status": "SAVED_EDITOR_TERRAIN_CANDIDATE_NOT_LOCATION_ACCEPTED"
+      },
+      "provenance": {
+        "source_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+        "source_glb": "development/levels/rebuild/structures/wld-07-mortuary/rough-shell.glb",
+        "source_glb_sha256": "a4943c387d7120757e3c8d2be3011e3d9dd8c0ce7986cec29b2ce749413fe099",
+        "source_layout": "development/levels/layout-expansions/wld-07-mortuary/layout.json",
+        "source_layout_sha256": "d6c6c8a4c083cffc3e14d2a4c1cadb93d364eaa05d7897dcf4987573cf33b148",
+        "cut_layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+        "cut_definition_sha256": "b44e20e49efa6e13800007187fd319c5bcd701c817e059021cf5a2ddf39931fc",
+        "sampler_sha256": "22562058716727becd4eba8d4a3543634a26d3a0c2fb59d612fa5a8942063a48",
+        "grid_metres": 2,
+        "cut_grid_metres": 0.25,
+        "edge_and_void_resampling": "Quarter-metre cells classify immutable source footprint; current authored foundations/entrances supply persistent cut requests; no final terrain/edge acceptance",
+        "nearest_fallback_samples": 2247,
+        "cuts": 693
+      },
+      "raw_height_matches_prior_annex_source": true,
+      "grading_program_sha256": "956cda3217be49296c27e79f3e414387b279e1ef955cb6d3c09ece11a4d563a3",
+      "grading_document_sha256": "66b10e8ca96b83410a54032e539784a33d8522404ccf0c1ebc6ebc4fb4ece0ba"
+    }
+  },
+  "scope": "Shared cemetery terrain only; explicit source mapping, current authored cut data, saved/reopened physical holes. Terrain edges/rims/guards not accepted.",
+  "terrain_builder_sha256": "2f1df8f7bd0125027fe411f30baf50666c374f4931aa9a4321b831c58f6b45c9",
+  "raw_height_sha256": "5b71777b8278d446d2478aed7539f5b68a66ff98dfba9034b087e6e2a86a2d89"
+}

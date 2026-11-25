@@ -1,0 +1,27 @@
+{
+  "camera": [
+    22.3,
+    -25.8,
+    1.62
+  ],
+  "focus": [
+    19.8,
+    -21.67,
+    1.07
+  ],
+  "lighting": "Native inspection daylight with identical front fill in both views",
+  "views": {
+    "before": {
+      "native_sha256": "d13136a9e73b2c7ab96eeff2972a452eb8fcab17b809a826166e0f6fc5744a81",
+      "revision": "first-principles-functional-furnishings-v1-981935462ed806a0",
+      "capture": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-before-standing.png",
+      "capture_sha256": "d92ff1cc286af300d77e59193f96f72dc7fa6ecb70b4e64ae748c22c3a706838"
+    },
+    "after": {
+      "native_sha256": "4d67eb753828ef3c1506a1978fbf79e56bd885353b4cd69d19839899f297d7c0",
+      "revision": "first-principles-functional-furnishings-v1-1fd2c4bdb33768b8",
+      "capture": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-after-standing.png",
+      "capture_sha256": "4e0cbe60fa9737d830bb2c4d12ff269a14b1decfdbb3d27aeaf23b6765eab89a"
+    }
+  }
+}

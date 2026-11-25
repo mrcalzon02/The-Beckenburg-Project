@@ -1,0 +1,87 @@
+{
+  "cupboards": [
+    {
+      "id": "wld-07-mortuary-cottage-cupboard",
+      "space": "cottage",
+      "owner": 1,
+      "position": [
+        33.45,
+        0.0,
+        44.3
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          32.850002,
+          0.0,
+          43.450001
+        ],
+        [
+          34.152,
+          2.31,
+          45.149998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "wld-07-mortuary-tool-cupboard",
+      "space": "tool",
+      "owner": 2,
+      "position": [
+        52.55,
+        0.0,
+        49.7
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          51.848,
+          0.0,
+          48.850002
+        ],
+        [
+          53.149998,
+          2.31,
+          50.549999
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "wld-07-mortuary-mort-office-cupboard",
+      "space": "mort-office",
+      "owner": 10,
+      "position": [
+        82.55,
+        0.0,
+        63.2
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          81.848,
+          0.0,
+          62.350002
+        ],
+        [
+          83.150002,
+          2.31,
+          64.050003
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "prior_door_scene": "73ecfaad3726caf3775a7dbbc47e551ac6ee163747341c8df09b7ab5b6ef24c0",
+  "retained_collision_parts": 281,
+  "added_collision_parts": 3,
+  "exports": {
+    "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/grounds-with-refuges.glb": "9a765c8f3a6f49915cf48ddebf5f30daa474c2678a2ec2fbe09fe3d3c38e618f",
+    "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/grounds-with-refuges.hcs2": "bc0b475848451e188e1510a5a34991492f151cf5f561433c3ba9cf5d68b1fbaf",
+    "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/grounds-with-refuges.blend": "ae1c6d22a757408aaca6178f9f58920cafcdc88683131e512d7fe4108fe26df9"
+  }
+}

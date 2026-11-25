@@ -50,22 +50,22 @@ public final class LanWorldControlsTest {
                 check(panel.casefileOpen(),"Tab opens the evidence ledger anywhere in an investigation");
                 press(panel,KeyEvent.VK_ESCAPE);
                 check(!panel.casefileOpen(),"Escape closes ledger and returns to gameplay");
-                press(panel,KeyEvent.VK_F1);
+                press(panel,GameControls.HELP);
                 tap(panel,KeyEvent.VK_TAB);
                 check(panel.casefileOpen(),"Tab overrides the help overlay and opens evidence ledger");
                 press(panel,KeyEvent.VK_ESCAPE);
                 check(!panel.casefileOpen(),"ledger closes cleanly after help overlay");
                 press(panel,KeyEvent.VK_2);check(panel.selectedTool()==LanCase.Tool.THERMOMETER,"hotkey 2 selects thermometer");
-                press(panel,KeyEvent.VK_R);
+                tap(panel,GameControls.USE);
                 String measurement=a.await("ACCEPT|GEARUSE|THERMOMETER|");
                 check(measurement.contains("Air ")&&!measurement.contains("INCONCLUSIVE"),
                     "held thermometer returns host-measured air temperature without an evidence verdict");
-                press(panel,KeyEvent.VK_C);check(a.await("ACCEPT|WARD").contains("DEFENSIVE"),"ward updates host state");
-                press(panel,KeyEvent.VK_B);
+                SwingUtilities.invokeAndWait(()->panel.fieldAction(6));check(a.await("ACCEPT|WARD").contains("DEFENSIVE"),"ward updates host state");
+                SwingUtilities.invokeAndWait(()->panel.fieldAction(7));
                 check(a.await("REJECT|CLEANSE").contains("haunting anchor"),
                     "legacy host rejects a ritual from the van rather than the physical anchor");
                 press(panel,KeyEvent.VK_3);check(panel.selectedTool()==LanCase.Tool.SPIRIT_BOX,"hotkey 3 selects spirit box");
-                press(panel,KeyEvent.VK_X);
+                SwingUtilities.invokeAndWait(()->panel.fieldAction(18));
                 check(a.await("REJECT|").contains("physical hunters must use the van door control"),
                     "physical viewport shortcut cannot bypass the van door");
                 check(host.running(),"rejected extraction must leave the round active");

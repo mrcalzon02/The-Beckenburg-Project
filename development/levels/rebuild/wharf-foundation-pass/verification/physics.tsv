@@ -1,0 +1,68 @@
+check	id	posture	forward	reverse	steps
+walk	L01	1.78	PASS	PASS	236
+walk	L01	1.05	PASS	PASS	236
+walk	L02	1.78	PASS	PASS	826
+walk	L02	1.05	PASS	PASS	826
+walk	L03	1.78	PASS	PASS	826
+walk	L03	1.05	PASS	PASS	826
+walk	L04	1.78	PASS	PASS	402
+walk	L04	1.05	PASS	PASS	402
+walk	L05	1.78	PASS	PASS	576
+walk	L05	1.05	PASS	PASS	576
+walk	L06	1.78	PASS	PASS	576
+walk	L06	1.05	PASS	PASS	576
+walk	L07	1.78	PASS	PASS	1200
+walk	L07	1.05	PASS	PASS	1200
+walk	L08	1.78	PASS	PASS	626
+walk	L08	1.05	PASS	PASS	626
+walk	L09	1.78	PASS	PASS	626
+walk	L09	1.05	PASS	PASS	626
+walk	L10	1.78	PASS	PASS	1100
+walk	L10	1.05	PASS	PASS	1100
+walk	L11	1.78	PASS	PASS	350
+walk	L11	1.05	PASS	PASS	350
+walk	L12	1.78	PASS	PASS	350
+walk	L12	1.05	PASS	PASS	350
+walk	L13	1.78	PASS	PASS	226
+walk	L13	1.05	PASS	PASS	226
+walk	L14	1.78	PASS	PASS	602
+walk	L14	1.05	PASS	PASS	602
+walk	L15	1.78	PASS	PASS	850
+walk	L15	1.05	PASS	PASS	850
+walk	L16	1.78	PASS	PASS	428
+walk	L16	1.05	PASS	PASS	428
+walk	L17	1.78	PASS	PASS	428
+walk	L17	1.05	PASS	PASS	428
+walk	L18	1.78	PASS	PASS	622
+walk	L18	1.05	PASS	PASS	622
+walk	van-to-net-store-via-crossdock	1.78	PASS	PASS	3440
+walk	van-to-net-store-via-crossdock	1.05	PASS	PASS	3440
+walk	west-cottage-to-fish-works	1.78	PASS	PASS	3280
+walk	west-cottage-to-fish-works	1.05	PASS	PASS	3280
+walk	van-undercroft-return-loop	1.78	PASS	PASS	3604
+walk	van-undercroft-return-loop	1.05	PASS	PASS	3604
+walk	WLD-06-z-54-12	1.78	PASS	PASS	38
+walk	WLD-06-z-54-12	1.05	PASS	PASS	38
+optics	WLD-06-z-54-12	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-x-20-48	1.78	PASS	PASS	38
+walk	WLD-06-x-20-48	1.05	PASS	PASS	38
+optics	WLD-06-x-20-48	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-z-54-52	1.78	PASS	PASS	38
+walk	WLD-06-z-54-52	1.05	PASS	PASS	38
+optics	WLD-06-z-54-52	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-x-44-48	1.78	PASS	PASS	38
+walk	WLD-06-x-44-48	1.05	PASS	PASS	38
+optics	WLD-06-x-44-48	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-z-28-16	1.78	PASS	PASS	38
+walk	WLD-06-z-28-16	1.05	PASS	PASS	38
+optics	WLD-06-z-28-16	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-x-20-19	1.78	PASS	PASS	38
+walk	WLD-06-x-20-19	1.05	PASS	PASS	38
+optics	WLD-06-x-20-19	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-x-44-17	1.78	PASS	PASS	38
+walk	WLD-06-x-44-17	1.05	PASS	PASS	38
+optics	WLD-06-x-44-17	1.2m ray	open center	blocked both jambs	3
+walk	WLD-06-z-10-32	1.78	PASS	PASS	38
+walk	WLD-06-z-10-32	1.05	PASS	PASS	38
+optics	WLD-06-z-10-32	1.2m ray	open center	blocked both jambs	3
+optics	undercroft slab and roof	1.0m ray	blocked	blocked	2

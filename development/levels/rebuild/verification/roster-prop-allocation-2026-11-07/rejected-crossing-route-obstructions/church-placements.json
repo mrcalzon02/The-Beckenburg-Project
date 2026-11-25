@@ -1,0 +1,147 @@
+{
+  "site": "CHURCH",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/church/rough-layout.json",
+  "source_layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+  "structure_glb_sha256": "c3c12cd177a7f155297afa87997e8a539ff02f333dcba5fee2904a9952393874",
+  "furnished_glb_sha256": "73c6578d2470126a0e6628a0314f8e0d7a6c56f0fb502c031050689e5f285533",
+  "native_sha256": "f33848e541c45fe61aea62f78688f96187562466dc4939d71ab54c12b08bf024",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "CHURCH:nave:0:0",
+      "zone": "nave",
+      "purpose": "Forty-place nave with centre and side aisles / Parish pew bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_pew",
+      "asset": "level_blockout_pew",
+      "source_sha256": "3626a9597743d7ea10670ec405a40e61a3d164d361b7cbf570fe3df37e050b25",
+      "bounds": [
+        19.053998947143555,
+        -12.730000495910645,
+        0.0,
+        20.77400016784668,
+        -12.15999984741211,
+        1.3049999475479126
+      ],
+      "rect": [
+        19.053999995708466,
+        12.16,
+        20.774000024318696,
+        12.730000022649765
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 48
+    },
+    {
+      "id": "CHURCH:chancel:1:0",
+      "zone": "chancel",
+      "purpose": "Chancel and supported altar arrangement / Parish chancel stone altar / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_stone_altar",
+      "asset": "level_blockout_stone_altar",
+      "source_sha256": "95aeb6f2597b8f13cbcc9f6219b9256e3ef24253e386075172cf19597694a603",
+      "bounds": [
+        19.23200035095215,
+        -7.340000152587891,
+        0.0,
+        21.552000045776367,
+        -6.159999847412109,
+        1.7699999809265137
+      ],
+      "rect": [
+        19.232000013351442,
+        6.16,
+        21.55199994659424,
+        7.339999947547913
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 100
+    },
+    {
+      "id": "CHURCH:choir:2:0",
+      "zone": "choir",
+      "purpose": "Choir seating and music stands / Parish pipe organ with tiered pipe ranks / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_organ_pipe_console",
+      "asset": "level_blockout_organ_pipe_console",
+      "source_sha256": "43f240cc666fb75e330c45bcca1fcdbcdb8cf454dbf02083d12d73185e89d9dd",
+      "bounds": [
+        21.662078857421875,
+        -27.32160186767578,
+        3.0,
+        23.831680297851562,
+        -26.160001754760742,
+        5.779200077056885
+      ],
+      "rect": [
+        21.66208000183105,
+        26.16,
+        23.83167999267578,
+        27.321599979400634
+      ],
+      "floor_y": 3,
+      "yaw": 6.283185307179586,
+      "uniform_rough_fit_scale": 0.96,
+      "triangles": 428
+    },
+    {
+      "id": "CHURCH:confessional:3:0",
+      "zone": "confessional",
+      "purpose": "Private confessional conversation enclosure / Confessional screened booth / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_confessional_screen",
+      "asset": "level_blockout_confessional_screen",
+      "source_sha256": "81761e0c5fe809f2243c13ee0601fa725f8cb327381341bbfa68d66b44966d64",
+      "bounds": [
+        10.15999984741211,
+        -20.353281021118164,
+        0.0,
+        11.540000915527344,
+        -18.531679153442383,
+        2.4149999618530273
+      ],
+      "rect": [
+        10.16,
+        18.531679996490478,
+        11.54,
+        20.353280014038088
+      ],
+      "floor_y": 0,
+      "yaw": 1.5707963267948966,
+      "uniform_rough_fit_scale": 0.92,
+      "triangles": 96
+    },
+    {
+      "id": "CHURCH:records:4:0",
+      "zone": "records",
+      "purpose": "Confidential parish records / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        15.480000495910645,
+        -26.687000274658203,
+        0.0,
+        16.560001373291016,
+        -26.15999984741211,
+        2.0
+      ],
+      "rect": [
+        15.479999991416932,
+        26.16,
+        16.560000034332276,
+        26.68699999511242
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "e727ec8818c905b92fd1dc68b740e0e0f0ee2bbfbfc03f0e3072404d6f057feb",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "3d19efcba059544d91e4de705a805faed4d87ceec04f2734023e9abb799250c7"
+}

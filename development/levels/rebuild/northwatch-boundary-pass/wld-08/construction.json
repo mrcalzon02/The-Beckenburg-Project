@@ -1,0 +1,2123 @@
+{
+  "id": "WLD-08",
+  "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+  "before_layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+  "layout_sha256": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+  "before_layout_sha256": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+  "source_glb": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.glb",
+  "source_glb_sha256": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+  "source_physics": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.hcs2",
+  "source_physics_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c",
+  "glb_sha256": "60c8d60a95a99d7e7e8d475bee205ec2e19e3d9e73b01880e733448102a0de1e",
+  "physics_sha256": "7994b50ccaedc842d967a4d4d25891e7fe8c43d9d4bd9cb726a961caf8336931",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "1": 0
+    },
+    "L18": {
+      "3": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "1": 0
+    },
+    "L18": {
+      "3": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "before_stair_components": [
+    "WLD-08 L17 constant tread 0 region0",
+    "WLD-08 L17 constant tread 1 region0",
+    "WLD-08 L17 constant tread 2 region0",
+    "WLD-08 L17 constant tread 3 region0",
+    "WLD-08 L17 constant tread 4 region0",
+    "WLD-08 L17 constant tread 5 region0",
+    "WLD-08 L17 constant tread 6 region0",
+    "WLD-08 L17 constant tread 7 region0",
+    "WLD-08 L17 constant tread 8 region0",
+    "WLD-08 L17 constant tread 9 region0",
+    "WLD-08 L17 constant tread 10 region0",
+    "WLD-08 L17 constant tread 11 region0",
+    "WLD-08 L17 constant tread 12 region0",
+    "WLD-08 L17 constant tread 13 region0",
+    "WLD-08 L18 constant tread 0 region0",
+    "WLD-08 L18 constant tread 1 region0",
+    "WLD-08 L18 constant tread 2 region0",
+    "WLD-08 L18 constant tread 3 region0",
+    "WLD-08 L18 constant tread 4 region0",
+    "WLD-08 L18 constant tread 5 region0",
+    "WLD-08 L18 constant tread 6 region0",
+    "WLD-08 L18 constant tread 7 region0",
+    "WLD-08 L18 constant tread 8 region0",
+    "WLD-08 L18 constant tread 9 region0",
+    "WLD-08 L18 constant tread 10 region0",
+    "WLD-08 L18 constant tread 11 region0",
+    "WLD-08 L18 constant tread 12 region0",
+    "WLD-08 L18 constant tread 13 region0",
+    "WLD-08 L20 constant tread 0 region0",
+    "WLD-08 L20 constant tread 1 region0",
+    "WLD-08 L20 constant tread 2 region0",
+    "WLD-08 L20 constant tread 3 region0",
+    "WLD-08 L20 constant tread 4 region0",
+    "WLD-08 L20 constant tread 5 region0",
+    "WLD-08 L20 constant tread 6 region0",
+    "WLD-08 L20 constant tread 7 region0",
+    "WLD-08 L20 constant tread 8 region0",
+    "WLD-08 L20 constant tread 9 region0",
+    "WLD-08 L20 constant tread 10 region0",
+    "WLD-08 L20 constant tread 11 region0",
+    "WLD-08 L20 constant tread 12 region0",
+    "WLD-08 L20 constant tread 13 region0"
+  ],
+  "stair_components": [
+    "WLD-08 L17 constant tread 0 region0",
+    "WLD-08 L17 constant tread 1 region0",
+    "WLD-08 L17 constant tread 2 region0",
+    "WLD-08 L17 constant tread 3 region0",
+    "WLD-08 L17 constant tread 4 region0",
+    "WLD-08 L17 constant tread 5 region0",
+    "WLD-08 L17 constant tread 6 region0",
+    "WLD-08 L17 constant tread 7 region0",
+    "WLD-08 L17 constant tread 8 region0",
+    "WLD-08 L17 constant tread 9 region0",
+    "WLD-08 L17 constant tread 10 region0",
+    "WLD-08 L17 constant tread 11 region0",
+    "WLD-08 L17 constant tread 12 region0",
+    "WLD-08 L17 constant tread 13 region0",
+    "WLD-08 L18 constant tread 0 region0",
+    "WLD-08 L18 constant tread 1 region0",
+    "WLD-08 L18 constant tread 2 region0",
+    "WLD-08 L18 constant tread 3 region0",
+    "WLD-08 L18 constant tread 4 region0",
+    "WLD-08 L18 constant tread 5 region0",
+    "WLD-08 L18 constant tread 6 region0",
+    "WLD-08 L18 constant tread 7 region0",
+    "WLD-08 L18 constant tread 8 region0",
+    "WLD-08 L18 constant tread 9 region0",
+    "WLD-08 L18 constant tread 10 region0",
+    "WLD-08 L18 constant tread 11 region0",
+    "WLD-08 L18 constant tread 12 region0",
+    "WLD-08 L18 constant tread 13 region0",
+    "WLD-08 L20 constant tread 0 region0",
+    "WLD-08 L20 constant tread 1 region0",
+    "WLD-08 L20 constant tread 2 region0",
+    "WLD-08 L20 constant tread 3 region0",
+    "WLD-08 L20 constant tread 4 region0",
+    "WLD-08 L20 constant tread 5 region0",
+    "WLD-08 L20 constant tread 6 region0",
+    "WLD-08 L20 constant tread 7 region0",
+    "WLD-08 L20 constant tread 8 region0",
+    "WLD-08 L20 constant tread 9 region0",
+    "WLD-08 L20 constant tread 10 region0",
+    "WLD-08 L20 constant tread 11 region0",
+    "WLD-08 L20 constant tread 12 region0",
+    "WLD-08 L20 constant tread 13 region0"
+  ],
+  "exports": {
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.blend": "5d10ec2e7c9a3ae3264d2f540592f231149d032e047121abc87bd2e7bff7f7b3",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.glb": "60c8d60a95a99d7e7e8d475bee205ec2e19e3d9e73b01880e733448102a0de1e",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.hcs2": "7994b50ccaedc842d967a4d4d25891e7fe8c43d9d4bd9cb726a961caf8336931"
+  },
+  "terrain": {
+    "joined_rim_edges": 1004,
+    "retained_cut_edges": [
+      20,
+      128
+    ],
+    "exterior_faces": 2402,
+    "road_faces": 33,
+    "area_m2": 17258.375
+  },
+  "alignment": [
+    [
+      29,
+      85.2
+    ],
+    [
+      13.7,
+      83.0
+    ],
+    [
+      6.5,
+      77
+    ],
+    [
+      -2.3,
+      64
+    ],
+    [
+      -2.6,
+      51
+    ],
+    [
+      -2.2,
+      36
+    ],
+    [
+      -2.4,
+      20
+    ],
+    [
+      -1.05,
+      5
+    ],
+    [
+      8.3,
+      -2.4
+    ],
+    [
+      28,
+      -4
+    ],
+    [
+      44,
+      -3.2
+    ],
+    [
+      56,
+      -2.4
+    ],
+    [
+      64,
+      2.4
+    ],
+    [
+      72.2,
+      6.5
+    ],
+    [
+      72.2,
+      20.5
+    ],
+    [
+      69,
+      33
+    ],
+    [
+      67.4,
+      48.5
+    ],
+    [
+      65.7,
+      62
+    ],
+    [
+      56.5,
+      73
+    ],
+    [
+      46,
+      82
+    ],
+    [
+      35,
+      85.2
+    ]
+  ],
+  "spans": [
+    {
+      "name": "Northwatch windbreak span 01",
+      "a": [
+        29.0,
+        85.2
+      ],
+      "b": [
+        25.939999999999998,
+        84.76
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.0,
+      "soil_samples": 42,
+      "footing_low": -0.38,
+      "crest": 2.21,
+      "outward": [
+        -0.1423270144122867,
+        0.9898196911399998
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 02",
+      "a": [
+        25.939999999999998,
+        84.76
+      ],
+      "b": [
+        22.88,
+        84.32000000000001
+      ],
+      "soil_min": -0.004354000091552734,
+      "soil_max": 0.0,
+      "soil_samples": 42,
+      "footing_low": -0.38435400009155274,
+      "crest": 2.21,
+      "outward": [
+        -0.14232701441228687,
+        0.9898196911399998
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 03",
+      "a": [
+        22.88,
+        84.32000000000001
+      ],
+      "b": [
+        19.82,
+        83.88
+      ],
+      "soil_min": -0.015466690063476562,
+      "soil_max": 0.0,
+      "soil_samples": 42,
+      "footing_low": -0.39546669006347657,
+      "crest": 2.21,
+      "outward": [
+        -0.1423270144122914,
+        0.9898196911399992
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 04",
+      "a": [
+        19.82,
+        83.88
+      ],
+      "b": [
+        16.759999999999998,
+        83.44
+      ],
+      "soil_min": -0.048581600189208984,
+      "soil_max": 0.0,
+      "soil_samples": 42,
+      "footing_low": -0.428581600189209,
+      "crest": 2.21,
+      "outward": [
+        -0.1423270144122867,
+        0.9898196911399998
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 05",
+      "a": [
+        16.759999999999998,
+        83.44
+      ],
+      "b": [
+        13.7,
+        83.0
+      ],
+      "soil_min": -0.033915042877197266,
+      "soil_max": -0.010428905487060547,
+      "soil_samples": 42,
+      "footing_low": -0.41391504287719727,
+      "crest": 2.1995710945129394,
+      "outward": [
+        -0.14232701441228687,
+        0.9898196911399998
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 06",
+      "a": [
+        13.7,
+        83.0
+      ],
+      "b": [
+        11.3,
+        81.0
+      ],
+      "soil_min": -0.0276641845703125,
+      "soil_max": -0.005812644958496094,
+      "soil_samples": 45,
+      "footing_low": -0.4076641845703125,
+      "crest": 2.204187355041504,
+      "outward": [
+        -0.64018439966448,
+        0.7682212795973756
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 07",
+      "a": [
+        11.3,
+        81.0
+      ],
+      "b": [
+        8.9,
+        79.0
+      ],
+      "soil_min": -0.010183334350585938,
+      "soil_max": 0.05086851119995117,
+      "soil_samples": 45,
+      "footing_low": -0.39018333435058594,
+      "crest": 2.260868511199951,
+      "outward": [
+        -0.6401843996644798,
+        0.7682212795973759
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 08",
+      "a": [
+        8.9,
+        79.0
+      ],
+      "b": [
+        6.5,
+        77.0
+      ],
+      "soil_min": 0.04512596130371094,
+      "soil_max": 0.14521026611328125,
+      "soil_samples": 45,
+      "footing_low": -0.33487403869628907,
+      "crest": 2.355210266113281,
+      "outward": [
+        -0.6401843996644798,
+        0.7682212795973759
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 09",
+      "a": [
+        6.5,
+        77.0
+      ],
+      "b": [
+        4.74,
+        74.4
+      ],
+      "soil_min": 0.12537240982055664,
+      "soil_max": 0.2344961166381836,
+      "soil_samples": 45,
+      "footing_low": -0.25462759017944336,
+      "crest": 2.4444961166381836,
+      "outward": [
+        -0.8281094721359361,
+        0.5605664119074041
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 10",
+      "a": [
+        4.74,
+        74.4
+      ],
+      "b": [
+        2.9799999999999995,
+        71.8
+      ],
+      "soil_min": 0.20875120162963867,
+      "soil_max": 0.27948760986328125,
+      "soil_samples": 45,
+      "footing_low": -0.17124879837036133,
+      "crest": 2.489487609863281,
+      "outward": [
+        -0.8281094721359373,
+        0.5605664119074021
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 11",
+      "a": [
+        2.9799999999999995,
+        71.8
+      ],
+      "b": [
+        1.2199999999999998,
+        69.2
+      ],
+      "soil_min": 0.2551078796386719,
+      "soil_max": 0.31439208984375,
+      "soil_samples": 45,
+      "footing_low": -0.12489212036132813,
+      "crest": 2.52439208984375,
+      "outward": [
+        -0.8281094721359361,
+        0.5605664119074041
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 12",
+      "a": [
+        1.2199999999999998,
+        69.2
+      ],
+      "b": [
+        -0.5400000000000009,
+        66.6
+      ],
+      "soil_min": 0.27234888076782227,
+      "soil_max": 0.339508056640625,
+      "soil_samples": 45,
+      "footing_low": -0.10765111923217774,
+      "crest": 2.549508056640625,
+      "outward": [
+        -0.8281094721359373,
+        0.5605664119074021
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 13",
+      "a": [
+        -0.5400000000000009,
+        66.6
+      ],
+      "b": [
+        -2.3000000000000007,
+        64.0
+      ],
+      "soil_min": 0.2905998229980469,
+      "soil_max": 0.3469562530517578,
+      "soil_samples": 45,
+      "footing_low": -0.08940017700195313,
+      "crest": 2.5569562530517578,
+      "outward": [
+        -0.8281094721359361,
+        0.5605664119074041
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 14",
+      "a": [
+        -2.3,
+        64.0
+      ],
+      "b": [
+        -2.36,
+        61.4
+      ],
+      "soil_min": 0.1616215705871582,
+      "soil_max": 0.32161474227905273,
+      "soil_samples": 36,
+      "footing_low": -0.2183784294128418,
+      "crest": 2.5316147422790527,
+      "outward": [
+        -0.9997338341147937,
+        0.02307078078726448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 15",
+      "a": [
+        -2.36,
+        61.4
+      ],
+      "b": [
+        -2.42,
+        58.8
+      ],
+      "soil_min": 0.007350921630859375,
+      "soil_max": 0.18629169464111328,
+      "soil_samples": 36,
+      "footing_low": -0.37264907836914063,
+      "crest": 2.3962916946411132,
+      "outward": [
+        -0.9997338341147937,
+        0.02307078078726448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 16",
+      "a": [
+        -2.42,
+        58.8
+      ],
+      "b": [
+        -2.48,
+        56.2
+      ],
+      "soil_min": -9.107589721679688e-05,
+      "soil_max": 0.06819772720336914,
+      "soil_samples": 36,
+      "footing_low": -0.3800910758972168,
+      "crest": 2.278197727203369,
+      "outward": [
+        -0.9997338341147937,
+        0.02307078078726454
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 17",
+      "a": [
+        -2.48,
+        56.2
+      ],
+      "b": [
+        -2.54,
+        53.6
+      ],
+      "soil_min": 0.05390214920043945,
+      "soil_max": 0.19659662246704102,
+      "soil_samples": 36,
+      "footing_low": -0.32609785079956055,
+      "crest": 2.406596622467041,
+      "outward": [
+        -0.9997338341147937,
+        0.02307078078726448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 18",
+      "a": [
+        -2.54,
+        53.6
+      ],
+      "b": [
+        -2.6,
+        51.0
+      ],
+      "soil_min": 0.1900777816772461,
+      "soil_max": 0.32207536697387695,
+      "soil_samples": 36,
+      "footing_low": -0.1899222183227539,
+      "crest": 2.532075366973877,
+      "outward": [
+        -0.9997338341147937,
+        0.02307078078726448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 19",
+      "a": [
+        -2.6,
+        51.0
+      ],
+      "b": [
+        -2.52,
+        48.0
+      ],
+      "soil_min": 0.31453704833984375,
+      "soil_max": 0.47183895111083984,
+      "soil_samples": 42,
+      "footing_low": -0.06546295166015625,
+      "crest": 2.68183895111084,
+      "outward": [
+        -0.9996446339617708,
+        -0.02665719023898058
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 20",
+      "a": [
+        -2.52,
+        48.0
+      ],
+      "b": [
+        -2.44,
+        45.0
+      ],
+      "soil_min": 0.46238183975219727,
+      "soil_max": 0.630274772644043,
+      "soil_samples": 42,
+      "footing_low": 0.08238183975219726,
+      "crest": 2.840274772644043,
+      "outward": [
+        -0.9996446339617708,
+        -0.02665719023898058
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 21",
+      "a": [
+        -2.44,
+        45.0
+      ],
+      "b": [
+        -2.3600000000000003,
+        42.0
+      ],
+      "soil_min": 0.6184940338134766,
+      "soil_max": 0.7900676727294922,
+      "soil_samples": 42,
+      "footing_low": 0.23849403381347656,
+      "crest": 3.000067672729492,
+      "outward": [
+        -0.9996446339617708,
+        -0.026657190238980433
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 22",
+      "a": [
+        -2.3600000000000003,
+        42.0
+      ],
+      "b": [
+        -2.2800000000000002,
+        39.0
+      ],
+      "soil_min": 0.7768397331237793,
+      "soil_max": 0.9468588829040527,
+      "soil_samples": 42,
+      "footing_low": 0.3968397331237793,
+      "crest": 3.1568588829040527,
+      "outward": [
+        -0.9996446339617708,
+        -0.02665719023898058
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 23",
+      "a": [
+        -2.2800000000000002,
+        39.0
+      ],
+      "b": [
+        -2.2,
+        36.0
+      ],
+      "soil_min": 0.9307475090026855,
+      "soil_max": 1.0930123329162598,
+      "soil_samples": 42,
+      "footing_low": 0.5507475090026855,
+      "crest": 3.3030123329162597,
+      "outward": [
+        -0.9996446339617708,
+        -0.02665719023898058
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 24",
+      "a": [
+        -2.2,
+        36.0
+      ],
+      "b": [
+        -2.24,
+        32.8
+      ],
+      "soil_min": 1.0724408626556396,
+      "soil_max": 1.230487585067749,
+      "soil_samples": 45,
+      "footing_low": 0.6924408626556396,
+      "crest": 3.440487585067749,
+      "outward": [
+        -0.9999218841540815,
+        0.012499023551926019
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 25",
+      "a": [
+        -2.24,
+        32.8
+      ],
+      "b": [
+        -2.2800000000000002,
+        29.6
+      ],
+      "soil_min": 1.2106225490570068,
+      "soil_max": 1.3415327072143555,
+      "soil_samples": 45,
+      "footing_low": 0.8306225490570068,
+      "crest": 3.5515327072143554,
+      "outward": [
+        -0.9999218841540815,
+        0.012499023551926046
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 26",
+      "a": [
+        -2.2800000000000002,
+        29.6
+      ],
+      "b": [
+        -2.32,
+        26.4
+      ],
+      "soil_min": 1.3225185871124268,
+      "soil_max": 1.416938066482544,
+      "soil_samples": 45,
+      "footing_low": 0.9425185871124268,
+      "crest": 3.626938066482544,
+      "outward": [
+        -0.9999218841540815,
+        0.01249902355192588
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 27",
+      "a": [
+        -2.32,
+        26.4
+      ],
+      "b": [
+        -2.36,
+        23.2
+      ],
+      "soil_min": 1.3980660438537598,
+      "soil_max": 1.452005386352539,
+      "soil_samples": 45,
+      "footing_low": 1.0180660438537599,
+      "crest": 3.662005386352539,
+      "outward": [
+        -0.9999218841540815,
+        0.012499023551926032
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 28",
+      "a": [
+        -2.36,
+        23.2
+      ],
+      "b": [
+        -2.4,
+        20.0
+      ],
+      "soil_min": 1.4267964363098145,
+      "soil_max": 1.4558210372924805,
+      "soil_samples": 45,
+      "footing_low": 1.0467964363098146,
+      "crest": 3.6658210372924804,
+      "outward": [
+        -0.9999218841540815,
+        0.012499023551926032
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 29",
+      "a": [
+        -2.4,
+        20.0
+      ],
+      "b": [
+        -2.13,
+        17.0
+      ],
+      "soil_min": 1.3607196807861328,
+      "soil_max": 1.4460241794586182,
+      "soil_samples": 42,
+      "footing_low": 0.9807196807861328,
+      "crest": 3.656024179458618,
+      "outward": [
+        -0.9959744388432288,
+        -0.0896376994958906
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 30",
+      "a": [
+        -2.13,
+        17.0
+      ],
+      "b": [
+        -1.8599999999999999,
+        14.0
+      ],
+      "soil_min": 1.259303331375122,
+      "soil_max": 1.388392448425293,
+      "soil_samples": 42,
+      "footing_low": 0.8793033313751221,
+      "crest": 3.598392448425293,
+      "outward": [
+        -0.9959744388432288,
+        -0.0896376994958906
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 31",
+      "a": [
+        -1.8599999999999999,
+        14.0
+      ],
+      "b": [
+        -1.5899999999999999,
+        11.0
+      ],
+      "soil_min": 1.1260199546813965,
+      "soil_max": 1.3010711669921875,
+      "soil_samples": 42,
+      "footing_low": 0.7460199546813965,
+      "crest": 3.5110711669921875,
+      "outward": [
+        -0.9959744388432288,
+        -0.0896376994958906
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 32",
+      "a": [
+        -1.5899999999999999,
+        11.0
+      ],
+      "b": [
+        -1.32,
+        8.0
+      ],
+      "soil_min": 0.977266788482666,
+      "soil_max": 1.1740636825561523,
+      "soil_samples": 42,
+      "footing_low": 0.597266788482666,
+      "crest": 3.3840636825561523,
+      "outward": [
+        -0.9959744388432288,
+        -0.08963769949589052
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 33",
+      "a": [
+        -1.32,
+        8.0
+      ],
+      "b": [
+        -1.05,
+        5.0
+      ],
+      "soil_min": 0.8112459182739258,
+      "soil_max": 1.020174503326416,
+      "soil_samples": 42,
+      "footing_low": 0.4312459182739258,
+      "crest": 3.230174503326416,
+      "outward": [
+        -0.9959744388432288,
+        -0.0896376994958906
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 34",
+      "a": [
+        -1.05,
+        5.0
+      ],
+      "b": [
+        1.2875000000000003,
+        3.15
+      ],
+      "soil_min": 0.5389857292175293,
+      "soil_max": 0.8307161331176758,
+      "soil_samples": 42,
+      "footing_low": 0.1589857292175293,
+      "crest": 3.0407161331176757,
+      "outward": [
+        -0.6205955350051494,
+        -0.7841308449051551
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 35",
+      "a": [
+        1.2875000000000003,
+        3.15
+      ],
+      "b": [
+        3.625000000000001,
+        1.2999999999999998
+      ],
+      "soil_min": 0.23320388793945312,
+      "soil_max": 0.5526809692382812,
+      "soil_samples": 42,
+      "footing_low": -0.14679611206054688,
+      "crest": 2.762680969238281,
+      "outward": [
+        -0.6205955350051494,
+        -0.7841308449051551
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 36",
+      "a": [
+        3.625000000000001,
+        1.2999999999999998
+      ],
+      "b": [
+        5.962500000000001,
+        -0.5500000000000007
+      ],
+      "soil_min": -0.03392171859741211,
+      "soil_max": 0.2518129348754883,
+      "soil_samples": 42,
+      "footing_low": -0.4139217185974121,
+      "crest": 2.4618129348754882,
+      "outward": [
+        -0.6205955350051494,
+        -0.784130844905155
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 37",
+      "a": [
+        5.962500000000001,
+        -0.5500000000000007
+      ],
+      "b": [
+        8.3,
+        -2.4000000000000004
+      ],
+      "soil_min": -0.23009204864501953,
+      "soil_max": -0.01595163345336914,
+      "soil_samples": 42,
+      "footing_low": -0.6100920486450195,
+      "crest": 2.194048366546631,
+      "outward": [
+        -0.6205955350051494,
+        -0.7841308449051551
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 38",
+      "a": [
+        8.3,
+        -2.4
+      ],
+      "b": [
+        11.114285714285714,
+        -2.6285714285714286
+      ],
+      "soil_min": -0.35790252685546875,
+      "soil_max": -0.22060871124267578,
+      "soil_samples": 39,
+      "footing_low": -0.7379025268554688,
+      "crest": 1.9893912887573242,
+      "outward": [
+        -0.08095171768679055,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 39",
+      "a": [
+        11.114285714285714,
+        -2.6285714285714286
+      ],
+      "b": [
+        13.928571428571429,
+        -2.857142857142857
+      ],
+      "soil_min": -0.4307718276977539,
+      "soil_max": -0.35338497161865234,
+      "soil_samples": 39,
+      "footing_low": -0.8107718276977539,
+      "crest": 1.8566150283813476,
+      "outward": [
+        -0.08095171768679049,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 40",
+      "a": [
+        13.928571428571429,
+        -2.857142857142857
+      ],
+      "b": [
+        16.74285714285714,
+        -3.0857142857142854
+      ],
+      "soil_min": -0.461153507232666,
+      "soil_max": -0.42945384979248047,
+      "soil_samples": 39,
+      "footing_low": -0.841153507232666,
+      "crest": 1.7805461502075195,
+      "outward": [
+        -0.08095171768679044,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 41",
+      "a": [
+        16.74285714285714,
+        -3.0857142857142854
+      ],
+      "b": [
+        19.557142857142857,
+        -3.314285714285714
+      ],
+      "soil_min": -0.4709177017211914,
+      "soil_max": -0.46004581451416016,
+      "soil_samples": 39,
+      "footing_low": -0.8509177017211914,
+      "crest": 1.7499541854858398,
+      "outward": [
+        -0.08095171768679044,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 42",
+      "a": [
+        19.557142857142857,
+        -3.314285714285714
+      ],
+      "b": [
+        22.371428571428574,
+        -3.5428571428571427
+      ],
+      "soil_min": -0.47168540954589844,
+      "soil_max": -0.4700784683227539,
+      "soil_samples": 39,
+      "footing_low": -0.8516854095458984,
+      "crest": 1.739921531677246,
+      "outward": [
+        -0.08095171768679044,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 43",
+      "a": [
+        22.371428571428574,
+        -3.5428571428571427
+      ],
+      "b": [
+        25.185714285714283,
+        -3.7714285714285714
+      ],
+      "soil_min": -0.4707002639770508,
+      "soil_max": -0.4663724899291992,
+      "soil_samples": 39,
+      "footing_low": -0.8507002639770508,
+      "crest": 1.7436275100708007,
+      "outward": [
+        -0.08095171768679064,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 44",
+      "a": [
+        25.185714285714283,
+        -3.7714285714285714
+      ],
+      "b": [
+        28.0,
+        -4.0
+      ],
+      "soil_min": -0.4670400619506836,
+      "soil_max": -0.46114587783813477,
+      "soil_samples": 39,
+      "footing_low": -0.8470400619506836,
+      "crest": 1.7488541221618652,
+      "outward": [
+        -0.08095171768679044,
+        -0.9967180240186079
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 45",
+      "a": [
+        28.0,
+        -4.0
+      ],
+      "b": [
+        31.2,
+        -3.84
+      ],
+      "soil_min": -0.7136187553405762,
+      "soil_max": -0.458798885345459,
+      "soil_samples": 45,
+      "footing_low": -1.093618755340576,
+      "crest": 1.751201114654541,
+      "outward": [
+        0.04993761694389229,
+        -0.9987523388778448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 46",
+      "a": [
+        31.2,
+        -3.84
+      ],
+      "b": [
+        34.4,
+        -3.68
+      ],
+      "soil_min": -1.2407007217407227,
+      "soil_max": -0.7121791839599609,
+      "soil_samples": 45,
+      "footing_low": -1.6207007217407225,
+      "crest": 1.497820816040039,
+      "outward": [
+        0.04993761694389215,
+        -0.9987523388778448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 47",
+      "a": [
+        34.4,
+        -3.68
+      ],
+      "b": [
+        37.6,
+        -3.52
+      ],
+      "soil_min": -1.161005973815918,
+      "soil_max": -0.5150880813598633,
+      "soil_samples": 45,
+      "footing_low": -1.5410059738159179,
+      "crest": 1.6949119186401367,
+      "outward": [
+        0.04993761694389223,
+        -0.9987523388778448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 48",
+      "a": [
+        37.6,
+        -3.52
+      ],
+      "b": [
+        40.8,
+        -3.3600000000000003
+      ],
+      "soil_min": -0.5201225280761719,
+      "soil_max": -0.34386777877807617,
+      "soil_samples": 45,
+      "footing_low": -0.9001225280761719,
+      "crest": 1.8661322212219238,
+      "outward": [
+        0.049937616943892205,
+        -0.9987523388778448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 49",
+      "a": [
+        40.8,
+        -3.3600000000000003
+      ],
+      "b": [
+        44.0,
+        -3.2
+      ],
+      "soil_min": -0.39220428466796875,
+      "soil_max": -0.18089580535888672,
+      "soil_samples": 45,
+      "footing_low": -0.7722042846679688,
+      "crest": 2.0291041946411132,
+      "outward": [
+        0.04993761694389223,
+        -0.9987523388778448
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 50",
+      "a": [
+        44.0,
+        -3.2
+      ],
+      "b": [
+        47.0,
+        -3.0
+      ],
+      "soil_min": -0.2763481140136719,
+      "soil_max": -0.1290130615234375,
+      "soil_samples": 42,
+      "footing_low": -0.6563481140136719,
+      "crest": 2.0809869384765625,
+      "outward": [
+        0.06651901052377399,
+        -0.9977851578566089
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 51",
+      "a": [
+        47.0,
+        -3.0
+      ],
+      "b": [
+        50.0,
+        -2.8
+      ],
+      "soil_min": -0.2175607681274414,
+      "soil_max": -0.07618904113769531,
+      "soil_samples": 42,
+      "footing_low": -0.5975607681274414,
+      "crest": 2.1338109588623047,
+      "outward": [
+        0.06651901052377399,
+        -0.9977851578566089
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 52",
+      "a": [
+        50.0,
+        -2.8
+      ],
+      "b": [
+        53.0,
+        -2.6
+      ],
+      "soil_min": -0.15406417846679688,
+      "soil_max": -0.03870582580566406,
+      "soil_samples": 42,
+      "footing_low": -0.5340641784667969,
+      "crest": 2.171294174194336,
+      "outward": [
+        0.06651901052377383,
+        -0.9977851578566089
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 53",
+      "a": [
+        53.0,
+        -2.6
+      ],
+      "b": [
+        56.0,
+        -2.4
+      ],
+      "soil_min": -0.10711193084716797,
+      "soil_max": -0.008892059326171875,
+      "soil_samples": 42,
+      "footing_low": -0.487111930847168,
+      "crest": 2.201107940673828,
+      "outward": [
+        0.06651901052377399,
+        -0.9977851578566089
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 54",
+      "a": [
+        56.0,
+        -2.4
+      ],
+      "b": [
+        58.666666666666664,
+        -0.8
+      ],
+      "soil_min": -0.04970598220825195,
+      "soil_max": -9.5367431640625e-06,
+      "soil_samples": 42,
+      "footing_low": -0.42970598220825196,
+      "crest": 2.209990463256836,
+      "outward": [
+        0.5144957554275268,
+        -0.857492925712544
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 55",
+      "a": [
+        58.666666666666664,
+        -0.8
+      ],
+      "b": [
+        61.333333333333336,
+        0.7999999999999998
+      ],
+      "soil_min": -0.000213623046875,
+      "soil_max": 4.76837158203125e-07,
+      "soil_samples": 42,
+      "footing_low": -0.380213623046875,
+      "crest": 2.210000476837158,
+      "outward": [
+        0.5144957554275258,
+        -0.8574929257125447
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 56",
+      "a": [
+        61.333333333333336,
+        0.7999999999999998
+      ],
+      "b": [
+        64.0,
+        2.4
+      ],
+      "soil_min": 0.0,
+      "soil_max": 4.76837158203125e-07,
+      "soil_samples": 42,
+      "footing_low": -0.38,
+      "crest": 2.210000476837158,
+      "outward": [
+        0.5144957554275269,
+        -0.857492925712544
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 57",
+      "a": [
+        64.0,
+        2.4
+      ],
+      "b": [
+        66.73333333333333,
+        3.7666666666666666
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.0,
+      "soil_samples": 42,
+      "footing_low": -0.38,
+      "crest": 2.21,
+      "outward": [
+        0.44721359549995787,
+        -0.894427190999916
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 58",
+      "a": [
+        66.73333333333333,
+        3.7666666666666666
+      ],
+      "b": [
+        69.46666666666667,
+        5.133333333333333
+      ],
+      "soil_min": -4.76837158203125e-07,
+      "soil_max": 0.014888763427734375,
+      "soil_samples": 42,
+      "footing_low": -0.3800004768371582,
+      "crest": 2.2248887634277343,
+      "outward": [
+        0.4472135954999577,
+        -0.894427190999916
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 59",
+      "a": [
+        69.46666666666667,
+        5.133333333333333
+      ],
+      "b": [
+        72.2,
+        6.5
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.11368322372436523,
+      "soil_samples": 42,
+      "footing_low": -0.38,
+      "crest": 2.323683223724365,
+      "outward": [
+        0.4472135954999579,
+        -0.8944271909999159
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 60",
+      "a": [
+        72.2,
+        6.5
+      ],
+      "b": [
+        72.2,
+        9.3
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.19475364685058594,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.404753646850586,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 61",
+      "a": [
+        72.2,
+        9.3
+      ],
+      "b": [
+        72.2,
+        12.100000000000001
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.21227455139160156,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.4222745513916015,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 62",
+      "a": [
+        72.2,
+        12.100000000000001
+      ],
+      "b": [
+        72.2,
+        14.9
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.22653770446777344,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.4365377044677734,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 63",
+      "a": [
+        72.2,
+        14.9
+      ],
+      "b": [
+        72.2,
+        17.700000000000003
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.22677898406982422,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.436778984069824,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 64",
+      "a": [
+        72.2,
+        17.700000000000003
+      ],
+      "b": [
+        72.2,
+        20.5
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.22677898406982422,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.436778984069824,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 65",
+      "a": [
+        72.2,
+        20.5
+      ],
+      "b": [
+        71.4,
+        23.625
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.20737552642822266,
+      "soil_samples": 45,
+      "footing_low": -0.38,
+      "crest": 2.4173755264282226,
+      "outward": [
+        0.9687594151763185,
+        0.24800241028513667
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 66",
+      "a": [
+        71.4,
+        23.625
+      ],
+      "b": [
+        70.6,
+        26.75
+      ],
+      "soil_min": 0.10105276107788086,
+      "soil_max": 0.8691921234130859,
+      "soil_samples": 45,
+      "footing_low": -0.27894723892211915,
+      "crest": 3.079192123413086,
+      "outward": [
+        0.9687594151763175,
+        0.24800241028514078
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 67",
+      "a": [
+        70.6,
+        26.75
+      ],
+      "b": [
+        69.8,
+        29.875
+      ],
+      "soil_min": 0.780799388885498,
+      "soil_max": 1.1634371280670166,
+      "soil_samples": 45,
+      "footing_low": 0.40079938888549804,
+      "crest": 3.3734371280670166,
+      "outward": [
+        0.9687594151763185,
+        0.24800241028513667
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 68",
+      "a": [
+        69.8,
+        29.875
+      ],
+      "b": [
+        69.0,
+        33.0
+      ],
+      "soil_min": 0.6778783798217773,
+      "soil_max": 1.0149688720703125,
+      "soil_samples": 45,
+      "footing_low": 0.29787837982177734,
+      "crest": 3.2249688720703125,
+      "outward": [
+        0.9687594151763185,
+        0.24800241028513667
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 69",
+      "a": [
+        69.0,
+        33.0
+      ],
+      "b": [
+        68.68,
+        36.1
+      ],
+      "soil_min": 0.41927671432495117,
+      "soil_max": 0.700162410736084,
+      "soil_samples": 42,
+      "footing_low": 0.03927671432495117,
+      "crest": 2.910162410736084,
+      "outward": [
+        0.9947144197727067,
+        0.10268019817008361
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 70",
+      "a": [
+        68.68,
+        36.1
+      ],
+      "b": [
+        68.36,
+        39.2
+      ],
+      "soil_min": 0.24192571640014648,
+      "soil_max": 0.4450225830078125,
+      "soil_samples": 42,
+      "footing_low": -0.13807428359985352,
+      "crest": 2.6550225830078125,
+      "outward": [
+        0.994714419772706,
+        0.10268019817008811
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 71",
+      "a": [
+        68.36,
+        39.2
+      ],
+      "b": [
+        68.04,
+        42.3
+      ],
+      "soil_min": 0.0750880241394043,
+      "soil_max": 0.29413318634033203,
+      "soil_samples": 42,
+      "footing_low": -0.3049119758605957,
+      "crest": 2.504133186340332,
+      "outward": [
+        0.9947144197727066,
+        0.10268019817008385
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 72",
+      "a": [
+        68.04,
+        42.3
+      ],
+      "b": [
+        67.72,
+        45.4
+      ],
+      "soil_min": -0.053544044494628906,
+      "soil_max": 0.12856054306030273,
+      "soil_samples": 42,
+      "footing_low": -0.4335440444946289,
+      "crest": 2.3385605430603027,
+      "outward": [
+        0.994714419772706,
+        0.10268019817008811
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 73",
+      "a": [
+        67.72,
+        45.4
+      ],
+      "b": [
+        67.4,
+        48.5
+      ],
+      "soil_min": -0.16196584701538086,
+      "soil_max": -0.019908905029296875,
+      "soil_samples": 42,
+      "footing_low": -0.5419658470153809,
+      "crest": 2.190091094970703,
+      "outward": [
+        0.9947144197727067,
+        0.10268019817008361
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 74",
+      "a": [
+        67.4,
+        48.5
+      ],
+      "b": [
+        67.06,
+        51.2
+      ],
+      "soil_min": -0.2295060157775879,
+      "soil_max": -0.13429689407348633,
+      "soil_samples": 39,
+      "footing_low": -0.6095060157775879,
+      "crest": 2.0757031059265136,
+      "outward": [
+        0.9921643972682421,
+        0.12493922039674273
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 75",
+      "a": [
+        67.06,
+        51.2
+      ],
+      "b": [
+        66.72,
+        53.9
+      ],
+      "soil_min": -0.25850820541381836,
+      "soil_max": -0.20962142944335938,
+      "soil_samples": 39,
+      "footing_low": -0.6385082054138184,
+      "crest": 2.0003785705566406,
+      "outward": [
+        0.9921643972682421,
+        0.12493922039674304
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 76",
+      "a": [
+        66.72,
+        53.9
+      ],
+      "b": [
+        66.38000000000001,
+        56.6
+      ],
+      "soil_min": -0.26482200622558594,
+      "soil_max": -0.2031726837158203,
+      "soil_samples": 39,
+      "footing_low": -0.6448220062255859,
+      "crest": 2.0068273162841797,
+      "outward": [
+        0.9921643972682428,
+        0.12493922039673759
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 77",
+      "a": [
+        66.38000000000001,
+        56.6
+      ],
+      "b": [
+        66.04,
+        59.3
+      ],
+      "soil_min": -0.2172527313232422,
+      "soil_max": -0.06923532485961914,
+      "soil_samples": 39,
+      "footing_low": -0.5972527313232422,
+      "crest": 2.140764675140381,
+      "outward": [
+        0.9921643972682421,
+        0.12493922039674304
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 78",
+      "a": [
+        66.04,
+        59.3
+      ],
+      "b": [
+        65.7,
+        62.0
+      ],
+      "soil_min": -0.0983586311340332,
+      "soil_max": -0.04774761199951172,
+      "soil_samples": 39,
+      "footing_low": -0.4783586311340332,
+      "crest": 2.1622523880004882,
+      "outward": [
+        0.9921643972682421,
+        0.12493922039674273
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 79",
+      "a": [
+        65.7,
+        62.0
+      ],
+      "b": [
+        63.86,
+        64.2
+      ],
+      "soil_min": -0.08255434036254883,
+      "soil_max": -0.06975173950195312,
+      "soil_samples": 39,
+      "footing_low": -0.46255434036254883,
+      "crest": 2.140248260498047,
+      "outward": [
+        0.7670768701524094,
+        0.6415552004911064
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 80",
+      "a": [
+        63.86,
+        64.2
+      ],
+      "b": [
+        62.02,
+        66.4
+      ],
+      "soil_min": -0.09120845794677734,
+      "soil_max": -0.07752180099487305,
+      "soil_samples": 39,
+      "footing_low": -0.47120845794677735,
+      "crest": 2.132478199005127,
+      "outward": [
+        0.7670768701524106,
+        0.6415552004911049
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 81",
+      "a": [
+        62.02,
+        66.4
+      ],
+      "b": [
+        60.18,
+        68.6
+      ],
+      "soil_min": -0.10679912567138672,
+      "soil_max": -0.08594799041748047,
+      "soil_samples": 39,
+      "footing_low": -0.4867991256713867,
+      "crest": 2.1240520095825195,
+      "outward": [
+        0.7670768701524073,
+        0.6415552004911088
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 82",
+      "a": [
+        60.18,
+        68.6
+      ],
+      "b": [
+        58.34,
+        70.8
+      ],
+      "soil_min": -0.11942291259765625,
+      "soil_max": -0.0985713005065918,
+      "soil_samples": 39,
+      "footing_low": -0.49942291259765625,
+      "crest": 2.111428699493408,
+      "outward": [
+        0.7670768701524106,
+        0.6415552004911049
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 83",
+      "a": [
+        58.34,
+        70.8
+      ],
+      "b": [
+        56.5,
+        73.0
+      ],
+      "soil_min": -0.1421055793762207,
+      "soil_max": -0.11119508743286133,
+      "soil_samples": 39,
+      "footing_low": -0.5221055793762207,
+      "crest": 2.0988049125671386,
+      "outward": [
+        0.7670768701524094,
+        0.6415552004911064
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 84",
+      "a": [
+        56.5,
+        73.0
+      ],
+      "b": [
+        54.4,
+        74.8
+      ],
+      "soil_min": -0.14217281341552734,
+      "soil_max": -0.12616682052612305,
+      "soil_samples": 39,
+      "footing_low": -0.5221728134155273,
+      "crest": 2.083833179473877,
+      "outward": [
+        0.6507913734559676,
+        0.7592566023652972
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 85",
+      "a": [
+        54.4,
+        74.8
+      ],
+      "b": [
+        52.3,
+        76.6
+      ],
+      "soil_min": -0.1404409408569336,
+      "soil_max": -0.11909675598144531,
+      "soil_samples": 39,
+      "footing_low": -0.5204409408569336,
+      "crest": 2.0909032440185547,
+      "outward": [
+        0.6507913734559676,
+        0.7592566023652972
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 86",
+      "a": [
+        52.3,
+        76.6
+      ],
+      "b": [
+        50.2,
+        78.4
+      ],
+      "soil_min": -0.12700939178466797,
+      "soil_max": -0.0832366943359375,
+      "soil_samples": 39,
+      "footing_low": -0.507009391784668,
+      "crest": 2.1267633056640625,
+      "outward": [
+        0.6507913734559719,
+        0.7592566023652937
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 87",
+      "a": [
+        50.2,
+        78.4
+      ],
+      "b": [
+        48.1,
+        80.2
+      ],
+      "soil_min": -0.09280157089233398,
+      "soil_max": -0.046984195709228516,
+      "soil_samples": 39,
+      "footing_low": -0.472801570892334,
+      "crest": 2.1630158042907714,
+      "outward": [
+        0.6507913734559676,
+        0.7592566023652972
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 88",
+      "a": [
+        48.1,
+        80.2
+      ],
+      "b": [
+        46.0,
+        82.0
+      ],
+      "soil_min": -0.05647706985473633,
+      "soil_max": -0.010245323181152344,
+      "soil_samples": 39,
+      "footing_low": -0.43647706985473633,
+      "crest": 2.1997546768188476,
+      "outward": [
+        0.6507913734559676,
+        0.7592566023652972
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 89",
+      "a": [
+        46.0,
+        82.0
+      ],
+      "b": [
+        43.25,
+        82.8
+      ],
+      "soil_min": -0.022377967834472656,
+      "soil_max": 0.0,
+      "soil_samples": 39,
+      "footing_low": -0.40237796783447266,
+      "crest": 2.21,
+      "outward": [
+        0.2793295408301301,
+        0.9601952966035757
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 90",
+      "a": [
+        43.25,
+        82.8
+      ],
+      "b": [
+        40.5,
+        83.6
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.0,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.21,
+      "outward": [
+        0.2793295408301301,
+        0.9601952966035757
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 91",
+      "a": [
+        40.5,
+        83.6
+      ],
+      "b": [
+        37.75,
+        84.4
+      ],
+      "soil_min": -0.0006685256958007812,
+      "soil_max": 0.0,
+      "soil_samples": 39,
+      "footing_low": -0.3806685256958008,
+      "crest": 2.21,
+      "outward": [
+        0.27932954083013467,
+        0.9601952966035744
+      ]
+    },
+    {
+      "name": "Northwatch windbreak span 92",
+      "a": [
+        37.75,
+        84.4
+      ],
+      "b": [
+        35.0,
+        85.2
+      ],
+      "soil_min": 0.0,
+      "soil_max": 0.0,
+      "soil_samples": 39,
+      "footing_low": -0.38,
+      "crest": 2.21,
+      "outward": [
+        0.2793295408301301,
+        0.9601952966035757
+      ]
+    }
+  ],
+  "gate": {
+    "asset": "assets/runtime/models/level_camp_boundary_gate.glb",
+    "sha256": "6785e6a06abfbb86e002e0fc7650f0c20e8d71634ac9a83c63579c1d6e8ea41a",
+    "endpoints": [
+      [
+        35,
+        85.2
+      ],
+      [
+        29,
+        85.2
+      ]
+    ],
+    "ground": 0.0,
+    "uniform_scale": 0.7281553398058254,
+    "slat_fit": {
+      "seated_slats": 42,
+      "overlapping_joints_corrected": 41,
+      "source_max_overlap_m": 0.065
+    }
+  },
+  "prior_parts": 426,
+  "added_parts": 96
+}

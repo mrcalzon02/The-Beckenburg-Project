@@ -1,0 +1,35 @@
+{
+  "scope": "Staged production scene loader, game mover, fitted frame, software renderer and state snapshots.",
+  "tests": {
+    "scene_revision": "9c37678378dd0d2f6a155993bf44239ff59eada00099d70d01205f7eaac7d335",
+    "native_room_volumes": "17",
+    "van_to_director_west_and_east_standing_crouched": "PASS",
+    "director_to_van_west_and_east_standing_crouched": "PASS",
+    "canonical_ramp_receipt": "PASS",
+    "six_cargo_positions_reach_hatch": "PASS",
+    "upper_guard_and_opaque_roof": "PASS",
+    "physical_room_anchors": "14",
+    "preserved_ritual_socket_ownership": "PASS",
+    "closed_cargo_hatch": "BLOCKED",
+    "gallery_frame_closed_and_open_body_object_optics": "PASS",
+    "local_van_and_director_room_ownership": "PASS",
+    "door_state_host_guest_snapshots": "PASS",
+    "acoustic_open_cost": "2",
+    "acoustic_closed_cost": "6",
+    "changed_renderer_pixels": "136291"
+  },
+  "glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+  "physics_sha256": "6c49fc48e68c19c696d73857160bf2b9fed82b9fe18314839dc75bdea5a4f5ce",
+  "door_leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "evidence": {
+    "development/levels/rebuild/seacliff-receiving-pass/verification/battery-runtime-input.tsv": "a45405e6548500df03cfba113f98e8f67095db6be301d33a2b77aafa7d782d9f",
+    "development/levels/rebuild/seacliff-receiving-pass/verification/battery-runtime-result.tsv": "304bacf2ed910b4889c22d3c93b75a84d49bddb884072678a30b4f5538320e5c",
+    "tools/verify_seacliff_battery.py": "66e79d63a189c1e41ae4bf47b0262bafd9f988a6ae877f07a9d91ea257b51d82",
+    "tools/java/NativeSeacliffReceivingProbe.java": "c27082bb315b717d91b003c4902f800456634b410da86f176d257a6c9474f93b"
+  },
+  "captures": {
+    "battery-gallery-closed-runtime.png": "c99672b11f8ae959748cadb13536e4b8f97f5fc5c1d1f0cd0cfa16a71fae61bc",
+    "battery-gallery-open-runtime.png": "eff0a4cb68ad5cf957988fd5fd2ef4f7b7bba9ceb6d4d0473176fcc48a15bc7a",
+    "battery-director-stair-runtime.png": "6602211152c0890898828ff3842986384e04958710bc884ee9838a15a92f0010"
+  }
+}

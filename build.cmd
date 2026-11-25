@@ -41,6 +41,11 @@ if exist assets\runtime\mission-board (
   if not exist build\classes\org\beckenburg\mission-board mkdir build\classes\org\beckenburg\mission-board
   copy /Y assets\runtime\mission-board\*.png build\classes\org\beckenburg\mission-board\ >nul || exit /b 1
 )
+if not exist assets\runtime\campaign\beckenburg-county.jpg (echo ERROR: approved county map missing & exit /b 1)
+if not exist assets\runtime\campaign\locations.tsv (echo ERROR: county node registry missing & exit /b 1)
+if not exist build\classes\org\beckenburg\campaign mkdir build\classes\org\beckenburg\campaign
+copy /Y assets\runtime\campaign\beckenburg-county.jpg build\classes\org\beckenburg\campaign\ >nul || exit /b 1
+copy /Y assets\runtime\campaign\locations.tsv build\classes\org\beckenburg\campaign\ >nul || exit /b 1
 if exist assets\runtime\water-imports (
   if not exist build\classes\org\beckenburg\water-imports mkdir build\classes\org\beckenburg\water-imports
   copy /Y assets\runtime\water-imports\*.png build\classes\org\beckenburg\water-imports\ >nul
@@ -52,6 +57,7 @@ if not exist assets\runtime\character-directions.zip (echo ERROR: required appro
 copy /Y assets\runtime\character-directions.zip build\classes\org\beckenburg\character-directions.zip >nul || exit /b 1
 if not exist assets\runtime\hunter-animation.zip (echo ERROR: hunter animation sprites missing & exit /b 1)
 copy /Y assets\runtime\hunter-animation.zip build\classes\org\beckenburg\hunter-animation.zip >nul || exit /b 1
+copy /Y assets\runtime\hunter-reactions.zip build\classes\org\beckenburg\hunter-reactions.zip >nul || exit /b 1
 copy /Y assets\runtime\castle-resident-animation.zip build\classes\org\beckenburg\castle-resident-animation.zip >nul || exit /b 1
 if not exist assets\runtime\twins-directions.zip (echo ERROR: independent Twins PNGs missing & exit /b 1)
 copy /Y assets\runtime\twins-directions.zip build\classes\org\beckenburg\twins-directions.zip >nul || exit /b 1
@@ -104,6 +110,56 @@ for /f "usebackq delims=" %%S in ("assets\runtime\site-geometry.txt") do (
   if not exist "assets\runtime\sites\%%S" (echo ERROR: missing native site geometry %%S & exit /b 1)
   copy /Y "assets\runtime\sites\%%S" "build\classes\org\beckenburg\sites\%%S" >nul || exit /b 1
 )
+rem Package the verified native review sources with the normal game resources.
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\seacliff-room-services\battery.%%S build\classes\org\beckenburg\sites\seacliff-native.%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\seacliff-room-services\runtime.tsv build\classes\org\beckenburg\sites\seacliff-runtime.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\college-residence-pass\college\college-residence.%%S build\classes\org\beckenburg\sites\college-native.%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\college-residence-pass\verification\runtime.tsv build\classes\org\beckenburg\sites\college-runtime.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\school-electrical-pass\school-electrical.%%S build\classes\org\beckenburg\sites\school-electrical.%%S >nul || exit /b 1
+for %%S in (circulation door-schedule mission) do copy /Y development\levels\rebuild\school-electrical-pass\%%S.tsv build\classes\org\beckenburg\sites\school-%%S.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\prison-vehicle-sally-pass\prison-vehicle-sally.%%S build\classes\org\beckenburg\sites\prison-vehicle-sally.%%S >nul || exit /b 1
+for %%S in (arrival door-survey mission gate vehicle-gate services) do copy /Y development\levels\rebuild\prison-vehicle-sally-pass\%%S.tsv build\classes\org\beckenburg\sites\prison-%%S.tsv >nul || exit /b 1
+copy /Y development\levels\rebuild\prison-sally-gate-pass\sally-moving-panel.glb build\classes\org\beckenburg\sites\prison-sally-moving-panel.glb >nul || exit /b 1
+copy /Y development\levels\rebuild\prison-vehicle-sally-pass\vehicle-moving-panel.glb build\classes\org\beckenburg\sites\prison-vehicle-moving-panel.glb >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\lookout-case-pass\lookout-case.%%S build\classes\org\beckenburg\sites\lookout-case.%%S >nul || exit /b 1
+for %%S in (arrival door-survey mission) do copy /Y development\levels\rebuild\lookout-case-pass\%%S.tsv build\classes\org\beckenburg\sites\lookout-%%S.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\mine-case-pass\mine-case.%%S build\classes\org\beckenburg\sites\mine-case.%%S >nul || exit /b 1
+for %%S in (arrival door-survey mission) do copy /Y development\levels\rebuild\mine-case-pass\%%S.tsv build\classes\org\beckenburg\sites\mine-%%S.tsv >nul || exit /b 1
+copy /Y development\levels\rebuild\mine-case-pass\mine-sump.water build\classes\org\beckenburg\sites\mine-sump.water >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\wharf-case-pass\wharf-case.%%S build\classes\org\beckenburg\sites\wharf-case.%%S >nul || exit /b 1
+for %%S in (room-layout door-schedule) do copy /Y development\levels\rebuild\wharf-case-pass\%%S.tsv build\classes\org\beckenburg\sites\wharf-%%S.tsv >nul || exit /b 1
+copy /Y development\levels\rebuild\wharf-landward-pass\wharf-tide.water build\classes\org\beckenburg\sites\wharf-tide.water >nul || exit /b 1
+for %%M in (wld-07 wld-07-mortuary) do (
+  if not exist build\classes\org\beckenburg\sites\%%M mkdir build\classes\org\beckenburg\sites\%%M || exit /b 1
+  for %%S in (furnished-grounds.glb furnished-grounds.hcs2 room-layout.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\cemetery-furnishings-pass\%%M\%%S build\classes\org\beckenburg\sites\%%M\%%S >nul || exit /b 1
+)
+if not exist build\classes\org\beckenburg\sites\wld-03 mkdir build\classes\org\beckenburg\sites\wld-03 || exit /b 1
+for %%S in (red-mesa-review.glb red-mesa-review.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\red-mesa-native-pass\%%S build\classes\org\beckenburg\sites\wld-03\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-11 mkdir build\classes\org\beckenburg\sites\wld-11 || exit /b 1
+for %%S in (marsh-review.glb marsh-review.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\mourning-marsh-native-pass\%%S build\classes\org\beckenburg\sites\wld-11\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-12 mkdir build\classes\org\beckenburg\sites\wld-12 || exit /b 1
+for %%S in (railway.glb railway.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\gallows-pass\%%S build\classes\org\beckenburg\sites\wld-12\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-18 mkdir build\classes\org\beckenburg\sites\wld-18 || exit /b 1
+for %%S in (facility.glb facility.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\cinder-6\%%S build\classes\org\beckenburg\sites\wld-18\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-16 mkdir build\classes\org\beckenburg\sites\wld-16 || exit /b 1
+for %%S in (motor-lodge.glb motor-lodge.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\eight-pines\%%S build\classes\org\beckenburg\sites\wld-16\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-15 mkdir build\classes\org\beckenburg\sites\wld-15 || exit /b 1
+for %%S in (vessel.glb vessel.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\saint-elara\%%S build\classes\org\beckenburg\sites\wld-15\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-14 mkdir build\classes\org\beckenburg\sites\wld-14 || exit /b 1
+for %%S in (lightstation.glb lightstation.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\morrow-point\%%S build\classes\org\beckenburg\sites\wld-14\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-13 mkdir build\classes\org\beckenburg\sites\wld-13 || exit /b 1
+for %%S in (greywater-review.glb greywater-review.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\greywater-native-pass\%%S build\classes\org\beckenburg\sites\wld-13\%%S >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-08 mkdir build\classes\org\beckenburg\sites\wld-08 || exit /b 1
+for %%S in (station-with-furnishings.glb station-with-furnishings.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\northwatch-furnishing-pass\wld-08\%%S build\classes\org\beckenburg\sites\wld-08\%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\northwatch-named-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-08\source-hashes.tsv >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-09 mkdir build\classes\org\beckenburg\sites\wld-09 || exit /b 1
+for %%S in (dam-with-ventilation.glb dam-with-ventilation.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv blackwater.water) do copy /Y development\levels\rebuild\dam-ventilation-pass\wld-09\%%S build\classes\org\beckenburg\sites\wld-09\%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\dam-named-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-09\source-hashes.tsv >nul || exit /b 1
+if not exist build\classes\org\beckenburg\sites\wld-10 mkdir build\classes\org\beckenburg\sites\wld-10 || exit /b 1
+for %%S in (monastery-with-perimeter.glb monastery-with-perimeter.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv) do copy /Y development\levels\rebuild\monastery-perimeter-pass\wld-10\%%S build\classes\org\beckenburg\sites\wld-10\%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\monastery-perimeter-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-10\source-hashes.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\asylum-enclosure-pass\asylum-stair.%%S build\classes\org\beckenburg\sites\asylum-stair.%%S >nul || exit /b 1
+for %%S in (arrival door-survey mission services) do copy /Y development\levels\rebuild\asylum-enclosure-pass\%%S.tsv build\classes\org\beckenburg\sites\asylum-%%S.tsv >nul || exit /b 1
 if not exist build\classes\org\beckenburg\models mkdir build\classes\org\beckenburg\models
 for %%M in (light_switch_1 ceiling_lamp_1_off door_1_loose shelf_mp_6 chair_mp_5 ceiling_lamp_1_on cross_mp_2 flashlight_mp_1 armchair_1 sofa_1 dinner_table_1 wardrobe_mp_1 display_cabinet_mp_2 tv_mp_1 tv_table_1_4 lamp_3_on lamp_3_off ceiling_lamp_4_on ceiling_lamp_4_off pc_keyboard_mp_1 vape_mp_1 dosimeter_1 dosimeter_2 walkie_talkie_2 handheld_tablet_1 monitoring_screen_mp_1 pc_mp_1 button_12 book_mp_1 open_book_mp_1 dosimeter_4 walkie_talkie_1 exploration_emf_detector exploration_flashlight exploration_flashlight_poquet exploration_photo_camera exploration_spirit_box exploration_thermal_camera exploration_thermometer exploration_voice_recorder ggbot_car08_van_shell ggbot_car01 ggbot_car05 ggbot_car07 kenney_road_asphalt_straight kenney_road_asphalt_side kenney_road_asphalt_damaged kenney_detail_light_single kenney_detail_dumpster_closed kenney_detail_bench kenney_detail_barrier_type_a blender_sound_recorder_1 blender_sound_recorder_2 blender_sound_recorder_3) do (
   if not exist assets\runtime\models\%%M.glb (echo ERROR: required licensed model %%M missing & exit /b 1)
@@ -161,7 +217,7 @@ if defined BECKENBURG_RELEASE_VERSION (
 rem Ship the independently compiled WATER module as well as the weather/game classes.
 rem Without this directory, building an authored House from the packaged JAR
 rem fails with NoClassDefFoundError: dev/mrcalzon/water/WaterDocument.
-jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes hbnet -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water -C build\classes dev\mrcalzon\lighting || exit /b 1
+jar "-J-Djava.io.tmpdir=%CD%\build" --create --file "%CD%\build\beckenburg-game.jar" --main-class org.beckenburg.InvestigationGame -C build\classes hbnet -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water -C build\classes dev\mrcalzon\lighting || exit /b 1
 rem Fail before any packaged game smoke if runtime module classes are missing.
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/lighting/LightingModule.class" >nul || (echo ERROR: lighting module missing from game JAR & exit /b 1)
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterDocument.class" >nul || (echo ERROR: packaged water document missing from game JAR & exit /b 1)

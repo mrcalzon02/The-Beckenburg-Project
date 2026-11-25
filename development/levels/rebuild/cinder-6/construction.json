@@ -1,0 +1,1473 @@
+{
+  "source": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
+  "exports": {
+    "blend": "735fb6638e51eed8b870c892efbd6b997be763892ecf28a54aef1ecddd3028da",
+    "glb": "c9bc6b4ffa11950a6fa60040dc40924f6fa6e56a64db1df1311928d418b0dcdd",
+    "hcs2": "b24cc4005266c657edcea43dc19dc01d1eda61c6faee9a42f2b704c485123aba"
+  },
+  "retained_components": 615,
+  "pockets": [
+    {
+      "id": "cinder-servicehouse-cupboard",
+      "space": "servicehouse",
+      "owner": 0,
+      "position": [
+        12,
+        0,
+        66.1
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          11.4,
+          0.0,
+          65.25
+        ],
+        [
+          12.702,
+          2.31,
+          66.949997
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "cinder-records-cupboard",
+      "space": "records",
+      "owner": 4,
+      "position": [
+        10.2,
+        -4,
+        48
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          9.599999,
+          -4.0,
+          47.150002
+        ],
+        [
+          10.901999,
+          -1.69,
+          48.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "cinder-crew-cupboard",
+      "space": "crew",
+      "owner": 10,
+      "position": [
+        20.1,
+        -8,
+        33.0
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          19.398001,
+          -8.0,
+          32.150002
+        ],
+        [
+          20.700001,
+          -5.69,
+          33.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "cinder-servicehouse-cupboard",
+      "type": "hide",
+      "room": 0,
+      "position": [
+        12,
+        0,
+        66.1
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "cinder-records-cupboard",
+      "type": "hide",
+      "room": 4,
+      "position": [
+        10.2,
+        -4,
+        48
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "cinder-crew-cupboard",
+      "type": "hide",
+      "room": 10,
+      "position": [
+        20.1,
+        -8,
+        33.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "cinder-generator",
+      "type": "generator",
+      "room": 11,
+      "position": [
+        49.200001,
+        -7.44,
+        40.520001
+      ],
+      "yaw": 0,
+      "style": "C6-MAIN"
+    },
+    {
+      "id": "cinder-breaker",
+      "type": "breaker",
+      "room": 11,
+      "position": [
+        53.200001,
+        -7.11,
+        50.854999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "C6-MAIN"
+    },
+    {
+      "id": "cinder-servicehouse-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        10.241,
+        1.25,
+        61.700001
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "C6-00"
+    },
+    {
+      "id": "cinder-servicehouse-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        10.424,
+        2.35,
+        63.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-head-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        30.0,
+        1.25,
+        42.241001
+      ],
+      "yaw": 0.0,
+      "style": "C6-01"
+    },
+    {
+      "id": "cinder-head-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        32.0,
+        2.35,
+        42.424
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-shop-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        53.758999,
+        1.25,
+        49.599998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-02"
+    },
+    {
+      "id": "cinder-shop-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        53.576,
+        2.35,
+        51.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-exit-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        4.081,
+        1.25,
+        53.400002
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "C6-03"
+    },
+    {
+      "id": "cinder-exit-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        4.264,
+        2.35,
+        51.5
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-records-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        21.919001,
+        -2.75,
+        44.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-04"
+    },
+    {
+      "id": "cinder-records-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        21.736,
+        -1.65,
+        46.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-west-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        8.241,
+        -2.75,
+        36.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "C6-05"
+    },
+    {
+      "id": "cinder-west-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        8.424,
+        -1.65,
+        37.099998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-exhibit-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        55.918999,
+        -2.75,
+        24.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-07"
+    },
+    {
+      "id": "cinder-exhibit-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        55.736,
+        -1.65,
+        25.700001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-east-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        55.918999,
+        -6.75,
+        24.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-08"
+    },
+    {
+      "id": "cinder-east-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        55.736,
+        -5.65,
+        25.700001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-crew-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        21.759001,
+        -6.75,
+        33.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-10"
+    },
+    {
+      "id": "cinder-crew-light",
+      "type": "light",
+      "room": 10,
+      "position": [
+        21.576,
+        -5.65,
+        35.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-plant-switch",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        55.918999,
+        -6.75,
+        46.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "C6-11"
+    },
+    {
+      "id": "cinder-plant-light",
+      "type": "light",
+      "room": 11,
+      "position": [
+        55.736,
+        -5.65,
+        48.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        22.312342,
+        -2.75,
+        30.426632
+      ],
+      "yaw": 1.8162332528565994,
+      "style": "C6-06"
+    },
+    {
+      "id": "cinder-upperring-lamp-1",
+      "type": "light",
+      "room": 6,
+      "position": [
+        23.124214,
+        -1.484,
+        30.223269
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-2",
+      "type": "light",
+      "room": 6,
+      "position": [
+        24.151783,
+        -1.484,
+        23.295959
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-3",
+      "type": "light",
+      "room": 6,
+      "position": [
+        29.776731,
+        -1.484,
+        19.124214
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-4",
+      "type": "light",
+      "room": 6,
+      "position": [
+        36.704041,
+        -1.484,
+        20.151783
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-5",
+      "type": "light",
+      "room": 6,
+      "position": [
+        40.875786,
+        -1.484,
+        25.776731
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-6",
+      "type": "light",
+      "room": 6,
+      "position": [
+        39.848217,
+        -1.484,
+        32.704041
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-7",
+      "type": "light",
+      "room": 6,
+      "position": [
+        34.22327,
+        -1.484,
+        36.875786
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-upperring-lamp-8",
+      "type": "light",
+      "room": 6,
+      "position": [
+        27.295959,
+        -1.484,
+        35.848217
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-switch",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        41.68766,
+        -6.75,
+        30.426634
+      ],
+      "yaw": -1.8162332528565992,
+      "style": "C6-09"
+    },
+    {
+      "id": "cinder-lowring-lamp-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        40.875786,
+        -5.484,
+        30.223269
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-2",
+      "type": "light",
+      "room": 9,
+      "position": [
+        36.704041,
+        -5.484,
+        35.848217
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-3",
+      "type": "light",
+      "room": 9,
+      "position": [
+        29.776731,
+        -5.484,
+        36.875786
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-4",
+      "type": "light",
+      "room": 9,
+      "position": [
+        24.151783,
+        -5.484,
+        32.704041
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-5",
+      "type": "light",
+      "room": 9,
+      "position": [
+        23.124214,
+        -5.484,
+        25.776731
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-6",
+      "type": "light",
+      "room": 9,
+      "position": [
+        27.295959,
+        -5.484,
+        20.151783
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-7",
+      "type": "light",
+      "room": 9,
+      "position": [
+        34.22327,
+        -5.484,
+        19.124214
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "cinder-lowring-lamp-8",
+      "type": "light",
+      "room": 9,
+      "position": [
+        39.848217,
+        -5.484,
+        23.295959
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "Cinder lower crew emergency telephone",
+      "type": "native-device",
+      "room": 10,
+      "position": [
+        13.7,
+        -7.179,
+        33.77500199999999
+      ],
+      "yaw": 0,
+      "style": "PHONE"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "cinder-servicehouse-switch",
+      "circuit": "C6-00",
+      "space": "servicehouse",
+      "room": 0,
+      "at": [
+        10.241,
+        1.25,
+        61.700001
+      ],
+      "support": "WLD-18 clean servicehouse W end",
+      "feet": [
+        11.2,
+        0,
+        61.7
+      ]
+    },
+    {
+      "id": "cinder-head-switch",
+      "circuit": "C6-01",
+      "space": "head",
+      "room": 1,
+      "at": [
+        30.0,
+        1.25,
+        42.241001
+      ],
+      "support": "WLD-18 clean head N end",
+      "feet": [
+        30,
+        0,
+        43.15
+      ]
+    },
+    {
+      "id": "cinder-shop-switch",
+      "circuit": "C6-02",
+      "space": "shop",
+      "room": 2,
+      "at": [
+        53.758999,
+        1.25,
+        49.599998
+      ],
+      "support": "WLD-18 clean shop E end",
+      "feet": [
+        52.8,
+        0,
+        49.6
+      ]
+    },
+    {
+      "id": "cinder-exit-switch",
+      "circuit": "C6-03",
+      "space": "exit",
+      "room": 3,
+      "at": [
+        4.081,
+        1.25,
+        53.400002
+      ],
+      "support": "Wall exit W",
+      "feet": [
+        5.15,
+        0,
+        53.4
+      ]
+    },
+    {
+      "id": "cinder-records-switch",
+      "circuit": "C6-04",
+      "space": "records",
+      "room": 4,
+      "at": [
+        21.919001,
+        -2.75,
+        44.0
+      ],
+      "support": "Wall records E",
+      "feet": [
+        20.8,
+        -4,
+        44
+      ]
+    },
+    {
+      "id": "cinder-west-switch",
+      "circuit": "C6-05",
+      "space": "west",
+      "room": 5,
+      "at": [
+        8.241,
+        -2.75,
+        36.0
+      ],
+      "support": "WLD-18 west room entry wall south region0",
+      "feet": [
+        9.2,
+        -4,
+        36
+      ]
+    },
+    {
+      "id": "cinder-exhibit-switch",
+      "circuit": "C6-07",
+      "space": "exhibit",
+      "room": 7,
+      "at": [
+        55.918999,
+        -2.75,
+        24.0
+      ],
+      "support": "Wall exhibit E",
+      "feet": [
+        54.8,
+        -4,
+        24
+      ]
+    },
+    {
+      "id": "cinder-east-switch",
+      "circuit": "C6-08",
+      "space": "east",
+      "room": 8,
+      "at": [
+        55.918999,
+        -6.75,
+        24.0
+      ],
+      "support": "Wall east E",
+      "feet": [
+        54.8,
+        -8,
+        24
+      ]
+    },
+    {
+      "id": "cinder-crew-switch",
+      "circuit": "C6-10",
+      "space": "crew",
+      "room": 10,
+      "at": [
+        21.759001,
+        -6.75,
+        33.5
+      ],
+      "support": "WLD-18 clean crew E end",
+      "feet": [
+        20.8,
+        -8,
+        33.5
+      ]
+    },
+    {
+      "id": "cinder-plant-switch",
+      "circuit": "C6-11",
+      "space": "plant",
+      "room": 11,
+      "at": [
+        55.918999,
+        -6.75,
+        46.5
+      ],
+      "support": "Wall plant E",
+      "feet": [
+        54.8,
+        -8,
+        46.5
+      ]
+    },
+    {
+      "id": "cinder-upperring-switch",
+      "circuit": "C6-06",
+      "space": "upperring",
+      "room": 6,
+      "at": [
+        22.312342,
+        -2.75,
+        30.426632
+      ],
+      "support": "WLD-18 upperring curved retaining wall 29 region0",
+      "feet": [
+        23.124214033269922,
+        -4,
+        30.223268646114867
+      ]
+    },
+    {
+      "id": "cinder-lowring-switch",
+      "circuit": "C6-09",
+      "space": "lowring",
+      "room": 9,
+      "at": [
+        41.68766,
+        -6.75,
+        30.426634
+      ],
+      "support": "WLD-18 lowring curved retaining wall 2 region0",
+      "feet": [
+        40.87578596673008,
+        -8,
+        30.223268646114864
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "cinder-servicehouse-light",
+      "room": 0,
+      "space": "servicehouse",
+      "circuit": "C6-00",
+      "mount": [
+        10.24,
+        2.35,
+        63.400002
+      ],
+      "emitter": [
+        10.424,
+        2.35,
+        63.400002
+      ],
+      "support": "WLD-18 clean servicehouse W end"
+    },
+    {
+      "id": "cinder-head-light",
+      "room": 1,
+      "space": "head",
+      "circuit": "C6-01",
+      "mount": [
+        32.0,
+        2.35,
+        42.240002
+      ],
+      "emitter": [
+        32.0,
+        2.35,
+        42.424
+      ],
+      "support": "WLD-18 clean head N end"
+    },
+    {
+      "id": "cinder-shop-light",
+      "room": 2,
+      "space": "shop",
+      "circuit": "C6-02",
+      "mount": [
+        53.759998,
+        2.35,
+        51.299999
+      ],
+      "emitter": [
+        53.576,
+        2.35,
+        51.299999
+      ],
+      "support": "WLD-18 clean shop E end"
+    },
+    {
+      "id": "cinder-exit-light",
+      "room": 3,
+      "space": "exit",
+      "circuit": "C6-03",
+      "mount": [
+        4.08,
+        2.35,
+        51.5
+      ],
+      "emitter": [
+        4.264,
+        2.35,
+        51.5
+      ],
+      "support": "Wall exit W"
+    },
+    {
+      "id": "cinder-records-light",
+      "room": 4,
+      "space": "records",
+      "circuit": "C6-04",
+      "mount": [
+        21.92,
+        -1.65,
+        46.299999
+      ],
+      "emitter": [
+        21.736,
+        -1.65,
+        46.299999
+      ],
+      "support": "Wall records E"
+    },
+    {
+      "id": "cinder-west-light",
+      "room": 5,
+      "space": "west",
+      "circuit": "C6-05",
+      "mount": [
+        8.24,
+        -1.65,
+        37.099998
+      ],
+      "emitter": [
+        8.424,
+        -1.65,
+        37.099998
+      ],
+      "support": "WLD-18 west room entry wall south region0"
+    },
+    {
+      "id": "cinder-exhibit-light",
+      "room": 7,
+      "space": "exhibit",
+      "circuit": "C6-07",
+      "mount": [
+        55.919998,
+        -1.65,
+        25.700001
+      ],
+      "emitter": [
+        55.736,
+        -1.65,
+        25.700001
+      ],
+      "support": "Wall exhibit E"
+    },
+    {
+      "id": "cinder-east-light",
+      "room": 8,
+      "space": "east",
+      "circuit": "C6-08",
+      "mount": [
+        55.919998,
+        -5.65,
+        25.700001
+      ],
+      "emitter": [
+        55.736,
+        -5.65,
+        25.700001
+      ],
+      "support": "Wall east E"
+    },
+    {
+      "id": "cinder-crew-light",
+      "room": 10,
+      "space": "crew",
+      "circuit": "C6-10",
+      "mount": [
+        21.76,
+        -5.65,
+        35.400002
+      ],
+      "emitter": [
+        21.576,
+        -5.65,
+        35.400002
+      ],
+      "support": "WLD-18 clean crew E end"
+    },
+    {
+      "id": "cinder-plant-light",
+      "room": 11,
+      "space": "plant",
+      "circuit": "C6-11",
+      "mount": [
+        55.919998,
+        -5.65,
+        48.200001
+      ],
+      "emitter": [
+        55.736,
+        -5.65,
+        48.200001
+      ],
+      "support": "Wall plant E"
+    },
+    {
+      "id": "cinder-upperring-lamp-1",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        23.124214,
+        -1.3,
+        30.223269
+      ],
+      "emitter": [
+        23.124214,
+        -1.484,
+        30.223269
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-2",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        24.151783,
+        -1.3,
+        23.295959
+      ],
+      "emitter": [
+        24.151783,
+        -1.484,
+        23.295959
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-3",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        29.776731,
+        -1.3,
+        19.124214
+      ],
+      "emitter": [
+        29.776731,
+        -1.484,
+        19.124214
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-4",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        36.704041,
+        -1.3,
+        20.151783
+      ],
+      "emitter": [
+        36.704041,
+        -1.484,
+        20.151783
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-5",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        40.875786,
+        -1.3,
+        25.776731
+      ],
+      "emitter": [
+        40.875786,
+        -1.484,
+        25.776731
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-6",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        39.848217,
+        -1.3,
+        32.704041
+      ],
+      "emitter": [
+        39.848217,
+        -1.484,
+        32.704041
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-7",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        34.22327,
+        -1.3,
+        36.875786
+      ],
+      "emitter": [
+        34.22327,
+        -1.484,
+        36.875786
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-upperring-lamp-8",
+      "room": 6,
+      "space": "upperring",
+      "circuit": "C6-06",
+      "mount": [
+        27.295959,
+        -1.3,
+        35.848217
+      ],
+      "emitter": [
+        27.295959,
+        -1.484,
+        35.848217
+      ],
+      "support": "WLD-18 upperring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-1",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        40.875786,
+        -5.3,
+        30.223269
+      ],
+      "emitter": [
+        40.875786,
+        -5.484,
+        30.223269
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-2",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        36.704041,
+        -5.3,
+        35.848217
+      ],
+      "emitter": [
+        36.704041,
+        -5.484,
+        35.848217
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-3",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        29.776731,
+        -5.3,
+        36.875786
+      ],
+      "emitter": [
+        29.776731,
+        -5.484,
+        36.875786
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-4",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        24.151783,
+        -5.3,
+        32.704041
+      ],
+      "emitter": [
+        24.151783,
+        -5.484,
+        32.704041
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-5",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        23.124214,
+        -5.3,
+        25.776731
+      ],
+      "emitter": [
+        23.124214,
+        -5.484,
+        25.776731
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-6",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        27.295959,
+        -5.3,
+        20.151783
+      ],
+      "emitter": [
+        27.295959,
+        -5.484,
+        20.151783
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-7",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        34.22327,
+        -5.3,
+        19.124214
+      ],
+      "emitter": [
+        34.22327,
+        -5.484,
+        19.124214
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    },
+    {
+      "id": "cinder-lowring-lamp-8",
+      "room": 9,
+      "space": "lowring",
+      "circuit": "C6-09",
+      "mount": [
+        39.848217,
+        -5.3,
+        23.295959
+      ],
+      "emitter": [
+        39.848217,
+        -5.484,
+        23.295959
+      ],
+      "support": "WLD-18 lowring enclosed gallery ceiling"
+    }
+  ],
+  "workrooms": [
+    {
+      "name": "surface maintenance bench",
+      "room": "shop",
+      "asset": "level_work_repair_bench",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "bounds": [
+        [
+          48.375,
+          0.0,
+          43.001499
+        ],
+        [
+          50.824997,
+          1.645,
+          43.998501
+        ]
+      ],
+      "pivot": [
+        49.599998474121094,
+        0.0,
+        43.39649963378906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "surface duty desk",
+      "room": "servicehouse",
+      "asset": "level_workbench_worn",
+      "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+      "bounds": [
+        [
+          22.9,
+          0.0,
+          56.247498
+        ],
+        [
+          24.699999,
+          1.22,
+          56.952499
+        ]
+      ],
+      "pivot": [
+        23.799999237060547,
+        0.0,
+        56.58749771118164
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "west standby bunk",
+      "room": "crew",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          11.137501,
+          -8.0,
+          35.127502
+        ],
+        [
+          12.0625,
+          -7.18,
+          37.172501
+        ]
+      ],
+      "pivot": [
+        11.600000381469727,
+        -8.0,
+        36.150001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "east standby bunk",
+      "room": "crew",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          15.6875,
+          -8.0,
+          35.127502
+        ],
+        [
+          16.612499,
+          -7.18,
+          37.172501
+        ]
+      ],
+      "pivot": [
+        16.149999618530273,
+        -8.0,
+        36.150001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "crew equipment locker",
+      "room": "crew",
+      "asset": "level_work_crew_footlocker",
+      "sha256": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+      "bounds": [
+        [
+          18.202002,
+          -8.0,
+          36.336246
+        ],
+        [
+          19.198,
+          -7.11927,
+          37.063755
+        ]
+      ],
+      "pivot": [
+        18.700000762939453,
+        -8.0,
+        36.77875518798828
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "name": "crew emergency telephone",
+      "room": "crew",
+      "stand": {
+        "asset": "level_event_side_table_worn",
+        "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+        "bounds": [
+          [
+            13.47,
+            -8.0,
+            33.450001
+          ],
+          [
+            13.929999,
+            -7.245,
+            33.850002
+          ]
+        ],
+        "pivot": [
+          13.699999809265137,
+          -8.0,
+          33.650001525878906
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "device": {
+        "asset": "level_event_phone_worn",
+        "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+        "bounds": [
+          [
+            13.558,
+            -7.244,
+            33.540001
+          ],
+          [
+            13.842,
+            -7.076881,
+            33.760002
+          ]
+        ],
+        "pivot": [
+          13.699999809265137,
+          -7.24399995803833,
+          33.650001525878906
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": [
+          "Mine case crew telephone stand 01"
+        ]
+      }
+    }
+  ],
+  "staging_enclosure": {
+    "gate": [
+      28,
+      99.58,
+      36
+    ],
+    "fence_returns": [
+      [
+        24.1,
+        84.06,
+        99.58
+      ],
+      [
+        39.9,
+        84.06,
+        99.58
+      ]
+    ],
+    "mounted_posts": 16,
+    "road_head_owner": 13
+  }
+}

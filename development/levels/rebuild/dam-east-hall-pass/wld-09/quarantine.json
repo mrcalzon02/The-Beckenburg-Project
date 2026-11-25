@@ -1,0 +1,420 @@
+{
+  "source": {
+    "id": "WLD-09",
+    "construction": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/construction.json",
+    "layout": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/authored-layout.json",
+    "glb": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.glb",
+    "native": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.hcs2",
+    "blend": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.blend",
+    "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+    "native_sha256": "acb40c7c046e1f3512286db59a867c619889532733982f7dae6c8309881f7daf"
+  },
+  "retired_structural_parts": [
+    "WLD-09 middle landing column 65.78 34.25 region0",
+    "WLD-09 middle landing column 65.78 35.75 region0",
+    "WLD-09 middle landing column 68.22 34.25 region0",
+    "WLD-09 middle landing column 68.22 35.75 region0",
+    "WLD-09 middle landing side bearing 65.78 region0",
+    "WLD-09 middle landing side bearing 68.22 region0",
+    "WLD-09 middle landing transverse bearing region0",
+    "WLD-09 rim column 65.78 31.5 region0",
+    "WLD-09 rim column 65.78 38.5 region0",
+    "WLD-09 rim column 68.22 31.5 region0",
+    "WLD-09 rim column 68.22 38.5 region0",
+    "WLD-09 waist bearing 31.5 region0",
+    "WLD-09 waist bearing 38.5 region0"
+  ],
+  "superseded_guides": {
+    "L09": {
+      "id": "L09",
+      "a": "workshop",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          45,
+          -6,
+          55
+        ],
+        [
+          45,
+          -6,
+          48
+        ],
+        [
+          45,
+          -6,
+          43
+        ],
+        [
+          52,
+          -6,
+          43
+        ],
+        [
+          52,
+          -6,
+          35
+        ],
+        [
+          50,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          0,
+          46.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    "L11": {
+      "id": "L11",
+      "a": "turbine",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          50,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          0,
+          46.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    "L12": {
+      "id": "L12",
+      "a": "east-stair",
+      "b": "spillway",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          67,
+          0,
+          46.5
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          69.2,
+          -6,
+          23.5
+        ],
+        [
+          69.2,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          48
+        ],
+        [
+          68,
+          -6,
+          50.3
+        ],
+        [
+          70.8,
+          -6,
+          50.3
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Use the existing east stair and lower aisle. Pass through DAM-SPILLWAY-LOWER-68 into the protected observation gallery.",
+      "construction_status": "BUILT_PROTECTED_OBSERVATION_GALLERY"
+    },
+    "L18": {
+      "id": "L18",
+      "a": "return",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          57,
+          -10,
+          40
+        ],
+        [
+          57,
+          -10,
+          35
+        ],
+        [
+          60.3,
+          -10,
+          35
+        ],
+        [
+          60.3,
+          -10,
+          36.4
+        ],
+        [
+          60.3,
+          -8,
+          40
+        ],
+        [
+          60.3,
+          -8,
+          40.9
+        ],
+        [
+          62.5,
+          -8,
+          40.9
+        ],
+        [
+          62.5,
+          -8,
+          40
+        ],
+        [
+          62.5,
+          -6,
+          36.4
+        ],
+        [
+          62.5,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          35
+        ],
+        [
+          69.2,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          0,
+          46.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 10,
+      "construction": "One reserved lower return/turbine bay; two flights meet at a supported middle landing. Upper arrival uses the existing actual east-hall doorway and main stair.",
+      "construction_status": "AUTHORED_LOWER_U_BAY_JOINED_TO_EXISTING_MAIN_EAST_HALL"
+    },
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          36.0,
+          0,
+          76.0
+        ],
+        [
+          36.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          76.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L10": {
+      "id": "L10",
+      "a": "east-stair",
+      "b": "crest",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          67,
+          0,
+          46.5
+        ],
+        [
+          68,
+          0,
+          46.5
+        ],
+        [
+          68,
+          0,
+          52
+        ],
+        [
+          40,
+          0,
+          52
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          68.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    }
+  }
+}

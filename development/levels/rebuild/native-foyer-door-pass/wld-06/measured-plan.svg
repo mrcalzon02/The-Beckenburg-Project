@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 554" role="img">
+<title>Drowned Fisherman's Wharf measured approach plan</title>
+<style>
+text{font:16px "Segoe UI",sans-serif;fill:#24394a}
+.title{font-size:28px;font-weight:700} .caption{font-size:14px}
+.floor{fill:#dbe8ee;stroke:#344f63;stroke-width:1.6} .building{fill:#e0ddd0;stroke:#64533d;stroke-width:1.6}
+.well{fill:#e9ccb7;stroke:#8c6448;stroke-width:1.6} .guide,.door{fill:none}
+.guide{stroke:#b45825;stroke-width:2.6;stroke-dasharray:5 4} .door{stroke:#15776d;stroke-width:4.5}
+</style>
+<rect width="840" height="554" fill="#f9faf7"/>
+<text x="34" y="43" class="title">Drowned Fisherman's Wharf</text><rect x="65.000" y="105.000" width="432.000" height="72.000" class="floor"/><rect x="65.000" y="177.000" width="72.000" height="288.000" class="floor"/><rect x="425.000" y="177.000" width="72.000" height="288.000" class="floor"/><rect x="137.000" y="177.000" width="288.000" height="252.000" class="building"/><polyline points="259.400,177.000 302.600,177.000" class="door"/><polyline points="101.000,411.000 101.000,141.000 281.000,141.000" class="guide"/><polyline points="281.000,141.000 461.000,141.000 461.000,411.000" class="guide"/><text x="227" y="257" class="">Fish works</text><text x="524" y="136" class="caption">Full crossdock at Z8</text><text x="524" y="174" class="caption">Guidance turns north of the Z10 wall.</text><polyline points="45.000,521.000 77.000,521.000" class="guide"/><text x="90" y="528" class="caption">Nonphysical guidance</text><polyline points="279.000,521.000 313.000,521.000" class="door"/><text x="326" y="528" class="caption">Fitted doorway</text><rect x="517.000" y="509.000" width="18.000" height="15.000" class="well"/><text x="548" y="528" class="caption">Structural well</text>
+</svg>

@@ -1,0 +1,27 @@
+check	result
+native_scene_revision	7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07
+stage_revision	7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07-893e3ae9633bec4a
+actual_fitted_doors	7
+bound_native_room_volumes	18
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	17
+physical_open_transitions	8
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	Software
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+caretaker_lamp_energy	3.446046006200377 supplied, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+caretaker_lamp_visible_response	441062 changed pixels; 6.6905897335423195 mean RGB increase
+four_peer_caretaker_supply	PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset
+fixture_cemetery-load-chapel	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-cottage	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-tool	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-west-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-east-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-ossuary	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-chamber	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+standing_cemetery-load-chapel	290628 changed pixels, 1.3884724399164055 mean RGB increase
+standing_cemetery-load-chamber	188153 changed pixels, 0.40525600835945663 mean RGB increase
+four_peer_independent_circuits	PASS aimed cottage and archive toggles with independent restoration
+archive_ritual_clearance	81 supported positions in both postures
+standing_aim_MEMORIAL_REGISTER	PASS
+four_peer_record_MEMORIAL_REGISTER	PASS

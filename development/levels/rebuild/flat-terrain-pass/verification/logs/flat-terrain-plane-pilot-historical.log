@@ -1,0 +1,29 @@
+{
+  "ACADEMY": {
+    "samples": 7908,
+    "baseline_valid": 7136,
+    "new_block": 0,
+    "baseline_sweep": 6819,
+    "new_sweep_block": 0,
+    "after_valid": 7243,
+    "recovered_pose": 107
+  },
+  "WLD-09": {
+    "samples": 3123,
+    "baseline_valid": 2358,
+    "new_block": 0,
+    "baseline_sweep": 2264,
+    "new_sweep_block": 0,
+    "after_valid": 2602,
+    "recovered_pose": 244
+  },
+  "WLD-18": {
+    "samples": 3033,
+    "baseline_valid": 2905,
+    "new_block": 0,
+    "baseline_sweep": 2805,
+    "new_sweep_block": 0,
+    "after_valid": 2958,
+    "recovered_pose": 53
+  }
+}

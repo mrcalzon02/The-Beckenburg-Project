@@ -1,0 +1,109 @@
+{
+  "status": "WHARF_OPERATING_NATIVE_DOORS_AND_ACOUSTIC_ROOM_GRAPH_VERIFIED",
+  "prior_commit": "07e33bbf0d49cb578cec841b4dc80938f8ddfd3b",
+  "previous_enclosure_gallery": 45361779451,
+  "software": {
+    "native_scene_revision": "47ec48c0dd40d789d31bcd2e365df07b3415ba5201db99f11e301f57fb48e58e",
+    "stage_revision": "47ec48c0dd40d789d31bcd2e365df07b3415ba5201db99f11e301f57fb48e58e-c35041b522d62ea5",
+    "fitted_frames": "8",
+    "reachable_owners": "15",
+    "physical_walks_both_postures_and_directions": "18",
+    "native_door_motion_body_optical_acoustic_and_snapshot": "PASS",
+    "physically_checked_open_portals": "10",
+    "four_peer_tcp_cottage_door": "PASS",
+    "renderer": "Software"
+  },
+  "opengl": {
+    "native_scene_revision": "47ec48c0dd40d789d31bcd2e365df07b3415ba5201db99f11e301f57fb48e58e",
+    "stage_revision": "47ec48c0dd40d789d31bcd2e365df07b3415ba5201db99f11e301f57fb48e58e-c35041b522d62ea5",
+    "fitted_frames": "8",
+    "reachable_owners": "15",
+    "physical_walks_both_postures_and_directions": "18",
+    "native_door_motion_body_optical_acoustic_and_snapshot": "PASS",
+    "physically_checked_open_portals": "10",
+    "four_peer_tcp_cottage_door": "covered by software TCP run",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  },
+  "accessible_architectural_volumes": 19,
+  "canonical_van_slots": 1,
+  "stable_gameplay_owners": 15,
+  "geometry_sha256": {
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.blend": "25caf3d69e72b2179780fdecb8c7ba89c557ad6c1db8a0edce77db5477030d8d",
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.glb": "45deb8c1d36a7414adbef9d8617b816807e1c6916f7bbcaa7e8bc887ca89e672",
+    "development/levels/rebuild/wharf-landward-pass/enclosed-wharf.hcs2": "533b9f7789981c36269f7cfb41991c944409a27b83e25aea76a63f022f3ab9a0",
+    "development/levels/rebuild/wharf-landward-pass/wharf-tide.water": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc"
+  },
+  "required_door_asset_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "network_scope": "Three hunters and one ghost used the staged USER map. One live cottage leaf was aimed, opened, and crossed after a pre-open collision rejection.",
+  "evidence_sha256": {
+    "development/levels/rebuild/wharf-door-pass/room-layout.tsv": "3061574a082e183fd85ea32a54058c52f2d60e531839febf97cb3b1576e7c2bc",
+    "development/levels/rebuild/wharf-door-pass/door-schedule.tsv": "0f5bd05208f580731ddc4456b1d652b4608477ebadd2edf9af1d0fd70f1685e7",
+    "development/levels/rebuild/wharf-door-pass/verification/software.tsv": "ef3d3166569d0194198b258c1b27f9fcbe792f80d62ff4c3fce2d021f4fffcb4",
+    "development/levels/rebuild/wharf-door-pass/verification/opengl.tsv": "9e6c3b6466afe41e1b9cb03c7cb5b94abacf933a6d3e900f8207ddceba005b65",
+    "tools/verify_wharf_doors.py": "bd10e2e6e84346b6817eae6cba51bd09672bf33b14b6ae15900536746ecc3322",
+    "tools/java/WharfDoorReview.java": "b7954a765c54b7fa5b99fd3846b7d7b7170179b191fb8030117c937de1a36df9"
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-closed.png",
+      "sha256": "a0ccea4d779b01e38d813013852f76ad17d9d437a04b2e3aacee9c500025241c",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-open.png",
+      "sha256": "5be33210f2777694189e6ec50f8c9bea98794c7b558cede3d02064e4836622cc",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-814-closed.png",
+      "sha256": "72beb64e5772d6f6d3266ef303b2bc2ace99d1d0469cd562cfcb1aba029cca8a",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-814-open.png",
+      "sha256": "d66092fb55f9959ef972c7a958d97849d39a8b6e62b2685127341ed65a1c7e21",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-817-closed.png",
+      "sha256": "a1c090f39ad59433bc568d01e46a1471917fc728c799f5699d356197e14f237b",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-817-open.png",
+      "sha256": "182662a2015c7d39d053a8d556f9763feaaabd1f507535f8779c16d422102c1e",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-810-closed.png",
+      "sha256": "33d14838fff36c2a4e096be7efa3def66443dde1482cce974495eb47a80cdfb9",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-810-open.png",
+      "sha256": "58db2a2c16d27d736e9f64d66e208cab20122b58168e09b207713dc9b7cdeaa7",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-814-closed.png",
+      "sha256": "d4337d87360200469097bc0e366efdb5c5e933b9512e1c31b1955e2413e15613",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-814-open.png",
+      "sha256": "4b349d5079470f460bc05e327355ece1cbb9fd85b88df0160de3e7a612a24b6e",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-817-closed.png",
+      "sha256": "34b1ad6e49dafcee9665fc5e45a19905582315fa1ef165966a8f9151d26e0c23",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-817-open.png",
+      "sha256": "3f9ff285d892f78dee99ad7d30342546c25b866cbaae564fd164ec250d1fd1ce",
+      "type": "Software"
+    }
+  ],
+  "open": "Fit powered services and full walk-in refuges. Install and verify case evidence, rituals, navigation and named dispatch against this staged room and door authority."
+}

@@ -1,0 +1,477 @@
+{
+  "site": "WLD-03",
+  "source": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
+  "geometry_sha256": {
+    "blend": "491d885aecc40c7e7af584238fee4052e84ef2545fb0afef33f61e3ea6777de6",
+    "glb": "6e7719e5d7a12d6ee0410ad26eb8cba717b73c51aa4beab81f545552be99f2fb",
+    "hcs2": "a0efc3684305df4e21536f13d682ce4a12a5f74a845dd6f132943025fa802c48"
+  },
+  "retained_native_components": 246,
+  "refuges": [
+    {
+      "id": "red-mesa-shelter-cupboard",
+      "space": "shelter",
+      "owner": 0,
+      "position": [
+        5.5,
+        0,
+        55
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          4.9,
+          0.0,
+          54.150002
+        ],
+        [
+          6.202,
+          2.31,
+          55.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "red-mesa-wash-cupboard",
+      "space": "wash",
+      "owner": 1,
+      "position": [
+        58.5,
+        0,
+        55
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          57.798,
+          0.0,
+          54.150002
+        ],
+        [
+          59.099998,
+          2.31,
+          55.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "red-mesa-chamber-cupboard",
+      "space": "chamber",
+      "owner": 7,
+      "position": [
+        75,
+        8,
+        5.5
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          74.150002,
+          8.0,
+          4.9
+        ],
+        [
+          75.849998,
+          10.309999,
+          6.202
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "red-mesa-generator",
+      "type": "generator",
+      "room": 0,
+      "position": [
+        16.35,
+        0.56,
+        56.177
+      ],
+      "yaw": 3.141592653589793,
+      "style": "RM-MAIN"
+    },
+    {
+      "id": "red-mesa-breaker",
+      "type": "breaker",
+      "room": 0,
+      "position": [
+        18.450001,
+        0.89,
+        56.202001
+      ],
+      "yaw": 3.141592653589793,
+      "style": "RM-MAIN"
+    },
+    {
+      "id": "red-mesa-shelter-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        19.919001,
+        1.25,
+        49.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-00"
+    },
+    {
+      "id": "red-mesa-shelter-light-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        19.736,
+        2.38,
+        47.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-wash-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        59.918999,
+        1.25,
+        49.400002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-01"
+    },
+    {
+      "id": "red-mesa-wash-light-1",
+      "type": "light",
+      "room": 1,
+      "position": [
+        59.736,
+        2.38,
+        51.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-gallery-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        48.120998,
+        9.25,
+        26.1
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "RM-04"
+    },
+    {
+      "id": "red-mesa-gallery-light-1",
+      "type": "light",
+      "room": 4,
+      "position": [
+        48.303997,
+        10.38,
+        24.25
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-gallery-light-2",
+      "type": "light",
+      "room": 4,
+      "position": [
+        48.303997,
+        10.38,
+        35.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-fork-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        75.918999,
+        9.25,
+        30.4
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-06"
+    },
+    {
+      "id": "red-mesa-fork-light-1",
+      "type": "light",
+      "room": 6,
+      "position": [
+        75.736,
+        10.38,
+        32.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-chamber-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        81.918999,
+        9.25,
+        11.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-07"
+    },
+    {
+      "id": "red-mesa-chamber-light-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        81.736,
+        10.38,
+        9.2
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-chamber-light-2",
+      "type": "light",
+      "room": 7,
+      "position": [
+        81.736,
+        10.38,
+        15.9
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-lower-cave-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        60.700001,
+        5.25,
+        39.879002
+      ],
+      "yaw": 3.141592653589793,
+      "style": "RM-08"
+    },
+    {
+      "id": "red-mesa-lower-cave-light-1",
+      "type": "light",
+      "room": 8,
+      "position": [
+        62.5,
+        6.38,
+        39.696003
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "red-mesa-alcove-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        59.918999,
+        9.25,
+        46.700001
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "RM-10"
+    },
+    {
+      "id": "red-mesa-alcove-light-1",
+      "type": "light",
+      "room": 10,
+      "position": [
+        59.736,
+        10.38,
+        48.599998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "Red Mesa expedition base radio",
+      "type": "native-device",
+      "room": 0,
+      "position": [
+        7.65,
+        1.011,
+        47.803138999999994
+      ],
+      "yaw": 0,
+      "style": "RADIO"
+    }
+  ],
+  "shelter_furnishings": [
+    {
+      "room": "shelter",
+      "name": "expedition base radio",
+      "desk": {
+        "asset": "level_workbench_worn",
+        "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+        "bounds": [
+          [
+            6.75,
+            0.0,
+            47.3475
+          ],
+          [
+            8.55,
+            1.22,
+            48.052502
+          ]
+        ],
+        "pivot": [
+          7.650000095367432,
+          0.0,
+          47.6875
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "radio": {
+        "asset": "level_event_radio_worn",
+        "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+        "bounds": [
+          [
+            7.490717,
+            0.946,
+            47.626003
+          ],
+          [
+            7.809283,
+            1.39641,
+            47.774002
+          ]
+        ],
+        "pivot": [
+          7.659282684326172,
+          0.9459999203681946,
+          47.691001892089844
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": [
+          "Mine case expedition communications bench 01"
+        ]
+      }
+    },
+    {
+      "room": "shelter",
+      "name": "expedition rest bench",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          7.325,
+          0.0,
+          55.892696
+        ],
+        [
+          9.075,
+          0.88,
+          56.507309
+        ]
+      ],
+      "pivot": [
+        8.199999809265137,
+        0.0,
+        56.23230743408203
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "shelter",
+      "name": "expedition gear chest",
+      "asset": "level_work_crew_footlocker",
+      "sha256": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+      "bounds": [
+        [
+          6.302,
+          0.0,
+          50.036247
+        ],
+        [
+          7.298,
+          0.88073,
+          50.763756
+        ]
+      ],
+      "pivot": [
+        6.800000190734863,
+        0.0,
+        50.478755950927734
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "wash",
+      "name": "sample sorting bench",
+      "asset": "level_work_repair_bench",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "bounds": [
+        [
+          50.875,
+          0.0,
+          55.401501
+        ],
+        [
+          53.324997,
+          1.645,
+          56.398502
+        ]
+      ],
+      "pivot": [
+        52.099998474121094,
+        0.0,
+        55.79650115966797
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "wash",
+      "name": "sample storage rack",
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          50.09,
+          0.0,
+          47.540001
+        ],
+        [
+          50.910004,
+          1.29,
+          47.760002
+        ]
+      ],
+      "pivot": [
+        50.500003814697266,
+        5.042526751708465e-08,
+        47.650001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    }
+  ]
+}

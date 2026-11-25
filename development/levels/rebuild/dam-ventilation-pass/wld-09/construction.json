@@ -1,0 +1,8351 @@
+{
+  "id": "WLD-09",
+  "stair_components": [
+    "WLD-09 L14 open-under service flight tread1",
+    "WLD-09 L14 open-under service flight tread2",
+    "WLD-09 L14 open-under service flight tread3",
+    "WLD-09 L14 open-under service flight tread4",
+    "WLD-09 L14 open-under service flight tread5",
+    "WLD-09 L14 open-under service flight tread6",
+    "WLD-09 L14 open-under service flight tread7",
+    "WLD-09 L14 open-under service flight tread8",
+    "WLD-09 L14 open-under service flight tread9",
+    "WLD-09 L14 open-under service flight tread10",
+    "WLD-09 L14 open-under service flight tread11",
+    "WLD-09 L14 open-under service flight tread12",
+    "WLD-09 L14 open-under service flight tread13",
+    "WLD-09 L14 open-under service flight tread14",
+    "WLD-09 L14 open-under service flight tread15",
+    "WLD-09 L14 open-under service flight tread16",
+    "WLD-09 L14 open-under service flight tread17",
+    "WLD-09 L14 open-under service flight tread18",
+    "WLD-09 L14 open-under service flight tread19",
+    "WLD-09 L14 open-under service flight tread20",
+    "WLD-09 L14 open-under service flight tread21",
+    "WLD-09 L14 open-under service flight tread22",
+    "WLD-09 L14 open-under service flight tread23",
+    "WLD-09 contained main tread 0",
+    "WLD-09 contained main tread 1",
+    "WLD-09 contained main tread 2",
+    "WLD-09 contained main tread 3",
+    "WLD-09 contained main tread 4",
+    "WLD-09 contained main tread 5",
+    "WLD-09 contained main tread 6",
+    "WLD-09 contained main tread 7",
+    "WLD-09 contained main tread 8",
+    "WLD-09 contained main tread 9",
+    "WLD-09 contained main tread 10",
+    "WLD-09 contained main tread 11",
+    "WLD-09 contained main tread 12",
+    "WLD-09 contained main tread 13",
+    "WLD-09 contained main tread 14",
+    "WLD-09 contained main tread 15",
+    "WLD-09 contained main tread 16",
+    "WLD-09 contained main tread 17",
+    "WLD-09 contained main tread 18",
+    "WLD-09 contained main tread 19",
+    "WLD-09 contained main tread 20",
+    "WLD-09 contained main tread 21",
+    "WLD-09 contained main tread 22",
+    "WLD-09 contained main tread 23",
+    "WLD-09 contained main tread 24",
+    "WLD-09 contained main tread 25",
+    "WLD-09 contained main tread 26",
+    "WLD-09 contained main tread 27",
+    "WLD-09 contained main tread 28",
+    "WLD-09 contained main tread 29",
+    "WLD-09 contained main tread 30",
+    "WLD-09 contained main tread 31",
+    "WLD-09 contained main tread 32",
+    "WLD-09 contained main tread 33",
+    "WLD-09 west contained main tread 0 west",
+    "WLD-09 west contained main tread 1 west",
+    "WLD-09 west contained main tread 2 west",
+    "WLD-09 west contained main tread 3 west",
+    "WLD-09 west contained main tread 4 west",
+    "WLD-09 west contained main tread 5 west",
+    "WLD-09 west contained main tread 6 west",
+    "WLD-09 west contained main tread 7 west",
+    "WLD-09 west contained main tread 8 west",
+    "WLD-09 west contained main tread 9 west",
+    "WLD-09 west contained main tread 10 west",
+    "WLD-09 west contained main tread 11 west",
+    "WLD-09 west contained main tread 12 west",
+    "WLD-09 west contained main tread 13 west",
+    "WLD-09 west contained main tread 14 west",
+    "WLD-09 west contained main tread 15 west",
+    "WLD-09 west contained main tread 16 west",
+    "WLD-09 west contained main tread 17 west",
+    "WLD-09 west contained main tread 18 west",
+    "WLD-09 west contained main tread 19 west",
+    "WLD-09 west contained main tread 20 west",
+    "WLD-09 west contained main tread 21 west",
+    "WLD-09 west contained main tread 22 west",
+    "WLD-09 west contained main tread 23 west",
+    "WLD-09 west contained main tread 24 west",
+    "WLD-09 west contained main tread 25 west",
+    "WLD-09 west contained main tread 26 west",
+    "WLD-09 west contained main tread 27 west",
+    "WLD-09 west contained main tread 28 west",
+    "WLD-09 west contained main tread 29 west",
+    "WLD-09 west contained main tread 30 west",
+    "WLD-09 west contained main tread 31 west",
+    "WLD-09 west contained main tread 32 west",
+    "WLD-09 west contained main tread 33 west",
+    "WLD-09 service bay L18 tread 0",
+    "WLD-09 service bay L18 tread 1",
+    "WLD-09 service bay L18 tread 2",
+    "WLD-09 service bay L18 tread 3",
+    "WLD-09 service bay L18 tread 4",
+    "WLD-09 service bay L18 tread 5",
+    "WLD-09 service bay L18 tread 6",
+    "WLD-09 service bay L18 tread 7",
+    "WLD-09 service bay L18 tread 8",
+    "WLD-09 service bay L18 tread 9",
+    "WLD-09 service bay L18 tread 10",
+    "WLD-09 service bay L18 tread 11",
+    "WLD-09 service bay L18 tread 12",
+    "WLD-09 service bay L18 tread 13",
+    "WLD-09 service bay L18 tread 14",
+    "WLD-09 service bay L18 tread 15",
+    "WLD-09 service bay L18 tread 16",
+    "WLD-09 service bay L18 tread 17",
+    "WLD-09 service bay L18 tread 18",
+    "WLD-09 service bay L18 tread 19",
+    "WLD-09 service bay L18 tread 20",
+    "WLD-09 service bay L18 tread 21",
+    "WLD-09 service bay L18 tread 22",
+    "WLD-09 service bay L18 tread 23"
+  ],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {
+      "1": 0,
+      "3": 1
+    },
+    "L08": {},
+    "L09": {
+      "10": 0,
+      "12": 1
+    },
+    "L10": {},
+    "L11": {
+      "5": 0,
+      "7": 1
+    },
+    "L12": {
+      "1": 0,
+      "3": 1
+    },
+    "L13": {},
+    "L14": {
+      "0": 0
+    },
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {
+      "3": 0,
+      "7": 2,
+      "14": 3,
+      "16": 4
+    }
+  },
+  "status": "DAM_GENERATOR_EXHAUST_AND_BAFFLED_AIR_STAGED",
+  "source_contract": "development/levels/rebuild/terrain-ownership-construction-pass/wld-09/construction.json",
+  "source_contract_sha256": "1bdf339c746ae9c2f05250f07c7f56b61ed99f320b0834fa0334496873074ed3",
+  "source_glb": "development/levels/rebuild/dam-carrier-pass/wld-09/dam-with-carrier.glb",
+  "source_glb_sha256": "a3c32d895465b0bb825957a853f32921b2f95ce9881d2e86165d461a6b9648b6",
+  "source_physics": "development/levels/rebuild/dam-carrier-pass/wld-09/dam-with-carrier.hcs2",
+  "source_physics_sha256": "8b2479c800316bb74223160b7e47dced971d6916a3e9961f511995f36dd6a41d",
+  "before_layout": "development/levels/rebuild/dam-door-pass/wld-09/authored-layout.json",
+  "before_layout_sha256": "087227b49dbadf20f68fd632ae5870ccb4734f5d168fcfb464a6bc89a56224db",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {
+      "1": 0,
+      "3": 1
+    },
+    "L08": {},
+    "L09": {
+      "10": 0,
+      "12": 1
+    },
+    "L10": {},
+    "L11": {
+      "5": 0,
+      "7": 1
+    },
+    "L12": {
+      "1": 0,
+      "3": 1
+    },
+    "L13": {},
+    "L14": {
+      "0": 0
+    },
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {
+      "3": 0,
+      "7": 2,
+      "14": 3,
+      "16": 4
+    }
+  },
+  "before_stair_components": [
+    "WLD-09 L14 open-under service flight tread1",
+    "WLD-09 L14 open-under service flight tread2",
+    "WLD-09 L14 open-under service flight tread3",
+    "WLD-09 L14 open-under service flight tread4",
+    "WLD-09 L14 open-under service flight tread5",
+    "WLD-09 L14 open-under service flight tread6",
+    "WLD-09 L14 open-under service flight tread7",
+    "WLD-09 L14 open-under service flight tread8",
+    "WLD-09 L14 open-under service flight tread9",
+    "WLD-09 L14 open-under service flight tread10",
+    "WLD-09 L14 open-under service flight tread11",
+    "WLD-09 L14 open-under service flight tread12",
+    "WLD-09 L14 open-under service flight tread13",
+    "WLD-09 L14 open-under service flight tread14",
+    "WLD-09 L14 open-under service flight tread15",
+    "WLD-09 L14 open-under service flight tread16",
+    "WLD-09 L14 open-under service flight tread17",
+    "WLD-09 L14 open-under service flight tread18",
+    "WLD-09 L14 open-under service flight tread19",
+    "WLD-09 L14 open-under service flight tread20",
+    "WLD-09 L14 open-under service flight tread21",
+    "WLD-09 L14 open-under service flight tread22",
+    "WLD-09 L14 open-under service flight tread23",
+    "WLD-09 contained main tread 0",
+    "WLD-09 contained main tread 1",
+    "WLD-09 contained main tread 2",
+    "WLD-09 contained main tread 3",
+    "WLD-09 contained main tread 4",
+    "WLD-09 contained main tread 5",
+    "WLD-09 contained main tread 6",
+    "WLD-09 contained main tread 7",
+    "WLD-09 contained main tread 8",
+    "WLD-09 contained main tread 9",
+    "WLD-09 contained main tread 10",
+    "WLD-09 contained main tread 11",
+    "WLD-09 contained main tread 12",
+    "WLD-09 contained main tread 13",
+    "WLD-09 contained main tread 14",
+    "WLD-09 contained main tread 15",
+    "WLD-09 contained main tread 16",
+    "WLD-09 contained main tread 17",
+    "WLD-09 contained main tread 18",
+    "WLD-09 contained main tread 19",
+    "WLD-09 contained main tread 20",
+    "WLD-09 contained main tread 21",
+    "WLD-09 contained main tread 22",
+    "WLD-09 contained main tread 23",
+    "WLD-09 contained main tread 24",
+    "WLD-09 contained main tread 25",
+    "WLD-09 contained main tread 26",
+    "WLD-09 contained main tread 27",
+    "WLD-09 contained main tread 28",
+    "WLD-09 contained main tread 29",
+    "WLD-09 contained main tread 30",
+    "WLD-09 contained main tread 31",
+    "WLD-09 contained main tread 32",
+    "WLD-09 contained main tread 33",
+    "WLD-09 west contained main tread 0 west",
+    "WLD-09 west contained main tread 1 west",
+    "WLD-09 west contained main tread 2 west",
+    "WLD-09 west contained main tread 3 west",
+    "WLD-09 west contained main tread 4 west",
+    "WLD-09 west contained main tread 5 west",
+    "WLD-09 west contained main tread 6 west",
+    "WLD-09 west contained main tread 7 west",
+    "WLD-09 west contained main tread 8 west",
+    "WLD-09 west contained main tread 9 west",
+    "WLD-09 west contained main tread 10 west",
+    "WLD-09 west contained main tread 11 west",
+    "WLD-09 west contained main tread 12 west",
+    "WLD-09 west contained main tread 13 west",
+    "WLD-09 west contained main tread 14 west",
+    "WLD-09 west contained main tread 15 west",
+    "WLD-09 west contained main tread 16 west",
+    "WLD-09 west contained main tread 17 west",
+    "WLD-09 west contained main tread 18 west",
+    "WLD-09 west contained main tread 19 west",
+    "WLD-09 west contained main tread 20 west",
+    "WLD-09 west contained main tread 21 west",
+    "WLD-09 west contained main tread 22 west",
+    "WLD-09 west contained main tread 23 west",
+    "WLD-09 west contained main tread 24 west",
+    "WLD-09 west contained main tread 25 west",
+    "WLD-09 west contained main tread 26 west",
+    "WLD-09 west contained main tread 27 west",
+    "WLD-09 west contained main tread 28 west",
+    "WLD-09 west contained main tread 29 west",
+    "WLD-09 west contained main tread 30 west",
+    "WLD-09 west contained main tread 31 west",
+    "WLD-09 west contained main tread 32 west",
+    "WLD-09 west contained main tread 33 west",
+    "WLD-09 service bay L18 tread 0",
+    "WLD-09 service bay L18 tread 1",
+    "WLD-09 service bay L18 tread 2",
+    "WLD-09 service bay L18 tread 3",
+    "WLD-09 service bay L18 tread 4",
+    "WLD-09 service bay L18 tread 5",
+    "WLD-09 service bay L18 tread 6",
+    "WLD-09 service bay L18 tread 7",
+    "WLD-09 service bay L18 tread 8",
+    "WLD-09 service bay L18 tread 9",
+    "WLD-09 service bay L18 tread 10",
+    "WLD-09 service bay L18 tread 11",
+    "WLD-09 service bay L18 tread 12",
+    "WLD-09 service bay L18 tread 13",
+    "WLD-09 service bay L18 tread 14",
+    "WLD-09 service bay L18 tread 15",
+    "WLD-09 service bay L18 tread 16",
+    "WLD-09 service bay L18 tread 17",
+    "WLD-09 service bay L18 tread 18",
+    "WLD-09 service bay L18 tread 19",
+    "WLD-09 service bay L18 tread 20",
+    "WLD-09 service bay L18 tread 21",
+    "WLD-09 service bay L18 tread 22",
+    "WLD-09 service bay L18 tread 23"
+  ],
+  "layout": "development/levels/rebuild/dam-door-pass/wld-09/authored-layout.json",
+  "layout_sha256": "087227b49dbadf20f68fd632ae5870ccb4734f5d168fcfb464a6bc89a56224db",
+  "glb_sha256": "e29f46f0d973f2edf99a0ca7e3f0a4dd9f93c4491a9e4dad813cd6ff2564e82e",
+  "physics_sha256": "2718d62de0cb6a17cbe62fbdd0fd097ca47cb6dbb50f379ccfcde3f576602cf7",
+  "removed_source_meshes": [
+    "Wall plant N"
+  ],
+  "removed_native_parts": [
+    "17:Floor west-stair",
+    "18:Floor west-stair.001",
+    "19:Floor west-stair.002",
+    "20:Floor west-stair.003",
+    "21:Floor west-stair.004",
+    "121:L07 flight0 step1",
+    "122:L07 flight0 step2",
+    "123:L07 flight0 step3",
+    "124:L07 flight0 step4",
+    "125:L07 flight0 step5",
+    "126:L07 flight0 step6",
+    "127:L07 flight0 step7",
+    "128:L07 flight0 step8",
+    "129:L07 flight0 step9",
+    "130:L07 flight0 step10",
+    "131:L07 flight0 step11",
+    "132:L07 flight0 step12",
+    "133:L07 flight0 step13",
+    "134:L07 flight0 step14",
+    "135:L07 flight0 step15",
+    "136:L07 flight0 step16",
+    "137:L07 flight0 step17",
+    "138:L07 flight0 step18",
+    "139:L07 flight0 step19",
+    "140:L07 flight0 step20",
+    "141:L07 flight0 step21",
+    "142:L07 flight0 step22",
+    "143:L07 flight0 step23",
+    "144:L07 flight0 step24",
+    "145:L07 flight0 step25",
+    "146:L07 flight0 step26",
+    "147:L07 flight0 step27",
+    "148:L07 flight0 step28",
+    "149:L07 flight0 step29",
+    "150:L07 flight0 step30",
+    "151:L07 flight0 step31",
+    "152:L07 flight0 step32",
+    "153:L07 flight0 step33",
+    "154:L07 flight0 step34",
+    "262:L14 flight0 step1",
+    "263:L14 flight0 step2",
+    "264:L14 flight0 step3",
+    "265:L14 flight0 step4",
+    "266:L14 flight0 step5",
+    "267:L14 flight0 step6",
+    "268:L14 flight0 step7",
+    "269:L14 flight0 step8",
+    "270:L14 flight0 step9",
+    "271:L14 flight0 step10",
+    "272:L14 flight0 step11",
+    "273:L14 flight0 step12",
+    "274:L14 flight0 step13",
+    "275:L14 flight0 step14",
+    "276:L14 flight0 step15",
+    "277:L14 flight0 step16",
+    "278:L14 flight0 step17",
+    "279:L14 flight0 step18",
+    "280:L14 flight0 step19",
+    "281:L14 flight0 step20",
+    "282:L14 flight0 step21",
+    "283:L14 flight0 step22",
+    "284:L14 flight0 step23"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain WLD-09",
+  "native_terrain_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_closed_parts": [
+    "Arrival end bearing WLD-09 0"
+  ],
+  "new_closed_triangles": 12,
+  "world": "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/adaptive-topology.bin": "e23fcba0fec0924a95daa9e5857ea244757b1e7b157736d46c20cec510ca7920",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/authored-cuts.tsv": "e6e9c4825837301c23e46d20fe7835397763071d336991fc7bbc9ec5bc1a2012",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/authored-path-grading.sha256": "2704d2a567c0f5967f8f5b69b4a3df007da7bf1b8d178a9ba39032d0307aa8a5",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/earthworks-verification.json": "27fc36d255c9ae25f001f63f44201c4fd6df4834c07cdcb273c008f063642748",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/source-provenance.json": "70499990bbb6a1154abcd8321a5f5b0d51e0d54ffbaad3488f7df1d342626df7",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/stair-cell-punch-verification.json": "3169c90011332fe9ad358f39595102a4c49dea3ee5eb9ce600a55dc7b6d9ae10",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/terrain-physics.hcs2": "86c8882825c76928bcc9193bc30610daa51a969f67b6c434a98b21bb4f18ba46",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/tile_0_0.png": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/verification.json": "a02ce2b46b1b30a5fb73e50f853537d90804df1918bd0a8cd019894c7e335eb5",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.previous": "865045c8739e64326ef168060920d9db573e53a52a53d1fd18d096f772dc6760",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/scene.bin": "975bd791342e5723a5f5825e9c1f5421c6eb71da3fa8781a24473d24955c9ea8",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-0.obj": "46b024d44b3dd04f3c9bfc7fdbf7c36ce5e63e6cf604205c97dd98fe1c6c8623",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-1.obj": "f073717a5a72015ef4de6d8ed3c72f1f6ce467fcf54628389504dbbd1bb9493f",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-0.obj": "edc0d74e8ab43a820e799677a89cd1f7eac4e7e30957d7fb336146204da97e24",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-1.obj": "95cefc5cab502a1757a62f36a2d8373de49e28e63c397255d46c78be51acfdcd",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/terrain-layers/tile_0_0.bin": "e2bcc083ca8eac4c99492d51dd5919cdca93574f893e30ba7247e08d9e9b7a58"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [],
+  "deferred_walkway_beds": [],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [
+    "Arrival end bearing WLD-09 0"
+  ],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Coping/drainage/returns and full landscape art, off-landform routes, remaining connectivity and runtime integration are open. Soil/sculpt/topology bytes unchanged; no new terrain hole, map unlock or terrain acceptance.",
+  "root_checks": [
+    {
+      "name": "Retaining shoulder WLD-09 L01 0 -1 0",
+      "samples": 25,
+      "minimum_embedding": 0.40008544921875
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 0 -1 1",
+      "samples": 25,
+      "minimum_embedding": 0.40007781982421875
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 0 -1 2",
+      "samples": 25,
+      "minimum_embedding": 0.400054931640625
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 0",
+      "samples": 25,
+      "minimum_embedding": 0.4001731872558594
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 1",
+      "samples": 25,
+      "minimum_embedding": 0.40007781982421875
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 2",
+      "samples": 25,
+      "minimum_embedding": 0.40006256103515625
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 3",
+      "samples": 25,
+      "minimum_embedding": 0.4000663757324219
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L02 0 -1 0",
+      "samples": 25,
+      "minimum_embedding": 0.40029144287109375
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L02 0 -1 1",
+      "samples": 25,
+      "minimum_embedding": 0.399993896484375
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 4",
+      "samples": 25,
+      "minimum_embedding": 0.40032196044921875
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 5",
+      "samples": 25,
+      "minimum_embedding": 0.400299072265625
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 6",
+      "samples": 25,
+      "minimum_embedding": 0.4002532958984375
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 7",
+      "samples": 25,
+      "minimum_embedding": 0.4001731872558594
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 8",
+      "samples": 25,
+      "minimum_embedding": 0.40008544921875
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 9",
+      "samples": 25,
+      "minimum_embedding": 0.4000663757324219
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 10",
+      "samples": 25,
+      "minimum_embedding": 0.4000701904296875
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 11",
+      "samples": 25,
+      "minimum_embedding": 0.4000663757324219
+    }
+  ],
+  "retaining_shoulders": [
+    {
+      "name": "Retaining shoulder WLD-09 L01 0 -1 0",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          82.0
+        ],
+        [
+          33.459999999999994,
+          80.0
+        ],
+        [
+          33.14,
+          80.0
+        ],
+        [
+          33.14,
+          82.0
+        ]
+      ],
+      "top_y": 0.68781005859375,
+      "bottom_y": [
+        -0.30384674072265627,
+        -0.30384674072265627,
+        -0.30384674072265627,
+        -0.30384674072265627
+      ],
+      "actual_soil_y": [
+        0.09615325927734375,
+        0.09615325927734375,
+        0.2716522216796875,
+        0.2716522216796875
+      ],
+      "cut_inner_y": [
+        -0.03546905517578125,
+        -0.03546905517578125
+      ],
+      "bank_outer_y": [
+        0.56781005859375,
+        0.56781005859375
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          82.0,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          82.0,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          82.0,
+          0.18390274047851562
+        ],
+        [
+          33.22,
+          82.0,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          82.0,
+          0.2716522216796875
+        ],
+        [
+          33.459999999999994,
+          81.5,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          81.5,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          81.5,
+          0.18390655517578125
+        ],
+        [
+          33.22,
+          81.5,
+          0.22777557373046875
+        ],
+        [
+          33.14,
+          81.5,
+          0.2716560363769531
+        ],
+        [
+          33.459999999999994,
+          81.0,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          81.0,
+          0.14002609252929688
+        ],
+        [
+          33.3,
+          81.0,
+          0.18390274047851562
+        ],
+        [
+          33.22,
+          81.0,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          81.0,
+          0.2716522216796875
+        ],
+        [
+          33.459999999999994,
+          80.5,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          80.5,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          80.5,
+          0.18390655517578125
+        ],
+        [
+          33.22,
+          80.5,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          80.5,
+          0.2716560363769531
+        ],
+        [
+          33.459999999999994,
+          80.0,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          80.0,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          80.0,
+          0.18390274047851562
+        ],
+        [
+          33.22,
+          80.0,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          80.0,
+          0.2716522216796875
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 0 -1 1",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          80.0
+        ],
+        [
+          33.459999999999994,
+          78.0
+        ],
+        [
+          33.14,
+          78.0
+        ],
+        [
+          33.14,
+          80.0
+        ]
+      ],
+      "top_y": 0.68781005859375,
+      "bottom_y": [
+        -0.3378814697265625,
+        -0.3378814697265625,
+        -0.3378814697265625,
+        -0.3378814697265625
+      ],
+      "actual_soil_y": [
+        0.09615325927734375,
+        0.062122344970703125,
+        0.2174530029296875,
+        0.2716522216796875
+      ],
+      "cut_inner_y": [
+        -0.03546905517578125,
+        -0.054378509521484375
+      ],
+      "bank_outer_y": [
+        0.56781005859375,
+        0.4795722961425781
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          80.0,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          80.0,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          80.0,
+          0.18390274047851562
+        ],
+        [
+          33.22,
+          80.0,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          80.0,
+          0.2716522216796875
+        ],
+        [
+          33.459999999999994,
+          79.5,
+          0.06464385986328125
+        ],
+        [
+          33.379999999999995,
+          79.5,
+          0.10851287841796875
+        ],
+        [
+          33.3,
+          79.5,
+          0.1523895263671875
+        ],
+        [
+          33.22,
+          79.5,
+          0.19626617431640625
+        ],
+        [
+          33.14,
+          79.5,
+          0.240142822265625
+        ],
+        [
+          33.459999999999994,
+          79.0,
+          0.0621185302734375
+        ],
+        [
+          33.379999999999995,
+          79.0,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          79.0,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          79.0,
+          0.178619384765625
+        ],
+        [
+          33.14,
+          79.0,
+          0.2174530029296875
+        ],
+        [
+          33.459999999999994,
+          78.5,
+          0.0621185302734375
+        ],
+        [
+          33.379999999999995,
+          78.5,
+          0.10094833374023438
+        ],
+        [
+          33.3,
+          78.5,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          78.5,
+          0.17861557006835938
+        ],
+        [
+          33.14,
+          78.5,
+          0.2174530029296875
+        ],
+        [
+          33.459999999999994,
+          78.0,
+          0.062122344970703125
+        ],
+        [
+          33.379999999999995,
+          78.0,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          78.0,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          78.0,
+          0.178619384765625
+        ],
+        [
+          33.14,
+          78.0,
+          0.2174530029296875
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 0 -1 2",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          78.0
+        ],
+        [
+          33.459999999999994,
+          76.0
+        ],
+        [
+          33.14,
+          76.0
+        ],
+        [
+          33.14,
+          78.0
+        ]
+      ],
+      "top_y": 0.5995722961425781,
+      "bottom_y": [
+        -0.40809478759765627,
+        -0.40809478759765627,
+        -0.40809478759765627,
+        -0.40809478759765627
+      ],
+      "actual_soil_y": [
+        0.062122344970703125,
+        -0.008090972900390625,
+        0.10563278198242188,
+        0.2174530029296875
+      ],
+      "cut_inner_y": [
+        -0.054378509521484375,
+        -0.0933837890625
+      ],
+      "bank_outer_y": [
+        0.4795722961425781,
+        0.2975425720214844
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          78.0,
+          0.062122344970703125
+        ],
+        [
+          33.379999999999995,
+          78.0,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          78.0,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          78.0,
+          0.178619384765625
+        ],
+        [
+          33.14,
+          78.0,
+          0.2174530029296875
+        ],
+        [
+          33.459999999999994,
+          77.5,
+          -0.00289154052734375
+        ],
+        [
+          33.379999999999995,
+          77.5,
+          0.03594207763671875
+        ],
+        [
+          33.3,
+          77.5,
+          0.07477569580078125
+        ],
+        [
+          33.22,
+          77.5,
+          0.11360549926757812
+        ],
+        [
+          33.14,
+          77.5,
+          0.15243911743164062
+        ],
+        [
+          33.459999999999994,
+          77.0,
+          -0.00809478759765625
+        ],
+        [
+          33.379999999999995,
+          77.0,
+          0.020336151123046875
+        ],
+        [
+          33.3,
+          77.0,
+          0.04876708984375
+        ],
+        [
+          33.22,
+          77.0,
+          0.07720184326171875
+        ],
+        [
+          33.14,
+          77.0,
+          0.10562896728515625
+        ],
+        [
+          33.459999999999994,
+          76.5,
+          -0.008090972900390625
+        ],
+        [
+          33.379999999999995,
+          76.5,
+          0.020336151123046875
+        ],
+        [
+          33.3,
+          76.5,
+          0.048770904541015625
+        ],
+        [
+          33.22,
+          76.5,
+          0.07719802856445312
+        ],
+        [
+          33.14,
+          76.5,
+          0.10562896728515625
+        ],
+        [
+          33.459999999999994,
+          76.0,
+          -0.008090972900390625
+        ],
+        [
+          33.379999999999995,
+          76.0,
+          0.0203399658203125
+        ],
+        [
+          33.3,
+          76.0,
+          0.048770904541015625
+        ],
+        [
+          33.22,
+          76.0,
+          0.07720184326171875
+        ],
+        [
+          33.14,
+          76.0,
+          0.10563278198242188
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 0",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          76.0
+        ],
+        [
+          33.459999999999994,
+          74.25
+        ],
+        [
+          33.14,
+          74.25
+        ],
+        [
+          33.14,
+          76.0
+        ]
+      ],
+      "top_y": 0.5995722961425781,
+      "bottom_y": [
+        -0.40809097290039065,
+        -0.40809097290039065,
+        -0.40809097290039065,
+        -0.40809097290039065
+      ],
+      "actual_soil_y": [
+        -0.008090972900390625,
+        0.0621185302734375,
+        0.2174530029296875,
+        0.10563278198242188
+      ],
+      "cut_inner_y": [
+        -0.0933837890625,
+        -0.05438232421875
+      ],
+      "bank_outer_y": [
+        0.2975425720214844,
+        0.4795722961425781
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          76.0,
+          -0.008090972900390625
+        ],
+        [
+          33.379999999999995,
+          76.0,
+          0.0203399658203125
+        ],
+        [
+          33.3,
+          76.0,
+          0.048770904541015625
+        ],
+        [
+          33.22,
+          76.0,
+          0.07720184326171875
+        ],
+        [
+          33.14,
+          76.0,
+          0.10563278198242188
+        ],
+        [
+          33.459999999999994,
+          75.5625,
+          0.04878997802734375
+        ],
+        [
+          33.379999999999995,
+          75.5625,
+          0.0772247314453125
+        ],
+        [
+          33.3,
+          75.5625,
+          0.10565567016601562
+        ],
+        [
+          33.22,
+          75.5625,
+          0.13408660888671875
+        ],
+        [
+          33.14,
+          75.5625,
+          0.16251754760742188
+        ],
+        [
+          33.459999999999994,
+          75.125,
+          0.062122344970703125
+        ],
+        [
+          33.379999999999995,
+          75.125,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          75.125,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          75.125,
+          0.178619384765625
+        ],
+        [
+          33.14,
+          75.125,
+          0.2174530029296875
+        ],
+        [
+          33.459999999999994,
+          74.6875,
+          0.062122344970703125
+        ],
+        [
+          33.379999999999995,
+          74.6875,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          74.6875,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          74.6875,
+          0.17861557006835938
+        ],
+        [
+          33.14,
+          74.6875,
+          0.2174530029296875
+        ],
+        [
+          33.459999999999994,
+          74.25,
+          0.0621185302734375
+        ],
+        [
+          33.379999999999995,
+          74.25,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          74.25,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          74.25,
+          0.17861557006835938
+        ],
+        [
+          33.14,
+          74.25,
+          0.2174530029296875
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 1",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          74.25
+        ],
+        [
+          33.459999999999994,
+          72.5
+        ],
+        [
+          33.14,
+          72.5
+        ],
+        [
+          33.14,
+          74.25
+        ]
+      ],
+      "top_y": 0.68781005859375,
+      "bottom_y": [
+        -0.3378814697265625,
+        -0.3378814697265625,
+        -0.3378814697265625,
+        -0.3378814697265625
+      ],
+      "actual_soil_y": [
+        0.0621185302734375,
+        0.09615325927734375,
+        0.2716560363769531,
+        0.2174530029296875
+      ],
+      "cut_inner_y": [
+        -0.05438232421875,
+        -0.03546905517578125
+      ],
+      "bank_outer_y": [
+        0.4795722961425781,
+        0.56781005859375
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          74.25,
+          0.0621185302734375
+        ],
+        [
+          33.379999999999995,
+          74.25,
+          0.1009521484375
+        ],
+        [
+          33.3,
+          74.25,
+          0.1397857666015625
+        ],
+        [
+          33.22,
+          74.25,
+          0.17861557006835938
+        ],
+        [
+          33.14,
+          74.25,
+          0.2174530029296875
+        ],
+        [
+          33.459999999999994,
+          73.8125,
+          0.07393646240234375
+        ],
+        [
+          33.379999999999995,
+          73.8125,
+          0.11277008056640625
+        ],
+        [
+          33.3,
+          73.8125,
+          0.15160369873046875
+        ],
+        [
+          33.22,
+          73.8125,
+          0.19043731689453125
+        ],
+        [
+          33.14,
+          73.8125,
+          0.22927093505859375
+        ],
+        [
+          33.459999999999994,
+          73.375,
+          0.09615707397460938
+        ],
+        [
+          33.379999999999995,
+          73.375,
+          0.14002609252929688
+        ],
+        [
+          33.3,
+          73.375,
+          0.17917633056640625
+        ],
+        [
+          33.22,
+          73.375,
+          0.21800994873046875
+        ],
+        [
+          33.14,
+          73.375,
+          0.25684356689453125
+        ],
+        [
+          33.459999999999994,
+          72.9375,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          72.9375,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          72.9375,
+          0.18390655517578125
+        ],
+        [
+          33.22,
+          72.9375,
+          0.22777557373046875
+        ],
+        [
+          33.14,
+          72.9375,
+          0.2716522216796875
+        ],
+        [
+          33.459999999999994,
+          72.5,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          72.5,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          72.5,
+          0.18390655517578125
+        ],
+        [
+          33.22,
+          72.5,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          72.5,
+          0.2716560363769531
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 2",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          72.5
+        ],
+        [
+          33.459999999999994,
+          70.75
+        ],
+        [
+          33.14,
+          70.75
+        ],
+        [
+          33.14,
+          72.5
+        ]
+      ],
+      "top_y": 0.68781005859375,
+      "bottom_y": [
+        -0.3875946044921875,
+        -0.3875946044921875,
+        -0.3875946044921875,
+        -0.3875946044921875
+      ],
+      "actual_soil_y": [
+        0.09615325927734375,
+        0.0124053955078125,
+        0.138275146484375,
+        0.2716560363769531
+      ],
+      "cut_inner_y": [
+        -0.03546905517578125,
+        -0.082000732421875
+      ],
+      "bank_outer_y": [
+        0.56781005859375,
+        0.3739471435546875
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          72.5,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          72.5,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          72.5,
+          0.18390655517578125
+        ],
+        [
+          33.22,
+          72.5,
+          0.22777938842773438
+        ],
+        [
+          33.14,
+          72.5,
+          0.2716560363769531
+        ],
+        [
+          33.459999999999994,
+          72.0625,
+          0.09615325927734375
+        ],
+        [
+          33.379999999999995,
+          72.0625,
+          0.1400299072265625
+        ],
+        [
+          33.3,
+          72.0625,
+          0.18390655517578125
+        ],
+        [
+          33.22,
+          72.0625,
+          0.22777557373046875
+        ],
+        [
+          33.14,
+          72.0625,
+          0.2716560363769531
+        ],
+        [
+          33.459999999999994,
+          71.625,
+          0.037994384765625
+        ],
+        [
+          33.379999999999995,
+          71.625,
+          0.08187103271484375
+        ],
+        [
+          33.3,
+          71.625,
+          0.12574386596679688
+        ],
+        [
+          33.22,
+          71.625,
+          0.16961669921875
+        ],
+        [
+          33.14,
+          71.625,
+          0.21349334716796875
+        ],
+        [
+          33.459999999999994,
+          71.1875,
+          0.012409210205078125
+        ],
+        [
+          33.379999999999995,
+          71.1875,
+          0.043872833251953125
+        ],
+        [
+          33.3,
+          71.1875,
+          0.07534027099609375
+        ],
+        [
+          33.22,
+          71.1875,
+          0.10680389404296875
+        ],
+        [
+          33.14,
+          71.1875,
+          0.1456451416015625
+        ],
+        [
+          33.459999999999994,
+          70.75,
+          0.0124053955078125
+        ],
+        [
+          33.379999999999995,
+          70.75,
+          0.043872833251953125
+        ],
+        [
+          33.3,
+          70.75,
+          0.07534027099609375
+        ],
+        [
+          33.22,
+          70.75,
+          0.10680770874023438
+        ],
+        [
+          33.14,
+          70.75,
+          0.138275146484375
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L01 1 -1 3",
+      "link": "L01",
+      "footprint": [
+        [
+          33.459999999999994,
+          70.75
+        ],
+        [
+          33.459999999999994,
+          69.0
+        ],
+        [
+          33.14,
+          69.0
+        ],
+        [
+          33.14,
+          70.75
+        ]
+      ],
+      "top_y": 0.5125704956054687,
+      "bottom_y": [
+        -0.3875946044921875,
+        -0.3875946044921875,
+        -0.3875946044921875,
+        -0.3875946044921875
+      ],
+      "actual_soil_y": [
+        0.0124053955078125,
+        0.035022735595703125,
+        0.17429733276367188,
+        0.138275146484375
+      ],
+      "cut_inner_y": [
+        -0.082000732421875,
+        -0.06943130493164062
+      ],
+      "bank_outer_y": [
+        0.3739471435546875,
+        0.39257049560546875
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.459999999999994,
+          70.75,
+          0.0124053955078125
+        ],
+        [
+          33.379999999999995,
+          70.75,
+          0.043872833251953125
+        ],
+        [
+          33.3,
+          70.75,
+          0.07534027099609375
+        ],
+        [
+          33.22,
+          70.75,
+          0.10680770874023438
+        ],
+        [
+          33.14,
+          70.75,
+          0.138275146484375
+        ],
+        [
+          33.459999999999994,
+          70.3125,
+          0.0124053955078125
+        ],
+        [
+          33.379999999999995,
+          70.3125,
+          0.043872833251953125
+        ],
+        [
+          33.3,
+          70.3125,
+          0.07534027099609375
+        ],
+        [
+          33.22,
+          70.3125,
+          0.10680770874023438
+        ],
+        [
+          33.14,
+          70.3125,
+          0.138275146484375
+        ],
+        [
+          33.459999999999994,
+          69.875,
+          0.01763916015625
+        ],
+        [
+          33.379999999999995,
+          69.875,
+          0.04911041259765625
+        ],
+        [
+          33.3,
+          69.875,
+          0.08057403564453125
+        ],
+        [
+          33.22,
+          69.875,
+          0.1120452880859375
+        ],
+        [
+          33.14,
+          69.875,
+          0.14351272583007812
+        ],
+        [
+          33.459999999999994,
+          69.4375,
+          0.035022735595703125
+        ],
+        [
+          33.379999999999995,
+          69.4375,
+          0.06743240356445312
+        ],
+        [
+          33.3,
+          69.4375,
+          0.09889984130859375
+        ],
+        [
+          33.22,
+          69.4375,
+          0.13037109375
+        ],
+        [
+          33.14,
+          69.4375,
+          0.16183853149414062
+        ],
+        [
+          33.459999999999994,
+          69.0,
+          0.035022735595703125
+        ],
+        [
+          33.379999999999995,
+          69.0,
+          0.06984329223632812
+        ],
+        [
+          33.3,
+          69.0,
+          0.1046600341796875
+        ],
+        [
+          33.22,
+          69.0,
+          0.1394805908203125
+        ],
+        [
+          33.14,
+          69.0,
+          0.17429733276367188
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L02 0 -1 0",
+      "link": "L02",
+      "footprint": [
+        [
+          33.52752039243272,
+          68.41824009233711
+        ],
+        [
+          33.97196483687716,
+          66.52935120344823
+        ],
+        [
+          33.660471343010414,
+          66.45605861665605
+        ],
+        [
+          33.21602689856597,
+          68.34494750554494
+        ]
+      ],
+      "top_y": 0.5989848327636719,
+      "bottom_y": [
+        -0.5751556396484375,
+        -0.5751556396484375,
+        -0.5751556396484375,
+        -0.5751556396484375
+      ],
+      "actual_soil_y": [
+        0.005634307861328125,
+        -0.1751556396484375,
+        0.06824493408203125,
+        0.14120864868164062
+      ],
+      "cut_inner_y": [
+        -0.096038818359375,
+        -0.1971588134765625
+      ],
+      "bank_outer_y": [
+        0.3699836730957031,
+        0.4789848327636719
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.52752039243272,
+          68.41824009233711,
+          0.005634307861328125
+        ],
+        [
+          33.44964701896603,
+          68.39991694563908,
+          0.03952789306640625
+        ],
+        [
+          33.371773645499346,
+          68.38159379894103,
+          0.07342147827148438
+        ],
+        [
+          33.29390027203266,
+          68.36327065224297,
+          0.1073150634765625
+        ],
+        [
+          33.21602689856597,
+          68.34494750554494,
+          0.14120864868164062
+        ],
+        [
+          33.638631503543834,
+          67.9460178701149,
+          -0.02394866943359375
+        ],
+        [
+          33.56075813007715,
+          67.92769472341685,
+          0.0163116455078125
+        ],
+        [
+          33.48288475661046,
+          67.9093715767188,
+          0.056575775146484375
+        ],
+        [
+          33.40501138314377,
+          67.89104843002076,
+          0.09683990478515625
+        ],
+        [
+          33.327138009677086,
+          67.87272528332271,
+          0.1371002197265625
+        ],
+        [
+          33.74974261465494,
+          67.47379564789267,
+          -0.003513336181640625
+        ],
+        [
+          33.671869241188254,
+          67.45547250119463,
+          0.057342529296875
+        ],
+        [
+          33.59399586772157,
+          67.43714935449658,
+          0.11819076538085938
+        ],
+        [
+          33.51612249425488,
+          67.41882620779853,
+          0.17904281616210938
+        ],
+        [
+          33.43824912078819,
+          67.4005030611005,
+          0.23988723754882812
+        ],
+        [
+          33.86085372576605,
+          67.00157342567044,
+          -0.08933258056640625
+        ],
+        [
+          33.78298035229936,
+          66.9832502789724,
+          -0.028484344482421875
+        ],
+        [
+          33.705106978832674,
+          66.96492713227437,
+          0.0323638916015625
+        ],
+        [
+          33.62723360536599,
+          66.94660398557633,
+          0.0932159423828125
+        ],
+        [
+          33.5493602318993,
+          66.92828083887828,
+          0.1540679931640625
+        ],
+        [
+          33.97196483687716,
+          66.52935120344823,
+          -0.1751556396484375
+        ],
+        [
+          33.894091463410476,
+          66.51102805675018,
+          -0.11430740356445312
+        ],
+        [
+          33.81621808994379,
+          66.49270491005214,
+          -0.05345916748046875
+        ],
+        [
+          33.7383447164771,
+          66.4743817633541,
+          0.00739288330078125
+        ],
+        [
+          33.660471343010414,
+          66.45605861665605,
+          0.06824493408203125
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L02 0 -1 1",
+      "link": "L02",
+      "footprint": [
+        [
+          33.97196483687716,
+          66.52935120344823
+        ],
+        [
+          34.416409281321606,
+          64.64046231455934
+        ],
+        [
+          34.10491578745486,
+          64.56716972776717
+        ],
+        [
+          33.660471343010414,
+          66.45605861665605
+        ]
+      ],
+      "top_y": 0.5989848327636719,
+      "bottom_y": [
+        -0.5961517333984375,
+        -0.5961517333984375,
+        -0.5961517333984375,
+        -0.5961517333984375
+      ],
+      "actual_soil_y": [
+        -0.1751556396484375,
+        -0.0870361328125,
+        -0.08049392700195312,
+        0.06824493408203125
+      ],
+      "cut_inner_y": [
+        -0.1971588134765625,
+        -0.09194564819335938
+      ],
+      "bank_outer_y": [
+        0.4789848327636719,
+        0.2509727478027344
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          33.97196483687716,
+          66.52935120344823,
+          -0.1751556396484375
+        ],
+        [
+          33.894091463410476,
+          66.51102805675018,
+          -0.11430740356445312
+        ],
+        [
+          33.81621808994379,
+          66.49270491005214,
+          -0.05345916748046875
+        ],
+        [
+          33.7383447164771,
+          66.4743817633541,
+          0.00739288330078125
+        ],
+        [
+          33.660471343010414,
+          66.45605861665605,
+          0.06824493408203125
+        ],
+        [
+          34.08307594798828,
+          66.057128981226,
+          -0.1961517333984375
+        ],
+        [
+          34.00520257452159,
+          66.03880583452795,
+          -0.19606781005859375
+        ],
+        [
+          33.9273292010549,
+          66.02048268782991,
+          -0.13927841186523438
+        ],
+        [
+          33.849455827588216,
+          66.00215954113187,
+          -0.07842636108398438
+        ],
+        [
+          33.77158245412153,
+          65.98383639443384,
+          -0.0165863037109375
+        ],
+        [
+          34.194187059099384,
+          65.58490675900379,
+          -0.1628570556640625
+        ],
+        [
+          34.1163136856327,
+          65.56658361230575,
+          -0.161224365234375
+        ],
+        [
+          34.03844031216601,
+          65.5482604656077,
+          -0.15958786010742188
+        ],
+        [
+          33.96056693869932,
+          65.52993731890965,
+          -0.12791824340820312
+        ],
+        [
+          33.882693565232636,
+          65.51161417221161,
+          -0.0669708251953125
+        ],
+        [
+          34.30529817021049,
+          65.11268453678157,
+          -0.12494659423828125
+        ],
+        [
+          34.227424796743804,
+          65.09436139008352,
+          -0.12331390380859375
+        ],
+        [
+          34.14955142327712,
+          65.07603824338548,
+          -0.121673583984375
+        ],
+        [
+          34.07167804981043,
+          65.05771509668743,
+          -0.1200408935546875
+        ],
+        [
+          33.99380467634374,
+          65.03939194998938,
+          -0.11368560791015625
+        ],
+        [
+          34.416409281321606,
+          64.64046231455934,
+          -0.0870361328125
+        ],
+        [
+          34.33853590785492,
+          64.6221391678613,
+          -0.08539962768554688
+        ],
+        [
+          34.26066253438823,
+          64.60381602116325,
+          -0.08376312255859375
+        ],
+        [
+          34.182789160921544,
+          64.5854928744652,
+          -0.08213043212890625
+        ],
+        [
+          34.10491578745486,
+          64.56716972776717,
+          -0.08049392700195312
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 4",
+      "link": "L03",
+      "footprint": [
+        [
+          32.333333333333336,
+          54.540000000000006
+        ],
+        [
+          30.416666666666664,
+          54.540000000000006
+        ],
+        [
+          30.416666666666664,
+          54.86
+        ],
+        [
+          32.333333333333336,
+          54.86
+        ]
+      ],
+      "top_y": 0.3134547424316406,
+      "bottom_y": [
+        -1.0527786254882812,
+        -1.0527786254882812,
+        -1.0527786254882812,
+        -1.0527786254882812
+      ],
+      "actual_soil_y": [
+        -0.6527786254882812,
+        -0.18405914306640625,
+        -0.043590545654296875,
+        -0.5123100280761719
+      ],
+      "cut_inner_y": [
+        -0.7581329345703125,
+        -0.2894134521484375
+      ],
+      "bank_outer_y": [
+        -0.27526092529296875,
+        0.19345474243164062
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          32.333333333333336,
+          54.540000000000006,
+          -0.6527786254882812
+        ],
+        [
+          32.333333333333336,
+          54.620000000000005,
+          -0.6176605224609375
+        ],
+        [
+          32.333333333333336,
+          54.7,
+          -0.5825462341308594
+        ],
+        [
+          32.333333333333336,
+          54.78,
+          -0.54742431640625
+        ],
+        [
+          32.333333333333336,
+          54.86,
+          -0.5123100280761719
+        ],
+        [
+          31.854166666666664,
+          54.540000000000006,
+          -0.5301055908203125
+        ],
+        [
+          31.854166666666664,
+          54.620000000000005,
+          -0.49498748779296875
+        ],
+        [
+          31.854166666666664,
+          54.7,
+          -0.4598731994628906
+        ],
+        [
+          31.854166666666664,
+          54.78,
+          -0.42475128173828125
+        ],
+        [
+          31.854166666666664,
+          54.86,
+          -0.3896331787109375
+        ],
+        [
+          31.375,
+          54.540000000000006,
+          -0.41475677490234375
+        ],
+        [
+          31.375,
+          54.620000000000005,
+          -0.3796424865722656
+        ],
+        [
+          31.375,
+          54.7,
+          -0.34452056884765625
+        ],
+        [
+          31.375,
+          54.78,
+          -0.3094062805175781
+        ],
+        [
+          31.375,
+          54.86,
+          -0.2742881774902344
+        ],
+        [
+          30.895833333333336,
+          54.540000000000006,
+          -0.299407958984375
+        ],
+        [
+          30.895833333333336,
+          54.620000000000005,
+          -0.2642936706542969
+        ],
+        [
+          30.895833333333336,
+          54.7,
+          -0.2291717529296875
+        ],
+        [
+          30.895833333333336,
+          54.78,
+          -0.19405746459960938
+        ],
+        [
+          30.895833333333336,
+          54.86,
+          -0.15893936157226562
+        ],
+        [
+          30.416666666666664,
+          54.540000000000006,
+          -0.18405914306640625
+        ],
+        [
+          30.416666666666664,
+          54.620000000000005,
+          -0.14894485473632812
+        ],
+        [
+          30.416666666666664,
+          54.7,
+          -0.11382675170898438
+        ],
+        [
+          30.416666666666664,
+          54.78,
+          -0.07871246337890625
+        ],
+        [
+          30.416666666666664,
+          54.86,
+          -0.043590545654296875
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 5",
+      "link": "L03",
+      "footprint": [
+        [
+          30.416666666666664,
+          54.540000000000006
+        ],
+        [
+          28.5,
+          54.540000000000006
+        ],
+        [
+          28.5,
+          54.86
+        ],
+        [
+          30.416666666666664,
+          54.86
+        ]
+      ],
+      "top_y": 0.6976443481445312,
+      "bottom_y": [
+        -0.5840591430664063,
+        -0.5840591430664063,
+        -0.5840591430664063,
+        -0.5840591430664063
+      ],
+      "actual_soil_y": [
+        -0.18405914306640625,
+        0.19971084594726562,
+        0.34033966064453125,
+        -0.043590545654296875
+      ],
+      "cut_inner_y": [
+        -0.2894134521484375,
+        0.09433746337890625
+      ],
+      "bank_outer_y": [
+        0.19345474243164062,
+        0.5776443481445312
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          30.416666666666664,
+          54.540000000000006,
+          -0.18405914306640625
+        ],
+        [
+          30.416666666666664,
+          54.620000000000005,
+          -0.14894485473632812
+        ],
+        [
+          30.416666666666664,
+          54.7,
+          -0.11382675170898438
+        ],
+        [
+          30.416666666666664,
+          54.78,
+          -0.07871246337890625
+        ],
+        [
+          30.416666666666664,
+          54.86,
+          -0.043590545654296875
+        ],
+        [
+          29.9375,
+          54.540000000000006,
+          -0.07194900512695312
+        ],
+        [
+          29.9375,
+          54.620000000000005,
+          -0.036834716796875
+        ],
+        [
+          29.9375,
+          54.7,
+          -0.00171661376953125
+        ],
+        [
+          29.9375,
+          54.78,
+          0.0334014892578125
+        ],
+        [
+          29.9375,
+          54.86,
+          0.06851959228515625
+        ],
+        [
+          29.458333333333332,
+          54.540000000000006,
+          0.018596649169921875
+        ],
+        [
+          29.458333333333332,
+          54.620000000000005,
+          0.0537109375
+        ],
+        [
+          29.458333333333332,
+          54.7,
+          0.08882904052734375
+        ],
+        [
+          29.458333333333332,
+          54.78,
+          0.1239471435546875
+        ],
+        [
+          29.458333333333332,
+          54.86,
+          0.15906524658203125
+        ],
+        [
+          28.979166666666664,
+          54.540000000000006,
+          0.1091461181640625
+        ],
+        [
+          28.979166666666664,
+          54.620000000000005,
+          0.14426040649414062
+        ],
+        [
+          28.979166666666664,
+          54.7,
+          0.17937850952148438
+        ],
+        [
+          28.979166666666664,
+          54.78,
+          0.21449661254882812
+        ],
+        [
+          28.979166666666664,
+          54.86,
+          0.24961471557617188
+        ],
+        [
+          28.5,
+          54.540000000000006,
+          0.19971084594726562
+        ],
+        [
+          28.5,
+          54.620000000000005,
+          0.23486328125
+        ],
+        [
+          28.5,
+          54.7,
+          0.27002716064453125
+        ],
+        [
+          28.5,
+          54.78,
+          0.3051795959472656
+        ],
+        [
+          28.5,
+          54.86,
+          0.34033966064453125
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 6",
+      "link": "L03",
+      "footprint": [
+        [
+          28.5,
+          54.540000000000006
+        ],
+        [
+          26.583333333333336,
+          54.540000000000006
+        ],
+        [
+          26.583333333333336,
+          54.86
+        ],
+        [
+          28.5,
+          54.86
+        ]
+      ],
+      "top_y": 0.94623291015625,
+      "bottom_y": [
+        -0.2002891540527344,
+        -0.2002891540527344,
+        -0.2002891540527344,
+        -0.2002891540527344
+      ],
+      "actual_soil_y": [
+        0.19971084594726562,
+        0.4486961364746094,
+        0.5891876220703125,
+        0.34033966064453125
+      ],
+      "cut_inner_y": [
+        0.09433746337890625,
+        0.34322357177734375
+      ],
+      "bank_outer_y": [
+        0.5776443481445312,
+        0.82623291015625
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          28.5,
+          54.540000000000006,
+          0.19971084594726562
+        ],
+        [
+          28.5,
+          54.620000000000005,
+          0.23486328125
+        ],
+        [
+          28.5,
+          54.7,
+          0.27002716064453125
+        ],
+        [
+          28.5,
+          54.78,
+          0.3051795959472656
+        ],
+        [
+          28.5,
+          54.86,
+          0.34033966064453125
+        ],
+        [
+          28.020833333333336,
+          54.540000000000006,
+          0.29048919677734375
+        ],
+        [
+          28.020833333333336,
+          54.620000000000005,
+          0.32564544677734375
+        ],
+        [
+          28.020833333333336,
+          54.7,
+          0.3608055114746094
+        ],
+        [
+          28.020833333333336,
+          54.78,
+          0.39595794677734375
+        ],
+        [
+          28.020833333333336,
+          54.86,
+          0.4311180114746094
+        ],
+        [
+          27.541666666666668,
+          54.540000000000006,
+          0.3443450927734375
+        ],
+        [
+          27.541666666666668,
+          54.620000000000005,
+          0.3795013427734375
+        ],
+        [
+          27.541666666666668,
+          54.7,
+          0.4146575927734375
+        ],
+        [
+          27.541666666666668,
+          54.78,
+          0.4498138427734375
+        ],
+        [
+          27.541666666666668,
+          54.86,
+          0.4849700927734375
+        ],
+        [
+          27.0625,
+          54.540000000000006,
+          0.39652252197265625
+        ],
+        [
+          27.0625,
+          54.620000000000005,
+          0.4316749572753906
+        ],
+        [
+          27.0625,
+          54.7,
+          0.46683502197265625
+        ],
+        [
+          27.0625,
+          54.78,
+          0.5019874572753906
+        ],
+        [
+          27.0625,
+          54.86,
+          0.5371475219726562
+        ],
+        [
+          26.583333333333336,
+          54.540000000000006,
+          0.4486961364746094
+        ],
+        [
+          26.583333333333336,
+          54.620000000000005,
+          0.48383331298828125
+        ],
+        [
+          26.583333333333336,
+          54.7,
+          0.518951416015625
+        ],
+        [
+          26.583333333333336,
+          54.78,
+          0.5540695190429688
+        ],
+        [
+          26.583333333333336,
+          54.86,
+          0.5891876220703125
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 7",
+      "link": "L03",
+      "footprint": [
+        [
+          26.583333333333336,
+          54.540000000000006
+        ],
+        [
+          24.666666666666664,
+          54.540000000000006
+        ],
+        [
+          24.666666666666664,
+          54.86
+        ],
+        [
+          26.583333333333336,
+          54.86
+        ]
+      ],
+      "top_y": 1.0293589782714845,
+      "bottom_y": [
+        0.04869613647460935,
+        0.04869613647460935,
+        0.04869613647460935,
+        0.04869613647460935
+      ],
+      "actual_soil_y": [
+        0.4486961364746094,
+        0.5314865112304688,
+        0.6720504760742188,
+        0.5891876220703125
+      ],
+      "cut_inner_y": [
+        0.34322357177734375,
+        0.4261322021484375
+      ],
+      "bank_outer_y": [
+        0.82623291015625,
+        0.9093589782714844
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          26.583333333333336,
+          54.540000000000006,
+          0.4486961364746094
+        ],
+        [
+          26.583333333333336,
+          54.620000000000005,
+          0.48383331298828125
+        ],
+        [
+          26.583333333333336,
+          54.7,
+          0.518951416015625
+        ],
+        [
+          26.583333333333336,
+          54.78,
+          0.5540695190429688
+        ],
+        [
+          26.583333333333336,
+          54.86,
+          0.5891876220703125
+        ],
+        [
+          26.104166666666664,
+          54.540000000000006,
+          0.5006599426269531
+        ],
+        [
+          26.104166666666664,
+          54.620000000000005,
+          0.5357818603515625
+        ],
+        [
+          26.104166666666664,
+          54.7,
+          0.5708961486816406
+        ],
+        [
+          26.104166666666664,
+          54.78,
+          0.6060104370117188
+        ],
+        [
+          26.104166666666664,
+          54.86,
+          0.6411323547363281
+        ],
+        [
+          25.625,
+          54.540000000000006,
+          0.5174407958984375
+        ],
+        [
+          25.625,
+          54.620000000000005,
+          0.5525588989257812
+        ],
+        [
+          25.625,
+          54.7,
+          0.587677001953125
+        ],
+        [
+          25.625,
+          54.78,
+          0.6227951049804688
+        ],
+        [
+          25.625,
+          54.86,
+          0.6579170227050781
+        ],
+        [
+          25.145833333333336,
+          54.540000000000006,
+          0.5244636535644531
+        ],
+        [
+          25.145833333333336,
+          54.620000000000005,
+          0.5595817565917969
+        ],
+        [
+          25.145833333333336,
+          54.7,
+          0.5946998596191406
+        ],
+        [
+          25.145833333333336,
+          54.78,
+          0.6298141479492188
+        ],
+        [
+          25.145833333333336,
+          54.86,
+          0.6649322509765625
+        ],
+        [
+          24.666666666666664,
+          54.540000000000006,
+          0.5314865112304688
+        ],
+        [
+          24.666666666666664,
+          54.620000000000005,
+          0.5666007995605469
+        ],
+        [
+          24.666666666666664,
+          54.7,
+          0.6017341613769531
+        ],
+        [
+          24.666666666666664,
+          54.78,
+          0.6368904113769531
+        ],
+        [
+          24.666666666666664,
+          54.86,
+          0.6720504760742188
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 8",
+      "link": "L03",
+      "footprint": [
+        [
+          24.666666666666664,
+          54.540000000000006
+        ],
+        [
+          22.75,
+          54.540000000000006
+        ],
+        [
+          22.75,
+          54.86
+        ],
+        [
+          24.666666666666664,
+          54.86
+        ]
+      ],
+      "top_y": 1.0394488525390626,
+      "bottom_y": [
+        0.13148651123046873,
+        0.13148651123046873,
+        0.13148651123046873,
+        0.13148651123046873
+      ],
+      "actual_soil_y": [
+        0.5314865112304688,
+        0.5415115356445312,
+        0.6821365356445312,
+        0.6720504760742188
+      ],
+      "cut_inner_y": [
+        0.4261322021484375,
+        0.43604278564453125
+      ],
+      "bank_outer_y": [
+        0.9093589782714844,
+        0.9194488525390625
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          24.666666666666664,
+          54.540000000000006,
+          0.5314865112304688
+        ],
+        [
+          24.666666666666664,
+          54.620000000000005,
+          0.5666007995605469
+        ],
+        [
+          24.666666666666664,
+          54.7,
+          0.6017341613769531
+        ],
+        [
+          24.666666666666664,
+          54.78,
+          0.6368904113769531
+        ],
+        [
+          24.666666666666664,
+          54.86,
+          0.6720504760742188
+        ],
+        [
+          24.1875,
+          54.540000000000006,
+          0.5386734008789062
+        ],
+        [
+          24.1875,
+          54.620000000000005,
+          0.5738296508789062
+        ],
+        [
+          24.1875,
+          54.7,
+          0.6089859008789062
+        ],
+        [
+          24.1875,
+          54.78,
+          0.6441421508789062
+        ],
+        [
+          24.1875,
+          54.86,
+          0.6793022155761719
+        ],
+        [
+          23.708333333333332,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          23.708333333333332,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          23.708333333333332,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          23.708333333333332,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          23.708333333333332,
+          54.86,
+          0.6821403503417969
+        ],
+        [
+          23.229166666666664,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          23.229166666666664,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          23.229166666666664,
+          54.7,
+          0.6118278503417969
+        ],
+        [
+          23.229166666666664,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          23.229166666666664,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          22.75,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          22.75,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          22.75,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          22.75,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          22.75,
+          54.86,
+          0.6821365356445312
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 9",
+      "link": "L03",
+      "footprint": [
+        [
+          22.75,
+          54.540000000000006
+        ],
+        [
+          20.833333333333332,
+          54.540000000000006
+        ],
+        [
+          20.833333333333332,
+          54.86
+        ],
+        [
+          22.75,
+          54.86
+        ]
+      ],
+      "top_y": 1.0394488525390626,
+      "bottom_y": [
+        0.14151153564453123,
+        0.14151153564453123,
+        0.14151153564453123,
+        0.14151153564453123
+      ],
+      "actual_soil_y": [
+        0.5415115356445312,
+        0.5415115356445312,
+        0.6821365356445312,
+        0.6821365356445312
+      ],
+      "cut_inner_y": [
+        0.43604278564453125,
+        0.43604278564453125
+      ],
+      "bank_outer_y": [
+        0.9194488525390625,
+        0.9194488525390625
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          22.75,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          22.75,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          22.75,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          22.75,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          22.75,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          22.270833333333332,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          22.270833333333332,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          22.270833333333332,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          22.270833333333332,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          22.270833333333332,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          21.791666666666664,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          21.791666666666664,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          21.791666666666664,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          21.791666666666664,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          21.791666666666664,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          21.3125,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          21.3125,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          21.3125,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          21.3125,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          21.3125,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          20.833333333333332,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          20.833333333333332,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          20.833333333333332,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          20.833333333333332,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          20.833333333333332,
+          54.86,
+          0.6821365356445312
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 10",
+      "link": "L03",
+      "footprint": [
+        [
+          20.833333333333332,
+          54.540000000000006
+        ],
+        [
+          18.916666666666668,
+          54.540000000000006
+        ],
+        [
+          18.916666666666668,
+          54.86
+        ],
+        [
+          20.833333333333332,
+          54.86
+        ]
+      ],
+      "top_y": 1.0394488525390626,
+      "bottom_y": [
+        0.1415077209472656,
+        0.1415077209472656,
+        0.1415077209472656,
+        0.1415077209472656
+      ],
+      "actual_soil_y": [
+        0.5415115356445312,
+        0.5415115356445312,
+        0.6821403503417969,
+        0.6821365356445312
+      ],
+      "cut_inner_y": [
+        0.43604278564453125,
+        0.43604278564453125
+      ],
+      "bank_outer_y": [
+        0.9194488525390625,
+        0.9194488525390625
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          20.833333333333332,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          20.833333333333332,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          20.833333333333332,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          20.833333333333332,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          20.833333333333332,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          20.354166666666668,
+          54.540000000000006,
+          0.5415077209472656
+        ],
+        [
+          20.354166666666668,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          20.354166666666668,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          20.354166666666668,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          20.354166666666668,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          19.875,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          19.875,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          19.875,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          19.875,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          19.875,
+          54.86,
+          0.6821403503417969
+        ],
+        [
+          19.395833333333332,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          19.395833333333332,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          19.395833333333332,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          19.395833333333332,
+          54.78,
+          0.6469841003417969
+        ],
+        [
+          19.395833333333332,
+          54.86,
+          0.6821403503417969
+        ],
+        [
+          18.916666666666668,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          18.916666666666668,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          18.916666666666668,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          18.916666666666668,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          18.916666666666668,
+          54.86,
+          0.6821403503417969
+        ]
+      ]
+    },
+    {
+      "name": "Retaining shoulder WLD-09 L03 0 -1 11",
+      "link": "L03",
+      "footprint": [
+        [
+          18.916666666666668,
+          54.540000000000006
+        ],
+        [
+          17.0,
+          54.540000000000006
+        ],
+        [
+          17.0,
+          54.86
+        ],
+        [
+          18.916666666666668,
+          54.86
+        ]
+      ],
+      "top_y": 1.0394488525390626,
+      "bottom_y": [
+        0.14151153564453123,
+        0.14151153564453123,
+        0.14151153564453123,
+        0.14151153564453123
+      ],
+      "actual_soil_y": [
+        0.5415115356445312,
+        0.5415115356445312,
+        0.6821403503417969,
+        0.6821403503417969
+      ],
+      "cut_inner_y": [
+        0.43604278564453125,
+        0.4360389709472656
+      ],
+      "bank_outer_y": [
+        0.9194488525390625,
+        0.9194488525390625
+      ],
+      "soil_embedding": 0.4,
+      "soil_root_probes": [
+        [
+          18.916666666666668,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          18.916666666666668,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          18.916666666666668,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          18.916666666666668,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          18.916666666666668,
+          54.86,
+          0.6821403503417969
+        ],
+        [
+          18.4375,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          18.4375,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          18.4375,
+          54.7,
+          0.6118278503417969
+        ],
+        [
+          18.4375,
+          54.78,
+          0.6469841003417969
+        ],
+        [
+          18.4375,
+          54.86,
+          0.6821403503417969
+        ],
+        [
+          17.958333333333336,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          17.958333333333336,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          17.958333333333336,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          17.958333333333336,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          17.958333333333336,
+          54.86,
+          0.6821365356445312
+        ],
+        [
+          17.479166666666668,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          17.479166666666668,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          17.479166666666668,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          17.479166666666668,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          17.479166666666668,
+          54.86,
+          0.6821403503417969
+        ],
+        [
+          17.0,
+          54.540000000000006,
+          0.5415115356445312
+        ],
+        [
+          17.0,
+          54.620000000000005,
+          0.5766677856445312
+        ],
+        [
+          17.0,
+          54.7,
+          0.6118240356445312
+        ],
+        [
+          17.0,
+          54.78,
+          0.6469802856445312
+        ],
+        [
+          17.0,
+          54.86,
+          0.6821403503417969
+        ]
+      ]
+    }
+  ],
+  "deferred_retaining": [
+    {
+      "link": "L02",
+      "segment": 0,
+      "reason": "RESERVE_ROUTE_OR_BUILDING",
+      "route": "L02",
+      "rooms": []
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "reason": "RESERVE_ROUTE_OR_BUILDING",
+      "route": "L02",
+      "rooms": []
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "reason": "RESERVE_ROUTE_OR_BUILDING",
+      "route": "L02",
+      "rooms": []
+    }
+  ],
+  "retaining_builder_sha256": "503efb99756c15f97fa8a7152e0203234efa458079f294fc6819b00b260f4553",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-09.png",
+      "sha256": "6c1bbebac846169fc78595e8a2c0a9618e870b3c521049055b38638f0420acd6",
+      "type": "native exported actual saved terrain earthworks with roof cutaway; not gameplay"
+    }
+  ],
+  "terrain_seed_builder": null,
+  "terrain_seed_builder_sha256": null,
+  "seed_input_files_sha256": {},
+  "original_terrain_mesh": "Saved editor circulation terrain WLD-09",
+  "removed_interface_parts": [
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L03 support 0",
+    "L06 support 1",
+    "L08 support 1",
+    "L10 support 1",
+    "Arrival end bearing WLD-09 0"
+  ],
+  "new_interface_parts": [
+    "Entrance rebuild Blackwater ventilation west pier",
+    "Entrance rebuild Blackwater ventilation service pier",
+    "Entrance rebuild Blackwater ventilation east pier",
+    "Entrance rebuild Blackwater ventilation flue sill",
+    "Entrance rebuild Blackwater ventilation flue head",
+    "Entrance rebuild Blackwater ventilation air sill",
+    "Entrance rebuild Blackwater ventilation air head",
+    "Blackwater ventilation cast flue sleeve",
+    "Blackwater ventilation swept exhaust with downward outlet",
+    "Blackwater ventilation muffler adapter",
+    "Blackwater ventilation indoor collar",
+    "Blackwater ventilation weather collar",
+    "Entrance rebuild Blackwater ventilation external riser bearer",
+    "Entrance rebuild Blackwater ventilation external riser bearer.001",
+    "Blackwater ventilation fitted stack saddle",
+    "Entrance rebuild Blackwater ventilation external riser bearer.002",
+    "Entrance rebuild Blackwater ventilation external riser bearer.003",
+    "Blackwater ventilation fitted stack saddle.001",
+    "Entrance rebuild Blackwater ventilation louver jamb",
+    "Entrance rebuild Blackwater ventilation louver jamb.001",
+    "Entrance rebuild Blackwater ventilation louver hood",
+    "Entrance rebuild Blackwater ventilation louver drain sill",
+    "Blackwater ventilation weather blade 01",
+    "Blackwater ventilation weather blade 02",
+    "Blackwater ventilation weather blade 03",
+    "Blackwater ventilation weather blade 04",
+    "Blackwater ventilation weather blade 05",
+    "Blackwater ventilation weather blade 06",
+    "Blackwater dispatch desk 01",
+    "Blackwater dispatch radio",
+    "Blackwater shift records desk 01",
+    "Blackwater maintenance bench 01"
+  ],
+  "doorways": [
+    {
+      "id": "DAM-HALL-z-48-68-0",
+      "axis": "z",
+      "boundary": 48,
+      "along": 68,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "frame_span": [
+        47.76,
+        48
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002
+    },
+    {
+      "id": "DAM-HALL-x-64-35--6",
+      "axis": "x",
+      "boundary": 64,
+      "along": 35,
+      "sill_y": -6,
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "frame_span": [
+        63.76,
+        64.24
+      ],
+      "side": "W",
+      "frame_depth": 0.4799999999999969
+    },
+    {
+      "id": "DAM-HALL-x-70.5-47-0",
+      "axis": "x",
+      "boundary": 70.5,
+      "along": 47,
+      "sill_y": 0,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        70.26,
+        70.5
+      ],
+      "side": "E",
+      "frame_depth": 0.23999999999999488
+    },
+    {
+      "id": "DAM-HALL-z-48-31-0",
+      "axis": "z",
+      "boundary": 48,
+      "along": 31,
+      "sill_y": 0,
+      "clear_width": 2,
+      "clear_height": 2.3,
+      "frame_span": [
+        47.76,
+        48
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002
+    },
+    {
+      "id": "DAM-HALL-x-26-28-0",
+      "axis": "x",
+      "boundary": 26,
+      "along": 28,
+      "sill_y": 0,
+      "clear_width": 1.5,
+      "clear_height": 2.3,
+      "frame_span": [
+        25.76,
+        26.24
+      ],
+      "side": "W",
+      "frame_depth": 0.4799999999999969
+    },
+    {
+      "id": "DAM-HALL-x-36-35--6",
+      "axis": "x",
+      "boundary": 36,
+      "along": 35,
+      "sill_y": -6,
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "frame_span": [
+        35.76,
+        36.24
+      ],
+      "side": "E",
+      "frame_depth": 0.480000000000004
+    },
+    {
+      "id": "WLD-09-restart-shared turbine workshop north",
+      "axis": "z",
+      "boundary": 48,
+      "along": 45,
+      "sill_y": -6,
+      "clear_width": 1.61,
+      "clear_height": 2.1,
+      "frame_span": [
+        47.88,
+        48.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "DAM-SPILLWAY-LOWER-68",
+      "axis": "z",
+      "boundary": 48,
+      "along": 68,
+      "sill_y": -6,
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "frame_span": [
+        47.76,
+        48
+      ],
+      "frame_depth": 0.24,
+      "side": "S",
+      "rooms": [
+        "east-lower-stair",
+        "spillway"
+      ]
+    }
+  ],
+  "program_files_sha256": {
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-09/features.tsv": "fe4c881bf82808dbe29911df8e67451d779e1af611ca88aa16b1ce71a305cb6d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-09/protected-rooms.tsv": "6813f4f615f01e55856f824209560fc8e3ff438d3405225a6af761365b76b784",
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-09/saved-grid.tsv": "e79d55e77492141c2993f141232a967a0f9bdc6ef574035dea3e72d113d3669f",
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-09/underlays.tsv": "dbf5f764ac2dd9038400ee2be4291e29b91eff15aeeef403680f62114ec6e72a"
+  },
+  "saved_world": "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/adaptive-topology.bin": "3a981b47c8afa60bdcef25fda08a89d68e6eeddf500704dccc336b4e898be758",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/authored-cuts.tsv": "c04dc1fc3ca4f96fb6c5b62458d19f8bdcf4be32884f8258033caa59a61c5413",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/restoration.json": "65fc6c9a617b71fe41a61c512dc68ff8b60d88e1bce3ed7fbee954cbb3ef7f08",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/scene-package/meshes/site-0-0.obj": "46b024d44b3dd04f3c9bfc7fdbf7c36ce5e63e6cf604205c97dd98fe1c6c8623",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/scene-package/meshes/site-0-1.obj": "f073717a5a72015ef4de6d8ed3c72f1f6ce467fcf54628389504dbbd1bb9493f",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/scene-package/meshes/site-1-0.obj": "567029f3724ad7f7c77c49b5cb4570d75befb92b9fc0005e91fa5e5bb48d4cca",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/scene-package/meshes/site-1-1.obj": "95cefc5cab502a1757a62f36a2d8373de49e28e63c397255d46c78be51acfdcd",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/scene-package/scene.bin": "4193ea3897af458847c93689f3ac66988311e84f54f5013e4bab6bc8129a0b91",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/terrain-layers/tile_0_0.bin": "e2bcc083ca8eac4c99492d51dd5919cdca93574f893e30ba7247e08d9e9b7a58",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/terrain-physics.hcs2": "648959b57bab0d61115271f1e3e539a9a643473c8b9c301a981bcc8471653804",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/tile_0_0.png": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+    "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain/world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be"
+  },
+  "earthworks": [
+    {
+      "name": "Dam access road and crest arrival apron",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          24,
+          59
+        ],
+        [
+          28,
+          54
+        ],
+        [
+          46,
+          54
+        ],
+        [
+          51,
+          61
+        ],
+        [
+          49,
+          83
+        ],
+        [
+          44,
+          91
+        ],
+        [
+          27,
+          91
+        ],
+        [
+          23,
+          81
+        ]
+      ]
+    }
+  ],
+  "earthworks_verification": {
+    "site": "WLD-09",
+    "changed_vertices": 283,
+    "raised_vertices": 150,
+    "lowered_vertices": 133,
+    "max_change_m": 2.600137234,
+    "source_height_sha256": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+    "saved_topology_sha256": "a958a7fccc99b4a14d9e6a7db1a6f2fc1f008c9e46d93f6e5352f4be62c34b6a",
+    "saved_cuts_sha256": "54837b189a3bf7c3766c12d6ee9363f525591bbbf6541bdab2389b6b176a3afc",
+    "hole_controls": 1727,
+    "disk_reopen_verified": true,
+    "physics_sha256": "9b5d232144122c72677ffd41fd6e3d9daf717ed48b51917398a0e2e53f3029f0",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world",
+  "removed_redundant_cottage_walks": [
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L03 support 0",
+    "L06 support 1",
+    "L08 support 1",
+    "L10 support 1",
+    "Arrival end bearing WLD-09 0"
+  ],
+  "source_terrain_physics_sha256": "e19eb609700390e23d1c5b2b34fd3102be64df9050c4679362fe5c066348acec",
+  "terrain_writer": "tools/java/RebuildInstitutionEarthworks.java",
+  "terrain_writer_sha256": "a8baf56f63c7640dddfce02a4f1abacfbbe80696e79c48181137b9afaee536fe",
+  "terrain_composer": "tools/compose_terrain_ownership.py",
+  "terrain_composer_sha256": "ed7bc16516fc5ba6056137d2fea8402c9ca3eb59fcca22c2f868acfb78cbccf2",
+  "blend_sha256": "da96b19f4f123380839edab6d5022519e028cc185bd404adcffc8213e56cff71",
+  "new_parts": 121,
+  "stair_interfaces": [
+    {
+      "link": "L07",
+      "name": "WLD-09 L07 lower flight continuous stair waist",
+      "low": [
+        48.5,
+        -6,
+        35
+      ],
+      "high": [
+        42.15,
+        -3,
+        35
+      ],
+      "gross_width": 1.8,
+      "risers": 17,
+      "riser": 0.17647058823529413,
+      "tread": 0.37352941176470594,
+      "waist_depth": 0.2
+    },
+    {
+      "link": "L07",
+      "name": "WLD-09 L07 upper flight continuous stair waist",
+      "low": [
+        40.35,
+        -3,
+        35
+      ],
+      "high": [
+        32.5,
+        0,
+        35
+      ],
+      "gross_width": 1.8,
+      "risers": 17,
+      "riser": 0.17647058823529413,
+      "tread": 0.461764705882353,
+      "waist_depth": 0.2
+    },
+    {
+      "pier": [
+        41.25,
+        34.25
+      ],
+      "receiver_y": [
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0
+      ],
+      "bottom_y": -6.1,
+      "top_y": -3.32
+    },
+    {
+      "pier": [
+        41.25,
+        35.75
+      ],
+      "receiver_y": [
+        -6.0,
+        -6.000000476837158,
+        -6.0,
+        -6.0
+      ],
+      "bottom_y": -6.1,
+      "top_y": -3.32
+    },
+    {
+      "link": "L14",
+      "name": "WLD-09 L14 open-under service flight continuous stair waist",
+      "low": [
+        56,
+        -10,
+        23.5
+      ],
+      "high": [
+        56,
+        -6,
+        30.5
+      ],
+      "gross_width": 1.8,
+      "risers": 23,
+      "riser": 0.17391304347826086,
+      "tread": 0.30434782608695654,
+      "waist_depth": 0.2
+    },
+    {
+      "pier": [
+        72.5,
+        38
+      ],
+      "soil_y": [
+        -7.707221984863281,
+        -7.7129364013671875,
+        -7.7133026123046875,
+        -7.707588195800781
+      ],
+      "bottom_y": -8.063302612304687
+    },
+    {
+      "pier": [
+        72.5,
+        41.6
+      ],
+      "soil_y": [
+        -7.7342987060546875,
+        -7.7247772216796875,
+        -7.728145599365234,
+        -7.737667083740234
+      ],
+      "bottom_y": -8.087667083740234
+    },
+    {
+      "pier": [
+        72.5,
+        46.5
+      ],
+      "soil_y": [
+        -7.23883056640625,
+        -7.214515686035156,
+        -7.114902496337891,
+        -7.146251678466797
+      ],
+      "bottom_y": -7.58883056640625
+    },
+    {
+      "bearing": "Original constructed dam crest deck",
+      "contact_bounds": [
+        67.15,
+        48,
+        67.45,
+        48.4
+      ],
+      "embed_y": [
+        -0.6,
+        -0.3
+      ]
+    }
+  ],
+  "interface_added_flights": [
+    {
+      "link": "L18",
+      "segment": 3,
+      "layout_segment": 13,
+      "points": [
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ]
+      ]
+    },
+    {
+      "link": "L18",
+      "segment": 4,
+      "layout_segment": 15,
+      "points": [
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          0,
+          45
+        ]
+      ]
+    }
+  ],
+  "interface_builder": "development/levels/rebuild/stair-interface-construction-pass/verification/generators/build_stair_interfaces-executed.py",
+  "interface_builder_sha256": "d123e00406bda8aaff3d160eaf9f88ad034b97b9a9db6aadc46cf291a6865088",
+  "interface_library": {
+    "path": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+    "sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d"
+  },
+  "geometry_unchanged": false,
+  "interface_metadata_note": "Inherited geometry_unchanged flag corrected after construction; actual executed generator retained byte-for-byte. No native, GLB, blend or layout bytes changed.",
+  "hall_bounds": [
+    64,
+    22,
+    70.5,
+    48
+  ],
+  "west_hall_bounds": [
+    26,
+    22,
+    36,
+    48
+  ],
+  "main_flight": {
+    "low": [
+      67,
+      -6,
+      25
+    ],
+    "middle_landing": [
+      [
+        67,
+        -3,
+        34.1
+      ],
+      [
+        67,
+        -3,
+        35.9
+      ]
+    ],
+    "high": [
+      67,
+      0,
+      45
+    ],
+    "risers_per_flight": 17,
+    "width": 1.8
+  },
+  "hall_builder": "tools/build_dam_contained_stair.py",
+  "hall_builder_sha256": "54fbc792ac34013954c545d8cf28c03a5e8330719422df5104e43d81bd535046",
+  "architectural_plan": {
+    "bay": [
+      59.2,
+      34.6,
+      63.6,
+      41.8
+    ],
+    "well": [
+      59.2,
+      36.4,
+      63.6,
+      41.8
+    ],
+    "floors": [
+      -10,
+      -8,
+      -6
+    ],
+    "lanes": [
+      60.3,
+      62.5
+    ],
+    "flight_z": [
+      36.4,
+      40
+    ],
+    "width": 1.8,
+    "risers_per_flight": 12,
+    "turn_landing": [
+      59.4,
+      40,
+      63.4,
+      41.8
+    ],
+    "upper_arrival": [
+      61.6,
+      34.6,
+      63.4,
+      36.4
+    ],
+    "existing_gallery_well": [
+      54.9,
+      23.3,
+      57.1,
+      30.5
+    ],
+    "saved_terrain": "Reuse existing architectural room excavation; no new holes or height edits",
+    "spillway": "Protected observation gallery reached from the east lower hall"
+  },
+  "foundation_receivers": [],
+  "flights": [],
+  "builder": "tools/build_dam_ventilation.py",
+  "builder_sha256": "c120e97c4f083c550f98710ed148beab37c5a395a7e064e1421cb6b6d7547fa1",
+  "unchanged_saved_world_files": {
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/adaptive-topology.bin": "e23fcba0fec0924a95daa9e5857ea244757b1e7b157736d46c20cec510ca7920",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/authored-cuts.tsv": "e6e9c4825837301c23e46d20fe7835397763071d336991fc7bbc9ec5bc1a2012",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/authored-path-grading.sha256": "2704d2a567c0f5967f8f5b69b4a3df007da7bf1b8d178a9ba39032d0307aa8a5",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/earthworks-verification.json": "27fc36d255c9ae25f001f63f44201c4fd6df4834c07cdcb273c008f063642748",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/source-provenance.json": "70499990bbb6a1154abcd8321a5f5b0d51e0d54ffbaad3488f7df1d342626df7",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/stair-cell-punch-verification.json": "3169c90011332fe9ad358f39595102a4c49dea3ee5eb9ce600a55dc7b6d9ae10",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/terrain-physics.hcs2": "86c8882825c76928bcc9193bc30610daa51a969f67b6c434a98b21bb4f18ba46",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/tile_0_0.png": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/verification.json": "a02ce2b46b1b30a5fb73e50f853537d90804df1918bd0a8cd019894c7e335eb5",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.previous": "865045c8739e64326ef168060920d9db573e53a52a53d1fd18d096f772dc6760",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/scene.bin": "975bd791342e5723a5f5825e9c1f5421c6eb71da3fa8781a24473d24955c9ea8",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-0.obj": "46b024d44b3dd04f3c9bfc7fdbf7c36ce5e63e6cf604205c97dd98fe1c6c8623",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-1.obj": "f073717a5a72015ef4de6d8ed3c72f1f6ce467fcf54628389504dbbd1bb9493f",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-0.obj": "edc0d74e8ab43a820e799677a89cd1f7eac4e7e30957d7fb336146204da97e24",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-1.obj": "95cefc5cab502a1757a62f36a2d8373de49e28e63c397255d46c78be51acfdcd",
+    "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world/terrain-layers/tile_0_0.bin": "e2bcc083ca8eac4c99492d51dd5919cdca93574f893e30ba7247e08d9e9b7a58"
+  },
+  "spillway_gallery": {
+    "footprint": [
+      64,
+      48,
+      72,
+      56
+    ],
+    "foundation_bottom_y": -10.3,
+    "floor_y": -6,
+    "crest_y": 0,
+    "crest_soffit_y": -0.6,
+    "clear_room_bounds": [
+      64.4,
+      48,
+      71.1,
+      54.7
+    ],
+    "door": {
+      "id": "DAM-SPILLWAY-LOWER-68",
+      "axis": "z",
+      "boundary": 48,
+      "along": 68,
+      "sill_y": -6,
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "frame_span": [
+        47.76,
+        48
+      ],
+      "frame_depth": 0.24,
+      "side": "S",
+      "rooms": [
+        "east-lower-stair",
+        "spillway"
+      ]
+    },
+    "east_screen": {
+      "span_z": [
+        49,
+        51.62
+      ],
+      "sill_y": -4.9,
+      "head_y": -2.59
+    }
+  },
+  "empty_saved_terrain_samples": 702,
+  "screen_source": "development/levels/primitive-props-v1/models/level_blockout_dam_spillway_guard_screen.glb",
+  "screen_source_sha256": "5d10814623f8c07de6bccb870816744c6d3e2423292498e154410ede6ea8fd60",
+  "east_hall_bearings": {
+    "hall": [
+      64,
+      22,
+      70.5,
+      48
+    ],
+    "floors": [
+      -6,
+      -3,
+      0
+    ],
+    "well": [
+      65.9,
+      25,
+      68.1,
+      45
+    ],
+    "middle_landing": [
+      66.1,
+      34.1,
+      67.9,
+      35.9
+    ],
+    "lower_service_aisle_x": 69.25,
+    "guarded_guide_width": 1.5,
+    "unobstructed_lower_headroom_under_transfer_m": 2.38,
+    "west_transfer_ledger": [
+      64.03,
+      33.15,
+      64.46,
+      36.85
+    ],
+    "middle_transfer_girder_centres_z": [
+      34.34,
+      35.66
+    ],
+    "rim_joists_z": [
+      31.5,
+      38.5
+    ],
+    "return_turn_z": 40.88,
+    "van_ramp": [
+      36.0,
+      0,
+      78.372
+    ],
+    "nonphysical_guidance": true
+  },
+  "previous_saved_world": "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world",
+  "restored_grade_footing_controls": [
+    [
+      70.75,
+      22.25,
+      -7.29906
+    ],
+    [
+      70.75,
+      22.75,
+      -7.29052
+    ],
+    [
+      70.75,
+      23.25,
+      -7.27806
+    ],
+    [
+      70.75,
+      23.75,
+      -7.26561
+    ],
+    [
+      70.75,
+      24.25,
+      -7.25475
+    ],
+    [
+      70.75,
+      24.75,
+      -7.24547
+    ],
+    [
+      70.75,
+      25.25,
+      -7.23302
+    ],
+    [
+      70.75,
+      25.75,
+      -7.22057
+    ],
+    [
+      70.75,
+      26.25,
+      -7.20934
+    ],
+    [
+      70.75,
+      26.75,
+      -7.19933
+    ],
+    [
+      70.75,
+      27.25,
+      -7.18712
+    ],
+    [
+      70.75,
+      27.75,
+      -7.17492
+    ],
+    [
+      70.75,
+      28.25,
+      -7.17394
+    ],
+    [
+      70.75,
+      28.75,
+      -7.18419
+    ],
+    [
+      70.75,
+      29.25,
+      -7.19689
+    ],
+    [
+      70.75,
+      29.75,
+      -7.20958
+    ],
+    [
+      70.75,
+      30.25,
+      -7.22081
+    ],
+    [
+      70.75,
+      30.75,
+      -7.23058
+    ],
+    [
+      70.75,
+      31.25,
+      -7.24352
+    ],
+    [
+      70.75,
+      31.75,
+      -7.25646
+    ],
+    [
+      70.75,
+      32.25,
+      -7.26744
+    ],
+    [
+      70.75,
+      32.75,
+      -7.27648
+    ],
+    [
+      70.75,
+      33.25,
+      -7.28942
+    ],
+    [
+      70.75,
+      33.75,
+      -7.30236
+    ],
+    [
+      70.75,
+      34.25,
+      -7.31298
+    ],
+    [
+      70.75,
+      34.75,
+      -7.32128
+    ],
+    [
+      70.75,
+      35.25,
+      -7.33446
+    ],
+    [
+      70.75,
+      35.75,
+      -7.34765
+    ],
+    [
+      70.75,
+      36.25,
+      -7.3579
+    ],
+    [
+      70.75,
+      36.75,
+      -7.36522
+    ],
+    [
+      70.75,
+      37.25,
+      -7.37792
+    ],
+    [
+      70.75,
+      37.75,
+      -7.39062
+    ],
+    [
+      70.75,
+      38.25,
+      -7.40026
+    ],
+    [
+      70.75,
+      38.75,
+      -7.40685
+    ],
+    [
+      70.75,
+      39.25,
+      -7.41979
+    ],
+    [
+      70.75,
+      39.75,
+      -7.43273
+    ],
+    [
+      70.75,
+      40.25,
+      -7.44201
+    ],
+    [
+      70.75,
+      40.75,
+      -7.44762
+    ],
+    [
+      70.75,
+      41.25,
+      -7.46008
+    ],
+    [
+      70.75,
+      41.75,
+      -7.47253
+    ],
+    [
+      70.75,
+      42.25,
+      -7.47509
+    ],
+    [
+      70.75,
+      42.75,
+      -7.46777
+    ],
+    [
+      70.75,
+      43.25,
+      -7.46801
+    ],
+    [
+      70.75,
+      43.75,
+      -7.46825
+    ],
+    [
+      70.75,
+      44.25,
+      -7.42602
+    ],
+    [
+      70.75,
+      44.75,
+      -7.3413
+    ],
+    [
+      70.75,
+      45.25,
+      -7.26488
+    ],
+    [
+      70.75,
+      45.75,
+      -7.18847
+    ],
+    [
+      70.75,
+      46.25,
+      -7.0731
+    ],
+    [
+      70.75,
+      46.75,
+      -6.91881
+    ],
+    [
+      70.75,
+      47.25,
+      -6.77378
+    ],
+    [
+      70.75,
+      47.75,
+      -6.62876
+    ]
+  ],
+  "tailrace": {
+    "invert_y": -7.18,
+    "water_y": -6.82,
+    "freeboard": 0.6500000000000004,
+    "outer_bounds": [
+      72.72,
+      14.97,
+      75.06,
+      44.56
+    ],
+    "soil": {
+      "samples": 590,
+      "lowest_soil_y": -7.7873,
+      "highest_soil_y": -7.2775,
+      "basis": "surveyed saved bank"
+    },
+    "document": "development/levels/rebuild/dam-tailrace-pass/wld-09/dam-tailrace.water",
+    "water_sha256": "e3bdb4e6ea09e631791616102b1f812dee11c1511b29528d0e8f5d6e89e8c01c",
+    "operating_state": "isolated by two closed sluices"
+  },
+  "resurfaced_source_mesh": "Dam saved east-bank ground",
+  "resurfaced_render_mesh": "Blackwater saved ground with road surface at receiving bench",
+  "valley": {
+    "exact_joined_rim_edges": 1159,
+    "preserved_excavation_edges": 185,
+    "extension_triangles": 2718,
+    "road_triangles": 12,
+    "retained_road_surface_faces": 46,
+    "area_m2": 27890.0
+  },
+  "perimeter": {
+    "alignment": [
+      [
+        40,
+        89.6
+      ],
+      [
+        32,
+        89.6
+      ],
+      [
+        27,
+        88.9
+      ],
+      [
+        23,
+        85
+      ],
+      [
+        18,
+        78
+      ],
+      [
+        12,
+        72
+      ],
+      [
+        5,
+        63
+      ],
+      [
+        1.2,
+        54
+      ],
+      [
+        -0.9,
+        44
+      ],
+      [
+        -1.9,
+        31
+      ],
+      [
+        -1.8,
+        19
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        26,
+        -2
+      ],
+      [
+        36,
+        -3
+      ],
+      [
+        48,
+        -4
+      ],
+      [
+        60,
+        -3
+      ],
+      [
+        69,
+        1
+      ],
+      [
+        76,
+        6
+      ],
+      [
+        82,
+        13
+      ],
+      [
+        87,
+        22
+      ],
+      [
+        90,
+        33
+      ],
+      [
+        90,
+        47
+      ],
+      [
+        87,
+        56
+      ],
+      [
+        82,
+        64
+      ],
+      [
+        74,
+        73
+      ],
+      [
+        64,
+        80
+      ],
+      [
+        53,
+        86
+      ],
+      [
+        46,
+        89
+      ]
+    ],
+    "spans": [
+      {
+        "name": "Blackwater retaining return 01",
+        "side": "retaining",
+        "a": [
+          32,
+          89.6
+        ],
+        "b": [
+          29.5,
+          89.25
+        ],
+        "soil_range": [
+          -0.0,
+          0.0028
+        ],
+        "toe": -0.38,
+        "top": 2.1028
+      },
+      {
+        "name": "Blackwater retaining return 02",
+        "side": "retaining",
+        "a": [
+          29.5,
+          89.25
+        ],
+        "b": [
+          27,
+          88.9
+        ],
+        "soil_range": [
+          0.0,
+          0.0176
+        ],
+        "toe": -0.38,
+        "top": 2.1176
+      },
+      {
+        "name": "Blackwater retaining return 03",
+        "side": "retaining",
+        "a": [
+          27,
+          88.9
+        ],
+        "b": [
+          25.0,
+          86.95
+        ],
+        "soil_range": [
+          0.0,
+          0.2804
+        ],
+        "toe": -0.38,
+        "top": 2.3804
+      },
+      {
+        "name": "Blackwater retaining return 04",
+        "side": "retaining",
+        "a": [
+          25.0,
+          86.95
+        ],
+        "b": [
+          23,
+          85
+        ],
+        "soil_range": [
+          0.0816,
+          0.8335
+        ],
+        "toe": -0.2984,
+        "top": 2.9335
+      },
+      {
+        "name": "Blackwater retaining return 05",
+        "side": "retaining",
+        "a": [
+          23,
+          85
+        ],
+        "b": [
+          21.333333333333332,
+          82.66666666666667
+        ],
+        "soil_range": [
+          0.1444,
+          0.8083
+        ],
+        "toe": -0.2356,
+        "top": 2.9083
+      },
+      {
+        "name": "Blackwater retaining return 06",
+        "side": "retaining",
+        "a": [
+          21.333333333333332,
+          82.66666666666667
+        ],
+        "b": [
+          19.666666666666668,
+          80.33333333333333
+        ],
+        "soil_range": [
+          -0.1932,
+          0.2715
+        ],
+        "toe": -0.5732,
+        "top": 2.3715
+      },
+      {
+        "name": "Blackwater retaining return 07",
+        "side": "retaining",
+        "a": [
+          19.666666666666668,
+          80.33333333333333
+        ],
+        "b": [
+          18,
+          78
+        ],
+        "soil_range": [
+          -0.0884,
+          1.1845
+        ],
+        "toe": -0.4684,
+        "top": 3.2845
+      },
+      {
+        "name": "Blackwater retaining return 08",
+        "side": "retaining",
+        "a": [
+          18,
+          78
+        ],
+        "b": [
+          16.0,
+          76.0
+        ],
+        "soil_range": [
+          0.9975,
+          2.0479
+        ],
+        "toe": 0.6175,
+        "top": 4.1479
+      },
+      {
+        "name": "Blackwater retaining return 09",
+        "side": "retaining",
+        "a": [
+          16.0,
+          76.0
+        ],
+        "b": [
+          14.0,
+          74.0
+        ],
+        "soil_range": [
+          1.7746,
+          2.1271
+        ],
+        "toe": 1.3946,
+        "top": 4.2271
+      },
+      {
+        "name": "Blackwater retaining return 10",
+        "side": "retaining",
+        "a": [
+          14.0,
+          74.0
+        ],
+        "b": [
+          12,
+          72
+        ],
+        "soil_range": [
+          1.8597,
+          2.2007
+        ],
+        "toe": 1.4797,
+        "top": 4.3007
+      },
+      {
+        "name": "Blackwater retaining return 11",
+        "side": "retaining",
+        "a": [
+          12,
+          72
+        ],
+        "b": [
+          10.25,
+          69.75
+        ],
+        "soil_range": [
+          1.9336,
+          2.3529
+        ],
+        "toe": 1.5536,
+        "top": 4.4529
+      },
+      {
+        "name": "Blackwater retaining return 12",
+        "side": "retaining",
+        "a": [
+          10.25,
+          69.75
+        ],
+        "b": [
+          8.5,
+          67.5
+        ],
+        "soil_range": [
+          2.0993,
+          2.5503
+        ],
+        "toe": 1.7193,
+        "top": 4.6503
+      },
+      {
+        "name": "Blackwater retaining return 13",
+        "side": "retaining",
+        "a": [
+          8.5,
+          67.5
+        ],
+        "b": [
+          6.75,
+          65.25
+        ],
+        "soil_range": [
+          2.3169,
+          2.6001
+        ],
+        "toe": 1.9369,
+        "top": 4.7001
+      },
+      {
+        "name": "Blackwater retaining return 14",
+        "side": "retaining",
+        "a": [
+          6.75,
+          65.25
+        ],
+        "b": [
+          5,
+          63
+        ],
+        "soil_range": [
+          2.4855,
+          2.6001
+        ],
+        "toe": 2.1055,
+        "top": 4.7001
+      },
+      {
+        "name": "Blackwater retaining return 15",
+        "side": "retaining",
+        "a": [
+          5,
+          63
+        ],
+        "b": [
+          3.7333333333333334,
+          60.0
+        ],
+        "soil_range": [
+          2.3718,
+          2.6001
+        ],
+        "toe": 1.9918,
+        "top": 4.7001
+      },
+      {
+        "name": "Blackwater retaining return 16",
+        "side": "retaining",
+        "a": [
+          3.7333333333333334,
+          60.0
+        ],
+        "b": [
+          2.466666666666667,
+          57.0
+        ],
+        "soil_range": [
+          1.4863,
+          2.4305
+        ],
+        "toe": 1.1063,
+        "top": 4.5305
+      },
+      {
+        "name": "Blackwater retaining return 17",
+        "side": "retaining",
+        "a": [
+          2.466666666666667,
+          57.0
+        ],
+        "b": [
+          1.2,
+          54
+        ],
+        "soil_range": [
+          0.2237,
+          1.6114
+        ],
+        "toe": -0.1563,
+        "top": 3.7114
+      },
+      {
+        "name": "Blackwater retaining return 18",
+        "side": "retaining",
+        "a": [
+          1.2,
+          54
+        ],
+        "b": [
+          0.5,
+          50.666666666666664
+        ],
+        "soil_range": [
+          -1.2894,
+          0.3398
+        ],
+        "toe": -1.6694,
+        "top": 2.4398
+      },
+      {
+        "name": "Blackwater retaining return 19",
+        "side": "retaining",
+        "a": [
+          0.5,
+          50.666666666666664
+        ],
+        "b": [
+          -0.19999999999999996,
+          47.333333333333336
+        ],
+        "soil_range": [
+          -2.569,
+          -1.181
+        ],
+        "toe": -2.949,
+        "top": 0.919
+      },
+      {
+        "name": "Blackwater retaining return 20",
+        "side": "retaining",
+        "a": [
+          -0.19999999999999996,
+          47.333333333333336
+        ],
+        "b": [
+          -0.9,
+          44
+        ],
+        "soil_range": [
+          -3.0467,
+          -2.4779
+        ],
+        "toe": -3.4267,
+        "top": -0.3779
+      },
+      {
+        "name": "Blackwater retaining return 21",
+        "side": "retaining",
+        "a": [
+          -0.9,
+          44
+        ],
+        "b": [
+          -1.15,
+          40.75
+        ],
+        "soil_range": [
+          -3.128,
+          -2.8564
+        ],
+        "toe": -3.508,
+        "top": -0.7564
+      },
+      {
+        "name": "Blackwater retaining return 22",
+        "side": "retaining",
+        "a": [
+          -1.15,
+          40.75
+        ],
+        "b": [
+          -1.4,
+          37.5
+        ],
+        "soil_range": [
+          -3.1241,
+          -2.9197
+        ],
+        "toe": -3.5041,
+        "top": -0.8197
+      },
+      {
+        "name": "Blackwater retaining return 23",
+        "side": "retaining",
+        "a": [
+          -1.4,
+          37.5
+        ],
+        "b": [
+          -1.65,
+          34.25
+        ],
+        "soil_range": [
+          -3.0996,
+          -2.8677
+        ],
+        "toe": -3.4796,
+        "top": -0.7677
+      },
+      {
+        "name": "Blackwater retaining return 24",
+        "side": "retaining",
+        "a": [
+          -1.65,
+          34.25
+        ],
+        "b": [
+          -1.9,
+          31
+        ],
+        "soil_range": [
+          -3.0652,
+          -2.8164
+        ],
+        "toe": -3.4452,
+        "top": -0.7164
+      },
+      {
+        "name": "Blackwater retaining return 25",
+        "side": "retaining",
+        "a": [
+          -1.9,
+          31
+        ],
+        "b": [
+          -1.875,
+          28.0
+        ],
+        "soil_range": [
+          -3.0834,
+          -2.8164
+        ],
+        "toe": -3.4634,
+        "top": -0.7164
+      },
+      {
+        "name": "Blackwater retaining return 26",
+        "side": "retaining",
+        "a": [
+          -1.875,
+          28.0
+        ],
+        "b": [
+          -1.85,
+          25.0
+        ],
+        "soil_range": [
+          -3.0832,
+          -2.8478
+        ],
+        "toe": -3.4632,
+        "top": -0.7478
+      },
+      {
+        "name": "Blackwater retaining return 27",
+        "side": "retaining",
+        "a": [
+          -1.85,
+          25.0
+        ],
+        "b": [
+          -1.825,
+          22.0
+        ],
+        "soil_range": [
+          -3.0769,
+          -2.8335
+        ],
+        "toe": -3.4569,
+        "top": -0.7335
+      },
+      {
+        "name": "Blackwater retaining return 28",
+        "side": "retaining",
+        "a": [
+          -1.825,
+          22.0
+        ],
+        "b": [
+          -1.8,
+          19
+        ],
+        "soil_range": [
+          -3.0279,
+          -2.7789
+        ],
+        "toe": -3.4079,
+        "top": -0.6789
+      },
+      {
+        "name": "Blackwater retaining return 29",
+        "side": "retaining",
+        "a": [
+          -1.8,
+          19
+        ],
+        "b": [
+          -0.40000000000000013,
+          16.0
+        ],
+        "soil_range": [
+          -3.1249,
+          -2.7878
+        ],
+        "toe": -3.5049,
+        "top": -0.6878
+      },
+      {
+        "name": "Blackwater shore grille 30",
+        "side": "shore",
+        "a": [
+          -0.40000000000000013,
+          16.0
+        ],
+        "b": [
+          1,
+          13
+        ],
+        "soil_range": [
+          -3.3015,
+          -2.9863
+        ],
+        "toe": -3.6815,
+        "top": -0.8163
+      },
+      {
+        "name": "Blackwater shore grille 31",
+        "side": "shore",
+        "a": [
+          1,
+          13
+        ],
+        "b": [
+          3.0,
+          11.333333333333334
+        ],
+        "soil_range": [
+          -3.4,
+          -3.1938
+        ],
+        "toe": -3.78,
+        "top": -1.0238
+      },
+      {
+        "name": "Blackwater shore grille 32",
+        "side": "shore",
+        "a": [
+          3.0,
+          11.333333333333334
+        ],
+        "b": [
+          5.0,
+          9.666666666666668
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 33",
+        "side": "shore",
+        "a": [
+          5.0,
+          9.666666666666668
+        ],
+        "b": [
+          7,
+          8
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 34",
+        "side": "shore",
+        "a": [
+          7,
+          8
+        ],
+        "b": [
+          9.25,
+          6.5
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 35",
+        "side": "shore",
+        "a": [
+          9.25,
+          6.5
+        ],
+        "b": [
+          11.5,
+          5.0
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 36",
+        "side": "shore",
+        "a": [
+          11.5,
+          5.0
+        ],
+        "b": [
+          13.75,
+          3.5
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 37",
+        "side": "shore",
+        "a": [
+          13.75,
+          3.5
+        ],
+        "b": [
+          16,
+          2
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 38",
+        "side": "shore",
+        "a": [
+          16,
+          2
+        ],
+        "b": [
+          19.333333333333332,
+          0.6666666666666667
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 39",
+        "side": "shore",
+        "a": [
+          19.333333333333332,
+          0.6666666666666667
+        ],
+        "b": [
+          22.666666666666664,
+          -0.6666666666666665
+        ],
+        "soil_range": [
+          -3.4,
+          -3.4
+        ],
+        "toe": -3.78,
+        "top": -1.23
+      },
+      {
+        "name": "Blackwater shore grille 40",
+        "side": "shore",
+        "a": [
+          22.666666666666664,
+          -0.6666666666666665
+        ],
+        "b": [
+          26,
+          -2
+        ],
+        "soil_range": [
+          -3.4555,
+          -3.397
+        ],
+        "toe": -3.8355,
+        "top": -1.227
+      },
+      {
+        "name": "Blackwater shore grille 41",
+        "side": "shore",
+        "a": [
+          26,
+          -2
+        ],
+        "b": [
+          29.333333333333332,
+          -2.3333333333333335
+        ],
+        "soil_range": [
+          -3.902,
+          -3.435
+        ],
+        "toe": -4.282,
+        "top": -1.265
+      },
+      {
+        "name": "Blackwater shore grille 42",
+        "side": "shore",
+        "a": [
+          29.333333333333332,
+          -2.3333333333333335
+        ],
+        "b": [
+          32.666666666666664,
+          -2.6666666666666665
+        ],
+        "soil_range": [
+          -4.5688,
+          -3.8498
+        ],
+        "toe": -4.9488,
+        "top": -1.6798
+      },
+      {
+        "name": "Blackwater shore grille 43",
+        "side": "shore",
+        "a": [
+          32.666666666666664,
+          -2.6666666666666665
+        ],
+        "b": [
+          36,
+          -3
+        ],
+        "soil_range": [
+          -5.3034,
+          -4.436
+        ],
+        "toe": -5.6834,
+        "top": -2.266
+      },
+      {
+        "name": "Blackwater shore grille 44",
+        "side": "shore",
+        "a": [
+          36,
+          -3
+        ],
+        "b": [
+          39.0,
+          -3.25
+        ],
+        "soil_range": [
+          -5.6806,
+          -5.1439
+        ],
+        "toe": -6.0606,
+        "top": -2.9739
+      },
+      {
+        "name": "Blackwater shore grille 45",
+        "side": "shore",
+        "a": [
+          39.0,
+          -3.25
+        ],
+        "b": [
+          42.0,
+          -3.5
+        ],
+        "soil_range": [
+          -5.8171,
+          -5.5069
+        ],
+        "toe": -6.1971,
+        "top": -3.3369
+      },
+      {
+        "name": "Blackwater shore grille 46",
+        "side": "shore",
+        "a": [
+          42.0,
+          -3.5
+        ],
+        "b": [
+          45.0,
+          -3.75
+        ],
+        "soil_range": [
+          -5.8152,
+          -5.6246
+        ],
+        "toe": -6.1952,
+        "top": -3.4546
+      },
+      {
+        "name": "Blackwater shore grille 47",
+        "side": "shore",
+        "a": [
+          45.0,
+          -3.75
+        ],
+        "b": [
+          48,
+          -4
+        ],
+        "soil_range": [
+          -5.7744,
+          -5.5254
+        ],
+        "toe": -6.1544,
+        "top": -3.3554
+      },
+      {
+        "name": "Blackwater shore grille 48",
+        "side": "shore",
+        "a": [
+          48,
+          -4
+        ],
+        "b": [
+          51.0,
+          -3.75
+        ],
+        "soil_range": [
+          -5.6768,
+          -5.5147
+        ],
+        "toe": -6.0568,
+        "top": -3.3447
+      },
+      {
+        "name": "Blackwater shore grille 49",
+        "side": "shore",
+        "a": [
+          51.0,
+          -3.75
+        ],
+        "b": [
+          54.0,
+          -3.5
+        ],
+        "soil_range": [
+          -5.6746,
+          -5.5117
+        ],
+        "toe": -6.0546,
+        "top": -3.3417
+      },
+      {
+        "name": "Blackwater shore grille 50",
+        "side": "shore",
+        "a": [
+          54.0,
+          -3.5
+        ],
+        "b": [
+          57.0,
+          -3.25
+        ],
+        "soil_range": [
+          -5.6746,
+          -5.5152
+        ],
+        "toe": -6.0546,
+        "top": -3.3452
+      },
+      {
+        "name": "Blackwater shore grille 51",
+        "side": "shore",
+        "a": [
+          57.0,
+          -3.25
+        ],
+        "b": [
+          60,
+          -3
+        ],
+        "soil_range": [
+          -5.675,
+          -5.5103
+        ],
+        "toe": -6.055,
+        "top": -3.3403
+      },
+      {
+        "name": "Blackwater shore grille 52",
+        "side": "shore",
+        "a": [
+          60,
+          -3
+        ],
+        "b": [
+          63.0,
+          -1.6666666666666667
+        ],
+        "soil_range": [
+          -5.8426,
+          -5.543
+        ],
+        "toe": -6.2226,
+        "top": -3.373
+      },
+      {
+        "name": "Blackwater shore grille 53",
+        "side": "shore",
+        "a": [
+          63.0,
+          -1.6666666666666667
+        ],
+        "b": [
+          66.0,
+          -0.3333333333333335
+        ],
+        "soil_range": [
+          -6.2434,
+          -5.717
+        ],
+        "toe": -6.6234,
+        "top": -3.547
+      },
+      {
+        "name": "Blackwater shore grille 54",
+        "side": "shore",
+        "a": [
+          66.0,
+          -0.3333333333333335
+        ],
+        "b": [
+          69,
+          1
+        ],
+        "soil_range": [
+          -6.8029,
+          -6.2325
+        ],
+        "toe": -7.1829,
+        "top": -4.0625
+      },
+      {
+        "name": "Blackwater shore grille 55",
+        "side": "shore",
+        "a": [
+          69,
+          1
+        ],
+        "b": [
+          71.33333333333333,
+          2.6666666666666665
+        ],
+        "soil_range": [
+          -7.3768,
+          -6.7891
+        ],
+        "toe": -7.7568,
+        "top": -4.6191
+      },
+      {
+        "name": "Blackwater shore grille 56",
+        "side": "shore",
+        "a": [
+          71.33333333333333,
+          2.6666666666666665
+        ],
+        "b": [
+          73.66666666666667,
+          4.333333333333333
+        ],
+        "soil_range": [
+          -7.9204,
+          -7.3133
+        ],
+        "toe": -8.3004,
+        "top": -5.1433
+      },
+      {
+        "name": "Blackwater shore grille 57",
+        "side": "shore",
+        "a": [
+          73.66666666666667,
+          4.333333333333333
+        ],
+        "b": [
+          76,
+          6
+        ],
+        "soil_range": [
+          -8.412,
+          -7.8154
+        ],
+        "toe": -8.792,
+        "top": -5.6454
+      },
+      {
+        "name": "Blackwater shore grille 58",
+        "side": "shore",
+        "a": [
+          76,
+          6
+        ],
+        "b": [
+          78.0,
+          8.333333333333332
+        ],
+        "soil_range": [
+          -8.2964,
+          -7.3461
+        ],
+        "toe": -8.6764,
+        "top": -5.1761
+      },
+      {
+        "name": "Blackwater shore grille 59",
+        "side": "shore",
+        "a": [
+          78.0,
+          8.333333333333332
+        ],
+        "b": [
+          80.0,
+          10.666666666666666
+        ],
+        "soil_range": [
+          -7.3938,
+          -6.7938
+        ],
+        "toe": -7.7738,
+        "top": -4.6238
+      },
+      {
+        "name": "Blackwater shore grille 60",
+        "side": "shore",
+        "a": [
+          80.0,
+          10.666666666666666
+        ],
+        "b": [
+          82,
+          13
+        ],
+        "soil_range": [
+          -6.8319,
+          -6.4116
+        ],
+        "toe": -7.2119,
+        "top": -4.2416
+      },
+      {
+        "name": "Blackwater shore grille 61",
+        "side": "shore",
+        "a": [
+          82,
+          13
+        ],
+        "b": [
+          83.66666666666667,
+          16.0
+        ],
+        "soil_range": [
+          -6.4543,
+          -6.1136
+        ],
+        "toe": -6.8343,
+        "top": -3.9436
+      },
+      {
+        "name": "Blackwater retaining return 62",
+        "side": "retaining",
+        "a": [
+          83.66666666666667,
+          16.0
+        ],
+        "b": [
+          85.33333333333333,
+          19.0
+        ],
+        "soil_range": [
+          -6.2428,
+          -5.8923
+        ],
+        "toe": -6.6228,
+        "top": -3.7923
+      },
+      {
+        "name": "Blackwater retaining return 63",
+        "side": "retaining",
+        "a": [
+          85.33333333333333,
+          19.0
+        ],
+        "b": [
+          87,
+          22
+        ],
+        "soil_range": [
+          -6.0106,
+          -5.5479
+        ],
+        "toe": -6.3906,
+        "top": -3.4479
+      },
+      {
+        "name": "Blackwater retaining return 64",
+        "side": "retaining",
+        "a": [
+          87,
+          22
+        ],
+        "b": [
+          87.75,
+          24.75
+        ],
+        "soil_range": [
+          -5.675,
+          -5.3209
+        ],
+        "toe": -6.055,
+        "top": -3.2209
+      },
+      {
+        "name": "Blackwater retaining return 65",
+        "side": "retaining",
+        "a": [
+          87.75,
+          24.75
+        ],
+        "b": [
+          88.5,
+          27.5
+        ],
+        "soil_range": [
+          -5.5362,
+          -4.9729
+        ],
+        "toe": -5.9162,
+        "top": -2.8729
+      },
+      {
+        "name": "Blackwater retaining return 66",
+        "side": "retaining",
+        "a": [
+          88.5,
+          27.5
+        ],
+        "b": [
+          89.25,
+          30.25
+        ],
+        "soil_range": [
+          -5.3113,
+          -4.5358
+        ],
+        "toe": -5.6913,
+        "top": -2.4358
+      },
+      {
+        "name": "Blackwater retaining return 67",
+        "side": "retaining",
+        "a": [
+          89.25,
+          30.25
+        ],
+        "b": [
+          90,
+          33
+        ],
+        "soil_range": [
+          -4.9257,
+          -4.1495
+        ],
+        "toe": -5.3057,
+        "top": -2.0495
+      },
+      {
+        "name": "Blackwater retaining return 68",
+        "side": "retaining",
+        "a": [
+          90,
+          33
+        ],
+        "b": [
+          90.0,
+          36.5
+        ],
+        "soil_range": [
+          -4.5634,
+          -4.0117
+        ],
+        "toe": -4.9434,
+        "top": -1.9117
+      },
+      {
+        "name": "Blackwater retaining return 69",
+        "side": "retaining",
+        "a": [
+          90.0,
+          36.5
+        ],
+        "b": [
+          90.0,
+          40.0
+        ],
+        "soil_range": [
+          -4.4632,
+          -3.9526
+        ],
+        "toe": -4.8432,
+        "top": -1.8526
+      },
+      {
+        "name": "Blackwater retaining return 70",
+        "side": "retaining",
+        "a": [
+          90.0,
+          40.0
+        ],
+        "b": [
+          90.0,
+          43.5
+        ],
+        "soil_range": [
+          -4.4371,
+          -3.6742
+        ],
+        "toe": -4.8171,
+        "top": -1.5742
+      },
+      {
+        "name": "Blackwater retaining return 71",
+        "side": "retaining",
+        "a": [
+          90.0,
+          43.5
+        ],
+        "b": [
+          90,
+          47
+        ],
+        "soil_range": [
+          -4.1587,
+          -3.355
+        ],
+        "toe": -4.5387,
+        "top": -1.255
+      },
+      {
+        "name": "Blackwater retaining return 72",
+        "side": "retaining",
+        "a": [
+          90,
+          47
+        ],
+        "b": [
+          89.0,
+          50.0
+        ],
+        "soil_range": [
+          -3.8338,
+          -2.8349
+        ],
+        "toe": -4.2138,
+        "top": -0.7349
+      },
+      {
+        "name": "Blackwater retaining return 73",
+        "side": "retaining",
+        "a": [
+          89.0,
+          50.0
+        ],
+        "b": [
+          88.0,
+          53.0
+        ],
+        "soil_range": [
+          -3.3844,
+          -2.396
+        ],
+        "toe": -3.7644,
+        "top": -0.296
+      },
+      {
+        "name": "Blackwater retaining return 74",
+        "side": "retaining",
+        "a": [
+          88.0,
+          53.0
+        ],
+        "b": [
+          87,
+          56
+        ],
+        "soil_range": [
+          -2.7378,
+          -1.327
+        ],
+        "toe": -3.1178,
+        "top": 0.773
+      },
+      {
+        "name": "Blackwater retaining return 75",
+        "side": "retaining",
+        "a": [
+          87,
+          56
+        ],
+        "b": [
+          85.33333333333333,
+          58.666666666666664
+        ],
+        "soil_range": [
+          -1.5518,
+          -0.3946
+        ],
+        "toe": -1.9318,
+        "top": 1.7054
+      },
+      {
+        "name": "Blackwater retaining return 76",
+        "side": "retaining",
+        "a": [
+          85.33333333333333,
+          58.666666666666664
+        ],
+        "b": [
+          83.66666666666667,
+          61.333333333333336
+        ],
+        "soil_range": [
+          -0.6509,
+          -0.2232
+        ],
+        "toe": -1.0309,
+        "top": 1.8768
+      },
+      {
+        "name": "Blackwater retaining return 77",
+        "side": "retaining",
+        "a": [
+          83.66666666666667,
+          61.333333333333336
+        ],
+        "b": [
+          82,
+          64
+        ],
+        "soil_range": [
+          -0.3895,
+          -0.0711
+        ],
+        "toe": -0.7695,
+        "top": 2.0289
+      },
+      {
+        "name": "Blackwater retaining return 78",
+        "side": "retaining",
+        "a": [
+          82,
+          64
+        ],
+        "b": [
+          80.0,
+          66.25
+        ],
+        "soil_range": [
+          -0.1827,
+          0.016
+        ],
+        "toe": -0.5627,
+        "top": 2.116
+      },
+      {
+        "name": "Blackwater retaining return 79",
+        "side": "retaining",
+        "a": [
+          80.0,
+          66.25
+        ],
+        "b": [
+          78.0,
+          68.5
+        ],
+        "soil_range": [
+          -0.0871,
+          0.0467
+        ],
+        "toe": -0.4671,
+        "top": 2.1467
+      },
+      {
+        "name": "Blackwater retaining return 80",
+        "side": "retaining",
+        "a": [
+          78.0,
+          68.5
+        ],
+        "b": [
+          76.0,
+          70.75
+        ],
+        "soil_range": [
+          -0.1009,
+          0.0301
+        ],
+        "toe": -0.4809,
+        "top": 2.1301
+      },
+      {
+        "name": "Blackwater retaining return 81",
+        "side": "retaining",
+        "a": [
+          76.0,
+          70.75
+        ],
+        "b": [
+          74,
+          73
+        ],
+        "soil_range": [
+          -0.0984,
+          0.0224
+        ],
+        "toe": -0.4784,
+        "top": 2.1224
+      },
+      {
+        "name": "Blackwater retaining return 82",
+        "side": "retaining",
+        "a": [
+          74,
+          73
+        ],
+        "b": [
+          71.5,
+          74.75
+        ],
+        "soil_range": [
+          -0.1654,
+          0.0208
+        ],
+        "toe": -0.5454,
+        "top": 2.1208
+      },
+      {
+        "name": "Blackwater retaining return 83",
+        "side": "retaining",
+        "a": [
+          71.5,
+          74.75
+        ],
+        "b": [
+          69.0,
+          76.5
+        ],
+        "soil_range": [
+          -0.1999,
+          -0.0795
+        ],
+        "toe": -0.5799,
+        "top": 2.0205
+      },
+      {
+        "name": "Blackwater retaining return 84",
+        "side": "retaining",
+        "a": [
+          69.0,
+          76.5
+        ],
+        "b": [
+          66.5,
+          78.25
+        ],
+        "soil_range": [
+          -0.1726,
+          -0.006
+        ],
+        "toe": -0.5526,
+        "top": 2.094
+      },
+      {
+        "name": "Blackwater retaining return 85",
+        "side": "retaining",
+        "a": [
+          66.5,
+          78.25
+        ],
+        "b": [
+          64,
+          80
+        ],
+        "soil_range": [
+          -0.0897,
+          0.1042
+        ],
+        "toe": -0.4697,
+        "top": 2.2042
+      },
+      {
+        "name": "Blackwater retaining return 86",
+        "side": "retaining",
+        "a": [
+          64,
+          80
+        ],
+        "b": [
+          61.25,
+          81.5
+        ],
+        "soil_range": [
+          -0.0273,
+          0.1115
+        ],
+        "toe": -0.4073,
+        "top": 2.2115
+      },
+      {
+        "name": "Blackwater retaining return 87",
+        "side": "retaining",
+        "a": [
+          61.25,
+          81.5
+        ],
+        "b": [
+          58.5,
+          83.0
+        ],
+        "soil_range": [
+          -0.0615,
+          0.0773
+        ],
+        "toe": -0.4415,
+        "top": 2.1773
+      },
+      {
+        "name": "Blackwater retaining return 88",
+        "side": "retaining",
+        "a": [
+          58.5,
+          83.0
+        ],
+        "b": [
+          55.75,
+          84.5
+        ],
+        "soil_range": [
+          -0.0653,
+          0.0274
+        ],
+        "toe": -0.4453,
+        "top": 2.1274
+      },
+      {
+        "name": "Blackwater retaining return 89",
+        "side": "retaining",
+        "a": [
+          55.75,
+          84.5
+        ],
+        "b": [
+          53,
+          86
+        ],
+        "soil_range": [
+          -0.084,
+          -0.0611
+        ],
+        "toe": -0.464,
+        "top": 2.0389
+      },
+      {
+        "name": "Blackwater retaining return 90",
+        "side": "retaining",
+        "a": [
+          53,
+          86
+        ],
+        "b": [
+          50.666666666666664,
+          87.0
+        ],
+        "soil_range": [
+          -0.0912,
+          -0.0796
+        ],
+        "toe": -0.4712,
+        "top": 2.0204
+      },
+      {
+        "name": "Blackwater retaining return 91",
+        "side": "retaining",
+        "a": [
+          50.666666666666664,
+          87.0
+        ],
+        "b": [
+          48.333333333333336,
+          88.0
+        ],
+        "soil_range": [
+          -0.1827,
+          -0.0791
+        ],
+        "toe": -0.5627,
+        "top": 2.0209
+      },
+      {
+        "name": "Blackwater retaining return 92",
+        "side": "retaining",
+        "a": [
+          48.333333333333336,
+          88.0
+        ],
+        "b": [
+          46,
+          89
+        ],
+        "soil_range": [
+          -0.1827,
+          -0.0165
+        ],
+        "toe": -0.5627,
+        "top": 2.0835
+      },
+      {
+        "name": "Blackwater retaining return 93",
+        "side": "retaining",
+        "a": [
+          46,
+          89
+        ],
+        "b": [
+          43.0,
+          89.3
+        ],
+        "soil_range": [
+          -0.0439,
+          0.0
+        ],
+        "toe": -0.4239,
+        "top": 2.1
+      },
+      {
+        "name": "Blackwater retaining return 94",
+        "side": "retaining",
+        "a": [
+          43.0,
+          89.3
+        ],
+        "b": [
+          40,
+          89.6
+        ],
+        "soil_range": [
+          -0.0008,
+          0.0
+        ],
+        "toe": -0.3808,
+        "top": 2.1
+      }
+    ],
+    "station_count": 648,
+    "gate_asset": "development/levels/primitive-props-v1/models/level_blockout_prison_sally_gate.glb",
+    "gate_asset_sha256": "957a63a8a769ebe53c6032ea4074c65ef131733d8452ac779cfc37b8aac09df3",
+    "road_gate": [
+      [
+        40,
+        89.6
+      ],
+      [
+        32,
+        89.6
+      ]
+    ]
+  },
+  "fitted_doors": [
+    {
+      "id": 870,
+      "frame": "crest-control",
+      "a": "control",
+      "b": "crest",
+      "floor_measurements": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 871,
+      "frame": "control-office",
+      "a": "office",
+      "b": "control",
+      "floor_measurements": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 872,
+      "frame": "DAM-HALL-x-26-28-0",
+      "a": "office",
+      "b": "west-stair",
+      "floor_measurements": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 873,
+      "frame": "DAM-HALL-z-48-31-0",
+      "a": "west-stair",
+      "b": "crest",
+      "floor_measurements": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 874,
+      "frame": "DAM-HALL-x-36-35--6",
+      "a": "west-lower-stair",
+      "b": "turbine",
+      "floor_measurements": [
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0
+      ]
+    },
+    {
+      "id": 875,
+      "frame": "WLD-09-restart-shared turbine workshop north",
+      "a": "turbine",
+      "b": "workshop",
+      "floor_measurements": [
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0
+      ]
+    },
+    {
+      "id": 876,
+      "frame": "DAM-HALL-x-64-35--6",
+      "a": "turbine",
+      "b": "east-lower-stair",
+      "floor_measurements": [
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0
+      ]
+    },
+    {
+      "id": 877,
+      "frame": "DAM-HALL-z-48-68-0",
+      "a": "east-stair",
+      "b": "crest",
+      "floor_measurements": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 878,
+      "frame": "DAM-HALL-x-70.5-47-0",
+      "a": "east-stair",
+      "b": "east-service-catwalk",
+      "floor_measurements": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 879,
+      "frame": "DAM-SPILLWAY-LOWER-68",
+      "a": "east-lower-stair",
+      "b": "spillway",
+      "floor_measurements": [
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0
+      ]
+    },
+    {
+      "id": 880,
+      "frame": "turbine-plant",
+      "a": "plant",
+      "b": "turbine",
+      "floor_measurements": [
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0,
+        -6.0
+      ]
+    },
+    {
+      "id": 881,
+      "frame": "gallery-valve",
+      "a": "gallery",
+      "b": "valve",
+      "floor_measurements": [
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0
+      ]
+    },
+    {
+      "id": 882,
+      "frame": "gallery-return",
+      "a": "gallery",
+      "b": "return",
+      "floor_measurements": [
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0
+      ]
+    },
+    {
+      "id": 883,
+      "frame": "valve-return",
+      "a": "valve",
+      "b": "return",
+      "floor_measurements": [
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0,
+        -10.0
+      ]
+    }
+  ],
+  "indexed_casings": 6,
+  "retained_native_records": 790,
+  "leaf_source": "assets/runtime/models/door_1_loose.glb",
+  "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "frame_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "frame_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "refuges": [
+    {
+      "id": "dam-office-cupboard",
+      "space": "office",
+      "owner": 1,
+      "position": [
+        9.46,
+        0.0,
+        30.8
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          8.86,
+          0.0,
+          29.949999
+        ],
+        [
+          10.162,
+          2.31,
+          31.65
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "dam-workshop-cupboard",
+      "space": "workshop",
+      "owner": 4,
+      "position": [
+        49.8,
+        -6.0,
+        60.6
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          48.950001,
+          -6.0,
+          59.897999
+        ],
+        [
+          50.649998,
+          -3.69,
+          61.199997
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "dam-plant-cupboard",
+      "space": "plant",
+      "owner": 10,
+      "position": [
+        37.46,
+        -6.0,
+        12.25
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          36.860001,
+          -6.0,
+          11.4
+        ],
+        [
+          38.161999,
+          -3.69,
+          13.1
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "door_schedule_sha256": "e211d1d2fb065c054c658b88feeb34f031f5a8aba8aeebabc9a8a1feff2c6047",
+  "previous_construction": "development/levels/rebuild/dam-carrier-pass/wld-09/construction.json",
+  "equipment": {
+    "level_trace_generator_refined": {
+      "origin": [
+        41,
+        -5.92,
+        9.08
+      ],
+      "yaw": 3.141592653589793,
+      "sha256": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+      "bounds": [
+        [
+          40.224998,
+          -5.92,
+          8.639999
+        ],
+        [
+          41.775002,
+          -4.765,
+          9.52
+        ]
+      ]
+    },
+    "level_electrical_bank_worn": {
+      "origin": [
+        49,
+        -5.94,
+        8.25
+      ],
+      "yaw": 0,
+      "sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+      "bounds": [
+        [
+          47.889999,
+          -5.94,
+          8.11
+        ],
+        [
+          50.110001,
+          -3.821695,
+          8.48
+        ]
+      ]
+    }
+  },
+  "power_bearings": [
+    {
+      "at": [
+        40.145,
+        -6.0,
+        8.6
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        40.145,
+        -6.0,
+        9.08
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        40.145,
+        -6.0,
+        9.56
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        41.0,
+        -6.0,
+        8.6
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        41.0,
+        -6.0,
+        9.08
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        41.0,
+        -6.0,
+        9.56
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        41.855,
+        -6.0,
+        8.6
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        41.855,
+        -6.0,
+        9.08
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        41.855,
+        -6.0,
+        9.56
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        47.810001,
+        -6.0,
+        8.092
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        47.810001,
+        -6.0,
+        8.25
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        47.810001,
+        -6.0,
+        8.52
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        49.0,
+        -6.0,
+        8.092
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        49.0,
+        -6.0,
+        8.25
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        49.0,
+        -6.0,
+        8.52
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        50.189999,
+        -6.0,
+        8.092
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        50.189999,
+        -6.0,
+        8.25
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        50.189999,
+        -6.0,
+        8.52
+      ],
+      "bearing": "Floor plant"
+    },
+    {
+      "at": [
+        48.049999,
+        -5.44,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        49.0,
+        -5.44,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        49.950001,
+        -5.44,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        48.049999,
+        -4.45,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        49.0,
+        -4.45,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        49.950001,
+        -4.45,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        41.25,
+        -5.0275,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        41.25,
+        -4.0025,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        41.790489,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        42.871464,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        43.952438,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        45.033413,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        46.114388,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        47.195362,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        48.276337,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        49.357311,
+        -3.49,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        46.900002,
+        -4.035,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        46.959999,
+        -4.34075,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        46.959999,
+        -3.58225,
+        8.08
+      ],
+      "bearing": "Wall plant N"
+    },
+    {
+      "at": [
+        46.959999,
+        -3.16,
+        8.3365
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        46.438999,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        45.396999,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        44.355,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        43.313,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        42.271,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        41.75,
+        -3.16,
+        9.03
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        41.75,
+        -3.16,
+        9.99
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        41.75,
+        -3.16,
+        10.95
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        41.75,
+        -3.16,
+        11.91
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        41.75,
+        -3.16,
+        12.87
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        46.959999,
+        -3.16,
+        8.3365
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        47.333332,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        48.080002,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        48.826668,
+        -3.16,
+        8.55
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        49.200001,
+        -3.16,
+        9.03
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        49.200001,
+        -3.16,
+        9.99
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        49.200001,
+        -3.16,
+        10.95
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        49.200001,
+        -3.16,
+        11.91
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        49.200001,
+        -3.16,
+        12.87
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        50.423351,
+        -3.16,
+        8.123
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        51.474449,
+        -3.16,
+        8.123
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        8.652
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        9.71
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        10.768
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        11.826
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        12.884
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        13.942
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        15.0
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        16.058001
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        17.115999
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        18.174
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        19.232
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        20.290001
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.16,
+        21.348
+      ],
+      "bearing": "Ceiling cap plant"
+    },
+    {
+      "at": [
+        52.0,
+        -3.49,
+        21.92
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        52.0,
+        -3.49,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        52.0,
+        -3.7825,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        52.0,
+        -4.3675,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        52.549999,
+        -3.49,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        53.650002,
+        -3.49,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        54.75,
+        -3.49,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    },
+    {
+      "at": [
+        55.849998,
+        -3.49,
+        22.08
+      ],
+      "bearing": "Wall turbine N"
+    }
+  ],
+  "services": [
+    {
+      "id": "dam-aux-generator",
+      "type": "generator",
+      "room": 10,
+      "position": [
+        41.035,
+        -5.445,
+        9.443
+      ],
+      "yaw": 0,
+      "style": "BW-MAIN"
+    },
+    {
+      "id": "dam-main-breaker",
+      "type": "breaker",
+      "room": 10,
+      "position": [
+        49,
+        -5.1,
+        8.485
+      ],
+      "yaw": 0,
+      "style": "BW-MAIN"
+    },
+    {
+      "id": "dam-plant-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        46.900002,
+        -4.75,
+        8.081
+      ],
+      "yaw": 0.0,
+      "style": "BW-10"
+    },
+    {
+      "id": "dam-turbine-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        52.0,
+        -4.75,
+        22.080999
+      ],
+      "yaw": 0.0,
+      "style": "BW-03"
+    },
+    {
+      "id": "dam-switchgear-light-41.75",
+      "type": "light",
+      "room": 10,
+      "position": [
+        41.75,
+        -3.344,
+        13.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "dam-switchgear-light-49.2",
+      "type": "light",
+      "room": 10,
+      "position": [
+        49.200001,
+        -3.344,
+        13.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "dam-turbine-north-light-53.2",
+      "type": "light",
+      "room": 3,
+      "position": [
+        53.200001,
+        -3.65,
+        22.264
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "dam-turbine-north-light-56.4",
+      "type": "light",
+      "room": 3,
+      "position": [
+        56.400002,
+        -3.65,
+        22.264
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "loads": [
+    {
+      "id": "dam-switchgear-light-41.75",
+      "room": 10,
+      "space": "plant",
+      "circuit": "BW-10",
+      "mount": [
+        41.75,
+        -3.16,
+        13.35
+      ],
+      "emitter": [
+        41.75,
+        -3.344,
+        13.35
+      ],
+      "support": "Ceiling cap plant"
+    },
+    {
+      "id": "dam-switchgear-light-49.2",
+      "room": 10,
+      "space": "plant",
+      "circuit": "BW-10",
+      "mount": [
+        49.200001,
+        -3.16,
+        13.35
+      ],
+      "emitter": [
+        49.200001,
+        -3.344,
+        13.35
+      ],
+      "support": "Ceiling cap plant"
+    },
+    {
+      "id": "dam-turbine-north-light-53.2",
+      "room": 3,
+      "space": "turbine",
+      "circuit": "BW-03",
+      "mount": [
+        53.200001,
+        -3.65,
+        22.08
+      ],
+      "emitter": [
+        53.200001,
+        -3.65,
+        22.264
+      ],
+      "support": "Flat route shell Wall turbine N.001"
+    },
+    {
+      "id": "dam-turbine-north-light-56.4",
+      "room": 3,
+      "space": "turbine",
+      "circuit": "BW-03",
+      "mount": [
+        56.400002,
+        -3.65,
+        22.08
+      ],
+      "emitter": [
+        56.400002,
+        -3.65,
+        22.264
+      ],
+      "support": "Flat route shell Wall turbine N.001"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "dam-plant-switch",
+      "circuit": "BW-10",
+      "space": "plant",
+      "room": 10,
+      "at": [
+        46.900002,
+        -4.75,
+        8.081
+      ],
+      "support": "Wall plant N",
+      "feet": [
+        46.9,
+        -6,
+        9.35
+      ]
+    },
+    {
+      "id": "dam-turbine-switch",
+      "circuit": "BW-03",
+      "space": "turbine",
+      "room": 3,
+      "at": [
+        52.0,
+        -4.75,
+        22.080999
+      ],
+      "support": "Flat route shell Wall turbine N.001",
+      "feet": [
+        52,
+        -6,
+        23.35
+      ]
+    }
+  ],
+  "raceways": [
+    {
+      "id": "BW-MAIN short generator output",
+      "points": [
+        [
+          41.25,
+          -5.54,
+          8.774999618530273
+        ],
+        [
+          41.25,
+          -5.54,
+          8.123
+        ]
+      ],
+      "radius": 0.019,
+      "visible": true
+    },
+    {
+      "id": "BW-MAIN plant wall feeder",
+      "points": [
+        [
+          41.25,
+          -5.54,
+          8.123
+        ],
+        [
+          41.25,
+          -3.49,
+          8.123
+        ],
+        [
+          49.8978,
+          -3.49,
+          8.123
+        ]
+      ],
+      "radius": 0.024,
+      "visible": true
+    },
+    {
+      "id": "BW-MAIN board terminal 1",
+      "points": [
+        [
+          48.3778,
+          -3.832,
+          8.21
+        ],
+        [
+          48.3778,
+          -3.49,
+          8.21
+        ],
+        [
+          48.3778,
+          -3.49,
+          8.123
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "BW-MAIN board terminal 2",
+      "points": [
+        [
+          49.1378,
+          -3.832,
+          8.21
+        ],
+        [
+          49.1378,
+          -3.49,
+          8.21
+        ],
+        [
+          49.1378,
+          -3.49,
+          8.123
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "BW-MAIN board terminal 3",
+      "points": [
+        [
+          49.8978,
+          -3.832,
+          8.21
+        ],
+        [
+          49.8978,
+          -3.49,
+          8.21
+        ],
+        [
+          49.8978,
+          -3.49,
+          8.123
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          46.900002,
+          -4.698,
+          8.109
+        ],
+        [
+          46.900002,
+          -3.22,
+          8.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          52.0,
+          -4.698,
+          22.108999
+        ],
+        [
+          52.0,
+          -3.22,
+          22.108999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "BW-10 switch feed",
+      "points": [
+        [
+          46.9,
+          -3.49,
+          8.123
+        ],
+        [
+          46.9,
+          -4.58,
+          8.123
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "BW-10 switched rise",
+      "points": [
+        [
+          46.96,
+          -4.72,
+          8.123
+        ],
+        [
+          46.96,
+          -3.2030000000000003,
+          8.123
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "BW-10 switchgear ceiling branch",
+      "points": [
+        [
+          46.96,
+          -3.2030000000000003,
+          8.123
+        ],
+        [
+          46.96,
+          -3.2030000000000003,
+          8.55
+        ],
+        [
+          41.75,
+          -3.2030000000000003,
+          8.55
+        ],
+        [
+          41.75,
+          -3.2030000000000003,
+          13.35
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "BW-10 switchgear ceiling branch",
+      "points": [
+        [
+          46.96,
+          -3.2030000000000003,
+          8.123
+        ],
+        [
+          46.96,
+          -3.2030000000000003,
+          8.55
+        ],
+        [
+          49.2,
+          -3.2030000000000003,
+          8.55
+        ],
+        [
+          49.2,
+          -3.2030000000000003,
+          13.35
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "BW-03 switchgear overhead outgoing feeder",
+      "points": [
+        [
+          49.8978,
+          -3.2030000000000003,
+          8.123
+        ],
+        [
+          52,
+          -3.2030000000000003,
+          8.123
+        ],
+        [
+          52,
+          -3.2030000000000003,
+          21.877000000000002
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true
+    },
+    {
+      "id": "BW-03 bank riser",
+      "points": [
+        [
+          49.8978,
+          -3.49,
+          8.123
+        ],
+        [
+          49.8978,
+          -3.2030000000000003,
+          8.123
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "BW-03 south wall elbow",
+      "points": [
+        [
+          52,
+          -3.2030000000000003,
+          21.877000000000002
+        ],
+        [
+          52,
+          -3.49,
+          21.877000000000002
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "BW-03 sealed electrical sleeve",
+      "points": [
+        [
+          52,
+          -3.49,
+          21.92
+        ],
+        [
+          52,
+          -3.49,
+          22.08
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false
+    },
+    {
+      "id": "BW-03 turbine switch feed and return",
+      "points": [
+        [
+          52,
+          -3.49,
+          22.123
+        ],
+        [
+          52,
+          -4.66,
+          22.123
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "BW-03 turbine header",
+      "points": [
+        [
+          52,
+          -3.49,
+          22.123
+        ],
+        [
+          56.4,
+          -3.49,
+          22.123
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "BW-03 wall light takeoff",
+      "points": [
+        [
+          53.2,
+          -3.49,
+          22.123
+        ],
+        [
+          53.2,
+          -3.65,
+          22.123
+        ]
+      ],
+      "radius": 0.013,
+      "visible": true
+    },
+    {
+      "id": "BW-03 wall light takeoff",
+      "points": [
+        [
+          56.4,
+          -3.49,
+          22.123
+        ],
+        [
+          56.4,
+          -3.65,
+          22.123
+        ]
+      ],
+      "radius": 0.013,
+      "visible": true
+    }
+  ],
+  "reservoir": {
+    "surface_y": -4.1,
+    "footprint": [
+      -8.0,
+      -37.0,
+      35.0,
+      -13.0
+    ],
+    "step": 0.25,
+    "terrain_samples": 16781,
+    "connected_wet_points": 9408,
+    "wet_area_sampled_m2": 588.0,
+    "dry_envelope_points": 536,
+    "minimum_envelope_bank_y": -3.94678,
+    "lowest_terrain_y": -5.27993,
+    "compound_overlap": 0
+  },
+  "intake": {
+    "foundation_box": [
+      25.2,
+      -29.47,
+      30.14,
+      -26.53
+    ],
+    "foundation_bottom": -4.99,
+    "foundation_samples": 240,
+    "foundation_top": -4.29,
+    "ground_range": [
+      -4.59014,
+      -4.21003
+    ],
+    "throat_samples": 108,
+    "throat_highest_ground": -4.32379,
+    "screen_axis_x": 25.92,
+    "rack_verticals": 14,
+    "carrier_end": [
+      30.14,
+      -4.13,
+      -28.0
+    ],
+    "carrier_state": "connected behind closed tailrace isolation gate",
+    "personnel_portals": 0
+  },
+  "west_bearing": {
+    "bearing_parts": 15,
+    "stem_slabs": [
+      {
+        "id": "west foundation wall Z21.92",
+        "footprint": [
+          7.92,
+          21.92,
+          8.42,
+          26
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "west foundation wall Z26",
+        "footprint": [
+          7.92,
+          26,
+          8.42,
+          30
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "west foundation wall Z30",
+        "footprint": [
+          7.92,
+          30,
+          8.42,
+          34
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "west foundation wall Z34",
+        "footprint": [
+          7.92,
+          34,
+          8.42,
+          38
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "west foundation wall Z38",
+        "footprint": [
+          7.92,
+          38,
+          8.42,
+          42
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "west foundation wall Z42",
+        "footprint": [
+          7.92,
+          42,
+          8.42,
+          46
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "west foundation wall Z46",
+        "footprint": [
+          7.92,
+          46,
+          8.42,
+          48
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "north foundation return X8.42",
+        "footprint": [
+          8.42,
+          21.92,
+          13,
+          22.42
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "north foundation return X13",
+        "footprint": [
+          13,
+          21.92,
+          18,
+          22.42
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "north foundation return X18",
+        "footprint": [
+          18,
+          21.92,
+          23,
+          22.42
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "north foundation return X23",
+        "footprint": [
+          23,
+          21.92,
+          26,
+          22.42
+        ],
+        "slab_contacts": 3
+      },
+      {
+        "id": "south closure against crest foundation",
+        "footprint": [
+          8.42,
+          47.6,
+          26,
+          48
+        ],
+        "slab_contacts": 5
+      }
+    ],
+    "bank_key_points": 339,
+    "bank_height_range": [
+      -3.4226608276367188,
+      -2.28289794921875
+    ],
+    "stair_core_contact_samples": 12,
+    "foundation_low": -6.48,
+    "finished_floor": 0
+  },
+  "water_sha256": "aff5c7744467cc5ce880756607be1738d075f1d72389f1b93ef8e89d48f3b61c",
+  "joined_valley_render_mesh": "Blackwater joined valley terrain at intake bench",
+  "terrain_benches": {
+    "intake": [
+      30.18,
+      -28.32,
+      31.66,
+      -27.68
+    ],
+    "receiving": [
+      73.56,
+      45.1,
+      74.22,
+      46.3
+    ],
+    "locally_cut_faces": 10,
+    "amended_native_records": {
+      "terrain-site-1-0:surface": 8,
+      "Blackwater joined valley terrain": 2
+    },
+    "seated_pipe_shoes": 4
+  },
+  "carrier": {
+    "length_m": 150.304,
+    "stations": 476,
+    "geometric_stations": 137,
+    "inner_radius_m": 0.218,
+    "outer_radius_m": 0.27,
+    "minimum_buried_cover_m": 0.584848,
+    "buried_stations": 437,
+    "owned_personnel_space_crossings": 0,
+    "source_terminal": [
+      28.7,
+      -4.04,
+      -28
+    ],
+    "receiving_mouth": [
+      73.89,
+      -6.93,
+      44.74
+    ],
+    "isolation_leaf": "existing closed upstream tailrace sluice",
+    "active_hydraulic_simulation": false
+  },
+  "generator_ventilation": {
+    "muffler_contact": [
+      40.419998,
+      -5.07,
+      8.75
+    ],
+    "wall_supports": [
+      [
+        40.419998,
+        -3.97,
+        7.92
+      ],
+      [
+        40.419998,
+        -3.97,
+        8.08
+      ],
+      [
+        40.419998,
+        -3.37,
+        7.92
+      ],
+      [
+        40.419998,
+        -3.37,
+        8.08
+      ],
+      [
+        43.84,
+        -4.44,
+        7.92
+      ],
+      [
+        43.84,
+        -4.44,
+        8.08
+      ],
+      [
+        44.700001,
+        -4.8,
+        7.92
+      ],
+      [
+        44.700001,
+        -4.8,
+        8.08
+      ]
+    ],
+    "through_wall": [
+      7.92,
+      8.08
+    ],
+    "intake_opening": [
+      43.86,
+      44.68,
+      -4.98,
+      -4.29
+    ],
+    "flue_axis": [
+      [
+        40.419998,
+        -5.07,
+        8.75
+      ],
+      [
+        40.419998,
+        -4.19,
+        8.75
+      ],
+      [
+        40.419998,
+        -4.152857,
+        8.747143
+      ],
+      [
+        40.419998,
+        -4.121429,
+        8.738572
+      ],
+      [
+        40.419998,
+        -4.095715,
+        8.724285
+      ],
+      [
+        40.419998,
+        -4.075715,
+        8.704286
+      ],
+      [
+        40.419998,
+        -4.061429,
+        8.678572
+      ],
+      [
+        40.419998,
+        -4.052857,
+        8.647142
+      ],
+      [
+        40.419998,
+        -4.05,
+        8.61
+      ],
+      [
+        40.419998,
+        -4.05,
+        7.68
+      ],
+      [
+        40.419998,
+        -4.047143,
+        7.642857
+      ],
+      [
+        40.419998,
+        -4.038572,
+        7.611429
+      ],
+      [
+        40.419998,
+        -4.024286,
+        7.585714
+      ],
+      [
+        40.419998,
+        -4.004286,
+        7.565715
+      ],
+      [
+        40.419998,
+        -3.978572,
+        7.551429
+      ],
+      [
+        40.419998,
+        -3.947143,
+        7.542857
+      ],
+      [
+        40.419998,
+        -3.91,
+        7.54
+      ],
+      [
+        40.419998,
+        -2.4286,
+        7.54
+      ],
+      [
+        40.419998,
+        -2.391829,
+        7.537172
+      ],
+      [
+        40.419998,
+        -2.360714,
+        7.528686
+      ],
+      [
+        40.419998,
+        -2.335257,
+        7.514543
+      ],
+      [
+        40.419998,
+        -2.315457,
+        7.494743
+      ],
+      [
+        40.419998,
+        -2.301314,
+        7.469286
+      ],
+      [
+        40.419998,
+        -2.292829,
+        7.438171
+      ],
+      [
+        40.419998,
+        -2.29,
+        7.4014
+      ],
+      [
+        40.419998,
+        -2.29,
+        7.2223
+      ],
+      [
+        40.419998,
+        -2.292088,
+        7.195159
+      ],
+      [
+        40.419998,
+        -2.298351,
+        7.172194
+      ],
+      [
+        40.419998,
+        -2.30879,
+        7.153404
+      ],
+      [
+        40.419998,
+        -2.323404,
+        7.13879
+      ],
+      [
+        40.419998,
+        -2.342194,
+        7.128351
+      ],
+      [
+        40.419998,
+        -2.365159,
+        7.122087
+      ],
+      [
+        40.419998,
+        -2.3923,
+        7.12
+      ],
+      [
+        40.419998,
+        -2.6,
+        7.12
+      ]
+    ],
+    "intake_blades": 6,
+    "combustion_air_and_exhaust_are_separate": true,
+    "ambient_airflow_simulated": false
+  },
+  "furnishings": [
+    {
+      "asset": "level_workbench_worn",
+      "zone": "control",
+      "label": "dispatch desk",
+      "bounds": [
+        [
+          11.6,
+          0.0,
+          36.759998
+        ],
+        [
+          13.4,
+          1.22,
+          37.465
+        ]
+      ]
+    },
+    {
+      "asset": "level_workbench_worn",
+      "zone": "office",
+      "label": "shift records desk",
+      "bounds": [
+        [
+          11.6,
+          0.0,
+          25.16
+        ],
+        [
+          13.4,
+          1.22,
+          25.865
+        ]
+      ]
+    },
+    {
+      "asset": "level_work_repair_bench",
+      "zone": "workshop",
+      "label": "maintenance bench",
+      "bounds": [
+        [
+          38.575001,
+          -6.0,
+          53.805
+        ],
+        [
+          41.024998,
+          -4.355,
+          54.802002
+        ]
+      ]
+    }
+  ],
+  "dispatch_radio": [
+    "DEVICE",
+    "Blackwater dispatch radio",
+    "RADIO",
+    0,
+    12.5,
+    1.022,
+    37.199996999999996,
+    0
+  ]
+}

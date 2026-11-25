@@ -1,0 +1,15 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-lane-input.tsv.gz",
+      "original_bytes": 5105407,
+      "original_sha256": "f5f355616e92a388005f26ec5484a6210bf7b2293bad8f86d39b7418c1665344",
+      "archive_bytes": 101534,
+      "archive_sha256": "cf4fd842944258e9b0e2762a11bd5f21505dbcad0239a256551c4f281fa65475",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

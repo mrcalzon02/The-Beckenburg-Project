@@ -1,0 +1,415 @@
+{
+  "glb_sha256": "60c8d60a95a99d7e7e8d475bee205ec2e19e3d9e73b01880e733448102a0de1e",
+  "physics_sha256": "7994b50ccaedc842d967a4d4d25891e7fe8c43d9d4bd9cb726a961caf8336931",
+  "source": {
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.blend": "5d10ec2e7c9a3ae3264d2f540592f231149d032e047121abc87bd2e7bff7f7b3",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.glb": "60c8d60a95a99d7e7e8d475bee205ec2e19e3d9e73b01880e733448102a0de1e",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.hcs2": "7994b50ccaedc842d967a4d4d25891e7fe8c43d9d4bd9cb726a961caf8336931"
+  },
+  "prior_layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+  "prior_layout_sha256": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+  "leaf_source": "assets/runtime/models/door_1_loose.glb",
+  "leaf_hash": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "supported_frames": [
+    {
+      "frame": "WLD-08-z-26-7",
+      "physical_reveal": [
+        25.76,
+        26.24
+      ],
+      "hinge_axis": 26.244,
+      "opening_m": [
+        1.8,
+        2.3
+      ],
+      "swing_direction": 1,
+      "leaves": 2,
+      "floor_samples": [
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-x-20-19",
+      "physical_reveal": [
+        19.76,
+        20.24
+      ],
+      "hinge_axis": 20.244,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": 1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-44-11",
+      "physical_reveal": [
+        43.76,
+        44.24
+      ],
+      "hinge_axis": 44.244,
+      "opening_m": [
+        1.8,
+        2.3
+      ],
+      "swing_direction": 1,
+      "leaves": 2,
+      "floor_samples": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-x-20-41",
+      "physical_reveal": [
+        19.76,
+        20
+      ],
+      "hinge_axis": 19.756,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": -1,
+      "leaves": 1,
+      "floor_samples": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-56-11",
+      "physical_reveal": [
+        55.76,
+        56
+      ],
+      "hinge_axis": 55.756,
+      "opening_m": [
+        1.8,
+        2.3
+      ],
+      "swing_direction": -1,
+      "leaves": 2,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-26-26",
+      "physical_reveal": [
+        25.76,
+        26
+      ],
+      "hinge_axis": 25.756,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": -1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-x-32-19",
+      "physical_reveal": [
+        31.76,
+        32.24
+      ],
+      "hinge_axis": 32.244,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": 1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-26-38",
+      "physical_reveal": [
+        25.76,
+        26
+      ],
+      "hinge_axis": 25.756,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": -1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-x-44-16",
+      "physical_reveal": [
+        43.76,
+        44
+      ],
+      "hinge_axis": 43.756,
+      "opening_m": [
+        1.8,
+        2.3
+      ],
+      "swing_direction": -1,
+      "leaves": 2,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-26-53",
+      "physical_reveal": [
+        26,
+        26.24
+      ],
+      "hinge_axis": 26.244,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": 1,
+      "leaves": 1,
+      "floor_samples": [
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-44-53",
+      "physical_reveal": [
+        43.76,
+        44.24
+      ],
+      "hinge_axis": 44.244,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": 1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-x-44-41",
+      "physical_reveal": [
+        44,
+        44.24
+      ],
+      "hinge_axis": 44.244,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": 1,
+      "leaves": 1,
+      "floor_samples": [
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-z-56-53",
+      "physical_reveal": [
+        55.76,
+        56
+      ],
+      "hinge_axis": 55.756,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": -1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-x-62-14",
+      "physical_reveal": [
+        62,
+        62.24
+      ],
+      "hinge_axis": 62.244,
+      "opening_m": [
+        1.05,
+        2.1
+      ],
+      "swing_direction": 1,
+      "leaves": 1,
+      "floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": "WLD-08-cell-tunnel-N-22",
+      "physical_reveal": [
+        25.76,
+        26.24
+      ],
+      "hinge_axis": 26.244,
+      "opening_m": [
+        1.8,
+        2.0
+      ],
+      "swing_direction": 1,
+      "leaves": 2,
+      "floor_samples": [
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5
+      ]
+    },
+    {
+      "frame": "WLD-08-cell-tunnel-n-E-23",
+      "physical_reveal": [
+        19.76,
+        20.24
+      ],
+      "hinge_axis": 20.244,
+      "opening_m": [
+        1.8,
+        2.0
+      ],
+      "swing_direction": 1,
+      "leaves": 2,
+      "floor_samples": [
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5,
+        -2.5
+      ]
+    }
+  ]
+}

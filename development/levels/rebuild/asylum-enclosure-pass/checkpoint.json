@@ -1,0 +1,108 @@
+{
+  "site": "ASYLUM",
+  "status": "FOUNDED_ENCLOSURE_AND_FULL_NAMED_CASE_VERIFIED",
+  "prior_commit": "ab5d9cbd",
+  "prior_source": "development/levels/rebuild/asylum-flight-rails-pass/checkpoint.json",
+  "prior_live_case": "development/levels/rebuild/asylum-continuous-case-pass/checkpoint.json",
+  "named_revision": "8962ca516a9b89a25045dcdb895660e8b20cc1ec590d38576a74daf5870e3f87-bf962dda717fbe41",
+  "terrain": {
+    "exterior_seam_edges": 971,
+    "preserved_interior_edges": [
+      186,
+      20,
+      16
+    ],
+    "exterior_area_m2": 23658.0,
+    "new_faces": 3881,
+    "road_boundary_constraints": 6
+  },
+  "new_matched_parts": 83,
+  "retained_collision_parts": 889,
+  "gate": [
+    32,
+    92.4,
+    8
+  ],
+  "package_hashes": {
+    "beckenburg-game.jar": {
+      "bytes": 400041232,
+      "sha256": "464b20d5ef72cf8c59d12a5df9826012c35e4cc5e05fdba80e7d7acb0f28c0da"
+    },
+    "BeckenburgGPU.jar": {
+      "bytes": 414592702,
+      "sha256": "c2f7fd78c33252e54803ce761003eb736999fb28b7d10f417dbb44f21b3de6ce"
+    }
+  },
+  "software": {
+    "named_revision": "8962ca516a9b89a25045dcdb895660e8b20cc1ec590d38576a74daf5870e3f87-bf962dda717fbe41",
+    "renderer": "Software",
+    "perimeter_optical_rays": "2484",
+    "perimeter_body_probes": "2484",
+    "supported_perimeter_sweeps": "4838",
+    "perimeter_span_endpoints": "48",
+    "prior_open_edge_and_airborne_limit": "PASS negative controls reproduced on the old archive",
+    "road_seam_footprints": "152",
+    "running_jump_and_spectral_edge": "PASS jump landed inside the closed road gate and the ghost stopped at its room boundary"
+  },
+  "opengl": {
+    "named_revision": "8962ca516a9b89a25045dcdb895660e8b20cc1ec590d38576a74daf5870e3f87-bf962dda717fbe41",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "perimeter_optical_rays": "2484",
+    "perimeter_body_probes": "2484",
+    "supported_perimeter_sweeps": "4838",
+    "perimeter_span_endpoints": "48",
+    "prior_open_edge_and_airborne_limit": "PASS negative controls reproduced on the old archive",
+    "road_seam_footprints": "152",
+    "running_jump_and_spectral_edge": "PASS jump landed inside the closed road gate and the ghost stopped at its room boundary"
+  },
+  "live_case": {
+    "named_revision": "8962ca516a9b89a25045dcdb895660e8b20cc1ec590d38576a74daf5870e3f87-bf962dda717fbe41",
+    "asylum-records-cupboard": "PASS Standing and crouched walk-in protection, hide, reveal and exit; spectral sweep excluded",
+    "admission": "PASS Real cargo ramp, admission door, interview door and records door",
+    "asylum-day-cupboard": "PASS Standing and crouched walk-in protection, hide, reveal and exit; spectral sweep excluded",
+    "court_and_main_stair": "PASS Day-room doors crossed into the court and back; main flight reached +3.4 m and returned",
+    "asylum-plant-cupboard": "PASS Standing and crouched walk-in protection, hide, reveal and exit; spectral sweep excluded",
+    "service_stair": "PASS The physical cellar flight reached \u22123 m and returned to the ground service corridor",
+    "ward_and_absolution": "PASS Physical anchor ward and day-room rite yielded ABSOLVED and 396 credits / 132 XP"
+  },
+  "publication": {
+    "verified_draft_head": "2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf",
+    "status": "local checkpoint, prior push not approved"
+  },
+  "remaining": [
+    "Garden planting and material finish",
+    "Directional skyline scenery",
+    "Other complete rites and authored encounter",
+    "Installer and default dispatch acceptance"
+  ],
+  "staged_file_sha256": {
+    "development/levels/rebuild/asylum-enclosure-pass/arrival.tsv": "b8992a93debcf696119da0cb69d9feb8f50cbe403d555a1050a5b82d5cb16c58",
+    "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.blend": "da45863099497efee20dbe24bf28603c705ac534212e8b2e5063c67cbb1de20b",
+    "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.glb": "81445871322f28b78ddda557c27dbb291ab08febc19ae87ea13ce980d70cb3d1",
+    "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.hcs2": "7e3088c8b7f06d684ef277d05a222a9f48281b51bd0a38343e386ab52d07dc43",
+    "development/levels/rebuild/asylum-enclosure-pass/boundary-survey.tsv": "6c394b79a3bc56d9365dc6596900a29c9bb7f5de75dcca1a79afc12b12a65a59",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/opengl/asylum-canonical-van-from-road.png": "1435d4d023eaeaf53694ace650c83e62df7bce266429603dbf12a043c4493590",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/opengl/asylum-fitted-carriage-gate.png": "661e563db0f61396a11753811325a5dbffca353b328bfdaa2f1fa4ad2cd1249f",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/software/asylum-canonical-van-from-road.png": "79a153fb678a5fc8e0dfbbface808b5940b6d1c507bcd94db0f668a0493099f3",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/software/asylum-fitted-carriage-gate.png": "d8d536b5bee13b6ae096f74cb1ab24df0953881f1e9e1cac22be032ec838bbc3",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-carriage-gate-and-piers.png": "13b64826e01b80b149ec6c75fb2ccd7578ef88b54ddfea80f90aee2ebdecfa26",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-east-service-wall.png": "24cf769054b5f43826015ad631eee202f89b7088183b10b957f5893dab3211d0",
+    "development/levels/rebuild/asylum-enclosure-pass/captures/structure/asylum-estate-and-road.png": "68e11539a7e35532576358e321b7111cc4345d27d5ed308889cd96f13ed10cde",
+    "development/levels/rebuild/asylum-enclosure-pass/case.tsv": "71bf83330f654fdd9cc5329c111f34124b225b18df67b762a776323d76c3c0b5",
+    "development/levels/rebuild/asylum-enclosure-pass/construction.json": "36d1e084bc34909afa8dcfb8bd63645e15a6cb3158bff2c7b9da6c957fb81473",
+    "development/levels/rebuild/asylum-enclosure-pass/door-survey.tsv": "d6f57e067cd12eeb7c9771b2773dceeb11336243afa211359a4ff433e542537d",
+    "development/levels/rebuild/asylum-enclosure-pass/enclosure-plan.svg": "55c51ec0dee26010cd20eb6e0aebf581ddf7794c788a85a05ae0e16409643d5c",
+    "development/levels/rebuild/asylum-enclosure-pass/mission.tsv": "9f5386bc53f4a42ade52f3d3124709def54bc2ebc9d702e5d459a8706e7a0008",
+    "development/levels/rebuild/asylum-enclosure-pass/named-opengl.tsv": "920bffe1c9604e1bf9473c528e757e4eeadf1376468064b1498ab707a0af86dd",
+    "development/levels/rebuild/asylum-enclosure-pass/named-software.tsv": "660b669aacb928528fb5737ae3430363f7e7e30505d574b0ce6e0737f66f2f25",
+    "development/levels/rebuild/asylum-enclosure-pass/README.md": "c7e6e4a959fc15bb2250ecceb9c533e48194038880a5686624c95e3cf67e27b3",
+    "development/levels/rebuild/asylum-enclosure-pass/roster.json": "260b6163be880f6d18b8f787007e8cd2a01abe3b02fabedb42b42f1129c1b022",
+    "development/levels/rebuild/asylum-enclosure-pass/services.tsv": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f",
+    "tools/build_asylum_enclosure.py": "e7f00389330b5637b9a85b1dd2c023c7a82f5e6c2fd17859ece3979dac53b27b",
+    "tools/build_monastery_perimeter.py": "c96871ceabcaf59f1830db6066bfe76722ca2559c6683966741039593c65fe61",
+    "tools/java/AsylumEnclosureReview.java": "82c0cf634ed2a226acf94235a747963ce752ee94523bda47d2342dff89f183af",
+    "tools/java/MonasteryPerimeterReview.java": "559d79b9432bda0bfd69d031364401f5acff6f5af0d25ccd8715e1057d37a30b",
+    "tools/render_asylum_enclosure.py": "2dd4c9e7b6d01a938f36c1afd19fa13faef8fb2e3d326a324fc0541d637efefe",
+    "tools/verify_asylum_continuous.py": "79d9f38cd8b44a4824c648d728a95668344cc228ca0a7e888a8a33b1995323ce"
+  }
+}

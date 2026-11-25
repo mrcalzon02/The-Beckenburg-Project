@@ -1,0 +1,1328 @@
+{
+  "observed_utc": "2026-11-08T06:30:20.211323+00:00",
+  "source_checkpoint": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+  "remote_head_verified": "d3d316c5d747cb86a133f2541945cb97891967c7",
+  "remote_tree_sha": "15be4ee1083ee53262ccf10d72fb054edf0c5937",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of both checkpoint changed paths",
+  "checkpoints": [
+    {
+      "commit": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+      "changed_files": 226
+    },
+    {
+      "commit": "862b65c2af88381035d364a0cd848d1e28f913b6",
+      "changed_files": 101
+    },
+    {
+      "commit": "d3d316c5d747cb86a133f2541945cb97891967c7",
+      "changed_files": 3
+    }
+  ],
+  "verified_file_count": 323,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "1df53aecc4fdba121a6f056dc322447212e81819"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "dbe22c674f0117914d4bb02f302d7e0baece3348"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "b4b26c9c63e726395a03125304ee4a5412d65824"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "63eb132ab748f8fd934bf4da93876d14f93e173e"
+    },
+    {
+      "path": "build.cmd",
+      "sha": "71e2c6829c797cc75303eb1a5393a070b0a6130c"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "7a31b1103536c744c9b549c7c8ad445a79c505f7"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "e7c8156681b2150f5dd65714d63f54e51fdb20dc"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "a7b0ce3d171b7aa2bc877e97a9809822aa34b068"
+    },
+    {
+      "path": "development/levels/FIRST_PRINCIPLES_REBUILD_PLAN.md",
+      "sha": "3b3ffa4d1bcf97e92e46f72ef67a45428f15ade6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-courtyard-sheet.png",
+      "sha": "202d2f7ea7a9a2f83ff1c7e55597edd1db53bb38"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-01.png",
+      "sha": "c2e20e0c28f80b8e242b0375d4dacf2091555c0a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-02.png",
+      "sha": "a916f19255f8f1736187329b30d768666d0a2a43"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-03.png",
+      "sha": "aa6c866c0a24a83b346add0869f7cf755245142d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-04.png",
+      "sha": "9fd9cf9815cde4e02e2d8b1bc1ccd1479fafe606"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/academy-outward-sky.png",
+      "sha": "dc9053f308f96ac00c89f2abc2a968b850ae5055"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/academy-toward-site.png",
+      "sha": "94780e8fffb388303836c4a23e58896eca89bb06"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/asylum-outward-sky.png",
+      "sha": "bbf3fecf21b3c6fb4b9953fd49a3efc894ee1de5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/asylum-toward-site.png",
+      "sha": "6f3159a95a80204a236d12b506a143a4a0fd638a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/castle-courtyard-outward-sky.png",
+      "sha": "6fd5f571e9ae223cf27de35172dfe8dff5530744"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/castle-courtyard-toward-site.png",
+      "sha": "f08eb6d7db7c29328a39eeaae79c958e35923118"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/castle-outward-sky.png",
+      "sha": "312f090228d25b337c7f8ba76bc1df8bfce9c2bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/castle-toward-site.png",
+      "sha": "732d19126d83b0897826ab45b7f550c84e7d705c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/church-outward-sky.png",
+      "sha": "22e280bfc8011a2f2d6fe37e77f52c42ef759cb7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/church-toward-site.png",
+      "sha": "512adacb2b0b58f71ce9737d5c899a028a0edb41"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/college-outward-sky.png",
+      "sha": "49c3ee935fc3e4c83bcd9063ffc22449018152c4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/college-toward-site.png",
+      "sha": "eae28026f05bcd460c01b68dca141070c596b6ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/courtyard-coverage.csv",
+      "sha": "bb68d7ece7dc5576af819de941afea31a6873f59"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/farmhouse-outward-sky.png",
+      "sha": "8ee287796726a6899c16447fd4b804b46a1a672c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/farmhouse-toward-site.png",
+      "sha": "65e682760054d4f2cf231869e3532917262fba6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/hollow_creek-outward-sky.png",
+      "sha": "a333d912ae769d6aaed6583b1f7a5b992ac24ec3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/hollow_creek-toward-site.png",
+      "sha": "dcef1d2c680015f0ebac66f7958574f80173981d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/house-outward-sky.png",
+      "sha": "98647d3f052d8539ce928c06a3d57ccbc2ed8be6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/house-toward-site.png",
+      "sha": "3e9d9769d8eab0ce3e055b114cbb747569f02c59"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/mansion-outward-sky.png",
+      "sha": "aea5caf59e5213f4bac1476ee14cbc3edfb9907e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/mansion-toward-site.png",
+      "sha": "fe89c59300a3501522556d93184dfe87c8ef34dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/prison-outward-sky.png",
+      "sha": "b343d1de2143d2281ca3e8440cf1c519639b7f19"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/prison-toward-site.png",
+      "sha": "bf73bcc75622ae68dc1638f714364dc5bfea026b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/runtime-coverage.csv",
+      "sha": "22f4061cc57afe83873d3b5a2239c4e36c4c8866"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/school-outward-sky.png",
+      "sha": "c95aeddd6ec76ee2e7bdff1bb6a6ce4961ed4cf7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/school-toward-site.png",
+      "sha": "6e2c3bac519075aefccc1ae52045b7a167000c2e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/wld-01-outward-sky.png",
+      "sha": "ed3ff08e9ce179847f42fea985da46e18d3ce451"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/opengl/wld-01-toward-site.png",
+      "sha": "d9528a8d7137a14e6e3989bd0b0084cf8d1bef76"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/academy-outward-sky.png",
+      "sha": "1b55ade20a707c8e6e33581555b4fee017069118"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/academy-toward-site.png",
+      "sha": "bad48aa7d4e950ed6289f35df4a2b8ad879b9669"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/asylum-outward-sky.png",
+      "sha": "3ab91ff612fce24b95bdf9a60f2efbe9ce39fe10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/asylum-toward-site.png",
+      "sha": "d298dc5996d14497cf6a316fbd4b480373fe8243"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/castle-courtyard-outward-sky.png",
+      "sha": "d26addf8b1a616c8d28c74e4a45960ab1d5f02da"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/castle-courtyard-toward-site.png",
+      "sha": "ef0b39e855694485565de52b85acb3aa594e27f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/castle-outward-sky.png",
+      "sha": "059061f8ccd272712505ef50a16261b799660627"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/castle-toward-site.png",
+      "sha": "8f2b2df8915852f07a269eea7b40601eac75ebf2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/church-outward-sky.png",
+      "sha": "276bbe5e4be177bd0dda6c6b42c58367dd745d0f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/church-toward-site.png",
+      "sha": "481ed4a151a799896e3ad73b095092a196443d02"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/college-outward-sky.png",
+      "sha": "b77971515d4b05933e58231ec1868300377960cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/college-toward-site.png",
+      "sha": "6d252aedfb0a9a06312d9b885de0e671a12d1101"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/courtyard-coverage.csv",
+      "sha": "e2fe772afc6b9ff2de24ccd6d1bb74aeee3bedf0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/farmhouse-outward-sky.png",
+      "sha": "74ee46ca0a77ce5e37496e895df7c939b8566cb9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/farmhouse-toward-site.png",
+      "sha": "f35a164717c0dabac7aef84b02a6ebd27e041b01"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/hollow_creek-outward-sky.png",
+      "sha": "abaf00d53d8fa2045603fb0567e0bec3503b8d10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/hollow_creek-toward-site.png",
+      "sha": "24951c517abad0e63cdd9cceec42e5c2bf3d162f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/house-outward-sky.png",
+      "sha": "e927f832bbfc32170daf14fb3fb7ad144269185e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/house-toward-site.png",
+      "sha": "b1093236de064effcefc1cc3c413b56e1b09b493"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/mansion-outward-sky.png",
+      "sha": "407f3982f3b4d4e02d778b2c2cb1c6a1a34810b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/mansion-toward-site.png",
+      "sha": "2799ee887be202c278ec30a150e093858f8b58b9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/prison-outward-sky.png",
+      "sha": "60c1a01d8923ce387cb475e9f6249d5ca3101d99"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/prison-toward-site.png",
+      "sha": "6b6c27cf2476f85e32f21c9b90ebc2b597dba9b4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/runtime-coverage.csv",
+      "sha": "cd84a02afb23481443ff1c13131344ebcb6e7bca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/school-outward-sky.png",
+      "sha": "340c42fb18e865b7a671691254ba301d7e02b4f7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/school-toward-site.png",
+      "sha": "d4186242af9b07358a7337338e308527b46bc2f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/wld-01-outward-sky.png",
+      "sha": "ddd1698d76e708b7f8019567ae0bded257ed1f85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/software/wld-01-toward-site.png",
+      "sha": "4c3fea93bcc792e438dcdd9926c1ad2459626343"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/academy-overview.png",
+      "sha": "cf7a7a1890359d4c12174f8e12ee42798a26c424"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/academy-support-side.png",
+      "sha": "541738e4a881a00d5f9516abfd35c88ccfc97849"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/asylum-overview.png",
+      "sha": "4395bc447d44d1a0181b974f9daedb05813ab347"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/asylum-support-side.png",
+      "sha": "b773a723ae1f610f1b8a21422b5382c9ec68a079"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-01.png",
+      "sha": "c0d4f743a87683308ba2b1d8f102f8e664d86068"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-02.png",
+      "sha": "cb63c360fe832dfc6e74c718cfd3ac8e58ba5286"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-03.png",
+      "sha": "88ca240344c9c2d10a72fbd3fbf9208da723ead8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-04.png",
+      "sha": "123f37e749e517f1ced8cc3af1194eb5db388e67"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-05.png",
+      "sha": "179f72d3f05858ec7466b5051372f14d8aae1a64"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-06.png",
+      "sha": "e18f5ff7005b9b25e486961f1255bd7c58df909d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-07.png",
+      "sha": "93e9b60e70dcfb5213b262551cbddf52dfa2f7e0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/church-overview.png",
+      "sha": "d7ba3ce06adc8b6ae0f94d32e259b92fb7e7de46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/church-support-side.png",
+      "sha": "1681312ffe51a07569635939e3b3ba72eb717f61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/college-overview.png",
+      "sha": "59e710a6f63b5d06b01f160e78fd6d3ab8a080eb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/college-support-side.png",
+      "sha": "b6fbcefcae3b3cb6e06b5edbd11bc4accdd73b68"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/existing-terrain-sheet-01.png",
+      "sha": "84ffa24e4f788b5eed1170e3ae02444b0ba765ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/existing-terrain-sheet-02.png",
+      "sha": "a8f6682315e4639852c331305d3161d1b353e88c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/farmhouse-overview.png",
+      "sha": "0b02a7618562427140cf502caac1938289fe3309"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/farmhouse-support-side.png",
+      "sha": "4e3a57d79dbeea987fb2123a41efac2bb60e1893"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/mansion-overview.png",
+      "sha": "6732e5fd4ad16eff4de860bef45d9c2102b06976"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/mansion-support-side.png",
+      "sha": "c420ca875eba5135ccbfb05669f86048c1b56474"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/prison-overview.png",
+      "sha": "966c608b3ec568e254ed9ce5e6a394975a26a2d7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/prison-support-side.png",
+      "sha": "a189cc51de6689dbeec14d55c4fed37942381d1b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/rejected-marsh-reservation-posts.png",
+      "sha": "7779ad460efb8c9f2ed90f96cb5bb43003d20fdd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/school-overview.png",
+      "sha": "833436c4de39479137a9dc85aeabbfe8c06fc895"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/school-support-side.png",
+      "sha": "1b115f86437e97fb8482a9f5db1d3ef4f98f4cf0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-03-overview.png",
+      "sha": "bb3fff645850b47e500a7a898da1d1f4308b1f2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-03-support-side.png",
+      "sha": "ff9e7cc7f0e45f89d884f22f350090d1fbc0e3b6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-04-overview.png",
+      "sha": "953ee181b7fccbad3207cd8a9da8e587afd23d1e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-04-support-side.png",
+      "sha": "e8c1d09b49ba01fc2a289d9a7f3341999af118bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-05-overview.png",
+      "sha": "fbdb8cf9ef6acf5712ca51bc07bcbf34a5fd5041"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-05-support-side.png",
+      "sha": "681979f63bedafebdb61d1a431d6b4a2d0253e48"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-06-overview.png",
+      "sha": "d10776d5fab58fc46bc6758bf5f3e13bc940f13d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-06-support-side.png",
+      "sha": "b9f6ace7535b1f5b35976b3076276a4caed733a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-mortuary-overview.png",
+      "sha": "4eb7bae7d4fbf8e2349469213d2ae9c9a7fbca72"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-mortuary-support-side.png",
+      "sha": "9a5d164daef7c61171101cf6cf363644e31cdf30"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-overview.png",
+      "sha": "9730236c0ce6d5dd351eb2bf206485e1312547d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-support-side.png",
+      "sha": "9c052427fd8fdc3928ea0a83548121ec896e78c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-08-overview.png",
+      "sha": "5253aac2b8bb485805399a760a8116bc80596c33"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-08-support-side.png",
+      "sha": "ffbf7351e6d7ee89bba0ab46d5d5aa29cd0d76c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-09-overview.png",
+      "sha": "5572c4161794a26af62d5e814063ce6c9eedeab8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-09-support-side.png",
+      "sha": "f88904c4f5ff5fac752ac8d6f19a7f3886cfe8d6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-10-overview.png",
+      "sha": "ab55785a0dc7ba7d394a895d622a37dc87eaa4fe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-10-support-side.png",
+      "sha": "c2256419e5f3ddb298386c0098f5f0022b766cb4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-11-overview.png",
+      "sha": "726852bbf5ac4def7a01d9ea17555c6bebddc2ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-11-support-side.png",
+      "sha": "b0f4b9a7ba99e8142bd22cfd607d9519b7b5b23d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-12-overview.png",
+      "sha": "f6ba577e20b3c8fa79bbd70be8d44ed3ebd2b20f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-12-support-side.png",
+      "sha": "672d31dd8805add7beb4ebd849b361dcad824a4e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-13-overview.png",
+      "sha": "64dbb34e46dab478421e23a0daf95187cd4f1c35"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-13-support-side.png",
+      "sha": "e3e4f5bc37e1bbc31ef1c5732bd588011e68ac7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-14-overview.png",
+      "sha": "3b7b695078161805ee80304682d79374cad06848"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-14-support-side.png",
+      "sha": "b200935730476f3a059e5bcab5c422910fe73192"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-15-overview.png",
+      "sha": "97c5dee4a3c33da714fe76121399d4cacf92d701"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-15-support-side.png",
+      "sha": "cb28298873322ff001c664ddc4953bf59f3c2079"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-16-overview.png",
+      "sha": "fdacae6fd91f4b1eeb4d289a217069636da35db7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-16-support-side.png",
+      "sha": "7e4a25ccea58d40f170221e8ba62f095d58dc39c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-17-overview.png",
+      "sha": "a6f53df5453acc2230e048101fc9d16ac6cd4118"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-17-support-side.png",
+      "sha": "b5a4aa384df18ec00af5214b773ff8ea66d6d75b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-18-overview.png",
+      "sha": "25050195d5562771259387d50d2af53f5a5b127f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-18-support-side.png",
+      "sha": "f138b4e4b0ae14afd51374a994e8047168c5ae91"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "7e7213dad52ded67739811879dd93a6639b7988b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/README.md",
+      "sha": "d902a0fca7d1f617cf618ba5c8e1ce70afa512c5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/academy/NEXT.md",
+      "sha": "8b2008784d9b6a039ed0319375a1fd9e61f2fbe7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/academy/construction.json",
+      "sha": "90475eb3ba51f70aa75fa41d04ee34370b73b7d5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/academy/supported-terrain.blend",
+      "sha": "fbcde9dece02c85181e52656013f45d4101b7255"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/academy/supported-terrain.glb",
+      "sha": "1d0132d4388e754fada7ab39d873734468d5ca89"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/academy/supported-terrain.hcs2",
+      "sha": "6e2342f2e81433293d93b4a050cb7a2da57577ee"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/asylum/NEXT.md",
+      "sha": "a595179478468d9750012859d2f2a185b0571c75"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/asylum/construction.json",
+      "sha": "99395b9c70c277d66e6c02d8313337f6f730fe8b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.blend",
+      "sha": "a0534db3100527848b4d871ab57f9abbb8eb6e4a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.glb",
+      "sha": "de1f27577462b111dd63f7740904c892397e1fe2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.hcs2",
+      "sha": "16945c42361319027fc63cac7a6c4001138f00f6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/church/NEXT.md",
+      "sha": "9bad48ddc464ff15cebda804846c069357f4d5c9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/church/construction.json",
+      "sha": "85383bc9463ade4534f2e678599a7a3a25d8a66d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/church/supported-terrain.blend",
+      "sha": "6c2fa75bdb7ce65cfec178a19a624429c64acd09"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/church/supported-terrain.glb",
+      "sha": "9468a03452a0eb0efdd1d41f9016f15f5b9902b3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/church/supported-terrain.hcs2",
+      "sha": "8648910a9570d453104a0057e3644a52f8a381de"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/college/NEXT.md",
+      "sha": "e05585d5cddaac03cc832832abcee2f79f22ebf0"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/college/construction.json",
+      "sha": "048321cfa4b8d6108d120c52e7e47ece1d6c1c2e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/college/supported-terrain.blend",
+      "sha": "d4abcf18f865fee78ce9d2460400179bb60490da"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/college/supported-terrain.glb",
+      "sha": "5dc5cff6041ff934d2e9ccf81bfce76b45ece43d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/college/supported-terrain.hcs2",
+      "sha": "b3795716b8f68131a02068d644efc9c455ddd4e8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/existing-terrain-review.json",
+      "sha": "91f2546c0db2a593bde43924619ba87ac7dd2a40"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/farmhouse/NEXT.md",
+      "sha": "9f4414c610f38de7a2bdc2fe7e54a1a450d9e39b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/farmhouse/construction.json",
+      "sha": "10a304503f9f2fd04e65aa4f0be1738699748c4c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/farmhouse/supported-terrain.blend",
+      "sha": "3a63b1c0fa5a0d5c532e94b7e66162e3f3747383"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/farmhouse/supported-terrain.glb",
+      "sha": "dd1cdde575e7d14bf74a95aa705d6439fa796b34"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/farmhouse/supported-terrain.hcs2",
+      "sha": "f3b324c4d0981b5dcda7300421d946096e9b8ff5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/mansion/NEXT.md",
+      "sha": "0d75122bb8e016f297e1b08e4dd0fdc1c05cc8bb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/mansion/construction.json",
+      "sha": "6adf5470d60cf377c09fe20c548fcc7956461552"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/mansion/supported-terrain.blend",
+      "sha": "8a8f951db289a6dc9001548c9d48b8478c4ec347"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/mansion/supported-terrain.glb",
+      "sha": "2ed95fe5e22e565d8b513c6deb1ee5e761348273"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/mansion/supported-terrain.hcs2",
+      "sha": "8a7be3895203fe9ea689dd72a5af20951c72e125"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/prison/NEXT.md",
+      "sha": "8707c9360eefa0257f4fc3c5302c788d3cfcb4bb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/prison/construction.json",
+      "sha": "db685caf695e87dfbf5fb09d774a6cc2ddd62621"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/prison/supported-terrain.blend",
+      "sha": "9182bc53b186157f4999612bd08f462e760b40b6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/prison/supported-terrain.glb",
+      "sha": "0f5b9e50dbc4de4254f5983b0a2ff2f0f4e0536b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/prison/supported-terrain.hcs2",
+      "sha": "c43fac01e72e36e8679777baa087593bb75e62ee"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/rejected/marsh-reservation-posts.json",
+      "sha": "1b79f49f32115c0c80f60b14f2d36649e877f389"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/rejected/wharf-contact-rejection.log",
+      "sha": "12ede7dc23857e1218aa042431103b6f29c57772"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/rejected/wharf-skirt-on-route.glb",
+      "sha": "0bae4fc11040e1f204e2ce53a3889e97ea1dcc59"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/rejected/wharf-skirt-on-route.json",
+      "sha": "e7e4acfa198fa58ab5de6596ac472c903eec393f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/roster.json",
+      "sha": "db77bb165ad179bf29f027f57bed7e5d4116bf4a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/school/NEXT.md",
+      "sha": "9c326c70be62d993d33f3c1b7d39051e6fc3507d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/school/construction.json",
+      "sha": "2e0536f8de98131f3e6c73a553b981b6135130d3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/school/supported-terrain.blend",
+      "sha": "b5d4937165783365f87c21cc95761b43d403edbb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/school/supported-terrain.glb",
+      "sha": "bbf1fc2648cd39d448c1215456baddf9719850e0"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/school/supported-terrain.hcs2",
+      "sha": "384d72fe56eb906c0d69a5c986dda8a4346137d5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/support-policies.json",
+      "sha": "a6f5a87fb1eb7b4e2d2aa5649c9d27495fcb8d56"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+      "sha": "f6b42fb2f1b1a19a0be4036a0fea73115bbd2046"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/empty-variant-negative.json",
+      "sha": "a2bb92e3b303ef2e79c0d597861965a133b534d5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/export-preservation.json",
+      "sha": "e7f8416e8fe36adad999a7b9cdbffe6a4c5762fb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/logs/terrain-support-batch.log",
+      "sha": "01e07cca156682a78be1d3006916afa6f7774a76"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/logs/terrain-support-contacts.log",
+      "sha": "2b7f0e205e16ad6a60376acbebca1cb1a63ab499"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/logs/terrain-support-export-preservation.log",
+      "sha": "e3d5e85227336dbb7761ad8a83782894871f2322"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/logs/terrain-support-native-fit.log",
+      "sha": "c24738fed936a142357cf93a2783343725a4c3b6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/logs/terrain-support-stairs.log",
+      "sha": "ae3a2f33a08439e9537e70eb17ec64664169fdf9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/native-route-fit.json",
+      "sha": "3dca5a9fa154072aad1d733a424abb2deb2c84ff"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/native-route-probes.tsv",
+      "sha": "54033dfd30379927e7883c51486a4248b4fd6036"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/stairs/complete-route-sweeps.tsv",
+      "sha": "c83dca8b98513b6e9caf1e51fa5b922ec9fac68e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/stairs/failure-contacts.tsv",
+      "sha": "55bf596888aca0488fd68d137f9a07aac8c108fe"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/stairs/flight-sweeps.tsv",
+      "sha": "dbe3c86886e3a6f2461afd8f0929be293672cd62"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+      "sha": "99ef3353526cfc1b29f4f10454b61fab22902079"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/tool-source-hashes.json",
+      "sha": "5effd5f9ccb5714a7e0aa720d8afd10d333b1eca"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/verification/visual-review.json",
+      "sha": "0be89d76af3cec3b6653507630625aeae5e6a44e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-03/NEXT.md",
+      "sha": "c221961397f20ec126376b023834e6b69bea8503"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-03/construction.json",
+      "sha": "c0af7fa867c6c805b467a6d0ab5706cba3644dfd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-03/supported-terrain.blend",
+      "sha": "03f17220a5380f7b07086cb2c59f3f625688e741"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-03/supported-terrain.glb",
+      "sha": "f6a2ffdfb22ceffcd01acabe133c0d80981f416e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-03/supported-terrain.hcs2",
+      "sha": "963301edd2f3301d8cef744108959c61634de927"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-04/NEXT.md",
+      "sha": "06cb9265927c8502fb23cffe7a367b77d32d49eb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-04/construction.json",
+      "sha": "b99f5e1da8ec2cd263fe3902645e0c692823c52a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-04/supported-terrain.blend",
+      "sha": "c7687cfaea3545740e4e3703926964859f15bec4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-04/supported-terrain.glb",
+      "sha": "72781e3723848c001fd4e5b247029c3121a4f757"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-04/supported-terrain.hcs2",
+      "sha": "f41a2ed325d573fa04ea43b5ada888e554e28215"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-05/NEXT.md",
+      "sha": "e88c1e687cbdda0aac81253ff3d97d6a4058c57e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-05/construction.json",
+      "sha": "d4aedbbc62199e17c2a7f043cc998d675d51c99b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-05/supported-terrain.blend",
+      "sha": "3148b559db451a1fe12c74f9af86e7881ed146a3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-05/supported-terrain.glb",
+      "sha": "6510232aeb37b2e4020b00013bf57778ac5f47ff"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-05/supported-terrain.hcs2",
+      "sha": "bb851f9c427c380f123d059dd58b9a5159d6e040"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-06/NEXT.md",
+      "sha": "1ff42f77dc177c2c0a9f2e79423b929d1035da2a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-06/construction.json",
+      "sha": "cd3439f046cb0493e27d805a673c2eb0e41a61e8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-06/supported-terrain.blend",
+      "sha": "7a6c581531c86aa45221365ccd1056b74231fb45"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-06/supported-terrain.glb",
+      "sha": "78e00d6be26d9c9e953a8799972948841266bd38"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-06/supported-terrain.hcs2",
+      "sha": "049c0387b7c6aa69024abba5440b9e240065ec44"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/NEXT.md",
+      "sha": "614f013891c8de072b90501866fbf463b2bcb333"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/construction.json",
+      "sha": "78c9745627b7d50e49503f9ca51db14db20f9cbe"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/supported-terrain.blend",
+      "sha": "5064df146d7025fde4d2912a8610740b438fa008"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/supported-terrain.glb",
+      "sha": "0205b26ce5fd7ae96bbd044e2e6c6f88eba517ab"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/supported-terrain.hcs2",
+      "sha": "e1920d06c997e558bc6500956131a53f0628014d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07/NEXT.md",
+      "sha": "257b496b6d879dcbdfcd7d002876490b35343c39"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07/construction.json",
+      "sha": "06d9f4ed78c43d73c1f888106de11c5a57c91cf5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07/supported-terrain.blend",
+      "sha": "b6e0e0343f5ca3de06a729cc2c19825c77b0c082"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07/supported-terrain.glb",
+      "sha": "263159b4bec2f5420d6e26622df31221b9fef211"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-07/supported-terrain.hcs2",
+      "sha": "3d58aa6b8c4932566c710b6545a32afe2aa17561"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-08/NEXT.md",
+      "sha": "2948a5165472c396e86a8faaea6bd7619b2aa12f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-08/construction.json",
+      "sha": "5e058124664bd66f57ba66b27df39b2cdcb6cae3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-08/supported-terrain.blend",
+      "sha": "e436c49766b749baa6c42be1a43ea17212b4812e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-08/supported-terrain.glb",
+      "sha": "adc7a7d29ebebd5d30bc282b8c71c7fb90365655"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-08/supported-terrain.hcs2",
+      "sha": "890e6ca422578642e868127004c2e83b9104fd19"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-09/NEXT.md",
+      "sha": "8a81b146a4e2d50934d9aa570c80791c597a4d7d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-09/construction.json",
+      "sha": "1bc62fa92b14cbf33ad54bdaff0350ad59398650"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-09/supported-terrain.blend",
+      "sha": "6da770b977cfcda792bc7e2917176d7b655fd1fc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-09/supported-terrain.glb",
+      "sha": "af7f7786708969e4f518f0096acf39f538373834"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-09/supported-terrain.hcs2",
+      "sha": "126db26872b2d047534f842d285946d5902ed521"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-10/NEXT.md",
+      "sha": "0b83deff92effa1fa3e5dddb75d433d9ad6614ec"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-10/construction.json",
+      "sha": "7e718447fecfb0b8c0491fdba2602265313de394"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-10/supported-terrain.blend",
+      "sha": "b6367f3fdf35ede2b74e9bb043fb3925df05060f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-10/supported-terrain.glb",
+      "sha": "b0a48b0354562a7a1c858acb98e4481ce69374a4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-10/supported-terrain.hcs2",
+      "sha": "0f6ba84051144b7a589c05018f02c71a23f39e63"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-11/NEXT.md",
+      "sha": "f0515c97730fbf2b15c61c0d5a05ecd32d136700"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-11/construction.json",
+      "sha": "fdbaad3f4750dc107de4fc54a065603092a6178e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-11/supported-terrain.blend",
+      "sha": "725bc013fc2f9db5982238b6cc020c3e63bbdc14"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-11/supported-terrain.glb",
+      "sha": "a0c9e415c8ca5346ef3a5ccd564eb0812f773019"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-11/supported-terrain.hcs2",
+      "sha": "d65c9e49c0bcd1cc579096bbdf9416ebbbdcfd6b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-12/NEXT.md",
+      "sha": "94a85a27e6c8cc881e83967ffc821607d4c1d8a8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-12/construction.json",
+      "sha": "5f300ebeed3984d78e7023336aab35576235bad5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-12/supported-terrain.blend",
+      "sha": "919cf511435eee974bd33a7062f0d980b44ea9bc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-12/supported-terrain.glb",
+      "sha": "46481ab9cab47cad06c7a7d887588e2004d26d11"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-12/supported-terrain.hcs2",
+      "sha": "21ba9fd8d6ea23cedc7c2af9f0ae7bec8c1a119f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-13/NEXT.md",
+      "sha": "9c795da43b3666b4247f5b34af4f682369ac16cc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-13/construction.json",
+      "sha": "4b5f8b2cf92b98967c8ec2bf3d28f0069ffe55a7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-13/supported-terrain.blend",
+      "sha": "42b9423dbb9bb39e214a9dc82f76029630115e50"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-13/supported-terrain.glb",
+      "sha": "93a1417cc42d034f7acd86dcb69c85a69f2f7244"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-13/supported-terrain.hcs2",
+      "sha": "d6b14077303d4d4d42b12193c046bd19dd6b1d15"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-14/NEXT.md",
+      "sha": "93d6a50dca9fd8925f1e67e8a2bb93cc7b49b4ea"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-14/construction.json",
+      "sha": "9b4fa10c6a7f31ac777c499c60548a54074e512b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-14/supported-terrain.blend",
+      "sha": "d1fd30b013edac38d8f083400154f383bcab9b65"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-14/supported-terrain.glb",
+      "sha": "148bc5078f41662b0b6238e3454b243869614103"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-14/supported-terrain.hcs2",
+      "sha": "4b7ff1d7ba7f437d33f81dd1c35cdd9a3b6ba9f2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-15/NEXT.md",
+      "sha": "cd7b9e2f224e0fd700cbc3bfce03db43de33a3a4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-15/construction.json",
+      "sha": "b497a0660bff496acc5eb9ec3e9e93d812449ea5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-15/supported-terrain.blend",
+      "sha": "5ec86583502275f5865f412074aeadd59a6bb598"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-15/supported-terrain.glb",
+      "sha": "499ec3da319958d71cce8f3db4a28d80fd8f4ef4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-15/supported-terrain.hcs2",
+      "sha": "2b23fc5cdfd7adb3c6047974919e2713709d5ba1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-16/NEXT.md",
+      "sha": "09d33019608e2799b476e1298d8404070f1b6d9c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-16/construction.json",
+      "sha": "8948ae57896af8717bd1bbbba1598d5de4b0ad9e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-16/supported-terrain.blend",
+      "sha": "afa23dc26dbfd19791c0e582bb1cb1006042dc02"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-16/supported-terrain.glb",
+      "sha": "1285cf04390e14e4ee5bd93f865bff430113cdf7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-16/supported-terrain.hcs2",
+      "sha": "082647cfc93db5a7846e92d18517561a42029432"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-17/NEXT.md",
+      "sha": "c49ec67963b3b2587c5aba47567af27753a9a1ab"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-17/construction.json",
+      "sha": "1cdde335f4c8fee5da9e5e0b1b3d8427e1617d38"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-17/supported-terrain.blend",
+      "sha": "bfe0678490abf118f56f3bf26c405a2e58403e0d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-17/supported-terrain.glb",
+      "sha": "bc3ba273e1900fffeb93c1d74c69b86ae305d0a9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-17/supported-terrain.hcs2",
+      "sha": "1cd6d3020f98bdac454099994109291efd162cd6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-18/NEXT.md",
+      "sha": "7c01e3b860c863aa85ad1edad41eb1be7eba28c7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-18/construction.json",
+      "sha": "ed4c7e9f2b6667c93a3a9da5b9a3223c5fbdd213"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.blend",
+      "sha": "dd100ae295573d0abbc5dd0eb3db8ca574fe6c1d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.glb",
+      "sha": "14a9aae07ffbf4c026c258a325b659a7c680df90"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.hcs2",
+      "sha": "4fa98fa58e88eda669a0b2016230c13199dd1d8b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/CastleHubIntegrationTest.log",
+      "sha": "7730354f5ed923968ded96ae3d91c0d191106eaa"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/GpuReadbackTest.log",
+      "sha": "38d8c186275e0e2edeb599f0b6aec940b88d1e7d"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/LevelAtmosphereTest.log",
+      "sha": "6ea58f52c322ec8a82c290d8e7bf18a23d95fbe7"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/MissionWeatherTest.log",
+      "sha": "15124fdd4743075f123f194971383a52eb256c81"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+      "sha": "633eba86fd46e2a7f81c781db54b19877784a607"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/RecordedWeatherTest.log",
+      "sha": "17a23e8b318bc5409cce916c59cdb42ecb3a6c1e"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/SafeAreaHazeTest.log",
+      "sha": "d9429a2c197ae59a2cb80d9886d0f1c0bbbf5c80"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/WaterReviewRegressionTest.log",
+      "sha": "da7f3a7865b6d0320ddf63698617851a734c868b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/WeatherAssetsIntegrationTest.log",
+      "sha": "803dda5353a01a597df5ee73149d43c5453cfc5d"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/WeatherSkyWorldAnchorTest.log",
+      "sha": "aa3851cdf5bfb84a01a7dae3ec6722134d7d914c"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/atmosphere-package-final.log",
+      "sha": "22c71b442454a8722d985c8d3c00d7f94d009177"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/atmosphere-package-recovery.log",
+      "sha": "e0a798c0a60b7a0918a1af9bd292a55f0898e037"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/atmosphere-package.log",
+      "sha": "93beb5125c29a17088dbe5d30e4e27ee9538a318"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/capture-manifest.json",
+      "sha": "02a9880dfee596e0983652d182ddded4e70dab94"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/courtyard-actual-opengl.log",
+      "sha": "564db69e825b28ec98aee9e4b784204aec62afae"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/courtyard-gpu-checks.json",
+      "sha": "3ab75c83acb8ad49fa78e85f2f59d54940463961"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/courtyard-software-checks.json",
+      "sha": "f81fa75d52bf4b599cde4b9c0c2f90482558d70c"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/courtyard-software.log",
+      "sha": "255ee677315dd50d0b63bf73bed79901701d9056"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/gpu-checks.json",
+      "sha": "1b759cee394f7fb76d7138f42c4a47cb5bce8bc8"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/packaged-runtime-check.json",
+      "sha": "b2e14cb5ca9b0edaab2139b5963b51adab1c21e8"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/runtime-actual-opengl.log",
+      "sha": "0cb2b656d837faa56f40fb2622d27e63fdb10292"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/runtime-software.log",
+      "sha": "ccd3baed54e8ef4fab2c7db13243ebfa8f514d63"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/software-checks.json",
+      "sha": "5cb668ebdd6cfe095840481a0573249ab4d33137"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/source-hashes.json",
+      "sha": "ffcb8107db791b46a1b85be8c91e1389feb78603"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/synthetic-gpu-composite-control.log",
+      "sha": "08c69bc22a27016b18fa240dd54722eac8c33b7b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/atmosphere-all-levels/visual-review.json",
+      "sha": "9d36ca309a42319c2cc8341307d93cb3c9de1186"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "b5bec5ce185907265364cb9b99a93dd192e96733"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "a630f4a8ca2569a4a80388f501cd1808b990fd2d"
+    },
+    {
+      "path": "gpu-client/src/test/java/org/beckenburg/gpu/LevelAtmosphereGpuCapture.java",
+      "sha": "f04f4423ce70a0b63aac1ff2b990f08995a7cd92"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LevelAtmosphere.java",
+      "sha": "8e3abfcddfb9f7d0de65fefcae69093f132f0596"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/SceneRenderer.java",
+      "sha": "2f8c7340f479770df799fea488139a54699c3cc5"
+    },
+    {
+      "path": "src/test/java/org/beckenburg/AllLevelAtmosphereCapture.java",
+      "sha": "8b4f45cbd7f6e642ea7247fee2052edc05201049"
+    },
+    {
+      "path": "src/test/java/org/beckenburg/LevelAtmosphereTest.java",
+      "sha": "5ed91f125354afdbc1b92a8d97c3e863d9bf39e4"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "519f5c3473520e1c934dc289745a659e20ed7781"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "23bd712fb5b1df02cf72de5f4e7ad20a2a4b2b25"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "8f2995c26aadc78a5bd4eedd7c304d74e200c805"
+    },
+    {
+      "path": "tools/build_roster_foundations.py",
+      "sha": "166b8d83cf8e441b2caf607d6bb507f04ed253e9"
+    },
+    {
+      "path": "tools/check_macroterrain_exports.py",
+      "sha": "3beaa641c4eb81ec31465af034ac4f6356ecf36b"
+    },
+    {
+      "path": "tools/check_roster_foundations.py",
+      "sha": "b116414f599787c430c693e5914a33cec468b4d3"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "d5d36cb891a4a8098438e16202c7d798f37a7315"
+    },
+    {
+      "path": "tools/java/RosterFailureContacts.java",
+      "sha": "1bf2a21c52628e3649ecac8ba9a837ae124d35ba"
+    },
+    {
+      "path": "tools/summarize_roster_foundations.py",
+      "sha": "b917d82791efee371b517369459d529fd60c1bfa"
+    },
+    {
+      "path": "tools/verify_level_atmosphere.py",
+      "sha": "a684e2b68c56a7f475a8715f6fb0b6a8a7b146c4"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-courtyard-sheet.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

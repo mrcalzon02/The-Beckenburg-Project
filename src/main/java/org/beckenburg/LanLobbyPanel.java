@@ -26,7 +26,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private final JComboBox<HouseMap.Site> siteChoice=
         new JComboBox<>(java.util.Arrays.stream(HouseMap.Site.values())
             .filter(SiteCatalog::playable).toArray(HouseMap.Site[]::new));
-    private HouseMap.Site selectedSite=HouseMap.Site.HOUSE;
+    private HouseMap selectedLayout;
     private final JButton tuneContract=new JButton("Contract options");
     private CustomContract custom=CustomContract.standard(3);
     private final JTextArea log=new JTextArea(12,52);
@@ -569,7 +569,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     siteChoice.setEnabled(false);
                     lobbyLock.setEnabled(hosted!=null);hostInfo.setEnabled(hosted!=null);
                     role.setEnabled(false);
-                    status.setText("Seat "+client.seat()+" / "+MissionSites.title(selectedSite.name()));
+                    status.setText("Seat "+client.seat()+" / "+MissionSites.title(selectedSite().name()));
                     if("GHOST".equals(client.seat()))avatar.showGhost(
                         remoteLook!=null?remoteLook:localLook,remoteLook!=null);
                     else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
@@ -672,17 +672,31 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         // Subsequent frames update this viewport.
     }
     private void receive(String event){
-        if(event.equals("INFO|network connection ended")){
+        boolean siteFrame=event.startsWith("SITE|");
+        boolean incompatibleSite=false;
+        if(siteFrame){
+            try{
+                var parts=LanProtocol.parts(event);
+                if(parts.size()!=3)throw new IllegalArgumentException("invalid site frame");
+                selectedLayout=HouseMap.forNetworkRevision(HouseMap.Site.valueOf(parts.get(1)),parts.get(2));
+                siteChoice.setSelectedItem(selectedLayout.site());
+            }catch(IllegalArgumentException rejected){
+                incompatibleSite=true;
+            }
+        }
+        if(incompatibleSite||event.equals("INFO|network connection ended")){
             // This event is a transport loss, NOT necessarily the death of the
             // authoritative listen-host process. Keep a running local host alive.
             connectionGeneration++;
             // Capture the host-issued per-seat reconnect capability before closing
             // the old socket. It is not the local installation/player profile ID.
-            resumeTicket=connection==null?null:connection.resumeTicket();
-            if(connection!=null){
+            resumeTicket=connection==null||incompatibleSite?null:connection.resumeTicket();
+            if(connection!=null&&!incompatibleSite){
                 resumeAddress=connection.address();resumePort=connection.port();
                 saveResume(connection);
             }
+            if(incompatibleSite)clearSavedResume();
+            selectedLayout=null;
             boolean localHostSurvives=keepRunningLocalHost(hosted,resumeTicket);
             if(hosted!=null&&!localHostSurvives)resumeTicket=null;
             reconnect.setEnabled(resumeTicket!=null);
@@ -707,18 +721,20 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             hostInfo.setEnabled(localHostSurvives);
             if(role.getSelectedIndex()==1)avatar.showGhost(localLook,false);
             else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
-            status.setText(localHostSurvives
+            status.setText(incompatibleSite?"Disconnected — incompatible location version":localHostSurvives
                 ?"Local host still running — reconnect your reserved seat"
                 :"Disconnected — host or server connection lost");
             caseStatus.setText(localHostSurvives?"Case: active on local host":"Case: connection ended");
             teamStatus.setText("Team: disconnected");
             setCommandEnabled(false);equipmentPage.disconnect();closeWorld();
-            log.append(resumeTicket==null?"Connection ended. You can host or join a fresh match.\n":
+            if(incompatibleSite)log.append("The host's location revision is unavailable in this build or local map selection.\n");
+            else log.append(resumeTicket==null?"Connection ended. You can host or join a fresh match.\n":
                 "Connection interrupted. Reconnect to the same mission while the host reserves your seat.\n");
             return;
         }
         if(worldView!=null)worldView.onEvent(event);
         if(ghostView!=null)ghostView.onEvent(event);
+        if(siteFrame)return;
         if(event.startsWith("REJECT|")||event.startsWith("ERROR|")||event.startsWith("ACCEPT|"))equipmentPage.notice(event);
         if(event.startsWith("REJECT|")&&pendingStart){
             pendingStart=false;startCommandSent=false;waitingReadyAck=false;
@@ -734,20 +750,6 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 if(serverReady&&waitingReadyAck&&pendingStart){
                     waitingReadyAck=false;
                     dispatchStartRound();
-                }
-            }
-            return;
-        }
-        if(event.startsWith("SITE|")){
-            var parts=LanProtocol.parts(event);
-            if(parts.size()==3){
-                try{
-                    selectedSite=HouseMap.Site.valueOf(parts.get(1));
-                    if(!new HouseMap(selectedSite).level().revision().equals(parts.get(2)))throw new IllegalArgumentException("incompatible level revision");
-                    siteChoice.setSelectedItem(selectedSite);
-
-                }catch(IllegalArgumentException rejected){
-                    log.append("Unsupported location version received.\n");
                 }
             }
             return;
@@ -828,12 +830,12 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             }
         }else if(event.startsWith("STATE|")){
             var p=LanProtocol.parts(event);if(p.size()>=4)try{myRoom=Integer.parseInt(p.get(2));}catch(NumberFormatException ignored){}
-            status.setText("Room: "+new HouseMap(selectedSite).roomName(myRoom)+
+            status.setText("Room: "+selectedLayout().roomName(myRoom)+
                 "  |  tick "+p.get(1)+"  |  energy "+p.get(4));
         }else if(event.startsWith("TEAMMAP|")){
             var parts=LanProtocol.parts(event);
             if(parts.size()==7){
-                HouseMap layout=new HouseMap(selectedSite);
+                HouseMap layout=selectedLayout();
                 StringBuilder summary=new StringBuilder("Hunters");
                 for(int i=1;i<=6;i++)summary.append(" H").append(i).append(':')
                         .append(teamRoom(layout,parts.get(i)));
@@ -846,6 +848,13 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             var fields=LanProtocol.parts(event);
             if(fields.size()==8)caseStatus.setText("Health "+fields.get(1)+"  Fear "+fields.get(2)+"  Wards "+fields.get(3)+"  Evidence "+fields.get(4)+"/3  Circle "+fields.get(5)+"  Ritual "+fields.get(6)+"  "+fields.get(7));
         }else{log.append(event+"\n");log.setCaretPosition(log.getDocument().getLength());}
+    }
+    private HouseMap.Site selectedSite(){
+        return selectedLayout==null?HouseMap.Site.HOUSE:selectedLayout.site();
+    }
+    private HouseMap selectedLayout(){
+        if(selectedLayout==null)selectedLayout=new HouseMap(HouseMap.Site.HOUSE);
+        return selectedLayout;
     }
     private static String teamRoom(HouseMap map,String raw){
         int room=LanProtocol.integer(raw,-1,HouseMap.ROOM_COUNT-1);

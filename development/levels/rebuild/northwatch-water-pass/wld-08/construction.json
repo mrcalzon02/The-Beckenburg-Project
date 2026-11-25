@@ -1,0 +1,712 @@
+{
+  "anchors": [
+    {
+      "id": "cistern base",
+      "contact": [
+        3.22,
+        -0.0,
+        11.98
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        3.22,
+        -0.0,
+        12.4
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        3.22,
+        -0.0,
+        12.82
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        3.64,
+        0.0,
+        11.98
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        3.64,
+        -0.0,
+        12.4
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        3.64,
+        -0.0,
+        12.82
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        4.06,
+        0.0,
+        11.98
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        4.06,
+        0.0,
+        12.4
+      ]
+    },
+    {
+      "id": "cistern base",
+      "contact": [
+        4.06,
+        -0.0,
+        12.82
+      ]
+    },
+    {
+      "id": "cistern outlet saddle",
+      "contact": [
+        2.24,
+        1.53,
+        12.4
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        8.8
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        10.1
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        11.5
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        13.2
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        14.6
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        16.0
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        17.4
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        18.799999
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        20.200001
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        21.6
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        23.0
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        24.4
+      ]
+    },
+    {
+      "id": "shed water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        25.6
+      ]
+    },
+    {
+      "id": "lab water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        26.5
+      ]
+    },
+    {
+      "id": "lab water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        27.700001
+      ]
+    },
+    {
+      "id": "lab water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        29.0
+      ]
+    },
+    {
+      "id": "lab water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        30.25
+      ]
+    },
+    {
+      "id": "lab water main saddle",
+      "contact": [
+        2.24,
+        1.16,
+        31.5
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.4,
+        -0.0,
+        8.42
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.4,
+        -0.0,
+        8.49
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.4,
+        -0.0,
+        8.56
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.47,
+        -0.0,
+        8.42
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.47,
+        -0.0,
+        8.49
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.47,
+        -0.0,
+        8.56
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.54,
+        -0.0,
+        8.42
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.54,
+        0.0,
+        8.49
+      ]
+    },
+    {
+      "id": "shed-wash-basin",
+      "contact": [
+        3.54,
+        -0.0,
+        8.56
+      ]
+    },
+    {
+      "id": "shed branch",
+      "contact": [
+        2.67,
+        1.16,
+        8.24
+      ]
+    },
+    {
+      "id": "shed branch",
+      "contact": [
+        3.27,
+        1.16,
+        8.24
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.42,
+        -0.0,
+        31.58
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.42,
+        -0.0,
+        31.65
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.42,
+        -0.0,
+        31.719999
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.49,
+        0.0,
+        31.58
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.49,
+        0.0,
+        31.65
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.49,
+        0.0,
+        31.719999
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.56,
+        -0.0,
+        31.58
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.56,
+        -0.0,
+        31.65
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "contact": [
+        2.56,
+        -0.0,
+        31.719999
+      ]
+    }
+  ],
+  "sleeves": [
+    {
+      "id": "lab water sleeve",
+      "faces": [
+        [
+          2.3,
+          1.16,
+          25.76
+        ],
+        [
+          2.3,
+          1.16,
+          26.24
+        ]
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "shed-wash-basin",
+      "owner": 5,
+      "position": [
+        3.47,
+        0,
+        8.49
+      ],
+      "yaw": 0,
+      "terminal": [
+        3.47,
+        1.0,
+        8.274
+      ],
+      "bounds": [
+        [
+          3.14,
+          0.0,
+          8.24
+        ],
+        [
+          3.8,
+          1.136,
+          8.74
+        ]
+      ],
+      "waste_endpoint": [
+        1.58,
+        -0.41800000000000004,
+        8.49
+      ]
+    },
+    {
+      "id": "lab-wash-basin",
+      "owner": 0,
+      "position": [
+        2.49,
+        0,
+        31.65
+      ],
+      "yaw": 1.5707963267948966,
+      "terminal": [
+        2.274,
+        1.0,
+        31.65
+      ],
+      "bounds": [
+        [
+          2.24,
+          0.0,
+          31.32
+        ],
+        [
+          2.74,
+          1.136,
+          31.98
+        ]
+      ],
+      "waste_endpoint": [
+        1.58,
+        -0.47800000000000004,
+        31.65
+      ]
+    }
+  ],
+  "cistern_bounds": [
+    [
+      2.66,
+      0.0,
+      11.429999
+    ],
+    [
+      4.62,
+      2.269127,
+      13.37
+    ]
+  ],
+  "raceways": [
+    {
+      "id": "cistern gravity outlet",
+      "points": [
+        [
+          2.778,
+          1.53,
+          12.4
+        ],
+        [
+          2.3,
+          1.53,
+          12.4
+        ],
+        [
+          2.3,
+          1.16,
+          12.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "water main along shed west wall",
+      "points": [
+        [
+          2.3,
+          1.16,
+          8.32
+        ],
+        [
+          2.3,
+          1.16,
+          12.4
+        ],
+        [
+          2.3,
+          1.16,
+          25.72
+        ]
+      ],
+      "radius": 0.02,
+      "visible": true
+    },
+    {
+      "id": "closed lab water sleeve",
+      "points": [
+        [
+          2.3,
+          1.16,
+          25.72
+        ],
+        [
+          2.3,
+          1.16,
+          26.28
+        ]
+      ],
+      "radius": 0.021,
+      "visible": false
+    },
+    {
+      "id": "lab wall water main",
+      "points": [
+        [
+          2.3,
+          1.16,
+          26.28
+        ],
+        [
+          2.3,
+          1.16,
+          31.65
+        ]
+      ],
+      "radius": 0.019,
+      "visible": true
+    },
+    {
+      "id": "shed-wash-basin spout feed",
+      "points": [
+        [
+          2.3,
+          1.16,
+          8.32
+        ],
+        [
+          3.47,
+          1.16,
+          8.32
+        ],
+        [
+          3.47,
+          1.16,
+          8.257
+        ],
+        [
+          3.47,
+          1.0,
+          8.257
+        ],
+        [
+          3.47,
+          1.0,
+          8.277
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "shed-wash-basin pedestal waste",
+      "points": [
+        [
+          3.47,
+          0.14,
+          8.49
+        ],
+        [
+          3.47,
+          -0.12,
+          8.49
+        ],
+        [
+          1.76,
+          -0.4,
+          8.49
+        ]
+      ],
+      "radius": 0.024,
+      "visible": false
+    },
+    {
+      "id": "shed-wash-basin below-grade collection stub",
+      "points": [
+        [
+          1.76,
+          -0.4,
+          8.49
+        ],
+        [
+          1.58,
+          -0.41800000000000004,
+          8.49
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "lab-wash-basin spout feed",
+      "points": [
+        [
+          2.3,
+          1.16,
+          31.65
+        ],
+        [
+          2.257,
+          1.16,
+          31.65
+        ],
+        [
+          2.257,
+          1.0,
+          31.65
+        ],
+        [
+          2.277,
+          1.0,
+          31.65
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "lab-wash-basin pedestal waste",
+      "points": [
+        [
+          2.49,
+          0.14,
+          31.65
+        ],
+        [
+          2.49,
+          -0.17,
+          31.65
+        ],
+        [
+          1.76,
+          -0.46,
+          31.65
+        ]
+      ],
+      "radius": 0.024,
+      "visible": false
+    },
+    {
+      "id": "lab-wash-basin below-grade collection stub",
+      "points": [
+        [
+          1.76,
+          -0.46,
+          31.65
+        ],
+        [
+          1.58,
+          -0.47800000000000004,
+          31.65
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    }
+  ],
+  "canonical_assets": {
+    "level_blockout_lighthouse_cistern": "30c140c29e5af26edea999f606c65a87950ad38f19c65ac5ae7951b60e272e54",
+    "level_bath_basin": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf"
+  },
+  "exports": {
+    "development/levels/rebuild/northwatch-water-pass/wld-08/station-with-water.blend": "02922609d5265b0930c77bbecaa3fa7b14fea3657c91a73db2efbe6b4f1e413f",
+    "development/levels/rebuild/northwatch-water-pass/wld-08/station-with-water.glb": "9d1b65f0172e6df6f46e15d3c50da5288a8f39e9c461782ec3ac6001c87f08b5",
+    "development/levels/rebuild/northwatch-water-pass/wld-08/station-with-water.hcs2": "47a3bfda35dc36d4efb43b604c18353daf72fd81a4f538e88124366277e157f2"
+  },
+  "previous_scene": "a36bea99dd0edcbdbc1bae8c728dc1e072f98258ea92e1c8c7dde9a2bf8a857e",
+  "retained_collision_parts": 1089,
+  "added_collision_parts": 46
+}

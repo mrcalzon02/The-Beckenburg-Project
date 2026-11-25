@@ -1,0 +1,848 @@
+{
+  "source": "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json",
+  "exports": {
+    "blend": "d5e86041138e7aa9a80cba21777c500f458a4f6b92004145e3349ca2b24aa4cf",
+    "glb": "6e29fa9ba05f23bf298c46ef15bfc4946f3a33d64558ede05c1e23609f3a6d58",
+    "hcs2": "50f94be7ba2df82006958f429181526842a79bc629e2581bf04b0282b29a543d"
+  },
+  "retained_components": 161,
+  "replaced_placeholders": [
+    "level_blockout_motel_guest_bed.001",
+    "level_blockout_motel_guest_bed.002",
+    "level_blockout_motel_guest_bed.003",
+    "level_blockout_motel_guest_bed.004",
+    "level_blockout_motel_guest_bed.005",
+    "level_blockout_motel_guest_bed.006",
+    "level_blockout_motel_guest_bed.007",
+    "level_blockout_motel_guest_bed.008",
+    "level_blockout_motel_laundry_unit.001",
+    "level_blockout_motel_reception_counter.001"
+  ],
+  "pockets": [
+    {
+      "id": "pines-manager-cupboard",
+      "space": "manager",
+      "owner": 9,
+      "position": [
+        7.55,
+        0,
+        48.0
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          6.95,
+          0.0,
+          47.150002
+        ],
+        [
+          8.252,
+          2.31,
+          48.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "pines-room2-cupboard",
+      "space": "room2",
+      "owner": 1,
+      "position": [
+        7.45,
+        0,
+        28.8
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          6.849999,
+          0.0,
+          27.949999
+        ],
+        [
+          8.151999,
+          2.31,
+          29.65
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "pines-room6-cupboard",
+      "space": "room6",
+      "owner": 6,
+      "position": [
+        44.55,
+        0,
+        28.8
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          43.848,
+          0.0,
+          27.949999
+        ],
+        [
+          45.149998,
+          2.31,
+          29.65
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "pines-manager-cupboard",
+      "type": "hide",
+      "room": 9,
+      "position": [
+        7.55,
+        0,
+        48.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "pines-room2-cupboard",
+      "type": "hide",
+      "room": 1,
+      "position": [
+        7.45,
+        0,
+        28.8
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "pines-room6-cupboard",
+      "type": "hide",
+      "room": 6,
+      "position": [
+        44.55,
+        0,
+        28.8
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "walk-in-cupboard"
+    },
+    {
+      "id": "pines-generator",
+      "type": "generator",
+      "room": 11,
+      "position": [
+        44.200001,
+        0.56,
+        47.919999
+      ],
+      "yaw": 0,
+      "style": "EP-MAIN"
+    },
+    {
+      "id": "pines-breaker",
+      "type": "breaker",
+      "room": 11,
+      "position": [
+        41.150002,
+        0.89,
+        51.104999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EP-MAIN"
+    },
+    {
+      "id": "pines-office-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        20.200001,
+        1.25,
+        49.758999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EP-04"
+    },
+    {
+      "id": "pines-office-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        21.0,
+        2.35,
+        49.576
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-manager-switch",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        6.241,
+        1.25,
+        43.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-09"
+    },
+    {
+      "id": "pines-manager-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        6.424,
+        2.35,
+        44.599998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-laundry-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        45.758999,
+        1.25,
+        42.0
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-10"
+    },
+    {
+      "id": "pines-laundry-light",
+      "type": "light",
+      "room": 10,
+      "position": [
+        45.576,
+        2.35,
+        44.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-plant-switch",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        43.799999,
+        1.25,
+        51.758999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EP-11"
+    },
+    {
+      "id": "pines-plant-light",
+      "type": "light",
+      "room": 11,
+      "position": [
+        44.599998,
+        2.35,
+        51.576
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room1-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        6.241,
+        1.25,
+        21.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-00"
+    },
+    {
+      "id": "pines-room1-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        6.424,
+        2.35,
+        23.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room2-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        6.241,
+        1.25,
+        26.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-01"
+    },
+    {
+      "id": "pines-room2-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        6.424,
+        2.35,
+        28.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room3-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        6.241,
+        1.25,
+        31.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-02"
+    },
+    {
+      "id": "pines-room3-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        6.424,
+        2.35,
+        33.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room4-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        6.241,
+        1.25,
+        36.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EP-03"
+    },
+    {
+      "id": "pines-room4-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        6.424,
+        2.35,
+        38.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room5-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        45.758999,
+        1.25,
+        21.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-05"
+    },
+    {
+      "id": "pines-room5-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        45.576,
+        2.35,
+        23.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room6-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        45.758999,
+        1.25,
+        26.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-06"
+    },
+    {
+      "id": "pines-room6-light",
+      "type": "light",
+      "room": 6,
+      "position": [
+        45.576,
+        2.35,
+        28.35
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room7-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        45.758999,
+        1.25,
+        31.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-07"
+    },
+    {
+      "id": "pines-room7-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        45.576,
+        2.35,
+        33.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "pines-room8-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        45.758999,
+        1.25,
+        36.5
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EP-08"
+    },
+    {
+      "id": "pines-room8-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        45.576,
+        2.35,
+        38.349998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "Eight Pines guest register 01",
+      "type": "native_story",
+      "room": 4,
+      "position": [
+        21.35,
+        0.934677,
+        46.1
+      ],
+      "yaw": 0,
+      "style": "PINES_GUEST_REGISTER"
+    },
+    {
+      "id": "Eight Pines laundry washer 01",
+      "type": "native-device",
+      "room": 10,
+      "position": [
+        43.700001,
+        0.57,
+        41.40365
+      ],
+      "yaw": 0,
+      "style": "WASHING_MACHINE"
+    }
+  ],
+  "furniture": [
+    {
+      "room": "office",
+      "asset": "table_large_2",
+      "use": "reception counter",
+      "bounds": [
+        [
+          20.924999,
+          0.0,
+          45.297222
+        ],
+        [
+          21.775002,
+          0.906667,
+          46.902779
+        ]
+      ]
+    },
+    {
+      "room": "office",
+      "asset": "armchair_1",
+      "use": "waiting chair",
+      "bounds": [
+        [
+          14.685419,
+          0.0,
+          47.925003
+        ],
+        [
+          15.314582,
+          0.677767,
+          48.875
+        ]
+      ]
+    },
+    {
+      "room": "manager",
+      "asset": "bed_2",
+      "use": "manager bed",
+      "bounds": [
+        [
+          7.795673,
+          0.0,
+          41.025002
+        ],
+        [
+          8.904328,
+          2.114364,
+          43.175003
+        ]
+      ]
+    },
+    {
+      "room": "manager",
+      "asset": "level_lived_linen_press_worn",
+      "use": "linen press",
+      "bounds": [
+        [
+          11.224999,
+          0.0,
+          48.463547
+        ],
+        [
+          12.075,
+          1.576364,
+          48.936455
+        ]
+      ]
+    },
+    {
+      "room": "laundry",
+      "asset": "level_laundry_washer_worn",
+      "use": "washer",
+      "bounds": [
+        [
+          43.299999,
+          0.0,
+          40.73637
+        ],
+        [
+          44.099998,
+          0.868699,
+          41.363628
+        ]
+      ]
+    },
+    {
+      "room": "laundry",
+      "asset": "level_laundry_shelf_worn",
+      "use": "linen shelf",
+      "bounds": [
+        [
+          43.868748,
+          -0.0,
+          45.005367
+        ],
+        [
+          44.731251,
+          0.549788,
+          45.294636
+        ]
+      ]
+    },
+    {
+      "room": "room1",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.934815,
+          0.0,
+          20.91
+        ],
+        [
+          9.065186,
+          1.025406,
+          23.09
+        ]
+      ]
+    },
+    {
+      "room": "room1",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          20.822346
+        ],
+        [
+          10.25,
+          0.685713,
+          21.377655
+        ]
+      ]
+    },
+    {
+      "room": "room2",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.937937,
+          0.0,
+          25.91
+        ],
+        [
+          9.062063,
+          2.143866,
+          28.09
+        ]
+      ]
+    },
+    {
+      "room": "room2",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          25.822346
+        ],
+        [
+          10.25,
+          0.685713,
+          26.377655
+        ]
+      ]
+    },
+    {
+      "room": "room3",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.934815,
+          0.0,
+          30.91
+        ],
+        [
+          9.065186,
+          1.025406,
+          33.09
+        ]
+      ]
+    },
+    {
+      "room": "room3",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          30.822346
+        ],
+        [
+          10.25,
+          0.685713,
+          31.377655
+        ]
+      ]
+    },
+    {
+      "room": "room4",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          7.937937,
+          0.0,
+          35.909996
+        ],
+        [
+          9.062063,
+          2.143866,
+          38.09
+        ]
+      ]
+    },
+    {
+      "room": "room4",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          9.65,
+          0.0,
+          35.822342
+        ],
+        [
+          10.25,
+          0.685713,
+          36.377655
+        ]
+      ]
+    },
+    {
+      "room": "room5",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.937939,
+          0.0,
+          20.91
+        ],
+        [
+          44.062061,
+          2.143866,
+          23.09
+        ]
+      ]
+    },
+    {
+      "room": "room5",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          20.822346
+        ],
+        [
+          42.350002,
+          0.685713,
+          21.377655
+        ]
+      ]
+    },
+    {
+      "room": "room6",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.934814,
+          0.0,
+          25.91
+        ],
+        [
+          44.065186,
+          1.025406,
+          28.09
+        ]
+      ]
+    },
+    {
+      "room": "room6",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          25.822346
+        ],
+        [
+          42.350002,
+          0.685713,
+          26.377655
+        ]
+      ]
+    },
+    {
+      "room": "room7",
+      "asset": "bed_2",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.937939,
+          0.0,
+          30.91
+        ],
+        [
+          44.062061,
+          2.143866,
+          33.09
+        ]
+      ]
+    },
+    {
+      "room": "room7",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          30.822346
+        ],
+        [
+          42.350002,
+          0.685713,
+          31.377655
+        ]
+      ]
+    },
+    {
+      "room": "room8",
+      "asset": "bed_1",
+      "use": "guest bed",
+      "bounds": [
+        [
+          42.934814,
+          0.0,
+          35.91
+        ],
+        [
+          44.065186,
+          1.025406,
+          38.09
+        ]
+      ]
+    },
+    {
+      "room": "room8",
+      "asset": "bedside_table_1",
+      "use": "bedside table",
+      "bounds": [
+        [
+          41.75,
+          0.0,
+          35.822342
+        ],
+        [
+          42.350002,
+          0.685713,
+          36.377655
+        ]
+      ]
+    }
+  ]
+}

@@ -28,6 +28,12 @@ public final class LanProtocol {
         if(number<min||number>max)throw new IllegalArgumentException("integer outside bounds");
         return number;
     }
+    static double worldX(HouseMap map,String value){
+        return integer(value,map.networkMinX()*1000,map.width()*1000)/1000.0;
+    }
+    static double worldZ(HouseMap map,String value){
+        return integer(value,map.networkMinZ()*1000,map.height()*1000)/1000.0;
+    }
     public static long sequence(String value) {
         if(value==null||!value.matches("[0-9]{1,15}"))throw new IllegalArgumentException("invalid sequence");
         return Long.parseLong(value);

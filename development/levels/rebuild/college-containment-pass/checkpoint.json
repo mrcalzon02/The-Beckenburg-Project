@@ -1,0 +1,339 @@
+{
+  "status": "COLLEGE_SITE_CONTAINMENT_VERIFIED_FULL_ACCEPTANCE_OPEN",
+  "baseline": "8351fed458ed9dd35fd4d7b0cca00c939b0952a4",
+  "scene_revision": "95f8eed2ee6cfcd3c636798df0904b61504a4374aabfb6352bab70926639de4f",
+  "collision_sha256": "51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5",
+  "roster": "roster.json",
+  "verified_roster": {
+    "native_sites": 25,
+    "retained_prior_native_sites": 24,
+    "all_packets": 29
+  },
+  "native_files": {
+    "college-containment.glb": {
+      "sha256": "92de55770a64288b2cf7a69933c3e5e58d4b583d8bd6e520650ae680dc1d66ac"
+    },
+    "college-containment.hcs2": {
+      "sha256": "51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5"
+    },
+    "college-containment.blend": {
+      "sha256": "3b46c9046e32404a3d4c2545f4f8d721cb2539a38ca4e223296dbf2309f2b26f"
+    }
+  },
+  "plan": "college-containment-plan.svg",
+  "physical_schedule": "college/containment.json",
+  "runtime_schedule": "verification/containment.tsv",
+  "native_geometry_readback": "verification/structural-readback.json",
+  "construction": {
+    "perimeter_spans": 35,
+    "perimeter_bays": 124,
+    "foundation_grade_samples": 12180,
+    "service_gate_pier_centres_m": 8,
+    "well_rims": 5,
+    "protected_edges": 15,
+    "new_flight_guard_pairs": 2,
+    "slab_wall_heads_refitted": 2,
+    "apron": {
+      "seam_edges": 1083,
+      "retained_cut_loop_edges": [
+        42,
+        178
+      ],
+      "soil_triangles": 2529,
+      "square_metres": 22660.87,
+      "outer_limits": [
+        [
+          -44,
+          -30
+        ],
+        [
+          -13,
+          -42
+        ],
+        [
+          32,
+          -44
+        ],
+        [
+          85,
+          -41
+        ],
+        [
+          114,
+          -18
+        ],
+        [
+          122,
+          28
+        ],
+        [
+          117,
+          70
+        ],
+        [
+          111,
+          102
+        ],
+        [
+          89,
+          139
+        ],
+        [
+          64,
+          158
+        ],
+        [
+          36,
+          168.5
+        ],
+        [
+          32,
+          170
+        ],
+        [
+          28,
+          167.92
+        ],
+        [
+          7,
+          157
+        ],
+        [
+          -15,
+          137
+        ],
+        [
+          -35,
+          102
+        ],
+        [
+          -42,
+          60
+        ],
+        [
+          -44,
+          13
+        ]
+      ],
+      "road_width": 8,
+      "road_outer_ends": [
+        [
+          28,
+          167.92
+        ],
+        [
+          36,
+          168.5
+        ]
+      ]
+    },
+    "unchanged_original_terrain_collision_triangles": 8601
+  },
+  "physical_movement": {
+    "perimeter_ground_capsules": 3726,
+    "perimeter_jump_apex_capsules": 3726,
+    "parcel_join_samples": 496,
+    "perimeter_supported_sweeps": 7158,
+    "under_gate_capsules": 100,
+    "fence_open_optical_rays": 189,
+    "well_ground_jump_capsules": 1720,
+    "well_supported_sweeps": 714,
+    "normal_jumps": 5,
+    "baseline_clear_at_jump_apex": 779,
+    "normal_host_ghost_before_accepted_z": 101.36,
+    "normal_host_ghost_candidate_stop_z": 101.05
+  },
+  "inherited_runtime": {
+    "active_doors": 18,
+    "real_host_door_events": 36,
+    "ordinary_and_vertical_route_directions": 88,
+    "circuit_loads": 68,
+    "actual_tcp_peers": 4,
+    "rooms": 15,
+    "searchable_spaces": 40,
+    "rituals": 3,
+    "sealed_seam_checks": 1283,
+    "van_round_trip_journeys": 2
+  },
+  "runtime": {
+    "software": "verification/software-runtime.txt",
+    "opengl": "verification/opengl-runtime.txt",
+    "gpu": "NVIDIA RTX 5070 OpenGL 3.3.0 NVIDIA 616.64",
+    "packaged_runtime": "verification/package.txt",
+    "regressions": {
+      "InteractionFocusTest": "PASS",
+      "InteractionNetworkTest": "PASS",
+      "DoorSwingTest": "PASS",
+      "ArchitecturalPlansTest": "PASS",
+      "LevelEnclosureTest": "PASS",
+      "GroundRecoverySupportParityTest": "PASS",
+      "LanWorldRenderTest": "PASS",
+      "PlayerJumpTest": "PASS",
+      "LanWorldTest": "PASS"
+    }
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-native-gate-piers.png",
+      "backend": "native",
+      "sha256": "a3bb38c126c94f9e33c2d99f9651676d2e626dda5db41192f9238e509be26bbe",
+      "size": [
+        1280,
+        910
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-native-parcel.png",
+      "backend": "native",
+      "sha256": "bffe68ec165afd9ad9ebb606ebde7c7a22bf4f6c4a21fe0f4be0bf4f0ab57fdc",
+      "size": [
+        1280,
+        910
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-native-tower-cutaway.png",
+      "backend": "native",
+      "sha256": "87ce6fcc789cdd6df70634c448a14c9e1cde6e8b002bc1a42f3955b4757a8365",
+      "size": [
+        1280,
+        910
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-arrival-van.png",
+      "backend": "opengl",
+      "sha256": "f5dbbbe9e27d15e2fa011d63dd2211e3d68262a6fbaa17df876d2776e713427e",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-east-fence-return.png",
+      "backend": "opengl",
+      "sha256": "3c21b944f69a94d61e9793907d684238deee1f4d26ecbf9ba080ba1d174465a2",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-north-tower-guard.png",
+      "backend": "opengl",
+      "sha256": "eb0f7ceb0e0865ae46344b6c6c9ed0ddc1ddb5f63aea2bf67a7cf124571f58d0",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-seminar-bearing.png",
+      "backend": "opengl",
+      "sha256": "30a9d2113b0d7c5c2f339e8ef47130c996caa3871bbc73f1bbf937d4be7ca813",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-seminar-before.png",
+      "backend": "opengl",
+      "sha256": "beb9cc791ba27c74b1794d752443c706c726f9e14fec763418844aa52b5a6c9a",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-cellar-guard.png",
+      "backend": "opengl",
+      "sha256": "028220149e7438b972d39f550f1d788ff21547e7d4497956fc0481e98dcf8428",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-gate.png",
+      "backend": "opengl",
+      "sha256": "f5b2a2499b5b2706a09433c04827d41865903a3c6241061c40bc4848a8bf3469",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-arrival-van.png",
+      "backend": "software",
+      "sha256": "1807b8709a8b5e06a82d822cc4471fae629f8673fc625896f5446b3e6b4d3cf7",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-east-fence-return.png",
+      "backend": "software",
+      "sha256": "21890cc2a28e76c57ebaae1cd4f7bd912e4d7da73176034afe99083e1c83806a",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-north-tower-guard.png",
+      "backend": "software",
+      "sha256": "2b1f1be4ded8bc702e84565ac0c0ef9191236e43a9f74c13f99af7f0a2a1f897",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-seminar-bearing.png",
+      "backend": "software",
+      "sha256": "e945b61f70bcf29bd6e3a9f9843a30ecb65fadb100affc42cdf94018e6caeca0",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-seminar-before.png",
+      "backend": "software",
+      "sha256": "e1bcb8b796b32ec02bd6ed489756c190fdc1791e846588107ca4f5b7d5a2d318",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-service-cellar-guard.png",
+      "backend": "software",
+      "sha256": "d69747ddf0a8945c9b49d177995f0200108e0e09434c4fe6d9eae7a7964a0822",
+      "size": [
+        1120,
+        700
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-service-gate.png",
+      "backend": "software",
+      "sha256": "bcff6f3f971a7624e4f8f708509b7c142d46100898a6849b41bf5ae96d26ff66",
+      "size": [
+        1120,
+        700
+      ]
+    }
+  ],
+  "release": "HELD_DRAFT_REVIEW",
+  "remaining_acceptance": [
+    "Develop final directional scenery and review 360-degree weather and sight lines, including windows and upper access.",
+    "Install and verify water, drainage, heating and ventilation equipment, complete the approved fit-out and story, and audit the full staged case.",
+    "Finish public selection, production peer dispatch and release readiness independently of this staged case.",
+    "Resolve the prior House native window host acknowledgement failure recorded in DEV-592."
+  ],
+  "next_action": "Detail and verify the College maintenance plumbing and hydronic distribution against the installed service bays and temperature contracts.",
+  "publication_readback": "verification/publication-readback.json"
+}

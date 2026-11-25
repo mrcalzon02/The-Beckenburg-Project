@@ -1,0 +1,609 @@
+[
+  {
+    "site": "academy",
+    "sha256": "b8bf42dae4c5e617ea1fe4191aec8ea9f5847aaae8311cc7571f7d901311375c",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "asylum",
+    "sha256": "6b8e50ac383638e7d4ede66a9e45c223ee7c1726aa70852d6247958d49cb5cc5",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "church",
+    "sha256": "ee132bd6998fa419a9c75a0eee74b016c3d15ac09326aa40121d015fb264684f",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "college",
+    "sha256": "61e3577c942b0c511013298a6e9511d7a4d77e2a123896b79aec0e0c07308ec1",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "farmhouse",
+    "sha256": "4921da8be025b9e212bdf6bde92e0e9e164d3976776f3a849dcbec4dd7d3f48e",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "mansion",
+    "sha256": "807fc82874d35a2cd9a5760d7a2fd9b276087ff685f99157ba36bfed0c115c56",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "prison",
+    "sha256": "0276835b0bf5c3e9a6bea918ea73064581791ebd1e644b7ebcd24952e0099c6e",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "school",
+    "sha256": "88b2b2c9b6abf1a21766654e1026b91757d6f62b3a08936774b1c7308f53b4e4",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-03",
+    "sha256": "e329e5ce5116c01272b03911aeca8b233199b89eb9ae20d91f1efefd39e6c02e",
+    "degenerate_triangles": [
+      {
+        "component": "Flat route shell Wall wash W",
+        "triangle": 15,
+        "coordinates": [
+          47.96364212036133,
+          2.200000047683716,
+          50.97999954223633,
+          47.96364212036133,
+          2.200000047683716,
+          50.97999954223633,
+          47.91999816894531,
+          2.200000047683716,
+          50.983116149902344,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Wall wash W",
+        "triangle": 18,
+        "coordinates": [
+          48.08000183105469,
+          2.200000047683716,
+          50.97168731689453,
+          47.96364212036133,
+          2.200000047683716,
+          50.97999954223633,
+          47.96364212036133,
+          2.200000047683716,
+          50.97999954223633,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Wall wash W.001",
+        "triangle": 12,
+        "coordinates": [
+          48.036354064941406,
+          2.200000047683716,
+          53.02000045776367,
+          47.91999816894531,
+          2.200000047683716,
+          53.02831268310547,
+          48.036354064941406,
+          2.200000047683716,
+          53.02000045776367,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Wall wash W.001",
+        "triangle": 14,
+        "coordinates": [
+          48.036354064941406,
+          2.200000047683716,
+          53.02000045776367,
+          48.07206344604492,
+          2.200000047683716,
+          53.01744842529297,
+          48.036354064941406,
+          2.200000047683716,
+          53.02000045776367,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "site": "wld-04",
+    "sha256": "c84d61be44d4f5f5654ae7854ba629fbdc5631d31fff6f73418640e9173ba705",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-05",
+    "sha256": "ab6a6c74fbbd14c2df1aae01d538fb329f87b6071964b90d20a84414309e76be",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-06",
+    "sha256": "54f61e7ac360ea349f713e7a34bf6e17683ef384d32143228bd8bdfb31968851",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-07",
+    "sha256": "7881b7e8d10b70ba51d4a8c85ea2165afb5d637a46a46e23fe769351397e00cc",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-07-mortuary",
+    "sha256": "82248758a218739a1ec8786ab2ae53b14a44f0c46ff3a097c3aa4f9b5bc49e7f",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-08",
+    "sha256": "71c583fd91173032e4566c7202ed91a76199b2feaf260222ae94f1e7d5b597c7",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-09",
+    "sha256": "c9f39fd2ddde9775d98fe7a8cbbf74a4266e52b5f0797964e632d215672ce8ae",
+    "degenerate_triangles": [
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 15,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 16,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.02000045776367,
+          -3.799999952316284,
+          48.0612907409668,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 21,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          44.25,
+          2.0,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 26,
+        "coordinates": [
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 47,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 53,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 63,
+        "coordinates": [
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          41.28959274291992,
+          -3.799999952316284,
+          48.06406021118164,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 64,
+        "coordinates": [
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          41.52912521362305,
+          -3.799999952316284,
+          48.0,
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 66,
+        "coordinates": [
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.92000198364258,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 73,
+        "coordinates": [
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          36.0,
+          2.0,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 87,
+        "coordinates": [
+          44.25,
+          2.0,
+          47.91999816894531,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 88,
+        "coordinates": [
+          44.25,
+          2.0,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 94,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.02000045776367,
+          -3.799999952316284,
+          48.0612907409668,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall turbine S",
+        "triangle": 96,
+        "coordinates": [
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 16,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 47,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 48,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          43.02000045776367,
+          -3.799999952316284,
+          48.05691909790039,
+          43.0621452331543,
+          -3.799999952316284,
+          48.07999801635742,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 50,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 56,
+        "coordinates": [
+          44.25,
+          -3.0,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 60,
+        "coordinates": [
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          41.52912521362305,
+          -3.799999952316284,
+          48.0,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 62,
+        "coordinates": [
+          41.457122802734375,
+          -3.799999952316284,
+          47.92000198364258,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          41.457122802734375,
+          -3.799999952316284,
+          47.91999816894531,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 68,
+        "coordinates": [
+          44.25,
+          -3.0,
+          47.91999816894531,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          43.23992156982422,
+          -3.799999952316284,
+          47.91999816894531,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 75,
+        "coordinates": [
+          41.5640869140625,
+          -3.799999952316284,
+          48.038848876953125,
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 82,
+        "coordinates": [
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          41.60112380981445,
+          -3.799999952316284,
+          48.08000183105469,
+          44.25,
+          -3.0,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 86,
+        "coordinates": [
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          43.0621452331543,
+          -3.799999952316284,
+          48.08000183105469,
+          44.25,
+          -3.0,
+          48.08000183105469,
+          6
+        ]
+      },
+      {
+        "component": "Flat route shell Bayed shell Wall workshop N",
+        "triangle": 94,
+        "coordinates": [
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          41.28959274291992,
+          -3.799999952316284,
+          48.06406021118164,
+          41.52912139892578,
+          -3.799999952316284,
+          48.0,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "site": "wld-10",
+    "sha256": "ee145a1d57e3f2bfe8135c54febf376fd154f1e27bb61ac48915800cfaeaefdc",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-11",
+    "sha256": "df9051c192e25caff05680b5abdb53eed311441264d733e5d32c62b59f2625e5",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-12",
+    "sha256": "de95807d78f6f79a1d9923838b7ea806238013c81ee87ebd11734807f317b879",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-13",
+    "sha256": "01619a6289aaa14bd402dd5214944c343362df80ee11c2e0ddad037761db91a5",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-14",
+    "sha256": "10477543362b32b918276a5d281babca1d1128fba4f8455f7b3f655e10605728",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-15",
+    "sha256": "ff861c2fb01edeabc39737974cb9269a949d82c0b8baee585b7959e695a44642",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-16",
+    "sha256": "39272b66ae42aff520407a191fb35863b81b9a9b082fb2a5176bd42d3f1c4c01",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-17",
+    "sha256": "5396c2708d14cdcae7e89cd6e4a8b1ccb5fdd8760cc140e84490b93cc7520c00",
+    "degenerate_triangles": []
+  },
+  {
+    "site": "wld-18",
+    "sha256": "470cf0a94618d9a7f9051d6f8e32037f24d63e91d2622df8aef045c02bc06c1a",
+    "degenerate_triangles": []
+  }
+]

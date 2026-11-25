@@ -1,0 +1,19 @@
+{
+  "glb_sha256": "609d0e31d5656cec8eef7c639d67ae21765296950cf35b54f862f32ea6d66bd4",
+  "native_sha256": "a96d1cbbafd3d5e42c0dff7feb4f1db74e0c06699cfbd944e7a4e073a91cc6c0",
+  "retained_native_records": 496,
+  "new_closed_parts": 15,
+  "canonical_van_triangles": 2689,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/structure/east-bank-stilling-channel.png",
+      "sha256": "dddc1987c263ec28e197e94b6fc0df1a23bf584e9d45f3589fab8ae30b77eaa8",
+      "source_glb_sha256": "609d0e31d5656cec8eef7c639d67ae21765296950cf35b54f862f32ea6d66bd4"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/structure/stilling-channel-cast-invert.png",
+      "sha256": "e6ce9d1cc735cdb04d4728e6e14d750e28781f3cb423d73abe8d0dbd26d3c975",
+      "source_glb_sha256": "609d0e31d5656cec8eef7c639d67ae21765296950cf35b54f862f32ea6d66bd4"
+    }
+  ]
+}

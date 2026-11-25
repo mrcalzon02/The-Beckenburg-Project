@@ -1,0 +1,23 @@
+{
+  "id": "WLD-08",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -2.5,
+    0
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Wind-scoured central trough runs between the station wings; snow/rock berms build beyond the outer service elevations.",
+  "construction_response": "Keep station on short supported plinths; service tunnel remains a buried structure. Move shelter or antenna service route if berms obstruct their real clearances.",
+  "source_layout": "development/levels/layouts/wld-08/layout.json",
+  "source_layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+  "spec_sha256": "da0085ed2b7ae6765dfbbd91ddb5ae15f5cbd00aa4aa80645f08c4c6a1dfd2c2",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.2519499865562136,
+    1.8328909815803562
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

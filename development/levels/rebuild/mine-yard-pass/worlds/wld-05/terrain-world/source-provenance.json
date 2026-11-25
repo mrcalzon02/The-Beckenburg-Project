@@ -1,0 +1,30 @@
+{
+  "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world",
+  "builders": {
+    "tools/java/RebuildTieredEarthworks.java": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+    "tools/java/RebuildStairCellPunches.java": "57288fc8976428f996f625bcfe2b44e0b7777e115eefe8848b1b72ca088b6455"
+  },
+  "grade": {
+    "site": "WLD-05",
+    "changed_vertices": 433,
+    "raised_vertices": 371,
+    "lowered_vertices": 62,
+    "max_change_m": 3.409465313,
+    "source_height_sha256": "e13d2136218a123648d0325daeaf37bbd3efa4352b71e92f2d341001b735ac88",
+    "saved_topology_sha256": "837e9334125baa9923ebdef382fe2839e9c4d147e9b9f6f852684f0484f56b9a",
+    "saved_cuts_sha256": "650180e121f5d9df0af3775b680323f3b759c53c750186829175b17ca66a438c",
+    "hole_controls": 1152,
+    "disk_reopen_verified": true,
+    "physics_sha256": "bcb85527dd878497153470073c1aa659c9f2a5d27c25c74380fc7f1d4eb04875",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "foundation": {
+    "source_height_and_layers_unchanged": true,
+    "disk_reopen_verified": true,
+    "prior_and_new_hole_controls": 1153,
+    "cutouts_before": 1745,
+    "cutouts_after": 1806,
+    "physics_sha256": "26b8f40a993b91867cdd62c618c3cf97decad3c93075dbe83eb0c2e2ee50867e"
+  },
+  "terrain_sha256": "26b8f40a993b91867cdd62c618c3cf97decad3c93075dbe83eb0c2e2ee50867e"
+}

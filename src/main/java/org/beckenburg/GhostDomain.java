@@ -121,14 +121,17 @@ public final class GhostDomain {
     }
     /** Only the host calls this; clients cannot provide their own observations. */
     public Observation observe() {
+        var availableExits = exits(room);
+        if (!map.temporarySafeAreas().isEmpty())
+            availableExits = availableExits.stream().filter(to -> SafeAreaBarrier.ghostSpawn(map,to)!=null).toList();
         List<Action> allowed = new ArrayList<>();
         for (Action action : Action.values()) {
-            if (action == Action.DRIFT ? exits(room).stream().anyMatch(to -> valid(action, to)) : valid(action, room)) {
+            if (action == Action.DRIFT ? availableExits.stream().anyMatch(to -> valid(action, to)) : valid(action, room)) {
                 allowed.add(action);
             }
         }
         return new Observation(tick, room, anchorRoom, energy, manifested(), hearsHunter,
-                exits(room), allowed);
+                availableExits, allowed);
     }
     public Resolution dispatch(Command command) {
         Objects.requireNonNull(command, "command");
@@ -139,6 +142,8 @@ public final class GhostDomain {
         if (!valid(command.action(), command.targetRoom()))
             return rejected(command, "insufficient energy, cooldown or invalid target/state");
         Action a = command.action();
+        if (a==Action.DRIFT && SafeAreaBarrier.ghostSpawn(map,command.targetRoom())==null)
+            return rejected(command, "destination has no unprotected footing");
         energy -= GhostBehavior.cost(archetype,a,COST[a.ordinal()]);
         lastActionTick[a.ordinal()] = tick;
         int fear = 0, harm = 0;

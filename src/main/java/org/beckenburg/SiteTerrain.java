@@ -12,18 +12,12 @@ public final class SiteTerrain {
     /** Saved manual terrain revisions are picked up when loading a map again. */
     public static synchronized SiteTerrain of(LevelDefinition level){
         if(!level.id().equals("blackpine"))return null;
-        java.nio.file.Path path=org.beckenburg.editor.TerrainZoneDocument.defaultPath(level.id());
-        String stamp="";
-        try{
-            if(java.nio.file.Files.isRegularFile(path))
-                stamp=java.nio.file.Files.getLastModifiedTime(path).toString()
-                    +":"+java.nio.file.Files.size(path);
-        }catch(java.io.IOException problem){
-            throw new IllegalStateException("Cannot inspect authored terrain revision",problem);
-        }
-        String key=level.revision()+":"+stamp;
+        String key=level.revision();
         SiteTerrain found=CACHE.get(key);if(found!=null)return found;
         var terrain=new SiteTerrain(level);
+        var binding=level.socket("terrain_profile",12);
+        if(binding!=null&&!binding.style().endsWith("|edits="+terrain.editRevision))
+            throw new IllegalStateException("Blackpine terrain changed during level load");
         if(CACHE.size()>=4)CACHE.remove(CACHE.keySet().iterator().next());
         CACHE.put(key,terrain);
         return terrain;
@@ -31,6 +25,7 @@ public final class SiteTerrain {
     public final double x0=3,z0=1,x1=68,z1=79.5;
     public final int nx=(int)((x1-x0)/STEP)+1,nz=(int)((z1-z0)/STEP)+1;
     private final double[] heights=new double[nx*nz];
+    private final String editRevision;
     private final LevelDefinition level;private BufferedImage diffuse;private int material=-1;
     private record Pad(double x0,double z0,double x1,double z1,double y){}
     private final List<Pad> pads=new ArrayList<>();
@@ -46,12 +41,21 @@ public final class SiteTerrain {
             try{
                 var edits=org.beckenburg.editor.TerrainZoneDocument.load(path,level.id(),
                     new org.beckenburg.editor.TerrainZoneDocument.Grid(x0,z0,STEP,nx,nz));
-                for(int iz=0;iz<nz;iz++)for(int ix=0;ix<nx;ix++)
-                    heights[iz*nx+ix]+=edits.delta(ix,iz);
+                var deltas=edits.snapshot().deltas();
+                for(int i=0;i<heights.length;i++)heights[i]+=deltas[i];
+                editRevision=editRevision(deltas);
             }catch(java.io.IOException error){
                 throw new IllegalStateException("Cannot load authored Blackpine terrain",error);
             }
-        }
+        }else editRevision="none";
+    }
+    private static String editRevision(double[] deltas){
+        var bytes=java.nio.ByteBuffer.allocate(deltas.length*Double.BYTES);
+        for(double delta:deltas)bytes.putDouble(delta==0?0:delta);
+        try{
+            var digest=java.security.MessageDigest.getInstance("SHA-256");
+            return HexFormat.of().formatHex(digest.digest(bytes.array()));
+        }catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
     }
     public static double grade(double z){return RISE*Math.max(0,Math.min(1,(ROAD_Z-z)/(ROAD_Z-BACK_Z)));}
     private static double smooth(double a,double b,double value){double t=Math.max(0,Math.min(1,(value-a)/(b-a)));return t*t*(3-2*t);}
@@ -114,7 +118,7 @@ public final class SiteTerrain {
         var props=base.props().stream().map(p->new Prop(p.mesh(),p.room(),p.x(),p.y()+offset(base,terrain,p.x(),p.z(),p.room()),p.z(),p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),p.support())).toList();
         var sockets=new ArrayList<Socket>();
         for(var s:base.sockets())sockets.add(new Socket(s.id(),s.type(),s.room(),s.x(),s.y()+offset(base,terrain,s.x(),s.z(),s.room()),s.z(),s.yaw(),s.style()));
-        sockets.add(new Socket("blackpine-terrain-profile","terrain_profile",12,35.5,0,ROAD_Z,0,VERSION+"|rise="+RISE+"|cell="+STEP+"|routes="+baseRoutes()));
+        sockets.add(new Socket("blackpine-terrain-profile","terrain_profile",12,35.5,0,ROAD_Z,0,VERSION+"|rise="+RISE+"|cell="+STEP+"|routes="+baseRoutes()+"|edits="+terrain.editRevision));
         var colliders=new ArrayList<Collider>();
         for(var c:base.colliders()){
             if(base.sockets().stream().anyMatch(s->s.room()>=12&&s.type().equals("enclosure")&&Math.hypot(s.x()-c.x(),s.z()-c.z())<.001))continue;

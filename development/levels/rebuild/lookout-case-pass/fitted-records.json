@@ -1,0 +1,221 @@
+{
+  "exports": {
+    "blend": "48fef3765e0cfa6e978aec888019c0014171ce5717de81324d632e900946a741",
+    "glb": "b576880e706b4cc27ae2519c8ee065b015cfabaceaf533ee8254ad6ef1cef2f5",
+    "hcs2": "c41dfb6f7304985ee253d91f6c11627639662b06d06b16f2753d5f0e59ad1777"
+  },
+  "retained_components": 485,
+  "added_components": 9,
+  "preserved_bench_source": "level_blockout_workbench.001",
+  "records": [
+    {
+      "id": "TRANSMISSION",
+      "asset": "level_story_letters",
+      "asset_sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "owner": 4,
+      "position": [
+        43.05,
+        6.9104,
+        15.73
+      ],
+      "scale": 1,
+      "support": "Ranger station radio workbench",
+      "bounds": [
+        [
+          42.919125,
+          6.9109,
+          15.62368
+        ],
+        [
+          43.193039,
+          6.946112,
+          15.835818
+        ]
+      ]
+    },
+    {
+      "id": "disconnected station radio",
+      "asset": "level_event_radio_worn",
+      "asset_sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+      "owner": 4,
+      "position": [
+        42.41,
+        6.910399,
+        15.58
+      ],
+      "scale": 1,
+      "support": "Ranger station radio workbench",
+      "bounds": [
+        [
+          42.241436,
+          6.910399,
+          15.515
+        ],
+        [
+          42.560001,
+          7.360809,
+          15.663
+        ]
+      ]
+    },
+    {
+      "id": "SIGHTING_LOG",
+      "asset": "level_trace_journal",
+      "asset_sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+      "owner": 10,
+      "position": [
+        25.28,
+        15.7154,
+        2.42
+      ],
+      "scale": 0.48,
+      "support": "level_blockout_lookout_spotter.001",
+      "bounds": [
+        [
+          25.170801,
+          15.7154,
+          2.348
+        ],
+        [
+          25.3892,
+          15.73436,
+          2.492
+        ]
+      ]
+    }
+  ],
+  "workrooms": [
+    {
+      "zone": "hut",
+      "label": "communications desk",
+      "asset": "level_workbench_worn",
+      "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+      "bounds": [
+        [
+          8.400001,
+          6.0,
+          15.3475
+        ],
+        [
+          10.2,
+          7.22,
+          16.0525
+        ]
+      ],
+      "pivot": [
+        9.300000190734863,
+        6.0,
+        15.6875
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "zone": "hut",
+      "label": "backup radio",
+      "asset": "level_event_radio_worn",
+      "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+      "bounds": [
+        [
+          9.140718,
+          6.946,
+          15.626
+        ],
+        [
+          9.459283,
+          7.39641,
+          15.774
+        ]
+      ],
+      "pivot": [
+        9.309283256530762,
+        6.946000099182129,
+        15.690999984741211
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": [
+        "Mine case Hut communications bench 01"
+      ]
+    },
+    {
+      "zone": "hut",
+      "label": "Hut rest bench",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          7.425,
+          6.0,
+          22.992695
+        ],
+        [
+          9.175,
+          6.88,
+          23.607306
+        ]
+      ],
+      "pivot": [
+        8.300000190734863,
+        6.0,
+        23.332305908203125
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "zone": "store",
+      "label": "Supply repair bench",
+      "asset": "level_work_repair_bench",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "bounds": [
+        [
+          41.025002,
+          6.0,
+          35.851498
+        ],
+        [
+          43.474998,
+          7.645,
+          36.848499
+        ]
+      ],
+      "pivot": [
+        42.25,
+        6.0,
+        36.246498107910156
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "zone": "store",
+      "label": "Supply equipment locker",
+      "asset": "level_work_crew_footlocker",
+      "sha256": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+      "bounds": [
+        [
+          41.652,
+          6.0,
+          32.186245
+        ],
+        [
+          42.648003,
+          6.88073,
+          32.913754
+        ]
+      ],
+      "pivot": [
+        42.150001525878906,
+        6.0,
+        32.628753662109375
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    }
+  ]
+}

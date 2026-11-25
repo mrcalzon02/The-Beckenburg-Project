@@ -1,0 +1,56 @@
+{
+  "source_glb_sha256": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+  "source_native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c",
+  "canonical_van_triangles": 2689,
+  "canonical_van_geometry_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "door_controls": {
+    "aperture_rays": 27,
+    "standing_sills": 18,
+    "solid_jamb_rays": 6
+  },
+  "school_walkable_receivers": [],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-radio-generator-threshold.png",
+      "sha256": "abb95186a58681b1084c88ce71063b534f2dfdb470174b0638514a533d459115",
+      "camera": [
+        24,
+        -19,
+        1.57
+      ],
+      "target": [
+        15,
+        -19,
+        1.25
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-generator-well-turn.png",
+      "sha256": "b88ca1673c9dbf425df3508c25c9241ece78a7b2f442aa32a1c2266412bb5db1",
+      "camera": [
+        13.35,
+        -19.45,
+        1.55
+      ],
+      "target": [
+        11.35,
+        -16.15,
+        0.95
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-canonical-roadhead.png",
+      "sha256": "acc7930b0b13aa3c0c72dc69ca60ca45c13005f3bdd6c88fe52ad0a33305dd77",
+      "camera": [
+        42,
+        -84,
+        15
+      ],
+      "target": [
+        32,
+        -60,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "status": "NATIVE_PRISON_SALLY_GATE_AND_CONNECTED_TCP_CASE_STAGED",
+  "prior_commit": "613a967707274674693b7add8bb31221a610c31f",
+  "native_scene_revision": "b016de9ba54b44b4421c882735f17792d653edf588184180a491d63f5ceb907a",
+  "preserved_geometry": 1052,
+  "authored_search_spaces": 37,
+  "stable_gameplay_owners": 15,
+  "retained_ritual_anchors": 3,
+  "existing_physical_link_replays": 60,
+  "manual_releases": 2,
+  "wall_bearings": 6,
+  "gate_travel_m": 2.53,
+  "matched_editor_poses": 2,
+  "matched_editor_triangles": 336,
+  "lan_peers": 4,
+  "verified_modes": [
+    "Closed and parked gate against standing and crouched movement, sight, objects and acoustics",
+    "Both physical releases aimed in each state",
+    "Real TCP moves through the aperture twice during a controlled host outage",
+    "Packaged executable with staged native scene, software and Windows RTX 5070 OpenGL captures",
+    "Ravenshade packaged four-peer regression passed again"
+  ],
+  "still_open": [
+    "Prison plant breaker and circuits, ghost-triggered electrical outage and physical reset",
+    "Remaining custody doors and release policy, full room/prop and containment inspection",
+    "Ordinary packaged map selection, complete investigation progression and promotion"
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/arrival.tsv",
+      "bytes": 5358,
+      "sha256": "ea0d492c771b9a70554c35a4f2cc350d3ccaf30a920237e1d2b7b1337bcbc75e"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/mission.tsv",
+      "bytes": 3899,
+      "sha256": "ed5fb9cee1fd55af8e8eb3f67a48a8fe3acca342a4dfc452fbf81481d52436a2"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/gate.tsv",
+      "bytes": 311,
+      "sha256": "2cdbeb22df9c20131f4236bac4072680437feef91d2558a58bb48c11b71a00aa"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/door-survey.tsv",
+      "bytes": 281,
+      "sha256": "35c3febfdef458b1b804c6dd26334430dffec09003ac398367dee9202d4f2523"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/construction.json",
+      "bytes": 2099,
+      "sha256": "ac601dfc51f9085bd20336d216a4ba6089190340c25f853d848689a9a8ea29bb"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/prison-sally-port.blend",
+      "bytes": 1038864,
+      "sha256": "c8ef03d54268520cc690f62ea710fc67b3957efce7135deb80b647d5879919ef"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/prison-sally-port.glb",
+      "bytes": 3932680,
+      "sha256": "13ed2e3157dd601b7ac40fe9f5fe10b177e1e1dbd0bcfce8ed56d3a0f9b74cf3"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/prison-sally-port.hcs2",
+      "bytes": 934449,
+      "sha256": "7e6b21cf6061627488a561c7cb42c16381253de3b7169f9e68f3c96447ba0c8d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/sally-moving-panel.glb",
+      "bytes": 22120,
+      "sha256": "b69bd8e296ea63e627811689b7a7e5ed2d4ed5e0f82133d7fe3acf2bfd125cb2"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/sally-gate-plan.svg",
+      "bytes": 2392,
+      "sha256": "56c1bbf5a952a354d88ecfa66b6d11ba6e9d74a0a9c45e403f6fdfaa575bf4be"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/verification/editable-gate-poses.tsv",
+      "bytes": 86,
+      "sha256": "ab0797ee31d2a69b6bf67ce18f138707e3fa4b0cb5f9c7300fa595282e8e7e8a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/verification/opengl.tsv",
+      "bytes": 843,
+      "sha256": "5bc3d0f788ecca9ff2e8c9e7b0a565670e568383d167b58499904eed568fc932"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/verification/staged-approach.tsv",
+      "bytes": 1023,
+      "sha256": "988fa4c62142e93f7f1afbf5b8fefc9afbc85a4ac4c485712f18bfa42b5c913d"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-gate-closed-yard.png",
+      "bytes": 380051,
+      "sha256": "173970b0a6586da7efdf1b04b58be23f3b0c8d3bbf1ea262642d33383773ab1d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-gate-open-yard.png",
+      "bytes": 299325,
+      "sha256": "4c79eeb180e46dbca816da039a21a95fa55c857640d12a07f408391b08ed10b5"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-mechanism-closed.png",
+      "bytes": 396108,
+      "sha256": "0593512e34b76af057a099641a6dba9b176a3c18566856a30463a9f8bbce63f1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/opengl/sally-mechanism-open.png",
+      "bytes": 381452,
+      "sha256": "606d55b49436a0b867707b20493001a82fd802829090b7847c4ccfc0126710b1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-gate-closed-yard.png",
+      "bytes": 380475,
+      "sha256": "c1df2fe74658ae907caade23b559802fed70774d5cc58dc89525d7e2127ea8a3"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-gate-open-yard.png",
+      "bytes": 299909,
+      "sha256": "3f0632ffb391cb25fdaa2c96778293d9b238e8af0c283e9b546fee59e86bb2d8"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-mechanism-closed.png",
+      "bytes": 396348,
+      "sha256": "7999cb3cd13944786ddafe52444e61926794c4aa94930074e979029773fbf477"
+    },
+    {
+      "path": "development/levels/rebuild/prison-sally-gate-pass/captures/sally-mechanism-open.png",
+      "bytes": 381495,
+      "sha256": "9f54a6565a65d90dfe8ed9807be20ee4c44e9d3a122cb805eccc09846524eebc"
+    }
+  ]
+}

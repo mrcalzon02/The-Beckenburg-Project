@@ -38,6 +38,38 @@ public final class LanGhostPursuitTest {
         ok(spatial.pose().room()==5&&map.roomAt(spatial.pose().x(),spatial.pose().y(),spatial.pose().z())==5,
                 "AI cannot step across a room wall");
         ok(brain.memory(80)==null,"the target must expire rather than persist forever");
+        // A faint chat must NOT override a loud fresh ritual or strong voice
+        // merely because CHAT has a later enum ordinal.
+        var focusAt=map.spawn(4);
+        var focusPose=new LanGhostSpatial.Pose(4,focusAt.x(),focusAt.y(),focusAt.z(),0);
+        var prioritized=new LanGhostPursuit(map,401);
+        prioritized.heard(focusPose,4,focusAt.x(),focusAt.y(),focusAt.z(),
+            LanGhostPursuit.Sound.RITUAL,200);
+        var firstSound=prioritized.memory(200);
+        prioritized.heard(focusPose,4,focusAt.x(),focusAt.y(),focusAt.z(),
+            LanGhostPursuit.Sound.CHAT,201,GhostSoundProfile.chat(2));
+        ok(prioritized.memory(201).equals(firstSound),
+            "A faint written message cannot overwrite a recent loud ritual");
+        prioritized.heard(focusPose,4,focusAt.x(),focusAt.y(),focusAt.z(),
+            LanGhostPursuit.Sound.CHAT,211,GhostSoundProfile.chat(80));
+        ok(prioritized.memory(211).source()==LanGhostPursuit.Sound.CHAT,
+            "Recent sustained loud speech can supersede a fading prior noise");
+        // Text-chat size must alter the AI's event memory, not reveal a body.
+        var nearby=map.spawn(4);
+        var shortChat=new LanGhostPursuit(map,401);
+        var longChat=new LanGhostPursuit(map,402);
+        var soundPoint=new LanGhostSpatial.Pose(4,nearby.x(),nearby.y(),nearby.z(),0);
+        shortChat.heard(soundPoint,4,nearby.x(),nearby.y(),nearby.z(),
+            LanGhostPursuit.Sound.CHAT,100,GhostSoundProfile.chat(2));
+        longChat.heard(soundPoint,4,nearby.x(),nearby.y(),nearby.z(),
+            LanGhostPursuit.Sound.CHAT,100,GhostSoundProfile.chat(80));
+        ok(shortChat.memory(100)!=null&&longChat.memory(100)!=null,
+            "Actual host-authorized chat creates bounded AI memories");
+        int briefExpiry=shortChat.memory(100).expiryTick();
+        int sustainedExpiry=longChat.memory(100).expiryTick();
+        ok(briefExpiry<sustainedExpiry&&shortChat.memory(briefExpiry)==null
+                &&longChat.memory(briefExpiry)!=null&&longChat.memory(sustainedExpiry)==null,
+            "Short chat expires before longer speech without future body tracking");
         GhostDomain.Command missing=brain.decide(new GhostDomain.Observation(79,5,4,95,false,false,
                 map.ghostExits(5),java.util.List.of(GhostDomain.Action.DRIFT, GhostDomain.Action.WHISPER)),false);
         ok(missing==null,"no sound and no patrol tick does not infer hidden hunters");

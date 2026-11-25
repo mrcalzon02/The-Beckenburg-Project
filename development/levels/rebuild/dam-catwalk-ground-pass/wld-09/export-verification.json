@@ -1,0 +1,49 @@
+{
+  "glb_sha256": "ecf9454bea92202fa1b35cb8c2eed8acd40d7c962d130f9f049be2c02372a62e",
+  "native_sha256": "189ab11673f922d085b2d0c25468b9b0392878885d6698ac5a4f07e0065a5db5",
+  "retained_native_records": 490,
+  "retired_terrain_rim_counts": [
+    1159,
+    210,
+    136
+  ],
+  "restored_terrain_rim_counts": [
+    1159,
+    185
+  ],
+  "founded_lower_wall_face_rays": 12,
+  "buried_footing_grade_controls": 52,
+  "canonical_van_triangles": 2689,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-overview.png",
+      "sha256": "2937161b2894096d025dac3e159665176c9053af7494bc54f97006ec57861e3e",
+      "source_glb_sha256": "ecf9454bea92202fa1b35cb8c2eed8acd40d7c962d130f9f049be2c02372a62e"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-catwalk-standing.png",
+      "sha256": "52632d12c40c6892261da9042e4b7c72e00775fb305059941ec0158d61851c56",
+      "source_glb_sha256": "ecf9454bea92202fa1b35cb8c2eed8acd40d7c962d130f9f049be2c02372a62e"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior.png",
+      "sha256": "b041cd76259706a8e3258fd23130c9df461e6c65b883e50e4915b3616874bb60",
+      "source_glb_sha256": "ecf9454bea92202fa1b35cb8c2eed8acd40d7c962d130f9f049be2c02372a62e"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-overview-before.png",
+      "sha256": "5cff8befd8681bb593cb15a488b84ef041bc1f8fca3c4542578ee3f8d7753764",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-catwalk-standing-before.png",
+      "sha256": "f9c4ec3ae4863528b0aee3dccc6e9c524cdd8f5b1ce37537a3b95b70bbc95680",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior-before.png",
+      "sha256": "a81b85fe99686474e3669181ca0c4cb3e1c33313feaa9f813f5268e99765ae33",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    }
+  ]
+}

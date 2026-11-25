@@ -1,0 +1,474 @@
+{
+  "geometry": "f2aff54d45c3671868a5fc34c278c1b3ed18e9672c05550b75a4753dd4b4ead9",
+  "journeys": [
+    {
+      "site": "WLD-09",
+      "variant": "after",
+      "link": "J01",
+      "segments": "17",
+      "legacy_forward": "BLOCKED_SEGMENT_9_AT_13_OF_15",
+      "legacy_reverse": "BLOCKED_SEGMENT_4_AT_4_OF_92",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Workshop to crest through east stair",
+      "points": [
+        [
+          45,
+          -6,
+          55
+        ],
+        [
+          45,
+          -6,
+          48
+        ],
+        [
+          45,
+          -6,
+          43
+        ],
+        [
+          52,
+          -6,
+          43
+        ],
+        [
+          52,
+          -6,
+          35
+        ],
+        [
+          50,
+          -6,
+          35
+        ],
+        [
+          64,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          0,
+          46.5
+        ],
+        [
+          68,
+          0,
+          46.5
+        ],
+        [
+          68,
+          0,
+          52
+        ],
+        [
+          40,
+          0,
+          52
+        ]
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "variant": "after",
+      "link": "J02",
+      "segments": "7",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Turbine hall to spillway along lower bypass",
+      "points": [
+        [
+          50,
+          -6,
+          35
+        ],
+        [
+          64,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          48
+        ],
+        [
+          68,
+          -6,
+          50.3
+        ],
+        [
+          70.8,
+          -6,
+          50.3
+        ]
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "variant": "after",
+      "link": "J03",
+      "segments": "16",
+      "legacy_forward": "BLOCKED_SEGMENT_2_AT_12_OF_14",
+      "legacy_reverse": "BLOCKED_SEGMENT_8_AT_1_OF_37",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Maintenance return to spillway via lower bypass",
+      "points": [
+        [
+          57,
+          -10,
+          40
+        ],
+        [
+          57,
+          -10,
+          35
+        ],
+        [
+          60.3,
+          -10,
+          35
+        ],
+        [
+          60.3,
+          -10,
+          36.4
+        ],
+        [
+          60.3,
+          -8,
+          40
+        ],
+        [
+          60.3,
+          -8,
+          40.88
+        ],
+        [
+          62.5,
+          -8,
+          40.88
+        ],
+        [
+          62.5,
+          -8,
+          40
+        ],
+        [
+          62.5,
+          -6,
+          36.4
+        ],
+        [
+          62.5,
+          -6,
+          35.0
+        ],
+        [
+          64,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          48
+        ],
+        [
+          68,
+          -6,
+          50.3
+        ],
+        [
+          70.8,
+          -6,
+          50.3
+        ]
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "variant": "after",
+      "link": "J04",
+      "segments": "15",
+      "legacy_forward": "BLOCKED_SEGMENT_4_AT_4_OF_92",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_13_OF_15",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Crest to spillway through east stair",
+      "points": [
+        [
+          40,
+          0,
+          52
+        ],
+        [
+          68,
+          0,
+          52
+        ],
+        [
+          68,
+          0,
+          46.5
+        ],
+        [
+          67,
+          0,
+          46.5
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          69.25,
+          -6,
+          23.5
+        ],
+        [
+          69.25,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          48
+        ],
+        [
+          68,
+          -6,
+          50.3
+        ],
+        [
+          70.8,
+          -6,
+          50.3
+        ]
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "variant": "after",
+      "link": "J05",
+      "segments": "19",
+      "legacy_forward": "BLOCKED_SEGMENT_8_AT_4_OF_92",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_13_OF_15",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to spillway through crest and east hall",
+      "points": [
+        [
+          36.0,
+          0,
+          78.372
+        ],
+        [
+          36,
+          0,
+          76
+        ],
+        [
+          36.0,
+          0,
+          69.0
+        ],
+        [
+          40,
+          0,
+          69
+        ],
+        [
+          40,
+          0,
+          52
+        ],
+        [
+          68,
+          0,
+          52
+        ],
+        [
+          68,
+          0,
+          46.5
+        ],
+        [
+          67,
+          0,
+          46.5
+        ],
+        [
+          67,
+          0,
+          45
+        ],
+        [
+          67,
+          -3,
+          35.9
+        ],
+        [
+          67,
+          -3,
+          34.1
+        ],
+        [
+          67,
+          -6,
+          25
+        ],
+        [
+          67,
+          -6,
+          23.5
+        ],
+        [
+          69.25,
+          -6,
+          23.5
+        ],
+        [
+          69.25,
+          -6,
+          35
+        ],
+        [
+          69.25,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          46.4
+        ],
+        [
+          68,
+          -6,
+          48
+        ],
+        [
+          68,
+          -6,
+          50.3
+        ],
+        [
+          70.8,
+          -6,
+          50.3
+        ]
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/verify_dam_east_hall.py": "5cd9070d39e6ec1f1b8c557e44898e7f6823ef38a16a58955244cb61cb8fa54d"
+  },
+  "evidence_sha256": {
+    "complete-journey-input.tsv": "a0de1916db7a3755e39ec0704dd4a01656eaab99d27769dfe42d5cfa5d1d26fb",
+    "complete-journey-sweeps.tsv": "be7e9c5b84166a8c38eeffaa8ce07ed31b3b2a37895fc22922ab3ba283bcd5ff"
+  }
+}

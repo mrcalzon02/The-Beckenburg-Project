@@ -1,0 +1,14 @@
+check	result
+native_scene_revision	2440ae3effb6e8f3f809f065414809a38d8ab526ca63b9c8abffd94bee25866a
+stage_revision	2440ae3effb6e8f3f809f065414809a38d8ab526ca63b9c8abffd94bee25866a-369e8438ef80f478
+actual_fitted_doors	7
+bound_native_room_volumes	18
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	17
+physical_open_transitions	8
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	Software
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+caretaker_lamp_energy	3.446046006200377 supplied, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+caretaker_lamp_visible_response	441091 changed pixels; 6.690457810867294 mean RGB increase
+four_peer_caretaker_supply	PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset

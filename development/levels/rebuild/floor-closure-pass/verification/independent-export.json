@@ -1,0 +1,257 @@
+{
+  "status": "PASS_SCOPED_EXPORTED_FLOOR_CAP_CHECKS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "preserved_meshes": 690,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+      "physics_sha256": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41"
+    },
+    {
+      "id": "ASYLUM",
+      "preserved_meshes": 755,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+      "physics_sha256": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e"
+    },
+    {
+      "id": "CHURCH",
+      "preserved_meshes": 408,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "a468b86717a032c9f394f96cd2c36de36cd1572c63d18d77a30afd7a441f25cf",
+      "physics_sha256": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd"
+    },
+    {
+      "id": "COLLEGE",
+      "preserved_meshes": 898,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "d40df9082b1410c7b632b8536d2d7ceaf9253ddf175d26277da12234f8b39555",
+      "physics_sha256": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295"
+    },
+    {
+      "id": "FARMHOUSE",
+      "preserved_meshes": 465,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "39f262d69a872623f9027e66fbd0c50f219f37c595d2e60ddf3ca3484256527e",
+      "physics_sha256": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8"
+    },
+    {
+      "id": "MANSION",
+      "preserved_meshes": 666,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "621ce73eeed2b3153b2a6a9e04e7f1446729610dcb220e3910556ab994e97d91",
+      "physics_sha256": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1"
+    },
+    {
+      "id": "PRISON",
+      "preserved_meshes": 961,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "e1d27f13672b2a33181decf5dfd0f1bd1a7927fe77c0a6a075aa8f5b3cc1b825",
+      "physics_sha256": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa"
+    },
+    {
+      "id": "SCHOOL",
+      "preserved_meshes": 508,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "ca3d75d73422c3e509b554cf508376f7c2f13d07307ef1f013d7be67ef5a4a53",
+      "physics_sha256": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f"
+    },
+    {
+      "id": "WLD-03",
+      "preserved_meshes": 204,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+      "physics_sha256": "842b83b7a9aa2b839a1e0fe554e9ff853bf40d7ae51136cff8fe503152f0c12c"
+    },
+    {
+      "id": "WLD-04",
+      "preserved_meshes": 254,
+      "closed_new_parts": 6,
+      "new_triangles": 80,
+      "restored_area_m2": 80.19089447974693,
+      "shaft_body_samples_clear": 663,
+      "glb_sha256": "85f3a8d3b2516faccd8d72d566eec5afb5b2839d0621d78b0d7ff9defc660126",
+      "physics_sha256": "202962dc366ccee56c2471468511fa6774183d30d782ac4f265ee64eb47b1e5e"
+    },
+    {
+      "id": "WLD-05",
+      "preserved_meshes": 289,
+      "closed_new_parts": 3,
+      "new_triangles": 28,
+      "restored_area_m2": 22.239290475845337,
+      "shaft_body_samples_clear": 156,
+      "glb_sha256": "8caf77bf3cdd013b0936a426df076024175c8ebada5bc70b4f00255b9a7d6683",
+      "physics_sha256": "a5644ee06b0c429b12152d7b8f82c7ac79b89e5565a4597bdda49c9f5b5d9108"
+    },
+    {
+      "id": "WLD-06",
+      "preserved_meshes": 379,
+      "closed_new_parts": 3,
+      "new_triangles": 44,
+      "restored_area_m2": 40.18083453178406,
+      "shaft_body_samples_clear": 204,
+      "glb_sha256": "095782aade4fea3277dfec6d144bcd20071779bd64ddb8f9e0a128f9787b1e31",
+      "physics_sha256": "e3fb784f518e4766b6ccd65aa4bbae02b5ab1ceb7f489aa138962e9822641054"
+    },
+    {
+      "id": "WLD-07",
+      "preserved_meshes": 147,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7",
+      "physics_sha256": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "preserved_meshes": 227,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101",
+      "physics_sha256": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d"
+    },
+    {
+      "id": "WLD-08",
+      "preserved_meshes": 265,
+      "closed_new_parts": 10,
+      "new_triangles": 104,
+      "restored_area_m2": 167.4024958461523,
+      "shaft_body_samples_clear": 789,
+      "glb_sha256": "1525ec3f37fbf6774619681d9d59f04def3dd3c1741beeb8576d1ff60a275fb5",
+      "physics_sha256": "273bb9b709d2c9c3d32cd44112c21fe402c2b07f6af28e7198aab9d6a14f7064"
+    },
+    {
+      "id": "WLD-09",
+      "preserved_meshes": 367,
+      "closed_new_parts": 5,
+      "new_triangles": 64,
+      "restored_area_m2": 256.89761650562286,
+      "shaft_body_samples_clear": 429,
+      "glb_sha256": "740862241b4611cdf9ed6ec4d8bf8bec733a4e87a18778ab9519ddca0e4bddd9",
+      "physics_sha256": "81b5b8a20cef4453701820fbde5b67c4893cf3fa01cab2c1c442bba214cd4ac7"
+    },
+    {
+      "id": "WLD-10",
+      "preserved_meshes": 375,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b",
+      "physics_sha256": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17"
+    },
+    {
+      "id": "WLD-11",
+      "preserved_meshes": 364,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+      "physics_sha256": "bbb06bffe3af3091d2eae604475c9df0c914919ba90f8a938f70b6f084498239"
+    },
+    {
+      "id": "WLD-12",
+      "preserved_meshes": 177,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "37aebdfa43c4390c867edceb3a20773e87cd7d221d771d0ade2c20d61bc4b617",
+      "physics_sha256": "8d23714db2c71a36b7ef5b6ddd0924738d6626ae4eb0da02da0d165ada919e35"
+    },
+    {
+      "id": "WLD-13",
+      "preserved_meshes": 233,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+      "physics_sha256": "5c5798a74c78c4859223091fa7566cd9cb3e30c04f1cbfde1c9617b48d653ba2"
+    },
+    {
+      "id": "WLD-14",
+      "preserved_meshes": 437,
+      "closed_new_parts": 269,
+      "new_triangles": 9496,
+      "restored_area_m2": 14.052660787509922,
+      "shaft_body_samples_clear": 996,
+      "glb_sha256": "de67d0bcc375d5d1f809ef0ea3a29b65f608f45f9871ce2829efbb2a5afa4f0b",
+      "physics_sha256": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a"
+    },
+    {
+      "id": "WLD-15",
+      "preserved_meshes": 219,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+      "physics_sha256": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3"
+    },
+    {
+      "id": "WLD-16",
+      "preserved_meshes": 232,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+      "physics_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a"
+    },
+    {
+      "id": "WLD-17",
+      "preserved_meshes": 258,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+      "physics_sha256": "f48d004caddf529a36b5fcb49528328dd7bd72c09b9b0f90ca0f595a0f870bfd"
+    },
+    {
+      "id": "WLD-18",
+      "preserved_meshes": 326,
+      "closed_new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "shaft_body_samples_clear": 0,
+      "glb_sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3",
+      "physics_sha256": "fb8f28c9019654d7fc68c53a31faabcf144d27a929f73e9dd5b42ec5b56cac7b"
+    }
+  ],
+  "checker_sha256": "a6d74c4386fe4da98d62a17350c7b2f037ede4a8e7e746e0c33703c8f846afd7",
+  "scope": "Every source node/resource/mesh/UV/image/pose preserved; every appended triangle matches native and is nondegenerate; exact-edge closed outward solids with0.16m volume/area thickness; independent standing-body shaft samples. Native optical and full continuous movement reported separately; not complete map/runtime acceptance."
+}

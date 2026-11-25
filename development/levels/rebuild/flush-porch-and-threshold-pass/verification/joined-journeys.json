@@ -1,0 +1,87 @@
+{
+  "routes": [
+    {
+      "site": "ACADEMY",
+      "variant": "after",
+      "link": "door-journey",
+      "segments": "6",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "label": "West corridor to the lower stair hall",
+      "links": [
+        "L40"
+      ],
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/authored-layout.json",
+      "layout_sha256": "a0aac3f558e46449f2744ecabde6407120edb3b3115c0b5e4e1dbb5b234f6669",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.hcs2",
+      "native_sha256": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea"
+    },
+    {
+      "site": "ASYLUM",
+      "variant": "after",
+      "link": "door-journey",
+      "segments": "12",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "label": "Treatment, changing, baths and drying loop",
+      "links": [
+        "L40",
+        "L41",
+        "L42",
+        "L43"
+      ],
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+      "layout_sha256": "d07b86884bdd431363e2f4ba3cd50e9e9bfdc95c1efda9a5f2c37a515b94f9e0",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.hcs2",
+      "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9"
+    },
+    {
+      "site": "PRISON",
+      "variant": "after",
+      "link": "door-journey",
+      "segments": "5",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "label": "East gallery through the front link to the next fitted doorway",
+      "links": [
+        "L050",
+        "-L078"
+      ],
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/authored-layout.json",
+      "layout_sha256": "2ac5dd668521b115a9fc93146eee16856b69512af4faff66117a0c8d41406808",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.hcs2",
+      "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d"
+    },
+    {
+      "site": "WLD-18",
+      "variant": "after",
+      "link": "door-journey",
+      "segments": "5",
+      "legacy_forward": "BLOCKED_SEGMENT_3_AT_4_OF_6",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_4_OF_140",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "label": "West service vault through the framed escape door and up the exit flight",
+      "links": [
+        "route-08"
+      ],
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
+      "layout_sha256": "25762edbc49fc1e3480123bd09e801a946c0b40887264610ae9fe6cd95c7d16e",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.hcs2",
+      "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b"
+    }
+  ],
+  "hashes": {
+    "tools/verify_surveyed_thresholds.py": "21a43cb6bf1ec3117178b7e1ddd41731c3332007ec2fd19aa553ecb6596aac70",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "5c13704ab659a7518088419616b23c2ffce34dbd72f3a707b0da3671418be453",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/verification/journey-input.tsv": "dc723221233ff14a51f75a03e143a60d30295039a32e583df4337730b4360661",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/verification/journey-results.tsv": "5251b93231692fd96286841357aaeb7b224d184491fa230bffb42bb5f008b391"
+  }
+}

@@ -1,0 +1,4132 @@
+[
+  {
+    "name": "Floor hut",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      4.0,
+      14.000000953674316,
+      11.186827659606934,
+      19.18682861328125,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor hut.001",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      4.0,
+      19.18682861328125,
+      11.186827659606934,
+      26.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor hut.002",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      11.186826705932617,
+      14.000000953674316,
+      20.0,
+      19.18682861328125,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Ceiling cap hut",
+    "role": "ceiling-cap",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      4.0,
+      14.0,
+      20.0,
+      26.0,
+      8.84000015258789,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall hut N",
+    "role": "rough shell wall",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      4.0,
+      13.920000076293945,
+      20.0,
+      14.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall hut W",
+    "role": "rough shell wall",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      3.9200000762939453,
+      14.0,
+      4.079999923706055,
+      26.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Header hut E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      19.920000076293945,
+      19.0,
+      20.079999923706055,
+      21.0,
+      8.450000762939453,
+      9.0
+    ]
+  },
+  {
+    "name": "Floor ruin",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      14.0,
+      44.04938507080078,
+      21.529586791992188,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor ruin.001",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      44.04938507080078,
+      14.0,
+      54.0,
+      21.529586791992188,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor ruin.002",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      44.04938507080078,
+      21.529586791992188,
+      54.0,
+      30.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Ceiling cap ruin",
+    "role": "ceiling-cap",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      14.0,
+      54.0,
+      30.0,
+      8.84000015258789,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall ruin N",
+    "role": "rough shell wall",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      13.920000076293945,
+      54.0,
+      14.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Header ruin S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      44.25,
+      29.920000076293945,
+      45.75,
+      30.079999923706055,
+      8.450000762939453,
+      9.0
+    ]
+  },
+  {
+    "name": "Header ruin W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      39.91999816894531,
+      21.0,
+      40.08000183105469,
+      23.0,
+      8.450000762939453,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall ruin E",
+    "role": "rough shell wall",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      53.91999816894531,
+      14.0,
+      54.08000183105469,
+      30.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Floor store",
+    "role": "floor",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      44.04938507080078,
+      30.0,
+      46.14112091064453,
+      34.85736083984375,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor store.001",
+    "role": "floor",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      46.14112091064453,
+      30.0,
+      50.0,
+      34.85736083984375,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor store.002",
+    "role": "floor",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      46.14112091064453,
+      34.85736083984375,
+      50.0,
+      40.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Ceiling cap store",
+    "role": "ceiling-cap",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      40.0,
+      30.0,
+      50.0,
+      40.0,
+      8.84000015258789,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall store W",
+    "role": "rough shell wall",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      39.91999816894531,
+      30.0,
+      40.08000183105469,
+      40.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall store E",
+    "role": "rough shell wall",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      49.91999816894531,
+      30.0,
+      50.08000183105469,
+      40.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Floor landing",
+    "role": "floor",
+    "zone": "landing",
+    "link": null,
+    "bounds": [
+      25.25,
+      2.700000047683716,
+      31.549999237060547,
+      4.199999809265137,
+      10.34000015258789,
+      10.5
+    ]
+  },
+  {
+    "name": "Floor cab",
+    "role": "floor",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      24.0,
+      1.9999998807907104,
+      27.299999237060547,
+      4.199999809265137,
+      14.84000015258789,
+      15.0
+    ]
+  },
+  {
+    "name": "Floor cab.001",
+    "role": "floor",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      24.0,
+      4.199999809265137,
+      27.299999237060547,
+      8.0,
+      14.84000015258789,
+      15.0
+    ]
+  },
+  {
+    "name": "Floor cab.002",
+    "role": "floor",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      27.30000114440918,
+      1.9999998807907104,
+      29.100000381469727,
+      4.199999809265137,
+      14.84000015258789,
+      15.0
+    ]
+  },
+  {
+    "name": "Floor cab.003",
+    "role": "floor",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      1.9999998807907104,
+      30.0,
+      4.199999809265137,
+      14.84000015258789,
+      15.0
+    ]
+  },
+  {
+    "name": "Floor cab.004",
+    "role": "floor",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      4.199999809265137,
+      30.0,
+      8.0,
+      14.84000015258789,
+      15.0
+    ]
+  },
+  {
+    "name": "Ceiling cap cab",
+    "role": "ceiling-cap",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      24.0,
+      2.0,
+      30.0,
+      8.0,
+      17.84000015258789,
+      18.0
+    ]
+  },
+  {
+    "name": "Wall cab N",
+    "role": "rough shell wall",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      24.0,
+      1.9199999570846558,
+      30.0,
+      2.0799999237060547,
+      15.0,
+      18.0
+    ]
+  },
+  {
+    "name": "Wall cab S",
+    "role": "rough shell wall",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      24.0,
+      7.920000076293945,
+      30.0,
+      8.079999923706055,
+      15.0,
+      18.0
+    ]
+  },
+  {
+    "name": "Wall cab W",
+    "role": "rough shell wall",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      23.920000076293945,
+      2.0,
+      24.079999923706055,
+      8.0,
+      15.0,
+      18.0
+    ]
+  },
+  {
+    "name": "Header cab E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.920000076293945,
+      4.0,
+      30.079999923706055,
+      6.0,
+      17.450000762939453,
+      18.0
+    ]
+  },
+  {
+    "name": "Floor upper-turn-platform",
+    "role": "floor",
+    "zone": "upper-turn-platform",
+    "link": null,
+    "bounds": [
+      27.450000762939453,
+      8.100000381469727,
+      31.549999237060547,
+      9.600000381469727,
+      12.59000015258789,
+      12.75
+    ]
+  },
+  {
+    "name": "L01 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.0,
+      72.0,
+      29.0,
+      78.0,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L01 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.0,
+      66.0,
+      29.0,
+      72.0,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L02 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      13.26894474029541,
+      50.31768035888672,
+      28.731056213378906,
+      66.68231964111328,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L03 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      13.26894474029541,
+      49.43532943725586,
+      15.554585456848145,
+      51.682315826416016,
+      -0.1599999964237213,
+      0.1764705777168274
+    ]
+  },
+  {
+    "name": "L03 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      14.092473983764648,
+      48.552978515625,
+      16.378114700317383,
+      50.799964904785156,
+      -0.1599999964237213,
+      0.3529411852359772
+    ]
+  },
+  {
+    "name": "L03 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      14.91600227355957,
+      47.670623779296875,
+      17.201642990112305,
+      49.91761016845703,
+      -0.1599999964237213,
+      0.529411792755127
+    ]
+  },
+  {
+    "name": "L03 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      15.739532470703125,
+      46.788272857666016,
+      18.02517318725586,
+      49.03525924682617,
+      -0.1599999964237213,
+      0.7058823108673096
+    ]
+  },
+  {
+    "name": "L03 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      16.56306266784668,
+      45.90591812133789,
+      18.848703384399414,
+      48.15290451049805,
+      -0.1599999964237213,
+      0.8823529481887817
+    ]
+  },
+  {
+    "name": "L03 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      17.3865909576416,
+      45.02356719970703,
+      19.672231674194336,
+      47.27055358886719,
+      -0.1600000262260437,
+      1.058823585510254
+    ]
+  },
+  {
+    "name": "L03 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      18.210121154785156,
+      44.141212463378906,
+      20.49576187133789,
+      46.38819885253906,
+      -0.15999996662139893,
+      1.2352941036224365
+    ]
+  },
+  {
+    "name": "L03 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      19.033649444580078,
+      43.25886154174805,
+      21.319290161132812,
+      45.5058479309082,
+      -0.1600000262260437,
+      1.4117646217346191
+    ]
+  },
+  {
+    "name": "L03 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      19.857179641723633,
+      42.37650680541992,
+      22.142820358276367,
+      44.62349319458008,
+      -0.1600000262260437,
+      1.5882353782653809
+    ]
+  },
+  {
+    "name": "L03 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      20.680709838867188,
+      41.4941520690918,
+      22.966350555419922,
+      43.74113845825195,
+      -0.15999996662139893,
+      1.7647058963775635
+    ]
+  },
+  {
+    "name": "L03 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      21.50423812866211,
+      40.61180114746094,
+      23.789878845214844,
+      42.858787536621094,
+      -0.1600000262260437,
+      1.941176414489746
+    ]
+  },
+  {
+    "name": "L03 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      22.327768325805664,
+      39.72944641113281,
+      24.6134090423584,
+      41.97643280029297,
+      -0.15999996662139893,
+      2.117647171020508
+    ]
+  },
+  {
+    "name": "L03 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      23.151296615600586,
+      38.84709548950195,
+      25.43693733215332,
+      41.09408187866211,
+      -0.15999996662139893,
+      2.2941174507141113
+    ]
+  },
+  {
+    "name": "L03 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      23.97482681274414,
+      37.96474075317383,
+      26.260467529296875,
+      40.211727142333984,
+      -0.16000008583068848,
+      2.470588207244873
+    ]
+  },
+  {
+    "name": "L03 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      24.798357009887695,
+      37.08238983154297,
+      27.08399772644043,
+      39.329376220703125,
+      -0.15999996662139893,
+      2.6470589637756348
+    ]
+  },
+  {
+    "name": "L03 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      25.621885299682617,
+      36.200035095214844,
+      27.90752601623535,
+      38.447021484375,
+      -0.15999996662139893,
+      2.8235292434692383
+    ]
+  },
+  {
+    "name": "L03 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      26.445415496826172,
+      35.317684173583984,
+      28.731056213378906,
+      37.56467056274414,
+      -0.16000008583068848,
+      3.0
+    ]
+  },
+  {
+    "name": "L05 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      20.162633895874023,
+      19.019418716430664,
+      30.196115493774414,
+      21.837366104125977,
+      5.880000114440918,
+      6.0
+    ]
+  },
+  {
+    "name": "L07 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.0,
+      21.0,
+      40.0,
+      21.529586791992188,
+      5.880000114440918,
+      6.0
+    ]
+  },
+  {
+    "name": "L09 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.007720947265625,
+      49.93478775024414,
+      44.10992431640625,
+      51.1240348815918,
+      2.8399999141693115,
+      3.1764705181121826
+    ]
+  },
+  {
+    "name": "L09 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.125370025634766,
+      48.99361038208008,
+      44.22757339477539,
+      50.182857513427734,
+      2.8399999141693115,
+      3.3529412746429443
+    ]
+  },
+  {
+    "name": "L09 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.24301528930664,
+      48.05243682861328,
+      44.345218658447266,
+      49.24168395996094,
+      2.8400001525878906,
+      3.529411792755127
+    ]
+  },
+  {
+    "name": "L09 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.36066436767578,
+      47.11125946044922,
+      44.462867736816406,
+      48.300506591796875,
+      2.8399999141693115,
+      3.7058823108673096
+    ]
+  },
+  {
+    "name": "L09 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.478309631347656,
+      46.170082092285156,
+      44.58051300048828,
+      47.35932922363281,
+      2.8400001525878906,
+      3.882352828979492
+    ]
+  },
+  {
+    "name": "L09 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.5959587097168,
+      45.228904724121094,
+      44.69816207885742,
+      46.41815185546875,
+      2.8400001525878906,
+      4.058823585510254
+    ]
+  },
+  {
+    "name": "L09 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.71360397338867,
+      44.2877311706543,
+      44.8158073425293,
+      45.47697830200195,
+      2.8399999141693115,
+      4.235293865203857
+    ]
+  },
+  {
+    "name": "L09 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.83125305175781,
+      43.346553802490234,
+      44.93345642089844,
+      44.53580093383789,
+      2.8400001525878906,
+      4.411764621734619
+    ]
+  },
+  {
+    "name": "L09 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      42.94889831542969,
+      42.40537643432617,
+      45.05110168457031,
+      43.59462356567383,
+      2.8400001525878906,
+      4.588235378265381
+    ]
+  },
+  {
+    "name": "L09 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.06654357910156,
+      41.46419906616211,
+      45.16874694824219,
+      42.653446197509766,
+      2.8399999141693115,
+      4.764705657958984
+    ]
+  },
+  {
+    "name": "L09 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.1841926574707,
+      40.52302169799805,
+      45.28639602661133,
+      41.7122688293457,
+      2.8400001525878906,
+      4.941176414489746
+    ]
+  },
+  {
+    "name": "L09 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.30183792114258,
+      39.58184814453125,
+      45.4040412902832,
+      40.771095275878906,
+      2.8399999141693115,
+      5.117647171020508
+    ]
+  },
+  {
+    "name": "L09 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.41948699951172,
+      38.64067077636719,
+      45.521690368652344,
+      39.829917907714844,
+      2.8400001525878906,
+      5.2941179275512695
+    ]
+  },
+  {
+    "name": "L09 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.537132263183594,
+      37.699493408203125,
+      45.63933563232422,
+      38.88874053955078,
+      2.8399996757507324,
+      5.470588207244873
+    ]
+  },
+  {
+    "name": "L09 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.654781341552734,
+      36.75831604003906,
+      45.75698471069336,
+      37.94756317138672,
+      2.8399999141693115,
+      5.647058486938477
+    ]
+  },
+  {
+    "name": "L09 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.77242660522461,
+      35.817142486572266,
+      45.874629974365234,
+      37.00638961791992,
+      2.8400001525878906,
+      5.823529243469238
+    ]
+  },
+  {
+    "name": "L09 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.89007568359375,
+      34.8759651184082,
+      45.992279052734375,
+      36.06521224975586,
+      2.8400001525878906,
+      6.0
+    ]
+  },
+  {
+    "name": "L10 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      27.29289436340332,
+      64.41053771972656,
+      29.589460372924805,
+      66.70710754394531,
+      -0.1599999964237213,
+      0.1764705777168274
+    ]
+  },
+  {
+    "name": "L10 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      28.175247192382812,
+      63.52818298339844,
+      30.471813201904297,
+      65.82475280761719,
+      -0.1599999964237213,
+      0.3529411852359772
+    ]
+  },
+  {
+    "name": "L10 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      29.057600021362305,
+      62.64583206176758,
+      31.35416603088379,
+      64.94239807128906,
+      -0.1599999964237213,
+      0.529411792755127
+    ]
+  },
+  {
+    "name": "L10 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      29.939952850341797,
+      61.76348114013672,
+      32.23651885986328,
+      64.06005096435547,
+      -0.1599999964237213,
+      0.7058823108673096
+    ]
+  },
+  {
+    "name": "L10 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      30.82230567932129,
+      60.881126403808594,
+      33.118873596191406,
+      63.177696228027344,
+      -0.1599999964237213,
+      0.8823529481887817
+    ]
+  },
+  {
+    "name": "L10 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      31.70465660095215,
+      59.998775482177734,
+      34.001224517822266,
+      62.295345306396484,
+      -0.1600000262260437,
+      1.058823585510254
+    ]
+  },
+  {
+    "name": "L10 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      32.58700942993164,
+      59.11642074584961,
+      34.88357925415039,
+      61.41299057006836,
+      -0.15999996662139893,
+      1.2352941036224365
+    ]
+  },
+  {
+    "name": "L10 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      33.4693603515625,
+      58.23406982421875,
+      35.76593017578125,
+      60.5306396484375,
+      -0.1600000262260437,
+      1.4117646217346191
+    ]
+  },
+  {
+    "name": "L10 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      34.351715087890625,
+      57.351715087890625,
+      36.648284912109375,
+      59.648284912109375,
+      -0.1600000262260437,
+      1.5882353782653809
+    ]
+  },
+  {
+    "name": "L10 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      35.23406982421875,
+      56.4693603515625,
+      37.5306396484375,
+      58.76593017578125,
+      -0.15999996662139893,
+      1.7647058963775635
+    ]
+  },
+  {
+    "name": "L10 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      36.11642074584961,
+      55.58700942993164,
+      38.41299057006836,
+      57.88357925415039,
+      -0.1600000262260437,
+      1.941176414489746
+    ]
+  },
+  {
+    "name": "L10 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      36.998775482177734,
+      54.704654693603516,
+      39.295345306396484,
+      57.001224517822266,
+      -0.15999996662139893,
+      2.117647171020508
+    ]
+  },
+  {
+    "name": "L10 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      37.881126403808594,
+      53.822303771972656,
+      40.177696228027344,
+      56.118873596191406,
+      -0.15999996662139893,
+      2.2941174507141113
+    ]
+  },
+  {
+    "name": "L10 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      38.76348114013672,
+      52.93994903564453,
+      41.06005096435547,
+      55.23651885986328,
+      -0.16000008583068848,
+      2.470588207244873
+    ]
+  },
+  {
+    "name": "L10 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      39.64583206176758,
+      52.05759811401367,
+      41.94240188598633,
+      54.35416793823242,
+      -0.15999996662139893,
+      2.6470589637756348
+    ]
+  },
+  {
+    "name": "L10 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      40.5281867980957,
+      51.17524337768555,
+      42.82475662231445,
+      53.4718132019043,
+      -0.15999996662139893,
+      2.8235292434692383
+    ]
+  },
+  {
+    "name": "L10 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      41.41053771972656,
+      50.29289245605469,
+      43.70710754394531,
+      52.58946228027344,
+      -0.16000008583068848,
+      3.0
+    ]
+  },
+  {
+    "name": "L12 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.0,
+      14.0,
+      31.0,
+      21.529586791992188,
+      5.880000114440918,
+      6.0
+    ]
+  },
+  {
+    "name": "L12 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.0,
+      8.0,
+      31.0,
+      14.0,
+      5.880000114440918,
+      6.0
+    ]
+  },
+  {
+    "name": "L13 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      11.880000114440918,
+      27.0,
+      12.199999809265137,
+      5.840000152587891,
+      6.180000305175781
+    ]
+  },
+  {
+    "name": "L13 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      11.5600004196167,
+      27.0,
+      11.880000114440918,
+      5.840000152587891,
+      6.359999656677246
+    ]
+  },
+  {
+    "name": "L13 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      11.239999771118164,
+      27.0,
+      11.559999465942383,
+      5.840000152587891,
+      6.539999961853027
+    ]
+  },
+  {
+    "name": "L13 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      10.920000076293945,
+      27.0,
+      11.239999771118164,
+      5.840000152587891,
+      6.720000267028809
+    ]
+  },
+  {
+    "name": "L13 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      10.600000381469727,
+      27.0,
+      10.920000076293945,
+      5.840000152587891,
+      6.899999618530273
+    ]
+  },
+  {
+    "name": "L13 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      10.279999732971191,
+      27.0,
+      10.59999942779541,
+      5.840000152587891,
+      7.079999923706055
+    ]
+  },
+  {
+    "name": "L13 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      9.960000038146973,
+      27.0,
+      10.279999732971191,
+      5.840000152587891,
+      7.260000228881836
+    ]
+  },
+  {
+    "name": "L13 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      9.640000343322754,
+      27.0,
+      9.960000038146973,
+      5.839999675750732,
+      7.440000057220459
+    ]
+  },
+  {
+    "name": "L13 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      9.319999694824219,
+      27.0,
+      9.639999389648438,
+      5.840000152587891,
+      7.619999885559082
+    ]
+  },
+  {
+    "name": "L13 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      9.0,
+      27.0,
+      9.319999694824219,
+      5.840000152587891,
+      7.800000190734863
+    ]
+  },
+  {
+    "name": "L13 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      8.680000305175781,
+      27.0,
+      9.0,
+      5.839999675750732,
+      7.980000019073486
+    ]
+  },
+  {
+    "name": "L13 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      8.360000610351562,
+      27.0,
+      8.680000305175781,
+      5.840000152587891,
+      8.15999984741211
+    ]
+  },
+  {
+    "name": "L13 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      8.039999961853027,
+      27.0,
+      8.359999656677246,
+      5.840000152587891,
+      8.34000015258789
+    ]
+  },
+  {
+    "name": "L13 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      7.720000267028809,
+      27.0,
+      8.039999961853027,
+      5.839999675750732,
+      8.519999504089355
+    ]
+  },
+  {
+    "name": "L13 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      7.400000095367432,
+      27.0,
+      7.71999979019165,
+      5.840000152587891,
+      8.699999809265137
+    ]
+  },
+  {
+    "name": "L13 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      7.079999923706055,
+      27.0,
+      7.399999618530273,
+      5.840000152587891,
+      8.880000114440918
+    ]
+  },
+  {
+    "name": "L13 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      6.760000228881836,
+      27.0,
+      7.079999923706055,
+      5.839999675750732,
+      9.059999465942383
+    ]
+  },
+  {
+    "name": "L13 flight0 step18",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      6.440000057220459,
+      27.0,
+      6.759999752044678,
+      5.840000152587891,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "L13 flight0 step19",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      6.12000036239624,
+      27.0,
+      6.440000057220459,
+      5.840000152587891,
+      9.420000076293945
+    ]
+  },
+  {
+    "name": "L13 flight0 step20",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      5.800000190734863,
+      27.0,
+      6.119999885559082,
+      5.839999675750732,
+      9.59999942779541
+    ]
+  },
+  {
+    "name": "L13 flight0 step21",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      5.480000019073486,
+      27.0,
+      5.799999713897705,
+      5.840000152587891,
+      9.779999732971191
+    ]
+  },
+  {
+    "name": "L13 flight0 step22",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      5.160000324249268,
+      27.0,
+      5.480000019073486,
+      5.840000152587891,
+      9.960000038146973
+    ]
+  },
+  {
+    "name": "L13 flight0 step23",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      4.840000152587891,
+      27.0,
+      5.159999847412109,
+      5.839999675750732,
+      10.139999389648438
+    ]
+  },
+  {
+    "name": "L13 flight0 step24",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      4.519999980926514,
+      27.0,
+      4.839999675750732,
+      5.840000152587891,
+      10.319999694824219
+    ]
+  },
+  {
+    "name": "L13 flight0 step25",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      4.200000286102295,
+      27.0,
+      4.519999980926514,
+      5.840000152587891,
+      10.5
+    ]
+  },
+  {
+    "name": "L15 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.0,
+      4.0,
+      30.0,
+      6.0,
+      14.880000114440918,
+      15.0
+    ]
+  },
+  {
+    "name": "L15 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.0,
+      4.0,
+      33.0,
+      6.0,
+      14.880000114440918,
+      15.0
+    ]
+  },
+  {
+    "name": "level_blockout_workbench.001",
+    "role": "placed source-library furnishing",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      6.946000099182129,
+      14.15999984741211,
+      8.696000099182129,
+      14.940000534057617,
+      6.0,
+      6.909999847412109
+    ]
+  },
+  {
+    "name": "level_blockout_storage_shelf.001",
+    "role": "placed source-library furnishing",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      46.98550033569336,
+      30.15999984741211,
+      48.635501861572266,
+      30.90999984741211,
+      6.0,
+      7.800000190734863
+    ]
+  },
+  {
+    "name": "level_blockout_lookout_spotter.001",
+    "role": "placed source-library furnishing",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      25.06599998474121,
+      2.1600000858306885,
+      26.216001510620117,
+      2.9100000858306885,
+      15.0,
+      16.15814781188965
+    ]
+  },
+  {
+    "name": "Bearing skirt 0000",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      4.0,
+      13.649999618530273,
+      6.0,
+      14.100000381469727,
+      4.5001702308654785,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0001",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      6.0,
+      13.649999618530273,
+      8.0,
+      14.100000381469727,
+      4.89959192276001,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0002",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.0,
+      13.649999618530273,
+      10.0,
+      14.100000381469727,
+      5.299990177154541,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0003",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      13.649999618530273,
+      12.0,
+      14.100000381469727,
+      5.299990177154541,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0004",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      12.0,
+      13.649999618530273,
+      14.0,
+      14.100000381469727,
+      5.299990177154541,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0005",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      14.0,
+      13.649999618530273,
+      16.0,
+      14.100000381469727,
+      5.299990177154541,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0006",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      16.0,
+      13.649999618530273,
+      18.0,
+      14.100000381469727,
+      5.299990177154541,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0007",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      13.649999618530273,
+      20.0,
+      14.100000381469727,
+      5.299990177154541,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0008",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      4.0,
+      25.899999618530273,
+      6.0,
+      26.350000381469727,
+      4.4984612464904785,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0009",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      6.0,
+      25.899999618530273,
+      8.0,
+      26.350000381469727,
+      4.8855767250061035,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0010",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.0,
+      25.899999618530273,
+      10.0,
+      26.350000381469727,
+      5.295717716217041,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0011",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.6500000953674316,
+      14.0,
+      4.099999904632568,
+      16.0,
+      4.570066928863525,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0012",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.6500000953674316,
+      16.0,
+      4.099999904632568,
+      18.0,
+      4.570066928863525,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0013",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.6500000953674316,
+      18.0,
+      4.099999904632568,
+      20.0,
+      4.570066928863525,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0014",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.6500000953674316,
+      20.0,
+      4.099999904632568,
+      22.0,
+      4.570066928863525,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0015",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.6500000953674316,
+      22.0,
+      4.099999904632568,
+      24.0,
+      4.570066928863525,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0016",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.6500000953674316,
+      24.0,
+      4.099999904632568,
+      26.0,
+      4.570066928863525,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0017",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      19.899999618530273,
+      14.0,
+      20.350000381469727,
+      16.0,
+      5.300161838531494,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0018",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      19.899999618530273,
+      16.0,
+      20.350000381469727,
+      18.0,
+      5.300161838531494,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0019",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      46.0,
+      39.900001525878906,
+      48.0,
+      40.349998474121094,
+      3.3753228187561035,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0020",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      48.0,
+      39.900001525878906,
+      50.0,
+      40.349998474121094,
+      3.380842685699463,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0021",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.900001525878906,
+      30.0,
+      50.349998474121094,
+      32.0,
+      5.205652713775635,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0022",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.900001525878906,
+      32.0,
+      50.349998474121094,
+      34.0,
+      4.83892297744751,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0023",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.900001525878906,
+      34.0,
+      50.349998474121094,
+      36.0,
+      4.420774936676025,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0024",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.900001525878906,
+      36.0,
+      50.349998474121094,
+      38.0,
+      3.9624199867248535,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0025",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.900001525878906,
+      38.0,
+      50.349998474121094,
+      40.0,
+      3.4731507301330566,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0026",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      50.0,
+      29.899999618530273,
+      52.0,
+      30.350000381469727,
+      5.456461429595947,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Bearing skirt 0027",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      52.0,
+      29.899999618530273,
+      54.0,
+      30.350000381469727,
+      5.456461429595947,
+      5.840000152587891
+    ]
+  },
+  {
+    "name": "Restored ruin floor 0",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      43.14935302734375,
+      23.0,
+      44.04938507080078,
+      23.790069580078125,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 1",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.099037170410156,
+      23.0,
+      44.04938507080078,
+      23.610063552856445,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 2",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      21.837366104125977,
+      44.04938507080078,
+      23.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 3",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      42.822288513183594,
+      23.610063552856445,
+      44.04938507080078,
+      24.007055282592773,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 4",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      23.0,
+      43.14935302734375,
+      23.831756591796875,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 5",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      22.980192184448242,
+      40.099037170410156,
+      23.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 6",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      21.529586791992188,
+      44.04938507080078,
+      21.744037628173828,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 7",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      21.529586791992188,
+      44.04938507080078,
+      21.837366104125977,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 8",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      28.75,
+      44.04938507080078,
+      30.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 9",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      26.0,
+      44.04938507080078,
+      29.762346267700195,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 10",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      23.831756591796875,
+      44.04938507080078,
+      26.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored ruin floor 11",
+    "role": "floor",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      23.428571701049805,
+      42.822288513183594,
+      25.744773864746094,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored floor hut 0 region0",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      11.186827659606934,
+      19.18682861328125,
+      12.81317138671875,
+      20.81317138671875,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored floor hut 0 region1",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      12.8131742477417,
+      19.18682861328125,
+      20.0,
+      26.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored floor hut 0 region2",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      11.186827659606934,
+      20.813173294067383,
+      16.373655319213867,
+      26.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored floor store 3 region0",
+    "role": "floor",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      40.0,
+      30.0,
+      44.04938507080078,
+      40.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored floor store 3 region1",
+    "role": "floor",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      43.85887908935547,
+      33.33332443237305,
+      46.14112091064453,
+      35.14263916015625,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Restored floor store 3 region2",
+    "role": "floor",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      45.53395080566406,
+      35.14263916015625,
+      46.14112091064453,
+      40.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L03 0 low region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      12.723090171813965,
+      50.31768035888672,
+      14.0,
+      51.54715347290039,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L03 0 high region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      27.268949508666992,
+      34.73283767700195,
+      29.27691078186035,
+      36.682315826416016,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L04 0 low region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      26.896913528442383,
+      36.624855041503906,
+      26.933734893798828,
+      36.655799865722656,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L04 0 low region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.54145050048828,
+      36.45255661010742,
+      28.94550132751465,
+      36.933380126953125,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L04 0 high region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      29.01004981994629,
+      21.529590606689453,
+      30.094079971313477,
+      21.999998092651367,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L04 0 high region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      30.0,
+      21.529590606689453,
+      31.077354431152344,
+      22.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L06 0 low region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      28.566022872924805,
+      35.29289245605469,
+      29.27279281616211,
+      35.98015594482422,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L09 0 low region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      43.0,
+      51.0,
+      43.992279052734375,
+      51.9178581237793,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L10 0 high region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      42.29289245605469,
+      49.72720718383789,
+      44.27279281616211,
+      51.157127380371094,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L10 0 high region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L10",
+    "bounds": [
+      43.94972229003906,
+      51.12403106689453,
+      44.257083892822266,
+      51.4644889831543,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L11 0 low region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      43.781185150146484,
+      50.5909423828125,
+      44.06704330444336,
+      50.935672760009766,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L11 0 low region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      43.9742317199707,
+      51.21979904174805,
+      44.23975372314453,
+      51.439979553222656,
+      2.8399999141693115,
+      3.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L11 0 high region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      28.76024627685547,
+      21.655323028564453,
+      28.813169479370117,
+      21.797109603881836,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L11 0 high region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      28.83121681213379,
+      21.547121047973633,
+      29.05454444885254,
+      22.14501953125,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L13 0 low region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      12.199999809265137,
+      27.0,
+      13.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Authored stair end WLD-04 L13 0 high region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L13",
+    "bounds": [
+      25.0,
+      3.4000000953674316,
+      25.25,
+      4.199999809265137,
+      10.34000015258789,
+      10.5
+    ]
+  },
+  {
+    "name": "Opened stair shell Wall store S",
+    "role": "rough shell wall",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      40.0,
+      39.91999816894531,
+      50.0,
+      40.08000183105469,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Saved editor stair bench terrain WLD-04",
+    "role": "saved editor terrain / actual stair-bed layers and basement punches",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      0.0,
+      -6.0,
+      59.0,
+      91.0,
+      -1.149919867515564,
+      7.1500115394592285
+    ]
+  },
+  {
+    "name": "Authored ruin threshold bearing plate region0",
+    "role": "floor",
+    "zone": "ruin",
+    "link": "L07",
+    "bounds": [
+      39.5,
+      21.529590606689453,
+      40.0,
+      23.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed shell Wall hut S",
+    "role": "rough shell wall",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      4.0,
+      25.920000076293945,
+      20.0,
+      26.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Restored bay WLD-04 hut floor region0",
+    "role": "floor",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      12.0,
+      19.186830520629883,
+      19.626340866088867,
+      26.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bay landing WLD-04 L04 4 region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      29.057050704956055,
+      21.512096405029297,
+      29.182003021240234,
+      21.529590606689453,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bay landing WLD-04 L06 3 region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      19.868629455566406,
+      26.72720718383789,
+      20.707107543945312,
+      28.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bay landing WLD-04 L11 1 region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      32.15509796142578,
+      24.3609561920166,
+      32.48091125488281,
+      25.087379455566406,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bay landing WLD-04 L11 1 region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      31.56999969482422,
+      25.090721130371094,
+      32.482521057128906,
+      25.5,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bay landing WLD-04 L11 4 region0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      30.193525314331055,
+      21.27137565612793,
+      30.884986877441406,
+      21.529590606689453,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bay landing WLD-04 L11 4 region1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      28.94434356689453,
+      22.089902877807617,
+      28.96912956237793,
+      22.145151138305664,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.51004981994629,
+      21.858577728271484,
+      30.98995018005371,
+      25.641422271728516,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.01004981994629,
+      35.24093246459961,
+      29.078184127807617,
+      36.141422271728516,
+      2.8399999141693115,
+      3.1764705181121826
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.098285675048828,
+      34.62328338623047,
+      29.166419982910156,
+      35.523773193359375,
+      2.8399999141693115,
+      3.3529412746429443
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.186521530151367,
+      34.005638122558594,
+      29.254655838012695,
+      34.9061279296875,
+      2.8400001525878906,
+      3.529411792755127
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.274755477905273,
+      33.38798904418945,
+      29.3428897857666,
+      34.28847885131836,
+      2.8399999141693115,
+      3.7058823108673096
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.362991333007812,
+      32.77034378051758,
+      29.43112564086914,
+      33.670833587646484,
+      2.8400001525878906,
+      3.882352828979492
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.45122718811035,
+      32.15269470214844,
+      29.51936149597168,
+      33.053184509277344,
+      2.8400001525878906,
+      4.058823585510254
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.53946304321289,
+      31.535049438476562,
+      29.60759735107422,
+      32.43553924560547,
+      2.8399999141693115,
+      4.235293865203857
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.627696990966797,
+      30.917402267456055,
+      29.695831298828125,
+      31.81789207458496,
+      2.8400001525878906,
+      4.411764621734619
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.715932846069336,
+      30.299755096435547,
+      29.784067153930664,
+      31.200244903564453,
+      2.8400001525878906,
+      4.588235378265381
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.804168701171875,
+      29.68210792541504,
+      29.872303009033203,
+      30.582597732543945,
+      2.8399999141693115,
+      4.764705657958984
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.89240264892578,
+      29.06446075439453,
+      29.96053695678711,
+      29.964950561523438,
+      2.8400001525878906,
+      4.941176414489746
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      27.98063850402832,
+      28.446813583374023,
+      30.04877281188965,
+      29.34730339050293,
+      2.8399999141693115,
+      5.117647171020508
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.06887435913086,
+      27.829166412353516,
+      30.137008666992188,
+      28.729656219482422,
+      2.8400001525878906,
+      5.2941179275512695
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.1571102142334,
+      27.211519241333008,
+      30.225244522094727,
+      28.112009048461914,
+      2.8399996757507324,
+      5.470588207244873
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.245344161987305,
+      26.5938720703125,
+      30.313478469848633,
+      27.494361877441406,
+      2.8399999141693115,
+      5.647058486938477
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.333580017089844,
+      25.976224899291992,
+      30.401714324951172,
+      26.8767147064209,
+      2.8400001525878906,
+      5.823529243469238
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L04 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L04",
+    "bounds": [
+      28.421815872192383,
+      25.358577728271484,
+      30.48995018005371,
+      26.25906753540039,
+      2.8400001525878906,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      29.08759117126465,
+      21.59071922302246,
+      32.48240661621094,
+      25.90928077697754,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      41.415122985839844,
+      49.09097671508789,
+      43.91252136230469,
+      51.40902328491211,
+      2.8399999141693115,
+      3.1764705181121826
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      40.74277114868164,
+      47.59097671508789,
+      43.240169525146484,
+      49.90902328491211,
+      2.8399999141693115,
+      3.3529412746429443
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      40.07041931152344,
+      46.09097671508789,
+      42.56781768798828,
+      48.40902328491211,
+      2.8400001525878906,
+      3.529411792755127
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      39.39806365966797,
+      44.59097671508789,
+      41.89546203613281,
+      46.90902328491211,
+      2.8399999141693115,
+      3.7058823108673096
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      38.725711822509766,
+      43.09097671508789,
+      41.22311019897461,
+      45.40902328491211,
+      2.8400001525878906,
+      3.882352828979492
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      38.05335998535156,
+      41.59097671508789,
+      40.550758361816406,
+      43.90902328491211,
+      2.8400001525878906,
+      4.058823585510254
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      37.38100814819336,
+      40.09097671508789,
+      39.8784065246582,
+      42.40902328491211,
+      2.8399999141693115,
+      4.235293865203857
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      36.70865249633789,
+      38.59097671508789,
+      39.206050872802734,
+      40.90902328491211,
+      2.8400001525878906,
+      4.411764621734619
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      36.03630065917969,
+      37.09097671508789,
+      38.53369903564453,
+      39.40902328491211,
+      2.8400001525878906,
+      4.588235378265381
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      35.363948822021484,
+      35.59097671508789,
+      37.86134719848633,
+      37.90902328491211,
+      2.8399999141693115,
+      4.764705657958984
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      34.691593170166016,
+      34.09097671508789,
+      37.18899154663086,
+      36.40902328491211,
+      2.8400001525878906,
+      4.941176414489746
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      34.01924133300781,
+      32.59097671508789,
+      36.516639709472656,
+      34.90902328491211,
+      2.8399999141693115,
+      5.117647171020508
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      33.34688949584961,
+      31.090974807739258,
+      35.84428787231445,
+      33.40902328491211,
+      2.8400001525878906,
+      5.2941179275512695
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      32.674537658691406,
+      29.590974807739258,
+      35.17193603515625,
+      31.909025192260742,
+      2.8399996757507324,
+      5.470588207244873
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      32.00218200683594,
+      28.090974807739258,
+      34.49958038330078,
+      30.409025192260742,
+      2.8399999141693115,
+      5.647058486938477
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      31.329830169677734,
+      26.590974807739258,
+      33.82722854614258,
+      28.909025192260742,
+      2.8400001525878906,
+      5.823529243469238
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L11 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L11",
+    "bounds": [
+      30.6574764251709,
+      25.090974807739258,
+      33.154876708984375,
+      27.409025192260742,
+      2.8400001525878906,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step0",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      11.0,
+      20.0,
+      13.0,
+      28.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step1",
+    "role": "structural-stair-landing",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      12.0,
+      27.0,
+      20.0,
+      29.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      26.82230567932129,
+      34.822303771972656,
+      28.70710563659668,
+      36.70710754394531,
+      2.8399999141693115,
+      3.1764705181121826
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      26.351716995239258,
+      34.351715087890625,
+      28.23651695251465,
+      36.23651885986328,
+      2.8399999141693115,
+      3.3529412746429443
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      25.88113021850586,
+      33.881126403808594,
+      27.76593017578125,
+      35.76593017578125,
+      2.8400001525878906,
+      3.529411792755127
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      25.410541534423828,
+      33.41053771972656,
+      27.29534149169922,
+      35.29534149169922,
+      2.8399999141693115,
+      3.7058823108673096
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      24.939952850341797,
+      32.9399528503418,
+      26.824752807617188,
+      34.82475662231445,
+      2.8400001525878906,
+      3.882352828979492
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      24.469364166259766,
+      32.469364166259766,
+      26.354164123535156,
+      34.35416793823242,
+      2.8400001525878906,
+      4.058823585510254
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      23.998777389526367,
+      31.998777389526367,
+      25.883577346801758,
+      33.88357925415039,
+      2.8399999141693115,
+      4.235293865203857
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      23.528188705444336,
+      31.528188705444336,
+      25.412988662719727,
+      33.41299057006836,
+      2.8400001525878906,
+      4.411764621734619
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      23.057600021362305,
+      31.057600021362305,
+      24.942399978637695,
+      32.94240188598633,
+      2.8400001525878906,
+      4.588235378265381
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      22.587011337280273,
+      30.587011337280273,
+      24.471811294555664,
+      32.4718132019043,
+      2.8399999141693115,
+      4.764705657958984
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      22.116422653198242,
+      30.116422653198242,
+      24.001222610473633,
+      32.001224517822266,
+      2.8400001525878906,
+      4.941176414489746
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      21.645835876464844,
+      29.645835876464844,
+      23.530635833740234,
+      31.530635833740234,
+      2.8399999141693115,
+      5.117647171020508
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      21.175247192382812,
+      29.175247192382812,
+      23.060047149658203,
+      31.060047149658203,
+      2.8400001525878906,
+      5.2941179275512695
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      20.70465850830078,
+      28.70465850830078,
+      22.589458465576172,
+      30.589458465576172,
+      2.8399996757507324,
+      5.470588207244873
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      20.23406982421875,
+      28.23406982421875,
+      22.11886978149414,
+      30.11886978149414,
+      2.8399999141693115,
+      5.647058486938477
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      19.76348304748535,
+      27.76348304748535,
+      21.648283004760742,
+      29.648283004760742,
+      2.8400001525878906,
+      5.823529243469238
+    ]
+  },
+  {
+    "name": "Bayed stair WLD-04 L06 step18",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L06",
+    "bounds": [
+      19.29289436340332,
+      27.29289436340332,
+      21.17769432067871,
+      29.17769432067871,
+      2.8400001525878906,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall hut E",
+    "role": "rough shell wall",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      19.920000076293945,
+      14.0,
+      20.079999923706055,
+      19.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall hut E.001",
+    "role": "rough shell wall",
+    "zone": "hut",
+    "link": null,
+    "bounds": [
+      19.920000076293945,
+      21.0,
+      20.079999923706055,
+      26.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall ruin S",
+    "role": "rough shell wall",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      40.0,
+      29.920000076293945,
+      44.25,
+      30.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall ruin S.001",
+    "role": "rough shell wall",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      45.75,
+      29.920000076293945,
+      54.0,
+      30.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall ruin W",
+    "role": "rough shell wall",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      39.91999816894531,
+      14.0,
+      40.08000183105469,
+      21.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall ruin W.001",
+    "role": "rough shell wall",
+    "zone": "ruin",
+    "link": null,
+    "bounds": [
+      39.91999816894531,
+      23.0,
+      40.08000183105469,
+      30.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall store N.001",
+    "role": "rough shell wall",
+    "zone": "store",
+    "link": null,
+    "bounds": [
+      45.75,
+      29.920000076293945,
+      50.0,
+      30.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall cab E",
+    "role": "rough shell wall",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      29.920000076293945,
+      2.0,
+      30.079999923706055,
+      4.0,
+      15.0,
+      18.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall cab E.001",
+    "role": "rough shell wall",
+    "zone": "cab",
+    "link": null,
+    "bounds": [
+      29.920000076293945,
+      6.0,
+      30.079999923706055,
+      8.0,
+      15.0,
+      18.0
+    ]
+  },
+  {
+    "name": "Arrival end bearing WLD-04 0",
+    "role": "structural-arrival-end-bearing",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      27.0,
+      78.0,
+      29.0,
+      78.3499984741211,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight continuous stair waist",
+    "role": "continuous load-bearing stair waist",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      4.199999809265137,
+      31.700000762939453,
+      8.100000381469727,
+      10.100000381469727,
+      12.550000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      4.199999809265137,
+      31.700000762939453,
+      4.5,
+      10.300000190734863,
+      10.673076629638672
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      4.5,
+      31.700000762939453,
+      4.800000190734863,
+      10.473076820373535,
+      10.84615421295166
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      4.800000190734863,
+      31.700000762939453,
+      5.099999904632568,
+      10.646153450012207,
+      11.019230842590332
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      5.099999904632568,
+      31.700000762939453,
+      5.400000095367432,
+      10.819231033325195,
+      11.192307472229004
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      5.400000095367432,
+      31.700000762939453,
+      5.699999809265137,
+      10.992307662963867,
+      11.365385055541992
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      5.699999809265137,
+      31.700000762939453,
+      6.0,
+      11.165384292602539,
+      11.538461685180664
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      6.0,
+      31.700000762939453,
+      6.300000190734863,
+      11.338461875915527,
+      11.711538314819336
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      6.300000190734863,
+      31.700000762939453,
+      6.599999904632568,
+      11.5115385055542,
+      11.884614944458008
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      6.599999904632568,
+      31.700000762939453,
+      6.900000095367432,
+      11.684615135192871,
+      12.057692527770996
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      6.900000095367432,
+      31.700000762939453,
+      7.199999809265137,
+      11.85769271850586,
+      12.230769157409668
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      7.199999809265137,
+      31.700000762939453,
+      7.5,
+      12.030769348144531,
+      12.40384578704834
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      7.5,
+      31.700000762939453,
+      7.800000190734863,
+      12.203845977783203,
+      12.576923370361328
+    ]
+  },
+  {
+    "name": "WLD-04 L14 lookout upper first flight tread13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      29.899999618530273,
+      7.800000190734863,
+      31.700000762939453,
+      8.100000381469727,
+      12.376922607421875,
+      12.75
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight continuous stair waist",
+    "role": "continuous load-bearing stair waist",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      4.199999809265137,
+      29.100000381469727,
+      8.100000381469727,
+      12.350000381469727,
+      14.800000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      7.800000190734863,
+      29.100000381469727,
+      8.100000381469727,
+      12.550000190734863,
+      12.923076629638672
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      7.5,
+      29.100000381469727,
+      7.800000190734863,
+      12.723076820373535,
+      13.09615421295166
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      7.199999809265137,
+      29.100000381469727,
+      7.5,
+      12.896153450012207,
+      13.269230842590332
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      6.900000095367432,
+      29.100000381469727,
+      7.199999809265137,
+      13.069231033325195,
+      13.442307472229004
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      6.599999904632568,
+      29.100000381469727,
+      6.900000095367432,
+      13.242307662963867,
+      13.615385055541992
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      6.300000190734863,
+      29.100000381469727,
+      6.599999904632568,
+      13.415384292602539,
+      13.788461685180664
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      6.0,
+      29.100000381469727,
+      6.300000190734863,
+      13.588461875915527,
+      13.961538314819336
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      5.699999809265137,
+      29.100000381469727,
+      6.0,
+      13.7615385055542,
+      14.134614944458008
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      5.400000095367432,
+      29.100000381469727,
+      5.699999809265137,
+      13.934615135192871,
+      14.307692527770996
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      5.099999904632568,
+      29.100000381469727,
+      5.400000095367432,
+      14.10769271850586,
+      14.480769157409668
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      4.800000190734863,
+      29.100000381469727,
+      5.099999904632568,
+      14.280769348144531,
+      14.65384578704834
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      4.5,
+      29.100000381469727,
+      4.800000190734863,
+      14.453845977783203,
+      14.826923370361328
+    ]
+  },
+  {
+    "name": "WLD-04 L14B lookout upper second flight tread13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14B",
+    "bounds": [
+      27.299999237060547,
+      4.199999809265137,
+      29.100000381469727,
+      4.5,
+      14.626922607421875,
+      15.0
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 28",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.65999984741211,
+      4.199999809265137,
+      31.739999771118164,
+      6.150000095367432,
+      10.508437156677246,
+      12.675000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 29",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.65999984741211,
+      6.150000095367432,
+      31.739999771118164,
+      8.100000381469727,
+      11.633437156677246,
+      13.800000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 30",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.860000610351562,
+      4.199999809265137,
+      29.940000534057617,
+      6.150000095367432,
+      10.508437156677246,
+      12.675000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 31",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.860000610351562,
+      6.150000095367432,
+      29.940000534057617,
+      8.100000381469727,
+      11.633437156677246,
+      13.800000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 32",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.260000228881836,
+      6.150000095367432,
+      27.34000015258789,
+      8.100000381469727,
+      12.758437156677246,
+      14.925000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 33",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.260000228881836,
+      4.199999809265137,
+      27.34000015258789,
+      6.150000095367432,
+      13.883437156677246,
+      16.049999237060547
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 34",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.059999465942383,
+      6.150000095367432,
+      29.139999389648438,
+      8.100000381469727,
+      12.758437156677246,
+      14.925000190734863
+    ]
+  },
+  {
+    "name": "WLD-04 mounted stair guard 35",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.059999465942383,
+      4.199999809265137,
+      29.139999389648438,
+      6.150000095367432,
+      13.883437156677246,
+      16.049999237060547
+    ]
+  }
+]

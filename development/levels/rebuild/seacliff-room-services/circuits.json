@@ -1,0 +1,950 @@
+{
+  "source": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/battery-cupboards.blend",
+  "installed": [
+    {
+      "id": "battery-gallery-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        38.0,
+        5.25,
+        26.121
+      ],
+      "yaw": 0.0,
+      "style": "BATTERY-GALLERY"
+    },
+    {
+      "id": "battery-gallery-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        35.599998,
+        6.36,
+        26.304001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-director-stair-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        29.041,
+        5.25,
+        24.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "BATTERY-DIRECTOR-STAIR"
+    },
+    {
+      "id": "battery-director-stair-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        29.224001,
+        6.36,
+        22.450001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-director-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        38.599998,
+        8.25,
+        25.919001
+      ],
+      "yaw": 3.141592653589793,
+      "style": "BATTERY-DIRECTOR"
+    },
+    {
+      "id": "battery-director-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        37.0,
+        9.36,
+        25.736
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-west-switch",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        15.0,
+        5.25,
+        39.918999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "BATTERY-WEST"
+    },
+    {
+      "id": "battery-west-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        18.0,
+        6.36,
+        39.736
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-east-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        52.0,
+        5.25,
+        39.918999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "BATTERY-EAST"
+    },
+    {
+      "id": "battery-east-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        55.0,
+        6.36,
+        39.736
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-magazine-switch",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        10.0,
+        5.25,
+        14.081
+      ],
+      "yaw": 0.0,
+      "style": "BATTERY-MAGAZINE"
+    },
+    {
+      "id": "battery-magazine-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        12.2,
+        6.36,
+        14.264
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-barracks-switch",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        13.0,
+        1.25,
+        25.919001
+      ],
+      "yaw": 3.141592653589793,
+      "style": "BATTERY-BARRACKS"
+    },
+    {
+      "id": "battery-barracks-light",
+      "type": "light",
+      "room": 7,
+      "position": [
+        17.0,
+        2.36,
+        25.736
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-lowgallery-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        33.0,
+        1.25,
+        26.121
+      ],
+      "yaw": 0.0,
+      "style": "BATTERY-LOWGALLERY"
+    },
+    {
+      "id": "battery-lowgallery-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        35.599998,
+        2.36,
+        26.304001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-records-switch",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        31.0,
+        1.25,
+        14.081
+      ],
+      "yaw": 0.0,
+      "style": "BATTERY-RECORDS"
+    },
+    {
+      "id": "battery-records-light",
+      "type": "light",
+      "room": 10,
+      "position": [
+        29.0,
+        2.36,
+        14.264
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "battery-pump-switch",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        41.0,
+        1.25,
+        14.081
+      ],
+      "yaw": 0.0,
+      "style": "BATTERY-PUMP"
+    },
+    {
+      "id": "battery-pump-light",
+      "type": "light",
+      "room": 11,
+      "position": [
+        39.0,
+        2.36,
+        14.264
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "Seacliff director plotting log",
+      "type": "native_story",
+      "room": 2,
+      "position": [
+        35.25,
+        7.98801,
+        14.5
+      ],
+      "yaw": 0,
+      "style": "SEACLIFF_DIRECTOR_LOG"
+    },
+    {
+      "id": "Seacliff director telephone",
+      "type": "native-device",
+      "room": 2,
+      "position": [
+        37.5,
+        7.821,
+        12.825
+      ],
+      "yaw": 0,
+      "style": "PHONE"
+    },
+    {
+      "id": "Seacliff casemate sump pump",
+      "type": "native-device",
+      "room": 11,
+      "position": [
+        39.119999,
+        0.493845,
+        16.278062
+      ],
+      "yaw": 0,
+      "style": "WATER_PUMP"
+    }
+  ],
+  "lights": [
+    {
+      "id": "battery-gallery-light",
+      "room": 0,
+      "space": "gallery",
+      "circuit": "EM-00",
+      "mount": [
+        35.599998,
+        6.36,
+        26.120001
+      ],
+      "emitter": [
+        35.599998,
+        6.36,
+        26.304001
+      ],
+      "support": "Battery gallery passage north face end pier region0"
+    },
+    {
+      "id": "battery-director-stair-light",
+      "room": 1,
+      "space": "director-stair",
+      "circuit": "EM-01",
+      "mount": [
+        29.040001,
+        6.36,
+        22.450001
+      ],
+      "emitter": [
+        29.224001,
+        6.36,
+        22.450001
+      ],
+      "support": "Battery west return region0"
+    },
+    {
+      "id": "battery-director-light",
+      "room": 2,
+      "space": "director",
+      "circuit": "EM-02",
+      "mount": [
+        37.0,
+        9.36,
+        25.92
+      ],
+      "emitter": [
+        37.0,
+        9.36,
+        25.736
+      ],
+      "support": "Wall director S"
+    },
+    {
+      "id": "battery-west-light",
+      "room": 3,
+      "space": "west",
+      "circuit": "EM-03",
+      "mount": [
+        18.0,
+        6.36,
+        39.919998
+      ],
+      "emitter": [
+        18.0,
+        6.36,
+        39.736
+      ],
+      "support": "Wall west S"
+    },
+    {
+      "id": "battery-east-light",
+      "room": 4,
+      "space": "east",
+      "circuit": "EM-04",
+      "mount": [
+        55.0,
+        6.36,
+        39.919998
+      ],
+      "emitter": [
+        55.0,
+        6.36,
+        39.736
+      ],
+      "support": "Wall east S"
+    },
+    {
+      "id": "battery-magazine-light",
+      "room": 5,
+      "space": "magazine",
+      "circuit": "EM-05",
+      "mount": [
+        12.2,
+        6.36,
+        14.08
+      ],
+      "emitter": [
+        12.2,
+        6.36,
+        14.264
+      ],
+      "support": "Wall magazine N"
+    },
+    {
+      "id": "battery-barracks-light",
+      "room": 7,
+      "space": "barracks",
+      "circuit": "EM-07",
+      "mount": [
+        17.0,
+        2.36,
+        25.92
+      ],
+      "emitter": [
+        17.0,
+        2.36,
+        25.736
+      ],
+      "support": "Wall barracks S"
+    },
+    {
+      "id": "battery-lowgallery-light",
+      "room": 8,
+      "space": "lowgallery",
+      "circuit": "EM-08",
+      "mount": [
+        35.599998,
+        2.36,
+        26.120001
+      ],
+      "emitter": [
+        35.599998,
+        2.36,
+        26.304001
+      ],
+      "support": "Battery lower lower gallery north partition pump-gallery preceding pier region0"
+    },
+    {
+      "id": "battery-records-light",
+      "room": 10,
+      "space": "records",
+      "circuit": "EM-10",
+      "mount": [
+        29.0,
+        2.36,
+        14.08
+      ],
+      "emitter": [
+        29.0,
+        2.36,
+        14.264
+      ],
+      "support": "Wall records N"
+    },
+    {
+      "id": "battery-pump-light",
+      "room": 11,
+      "space": "pump",
+      "circuit": "EM-11",
+      "mount": [
+        39.0,
+        2.36,
+        14.08
+      ],
+      "emitter": [
+        39.0,
+        2.36,
+        14.264
+      ],
+      "support": "Wall pump N"
+    }
+  ],
+  "conduit": [
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          38.0,
+          5.302,
+          26.149
+        ],
+        [
+          38.0,
+          6.77000015258789,
+          26.149
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery gallery lamp branch",
+      "points": [
+        [
+          38.0,
+          6.77000015258789,
+          26.149
+        ],
+        [
+          35.599998,
+          6.77000015258789,
+          26.148000999999997
+        ],
+        [
+          35.599998,
+          6.44,
+          26.148000999999997
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          29.069,
+          5.302,
+          24.5
+        ],
+        [
+          29.069,
+          6.77000015258789,
+          24.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery director-stair lamp branch",
+      "points": [
+        [
+          29.069,
+          6.77000015258789,
+          24.5
+        ],
+        [
+          29.068001,
+          6.77000015258789,
+          22.450001
+        ],
+        [
+          29.068001,
+          6.44,
+          22.450001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          38.599998,
+          8.302,
+          25.891001
+        ],
+        [
+          38.599998,
+          9.77000015258789,
+          25.891001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery director lamp branch",
+      "points": [
+        [
+          38.599998,
+          9.77000015258789,
+          25.891001
+        ],
+        [
+          37.0,
+          9.77000015258789,
+          25.892000000000003
+        ],
+        [
+          37.0,
+          9.44,
+          25.892000000000003
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          15.0,
+          5.302,
+          39.890999
+        ],
+        [
+          15.0,
+          6.77000015258789,
+          39.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery west lamp branch",
+      "points": [
+        [
+          15.0,
+          6.77000015258789,
+          39.890999
+        ],
+        [
+          18.0,
+          6.77000015258789,
+          39.891998
+        ],
+        [
+          18.0,
+          6.44,
+          39.891998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          52.0,
+          5.302,
+          39.890999
+        ],
+        [
+          52.0,
+          6.77000015258789,
+          39.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery east lamp branch",
+      "points": [
+        [
+          52.0,
+          6.77000015258789,
+          39.890999
+        ],
+        [
+          55.0,
+          6.77000015258789,
+          39.891998
+        ],
+        [
+          55.0,
+          6.44,
+          39.891998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          10.0,
+          5.302,
+          14.109
+        ],
+        [
+          10.0,
+          6.77000015258789,
+          14.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery magazine lamp branch",
+      "points": [
+        [
+          10.0,
+          6.77000015258789,
+          14.109
+        ],
+        [
+          12.2,
+          6.77000015258789,
+          14.108
+        ],
+        [
+          12.2,
+          6.44,
+          14.108
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-07 switch drop",
+      "points": [
+        [
+          13.0,
+          1.302,
+          25.891001
+        ],
+        [
+          13.0,
+          2.770000152587891,
+          25.891001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery barracks lamp branch",
+      "points": [
+        [
+          13.0,
+          2.770000152587891,
+          25.891001
+        ],
+        [
+          17.0,
+          2.770000152587891,
+          25.892000000000003
+        ],
+        [
+          17.0,
+          2.44,
+          25.892000000000003
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-08 switch drop",
+      "points": [
+        [
+          33.0,
+          1.302,
+          26.149
+        ],
+        [
+          33.0,
+          2.770000152587891,
+          26.149
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery lowgallery lamp branch",
+      "points": [
+        [
+          33.0,
+          2.770000152587891,
+          26.149
+        ],
+        [
+          35.599998,
+          2.770000152587891,
+          26.148000999999997
+        ],
+        [
+          35.599998,
+          2.44,
+          26.148000999999997
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          31.0,
+          1.302,
+          14.109
+        ],
+        [
+          31.0,
+          2.770000152587891,
+          14.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery records lamp branch",
+      "points": [
+        [
+          31.0,
+          2.770000152587891,
+          14.109
+        ],
+        [
+          29.0,
+          2.770000152587891,
+          14.108
+        ],
+        [
+          29.0,
+          2.44,
+          14.108
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-11 switch drop",
+      "points": [
+        [
+          41.0,
+          1.302,
+          14.109
+        ],
+        [
+          41.0,
+          2.770000152587891,
+          14.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "Battery pump lamp branch",
+      "points": [
+        [
+          41.0,
+          2.770000152587891,
+          14.109
+        ],
+        [
+          39.0,
+          2.770000152587891,
+          14.108
+        ],
+        [
+          39.0,
+          2.44,
+          14.108
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    }
+  ],
+  "fitted_rooms": {
+    "telephone": {
+      "asset": "level_event_phone_worn",
+      "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+      "bounds": [
+        [
+          37.358002,
+          7.756,
+          12.59
+        ],
+        [
+          37.641998,
+          7.923119,
+          12.809999
+        ]
+      ],
+      "pivot": [
+        37.5,
+        7.75600004196167,
+        12.699999809265137
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": [
+        "Mine case director telephone stand 01"
+      ]
+    },
+    "telephone_stand": {
+      "asset": "level_event_side_table_worn",
+      "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+      "bounds": [
+        [
+          37.27,
+          7.0,
+          12.5
+        ],
+        [
+          37.73,
+          7.755,
+          12.9
+        ]
+      ],
+      "pivot": [
+        37.5,
+        7.0,
+        12.699999809265137
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    "sump_pump": {
+      "asset": "level_blockout_cinder_sump_pump",
+      "sha256": "6c54c4c59ff5f80a8d985f5f4a3e7a3baea244178d267f0c1128c71c27b207b5",
+      "bounds": [
+        [
+          37.898796,
+          0.0,
+          15.0048
+        ],
+        [
+          39.801197,
+          0.8979,
+          16.415199
+        ]
+      ],
+      "pivot": [
+        38.74749755859375,
+        -0.004100000020116568,
+        15.710000038146973
+      ],
+      "yaw": 0,
+      "scale": 0.82,
+      "support": "measured existing slab"
+    },
+    "records_shelf": {
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          29.989998,
+          0.0,
+          15.74
+        ],
+        [
+          30.810001,
+          1.29,
+          15.96
+        ]
+      ],
+      "pivot": [
+        30.40000343322754,
+        5.042526751708465e-08,
+        15.84999942779541
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    }
+  },
+  "exports": {
+    "blend": "a8b0db3488446046275aab2157ce006a5be436d81576435ac5cdc6dd6b160178",
+    "glb": "04c4c47fd884a1e931bf8c283a31f3ec9b0fb40558544b0a1cb8bd7fca7c925f",
+    "hcs2": "829d5fe47ccfd35aed7da4089b76e65e0a6d94f18c8a330a95060ce8b3252079"
+  }
+}

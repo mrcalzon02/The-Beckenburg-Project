@@ -1,0 +1,135 @@
+{
+  "source_glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+  "source_native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865",
+  "canonical_van_triangles": 2689,
+  "canonical_van_geometry_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "door_controls": {
+    "aperture_rays": 9,
+    "standing_sills": 6,
+    "solid_jamb_rays": 2
+  },
+  "school_walkable_receivers": [
+    {
+      "point": [
+        24.372,
+        -0.0,
+        51
+      ],
+      "physical_receiver": "Saved editor geographic earthworks SCHOOL"
+    },
+    {
+      "point": [
+        23.75,
+        -0.0,
+        51
+      ],
+      "physical_receiver": "Saved editor geographic earthworks SCHOOL"
+    },
+    {
+      "point": [
+        22.5,
+        0.0,
+        48
+      ],
+      "physical_receiver": "Saved editor geographic earthworks SCHOOL"
+    },
+    {
+      "point": [
+        22.5,
+        0.0,
+        44
+      ],
+      "physical_receiver": "Saved editor geographic earthworks SCHOOL"
+    },
+    {
+      "point": [
+        22.5,
+        0.0,
+        42.06
+      ],
+      "physical_receiver": "Saved editor geographic earthworks SCHOOL"
+    },
+    {
+      "point": [
+        22.5,
+        0.0,
+        41.4
+      ],
+      "physical_receiver": "SCHOOL south school forecourt pavement region0"
+    },
+    {
+      "point": [
+        22.5,
+        0.0,
+        39.35
+      ],
+      "physical_receiver": "SCHOOL south school forecourt pavement region0"
+    },
+    {
+      "point": [
+        22.5,
+        0.0,
+        38.45
+      ],
+      "physical_receiver": "SCHOOL architectural entrance landing and soil-bearing plinth"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-van-and-forecourt.png",
+      "sha256": "7e5f5f86e2e6afdbca1ab19df610032a0b4a818da16e90d70f048449a7aab3af",
+      "camera": [
+        41,
+        -64,
+        21
+      ],
+      "target": [
+        25,
+        -42,
+        0.35
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-cargo-ramp-receiver.png",
+      "sha256": "09a3eba553897396f85e07f6523b3906b5c3a060bbb258ac74ac0742fa5731a0",
+      "camera": [
+        20.8,
+        -55,
+        2.1
+      ],
+      "target": [
+        26.2,
+        -51,
+        1.18
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-ramp-to-the-foyer.png",
+      "sha256": "f1c35d561efaa638c653aa897a8b3ea90b4f1f39b5f3298d83665b9615f4b3ea",
+      "camera": [
+        23.74,
+        -50.98,
+        1.58
+      ],
+      "target": [
+        22.5,
+        -35.6,
+        1.22
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-foyer-threshold.png",
+      "sha256": "b8e799b9570a0b9f3c9951ce6b8e33ab5091a8f11b1be444f4a8359c9f58cc5c",
+      "camera": [
+        22.5,
+        -38.65,
+        1.57
+      ],
+      "target": [
+        22.5,
+        -33.6,
+        1.35
+      ]
+    }
+  ]
+}

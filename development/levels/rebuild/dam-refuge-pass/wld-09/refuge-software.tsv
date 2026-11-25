@@ -1,0 +1,21 @@
+check	result
+native_scene_revision	ccae41445034228bf8079d002eefaa21b3434664cfb356567988c7fbe9402d89
+collision_sha256	2fb365fb3b58e7ce5bb94b004f0bec1ca2ae9dc72efd4587850d4ff38887eea0
+level_revision	ccae41445034228bf8079d002eefaa21b3434664cfb356567988c7fbe9402d89-5f843e0b033565da
+water_revision	a7fd90e0ba964931361a65c598d9fecbfdd21ad0d7bc0fdc9cd16cee82ad7575
+renderer	Software
+retained_fitted_doors	14
+dam-office-cupboard_protected_floor_samples	69
+dam-workshop-cupboard_protected_floor_samples	69
+dam-plant-cupboard_protected_floor_samples	69
+dam_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+protected_samples_across_full_width_depth_and_height	2475
+physical_volume_m	1.58 x 1.14 x 2.02
+full_cargo_to_refuge_and_return_direction_replays	12
+disabled_refuge_cue_pixels	0
+dam-office-cupboard_live_entry_hide_reveal_exit	PASS
+dam-workshop-cupboard_live_entry_hide_reveal_exit	PASS
+dam-plant-cupboard_live_entry_hide_reveal_exit	PASS
+live_spectral_workshop_threshold	PASS
+live_zero_density_same_walkable_shell_without_cover	PASS

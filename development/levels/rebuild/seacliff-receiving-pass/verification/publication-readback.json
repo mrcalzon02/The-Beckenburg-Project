@@ -1,0 +1,39 @@
+{
+  "status": "VERIFIED_DRAFT_BRANCH_AND_GALLERY_INDEX",
+  "implementation": "848c6cf20a7ae003c178a1128f816336cabc9cee",
+  "git_tree": "fb6d0fc60fa2bca838216fe1a8b24193cc1cab92",
+  "pull_request": {
+    "baseRefName": "map/house-default",
+    "baseRefOid": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "headRefName": "map/roster-structure-batch",
+    "headRefOid": "848c6cf20a7ae003c178a1128f816336cabc9cee",
+    "isDraft": true,
+    "state": "OPEN",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86"
+  },
+  "gallery": {
+    "conclusion": "success",
+    "databaseId": 44241737196,
+    "headSha": "848c6cf20a7ae003c178a1128f816336cabc9cee",
+    "status": "completed",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44241737196"
+  },
+  "draft_capture_readback": {
+    "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-after.png": {
+      "git_blob": "db61e8bec78c738ffbeb9a98bdf59c7690379edf",
+      "sha256": "dcbfea9e52abcba04ecba732f0b80dbe7376c1bbb4258d18415ee45e1ca6655f",
+      "public_pages_http": 404
+    },
+    "development/levels/rebuild/captures/seacliff-receiving-batch/battery-gallery-open-runtime.png": {
+      "git_blob": "c632b75c94ad05f5575ce72f336af726c07f0b4b",
+      "sha256": "eff0a4cb68ad5cf957988fd5fd2ef4f7b7bba9ceb6d4d0473176fcc48a15bc7a",
+      "public_pages_http": 404
+    }
+  },
+  "main_gallery_http": 200,
+  "public_pages": "The two new draft images await accepted integration.",
+  "next_house_boundary_scout": {
+    "file": "development/levels/rebuild/seacliff-receiving-pass/verification/house-segment-scout.json",
+    "sha256": "7defdf4096e71c3c7ed3ee45584496207642c8c0873a1778ee076a8742ac51c1"
+  }
+}

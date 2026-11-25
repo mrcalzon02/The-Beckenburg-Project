@@ -1,0 +1,56 @@
+{
+  "id": "WLD-08",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-0-L17--1.png",
+      "sha256": "73ac8270f3fd5753e810f93a226a325fbad53531679dc4267915dbad5e00b503",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-0-L17-1.png",
+      "sha256": "b5c06baf30b6f020958df6e570bae32c4889c401252fb0595a71abc6c42b84e0",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-1-L18--1.png",
+      "sha256": "b3301f7ea090ff70a8512d59c55d08eb9941e9b4554964a5cd7db42760537e4f",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-1-L18-1.png",
+      "sha256": "1c2b0173b50fe28a89b1f576963dd7db37e9e7efa02ecbea307215fd732220d6",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-2-L17--1.png",
+      "sha256": "ac4db90cf1e3e1a35b85e0077c045ba5476551a5cd49711666c3356f317f7744",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-2-L17-1.png",
+      "sha256": "40f1b79e8872d4c7c6ac717a17a75f1cc799dda398fad65e49f689096bf891b4",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-3-L18--1.png",
+      "sha256": "1726450f18f542b759d5403609dc44cf75e364a8b021f56d0fa1880c382bf1db",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-3-L18-1.png",
+      "sha256": "3178e36733411aa6cfdab6e45e5d27550c3fa630d3503e30302333031069917d",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-4-L20--1.png",
+      "sha256": "677f4257bdd4cd58c6e93df37a0f6c88b2c4a168396d2705e5b6927afc8f0e55",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-4-L20-1.png",
+      "sha256": "975b70410aded9157ee1acfb80ce02535933b477b3ed1b57b2115fb0af4bc57f",
+      "type": "native aperture inspection; construction camera, not runtime"
+    }
+  ],
+  "renderer": "Blender native Workbench; actual GLB reimport, not runtime"
+}

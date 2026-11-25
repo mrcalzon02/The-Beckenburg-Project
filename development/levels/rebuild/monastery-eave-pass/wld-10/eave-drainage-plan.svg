@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 680" role="img" aria-labelledby="title desc">
+<title id="title">Monastery public gate and herb court eave drainage</title>
+<desc id="desc">North-up roof and drainage plan showing five fitted gutters, ten gravel beds, and the archive–vestry roof lap.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+<path d="M0 0L7 4L0 8" fill="none" stroke="#216b5f" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#273733}.title{font-size:32px;font-weight:650}
+.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.roof{fill:#dedfd6;stroke:#767063}.ridge{stroke:#89897d}.label{paint-order:stroke;stroke:#dedfd6;stroke-width:3}
+.gutter{stroke:#216b5f;stroke-width:3;stroke-linecap:round;fill:none}.fall{marker-end:url(#arrow)}
+.bed{fill:#216b5f;stroke:white;stroke-width:1.3}.lap{stroke:#97592e;stroke-width:3;stroke-linecap:round;fill:none}
+</style>
+<rect width="1050" height="680" fill="#f2ece0"/>
+<text class="title" x="26" y="47">Monastery of Ashen Bells · Eave drainage</text>
+<text class="body" x="27" y="76">Public gate and herb court roof drainage, with the fitted archive–vestry lap.</text>
+<rect x="24" y="92" width="607" height="565" rx="8" fill="#fbf7eb" stroke="#cfc3ad"/>
+<rect x="647" y="92" width="379" height="565" rx="8" fill="#fbf7eb" stroke="#cfc3ad"/>
+<rect class="roof" x="282.08" y="532.52" width="118.72" height="44.52"/>
+<path class="ridge" d="M282.08 554.78H400.80"/>
+<rect class="roof" x="163.36" y="280.24" width="44.52" height="207.76"/>
+<path class="ridge" d="M185.62 280.24V488.00"/>
+<rect class="roof" x="430.48" y="280.24" width="44.52" height="207.76"/>
+<path class="ridge" d="M452.74 280.24V488.00"/>
+<rect class="roof" x="163.36" y="235.72" width="311.64" height="44.52"/>
+<path class="ridge" d="M163.36 257.98H475.00"/>
+<rect class="roof" x="163.36" y="488.00" width="311.64" height="44.52"/>
+<path class="ridge" d="M163.36 510.26H475.00"/>
+<rect class="roof" x="163.36" y="131.84" width="148.40" height="103.88"/>
+<path class="ridge" d="M163.36 183.78H311.76"/>
+<rect class="roof" x="311.76" y="131.84" width="118.72" height="103.88"/>
+<path class="ridge" d="M311.76 183.78H430.48"/>
+<rect class="roof" x="475.00" y="339.60" width="133.56" height="148.40"/>
+<path class="ridge" d="M541.78 339.60V488.00"/>
+<rect class="roof" x="44.64" y="280.24" width="118.72" height="207.76"/>
+<path class="ridge" d="M104.00 280.24V488.00"/>
+<rect class="roof" x="475.00" y="235.72" width="74.20" height="103.88"/>
+<path class="ridge" d="M512.10 287.66L475.00 235.72"/>
+<path class="ridge" d="M512.10 287.66L475.00 339.60"/>
+<path class="ridge" d="M512.10 287.66L549.20 235.72"/>
+<path class="ridge" d="M512.10 287.66L549.20 339.60"/>
+<path class="gutter" d="M282.34 578.41L400.54 578.41"/>
+<path class="gutter fall" d="M341.44 577.04L286.16 580.90"/>
+<circle class="bed" cx="286.16" cy="583.12" r="4.4"/>
+<path class="gutter fall" d="M341.44 577.04L396.72 580.90"/>
+<circle class="bed" cx="396.72" cy="583.12" r="4.4"/>
+<path class="gutter" d="M208.14 281.61L430.22 281.61"/>
+<path class="gutter fall" d="M318.99 280.24L220.49 284.10"/>
+<circle class="bed" cx="220.49" cy="286.32" r="4.4"/>
+<path class="gutter fall" d="M318.99 280.24L417.50 284.10"/>
+<circle class="bed" cx="417.50" cy="286.32" r="4.4"/>
+<path class="gutter" d="M208.14 486.63L430.22 486.63"/>
+<path class="gutter fall" d="M318.99 488.00L220.49 484.14"/>
+<circle class="bed" cx="220.49" cy="481.92" r="4.4"/>
+<path class="gutter fall" d="M318.99 488.00L417.50 484.14"/>
+<circle class="bed" cx="417.50" cy="481.92" r="4.4"/>
+<path class="gutter" d="M209.25 280.50L209.25 487.74"/>
+<path class="gutter fall" d="M207.88 384.12L211.74 299.16"/>
+<circle class="bed" cx="213.96" cy="299.16" r="4.4"/>
+<path class="gutter fall" d="M207.88 384.12L211.74 469.08"/>
+<circle class="bed" cx="213.96" cy="469.08" r="4.4"/>
+<path class="gutter" d="M429.11 280.50L429.11 487.74"/>
+<path class="gutter fall" d="M430.48 384.12L426.62 299.16"/>
+<circle class="bed" cx="424.40" cy="299.16" r="4.4"/>
+<path class="gutter fall" d="M430.48 384.12L426.62 469.08"/>
+<circle class="bed" cx="424.40" cy="469.08" r="4.4"/>
+<path class="lap" d="M311.76 131.95V235.61"/>
+<text class="small label" x="341.44" y="557.01" text-anchor="middle">Gatehouse</text>
+<text class="small label" x="319.18" y="384.12" text-anchor="middle">Herb court</text>
+<text class="small label" x="512.10" y="287.66" text-anchor="middle">Bell tower</text>
+<text class="small label" x="237.56" y="183.78" text-anchor="middle">Archive</text>
+<text class="small label" x="371.12" y="183.78" text-anchor="middle">Vestry</text>
+<text class="small label" x="541.78" y="406.38" text-anchor="middle">Refectory</text>
+<text class="small label" x="104.00" y="384.12" text-anchor="middle">Dormitory</text>
+<path d="M594 148v-27l-5 7m5-7l5 7" fill="none" stroke="#273733"/><text class="small" x="594" y="165" text-anchor="middle">N</text>
+<path d="M48 607h74.2v-5M48 602v5" fill="none" stroke="#273733"/><text class="small" x="86" y="628" text-anchor="middle">10 m</text>
+<text x="669" y="131" class="head">Rainwater path</text>
+<path class="gutter fall" d="M672 158h30"/><text x="718" y="163" class="body">Graded eave gutter</text>
+<circle class="bed" cx="687" cy="187" r="5"/><text x="718" y="192" class="body">Pipe and gravel outfall</text>
+<path class="lap" d="M672 216h30"/><text x="718" y="221" class="body">Archive–vestry roof lap</text>
+<text x="669" y="285" class="head">Five gutter runs</text>
+<text x="669" y="314" class="body">The public gate and all four court eaves are fitted.</text>
+<text x="669" y="340" class="body">A central crown falls 0.45% toward each outlet.</text>
+<text x="669" y="366" class="body">Short end sections drain back to the nearest outlet.</text>
+<text x="669" y="439" class="head">Ten outlets</text>
+<text x="669" y="468" class="body">Water leaves each trough through a side notch.</text>
+<text x="669" y="494" class="body">A hollow pipe empties beside the masonry pier,</text>
+<text x="669" y="518" class="body">clear of the existing door approach.</text>
+<text x="669" y="614" class="small">Outlying and tower eaves are outside this checkpoint.</text>
+</svg>

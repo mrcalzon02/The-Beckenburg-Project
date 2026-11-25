@@ -1,0 +1,147 @@
+{
+  "site": "WLD-05",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-05/rough-layout.json",
+  "source_layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
+  "structure_glb_sha256": "dfa8ebc247575f049fa0c0e72c15279d3c93fca5dd0813be8a7e2aa988d10b9d",
+  "furnished_glb_sha256": "881f5de0ff5028b262cd9586776e8b8ef09c4fa8b60d438dd251f6957e5c6cb4",
+  "native_sha256": "646103b53d8fe7436fa4cfa7092b2b3d51c24f4f26990f93912c11764f2c880d",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "WLD-05:ore-west:0:0",
+      "zone": "ore-west",
+      "purpose": "West ore room / Small ore wagon / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_ore_cart",
+      "asset": "level_blockout_ore_cart",
+      "source_sha256": "f58239440ac22b7824cfbcd49c903a6b3ed26bd9ce17c518d007e03426dd1f4b",
+      "bounds": [
+        5.443999767303467,
+        -21.900001525878906,
+        -6.0,
+        6.703999996185303,
+        -20.15999984741211,
+        -4.945000171661377
+      ],
+      "rect": [
+        5.444000001907349,
+        20.16,
+        6.703999992370606,
+        21.900000009536743
+      ],
+      "floor_y": -6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 184
+    },
+    {
+      "id": "WLD-05:ore-east:1:0",
+      "zone": "ore-east",
+      "purpose": "East ore room / Mine ventilation unit / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_mine_ventilation",
+      "asset": "level_blockout_mine_ventilation",
+      "source_sha256": "4d7feffbb7bed878c54c410d55cd5adfbc7d3dd4fa3a95755d65bbb997507643",
+      "bounds": [
+        49.87049865722656,
+        -21.420000076293945,
+        -6.0,
+        51.420501708984375,
+        -20.160001754760742,
+        -4.5
+      ],
+      "rect": [
+        49.870500040531155,
+        20.16,
+        51.42049999284744,
+        21.419999990463257
+      ],
+      "floor_y": -6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 196
+    },
+    {
+      "id": "WLD-05:stores:2:0",
+      "zone": "stores",
+      "purpose": "Surface stores / Three-level freestanding shelf / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_storage_shelf",
+      "asset": "level_blockout_storage_shelf",
+      "source_sha256": "9e7baa1f1c128734b572d4e83de878db8ed2643eba544287eeb3034e74d88df1",
+      "bounds": [
+        4.1660003662109375,
+        -30.90999984741211,
+        0.0,
+        5.815999984741211,
+        -30.15999984741211,
+        1.7999999523162842
+      ],
+      "rect": [
+        4.166000004768372,
+        30.16,
+        5.815999980926514,
+        30.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "WLD-05:shack:3:0",
+      "zone": "shack",
+      "purpose": "Miners shack / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_camp_field_cot",
+      "asset": "level_blockout_camp_field_cot",
+      "source_sha256": "bed0b8ba5acec83bd08a44d865d27b658691dd7d2d2526166f1a4deebb3b308f",
+      "bounds": [
+        5.519999980926514,
+        -48.10000228881836,
+        0.0,
+        6.400000095367432,
+        -46.15999984741211,
+        0.6850000023841858
+      ],
+      "rect": [
+        5.520000000953674,
+        46.16,
+        6.3999999961853025,
+        48.100000057220456
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-05:assay:4:0",
+      "zone": "assay",
+      "purpose": "Assay office / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        42.68000030517578,
+        -46.6870002746582,
+        0.0,
+        43.76000213623047,
+        -46.15999984741211,
+        2.0
+      ],
+      "rect": [
+        42.67999999141693,
+        46.16,
+        43.76000003433227,
+        46.686999995112416
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "a50c66b74677f421b0eb45a4b579f6873adb030d5bd8f8445a4c15e0eec10dfb",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

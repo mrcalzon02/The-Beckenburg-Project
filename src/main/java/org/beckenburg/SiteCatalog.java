@@ -6,19 +6,36 @@ import java.util.Objects;
 public final class SiteCatalog {
     private SiteCatalog(){}
     public enum Location {
-        HOUSE(MissionSites.title("HOUSE"),true), MANSION(MissionSites.title("MANSION"),true), PRISON(MissionSites.title("PRISON"),true),
-        ASYLUM(MissionSites.title("ASYLUM"),true), SCHOOL(MissionSites.title("SCHOOL"),true), FARMHOUSE(MissionSites.title("FARMHOUSE"),true),
-        ACADEMY(MissionSites.title("ACADEMY"),true), COLLEGE(MissionSites.title("COLLEGE"),true),
-        CHURCH(MissionSites.title("CHURCH"),true), USER("User authored level",true);
+        HOUSE(MissionSites.title("HOUSE")), MANSION(MissionSites.title("MANSION")), PRISON(MissionSites.title("PRISON")),
+        ASYLUM(MissionSites.title("ASYLUM")), SCHOOL(MissionSites.title("SCHOOL")), FARMHOUSE(MissionSites.title("FARMHOUSE")),
+        ACADEMY(MissionSites.title("ACADEMY")), COLLEGE(MissionSites.title("COLLEGE")),
+        CHURCH(MissionSites.title("CHURCH")), USER("User authored level"),
+        HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK")),
+        SEACLIFF(MissionSites.title("SEACLIFF")),
+        BLACKPINE(MissionSites.title("BLACKPINE")),
+        LOOKOUT(MissionSites.title("LOOKOUT")),
+        MINE(MissionSites.title("MINE")),
+        WHARF(WharfNativeLevel.TITLE),
+        CEMETERY(CemeteryNativeLevel.TITLE),
+        MORTUARY(CemeteryNativeLevel.ANNEX_TITLE),
+        NORTHWATCH(NorthwatchNativeLevel.TITLE),
+        BLACKWATER(BlackwaterNativeLevel.TITLE),
+        MONASTERY(MonasteryNativeLevel.TITLE),
+        RED_MESA(MissionSites.title("RED_MESA")),
+        MOURNING_MARSH(MissionSites.title("MOURNING_MARSH")),
+        GREYWATER(MissionSites.title("GREYWATER")),
+        GALLOWS(MissionSites.title("GALLOWS")),
+        MORROW(MissionSites.title("MORROW")),
+        ELARA(MissionSites.title("ELARA")),
+        PINES(MissionSites.title("PINES")),
+        CINDER(MissionSites.title("CINDER"));
         public final String label;
-        private final boolean playable;
         private volatile Boolean geometryValidated;
-        Location(String label,boolean playable){this.label=label;this.playable=playable;}
+        Location(String label){this.label=label;}
         /** Authoring availability is static per build. Do not rebuild a complete
          * 15-room level every time Swing paints a combo-box label. */
         public synchronized boolean playable(){
             if(this==USER)return UserLevelLibrary.activeId()!=null;
-            if(!playable)return false;
             if(geometryValidated!=null)return geometryValidated;
             try{geometryValidated=LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
             catch(IllegalArgumentException unavailable){geometryValidated=false;}
@@ -45,6 +62,9 @@ public final class SiteCatalog {
         public boolean initiallyPowered(){return powered;}
         @Override public String toString(){return label;}
     }
+    static Location[] soloLocations(){
+        return Location.values();
+    }
     public static void requirePlayable(Location chosen){
         if(!Objects.requireNonNull(chosen).playable())
             throw new IllegalArgumentException(chosen.label+" has no shipped level geometry");
@@ -53,7 +73,7 @@ public final class SiteCatalog {
      * Multiplayer lists the entire HouseMap.Site authoring roster, which can
      * contain native prototypes before they receive a public contract entry.
      * Never throw during lobby construction or silently advertise an
-     * unfinished prototype (for example HOLLOW_CREEK) as an active mission.
+     * uncatalogued site as an active mission.
      */
     public static boolean playable(HouseMap.Site site){
         Objects.requireNonNull(site,"site");

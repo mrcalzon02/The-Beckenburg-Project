@@ -1,0 +1,98 @@
+[
+  {
+    "test": "LocalInvestigationTest",
+    "exit_code": 0,
+    "seconds": 2.0,
+    "output": "PASS: free play and campaign solo run the co-op host, viewport, equipment, flashlight, journal and posture\n2026-11-07T06:42:41.738992500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready\n2026-11-07T06:42:41.753350500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready\n2026-11-07T06:42:41.773747300Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready\n"
+  },
+  {
+    "test": "LanWorldControlsTest",
+    "exit_code": 0,
+    "seconds": 1.8,
+    "output": "PASS: LAN viewport hotkeys dispatch host-owned tools; legacy extraction rejected and physical van door completes synchronized retreat\n"
+  },
+  {
+    "test": "LanIncapacitationHudTest",
+    "exit_code": 0,
+    "seconds": 1.8,
+    "output": "PASS: downed first-person view refuses doors, scanner and movement inputs\n"
+  },
+  {
+    "test": "CrouchCameraTest",
+    "exit_code": 0,
+    "seconds": 0.1,
+    "output": "PASS crouch/stand easing: gradual motion, frame-rate independence, reversal continuity, bounds and reset\n"
+  },
+  {
+    "test": "CrouchNetworkTest",
+    "exit_code": 0,
+    "seconds": 1.8,
+    "output": "PASS real TCP crouch/stand, continuous camera easing, fixed feet, unchanged network cadence and ghost-role rejection\n"
+  },
+  {
+    "test": "LanDotsPlacementIntegrationTest",
+    "exit_code": 0,
+    "seconds": 1.9,
+    "output": "PASS: LAN DOTS rack/equip, rejected placement/remote retrieval, mouse rotation, three-client replication, two renderers and exhausted recovery\n"
+  },
+  {
+    "test": "LanFieldEquipmentIntegrationTest",
+    "exit_code": 0,
+    "seconds": 0.6,
+    "output": "PASS: real sockets, multi-slot gear readings, team journal and ghost privacy\n"
+  },
+  {
+    "test": "ManualEvidenceHudTest",
+    "exit_code": 0,
+    "seconds": 1.8,
+    "output": "PASS: notebook checkboxes, greying/undo, ghost choice and actual HUD paint\n"
+  },
+  {
+    "test": "CampaignCoopLobbyTest",
+    "exit_code": 0,
+    "seconds": 0.6,
+    "output": "PASS real TCP campaign co-op, six-seat cap, bot substitution/refund, guest isolation, host receipt and multiplayer lobby purchases\n"
+  },
+  {
+    "test": "CampaignMenuWorkflowTest",
+    "exit_code": 0,
+    "seconds": 3.8,
+    "output": "PASS mission reservations, refunds, capacity, save rollback, campaign dispatch and real panel captures\n"
+  },
+  {
+    "test": "FieldEquipmentTest",
+    "exit_code": 0,
+    "seconds": 0.1,
+    "output": "PASS: working tiered inventory, shared credits, range, cooldown and duplicate-slot rejection\n"
+  },
+  {
+    "test": "LanDroppedGearIntegrationTest",
+    "exit_code": 0,
+    "seconds": 1.9,
+    "output": "PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection\n"
+  },
+  {
+    "test": "CampaignStoryProgressionTest",
+    "exit_code": 0,
+    "seconds": 0.7,
+    "output": "PASS 22-chapter seeded campaign, nine actual map victory gates, unfinished destination locks, persisted replay rewards and separate LAN wallet\n"
+  },
+  {
+    "test": "CampaignCareerTest",
+    "exit_code": 0,
+    "seconds": 0.3,
+    "output": "PASS career: paid hire, reload, durable unique dispatch, idempotent visit/outcome and payout\n"
+  },
+  {
+    "test": "EquipmentStoreDescriptionsTest",
+    "exit_code": 0,
+    "seconds": 0.1,
+    "output": "PASS: store names, live prices, 42x3 tier facts, optics, batteries, hover copy, no invented capabilities\n"
+  },
+  {
+    "test": "EquipmentSelectionTest",
+    "exit_code": 0,
+    "seconds": 0.1,
+    "output": "PASS: four-slot selection, distinct rack swaps, consumables and resupply\n"
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "id": "WLD-08",
+  "status": "NORTHWATCH_STAGED_NATIVE_DOORS_AND_ROOM_ACOUSTICS_VERIFIED",
+  "previous_commit": "c4ea36264f5125deae4be7c85cfdfebf8f617485",
+  "previous_gallery": 45390262508,
+  "exports": {
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.blend": "5d10ec2e7c9a3ae3264d2f540592f231149d032e047121abc87bd2e7bff7f7b3",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.glb": "60c8d60a95a99d7e7e8d475bee205ec2e19e3d9e73b01880e733448102a0de1e",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.hcs2": "7994b50ccaedc842d967a4d4d25891e7fe8c43d9d4bd9cb726a961caf8336931"
+  },
+  "evidence": {
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-closed.png": "6095970fdafd968dca5165beba02df163d7c26a80aae73057ac2e7b79e0180df",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-open.png": "b1110f891efd91943023e3ef140e21810a057ed555b87bf6dffaeb6ae6240a3d",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/lower-tunnel-door-closed.png": "23307176e317516caf34bb9ce7942e028275cdc19a333066d94bfe0a29d23d2c",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/lower-tunnel-door-open.png": "4ad43ee3f30b33814415affb681d20302b90c6ea8eb5c4f54a4627a792af6d81",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/court-radio-closed.png": "5e6f9fd465677b7acfd758cad6563db5269cbc251433f901aeab2bb58a037cca",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/court-radio-open.png": "17a317109117c8687bc058527a1ccfbeaf5b045397c8f96db2e2472c00347bc9",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/lower-tunnel-door-closed.png": "ae59d3e8eb88c0ed1d58a748e943cd37ad030b0aded11b754953128be218d2fe",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/lower-tunnel-door-open.png": "1c6435bb31353c05dfeb71d314b5470a1ea869ec2c9d86f325f3eac6dfd12344",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/radio-generator-closed.png": "88f87e8e04517493430bda2807b6c96c98914d639c8732d2de84c2e75eb2b7a1",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/opengl/radio-generator-open.png": "26448bfc778acf81eb20cb7d5f14eebb7bcea3684f3a93bdbc0363b88dd5fffc",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/radio-generator-closed.png": "43daf0effc62f7aba14b4997d91dbbc90821b484a55d74f1ff250558a7479977",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/captures/radio-generator-open.png": "6b4e61048b851162a1316f4dae438c6ca84763b87e02ada251a5981fe21de067",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/construction.json": "91b6f0c165d3d77def45a7e13bf81af9bad8858c9bad7f121981903a1aee0f87",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/door-schedule.tsv": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/doors-opengl.tsv": "1b400a0abbee3ca916e8852e8e6a27b94c75877c221af21bec241523ec6ec356",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/doors-software.tsv": "79b40ef240794b713f539746a38a861a4f210da73ec8cf48405ca42f233770aa",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/retained-route-datums.tsv": "473412764f097f10ccb3b1485f02d170de54bff53cc8e47098efad44423e9a06",
+    "development/levels/rebuild/northwatch-door-pass/wld-08/runtime-input.tsv": "1ed7b8560bc652611bb1335e48a297f42a5aded15926e2db4fc0fcfe02974eb8"
+  },
+  "native_scene_revision": "11ced0aca27ec70d48e2359eab8bedd2961779d0d1e57f7a65cec5a9cbec7bc0",
+  "frames": 16,
+  "supported_floor_points": 144,
+  "renderers": [
+    "Software",
+    "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  ],
+  "checks": {
+    "scene_revision": "11ced0aca27ec70d48e2359eab8bedd2961779d0d1e57f7a65cec5a9cbec7bc0",
+    "renderer": "Software",
+    "body_contacts_at_perimeter": "1302",
+    "jump_height_contacts": "1302",
+    "standing_optical_contacts": "651",
+    "supported_crossings_blocked": "1172",
+    "original_invisible_edges_with_exterior_ground": "3",
+    "canonical_ramp_retreat_both_postures": "PASS",
+    "measured_tread_datums": "6",
+    "walked_authored_links_and_journeys_both_postures": "23",
+    "working_doors": "16",
+    "connected_supported_owners": "15",
+    "optics_object_passage_room_acoustics_and_replica_state": "PASS",
+    "four_peer_van_to_generator_two_aimed_doors": "PASS"
+  },
+  "remaining_acceptance": [
+    "Power and other building systems",
+    "Full walk-in safe zones",
+    "Normal furnishings and case actions",
+    "Named dispatch, detailed finish and release acceptance"
+  ]
+}

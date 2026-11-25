@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 680" role="img" aria-labelledby="title desc">
+<title id="title">Monastery archive and vestry circuits</title>
+<desc id="desc">Measured north-range plan showing the unswitched feed from the east cloister and two switched room branches across intact stone walls.</desc>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#28362f}.title{font-size:29px;font-weight:650}
+.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.feed{fill:none;stroke:#625281;stroke-width:3;stroke-linecap:round}
+.wire{fill:none;stroke:#216b5f;stroke-width:2;stroke-linecap:round}
+.sleeve{stroke:#945a36;stroke-width:4;fill:none}.lamp{fill:#ddb344;stroke:#896523}.switch{fill:#216b5f}
+</style>
+<rect width="1060" height="680" fill="#f1ecdf"/>
+<text x="27" y="48" class="title">Monastery of Ashen Bells · North-range power</text>
+<text x="28" y="76" class="body">A dedicated feeder supplies independent archive and vestry circuits.</text>
+<rect x="24" y="94" width="638" height="546" rx="8" fill="#faf6ec" stroke="#cfc3ad"/>
+<rect x="679" y="94" width="357" height="546" rx="8" fill="#faf6ec" stroke="#cfc3ad"/>
+<rect x="61.00" y="128.00" width="224.00" height="156.80" fill="#e9e3d5" stroke="#857b69"/>
+<rect x="285.00" y="128.00" width="179.20" height="156.80" fill="#e7e9d9" stroke="#857b69"/>
+<rect x="61.00" y="284.80" width="470.40" height="67.20" fill="#dfdbcd" stroke="#857b69"/>
+<rect x="464.20" y="352.00" width="67.20" height="235.20" fill="#ded8c9" stroke="#857b69"/>
+<rect x="531.40" y="284.80" width="112.00" height="156.80" fill="#d4cfc6" stroke="#857b69"/>
+<text x="105.80" y="150.40" class="small">Archive</text>
+<text x="307.40" y="150.40" class="small">Vestry</text>
+<text x="262.60" y="329.60" class="small">North cloister</text>
+<text x="463.08" y="486.40" class="small">East cloister</text>
+<text x="553.80" y="318.40" class="small">Tower</text>
+<path d="M162.75 284.80H183.25" stroke="#fbf6e9" stroke-width="3.5"/>
+<path d="M364.35 284.80H384.85" stroke="#fbf6e9" stroke-width="3.5"/>
+<polyline points="529.57,571.30 529.57,571.30 529.57,286.63" class="feed"/>
+<polyline points="529.57,286.63 356.90,286.63 153.06,286.63" class="feed"/>
+<polyline points="153.06,283.13 153.06,283.13" class="wire"/>
+<polyline points="153.06,286.14 153.06,283.46" class="sleeve"/>
+<polyline points="153.06,282.97 153.06,282.97" class="wire"/>
+<polyline points="153.06,282.97 153.06,282.97" class="wire"/>
+<polyline points="153.06,282.97 153.06,168.88" class="wire"/>
+<polyline points="153.06,184.00 108.04,184.00" class="wire"/>
+<polyline points="108.04,184.00 108.04,184.00" class="wire"/>
+<polyline points="153.06,168.88 176.36,168.88" class="wire"/>
+<polyline points="176.36,168.88 176.36,168.88" class="wire"/>
+<polyline points="153.06,234.40 244.68,234.40" class="wire"/>
+<polyline points="244.68,234.40 244.68,234.40" class="wire"/>
+<polyline points="356.90,283.13 356.90,283.13" class="wire"/>
+<polyline points="356.90,286.14 356.90,283.46" class="sleeve"/>
+<polyline points="356.90,282.97 356.90,282.97" class="wire"/>
+<polyline points="356.90,282.97 356.90,282.97" class="wire"/>
+<polyline points="356.90,282.97 356.90,172.80" class="wire"/>
+<polyline points="356.90,195.20 320.84,195.20" class="wire"/>
+<polyline points="320.84,195.20 320.84,195.20" class="wire"/>
+<polyline points="356.90,172.80 379.08,172.80" class="wire"/>
+<polyline points="379.08,172.80 379.08,172.80" class="wire"/>
+<polyline points="356.90,228.80 435.08,228.80" class="wire"/>
+<polyline points="435.08,228.80 435.08,228.80" class="wire"/>
+<circle class="switch" cx="153.06" cy="283.44" r="4.6"/>
+<circle class="lamp" cx="108.04" cy="184.00" r="4.6"/>
+<circle class="lamp" cx="176.36" cy="168.88" r="4.6"/>
+<circle class="lamp" cx="244.68" cy="234.40" r="4.6"/>
+<circle class="switch" cx="356.90" cy="283.44" r="4.6"/>
+<circle class="lamp" cx="320.84" cy="195.20" r="4.6"/>
+<circle class="lamp" cx="379.08" cy="172.80" r="4.6"/>
+<circle class="lamp" cx="435.08" cy="228.80" r="4.6"/>
+<path class="feed" d="M702 151h26"/><text x="741" y="156" class="body">Unswitched feeder</text>
+<path class="wire" d="M702 182h26"/><text x="741" y="187" class="body">Supported room branch</text>
+<path class="sleeve" d="M702 213h26"/><text x="741" y="218" class="body">Sealed masonry sleeve</text>
+<circle class="switch" cx="715" cy="245" r="5"/><text x="741" y="250" class="body">Room switch</text>
+<circle class="lamp" cx="715" cy="277" r="5"/><text x="741" y="282" class="body">Mounted ceiling light</text>
+<text x="702" y="350" class="head">MON-03 · Archive</text>
+<text x="702" y="377" class="body">Three fixtures on the existing ceiling.</text>
+<text x="702" y="427" class="head">MON-10 · Vestry</text>
+<text x="702" y="454" class="body">Three fixtures on an independent switch.</text>
+<text x="702" y="526" class="body">The east cloister switch leaves both supplied.</text>
+<path d="M613 160v-25l-5 7m5-7l5 7" stroke="#28362f" fill="none"/>
+<text class="small" x="613" y="176" text-anchor="middle">N</text>
+</svg>

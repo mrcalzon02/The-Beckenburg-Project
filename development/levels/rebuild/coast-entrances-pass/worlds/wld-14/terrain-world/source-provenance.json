@@ -1,0 +1,23 @@
+{
+  "source_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world",
+  "preserved_sha256": {
+    "tile_0_0.png": "8099d45bfb8351aad146d87bf77654f925f260170fd11b5d0b2ce377ef85d7e2",
+    "adaptive-topology.bin": "088884317adf03607e508073e4b9241802ae317d5de3f9d7f483d3d92c7c5abb",
+    "authored-cuts.tsv": "bcc330cc4df2627367905e144c938f3104fa25d2035cbaaf7fe909b0f7e294d5"
+  },
+  "builder_sha256": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+  "terrain": {
+    "site": "WLD-14",
+    "changed_vertices": 459,
+    "raised_vertices": 334,
+    "lowered_vertices": 125,
+    "max_change_m": 3.666029453,
+    "source_height_sha256": "8099d45bfb8351aad146d87bf77654f925f260170fd11b5d0b2ce377ef85d7e2",
+    "saved_topology_sha256": "088884317adf03607e508073e4b9241802ae317d5de3f9d7f483d3d92c7c5abb",
+    "saved_cuts_sha256": "bcc330cc4df2627367905e144c938f3104fa25d2035cbaaf7fe909b0f7e294d5",
+    "hole_controls": 817,
+    "disk_reopen_verified": true,
+    "physics_sha256": "0f0309015126c782f5f0bc84cfcb667bc8271b60f9dc81cb0bf73cecdbdb3c0d",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "exports": {
+    "blend": "88f772a5a21c3aae9f7530f5cea7b70b2f9521776063b978827ba906ff3275cd",
+    "glb": "6400ee97da521a1d8b53cde73f2e16d1d4779f9f192e05dbf6583736755ca95f",
+    "hcs2": "169a53d05b6427cab2af8f2f06bd3b923c84ed68d6ed5ce124e965c53b2565eb"
+  },
+  "retired": [
+    "Mine lower workings continuous floor region0"
+  ],
+  "retained_components": 1243,
+  "new_components": 45,
+  "outer_basin": [
+    17.29,
+    37.4,
+    19.4,
+    39.55
+  ],
+  "wet_basin": [
+    17.49,
+    37.6,
+    19.2,
+    39.35
+  ],
+  "bed": -11.12,
+  "level": -10.49,
+  "freeboard": 0.625,
+  "guard_contacts": 32,
+  "pump": {
+    "source": "development/levels/primitive-props-v1/models/level_blockout_cinder_sump_pump.glb",
+    "source_sha256": "6c54c4c59ff5f80a8d985f5f4a3e7a3baea244178d267f0c1128c71c27b207b5",
+    "pivot": [
+      15.6,
+      -9.95,
+      38.55
+    ],
+    "status": "isolated machinery; standing water retained in the physical basin",
+    "intake": [
+      [
+        18.01,
+        -10.9,
+        38.86
+      ],
+      [
+        18.01,
+        -9.66,
+        38.86
+      ],
+      [
+        17.29,
+        -9.66,
+        38.86
+      ],
+      [
+        16.3,
+        -9.66,
+        38.86
+      ],
+      [
+        16.25,
+        -9.79,
+        38.96
+      ]
+    ],
+    "discharge": [
+      [
+        16.87,
+        -9.07,
+        38.96
+      ],
+      [
+        16.9,
+        -8.98,
+        38.96
+      ],
+      [
+        16.9,
+        -6.51,
+        38.96
+      ],
+      [
+        19.81,
+        -6.51,
+        38.96
+      ],
+      [
+        19.91,
+        -6.36,
+        38.96
+      ]
+    ]
+  },
+  "water_sha256": "6001ddd6088a78541d85eff4dc38bb1d83ce5294f10b5e16c5b2a5eb83624dd1"
+}

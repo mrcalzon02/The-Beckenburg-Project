@@ -1,0 +1,10 @@
+PASS ordinary College TCP dispatch to four peers, supported cargo ramp from Vec[x=30.9, y=0.5, z=96.25] to Vec[x=28.11, y=0.0, z=96.25]
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-18T09:54:23.515441500Z [main] ACTIVE_RENDERER GPU OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64 / scene triangles OpenGL, UI Swing
+2026-11-18T09:54:26.153220900Z [main] RENDER SLOW stage=idle faces=135608 visible_faces=103774 culled_faces=31834 target=1120x700 build_ms=269 lighting_raster_ms=2340
+2026-11-18T09:54:26.370009200Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=2 frame=1578 surface_batches=1577 vbo_uploaded_batches=1577 vbo_uploaded_bytes=30583104 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=118 texture_uploaded_bytes=3588080 gl_worker_ms=213.7102 readback_ms=14.681 measurement=gl_worker_not_gpu_timestamp
+2026-11-18T09:54:26.372578100Z [beckenburg-opengl] GPU FRAME SLOW id=1578 surfaces=1577 target=1120x700 raster_ms=199 readback_ms=14 uploaded_batches=1577 reused_batches=0 uploaded_bytes=30583104 reuse_saved_bytes=0 superseded=0
+2026-11-18T09:54:26.981518600Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=1581 frame=1941 surface_batches=359 vbo_uploaded_batches=359 vbo_uploaded_bytes=5252448 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=0 texture_uploaded_bytes=0 gl_worker_ms=24.9343 readback_ms=3.1863 measurement=gl_worker_not_gpu_timestamp
+PASS legacy authoring, mismatch rejection and nonphysical route metadata
+COLLEGE LEVEL authored-campus-candidate-d48d47cd9c6f8cc1
+COLLEGE SCENE e80366f411643069531a4dd087473012eb07081f599404919c44f8a762383907

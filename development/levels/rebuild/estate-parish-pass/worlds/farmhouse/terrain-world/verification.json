@@ -1,0 +1,21 @@
+{
+  "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world",
+  "grade": {
+    "site": "FARMHOUSE",
+    "changed_vertices": 407,
+    "raised_vertices": 387,
+    "lowered_vertices": 20,
+    "max_change_m": 1.123552322,
+    "source_height_sha256": "150f8219d6c2267fe6bdd2a7fc2376e4a4ab46c176bd0cf8ba5d95e67e75839b",
+    "saved_topology_sha256": "b0436ee7ba4b58cc9235fd191a621c0759c47603fa8cd7f01163752a455dac73",
+    "saved_cuts_sha256": "aedaabc00e432f97507aec323428813a717f049f5ec265ce7cf44c88a4c857bb",
+    "hole_controls": 665,
+    "disk_reopen_verified": true,
+    "physics_sha256": "c865a67d24d7ff567106ca40d5c5ece88b64bdc901df98dc42c31308d5909aa2",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "builder_sha256": {
+    "RebuildTieredEarthworks.java": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f"
+  },
+  "terrain_sha256": "c865a67d24d7ff567106ca40d5c5ece88b64bdc901df98dc42c31308d5909aa2"
+}

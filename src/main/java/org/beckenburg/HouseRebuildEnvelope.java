@@ -8,7 +8,8 @@ import org.beckenburg.LevelDefinition.*;
 /** One authored dwelling envelope; rooms, openings and structural skin share coordinates. */
 public final class HouseRebuildEnvelope {
     private HouseRebuildEnvelope(){}
-    static final String STYLE="gable-v1|1.88|0.4|0.16|3.0|1.9|3.0|2.55|0.04";
+    static final String STYLE="gable-sill-v2|1.88|0.4|0.16|3.0|1.9|3.0|2.55";
+    static final String PORCH_WORLD="briar-porch-world.hcs2#7351ae8359228b30568f2648ef89252eb924131c3e9197e9bf911a8a77f3f3b3";
     public record Vertex(Vec p,double u,double v){}
     public record Triangle(Vertex a,Vertex b,Vertex c,int material,boolean visible){}
     public record Part(String name,List<Triangle> triangles,boolean support){
@@ -23,7 +24,11 @@ public final class HouseRebuildEnvelope {
     public static HouseMap map(){return new HouseMap(HouseMap.Site.HOUSE,source());}
     public static LevelDefinition source(){
         var base=HouseRebuildLandscape.source();var sockets=new ArrayList<>(base.sockets());
+        sockets.replaceAll(socket->socket.type().equals("world-terrain")
+            ?new Socket(socket.id(),socket.type(),socket.room(),socket.x(),socket.y(),socket.z(),socket.yaw(),PORCH_WORLD)
+            :socket);
         var colliders=new ArrayList<>(base.colliders());
+        HouseParcelBoundary.bind(sockets,colliders);
         var oldArrival=arrival(base,List.of());colliders.removeAll(arrivalSolids(oldArrival));sockets.removeIf(s->s.type().equals("parcel_fence"));
         var context=new Socket("house-approach-reservation","arrival-context",13,0,0,0,0,"house-side-setback-v1:12.0");sockets.add(context);
         var newArrival=arrival(base,List.of(context));colliders.addAll(arrivalSolids(newArrival));
@@ -32,7 +37,7 @@ public final class HouseRebuildEnvelope {
         for(int i=0;i<portals.size();i++){var p=portals.get(i);if(p.kind().equals("window")&&p.a()==2&&p.alongX()&&p.z()==10)
             portals.set(i,new Portal(p.id(),p.a(),p.b(),14.9,p.y(),p.z(),p.width(),p.alongX(),p.kind(),p.loss()));}
         sockets.add(new Socket("dwelling-envelope","structure-envelope",13,16.8,5.6,15.25,0,STYLE));
-        return new LevelDefinition(base.id(),"first-principles-envelope-v1",base.title().replace("landscape construction","dwelling construction"),
+        return new LevelDefinition(base.id(),"first-principles-envelope-v2",base.title().replace("landscape construction","dwelling construction"),
             base.rooms(),portals,base.stairs(),base.voids(),base.props(),sockets,colliders,base.dock(),base.ambience(),base.water(),base.sounds());
     }
     private static LevelPlans.B arrival(LevelDefinition base,List<Socket> context){
@@ -50,8 +55,15 @@ public final class HouseRebuildEnvelope {
         var key=new Key(rooms,portals,bindings.get(0).style());return CACHE.computeIfAbsent(key,k->build(k.rooms(),k.portals(),k.style()));
     }
     static Geometry build(List<Room> sourceRooms,List<Portal> portals,String style){
-        var values=style.split("\\|");if(values.length!=9||!values[0].equals("gable-v1"))throw new IllegalArgumentException("Unknown dwelling envelope");
-        double[] p=new double[8];for(int i=0;i<8;i++){p[i]=Double.parseDouble(values[i+1]);if(!Double.isFinite(p[i])||p[i]<=0)throw new IllegalArgumentException("Invalid envelope dimensions");}
+        var values=style.split(java.util.regex.Pattern.quote("|"));
+        boolean flush=values.length==8&&values[0].equals("gable-sill-v2");
+        boolean original=values.length==9&&values[0].equals("gable-v1");
+        if(!flush&&!original)throw new IllegalArgumentException("Unknown dwelling envelope");
+        double[] p=new double[values.length-1];
+        for(int i=0;i<p.length;i++){
+            p[i]=Double.parseDouble(values[i+1]);
+            if(!Double.isFinite(p[i])||p[i]<=0)throw new IllegalArgumentException("Invalid envelope dimensions");
+        }
         var rooms=sourceRooms.stream().filter(r->!r.outside()&&r.y()>=0).toList();
         double x0=rooms.stream().mapToDouble(Room::x0).min().orElseThrow(),x1=rooms.stream().mapToDouble(Room::x1).max().orElseThrow();
         double z0=rooms.stream().mapToDouble(Room::z0).min().orElseThrow(),z1=rooms.stream().mapToDouble(Room::z1).max().orElseThrow();
@@ -75,14 +87,21 @@ public final class HouseRebuildEnvelope {
         b.box("east-storey-belt",x1+.04,2.73,z0-.04,x1+.12,2.87,z1+.04,LevelMaterials.WOOD,-1,false);
         var entry=portals.stream().filter(q->q.door()&&q.alongX()&&Math.abs(q.z()-z1)<.01&&q.y()==0&&(q.a()==13||q.b()==13)).findFirst().orElseThrow();
         double px0=entry.x()-p[3]/2,px1=entry.x()+p[3]/2,pz=z1+p[4];
-        b.box("porch-deck",px0,-.12,z1,px1,p[7],pz,LevelMaterials.STONE,-1,true);
+        // The whole slab and its post feet share the entry sill datum.
+        // The original style still decodes its explicitly raised porch.
+        double porchTop=flush?entry.y():p[7];
+        double porchBottom=flush?porchTop-.16:-.12;
+        b.box("porch-deck",px0,porchBottom,z1,px1,porchTop,pz,LevelMaterials.STONE,-1,true);
+        if(flush)b.slopedSlab("porch-apron",px0,px1,pz,pz+.60,porchTop,porchTop-.019,.16,
+            LevelMaterials.STONE,LevelMaterials.STONE,true);
         for(double x:new double[]{px0+.13,px1-.13}){
-            b.box("porch-post-"+x,x-.075,p[7],pz-.25,x+.075,p[6]-.06,pz-.10,LevelMaterials.WOOD,-1,false);
-            b.box("porch-post-foot-"+x,x-.12,p[7],pz-.295,x+.12,p[7]+.16,pz-.055,LevelMaterials.STONE,-1,false);
+            b.box("porch-post-"+x,x-.075,porchTop,pz-.25,x+.075,p[6]-.06,pz-.10,LevelMaterials.WOOD,-1,false);
+            b.box("porch-post-foot-"+x,x-.12,porchTop,pz-.295,x+.12,porchTop+.16,pz-.055,LevelMaterials.STONE,-1,false);
         }
         b.box("porch-front-beam",px0,p[6]-.20,pz-.26,px1,p[6]-.04,pz-.09,LevelMaterials.WOOD,-1,false);
         b.box("porch-wall-ledger",px0,p[5]-.20,z1-.04,px1,p[5]-.07,z1+.12,LevelMaterials.WOOD,-1,false);
-        b.slope("porch-roof",px0-.12,px1+.12,z1-.06,pz+.12,p[5],p[6],.12);
+        b.slopedSlab("porch-roof",px0-.12,px1+.12,z1-.06,pz+.12,p[5],p[6],.12,
+            LevelMaterials.ROOF,LevelMaterials.WOOD,false);
         return b.finish(x0,z0,x1,z1,plate,ridge);
     }
     private static void wall(Builder b,List<Portal> portals,boolean ax,double plane,double from,double to,int outward,double plate,String name){
@@ -148,15 +167,16 @@ public final class HouseRebuildEnvelope {
             if(left)quad(v(x0,y0-t,z0),v(x0,y0-t,z1),v(x0,y0,z1),v(x0,y0,z0),LevelMaterials.WOOD,true);
             else quad(v(x1,y1-t,z1),v(x1,y1-t,z0),v(x1,y1,z0),v(x1,y1,z1),LevelMaterials.WOOD,true);
         }
-        void slope(String name,double x0,double x1,double z0,double z1,double y0,double y1,double t){
+        void slopedSlab(String name,double x0,double x1,double z0,double z1,double y0,double y1,double t,
+                int topMaterial,int liningMaterial,boolean support){
             triangles=new ArrayList<>();
-            quad(v(x0,y1,z1),v(x1,y1,z1),v(x1,y0,z0),v(x0,y0,z0),LevelMaterials.ROOF,true);
-            quad(v(x0,y0-t,z0),v(x1,y0-t,z0),v(x1,y1-t,z1),v(x0,y1-t,z1),LevelMaterials.WOOD,true);
-            quad(v(x1,y0-t,z0),v(x0,y0-t,z0),v(x0,y0,z0),v(x1,y0,z0),LevelMaterials.WOOD,true);
-            quad(v(x0,y1-t,z1),v(x1,y1-t,z1),v(x1,y1,z1),v(x0,y1,z1),LevelMaterials.WOOD,true);
-            quad(v(x0,y0-t,z0),v(x0,y1-t,z1),v(x0,y1,z1),v(x0,y0,z0),LevelMaterials.WOOD,true);
-            quad(v(x1,y1-t,z1),v(x1,y0-t,z0),v(x1,y0,z0),v(x1,y1,z1),LevelMaterials.WOOD,true);
-            parts.add(new Part(name,triangles,false));
+            quad(v(x0,y1,z1),v(x1,y1,z1),v(x1,y0,z0),v(x0,y0,z0),topMaterial,true);
+            quad(v(x0,y0-t,z0),v(x1,y0-t,z0),v(x1,y1-t,z1),v(x0,y1-t,z1),liningMaterial,true);
+            quad(v(x1,y0-t,z0),v(x0,y0-t,z0),v(x0,y0,z0),v(x1,y0,z0),liningMaterial,true);
+            quad(v(x0,y1-t,z1),v(x1,y1-t,z1),v(x1,y1,z1),v(x0,y1,z1),liningMaterial,true);
+            quad(v(x0,y0-t,z0),v(x0,y1-t,z1),v(x0,y1,z1),v(x0,y0,z0),liningMaterial,true);
+            quad(v(x1,y1-t,z1),v(x1,y0-t,z0),v(x1,y0,z0),v(x1,y1,z1),liningMaterial,true);
+            parts.add(new Part(name,triangles,support));
         }
         Geometry finish(double x0,double z0,double x1,double z1,double plate,double ridge){
             try{

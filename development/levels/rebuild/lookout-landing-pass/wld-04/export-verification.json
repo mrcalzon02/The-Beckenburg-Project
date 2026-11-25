@@ -1,0 +1,65 @@
+{
+  "glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc",
+  "native_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be",
+  "retained_non_terrain_records": 351,
+  "new_closed_parts": 22,
+  "apertures": 45,
+  "sill_checks": 30,
+  "standing_controls": 13,
+  "foundation_closure_rays": 12,
+  "foundation_soil_receivers": 66,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/overview.png",
+      "sha256": "09f72c4082a8cfec193af0b985abd4a8e0ecdc8ccd8e7be52415c610c40deae7",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/roadhead.png",
+      "sha256": "1a88ea10490c6f93ca72c8913891cbe3e274c8fd7d21e4de77f07bbf55aa7165",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/lower-court.png",
+      "sha256": "371f36b3451bb44c6088923818a68983bae6979ea25bb0720b44b0435a308d83",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/boulder-saddle.png",
+      "sha256": "a0d441d88b6dc259570e1c9276cda5516c731f1b67c728da99a965bbb0c99f8a",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/ruin-porch.png",
+      "sha256": "42fd281c386e245fa13279833d4cd9b8e0d9bf602b95a3cf442867412c1fc949",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/tower-midturn.png",
+      "sha256": "8317d778fc1eba87963fcee73bdd072c93d57a9c68be4455e4972e7ec331562f",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/cab-east-door.png",
+      "sha256": "5586ae6d24986220a401a02947bb0150829270c6bd614ef5ff7ce4854b2a8444",
+      "source_glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/lower-court-before.png",
+      "sha256": "6cd474b8bbbd88518060f64d21c7430ffebe48e5e285e5a14deebd85f0859fe9",
+      "source_glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/boulder-saddle-before.png",
+      "sha256": "56ef9f400bbbb225e7cf83c9a175548856f6f213798d81717208dc344831d76c",
+      "source_glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/ruin-porch-before.png",
+      "sha256": "12c3baedcf40d761253894ad4b6318dd0d62cf51ad76fe5674ee9582239bc536",
+      "source_glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd"
+    }
+  ]
+}

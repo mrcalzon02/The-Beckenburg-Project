@@ -1,0 +1,44 @@
+{
+  "site": "WLD-09",
+  "status": "BLACKWATER_FULL_NAMED_CASE_VERIFIED_UNDER_REVIEW_GATE",
+  "prior_commit": "9efa23109549da829c6c8dcf3a543b149a408940",
+  "native_source": "development/levels/rebuild/dam-named-pass/checkpoint.json",
+  "archive": {
+    "name": "beckenburg-game.jar",
+    "sha256": "464b20d5ef72cf8c59d12a5df9826012c35e4cc5e05fdba80e7d7acb0f28c0da",
+    "packaged_blackwater_members_verified": 7
+  },
+  "case": {
+    "named_revision": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e-501c9f5565c03395",
+    "collision_sha256": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+    "dam-office-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "crest_to_turbine": "PASS Cargo ramp, two office doors and west stair entrance and exit verified with replicated leaves",
+    "dam-plant-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "dam-workshop-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "anchor": "PASS Workshop EMF reached the witness; host accepted the ward and required the lower ritual installation",
+    "turbine_to_valve": "PASS East switchback crossed its -8 m landing and reached the -10 m gallery and fitted vault door",
+    "settlement": "PASS CLEANSED reported to all three peers; 396 credits and 132 XP"
+  },
+  "coverage": {
+    "physical_door_crossings_with_state_replication": 8,
+    "physical_switchback_stairs": 2,
+    "walk_in_refuges": 3,
+    "protection_depths_per_posture": 2,
+    "postures_per_refuge": 2
+  },
+  "publication": {
+    "verified_draft_head": "2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf",
+    "status": "local checkpoint, prior push declined by automated approval review"
+  },
+  "remaining": [
+    "Additional room circuits and water-service installations",
+    "Final furnishing, site soundscape, surfaces and narrative",
+    "Other rites, installed Windows and reference performance acceptance"
+  ],
+  "file_sha256": {
+    "development/levels/rebuild/dam-investigation-pass/case.tsv": "0fe6eb8d835ac9dcc2ba3efecd6d7c050190fb30d3db003921016b63d815e145",
+    "development/levels/rebuild/dam-investigation-pass/README.md": "1c09e2da06f76e33be4f253efa5a7281fb95b6eec6734e8a7808313c0d401bef",
+    "tools/java/BlackwaterInvestigationReview.java": "df3db8d0222f554e959d7527da925af51644b0978b1540f4e0b8dfb00f84a26d",
+    "tools/verify_blackwater_named.py": "68e507d6ff49697ec9e2212fcf3b4cfc5b5cab4a379f95f42158f5571e995e0b"
+  }
+}

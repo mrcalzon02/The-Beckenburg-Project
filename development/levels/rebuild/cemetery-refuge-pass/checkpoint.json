@@ -1,0 +1,61 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_FULL_WALK_IN_REFUGES_VERIFIED",
+  "previous_commit": "05edfb05abf6679e3ac0f23a18c3546fbae332a9",
+  "previous_gallery": 45376266580,
+  "sites": {
+    "WLD-07": {
+      "cupboards": [
+        "cottage",
+        "tool",
+        "chapel"
+      ],
+      "native_scene_revision": "419cdbd6704c8139271777de15d97ba76863157a42f0e42ee3570bf7ff8af7a6",
+      "exports": {
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/grounds-with-refuges.glb": "d6889c8ede15b756e6605ffb05edf54de19c91ef07e2018784c70ec1e930a950",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/grounds-with-refuges.hcs2": "ee8632c06f813b0ab203265f393672f5a96e9a9804e0421f82f8b2f24fdd9e4c",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/grounds-with-refuges.blend": "df8022a1d11ab69e6fe849862fe6d4e9abc783bee8318c06cbe82e76303d4362"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/refuges-software.tsv": "62057e88a2baf63cdfc0d3a03193682543f59ad7b1ba73fd3f9c081feb30025c",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/refuges-opengl.tsv": "fe54f6660c604b527f6d3eff1eb88aff974f57000d039d8fd26a3c963ba23ab4",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/construction.json": "b393ac22b0a09ad29f3fa0ede4f18ff8a1bc0511ba34e9452c95d7992d8eaf7d",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/room-layout.tsv": "aebde3955f8812a387d8b7d3cdd419f1590cc02dfe0f2568a7b5c581f9c86458",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07/door-schedule.tsv": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6"
+      },
+      "retained_collision_parts": 188,
+      "footing_samples": 36,
+      "protected_usable_floor_samples": 207
+    },
+    "WLD-07-MORTUARY": {
+      "cupboards": [
+        "cottage",
+        "tool",
+        "mort-office"
+      ],
+      "native_scene_revision": "2ec56e5ee7dc0d393a3614bc1de24929c2a0a8844cc199a2de24c5996dbe4951",
+      "exports": {
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/grounds-with-refuges.glb": "9a765c8f3a6f49915cf48ddebf5f30daa474c2678a2ec2fbe09fe3d3c38e618f",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/grounds-with-refuges.hcs2": "bc0b475848451e188e1510a5a34991492f151cf5f561433c3ba9cf5d68b1fbaf",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/grounds-with-refuges.blend": "ae1c6d22a757408aaca6178f9f58920cafcdc88683131e512d7fe4108fe26df9"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/refuges-software.tsv": "7c868d53ea247ee1b0978b51916401b36849af7ad0b61cde75e5d306e197a9af",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/refuges-opengl.tsv": "9e848e7168db00c66a1e8f8d82aa8aac454e78c0f85a8d3e45e8b44ff38d46c5",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/construction.json": "2adfa44d30d6c552b58e4bf442677316cd83b11d95711557f78a1cccfef44d98",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/room-layout.tsv": "4b0c93562d6ec53785ffb8e30fb31f5407fb1bec19bae354e039547d16cf399c",
+        "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/door-schedule.tsv": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77"
+      },
+      "retained_collision_parts": 281,
+      "footing_samples": 36,
+      "protected_usable_floor_samples": 207
+    }
+  },
+  "interior_m": {
+    "width": 1.58,
+    "depth": 1.14,
+    "protected_height": 2.02
+  },
+  "maximum_per_variant": 3,
+  "exact_door_schedule_preserved": true,
+  "remaining": "Fit the supported screened caretaker power yard and distribution. Then complete case, named dispatch, native solo flow, normal-use room finish and site acceptance."
+}

@@ -1,0 +1,587 @@
+{
+  "id": "PRISON",
+  "status": "AUTHORED_NATIVE_ROOM_ACCESS_ROUTES_NOT_RUNTIME_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+  "source_contract_sha256": "f74b9b9fa9897a64dd53b04c375ffac95253f7029980b84b09a5a3e1a9661737",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+  "source_glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+  "source_physics_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+  "before_layout_sha256": "fa0ee1dd6d39288890d247247bed474d63e177b326c9c7a95e31127e10564a45",
+  "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+  "layout_sha256": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "630:L047 flight0 step1",
+    "631:L047 flight0 step2",
+    "632:L047 flight0 step3",
+    "633:L047 flight0 step4",
+    "634:L047 flight0 step5",
+    "635:L047 flight0 step6",
+    "636:L047 flight0 step7",
+    "637:L047 flight0 step8",
+    "638:L047 flight0 step9",
+    "639:L047 flight0 step10",
+    "640:L047 flight0 step11",
+    "641:L047 flight0 step12",
+    "642:L047 flight0 step13",
+    "643:L047 flight0 step14",
+    "644:L047 flight0 step15",
+    "645:L047 flight0 step16",
+    "646:L047 flight0 step17",
+    "647:L047 flight0 step18",
+    "648:L047 flight0 step19",
+    "659:L063 flight0 step1",
+    "660:L063 flight0 step2",
+    "661:L063 flight0 step3",
+    "662:L063 flight0 step4",
+    "663:L063 flight0 step5",
+    "664:L063 flight0 step6",
+    "665:L063 flight0 step7",
+    "666:L063 flight0 step8",
+    "667:L063 flight0 step9",
+    "668:L063 flight0 step10",
+    "669:L063 flight0 step11",
+    "670:L063 flight0 step12",
+    "671:L063 flight0 step13",
+    "672:L063 flight0 step14",
+    "673:L063 flight0 step15",
+    "674:L063 flight0 step16",
+    "675:L063 flight0 step17",
+    "676:L063 flight0 step18",
+    "677:L063 flight0 step19",
+    "722:L112 flight0 step1",
+    "723:L112 flight0 step2",
+    "724:L112 flight0 step3",
+    "725:L112 flight0 step4",
+    "726:L112 flight0 step5",
+    "727:L112 flight0 step6",
+    "728:L112 flight0 step7",
+    "729:L112 flight0 step8",
+    "730:L112 flight0 step9",
+    "731:L112 flight0 step10",
+    "732:L112 flight0 step11",
+    "733:L112 flight0 step12",
+    "734:L112 flight0 step13",
+    "735:L112 flight0 step14",
+    "736:L112 flight0 step15",
+    "737:L112 flight0 step16",
+    "738:L112 flight0 step17"
+  ],
+  "stair_components": [
+    "630:L047 flight0 step1",
+    "631:L047 flight0 step2",
+    "632:L047 flight0 step3",
+    "633:L047 flight0 step4",
+    "634:L047 flight0 step5",
+    "635:L047 flight0 step6",
+    "636:L047 flight0 step7",
+    "637:L047 flight0 step8",
+    "638:L047 flight0 step9",
+    "639:L047 flight0 step10",
+    "640:L047 flight0 step11",
+    "641:L047 flight0 step12",
+    "642:L047 flight0 step13",
+    "643:L047 flight0 step14",
+    "644:L047 flight0 step15",
+    "645:L047 flight0 step16",
+    "646:L047 flight0 step17",
+    "647:L047 flight0 step18",
+    "648:L047 flight0 step19",
+    "659:L063 flight0 step1",
+    "660:L063 flight0 step2",
+    "661:L063 flight0 step3",
+    "662:L063 flight0 step4",
+    "663:L063 flight0 step5",
+    "664:L063 flight0 step6",
+    "665:L063 flight0 step7",
+    "666:L063 flight0 step8",
+    "667:L063 flight0 step9",
+    "668:L063 flight0 step10",
+    "669:L063 flight0 step11",
+    "670:L063 flight0 step12",
+    "671:L063 flight0 step13",
+    "672:L063 flight0 step14",
+    "673:L063 flight0 step15",
+    "674:L063 flight0 step16",
+    "675:L063 flight0 step17",
+    "676:L063 flight0 step18",
+    "677:L063 flight0 step19",
+    "722:L112 flight0 step1",
+    "723:L112 flight0 step2",
+    "724:L112 flight0 step3",
+    "725:L112 flight0 step4",
+    "726:L112 flight0 step5",
+    "727:L112 flight0 step6",
+    "728:L112 flight0 step7",
+    "729:L112 flight0 step8",
+    "730:L112 flight0 step9",
+    "731:L112 flight0 step10",
+    "732:L112 flight0 step11",
+    "733:L112 flight0 step12",
+    "734:L112 flight0 step13",
+    "735:L112 flight0 step14",
+    "736:L112 flight0 step15",
+    "737:L112 flight0 step16",
+    "738:L112 flight0 step17"
+  ],
+  "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+  "physics_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+  "arrival_bearing": {
+    "link": "L111",
+    "anchor": [
+      34.0,
+      0,
+      85.0
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L111 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        33.4,
+        85.35
+      ],
+      [
+        33.4,
+        85.0
+      ],
+      [
+        34.6,
+        85.0
+      ],
+      [
+        34.6,
+        85.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          33.4,
+          85.35
+        ],
+        [
+          33.4,
+          85.0
+        ],
+        [
+          34.6,
+          85.0
+        ],
+        [
+          34.6,
+          85.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing PRISON 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing PRISON 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "84ebdcf234547bc3ac31448c2be3ee87676072e7fa0c436088f7b5e7193f39a0",
+  "access_route_changes": [
+    {
+      "site": "PRISON",
+      "link": "L045",
+      "rooms": [
+        "a-stair",
+        "a-front-link"
+      ],
+      "before": [
+        [
+          18.0,
+          0,
+          52.0
+        ],
+        [
+          18.0,
+          0,
+          55
+        ],
+        [
+          16,
+          0,
+          55
+        ],
+        [
+          13.0,
+          0,
+          55
+        ]
+      ],
+      "after": [
+        [
+          18.0,
+          0.0,
+          54.5
+        ],
+        [
+          17.0,
+          0.0,
+          55.0
+        ],
+        [
+          16.0,
+          0.0,
+          55.0
+        ],
+        [
+          13.0,
+          0.0,
+          55.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        16,
+        0,
+        55
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L046",
+      "rooms": [
+        "a-upper-stair",
+        "a-upper-gallery"
+      ],
+      "before": [
+        [
+          18.0,
+          3.4,
+          52.0
+        ],
+        [
+          18.0,
+          3.4,
+          56
+        ],
+        [
+          16,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "after": [
+        [
+          18.0,
+          3.4,
+          54.0
+        ],
+        [
+          17.0,
+          3.4,
+          55.5
+        ],
+        [
+          16.5,
+          3.4,
+          56.0
+        ],
+        [
+          16.0,
+          3.4,
+          56.0
+        ],
+        [
+          15.5,
+          3.4,
+          56.0
+        ],
+        [
+          15.0,
+          3.4,
+          55.5
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        16,
+        3.4,
+        56
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L061",
+      "rooms": [
+        "b-stair",
+        "b-front-link"
+      ],
+      "before": [
+        [
+          50.0,
+          0,
+          52.0
+        ],
+        [
+          50.0,
+          0,
+          55
+        ],
+        [
+          52,
+          0,
+          55
+        ],
+        [
+          55.0,
+          0,
+          55
+        ]
+      ],
+      "after": [
+        [
+          50.0,
+          0.0,
+          54.5
+        ],
+        [
+          51.0,
+          0.0,
+          55.0
+        ],
+        [
+          52.0,
+          0.0,
+          55.0
+        ],
+        [
+          55.0,
+          0.0,
+          55.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        52,
+        0,
+        55
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L062",
+      "rooms": [
+        "b-upper-stair",
+        "b-upper-gallery"
+      ],
+      "before": [
+        [
+          50.0,
+          3.4,
+          52.0
+        ],
+        [
+          50.0,
+          3.4,
+          56
+        ],
+        [
+          52,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "after": [
+        [
+          50.0,
+          3.4,
+          54.0
+        ],
+        [
+          51.5,
+          3.4,
+          56.0
+        ],
+        [
+          52.0,
+          3.4,
+          56.0
+        ],
+        [
+          52.5,
+          3.4,
+          56.0
+        ],
+        [
+          53.0,
+          3.4,
+          55.5
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        52,
+        3.4,
+        56
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L105",
+      "rooms": [
+        "lower-stair",
+        "plant"
+      ],
+      "before": [
+        [
+          30.0,
+          -3,
+          28.0
+        ],
+        [
+          30.0,
+          -3,
+          31
+        ],
+        [
+          32,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          28.0
+        ]
+      ],
+      "after": [
+        [
+          30.0,
+          -3.0,
+          29.5
+        ],
+        [
+          31.0,
+          -3.0,
+          31.0
+        ],
+        [
+          32.0,
+          -3.0,
+          31.0
+        ],
+        [
+          37.5,
+          -3.0,
+          30.0
+        ],
+        [
+          39.0,
+          -3.0,
+          28.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        32,
+        -3,
+        31
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    }
+  ],
+  "geometry_unchanged": true,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock."
+}

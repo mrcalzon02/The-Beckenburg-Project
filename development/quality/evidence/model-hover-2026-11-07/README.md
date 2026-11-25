@@ -1,0 +1,1 @@
+These captures come from mouse-move events in the perspective Model Editor on a source-backed GLB. AssetImportBevelGuiTest checks visible highlight pixels, stable selection and native revision, reuse of prepared picking data, clearing on pointer exit and agreement with the subsequent click. The same test verifies native persistence and actual game publication.

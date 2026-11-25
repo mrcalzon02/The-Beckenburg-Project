@@ -1,0 +1,7 @@
+{
+  "status": "PASS_ACTUAL_NATIVE_THRESHOLD_NEGATIVE_AND_POSITIVE_CONTROLS",
+  "negative_sha256": "c6853c362f4c0cd556c2b1137d164710388fc18ab625fd21c9d3dcdc819dcd4d",
+  "negative_failed_directions": 4,
+  "positive_failed_directions": 0,
+  "method": "Reconstructed exactly captured pre-threshold native bytes by removing only the declared appended threshold; SHA equals original failed contact input. Same unchanged production capsule resolves both before/after directions."
+}

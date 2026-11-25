@@ -19,8 +19,9 @@ public final class InteractionFocus {
         if(key.equals("monitoring_screen_mp_1"))triangles=triangles.stream().map(t->new GlbProps.Triangle(VanInteriorLayout.vertex(key,t.a()),VanInteriorLayout.vertex(key,t.b()),VanInteriorLayout.vertex(key,t.c()),t.material())).toList();
         return new Mesh(triangles,VanInteriorLayout.bounds(key));});}
     private static double[] ray(LooseClutter.Observer o){return new double[]{o.x(),o.eyeY(),o.z(),Math.sin(o.yaw())*Math.cos(o.pitch()),Math.sin(o.pitch()),Math.cos(o.yaw())*Math.cos(o.pitch())};}
-    private static double box(double[] r,VanInteriorLayout.Bounds b){
-        double near=0,far=2.05;double[] lo={b.x0(),b.y0(),b.z0()},hi={b.x1(),b.y1(),b.z1()};
+    private static double box(double[] r,VanInteriorLayout.Bounds b){return box(r,b,2.05);}
+    private static double box(double[] r,VanInteriorLayout.Bounds b,double reach){
+        double near=0,far=reach;double[] lo={b.x0(),b.y0(),b.z0()},hi={b.x1(),b.y1(),b.z1()};
         for(int n=0;n<3;n++){if(Math.abs(r[n+3])<1e-10){if(r[n]<lo[n]||r[n]>hi[n])return Double.POSITIVE_INFINITY;}
             else {double a=(lo[n]-r[n])/r[n+3],c=(hi[n]-r[n])/r[n+3];near=Math.max(near,Math.min(a,c));far=Math.min(far,Math.max(a,c));if(far<near)return Double.POSITIVE_INFINITY;}}
         return near;
@@ -40,9 +41,12 @@ public final class InteractionFocus {
         return q;
     }
     private static double hit(String id,double[] r,double x,double y,double z,double yaw,double sx,double sy,double sz,double roll,double half){
+        return hit(id,r,x,y,z,yaw,sx,sy,sz,roll,half,2.05);
+    }
+    private static double hit(String id,double[] r,double x,double y,double z,double yaw,double sx,double sy,double sz,double roll,double half,double reach){
         if(Math.hypot(r[0]-x,r[2]-z)>5)return Double.POSITIVE_INFINITY;
         Mesh m=mesh(id);double[] q=local(r,x,y,z,yaw,sx,sy,sz,roll,half);
-        if(!Double.isFinite(box(q,m.bounds)))return Double.POSITIVE_INFINITY;double distance=Double.POSITIVE_INFINITY;
+        if(!Double.isFinite(box(q,m.bounds,reach)))return Double.POSITIVE_INFINITY;double distance=Double.POSITIVE_INFINITY;
         for(var t:m.triangles)distance=Math.min(distance,triangle(q,t.a(),t.b(),t.c()));return distance;
     }
     private static double hit(String id,double[] r,double x,double y,double z,double yaw,double scale){return hit(id,r,x,y,z,yaw,scale,scale,scale,0,0);}
@@ -52,7 +56,15 @@ public final class InteractionFocus {
         if(!observer.exposed()||!Double.isFinite(observer.x()+observer.y()+observer.z()+observer.yaw()+observer.pitch())||Math.abs(observer.pitch())>1.4)return null;
         double[] r=ray(observer);List<Target> targets=new ArrayList<>();double blocker=Double.POSITIVE_INFINITY;
         for(var item:map.clutter().states())if(item.holder()==-1&&map.clutter().held(observer.seat())<0)candidate(targets,Kind.CLUTTER,""+item.id(),label(item.kind().name()),hit(item.kind().mesh(),r,item.x(),item.y(),item.z(),item.yaw(),1,1,1,item.roll(),item.kind().half));
-        for(var f:map.fixtures().states())if(f.kind().mesh()!=null)candidate(targets,Kind.FIXTURE,""+f.id(),label(f.kind().name()),hit(f.kind().mesh(),r,f.x(),f.y(),f.z(),f.yaw(),f.scale()));
+        for(var f:map.fixtures().states()){
+            String mesh=f.kind().mesh();
+            if(mesh!=null&&!map.fixtures().embedded(f.id()))candidate(targets,Kind.FIXTURE,""+f.id(),label(f.kind().name()),hit(mesh,r,f.x(),f.y(),f.z(),f.yaw(),f.scale()));
+            else if(f.kind()==HauntedFixtures.Kind.SINK_BATH&&map.nativeInvestigation()!=null
+                    &&map.level().sockets().stream().anyMatch(s->s.type().equals(HauntedFixtures.NATIVE_BASIN_SOCKET)
+                        &&s.room()==f.room()&&s.x()==f.x()&&s.y()==f.y()&&s.z()==f.z()))
+                candidate(targets,Kind.FIXTURE,""+f.id(),"Wash basin",
+                    hit("level_bath_basin",r,f.x(),f.y()-HauntedFixtures.BASIN_RIM_Y,f.z(),f.yaw(),f.scale()));
+        }
         for(var prop:map.level().props()){
             double distance=hit(prop.mesh(),r,prop.x(),prop.y(),prop.z(),prop.yaw(),prop.scale());blocker=Math.min(blocker,distance);
             for(var story:map.level().sockets())if(story.type().equals("story")&&story.room()==prop.room()&&Math.hypot(story.x()-prop.x(),story.z()-prop.z())<.02&&prop.mesh().startsWith("level_"))
@@ -67,12 +79,58 @@ public final class InteractionFocus {
             if(socket.type().equals("generator"))candidate(targets,Kind.GENERATOR,socket.id(),"Start / stop diesel generator",hit("button_12",r,socket.x(),socket.y(),socket.z(),socket.yaw(),.30));
             if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity()))blocker=Math.min(blocker,hit("level_hiding_cupboard_worn",r,socket.x(),socket.y(),socket.z(),socket.yaw(),1));
         }
+        var nativeScene=map.nativeInvestigation();
+        if (nativeScene!=null) {
+            var nearby=map.level().sockets().stream().filter(socket->(socket.type().equals("native_story")
+                ||socket.type().equals(HauntedFixtures.NATIVE_DEVICE_SOCKET))
+                &&Math.hypot(r[0]-socket.x(),r[2]-socket.z())<=2).toList();
+            if (!nearby.isEmpty()) {
+                var start=new LevelDefinition.Vec(r[0],r[1],r[2]);
+                var end=new LevelDefinition.Vec(r[0]+2*r[3],r[1]+2*r[4],r[2]+2*r[5]);
+                var hit=nativeScene.physics().firstOpticalHit(start,end);
+                if (hit!=null) for (var socket:nearby) if (socket.id().equals(hit.component())){
+                    if(socket.type().equals("native_story"))
+                        candidate(targets,Kind.INTERFACE,"STORY_"+socket.style(),
+                            SiteStories.document(map.level().id(),socket.style()).title(),hit.fraction()*2);
+                    else{
+                        var device=map.fixtures().nativeDevice(hit.component());
+                        if(device!=null)candidate(targets,Kind.FIXTURE,""+device.id(),
+                            device.kind()==HauntedFixtures.Kind.SINK_BATH?"Wash basin":label(device.kind().name()),
+                            hit.fraction()*2);
+                    }
+                }
+            }
+        }
         for(var p:map.level().portals())if(p.door()){
+            NativeInvestigationDoor fitted=null;
+            if(nativeScene!=null)for(var door:nativeScene.doors()){
+                if(door.spec().portal().id()==p.id()){fitted=door;break;}
+            }
+            if(fitted!=null){
+                if(Math.hypot(r[0]-p.x(),r[2]-p.z())>5)continue;
+                boolean open=map.doorOpen(p.id());
+                if(fitted.sliding()){
+                    for(var release:map.level().sockets())if(release.type().equals("gate_release")
+                            &&release.style().equals(Integer.toString(p.id()))){
+                        double[] localRay=local(r,release.x(),release.y(),release.z(),0,1,1,1,0,0);
+                        double hit=box(localRay,new VanInteriorLayout.Bounds(-.085,-.09,-.035,.085,.09,.035));
+                        candidate(targets,Kind.DOOR,Integer.toString(p.id()),
+                            open?"Close gate manually":"Open gate manually",hit);
+                    }
+                    continue;
+                }
+                double distance=Double.POSITIVE_INFINITY;
+                for(var face:fitted.pose(open).model().triangles())
+                    distance=Math.min(distance,triangle(r,face.a(),face.b(),face.c()));
+                candidate(targets,Kind.DOOR,Integer.toString(p.id()),open?"Close door":"Open door",distance);
+                continue;
+            }
             double angle=p.alongX()?0:Math.PI/2,hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2),leaf=p.width()>1.5?p.width()/2:p.width();
             // Interaction ray follows the visible moving door, not its final pose.
             double swing=map.doorOpenFraction(p.id())*Math.PI/2;
-            double t=hit("door_1_loose",r,hx,p.y(),hz,angle+swing,leaf,2.28/2.1,1,0,0);
-            if(p.width()>1.5)t=Math.min(t,hit("door_1_loose",r,p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),angle+Math.PI-swing,leaf,2.28/2.1,1,0,0));
+            double scaleY=MissionStructuralWall.doorLeafHeight(map.level(),p)/2.1;
+            double t=hit("door_1_loose",r,hx,p.y(),hz,angle+swing,leaf,scaleY,1,0,0);
+            if(p.width()>1.5)t=Math.min(t,hit("door_1_loose",r,p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),angle+Math.PI-swing,leaf,scaleY,1,0,0));
             candidate(targets,Kind.DOOR,""+p.id(),map.doorOpen(p.id())?"Close door":"Open door",t);
         }else if(p.kind().equals("window")){
             double angle=(p.alongX()?0:Math.PI/2)+(map.windowOpen(p.id())?.95:0),x=p.x()-(p.alongX()?p.width()/2:0),z=p.z()-(p.alongX()?0:p.width()/2);
@@ -81,7 +139,15 @@ public final class InteractionFocus {
             for(double bar:new double[]{0,.655,1.31})t=Math.min(t,box(q,new VanInteriorLayout.Bounds(0,bar-.018,-.018,p.width(),bar+.018,.018)));
             candidate(targets,Kind.WINDOW,""+p.id(),map.windowOpen(p.id())?"Close window":"Open window",t);
         }
-        var van=map.van();var button=van.doorButton();candidate(targets,Kind.VAN_DOOR,"cargo",van.cargoDoorClosed()?"Open van doors":"Close van doors",hit("button_12",r,button.x(),van.floorY()+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30));
+        var van=map.van();var button=van.doorButton();
+        // The departure control works across the cabin, but still requires an
+        // exact visible mesh hit from aboard the van at its actual deck height.
+        if(van.nearDoorButton(observer.x(),observer.z())
+                &&Math.abs(observer.y()-van.floorY())<=.25){
+            double distance=hit("button_12",r,button.x(),van.floorY()+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30,.30,.30,0,0,Double.POSITIVE_INFINITY);
+            if(distance<=5)targets.add(new Target(Kind.VAN_DOOR,"cargo",
+                    van.cargoDoorClosed()?"Open van doors":"Close doors and end mission",distance));
+        }
         for(var f:VanInteriorLayout.FIXTURES){
             var p=van.world(f.localX(),f.localZ());
             double t;

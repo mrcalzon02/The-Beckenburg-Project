@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: missing ACCEPT|WINDOW
+	at org.beckenburg.AuthoredLevelNetworkTest$Peer.await(AuthoredLevelNetworkTest.java:9)
+	at org.beckenburg.AuthoredLevelNetworkTest.main(AuthoredLevelNetworkTest.java:30)

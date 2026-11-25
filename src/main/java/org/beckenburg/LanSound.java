@@ -63,7 +63,8 @@ public final class LanSound {
         SPIRIT_BOX_HELP(0,91,"SPIRIT BOX / HELP ME"),
         SPIRIT_BOX_HERE(0,91,"SPIRIT BOX / I'M HERE"),
         SPIRIT_BOX_OUT(0,91,"SPIRIT BOX / GET OUT"),
-        TOY_WINDUP(4,46,"A SMALL WOODEN TOY CLICKS");
+        TOY_WINDUP(4,46,"A SMALL WOODEN TOY CLICKS"),
+        TOWER_BELL(14,88,"THE TOWER BELL TOLLS");
         final int acousticBudget, baseGain;
         final String caption;
         Cue(int budget, int gain, String caption) { acousticBudget=budget;baseGain=gain;this.caption=caption; }
@@ -75,7 +76,7 @@ public final class LanSound {
                     CAMERA,BOOK,POTION,DOTS_MOTOR,DOTS_STOP,SPARK,
                     INCENSE_BURN,FIRELIGHT_IGNITE,FIRELIGHT_OUT,DROP,ELECTRIC_HUM,MONITOR_HUM,
                     PHONE_RING,ALARM_BELL,FIRE_BELL,RADIO_PLAY,RUNNING_WATER,
-                    SPIRIT_BOX_STATIC,TOY_WINDUP->Tier.AMBIENT;
+                    SPIRIT_BOX_STATIC,TOY_WINDUP,TOWER_BELL->Tier.AMBIENT;
             case WHISPER,SPIRIT_BOX_LEAVE,SPIRIT_BOX_HELP,SPIRIT_BOX_HERE,
                     SPIRIT_BOX_OUT->Tier.MINOR;
             case DISTURB,MANIFEST,GHOST_DRIFT,WARD,HORROR_STING_A,
@@ -125,7 +126,13 @@ public final class LanSound {
                 ||listener.room()==HouseMap.EXTRACTION_ROOM))return null;
         int absorption=ghost?LanAcoustics.cost(map,listener.room(),sourceRoom)
             :LanAcoustics.physicalCost(map,listener.room(),sourceRoom);
-        if(absorption>cue.acousticBudget)return null;
+        // The legacy fifteen-zone route omits boundaries of newly constructed
+        // rooms inside a zone. Add only the real authored door threshold cost
+        // from their native sockets and current replicated open/closed state.
+        int local=map.architecturalSoundLoss(sourceX,sourceY,sourceZ,
+            listener.x(),listener.y(),listener.z());
+        if(absorption>cue.acousticBudget-local)return null;
+        absorption+=local;
         double dx=sourceX-listener.x(),dy=sourceY-listener.y(),dz=sourceZ-listener.z();
         double horizontal=Math.hypot(dx,dz),distance=Math.sqrt(dx*dx+dy*dy+dz*dz);
         // Nearby sounds remain useful; distance and material both lower their perceptibility.

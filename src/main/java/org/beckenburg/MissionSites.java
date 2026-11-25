@@ -4,7 +4,7 @@ import java.util.*;
 public final class MissionSites {
     private MissionSites(){}
     public record Entry(String id,String title,String region,String scale,String description,String imageKey,String imageCaption){
-        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(id);}catch(IllegalArgumentException planned){return null;}}
+        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-01" -> "BLACKPINE"; case "WLD-02" -> "HOLLOW_CREEK"; case "WLD-03" -> "RED_MESA"; case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; case "WLD-10" -> "MONASTERY"; case "WLD-11" -> "MOURNING_MARSH"; case "WLD-12" -> "GALLOWS"; case "WLD-13" -> "GREYWATER"; case "WLD-14" -> "MORROW"; case "WLD-15" -> "ELARA"; case "WLD-16" -> "PINES"; case "WLD-17" -> "SEACLIFF"; case "WLD-18" -> "CINDER"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
         public boolean headquarters(){return id.equals("CASTLE");}
         public boolean playable(){var site=location();return site!=null&&site.playable();}
         public String status(){return headquarters()?"HEADQUARTERS / NO INVESTIGATION":playable()?"AVAILABLE":"IN DEVELOPMENT / NOT DISPATCHABLE";}
@@ -28,12 +28,24 @@ public final class MissionSites {
         new Entry("WLD-05","Dead Man's Claim","Highland Frontier","Medium-large / mine levels","Small surface shacks lead into a two-level mine with a main haul loop and ventilation return. Collapsed lift remains visible scenery, never a required traversal mechanic.","wld-05","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-06","Drowned Fisherman's Wharf","Coastal Territories","Medium / shore and piers","A shore street feeds two parallel working piers joined by a cross-dock. Cottages sit on land, work sheds on piles, and a dry tidal undercroft is reached by two guarded descents.","wld-06","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-07","Saint Bartholomew's Forgotten Cemetery","Northern Woodlands","Small-medium / enclosed grounds","A bounded burial ground is organized by a main avenue and memorial ring. Ruined chapel and caretaker cottage face the approach; two ossuary entrances join underground.","wld-07","STATIC BLOCKOUT VIEW"),
-        new Entry("WLD-08","Northwatch Research Station","Northern Expanse","Medium / polar compound","A compact ring of insulated prefabs surrounds a flagged service court. A heated tunnel links lab, dormitory and generator while the instrument array remains an exposed optional branch.","wld-08","STATIC BLOCKOUT VIEW"),
-        new Entry("WLD-09","Blackwater Hydroelectric Dam","Highland Frontier","Large / industrial vertical","The roadhead feeds a dam crest and an offset powerhouse. A guarded external stair and internal service stair connect crest, turbine floor and lower galleries without entering the spillway.","wld-09","STATIC BLOCKOUT VIEW"),
-        new Entry("WLD-10","Monastery of Ashen Bells","Highland Frontier","Medium-large / remote cloister","A compact enclosed monastery wraps a high garden, with a detached bell stair on the east and catacombs below the north range. Its service path and terraces distinguish it from the urban academy.","wld-10","STATIC BLOCKOUT VIEW"),
+        new Entry("WLD-07-MORTUARY",CemeteryNativeLevel.ANNEX_TITLE,"Northern Woodlands","Medium / cemetery and mortuary",
+            "The burial grounds and ossuary join a mortuary with separate visitor and receiving entrances.","wld-07","CEMETERY GROUNDS VIEW"),
+        new Entry("WLD-08",NorthwatchNativeLevel.TITLE,"Northern Expanse","Medium / polar compound","A compact ring of insulated prefabs surrounds a flagged service court. A heated tunnel links lab, dormitory and generator while the instrument array remains an exposed optional branch.","wld-08","NORTHWATCH STATION VIEW"),
+        new Entry("WLD-09",BlackwaterNativeLevel.TITLE,"Highland Frontier","Large / industrial vertical","The roadhead feeds a dam crest and an offset powerhouse. A guarded external stair and internal service stair connect crest, turbine floor and lower galleries without entering the spillway.","wld-09","STATIC BLOCKOUT VIEW"),
+        new Entry("WLD-10",MonasteryNativeLevel.TITLE,"Highland Frontier","Medium-large / remote cloister","A compact enclosed monastery wraps a high garden, with a detached bell stair on the east and catacombs below the north range. Its service path and terraces distinguish it from the urban academy.","wld-10","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-11","Mourning Marsh","Coastal Territories","Medium / stilt settlement","A small settlement straddles a main raised boardwalk and a parallel service boardwalk. Homes, chapel and warehouse are reachable on dry supported decks; flooded terrain is a visible boundary.","wld-11","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-12","Gallows Pass Railway","Highland Frontier","Medium-large / linear railway with return","A bounded railway cutting runs past derailed coaches to a tunnel. A maintenance siding path parallels the track, while a guarded trestle has a service walkway beneath its deck.","wld-12","STATIC BLOCKOUT VIEW"),
-        new Entry("WLD-13","Greywater Cannery","Coastal Territories","Medium-large / industrial wilderness","A shore-side processing hall connects cold stores, boiler plant and shipping dock. Workers housing sits along the forest edge, linked by a short service-yard loop.","wld-13","STATIC BLOCKOUT VIEW"));
+        new Entry("WLD-13","Greywater Cannery","Coastal Territories","Medium-large / industrial wilderness","A shore-side processing hall connects cold stores, boiler plant and shipping dock. Workers housing sits along the forest edge, linked by a short service-yard loop.","wld-13","STATIC BLOCKOUT VIEW"),
+        new Entry("WLD-14","Morrow Point Lightstation","Coastal Territories","Medium / vertical lightstation",
+            "The keeper house joins a lighthouse by a covered passage. Two house stairs reach the upstairs rooms, and a separate delivery court serves the oil house.","wld-14","NATIVE SITE VIEW"),
+        new Entry("WLD-15","MV Saint Elara","Coastal Territories","Medium-large / moored processing vessel",
+            "A fixed gangway boards a former fish-processing vessel. The port stairs connect the machinery deck, crew cabins and bridge.","wld-15","NATIVE SITE VIEW"),
+        new Entry("WLD-16","Eight Pines Motor Lodge","Beckenburg district","Small / roadside lodge",
+            "Two rows of guest rooms face the parking court. Covered walks link the office, laundry and service rooms.","wld-16","NATIVE SITE VIEW"),
+        new Entry("WLD-17",SeacliffNativeLevel.TITLE,"Coastal Territories","Medium-large / coastal battery",
+            "A cliff road climbs to a fortified courtyard. Casemate stairs connect the magazines, records rooms and lower plant.","wld-17","NATIVE SITE VIEW"),
+        new Entry("WLD-18","Site Cinder-6","Highland Frontier","Medium-large / underground installation",
+            "A surface service yard connects to two underground levels around a guarded shaft. Stair bays link records, crew quarters and the plant.","wld-18","NATIVE SITE VIEW"));
     public static List<Entry> all(){return ALL;}
     /** Campaign progression is saved by ordinal; browsing order must never reorder it. */
     public static List<Entry> campaign(){
@@ -46,6 +58,27 @@ public final class MissionSites {
         // USER is an authoring slot, not a campaign chapter or a built-in site.
         // Labeling a lobby must work before a user project has been selected.
         if("USER".equals(id))return "User authored level";
-        return byId(id.equals("HOLLOW_CREEK")?"WLD-02":id).title();
+        return byId(switch(id){
+            case "BLACKPINE" -> "WLD-01";
+            case "HOLLOW_CREEK" -> "WLD-02";
+            case "RED_MESA" -> "WLD-03";
+            case "LOOKOUT" -> "WLD-04";
+            case "MINE" -> "WLD-05";
+            case "WHARF" -> "WLD-06";
+            case "CEMETERY" -> "WLD-07";
+            case "MORTUARY" -> "WLD-07-MORTUARY";
+            case "NORTHWATCH" -> "WLD-08";
+            case "BLACKWATER" -> "WLD-09";
+            case "MONASTERY" -> "WLD-10";
+            case "MOURNING_MARSH" -> "WLD-11";
+            case "GALLOWS" -> "WLD-12";
+            case "GREYWATER" -> "WLD-13";
+            case "MORROW" -> "WLD-14";
+            case "ELARA" -> "WLD-15";
+            case "PINES" -> "WLD-16";
+            case "SEACLIFF" -> "WLD-17";
+            case "CINDER" -> "WLD-18";
+            default -> id;
+        }).title();
     }
 }

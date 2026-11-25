@@ -1,0 +1,18 @@
+check	result
+native_scene_revision	489a4fe30af2134a0470d52e3622f3ab4177af03d4592e92cea6307b1c76a624
+collision_sha256	8c8325eeb15a745af035c247510d395859c751d4f9b8943673ef67b776540b76
+level_revision	489a4fe30af2134a0470d52e3622f3ab4177af03d4592e92cea6307b1c76a624-faa2eef99e80126e
+water_revision	a7fd90e0ba964931361a65c598d9fecbfdd21ad0d7bc0fdc9cd16cee82ad7575
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+retained_fitted_doors	14
+dam-office-cupboard_protected_floor_samples	69
+dam-workshop-cupboard_protected_floor_samples	69
+dam-plant-cupboard_protected_floor_samples	69
+dam_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+van_to_controls_and_back_both_postures	16
+dam-switchgear-light-41.75	2.6996139134430304 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+dam-switchgear-light-49.2	2.6996139134430304 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+dam-turbine-north-light-53.2	2.674897778179365 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+dam-turbine-north-light-56.4	2.6748977781793655 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+switchgear-supply_same_camera_response	322214 changed pixels / 2.262117293625914 mean RGB
+turbine-lighting_same_camera_response	348218 changed pixels / 2.923440438871473 mean RGB

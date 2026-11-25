@@ -57,7 +57,6 @@ public final class InvestigationSession {
     }
     private final String missionId=UUID.randomUUID().toString();
     private final int anchorRoom;
-    private final int[] spectralTrace=new int[HouseMap.ROOM_COUNT];
     private int saltRoom=-1,saltTick=-1;
     /** Actual placed solo salt model, at the accepted gameplay location and rotation. */
     public record PlacedSalt(int room,double x,double y,double z,double headingRadians){}
@@ -131,7 +130,8 @@ public final class InvestigationSession {
     private final FieldEquipment uvHardware=new FieldEquipment();
     public boolean uvPowered(){return uvHardware.powered("UV_LIGHT");}
     public java.util.List<UvEvidenceMarks.Mark> uvVisible(double x,double y,double z,double yaw){
-        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),EquipmentTiers.Tier.I,ticks,uvPowered());
+        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),
+            EquipmentTiers.Tier.I,ticks,uvPowered(),crouched);
     }
     public void rechargeUvAtVan(double x,double y,double z){
         if(map.roomAt(x,y,z)!=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("UV service requires van rack");
@@ -192,7 +192,6 @@ public final class InvestigationSession {
         };
         missionWeather=new MissionWeather(season,MissionWeather.Mode.FIXED,
             EvidenceSignals.Weather.CLEAR,1,seed);
-        java.util.Arrays.fill(spectralTrace,-100000);
         this.wards=(role==Role.CLERIC?3:2)+HunterProgression.extraWards(level);
         this.anchorRoom=random.nextInt(map.interiorRoomCount());
         this.ghost=new GhostDomain(map,anchorRoom,assignedGhost);
@@ -309,11 +308,9 @@ public final class InvestigationSession {
             stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,feed));
             // Ambient fear is felt through stress and audio, never a repeating text hint.
         }
-        if(ghost.room()>=0&&ghost.room()<spectralTrace.length){
-            if(haunted&&GhostTraits.of(ghost.type()).leavesUv()){
-                spectralTrace[ghost.room()]=ticks;
-                uvEvidence.leave(map,new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),standingY(map.centerX(ghost.room()),map.centerZ(ghost.room())),map.centerZ(ghost.room()),0),ticks);
-            }
+        if(ghost.room()>=0&&ghost.room()<HouseMap.ROOM_COUNT){
+            if(haunted&&GhostTraits.of(ghost.type()).leavesUv())
+                uvEvidence.leaveAtSpawn(map,ghost.room(),ticks);
             uvHardware.advancePower(ticks);
             if(saltRoom==ghost.room()&&ticks>saltTick&&GhostTraits.saltAffects(ghost.type())){
                 ghost.reveal(30);ghost.slowFor(26);
@@ -422,11 +419,8 @@ public final class InvestigationSession {
             case THERMOMETER->scan(Instrument.THERMOMETER,x,y,z);
             case SPIRIT_BOX->scan(Instrument.SPIRIT_BOX,x,y,z);
             case UV_LAMP->{
-                int room=map.roomAt(x,y,z);
                 try{uvHardware.setPower("UV_LIGHT",!uvPowered());}catch(IllegalArgumentException empty){log("UV battery empty. Service at the van rack.");yield false;}
-                boolean residue=!uvVisible(x,y,z,yaw).isEmpty();
-                log(residue?"UV: transient spectral residue detected in "+map.roomName(room)+"."
-                    :"UV: no fresh traces in "+map.roomName(room)+".");
+                log(uvPowered()?"UV light on.":"UV light off.");
                 yield true;
             }
             case PHOTO_CAMERA->{

@@ -1,0 +1,73 @@
+{
+  "exports": {
+    "blend": "90dc114e61134a774d34c8304e47df7b371d99725b01e0fa8fc8ca6bdeba7461",
+    "glb": "f1fbe5cd2f85fb827773fb9006f06fe77beb521dce0d1e1c8df67041754fb545",
+    "hcs2": "167b9147b7ac2fda75f902d94383caa8a3c91f496b992ab09f87b1c7b92520c7"
+  },
+  "removed": [
+    "Authored stair end WLD-05 L15 0 high region0",
+    "Bayed shell Floor lower",
+    "Bayed shell Floor ore-west.001",
+    "Bayed shell Floor ore-west.002",
+    "Bayed stair WLD-05 L15 step0",
+    "Bayed stair WLD-05 L15 step1",
+    "Bayed stair WLD-05 L15 step2",
+    "Bayed stair WLD-05 L15 step3",
+    "Bayed stair WLD-05 L15 step4",
+    "Floor ore-west",
+    "Floor ore-west.003",
+    "Floor ore-west.004",
+    "Floor ore-west.005",
+    "Floor ore-west.006",
+    "Floor ore-west.007",
+    "Floor ore-west.008",
+    "Indoor route bearing WLD-05 lower L15 3 region0",
+    "Restored bay WLD-05 ore-west floor region0"
+  ],
+  "retained_components": 975,
+  "added_components": 52,
+  "former_overlap": {
+    "lower": {
+      "point": [
+        5,
+        -10,
+        26.7
+      ],
+      "former_surfaces": [
+        "Bayed shell Floor lower",
+        "Bayed stair WLD-05 L15 step2",
+        "Bayed stair WLD-05 L15 step3"
+      ]
+    },
+    "ore-west": {
+      "point": [
+        5.25,
+        -6,
+        34.1
+      ],
+      "former_surfaces": [
+        "Bayed shell Floor ore-west.002",
+        "Bayed stair WLD-05 L15 step0",
+        "Bayed stair WLD-05 L15 step1"
+      ]
+    }
+  },
+  "room": [
+    2,
+    20,
+    20,
+    42
+  ],
+  "formed_stair_opening": [
+    4.25,
+    27.5,
+    5.75,
+    33.65
+  ],
+  "slab_probes": 3168,
+  "fixed_wall_bearings": 20,
+  "guard_mount_corner_checks": 44,
+  "retained_existing_guard_contact_checks": 16,
+  "column_bearing_corner_checks": 32,
+  "retained_lower_fixture_and_sleeve_soffit": -6.16
+}

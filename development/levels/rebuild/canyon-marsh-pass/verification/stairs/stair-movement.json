@@ -1,0 +1,152 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "WLD-03": {
+      "layout": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+      "variants": {
+        "before_bearing": {
+          "contract": "78985f659b930dfea08b8f3e33fc95f7a1cf467a45ad028d04ab7e64bcf63d92",
+          "physics": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+          "glb": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+          "layout": "367f260d73ecd9827abb20ed673218d974098bfa222b3ef3de752b22c484e785"
+        },
+        "after_bearing": {
+          "contract": "78985f659b930dfea08b8f3e33fc95f7a1cf467a45ad028d04ab7e64bcf63d92",
+          "physics": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1",
+          "glb": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+          "layout": "4c9982ac2e8afb0aeef1ab59ad133a5e8addce5f66b656c43aaf1cdfab5e84bb"
+        }
+      }
+    },
+    "WLD-11": {
+      "layout": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "variants": {
+        "before_bearing": {
+          "contract": "8910d96921d38dbbc5ad2804b8384b03008b9b3819cc95768b0b20ae4dac5e41",
+          "physics": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+          "glb": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b",
+          "layout": "71287aa9fbad58cfe1e216b0e647cd7f4d442940ac70dd1f05579fc0782a48ed"
+        },
+        "after_bearing": {
+          "contract": "8910d96921d38dbbc5ad2804b8384b03008b9b3819cc95768b0b20ae4dac5e41",
+          "physics": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca",
+          "glb": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+          "layout": "484bb5e0ce6c7559a4dfb89804a95bc22314a365dcd5409806c3d68aa0549b01"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "c75cb09beb0b444247fd78d427bbfc6dbce76ac238caa28eec32463717575d3d",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/coast-entrances-pass/roster.json": "7c38d763bafeac39506e48f6b0eba7a50070d827699e38c9214cffdff758226e",
+    "development/levels/rebuild/movement-chains.json": "2350f45af21848b60df378913d0cfbae165de15bc97bd0eb2710c5e8cf53c162"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "WLD-03": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-11": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      }
+    },
+    "after_bearing": {
+      "WLD-03": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      },
+      "WLD-11": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 4,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 4,
+      "authored_reverse": 4
+    },
+    "after_bearing": {
+      "routes": 4,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 4,
+      "authored_reverse": 4
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "declared_new_vertical_routes": [],
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [
+      {
+        "site": "WLD-03",
+        "variant": "before_bearing",
+        "id": "CHAIN/L04/L07",
+        "links": [
+          "L04",
+          "L07"
+        ]
+      },
+      {
+        "site": "WLD-03",
+        "variant": "after_bearing",
+        "id": "CHAIN/L04/L07",
+        "links": [
+          "L04",
+          "L07"
+        ]
+      }
+    ],
+    "results": [
+      {
+        "site": "WLD-03",
+        "variant": "before_bearing",
+        "link": "CHAIN/L04/L07",
+        "segments": "2",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_11_OF_285",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-03",
+        "variant": "after_bearing",
+        "link": "CHAIN/L04/L07",
+        "segments": "17",
+        "legacy_forward": "BLOCKED_SEGMENT_1_AT_12_OF_14",
+        "legacy_reverse": "BLOCKED_SEGMENT_3_AT_1_OF_38",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

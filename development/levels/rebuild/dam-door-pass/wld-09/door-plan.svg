@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 905" role="img" aria-labelledby="title desc">
+<title id="title">Blackwater Dam operating thresholds</title>
+<desc id="desc">Three unrotated plans with the measured door positions and supported threshold approaches at the crest, turbine hall, and lower galleries.</desc>
+<style>text {font: 14px sans-serif;fill:#2e413c}.head {font-size:27px;font-weight:700}.sub {font-size:17px;font-weight:700}.label {font-size:10px}.note {font-size:13px;fill:#51635a}.number {font-size:10px;font-weight:700;fill:#894321}</style>
+<rect width="1050" height="905" fill="#f1f3ee"/>
+<text x="47" y="55" class="head">Blackwater Dam operating thresholds</text>
+<text x="47" y="80" class="note">Measured frame positions and actual floor datums. Dashed marks indicate travel through a fitted opening.</text>
+<path d="M47 102H1003" stroke="#aec1b0"/>
+<text x="48" y="143" class="sub">Crest and control · Y 0</text>
+<rect x="48.0" y="273.2" width="75.6" height="58.8" fill="#dce6db" stroke="#81978b"/>
+<text x="52.0" y="302.6" class="label">Control</text>
+<rect x="48.0" y="222.8" width="75.6" height="50.4" fill="#dce6db" stroke="#81978b"/>
+<text x="52.0" y="248.0" class="label">Office</text>
+<rect x="123.6" y="222.8" width="42.0" height="109.2" fill="#dce6db" stroke="#81978b"/>
+<text x="127.6" y="277.4" class="label">West Stair</text>
+<rect x="283.2" y="222.8" width="27.3" height="109.2" fill="#dce6db" stroke="#81978b"/>
+<rect x="310.5" y="272.1" width="11.3" height="60.7" fill="#e5dbc9" stroke="#81978b"/>
+<rect x="48.0" y="332.0" width="268.8" height="33.6" fill="#e5dbc9" stroke="#81978b"/>
+<text x="52.0" y="348.8" class="label">Crest</text>
+<line x1="85.8" y1="324.2" x2="85.8" y2="338.9" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="85.8" cy="331.5" r="3.3" fill="#a25d3c"/>
+<text x="89.8" y="327.5" class="number">870</text>
+<text x="382" y="169" class="note">870 · control ↔ crest</text>
+<line x1="85.8" y1="265.4" x2="85.8" y2="280.1" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="85.8" cy="272.7" r="3.3" fill="#a25d3c"/>
+<text x="89.8" y="268.7" class="number">871</text>
+<text x="382" y="189" class="note">871 · office ↔ control</text>
+<line x1="115.2" y1="248.0" x2="129.9" y2="248.0" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="122.6" cy="248.0" r="3.3" fill="#a25d3c"/>
+<text x="126.6" y="244.0" class="number">872</text>
+<text x="382" y="209" class="note">872 · office ↔ west stair</text>
+<line x1="144.6" y1="324.7" x2="144.6" y2="339.4" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="144.6" cy="332.0" r="3.3" fill="#a25d3c"/>
+<text x="148.6" y="328.0" class="number">873</text>
+<text x="382" y="229" class="note">873 · west stair ↔ crest</text>
+<line x1="300.0" y1="324.7" x2="300.0" y2="339.4" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="300.0" cy="332.0" r="3.3" fill="#a25d3c"/>
+<text x="304.0" y="328.0" class="number">877</text>
+<text x="382" y="249" class="note">877 · east stair ↔ crest</text>
+<line x1="303.2" y1="327.8" x2="317.9" y2="327.8" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="310.5" cy="327.8" r="3.3" fill="#a25d3c"/>
+<text x="314.5" y="323.8" class="number">878</text>
+<text x="382" y="269" class="note">878 · east stair ↔ east service catwalk</text>
+<text x="48" y="398" class="sub">Turbine and switchgear · Y −6</text>
+<rect x="165.6" y="419.0" width="75.6" height="58.8" fill="#dce6db" stroke="#81978b"/>
+<text x="169.6" y="448.4" class="label">Plant</text>
+<rect x="165.6" y="477.8" width="117.6" height="109.2" fill="#dce6db" stroke="#81978b"/>
+<text x="169.6" y="532.4" class="label">Turbine</text>
+<rect x="165.6" y="587.0" width="75.6" height="58.8" fill="#dce6db" stroke="#81978b"/>
+<text x="169.6" y="616.4" class="label">Workshop</text>
+<rect x="123.6" y="477.8" width="42.0" height="109.2" fill="#dce6db" stroke="#81978b"/>
+<text x="127.6" y="532.4" class="label">West Lower Stair</text>
+<rect x="283.2" y="477.8" width="27.3" height="109.2" fill="#dce6db" stroke="#81978b"/>
+<rect x="283.2" y="587.0" width="33.6" height="33.6" fill="#dce6db" stroke="#81978b"/>
+<text x="287.2" y="603.8" class="label">Spillway</text>
+<line x1="159.3" y1="532.4" x2="174.0" y2="532.4" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="166.6" cy="532.4" r="3.3" fill="#a25d3c"/>
+<text x="170.6" y="528.4" class="number">874</text>
+<text x="382" y="424" class="note">874 · west lower stair ↔ turbine</text>
+<line x1="203.4" y1="580.2" x2="203.4" y2="594.9" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="203.4" cy="587.5" r="3.3" fill="#a25d3c"/>
+<text x="207.4" y="583.5" class="number">875</text>
+<text x="382" y="444" class="note">875 · turbine ↔ workshop</text>
+<line x1="274.8" y1="532.4" x2="289.5" y2="532.4" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="282.2" cy="532.4" r="3.3" fill="#a25d3c"/>
+<text x="286.2" y="528.4" class="number">876</text>
+<text x="382" y="464" class="note">876 · turbine ↔ east lower stair</text>
+<line x1="300.0" y1="579.7" x2="300.0" y2="594.4" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="300.0" cy="587.0" r="3.3" fill="#a25d3c"/>
+<text x="304.0" y="583.0" class="number">879</text>
+<text x="382" y="484" class="note">879 · east lower stair ↔ spillway</text>
+<line x1="203.4" y1="470.0" x2="203.4" y2="484.7" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="203.4" cy="477.3" r="3.3" fill="#a25d3c"/>
+<text x="207.4" y="473.3" class="number">880</text>
+<text x="382" y="504" class="note">880 · plant ↔ turbine</text>
+<text x="48" y="653" class="sub">Lower galleries · Y −10</text>
+<rect x="165.6" y="732.8" width="117.6" height="42.0" fill="#dce6db" stroke="#81978b"/>
+<text x="169.6" y="753.8" class="label">Gallery</text>
+<rect x="165.6" y="774.8" width="58.8" height="67.2" fill="#dce6db" stroke="#81978b"/>
+<text x="169.6" y="808.4" class="label">Valve</text>
+<rect x="224.4" y="774.8" width="58.8" height="67.2" fill="#dce6db" stroke="#81978b"/>
+<text x="228.4" y="808.4" class="label">Return</text>
+<line x1="195.0" y1="767.9" x2="195.0" y2="782.6" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="195.0" cy="775.3" r="3.3" fill="#a25d3c"/>
+<text x="199.0" y="771.3" class="number">881</text>
+<text x="382" y="679" class="note">881 · gallery ↔ valve</text>
+<line x1="253.8" y1="767.9" x2="253.8" y2="782.6" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="253.8" cy="775.3" r="3.3" fill="#a25d3c"/>
+<text x="257.8" y="771.3" class="number">882</text>
+<text x="382" y="699" class="note">882 · gallery ↔ return</text>
+<line x1="217.5" y1="808.4" x2="232.2" y2="808.4" stroke="#974c2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="224.9" cy="808.4" r="3.3" fill="#a25d3c"/>
+<text x="228.9" y="804.4" class="number">883</text>
+<text x="382" y="719" class="note">883 · valve ↔ return</text>
+<text x="47" y="876" class="note">North is toward the top. All three floor plans use the same scale.</text>
+</svg>

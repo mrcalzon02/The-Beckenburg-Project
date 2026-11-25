@@ -1,0 +1,178 @@
+{
+  "sources": {
+    "MANSION": {
+      "id": "MANSION",
+      "construction": "development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json",
+      "layout": "development/levels/rebuild/interior-stair-landing-pass/mansion/authored-layout.json",
+      "glb": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.glb",
+      "native": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.hcs2",
+      "blend": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.blend",
+      "glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093",
+      "native_sha256": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee"
+    },
+    "SCHOOL": {
+      "id": "SCHOOL",
+      "construction": "development/levels/rebuild/interior-stair-landing-pass/school/construction.json",
+      "layout": "development/levels/rebuild/interior-stair-landing-pass/school/authored-layout.json",
+      "glb": "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.glb",
+      "native": "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.hcs2",
+      "blend": "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.blend",
+      "glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+      "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+    }
+  },
+  "journeys": [
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J01",
+      "segments": "25",
+      "legacy_forward": "BLOCKED_SEGMENT_15_AT_8_OF_10",
+      "legacy_reverse": "BLOCKED_SEGMENT_8_AT_1_OF_58",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to the great-stair guest wing",
+      "links": [
+        "L01",
+        "L02",
+        "L05",
+        "L06",
+        "L58",
+        "L36",
+        "L37"
+      ]
+    },
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J02",
+      "segments": "33",
+      "legacy_forward": "BLOCKED_SEGMENT_6_AT_13_OF_15",
+      "legacy_reverse": "BLOCKED_SEGMENT_11_AT_1_OF_60",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Cellar passage to the attic archive",
+      "links": [
+        "-L54",
+        "L59",
+        "L60",
+        "L61",
+        "L51",
+        "L52"
+      ]
+    },
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J03",
+      "segments": "28",
+      "legacy_forward": "BLOCKED_SEGMENT_7_AT_1_OF_60",
+      "legacy_reverse": "BLOCKED_SEGMENT_12_AT_6_OF_8",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Attic passage to the garden through the service stair",
+      "links": [
+        "-L51",
+        "-L61",
+        "-L60",
+        "L28"
+      ]
+    },
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J04",
+      "segments": "24",
+      "legacy_forward": "BLOCKED_SEGMENT_6_AT_6_OF_8",
+      "legacy_reverse": "BLOCKED_SEGMENT_16_AT_1_OF_53",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Ground service to the upper staff rooms",
+      "links": [
+        "L23",
+        "L60",
+        "-L50",
+        "L43",
+        "L44",
+        "L46"
+      ]
+    },
+    {
+      "site": "SCHOOL",
+      "variant": "after",
+      "link": "J01",
+      "segments": "16",
+      "legacy_forward": "BLOCKED_SEGMENT_4_AT_6_OF_8",
+      "legacy_reverse": "BLOCKED_SEGMENT_10_AT_1_OF_49",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Plant room to the north grounds",
+      "links": [
+        "-L33",
+        "L44",
+        "L36"
+      ]
+    },
+    {
+      "site": "SCHOOL",
+      "variant": "after",
+      "link": "J02",
+      "segments": "18",
+      "legacy_forward": "BLOCKED_SEGMENT_12_AT_1_OF_49",
+      "legacy_reverse": "BLOCKED_SEGMENT_4_AT_6_OF_8",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Forecourt to the plant room",
+      "links": [
+        "-L35",
+        "L04",
+        "L09",
+        "L08",
+        "-L44",
+        "L33"
+      ]
+    },
+    {
+      "site": "SCHOOL",
+      "variant": "after",
+      "link": "J03",
+      "segments": "14",
+      "legacy_forward": "BLOCKED_SEGMENT_9_AT_8_OF_10",
+      "legacy_reverse": "BLOCKED_SEGMENT_3_AT_1_OF_58",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Dining room to the upper lobby",
+      "links": [
+        "-L14",
+        "L43",
+        "L45"
+      ]
+    },
+    {
+      "site": "SCHOOL",
+      "variant": "after",
+      "link": "J04",
+      "segments": "19",
+      "legacy_forward": "BLOCKED_SEGMENT_13_AT_8_OF_10",
+      "legacy_reverse": "BLOCKED_SEGMENT_4_AT_1_OF_58",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "North grounds to the upper corridor",
+      "links": [
+        "-L36",
+        "-L08",
+        "L43",
+        "-L27"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/verify_interior_stair_landings.py": "6af726a943ba19fb38bb5f40f207d32c3a24914af9b8046ae5fb35f7d8f01fcb"
+  },
+  "evidence_sha256": {
+    "complete-journey-input.tsv": "444a3036d5c09f67595b06c27d11a54f6ebb7162aff0f529a71d0caa2c18e212",
+    "complete-journey-sweeps.tsv": "177e14d0f041406b54ea9d1bdb611d01a555776a985b5bddfbe8fa60eb9b4a11"
+  }
+}

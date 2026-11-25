@@ -4,7 +4,7 @@ import dev.mrcalzon.lighting.LightingModule;
 import dev.mrcalzon.lighting.LightModel;
 /** Metre-space coloured emission and architectural occlusion, independent of the camera. */
 public final class FixtureLighting {
- public enum Kind { FROSTED_DOME,BARE_BULB,CANDLE_CHANDELIER,TABLE_LAMP,FLUORESCENT,VAN_DIFFUSER,WALL_SCONCE,TELEVISION,FIRELIGHT }
+ public enum Kind { FROSTED_DOME,BARE_BULB,CANDLE_CHANDELIER,TABLE_LAMP,FLUORESCENT,VAN_DIFFUSER,WALL_SCONCE,TELEVISION,FIRELIGHT,FIXED_BEACON }
  public record RGB(double r,double g,double b){static final RGB ZERO=new RGB(0,0,0);public double energy(){return r+g+b;}}
  public record Source(int id,Kind kind,int room,int fixture,double x,double y,double z,double dx,double dy,double dz,double radius,double power,double red,double green,double blue){}
  private record Key(int room,long x,long y,long z){}
@@ -523,6 +523,7 @@ public final class FixtureLighting {
   for(var s:map.level().sockets())if(s.type().equals("light")){
    int control=controller(s);
    if(s.style().equals("native-string"))add(Kind.FROSTED_DOME,s.room(),control,s.x(),s.y(),s.z(),0,-1,0,6,1.45,1,.76,.42);
+   else if(s.style().equals("fixed-beacon"))add(Kind.FIXED_BEACON,s.room(),control,s.x(),s.y(),s.z(),Math.sin(s.yaw()),0,Math.cos(s.yaw()),24,10,1,.82,.53);
    else if(s.style().equals("bare-bulb"))add(Kind.BARE_BULB,s.room(),0,s.x(),s.y()-.565,s.z(),0,-1,0,8,4.5,1,.86,.65);
    else if(s.style().equals("candle-chandelier")){for(int i=0;i<6;i++){double a=i*Math.PI/3;add(Kind.CANDLE_CHANDELIER,s.room(),0,s.x()+.4*Math.cos(a),s.y()-.515,s.z()+.4*Math.sin(a),0,-1,0,5.8,.55,1,.66,.31);}}
    else if(s.style().contains("utility")||s.style().contains("industrial")){for(double dx:new double[]{-.34,.34})add(Kind.FLUORESCENT,s.room(),control,s.x()+dx,s.y()-.145,s.z(),0,-1,0,9,2.8,.84,.94,1);}
@@ -676,6 +677,17 @@ public final class FixtureLighting {
   eachInfluenceCell(source,key->influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source));
  }
  public List<Source> sources(){return List.copyOf(sources);}
+ /** Conservative fixture reach for native faces whose corners miss a lamp. */
+ boolean nativeLoadNear(double x0,double y0,double z0,double x1,double y1,double z1){
+  for(var light:sources){
+   if(light.room==HouseMap.EXTRACTION_ROOM)continue;
+   double dx=Math.max(0,Math.max(x0-light.x,light.x-x1));
+   double dy=Math.max(0,Math.max(y0-light.y,light.y-y1));
+   double dz=Math.max(0,Math.max(z0-light.z,light.z-z1));
+   if(dx*dx+dy*dy+dz*dz<=light.radius*light.radius)return true;
+  }
+  return false;
+ }
  /** Opening a single portal changes only lights whose radius intersects it.
   * Mark their entire influence cells: rays can reach receivers far from the
   * actual door, so testing just the door cell would leak light through walls. */
@@ -748,6 +760,7 @@ public final class FixtureLighting {
  }
  /** Source orientation response is shared by the standalone light model. */
  public static double angular(Kind kind,double dot){
+  if(kind==Kind.FIXED_BEACON)return Math.pow(Math.max(0,dot),9);
   var beam=switch(kind){
    case FLUORESCENT -> LightModel.Beam.FLUORESCENT;
    case VAN_DIFFUSER -> LightModel.Beam.VAN_DIFFUSER;

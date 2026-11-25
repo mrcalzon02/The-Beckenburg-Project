@@ -32,18 +32,42 @@ public final class LooseClutter {
     private void noise(Item i,double speed){if(speed>1.2&&noises.size()<8)noises.add(new Noise(i.x,i.y,i.z,speed));}
     private static final class Item {
         int id,holder=-1,immunity,thrower=-1;Kind kind;double x,y,z,vx,vy,vz,yaw,roll,spin;boolean armed;
-        Item(int id,Kind kind,double x,double bottom,double z,double yaw){this.id=id;this.kind=kind;this.x=x;this.y=bottom+kind.half;this.z=z;this.yaw=yaw;}
+        private final Vec home;
+        private final double homeYaw;
+        Item(int id,Kind kind,double x,double bottom,double z,double yaw){
+            this.id=id;this.kind=kind;this.x=x;this.y=bottom+kind.half;this.z=z;this.yaw=yaw;
+            home=new Vec(x,this.y,z);homeYaw=yaw;
+        }
+        void restore(){
+            x=home.x();y=home.y();z=home.z();yaw=homeYaw;
+            vx=vy=vz=roll=spin=0;holder=thrower=-1;immunity=0;armed=false;
+        }
         State state(){return new State(id,kind,x,y,z,yaw,roll,holder);}
         double extent(){return Math.abs(Math.cos(roll))*kind.half+Math.abs(Math.sin(roll))*kind.radius;}
     }
     private final HouseMap map;private final CastleClutterWorld castle;
-    private final boolean authoredContacts,worldGroundContacts;private final List<Item> items=new ArrayList<>();
+    private final boolean authoredContacts,nativeContacts,worldGroundContacts;private final List<Item> items=new ArrayList<>();
     private final int[] last={-1000,-1000,-1000,-1000,-1000,-1000};
-    public LooseClutter(HouseMap map){this.map=Objects.requireNonNull(map);castle=null;authoredContacts=map.level().sockets().stream().anyMatch(s->s.type().equals("authored-clutter"));worldGroundContacts=WorldTerrainSurface.walking(map.level());seed();}
-    LooseClutter(CastleHubMap map){this.map=null;authoredContacts=false;worldGroundContacts=false;castle=new CastleClutterWorld(map);for(var s:castle.seeds())items.add(new Item(s.id(),s.kind(),s.x(),s.bottom(),s.z(),s.yaw()));}
+    public LooseClutter(HouseMap map){
+        this.map=Objects.requireNonNull(map);castle=null;
+        authoredContacts=map.level().sockets().stream().anyMatch(s->s.type().equals("authored-clutter"));
+        nativeContacts=map.nativeInvestigation()!=null&&map.level().sockets().stream().anyMatch(s->s.type().equals("native_loose"));
+        worldGroundContacts=WorldTerrainSurface.walking(map.level());seed();
+    }
+    LooseClutter(CastleHubMap map){this.map=null;authoredContacts=false;nativeContacts=false;worldGroundContacts=false;castle=new CastleClutterWorld(map);for(var s:castle.seeds())items.add(new Item(s.id(),s.kind(),s.x(),s.bottom(),s.z(),s.yaw()));}
     private boolean clearSight(double ax,double ay,double az,double bx,double by,double bz){return castle==null?map.clearLineOfSight(ax,ay,az,bx,by,bz):castle.clearSight(ax,ay,az,bx,by,bz);}
     private boolean clearPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){return castle==null?map.clearObjectPath(ax,ay,az,bx,by,bz,radius,half):castle.clearPath(ax,ay,az,bx,by,bz,radius,half);}
     private void seed(){
+        if(nativeContacts){
+            for(var socket:map.level().sockets())if(socket.type().equals("native_loose")){
+                var item=new Item(items.size()+1,Kind.valueOf(socket.style()),socket.x(),socket.y()+.001,
+                    socket.z(),socket.yaw());
+                items.add(item);
+                authoredDescriptions.put(item.id,SiteStories.nativeBelonging(map.level().id(),socket.id()));
+                authoredItems.put(socket.id(),item.id);
+            }
+            return;
+        }
         if(authoredContacts){
             for(var socket:map.level().sockets())if(socket.type().equals("loose-object")){
                 var binding=socket.style().split("\\|");if(binding.length!=6)throw new IllegalArgumentException("Invalid authored clutter binding "+socket.id());
@@ -198,6 +222,14 @@ public final class LooseClutter {
             if(++count==3)break;
         }return count;
     }
+    private double nativeSupport(double x,double z,double before,double after){
+        double top=before+.003, bottom=after-.003;
+        var deck=map.van().supportHeight(x,z);
+        var bearing=map.nativeInvestigation().physics().support(x,z,(top+bottom)*.5,(top-bottom)*.5);
+        double surface=bearing==null?-100:bearing.y();
+        return deck!=null&&deck>=bottom&&deck<=top?Math.max(surface,deck):surface;
+    }
+
     private double support(Item i,double before,double after){
         if(castle!=null)return castle.support(i.x,i.z,before,after);
         double best=-100;
@@ -215,25 +247,65 @@ public final class LooseClutter {
             double y=c.y()+c.height();if(Math.abs(x)<c.halfX()&&Math.abs(z)<c.halfZ()&&y<=before+.01&&y>=after-.02)best=Math.max(best,y);
         }return best;
     }
+    private double slideX(Item i,double x,double y,double z,double next,double extent){
+        if(next==x||clearPath(x,y,z,next,y,z,i.kind.radius,extent))return next;
+        noise(i,Math.abs(i.vx));i.vx*=-.3;return x;
+    }
+
+    private double slideZ(Item i,double x,double y,double z,double next,double extent){
+        if(next==z||clearPath(x,y,z,x,y,next,i.kind.radius,extent))return next;
+        noise(i,Math.abs(i.vz));i.vz*=-.3;return z;
+    }
+
+    private static void advanceRoll(Item item,double speed,double dt){
+        if(speed>.35)item.roll+=item.spin*dt;
+        else{item.spin=0;item.roll*=.92;}
+    }
+
     public synchronized List<Hit> advance(List<Observer> observers){
         List<Hit> hits=new ArrayList<>();
+        boolean nativeScene=nativeContacts;
         for(Item i:items){
-            double ground=castle==null?map.groundHeight(i.x,i.z,map.roomAt(i.x,i.y-i.extent(),i.z)):-100;
-            if(castle==null&&i.y-i.extent()<ground-.05){
+            if(nativeScene&&(Math.abs(i.x)>=255||Math.abs(i.z)>=255||i.y < -95))i.restore();
+            double ground=castle==null&&!nativeScene?map.groundHeight(i.x,i.z,map.roomAt(i.x,i.y-i.extent(),i.z)):-100;
+            if(castle==null&&!nativeScene&&i.y-i.extent()<ground-.05){
                 var recovered=GroundRecovery.recover(map,new Vec(i.x,i.y-i.extent(),i.z),map.roomAt(i.x,i.z),HunterPosture.CROUCH_HEIGHT);
                 i.x=recovered.x();i.y=recovered.y()+i.extent()+.002;i.z=recovered.z();i.holder=-1;i.vx=i.vy=i.vz=0;i.armed=false;
             }
             if(i.holder>=0){Observer o=observers.stream().filter(p->p.seat==i.holder&&p.exposed).findFirst().orElse(null);
                 if(o==null){i.holder=-1;i.vy=0;}else{carry(i,o);continue;}}
             if(i.immunity>0)i.immunity--;
-            if(castle!=null&&Math.abs(i.vx)+Math.abs(i.vy)+Math.abs(i.vz)+Math.abs(i.spin)<1e-8&&Math.abs(support(i,i.y-i.extent(),i.y-i.extent()-.005)-(i.y-i.extent()))<.003)continue;
+            if((castle!=null||nativeScene)&&Math.abs(i.vx)+Math.abs(i.vy)+Math.abs(i.vz)+Math.abs(i.spin)<1e-8&&(!nativeScene||Math.abs(i.roll)<1e-8)){
+                double foot=i.y-i.extent();
+                double rest=nativeScene?nativeSupport(i.x,i.z,foot,foot-.005):support(i,foot,foot-.005);
+                if(Math.abs(rest-foot)<.003)continue;
+            }
             for(int step=0;step<20;step++){
                 double dt=.005,extent=i.extent(),ox=i.x,oy=i.y,oz=i.z;
                 i.vy-=9.8*dt;double nx=ox+i.vx*dt,ny=oy+i.vy*dt,nz=oz+i.vz*dt;
-                double floor=support(i,oy-extent,ny-extent);
-                if(i.vy<0&&floor>-99){noise(i,Math.abs(i.vy));ny=floor+extent+.001;i.vy=Math.abs(i.vy)<.8?0:-i.vy*.24;i.vx*=.78;i.vz*=.78;i.spin*=.75;}
-                if(!clearPath(ox,oy,oz,nx,oy,oz,i.kind.radius,extent)){noise(i,Math.abs(i.vx));i.vx*=-.3;nx=ox;}
-                if(!clearPath(nx,oy,oz,nx,oy,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vz));i.vz*=-.3;nz=oz;}
+                double startingExtent=extent;
+                if(nativeScene){
+                    // Sweep both extents. A tumbling mug can cross the support
+                    // even when its centre rose during this substep.
+                    advanceRoll(i,Math.sqrt(i.vx*i.vx+i.vy*i.vy+i.vz*i.vz),dt);
+                    extent=i.extent();
+                    nx=slideX(i,ox,oy,oz,nx,extent);
+                    nz=slideZ(i,nx,oy,oz,nz,extent);
+                }
+                double before=oy-startingExtent, after=ny-extent;
+                if(nativeScene?after<=before:i.vy<0){
+                    double floor=nativeScene?nativeSupport(nx,nz,before,after):support(i,before,after);
+                    if(floor>-99){
+                        noise(i,Math.abs(i.vy));
+                        ny=floor+extent+.001;
+                        if(i.vy<0)i.vy=Math.abs(i.vy)<.8?0:-i.vy*.24;
+                        i.vx*=.78;i.vz*=.78;i.spin*=.75;
+                    }
+                }
+                if(!nativeScene){
+                    nx=slideX(i,ox,oy,oz,nx,extent);
+                    nz=slideZ(i,nx,oy,oz,nz,extent);
+                }
                 if(ny>oy&&!clearPath(ox,oy,oz,nx,ny,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vy));i.vy*=-.25;ny=oy;}
                 i.x=nx;i.y=ny;i.z=nz;
                 double speed=Math.sqrt(i.vx*i.vx+i.vy*i.vy+i.vz*i.vz);
@@ -242,7 +314,7 @@ public final class LooseClutter {
                     if(i.armed)hits.add(new Hit(o.seat,Math.min(15,Math.max(1,(int)Math.round(i.kind.mass*speed*1.8))),i.id));
                     i.armed=false;i.vx*=-.2;i.vz*=-.2;i.vy*=.2;break;
                 }
-                if(speed>.35)i.roll+=i.spin*dt;else{i.spin=0;i.roll*=.92;}
+                if(!nativeScene)advanceRoll(i,speed,dt);
                 i.vx*=.999;i.vz*=.999;
             }
         }

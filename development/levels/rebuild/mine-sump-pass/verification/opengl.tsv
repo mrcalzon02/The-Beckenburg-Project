@@ -1,0 +1,46 @@
+measure	result
+native_scene_revision	ed2845b683cb78e9b7b42b4adddaefa9a348174bf6ab7ca953110f07f551e067
+staged_case_revision	ed2845b683cb78e9b7b42b4adddaefa9a348174bf6ab7ca953110f07f551e067-40c57e73a33367ed
+supported_case_owners	14 supported owners and actual cargo van
+fitted_thresholds	8 fitted sets, four standing/crouched body tests per state, sight, aim, sound and object behavior
+physical_routes	21 routes with exact native standing/crouched replay in both directions
+joined_mine_loop	Four complete walks from cargo through haul and vent stairs, then back to the cargo deck
+mine_banishment	5 11.0 -6.0 31.0
+mine_cleansing	11 47.0 0.0 38.0
+mine_absolution	1 47.0 0.0 54.0
+shaft_landing_706	15 level, standing capsule supports; former face has no level support at .96 m past the sill
+shaft_landing_707	15 level, standing capsule supports; former face has no level support at .96 m past the sill
+staged_rail_collision	10 actual grip cross-sections; lower guards block a sideways standing or crouched capsule while retaining the walking lane
+lower_and_ore_west_slab_probes	3168 native probes, 36 open tread-bay points, six physical rail intersections, both-posture guard rejection on three sides
+mine_sump_slab_cut	16 intentional open points in the real lower slab well
+mine_runoff_geometry	28 physical roof surface locations, six open gutter throats and adjacent pans, six saved terrain samples with verified downhill fall
+mine_sump_water	Nine exact wall-contained wet samples, four dry outside probes, blocked standing and crouched guard crossings, and visible native water
+mine-assay-cupboard_protected_floor_samples	69
+mine-shack-cupboard_protected_floor_samples	69
+mine-wash-cupboard_protected_floor_samples	69
+mine_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+mine-service-light	3.41261391344303 supplied / 0.9000000000000001 source disabled / 0.9000000000000001 breaker tripped
+mine-shack-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-assay-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-stores-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-adit-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-haul-light	2.69961391344303 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-ore-west-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-ore-east-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-cross-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-lift-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-lower-light	2.69961391344303 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-vent-light	2.69961391344303 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-wash-light	2.6996139134430304 supplied / 0.187 source disabled / 0.187 breaker tripped
+mine-switch-00	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-01	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-02	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-03	3.5233211292318467 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-04	3.5233211292318467 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-05	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-06	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-07	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-08	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-09	3.5233211292318467 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-10	3.5233211292318467 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass
+mine-switch-11	3.523321129231846 supplied / 0.9000000000000001 locally switched off; aimed reach and both-posture approach pass

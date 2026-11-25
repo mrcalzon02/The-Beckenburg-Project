@@ -1,0 +1,5024 @@
+{
+  "assets": {
+    "door_1_loose": {
+      "path": "assets/runtime/models/door_1_loose.glb",
+      "sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    "level_bath_basin": {
+      "path": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf"
+    },
+    "level_bath_shower_worn": {
+      "path": "assets/runtime/models/level_bath_shower_worn.glb",
+      "sha256": "bba9bdea9ab14b4f42976a950c4de440fe9f0ea3a253ef06c4dba53ed63466e1"
+    },
+    "level_blockout_cellar_service_manifold": {
+      "path": "development/levels/primitive-props-v1/models/level_blockout_cellar_service_manifold.glb",
+      "sha256": "af93bac4dfd698080481106a060aa32f9aa3ef1a2f9f7d6e55a5e722b7bcaac0"
+    },
+    "level_blockout_domestic_kitchen_range": {
+      "path": "development/levels/primitive-props-v1/models/level_blockout_domestic_kitchen_range.glb",
+      "sha256": "9a024553c055d319ecbe298eaf4868045c7ed7ec3d6dfffd8912b452183ef396"
+    },
+    "level_blockout_lab_fume_hood": {
+      "path": "development/levels/primitive-props-v1/models/level_blockout_lab_fume_hood.glb",
+      "sha256": "332612ef5db9a984bb64123b46fcdc46094c0010bd68918e982826e4dec7d699"
+    },
+    "level_boiler_modern_worn": {
+      "path": "assets/runtime/models/level_boiler_modern_worn.glb",
+      "sha256": "20ee5d6959c9940f9ede3206189534ef905581f262655cba85dddfed16197d7a"
+    },
+    "level_kitchen_counter": {
+      "path": "assets/runtime/models/level_kitchen_counter.glb",
+      "sha256": "a554b18711ba31848a55a28be3674d7e7d1a11a595e21bb70d9466dc6cdeca53"
+    },
+    "level_laundry_washer": {
+      "path": "assets/runtime/models/level_laundry_washer.glb",
+      "sha256": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14"
+    },
+    "level_radiator_worn": {
+      "path": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63"
+    },
+    "toilet_mp_1": {
+      "path": "assets/runtime/models/toilet_mp_1.glb",
+      "sha256": "4fe48e46a8a10acf35167ddc6cc62aaaba645c9996b5325bb505d164d9512f3e"
+    }
+  },
+  "fixtures": [
+    {
+      "key": "west-plant-boiler",
+      "room": "plant",
+      "asset": "level_boiler_modern_worn",
+      "floor": -3,
+      "source": "assets/runtime/models/level_boiler_modern_worn.glb",
+      "sha256": "20ee5d6959c9940f9ede3206189534ef905581f262655cba85dddfed16197d7a",
+      "size": [
+        [
+          16.3,
+          -2.92,
+          12.925
+        ],
+        [
+          17.4,
+          -0.5753,
+          13.975
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor plant",
+        "Floor plant",
+        "Floor plant",
+        "Floor plant"
+      ],
+      "parts": [
+        "College west-plant-boiler 01"
+      ],
+      "plinth_m": 0.08
+    },
+    {
+      "key": "west-plant-manifold",
+      "room": "plant",
+      "asset": "level_blockout_cellar_service_manifold",
+      "floor": -3,
+      "source": "development/levels/primitive-props-v1/models/level_blockout_cellar_service_manifold.glb",
+      "sha256": "af93bac4dfd698080481106a060aa32f9aa3ef1a2f9f7d6e55a5e722b7bcaac0",
+      "size": [
+        [
+          12.775,
+          -2.935,
+          19.635
+        ],
+        [
+          13.675,
+          -0.985,
+          21.365
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor plant",
+        "Floor plant",
+        "Floor plant",
+        "Floor plant"
+      ],
+      "parts": [
+        "College west-plant-manifold 01"
+      ],
+      "plinth_m": 0.065
+    },
+    {
+      "key": "maintenance-basin",
+      "room": "maintenance",
+      "asset": "level_bath_basin",
+      "floor": -3,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          12.31,
+          -3.0,
+          29.52
+        ],
+        [
+          12.81,
+          -1.864,
+          30.18
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor maintenance",
+        "Floor maintenance",
+        "Floor maintenance",
+        "Floor maintenance"
+      ],
+      "parts": [
+        "College maintenance-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "lab-wash-basin",
+      "room": "lab-wash",
+      "asset": "level_bath_basin",
+      "floor": 0,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          18.12,
+          0.0,
+          16.25
+        ],
+        [
+          18.78,
+          1.136,
+          16.75
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor lab-wash",
+        "Floor lab-wash",
+        "Floor lab-wash",
+        "Floor lab-wash"
+      ],
+      "parts": [
+        "College lab-wash-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "public-basin",
+      "room": "public-wc",
+      "asset": "level_bath_basin",
+      "floor": 0,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          26.37,
+          0.0,
+          53.29
+        ],
+        [
+          27.03,
+          1.136,
+          53.79
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor public-wc",
+        "Floor public-wc",
+        "Floor public-wc",
+        "Floor public-wc"
+      ],
+      "parts": [
+        "College public-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "public-wc",
+      "room": "public-wc",
+      "asset": "toilet_mp_1",
+      "floor": 0,
+      "source": "assets/runtime/models/toilet_mp_1.glb",
+      "sha256": "4fe48e46a8a10acf35167ddc6cc62aaaba645c9996b5325bb505d164d9512f3e",
+      "size": [
+        [
+          24.6788,
+          0.0,
+          52.85548
+        ],
+        [
+          25.2412,
+          1.00636,
+          53.75224
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor public-wc",
+        "Floor public-wc",
+        "Floor public-wc",
+        "Floor public-wc"
+      ],
+      "parts": [
+        "College public-wc 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "cleaner-basin",
+      "room": "cleaner",
+      "asset": "level_bath_basin",
+      "floor": 0,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          26.17,
+          0.0,
+          46.28
+        ],
+        [
+          26.83,
+          1.136,
+          46.78
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor cleaner",
+        "Floor cleaner",
+        "Floor cleaner",
+        "Floor cleaner"
+      ],
+      "parts": [
+        "College cleaner-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "laundry-left",
+      "room": "laundry",
+      "asset": "level_laundry_washer",
+      "floor": 0,
+      "source": "assets/runtime/models/level_laundry_washer.glb",
+      "sha256": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
+      "size": [
+        [
+          44.285,
+          0.0,
+          34.187
+        ],
+        [
+          44.915,
+          0.8725,
+          34.9905
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor laundry",
+        "Floor laundry",
+        "Floor laundry",
+        "Floor laundry"
+      ],
+      "parts": [
+        "College laundry-left 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "laundry-right",
+      "room": "laundry",
+      "asset": "level_laundry_washer",
+      "floor": 0,
+      "source": "assets/runtime/models/level_laundry_washer.glb",
+      "sha256": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
+      "size": [
+        [
+          45.835,
+          0.0,
+          34.187
+        ],
+        [
+          46.465,
+          0.8725,
+          34.9905
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor laundry",
+        "Floor laundry",
+        "Floor laundry",
+        "Floor laundry"
+      ],
+      "parts": [
+        "College laundry-right 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "staff-cleaner-basin",
+      "room": "staff-cleaner",
+      "asset": "level_bath_basin",
+      "floor": 0,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          56.07,
+          0.0,
+          30.25
+        ],
+        [
+          56.73,
+          1.136,
+          30.75
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor staff-cleaner",
+        "Floor staff-cleaner",
+        "Floor staff-cleaner",
+        "Floor staff-cleaner"
+      ],
+      "parts": [
+        "College staff-cleaner-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "staff-basin",
+      "room": "staff-wc",
+      "asset": "level_bath_basin",
+      "floor": 0,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          60.62,
+          0.0,
+          33.29
+        ],
+        [
+          61.28,
+          1.136,
+          33.79
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor staff-wc",
+        "Floor staff-wc",
+        "Floor staff-wc",
+        "Floor staff-wc"
+      ],
+      "parts": [
+        "College staff-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "staff-wc",
+      "room": "staff-wc",
+      "asset": "toilet_mp_1",
+      "floor": 0,
+      "source": "assets/runtime/models/toilet_mp_1.glb",
+      "sha256": "4fe48e46a8a10acf35167ddc6cc62aaaba645c9996b5325bb505d164d9512f3e",
+      "size": [
+        [
+          58.9688,
+          0.0,
+          32.85548
+        ],
+        [
+          59.5312,
+          1.00636,
+          33.75224
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor staff-wc",
+        "Floor staff-wc",
+        "Floor staff-wc",
+        "Floor staff-wc"
+      ],
+      "parts": [
+        "College staff-wc 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "kitchen-sink",
+      "room": "kitchen",
+      "asset": "level_kitchen_counter",
+      "floor": 0,
+      "source": "assets/runtime/models/level_kitchen_counter.glb",
+      "sha256": "a554b18711ba31848a55a28be3674d7e7d1a11a595e21bb70d9466dc6cdeca53",
+      "size": [
+        [
+          56.26,
+          0.0,
+          50.345
+        ],
+        [
+          58.66,
+          1.196,
+          51.042
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor kitchen",
+        "Floor kitchen",
+        "Floor kitchen",
+        "Floor kitchen"
+      ],
+      "parts": [
+        "College kitchen-sink 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "washup-sink",
+      "room": "washup",
+      "asset": "level_kitchen_counter",
+      "floor": 0,
+      "source": "assets/runtime/models/level_kitchen_counter.glb",
+      "sha256": "a554b18711ba31848a55a28be3674d7e7d1a11a595e21bb70d9466dc6cdeca53",
+      "size": [
+        [
+          56.24,
+          0.0,
+          64.978
+        ],
+        [
+          58.64,
+          1.196,
+          65.675
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor washup",
+        "Floor washup",
+        "Floor washup",
+        "Floor washup"
+      ],
+      "parts": [
+        "College washup-sink 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "residence-basin",
+      "room": "res-wc",
+      "asset": "level_bath_basin",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "size": [
+        [
+          56.67,
+          3.6,
+          22.27
+        ],
+        [
+          57.33,
+          4.736,
+          22.77
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-wc",
+        "Floor res-wc",
+        "Floor res-wc",
+        "Floor res-wc"
+      ],
+      "parts": [
+        "College residence-basin 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "residence-wc",
+      "room": "res-wc",
+      "asset": "toilet_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/toilet_mp_1.glb",
+      "sha256": "4fe48e46a8a10acf35167ddc6cc62aaaba645c9996b5325bb505d164d9512f3e",
+      "size": [
+        [
+          54.8688,
+          3.6,
+          22.20776
+        ],
+        [
+          55.4312,
+          4.60636,
+          23.10452
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-wc",
+        "Floor res-wc",
+        "Floor res-wc",
+        "Floor res-wc"
+      ],
+      "parts": [
+        "College residence-wc 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "residence-shower-west",
+      "room": "res-shower",
+      "asset": "level_bath_shower_worn",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_bath_shower_worn.glb",
+      "sha256": "bba9bdea9ab14b4f42976a950c4de440fe9f0ea3a253ef06c4dba53ed63466e1",
+      "size": [
+        [
+          58.57,
+          3.6,
+          22.2705
+        ],
+        [
+          59.5315,
+          5.7925,
+          23.1775
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-shower",
+        "Floor res-shower",
+        "Floor res-shower",
+        "Floor res-shower"
+      ],
+      "parts": [
+        "College residence-shower-west 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "residence-shower-east",
+      "room": "res-shower",
+      "asset": "level_bath_shower_worn",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_bath_shower_worn.glb",
+      "sha256": "bba9bdea9ab14b4f42976a950c4de440fe9f0ea3a253ef06c4dba53ed63466e1",
+      "size": [
+        [
+          60.42,
+          3.6,
+          22.2705
+        ],
+        [
+          61.3815,
+          5.7925,
+          23.1775
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-shower",
+        "Floor res-shower",
+        "Floor res-shower",
+        "Floor res-shower"
+      ],
+      "parts": [
+        "College residence-shower-east 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "seminar-radiator",
+      "room": "seminar",
+      "asset": "level_radiator_worn",
+      "floor": 0,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          8.48,
+          0.0,
+          24.195
+        ],
+        [
+          9.65944,
+          0.8513,
+          24.45
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor seminar",
+        "Floor seminar",
+        "Floor seminar",
+        "Floor seminar"
+      ],
+      "parts": [
+        "College seminar-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "lecture-front-radiator",
+      "room": "lecture",
+      "asset": "level_radiator_worn",
+      "floor": 0,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          6.34,
+          0.0,
+          39.48
+        ],
+        [
+          6.595,
+          0.8513,
+          40.65944
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor lecture",
+        "Floor lecture",
+        "Floor lecture",
+        "Floor lecture"
+      ],
+      "parts": [
+        "College lecture-front-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "lecture-rear-radiator",
+      "room": "lecture",
+      "asset": "level_radiator_worn",
+      "floor": 0,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          6.34,
+          0.0,
+          48.48
+        ],
+        [
+          6.595,
+          0.8513,
+          49.65944
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor lecture",
+        "Floor lecture",
+        "Floor lecture",
+        "Floor lecture"
+      ],
+      "parts": [
+        "College lecture-rear-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "lobby-radiator",
+      "room": "teaching-lobby",
+      "asset": "level_radiator_worn",
+      "floor": 0,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          20.84056,
+          0.0,
+          61.52
+        ],
+        [
+          22.02,
+          0.8513,
+          61.775
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor teaching-lobby",
+        "Floor teaching-lobby",
+        "Floor teaching-lobby",
+        "Floor teaching-lobby"
+      ],
+      "parts": [
+        "College lobby-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "upper-seminar-radiator",
+      "room": "upper-seminar",
+      "asset": "level_radiator_worn",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          9.58,
+          3.6,
+          24.265
+        ],
+        [
+          10.75944,
+          4.4513,
+          24.52
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor upper-seminar",
+        "Floor upper-seminar",
+        "Floor upper-seminar",
+        "Floor upper-seminar"
+      ],
+      "parts": [
+        "College upper-seminar-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "library-reading-radiator",
+      "room": "reading",
+      "asset": "level_radiator_worn",
+      "floor": 0,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          44.44056,
+          0.0,
+          19.5
+        ],
+        [
+          45.62,
+          0.8513,
+          19.755
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor reading",
+        "Floor reading",
+        "Floor reading",
+        "Floor reading"
+      ],
+      "parts": [
+        "College library-reading-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "library-stack-radiator",
+      "room": "upper-stacks",
+      "asset": "level_radiator_worn",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          39.58,
+          3.6,
+          4.265
+        ],
+        [
+          40.75944,
+          4.4513,
+          4.52
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor upper-stacks",
+        "Floor upper-stacks",
+        "Floor upper-stacks",
+        "Floor upper-stacks"
+      ],
+      "parts": [
+        "College library-stack-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "cafe-radiator",
+      "room": "cafe",
+      "asset": "level_radiator_worn",
+      "floor": 0,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          42.35,
+          0.0,
+          61.58
+        ],
+        [
+          42.605,
+          0.8513,
+          62.75944
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor cafe",
+        "Floor cafe",
+        "Floor cafe",
+        "Floor cafe"
+      ],
+      "parts": [
+        "College cafe-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "residence-hall-radiator",
+      "room": "upper-res-hall",
+      "asset": "level_radiator_worn",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          53.435,
+          3.6,
+          47.14056
+        ],
+        [
+          53.69,
+          4.4513,
+          48.32
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor upper-res-hall",
+        "Floor upper-res-hall",
+        "Floor upper-res-hall",
+        "Floor upper-res-hall"
+      ],
+      "parts": [
+        "College residence-hall-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "dormitory-radiator",
+      "room": "res-west-1",
+      "asset": "level_radiator_worn",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_radiator_worn.glb",
+      "sha256": "8afc8241a755210b11e0eb009c057b64dbc10fcd2803534eba98f3e9be818a63",
+      "size": [
+        [
+          42.33,
+          3.6,
+          35.88
+        ],
+        [
+          42.585,
+          4.4513,
+          37.05944
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College dormitory-radiator 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "lab-extract-cabinet",
+      "room": "lab",
+      "asset": "level_blockout_lab_fume_hood",
+      "floor": 0,
+      "source": "development/levels/primitive-props-v1/models/level_blockout_lab_fume_hood.glb",
+      "sha256": "332612ef5db9a984bb64123b46fcdc46094c0010bd68918e982826e4dec7d699",
+      "size": [
+        [
+          11.86,
+          0.0,
+          10.18
+        ],
+        [
+          13.74,
+          2.22,
+          11.12
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor lab",
+        "Floor lab",
+        "Floor lab",
+        "Floor lab"
+      ],
+      "parts": [
+        "College lab-extract-cabinet 01"
+      ],
+      "plinth_m": 0
+    },
+    {
+      "key": "union-kitchen-range",
+      "room": "kitchen",
+      "asset": "level_blockout_domestic_kitchen_range",
+      "floor": 0,
+      "source": "development/levels/primitive-props-v1/models/level_blockout_domestic_kitchen_range.glb",
+      "sha256": "9a024553c055d319ecbe298eaf4868045c7ed7ec3d6dfffd8912b452183ef396",
+      "size": [
+        [
+          59.67,
+          0.0,
+          50.38
+        ],
+        [
+          60.63,
+          1.535,
+          51.13
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor kitchen",
+        "Floor kitchen",
+        "Floor kitchen",
+        "Floor kitchen"
+      ],
+      "parts": [
+        "College union-kitchen-range 01"
+      ],
+      "plinth_m": 0
+    }
+  ],
+  "terminals": [
+    {
+      "fixture": "west-plant-boiler",
+      "asset": "level_boiler_modern_worn",
+      "circuit": "flow",
+      "source": [
+        -0.2,
+        0.8,
+        -0.47
+      ],
+      "position": [
+        16.65,
+        -2.12,
+        12.98
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "flow",
+      "source": [
+        -0.6,
+        0.75,
+        -0.455
+      ],
+      "position": [
+        13.675,
+        -2.18,
+        19.9
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "flow",
+      "source": [
+        -0.6,
+        0.95,
+        -0.455
+      ],
+      "position": [
+        13.675,
+        -1.98,
+        19.9
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-boiler",
+      "asset": "level_boiler_modern_worn",
+      "circuit": "return",
+      "source": [
+        0.2,
+        0.8,
+        -0.47
+      ],
+      "position": [
+        17.050001,
+        -2.12,
+        12.98
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "return",
+      "source": [
+        0.6,
+        0.75,
+        -0.455
+      ],
+      "position": [
+        13.675,
+        -2.18,
+        21.1
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "return",
+      "source": [
+        0.6,
+        0.95,
+        -0.455
+      ],
+      "position": [
+        13.675,
+        -1.98,
+        21.1
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-boiler",
+      "asset": "level_boiler_modern_worn",
+      "circuit": "cold",
+      "source": [
+        -0.35,
+        1.0,
+        -0.47
+      ],
+      "position": [
+        16.5,
+        -1.92,
+        12.98
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "cold",
+      "source": [
+        -0.32,
+        0.75,
+        -0.345
+      ],
+      "position": [
+        13.565001,
+        -2.18,
+        20.18
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "cold",
+      "source": [
+        -0.32,
+        0.95,
+        -0.345
+      ],
+      "position": [
+        13.565001,
+        -1.98,
+        20.18
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-boiler",
+      "asset": "level_boiler_modern_worn",
+      "circuit": "hot",
+      "source": [
+        0.35,
+        1.0,
+        -0.47
+      ],
+      "position": [
+        17.200001,
+        -1.92,
+        12.98
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "hot",
+      "source": [
+        0.32,
+        0.75,
+        -0.345
+      ],
+      "position": [
+        13.565001,
+        -2.18,
+        20.82
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "west-plant-manifold",
+      "asset": "level_blockout_cellar_service_manifold",
+      "circuit": "hot",
+      "source": [
+        0.32,
+        0.95,
+        -0.345
+      ],
+      "position": [
+        13.565001,
+        -1.98,
+        20.82
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "maintenance-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        12.782892,
+        -2.25,
+        29.77
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "maintenance-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        12.782893,
+        -2.25,
+        29.93
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "maintenance-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        12.56,
+        -3.0,
+        29.85
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "lab-wash-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        18.370001,
+        0.75,
+        16.277109
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "lab-wash-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        18.530001,
+        0.75,
+        16.277107
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "lab-wash-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        18.450001,
+        0.0,
+        16.5
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "public-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        26.780001,
+        0.75,
+        53.762894
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "public-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        26.620001,
+        0.75,
+        53.762894
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "public-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        26.700001,
+        0.0,
+        53.540001
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "public-wc",
+      "asset": "toilet_mp_1",
+      "circuit": "cold",
+      "source": [
+        0.0,
+        0.5,
+        -0.550234
+      ],
+      "position": [
+        24.959999,
+        0.734545,
+        53.700233
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "public-wc",
+      "asset": "toilet_mp_1",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.050761,
+        -0.0
+      ],
+      "position": [
+        24.959999,
+        0.285306,
+        53.150002
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "cleaner-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        26.42,
+        0.75,
+        46.307106
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "cleaner-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        26.58,
+        0.75,
+        46.307106
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "cleaner-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        26.5,
+        0.0,
+        46.529999
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "laundry-left",
+      "asset": "level_laundry_washer",
+      "circuit": "cold",
+      "source": [
+        0.0,
+        0.45,
+        -0.305
+      ],
+      "position": [
+        44.599998,
+        0.45,
+        34.314999
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "laundry-left",
+      "asset": "level_laundry_washer",
+      "circuit": "waste",
+      "source": [
+        0.12,
+        0.3,
+        -0.305
+      ],
+      "position": [
+        44.719997,
+        0.3,
+        34.314999
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "laundry-right",
+      "asset": "level_laundry_washer",
+      "circuit": "cold",
+      "source": [
+        0.0,
+        0.45,
+        -0.305
+      ],
+      "position": [
+        46.150002,
+        0.45,
+        34.314999
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "laundry-right",
+      "asset": "level_laundry_washer",
+      "circuit": "waste",
+      "source": [
+        0.12,
+        0.3,
+        -0.305
+      ],
+      "position": [
+        46.27,
+        0.3,
+        34.314999
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "staff-cleaner-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        56.32,
+        0.75,
+        30.277109
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "staff-cleaner-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        56.480003,
+        0.75,
+        30.277107
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "staff-cleaner-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        56.400002,
+        0.0,
+        30.5
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "staff-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        61.030003,
+        0.75,
+        33.762894
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "staff-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        60.869999,
+        0.75,
+        33.762894
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "staff-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        60.950001,
+        0.0,
+        33.540001
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "staff-wc",
+      "asset": "toilet_mp_1",
+      "circuit": "cold",
+      "source": [
+        0.0,
+        0.5,
+        -0.550234
+      ],
+      "position": [
+        59.25,
+        0.734545,
+        33.700233
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "staff-wc",
+      "asset": "toilet_mp_1",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.050761,
+        -0.0
+      ],
+      "position": [
+        59.25,
+        0.285306,
+        33.150002
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "kitchen-sink",
+      "asset": "level_kitchen_counter",
+      "circuit": "cold",
+      "source": [
+        -0.68,
+        0.5,
+        -0.295
+      ],
+      "position": [
+        56.77,
+        0.5,
+        50.375
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "kitchen-sink",
+      "asset": "level_kitchen_counter",
+      "circuit": "hot",
+      "source": [
+        -0.52,
+        0.5,
+        -0.295
+      ],
+      "position": [
+        56.93,
+        0.5,
+        50.375
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "kitchen-sink",
+      "asset": "level_kitchen_counter",
+      "circuit": "waste",
+      "source": [
+        -0.6,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        56.850002,
+        0.0,
+        50.669998
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "washup-sink",
+      "asset": "level_kitchen_counter",
+      "circuit": "cold",
+      "source": [
+        -0.68,
+        0.5,
+        -0.295
+      ],
+      "position": [
+        58.130001,
+        0.5,
+        65.644997
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "washup-sink",
+      "asset": "level_kitchen_counter",
+      "circuit": "hot",
+      "source": [
+        -0.52,
+        0.5,
+        -0.295
+      ],
+      "position": [
+        57.970001,
+        0.5,
+        65.644997
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "washup-sink",
+      "asset": "level_kitchen_counter",
+      "circuit": "waste",
+      "source": [
+        -0.6,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        58.049999,
+        0.0,
+        65.349998
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "residence-basin",
+      "asset": "level_bath_basin",
+      "circuit": "cold",
+      "source": [
+        -0.08,
+        0.75,
+        -0.222891
+      ],
+      "position": [
+        56.919998,
+        4.35,
+        22.29711
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-basin",
+      "asset": "level_bath_basin",
+      "circuit": "hot",
+      "source": [
+        0.08,
+        0.75,
+        -0.222893
+      ],
+      "position": [
+        57.080002,
+        4.35,
+        22.297108
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-basin",
+      "asset": "level_bath_basin",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        57.0,
+        3.6,
+        22.52
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "residence-wc",
+      "asset": "toilet_mp_1",
+      "circuit": "cold",
+      "source": [
+        0.0,
+        0.5,
+        -0.550234
+      ],
+      "position": [
+        55.150002,
+        4.334545,
+        22.259766
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-wc",
+      "asset": "toilet_mp_1",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.050761,
+        -0.0
+      ],
+      "position": [
+        55.150002,
+        3.885306,
+        22.809999
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "residence-shower-west",
+      "asset": "level_bath_shower_worn",
+      "circuit": "cold",
+      "source": [
+        -0.06,
+        1.05,
+        -0.4595
+      ],
+      "position": [
+        58.989998,
+        4.6425,
+        22.2705
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-shower-west",
+      "asset": "level_bath_shower_worn",
+      "circuit": "hot",
+      "source": [
+        0.06,
+        1.22,
+        -0.4595
+      ],
+      "position": [
+        59.110001,
+        4.8125,
+        22.2705
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-shower-west",
+      "asset": "level_bath_shower_worn",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0075,
+        0.02
+      ],
+      "position": [
+        59.049999,
+        3.6,
+        22.75
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "residence-shower-east",
+      "asset": "level_bath_shower_worn",
+      "circuit": "cold",
+      "source": [
+        -0.06,
+        1.05,
+        -0.4595
+      ],
+      "position": [
+        60.84,
+        4.6425,
+        22.2705
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-shower-east",
+      "asset": "level_bath_shower_worn",
+      "circuit": "hot",
+      "source": [
+        0.06,
+        1.22,
+        -0.4595
+      ],
+      "position": [
+        60.960003,
+        4.8125,
+        22.2705
+      ],
+      "face": "rear"
+    },
+    {
+      "fixture": "residence-shower-east",
+      "asset": "level_bath_shower_worn",
+      "circuit": "waste",
+      "source": [
+        0.0,
+        0.0075,
+        0.02
+      ],
+      "position": [
+        60.900002,
+        3.6,
+        22.75
+      ],
+      "face": "bottom"
+    },
+    {
+      "fixture": "seminar-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        9.645,
+        0.72,
+        24.370001
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "seminar-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        8.48,
+        0.15,
+        24.32
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "lecture-front-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        6.42,
+        0.72,
+        40.645
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "lecture-front-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        6.47,
+        0.15,
+        39.48
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "lecture-rear-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        6.42,
+        0.72,
+        49.645
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "lecture-rear-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        6.47,
+        0.15,
+        48.48
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "lobby-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        20.855,
+        0.72,
+        61.599998
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "lobby-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        22.02,
+        0.15,
+        61.649998
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "upper-seminar-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        10.745001,
+        4.32,
+        24.440001
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "upper-seminar-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        9.58,
+        3.75,
+        24.389999
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "library-reading-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        44.454998,
+        0.72,
+        19.58
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "library-reading-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        45.619999,
+        0.15,
+        19.630001
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "library-stack-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        40.744999,
+        4.32,
+        4.44
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "library-stack-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        39.579998,
+        3.75,
+        4.39
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "cafe-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        42.43,
+        0.72,
+        62.744999
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "cafe-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        42.48,
+        0.15,
+        61.579998
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "residence-hall-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        53.610001,
+        4.32,
+        47.154999
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "residence-hall-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        53.560001,
+        3.75,
+        48.32
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "dormitory-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "flow",
+      "source": [
+        0.645,
+        0.72,
+        0.02
+      ],
+      "position": [
+        42.41,
+        4.32,
+        37.045002
+      ],
+      "face": "right"
+    },
+    {
+      "fixture": "dormitory-radiator",
+      "asset": "level_radiator_worn",
+      "circuit": "return",
+      "source": [
+        -0.52,
+        0.15,
+        -0.03
+      ],
+      "position": [
+        42.459999,
+        3.75,
+        35.880001
+      ],
+      "face": "left"
+    },
+    {
+      "fixture": "lab-extract-cabinet",
+      "asset": "level_blockout_lab_fume_hood",
+      "circuit": "extract",
+      "source": [
+        0.0,
+        2.24,
+        -0.0
+      ],
+      "position": [
+        12.8,
+        2.22,
+        10.65
+      ],
+      "face": "top"
+    }
+  ],
+  "service_runs": [
+    {
+      "id": "plant isolation flow",
+      "room": "plant",
+      "circuit": "flow",
+      "radius": 0.021,
+      "nodes": [
+        [
+          16.65,
+          -2.12,
+          12.98
+        ],
+        [
+          16.65,
+          -2.12,
+          12.905
+        ],
+        [
+          16.65,
+          -3.29,
+          12.905
+        ],
+        [
+          13.75,
+          -3.29,
+          12.905
+        ],
+        [
+          13.75,
+          -3.29,
+          19.9
+        ],
+        [
+          13.75,
+          -2.18,
+          19.9
+        ],
+        [
+          13.675,
+          -2.18,
+          19.9
+        ]
+      ],
+      "installation": "Boiler connection to the separate isolation manifold through the plant's service floor",
+      "parts": [
+        "College plant isolation flow 01",
+        "College plant isolation flow 02",
+        "College plant isolation flow 03",
+        "College plant isolation flow 04",
+        "College plant isolation flow 05",
+        "College plant isolation flow 06"
+      ]
+    },
+    {
+      "id": "west-plant-manifold flow",
+      "room": "plant",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          13.675,
+          -1.98,
+          19.9
+        ],
+        [
+          13.75,
+          -1.98,
+          19.9
+        ],
+        [
+          13.75,
+          -3.44,
+          19.9
+        ],
+        [
+          31.35,
+          -3.44,
+          19.9
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College west-plant-manifold flow 01",
+        "College west-plant-manifold flow 02",
+        "College west-plant-manifold flow 03"
+      ]
+    },
+    {
+      "id": "plant isolation return",
+      "room": "plant",
+      "circuit": "return",
+      "radius": 0.021,
+      "nodes": [
+        [
+          17.050001,
+          -2.12,
+          12.98
+        ],
+        [
+          17.050001,
+          -2.12,
+          12.905
+        ],
+        [
+          17.050001,
+          -3.34,
+          12.905
+        ],
+        [
+          13.75,
+          -3.34,
+          12.905
+        ],
+        [
+          13.75,
+          -3.34,
+          21.1
+        ],
+        [
+          13.75,
+          -2.18,
+          21.1
+        ],
+        [
+          13.675,
+          -2.18,
+          21.1
+        ]
+      ],
+      "installation": "Boiler connection to the separate isolation manifold through the plant's service floor",
+      "parts": [
+        "College plant isolation return 01",
+        "College plant isolation return 02",
+        "College plant isolation return 03",
+        "College plant isolation return 04",
+        "College plant isolation return 05",
+        "College plant isolation return 06"
+      ]
+    },
+    {
+      "id": "west-plant-manifold return",
+      "room": "plant",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          13.675,
+          -1.98,
+          21.1
+        ],
+        [
+          13.75,
+          -1.98,
+          21.1
+        ],
+        [
+          13.75,
+          -3.48,
+          21.1
+        ],
+        [
+          31.63,
+          -3.48,
+          21.1
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College west-plant-manifold return 01",
+        "College west-plant-manifold return 02",
+        "College west-plant-manifold return 03"
+      ]
+    },
+    {
+      "id": "plant isolation cold",
+      "room": "plant",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          16.5,
+          -1.92,
+          12.98
+        ],
+        [
+          16.5,
+          -1.92,
+          12.905
+        ],
+        [
+          16.5,
+          -3.39,
+          12.905
+        ],
+        [
+          13.640001,
+          -3.39,
+          12.905
+        ],
+        [
+          13.640001,
+          -3.39,
+          20.18
+        ],
+        [
+          13.640001,
+          -2.18,
+          20.18
+        ],
+        [
+          13.565001,
+          -2.18,
+          20.18
+        ]
+      ],
+      "installation": "Boiler connection to the separate isolation manifold through the plant's service floor",
+      "parts": [
+        "College plant isolation cold 01",
+        "College plant isolation cold 02",
+        "College plant isolation cold 03",
+        "College plant isolation cold 04",
+        "College plant isolation cold 05",
+        "College plant isolation cold 06"
+      ]
+    },
+    {
+      "id": "west-plant-manifold cold",
+      "room": "plant",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          13.565001,
+          -1.98,
+          20.18
+        ],
+        [
+          13.640001,
+          -1.98,
+          20.18
+        ],
+        [
+          13.640001,
+          -3.46,
+          20.18
+        ],
+        [
+          32.35,
+          -3.46,
+          20.18
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College west-plant-manifold cold 01",
+        "College west-plant-manifold cold 02",
+        "College west-plant-manifold cold 03"
+      ]
+    },
+    {
+      "id": "plant isolation hot",
+      "room": "plant",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          17.200001,
+          -1.92,
+          12.98
+        ],
+        [
+          17.200001,
+          -1.92,
+          12.905
+        ],
+        [
+          17.200001,
+          -3.44,
+          12.905
+        ],
+        [
+          13.640001,
+          -3.44,
+          12.905
+        ],
+        [
+          13.640001,
+          -3.44,
+          20.82
+        ],
+        [
+          13.640001,
+          -2.18,
+          20.82
+        ],
+        [
+          13.565001,
+          -2.18,
+          20.82
+        ]
+      ],
+      "installation": "Boiler connection to the separate isolation manifold through the plant's service floor",
+      "parts": [
+        "College plant isolation hot 01",
+        "College plant isolation hot 02",
+        "College plant isolation hot 03",
+        "College plant isolation hot 04",
+        "College plant isolation hot 05",
+        "College plant isolation hot 06"
+      ]
+    },
+    {
+      "id": "west-plant-manifold hot",
+      "room": "plant",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          13.565001,
+          -1.98,
+          20.82
+        ],
+        [
+          13.640001,
+          -1.98,
+          20.82
+        ],
+        [
+          13.640001,
+          -3.5,
+          20.82
+        ],
+        [
+          32.6,
+          -3.5,
+          20.82
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College west-plant-manifold hot 01",
+        "College west-plant-manifold hot 02",
+        "College west-plant-manifold hot 03"
+      ]
+    },
+    {
+      "id": "maintenance-basin cold",
+      "room": "maintenance",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          12.782892,
+          -2.25,
+          29.77
+        ],
+        [
+          12.857892,
+          -2.25,
+          29.77
+        ],
+        [
+          12.857892,
+          -3.46,
+          29.77
+        ],
+        [
+          32.35,
+          -3.46,
+          29.77
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College maintenance-basin cold 01",
+        "College maintenance-basin cold 02",
+        "College maintenance-basin cold 03"
+      ]
+    },
+    {
+      "id": "maintenance-basin hot",
+      "room": "maintenance",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          12.782893,
+          -2.25,
+          29.93
+        ],
+        [
+          12.857893,
+          -2.25,
+          29.93
+        ],
+        [
+          12.857893,
+          -3.5,
+          29.93
+        ],
+        [
+          32.6,
+          -3.5,
+          29.93
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College maintenance-basin hot 01",
+        "College maintenance-basin hot 02",
+        "College maintenance-basin hot 03"
+      ]
+    },
+    {
+      "id": "maintenance-basin waste",
+      "room": "maintenance",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          12.56,
+          -3.0,
+          29.85
+        ],
+        [
+          12.56,
+          -3.075,
+          29.85
+        ],
+        [
+          12.56,
+          -3.8495000000000004,
+          29.85
+        ],
+        [
+          33.08,
+          -4.1573,
+          29.85
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College maintenance-basin waste 01",
+        "College maintenance-basin waste 02",
+        "College maintenance-basin waste 03"
+      ]
+    },
+    {
+      "id": "lab-wash-basin cold",
+      "room": "lab-wash",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          18.370001,
+          0.75,
+          16.277109
+        ],
+        [
+          18.370001,
+          0.75,
+          16.202109
+        ],
+        [
+          18.370001,
+          -3.46,
+          16.202109
+        ],
+        [
+          32.35,
+          -3.46,
+          16.202109
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lab-wash-basin cold 01",
+        "College lab-wash-basin cold 02",
+        "College lab-wash-basin cold 03"
+      ]
+    },
+    {
+      "id": "lab-wash-basin hot",
+      "room": "lab-wash",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          18.530001,
+          0.75,
+          16.277107
+        ],
+        [
+          18.530001,
+          0.75,
+          16.202107
+        ],
+        [
+          18.530001,
+          -3.5,
+          16.202107
+        ],
+        [
+          32.6,
+          -3.5,
+          16.202107
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lab-wash-basin hot 01",
+        "College lab-wash-basin hot 02",
+        "College lab-wash-basin hot 03"
+      ]
+    },
+    {
+      "id": "lab-wash-basin waste",
+      "room": "lab-wash",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          18.450001,
+          0.0,
+          16.5
+        ],
+        [
+          18.450001,
+          -0.075,
+          16.5
+        ],
+        [
+          18.450001,
+          -3.697550015,
+          16.5
+        ],
+        [
+          33.08,
+          -3.917,
+          16.5
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lab-wash-basin waste 01",
+        "College lab-wash-basin waste 02",
+        "College lab-wash-basin waste 03"
+      ]
+    },
+    {
+      "id": "public-basin cold",
+      "room": "public-wc",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          26.780001,
+          0.75,
+          53.762894
+        ],
+        [
+          26.780001,
+          0.75,
+          53.837894
+        ],
+        [
+          26.780001,
+          -3.46,
+          53.837894
+        ],
+        [
+          32.35,
+          -3.46,
+          53.837894
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College public-basin cold 01",
+        "College public-basin cold 02",
+        "College public-basin cold 03"
+      ]
+    },
+    {
+      "id": "public-basin hot",
+      "room": "public-wc",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          26.620001,
+          0.75,
+          53.762894
+        ],
+        [
+          26.620001,
+          0.75,
+          53.837894
+        ],
+        [
+          26.620001,
+          -3.5,
+          53.837894
+        ],
+        [
+          32.6,
+          -3.5,
+          53.837894
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College public-basin hot 01",
+        "College public-basin hot 02",
+        "College public-basin hot 03"
+      ]
+    },
+    {
+      "id": "public-basin waste",
+      "room": "public-wc",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          26.700001,
+          0.0,
+          53.540001
+        ],
+        [
+          26.700001,
+          -0.075,
+          53.540001
+        ],
+        [
+          26.700001,
+          -4.488020015,
+          53.540001
+        ],
+        [
+          33.08,
+          -4.58372,
+          53.540001
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College public-basin waste 01",
+        "College public-basin waste 02",
+        "College public-basin waste 03"
+      ]
+    },
+    {
+      "id": "public-wc cold",
+      "room": "public-wc",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          24.959999,
+          0.734545,
+          53.700233
+        ],
+        [
+          24.959999,
+          0.734545,
+          53.775233
+        ],
+        [
+          24.959999,
+          -3.46,
+          53.775233
+        ],
+        [
+          32.35,
+          -3.46,
+          53.775233
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College public-wc cold 01",
+        "College public-wc cold 02",
+        "College public-wc cold 03"
+      ]
+    },
+    {
+      "id": "public-wc waste",
+      "room": "public-wc",
+      "circuit": "waste",
+      "radius": 0.051,
+      "nodes": [
+        [
+          24.959999,
+          0.285306,
+          53.150002
+        ],
+        [
+          24.959999,
+          0.210306,
+          53.150002
+        ],
+        [
+          24.959999,
+          -4.454899985,
+          53.150002
+        ],
+        [
+          33.08,
+          -4.5767,
+          53.150002
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College public-wc waste 01",
+        "College public-wc waste 02",
+        "College public-wc waste 03"
+      ]
+    },
+    {
+      "id": "cleaner-basin cold",
+      "room": "cleaner",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          26.42,
+          0.75,
+          46.307106
+        ],
+        [
+          26.42,
+          0.75,
+          46.232106
+        ],
+        [
+          26.42,
+          -3.46,
+          46.232106
+        ],
+        [
+          32.35,
+          -3.46,
+          46.232106
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College cleaner-basin cold 01",
+        "College cleaner-basin cold 02",
+        "College cleaner-basin cold 03"
+      ]
+    },
+    {
+      "id": "cleaner-basin hot",
+      "room": "cleaner",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          26.58,
+          0.75,
+          46.307106
+        ],
+        [
+          26.58,
+          0.75,
+          46.232106
+        ],
+        [
+          26.58,
+          -3.5,
+          46.232106
+        ],
+        [
+          32.6,
+          -3.5,
+          46.232106
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College cleaner-basin hot 01",
+        "College cleaner-basin hot 02",
+        "College cleaner-basin hot 03"
+      ]
+    },
+    {
+      "id": "cleaner-basin waste",
+      "room": "cleaner",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          26.5,
+          0.0,
+          46.529999
+        ],
+        [
+          26.5,
+          -0.075,
+          46.529999
+        ],
+        [
+          26.5,
+          -4.35884,
+          46.529999
+        ],
+        [
+          33.08,
+          -4.45754,
+          46.529999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College cleaner-basin waste 01",
+        "College cleaner-basin waste 02",
+        "College cleaner-basin waste 03"
+      ]
+    },
+    {
+      "id": "laundry-left cold",
+      "room": "laundry",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          44.599998,
+          0.45,
+          34.314999
+        ],
+        [
+          44.599998,
+          0.45,
+          34.239999
+        ],
+        [
+          44.599998,
+          -3.46,
+          34.239999
+        ],
+        [
+          32.35,
+          -3.46,
+          34.239999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College laundry-left cold 01",
+        "College laundry-left cold 02",
+        "College laundry-left cold 03"
+      ]
+    },
+    {
+      "id": "laundry-left waste",
+      "room": "laundry",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          44.719997,
+          0.3,
+          34.314999
+        ],
+        [
+          44.719997,
+          0.3,
+          34.239999
+        ],
+        [
+          44.719997,
+          -4.061720045,
+          34.239999
+        ],
+        [
+          33.08,
+          -4.23632,
+          34.239999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College laundry-left waste 01",
+        "College laundry-left waste 02",
+        "College laundry-left waste 03"
+      ]
+    },
+    {
+      "id": "laundry-right cold",
+      "room": "laundry",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          46.150002,
+          0.45,
+          34.314999
+        ],
+        [
+          46.150002,
+          0.45,
+          34.239999
+        ],
+        [
+          46.150002,
+          -3.46,
+          34.239999
+        ],
+        [
+          32.35,
+          -3.46,
+          34.239999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College laundry-right cold 01",
+        "College laundry-right cold 02",
+        "College laundry-right cold 03"
+      ]
+    },
+    {
+      "id": "laundry-right waste",
+      "room": "laundry",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          46.27,
+          0.3,
+          34.314999
+        ],
+        [
+          46.27,
+          0.3,
+          34.239999
+        ],
+        [
+          46.27,
+          -4.03847,
+          34.239999
+        ],
+        [
+          33.08,
+          -4.23632,
+          34.239999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College laundry-right waste 01",
+        "College laundry-right waste 02",
+        "College laundry-right waste 03"
+      ]
+    },
+    {
+      "id": "staff-cleaner-basin cold",
+      "room": "staff-cleaner",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          56.32,
+          0.75,
+          30.277109
+        ],
+        [
+          56.32,
+          0.75,
+          30.202109
+        ],
+        [
+          56.32,
+          -3.46,
+          30.202109
+        ],
+        [
+          32.35,
+          -3.46,
+          30.202109
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-cleaner-basin cold 01",
+        "College staff-cleaner-basin cold 02",
+        "College staff-cleaner-basin cold 03"
+      ]
+    },
+    {
+      "id": "staff-cleaner-basin hot",
+      "room": "staff-cleaner",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          56.480003,
+          0.75,
+          30.277107
+        ],
+        [
+          56.480003,
+          0.75,
+          30.202107
+        ],
+        [
+          56.480003,
+          -3.5,
+          30.202107
+        ],
+        [
+          32.6,
+          -3.5,
+          30.202107
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-cleaner-basin hot 01",
+        "College staff-cleaner-basin hot 02",
+        "College staff-cleaner-basin hot 03"
+      ]
+    },
+    {
+      "id": "staff-cleaner-basin waste",
+      "room": "staff-cleaner",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          56.400002,
+          0.0,
+          30.5
+        ],
+        [
+          56.400002,
+          -0.075,
+          30.5
+        ],
+        [
+          56.400002,
+          -3.8191999699999997,
+          30.5
+        ],
+        [
+          33.08,
+          -4.169,
+          30.5
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-cleaner-basin waste 01",
+        "College staff-cleaner-basin waste 02",
+        "College staff-cleaner-basin waste 03"
+      ]
+    },
+    {
+      "id": "staff-basin cold",
+      "room": "staff-wc",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          61.030003,
+          0.75,
+          33.762894
+        ],
+        [
+          61.030003,
+          0.75,
+          33.837894
+        ],
+        [
+          61.030003,
+          -3.46,
+          33.837894
+        ],
+        [
+          32.35,
+          -3.46,
+          33.837894
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-basin cold 01",
+        "College staff-basin cold 02",
+        "College staff-basin cold 03"
+      ]
+    },
+    {
+      "id": "staff-basin hot",
+      "room": "staff-wc",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          60.869999,
+          0.75,
+          33.762894
+        ],
+        [
+          60.869999,
+          0.75,
+          33.837894
+        ],
+        [
+          60.869999,
+          -3.5,
+          33.837894
+        ],
+        [
+          32.6,
+          -3.5,
+          33.837894
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-basin hot 01",
+        "College staff-basin hot 02",
+        "College staff-basin hot 03"
+      ]
+    },
+    {
+      "id": "staff-basin waste",
+      "room": "staff-wc",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          60.950001,
+          0.0,
+          33.540001
+        ],
+        [
+          60.950001,
+          -0.075,
+          33.540001
+        ],
+        [
+          60.950001,
+          -3.805669985,
+          33.540001
+        ],
+        [
+          33.08,
+          -4.22372,
+          33.540001
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-basin waste 01",
+        "College staff-basin waste 02",
+        "College staff-basin waste 03"
+      ]
+    },
+    {
+      "id": "staff-wc cold",
+      "room": "staff-wc",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          59.25,
+          0.734545,
+          33.700233
+        ],
+        [
+          59.25,
+          0.734545,
+          33.775233
+        ],
+        [
+          59.25,
+          -3.46,
+          33.775233
+        ],
+        [
+          32.35,
+          -3.46,
+          33.775233
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-wc cold 01",
+        "College staff-wc cold 02",
+        "College staff-wc cold 03"
+      ]
+    },
+    {
+      "id": "staff-wc waste",
+      "room": "staff-wc",
+      "circuit": "waste",
+      "radius": 0.051,
+      "nodes": [
+        [
+          59.25,
+          0.285306,
+          33.150002
+        ],
+        [
+          59.25,
+          0.210306,
+          33.150002
+        ],
+        [
+          59.25,
+          -3.8241500000000004,
+          33.150002
+        ],
+        [
+          33.08,
+          -4.2167,
+          33.150002
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College staff-wc waste 01",
+        "College staff-wc waste 02",
+        "College staff-wc waste 03"
+      ]
+    },
+    {
+      "id": "kitchen-sink cold",
+      "room": "kitchen",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          56.77,
+          0.5,
+          50.375
+        ],
+        [
+          56.77,
+          0.5,
+          50.3
+        ],
+        [
+          56.77,
+          -3.46,
+          50.3
+        ],
+        [
+          32.35,
+          -3.46,
+          50.3
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College kitchen-sink cold 01",
+        "College kitchen-sink cold 02",
+        "College kitchen-sink cold 03"
+      ]
+    },
+    {
+      "id": "kitchen-sink hot",
+      "room": "kitchen",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          56.93,
+          0.5,
+          50.375
+        ],
+        [
+          56.93,
+          0.5,
+          50.3
+        ],
+        [
+          56.93,
+          -3.5,
+          50.3
+        ],
+        [
+          32.6,
+          -3.5,
+          50.3
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College kitchen-sink hot 01",
+        "College kitchen-sink hot 02",
+        "College kitchen-sink hot 03"
+      ]
+    },
+    {
+      "id": "kitchen-sink waste",
+      "room": "kitchen",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          56.850002,
+          0.0,
+          50.669998
+        ],
+        [
+          56.850002,
+          -0.075,
+          50.669998
+        ],
+        [
+          56.850002,
+          -4.17550997,
+          50.669998
+        ],
+        [
+          33.08,
+          -4.53206,
+          50.669998
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College kitchen-sink waste 01",
+        "College kitchen-sink waste 02",
+        "College kitchen-sink waste 03"
+      ]
+    },
+    {
+      "id": "washup-sink cold",
+      "room": "washup",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          58.130001,
+          0.5,
+          65.644997
+        ],
+        [
+          58.130001,
+          0.5,
+          65.719997
+        ],
+        [
+          58.130001,
+          -3.46,
+          65.719997
+        ],
+        [
+          32.35,
+          -3.46,
+          65.719997
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College washup-sink cold 01",
+        "College washup-sink cold 02",
+        "College washup-sink cold 03"
+      ]
+    },
+    {
+      "id": "washup-sink hot",
+      "room": "washup",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          57.970001,
+          0.5,
+          65.644997
+        ],
+        [
+          57.970001,
+          0.5,
+          65.719997
+        ],
+        [
+          57.970001,
+          -3.5,
+          65.719997
+        ],
+        [
+          32.6,
+          -3.5,
+          65.719997
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College washup-sink hot 01",
+        "College washup-sink hot 02",
+        "College washup-sink hot 03"
+      ]
+    },
+    {
+      "id": "washup-sink waste",
+      "room": "washup",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          58.049999,
+          0.0,
+          65.349998
+        ],
+        [
+          58.049999,
+          -0.075,
+          65.349998
+        ],
+        [
+          58.049999,
+          -4.421750015,
+          65.349998
+        ],
+        [
+          33.08,
+          -4.7963,
+          65.349998
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College washup-sink waste 01",
+        "College washup-sink waste 02",
+        "College washup-sink waste 03"
+      ]
+    },
+    {
+      "id": "residence-basin cold",
+      "room": "res-wc",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          56.919998,
+          4.35,
+          22.29711
+        ],
+        [
+          56.919998,
+          4.35,
+          22.22211
+        ],
+        [
+          56.919998,
+          -3.46,
+          22.22211
+        ],
+        [
+          32.35,
+          -3.46,
+          22.22211
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-basin cold 01",
+        "College residence-basin cold 02",
+        "College residence-basin cold 03"
+      ]
+    },
+    {
+      "id": "residence-basin hot",
+      "room": "res-wc",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          57.080002,
+          4.35,
+          22.297108
+        ],
+        [
+          57.080002,
+          4.35,
+          22.222108
+        ],
+        [
+          57.080002,
+          -3.5,
+          22.222108
+        ],
+        [
+          32.6,
+          -3.5,
+          22.222108
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-basin hot 01",
+        "College residence-basin hot 02",
+        "College residence-basin hot 03"
+      ]
+    },
+    {
+      "id": "residence-basin waste",
+      "room": "res-wc",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          57.0,
+          3.6,
+          22.52
+        ],
+        [
+          57.0,
+          3.525,
+          22.52
+        ],
+        [
+          57.0,
+          -3.66656,
+          22.52
+        ],
+        [
+          33.08,
+          -4.02536,
+          22.52
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-basin waste 01",
+        "College residence-basin waste 02",
+        "College residence-basin waste 03"
+      ]
+    },
+    {
+      "id": "residence-wc cold",
+      "room": "res-wc",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          55.150002,
+          4.334545,
+          22.259766
+        ],
+        [
+          55.150002,
+          4.334545,
+          22.184766
+        ],
+        [
+          55.150002,
+          -3.46,
+          22.184766
+        ],
+        [
+          32.35,
+          -3.46,
+          22.184766
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-wc cold 01",
+        "College residence-wc cold 02",
+        "College residence-wc cold 03"
+      ]
+    },
+    {
+      "id": "residence-wc waste",
+      "room": "res-wc",
+      "circuit": "waste",
+      "radius": 0.051,
+      "nodes": [
+        [
+          55.150002,
+          3.885306,
+          22.809999
+        ],
+        [
+          55.150002,
+          3.810306,
+          22.809999
+        ],
+        [
+          55.150002,
+          -3.6995299699999995,
+          22.809999
+        ],
+        [
+          33.08,
+          -4.03058,
+          22.809999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-wc waste 01",
+        "College residence-wc waste 02",
+        "College residence-wc waste 03"
+      ]
+    },
+    {
+      "id": "residence-shower-west cold",
+      "room": "res-shower",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          58.989998,
+          4.6425,
+          22.2705
+        ],
+        [
+          58.989998,
+          4.6425,
+          22.1955
+        ],
+        [
+          58.989998,
+          -3.46,
+          22.1955
+        ],
+        [
+          32.35,
+          -3.46,
+          22.1955
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-shower-west cold 01",
+        "College residence-shower-west cold 02",
+        "College residence-shower-west cold 03"
+      ]
+    },
+    {
+      "id": "residence-shower-west hot",
+      "room": "res-shower",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          59.110001,
+          4.8125,
+          22.2705
+        ],
+        [
+          59.110001,
+          4.8125,
+          22.1955
+        ],
+        [
+          59.110001,
+          -3.5,
+          22.1955
+        ],
+        [
+          32.6,
+          -3.5,
+          22.1955
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-shower-west hot 01",
+        "College residence-shower-west hot 02",
+        "College residence-shower-west hot 03"
+      ]
+    },
+    {
+      "id": "residence-shower-west waste",
+      "room": "res-shower",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          59.049999,
+          3.6,
+          22.75
+        ],
+        [
+          59.049999,
+          3.525,
+          22.75
+        ],
+        [
+          59.049999,
+          -3.6399500149999997,
+          22.75
+        ],
+        [
+          33.08,
+          -4.0295,
+          22.75
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-shower-west waste 01",
+        "College residence-shower-west waste 02",
+        "College residence-shower-west waste 03"
+      ]
+    },
+    {
+      "id": "residence-shower-east cold",
+      "room": "res-shower",
+      "circuit": "cold",
+      "radius": 0.015,
+      "nodes": [
+        [
+          60.84,
+          4.6425,
+          22.2705
+        ],
+        [
+          60.84,
+          4.6425,
+          22.1955
+        ],
+        [
+          60.84,
+          -3.46,
+          22.1955
+        ],
+        [
+          32.35,
+          -3.46,
+          22.1955
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-shower-east cold 01",
+        "College residence-shower-east cold 02",
+        "College residence-shower-east cold 03"
+      ]
+    },
+    {
+      "id": "residence-shower-east hot",
+      "room": "res-shower",
+      "circuit": "hot",
+      "radius": 0.015,
+      "nodes": [
+        [
+          60.960003,
+          4.8125,
+          22.2705
+        ],
+        [
+          60.960003,
+          4.8125,
+          22.1955
+        ],
+        [
+          60.960003,
+          -3.5,
+          22.1955
+        ],
+        [
+          32.6,
+          -3.5,
+          22.1955
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-shower-east hot 01",
+        "College residence-shower-east hot 02",
+        "College residence-shower-east hot 03"
+      ]
+    },
+    {
+      "id": "residence-shower-east waste",
+      "room": "res-shower",
+      "circuit": "waste",
+      "radius": 0.021,
+      "nodes": [
+        [
+          60.900002,
+          3.6,
+          22.75
+        ],
+        [
+          60.900002,
+          3.525,
+          22.75
+        ],
+        [
+          60.900002,
+          -3.61219997,
+          22.75
+        ],
+        [
+          33.08,
+          -4.0295,
+          22.75
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-shower-east waste 01",
+        "College residence-shower-east waste 02",
+        "College residence-shower-east waste 03"
+      ]
+    },
+    {
+      "id": "seminar-radiator flow",
+      "room": "seminar",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          9.645,
+          0.72,
+          24.370001
+        ],
+        [
+          9.72,
+          0.72,
+          24.370001
+        ],
+        [
+          9.72,
+          -3.44,
+          24.370001
+        ],
+        [
+          31.35,
+          -3.44,
+          24.370001
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College seminar-radiator flow 01",
+        "College seminar-radiator flow 02",
+        "College seminar-radiator flow 03"
+      ]
+    },
+    {
+      "id": "seminar-radiator return",
+      "room": "seminar",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          8.48,
+          0.15,
+          24.32
+        ],
+        [
+          8.405,
+          0.15,
+          24.32
+        ],
+        [
+          8.405,
+          -3.48,
+          24.32
+        ],
+        [
+          31.63,
+          -3.48,
+          24.32
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College seminar-radiator return 01",
+        "College seminar-radiator return 02",
+        "College seminar-radiator return 03"
+      ]
+    },
+    {
+      "id": "lecture-front-radiator flow",
+      "room": "lecture",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          6.42,
+          0.72,
+          40.645
+        ],
+        [
+          6.42,
+          0.72,
+          40.72
+        ],
+        [
+          6.42,
+          -3.44,
+          40.72
+        ],
+        [
+          31.35,
+          -3.44,
+          40.72
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lecture-front-radiator flow 01",
+        "College lecture-front-radiator flow 02",
+        "College lecture-front-radiator flow 03"
+      ]
+    },
+    {
+      "id": "lecture-front-radiator return",
+      "room": "lecture",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          6.47,
+          0.15,
+          39.48
+        ],
+        [
+          6.47,
+          0.15,
+          39.405
+        ],
+        [
+          6.47,
+          -3.48,
+          39.405
+        ],
+        [
+          31.63,
+          -3.48,
+          39.405
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lecture-front-radiator return 01",
+        "College lecture-front-radiator return 02",
+        "College lecture-front-radiator return 03"
+      ]
+    },
+    {
+      "id": "lecture-rear-radiator flow",
+      "room": "lecture",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          6.42,
+          0.72,
+          49.645
+        ],
+        [
+          6.42,
+          0.72,
+          49.72
+        ],
+        [
+          6.42,
+          -3.44,
+          49.72
+        ],
+        [
+          31.35,
+          -3.44,
+          49.72
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lecture-rear-radiator flow 01",
+        "College lecture-rear-radiator flow 02",
+        "College lecture-rear-radiator flow 03"
+      ]
+    },
+    {
+      "id": "lecture-rear-radiator return",
+      "room": "lecture",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          6.47,
+          0.15,
+          48.48
+        ],
+        [
+          6.47,
+          0.15,
+          48.405
+        ],
+        [
+          6.47,
+          -3.48,
+          48.405
+        ],
+        [
+          31.63,
+          -3.48,
+          48.405
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lecture-rear-radiator return 01",
+        "College lecture-rear-radiator return 02",
+        "College lecture-rear-radiator return 03"
+      ]
+    },
+    {
+      "id": "lobby-radiator flow",
+      "room": "teaching-lobby",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          20.855,
+          0.72,
+          61.599998
+        ],
+        [
+          20.78,
+          0.72,
+          61.599998
+        ],
+        [
+          20.78,
+          -3.44,
+          61.599998
+        ],
+        [
+          31.35,
+          -3.44,
+          61.599998
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lobby-radiator flow 01",
+        "College lobby-radiator flow 02",
+        "College lobby-radiator flow 03"
+      ]
+    },
+    {
+      "id": "lobby-radiator return",
+      "room": "teaching-lobby",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          22.02,
+          0.15,
+          61.649998
+        ],
+        [
+          22.095,
+          0.15,
+          61.649998
+        ],
+        [
+          22.095,
+          -3.48,
+          61.649998
+        ],
+        [
+          31.63,
+          -3.48,
+          61.649998
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College lobby-radiator return 01",
+        "College lobby-radiator return 02",
+        "College lobby-radiator return 03"
+      ]
+    },
+    {
+      "id": "upper-seminar-radiator flow",
+      "room": "upper-seminar",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          10.745001,
+          4.32,
+          24.440001
+        ],
+        [
+          10.820001,
+          4.32,
+          24.440001
+        ],
+        [
+          10.820001,
+          -3.44,
+          24.440001
+        ],
+        [
+          31.35,
+          -3.44,
+          24.440001
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College upper-seminar-radiator flow 01",
+        "College upper-seminar-radiator flow 02",
+        "College upper-seminar-radiator flow 03"
+      ]
+    },
+    {
+      "id": "upper-seminar-radiator return",
+      "room": "upper-seminar",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          9.58,
+          3.75,
+          24.389999
+        ],
+        [
+          9.505,
+          3.75,
+          24.389999
+        ],
+        [
+          9.505,
+          -3.48,
+          24.389999
+        ],
+        [
+          31.63,
+          -3.48,
+          24.389999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College upper-seminar-radiator return 01",
+        "College upper-seminar-radiator return 02",
+        "College upper-seminar-radiator return 03"
+      ]
+    },
+    {
+      "id": "library-reading-radiator flow",
+      "room": "reading",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          44.454998,
+          0.72,
+          19.58
+        ],
+        [
+          44.379998,
+          0.72,
+          19.58
+        ],
+        [
+          44.379998,
+          -3.44,
+          19.58
+        ],
+        [
+          31.35,
+          -3.44,
+          19.58
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College library-reading-radiator flow 01",
+        "College library-reading-radiator flow 02",
+        "College library-reading-radiator flow 03"
+      ]
+    },
+    {
+      "id": "library-reading-radiator return",
+      "room": "reading",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          45.619999,
+          0.15,
+          19.630001
+        ],
+        [
+          45.694999,
+          0.15,
+          19.630001
+        ],
+        [
+          45.694999,
+          -3.48,
+          19.630001
+        ],
+        [
+          31.63,
+          -3.48,
+          19.630001
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College library-reading-radiator return 01",
+        "College library-reading-radiator return 02",
+        "College library-reading-radiator return 03"
+      ]
+    },
+    {
+      "id": "library-stack-radiator flow",
+      "room": "upper-stacks",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          40.744999,
+          4.32,
+          4.44
+        ],
+        [
+          40.819999,
+          4.32,
+          4.44
+        ],
+        [
+          40.819999,
+          -3.44,
+          4.44
+        ],
+        [
+          31.35,
+          -3.44,
+          4.44
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College library-stack-radiator flow 01",
+        "College library-stack-radiator flow 02",
+        "College library-stack-radiator flow 03"
+      ]
+    },
+    {
+      "id": "library-stack-radiator return",
+      "room": "upper-stacks",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          39.579998,
+          3.75,
+          4.39
+        ],
+        [
+          39.504998,
+          3.75,
+          4.39
+        ],
+        [
+          39.504998,
+          -3.48,
+          4.39
+        ],
+        [
+          31.63,
+          -3.48,
+          4.39
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College library-stack-radiator return 01",
+        "College library-stack-radiator return 02",
+        "College library-stack-radiator return 03"
+      ]
+    },
+    {
+      "id": "cafe-radiator flow",
+      "room": "cafe",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          42.43,
+          0.72,
+          62.744999
+        ],
+        [
+          42.43,
+          0.72,
+          62.819999
+        ],
+        [
+          42.43,
+          -3.44,
+          62.819999
+        ],
+        [
+          31.35,
+          -3.44,
+          62.819999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College cafe-radiator flow 01",
+        "College cafe-radiator flow 02",
+        "College cafe-radiator flow 03"
+      ]
+    },
+    {
+      "id": "cafe-radiator return",
+      "room": "cafe",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          42.48,
+          0.15,
+          61.579998
+        ],
+        [
+          42.48,
+          0.15,
+          61.504998
+        ],
+        [
+          42.48,
+          -3.48,
+          61.504998
+        ],
+        [
+          31.63,
+          -3.48,
+          61.504998
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College cafe-radiator return 01",
+        "College cafe-radiator return 02",
+        "College cafe-radiator return 03"
+      ]
+    },
+    {
+      "id": "residence-hall-radiator flow",
+      "room": "upper-res-hall",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          53.610001,
+          4.32,
+          47.154999
+        ],
+        [
+          53.610001,
+          4.32,
+          47.079999
+        ],
+        [
+          53.610001,
+          -3.44,
+          47.079999
+        ],
+        [
+          31.35,
+          -3.44,
+          47.079999
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-hall-radiator flow 01",
+        "College residence-hall-radiator flow 02",
+        "College residence-hall-radiator flow 03"
+      ]
+    },
+    {
+      "id": "residence-hall-radiator return",
+      "room": "upper-res-hall",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          53.560001,
+          3.75,
+          48.32
+        ],
+        [
+          53.560001,
+          3.75,
+          48.395
+        ],
+        [
+          53.560001,
+          -3.48,
+          48.395
+        ],
+        [
+          31.63,
+          -3.48,
+          48.395
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College residence-hall-radiator return 01",
+        "College residence-hall-radiator return 02",
+        "College residence-hall-radiator return 03"
+      ]
+    },
+    {
+      "id": "dormitory-radiator flow",
+      "room": "res-west-1",
+      "circuit": "flow",
+      "radius": 0.015,
+      "nodes": [
+        [
+          42.41,
+          4.32,
+          37.045002
+        ],
+        [
+          42.41,
+          4.32,
+          37.120002
+        ],
+        [
+          42.41,
+          -3.44,
+          37.120002
+        ],
+        [
+          31.35,
+          -3.44,
+          37.120002
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College dormitory-radiator flow 01",
+        "College dormitory-radiator flow 02",
+        "College dormitory-radiator flow 03"
+      ]
+    },
+    {
+      "id": "dormitory-radiator return",
+      "room": "res-west-1",
+      "circuit": "return",
+      "radius": 0.015,
+      "nodes": [
+        [
+          42.459999,
+          3.75,
+          35.880001
+        ],
+        [
+          42.459999,
+          3.75,
+          35.805001
+        ],
+        [
+          42.459999,
+          -3.48,
+          35.805001
+        ],
+        [
+          31.63,
+          -3.48,
+          35.805001
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College dormitory-radiator return 01",
+        "College dormitory-radiator return 02",
+        "College dormitory-radiator return 03"
+      ]
+    },
+    {
+      "id": "flow campus carrier",
+      "room": "campus",
+      "circuit": "flow",
+      "radius": 0.022,
+      "nodes": [
+        [
+          31.35,
+          -3.44,
+          3
+        ],
+        [
+          31.35,
+          -3.44,
+          73
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College flow campus carrier 01"
+      ]
+    },
+    {
+      "id": "return campus carrier",
+      "room": "campus",
+      "circuit": "return",
+      "radius": 0.022,
+      "nodes": [
+        [
+          31.63,
+          -3.48,
+          3
+        ],
+        [
+          31.63,
+          -3.48,
+          73
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College return campus carrier 01"
+      ]
+    },
+    {
+      "id": "cold campus carrier",
+      "room": "campus",
+      "circuit": "cold",
+      "radius": 0.017,
+      "nodes": [
+        [
+          32.35,
+          -3.46,
+          3
+        ],
+        [
+          32.35,
+          -3.46,
+          109
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College cold campus carrier 01"
+      ]
+    },
+    {
+      "id": "hot campus carrier",
+      "room": "campus",
+      "circuit": "hot",
+      "radius": 0.017,
+      "nodes": [
+        [
+          32.6,
+          -3.5,
+          3
+        ],
+        [
+          32.6,
+          -3.5,
+          73
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College hot campus carrier 01"
+      ]
+    },
+    {
+      "id": "south gravity collector",
+      "room": "campus",
+      "circuit": "waste",
+      "radius": 0.075,
+      "nodes": [
+        [
+          33.08,
+          -3.8,
+          10
+        ],
+        [
+          33.08,
+          -5.582,
+          109
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College south gravity collector 01"
+      ]
+    },
+    {
+      "id": "street cold service lateral",
+      "room": "outside service reserve",
+      "circuit": "cold",
+      "radius": 0.017,
+      "nodes": [
+        [
+          37.550000000000004,
+          -0.3404513359069824,
+          109
+        ],
+        [
+          37.550000000000004,
+          -3.46,
+          109
+        ],
+        [
+          32.35,
+          -3.46,
+          109
+        ]
+      ],
+      "installation": "below structural walking slabs",
+      "parts": [
+        "College street cold service lateral 01",
+        "College street cold service lateral 02"
+      ]
+    },
+    {
+      "id": "foul sewer inspection riser",
+      "room": "outside service reserve",
+      "circuit": "cleanout",
+      "radius": 0.1,
+      "nodes": [
+        [
+          33.08,
+          -0.2763107395172119,
+          109
+        ],
+        [
+          33.08,
+          -5.582,
+          109
+        ]
+      ],
+      "installation": "Service manhole beyond the campus gate",
+      "parts": [
+        "College foul sewer inspection riser 01"
+      ]
+    }
+  ],
+  "rejected_degenerate_source_faces": {
+    "level_boiler_modern_worn": 32,
+    "level_laundry_washer": 48,
+    "level_kitchen_counter": 16
+  },
+  "ventilation": [
+    {
+      "id": "lab dedicated extract",
+      "room": "lab",
+      "pickup": [
+        12.8,
+        3.06,
+        10.65
+      ],
+      "measured_ceiling": 3.44,
+      "shaft": [
+        9.25,
+        10.65
+      ],
+      "roof": [
+        "teaching-and-lecture roof west"
+      ],
+      "mount_heights": [
+        8.388889,
+        8.388889,
+        8.513333,
+        8.513333
+      ],
+      "room_intake_y": 2.22,
+      "parts": [
+        "Entrance rebuild College lab dedicated extract branch",
+        "Entrance rebuild College lab dedicated extract intake boot",
+        "Entrance rebuild College lab dedicated extract weathered riser",
+        "Entrance rebuild College lab dedicated extract curb and flashing",
+        "Entrance rebuild College lab dedicated extract hood cap",
+        "Entrance rebuild College lab dedicated extract hood post 1",
+        "Entrance rebuild College lab dedicated extract hood post 2",
+        "Entrance rebuild College lab dedicated extract hood post 3",
+        "Entrance rebuild College lab dedicated extract hood post 4",
+        "College lab dedicated extract hanger 0.23",
+        "College lab dedicated extract hanger 0.71"
+      ]
+    },
+    {
+      "id": "kitchen independent extract",
+      "room": "kitchen",
+      "pickup": [
+        60.15,
+        3.06,
+        50.75
+      ],
+      "measured_ceiling": 3.44,
+      "shaft": [
+        61.3,
+        50.75
+      ],
+      "roof": [
+        "east-residence-and-service roof east"
+      ],
+      "mount_heights": [
+        7.7775,
+        7.7775,
+        7.6275,
+        7.6275
+      ],
+      "room_intake_y": 2.38,
+      "parts": [
+        "Entrance rebuild College kitchen independent extract branch",
+        "Entrance rebuild College kitchen independent extract intake boot",
+        "Entrance rebuild College kitchen independent extract weathered riser",
+        "Entrance rebuild College kitchen independent extract curb and flashing",
+        "Entrance rebuild College kitchen independent extract hood cap",
+        "Entrance rebuild College kitchen independent extract hood post 1",
+        "Entrance rebuild College kitchen independent extract hood post 2",
+        "Entrance rebuild College kitchen independent extract hood post 3",
+        "Entrance rebuild College kitchen independent extract hood post 4",
+        "College kitchen independent extract hanger 0.23",
+        "College kitchen independent extract hanger 0.71"
+      ]
+    },
+    {
+      "id": "east shower extract",
+      "room": "res-shower",
+      "pickup": [
+        59.1,
+        6.62,
+        23.4
+      ],
+      "measured_ceiling": 7.04,
+      "shaft": [
+        61.22,
+        23.4
+      ],
+      "roof": [
+        "east-residence-and-service roof east"
+      ],
+      "mount_heights": [
+        7.8075,
+        7.8075,
+        7.6575,
+        7.6575
+      ],
+      "room_intake_y": 6.43,
+      "parts": [
+        "Entrance rebuild College east shower extract branch",
+        "Entrance rebuild College east shower extract weathered riser",
+        "Entrance rebuild College east shower extract curb and flashing",
+        "Entrance rebuild College east shower extract hood cap",
+        "Entrance rebuild College east shower extract hood post 1",
+        "Entrance rebuild College east shower extract hood post 2",
+        "Entrance rebuild College east shower extract hood post 3",
+        "Entrance rebuild College east shower extract hood post 4",
+        "College east shower extract hanger 0.23",
+        "College east shower extract hanger 0.71"
+      ]
+    },
+    {
+      "id": "plant room air shaft",
+      "room": "plant",
+      "pickup": [
+        17.65,
+        -0.55,
+        11.35
+      ],
+      "measured_ceiling": -0.16,
+      "shaft": [
+        19.1,
+        11.35
+      ],
+      "roof": [
+        "teaching-and-lecture roof east"
+      ],
+      "mount_heights": [
+        9.026667,
+        9.026667,
+        8.902222,
+        8.902222
+      ],
+      "room_intake_y": -0.74,
+      "parts": [
+        "Entrance rebuild College plant room air shaft branch",
+        "Entrance rebuild College plant room air shaft weathered riser",
+        "Entrance rebuild College plant room air shaft curb and flashing",
+        "Entrance rebuild College plant room air shaft hood cap",
+        "Entrance rebuild College plant room air shaft hood post 1",
+        "Entrance rebuild College plant room air shaft hood post 2",
+        "Entrance rebuild College plant room air shaft hood post 3",
+        "Entrance rebuild College plant room air shaft hood post 4",
+        "College plant room air shaft hanger 0.23",
+        "College plant room air shaft hanger 0.71"
+      ]
+    }
+  ],
+  "staff_doorways": [
+    {
+      "id": "plant-staff-door",
+      "rooms": [
+        "plant",
+        "maintenance"
+      ],
+      "center": [
+        16.38,
+        -3,
+        24
+      ],
+      "width": 1.68,
+      "height": 2.14,
+      "prescribed_state": "closed staff context",
+      "floor_approach": [
+        16.38,
+        -3,
+        25.05
+      ],
+      "asset_source": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2"
+    }
+  ],
+  "street_controls": [
+    {
+      "id": "water stop",
+      "x": 37.550000000000004,
+      "z": 109,
+      "grade": -0.240451,
+      "support": "College district apron"
+    },
+    {
+      "id": "sanitary cleanout",
+      "x": 33.08,
+      "z": 109,
+      "grade": -0.216311,
+      "support": "College district apron"
+    }
+  ],
+  "removed": [
+    "Wall plant S"
+  ],
+  "retained_collision_parts": 1395,
+  "native_parts": 320,
+  "native_triangles": 47364,
+  "source": {
+    "blend": "3b46c9046e32404a3d4c2545f4f8d721cb2539a38ca4e223296dbf2309f2b26f",
+    "glb": "92de55770a64288b2cf7a69933c3e5e58d4b583d8bd6e520650ae680dc1d66ac",
+    "hcs2": "51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5"
+  },
+  "exports": {
+    "college-services.blend": "fc67fc65ad62dde693af43636d1f50cd9f7d4a9f4157b082cc9356a1b8a7bb04",
+    "college-services.glb": "75894ba104362afd296af116945d58b23099cf5c17a0994e531ba7ce93e8e5f8",
+    "college-services.hcs2": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa"
+  }
+}

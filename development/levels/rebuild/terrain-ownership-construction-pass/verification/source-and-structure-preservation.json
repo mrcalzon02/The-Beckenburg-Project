@@ -1,0 +1,535 @@
+{
+  "sites": [
+    {
+      "site": "WLD-16",
+      "source_contracts_unchanged": true,
+      "old_nonremoved_native_records_exact": true,
+      "one_current_saved_terrain_owner": true,
+      "source_height_images_topology_and_all_holes_preserved": true,
+      "protected_grid_vertices_unchanged": 87,
+      "accessible_source_spaces": 19
+    },
+    {
+      "site": "ACADEMY",
+      "source_contracts_unchanged": true,
+      "old_nonremoved_native_records_exact": true,
+      "one_current_saved_terrain_owner": true,
+      "source_height_images_topology_and_all_holes_preserved": true,
+      "protected_grid_vertices_unchanged": 373,
+      "accessible_source_spaces": 38
+    },
+    {
+      "site": "WLD-09",
+      "source_contracts_unchanged": true,
+      "old_nonremoved_native_records_exact": true,
+      "one_current_saved_terrain_owner": true,
+      "source_height_images_topology_and_all_holes_preserved": true,
+      "protected_grid_vertices_unchanged": 682,
+      "accessible_source_spaces": 14
+    }
+  ],
+  "new_closed_solids": [
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 westwalk continuous founded floor region0",
+      "positive_volume": 18.479999899864197
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 eastwalk continuous founded floor region0",
+      "positive_volume": 18.479999899864197
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 northwalk continuous founded floor region0",
+      "positive_volume": 17.159999907016754
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 office continuous founded floor region0",
+      "positive_volume": 24.000000953674306
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 manager continuous founded floor region0",
+      "positive_volume": 21.00000083446502
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 laundry continuous founded floor region0",
+      "positive_volume": 12.600000500679023
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 plant continuous founded floor region0",
+      "positive_volume": 12.600000500679023
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room1 continuous founded floor region0",
+      "positive_volume": 10.50000041723251
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room5 continuous founded floor region0",
+      "positive_volume": 10.500000417232508
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room2 continuous founded floor region0",
+      "positive_volume": 10.500000417232513
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room6 continuous founded floor region0",
+      "positive_volume": 10.500000417232515
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room3 continuous founded floor region0",
+      "positive_volume": 10.500000417232512
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room7 continuous founded floor region0",
+      "positive_volume": 10.500000417232505
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room4 continuous founded floor region0",
+      "positive_volume": 10.500000417232513
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 room8 continuous founded floor region0",
+      "positive_volume": 10.500000417232506
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 north arcade full-width flush service apron region0",
+      "positive_volume": 1.3199999928474413
+    },
+    {
+      "site": "ACADEMY",
+      "name": "ACADEMY reception south west pier region0",
+      "positive_volume": 3.355800052463735
+    },
+    {
+      "site": "ACADEMY",
+      "name": "ACADEMY reception south east pier region0",
+      "positive_volume": 3.355800052463735
+    },
+    {
+      "site": "ACADEMY",
+      "name": "ACADEMY reception south lintel region0",
+      "positive_volume": 0.6094185356945943
+    },
+    {
+      "site": "ACADEMY",
+      "name": "ACADEMY reception south indexed arrival frame",
+      "positive_volume": 0.33902527868154275
+    },
+    {
+      "site": "ACADEMY",
+      "name": "ACADEMY reception full-width visitor landing region0",
+      "positive_volume": 1.5
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 complete bridge arrival forecourt region0",
+      "positive_volume": 156.00000619888306
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 arrival bearing on workshop side wall 35.76 region0",
+      "positive_volume": 7.200050010678769
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 arrival bearing on workshop side wall 53.76 region0",
+      "positive_volume": 7.200050010679329
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 transverse arrival girder 57.85 region0",
+      "positive_volume": 6.652868487747924
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 transverse arrival girder 61.85 region0",
+      "positive_volume": 6.652868487747924
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 complete structural crest deck region0",
+      "positive_volume": 307.20001220703114
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 crest bearing on workshop side wall 35.76 region0",
+      "positive_volume": 6.3000437593444225
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 crest bearing on workshop side wall 53.76 region0",
+      "positive_volume": 6.3000437593444225
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 transverse crest girder 49.85 region0",
+      "positive_volume": 6.652868487747924
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 transverse crest girder 53.85 region0",
+      "positive_volume": 6.652868487747924
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival west void edge 0",
+      "positive_volume": 0.03787978366959266
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival west void edge 1",
+      "positive_volume": 0.03787978366959266
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival west void edge 2",
+      "positive_volume": 0.03787978366959266
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival west void edge 3",
+      "positive_volume": 0.03787978366959266
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival west void edge 4",
+      "positive_volume": 0.03787978366959288
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 0",
+      "positive_volume": 0.03788052066871267
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 1",
+      "positive_volume": 0.03788052066868802
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 2",
+      "positive_volume": 0.03788052066869381
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 3",
+      "positive_volume": 0.03788051041656111
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 4",
+      "positive_volume": 0.03788037189395911
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 5",
+      "positive_volume": 0.037880371893921364
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 6",
+      "positive_volume": 0.037880371893925416
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 7",
+      "positive_volume": 0.03788037189392575
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 8",
+      "positive_volume": 0.03788037189392131
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south west void edge 9",
+      "positive_volume": 0.037880371893920975
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest west return 0",
+      "positive_volume": 0.03655431744025004
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest west return 1",
+      "positive_volume": 0.036553722348992124
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest west return 2",
+      "positive_volume": 0.03655372234899205
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest west return 3",
+      "positive_volume": 0.03655431744025056
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 0",
+      "positive_volume": 0.03788037189384537
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 1",
+      "positive_volume": 0.03788037189384559
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 2",
+      "positive_volume": 0.0378803718938457
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 3",
+      "positive_volume": 0.03788037189384537
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 4",
+      "positive_volume": 0.03788037189384559
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 5",
+      "positive_volume": 0.037880371893997136
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 6",
+      "positive_volume": 0.03788037189399725
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 7",
+      "positive_volume": 0.03788037189399747
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest south east void edge 8",
+      "positive_volume": 0.03788037189414879
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest east return 0",
+      "positive_volume": 0.03655438627244145
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest east return 1",
+      "positive_volume": 0.03655379120428074
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest east return 2",
+      "positive_volume": 0.03655379120428122
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard crest east return 3",
+      "positive_volume": 0.03655438627274429
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival east void edge 0",
+      "positive_volume": 0.03788037189384515
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival east void edge 1",
+      "positive_volume": 0.03788037189384548
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival east void edge 2",
+      "positive_volume": 0.03788037189384537
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival east void edge 3",
+      "positive_volume": 0.03788037189384515
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard arrival east void edge 4",
+      "positive_volume": 0.037880371893997136
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 0",
+      "positive_volume": 0.036459663777917165
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 1",
+      "positive_volume": 0.03645996132722521
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 2",
+      "positive_volume": 0.036460002335763
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 3",
+      "positive_volume": 0.03645996132722543
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 4",
+      "positive_volume": 0.036459663777841524
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 5",
+      "positive_volume": 0.036459663777841225
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 6",
+      "positive_volume": 0.03645996132722532
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 7",
+      "positive_volume": 0.0364600023357626
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 8",
+      "positive_volume": 0.03645996132722651
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 9",
+      "positive_volume": 0.03645966377784138
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 10",
+      "positive_volume": 0.036459663777841225
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 11",
+      "positive_volume": 0.03645996132723558
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 12",
+      "positive_volume": 0.036460002335742724
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 13",
+      "positive_volume": 0.03645996132723561
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 14",
+      "positive_volume": 0.03645966377784127
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north west void edge 15",
+      "positive_volume": 0.036460002335763374
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north east void return 0",
+      "positive_volume": 0.02519039260653873
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard north east void return 1",
+      "positive_volume": 0.025190392606055934
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south west return 0",
+      "positive_volume": 0.024621787205313293
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south west return 1",
+      "positive_volume": 0.024622382304091306
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 0",
+      "positive_volume": 0.03409232650293108
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 1",
+      "positive_volume": 0.03409232650263809
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 2",
+      "positive_volume": 0.03409232650263809
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 3",
+      "positive_volume": 0.03409232650294129
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 4",
+      "positive_volume": 0.03409266506069224
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 5",
+      "positive_volume": 0.03409232650294129
+    },
+    {
+      "site": "WLD-09",
+      "name": "WLD-09 supported crest guard south east return 6",
+      "positive_volume": 0.03409232650263809
+    }
+  ],
+  "dam_original_wall_bearing_receivers": [
+    {
+      "x": 36,
+      "z": 52,
+      "original_wall_top_y": -3.0,
+      "pier_bottom_y": -3.1
+    },
+    {
+      "x": 36,
+      "z": 59,
+      "original_wall_top_y": -3.0,
+      "pier_bottom_y": -3.1
+    },
+    {
+      "x": 54,
+      "z": 52,
+      "original_wall_top_y": -3.0,
+      "pier_bottom_y": -3.1
+    },
+    {
+      "x": 54,
+      "z": 59,
+      "original_wall_top_y": -3.0,
+      "pier_bottom_y": -3.1
+    }
+  ],
+  "full29roster_retained": true
+}

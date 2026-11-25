@@ -1,0 +1,55 @@
+{
+  "glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f",
+  "native_sha256": "f2aff54d45c3671868a5fc34c278c1b3ed18e9672c05550b75a4753dd4b4ead9",
+  "retained_native_records": 484,
+  "retained_terrain_records": 4,
+  "new_closed_parts": 10,
+  "aperture_rays": 36,
+  "sill_controls": 24,
+  "headroom_2_30_controls": 36,
+  "landing_standing_controls": 18,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/overview.png",
+      "sha256": "c273e1c5cdd617e8551ea11496d7489c22582a7c8f615718a350220dee54dc41",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/turbine-to-east-hall.png",
+      "sha256": "fdb0002c4d90311686fcd0c1a4937fd75af5bfee2d528e0f452a638595d8eb5c",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/east-service-aisle.png",
+      "sha256": "1430e0f8cc51eb633d090525beb0a1ed9a4ce4201f0d65a42e407a45755a3666",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/main-landing.png",
+      "sha256": "021501a34ad094421bd416c84311f62fa7779175efb5d9c9b3a06a7d66044584",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/return-landing.png",
+      "sha256": "55bff2aae5977c7f073eb174110275c624f2dca213a1b38ceb2a7543a02ba714",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/spillway-door.png",
+      "sha256": "b14578875b31aaa8fc85c6b1ee82ee461ec4183b0df3b19a8302e312271edced",
+      "source_glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/turbine-to-east-hall-before.png",
+      "sha256": "c64bad098f473b59703ff4117326f9850326a05718f875dc54ebb1f0e00abf2e",
+      "source_glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/east-service-aisle-before.png",
+      "sha256": "bca4ba095b258cc540c83fb86c299caa104ca4c8f240d375af454a7eb5a4f54b",
+      "source_glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b"
+    }
+  ]
+}

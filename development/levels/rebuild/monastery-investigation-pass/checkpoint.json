@@ -1,0 +1,17 @@
+{
+  "site": "WLD-10",
+  "baseline_commit": "27ef1d225c1e16bc171caf6659709ab94b01a0a0",
+  "baseline_checkpoint": "development/levels/rebuild/monastery-perimeter-pass/checkpoint.json",
+  "runtime_revision": "57361c318992376356c404d08c0c63ed9ed70f3d64099cfd7b906fa1abb51251-e8f366d380bc94dc",
+  "package_sha256": "de95df63a34798dc6fbe62709313306c0c92ac46ec383bb5f6a685a8500e837d",
+  "report_sha256": "b7421eee9f18bc3a3b0c834b60cce6536eca433dd8def9ec89092da9901ae519",
+  "result": "BANISHED",
+  "credits": 562,
+  "xp": 160,
+  "status": "PASS_NAMED_3D_TCP_INVESTIGATION_AND_THREE_LIVE_REFUGES",
+  "remaining": [
+    "Other two rite-specific complete cases",
+    "Encounter and final finishes",
+    "Installer and publication"
+  ]
+}

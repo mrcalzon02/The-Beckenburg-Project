@@ -1,0 +1,42 @@
+{
+  "status": "VERIFIED_DRAFT_BRANCH_AND_GALLERY_INDEX",
+  "implementation": "b6b1f74caddc863bc738f1e12747503be2f12560",
+  "git_tree": "962c684dbff810ac0afd373d8008b69b82d0552c",
+  "pull_request": {
+    "baseRefName": "map/house-default",
+    "baseRefOid": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "headRefName": "map/roster-structure-batch",
+    "headRefOid": "b6b1f74caddc863bc738f1e12747503be2f12560",
+    "isDraft": true,
+    "state": "OPEN",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86"
+  },
+  "gallery": {
+    "conclusion": "success",
+    "databaseId": 44237588722,
+    "headSha": "b6b1f74caddc863bc738f1e12747503be2f12560",
+    "status": "completed",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44237588722"
+  },
+  "draft_capture_readback": {
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-after-standing.png": {
+      "git_blob": "550931fb6d05be90ec63a9af0aaa7169aa959b4e",
+      "sha256": "4e0cbe60fa9737d830bb2c4d12ff269a14b1decfdbb3d27aeaf23b6765eab89a",
+      "public_pages_http": 404
+    },
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/wld-18-standing.png": {
+      "git_blob": "a20f689383e0a15af83a564c3696b8edc0f2101e",
+      "sha256": "992da3eb2b940bd72e9d6aecf3c0a4f63c77d737f57761fb16647849126cc0e4",
+      "public_pages_http": 404
+    }
+  },
+  "main": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+  "main_gallery_http": 200,
+  "public_pages": "Awaiting accepted integration of draft captures.",
+  "subsequent_battery_study": {
+    "file": "development/levels/rebuild/flush-porch-and-threshold-pass/verification/seacliff-landing-study.json",
+    "sha256": "61d49d82c64c0a844d9dbe6e7bff8170c8921241a03f1c77c81b6bbaa8e01c20",
+    "active_contacts": 14,
+    "trial_contacts": 6
+  }
+}

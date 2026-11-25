@@ -1,0 +1,42 @@
+{
+  "source_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "9dc0268d4f305252f5ef08e952814650eaf7e2e781ac0cf33aef1a02068f6431",
+    "authored-cuts.tsv": "47b4e89866a0bbf2771bb7250fe680d392802465df0ccf038217ac641fc59756",
+    "authored-path-grading.sha256": "794d815cc7cae67f2b92b8b7fc5c95866d90ad5277da5dc55fb547bc8c297858",
+    "source-provenance.json": "2225e50573bb084a77d72e5c6695c01e1771c4fdc86f4c55322893e304f3dc5b",
+    "terrain-physics.hcs2": "14db9b98c1091f14fe5da2819febb65c7cae88e2617c8acf8e3144c1c864531d",
+    "tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "verification.json": "18c8f8298331342ebb7adb4d64bece728cb0ef94b3542073b7c16188c8f11698",
+    "world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+    "scene-package/.scene.bin.editor.previous": "1f0d2fb6550bc78ae64825f4b6f4ba54cfc4ff84e6b3fa160e565eadefd80a33",
+    "scene-package/scene.bin": "b63571a049fdb57808b86353a90bc3e041f4a2b342afbb6df9cf679d4a7708ff",
+    "scene-package/meshes/site-0-0.obj": "9c2be7a828c8c744f4a922fd50806bae2a0e1dfc31f3faf9e7bc1b0ef796b082",
+    "scene-package/meshes/site-0-1.obj": "2b1c53cc4e063582392a58753a2a370502dd6f8b26cd73fb49f0259f624c0111",
+    "scene-package/meshes/site-1-0.obj": "8ad897fb847a95a7ced43c1eab83dbea5929fd922d0334b58d435e41dff11a6c",
+    "scene-package/meshes/site-1-1.obj": "e0d454904e070d5f667f671f9a77e03b8004bc08f2380e676fef8006c207c3fc",
+    "terrain-layers/tile_0_0.bin": "f64f8e8caa97aafd2da7090459029f880b2df7ad3dce8de638fe7e2c54a17339"
+  },
+  "rectangular_construction_cuts": [
+    [
+      26.75,
+      27.75,
+      29.25,
+      32.5
+    ],
+    [
+      12.75,
+      36.75,
+      31.25,
+      39.25
+    ],
+    [
+      10,
+      36,
+      16,
+      44.5
+    ]
+  ],
+  "source_height_and_layers_preserved": true,
+  "authoring": "Actual saved editor topology punches for structural wells/platform; no route-extrusion surfaces"
+}

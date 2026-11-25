@@ -1,0 +1,1071 @@
+{
+  "id": "ASYLUM",
+  "status": "ARCHITECTURAL_DOORWAYS_REBUILT_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/institution-roof-pass/asylum/construction.json",
+  "source_contract_sha256": "c9cc011a281e81a779a85173ecc3638d861f5dff6aabdb42c53faa775ad5aeac",
+  "source_glb": "development/levels/rebuild/institution-roof-pass/asylum/enclosed-roofs.glb",
+  "source_glb_sha256": "e3342fd1b09c599287fecd7c22b96c666aed6260e7d60ec0ee034c74bbe4d0f6",
+  "source_physics": "development/levels/rebuild/institution-roof-pass/asylum/enclosed-roofs.hcs2",
+  "source_physics_sha256": "f93eeb4507a8be044b33de347229066baf8e35aa5918f0a205801a6d0bc87053",
+  "before_layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+  "before_layout_sha256": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56",
+  "layout": "development/levels/rebuild/institution-doorway-pass/asylum/authored-layout.json",
+  "layout_sha256": "880cf69e0cc2f06dfc6daabe820cb1b54bc622eb88e7b12626d137baeb75300c",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "532:L77 flight0 step1",
+    "533:L77 flight0 step2",
+    "534:L77 flight0 step3",
+    "535:L77 flight0 step4",
+    "536:L77 flight0 step5",
+    "537:L77 flight0 step6",
+    "538:L77 flight0 step7",
+    "539:L77 flight0 step8",
+    "540:L77 flight0 step9",
+    "541:L77 flight0 step10",
+    "542:L77 flight0 step11",
+    "543:L77 flight0 step12",
+    "544:L77 flight0 step13",
+    "545:L77 flight0 step14",
+    "546:L77 flight0 step15",
+    "547:L77 flight0 step16",
+    "548:L77 flight0 step17",
+    "549:L77 flight0 step18",
+    "550:L77 flight0 step19",
+    "551:L78 flight0 step1",
+    "552:L78 flight0 step2",
+    "553:L78 flight0 step3",
+    "554:L78 flight0 step4",
+    "555:L78 flight0 step5",
+    "556:L78 flight0 step6",
+    "557:L78 flight0 step7",
+    "558:L78 flight0 step8",
+    "559:L78 flight0 step9",
+    "560:L78 flight0 step10",
+    "561:L78 flight0 step11",
+    "562:L78 flight0 step12",
+    "563:L78 flight0 step13",
+    "564:L78 flight0 step14",
+    "565:L78 flight0 step15",
+    "566:L78 flight0 step16",
+    "567:L78 flight0 step17"
+  ],
+  "stair_components": [
+    "532:L77 flight0 step1",
+    "533:L77 flight0 step2",
+    "534:L77 flight0 step3",
+    "535:L77 flight0 step4",
+    "536:L77 flight0 step5",
+    "537:L77 flight0 step6",
+    "538:L77 flight0 step7",
+    "539:L77 flight0 step8",
+    "540:L77 flight0 step9",
+    "541:L77 flight0 step10",
+    "542:L77 flight0 step11",
+    "543:L77 flight0 step12",
+    "544:L77 flight0 step13",
+    "545:L77 flight0 step14",
+    "546:L77 flight0 step15",
+    "547:L77 flight0 step16",
+    "548:L77 flight0 step17",
+    "549:L77 flight0 step18",
+    "550:L77 flight0 step19",
+    "551:L78 flight0 step1",
+    "552:L78 flight0 step2",
+    "553:L78 flight0 step3",
+    "554:L78 flight0 step4",
+    "555:L78 flight0 step5",
+    "556:L78 flight0 step6",
+    "557:L78 flight0 step7",
+    "558:L78 flight0 step8",
+    "559:L78 flight0 step9",
+    "560:L78 flight0 step10",
+    "561:L78 flight0 step11",
+    "562:L78 flight0 step12",
+    "563:L78 flight0 step13",
+    "564:L78 flight0 step14",
+    "565:L78 flight0 step15",
+    "566:L78 flight0 step16",
+    "567:L78 flight0 step17"
+  ],
+  "glb_sha256": "bf865e3414e307c7ad6b747fb89d99cde18ca0b8c313f97069b7e96c49652ad9",
+  "physics_sha256": "8b45f4f57150b8f3676f8578be5a1c37fd68f648eff71dd5f3ba4bcb6b7f6ad2",
+  "arrival_bearing": {
+    "link": "L19",
+    "anchor": [
+      32.0,
+      0,
+      76.5
+    ],
+    "route_width": 1.4,
+    "extension_metres": 0.35,
+    "contact_owner": "L19 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.3,
+        76.85
+      ],
+      [
+        31.3,
+        76.5
+      ],
+      [
+        32.7,
+        76.5
+      ],
+      [
+        32.7,
+        76.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.3,
+          76.85
+        ],
+        [
+          31.3,
+          76.5
+        ],
+        [
+          32.7,
+          76.5
+        ],
+        [
+          32.7,
+          76.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing ASYLUM 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 126,
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "ab43bebb1ef06005087b1a19d7f5907222addf75a3f73d1ffaaedb39f40ffa3b",
+  "access_route_changes": [
+    {
+      "site": "ASYLUM",
+      "link": "L32",
+      "rooms": [
+        "spine",
+        "main-stair"
+      ],
+      "before": [
+        [
+          27.5,
+          0,
+          31.0
+        ],
+        [
+          27.5,
+          0,
+          28
+        ],
+        [
+          29,
+          0,
+          28
+        ],
+        [
+          32.0,
+          0,
+          28
+        ],
+        [
+          32.0,
+          0,
+          25.0
+        ]
+      ],
+      "after": [
+        [
+          27.5,
+          0.0,
+          31.0
+        ],
+        [
+          28.0,
+          0.0,
+          28.0
+        ],
+        [
+          29.0,
+          0.0,
+          28.0
+        ],
+        [
+          29.5,
+          0.0,
+          28.0
+        ],
+        [
+          30.0,
+          0.0,
+          27.0
+        ],
+        [
+          30.5,
+          0.0,
+          25.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        29,
+        0,
+        28
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L53",
+      "rooms": [
+        "service",
+        "service-stair"
+      ],
+      "before": [
+        [
+          55.5,
+          0,
+          37.0
+        ],
+        [
+          55.5,
+          0,
+          24
+        ],
+        [
+          55.5,
+          0,
+          18.0
+        ],
+        [
+          57.0,
+          0,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          55.5,
+          0.0,
+          37.0
+        ],
+        [
+          55.5,
+          0.0,
+          24.0
+        ],
+        [
+          56.0,
+          0.0,
+          20.0
+        ],
+        [
+          57.0,
+          0.0,
+          19.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        55.5,
+        0,
+        24
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L54",
+      "rooms": [
+        "service-stair",
+        "service-link"
+      ],
+      "before": [
+        [
+          57.0,
+          0,
+          18.0
+        ],
+        [
+          54,
+          0,
+          18
+        ],
+        [
+          44.5,
+          0,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          57.0,
+          0.0,
+          19.0
+        ],
+        [
+          56.5,
+          0.0,
+          19.5
+        ],
+        [
+          55.0,
+          0.0,
+          19.5
+        ],
+        [
+          55.0,
+          0.0,
+          18.5
+        ],
+        [
+          54.5,
+          0.0,
+          18.0
+        ],
+        [
+          54.0,
+          0.0,
+          18.0
+        ],
+        [
+          44.5,
+          0.0,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        54,
+        0,
+        18
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L62",
+      "rooms": [
+        "upper-spine",
+        "upper-stair"
+      ],
+      "before": [
+        [
+          27.5,
+          3.4,
+          26.0
+        ],
+        [
+          27.5,
+          3.4,
+          28
+        ],
+        [
+          29,
+          3.4,
+          28
+        ],
+        [
+          32.0,
+          3.4,
+          28
+        ],
+        [
+          32.0,
+          3.4,
+          25.0
+        ]
+      ],
+      "after": [
+        [
+          27.5,
+          3.4,
+          26.0
+        ],
+        [
+          28.0,
+          3.4,
+          28.0
+        ],
+        [
+          29.0,
+          3.4,
+          28.0
+        ],
+        [
+          29.5,
+          3.4,
+          28.0
+        ],
+        [
+          30.0,
+          3.4,
+          27.0
+        ],
+        [
+          30.0,
+          3.4,
+          25.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        29,
+        3.4,
+        28
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L63",
+      "rooms": [
+        "cellar-stair",
+        "cellar-service"
+      ],
+      "before": [
+        [
+          57.0,
+          -3,
+          18.0
+        ],
+        [
+          55.5,
+          -3,
+          18.0
+        ],
+        [
+          55.5,
+          -3,
+          24
+        ],
+        [
+          55.5,
+          -3,
+          37.0
+        ]
+      ],
+      "after": [
+        [
+          55.5,
+          -3.0,
+          18.0
+        ],
+        [
+          55.5,
+          -3.0,
+          24.0
+        ],
+        [
+          55.5,
+          -3.0,
+          37.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        55.5,
+        -3,
+        24
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51",
+  "roof_wings": [
+    {
+      "wing": "two-storey-ward",
+      "bounds": [
+        10,
+        12,
+        26,
+        29
+      ],
+      "ceiling": 6.8,
+      "ridge": 9.64,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "upper-spine",
+      "bounds": [
+        26,
+        12,
+        29,
+        40
+      ],
+      "ceiling": 6.8,
+      "ridge": 7.69,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "main-stair-tower",
+      "bounds": [
+        29,
+        20,
+        35,
+        30
+      ],
+      "ceiling": 6.8,
+      "ridge": 8.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "lift-head",
+      "bounds": [
+        22,
+        31,
+        26,
+        36
+      ],
+      "ceiling": 6.8,
+      "ridge": 7.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "staff-office",
+      "bounds": [
+        29,
+        12,
+        35,
+        20
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.64,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "day-pavilion",
+      "bounds": [
+        10,
+        40,
+        26,
+        50
+      ],
+      "ceiling": 3.4,
+      "ridge": 5.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "admission-spine",
+      "bounds": [
+        26,
+        40,
+        29,
+        50
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.239999999999999,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "admission",
+      "bounds": [
+        26,
+        50,
+        35,
+        58
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.9399999999999995,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "interview",
+      "bounds": [
+        35,
+        50,
+        41,
+        54
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.4399999999999995,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "records-and-wc",
+      "bounds": [
+        35,
+        54,
+        44,
+        58
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.4399999999999995,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "clinical-and-dining",
+      "bounds": [
+        29,
+        30,
+        54,
+        50
+      ],
+      "ceiling": 3.4,
+      "ridge": 5.64,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "clinical-service",
+      "bounds": [
+        35,
+        24,
+        54,
+        26
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "clinical-stores",
+      "bounds": [
+        35,
+        26,
+        45,
+        30
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "staff-rest",
+      "bounds": [
+        35,
+        20,
+        45,
+        24
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "service-link",
+      "bounds": [
+        35,
+        16,
+        54,
+        20
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "quiet-pavilion",
+      "bounds": [
+        45,
+        4,
+        54,
+        16
+      ],
+      "ceiling": 3.4,
+      "ridge": 5.4399999999999995,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "quiet-wc",
+      "bounds": [
+        45,
+        0,
+        50,
+        4
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "service-stair",
+      "bounds": [
+        54,
+        12,
+        60,
+        24
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.74,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "service-corridor",
+      "bounds": [
+        54,
+        24,
+        57,
+        50
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.239999999999999,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "refuse",
+      "bounds": [
+        57,
+        40,
+        61,
+        44
+      ],
+      "ceiling": 3.4,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "chapel",
+      "bounds": [
+        10,
+        2,
+        22,
+        10
+      ],
+      "ceiling": 3.4,
+      "ridge": 5.64,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "roof_coverage_rays": 1890,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/asylum.png",
+      "sha256": "c598a09b6659a01beb345c76892b6b30b81f48ac1973a87970bce5c1efdb6e17",
+      "type": "native exported doorway construction with roof cutaway, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 495,
+  "wing_plan_builder": "tools/build_institution_roof_batch.py",
+  "wing_plan_sha256": "ebd4777a0129cee7fdd4c7ba11331fc1d254263f0d4ca88b286c1f65aab53c9e",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "roof_generator_source": "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/tools/build_roster_enclosed_roofs.py",
+  "entrance_landing": {
+    "bounds": [
+      26,
+      58,
+      35,
+      61
+    ],
+    "top_y": 0,
+    "foundation_bottom_y": -1.0191989898681642,
+    "soil_receivers": [
+      {
+        "x": 26.1,
+        "z": 60.9,
+        "soil_y": -0.6691989898681641
+      },
+      {
+        "x": 34.9,
+        "z": 60.9,
+        "soil_y": -0.32129478454589844
+      },
+      {
+        "x": 30.5,
+        "z": 60.9,
+        "soil_y": -0.336334228515625
+      },
+      {
+        "x": 30.5,
+        "z": 60.01,
+        "soil_y": -0.34128570556640625
+      }
+    ]
+  },
+  "study_solid_removal": [
+    "Arrival end bearing ASYLUM 0",
+    "L19 support 0",
+    "L19 support 1",
+    "L20 support 0",
+    "L20 support 1",
+    "L25 support 0",
+    "L26 support 1",
+    "L27 support 1",
+    "L35 support 0",
+    "L71 support 0",
+    "L72 support 0",
+    "L72 support 1",
+    "L73 support 0",
+    "L73 support 1",
+    "L74 support 0",
+    "L76 support 0",
+    "L76 support 1"
+  ],
+  "doorways": [
+    {
+      "id": "ASYLUM-z-50-27.5",
+      "axis": "z",
+      "boundary": 50,
+      "along": 27.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        49.76,
+        50.24
+      ],
+      "rooms": [
+        "admission",
+        "spine"
+      ],
+      "side": "N",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        27.5,
+        0,
+        50.0
+      ],
+      "boundary_center": [
+        27.5,
+        0,
+        50
+      ]
+    },
+    {
+      "id": "ASYLUM-z-58-30",
+      "axis": "z",
+      "boundary": 58,
+      "along": 30,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        57.76,
+        58
+      ],
+      "rooms": [
+        "admission"
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        30,
+        0,
+        57.879999999999995
+      ],
+      "boundary_center": [
+        30,
+        0,
+        58
+      ]
+    },
+    {
+      "id": "ASYLUM-x-35-52",
+      "axis": "x",
+      "boundary": 35,
+      "along": 52,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        34.76,
+        35.24
+      ],
+      "rooms": [
+        "admission",
+        "interview"
+      ],
+      "side": "E",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        35.0,
+        0,
+        52
+      ],
+      "boundary_center": [
+        35,
+        0,
+        52
+      ]
+    },
+    {
+      "id": "ASYLUM-z-54-39.5",
+      "axis": "z",
+      "boundary": 54,
+      "along": 39.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        53.76,
+        54.24
+      ],
+      "rooms": [
+        "interview",
+        "records"
+      ],
+      "side": "S",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        39.5,
+        0,
+        54.0
+      ],
+      "boundary_center": [
+        39.5,
+        0,
+        54
+      ]
+    }
+  ],
+  "door_types": {
+    "pedestrian": {
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0
+    },
+    "service": {
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0
+    },
+    "loading": {
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0
+    }
+  },
+  "doorway_builder": "tools/build_institution_doorways.py",
+  "doorway_builder_sha256": "413350004259ad30868c6b1ccfa796b017c29400ef4eefd88452185b025968a6",
+  "doorframe_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "doorframe_source_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "doorframe_parts": "Original catalog left jamb, right jamb and header; source master/UVs/materials preserved. Threshold/hardware studies retained in library, not placed as a blocked/raised opening.",
+  "rooms_rebuilt": [
+    "admission",
+    "interview",
+    "records"
+  ],
+  "corridor_faces": {
+    "spine": [
+      "S"
+    ]
+  },
+  "sealed_context_policy": "Existing SEALED_CONTEXT walls/access metadata retained; no new context-room openings",
+  "removed_fragmented_walls": [
+    "Arrival end bearing ASYLUM 0",
+    "Flat route shell Wall admission E",
+    "Flat route shell Wall admission E.001",
+    "Flat route shell Wall admission N.001",
+    "Flat route shell Wall admission S",
+    "Flat route shell Wall admission S.001",
+    "Flat route shell Wall interview S.001",
+    "Flat route shell Wall interview W.001",
+    "Flat route shell Wall records N.001",
+    "Flat route shell Wall spine S",
+    "Flat route shell Wall spine S.001",
+    "Header admission E",
+    "Header admission S",
+    "Header interview S",
+    "Header spine S",
+    "L19 support 0",
+    "L19 support 1",
+    "L20 support 0",
+    "L20 support 1",
+    "L25 support 0",
+    "L26 support 1",
+    "L27 support 1",
+    "L35 support 0",
+    "L71 support 0",
+    "L72 support 0",
+    "L72 support 1",
+    "L73 support 0",
+    "L73 support 1",
+    "L74 support 0",
+    "L76 support 0",
+    "L76 support 1",
+    "Wall admission W",
+    "Wall interview E",
+    "Wall interview N",
+    "Wall interview S",
+    "Wall records E",
+    "Wall records N",
+    "Wall records S"
+  ]
+}

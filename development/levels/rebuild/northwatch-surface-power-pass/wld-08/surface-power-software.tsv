@@ -1,0 +1,42 @@
+check	result
+scene_revision	b5bc9d7afb352fa17a8547ae9da8bff471ecccf1d0eaf6e293fac9c2f7497b39
+renderer	Software
+body_contacts_at_perimeter	1302
+jump_height_contacts	1302
+standing_optical_contacts	651
+supported_crossings_blocked	1172
+original_invisible_edges_with_exterior_ground	3
+canonical_ramp_retreat_both_postures	PASS
+measured_tread_datums	6
+walked_authored_links_and_journeys_both_postures	31
+working_doors	16
+connected_supported_owners	15
+optics_object_passage_room_acoustics_and_replica_state	PASS
+northwatch_live_shed_supply	PASS ghost trip, van and two doors in blackout, aimed source stop/start, reconnect, breaker and branch switch
+lab_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+store_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+radio_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+records_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+dorm_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+mess_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+shelter_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+four_peer_van_to_generator_two_aimed_doors	PASS
+northwatch-dorm-cupboard_protected_floor_samples	69
+northwatch-lab-cupboard_protected_floor_samples	69
+northwatch-shelter-cupboard_protected_floor_samples	69
+northwatch_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+northwatch-lab-cupboard_live_entry_hide_reveal_exit	PASS
+northwatch-dorm-cupboard_live_entry_hide_reveal_exit	PASS
+northwatch-shelter-cupboard_live_entry_hide_reveal_exit	PASS
+shed_task_light_energy	2.7330460062003774 supplied, 0.187 stopped, 0.187 tripped, 0.187 switched off
+lab_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+radio_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+records_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+store_visible_blackout	284815 changed pixels; 1.3321617032392894 mean RGB increase
+store_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+dorm_visible_blackout	270118 changed pixels; 2.176713035527691 mean RGB increase
+dorm_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+mess_visible_blackout	264765 changed pixels; 1.6105120167189133 mean RGB increase
+mess_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+shelter_visible_blackout	448727 changed pixels; 3.6519651253918495 mean RGB increase
+shelter_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped

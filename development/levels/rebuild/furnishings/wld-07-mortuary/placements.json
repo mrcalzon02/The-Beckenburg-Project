@@ -1,0 +1,147 @@
+{
+  "site": "WLD-07-MORTUARY",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+  "source_layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+  "structure_glb_sha256": "2458c67f8a78b95151f4aae8adb4684c90bb09e3219f96c5f71224f95a69164e",
+  "furnished_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+  "native_sha256": "56628d38ddbefb6f3535bb9fda49e2a0013e7623d02cbbbeb48e41b0e4746454",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "WLD-07-MORTUARY:mort-prep:0:0",
+      "zone": "mort-prep",
+      "purpose": "Preparation room / Vale mortuary drainage preparation table / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_mortuary_prep_table",
+      "asset": "level_blockout_mortuary_prep_table",
+      "source_sha256": "26dff42b0d7790bbecf64a5c5ad2afae0251f89dcc2dca15bf56e42fe0622561",
+      "bounds": [
+        74.2770004272461,
+        -42.45000076293945,
+        0.0,
+        75.37200164794922,
+        -40.15999984741211,
+        1.2200000286102295
+      ],
+      "rect": [
+        74.27700000619888,
+        40.16,
+        75.37199997520446,
+        42.449999961853024
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 128
+    },
+    {
+      "id": "WLD-07-MORTUARY:mort-cold:1:0",
+      "zone": "mort-cold",
+      "purpose": "Cold storage / Three-drawer mortuary cold storage bank / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_mortuary_cold_drawer_wall",
+      "asset": "level_blockout_mortuary_cold_drawer_wall",
+      "source_sha256": "47b83ea2cee127fc9f819db299d6ffb3edae45d54176dd96eef8d93fdd41f1c0",
+      "bounds": [
+        74.05799865722656,
+        -51.132503509521484,
+        0.0,
+        76.24800109863281,
+        -50.15999984741211,
+        1.8450000286102295
+      ],
+      "rect": [
+        74.0579999885559,
+        50.16,
+        76.24800004577637,
+        51.13249999642372
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-07-MORTUARY:mort-reception:2:0",
+      "zone": "mort-reception",
+      "purpose": "Vale Mortuary reception / Funeral guest register and small bell desk / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_mortuary_visitors_registry_desk",
+      "asset": "level_blockout_mortuary_visitors_registry_desk",
+      "source_sha256": "081a2cafa6821bff9e7b8deed2b04bc31dbb6dd6fa937e893f1b504d47dab73f",
+      "bounds": [
+        62.1879997253418,
+        -54.8599967956543,
+        0.0,
+        63.72800064086914,
+        -54.15999984741211,
+        1.1100000143051147
+      ],
+      "rect": [
+        62.18800000762939,
+        54.16,
+        63.72799996948242,
+        54.85999998807907
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-07-MORTUARY:mort-viewing:3:0",
+      "zone": "mort-viewing",
+      "purpose": "Viewing room / Vale viewing-room chairs and memorial pedestal / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_mortuary_viewing_seat",
+      "asset": "level_blockout_mortuary_viewing_seat",
+      "source_sha256": "8b3ca97e88681d972d7f188f7bd6b7c8ab688b5d0f4e2bd97794a7ce17348ea1",
+      "bounds": [
+        62.12000274658203,
+        -41.8650016784668,
+        0.0,
+        64.0,
+        -40.15999984741211,
+        1.4299999475479126
+      ],
+      "rect": [
+        62.120000000953674,
+        40.16,
+        63.9999999961853,
+        41.864999983310696
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 132
+    },
+    {
+      "id": "WLD-07-MORTUARY:mort-office:4:0",
+      "zone": "mort-office",
+      "purpose": "Mortuary office / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        74.27999877929688,
+        -58.6870002746582,
+        0.0,
+        75.36000061035156,
+        -58.15999984741211,
+        2.0
+      ],
+      "rect": [
+        74.27999999141693,
+        58.16,
+        75.36000003433227,
+        58.686999995112416
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "37a1858fed3922d8ec6f1c9b6c1d8464e46faa34d8458444f2393f6f7f970ade",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

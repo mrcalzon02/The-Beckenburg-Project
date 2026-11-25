@@ -35,14 +35,15 @@ public final class CastleCellar {
         return active()&&x>=LEFT&&x<=RIGHT&&z>=CastleCellarLayout.LOW_Z&&z<CastleCellarLayout.HIGH_Z;
     }
     public static double stairHeight(double z){
-        int step=Math.max(0,Math.min(CastleCellarLayout.RISERS-1,
-            (int)Math.floor((z-CastleCellarLayout.LOW_Z)/RUN+1e-8)));
-        return FLOOR+step*RISE;
+        return stairHeight(CastleCellarLayout.FLIGHT_X,z);
+    }
+    static double stairHeight(double x,double z){
+        return CastleLevelEdits.current().cellarTreadHeight(x,z);
     }
     /** Returns NaN outside the lower construction; the original upper stair remains authoritative. */
     public static double elevation(double x,double z,double old){
         if(!active()||old>0.3)return Double.NaN;
-        if(onFlight(x,z))return stairHeight(z);
+        if(onFlight(x,z))return stairHeight(x,z);
         if(old<0&&old>=-.26&&!opening(x,z)
             &&(CastleRooms.ground(x,z)||CastleLevelEdits.current().floorSupports(x,z,0)))return 0;
         if(old<-.1&&CastleLevelEdits.current().floorSupports(x,z,FLOOR))return FLOOR;
@@ -50,7 +51,7 @@ public final class CastleCellar {
     }
     public static CastleRooms.Room roomAt(double x,double feet,double z){
         if(!active()||feet>-.1)return null;
-        if(onFlight(x,z)&&Math.abs(feet-stairHeight(z))<.18)return CastleCellarLayout.ROOMS.get(0);
+        if(onFlight(x,z)&&Math.abs(feet-stairHeight(x,z))<.18)return CastleCellarLayout.ROOMS.get(0);
         if(Math.abs(feet-FLOOR)>.3||!CastleLevelEdits.current().floorSupports(x,z,FLOOR))return null;
         for(var r:CastleCellarLayout.ROOMS)if(r.contains(x,z))return r;
         return null;

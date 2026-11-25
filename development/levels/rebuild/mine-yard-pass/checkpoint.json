@@ -1,0 +1,396 @@
+{
+  "status": "MINE_WORKYARD_AND_PHYSICAL_STAIR_CELLS_RUNTIME_OPEN",
+  "baseline": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
+  "site": "WLD-05",
+  "source": {
+    "id": "WLD-05",
+    "construction": "development/levels/rebuild/mine-yard-pass/wld-05/construction.json",
+    "layout": "development/levels/rebuild/mine-yard-pass/wld-05/authored-layout.json",
+    "glb": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.glb",
+    "native": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2",
+    "blend": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.blend",
+    "glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+    "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c"
+  },
+  "prior": {
+    "id": "WLD-05",
+    "construction": "development/levels/rebuild/retaining-shoulder-pass/wld-05/construction.json",
+    "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+    "glb": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.glb",
+    "native": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.hcs2",
+    "blend": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.blend",
+    "glb_sha256": "189a4277319e46bbff7f9fc3950831459d54bf087f0ae038c196aa8391e46fbc",
+    "native_sha256": "df623702b4ed8760edb2168ae36f41b3f8d64e92886691c7f7b54bbc55d76f37"
+  },
+  "terrain": {
+    "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world",
+    "builders": {
+      "tools/java/RebuildTieredEarthworks.java": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+      "tools/java/RebuildStairCellPunches.java": "57288fc8976428f996f625bcfe2b44e0b7777e115eefe8848b1b72ca088b6455"
+    },
+    "grade": {
+      "site": "WLD-05",
+      "changed_vertices": 433,
+      "raised_vertices": 371,
+      "lowered_vertices": 62,
+      "max_change_m": 3.409465313,
+      "source_height_sha256": "e13d2136218a123648d0325daeaf37bbd3efa4352b71e92f2d341001b735ac88",
+      "saved_topology_sha256": "837e9334125baa9923ebdef382fe2839e9c4d147e9b9f6f852684f0484f56b9a",
+      "saved_cuts_sha256": "650180e121f5d9df0af3775b680323f3b759c53c750186829175b17ca66a438c",
+      "hole_controls": 1152,
+      "disk_reopen_verified": true,
+      "physics_sha256": "bcb85527dd878497153470073c1aa659c9f2a5d27c25c74380fc7f1d4eb04875",
+      "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+    },
+    "foundation": {
+      "source_height_and_layers_unchanged": true,
+      "disk_reopen_verified": true,
+      "prior_and_new_hole_controls": 1153,
+      "cutouts_before": 1745,
+      "cutouts_after": 1806,
+      "physics_sha256": "26b8f40a993b91867cdd62c618c3cf97decad3c93075dbe83eb0c2e2ee50867e"
+    },
+    "terrain_sha256": "26b8f40a993b91867cdd62c618c3cf97decad3c93075dbe83eb0c2e2ee50867e"
+  },
+  "doors": [
+    {
+      "id": "crew house yard door",
+      "axis": "x",
+      "boundary": 20,
+      "along": 57,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.24,
+      "rooms": [
+        "shack",
+        "adit-court"
+      ]
+    },
+    {
+      "id": "crew house and stores shared face",
+      "axis": "z",
+      "boundary": 46,
+      "along": 8,
+      "sill_y": 0,
+      "clear_width": 1.55,
+      "clear_height": 2.16,
+      "rooms": [
+        "shack",
+        "stores"
+      ]
+    },
+    {
+      "id": "stores working door",
+      "axis": "x",
+      "boundary": 14,
+      "along": 42,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.22,
+      "rooms": [
+        "stores",
+        "adit-court"
+      ]
+    },
+    {
+      "id": "assay yard door",
+      "axis": "x",
+      "boundary": 40,
+      "along": 57,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.24,
+      "rooms": [
+        "assay",
+        "adit-court"
+      ]
+    },
+    {
+      "id": "wash house yard door",
+      "axis": "x",
+      "boundary": 40,
+      "along": 43,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.22,
+      "rooms": [
+        "wash",
+        "adit-court"
+      ]
+    },
+    {
+      "id": "headhouse public mouth",
+      "axis": "z",
+      "boundary": 54.25,
+      "along": 29,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.24,
+      "rooms": [
+        "adit",
+        "adit-court"
+      ]
+    },
+    {
+      "id": "headhouse haul stair door",
+      "axis": "z",
+      "boundary": 49,
+      "along": 28.35,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.24,
+      "rooms": [
+        "adit",
+        "haul-stair"
+      ]
+    },
+    {
+      "id": "headhouse ventilation door",
+      "axis": "x",
+      "boundary": 26.5,
+      "along": 52,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.24,
+      "rooms": [
+        "adit",
+        "vent-stair"
+      ]
+    }
+  ],
+  "plan": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard-and-stairs.svg",
+  "plan_sha256": "2e382332e1a3f9afa6a20b7cd989188941070da29df206fe2b133ea504f840b3",
+  "before": [
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/mine-before.png",
+      "sha256": "fa3aa14bd19165a212192f2f6329b6deeae4ecb555529b2aa28291a8971d669f",
+      "source_glb_sha256": "189a4277319e46bbff7f9fc3950831459d54bf087f0ae038c196aa8391e46fbc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/mine-yard-before.png",
+      "sha256": "5e7db512fc439cf97aaf54c4c3e2fba8d2569a863b31c301b76961cd3854aca4",
+      "source_glb_sha256": "189a4277319e46bbff7f9fc3950831459d54bf087f0ae038c196aa8391e46fbc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/mine-haul-before.png",
+      "sha256": "40a9ffb56e8779cb9c6afda17869262901d09fc8ddd37cbf747ded46a76c9c50",
+      "source_glb_sha256": "189a4277319e46bbff7f9fc3950831459d54bf087f0ae038c196aa8391e46fbc"
+    }
+  ],
+  "export": {
+    "glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+    "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c",
+    "retained_native_records": 145,
+    "added_closed_parts": 126,
+    "terrain_matches_editor": true,
+    "door_clearance_controls": 72,
+    "door_sill_controls": 96,
+    "tread_controls": 68,
+    "standing_headroom_controls": 68,
+    "roadhead_controls": 15,
+    "van_triangle_count": 2689,
+    "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+    "captures": [
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/overview.png",
+        "sha256": "ca016173c1adb8d13e13fa4797321dfedb617e19762cd83337470d3414df060d",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/canonical-arrival.png",
+        "sha256": "6d4eeb87a0e8310926374baf9fb662cd3d00936a17ca98e4689315721c1e40ac",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/yard-and-headhouse.png",
+        "sha256": "59c4d07af81813e52d11b1009fbf57a380b63739c04ddd3ed5f1bb5c5ebb46c9",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/headhouse-south.png",
+        "sha256": "9391f8f876d4533e3c6996fe365cd5e2d238bb174142227db1084ae742ab8873",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/haul-stair.png",
+        "sha256": "5cfa066b6dfc18369015ce3902dc9e92f6f71d2ecfa18f8bb24a7cd2f2a7a5a6",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/ventilation-stair.png",
+        "sha256": "84c8253dda4572a2e87039f42d540692a54dacf52e04636ec0dacd89bb7be4be",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/mine-yard-batch/shaft-section.png",
+        "sha256": "ca9f31160b5b8fe44fb671beb301f0143ca354643c80543b626db709fed3372e",
+        "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+        "hidden": [
+          "Wall haul S",
+          "Header haul E",
+          "Ceiling cap ore-east",
+          "Flat route shell Wall haul E",
+          "Flat route shell Wall haul E.001",
+          "Mine haul cover with rectangular shaft mouth region0",
+          "Mine headhouse east elevation solid region0",
+          "Mine headhouse roof region0",
+          "Mine haul east retaining wall region0",
+          "Mine haul east return over the crossing region0",
+          "Mine haul stair weather roof region0",
+          "WLD-05 saved ground"
+        ]
+      }
+    ]
+  },
+  "native_movement": {
+    "ordinary": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 4938,
+        "valid_standing": 4938,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "flights": {
+      "flights": 6,
+      "legacy_up": 0,
+      "legacy_down": 0,
+      "authored_up": 6,
+      "authored_down": 6
+    },
+    "vertical": {
+      "routes": 4,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 4,
+      "authored_reverse": 4
+    },
+    "retained_chain": {
+      "bindings": [
+        {
+          "site": "WLD-05",
+          "variant": "before_bearing",
+          "id": "CHAIN/L16/L17",
+          "links": [
+            "L16",
+            "L17"
+          ]
+        },
+        {
+          "site": "WLD-05",
+          "variant": "after_bearing",
+          "id": "CHAIN/L16/L17",
+          "links": [
+            "L16",
+            "L17"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "site": "WLD-05",
+          "variant": "before_bearing",
+          "link": "CHAIN/L16/L17",
+          "segments": "10",
+          "legacy_forward": "BLOCKED_SEGMENT_3_AT_11_OF_13",
+          "legacy_reverse": "BLOCKED_SEGMENT_1_AT_3_OF_155",
+          "authored_forward": "PASS",
+          "authored_reverse": "PASS"
+        },
+        {
+          "site": "WLD-05",
+          "variant": "after_bearing",
+          "link": "CHAIN/L16/L17",
+          "segments": "14",
+          "legacy_forward": "BLOCKED_SEGMENT_3_AT_11_OF_13",
+          "legacy_reverse": "BLOCKED_SEGMENT_2_AT_2_OF_64",
+          "authored_forward": "PASS",
+          "authored_reverse": "PASS"
+        }
+      ],
+      "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+    },
+    "measured_loop_runs": [
+      {
+        "site": "WLD-05",
+        "variant": "before_bearing",
+        "link": "AUTHORED/headhouse-haul-and-ventilation-loop",
+        "segments": "9",
+        "legacy_forward": "BLOCKED_SEGMENT_2_AT_4_OF_181",
+        "legacy_reverse": "BLOCKED_SEGMENT_1_AT_3_OF_155",
+        "authored_forward": "BLOCKED_SEGMENT_3_AT_10_OF_80",
+        "authored_reverse": "BLOCKED_SEGMENT_5_AT_68_OF_80"
+      },
+      {
+        "site": "WLD-05",
+        "variant": "before_bearing",
+        "link": "AUTHORED/main-ore-circuit",
+        "segments": "8",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "START_BLOCKED",
+        "authored_forward": "BLOCKED_SEGMENT_0_AT_10_OF_80",
+        "authored_reverse": "BLOCKED_SEGMENT_7_AT_68_OF_80"
+      },
+      {
+        "site": "WLD-05",
+        "variant": "after_bearing",
+        "link": "AUTHORED/headhouse-haul-and-ventilation-loop",
+        "segments": "18",
+        "legacy_forward": "BLOCKED_SEGMENT_3_AT_3_OF_74",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_2_OF_64",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-05",
+        "variant": "after_bearing",
+        "link": "AUTHORED/main-ore-circuit",
+        "segments": "8",
+        "legacy_forward": "PASS",
+        "legacy_reverse": "PASS",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "rail_static_controls_open": true
+  },
+  "flat_evidence": "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-movement.json",
+  "stair_evidence": "development/levels/rebuild/mine-yard-pass/verification/stairs/stair-movement.json",
+  "loop_contract": {
+    "file": "development/levels/rebuild/movement-chains.json",
+    "sha256": "2350f45af21848b60df378913d0cfbae165de15bc97bd0eb2710c5e8cf53c162"
+  },
+  "other_roster_packets_preserved": 28,
+  "accessible_named_spaces": 17,
+  "runtime_accepted": false,
+  "publication": {
+    "construction_commit": "02b98c9cf06bc701865920949436d36c10bb0acd",
+    "remote_readback_verified": true,
+    "committed_bundle_bytes_verified": true,
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "pr_draft": true,
+    "pr_base": "map/house-default",
+    "gallery_ci_run": 44197147540,
+    "gallery_ci_status_at_readback": "in_progress",
+    "gallery_ci_conclusion_at_readback": null,
+    "local_gallery_pngs": 11070,
+    "live_gallery_http": 200,
+    "new_section_image_http": 404
+  }
+}

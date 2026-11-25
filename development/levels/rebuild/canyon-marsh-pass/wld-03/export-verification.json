@@ -1,0 +1,55 @@
+{
+  "glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+  "native_sha256": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1",
+  "retained_native_records": 111,
+  "new_closed_parts": 131,
+  "aperture_rays": 36,
+  "sill_controls": 24,
+  "independent_standing": 12,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-overview.png",
+      "sha256": "5d0e8b3dd080538ab3a3889f8f12baa1605e3cdf737965b9353cab6c7d1c05ad",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-roadhead.png",
+      "sha256": "abb84f18c9b817e976f17a87a04337402ead60db88efa69f82fcf9303ead0acb",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-shelter-stair.png",
+      "sha256": "099cf9a6d7d3db0c74192ebc4110b59177b9c7745e1467fb94eeb3d159790e1f",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-upper-stair.png",
+      "sha256": "75095b5b33f456fc8f9288ba1409839fa711823b63bd533dc810a48a9bdc269a",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-upper-terrace.png",
+      "sha256": "20b108484d2f88c3dc596835ca5abaa23ef6c2e5932908c57f3e36ad7315715e",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-lower-cave-sill.png",
+      "sha256": "1df5f9d91ab04a3d137f460b6bacf9b47e853f89d9d6f75f7cfcac7b5ff4eeff",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-terrace-section.png",
+      "sha256": "6ef5b916ddd574a9e08bd89e391f788b1c5f5c08f16bfbce30bce6836e2648d7",
+      "source_glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "hidden": []
+    }
+  ]
+}

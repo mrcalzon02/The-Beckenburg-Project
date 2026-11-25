@@ -1,0 +1,9 @@
+# Saint Bartholomew's Cemetery & Vale Mortuary
+
+A dedicated public entry opens into the front hall and gives reception and viewing their own approach. The south vehicle door uses a separate receiving yard. A staff vestibule shares actual walls with the bay, cold store and office. Complete partitions close the old viewing-to-preparation and reception-to-bay shortcuts. Staff transfer enters the cold store through its south face, and the office retains its own enclosure. Archive cabinet shifts 4 m east onto the staff office floor. Its original asset, child mesh, UVs, orientation and materials remain in use.
+
+The grade survey retains the original van at (28, 0, 78) with its rear ramp on the shared roadhead. The original height image, the adaptive terrain topology and 693 excavation controls survived reopening. Ground fields distinguish the arrival court, lawn and memorial terrace. The new limestone entrance walls have complete piers, fitted jambs and lintels. The stairs have continuous 220 mm landing decks, masonry cheeks and low-end returns. The vault and record chamber have separate 300 mm covers. The chapel and both stair pavilions have complete pitched roof slopes and closed gables.
+
+The native source uses 22 named accessible architectural spaces including outdoors and staging, before the final containment and ownership audit. The geometry passed 24 ordinary links in both directions and both vertical routes. All 6,705 sampled standing positions passed. Door, sill, roof and soffit checks ran on the independently reopened export. The architectural plan shows route guidance and actual door positions.
+
+Ground finish, cemetery perimeter, supported grave assets, service placement and the full gameplay integration gate remain open. The annex needs a working staff door, final mortuary roof articulation and its shared power, hiding and extraction audit.

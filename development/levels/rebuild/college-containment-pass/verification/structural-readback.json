@@ -1,0 +1,23 @@
+{
+  "retained_components": 1067,
+  "removed_components": 29,
+  "old_glb_binary_bytes_retained": 3763484,
+  "editable_matched_triangles": 39333,
+  "reimported_glb_matched_triangles": 39333,
+  "packed_images": 31,
+  "exterior_stitched_edges": 1083,
+  "original_interior_cut_edges": 220,
+  "outside_outline_edges": 18,
+  "slab_bearings": {
+    "plant": {
+      "slab_top": 0,
+      "wall_head": -0.16
+    },
+    "maintenance": {
+      "slab_top": 0,
+      "wall_head": -0.16
+    }
+  },
+  "terrain_triangles_same_position": 8601,
+  "terrain_faces_refinished_as_service_gravel": 64
+}

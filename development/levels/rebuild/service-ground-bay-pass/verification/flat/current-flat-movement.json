@@ -1,0 +1,257 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-04": {
+      "before": {
+        "flat_links": 7,
+        "pass_both_directions": 2
+      },
+      "after": {
+        "flat_links": 7,
+        "pass_both_directions": 7
+      },
+      "current_lanes": {
+        "samples": 3459,
+        "valid_standing": 3294,
+        "invalid_standing": 165,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 89,
+          "NO_FOOT_SUPPORT_0.22_0.0": 6,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 11,
+          "PHYSICAL_COMPONENT": 40,
+          "FOOT_HEIGHT_SPREAD": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 12,
+          "NO_FOOT_SUPPORT_0.0_0.22": 4
+        },
+        "physical_components": [
+          [
+            "Lookout terrace store south normal indexed door",
+            12
+          ],
+          [
+            "WLD-04 restart landing exposed end 10.5 rail 0",
+            4
+          ],
+          [
+            "WLD-04-restart-cab south indexed frame",
+            4
+          ],
+          [
+            "Flat route shell Wall ruin S.001",
+            3
+          ],
+          [
+            "Flat route shell Wall ruin S",
+            3
+          ],
+          [
+            "WLD-04 restart landing exposed end 10.5 rail 1",
+            3
+          ],
+          [
+            "Lookout terrace L09 flight -1.0 guard 0",
+            2
+          ],
+          [
+            "WLD-04-restart-cab east indexed frame",
+            2
+          ],
+          [
+            "WLD-04 restart cab east pier 0 0 region0",
+            2
+          ],
+          [
+            "WLD-04 restart L13 flight 60 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 57 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 57 rail 1",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 79 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 79 rail 1",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6870,
+        "valid_standing": 6377,
+        "invalid_standing": 493,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 165,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 41,
+          "NO_FOOT_SUPPORT_0.22_0.0": 44,
+          "NO_CENTRE_SUPPORT": 231,
+          "NO_FOOT_SUPPORT_0.0_0.22": 10,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2
+        },
+        "physical_components": [
+          [
+            "DAM-HALL-x-64-35--6 indexed frame",
+            24
+          ],
+          [
+            "WLD-09 middle landing column 68.22 34.25 region0",
+            24
+          ],
+          [
+            "349:level_blockout_hydro_turbine.001",
+            22
+          ],
+          [
+            "WLD-09 middle landing column 65.78 35.75 region0",
+            12
+          ],
+          [
+            "WLD-09 middle landing column 68.22 35.75 region0",
+            12
+          ],
+          [
+            "WLD-09 middle landing column 65.78 34.25 region0",
+            12
+          ],
+          [
+            "WLD-09 rim column 68.22 31.5 region0",
+            12
+          ],
+          [
+            "WLD-09-restart-shared turbine workshop north indexed frame",
+            8
+          ],
+          [
+            "WLD-09 restart shared turbine workshop north pier 0 0 region0",
+            8
+          ],
+          [
+            "WLD-09 contained lower flight 66.17 guard 0",
+            4
+          ],
+          [
+            "WLD-09 contained lower flight 67.83 guard 0",
+            4
+          ],
+          [
+            "WLD-09 contained upper flight 66.17 guard 4",
+            4
+          ],
+          [
+            "WLD-09 contained upper flight 67.83 guard 4",
+            4
+          ],
+          [
+            "DAM-HALL-z-48-68-0 indexed frame",
+            4
+          ],
+          [
+            "WLD-09 restart workshop east end pier region0",
+            3
+          ],
+          [
+            "WLD-09 service bay lower flight 61.13 guard 1",
+            2
+          ],
+          [
+            "WLD-09 service bay upper flight 61.67 guard 0",
+            2
+          ],
+          [
+            "WLD-09 service bay west stair cheek region0",
+            1
+          ],
+          [
+            "WLD-09 service bay lower flight 61.13 guard 0",
+            1
+          ],
+          [
+            "WLD-09 service bay upper flight 63.33 guard 1",
+            1
+          ],
+          [
+            "WLD-09 service bay upper flight 61.67 guard 1",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-04": {
+      "before": {
+        "contract": "development/levels/rebuild/architectural-restart-pass/wld-04/construction.json",
+        "contract_sha256": "9533cad199a1cbe7a3d3d64d4756a5f390706f4c191f48070224323f31a448ce",
+        "layout": "development/levels/rebuild/architectural-restart-pass/wld-04/authored-layout.json",
+        "layout_sha256": "2a8aba794a4f2c43103fb6958149f27caaf682bc0d49125b693cd91d180f6847",
+        "native": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.hcs2",
+        "native_sha256": "784d56c55fb32f894cd07e35b73d0c92fb7a83040e336b959db62d661a40532a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/service-ground-bay-pass/wld-04/construction.json",
+        "contract_sha256": "3800363e4cb41ea9280cf23eaab0dd95526d245e8233fe864de311143835db41",
+        "layout": "development/levels/rebuild/service-ground-bay-pass/wld-04/authored-layout.json",
+        "layout_sha256": "c0a5bc0ec108e76fd1756f311ffba10455af0b68c93cdb77c27938043c6f23e9",
+        "native": "development/levels/rebuild/service-ground-bay-pass/wld-04/authored-service-bay.hcs2",
+        "native_sha256": "837b74ce8ae499eab2feae7e7b03f90f588e9d3eab8d2ff95e82186071e8c097"
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/architectural-restart-pass/wld-09/construction.json",
+        "contract_sha256": "cbc0a462d62bfc09cf68ad5b7e64c4f77fbd5d9b94237372a521971be4513f55",
+        "layout": "development/levels/rebuild/architectural-restart-pass/wld-09/authored-layout.json",
+        "layout_sha256": "98c1ac82174fec59c9fd682f04f6b59e3d911ffd640b483d80cb4dee7b6324e7",
+        "native": "development/levels/rebuild/architectural-restart-pass/wld-09/reconstructed.hcs2",
+        "native_sha256": "13f539d589dd329d5938373fbbb8ec3e3dbedcca0fd09f88569cdcc72e6bb4fd"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/service-ground-bay-pass/wld-09/construction.json",
+        "contract_sha256": "e9ec38e31644206c5a3ee6b14f19ea1db65fb610828be6c894decfb2f422b795",
+        "layout": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-layout.json",
+        "layout_sha256": "bd72fce8bd7376d4f05fc694f9d7b78627ca86f9fb57a15429ef2cafba7e4a82",
+        "native": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-service-bay.hcs2",
+        "native_sha256": "6cf09c50961ff302ba1091e2f6cc64207a3d6f4adaee76d5405afa89c31daaa4"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/household-sacred-bay-pass/roster.json": "059bd570da8c93d507c18bae927dfca3846c8abbc205145beb0300840df987a1"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-failure-contacts.tsv": "4c124265ac9f034ae4819047ccc9c312c87a698a2637393a3bf087e6604364e0",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-failure-input.tsv": "61dee20ff86c484a7fabc9f5e147271d2f7f11e22e7f1fd6da310f2187d3ac4f",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-lane-input.tsv": "d27eb7575266e0fe515554df649ab350d56ab2dd658cbe359c58135e41e33bdb",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-lane-names.tsv": "078494abfb56725fa7164da631747efc976ef07f7e5200774ee56dbe61638259",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-lanes.tsv": "1e035f2354dc2937f774c72e23fb6fe2a23130af3f7463e410b1ad64a2c889d7",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-links.tsv": "996a88138d851e7a834a7c9ea2b53c9fe13968c0e12680b0ac2b878660bcd366",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-names.tsv": "1074c6ea5a472cf78c8d376feb17e7b0dd443851a4582eb66b009b5bbccc3b27",
+    "development/levels/rebuild/service-ground-bay-pass/verification/flat/current-flat-paths.tsv": "58d1f1b365b2b78d84b8c833791d210a8a7db9e94fdae301ae65047fe47a9059"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

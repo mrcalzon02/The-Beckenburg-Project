@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 630" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwater Dam downstream channel</title>
+  <desc id="desc">Plan and transverse section of the isolated east-bank reach at the current review stage. The catwalk is above the existing piers. Both terminal sluices are closed.</desc>
+  <style>
+    text {font: 15px sans-serif; fill: #293530}
+    .heading {font-size: 28px; font-weight: 700}
+    .panel {font-size: 19px; font-weight: 700}
+    .note {font-size: 13px; fill: #506159}
+    .leader {stroke: #56655c; stroke-width: 1.4; fill: none}
+    .concrete {fill: #9ca39a; stroke: #4c5c52; stroke-width: 1.3}
+    .water {fill: #56a9a9; stroke: #327a7d; stroke-width: 1.2}
+  </style>
+  <rect width="1040" height="630" fill="#f1f3ee"/>
+  <text x="48" y="57" class="heading">Blackwater Dam downstream channel</text>
+  <text x="48" y="85" class="note">WLD-09 Â· East bank at the isolated water stage Â· metres in the authored map datum</text>
+  <path d="M48 107H992" stroke="#b8c4b8"/>
+
+  <text x="48" y="145" class="panel">Plan</text>
+  <text x="48" y="166" class="note">X increases east. North is toward lower Z.</text>
+  <rect x="56" y="243" width="56" height="234" class="concrete"/>
+  <text x="77" y="411" transform="rotate(-90 77 411)">East hall</text>
+  <rect x="56" y="477" width="69" height="72" class="concrete"/>
+  <text x="143" y="506">Spillway gallery</text>
+  <path d="M126 502H137" class="leader"/>
+  <rect x="112" y="349" width="23.25" height="130" fill="#f1ead6" stroke="#675e45" stroke-width="1.5"/>
+  <path d="M152 363H240" class="leader"/>
+  <text x="249" y="367">Guarded catwalk Â· Y 0.00</text>
+  <rect x="131.13" y="179.73" width="20.16" height="266.31" class="concrete"/>
+  <rect x="133.54" y="182.6" width="15.34" height="259.05" class="water"/>
+  <path d="M132 182H150M132 442H150" stroke="#2d3734" stroke-width="5"/>
+  <path d="M152 183H240M152 442H240M152 282H240" class="leader"/>
+  <text x="249" y="187">Closed downstream sluice</text>
+  <text x="249" y="288">Isolated water Â· X 73.00â€“74.78</text>
+  <text x="249" y="446">Closed upstream sluice</text>
+  <text x="249" y="307" class="note">Both gates seat in cast terminal bays.</text>
+  <path d="M112 405H190" stroke="#56655c" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="197" y="410" class="note">Section at Z 40.0</text>
+  <path d="M457 234V189L452 198M457 189L462 198" class="leader"/>
+  <text x="451" y="181">N</text>
+
+  <path d="M513 133V579" stroke="#b8c4b8"/>
+  <text x="548" y="145" class="panel">Section at Z 40.0</text>
+  <text x="548" y="166" class="note">Lower bank shown with a vertical break below the existing deck.</text>
+  <path d="M550 347L575 352L604 370L650 376L704 380L756 370L809 350L865 337L915 334L986 334V488H550Z" fill="#ccd1bf" stroke="#a4ac98"/>
+  <rect x="552" y="236" width="32" height="157" class="concrete"/>
+  <rect x="584" y="224" width="118" height="12" class="concrete"/>
+  <path d="M686 227V185M702 226V185M681 186H704" stroke="#4c5c52" stroke-width="3"/>
+  <path d="M672 237V284L679 289L672 296V377H661V296L668 289L661 284V237" fill="#76847f" stroke="#53635b"/>
+  <text x="720" y="225">Existing guarded deck Â· Y 0.00</text>
+  <text x="558" y="278" class="note">Pier beyond section</text>
+  <path d="M672 285L681 290L672 295" stroke="#fff" stroke-width="2" fill="none"/>
+
+  <rect x="711" y="347" width="124" height="59" class="concrete"/>
+  <rect x="711" y="288" width="15" height="59" class="concrete"/>
+  <rect x="820" y="288" width="15" height="59" class="concrete"/>
+  <rect x="726" y="326" width="94" height="21" class="water"/>
+  <path d="M836 289H857M835 326H857M835 347H857M835 406H857" class="leader"/>
+  <text x="866" y="294">Wall Â· Y âˆ’6.17</text>
+  <text x="866" y="330">Water Â· Y âˆ’6.82</text>
+  <text x="866" y="351">Invert Â· Y âˆ’7.18</text>
+  <text x="866" y="410">Base Â· Y âˆ’8.24</text>
+  <path d="M763 408V445H716" class="leader"/>
+  <text x="714" y="466" text-anchor="middle">Continuous buried base</text>
+  <text x="548" y="528" class="note">0.36 m water depth Â· 0.65 m freeboard Â· 1.78 m wet channel clear width</text>
+  <text x="548" y="552" class="note">The covered connection and downstream valley remain separate construction work.</text>
+</svg>

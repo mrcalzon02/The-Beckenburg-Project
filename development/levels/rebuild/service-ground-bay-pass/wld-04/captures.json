@@ -1,0 +1,75 @@
+[
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-whole-site.png",
+    "sha256": "87642b50256d419bbf28c63a19b3c020fc6370205944b67ed61fc150de2b9642",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "whole-site",
+    "hidden": [
+      "Ceiling cap hut",
+      "Ceiling cap ruin",
+      "Ceiling cap store",
+      "WLD-04 restart cab closed roof region0"
+    ],
+    "type": "Native export overview with roofs hidden"
+  },
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-upper-structure.png",
+    "sha256": "47e3c40c74127e7f1d2617366e870da687e5f1a47692e8bd94d74b1527760956",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "upper-structure",
+    "hidden": [
+      "Ceiling cap hut",
+      "Ceiling cap ruin",
+      "Ceiling cap store",
+      "WLD-04 restart cab closed roof region0"
+    ],
+    "type": "Native export overview with roofs hidden"
+  },
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-west-stair-standing.png",
+    "sha256": "554d08a5b753216de190e48902d6a1ab24e08af507dba1a6f126ce914223e99c",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "west-stair-standing",
+    "hidden": [],
+    "type": "Native exported ordinary standing-height view; nothing hidden; runtime acceptance open"
+  },
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-east-stair-standing.png",
+    "sha256": "71f2dd1bb8dabf44cf67c729e14038b35bc17856d23a08327e1faa889ddf929e",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "east-stair-standing",
+    "hidden": [],
+    "type": "Native exported ordinary standing-height view; nothing hidden; runtime acceptance open"
+  },
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-clearing-standing.png",
+    "sha256": "8fb473a37dacb4033f6992aafde04d2eef86bc19d982f77b484338bf5810a373",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "clearing-standing",
+    "hidden": [],
+    "type": "Native exported ordinary standing-height view; nothing hidden; runtime acceptance open"
+  },
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-ruin-porch-standing.png",
+    "sha256": "d1c9b0acda0cd539710465720ffe087fec7fc0fe3468b11c856f5499657f5365",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "ruin-porch-standing",
+    "hidden": [],
+    "type": "Native exported ordinary standing-height view; nothing hidden; runtime acceptance open"
+  },
+  {
+    "site": "WLD-04",
+    "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-lower-stair-standing.png",
+    "sha256": "1a2164f589d4fd1ffb4486d9f4956d9f522b470a4ba5109cebf8c2d33d5ae215",
+    "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+    "view": "lower-stair-standing",
+    "hidden": [],
+    "type": "Native exported ordinary standing-height view; nothing hidden; runtime acceptance open"
+  }
+]

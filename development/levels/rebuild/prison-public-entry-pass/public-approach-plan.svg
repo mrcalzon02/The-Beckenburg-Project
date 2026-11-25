@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="500" viewBox="0 0 560 500" role="img" aria-labelledby="title desc">
+  <title id="title">Beckenburg Penitentiary public approach</title>
+  <desc id="desc">Measured exterior approach from the canonical van to the reception doorway. The guide marks tested movement across the completed geometry. The records door is separate. Interior custody circulation is outside this checkpoint.</desc>
+  <rect width="560" height="500" fill="#151d25"/>
+  <g fill="#e3eaf0" font-family="sans-serif" font-size="12">
+  <text x="24" y="32" font-size="22">Beckenburg Penitentiary</text>
+  <text x="24" y="51" fill="#a9bac8">Public approach and fitted doors · north at top</text>
+  <rect x="70" y="148" width="100" height="66" fill="#242e39" stroke="#748798"/>
+  <text x="120" y="169" text-anchor="middle">Reception</text>
+  <rect x="170" y="148" width="50" height="66" fill="#242e39" stroke="#748798"/>
+  <text x="195" y="169" text-anchor="middle">Records</text>
+  <rect x="70" y="104" width="100" height="44" fill="#242e39" stroke="#748798"/>
+  <text x="120" y="125" text-anchor="middle">Intake</text>
+  <rect x="270" y="104" width="200" height="110" fill="#242e39" stroke="#748798"/>
+  <text x="370" y="125" text-anchor="middle">Vehicle sally port</text>
+  <line x1="108.75" y1="214" x2="131.25" y2="214" stroke="#f6cf78" stroke-width="5"/>
+  <text x="102" y="219" fill="#f6cf78" text-anchor="end">Public entrance</text>
+  <line x1="170" y1="175.225" x2="170" y2="186.775" stroke="#f6cf78" stroke-width="5"/>
+  <text x="183" y="194" fill="#f6cf78">Records door</text>
+  <polyline points="370,401 343.4,401 317.15,401 317.15,357 370,357 370,269 120,269 120,181" fill="none" stroke="#88d3c6" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="370" cy="401" r="4" fill="#88d3c6"/>
+  <text x="380" y="405">Van cargo deck</text>
+  <path d="M 24 453 h 23" stroke="#88d3c6" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="53" y="457">Verified movement guide over existing ground and floors</text>
+  <path d="M 24 475 h 23" stroke="#f6cf78" stroke-width="4"/>
+  <text x="53" y="479">Operable leaf set in a measured opening</text>
+  </g>
+</svg>

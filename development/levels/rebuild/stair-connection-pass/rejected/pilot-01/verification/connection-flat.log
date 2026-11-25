@@ -1,0 +1,235 @@
+{
+  "ACADEMY": {
+    "samples": 7908,
+    "baseline_valid": 7041,
+    "new_block": 0,
+    "baseline_sweep": 6690,
+    "new_sweep_block": 0,
+    "after_valid": 7041,
+    "recovered_pose": 0
+  },
+  "ASYLUM": {
+    "samples": 7956,
+    "baseline_valid": 7172,
+    "new_block": 0,
+    "baseline_sweep": 6731,
+    "new_sweep_block": 0,
+    "after_valid": 7172,
+    "recovered_pose": 0
+  },
+  "CHURCH": {
+    "samples": 3420,
+    "baseline_valid": 3176,
+    "new_block": 0,
+    "baseline_sweep": 2922,
+    "new_sweep_block": 0,
+    "after_valid": 3176,
+    "recovered_pose": 0
+  },
+  "COLLEGE": {
+    "samples": 8289,
+    "baseline_valid": 7607,
+    "new_block": 0,
+    "baseline_sweep": 7211,
+    "new_sweep_block": 0,
+    "after_valid": 7607,
+    "recovered_pose": 0
+  },
+  "FARMHOUSE": {
+    "samples": 4101,
+    "baseline_valid": 3707,
+    "new_block": 0,
+    "baseline_sweep": 3366,
+    "new_sweep_block": 0,
+    "after_valid": 3707,
+    "recovered_pose": 0
+  },
+  "MANSION": {
+Traceback (most recent call last):
+    "samples": 7311,
+    "baseline_valid": 6924,
+    "new_block": 0,
+    "baseline_sweep": 6492,
+    "new_sweep_block": 0,
+    "after_valid": 6924,
+    "recovered_pose": 0
+  },
+  "PRISON": {
+    "samples": 6636,
+    "baseline_valid": 6034,
+    "new_block": 0,
+    "baseline_sweep": 5725,
+    "new_sweep_block": 0,
+    "after_valid": 6034,
+    "recovered_pose": 0
+  },
+  "SCHOOL": {
+    "samples": 5811,
+    "baseline_valid": 5193,
+    "new_block": 0,
+    "baseline_sweep": 4759,
+    "new_sweep_block": 0,
+    "after_valid": 5193,
+    "recovered_pose": 0
+  },
+  "WLD-03": {
+    "samples": 3549,
+    "baseline_valid": 3247,
+    "new_block": 0,
+    "baseline_sweep": 3087,
+    "new_sweep_block": 0,
+    "after_valid": 3247,
+    "recovered_pose": 0
+  },
+  "WLD-04": {
+    "samples": 1413,
+    "baseline_valid": 1184,
+    "new_block": 0,
+    "baseline_sweep": 1081,
+    "new_sweep_block": 0,
+    "after_valid": 1191,
+    "recovered_pose": 7
+  },
+  "WLD-05": {
+    "samples": 3510,
+    "baseline_valid": 3111,
+    "new_block": 0,
+    "baseline_sweep": 3006,
+    "new_sweep_block": 2,
+    "after_valid": 3140,
+    "recovered_pose": 29
+  },
+  "WLD-06": {
+    "samples": 3744,
+    "baseline_valid": 3543,
+    "new_block": 0,
+    "baseline_sweep": 3400,
+    "new_sweep_block": 0,
+    "after_valid": 3543,
+    "recovered_pose": 0
+  },
+  "WLD-07": {
+    "samples": 3579,
+    "baseline_valid": 3557,
+    "new_block": 0,
+    "baseline_sweep": 3460,
+    "new_sweep_block": 0,
+    "after_valid": 3557,
+    "recovered_pose": 0
+  },
+  "WLD-08": {
+    "samples": 4062,
+    "baseline_valid": 3275,
+    "new_block": 0,
+    "baseline_sweep": 3110,
+    "new_sweep_block": 0,
+    "after_valid": 3275,
+    "recovered_pose": 0
+  },
+  "WLD-09": {
+    "samples": 3123,
+    "baseline_valid": 2351,
+    "new_block": 0,
+    "baseline_sweep": 2254,
+    "new_sweep_block": 0,
+    "after_valid": 2351,
+    "recovered_pose": 0
+  },
+  "WLD-10": {
+    "samples": 4152,
+    "baseline_valid": 3695,
+    "new_block": 0,
+    "baseline_sweep": 3547,
+    "new_sweep_block": 0,
+    "after_valid": 3695,
+    "recovered_pose": 0
+  },
+  "WLD-11": {
+    "samples": 3663,
+    "baseline_valid": 3451,
+    "new_block": 0,
+    "baseline_sweep": 3310,
+    "new_sweep_block": 0,
+    "after_valid": 3451,
+    "recovered_pose": 0
+  },
+  "WLD-12": {
+    "samples": 4173,
+    "baseline_valid": 4077,
+    "new_block": 0,
+    "baseline_sweep": 3945,
+    "new_sweep_block": 0,
+    "after_valid": 4077,
+    "recovered_pose": 0
+  },
+  "WLD-13": {
+    "samples": 4239,
+    "baseline_valid": 3920,
+    "new_block": 0,
+    "baseline_sweep": 3795,
+    "new_sweep_block": 0,
+    "after_valid": 3920,
+    "recovered_pose": 0
+  },
+  "WLD-14": {
+    "samples": 2583,
+    "baseline_valid": 2441,
+    "new_block": 0,
+    "baseline_sweep": 2352,
+    "new_sweep_block": 0,
+    "after_valid": 2441,
+    "recovered_pose": 0
+  },
+  "WLD-15": {
+    "samples": 2940,
+    "baseline_valid": 2835,
+    "new_block": 0,
+    "baseline_sweep": 2728,
+    "new_sweep_block": 0,
+    "after_valid": 2835,
+    "recovered_pose": 0
+  },
+  "WLD-16": {
+    "samples": 3243,
+    "baseline_valid": 2980,
+    "new_block": 0,
+    "baseline_sweep": 2881,
+    "new_sweep_block": 0,
+    "after_valid": 2980,
+    "recovered_pose": 0
+  },
+  "WLD-17": {
+    "samples": 2913,
+    "baseline_valid": 2717,
+    "new_block": 0,
+    "baseline_sweep": 2629,
+    "new_sweep_block": 0,
+    "after_valid": 2717,
+    "recovered_pose": 0
+  },
+  "WLD-18": {
+    "samples": 3033,
+    "baseline_valid": 2881,
+    "new_block": 0,
+    "baseline_sweep": 2762,
+    "new_sweep_block": 0,
+    "after_valid": 2881,
+    "recovered_pose": 0
+  },
+  "WLD-07-MORTUARY": {
+    "samples": 5058,
+    "baseline_valid": 5012,
+    "new_block": 0,
+    "baseline_sweep": 4879,
+    "new_sweep_block": 0,
+    "after_valid": 5012,
+    "recovered_pose": 0
+  }
+}
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_macroterrain_fit.py", line 80, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_macroterrain_fit.py", line 79, in main
+    assert all(row['new_block']==0 and row['new_sweep_block']==0 for row in summary.values()),'Structural apertures regressed an existing flat route; inspect retained raw probes'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Structural apertures regressed an existing flat route; inspect retained raw probes

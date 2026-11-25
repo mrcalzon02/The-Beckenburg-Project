@@ -1,0 +1,40 @@
+{
+  "status": "PASS_CURRENT_CHUNKED_AND_LEGACY_SAVED_TERRAIN_IMPORT",
+  "cases": [
+    {
+      "layout": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/authored-layout.json",
+      "current_contract_preferred": true,
+      "legacy_control": false,
+      "triangles": 9462,
+      "mesh_chunks": 4,
+      "layout_sha256": "fb1284e7793ae54a04b4b99695f5babbf12ebee11d31f85ffd9844493e4c8e80"
+    },
+    {
+      "layout": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/authored-layout.json",
+      "current_contract_preferred": true,
+      "legacy_control": false,
+      "triangles": 8375,
+      "mesh_chunks": 1,
+      "layout_sha256": "dd16b01912fb2968795d8f6ae15ca6561b0a580032e655edfe4d592d7edca787"
+    },
+    {
+      "layout": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/authored-layout.json",
+      "current_contract_preferred": true,
+      "legacy_control": false,
+      "triangles": 12702,
+      "mesh_chunks": 4,
+      "layout_sha256": "47958e12195200b8f3178c9a640750ccb9fe2a77fcb42ff04c3193ff0227eb77"
+    },
+    {
+      "layout": "development/levels/rebuild/wld-18/rough-layout.json",
+      "current_contract_preferred": false,
+      "legacy_control": true,
+      "triangles": 9313,
+      "mesh_chunks": 1,
+      "layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d"
+    }
+  ],
+  "producer_sha256": "02bf19f6d4b5b8de771f556ee673effd554e45d8b532667f23ea26cb202a166d",
+  "checker_sha256": "cbcd46e26c6ea97afd51775e44fc23862da4cbce2121e4fd510b0736e342a1fc",
+  "scope": "Actual persisted current terrain imported despite deliberately stale legacy control, exact native triangles/flags, and unchanged real legacy world control. No runtime unlock."
+}

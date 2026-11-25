@@ -1,0 +1,56 @@
+{
+  "status": "REVISE_NOT_VISUALLY_ACCEPTED",
+  "views": [
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-01.png",
+      "sha256": "a6feef11748f38180010679b85d9b7686cf05480ac4af49164d7b90624cb1e00",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-02.png",
+      "sha256": "e162311bcb204398c3afa8b56a0d7e2542747235abb968c8065feb480d92206a",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-03.png",
+      "sha256": "50be0e5178161bbc6105df26f381f6c44076dd512f1a7534b07a08b7f47bd7ee",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-04.png",
+      "sha256": "5991656e69eacaa35ddf22bf6ef0d87de71d87c16d0524457b3d6bfaba2ac6c6",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-05.png",
+      "sha256": "a0b3444192b332a2dbd95d42490992c4aaa349f46bea08a2cec1a40b0b9f7337",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-06.png",
+      "sha256": "e151c6e9fc14c2bc777d3a69f28a52b507722c409e8609812d1a6e649a1d78a2",
+      "observed": true
+    }
+  ],
+  "actual_views": 36,
+  "additional_full_resolution_views": [
+    "academy-whole-site",
+    "academy-terrain-plan",
+    "wld-03-whole-site",
+    "wld-12-whole-site"
+  ],
+  "scores": {
+    "construction": 2,
+    "landscape": 2,
+    "finish": 1
+  },
+  "scale": 5,
+  "findings": [
+    "Broad terrain profiles now distinguish ridge/valley/shore/marsh from institutions; no room-reservation height snapping.",
+    "Angular/cell-stepped boundaries and narrow triangular-looking swales remain coarse; desquareify gate remains OPEN.",
+    "Old cyan/orange routes sometimes bury into or float above slopes. Actual native failures retained; revise coordinates and supported transitions.",
+    "Cave rock volumes, piers/stilts, foundation/retaining rims, dam section, water/banks and enclosure remain unfinished.",
+    "Canonical van absent; these are not arrival acceptance views.",
+    "Native overview and terrain-only views, not runtime captures. No visual/gameplay/network acceptance."
+  ]
+}

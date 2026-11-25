@@ -1,0 +1,245 @@
+{
+  "id": "WLD-11",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.glb",
+  "source_glb_sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.hcs2",
+  "source_physics_sha256": "bbb06bffe3af3091d2eae604475c9df0c914919ba90f8a938f70b6f084498239",
+  "layout": "development/levels/layouts/wld-11/layout.json",
+  "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "targeted_segments": [
+    {
+      "link": "L02",
+      "segment": 0
+    }
+  ],
+  "new_parts": 2,
+  "new_triangles": 44,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-11 L02 0 low region0",
+      "link": "L02",
+      "segment": 0,
+      "end": "low",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          32.28111277139949,
+          70.24939009510885
+        ],
+        [
+          32.78086880944303,
+          69.62469504755443
+        ],
+        [
+          31.21913119055697,
+          68.37530495244557
+        ],
+        [
+          30.71937515251343,
+          69.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-11 L02 0 high region0",
+      "link": "L02",
+      "segment": 0,
+      "end": "high",
+      "top_y": 1.2,
+      "bottom_y": 1.04,
+      "pad_polygon": [
+        [
+          40.780868809443035,
+          59.62469504755442
+        ],
+        [
+          41.28062484748657,
+          58.99999999999999
+        ],
+        [
+          39.7188872286005,
+          57.75060990489116
+        ],
+        [
+          39.219131190556965,
+          58.37530495244558
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "decisions": [
+    {
+      "link": "L02",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        32.0,
+        0,
+        69.0
+      ],
+      "actual_existing_top_receivers": [
+        "L01 support 1"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            32.0,
+            69.0
+          ],
+          [
+            31.21913119055697,
+            68.37530495244557
+          ],
+          [
+            30.71937515251343,
+            69.0
+          ]
+        ],
+        [
+          [
+            31.0,
+            69.0
+          ],
+          [
+            30.71937515251343,
+            69.0
+          ],
+          [
+            31.0,
+            69.22449987798926
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-11 L02 0 low region0"
+      ]
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        40.0,
+        1.2,
+        59.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor exterior deck south-deck 100",
+        "Floor exterior deck south-deck 115",
+        "Floor exterior deck south-deck 99",
+        "L02 flight0 step7",
+        "L03 support 0",
+        "L04 support 0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            40.780871736278804,
+            59.624691389009705
+          ],
+          [
+            40.898,
+            59.4782810593582
+          ],
+          [
+            40.898,
+            58.69390012201074
+          ],
+          [
+            40.38262484748657,
+            58.2816
+          ],
+          [
+            40.0,
+            58.2816
+          ],
+          [
+            40.0,
+            59.0
+          ]
+        ],
+        [
+          [
+            39.29409826238826,
+            58.2816
+          ],
+          [
+            39.219132926835506,
+            58.375306341468416
+          ],
+          [
+            39.99999999990043,
+            58.99999999992035
+          ],
+          [
+            39.99999999997025,
+            58.2816
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-11 L02 0 high region0"
+      ]
+    }
+  ],
+  "stair_components": [
+    "52:L02 flight0 step1",
+    "53:L02 flight0 step2",
+    "54:L02 flight0 step3",
+    "55:L02 flight0 step4",
+    "56:L02 flight0 step5",
+    "57:L02 flight0 step6",
+    "58:L02 flight0 step7",
+    "Authored stair end WLD-11 L02 0 low region0",
+    "Authored stair end WLD-11 L02 0 high region0"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1455668,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": []
+  },
+  "glb_sha256": "38168aaac87f855c5de0dcf9b0b9de047ac21e30879b87483f05846b9bbb990d",
+  "physics_sha256": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-whole-site.png",
+      "sha256": "a667dc79acc2c0463cce169aff582a00e1c0fdf7304eea8d204f064b44749f03",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-new-landings.png",
+      "sha256": "962b0ce31d4d44b88bd004973b46fbeba6538c8ed5e6bc8192814951c4dd71f3",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/layouts/wld-11/layout.json",
+  "source_layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "flight_replacements": [],
+  "corner_bridges": [],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {
+      "0": 0
+    },
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {}
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

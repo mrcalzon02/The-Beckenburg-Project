@@ -1,0 +1,2578 @@
+{
+  "sleeves": [
+    {
+      "id": "lab to cold store",
+      "faces": [
+        {
+          "face": [
+            15.0,
+            2.791,
+            43.759998
+          ],
+          "receiver": "WLD-08 clean lab S end"
+        },
+        {
+          "face": [
+            15.0,
+            2.791,
+            44.240002
+          ],
+          "receiver": "WLD-08 clean store N end"
+        }
+      ]
+    },
+    {
+      "id": "dorm to mess",
+      "faces": [
+        {
+          "face": [
+            59.0,
+            2.791,
+            43.759998
+          ],
+          "receiver": "WLD-08 clean dorm S end"
+        },
+        {
+          "face": [
+            59.0,
+            2.791,
+            44.240002
+          ],
+          "receiver": "WLD-08 clean mess N end"
+        }
+      ]
+    },
+    {
+      "id": "records exterior drop",
+      "faces": [
+        {
+          "face": [
+            43.759998,
+            2.791,
+            13.8
+          ],
+          "receiver": "WLD-08 clean records E pier0"
+        },
+        {
+          "face": [
+            44.0,
+            2.791,
+            13.8
+          ],
+          "receiver": "WLD-08 clean records E pier0"
+        }
+      ]
+    },
+    {
+      "id": "dorm north riser",
+      "faces": [
+        {
+          "face": [
+            56.5,
+            2.791,
+            26.0
+          ],
+          "receiver": "WLD-08 clean dorm N end"
+        },
+        {
+          "face": [
+            56.5,
+            2.791,
+            26.24
+          ],
+          "receiver": "WLD-08 clean dorm N end"
+        }
+      ]
+    },
+    {
+      "id": "shelter west riser",
+      "faces": [
+        {
+          "face": [
+            62.0,
+            2.791,
+            11.6
+          ],
+          "receiver": "WLD-08 clean shelter W pier0"
+        },
+        {
+          "face": [
+            62.240002,
+            2.791,
+            11.6
+          ],
+          "receiver": "WLD-08 clean shelter W pier0"
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "id": "records exterior drop",
+      "contact": [
+        44.0,
+        0.3,
+        13.8
+      ],
+      "receiver": "WLD-08 clean records E pier0"
+    },
+    {
+      "id": "records exterior drop",
+      "contact": [
+        44.0,
+        1.1,
+        13.8
+      ],
+      "receiver": "WLD-08 clean records E pier0"
+    },
+    {
+      "id": "records exterior drop",
+      "contact": [
+        44.0,
+        1.9,
+        13.8
+      ],
+      "receiver": "WLD-08 clean records E pier0"
+    },
+    {
+      "id": "records exterior drop",
+      "contact": [
+        44.0,
+        2.62,
+        13.8
+      ],
+      "receiver": "WLD-08 clean records E pier0"
+    },
+    {
+      "id": "dorm north riser",
+      "contact": [
+        56.5,
+        0.3,
+        26.0
+      ],
+      "receiver": "WLD-08 clean dorm N end"
+    },
+    {
+      "id": "dorm north riser",
+      "contact": [
+        56.5,
+        1.1,
+        26.0
+      ],
+      "receiver": "WLD-08 clean dorm N end"
+    },
+    {
+      "id": "dorm north riser",
+      "contact": [
+        56.5,
+        1.9,
+        26.0
+      ],
+      "receiver": "WLD-08 clean dorm N end"
+    },
+    {
+      "id": "dorm north riser",
+      "contact": [
+        56.5,
+        2.62,
+        26.0
+      ],
+      "receiver": "WLD-08 clean dorm N end"
+    },
+    {
+      "id": "shelter west riser",
+      "contact": [
+        62.0,
+        0.3,
+        11.6
+      ],
+      "receiver": "WLD-08 clean shelter W pier0"
+    },
+    {
+      "id": "shelter west riser",
+      "contact": [
+        62.0,
+        1.1,
+        11.6
+      ],
+      "receiver": "WLD-08 clean shelter W pier0"
+    },
+    {
+      "id": "shelter west riser",
+      "contact": [
+        62.0,
+        1.9,
+        11.6
+      ],
+      "receiver": "WLD-08 clean shelter W pier0"
+    },
+    {
+      "id": "shelter west riser",
+      "contact": [
+        62.0,
+        2.62,
+        11.6
+      ],
+      "receiver": "WLD-08 clean shelter W pier0"
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        26.866167
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        28.0285
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        29.190834
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        30.353167
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        31.515499
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        32.677834
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        33.840168
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        35.002499
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        36.164833
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        37.327168
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        38.489498
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        39.651833
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        40.814167
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        41.976501
+      ]
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "contact": [
+        15.0,
+        2.84,
+        43.138832
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        32.8605,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        34.001499,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        35.142502,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        36.283501,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        37.4245,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        38.565498,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        39.706501,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        40.8475,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        41.988499,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        43.129501,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "contact": [
+        43.700001,
+        2.84,
+        13.475
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        56.5,
+        2.84,
+        26.775
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        56.5,
+        2.84,
+        27.725
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        56.916668,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        57.75,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        58.583332,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        28.796923
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        29.990768
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        31.184616
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        32.37846
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        33.572308
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        34.766155
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        35.959999
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        37.153847
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        38.347691
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        39.541538
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        40.735386
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        41.92923
+      ]
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "contact": [
+        59.0,
+        2.84,
+        43.123077
+      ]
+    },
+    {
+      "id": "NW-06 supply to switch",
+      "contact": [
+        15.0,
+        2.84,
+        44.299999
+      ]
+    },
+    {
+      "id": "NW-06 supply to switch",
+      "contact": [
+        14.5125,
+        2.84,
+        44.32
+      ]
+    },
+    {
+      "id": "NW-06 supply to switch",
+      "contact": [
+        13.5375,
+        2.84,
+        44.32
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        13.05,
+        2.84,
+        44.862103
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        13.05,
+        2.84,
+        46.048302
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        13.05,
+        2.84,
+        47.234501
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        13.05,
+        2.84,
+        48.4207
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        13.05,
+        2.84,
+        49.606899
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        12.625,
+        2.84,
+        50.200001
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        11.775,
+        2.84,
+        50.200001
+      ]
+    },
+    {
+      "id": "NW-06 switched leg",
+      "contact": [
+        10.925,
+        2.84,
+        50.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        55.927776,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        54.783333,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        53.638889,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        52.494446,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        51.349998,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        50.205555,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        49.061111,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        47.916668,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.772221,
+        2.84,
+        28.200001
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        28.794445
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        29.983334
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        31.172222
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        32.361111
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        33.549999
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        34.738888
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        35.927776
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        37.116665
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        46.200001,
+        2.84,
+        38.305557
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        45.727501,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "contact": [
+        44.782501,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        44.81469,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        45.906063,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        46.997437,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        48.088814,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        49.180187,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        50.271564,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        51.362938,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        52.454311,
+        2.84,
+        38.900002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        53.0,
+        2.84,
+        38.325001
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        53.0,
+        2.84,
+        37.175003
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        53.0,
+        2.84,
+        36.025002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        53.0,
+        2.84,
+        34.875
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        53.0,
+        2.84,
+        33.725002
+      ]
+    },
+    {
+      "id": "NW-01 switched leg",
+      "contact": [
+        53.0,
+        2.84,
+        32.575001
+      ]
+    },
+    {
+      "id": "NW-02 supply to switch",
+      "contact": [
+        59.0,
+        2.84,
+        44.299999
+      ]
+    },
+    {
+      "id": "NW-02 supply to switch",
+      "contact": [
+        58.481251,
+        2.84,
+        44.32
+      ]
+    },
+    {
+      "id": "NW-02 supply to switch",
+      "contact": [
+        57.443748,
+        2.84,
+        44.32
+      ]
+    },
+    {
+      "id": "NW-02 supply to switch",
+      "contact": [
+        56.40625,
+        2.84,
+        44.32
+      ]
+    },
+    {
+      "id": "NW-02 supply to switch",
+      "contact": [
+        55.368752,
+        2.84,
+        44.32
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        54.849998,
+        2.84,
+        44.842102
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        54.849998,
+        2.84,
+        45.9883
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        54.849998,
+        2.84,
+        47.134499
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        54.849998,
+        2.84,
+        48.280701
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        54.849998,
+        2.84,
+        49.426899
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        54.387497,
+        2.84,
+        50.0
+      ]
+    },
+    {
+      "id": "NW-02 switched leg",
+      "contact": [
+        53.462498,
+        2.84,
+        50.0
+      ]
+    },
+    {
+      "id": "NW-09 supply to switch",
+      "contact": [
+        62.305,
+        2.84,
+        11.6
+      ]
+    },
+    {
+      "id": "NW-09 supply to switch",
+      "contact": [
+        62.310001,
+        2.84,
+        12.02
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        62.735374,
+        2.84,
+        12.44
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        63.668125,
+        2.84,
+        12.44
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        64.600876,
+        2.84,
+        12.44
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        65.533623,
+        2.84,
+        12.44
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        66.0,
+        2.84,
+        12.91
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        66.0,
+        2.84,
+        13.85
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        66.0,
+        2.84,
+        14.79
+      ]
+    },
+    {
+      "id": "NW-09 switched leg",
+      "contact": [
+        66.0,
+        2.84,
+        15.73
+      ]
+    }
+  ],
+  "soil_contacts": [
+    {
+      "id": "east service trunk",
+      "contact": [
+        44.060001,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        44.600868,
+        -0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        45.141739,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        45.68261,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        46.223476,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        46.764347,
+        -0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        47.305218,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        47.846088,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        48.386955,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        48.927826,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        49.468697,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        50.009563,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        50.550434,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        51.091305,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        51.632175,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        52.173042,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        52.713913,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        53.254784,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        53.79565,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        54.336521,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        54.877392,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        55.418262,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        55.959129,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        56.5,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        56.5,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        57.043999,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        57.588001,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        58.132,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        58.675999,
+        -0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        59.220001,
+        -0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        59.764,
+        -0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        60.307999,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        60.852001,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.396,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        0.0,
+        13.36
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        0.0,
+        12.92
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        0.0,
+        12.48
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        -0.0,
+        12.04
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "east service trunk",
+      "contact": [
+        61.939999,
+        0.0,
+        11.6
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        13.8
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        14.327826
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        14.855652
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        15.383478
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        15.911304
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        16.439131
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        16.966957
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        17.494783
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        -0.0,
+        18.022608
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        18.550434
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        19.07826
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        19.606087
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        20.133913
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        -0.0,
+        20.661739
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        21.189566
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        21.717392
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        -0.0,
+        22.245218
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        -0.0,
+        22.773043
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        23.300869
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        23.828695
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        -0.0,
+        24.356522
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        24.884348
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        25.412174
+      ],
+      "cover": 0.62
+    },
+    {
+      "id": "dorm lateral",
+      "contact": [
+        56.5,
+        0.0,
+        25.940001
+      ],
+      "cover": 0.62
+    }
+  ],
+  "minimum_cover": 0.62,
+  "services": [
+    {
+      "id": "northwatch-switch-06",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        13.05,
+        1.25,
+        44.241001
+      ],
+      "yaw": 0.0,
+      "style": "NW-06"
+    },
+    {
+      "id": "northwatch-store-task-light",
+      "type": "light",
+      "room": 6,
+      "position": [
+        10.5,
+        2.656,
+        50.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-switch-01",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        44.241001,
+        1.25,
+        38.900002
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "NW-01"
+    },
+    {
+      "id": "northwatch-dorm-task-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        53.0,
+        2.656,
+        32.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-switch-02",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        54.849998,
+        1.25,
+        44.241001
+      ],
+      "yaw": 0.0,
+      "style": "NW-02"
+    },
+    {
+      "id": "northwatch-mess-task-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        53.0,
+        2.656,
+        50.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-switch-09",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        62.241001,
+        1.25,
+        12.44
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "NW-09"
+    },
+    {
+      "id": "northwatch-shelter-task-light",
+      "type": "light",
+      "room": 9,
+      "position": [
+        66.0,
+        2.656,
+        16.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "loads": [
+    {
+      "id": "northwatch-store-task-light",
+      "room": 6,
+      "space": "store",
+      "circuit": "NW-06",
+      "mount": [
+        10.5,
+        2.84,
+        50.200001
+      ],
+      "emitter": [
+        10.5,
+        2.656,
+        50.200001
+      ],
+      "support": "Ceiling cap store"
+    },
+    {
+      "id": "northwatch-dorm-task-light",
+      "room": 1,
+      "space": "dorm",
+      "circuit": "NW-01",
+      "mount": [
+        53.0,
+        2.84,
+        32.0
+      ],
+      "emitter": [
+        53.0,
+        2.656,
+        32.0
+      ],
+      "support": "Ceiling cap dorm"
+    },
+    {
+      "id": "northwatch-mess-task-light",
+      "room": 2,
+      "space": "mess",
+      "circuit": "NW-02",
+      "mount": [
+        53.0,
+        2.84,
+        50.0
+      ],
+      "emitter": [
+        53.0,
+        2.656,
+        50.0
+      ],
+      "support": "Ceiling cap mess"
+    },
+    {
+      "id": "northwatch-shelter-task-light",
+      "room": 9,
+      "space": "shelter",
+      "circuit": "NW-09",
+      "mount": [
+        66.0,
+        2.84,
+        16.200001
+      ],
+      "emitter": [
+        66.0,
+        2.656,
+        16.200001
+      ],
+      "support": "Ceiling cap shelter"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "northwatch-switch-06",
+      "circuit": "NW-06",
+      "space": "store",
+      "room": 6,
+      "at": [
+        13.05,
+        1.25,
+        44.241001
+      ],
+      "support": "WLD-08 clean store N end",
+      "feet": [
+        13.05,
+        0,
+        45.44
+      ]
+    },
+    {
+      "id": "northwatch-switch-01",
+      "circuit": "NW-01",
+      "space": "dorm",
+      "room": 1,
+      "at": [
+        44.241001,
+        1.25,
+        38.900002
+      ],
+      "support": "WLD-08 clean dorm W pier0",
+      "feet": [
+        45.44,
+        0,
+        38.9
+      ]
+    },
+    {
+      "id": "northwatch-switch-02",
+      "circuit": "NW-02",
+      "space": "mess",
+      "room": 2,
+      "at": [
+        54.849998,
+        1.25,
+        44.241001
+      ],
+      "support": "WLD-08 clean mess N end",
+      "feet": [
+        54.85,
+        0,
+        45.44
+      ]
+    },
+    {
+      "id": "northwatch-switch-09",
+      "circuit": "NW-09",
+      "space": "shelter",
+      "room": 9,
+      "at": [
+        62.241001,
+        1.25,
+        12.44
+      ],
+      "support": "WLD-08 clean shelter W pier0",
+      "feet": [
+        63.44,
+        0,
+        12.44
+      ]
+    }
+  ],
+  "raceways": [
+    {
+      "id": "east service trunk",
+      "points": [
+        [
+          44.06,
+          -0.62,
+          13.8
+        ],
+        [
+          56.5,
+          -0.62,
+          13.8
+        ],
+        [
+          61.94,
+          -0.62,
+          13.8
+        ],
+        [
+          61.94,
+          -0.62,
+          11.6
+        ]
+      ],
+      "radius": 0.042,
+      "visible": false
+    },
+    {
+      "id": "dorm lateral",
+      "points": [
+        [
+          56.5,
+          -0.62,
+          13.8
+        ],
+        [
+          56.5,
+          -0.62,
+          25.94
+        ]
+      ],
+      "radius": 0.042,
+      "visible": false
+    },
+    {
+      "id": "NW-06 switch drop",
+      "points": [
+        [
+          13.05,
+          1.302,
+          44.269001
+        ],
+        [
+          13.05,
+          2.770000152587891,
+          44.269001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-01 switch drop",
+      "points": [
+        [
+          44.269001,
+          1.302,
+          38.900002
+        ],
+        [
+          44.269001,
+          2.770000152587891,
+          38.900002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-02 switch drop",
+      "points": [
+        [
+          54.849998,
+          1.302,
+          44.269001
+        ],
+        [
+          54.849998,
+          2.770000152587891,
+          44.269001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-09 switch drop",
+      "points": [
+        [
+          62.269001,
+          1.302,
+          12.44
+        ],
+        [
+          62.269001,
+          2.770000152587891,
+          12.44
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "lab to cold store closed wall sleeve",
+      "points": [
+        [
+          15,
+          2.791,
+          43.72
+        ],
+        [
+          15,
+          2.791,
+          44.28
+        ]
+      ],
+      "radius": 0.021,
+      "visible": false
+    },
+    {
+      "id": "dorm to mess closed wall sleeve",
+      "points": [
+        [
+          59,
+          2.791,
+          43.72
+        ],
+        [
+          59,
+          2.791,
+          44.28
+        ]
+      ],
+      "radius": 0.021,
+      "visible": false
+    },
+    {
+      "id": "records exterior drop closed wall sleeve",
+      "points": [
+        [
+          43.699999999999996,
+          2.791,
+          13.8
+        ],
+        [
+          44.06,
+          2.791,
+          13.8
+        ]
+      ],
+      "radius": 0.021,
+      "visible": false
+    },
+    {
+      "id": "records exterior drop",
+      "points": [
+        [
+          44.06,
+          2.791,
+          13.8
+        ],
+        [
+          44.06,
+          -0.62,
+          13.8
+        ]
+      ],
+      "radius": 0.035,
+      "visible": true
+    },
+    {
+      "id": "dorm north riser closed wall sleeve",
+      "points": [
+        [
+          56.5,
+          2.791,
+          25.94
+        ],
+        [
+          56.5,
+          2.791,
+          26.299999999999997
+        ]
+      ],
+      "radius": 0.021,
+      "visible": false
+    },
+    {
+      "id": "dorm north riser",
+      "points": [
+        [
+          56.5,
+          2.791,
+          25.94
+        ],
+        [
+          56.5,
+          -0.62,
+          25.94
+        ]
+      ],
+      "radius": 0.035,
+      "visible": true
+    },
+    {
+      "id": "shelter west riser closed wall sleeve",
+      "points": [
+        [
+          61.94,
+          2.791,
+          11.6
+        ],
+        [
+          62.300000000000004,
+          2.791,
+          11.6
+        ]
+      ],
+      "radius": 0.021,
+      "visible": false
+    },
+    {
+      "id": "shelter west riser",
+      "points": [
+        [
+          61.94,
+          2.791,
+          11.6
+        ],
+        [
+          61.94,
+          -0.62,
+          11.6
+        ]
+      ],
+      "radius": 0.035,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN lab feeder",
+      "points": [
+        [
+          15,
+          2.791,
+          26.285
+        ],
+        [
+          15,
+          2.791,
+          43.72
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN records feeder",
+      "points": [
+        [
+          32.29,
+          2.791,
+          13.15
+        ],
+        [
+          43.7,
+          2.791,
+          13.15
+        ],
+        [
+          43.7,
+          2.791,
+          13.8
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN dorm north feeder",
+      "points": [
+        [
+          56.5,
+          2.791,
+          26.3
+        ],
+        [
+          56.5,
+          2.791,
+          28.2
+        ],
+        [
+          59,
+          2.791,
+          28.2
+        ],
+        [
+          59,
+          2.791,
+          43.72
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-06 supply to switch",
+      "points": [
+        [
+          15,
+          2.791,
+          44.28
+        ],
+        [
+          15,
+          2.791,
+          44.32
+        ],
+        [
+          13.05,
+          2.791,
+          44.32
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-06 junction link",
+      "points": [
+        [
+          13.05,
+          2.791,
+          44.32
+        ],
+        [
+          13.05,
+          2.770000152587891,
+          44.269001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-06 switched leg riser",
+      "points": [
+        [
+          13.05,
+          2.770000152587891,
+          44.269001
+        ],
+        [
+          13.05,
+          2.791,
+          44.269001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-06 switched leg",
+      "points": [
+        [
+          13.05,
+          2.791,
+          44.269001
+        ],
+        [
+          13.05,
+          2.791,
+          50.2
+        ],
+        [
+          10.5,
+          2.791,
+          50.2
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-01 supply to switch",
+      "points": [
+        [
+          56.5,
+          2.791,
+          28.2
+        ],
+        [
+          46.2,
+          2.791,
+          28.2
+        ],
+        [
+          46.2,
+          2.791,
+          38.9
+        ],
+        [
+          44.31,
+          2.791,
+          38.9
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-01 junction link",
+      "points": [
+        [
+          44.31,
+          2.791,
+          38.9
+        ],
+        [
+          44.269001,
+          2.770000152587891,
+          38.900002
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-01 switched leg riser",
+      "points": [
+        [
+          44.269001,
+          2.770000152587891,
+          38.900002
+        ],
+        [
+          44.269001,
+          2.791,
+          38.900002
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-01 switched leg",
+      "points": [
+        [
+          44.269001,
+          2.791,
+          38.900002
+        ],
+        [
+          53,
+          2.791,
+          38.900002
+        ],
+        [
+          53,
+          2.791,
+          32
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-02 supply to switch",
+      "points": [
+        [
+          59,
+          2.791,
+          44.28
+        ],
+        [
+          59,
+          2.791,
+          44.32
+        ],
+        [
+          54.85,
+          2.791,
+          44.32
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-02 junction link",
+      "points": [
+        [
+          54.85,
+          2.791,
+          44.32
+        ],
+        [
+          54.849998,
+          2.770000152587891,
+          44.269001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-02 switched leg riser",
+      "points": [
+        [
+          54.849998,
+          2.770000152587891,
+          44.269001
+        ],
+        [
+          54.849998,
+          2.791,
+          44.269001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-02 switched leg",
+      "points": [
+        [
+          54.849998,
+          2.791,
+          44.269001
+        ],
+        [
+          54.849998,
+          2.791,
+          50
+        ],
+        [
+          53,
+          2.791,
+          50
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-09 supply to switch",
+      "points": [
+        [
+          62.3,
+          2.791,
+          11.6
+        ],
+        [
+          62.31,
+          2.791,
+          11.6
+        ],
+        [
+          62.31,
+          2.791,
+          12.44
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-09 junction link",
+      "points": [
+        [
+          62.31,
+          2.791,
+          12.44
+        ],
+        [
+          62.269001,
+          2.770000152587891,
+          12.44
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-09 switched leg riser",
+      "points": [
+        [
+          62.269001,
+          2.770000152587891,
+          12.44
+        ],
+        [
+          62.269001,
+          2.791,
+          12.44
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-09 switched leg",
+      "points": [
+        [
+          62.269001,
+          2.791,
+          12.44
+        ],
+        [
+          66,
+          2.791,
+          12.44
+        ],
+        [
+          66,
+          2.791,
+          16.2
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    }
+  ],
+  "canonical_assets": {
+    "light_switch_1": "6cc8c501605743d0d13bb96b840e8da01d5ea8825d8c13ee284f72f90742159e",
+    "level_utility_light": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+  },
+  "exports": {
+    "development/levels/rebuild/northwatch-surface-power-pass/wld-08/station-with-surface-power.blend": "831b4e21f0a88226c5338b5c4f4be5fa52374253a8d316d2736ddf5534db86ba",
+    "development/levels/rebuild/northwatch-surface-power-pass/wld-08/station-with-surface-power.glb": "0514ad83378b33125604d156ba1053c0bf74c7f4676bb4d67e49d62a5817e140",
+    "development/levels/rebuild/northwatch-surface-power-pass/wld-08/station-with-surface-power.hcs2": "83d716c67ea4ab2557201f404412e5e44e3e0e6c8cdc5e9c40b5bdfe7a8609ea"
+  },
+  "previous_scene": "14c72a89ad6baeb56eaee74cc0f0954675207e97dc1dc6d17d89fa9c782351e5",
+  "retained_collision_parts": 677,
+  "added_collision_parts": 192
+}

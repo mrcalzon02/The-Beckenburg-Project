@@ -82,12 +82,12 @@ public final class FieldEquipment {
     public String active(){return slots[current];}
     /** Host-only handoff: the dropped device cannot remain in the belt. */
     void dropActive(String id){
-        if(!"EMF_READER".equals(id)||!id.equals(active()))
-            throw new IllegalArgumentException("only the carried EMF reader can be dropped in this slice");
+        if(!functional(id)||!id.equals(active()))
+            throw new IllegalArgumentException("only the carried equipment can be dropped");
         slots[current]=EMPTY;
     }
     void restoreDropped(String id,int originalSlot){
-        if(!"EMF_READER".equals(id)||owned(id)==null)
+        if(!functional(id)||owned(id)==null)
             throw new IllegalArgumentException("unknown dropped equipment");
         for(String item:slots)if(item.equals(id))
             throw new IllegalArgumentException("equipment already carried");

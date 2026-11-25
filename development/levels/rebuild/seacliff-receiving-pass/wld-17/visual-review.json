@@ -1,0 +1,257 @@
+{
+  "model": "development/levels/rebuild/seacliff-receiving-pass/wld-17/founded-receiving-stairs.glb",
+  "sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+  "native_sha256": "6c49fc48e68c19c696d73857160bf2b9fed82b9fe18314839dc75bdea5a4f5ce",
+  "plan": "development/levels/rebuild/seacliff-receiving-pass/wld-17/receiving-plan.svg",
+  "plan_sha256": "59165004f6beae0e175e274cf0fa9a0832dbdcf98633774bce0136f51583b24d",
+  "transfer_wall_seats": [
+    {
+      "beam": "Battery transfer beam 1 over lower casemate walls region0",
+      "bearing_point": [
+        24,
+        3,
+        21.25
+      ],
+      "retained_walls": [
+        "Flat route shell Wall barracks E",
+        "Flat route shell Wall records W"
+      ]
+    },
+    {
+      "beam": "Battery transfer beam 1 over lower casemate walls region0",
+      "bearing_point": [
+        34,
+        3,
+        21.25
+      ],
+      "retained_walls": [
+        "Flat route shell Wall records E.001"
+      ]
+    },
+    {
+      "beam": "Battery transfer beam 1 over lower casemate walls region0",
+      "bearing_point": [
+        44,
+        3,
+        21.25
+      ],
+      "retained_walls": [
+        "Flat route shell Wall plant W.001",
+        "Flat route shell Wall pump E.001"
+      ]
+    },
+    {
+      "beam": "Battery transfer beam 2 over lower casemate walls region0",
+      "bearing_point": [
+        24,
+        3,
+        23.55
+      ],
+      "retained_walls": [
+        "Flat route shell Wall barracks E",
+        "Flat route shell Wall records W"
+      ]
+    },
+    {
+      "beam": "Battery transfer beam 2 over lower casemate walls region0",
+      "bearing_point": [
+        34,
+        3,
+        23.55
+      ],
+      "retained_walls": [
+        "Flat route shell Wall records E.001"
+      ]
+    },
+    {
+      "beam": "Battery transfer beam 2 over lower casemate walls region0",
+      "bearing_point": [
+        44,
+        3,
+        23.55
+      ],
+      "retained_walls": [
+        "Flat route shell Wall plant W.001",
+        "Flat route shell Wall pump E.001"
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-before.png",
+      "sha256": "39a965e75452003d95d28340807fbd3baf8aec5dd4c85c9fe035bb991041dfa6",
+      "source_glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "camera": [
+        83,
+        -94,
+        60
+      ],
+      "focus": [
+        39,
+        -37,
+        4
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-exterior-courts-before.png",
+      "sha256": "3537f53c6fb57340b4a626042ed974f1f24b10d6a55b41e13046e758081891c4",
+      "source_glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "camera": [
+        48,
+        -70,
+        16
+      ],
+      "focus": [
+        37,
+        -57,
+        1.8
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-before.png",
+      "sha256": "310a3c0afa3d0cf4073c8bc968f972fa5ec0f7d1a27212d63999d49bf4c6fcf8",
+      "source_glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "camera": [
+        30,
+        -22.12,
+        5.62
+      ],
+      "focus": [
+        37.5,
+        -22.05,
+        6.8
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-after.png",
+      "sha256": "dcbfea9e52abcba04ecba732f0b80dbe7376c1bbb4258d18415ee45e1ca6655f",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        83,
+        -94,
+        60
+      ],
+      "focus": [
+        39,
+        -37,
+        4
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-exterior-courts-after.png",
+      "sha256": "9527bec474df061b6c5aec85544219b25be351ca80c27ac26022c751aa1de0d4",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        48,
+        -70,
+        16
+      ],
+      "focus": [
+        37,
+        -57,
+        1.8
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-ramp-to-battery-after.png",
+      "sha256": "b856d65d60ce240253be9484e6f964bbbb8572de9458e844cfb76e9049590967",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        34,
+        -83,
+        1.62
+      ],
+      "focus": [
+        33,
+        -67,
+        1.43
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-intermediate-court-after.png",
+      "sha256": "56a61b7f9ea0c5494c40ec7e8e5e1a5325e98f05dcb81e2ebf085cefa114ee6c",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        33.65,
+        -57.25,
+        3.62
+      ],
+      "focus": [
+        39.7,
+        -56.1,
+        2.85
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-after.png",
+      "sha256": "67b936bcac8c19a8fd34429db5b016f33683ff52ddfde1ec3ae8c021e8b2bae9",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        30,
+        -22.12,
+        5.62
+      ],
+      "focus": [
+        37.5,
+        -22.05,
+        6.8
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-upper-after.png",
+      "sha256": "7655389678d4a9213d5fbd317e61dab71b5005d54ea75d3d6d827a548004fcba",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        38.8,
+        -24.35,
+        8.62
+      ],
+      "focus": [
+        34.5,
+        -22.0,
+        6.44
+      ],
+      "hidden_for_section": [],
+      "canonical_review_van": true
+    },
+    {
+      "image": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-section-after.png",
+      "sha256": "2aa2d326ef121b005e1bf6ceefbbf9ec3d03224405cbfbdab39d3cd120764850",
+      "source_glb_sha256": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+      "camera": [
+        43,
+        -26.7,
+        15.5
+      ],
+      "focus": [
+        33,
+        -21.75,
+        5.6
+      ],
+      "hidden_for_section": [
+        "Ceiling cap director",
+        "Wall director S",
+        "Wall director E",
+        "Battery flight south side region0",
+        "Battery southeast return region0"
+      ],
+      "canonical_review_van": true
+    }
+  ]
+}

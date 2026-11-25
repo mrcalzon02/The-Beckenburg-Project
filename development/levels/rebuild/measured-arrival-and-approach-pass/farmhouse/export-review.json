@@ -1,0 +1,42 @@
+{
+  "source_glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+  "source_native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810",
+  "canonical_van_triangles": 2689,
+  "canonical_van_geometry_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "door_controls": {
+    "aperture_rays": 36,
+    "standing_sills": 24,
+    "solid_jamb_rays": 8
+  },
+  "school_walkable_receivers": [],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-ground-stair-transfer.png",
+      "sha256": "74b5c303813af56b59bf54570ccf2527af065c89cb53b11647a40e05b6825540",
+      "camera": [
+        23.13,
+        -20.2,
+        1.55
+      ],
+      "target": [
+        23.13,
+        -13.1,
+        1.1
+      ]
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-barn-loft-threshold.png",
+      "sha256": "1e28b92e8bba69983523ba75178f440c187b1b95aa240fb6a4d80b3544eb8612",
+      "camera": [
+        37.2,
+        -17.5,
+        1.57
+      ],
+      "target": [
+        41.1,
+        -17.35,
+        1.15
+      ]
+    }
+  ]
+}

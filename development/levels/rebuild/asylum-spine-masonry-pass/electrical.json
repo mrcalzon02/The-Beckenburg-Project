@@ -1,0 +1,1080 @@
+{
+  "board": {
+    "wall": "Wall plant N",
+    "floor": "Floor plant",
+    "source": "level_electrical_bank_worn",
+    "source_sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+    "bounds": [
+      [
+        38.889999,
+        -2.94,
+        24.120001
+      ],
+      [
+        41.110001,
+        -0.821695,
+        24.49
+      ]
+    ],
+    "connected_terminals": [
+      [
+        39.39,
+        -0.856,
+        24.219999923706055
+      ],
+      [
+        40.15,
+        -0.856,
+        24.219999923706055
+      ],
+      [
+        40.91,
+        -0.856,
+        24.219999923706055
+      ]
+    ],
+    "incoming_receiver": {
+      "component": "Wall plant N",
+      "at": [
+        40.150002,
+        -0.23,
+        24.08
+      ]
+    }
+  },
+  "hiding_cupboards": [
+    {
+      "id": "asylum-day-cupboard",
+      "space": "day",
+      "owner": 2,
+      "position": [
+        12.1,
+        0,
+        48.9
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          11.25,
+          0.0,
+          48.198002
+        ],
+        [
+          12.950001,
+          2.31,
+          49.5
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "asylum-records-cupboard",
+      "space": "records",
+      "owner": 8,
+      "position": [
+        42.75,
+        0,
+        56.95
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          41.900002,
+          0.0,
+          56.248001
+        ],
+        [
+          43.599998,
+          2.31,
+          57.549999
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "asylum-plant-cupboard",
+      "space": "plant",
+      "owner": 11,
+      "position": [
+        43.6,
+        -3,
+        24.85
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          42.75,
+          -3.0,
+          24.25
+        ],
+        [
+          44.449997,
+          -0.69,
+          25.552
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "asylum-switch-00",
+      "circuit": "AS-00",
+      "space": "spine",
+      "room": 0,
+      "at": [
+        26.080999,
+        1.25,
+        36.799999
+      ],
+      "support": "Entrance rebuild Asylum shared spine west 4",
+      "feet": [
+        27.3,
+        0,
+        36.8
+      ]
+    },
+    {
+      "id": "asylum-switch-01",
+      "circuit": "AS-01",
+      "space": "admission",
+      "room": 1,
+      "at": [
+        32.299999,
+        1.25,
+        57.758999
+      ],
+      "support": "ASYLUM clean admission S end",
+      "feet": [
+        32.3,
+        0,
+        56.85
+      ]
+    },
+    {
+      "id": "asylum-switch-02",
+      "circuit": "AS-02",
+      "space": "day",
+      "room": 2,
+      "at": [
+        13.5,
+        1.25,
+        49.918999
+      ],
+      "support": "Wall day S",
+      "feet": [
+        13.5,
+        0,
+        48.85
+      ]
+    },
+    {
+      "id": "asylum-switch-03",
+      "circuit": "AS-03",
+      "space": "dining",
+      "room": 3,
+      "at": [
+        36.200001,
+        1.25,
+        49.918999
+      ],
+      "support": "Wall dining S",
+      "feet": [
+        36.2,
+        0,
+        48.85
+      ]
+    },
+    {
+      "id": "asylum-switch-04",
+      "circuit": "AS-04",
+      "space": "ground-ward-link",
+      "room": 4,
+      "at": [
+        18.5,
+        1.25,
+        19.080999
+      ],
+      "support": "Wall ground-north-b S",
+      "feet": [
+        18.5,
+        0,
+        20.1
+      ]
+    },
+    {
+      "id": "asylum-switch-05",
+      "circuit": "AS-05",
+      "space": "treatment",
+      "room": 5,
+      "at": [
+        41.0,
+        1.25,
+        39.918999
+      ],
+      "support": "Wall food-store N",
+      "feet": [
+        41,
+        0,
+        38.8
+      ]
+    },
+    {
+      "id": "asylum-switch-06",
+      "circuit": "AS-06",
+      "space": "hydro-change",
+      "room": 6,
+      "at": [
+        48.918999,
+        1.25,
+        31.700001
+      ],
+      "support": "Wall hydro-change E",
+      "feet": [
+        47.8,
+        0,
+        31.7
+      ]
+    },
+    {
+      "id": "asylum-switch-07",
+      "circuit": "AS-07",
+      "space": "upper-spine",
+      "room": 7,
+      "at": [
+        26.080999,
+        4.65,
+        33.599998
+      ],
+      "support": "Wall upper-lift E",
+      "feet": [
+        27.3,
+        3.4,
+        33.6
+      ]
+    },
+    {
+      "id": "asylum-switch-08",
+      "circuit": "AS-08",
+      "space": "records",
+      "room": 8,
+      "at": [
+        41.0,
+        1.25,
+        57.758999
+      ],
+      "support": "ASYLUM clean records S end",
+      "feet": [
+        41,
+        0,
+        56.8
+      ]
+    },
+    {
+      "id": "asylum-switch-09",
+      "circuit": "AS-09",
+      "space": "quiet-lobby",
+      "room": 9,
+      "at": [
+        52.349998,
+        1.25,
+        12.081
+      ],
+      "support": "Wall quiet-observation S",
+      "feet": [
+        52.35,
+        0,
+        13.2
+      ]
+    },
+    {
+      "id": "asylum-switch-10",
+      "circuit": "AS-10",
+      "space": "chapel",
+      "room": 10,
+      "at": [
+        19.0,
+        1.25,
+        9.919
+      ],
+      "support": "Flat route shell Wall chapel S.001",
+      "feet": [
+        19,
+        0,
+        8.8
+      ]
+    },
+    {
+      "id": "asylum-switch-11",
+      "circuit": "AS-11",
+      "space": "plant",
+      "room": 11,
+      "at": [
+        37.400002,
+        -1.75,
+        24.080999
+      ],
+      "support": "Wall plant N",
+      "feet": [
+        37.4,
+        -3,
+        25.15
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "id": "asylum-spine-load-1",
+      "room": 0,
+      "space": "spine",
+      "circuit": "AS-00",
+      "mount": [
+        27.5,
+        3.24,
+        16.5
+      ],
+      "emitter": [
+        27.5,
+        3.056,
+        16.5
+      ],
+      "support": "Floor upper-spine"
+    },
+    {
+      "id": "asylum-spine-load-2",
+      "room": 0,
+      "space": "spine",
+      "circuit": "AS-00",
+      "mount": [
+        27.5,
+        3.24,
+        32.0
+      ],
+      "emitter": [
+        27.5,
+        3.056,
+        32.0
+      ],
+      "support": "Floor upper-spine"
+    },
+    {
+      "id": "asylum-spine-load-3",
+      "room": 0,
+      "space": "spine",
+      "circuit": "AS-00",
+      "mount": [
+        27.5,
+        3.24,
+        47.0
+      ],
+      "emitter": [
+        27.5,
+        3.056,
+        47.0
+      ],
+      "support": "Ceiling cap spine"
+    },
+    {
+      "id": "asylum-admission-load-1",
+      "room": 1,
+      "space": "admission",
+      "circuit": "AS-01",
+      "mount": [
+        29.0,
+        3.24,
+        54.0
+      ],
+      "emitter": [
+        29.0,
+        3.056,
+        54.0
+      ],
+      "support": "Ceiling cap admission"
+    },
+    {
+      "id": "asylum-admission-load-2",
+      "room": 1,
+      "space": "admission",
+      "circuit": "AS-01",
+      "mount": [
+        32.5,
+        3.24,
+        54.0
+      ],
+      "emitter": [
+        32.5,
+        3.056,
+        54.0
+      ],
+      "support": "Ceiling cap admission"
+    },
+    {
+      "id": "asylum-day-load-1",
+      "room": 2,
+      "space": "day",
+      "circuit": "AS-02",
+      "mount": [
+        15.0,
+        3.24,
+        45.0
+      ],
+      "emitter": [
+        15.0,
+        3.056,
+        45.0
+      ],
+      "support": "Ceiling cap day"
+    },
+    {
+      "id": "asylum-day-load-2",
+      "room": 2,
+      "space": "day",
+      "circuit": "AS-02",
+      "mount": [
+        22.0,
+        3.24,
+        44.0
+      ],
+      "emitter": [
+        22.0,
+        3.056,
+        44.0
+      ],
+      "support": "Ceiling cap day"
+    },
+    {
+      "id": "asylum-dining-load-1",
+      "room": 3,
+      "space": "dining",
+      "circuit": "AS-03",
+      "mount": [
+        33.0,
+        3.24,
+        44.0
+      ],
+      "emitter": [
+        33.0,
+        3.056,
+        44.0
+      ],
+      "support": "Ceiling cap dining"
+    },
+    {
+      "id": "asylum-dining-load-2",
+      "room": 3,
+      "space": "dining",
+      "circuit": "AS-03",
+      "mount": [
+        38.0,
+        3.24,
+        46.0
+      ],
+      "emitter": [
+        38.0,
+        3.056,
+        46.0
+      ],
+      "support": "Ceiling cap dining"
+    },
+    {
+      "id": "asylum-ground-ward-link-load-1",
+      "room": 4,
+      "space": "ground-ward-link",
+      "circuit": "AS-04",
+      "mount": [
+        13.0,
+        3.24,
+        20.5
+      ],
+      "emitter": [
+        13.0,
+        3.056,
+        20.5
+      ],
+      "support": "Floor upper-ward-link"
+    },
+    {
+      "id": "asylum-ground-ward-link-load-2",
+      "room": 4,
+      "space": "ground-ward-link",
+      "circuit": "AS-04",
+      "mount": [
+        23.0,
+        3.24,
+        20.5
+      ],
+      "emitter": [
+        23.0,
+        3.056,
+        20.5
+      ],
+      "support": "Floor upper-ward-link"
+    },
+    {
+      "id": "asylum-treatment-load-1",
+      "room": 5,
+      "space": "treatment",
+      "circuit": "AS-05",
+      "mount": [
+        38.0,
+        3.24,
+        33.0
+      ],
+      "emitter": [
+        38.0,
+        3.056,
+        33.0
+      ],
+      "support": "Ceiling cap treatment"
+    },
+    {
+      "id": "asylum-treatment-load-2",
+      "room": 5,
+      "space": "treatment",
+      "circuit": "AS-05",
+      "mount": [
+        41.0,
+        3.24,
+        37.0
+      ],
+      "emitter": [
+        41.0,
+        3.056,
+        37.0
+      ],
+      "support": "Ceiling cap treatment"
+    },
+    {
+      "id": "asylum-hydro-change-load-1",
+      "room": 6,
+      "space": "hydro-change",
+      "circuit": "AS-06",
+      "mount": [
+        46.700001,
+        3.24,
+        31.5
+      ],
+      "emitter": [
+        46.700001,
+        3.056,
+        31.5
+      ],
+      "support": "Ceiling cap hydro-change"
+    },
+    {
+      "id": "asylum-hydro-change-load-2",
+      "room": 6,
+      "space": "hydro-change",
+      "circuit": "AS-06",
+      "mount": [
+        47.400002,
+        3.24,
+        33.599998
+      ],
+      "emitter": [
+        47.400002,
+        3.056,
+        33.599998
+      ],
+      "support": "Ceiling cap hydro-change"
+    },
+    {
+      "id": "asylum-upper-spine-load-1",
+      "room": 7,
+      "space": "upper-spine",
+      "circuit": "AS-07",
+      "mount": [
+        27.5,
+        6.64,
+        15.5
+      ],
+      "emitter": [
+        27.5,
+        6.456,
+        15.5
+      ],
+      "support": "Ceiling cap upper-spine"
+    },
+    {
+      "id": "asylum-upper-spine-load-2",
+      "room": 7,
+      "space": "upper-spine",
+      "circuit": "AS-07",
+      "mount": [
+        27.5,
+        6.64,
+        25.0
+      ],
+      "emitter": [
+        27.5,
+        6.456,
+        25.0
+      ],
+      "support": "Ceiling cap upper-spine"
+    },
+    {
+      "id": "asylum-upper-spine-load-3",
+      "room": 7,
+      "space": "upper-spine",
+      "circuit": "AS-07",
+      "mount": [
+        27.5,
+        6.64,
+        35.0
+      ],
+      "emitter": [
+        27.5,
+        6.456,
+        35.0
+      ],
+      "support": "Ceiling cap upper-spine"
+    },
+    {
+      "id": "asylum-records-load-1",
+      "room": 8,
+      "space": "records",
+      "circuit": "AS-08",
+      "mount": [
+        41.0,
+        3.24,
+        56.0
+      ],
+      "emitter": [
+        41.0,
+        3.056,
+        56.0
+      ],
+      "support": "Ceiling cap records"
+    },
+    {
+      "id": "asylum-quiet-lobby-load-1",
+      "room": 9,
+      "space": "quiet-lobby",
+      "circuit": "AS-09",
+      "mount": [
+        47.5,
+        3.24,
+        14.0
+      ],
+      "emitter": [
+        47.5,
+        3.056,
+        14.0
+      ],
+      "support": "Ceiling cap quiet-lobby"
+    },
+    {
+      "id": "asylum-quiet-lobby-load-2",
+      "room": 9,
+      "space": "quiet-lobby",
+      "circuit": "AS-09",
+      "mount": [
+        51.5,
+        3.24,
+        14.0
+      ],
+      "emitter": [
+        51.5,
+        3.056,
+        14.0
+      ],
+      "support": "Ceiling cap quiet-lobby"
+    },
+    {
+      "id": "asylum-chapel-load-1",
+      "room": 10,
+      "space": "chapel",
+      "circuit": "AS-10",
+      "mount": [
+        14.0,
+        3.24,
+        6.0
+      ],
+      "emitter": [
+        14.0,
+        3.056,
+        6.0
+      ],
+      "support": "Ceiling cap chapel"
+    },
+    {
+      "id": "asylum-chapel-load-2",
+      "room": 10,
+      "space": "chapel",
+      "circuit": "AS-10",
+      "mount": [
+        18.0,
+        3.24,
+        6.0
+      ],
+      "emitter": [
+        18.0,
+        3.056,
+        6.0
+      ],
+      "support": "Ceiling cap chapel"
+    },
+    {
+      "id": "asylum-plant-load-1",
+      "room": 11,
+      "space": "plant",
+      "circuit": "AS-11",
+      "mount": [
+        40.0,
+        -0.16,
+        26.0
+      ],
+      "emitter": [
+        40.0,
+        -0.344,
+        26.0
+      ],
+      "support": "Floor clinical-service"
+    },
+    {
+      "id": "asylum-plant-load-2",
+      "room": 11,
+      "space": "plant",
+      "circuit": "AS-11",
+      "mount": [
+        37.599998,
+        -0.16,
+        32.0
+      ],
+      "emitter": [
+        37.599998,
+        -0.344,
+        32.0
+      ],
+      "support": "Floor treatment"
+    },
+    {
+      "id": "asylum-plant-load-3",
+      "room": 11,
+      "space": "plant",
+      "circuit": "AS-11",
+      "mount": [
+        42.400002,
+        -0.16,
+        33.0
+      ],
+      "emitter": [
+        42.400002,
+        -0.344,
+        33.0
+      ],
+      "support": "Floor treatment"
+    }
+  ],
+  "routes": [
+    {
+      "id": "Asylum distribution terminal 1",
+      "points": [
+        [
+          39.39,
+          -0.856,
+          24.219999923706055
+        ],
+        [
+          39.39,
+          -0.48,
+          24.219999923706055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "Asylum distribution terminal 2",
+      "points": [
+        [
+          40.15,
+          -0.856,
+          24.219999923706055
+        ],
+        [
+          40.15,
+          -0.48,
+          24.219999923706055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "Asylum distribution terminal 3",
+      "points": [
+        [
+          40.91,
+          -0.856,
+          24.219999923706055
+        ],
+        [
+          40.91,
+          -0.48,
+          24.219999923706055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "Asylum distribution manifold",
+      "points": [
+        [
+          39.36,
+          -0.48,
+          24.219999923706055
+        ],
+        [
+          40.94,
+          -0.48,
+          24.219999923706055
+        ]
+      ],
+      "radius": 0.025,
+      "visible": true
+    },
+    {
+      "id": "Asylum incoming distribution riser",
+      "points": [
+        [
+          40.15,
+          -0.492,
+          24.219999923706055
+        ],
+        [
+          40.15,
+          -0.23,
+          24.219999923706055
+        ],
+        [
+          40.15,
+          -0.23,
+          24.109999923706056
+        ]
+      ],
+      "radius": 0.019,
+      "visible": true
+    },
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          26.108999,
+          1.302,
+          36.799999
+        ],
+        [
+          26.108999,
+          3.1699997711181642,
+          36.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          32.299999,
+          1.302,
+          57.730999
+        ],
+        [
+          32.299999,
+          3.1700000095367433,
+          57.730999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          13.5,
+          1.302,
+          49.890999
+        ],
+        [
+          13.5,
+          3.1699997711181642,
+          49.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          36.200001,
+          1.302,
+          49.890999
+        ],
+        [
+          36.200001,
+          3.1700000095367433,
+          49.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          18.5,
+          1.302,
+          19.108999
+        ],
+        [
+          18.5,
+          3.1699997711181642,
+          19.108999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          41.0,
+          1.302,
+          39.890999
+        ],
+        [
+          41.0,
+          3.1699997711181642,
+          39.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-06 switch drop",
+      "points": [
+        [
+          48.890999,
+          1.302,
+          31.700001
+        ],
+        [
+          48.890999,
+          3.1700000095367433,
+          31.700001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-07 switch drop",
+      "points": [
+        [
+          26.108999,
+          4.702,
+          33.599998
+        ],
+        [
+          26.108999,
+          6.569999866485595,
+          33.599998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-08 switch drop",
+      "points": [
+        [
+          41.0,
+          1.302,
+          57.730999
+        ],
+        [
+          41.0,
+          3.1700000095367433,
+          57.730999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-09 switch drop",
+      "points": [
+        [
+          52.349998,
+          1.302,
+          12.109
+        ],
+        [
+          52.349998,
+          3.1700000095367433,
+          12.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          19.0,
+          1.302,
+          9.891
+        ],
+        [
+          19.0,
+          3.1700000095367433,
+          9.891
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-11 switch drop",
+      "points": [
+        [
+          37.400002,
+          -1.698,
+          24.108999
+        ],
+        [
+          37.400002,
+          -0.2300000411272049,
+          24.108999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    }
+  ],
+  "retained_components": 811,
+  "new_components": 76,
+  "exports": {
+    "blend": "a7f63d997060844ac12cc3a12ce724702f748a3f140b62d9fb4d854371a0c04a",
+    "glb": "a59e9aa466273899fc1547aff13ee34a09510f39d6d6d3f065974f5857ff5cad",
+    "hcs2": "7665c48575f72992cbc7d2499bd63e02f49cd9e3a292e12183a5a9d68d7b43f9"
+  },
+  "prior_power_pass_exports": {
+    "blend": "53928f58911531194fad2137ddcf7d0f4f29b0a3ec6b6c87f46fb3323d4047fa",
+    "glb": "edd86035872657d97d325b7aca5b69871c1923758784d28aaebb94e2e0e12d21",
+    "hcs2": "f85345bbd5d065a07d012577a9afb5958fe5fee7f3bd06b141546829ed934ed4"
+  }
+}

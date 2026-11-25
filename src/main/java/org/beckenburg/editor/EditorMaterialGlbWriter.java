@@ -61,6 +61,7 @@ final class EditorMaterialGlbWriter {
             var nodes=new ArrayList<Object>();var meshes=new ArrayList<Object>();var roots=new ArrayList<Integer>();for(var group:groups.entrySet()){roots.add(nodes.size());nodes.add(obj("name",group.getKey(),"mesh",meshes.size()));meshes.add(obj("name",group.getKey(),"primitives",group.getValue()));}root.put("nodes",nodes);root.put("meshes",meshes);root.put("scenes",List.of(obj("nodes",roots)));root.put("extensionsUsed",new ArrayList<>(List.of("BECK_native_mesh")));int node=0;for(var group:groups.entrySet()){var frame=mesh.frames().get(group.getKey());if(frame!=null)EditorMeshFrame.attach(root,node,frame);var draw=new ArrayList<Integer>();for(var primitive:group.getValue())draw.addAll(drawOrders.get(primitive));EditorMeshOrder.attach(root,node,draw);node++;}
         }
         if(views.size()>4096||accessors.size()>4096)throw new IOException("Material GLB exceeds actual buffer/accessor budget");
+        EditorMeshQuad.writeGlb(root,mesh);
         byte[] json=EditorGlbJson.write(root).getBytes(StandardCharsets.UTF_8);int jsonSize=pad4(json.length),size=12+8+jsonSize+8+binary.size();if(size>4_000_000)throw new IOException("Material GLB exceeds actual4MiB runtime budget");
         var result=ByteBuffer.allocate(size).order(ByteOrder.LITTLE_ENDIAN);result.putInt(0x46546c67).putInt(2).putInt(size).putInt(jsonSize).putInt(0x4e4f534a).put(json);while(result.position()<20+jsonSize)result.put((byte)' ');result.putInt(binary.size()).putInt(0x004e4942).put(binary.toByteArray());return result.array();
     }

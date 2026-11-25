@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 675" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwater Dam auxiliary power plan</title>
+  <desc id="desc">Measured switchgear and turbine room plan at elevation minus six metres. The walk-in refuge and utility mounting aisle are inside switchgear, behind fitted door 880. Circuit lines run on the ceiling and wall, with a sealed electrical sleeve in their shared partition.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#e7efe9} .head{font-size:26px;font-weight:bold}
+    .room{font-size:19px;font-weight:bold} .label{font-size:14px} .muted{fill:#a7bbc0}
+    .shell{stroke:#aab7b4;stroke-width:7;fill:none;stroke-linecap:square}
+    .feed{stroke:#f0b878;stroke-width:2;fill:none} .walk{stroke:#89bedc;stroke-width:2.5;stroke-dasharray:7 6;fill:none}
+    .device{fill:#edb77b;stroke:#472e23;stroke-width:1}
+  </style>
+  <rect width="860" height="675" fill="#162629"/>
+  <text class="head" x="34" y="41">Blackwater Dam auxiliary power</text>
+  <text class="label muted" x="34" y="65">Switchgear and north turbine bay · Finished floor −6.00 m · North up</text>
+  <!-- Plan conversion x = 60 + 25 × (world X − 36), z = 113 + 25 × (world Z − 8). -->
+  <path fill="#25393d" d="M60 113H510V463H760V565H60Z"/>
+  <path class="shell" d="M60 463V113H510V463H760V565M60 565V463H267M303 463H510"/>
+  <path d="M267 463H303M267 463V427M267 427A36 36 0 0 1 303 463" fill="none" stroke="#bde2d7" stroke-width="2"/>
+  <text class="label" x="316" y="452">Door 880</text>
+  <path class="feed" d="M191 136V116H407V123H460V462M334 117V126H204V247M334 126H390V247M460 466V469H570"/>
+  <circle cx="460" cy="463" r="5" fill="#f0b878"/>
+  <path class="walk" d="M285 551V288H186V177M285 288H385V155M285 288H332V159"/>
+  <path d="M760 565H60" stroke="#6b8487" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect class="device" x="165" y="129" width="41" height="23" rx="3"/>
+  <rect class="device" x="358" y="116" width="55" height="12" rx="2"/>
+  <rect class="device" x="329" y="115" width="8" height="6"/>
+  <rect class="device" x="456" y="465" width="8" height="6"/>
+  <path d="M189 247h29m157 0h29m72 223h28m52 0h28" stroke="#fff0bc" stroke-width="7" stroke-linecap="round"/>
+  <rect x="79" y="202" width="34" height="35" fill="#466571" stroke="#b5dbe0" stroke-width="2"/>
+  <text class="label" x="131" y="171">Auxiliary generator</text>
+  <text class="label" x="358" y="148">Main board</text>
+  <text class="label" x="278" y="106">Switch</text>
+  <text class="label" x="77" y="255">Refuge</text>
+  <text class="room" x="79" y="392">Switchgear</text>
+  <text class="room" x="79" y="525">Turbine hall</text>
+  <text class="label" x="475" y="451">Sealed sleeve</text>
+  <text class="label" x="434" y="493">Switch</text>
+  <path d="M590 125H715M590 121V129M715 121V129" stroke="#e7efe9" stroke-width="2"/>
+  <text class="label" x="640" y="147">5 m</text>
+  <path class="walk" d="M61 598h50"/><text class="label" x="124" y="604">Control approach through the real doorway</text>
+  <path class="feed" d="M61 626h50"/><text class="label" x="124" y="631">Mounted conduit centreline and sealed sleeve</text>
+  <path d="M61 652h50" stroke="#fff0bc" stroke-width="5"/><text class="label" x="124" y="657">Fitted task light</text>
+</svg>

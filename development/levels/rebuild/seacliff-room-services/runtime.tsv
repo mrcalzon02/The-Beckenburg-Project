@@ -1,0 +1,311 @@
+SOURCE	development/levels/rebuild/seacliff-room-services/battery.glb	04c4c47fd884a1e931bf8c283a31f3ec9b0fb40558544b0a1cb8bd7fca7c925f	development/levels/rebuild/seacliff-room-services/battery.hcs2	829d5fe47ccfd35aed7da4089b76e65e0a6d94f18c8a330a95060ce8b3252079
+DOCK	32.0	0	88.0	0
+FRAME	420	WLD-17-gallery-north-stair	30	4	26	1.5	25.88	26.12	2.3	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+SPACE	stage	13	24	82	40	94	0	3	True
+SPACE	entry	13	24	68	40	82	0	3	True	32	0	75
+SPACE	approach	13	24	54	40	68	2	3	True
+SPACE	yard	12	24	34	44	54	4	3	True	36.5	4	42.5
+SPACE	west	3	8	26	24	40	4	3	False	16	4	33
+SPACE	east	4	44	26	60	40	4	3	False	52	4	33
+SPACE	gallery	0	24	26	44	34	4	3	False	34	4	30
+SPACE	magazine	5	8	14	24	26	4	3	False	16	4	20
+SPACE	service	6	44	14	60	26	4	3	False	52	4	20
+SPACE	director	2	28	10	40	26	7	3	False	39	7	23.2
+SPACE	barracks	7	8	14	24	26	0	3	False	16	0	20
+SPACE	lowgallery	8	24	26	44	34	0	3	False	34	0	30
+SPACE	plant	9	44	14	60	26	0	3	False	52	0	20
+SPACE	records	10	24	14	34	26	0	3	False	29	0	20
+SPACE	pump	11	34	14	44	26	0	3	False	39	0	20
+SPACE	director-stair	1	28.84	20.9	31.1	26	4	3	False	30	4	23
+SPACE	director-flight	1	31.1	20.9	38	23.1	4	3	False
+TREAD	179:route-11 landing0
+TREAD	180:route-11 landing2
+TREAD	204:route-12 landing0
+TREAD	205:route-12 landing2
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part0
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part1
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part2
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part3
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part4
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part5
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part6
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part7
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part8
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part9
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part10
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part11
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part12
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part13
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part14
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part15
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part16
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part17
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part18
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part19
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part20
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part21
+TREAD	Rebuilt stair WLD-17 route-11 flight0 part22
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part0
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part1
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part2
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part3
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part4
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part5
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part6
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part7
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part8
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part9
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part10
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part11
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part12
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part13
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part14
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part15
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part16
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part17
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part18
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part19
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part20
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part21
+TREAD	Rebuilt stair WLD-17 route-12 flight0 part22
+TREAD	Authored stair end WLD-17 route-11 1 corner-bridge region0
+TREAD	Authored stair end WLD-17 route-12 1 corner-bridge region0
+TREAD	Battery route-02 cast nosing 01 region0
+TREAD	Battery route-02 cast nosing 02 region0
+TREAD	Battery route-02 cast nosing 03 region0
+TREAD	Battery route-02 cast nosing 04 region0
+TREAD	Battery route-02 cast nosing 05 region0
+TREAD	Battery route-02 cast nosing 06 region0
+TREAD	Battery route-02 cast nosing 07 region0
+TREAD	Battery route-02 cast nosing 08 region0
+TREAD	Battery route-02 cast nosing 09 region0
+TREAD	Battery route-02 cast nosing 10 region0
+TREAD	Battery route-02 cast nosing 11 region0
+TREAD	Battery route-02 cast nosing 12 region0
+TREAD	Battery route-03 cast nosing 01 region0
+TREAD	Battery route-03 cast nosing 02 region0
+TREAD	Battery route-03 cast nosing 03 region0
+TREAD	Battery route-03 cast nosing 04 region0
+TREAD	Battery route-03 cast nosing 05 region0
+TREAD	Battery route-03 cast nosing 06 region0
+TREAD	Battery route-03 cast nosing 07 region0
+TREAD	Battery route-03 cast nosing 08 region0
+TREAD	Battery route-03 cast nosing 09 region0
+TREAD	Battery route-03 cast nosing 10 region0
+TREAD	Battery route-03 cast nosing 11 region0
+TREAD	Battery route-03 cast nosing 12 region0
+TREAD	Battery route-10 cast nosing 01 region0
+TREAD	Battery route-10 cast nosing 02 region0
+TREAD	Battery route-10 cast nosing 03 region0
+TREAD	Battery route-10 cast nosing 04 region0
+TREAD	Battery route-10 cast nosing 05 region0
+TREAD	Battery route-10 cast nosing 06 region0
+TREAD	Battery route-10 cast nosing 07 region0
+TREAD	Battery route-10 cast nosing 08 region0
+TREAD	Battery route-10 cast nosing 09 region0
+TREAD	Battery route-10 cast nosing 10 region0
+TREAD	Battery route-10 cast nosing 11 region0
+TREAD	Battery route-10 cast nosing 12 region0
+TREAD	Battery route-10 cast nosing 13 region0
+TREAD	Battery route-10 cast nosing 14 region0
+TREAD	Battery route-10 cast nosing 15 region0
+TREAD	Battery route-10 cast nosing 16 region0
+TREAD	Battery route-10 cast nosing 17 region0
+RITUAL	banishment	12	34.0	4	44.0
+RITUAL	cleansing	9	52.0	0	20.0
+RITUAL	absolution	10	29.0	0	20.0
+SOCKET	battery-generator	generator	9	58.714	0.75	17.38	-1.5707963267948966	BATTERY-MAIN
+SOCKET	battery-breaker	breaker	9	59.54	0.895	20.3	-1.5707963267948966	BATTERY-MAIN
+SOCKET	BATTERY-PLANT-switch	switch	9	59.919	1.25	23.2	-1.5707963267948966	BATTERY-PLANT
+SOCKET	BATTERY-PLANT-light-1	light	9	51	2.655	19.6	0	native-string
+SOCKET	BATTERY-PLANT-light-2	light	9	56.4	2.655	19.6	0	native-string
+SOCKET	BATTERY-PLANT-light-3	light	9	51	2.655	23.2	0	native-string
+SOCKET	BATTERY-PLANT-light-4	light	9	56.4	2.655	23.2	0	native-string
+SOCKET	BATTERY-SERVICE-switch	switch	6	59.919	5.25	23.2	-1.5707963267948966	BATTERY-SERVICE
+SOCKET	BATTERY-SERVICE-light-1	light	6	52	6.654999999999999	23.2	0	native-string
+SOCKET	BATTERY-SERVICE-light-2	light	6	55.1	6.654999999999999	23.2	0	native-string
+SOCKET	BATTERY-SERVICE-light-3	light	6	58.2	6.654999999999999	23.2	0	native-string
+BAY	421	barracks-records	barracks	records	24	0	20	1.4	x	23.88	24.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	422	records-pump	records	pump	34	0	20	1.4	x	33.88	34.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	423	pump-plant	pump	plant	44	0	20	1.4	x	43.88	44.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	424	records-gallery	records	lowgallery	29	0	26	1.4	z	25.88	26.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	425	pump-gallery	pump	lowgallery	39	0	26	1.4	z	25.88	26.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+POINT	west wing	32.0	0	84.372
+POINT	west wing	32.0	0	75.0
+POINT	west wing	32	0	68.35
+POINT	west wing	32	0.16666666666666666	67.58333333333333
+POINT	west wing	32	2	58
+POINT	west wing	32	2	57
+POINT	west wing	40	2	57
+POINT	west wing	40	2	56.35
+POINT	west wing	40	2.1666666666666665	55.666666666666664
+POINT	west wing	40	4	48
+POINT	west wing	40	4	46
+POINT	west wing	36.5	4	42.5
+POINT	west wing	31.5	4	42.5
+POINT	west wing	31.5	4	37.889
+POINT	west wing	24	4	37.889
+POINT	west wing	22.5	4	37.889
+POINT	west wing	20.5	4	37.889
+POINT	west wing	16	4	33
+POINT	west wing	22.5	4	31.67
+POINT	west wing	24	4	31.67
+POINT	west wing	25.5	4	31.67
+POINT	west wing	34	4	30
+POINT	west wing	30	4	30
+POINT	west wing	30	4	26
+POINT	west wing	30	4	22
+POINT	west wing	30.75	4	22
+POINT	west wing	31.30294117647059	4.176470588235294	22
+POINT	west wing	38	7	22
+POINT	east wing	32.0	0	84.372
+POINT	east wing	32.0	0	75.0
+POINT	east wing	32	0	68.35
+POINT	east wing	32	0.16666666666666666	67.58333333333333
+POINT	east wing	32	2	58
+POINT	east wing	32	2	57
+POINT	east wing	40	2	57
+POINT	east wing	40	2	56.35
+POINT	east wing	40	2.1666666666666665	55.666666666666664
+POINT	east wing	40	4	48
+POINT	east wing	40	4	46
+POINT	east wing	36.5	4	42.5
+POINT	east wing	36.5	4	37.889
+POINT	east wing	44	4	37.889
+POINT	east wing	45.5	4	37.889
+POINT	east wing	52	4	33
+POINT	east wing	45.5	4	31.67
+POINT	east wing	44	4	31.67
+POINT	east wing	42.5	4	31.67
+POINT	east wing	34	4	30
+POINT	east wing	30	4	30
+POINT	east wing	30	4	26
+POINT	east wing	30	4	22
+POINT	east wing	30.75	4	22
+POINT	east wing	31.30294117647059	4.176470588235294	22
+POINT	east wing	38	7	22
+BAY	426	west-gallery	west	gallery	24	4	31.67	1.4	x	23.88	24.12	2.22	-1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	427	west-courtyard	west	yard	24	4	37.889	1.4	x	23.88	24.12	2.22	-1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	428	gallery-east	gallery	east	44	4	31.67	1.4	x	43.88	44.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	429	courtyard-east	yard	east	44	4	37.889	1.4	x	43.88	44.12	2.22	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	430	magazine-west	magazine	west	16	4	26	1.4	z	25.88	26.12	2.22	-1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+BAY	431	service-east	service	east	52	4	26	1.4	z	25.88	26.12	2.22	-1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+SPACE	arrival-lower-flight	13	31	58	33	68	0	2.3	True
+SPACE	arrival-upper-flight	13	39	48	41	56	2	2.3	True
+SPACE	magazine-barracks-flight	5	12.74	15.1	20.2	16.9	2.8	1.21	False
+SPACE	service-plant-flight	6	48.74	15.1	56.2	16.9	2.8	1.21	False
+TRANSITION	432	cargo threshold	13	14	32	0.5	85.872	1.32	z	trail
+TRANSITION	433	upper exterior stair head	13	12	40	4	48	2.05	z	stair
+TRANSITION	434	barracks receiving slab	5	7	20.32	0	16	1.8	x	stair
+TRANSITION	435	plant receiving slab	6	9	56.32	0	16	1.8	x	stair
+TRANSITION	436	director stair head	1	2	38	7	22	1.8	x	stair
+LINK	route-01	32.0	0	84.372
+LINK	route-01	32.0	0	75.0
+LINK	route-02	32	0	75
+LINK	route-02	32	0	68.35
+LINK	route-02	32	0.16666666666666666	67.58333333333333
+LINK	route-02	32	2	58
+LINK	route-03	32	2	58
+LINK	route-03	32	2	57
+LINK	route-03	40	2	57
+LINK	route-03	40	2	56.35
+LINK	route-03	40	2.1666666666666665	55.666666666666664
+LINK	route-03	40	4	48
+LINK	route-04	31.5	4	42.5
+LINK	route-04	31.5	4	37.889
+LINK	route-04	24	4	37.889
+LINK	route-04	22.5	4	37.889
+LINK	route-04	20.5	4	37.889
+LINK	route-04	16	4	33
+LINK	route-05	36.5	4	42.5
+LINK	route-05	36.5	4	37.889
+LINK	route-05	44	4	37.889
+LINK	route-05	45.5	4	37.889
+LINK	route-05	52	4	33
+LINK	route-06	16	4	33
+LINK	route-06	22.5	4	31.67
+LINK	route-06	24	4	31.67
+LINK	route-06	25.5	4	31.67
+LINK	route-06	34	4	30
+LINK	route-07	34	4	30
+LINK	route-07	42.5	4	31.67
+LINK	route-07	44	4	31.67
+LINK	route-07	45.5	4	31.67
+LINK	route-07	52	4	33
+LINK	route-08	16	4	33
+LINK	route-08	16	4	26
+LINK	route-08	16	4	20
+LINK	route-09	52	4	33
+LINK	route-09	52	4	26
+LINK	route-09	52	4	20
+LINK	route-10	30	4	30
+LINK	route-10	30	4	26
+LINK	route-10	30	4	22
+LINK	route-10	30.75	4	22
+LINK	route-10	31.30294117647059	4.176470588235294	22
+LINK	route-10	38	7	22
+LINK	route-11	12	4	22
+LINK	route-11	12	4	16
+LINK	route-11	12.8	4	16.0
+LINK	route-11	20.32	0	16
+LINK	route-11	20.95	0	16
+LINK	route-11	20.95	0	18
+LINK	route-11	20	0	19
+LINK	route-11	20	0	22
+LINK	route-12	48	4	22
+LINK	route-12	48	4	16
+LINK	route-12	48.8	4	16.0
+LINK	route-12	56.32	0	16
+LINK	route-12	56.95	0	16
+LINK	route-12	56.95	0	18
+LINK	route-12	56	0	19
+LINK	route-12	56	0	22
+LINK	route-13	16	0	20
+LINK	route-13	24	0	20
+LINK	route-13	29	0	20
+LINK	route-13	29	0	26
+LINK	route-13	29	0	29
+LINK	route-13	34	0	30
+LINK	route-14	34	0	30
+LINK	route-14	39	0	30
+LINK	route-14	39	0	26
+LINK	route-14	39	0	20
+LINK	route-14	44	0	20
+LINK	route-14	52	0	20
+LINK	route-15	34	0	30
+LINK	route-15	29	0	30
+LINK	route-15	29	0	26
+LINK	route-15	29	0	20
+LINK	route-16	29	0	20
+LINK	route-16	34	0	20
+LINK	route-16	39	0	20
+LINK	route-17	39	0	20
+LINK	route-17	44	0	20
+LINK	route-17	52	0	20
+SOCKET	west-casemate-stores	hide	3	11.5	4	27.45	0	walk-in-cupboard
+SOCKET	east-casemate-stores	hide	4	57.25	4	27.45	0	walk-in-cupboard
+SOCKET	records-cupboard	hide	10	26.5	0	15.45	0	walk-in-cupboard
+SPACE	arrival-switchback-court	13	30.75	56.0	41.25	58.0	2.0	2.3	True
+SOCKET	battery-gallery-switch	switch	0	38.0	5.25	26.121	0.0	BATTERY-GALLERY
+SOCKET	battery-gallery-light	light	0	35.599998	6.36	26.304001	0	native-string
+SOCKET	battery-director-stair-switch	switch	1	29.041	5.25	24.5	1.5707963267948966	BATTERY-DIRECTOR-STAIR
+SOCKET	battery-director-stair-light	light	1	29.224001	6.36	22.450001	0	native-string
+SOCKET	battery-director-switch	switch	2	38.599998	8.25	25.919001	3.141592653589793	BATTERY-DIRECTOR
+SOCKET	battery-director-light	light	2	37.0	9.36	25.736	0	native-string
+SOCKET	battery-west-switch	switch	3	15.0	5.25	39.918999	3.141592653589793	BATTERY-WEST
+SOCKET	battery-west-light	light	3	18.0	6.36	39.736	0	native-string
+SOCKET	battery-east-switch	switch	4	52.0	5.25	39.918999	3.141592653589793	BATTERY-EAST
+SOCKET	battery-east-light	light	4	55.0	6.36	39.736	0	native-string
+SOCKET	battery-magazine-switch	switch	5	10.0	5.25	14.081	0.0	BATTERY-MAGAZINE
+SOCKET	battery-magazine-light	light	5	12.2	6.36	14.264	0	native-string
+SOCKET	battery-barracks-switch	switch	7	13.0	1.25	25.919001	3.141592653589793	BATTERY-BARRACKS
+SOCKET	battery-barracks-light	light	7	17.0	2.36	25.736	0	native-string
+SOCKET	battery-lowgallery-switch	switch	8	33.0	1.25	26.121	0.0	BATTERY-LOWGALLERY
+SOCKET	battery-lowgallery-light	light	8	35.599998	2.36	26.304001	0	native-string
+SOCKET	battery-records-switch	switch	10	31.0	1.25	14.081	0.0	BATTERY-RECORDS
+SOCKET	battery-records-light	light	10	29.0	2.36	14.264	0	native-string
+SOCKET	battery-pump-switch	switch	11	41.0	1.25	14.081	0.0	BATTERY-PUMP
+SOCKET	battery-pump-light	light	11	39.0	2.36	14.264	0	native-string
+SOCKET	Seacliff director plotting log	native_story	2	35.25	7.98801	14.5	0	SEACLIFF_DIRECTOR_LOG
+SOCKET	Seacliff director telephone	native-device	2	37.5	7.821	12.825	0	PHONE
+SOCKET	Seacliff casemate sump pump	native-device	11	39.119999	0.493845	16.278062	0	WATER_PUMP

@@ -28,3 +28,8 @@ native refuge placements are proposed; host sockets/fairness remain pending.
 Native placement does not establish working Hollow Creek concealment.
 
 Available hiding locations must display the shared animated sanctuary-energy material (user direction,7November2026). Visibility uses this same deterministic eligibility list, including zero at0percent. Cupboard veils occupy the open pocket; authored refuge foliage receives an enclosing energy marker. Existing hiding activation and crouch rules remain. Decorative bushes and disabled/inert sockets never gain a marker or hidden spectral exclusion. Native geometry-only overviews omit this analytic runtime compositing effect. Inspect each map's actual runtime cues individually.
+
+An active walk-in cupboard protects a hunter upon crossing its physical entrance.
+Its cover cue and spectral boundary reach the same sides, back and head of the enclosure.
+Stepping out clears protection. Use the hide action for concealment. At 0%
+availability the cupboard grants neither protection nor concealment.

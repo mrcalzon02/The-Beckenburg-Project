@@ -1,0 +1,226 @@
+SOURCE	03112abbfdac30cf3cc487a8d0f1f896d41d6f4a475430b98a9d0d24b05d8299	93a9ccc4fe0882ee82a2518e9127c17aac116e184fbd7c24c4ecd2de01ff17df
+DOCK	32.0	0	86.0	0
+ROOM	stage	13	24	80	40	92	0	3	true	Quayside van apron	32	0	82
+SPACE	entry	13	24	76	40	80	0	3	true
+SPACE	quay	13	24	64	40	76	0	3	true
+ROOM	portpier	12	16	40	22	72	0	3	true	Port service pier	19	0	46.75
+ROOM	aft	0	22	40	42	54	0	3	true	Aft working deck	32	0	47
+ROOM	processing	4	24	8	40	30	0	3	false	Fish processing hall	32	0	19
+ROOM	galley	1	24	30	32	40	0	3	false	Galley	28	0	35
+ROOM	mess	2	32	30	40	40	0	3	false	Crew mess	36	0	35
+SPACE	side	5	40	8	42	40	0	3	true
+ROOM	fore	5	24	-2	40	8	0	3	true	Foredeck	32	0	3
+ROOM	engine	3	24	24	40	40	-3	3	false	Engine room	32	-3	32
+ROOM	hold	6	24	4	40	24	-3	3	false	Chilled fish hold	32	-3	14
+ROOM	pump	7	24	-2	40	4	-3	3	false	Bilge pump room	32	-3	-0.5
+ROOM	crew	8	24	30	40	40	3	3	false	Crew bunks	32	3	35
+ROOM	bridge	9	24	18	40	30	6	3	false	Wheelhouse	30	6	24
+ROOM	net	10	24	8	40	18	3	3	false	Net and gear store	32	3	13
+ROOM	port stair	11	22.13	45.93	24	47.59	0	3	false	Port stair bays	23	0	46.75
+SPACE	shore shelf	13	16.1	64	42	76	0	3	true
+SPACE	stern gangway	13	30.5	56	33.5	64	0	3	true
+SPACE	stern boarding deck	0	25	53.9	39	56	0	3	true
+SPACE	port transfer	12	21.74	44.64	22.13	47.56	0	3	true
+SPACE	weather bow	5	22.1	-9.75	41.91	8	0	3	true
+SPACE	upper work deck	10	24	18	40	30	3	3	true
+SPACE	aft port approach	11	22.13	45.93	24.0	47.59	0	3	false
+SPACE	engine lower landing	11	22.2	21.93	24.0	35.53	-3	3.04	false
+SPACE	engine upper landing	11	22.2	21.93	24.0	24.05	0	3	false
+SPACE	crew flight	11	22.2	33.42	24.0	46.1	0	3.04	false
+SPACE	crew upper landing	11	22.2	33.42	24.0	36.01	3	3	false
+SPACE	net deck stair landing	11	22.2	12.46	24.0	26.34	3	3.04	false
+SPACE	bridge stair landing	11	22.2	23.95	24.0	26.34	6	3	false
+SPACE	pump hatch	7	28.5	0.05	34.67	1.95	-3	3	false
+TREAD	99:route-13 flight0 step1
+TREAD	100:route-13 flight0 step2
+TREAD	101:route-13 flight0 step3
+TREAD	102:route-13 flight0 step4
+TREAD	103:route-13 flight0 step5
+TREAD	104:route-13 flight0 step6
+TREAD	105:route-13 flight0 step7
+TREAD	106:route-13 flight0 step8
+TREAD	107:route-13 flight0 step9
+TREAD	108:route-13 flight0 step10
+TREAD	109:route-13 flight0 step11
+TREAD	110:route-13 flight0 step12
+TREAD	111:route-13 flight0 step13
+TREAD	112:route-13 flight0 step14
+TREAD	113:route-13 flight0 step15
+TREAD	114:route-13 flight0 step16
+TREAD	115:route-13 flight0 step17
+TREAD	116:route-14 flight0 step1
+TREAD	117:route-14 flight0 step2
+TREAD	118:route-14 flight0 step3
+TREAD	119:route-14 flight0 step4
+TREAD	120:route-14 flight0 step5
+TREAD	121:route-14 flight0 step6
+TREAD	122:route-14 flight0 step7
+TREAD	123:route-14 flight0 step8
+TREAD	124:route-14 flight0 step9
+TREAD	125:route-14 flight0 step10
+TREAD	126:route-14 flight0 step11
+TREAD	127:route-14 flight0 step12
+TREAD	128:route-14 flight0 step13
+TREAD	129:route-14 flight0 step14
+TREAD	130:route-14 flight0 step15
+TREAD	131:route-14 flight0 step16
+TREAD	132:route-14 flight0 step17
+TREAD	137:route-17 flight0 step1
+TREAD	138:route-17 flight0 step2
+TREAD	139:route-17 flight0 step3
+TREAD	140:route-17 flight0 step4
+TREAD	141:route-17 flight0 step5
+TREAD	142:route-17 flight0 step6
+TREAD	143:route-17 flight0 step7
+TREAD	144:route-17 flight0 step8
+TREAD	145:route-17 flight0 step9
+TREAD	146:route-17 flight0 step10
+TREAD	147:route-17 flight0 step11
+TREAD	148:route-17 flight0 step12
+TREAD	149:route-17 flight0 step13
+TREAD	150:route-17 flight0 step14
+TREAD	151:route-17 flight0 step15
+TREAD	152:route-17 flight0 step16
+TREAD	153:route-17 flight0 step17
+TREAD	157:route-19 flight0 step1
+TREAD	158:route-19 flight0 step2
+TREAD	159:route-19 flight0 step3
+TREAD	160:route-19 flight0 step4
+TREAD	161:route-19 flight0 step5
+TREAD	162:route-19 flight0 step6
+TREAD	163:route-19 flight0 step7
+TREAD	164:route-19 flight0 step8
+TREAD	165:route-19 flight0 step9
+TREAD	166:route-19 flight0 step10
+TREAD	167:route-19 flight0 step11
+TREAD	168:route-19 flight0 step12
+TREAD	169:route-19 flight0 step13
+TREAD	170:route-19 flight0 step14
+TREAD	171:route-19 flight0 step15
+TREAD	172:route-19 flight0 step16
+TREAD	173:route-19 flight0 step17
+TREAD	Saint Elara engine upper landing region0
+TREAD	Saint Elara engine lower landing region0
+TREAD	Saint Elara crew upper landing region0
+TREAD	Saint Elara net deck stair landing region0
+TREAD	Saint Elara bridge stair landing region0
+OPEN	930	13	0	32	0	56	2.5	z	trail
+OPEN	931	13	12	19	0	64	4	z	trail
+OPEN	932	12	11	22.12	0	46.75	1.8	x	trail
+OPEN	933	11	0	24	0	46.75	1.8	x	trail
+OPEN	934	1	4	29.25	0	30	1.7	z	trail
+OPEN	935	2	4	34.75	0	30	1.7	z	trail
+OPEN	936	4	5	32	0	8	1.7	z	trail
+OPEN	937	5	0	41	0	40	1.7	z	trail
+OPEN	938	5	7	31.6	-1.5	1	1.8	x	stair
+OPEN	939	7	6	32	-3	4	1.7	z	trail
+OPEN	940	6	3	32	-3	24	1.7	z	trail
+OPEN	941	8	10	32	3	30	1.7	z	trail
+RITUAL	banishment	4	32.0	0	19.0
+RITUAL	cleansing	2	36.0	0	35.0
+RITUAL	absolution	6	32.0	-3	14.0
+SERVICE	elara-generator	generator	3	36.900002	-2.44	26.62	0	SE-MAIN
+SERVICE	elara-breaker	breaker	3	37.5	-2.11	38.655001999999996	3.141592653589793	SE-MAIN
+SERVICE	elara-engine-switch	switch	3	39.918999	-1.75	29.0	-1.5707963267948966	SE-ENGINE
+SERVICE	elara-engine-light	light	3	39.736	-0.62	30.5	0	native-string
+SERVICE	elara-galley-switch	switch	1	31.919001	1.25	38.650002	-1.5707963267948966	SE-GALLEY
+SERVICE	elara-galley-light	light	1	31.736	2.35	36.799999	0	native-string
+SERVICE	elara-mess-switch	switch	2	39.918999	1.25	38.549999	-1.5707963267948966	SE-MESS
+SERVICE	elara-mess-light	light	2	39.736	2.35	36.75	0	native-string
+SERVICE	elara-processing-switch	switch	4	24.121	1.25	25.15	1.5707963267948966	SE-PROCESSING
+SERVICE	elara-processing-light	light	4	24.304001	2.35	27.049999	0	native-string
+SERVICE	elara-hold-switch	switch	6	39.919003	-1.75	16.1	-1.5707963267948966	SE-HOLD
+SERVICE	elara-hold-light	light	6	39.736	-0.65	13.9	0	native-string
+SERVICE	elara-pump-switch	switch	7	39.918999	-1.75	2.65	-1.5707963267948966	SE-PUMP
+SERVICE	elara-pump-light	light	7	39.736	-0.65	0.9	0	native-string
+SERVICE	elara-crew-switch	switch	8	39.918999	4.25	36.150002	-1.5707963267948966	SE-CREW
+SERVICE	elara-crew-light	light	8	39.736	5.35	38.150002	0	native-string
+SERVICE	elara-bridge-switch	switch	9	24.121	7.25	23.15	1.5707963267948966	SE-BRIDGE
+SERVICE	elara-bridge-light	light	9	24.304001	8.35	21.1	0	native-string
+SERVICE	elara-net-switch	switch	10	24.121	4.25	15.4	1.5707963267948966	SE-NET
+SERVICE	elara-net-light	light	10	24.304001	5.35	17.15	0	native-string
+SERVICE	Saint Elara bilge pump	native-device	7	37.0	-2.376	-0.259019	0	WATER_PUMP
+COVER	elara-galley-cupboard	1	25.35	0	37.5	-1.5707963267948966
+COVER	elara-net-cupboard	10	38.25	3	12	1.5707963267948966
+COVER	elara-hold-cupboard	6	25.25	-3	11	-1.5707963267948966
+POINT	route-01	32	0	82.372
+POINT	route-01	32	0	78
+POINT	route-02	32	0	78
+POINT	route-02	32	0	70
+POINT	route-03	32	0	70
+POINT	route-03	32	0	64
+POINT	route-03	32	0	56
+POINT	route-03	32	0	47
+POINT	route-04	32	0	70
+POINT	route-04	19	0	70
+POINT	route-04	19	0	64
+POINT	route-04	19	0	46.75
+POINT	route-05	19	0	46.75
+POINT	route-05	22	0	46.75
+POINT	route-05	26	0	46.75
+POINT	route-06	31.5	0	45.5
+POINT	route-06	29.6	0	42
+POINT	route-06	29.6	0	40
+POINT	route-06	29.6	0	38.4
+POINT	route-06	28	0	35
+POINT	route-07	32.5	0	45.5
+POINT	route-07	34.4	0	42
+POINT	route-07	34.4	0	40
+POINT	route-07	34.4	0	38.4
+POINT	route-07	36	0	35
+POINT	route-08	28.0	0	35.0
+POINT	route-08	32.0	0	19.0
+POINT	route-09	36.0	0	35.0
+POINT	route-09	32.0	0	19.0
+POINT	route-10	32.0	0	19.0
+POINT	route-10	32.0	0	3.0
+POINT	route-11	32	0	3
+POINT	route-11	32	0	6.35
+POINT	route-11	41	0	6.35
+POINT	route-11	41	0	10
+POINT	route-11	41	0	24
+POINT	route-12	41	0	24
+POINT	route-12	41	0	40
+POINT	route-12	41	0	45
+POINT	route-12	38.6	0	47
+POINT	route-12	32	0	47
+POINT	route-13	25	0	24
+POINT	route-13	24.8	0	23.2
+POINT	route-13	23	0	23.2
+POINT	route-13	23	0	24
+POINT	route-13	23	-3	34
+POINT	route-13	23	-3	34.4
+POINT	route-13	24	-3	34.4
+POINT	route-13	25	-3	34.4
+POINT	route-13	25	-3	34
+POINT	route-14	34.6	0	1
+POINT	route-14	28.6	-3	1
+POINT	route-15	32.0	-3.0	-0.5
+POINT	route-15	35.0	-3.0	-0.5
+POINT	route-15	35.5	-3.0	0.0
+POINT	route-15	35.5	-3.0	3.0
+POINT	route-15	32.5	-3.0	3.0
+POINT	route-15	32.0	-3.0	3.5
+POINT	route-15	32.0	-3.0	14.0
+POINT	route-16	32.0	-3	14.0
+POINT	route-16	32.0	-3	32.0
+POINT	route-17	26	0	46.75
+POINT	route-17	23	0	46.75
+POINT	route-17	23	0	46
+POINT	route-17	23	3	36
+POINT	route-17	23	3	34.78
+POINT	route-17	24	3	34.78
+POINT	route-17	25.15	3	34.78
+POINT	route-17	26	3	36
+POINT	route-18	32.0	3	35.0
+POINT	route-18	32.0	3	13.0
+POINT	route-19	30	3	14
+POINT	route-19	25.4	3	13.45
+POINT	route-19	24	3	13.45
+POINT	route-19	23	3	13.45
+POINT	route-19	23	3	14
+POINT	route-19	23	6	24
+POINT	route-19	23	6	25.15
+POINT	route-19	24	6	25.15
+POINT	route-19	25.16	6	25.15
+POINT	route-19	30	6	24

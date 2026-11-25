@@ -1,0 +1,3620 @@
+{
+  "id": "WLD-16",
+  "status": "PHYSICAL_DECK_CANDIDATE_NOT_RUNTIME_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-16/supported-terrain.glb",
+  "source_glb_sha256": "6ce78d1089cdabc0c63036e907a7011dfd3fbdd336146dacc0d41088c07eea7c",
+  "source_physics": "development/levels/rebuild/terrain-fit-pass/wld-16/supported-terrain.hcs2",
+  "source_physics_sha256": "cc806e734ddbe4d5a905068f941b1a08879d2146787aa8ea0026b13feb983ad6",
+  "layout": "development/levels/rebuild/wld-16/rough-layout.json",
+  "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+  "zones": [
+    "westwalk",
+    "eastwalk",
+    "northwalk"
+  ],
+  "decks": [
+    {
+      "name": "Floor exterior deck westwalk 0",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.0,
+          31.75
+        ],
+        [
+          13.0,
+          31.535715014398868
+        ],
+        [
+          13.062499804496838,
+          31.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 1",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.308219897164381,
+          34.347600885651055
+        ],
+        [
+          13.0,
+          34.43749793039505
+        ],
+        [
+          13.0,
+          33.25
+        ],
+        [
+          13.499999923706127,
+          33.25
+        ],
+        [
+          13.675679369013842,
+          33.85232936264758
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 2",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.779999732971191,
+          34.209999084472656
+        ],
+        [
+          13.308219897164381,
+          34.347600885651055
+        ],
+        [
+          13.675679369013842,
+          33.85232936264758
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 3",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.062499804496838,
+          31.75
+        ],
+        [
+          13.0,
+          31.535715014398868
+        ],
+        [
+          13.0,
+          28.250018890450498
+        ],
+        [
+          13.913041549928774,
+          31.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 4",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          14.122568841147595,
+          33.25
+        ],
+        [
+          13.675679369013842,
+          33.85232936264758
+        ],
+        [
+          13.499999923706127,
+          33.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 5",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13,
+          20
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          16.0,
+          21.3
+        ],
+        [
+          14.5,
+          21.75
+        ],
+        [
+          13.0,
+          21.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 6",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          21.3
+        ],
+        [
+          16.0,
+          21.75
+        ],
+        [
+          14.5,
+          21.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 7",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          23.25
+        ],
+        [
+          16.0,
+          26.3
+        ],
+        [
+          14.5,
+          26.75
+        ],
+        [
+          13.0,
+          26.75
+        ],
+        [
+          13.0,
+          23.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 8",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          26.3
+        ],
+        [
+          16.0,
+          26.75
+        ],
+        [
+          14.5,
+          26.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 9",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          28.25
+        ],
+        [
+          16.0,
+          30.719548996249735
+        ],
+        [
+          15.446042698212587,
+          31.466187190536225
+        ],
+        [
+          14.5,
+          31.75
+        ],
+        [
+          13.913041549928774,
+          31.75
+        ],
+        [
+          13.0,
+          28.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 10",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          15.446042698212587,
+          31.466187190536225
+        ],
+        [
+          15.235471930006035,
+          31.75
+        ],
+        [
+          14.5,
+          31.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 11",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          15.235471930006035,
+          31.75
+        ],
+        [
+          14.5,
+          32.741288375469125
+        ],
+        [
+          14.5,
+          31.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 12",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          26.75
+        ],
+        [
+          16.0,
+          28.25
+        ],
+        [
+          14.5,
+          28.25
+        ],
+        [
+          14.5,
+          26.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 13",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          21.75
+        ],
+        [
+          16.0,
+          23.25
+        ],
+        [
+          14.5,
+          23.25
+        ],
+        [
+          14.5,
+          21.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 14",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          14.499999999999998,
+          34.0
+        ],
+        [
+          13.779999732971191,
+          34.209999084472656
+        ],
+        [
+          13.675679369013842,
+          33.85232936264758
+        ],
+        [
+          13.89767646789551,
+          33.55311584472656
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 15",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          34.38379464186372
+        ],
+        [
+          16.0,
+          36.3
+        ],
+        [
+          15.955938512925076,
+          36.31321844612248
+        ],
+        [
+          15.43609577734637,
+          34.530900009923684
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 16",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          36.3
+        ],
+        [
+          16.0,
+          36.46428644297069
+        ],
+        [
+          15.955938512925076,
+          36.31321844612248
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 17",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.655957616374566,
+          36.75
+        ],
+        [
+          14.246544555427114,
+          35.8095808970415
+        ],
+        [
+          14.519157273322048,
+          36.74425281800339
+        ],
+        [
+          14.5,
+          36.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 18",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          14.519157273322048,
+          36.74425281800339
+        ],
+        [
+          14.520833535194472,
+          36.75
+        ],
+        [
+          14.5,
+          36.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 19",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16.0,
+          41.82142649747919
+        ],
+        [
+          16.0,
+          42.0
+        ],
+        [
+          13.0,
+          42.0
+        ],
+        [
+          13.0,
+          38.25
+        ],
+        [
+          14.958333654403761,
+          38.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 20",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          14.5,
+          36.75
+        ],
+        [
+          14.520833535194472,
+          36.75
+        ],
+        [
+          14.958333654403761,
+          38.25
+        ],
+        [
+          14.5,
+          38.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 21",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.393559953164923,
+          36.75
+        ],
+        [
+          14.202734193792882,
+          35.65937398379513
+        ],
+        [
+          14.246544555427114,
+          35.8095808970415
+        ],
+        [
+          13.655957616374566,
+          36.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 22",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.0,
+          34.76302775468851
+        ],
+        [
+          13.0,
+          34.43749793039505
+        ],
+        [
+          13.308219897164381,
+          34.347600885651055
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 23",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.0,
+          36.75
+        ],
+        [
+          13.0,
+          35.16640290484699
+        ],
+        [
+          13.98407562495817,
+          34.90968766634943
+        ],
+        [
+          14.202734193792882,
+          35.65937398379513
+        ],
+        [
+          13.393559953164923,
+          36.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck westwalk 24",
+      "zone": "westwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13.0,
+          35.16640290484699
+        ],
+        [
+          13.0,
+          34.76302775468851
+        ],
+        [
+          13.308219897164381,
+          34.347600885651055
+        ],
+        [
+          13.779999732971191,
+          34.209999084472656
+        ],
+        [
+          13.98407562495817,
+          34.90968766634943
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 25",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          33.25
+        ],
+        [
+          39.0,
+          33.44515735982838
+        ],
+        [
+          38.360243142133065,
+          33.3617545608499
+        ],
+        [
+          38.510868730153305,
+          33.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 26",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          33.44515735982838
+        ],
+        [
+          39.0,
+          33.61620601333688
+        ],
+        [
+          38.272929875106485,
+          33.42653542538412
+        ],
+        [
+          38.360243142133065,
+          33.3617545608499
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 27",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          33.61620601333688
+        ],
+        [
+          39.0,
+          34.76303052613516
+        ],
+        [
+          38.131686896157106,
+          33.592695135006615
+        ],
+        [
+          38.10754528016523,
+          33.549240226221244
+        ],
+        [
+          38.272929875106485,
+          33.42653542538412
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 28",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          38.131686896157106,
+          33.592695135006615
+        ],
+        [
+          38.10232162475586,
+          33.55311584472656
+        ],
+        [
+          38.10754528016523,
+          33.549240226221244
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 29",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          44.9444421816997
+        ],
+        [
+          39,
+          48
+        ],
+        [
+          36,
+          48
+        ],
+        [
+          36.0,
+          46.611106908870866
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 30",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          38.25
+        ],
+        [
+          39.0,
+          44.9444421816997
+        ],
+        [
+          36.0,
+          46.611106908870866
+        ],
+        [
+          36.0,
+          38.7
+        ],
+        [
+          37.5,
+          38.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 31",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36.0,
+          38.7
+        ],
+        [
+          36.0,
+          38.25
+        ],
+        [
+          37.5,
+          38.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 32",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36.0,
+          36.75
+        ],
+        [
+          36.0,
+          35.11290414515976
+        ],
+        [
+          36.727069931842856,
+          34.57346471784714
+        ],
+        [
+          37.0002095616308,
+          34.6447184890116
+        ],
+        [
+          38.169810401068794,
+          36.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 33",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.5,
+          38.25
+        ],
+        [
+          36.0,
+          38.25
+        ],
+        [
+          36.0,
+          36.75
+        ],
+        [
+          37.5,
+          36.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 34",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          34.76303052613516
+        ],
+        [
+          39.0,
+          35.15565872192383
+        ],
+        [
+          38.131686896157106,
+          33.592695135006615
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 35",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.5,
+          34.0
+        ],
+        [
+          38.10232162475586,
+          33.55311584472656
+        ],
+        [
+          38.131686896157106,
+          33.592695135006615
+        ],
+        [
+          38.155616760253906,
+          33.63576889038086
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 36",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36.727069931842856,
+          34.57346471784714
+        ],
+        [
+          36.0,
+          35.11290414515976
+        ],
+        [
+          36.0,
+          34.383794421433855
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 37",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          38.510868730153305,
+          33.25
+        ],
+        [
+          38.360243142133065,
+          33.3617545608499
+        ],
+        [
+          37.97552291534797,
+          33.31159996955019
+        ],
+        [
+          37.94130071004231,
+          33.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 38",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          28.25
+        ],
+        [
+          39.0,
+          31.75
+        ],
+        [
+          37.10796737670898,
+          31.75
+        ],
+        [
+          36.0,
+          29.75565872192383
+        ],
+        [
+          36.0,
+          28.7
+        ],
+        [
+          37.5,
+          28.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 39",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.5,
+          32.45565872192384
+        ],
+        [
+          37.10796737670898,
+          31.75
+        ],
+        [
+          37.5,
+          31.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 40",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36.0,
+          28.7
+        ],
+        [
+          36.0,
+          28.25
+        ],
+        [
+          37.5,
+          28.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 41",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          23.25
+        ],
+        [
+          39.0,
+          26.75
+        ],
+        [
+          36.0,
+          26.75
+        ],
+        [
+          36.0,
+          23.7
+        ],
+        [
+          37.5,
+          23.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 42",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.5,
+          28.25
+        ],
+        [
+          36.0,
+          28.25
+        ],
+        [
+          36.0,
+          26.75
+        ],
+        [
+          37.5,
+          26.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 43",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36.0,
+          23.7
+        ],
+        [
+          36.0,
+          23.25
+        ],
+        [
+          37.5,
+          23.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 44",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36,
+          20
+        ],
+        [
+          39,
+          20
+        ],
+        [
+          39.0,
+          21.75
+        ],
+        [
+          36.0,
+          21.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 45",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.5,
+          23.25
+        ],
+        [
+          36.0,
+          23.25
+        ],
+        [
+          36.0,
+          21.75
+        ],
+        [
+          37.5,
+          21.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 46",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.97552291534797,
+          33.31159996955019
+        ],
+        [
+          37.917522477478364,
+          33.30403866121747
+        ],
+        [
+          37.87742928880361,
+          33.25
+        ],
+        [
+          37.94130071004231,
+          33.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 47",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          36.76452638452728,
+          31.75
+        ],
+        [
+          36.0,
+          30.719551097059437
+        ],
+        [
+          36.0,
+          29.75565872192383
+        ],
+        [
+          37.10796737670898,
+          31.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 48",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.5,
+          32.7412908115973
+        ],
+        [
+          36.76452638452728,
+          31.75
+        ],
+        [
+          37.10796737670898,
+          31.75
+        ],
+        [
+          37.5,
+          32.45565872192384
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 49",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          38.360243142133065,
+          33.3617545608499
+        ],
+        [
+          38.272929875106485,
+          33.42653542538412
+        ],
+        [
+          37.99979050528259,
+          33.35528163143249
+        ],
+        [
+          37.97552291534797,
+          33.31159996955019
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 50",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          37.99979050528259,
+          33.35528163143249
+        ],
+        [
+          37.9449216652151,
+          33.34096801187975
+        ],
+        [
+          37.917522477478364,
+          33.30403866121747
+        ],
+        [
+          37.97552291534797,
+          33.31159996955019
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 51",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          38.272929875106485,
+          33.42653542538412
+        ],
+        [
+          38.10754528016523,
+          33.549240226221244
+        ],
+        [
+          37.99979050528259,
+          33.35528163143249
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck eastwalk 52",
+      "zone": "eastwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          38.10754528016523,
+          33.549240226221244
+        ],
+        [
+          38.10232162475586,
+          33.55311584472656
+        ],
+        [
+          37.9449216652151,
+          33.34096801187975
+        ],
+        [
+          37.99979050528259,
+          33.35528163143249
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 53",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          25.8209811591433,
+          17.0
+        ],
+        [
+          26.0,
+          17.0
+        ],
+        [
+          26.0,
+          17.24128633347368
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 54",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          26.0,
+          17.0
+        ],
+        [
+          26.179018970447355,
+          17.0
+        ],
+        [
+          26.000000049949612,
+          17.24128640079709
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 55",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          23.978264766514297,
+          17.0
+        ],
+        [
+          25.8209811591433,
+          17.0
+        ],
+        [
+          26.0,
+          17.24128633347368
+        ],
+        [
+          25.397676467895508,
+          18.05311393737793
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 56",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          26.179018970447355,
+          17.0
+        ],
+        [
+          39,
+          17
+        ],
+        [
+          39.0,
+          17.25
+        ],
+        [
+          26.006464976522693,
+          17.25
+        ],
+        [
+          26.000000049949612,
+          17.24128640079709
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 57",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          39.0,
+          18.75
+        ],
+        [
+          39,
+          20
+        ],
+        [
+          28.046786967695972,
+          20.0
+        ],
+        [
+          27.119367880799025,
+          18.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 58",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          26.0,
+          18.5
+        ],
+        [
+          25.397676467895508,
+          18.05311393737793
+        ],
+        [
+          26.0,
+          17.24128646812049
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 59",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          26.0,
+          17.25
+        ],
+        [
+          26.0,
+          17.24128646812049
+        ],
+        [
+          26.006464877695716,
+          17.25
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 60",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          26.0,
+          20.0
+        ],
+        [
+          25.82098083725681,
+          20.0
+        ],
+        [
+          26.0,
+          19.75871333208109
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 61",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          26.179019292333884,
+          20.0
+        ],
+        [
+          26.0,
+          20.0
+        ],
+        [
+          26.0,
+          19.75871333208109
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 62",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          24.880632033445846,
+          18.75
+        ],
+        [
+          23.953212792730476,
+          20.0
+        ],
+        [
+          13,
+          20
+        ],
+        [
+          13.0,
+          18.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 63",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          13,
+          17
+        ],
+        [
+          23.70425544443913,
+          17.0
+        ],
+        [
+          25.039810120768234,
+          18.535455595034335
+        ],
+        [
+          24.880632033445846,
+          18.75
+        ],
+        [
+          13.0,
+          18.75
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 64",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          23.70425544443913,
+          17.0
+        ],
+        [
+          23.95321219766059,
+          17.0
+        ],
+        [
+          25.06611581329309,
+          18.500000092050907
+        ],
+        [
+          25.039810120768234,
+          18.535455595034335
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck northwalk 65",
+      "zone": "northwalk",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          23.95321219766059,
+          17.0
+        ],
+        [
+          23.978264766514297,
+          17.0
+        ],
+        [
+          25.397676467895508,
+          18.05311393737793
+        ],
+        [
+          25.06611581329309,
+          18.500000092050907
+        ]
+      ],
+      "apertures": []
+    }
+  ],
+  "coplanar_subtractions": [
+    {
+      "zone": "westwalk",
+      "coplanar_receivers": [
+        "Floor office",
+        "route-04 support 0",
+        "route-05 support 0",
+        "route-06 support 0",
+        "route-09 support 0",
+        "route-15 support 0",
+        "route-16 support 0",
+        "route-17 support 0",
+        "route-18 support 0"
+      ],
+      "apertures": []
+    },
+    {
+      "zone": "eastwalk",
+      "coplanar_receivers": [
+        "route-07 support 0",
+        "route-08 support 0",
+        "route-10 support 0",
+        "route-19 support 0",
+        "route-20 support 0",
+        "route-21 support 0",
+        "route-22 support 0"
+      ],
+      "apertures": []
+    },
+    {
+      "zone": "northwalk",
+      "coplanar_receivers": [
+        "route-06 support 0",
+        "route-07 support 0",
+        "route-14 support 1"
+      ],
+      "apertures": []
+    }
+  ],
+  "discarded_boundary_residues": [],
+  "supports": [
+    {
+      "name": "Deck bearing 0",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          13.0,
+          48.35
+        ],
+        [
+          14.5,
+          48.35
+        ]
+      ],
+      "ground_y": [
+        -0.18000030517578125,
+        -0.18000030517578125
+      ],
+      "bottom_y": [
+        -0.5300003051757812,
+        -0.5300003051757812,
+        -0.5300003051757812,
+        -0.5300003051757812
+      ],
+      "footprint": [
+        [
+          13.0,
+          47.9
+        ],
+        [
+          14.5,
+          47.9
+        ],
+        [
+          14.5,
+          48.35
+        ],
+        [
+          13.0,
+          48.35
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        13.75,
+        47.96
+      ]
+    },
+    {
+      "name": "Deck bearing 1",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          14.5,
+          48.35
+        ],
+        [
+          16.0,
+          48.35
+        ]
+      ],
+      "ground_y": [
+        -0.18000030517578125,
+        -0.18000030517578125
+      ],
+      "bottom_y": [
+        -0.5300003051757812,
+        -0.5300003051757812,
+        -0.5300003051757812,
+        -0.5300003051757812
+      ],
+      "footprint": [
+        [
+          14.5,
+          47.9
+        ],
+        [
+          16.0,
+          47.9
+        ],
+        [
+          16.0,
+          48.35
+        ],
+        [
+          14.5,
+          48.35
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        15.25,
+        47.96
+      ]
+    },
+    {
+      "name": "Deck bearing 2",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          12.65,
+          28.0
+        ],
+        [
+          12.65,
+          30.0
+        ]
+      ],
+      "ground_y": [
+        -0.09999847412109375,
+        -0.17505645751953125
+      ],
+      "bottom_y": [
+        -0.44999847412109373,
+        -0.5250564575195312,
+        -0.5250564575195312,
+        -0.44999847412109373
+      ],
+      "footprint": [
+        [
+          13.1,
+          28.0
+        ],
+        [
+          13.1,
+          30.0
+        ],
+        [
+          12.65,
+          30.0
+        ],
+        [
+          12.65,
+          28.0
+        ]
+      ],
+      "supports": "Floor exterior deck westwalk 3",
+      "bearing_point": [
+        13.04,
+        29.0
+      ]
+    },
+    {
+      "name": "Deck bearing 3",
+      "kind": "skirt",
+      "top_y": -0.1600000262260437,
+      "terrain_probe_points": [
+        [
+          12.65,
+          30.0
+        ],
+        [
+          12.65,
+          32.0
+        ]
+      ],
+      "ground_y": [
+        -0.17505645751953125,
+        -0.09999847412109375
+      ],
+      "bottom_y": [
+        -0.5250564575195312,
+        -0.44999847412109373,
+        -0.44999847412109373,
+        -0.5250564575195312
+      ],
+      "footprint": [
+        [
+          13.1,
+          30.0
+        ],
+        [
+          13.1,
+          32.0
+        ],
+        [
+          12.65,
+          32.0
+        ],
+        [
+          12.65,
+          30.0
+        ]
+      ],
+      "supports": "Floor exterior deck westwalk 3",
+      "bearing_point": [
+        13.04,
+        31.0
+      ]
+    },
+    {
+      "name": "Deck bearing 4",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          12.65,
+          38.0
+        ],
+        [
+          12.65,
+          40.0
+        ]
+      ],
+      "ground_y": [
+        -0.09999847412109375,
+        -0.17803573608398438
+      ],
+      "bottom_y": [
+        -0.44999847412109373,
+        -0.5280357360839844,
+        -0.5280357360839844,
+        -0.44999847412109373
+      ],
+      "footprint": [
+        [
+          13.1,
+          38.0
+        ],
+        [
+          13.1,
+          40.0
+        ],
+        [
+          12.65,
+          40.0
+        ],
+        [
+          12.65,
+          38.0
+        ]
+      ],
+      "supports": "Floor exterior deck westwalk 19",
+      "bearing_point": [
+        13.04,
+        39.0
+      ]
+    },
+    {
+      "name": "Deck bearing 5",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          12.65,
+          40.0
+        ],
+        [
+          12.65,
+          42.0
+        ]
+      ],
+      "ground_y": [
+        -0.17803573608398438,
+        -0.18000030517578125
+      ],
+      "bottom_y": [
+        -0.5280357360839844,
+        -0.5300003051757812,
+        -0.5300003051757812,
+        -0.5280357360839844
+      ],
+      "footprint": [
+        [
+          13.1,
+          40.0
+        ],
+        [
+          13.1,
+          42.0
+        ],
+        [
+          12.65,
+          42.0
+        ],
+        [
+          12.65,
+          40.0
+        ]
+      ],
+      "supports": "Floor exterior deck westwalk 19",
+      "bearing_point": [
+        13.04,
+        41.0
+      ]
+    },
+    {
+      "name": "Deck bearing 6",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          12.65,
+          42.0
+        ],
+        [
+          12.65,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.18000030517578125,
+        -0.13255691528320312
+      ],
+      "bottom_y": [
+        -0.5300003051757812,
+        -0.4825569152832031,
+        -0.4825569152832031,
+        -0.5300003051757812
+      ],
+      "footprint": [
+        [
+          13.1,
+          42.0
+        ],
+        [
+          13.1,
+          44.0
+        ],
+        [
+          12.65,
+          44.0
+        ],
+        [
+          12.65,
+          42.0
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        13.04,
+        43.0
+      ]
+    },
+    {
+      "name": "Deck bearing 7",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          12.65,
+          46.0
+        ],
+        [
+          12.65,
+          48.0
+        ]
+      ],
+      "ground_y": [
+        -0.09999847412109375,
+        -0.18000030517578125
+      ],
+      "bottom_y": [
+        -0.44999847412109373,
+        -0.5300003051757812,
+        -0.5300003051757812,
+        -0.44999847412109373
+      ],
+      "footprint": [
+        [
+          13.1,
+          46.0
+        ],
+        [
+          13.1,
+          48.0
+        ],
+        [
+          12.65,
+          48.0
+        ],
+        [
+          12.65,
+          46.0
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        13.04,
+        47.0
+      ]
+    },
+    {
+      "name": "Deck bearing 8",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          16.35,
+          34.0
+        ],
+        [
+          16.35,
+          36.0
+        ]
+      ],
+      "ground_y": [
+        -0.10168075561523438,
+        -0.17234039306640625
+      ],
+      "bottom_y": [
+        -0.45168075561523435,
+        -0.5223403930664062,
+        -0.5223403930664062,
+        -0.45168075561523435
+      ],
+      "footprint": [
+        [
+          15.9,
+          34.0
+        ],
+        [
+          15.9,
+          36.0
+        ],
+        [
+          16.35,
+          36.0
+        ],
+        [
+          16.35,
+          34.0
+        ]
+      ],
+      "supports": "Floor exterior deck westwalk 15",
+      "bearing_point": [
+        15.96,
+        35.0
+      ]
+    },
+    {
+      "name": "Deck bearing 9",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          22.0,
+          16.65
+        ],
+        [
+          24.0,
+          16.65
+        ]
+      ],
+      "ground_y": [
+        -0.1669158935546875,
+        -0.22505950927734375
+      ],
+      "bottom_y": [
+        -0.5169158935546875,
+        -0.5750595092773437,
+        -0.5750595092773437,
+        -0.5169158935546875
+      ],
+      "footprint": [
+        [
+          22.0,
+          17.1
+        ],
+        [
+          24.0,
+          17.1
+        ],
+        [
+          24.0,
+          16.65
+        ],
+        [
+          22.0,
+          16.65
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 63",
+      "bearing_point": [
+        23.0,
+        17.04
+      ]
+    },
+    {
+      "name": "Deck bearing 10",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          24.0,
+          16.65
+        ],
+        [
+          26.0,
+          16.65
+        ]
+      ],
+      "ground_y": [
+        -0.22505950927734375,
+        -0.19010162353515625
+      ],
+      "bottom_y": [
+        -0.5750595092773437,
+        -0.5401016235351562,
+        -0.5401016235351562,
+        -0.5750595092773437
+      ],
+      "footprint": [
+        [
+          24.0,
+          17.1
+        ],
+        [
+          26.0,
+          17.1
+        ],
+        [
+          26.0,
+          16.65
+        ],
+        [
+          24.0,
+          16.65
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 55",
+      "bearing_point": [
+        25.0,
+        17.04
+      ]
+    },
+    {
+      "name": "Deck bearing 11",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          26.0,
+          16.65
+        ],
+        [
+          28.0,
+          16.65
+        ]
+      ],
+      "ground_y": [
+        -0.19010162353515625,
+        -0.17934417724609375
+      ],
+      "bottom_y": [
+        -0.5401016235351562,
+        -0.5293441772460937,
+        -0.5293441772460937,
+        -0.5401016235351562
+      ],
+      "footprint": [
+        [
+          26.0,
+          17.1
+        ],
+        [
+          28.0,
+          17.1
+        ],
+        [
+          28.0,
+          16.65
+        ],
+        [
+          26.0,
+          16.65
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 56",
+      "bearing_point": [
+        27.0,
+        17.04
+      ]
+    },
+    {
+      "name": "Deck bearing 12",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          28.0,
+          16.65
+        ],
+        [
+          30.0,
+          16.65
+        ]
+      ],
+      "ground_y": [
+        -0.17934417724609375,
+        -0.1429901123046875
+      ],
+      "bottom_y": [
+        -0.5293441772460937,
+        -0.4929901123046875,
+        -0.4929901123046875,
+        -0.5293441772460937
+      ],
+      "footprint": [
+        [
+          28.0,
+          17.1
+        ],
+        [
+          30.0,
+          17.1
+        ],
+        [
+          30.0,
+          16.65
+        ],
+        [
+          28.0,
+          16.65
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 56",
+      "bearing_point": [
+        29.0,
+        17.04
+      ]
+    },
+    {
+      "name": "Deck bearing 13",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          18.0,
+          20.35
+        ],
+        [
+          20.0,
+          20.35
+        ]
+      ],
+      "ground_y": [
+        -0.046817779541015625,
+        -0.17399978637695312
+      ],
+      "bottom_y": [
+        -0.3968177795410156,
+        -0.5239997863769531,
+        -0.5239997863769531,
+        -0.3968177795410156
+      ],
+      "footprint": [
+        [
+          18.0,
+          19.9
+        ],
+        [
+          20.0,
+          19.9
+        ],
+        [
+          20.0,
+          20.35
+        ],
+        [
+          18.0,
+          20.35
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 62",
+      "bearing_point": [
+        19.0,
+        19.96
+      ]
+    },
+    {
+      "name": "Deck bearing 14",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          20.0,
+          20.35
+        ],
+        [
+          22.0,
+          20.35
+        ]
+      ],
+      "ground_y": [
+        -0.17399978637695312,
+        -0.23846817016601562
+      ],
+      "bottom_y": [
+        -0.5239997863769531,
+        -0.5884681701660156,
+        -0.5884681701660156,
+        -0.5239997863769531
+      ],
+      "footprint": [
+        [
+          20.0,
+          19.9
+        ],
+        [
+          22.0,
+          19.9
+        ],
+        [
+          22.0,
+          20.35
+        ],
+        [
+          20.0,
+          20.35
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 62",
+      "bearing_point": [
+        21.0,
+        19.96
+      ]
+    },
+    {
+      "name": "Deck bearing 15",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          22.0,
+          20.35
+        ],
+        [
+          24.0,
+          20.35
+        ]
+      ],
+      "ground_y": [
+        -0.23846817016601562,
+        -0.09999847412109375
+      ],
+      "bottom_y": [
+        -0.5884681701660156,
+        -0.44999847412109373,
+        -0.44999847412109373,
+        -0.5884681701660156
+      ],
+      "footprint": [
+        [
+          22.0,
+          19.9
+        ],
+        [
+          24.0,
+          19.9
+        ],
+        [
+          24.0,
+          20.35
+        ],
+        [
+          22.0,
+          20.35
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 62",
+      "bearing_point": [
+        23.0,
+        19.96
+      ]
+    },
+    {
+      "name": "Deck bearing 16",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          28.0,
+          20.35
+        ],
+        [
+          30.0,
+          20.35
+        ]
+      ],
+      "ground_y": [
+        -0.09999847412109375,
+        -0.24585342407226562
+      ],
+      "bottom_y": [
+        -0.44999847412109373,
+        -0.5958534240722656,
+        -0.5958534240722656,
+        -0.44999847412109373
+      ],
+      "footprint": [
+        [
+          28.0,
+          19.9
+        ],
+        [
+          30.0,
+          19.9
+        ],
+        [
+          30.0,
+          20.35
+        ],
+        [
+          28.0,
+          20.35
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 57",
+      "bearing_point": [
+        29.0,
+        19.96
+      ]
+    },
+    {
+      "name": "Deck bearing 17",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          30.0,
+          20.35
+        ],
+        [
+          32.0,
+          20.35
+        ]
+      ],
+      "ground_y": [
+        -0.24585342407226562,
+        -0.19178390502929688
+      ],
+      "bottom_y": [
+        -0.5958534240722656,
+        -0.5417839050292969,
+        -0.5417839050292969,
+        -0.5958534240722656
+      ],
+      "footprint": [
+        [
+          30.0,
+          19.9
+        ],
+        [
+          32.0,
+          19.9
+        ],
+        [
+          32.0,
+          20.35
+        ],
+        [
+          30.0,
+          20.35
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 57",
+      "bearing_point": [
+        31.0,
+        19.96
+      ]
+    },
+    {
+      "name": "Deck bearing 18",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          32.0,
+          20.35
+        ],
+        [
+          34.0,
+          20.35
+        ]
+      ],
+      "ground_y": [
+        -0.19178390502929688,
+        -0.07265472412109375
+      ],
+      "bottom_y": [
+        -0.5417839050292969,
+        -0.42265472412109373,
+        -0.42265472412109373,
+        -0.5417839050292969
+      ],
+      "footprint": [
+        [
+          32.0,
+          19.9
+        ],
+        [
+          34.0,
+          19.9
+        ],
+        [
+          34.0,
+          20.35
+        ],
+        [
+          32.0,
+          20.35
+        ]
+      ],
+      "supports": "Floor exterior deck northwalk 57",
+      "bearing_point": [
+        33.0,
+        19.96
+      ]
+    },
+    {
+      "name": "Deck bearing 19",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          35.65,
+          34.0
+        ],
+        [
+          35.65,
+          36.0
+        ]
+      ],
+      "ground_y": [
+        -0.1017913818359375,
+        -0.3686676025390625
+      ],
+      "bottom_y": [
+        -0.4517913818359375,
+        -0.7186676025390625,
+        -0.7186676025390625,
+        -0.4517913818359375
+      ],
+      "footprint": [
+        [
+          36.1,
+          34.0
+        ],
+        [
+          36.1,
+          36.0
+        ],
+        [
+          35.65,
+          36.0
+        ],
+        [
+          35.65,
+          34.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 36",
+      "bearing_point": [
+        36.04,
+        35.0
+      ]
+    },
+    {
+      "name": "Deck bearing 20",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          35.65,
+          36.0
+        ],
+        [
+          35.65,
+          38.0
+        ]
+      ],
+      "ground_y": [
+        -0.3686676025390625,
+        -0.29323577880859375
+      ],
+      "bottom_y": [
+        -0.7186676025390625,
+        -0.6432357788085937,
+        -0.6432357788085937,
+        -0.7186676025390625
+      ],
+      "footprint": [
+        [
+          36.1,
+          36.0
+        ],
+        [
+          36.1,
+          38.0
+        ],
+        [
+          35.65,
+          38.0
+        ],
+        [
+          35.65,
+          36.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 33",
+      "bearing_point": [
+        36.04,
+        37.0
+      ]
+    },
+    {
+      "name": "Deck bearing 21",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          35.65,
+          38.0
+        ],
+        [
+          35.65,
+          40.0
+        ]
+      ],
+      "ground_y": [
+        -0.29323577880859375,
+        -0.3385887145996094
+      ],
+      "bottom_y": [
+        -0.6432357788085937,
+        -0.6885887145996094,
+        -0.6885887145996094,
+        -0.6432357788085937
+      ],
+      "footprint": [
+        [
+          36.1,
+          38.0
+        ],
+        [
+          36.1,
+          40.0
+        ],
+        [
+          35.65,
+          40.0
+        ],
+        [
+          35.65,
+          38.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 30",
+      "bearing_point": [
+        36.04,
+        39.0
+      ]
+    },
+    {
+      "name": "Deck bearing 22",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          35.65,
+          40.0
+        ],
+        [
+          35.65,
+          42.0
+        ]
+      ],
+      "ground_y": [
+        -0.3385887145996094,
+        -0.29935455322265625
+      ],
+      "bottom_y": [
+        -0.6885887145996094,
+        -0.6493545532226562,
+        -0.6493545532226562,
+        -0.6885887145996094
+      ],
+      "footprint": [
+        [
+          36.1,
+          40.0
+        ],
+        [
+          36.1,
+          42.0
+        ],
+        [
+          35.65,
+          42.0
+        ],
+        [
+          35.65,
+          40.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 30",
+      "bearing_point": [
+        36.04,
+        41.0
+      ]
+    },
+    {
+      "name": "Deck bearing 23",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          35.65,
+          42.0
+        ],
+        [
+          35.65,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.29935455322265625,
+        -0.2472381591796875
+      ],
+      "bottom_y": [
+        -0.6493545532226562,
+        -0.5972381591796875,
+        -0.5972381591796875,
+        -0.6493545532226562
+      ],
+      "footprint": [
+        [
+          36.1,
+          42.0
+        ],
+        [
+          36.1,
+          44.0
+        ],
+        [
+          35.65,
+          44.0
+        ],
+        [
+          35.65,
+          42.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 30",
+      "bearing_point": [
+        36.04,
+        43.0
+      ]
+    },
+    {
+      "name": "Deck bearing 24",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          35.65,
+          44.0
+        ],
+        [
+          35.65,
+          46.0
+        ]
+      ],
+      "ground_y": [
+        -0.2472381591796875,
+        -0.18574142456054688
+      ],
+      "bottom_y": [
+        -0.5972381591796875,
+        -0.5357414245605469,
+        -0.5357414245605469,
+        -0.5972381591796875
+      ],
+      "footprint": [
+        [
+          36.1,
+          44.0
+        ],
+        [
+          36.1,
+          46.0
+        ],
+        [
+          35.65,
+          46.0
+        ],
+        [
+          35.65,
+          44.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 30",
+      "bearing_point": [
+        36.04,
+        45.0
+      ]
+    },
+    {
+      "name": "Deck bearing 25",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          35.65,
+          46.0
+        ],
+        [
+          35.65,
+          48.0
+        ]
+      ],
+      "ground_y": [
+        -0.18574142456054688,
+        -0.1190032958984375
+      ],
+      "bottom_y": [
+        -0.5357414245605469,
+        -0.4690032958984375,
+        -0.4690032958984375,
+        -0.5357414245605469
+      ],
+      "footprint": [
+        [
+          36.1,
+          46.0
+        ],
+        [
+          36.1,
+          48.0
+        ],
+        [
+          35.65,
+          48.0
+        ],
+        [
+          35.65,
+          46.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 29",
+      "bearing_point": [
+        36.04,
+        47.0
+      ]
+    },
+    {
+      "name": "Deck bearing 26",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          39.35,
+          28.0
+        ],
+        [
+          39.35,
+          30.0
+        ]
+      ],
+      "ground_y": [
+        -0.09999847412109375,
+        -0.17657852172851562
+      ],
+      "bottom_y": [
+        -0.44999847412109373,
+        -0.5265785217285156,
+        -0.5265785217285156,
+        -0.44999847412109373
+      ],
+      "footprint": [
+        [
+          38.9,
+          28.0
+        ],
+        [
+          38.9,
+          30.0
+        ],
+        [
+          39.35,
+          30.0
+        ],
+        [
+          39.35,
+          28.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 38",
+      "bearing_point": [
+        38.96,
+        29.0
+      ]
+    },
+    {
+      "name": "Deck bearing 27",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          39.35,
+          30.0
+        ],
+        [
+          39.35,
+          32.0
+        ]
+      ],
+      "ground_y": [
+        -0.17657852172851562,
+        -0.09999847412109375
+      ],
+      "bottom_y": [
+        -0.5265785217285156,
+        -0.44999847412109373,
+        -0.44999847412109373,
+        -0.5265785217285156
+      ],
+      "footprint": [
+        [
+          38.9,
+          30.0
+        ],
+        [
+          38.9,
+          32.0
+        ],
+        [
+          39.35,
+          32.0
+        ],
+        [
+          39.35,
+          30.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 38",
+      "bearing_point": [
+        38.96,
+        31.0
+      ]
+    },
+    {
+      "name": "Deck bearing 28",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          39.35,
+          42.0
+        ],
+        [
+          39.35,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.1641082763671875,
+        -0.17423248291015625
+      ],
+      "bottom_y": [
+        -0.5141082763671875,
+        -0.5242324829101562,
+        -0.5242324829101562,
+        -0.5141082763671875
+      ],
+      "footprint": [
+        [
+          38.9,
+          42.0
+        ],
+        [
+          38.9,
+          44.0
+        ],
+        [
+          39.35,
+          44.0
+        ],
+        [
+          39.35,
+          42.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 30",
+      "bearing_point": [
+        38.96,
+        43.0
+      ]
+    },
+    {
+      "name": "Deck bearing 29",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          39.35,
+          44.0
+        ],
+        [
+          39.35,
+          46.0
+        ]
+      ],
+      "ground_y": [
+        -0.17423248291015625,
+        -0.17064666748046875
+      ],
+      "bottom_y": [
+        -0.5242324829101562,
+        -0.5206466674804687,
+        -0.5206466674804687,
+        -0.5242324829101562
+      ],
+      "footprint": [
+        [
+          38.9,
+          44.0
+        ],
+        [
+          38.9,
+          46.0
+        ],
+        [
+          39.35,
+          46.0
+        ],
+        [
+          39.35,
+          44.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 29",
+      "bearing_point": [
+        38.96,
+        45.0
+      ]
+    },
+    {
+      "name": "Deck bearing 30",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          39.35,
+          46.0
+        ],
+        [
+          39.35,
+          48.0
+        ]
+      ],
+      "ground_y": [
+        -0.17064666748046875,
+        -0.16675567626953125
+      ],
+      "bottom_y": [
+        -0.5206466674804687,
+        -0.5167556762695312,
+        -0.5167556762695312,
+        -0.5206466674804687
+      ],
+      "footprint": [
+        [
+          38.9,
+          46.0
+        ],
+        [
+          38.9,
+          48.0
+        ],
+        [
+          39.35,
+          48.0
+        ],
+        [
+          39.35,
+          46.0
+        ]
+      ],
+      "supports": "Floor exterior deck eastwalk 29",
+      "bearing_point": [
+        38.96,
+        47.0
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          13.0,
+          17.0
+        ],
+        [
+          14.5,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          14.5,
+          17.0
+        ],
+        [
+          16.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          13.0,
+          17.0
+        ],
+        [
+          13.0,
+          18.5
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          13.0,
+          18.5
+        ],
+        [
+          13.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          13.0,
+          22.0
+        ],
+        [
+          13.0,
+          24.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          13.0,
+          26.0
+        ],
+        [
+          13.0,
+          28.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          13.0,
+          32.0
+        ],
+        [
+          13.0,
+          34.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          13.0,
+          36.0
+        ],
+        [
+          13.0,
+          38.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          16.0,
+          20.0
+        ],
+        [
+          16.0,
+          22.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          30.0
+        ],
+        [
+          16.0,
+          32.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          32.0
+        ],
+        [
+          16.0,
+          34.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          36.0
+        ],
+        [
+          16.0,
+          38.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          38.0
+        ],
+        [
+          16.0,
+          40.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          40.0
+        ],
+        [
+          16.0,
+          42.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          16.0,
+          17.0
+        ],
+        [
+          18.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          18.0,
+          17.0
+        ],
+        [
+          20.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          34.0,
+          17.0
+        ],
+        [
+          36.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          16.0,
+          20.0
+        ],
+        [
+          18.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          24.0,
+          20.0
+        ],
+        [
+          26.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          26.0,
+          20.0
+        ],
+        [
+          28.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          34.0,
+          20.0
+        ],
+        [
+          36.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          36.0,
+          17.0
+        ],
+        [
+          37.5,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          37.5,
+          17.0
+        ],
+        [
+          39.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          39.0,
+          17.0
+        ],
+        [
+          39.0,
+          18.5
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          36.0,
+          20.0
+        ],
+        [
+          36.0,
+          22.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          36.0,
+          30.0
+        ],
+        [
+          36.0,
+          32.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          36.0,
+          32.0
+        ],
+        [
+          36.0,
+          34.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          39.0,
+          22.0
+        ],
+        [
+          39.0,
+          24.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          39.0,
+          26.0
+        ],
+        [
+          39.0,
+          28.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          39.0,
+          32.0
+        ],
+        [
+          39.0,
+          34.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          39.0,
+          36.0
+        ],
+        [
+          39.0,
+          38.0
+        ]
+      ],
+      "elevation": 0
+    }
+  ],
+  "new_deck_parts": 66,
+  "new_support_parts": 31,
+  "new_triangles": 1132,
+  "glb_sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+  "physics_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+  "generator_sha256": "786d4e3517abbe2eadad9f6634a9621174464713606fe9d679ef0fecb8668752",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-16-overview.png",
+      "sha256": "4c2625a1df1a6932aa85eb381caa56080532a289e18f336958297e69f2d58c41",
+      "type": "native exported physical deck candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-16-deck-side.png",
+      "sha256": "87f88f7142951d16dd849d3e20738c9eab9ce9b6efe0a182b23a748e05e1bec3",
+      "type": "native exported physical deck candidate"
+    }
+  ],
+  "limitations": "Rough closed slabs and bearing candidates. Guards, intermediate framing, terrain conflicts, all-site boundaries, canonical van, runtime integration and gameplay/network/performance remain open. Prior source bytes, model pivots/materials and saved terrain holes must be independently verified."
+}

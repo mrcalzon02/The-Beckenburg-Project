@@ -9,7 +9,7 @@ javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java w
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
 cp water-module/src/main/resources/META-INF/*.txt build/classes/META-INF/
-for family in water water-imports sounds mission-board; do
+for family in water water-imports sounds mission-board campaign; do
   if [ -d "assets/runtime/$family" ]; then
     mkdir -p "build/classes/org/beckenburg/$family"
     for water_file in assets/runtime/"$family"/*; do
@@ -26,6 +26,7 @@ test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
 test -s assets/runtime/hunter-animation.zip
 cp assets/runtime/hunter-animation.zip build/classes/org/beckenburg/hunter-animation.zip
+cp assets/runtime/hunter-reactions.zip build/classes/org/beckenburg/hunter-reactions.zip
 cp assets/runtime/castle-resident-animation.zip build/classes/org/beckenburg/castle-resident-animation.zip
 test -s assets/runtime/twins-directions.zip
 cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip
@@ -86,6 +87,148 @@ while IFS= read -r site || [ -n "$site" ]; do
     test -s "assets/runtime/sites/$site"
     cp "assets/runtime/sites/$site" "build/classes/org/beckenburg/sites/$site"
 done < assets/runtime/site-geometry.txt
+# Package the verified native review sources with the normal game resources.
+seacliff_packet=development/levels/rebuild/seacliff-room-services
+for extension in glb hcs2; do
+    cp "$seacliff_packet/battery.$extension" "build/classes/org/beckenburg/sites/seacliff-native.$extension"
+done
+cp "$seacliff_packet/runtime.tsv" build/classes/org/beckenburg/sites/seacliff-runtime.tsv
+college_packet=development/levels/rebuild/college-residence-pass
+for extension in glb hcs2; do
+    cp "$college_packet/college/college-residence.$extension" "build/classes/org/beckenburg/sites/college-native.$extension"
+done
+cp "$college_packet/verification/runtime.tsv" build/classes/org/beckenburg/sites/college-runtime.tsv
+school_packet=development/levels/rebuild/school-electrical-pass
+for extension in glb hcs2; do
+    cp "$school_packet/school-electrical.$extension" "build/classes/org/beckenburg/sites/school-electrical.$extension"
+done
+for table in circulation door-schedule mission; do
+    cp "$school_packet/$table.tsv" "build/classes/org/beckenburg/sites/school-$table.tsv"
+done
+prison_packet=development/levels/rebuild/prison-vehicle-sally-pass
+for extension in glb hcs2; do
+    cp "$prison_packet/prison-vehicle-sally.$extension" "build/classes/org/beckenburg/sites/prison-vehicle-sally.$extension"
+done
+for table in arrival door-survey mission gate vehicle-gate services; do
+    cp "$prison_packet/$table.tsv" "build/classes/org/beckenburg/sites/prison-$table.tsv"
+done
+cp development/levels/rebuild/prison-sally-gate-pass/sally-moving-panel.glb build/classes/org/beckenburg/sites/prison-sally-moving-panel.glb
+cp development/levels/rebuild/prison-vehicle-sally-pass/vehicle-moving-panel.glb build/classes/org/beckenburg/sites/prison-vehicle-moving-panel.glb
+lookout_packet=development/levels/rebuild/lookout-case-pass
+for extension in glb hcs2; do
+    cp "$lookout_packet/lookout-case.$extension" "build/classes/org/beckenburg/sites/lookout-case.$extension"
+done
+for table in arrival door-survey mission; do
+    cp "$lookout_packet/$table.tsv" "build/classes/org/beckenburg/sites/lookout-$table.tsv"
+done
+mine_packet=development/levels/rebuild/mine-case-pass
+for extension in glb hcs2; do
+    cp "$mine_packet/mine-case.$extension" "build/classes/org/beckenburg/sites/mine-case.$extension"
+done
+for table in arrival door-survey mission; do
+    cp "$mine_packet/$table.tsv" "build/classes/org/beckenburg/sites/mine-$table.tsv"
+done
+cp "$mine_packet/mine-sump.water" build/classes/org/beckenburg/sites/mine-sump.water
+wharf_packet=development/levels/rebuild/wharf-case-pass
+for extension in glb hcs2; do
+    cp "$wharf_packet/wharf-case.$extension" "build/classes/org/beckenburg/sites/wharf-case.$extension"
+done
+for table in room-layout door-schedule; do
+    cp "$wharf_packet/$table.tsv" "build/classes/org/beckenburg/sites/wharf-$table.tsv"
+done
+cp development/levels/rebuild/wharf-landward-pass/wharf-tide.water build/classes/org/beckenburg/sites/wharf-tide.water
+for site in wld-07 wld-07-mortuary; do
+    cemetery_packet="development/levels/rebuild/cemetery-furnishings-pass/$site"
+    cemetery_resource="build/classes/org/beckenburg/sites/$site"
+    mkdir -p "$cemetery_resource"
+    for payload in furnished-grounds.glb furnished-grounds.hcs2 room-layout.tsv door-schedule.tsv; do
+        cp "$cemetery_packet/$payload" "$cemetery_resource/$payload"
+    done
+done
+red_mesa_packet=development/levels/rebuild/red-mesa-native-pass
+red_mesa_resource=build/classes/org/beckenburg/sites/wld-03
+mkdir -p "$red_mesa_resource"
+for payload in red-mesa-review.glb red-mesa-review.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$red_mesa_packet/$payload" "$red_mesa_resource/$payload"
+done
+
+mourning_marsh_packet=development/levels/rebuild/mourning-marsh-native-pass
+mourning_marsh_resource=build/classes/org/beckenburg/sites/wld-11
+mkdir -p "$mourning_marsh_resource"
+for payload in marsh-review.glb marsh-review.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$mourning_marsh_packet/$payload" "$mourning_marsh_resource/$payload"
+done
+
+gallows_packet=development/levels/rebuild/gallows-pass
+gallows_resource=build/classes/org/beckenburg/sites/wld-12
+mkdir -p "$gallows_resource"
+for member in railway.glb railway.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$gallows_packet/$member" "$gallows_resource/$member"
+done
+
+cinder_packet=development/levels/rebuild/cinder-6
+cinder_resource=build/classes/org/beckenburg/sites/wld-18
+mkdir -p "$cinder_resource"
+for member in facility.glb facility.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$cinder_packet/$member" "$cinder_resource/$member"
+done
+
+pines_packet=development/levels/rebuild/eight-pines
+pines_resource=build/classes/org/beckenburg/sites/wld-16
+mkdir -p "$pines_resource"
+for member in motor-lodge.glb motor-lodge.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$pines_packet/$member" "$pines_resource/$member"
+done
+
+elara_packet=development/levels/rebuild/saint-elara
+elara_resource=build/classes/org/beckenburg/sites/wld-15
+mkdir -p "$elara_resource"
+for member in vessel.glb vessel.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$elara_packet/$member" "$elara_resource/$member"
+done
+
+morrow_packet=development/levels/rebuild/morrow-point
+morrow_resource=build/classes/org/beckenburg/sites/wld-14
+mkdir -p "$morrow_resource"
+for member in lightstation.glb lightstation.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$morrow_packet/$member" "$morrow_resource/$member"
+done
+
+greywater_packet=development/levels/rebuild/greywater-native-pass
+greywater_resource=build/classes/org/beckenburg/sites/wld-13
+mkdir -p "$greywater_resource"
+for payload in greywater-review.glb greywater-review.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$greywater_packet/$payload" "$greywater_resource/$payload"
+done
+
+northwatch_packet=development/levels/rebuild/northwatch-furnishing-pass/wld-08
+northwatch_resource=build/classes/org/beckenburg/sites/wld-08
+mkdir -p "$northwatch_resource"
+for payload in station-with-furnishings.glb station-with-furnishings.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$northwatch_packet/$payload" "$northwatch_resource/$payload"
+done
+cp development/levels/rebuild/northwatch-named-pass/source-hashes.tsv "$northwatch_resource/source-hashes.tsv"
+blackwater_packet=development/levels/rebuild/dam-ventilation-pass/wld-09
+blackwater_resource=build/classes/org/beckenburg/sites/wld-09
+mkdir -p "$blackwater_resource"
+for payload in dam-with-ventilation.glb dam-with-ventilation.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv blackwater.water; do
+    cp "$blackwater_packet/$payload" "$blackwater_resource/$payload"
+done
+cp development/levels/rebuild/dam-named-pass/source-hashes.tsv "$blackwater_resource/source-hashes.tsv"
+monastery_packet=development/levels/rebuild/monastery-perimeter-pass/wld-10
+monastery_resource=build/classes/org/beckenburg/sites/wld-10
+mkdir -p "$monastery_resource"
+for payload in monastery-with-perimeter.glb monastery-with-perimeter.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv; do
+    cp "$monastery_packet/$payload" "$monastery_resource/$payload"
+done
+cp development/levels/rebuild/monastery-perimeter-pass/source-hashes.tsv "$monastery_resource/source-hashes.tsv"
+asylum_packet=development/levels/rebuild/asylum-enclosure-pass
+for extension in glb hcs2; do
+    cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"
+done
+for table in arrival door-survey mission services; do
+    cp "$asylum_packet/$table.tsv" "build/classes/org/beckenburg/sites/asylum-$table.tsv"
+done
 # Licensed in-game subset, not the upstream paid PSX asset archive.
 mkdir -p build/classes/org/beckenburg/models
 for name in light_switch_1 ceiling_lamp_1_off door_1_loose shelf_mp_6 chair_mp_5 ceiling_lamp_1_on cross_mp_2 flashlight_mp_1 armchair_1 sofa_1 dinner_table_1 wardrobe_mp_1 display_cabinet_mp_2 tv_mp_1 tv_table_1_4 lamp_3_on lamp_3_off ceiling_lamp_4_on ceiling_lamp_4_off pc_keyboard_mp_1 vape_mp_1 dosimeter_1 dosimeter_2 walkie_talkie_2 handheld_tablet_1 monitoring_screen_mp_1 pc_mp_1 button_12 book_mp_1 open_book_mp_1 dosimeter_4 walkie_talkie_1 exploration_emf_detector exploration_flashlight exploration_flashlight_poquet exploration_photo_camera exploration_spirit_box exploration_thermal_camera exploration_thermometer exploration_voice_recorder ggbot_car08_van_shell ggbot_car01 ggbot_car05 ggbot_car07 kenney_road_asphalt_straight kenney_road_asphalt_side kenney_road_asphalt_damaged kenney_detail_light_single kenney_detail_dumpster_closed kenney_detail_bench kenney_detail_barrier_type_a blender_sound_recorder_1 blender_sound_recorder_2 blender_sound_recorder_3; do
@@ -160,6 +303,9 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Ho
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.HorrorAudioRoutingTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleHubIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignBoardPanelTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapPanelTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapNavigationTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleCountyBoardTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleContainedMenuTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignMenuWorkflowTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignCoopLobbyTest
@@ -257,6 +403,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanGhostIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.MouseLookTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldControlsTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LocalInvestigationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.EquipmentSelectionTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SiteSelectionTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.InvestigationSitesTest

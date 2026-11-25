@@ -1,0 +1,536 @@
+{
+  "anchors": [
+    {
+      "room": "generator",
+      "name": "service workbench",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "radio",
+      "name": "relay operator bench",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "dorm",
+      "name": "west crew bunk",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "dorm",
+      "name": "east crew bunk",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "mess",
+      "name": "crew mess bench",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "records",
+      "name": "relay log desk",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "store",
+      "name": "cold-store shelving",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "mess",
+      "name": "mess table",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "dorm",
+      "name": "dorm gear lockers",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "shelter",
+      "name": "shelter equipment shelf",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "lab",
+      "name": "science instrument table",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "array",
+      "name": "weather instrument array",
+      "measured_floor_bearings": 4
+    },
+    {
+      "room": "records",
+      "name": "WINTER_RELAY_LOG",
+      "measured_desktop_bearings": 4
+    },
+    {
+      "room": "generator",
+      "name": "FUEL_AND_HEAT_WORKSHEET",
+      "measured_desktop_bearings": 4
+    }
+  ],
+  "sleeves": [],
+  "furnishings": [
+    {
+      "room": "generator",
+      "name": "service workbench",
+      "nearest_route": "L13",
+      "minimum_route_margin": 3.0415,
+      "asset": "level_work_repair_bench",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "bounds": [
+        [
+          2.9615,
+          0.0,
+          18.824999
+        ],
+        [
+          3.9585,
+          1.645,
+          21.275
+        ]
+      ],
+      "pivot": [
+        3.3565001487731934,
+        0.0,
+        20.049999237060547
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "radio",
+      "name": "relay operator bench",
+      "nearest_route": "J02",
+      "minimum_route_margin": 4.6475,
+      "asset": "level_workbench_worn",
+      "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+      "bounds": [
+        [
+          26.75,
+          0.0,
+          13.6475
+        ],
+        [
+          28.549999,
+          1.22,
+          14.3525
+        ]
+      ],
+      "pivot": [
+        27.649999618530273,
+        0.0,
+        13.987500190734863
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "dorm",
+      "name": "west crew bunk",
+      "nearest_route": "L18",
+      "minimum_route_margin": 4.2275,
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          47.487499,
+          0.0,
+          28.727501
+        ],
+        [
+          48.412502,
+          0.82,
+          30.772499
+        ]
+      ],
+      "pivot": [
+        47.95000076293945,
+        0.0,
+        29.75
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "dorm",
+      "name": "east crew bunk",
+      "nearest_route": "J03",
+      "minimum_route_margin": 0.5875,
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          55.587498,
+          0.0,
+          38.577499
+        ],
+        [
+          56.512501,
+          0.82,
+          40.622498
+        ]
+      ],
+      "pivot": [
+        56.04999923706055,
+        0.0,
+        39.599998474121094
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "mess",
+      "name": "crew mess bench",
+      "nearest_route": "J03",
+      "minimum_route_margin": 2.325,
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          48.924999,
+          0.0,
+          51.342697
+        ],
+        [
+          50.674999,
+          0.88,
+          51.95731
+        ]
+      ],
+      "pivot": [
+        49.79999923706055,
+        0.0,
+        51.682308197021484
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "records",
+      "name": "relay log desk",
+      "nearest_route": "J02",
+      "minimum_route_margin": 1.7913,
+      "asset": "level_student_desk",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "bounds": [
+        [
+          35.310001,
+          0.0,
+          14.525001
+        ],
+        [
+          36.41,
+          0.74,
+          15.175
+        ]
+      ],
+      "pivot": [
+        35.86000061035156,
+        0.0,
+        14.850000381469727
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab",
+      "discarded_zero_area_source_triangles": 16
+    },
+    {
+      "room": "store",
+      "name": "cold-store shelving",
+      "nearest_route": "L04",
+      "minimum_route_margin": 7.89,
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          2.89,
+          0.0,
+          49.389996
+        ],
+        [
+          3.11,
+          1.29,
+          50.209999
+        ]
+      ],
+      "pivot": [
+        2.999999523162842,
+        5.042526751708465e-08,
+        49.79999542236328
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "mess",
+      "name": "mess table",
+      "nearest_route": "J03",
+      "minimum_route_margin": 2.35,
+      "asset": "dinner_table_1",
+      "sha256": "482303ac80e40371c9ffe2462a9fad6e946f66c7aebc8417b6b2c2c73400086a",
+      "bounds": [
+        [
+          48.949997,
+          0.0,
+          50.299999
+        ],
+        [
+          50.649998,
+          0.86,
+          51.399998
+        ]
+      ],
+      "pivot": [
+        49.79999542236328,
+        -1.8531864043325186e-08,
+        50.849998474121094
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "dorm",
+      "name": "dorm gear lockers",
+      "nearest_route": "L15",
+      "minimum_route_margin": 2.562,
+      "asset": "level_lockers",
+      "sha256": "ac2bc291264a2be64cfbcbfe0a53c0771243eb08ef3918197501554e956d9df7",
+      "bounds": [
+        [
+          56.487,
+          0.0,
+          26.8155
+        ],
+        [
+          58.913002,
+          1.8675,
+          27.384501
+        ]
+      ],
+      "pivot": [
+        57.70000076293945,
+        0.0,
+        27.055500030517578
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "shelter",
+      "name": "shelter equipment shelf",
+      "nearest_route": "Northwatch-switch-shelter",
+      "minimum_route_margin": 3.4215,
+      "asset": "shelf_mp_6",
+      "sha256": "87a77253220e18ebc2679b70a08d5c8a1ba37a76d6b1310d7790cde73e722754",
+      "bounds": [
+        [
+          66.089996,
+          0.0,
+          9.139999
+        ],
+        [
+          66.909996,
+          1.29,
+          9.36
+        ]
+      ],
+      "pivot": [
+        66.5,
+        5.042526751708465e-08,
+        9.249999046325684
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "lab",
+      "name": "science instrument table",
+      "nearest_route": "Northwatch-switch-lab",
+      "minimum_route_margin": 3.885,
+      "asset": "level_blockout_science_instrument_table",
+      "sha256": "37ad81a14c0dbcc369602bc756422a4be2d5cbd09dc3d01633cba1002b5387a9",
+      "bounds": [
+        [
+          12.685,
+          0.0,
+          28.83
+        ],
+        [
+          14.515,
+          1.598637,
+          29.67
+        ]
+      ],
+      "pivot": [
+        13.600000381469727,
+        -0.004999999888241291,
+        29.25
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "array",
+      "name": "weather instrument array",
+      "nearest_route": "J02",
+      "minimum_route_margin": 4.3058,
+      "asset": "level_blockout_weather_instrument_array",
+      "sha256": "48a677de7ae3216545794eb9322754317dd4ca2a3fa0036ce6f7eea158ade35f",
+      "bounds": [
+        [
+          56.974998,
+          0.0,
+          7.655
+        ],
+        [
+          58.624996,
+          2.935,
+          8.345
+        ]
+      ],
+      "pivot": [
+        57.77499771118164,
+        0.0,
+        8.0
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "room": "radio",
+      "name": "station relay radio",
+      "asset": "level_event_radio_worn",
+      "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+      "bounds": [
+        [
+          27.490717,
+          0.946,
+          13.926001
+        ],
+        [
+          27.809282,
+          1.39641,
+          14.074
+        ]
+      ],
+      "pivot": [
+        27.659282684326172,
+        0.9459999203681946,
+        13.991000175476074
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": [
+        "Northwatch relay operator bench 01"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "WINTER_RELAY_LOG",
+      "room": "records",
+      "owner": 4,
+      "desktop": 0.74,
+      "reading_stance": [
+        35.86,
+        0,
+        16.1
+      ],
+      "aim": [
+        35.877998,
+        0.76394,
+        14.832
+      ],
+      "placement": {
+        "asset": "level_trace_journal",
+        "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+        "bounds": [
+          [
+            35.718952,
+            0.741,
+            14.726999
+          ],
+          [
+            36.001049,
+            0.76549,
+            14.913
+          ]
+        ],
+        "pivot": [
+          35.86000061035156,
+          0.7409999966621399,
+          14.819999694824219
+        ],
+        "yaw": 0,
+        "scale": 0.62,
+        "support": [
+          "Northwatch relay log desk 01"
+        ]
+      }
+    },
+    {
+      "id": "FUEL_AND_HEAT_WORKSHEET",
+      "room": "generator",
+      "owner": 5,
+      "desktop": 0.9225,
+      "reading_stance": [
+        5.1,
+        0,
+        20.18
+      ],
+      "aim": [
+        3.568,
+        0.9421,
+        20.191999
+      ],
+      "placement": {
+        "asset": "level_story_letters",
+        "sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+        "bounds": [
+          [
+            3.465087,
+            0.9235,
+            20.114237
+          ],
+          [
+            3.634913,
+            0.945331,
+            20.245762
+          ]
+        ],
+        "pivot": [
+          3.546229124069214,
+          0.9231899976730347,
+          20.18015480041504
+        ],
+        "yaw": 0,
+        "scale": 0.62,
+        "support": [
+          "Northwatch service workbench 01"
+        ]
+      }
+    }
+  ],
+  "exports": {
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.blend": "fe9ef93a75b05c1f4f634b6d389c898d89493ac6b24d9cfb5a0e16c184a7f72b",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb": "2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909"
+  },
+  "previous_scene": "94e9f5f3c77d07e72a55cf969fcb9650a8fb2fb966c998e1e4c91ed30ad9c5e7",
+  "retained_collision_parts": 1135,
+  "added_collision_parts": 15
+}

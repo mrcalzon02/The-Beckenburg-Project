@@ -1,0 +1,3 @@
+# Retained failed connection studies
+
+pilot-01 retains the actual mine hub and battery approach native/export/editable payloads plus full raw flat/stair results: two mine sweep regressions and an incomplete battery terrain approach. pilot-02 retains actual battery native/export/editable payloads and results after excavation but before lower-entry support, including two flat sweeps and regressed complete route02. Metadata can contain original working output paths; raw retained payloads and their hashes identify the failed state. Do not use these as final maps or new usable props. Gallery rejected-entry-gap frames belong to pilot-02.

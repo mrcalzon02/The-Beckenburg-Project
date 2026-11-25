@@ -1,0 +1,110 @@
+{
+  "status": "NATIVE_PRISON_PUBLIC_DOORS_AND_ARRIVAL_STAGED",
+  "prison_source_commit": "3b2e8a11cdbcdb750e00bda7d2da45fa85904681",
+  "native_scene_revision": "00908376ed82359794e120cb07c935edf642c9a9255a88a81d950ad40ee16d01",
+  "source_authority": {
+    "id": "PRISON",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/authored-layout.json",
+    "glb": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.glb",
+    "native": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.hcs2",
+    "blend": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.blend",
+    "glb_sha256": "1f8ae458d2f7f9de28a42b11c87298547d4da9665e1a58efa23b2a25334b18cf",
+    "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/prison-public-entry-pass/prison-public-entry.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/prison-public-entry-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/prison-public-entry-pass/verification/staged-approach.tsv"
+  },
+  "doors": [
+    {
+      "frame": "PRISON-z-68-14",
+      "clear_width_m": 1.8,
+      "clear_height_m": 2.3,
+      "leaves": 2,
+      "swing": "Outward to forecourt"
+    },
+    {
+      "frame": "PRISON-x-18-65",
+      "clear_width_m": 1.05,
+      "clear_height_m": 2.1,
+      "leaves": 1,
+      "swing": "Into records"
+    }
+  ],
+  "matched_editor_poses": 4,
+  "matched_editor_triangles": 4272,
+  "arrival_direction_posture_replays": 4,
+  "unchanged_geometry": "Exact retained surveyed GLB and HCS2 plus fitted runtime leaves. The arrival guide has no physical extent.",
+  "verified": [
+    "Standing and crouched transit both ways",
+    "Open and closed door body, sight, small object and acoustics",
+    "Closed handle aim and second staged world snapshot",
+    "Game software captures and reopened editable scene"
+  ],
+  "still_open": [
+    "Custody release and gates using assigned security assets",
+    "Physical 15-owner investigation graph and utilities",
+    "Ordinary package dispatch and full case acceptance"
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/verification/editable-door-poses.tsv",
+      "bytes": 130,
+      "sha256": "39a8834dfd1328a676f659d5f499f429bb6224eaa80b5140d44cdc68d8cac7d7"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/verification/staged-approach.tsv",
+      "bytes": 348,
+      "sha256": "04ff2207f0c55b8bf788c20279453d57d345e825c9be09303c2a9426c8fb4fcf"
+    }
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/arrival.tsv",
+      "bytes": 5392,
+      "sha256": "2df84e9ff9aed774e568b9da17c45b974b313d2e523a874b09ab3ccc6f96ef43"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/door-survey.tsv",
+      "bytes": 281,
+      "sha256": "35c3febfdef458b1b804c6dd26334430dffec09003ac398367dee9202d4f2523"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/verified-cargo-guide.tsv",
+      "bytes": 126,
+      "sha256": "b63dbdfdf87d83f479744c1eca773dc892a791c7a2b0051579321dab1eaf6761"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/public-approach-plan.svg",
+      "bytes": 2188,
+      "sha256": "bb847d35ebbc1b685fa8fb7f279c8c0b3b0e21921d5a2c965a62ebe2c8696242"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/prison-public-entry.blend",
+      "bytes": 1169957,
+      "sha256": "8ee5e0fdfa69be3615651acddb27e6806205ce87770783e5c8618d69c19a9b15"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-closed.png",
+      "bytes": 402364,
+      "sha256": "ccd3e4e22748ac35b8768a14104386fb427e4e8ea978aebd6ed80ecc913a00f8"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-open.png",
+      "bytes": 365367,
+      "sha256": "07071d4b58fb1bc507aca36c6da1f76397e09e92a64ac6b30cf005976ce3038f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-451-closed.png",
+      "bytes": 387851,
+      "sha256": "cca767cd8ff3065fd448855e1f42c249587ab25ebe8fe2c031a57249d25bf90a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-451-open.png",
+      "bytes": 365531,
+      "sha256": "05c8359520b27849895fb531414786e29792065455d3a7b1ed2dea84746e4da9"
+    }
+  ]
+}

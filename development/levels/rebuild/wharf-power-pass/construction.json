@@ -1,0 +1,86 @@
+{
+  "footprint": [
+    34.7,
+    54.65,
+    40.3,
+    58.25
+  ],
+  "placement_offset": [
+    0.75,
+    0,
+    -12.7
+  ],
+  "ground_checks": 713,
+  "covered_service_source": {
+    "blend": "d4ff369f9b19f58f51a452dc7a06163609a3ffaf4ef31be5f79fb931d56b5d79",
+    "glb": "e68dbbaa1062ee96a8ad400537c8a0e1de022ab964d0a2c36679e9c37e1329f4",
+    "hcs2": "d7d4e9aa3fa2eae7b124a2ffe2ed3c1749a749a1dc8ad27a8c2987b875707f00"
+  },
+  "retained_collision_parts": 691,
+  "fitted_parts": 58,
+  "sockets": [
+    {
+      "id": "wharf-generator",
+      "type": "generator",
+      "room": 12,
+      "position": [
+        38.985,
+        0.475,
+        55.741
+      ],
+      "yaw": 0.0,
+      "style": "WH-MAIN"
+    },
+    {
+      "id": "wharf-breaker",
+      "type": "breaker",
+      "room": 12,
+      "position": [
+        36.55,
+        0.9,
+        55.355
+      ],
+      "yaw": 0.0,
+      "style": "WH-MAIN"
+    },
+    {
+      "id": "wharf-service-light",
+      "type": "light",
+      "room": 12,
+      "position": [
+        37.619999,
+        2.456,
+        57.090001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "approach": [
+    [
+      32,
+      0,
+      61
+    ],
+    [
+      37.5,
+      0,
+      61
+    ],
+    [
+      37.5,
+      0,
+      58.75
+    ],
+    [
+      37.5,
+      0.018,
+      57.65
+    ]
+  ],
+  "exports": {
+    "development/levels/rebuild/wharf-power-pass/wharf-power.blend": "884a65037a973014fb069da91c0fdd8ce17603fbb059147f72a304da55793118",
+    "development/levels/rebuild/wharf-power-pass/wharf-power.glb": "03be2d44feb5e3f76a291b92609bfe2e21058138966830ef2d1f585b8f8becc1",
+    "development/levels/rebuild/wharf-power-pass/wharf-power.hcs2": "a6178c8885ac0cb33327c15392ed9568002487082b641218da9a3a76f4e23360"
+  }
+}

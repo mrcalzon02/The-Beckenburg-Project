@@ -1,0 +1,315 @@
+{
+  "sites": [
+    {
+      "id": "WLD-06",
+      "source": {
+        "id": "WLD-06",
+        "construction": "development/levels/rebuild/courts-and-docks-pass/wld-06/construction.json",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-06/authored-layout.json",
+        "glb": "development/levels/rebuild/courts-and-docks-pass/wld-06/courts-and-docks.glb",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-06/courts-and-docks.hcs2",
+        "blend": "development/levels/rebuild/courts-and-docks-pass/wld-06/courts-and-docks.blend",
+        "glb_sha256": "bd5788fcca05aaffc9e14b2db744d52cc3389bd27ee1e58e2d10fc3c79ba6a5e",
+        "native_sha256": "0bbee6b1ccf813e9b72ce14f948055a0ae940cb565138ccbaea5197c260d8e97"
+      },
+      "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world",
+      "world": "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world",
+      "program": "development/levels/rebuild/site-earthworks-pass/program/wld-06",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "25654aa2897682852b024fc86c60d9e4a3156e1703516d34d8f07ab13000e74a",
+        "authored-cuts.tsv": "190e206e9ed5c9aee6256efa7b15f49c06a8e4cb70ee7330c06cbfc9f4fe9410",
+        "source-provenance.json": "85cdc766d12cd8e1f8be99b1915d1a252333afa0a97ea58a31871e1077fa03c2",
+        "terrain-physics.hcs2": "64708a2454ba28e70f47ac1b419ddde02b508d894e73954a6b9887c7cfa3f3f8",
+        "tile_0_0.png": "409a17cdef3d263a11251331b70b329b54f22118f571b69eaca1306c3f4ed016",
+        "verification.json": "c12f3c114bf7146940bbe733fd3e5270df1cd868fa1a2e6fb12cd177baf10b4e",
+        "world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+        "scene-package/scene.bin": "867c933bfb11abeaaa177f958b7e8c39db09eb0d1b3c5dd20aa0834bd3646633",
+        "scene-package/meshes/site.obj": "d986d9f9080b3f260fc78eb28f585800e633dfa68f8d9de315eb4631956fdd3c"
+      },
+      "features": [
+        {
+          "name": "Harbour arrival clearing",
+          "material": "GRAVEL",
+          "feather": 5.0,
+          "profile": "arrival",
+          "polygon": [
+            [
+              7.0,
+              54.0
+            ],
+            [
+              57.0,
+              54.0
+            ],
+            [
+              57.0,
+              60.0
+            ],
+            [
+              44.0,
+              66.0
+            ],
+            [
+              44.0,
+              69.0
+            ],
+            [
+              43.0,
+              79.0
+            ],
+            [
+              38.0,
+              84.0
+            ],
+            [
+              26.0,
+              84.0
+            ],
+            [
+              20.0,
+              78.0
+            ],
+            [
+              20.0,
+              69.0
+            ],
+            [
+              7.0,
+              60.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WLD-08",
+      "source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/courts-and-docks-pass/wld-08/construction.json",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/courts-and-docks-pass/wld-08/courts-and-docks.glb",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-08/courts-and-docks.hcs2",
+        "blend": "development/levels/rebuild/courts-and-docks-pass/wld-08/courts-and-docks.blend",
+        "glb_sha256": "28d524bf61d7bf3e6699032c9a705fc4ce7bf95f1d446768ebf6dae3da498b6c",
+        "native_sha256": "93523955a11c4fafe82b90c60040e8cc07ae78a5c04ad1c23296fc95323253f9"
+      },
+      "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world",
+      "world": "development/levels/rebuild/site-earthworks-pass/worlds/wld-08/terrain-world",
+      "program": "development/levels/rebuild/site-earthworks-pass/program/wld-08",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "bd109d05ae6c1414e690c9c44ec31923dcfa728cc291d519e6476ed54d0b8723",
+        "authored-cuts.tsv": "7b17b4e01fac94acf7388ecebb347f2b750a6b391f66d615c33cbffc8e2846fd",
+        "authored-path-grading.sha256": "d20bd54680f93b907f5d71a7686e023ea9454b6f76ce9f16026f445efb59b8f1",
+        "source-provenance.json": "952460910bd0f5e3a7eb0c17734389ab57fb77c21cd7bb205d9c7d4b5b158ae5",
+        "terrain-physics.hcs2": "80affa5b80eadec91498217ade0ce34656f21355a158bb77ebe8d663a0b6b1ec",
+        "tile_0_0.png": "52520d8fc7a747f2e846e536faad13fb232175b73087ecb15ab23facdbf6ae21",
+        "verification.json": "8777c8266eb7529abcb096d6addaedb2cb7bea325ccc95c270efc1817f216cc5",
+        "world.properties": "061685389ee0cafd56f51b8af8571f0f84d49ab32d7806ba8c2c3df0a6639c64",
+        "scene-package/.scene.bin.editor.previous": "7f7b12bc3a24fd448599a6d21a9a7bb794fde07e9e68c8360a3a60c7c17a83f9",
+        "scene-package/scene.bin": "95d32ab67d5c766f1e57b05c9eb5bd936ba9b88d8b7cd59a32f0213651c78b54",
+        "terrain-layers/tile_0_0.bin": "779a6e6d8c774bc964b3b14421d09cfb7cb0af94791f5819eb6071cd2a1ee716",
+        "scene-package/meshes/site-0-0.obj": "4c7c8e77defdc55c00f6416f54e51d707fb3f6a04a7eee1b14e27aad12d1df53",
+        "scene-package/meshes/site-0-1.obj": "41d530a1df283ba61656215ea1f3b9f652ef45fb50f9d9baf36125353222ff95",
+        "scene-package/meshes/site-1-0.obj": "2276e2d4bf74419e2fdd81bb04c1fc5b8a86858a624181ba9f253645fe9ebd2a",
+        "scene-package/meshes/site-1-1.obj": "d8d0c28efa93230b3a1a22432744f3bc96978abb04a8df18fdb5c8e1f1bac45c"
+      },
+      "features": [
+        {
+          "name": "Research arrival clearing",
+          "material": "GRAVEL",
+          "feather": 5.0,
+          "profile": "arrival",
+          "polygon": [
+            [
+              24.0,
+              70.0
+            ],
+            [
+              40.0,
+              70.0
+            ],
+            [
+              44.0,
+              76.0
+            ],
+            [
+              43.0,
+              84.0
+            ],
+            [
+              37.0,
+              87.0
+            ],
+            [
+              26.0,
+              87.0
+            ],
+            [
+              21.0,
+              81.0
+            ],
+            [
+              21.0,
+              75.0
+            ]
+          ]
+        },
+        {
+          "name": "Array equipment grounds",
+          "material": "GRAVEL",
+          "feather": 4.0,
+          "profile": "array",
+          "polygon": [
+            [
+              44.0,
+              -1.0
+            ],
+            [
+              59.0,
+              -2.0
+            ],
+            [
+              64.0,
+              3.0
+            ],
+            [
+              65.0,
+              8.0
+            ],
+            [
+              62.0,
+              20.0
+            ],
+            [
+              60.0,
+              26.0
+            ],
+            [
+              46.0,
+              26.0
+            ],
+            [
+              43.0,
+              18.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WLD-13",
+      "source": {
+        "id": "WLD-13",
+        "construction": "development/levels/rebuild/courts-and-docks-pass/wld-13/construction.json",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.glb",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.hcs2",
+        "blend": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.blend",
+        "glb_sha256": "7188c304814f64d530f24a8da978b82729ba83662e2a147f7bf0b8af6daf1f7c",
+        "native_sha256": "802c6b51ba9c51a9654be569c7ec13228e751f5b97782b149fba821c26f23df1"
+      },
+      "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world",
+      "world": "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world",
+      "program": "development/levels/rebuild/site-earthworks-pass/program/wld-13",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "3611b9192f5854f597e0fffb28653f0ba277be549753f7655fdeca6c1d172ee7",
+        "authored-cuts.tsv": "aaa496fb9cb2232a4d3562644d7f9e9202f67ef12ffac1a01adb71988898b750",
+        "authored-path-grading.sha256": "55eec905cdceded029bb321a28d77ce8f380434f71a135a128dba16ce07ba818",
+        "source-provenance.json": "b4435dd4068bd948e66fc28f5fd5ef2036b52396bba706789712c8c322691205",
+        "terrain-physics.hcs2": "feac68cfb77d3128275eedae107a1d866bb724588f30dd451d9c442a3c5ec379",
+        "tile_0_0.png": "846f7bf4eca48accad59887a9385145c37e7b573d655b58f7e87dec085baafab",
+        "verification.json": "e6a0eabf03203f2f04b07b276db54c487c0add0d8b36afc8c1c8ce39a0c3310f",
+        "world.properties": "5f1431ab44c44a32c2e07c9cd2c6a82caf366c9baf1067e24807556e8bc085d7",
+        "scene-package/.scene.bin.editor.previous": "b4e7492b5b3cd7c52d18618f2f49a9a0836eb61347e7c644d6b497436a3706f0",
+        "scene-package/scene.bin": "e7221800c688e5d929adcfe19e7e695a7cfaa14b41b075fc1596c7d9b67a34ac",
+        "terrain-layers/tile_0_0.bin": "0ca1efa5845bacc4570f4b9a4db08b8378b9ee31460ecd7ddd27342ddbccb969",
+        "scene-package/meshes/site-0-0.obj": "b79ea6117de059080293dc0a7e947d70ca9d71ed99c585f1f671cd4e2af64dd6",
+        "scene-package/meshes/site-0-1.obj": "ed6e23cf4a860923793fbc6c9333b271ac764fc1b1fffbf10128a7aff664bb8f",
+        "scene-package/meshes/site-1-0.obj": "97dde12b47976b711f47e566c919fba1d15997c6c2a0824b1a4d08645456891c",
+        "scene-package/meshes/site-1-1.obj": "a5023fb6bc48f85623dce563dd00d9946e6e52608ec4cc8aa9e6a55e4c726ef3"
+      },
+      "features": [
+        {
+          "name": "Cannery arrival clearing",
+          "material": "GRAVEL",
+          "feather": 5.0,
+          "profile": "arrival",
+          "polygon": [
+            [
+              26.0,
+              72.0
+            ],
+            [
+              42.0,
+              72.0
+            ],
+            [
+              46.0,
+              78.0
+            ],
+            [
+              44.0,
+              88.0
+            ],
+            [
+              38.0,
+              92.0
+            ],
+            [
+              26.0,
+              92.0
+            ],
+            [
+              22.0,
+              85.0
+            ],
+            [
+              22.0,
+              77.0
+            ]
+          ]
+        },
+        {
+          "name": "Workers woodland clearing",
+          "material": "DIRT",
+          "feather": 4.0,
+          "profile": "woodland",
+          "polygon": [
+            [
+              -15.0,
+              28.0
+            ],
+            [
+              -10.0,
+              25.0
+            ],
+            [
+              -8.0,
+              28.0
+            ],
+            [
+              -8.0,
+              60.0
+            ],
+            [
+              -12.0,
+              64.0
+            ],
+            [
+              -16.0,
+              58.0
+            ],
+            [
+              -18.0,
+              45.0
+            ],
+            [
+              -17.0,
+              34.0
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

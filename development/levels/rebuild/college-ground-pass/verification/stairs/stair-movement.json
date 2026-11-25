@@ -1,0 +1,121 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "COLLEGE": {
+      "layout": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+      "variants": {
+        "before_bearing": {
+          "contract": "36956f2be71f81ce3032dd1d4b2f178fc24de8a74f10ee184778ade363644f2e",
+          "physics": "69732edabc42400709d504bc099747f8daaebb0b867a3574cfc86bd2d9a6d009",
+          "glb": "7f5e8feeb59c9c31789f7c7bc0bbd75ddb60e40fbd867ea60ab1cb3d5e320db5",
+          "layout": "b86db6f86650d507bddb7c35e12a062c19ad8beb3934be5f35517ce8d97fcd00"
+        },
+        "after_bearing": {
+          "contract": "36956f2be71f81ce3032dd1d4b2f178fc24de8a74f10ee184778ade363644f2e",
+          "physics": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768",
+          "glb": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+          "layout": "d2cb5341768ebdd586f75a3981745ece9a78a09433f7214636957eaed2f642ad"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "c75cb09beb0b444247fd78d427bbfc6dbce76ac238caa28eec32463717575d3d",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/dam-spillway-gallery-pass/roster.json": "dad24c9e74f4b48b244bf5cd0081396fcc5fccb7a93ac75d80a3d2d7b50c0781",
+    "development/levels/rebuild/movement-chains.json": "36f6e9e7a913163fb457beee851a412b7584cff2be6ee55dbcd640ae662a6d4b"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      }
+    },
+    "after_bearing": {
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 5,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 5,
+      "authored_reverse": 5
+    },
+    "after_bearing": {
+      "routes": 5,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 5,
+      "authored_reverse": 5
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "declared_new_vertical_routes": [],
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [
+      {
+        "site": "COLLEGE",
+        "variant": "before_bearing",
+        "id": "CHAIN/L84/L80",
+        "links": [
+          "L84",
+          "L80"
+        ]
+      },
+      {
+        "site": "COLLEGE",
+        "variant": "after_bearing",
+        "id": "CHAIN/L84/L80",
+        "links": [
+          "L84",
+          "L80"
+        ]
+      }
+    ],
+    "results": [
+      {
+        "site": "COLLEGE",
+        "variant": "before_bearing",
+        "link": "CHAIN/L84/L80",
+        "segments": "13",
+        "legacy_forward": "BLOCKED_SEGMENT_2_AT_18_OF_20",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_1_OF_58",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "COLLEGE",
+        "variant": "after_bearing",
+        "link": "CHAIN/L84/L80",
+        "segments": "13",
+        "legacy_forward": "BLOCKED_SEGMENT_2_AT_18_OF_20",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_1_OF_58",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

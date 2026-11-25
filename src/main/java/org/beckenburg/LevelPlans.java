@@ -40,14 +40,50 @@ public final class LevelPlans {
             &&Math.abs(a.height()-b.height())<1e-8&&Math.abs(a.yaw()-b.yaw())<1e-8;
     }
     public static LevelDefinition build(HouseMap.Site site) {
-        return LevelAuthoringSession.apply(site,buildSource(site));
+        var source=buildSource(site);
+        if(site==HouseMap.Site.SEACLIFF||site==HouseMap.Site.BLACKPINE||site==HouseMap.Site.LOOKOUT||site==HouseMap.Site.MINE||site==HouseMap.Site.WHARF
+            ||site==HouseMap.Site.CEMETERY||site==HouseMap.Site.MORTUARY||site==HouseMap.Site.NORTHWATCH||site==HouseMap.Site.BLACKWATER
+            ||site==HouseMap.Site.MONASTERY||site==HouseMap.Site.RED_MESA||site==HouseMap.Site.MOURNING_MARSH||site==HouseMap.Site.GREYWATER||site==HouseMap.Site.GALLOWS||site==HouseMap.Site.MORROW||site==HouseMap.Site.ELARA||site==HouseMap.Site.PINES||site==HouseMap.Site.CINDER)return source;
+        if(site==HouseMap.Site.ASYLUM&&AsylumNativeLevel.reviewEnabled())
+            return LevelAuthoringSession.apply(site,source,AsylumNativeLevel::definition);
+        if(site==HouseMap.Site.PRISON&&PrisonNativeLevel.reviewEnabled())
+            return LevelAuthoringSession.apply(site,source,PrisonNativeLevel::definition);
+        if(site==HouseMap.Site.SCHOOL&&SchoolNativeLevel.reviewEnabled())
+            return LevelAuthoringSession.apply(site,source,SchoolNativeLevel::definition);
+        if(site==HouseMap.Site.COLLEGE&&CollegeNativeLevel.reviewEnabled())
+            return LevelAuthoringSession.apply(site,source,CollegeNativeLevel::definition);
+        return LevelAuthoringSession.apply(site,source);
     }
+    static boolean editableTemplate(HouseMap.Site site) {
+        return site!=HouseMap.Site.USER && site!=HouseMap.Site.HOLLOW_CREEK
+            && site!=HouseMap.Site.SEACLIFF && site!=HouseMap.Site.BLACKPINE && site!=HouseMap.Site.LOOKOUT && site!=HouseMap.Site.MINE && site!=HouseMap.Site.WHARF
+            && site!=HouseMap.Site.CEMETERY && site!=HouseMap.Site.MORTUARY && site!=HouseMap.Site.NORTHWATCH && site!=HouseMap.Site.BLACKWATER
+            && site!=HouseMap.Site.MONASTERY && site!=HouseMap.Site.RED_MESA && site!=HouseMap.Site.MOURNING_MARSH && site!=HouseMap.Site.GREYWATER && site!=HouseMap.Site.GALLOWS && site!=HouseMap.Site.MORROW && site!=HouseMap.Site.ELARA && site!=HouseMap.Site.PINES && site!=HouseMap.Site.CINDER;
+    }
+
     /** Unmodified shipped authoring source; shared by editor and gameplay. */
     static LevelDefinition buildSource(HouseMap.Site site) {
         return switch(site.name()) {
             case "USER" -> UserLevelLibrary.source();
             case "HOUSE" -> HouseSourceVersions.selected();
             case "HOLLOW_CREEK" -> HollowCreekLevel.build();
+            case "SEACLIFF" -> SeacliffNativeLevel.definition();
+            case "LOOKOUT" -> LookoutNativeLevel.definition();
+            case "MINE" -> MineNativeLevel.definition();
+            case "WHARF" -> WharfNativeLevel.definition();
+            case "CEMETERY","MORTUARY" -> CemeteryNativeLevel.packaged(site==HouseMap.Site.MORTUARY).level();
+            case "NORTHWATCH" -> NorthwatchNativeLevel.packaged().level();
+            case "BLACKWATER" -> BlackwaterNativeLevel.packaged().level();
+            case "MONASTERY" -> MonasteryNativeLevel.packaged().level();
+            case "RED_MESA" -> RedMesaNativeLevel.definition();
+            case "MOURNING_MARSH" -> MourningMarshNativeLevel.definition();
+            case "CINDER" -> CinderNativeLevel.definition();
+            case "PINES" -> PinesNativeLevel.definition();
+            case "ELARA" -> ElaraNativeLevel.definition();
+            case "MORROW" -> MorrowNativeLevel.definition();
+            case "GALLOWS" -> GallowsNativeLevel.definition();
+            case "GREYWATER" -> GreywaterNativeLevel.definition();
+            case "BLACKPINE" -> BlackpineLevel.build();
             case "MANSION" -> wing("mansion","Blackthorn Manor",10,20,26,38,3.6,
                 new String[]{"Grand staircase hall","Library","Dining hall","Scullery","Ballroom","Drawing room","Morning room","Upper gallery","Master suite","Servants corridor","Attic archive","Wine cellar"},"parquet","estate");
             case "PRISON" -> wing("prison","Beckenburg Penitentiary",8,20,27,39,3.4,

@@ -1,0 +1,51 @@
+{
+  "commit": "6f577f1ee8f7052969afc3be4fdc3bbb05a6c3ea",
+  "tree": "316b82b7bc9404a82cfaf1e74d9098ca27b0c8e6",
+  "git_blobs": {
+    "development/levels/rebuild/college-doors-pass/college/college-doors.glb": {
+      "git_blob": "fa4ebe3f8a1a6cd46d8de22dff01dd32e9995c2c",
+      "sha256": "99829f281a2f5a90cffc70fed416badb9a74990c3da05a4c68e8ac41d048b08d",
+      "bytes": 4913084
+    },
+    "development/levels/rebuild/college-doors-pass/college/college-doors.hcs2": {
+      "git_blob": "4a6573d7307e1f8ca220352e2f3a3d7f8d567330",
+      "sha256": "54d8d16f5b49ee1f00931f115e932ab507721b4c0356abc8f56782c1b9051014",
+      "bytes": 1686289
+    },
+    "development/levels/rebuild/college-doors-pass/college/college-doors.blend": {
+      "git_blob": "d53ed2c30c35cd51d1be563fb4350ecfb6deac7f",
+      "sha256": "175e451e28aa27b482f514cf7ab55455ecc074eae5ff5f99f88ac86dbe76e05b",
+      "bytes": 1615513
+    },
+    "development/levels/rebuild/captures/college-doors-batch/college-door-plan.png": {
+      "git_blob": "d88d7253409bf85f6369b2ef28349d56701dea20",
+      "sha256": "bd89ec8458a518be9fd3d63b2430d9b980fff59ac82c5bc256f0814f4afc930c",
+      "bytes": 56194
+    },
+    "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-court-teaching-lobby-open.png": {
+      "git_blob": "43015ba7bdddefaafe2f57d773fe25789e99d687",
+      "sha256": "a25f010e83d1dd1c2764e89f16a227283cdccbc5e401b92cc0ffd98e88b7ff24",
+      "bytes": 266263
+    }
+  },
+  "status": "DRAFT_BRANCH_PUBLISHED_WITH_HOSTED_GALLERY_AND_BINARY_READBACK",
+  "branch": "map/roster-structure-batch",
+  "pull_request": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86",
+  "held_base": {
+    "branch": "map/house-default",
+    "commit": "5c3daf923a7359554dc075c9e99be139bbcb1441"
+  },
+  "hosted_gate": {
+    "name": "Development gallery index",
+    "run": 44257423790,
+    "result": "success",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44257423790"
+  },
+  "public_pages": {
+    "branch": "main",
+    "main_commit": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "gallery_http_status": 200,
+    "draft_plan_http_status": 404
+  },
+  "scope": "College staged walls, doors and travel verification. College site acceptance and public selection remain open."
+}

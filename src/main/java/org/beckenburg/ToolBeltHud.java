@@ -21,7 +21,7 @@ public final class ToolBeltHud {
             default -> false;
         };
     }
-    /** Still cameras use R to toggle the raised viewfinder; LMB only exposes film while aimed. */
+    /** Still cameras use F to toggle the raised viewfinder; LMB only exposes film while aimed. */
     public static boolean stillCamera(String id){return normal(id).equals("PHOTO_CAMERA");}
     public static boolean cameraView(String id){return stillCamera(id)||normal(id).equals("VIDEO_CAMERA");}
     public static boolean shutterAllowed(String id,boolean aimed){return stillCamera(id)&&aimed;}
@@ -73,9 +73,9 @@ public final class ToolBeltHud {
             int total=cell*4+15,x0=(width-total)/2,y=height-cell-12;
             String id=normal(slots[active]);
             String actions=placing?"LMB PLACE  WHEEL ROTATE  G CANCEL":
-                stillCamera(id)?(held?"R LOWER  LMB SHUTTER  E INTERACT":"R RAISE CAMERA  E INTERACT"):
+                stillCamera(id)?(held?"F LOWER  LMB SHUTTER  E INTERACT":"F RAISE CAMERA  E INTERACT"):
                 "LMB USE"+(switchable(id)?"  RMB POWER":"")+
-                (placeable(id)?"  G PLACE":id.equals("EMF_READER")?"  G DROP":"")+"  E INTERACT";
+                (placeable(id)?"  G PLACE":"")+"  R DROP"+"  E INTERACT";
             int barW=Math.min(width-24,Math.max(310,total+22));
             g.setColor(new Color(8,17,23,228));
             g.fillRoundRect((width-barW)/2,y-34,barW,29,7,7);

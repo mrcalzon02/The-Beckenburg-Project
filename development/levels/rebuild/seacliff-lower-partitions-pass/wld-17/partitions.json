@@ -1,0 +1,215 @@
+{
+  "source": {
+    "blend": "9c17359707d063f804429f7133f99103590c4d04737a9c0a81932b1e918e54d8",
+    "glb": "c12600526ef49e816924c513e1eae7f180c32aaaaf23623e649c3024d1e5d068",
+    "hcs2": "4531bb6633c1d4594d8cfd64b79f459ad0bd9529bce5dc1e1d0bf88750dfb848"
+  },
+  "export": {
+    "blend": "da4cb77021d6a83af3b40f423ccc1821153464cde0af2f695cd7cea059eccae7",
+    "glb": "6e0ed73df261a31413aac4e7858914386f33d1b1a4f0235d36f3597a5972db09",
+    "hcs2": "27369d23fc0a887bdefde02bcf23ef37f00b056bc3e6db6829ad15b36e1349d3"
+  },
+  "footprints": [
+    {
+      "label": "barracks east partition",
+      "axis": "x",
+      "boundary": 24,
+      "ends": [
+        14,
+        25.88
+      ]
+    },
+    {
+      "label": "records east partition",
+      "axis": "x",
+      "boundary": 34,
+      "ends": [
+        14,
+        25.88
+      ]
+    },
+    {
+      "label": "plant west partition",
+      "axis": "x",
+      "boundary": 44,
+      "ends": [
+        14,
+        25.88
+      ]
+    },
+    {
+      "label": "lower gallery north partition",
+      "axis": "z",
+      "boundary": 26,
+      "ends": [
+        24,
+        44
+      ]
+    }
+  ],
+  "fitted_frames": [
+    {
+      "id": "barracks-records",
+      "axis": "x",
+      "boundary": 24,
+      "along": 20,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "barracks",
+        "records"
+      ],
+      "frame_center": [
+        24,
+        0,
+        20
+      ],
+      "frame_span": [
+        23.88,
+        24.12
+      ],
+      "portal_id": 421,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "records-pump",
+      "axis": "x",
+      "boundary": 34,
+      "along": 20,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "records",
+        "pump"
+      ],
+      "frame_center": [
+        34,
+        0,
+        20
+      ],
+      "frame_span": [
+        33.88,
+        34.12
+      ],
+      "portal_id": 422,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "pump-plant",
+      "axis": "x",
+      "boundary": 44,
+      "along": 20,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "pump",
+        "plant"
+      ],
+      "frame_center": [
+        44,
+        0,
+        20
+      ],
+      "frame_span": [
+        43.88,
+        44.12
+      ],
+      "portal_id": 423,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "records-gallery",
+      "axis": "z",
+      "boundary": 26,
+      "along": 29,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "records",
+        "lowgallery"
+      ],
+      "frame_center": [
+        29,
+        0,
+        26
+      ],
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "portal_id": 424,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "pump-gallery",
+      "axis": "z",
+      "boundary": 26,
+      "along": 39,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "pump",
+        "lowgallery"
+      ],
+      "frame_center": [
+        39,
+        0,
+        26
+      ],
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "portal_id": 425,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    }
+  ],
+  "retired_wall_components": [
+    "Flat route shell Wall barracks E",
+    "Flat route shell Wall barracks E.001",
+    "Flat route shell Wall lowgallery N",
+    "Flat route shell Wall lowgallery N.001",
+    "Flat route shell Wall lowgallery N.002",
+    "Flat route shell Wall lowgallery N.003",
+    "Flat route shell Wall plant W",
+    "Flat route shell Wall plant W.001",
+    "Flat route shell Wall plant W.002",
+    "Flat route shell Wall pump E.001",
+    "Flat route shell Wall pump S",
+    "Flat route shell Wall records E",
+    "Flat route shell Wall records E.001",
+    "Flat route shell Wall records S",
+    "Flat route shell Wall records S.001",
+    "Flat route shell Wall records W",
+    "Header barracks E",
+    "Header lowgallery N",
+    "Header lowgallery N.001",
+    "Header lowgallery N.002",
+    "Header plant W",
+    "Header plant W.001",
+    "Header records E"
+  ],
+  "receiving_floor_probes": 45,
+  "retained_native_components": 305,
+  "actual_new_surface_triangles": 348
+}

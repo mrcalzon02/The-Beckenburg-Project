@@ -55,6 +55,8 @@ public final class SafeAreaBarrier {
     }
     public static boolean protectedAt(HouseMap map,double x,double y,double z){
         if(overlapsBody(van(map.van()),x,y,z))return true;
+        if(LevelClosets.protectedAt(map.level(),x,y,z,map.hidingDensity())
+            ||OutdoorHiding.containing(map.level(),x,y,z,map.hidingDensity())!=null)return true;
         for(var area:map.temporarySafeAreas())if(overlapsBody(area,x,y,z))return true;
         return false;
     }
@@ -63,6 +65,8 @@ public final class SafeAreaBarrier {
     }
     public static boolean blocks(HouseMap map,Vec from,Vec to){
         if(crossesBody(van(map.van()),from,to))return true;
+        if(LevelClosets.blocks(map.level(),from,to,map.hidingDensity())
+            ||OutdoorHiding.blocks(map.level(),from,to,map.hidingDensity()))return true;
         for(var area:map.temporarySafeAreas())if(crossesBody(area,from,to))return true;
         return false;
     }
@@ -70,16 +74,56 @@ public final class SafeAreaBarrier {
         return area.crosses(from,to)||area.crosses(new Vec(from.x(),from.y()+.8,from.z()),new Vec(to.x(),to.y()+.8,to.z()))
             ||area.crosses(new Vec(from.x(),from.y()+1.6,from.z()),new Vec(to.x(),to.y()+1.6,to.z()));
     }
-    /** A room transfer must choose real unprotected support, never teleport into a dome. */
+    /** A room transfer must choose supported footing outside the protective area. */
     public static Vec ghostSpawn(HouseMap map,int room){
         var original=map.spawn(room);
-        if(!protectedAt(map,original.x(),original.y(),original.z()))return original;
-        var r=map.level().room(room);Vec best=null;double distance=Double.POSITIVE_INFINITY;
-        for(double x=r.x0()+.35;x<r.x1()-.3;x+=.55)for(double z=r.z0()+.35;z<r.z1()-.3;z+=.55){
-            double y=map.groundHeight(x,z,room),d=Math.hypot(x-original.x(),z-original.z());
-            if(d>=distance||map.roomAt(x,y,z)!=room||!map.traversable(x,y,z)||protectedAt(map,x,y,z))continue;
-            best=new Vec(x,y,z);distance=d;
-        }return best;
+        if(spectralFooting(map,room,original))return original;
+        var scene=map.nativeInvestigation();
+        Vec closest=null;
+        double distance=Double.POSITIVE_INFINITY;
+        if(scene==null){
+            var bounds=map.level().room(room);
+            return nearestFooting(map,room,original,bounds.x0(),bounds.z0(),bounds.x1(),bounds.z1(),bounds.y(),null,distance,false);
+        }
+        for(var space:scene.spaces()){
+            if(!space.accessible()||space.owner()!=room)continue;
+            var candidate=nearestFooting(map,room,original,space.x0(),space.z0(),space.x1(),space.z1(),
+                                         space.floor(),closest,distance,true);
+            if(candidate!=closest){
+                closest=candidate;
+                distance=distance(original,candidate);
+            }
+        }
+        return closest;
+    }
+
+    private static Vec nearestFooting(HouseMap map,int room,Vec origin,double x0,double z0,double x1,double z1,
+                                      double datum,Vec best,double distance,boolean nativeSpace){
+        for(double x=x0+.27;x<=x1-.27;x+=.45)for(double z=z0+.27;z<=z1-.27;z+=.45){
+            double horizontal=(x-origin.x())*(x-origin.x())+(z-origin.z())*(z-origin.z());
+            if(horizontal>=distance)continue;
+            double feet;
+            if(nativeSpace){
+                var floor=map.supportNear(x,z,datum);
+                if(floor==null)continue;
+                feet=floor;
+            }else feet=map.groundHeight(x,z,room);
+            if(!Double.isFinite(feet))continue;
+            var pose=new Vec(x,feet,z);
+            double candidate=distance(origin,pose);
+            if(candidate<distance&&spectralFooting(map,room,pose)){best=pose;distance=candidate;}
+        }
+        return best;
+    }
+
+    private static boolean spectralFooting(HouseMap map,int room,Vec at){
+        return !protectedAt(map,at.x(),at.y(),at.z())
+            &&map.roomAt(at.x(),at.y(),at.z())==room&&map.traversable(at.x(),at.y(),at.z());
+    }
+
+    private static double distance(Vec a,Vec b){
+        double x=a.x()-b.x(),y=a.y()-b.y(),z=a.z()-b.z();
+        return x*x+y*y+z*z;
     }
     /** Only settled, live wards are safe areas; flight never advertises protection. */
     public static List<Volume> visibleWards(HouseMap map,List<SceneRenderer.WorldMark> marks){

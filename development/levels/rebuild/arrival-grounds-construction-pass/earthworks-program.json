@@ -1,0 +1,356 @@
+{
+  "sites": [
+    {
+      "id": "WLD-08",
+      "source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/constant-flight-construction-pass/wld-08/construction.json",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/constant-flight-construction-pass/wld-08/constant-cells.glb",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-08/constant-cells.hcs2",
+        "blend": "development/levels/rebuild/constant-flight-construction-pass/wld-08/constant-cells.blend",
+        "glb_sha256": "066fb11bffcb760d97817fea85f1a22191f6b9e983b5dea910d2d1135128951b",
+        "native_sha256": "9561f8da9481e8aafe0a69511361f368e0fd2c936bc0912b8c3ea77131cdb37d"
+      },
+      "source_world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-08/terrain-world",
+      "world": "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-08/terrain-world",
+      "program": "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-08",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "bd109d05ae6c1414e690c9c44ec31923dcfa728cc291d519e6476ed54d0b8723",
+        "authored-cuts.tsv": "37eb76aab7dc0a585a4858234e9f6deec9a1b84e965e871094ce1cc4f39c0125",
+        "authored-path-grading.sha256": "419fee60981dd503fefc38d58efe7ad29dd7281296b09a78898cb9f56d0caa62",
+        "earthworks-verification.json": "3c935c8b40c8fe7ef36399616428c8bc0d3cae924571b4df5281a8aa765948a0",
+        "source-provenance.json": "c195d0da7ab214b46d57fcd7984e65aefd1e12126dfa275b81a5fb6ccddbadf2",
+        "stair-cell-punch-verification.json": "2430139dbff8f7998c10d2fd41850069d3f0525b2e8e1b638fb11ef54158fe8c",
+        "terrain-physics.hcs2": "247566c8e6f8c74437a498eae66845c48937bf97a660593bbeb54912a1d12775",
+        "tile_0_0.png": "52520d8fc7a747f2e846e536faad13fb232175b73087ecb15ab23facdbf6ae21",
+        "tunnel-punch-verification.json": "c315bd7dbb00d868383e3e134b35b56304d3d1d315b141827f3a6617a24fceb4",
+        "verification.json": "a06eae982b9e0941377eb5cc076868e7e27fbf1d23792a0722e318d393bed4eb",
+        "world.properties": "061685389ee0cafd56f51b8af8571f0f84d49ab32d7806ba8c2c3df0a6639c64",
+        "previous-authoring/source-provenance.json": "952460910bd0f5e3a7eb0c17734389ab57fb77c21cd7bb205d9c7d4b5b158ae5",
+        "previous-authoring/verification.json": "8777c8266eb7529abcb096d6addaedb2cb7bea325ccc95c270efc1817f216cc5",
+        "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scene-package/.scene.bin.editor.previous": "c314f8d19ce3d36bbba92345e70af2f0c4d7b0b90550cd888e49eee9e23f22c3",
+        "scene-package/scene.bin": "44ab07f2f9f124bfe74f92bfb678c2645a1d3ef6b41e74d0dc3ffff283c1b388",
+        "terrain-layers/tile_0_0.bin": "29261f43e56c1c4a8ac102179d30f0ea7dd6ecc77110856f4e1c934d39f3420e",
+        "scene-package/meshes/site-0-0.obj": "6132a17b685946652bd84b5cc4f6623b65b160754330368681d8e68c51b9ceb8",
+        "scene-package/meshes/site-0-1.obj": "581f2dd19e3091443ebf13fb19550a2b6a6b3cac5bc24ce1414d440fdfe81812",
+        "scene-package/meshes/site-1-0.obj": "e22f81de673add20dd8eec23e4aa909fa414eb6656323bfb1d7736dd7d50a431",
+        "scene-package/meshes/site-1-1.obj": "d8d0c28efa93230b3a1a22432744f3bc96978abb04a8df18fdb5c8e1f1bac45c"
+      },
+      "features": [
+        {
+          "name": "Research station arrival clearing",
+          "material": "GRAVEL",
+          "feather": 5,
+          "profile": "arrival",
+          "polygon": [
+            [
+              0,
+              58
+            ],
+            [
+              9,
+              54
+            ],
+            [
+              56,
+              54
+            ],
+            [
+              65,
+              60
+            ],
+            [
+              65,
+              78
+            ],
+            [
+              57,
+              84
+            ],
+            [
+              9,
+              84
+            ],
+            [
+              0,
+              76
+            ]
+          ]
+        },
+        {
+          "name": "Research antenna service grounds",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              44,
+              0
+            ],
+            [
+              62,
+              -1
+            ],
+            [
+              72,
+              6
+            ],
+            [
+              72,
+              23
+            ],
+            [
+              64,
+              27
+            ],
+            [
+              44,
+              24
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WLD-12",
+      "source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/constant-flight-construction-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.glb",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.hcs2",
+        "blend": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.blend",
+        "glb_sha256": "b56720f8730c695a2c96c0de344a46c8041ca4469977d100e38503fbd1de3ac2",
+        "native_sha256": "e18d1e85a3860eb0b6fac4fd19e46a4822f1a798f9ca83e239d4f67d1d6e683d"
+      },
+      "source_world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-12/terrain-world",
+      "world": "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world",
+      "program": "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-12",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "0b819d9108bc00c1f57140cde8725965c007f836e155528721589a07ff68d169",
+        "authored-cuts.tsv": "c8cd27f884e2709001922bfc0772b11474dab45b48a547212c709a2e347cc28e",
+        "authored-path-grading.sha256": "794d815cc7cae67f2b92b8b7fc5c95866d90ad5277da5dc55fb547bc8c297858",
+        "source-provenance.json": "55b880d9a79934bc46ac54548f228eac92eaf9d20da3e84648e097af05cc1614",
+        "stair-cell-punch-verification.json": "3927198e6fc0cb8dd02c578339ff666ef94d65adfc11da8c5e9f5a97284de8c9",
+        "terrain-physics.hcs2": "77b9627441c661a3c612fbfc6d3b645cdbd00d4c286409ea9d9104f25f09ffb2",
+        "tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+        "verification.json": "dd11c9a7d16e9ecdccb8948866919fbad4b53dc0f7aed93f7cd4fdffa5915daf",
+        "world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+        "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scene-package/.scene.bin.editor.previous": "247397462c3a6341b3565825130dda3a777c3bf91052b67cc315e2cca8f69071",
+        "scene-package/scene.bin": "04fbbc5cf7ce873750c8790dc67d3de69b5f7045090f4b7b2c9fe2cb7f11b1ad",
+        "terrain-layers/tile_0_0.bin": "f64f8e8caa97aafd2da7090459029f880b2df7ad3dce8de638fe7e2c54a17339",
+        "scene-package/meshes/site-0-0.obj": "2384b0c26c8da5240afe7081d0879974a4dd0510636407284e9e73a26272b119",
+        "scene-package/meshes/site-0-1.obj": "2b1c53cc4e063582392a58753a2a370502dd6f8b26cd73fb49f0259f624c0111",
+        "scene-package/meshes/site-1-0.obj": "8ad897fb847a95a7ced43c1eab83dbea5929fd922d0334b58d435e41dff11a6c",
+        "scene-package/meshes/site-1-1.obj": "e0d454904e070d5f667f671f9a77e03b8004bc08f2380e676fef8006c207c3fc"
+      },
+      "features": [
+        {
+          "name": "Railway public and maintenance approach",
+          "material": "GRAVEL",
+          "feather": 5,
+          "profile": "arrival",
+          "polygon": [
+            [
+              24,
+              72
+            ],
+            [
+              43,
+              72
+            ],
+            [
+              49,
+              81
+            ],
+            [
+              47,
+              99
+            ],
+            [
+              43,
+              103
+            ],
+            [
+              26,
+              103
+            ],
+            [
+              23,
+              95
+            ]
+          ]
+        },
+        {
+          "name": "Railway cutting and coach workgrounds",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              11,
+              43
+            ],
+            [
+              17,
+              40
+            ],
+            [
+              41,
+              40
+            ],
+            [
+              46,
+              44
+            ],
+            [
+              45,
+              75
+            ],
+            [
+              38,
+              79
+            ],
+            [
+              12,
+              78
+            ],
+            [
+              7,
+              65
+            ],
+            [
+              7,
+              48
+            ]
+          ]
+        },
+        {
+          "name": "Railway siding and crossing apron",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              41,
+              12
+            ],
+            [
+              63,
+              11
+            ],
+            [
+              66,
+              23
+            ],
+            [
+              65,
+              72
+            ],
+            [
+              61,
+              79
+            ],
+            [
+              46,
+              79
+            ],
+            [
+              41,
+              72
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/constant-flight-construction-pass/wld-18/construction.json",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.glb",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.hcs2",
+        "blend": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.blend",
+        "glb_sha256": "378350aebcbaae3c43f7241aceb1d2079dc2a51c9299d073ebdfbae1184e11fd",
+        "native_sha256": "b93a74c6666b2635197c99a7dce76424d4923d7a384f73a4a46b1be827354eba"
+      },
+      "source_world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-18/terrain-world",
+      "world": "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world",
+      "program": "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-18",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "1a75a36024cb056c5d8732d998801991de44d4180fe6954e219bda22c525ec23",
+        "authored-cuts.tsv": "7561a0e4a1ba124882e6b1cd43abd7332458dcebd9d3b32c4f158f237b96779e",
+        "authored-path-grading.sha256": "08d441fbe9e35e4aca099298ab89e74e9ef7b952c7460f39b72f8f9899737960",
+        "source-provenance.json": "0d54a356fdfac1c6ebf1ce2885deadb2cbc8e9eb74c9c8f767b17c55f4995694",
+        "stair-cell-punch-verification.json": "d3558a2c934a83570cbc4f017ae79f7c67d97238d015bfa046c058e4ea80b50e",
+        "terrain-physics.hcs2": "d54c97d7847a38cd0e27c027ff8ec1f7588a525482d29dd5349a0efa362cb46e",
+        "tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+        "verification.json": "bcb1fa7f29414041c025b6a8576768e2caf07bf8930e877fa786df66f1fc8bb3",
+        "world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+        "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scene-package/.scene.bin.editor.previous": "70fdb9abfa530d0fce478afcb6ea9d5bb073dcb96c533957cce2fd7431f7aad3",
+        "scene-package/scene.bin": "dec503d5465461f78e2713b22fcf2a94fb59a6c4966e43cf02ac0d80220fa0bb",
+        "terrain-layers/tile_0_0.bin": "91827544b914ac971ffdc33ec3113c42a7196709898e22b55011aa7a625e13f8",
+        "scene-package/meshes/site.obj": "5934ba82ff38041b7e5d0114be3ec579e0c76ae3806fa6412e8df3cf33f2b79c"
+      },
+      "features": [
+        {
+          "name": "Cinder surface arrival and service yard",
+          "material": "GRAVEL",
+          "feather": 5,
+          "profile": "arrival",
+          "polygon": [
+            [
+              9,
+              54
+            ],
+            [
+              24,
+              53
+            ],
+            [
+              51,
+              53
+            ],
+            [
+              57,
+              60
+            ],
+            [
+              52,
+              75
+            ],
+            [
+              45,
+              83
+            ],
+            [
+              43,
+              97
+            ],
+            [
+              38,
+              101
+            ],
+            [
+              24,
+              99
+            ],
+            [
+              21,
+              83
+            ],
+            [
+              9,
+              74
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

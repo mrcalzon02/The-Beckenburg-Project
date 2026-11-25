@@ -1,0 +1,541 @@
+{
+  "source": {
+    "id": "WLD-12",
+    "construction": "development/levels/rebuild/service-portal-construction-pass/wld-12/construction.json",
+    "layout": "development/levels/rebuild/service-portal-construction-pass/wld-12/authored-layout.json",
+    "glb": "development/levels/rebuild/service-portal-construction-pass/wld-12/clean-doorways.glb",
+    "native": "development/levels/rebuild/service-portal-construction-pass/wld-12/clean-doorways.hcs2",
+    "blend": "development/levels/rebuild/service-portal-construction-pass/wld-12/clean-doorways.blend",
+    "glb_sha256": "971e67684a6f53245f877f43940d3f60de3347fdc723af6a72ed8aebced609ad",
+    "native_sha256": "ce32d6cfa1e3875c86851177ea7b940fbcafa9f8948004065b2baef12ddd7896"
+  },
+  "retired": [
+    "Saved editor geographic earthworks WLD-12",
+    "WLD-12 clean signal S end",
+    "WLD-12 clean signal S lintel0",
+    "WLD-12 clean signal S pier0",
+    "WLD-12-z-76-20-y0 indexed jambs and head"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          94.0
+        ],
+        [
+          36.0,
+          0,
+          88.0
+        ],
+        [
+          36.0,
+          0,
+          82.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          88.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L02": {
+      "id": "L02",
+      "a": "entry",
+      "b": "signal",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36,
+          0,
+          82
+        ],
+        [
+          20,
+          0,
+          82
+        ],
+        [
+          20,
+          0,
+          69
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L04": {
+      "id": "L04",
+      "a": "entry",
+      "b": "siding",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36,
+          0,
+          82
+        ],
+        [
+          57,
+          0,
+          82
+        ],
+        [
+          57,
+          0,
+          53
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L03": {
+      "id": "L03",
+      "a": "signal",
+      "b": "cutting",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          20.0,
+          0,
+          69.0
+        ],
+        [
+          28.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          59.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          69.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L05": {
+      "id": "L05",
+      "a": "cutting",
+      "b": "coach-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34,
+          0,
+          59
+        ],
+        [
+          30,
+          0,
+          59
+        ],
+        [
+          30,
+          0,
+          54
+        ],
+        [
+          20,
+          0,
+          54
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L06": {
+      "id": "L06",
+      "a": "coach-a",
+      "b": "west-return",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          20,
+          0,
+          54
+        ],
+        [
+          16,
+          0,
+          54
+        ],
+        [
+          13,
+          0,
+          54
+        ],
+        [
+          13,
+          0,
+          46
+        ],
+        [
+          13,
+          0,
+          42
+        ],
+        [
+          11,
+          0,
+          42
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          0,
+          54.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L07": {
+      "id": "L07",
+      "a": "west-return",
+      "b": "signal",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          11,
+          0,
+          42
+        ],
+        [
+          13,
+          0,
+          42
+        ],
+        [
+          13,
+          0,
+          46
+        ],
+        [
+          14,
+          0,
+          46
+        ],
+        [
+          14,
+          0,
+          62
+        ],
+        [
+          14,
+          0,
+          69
+        ],
+        [
+          20,
+          0,
+          69
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          14.0,
+          0,
+          62.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L08": {
+      "id": "L08",
+      "a": "cutting",
+      "b": "coach-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34,
+          0,
+          59
+        ],
+        [
+          38,
+          0,
+          59
+        ],
+        [
+          38,
+          0,
+          54
+        ],
+        [
+          48,
+          0,
+          54
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L09": {
+      "id": "L09",
+      "a": "coach-b",
+      "b": "siding",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          48.0,
+          0,
+          54.0
+        ],
+        [
+          52.0,
+          0,
+          54.0
+        ],
+        [
+          57.0,
+          0,
+          54.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          52.0,
+          0,
+          54.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L11": {
+      "id": "L11",
+      "a": "trestle",
+      "b": "tunnel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          32.0
+        ],
+        [
+          34.0,
+          0,
+          22.0
+        ],
+        [
+          34.0,
+          0,
+          7.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          22.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L13": {
+      "id": "L13",
+      "a": "refuge",
+      "b": "crossing",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          46.0,
+          0,
+          6.0
+        ],
+        [
+          46.0,
+          0,
+          12.0
+        ],
+        [
+          46.0,
+          0,
+          17.0
+        ],
+        [
+          51.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          46.0,
+          0,
+          12.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L15": {
+      "id": "L15",
+      "a": "siding",
+      "b": "store",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          57,
+          0,
+          53
+        ],
+        [
+          58,
+          0,
+          53
+        ],
+        [
+          58,
+          0,
+          23
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          57.0,
+          0,
+          30.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L16": {
+      "id": "L16",
+      "a": "trestle",
+      "b": "lower",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          31,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          32.3
+        ],
+        [
+          28,
+          -3,
+          28
+        ],
+        [
+          28,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          28
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Authored flight coordinates; riser<=180mm, tread>=240mm. Actual export support/headroom and later runtime capsule/guard tests remain required.",
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5
+    },
+    "L17": {
+      "id": "L17",
+      "a": "lower",
+      "b": "west-return",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          31,
+          -3,
+          32
+        ],
+        [
+          32.5,
+          -3,
+          32
+        ],
+        [
+          32.5,
+          -3,
+          38
+        ],
+        [
+          31,
+          -3,
+          38
+        ],
+        [
+          13,
+          0,
+          38
+        ],
+        [
+          11,
+          0,
+          38
+        ],
+        [
+          11,
+          0,
+          42
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  }
+}

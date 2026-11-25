@@ -1,0 +1,269 @@
+{
+  "site": "WLD-11",
+  "source": "development/levels/rebuild/canyon-marsh-pass/wld-11/authored-layout.json",
+  "geometry_sha256": {
+    "blend": "29e5eafbc28dd8dcd523d8ff7e8a0676aa246688bf3ee97d75c97f90ff591541",
+    "glb": "bf20a91a15eb0b3aead99b8d6a0a643de3099afdb2e3d0adb40771295283ab5a",
+    "hcs2": "3035bfc8ac1c63184df5c910959f2e3a21523cb81d57cc91b3c91307581032fa"
+  },
+  "retained_native_components": 356,
+  "refuges": [
+    {
+      "id": "marsh-house-a-cupboard",
+      "space": "house-a",
+      "owner": 0,
+      "position": [
+        13.5,
+        1.2,
+        49
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          12.9,
+          1.2,
+          48.150002
+        ],
+        [
+          14.202,
+          3.51,
+          49.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "marsh-house-b-cupboard",
+      "space": "house-b",
+      "owner": 1,
+      "position": [
+        64.5,
+        1.2,
+        49
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          63.798,
+          1.2,
+          48.150002
+        ],
+        [
+          65.099998,
+          3.51,
+          49.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "marsh-chapel-cupboard",
+      "space": "chapel",
+      "owner": 2,
+      "position": [
+        15.5,
+        1.2,
+        17.5
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          14.65,
+          1.2,
+          16.9
+        ],
+        [
+          16.35,
+          3.51,
+          18.202
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "services": [
+    {
+      "id": "marsh-generator",
+      "type": "generator",
+      "room": 8,
+      "position": [
+        61.599998,
+        1.76,
+        61.528998
+      ],
+      "yaw": 3.141592653589793,
+      "style": "MM-MAIN"
+    },
+    {
+      "id": "marsh-breaker",
+      "type": "breaker",
+      "room": 8,
+      "position": [
+        58.900002,
+        2.09,
+        63.033999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "MM-MAIN"
+    },
+    {
+      "id": "Mourning Marsh pump 01",
+      "type": "native-device",
+      "room": 8,
+      "position": [
+        61.779999,
+        1.68,
+        56.139547
+      ],
+      "yaw": 0,
+      "style": "WATER_PUMP"
+    },
+    {
+      "id": "marsh-house-a-switch",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        27.879,
+        2.45,
+        43.099998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MM-HOUSE-A"
+    },
+    {
+      "id": "marsh-house-a-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        27.695999,
+        3.55,
+        41.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "marsh-house-b-switch",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        52.120998,
+        2.45,
+        43.099998
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "MM-HOUSE-B"
+    },
+    {
+      "id": "marsh-house-b-light",
+      "type": "light",
+      "room": 1,
+      "position": [
+        52.303997,
+        3.55,
+        41.299999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "marsh-chapel-switch",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        27.879,
+        2.45,
+        22.200001
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "MM-CHAPEL"
+    },
+    {
+      "id": "marsh-chapel-light",
+      "type": "light",
+      "room": 2,
+      "position": [
+        27.695999,
+        3.55,
+        20.4
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "marsh-warehouse-switch",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        32.120998,
+        2.45,
+        28.0
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "MM-WAREHOUSE"
+    },
+    {
+      "id": "marsh-warehouse-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        32.303997,
+        3.55,
+        29.799999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "marsh-shack-switch",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        52.120998,
+        2.45,
+        27.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "MM-SHACK"
+    },
+    {
+      "id": "marsh-shack-light",
+      "type": "light",
+      "room": 6,
+      "position": [
+        52.303997,
+        3.55,
+        29.6
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "marsh-pump-switch",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        52.120998,
+        2.45,
+        60.900002
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "MM-PUMP"
+    },
+    {
+      "id": "marsh-pump-light",
+      "type": "light",
+      "room": 8,
+      "position": [
+        52.303997,
+        3.55,
+        62.700001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ]
+}

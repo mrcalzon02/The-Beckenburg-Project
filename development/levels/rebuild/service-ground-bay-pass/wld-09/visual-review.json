@@ -1,0 +1,40 @@
+{
+  "reviewer": "architectural construction agent",
+  "status": "SCOPED_NATIVE_GEOMETRY_REVIEWED_RUNTIME_OPEN",
+  "glb_sha256": "9ca45264727b42c43c206538de28dbeb1f69e714434fd76a146a984cbd23321c",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/lower-standing.png",
+      "sha256": "97ffadceeeec4de42ed2274bca2d7e46ad3dd1d7c4a181b22e6e3dd8af76a81f"
+    },
+    {
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/upper-standing.png",
+      "sha256": "afa8c743cad348572269123ad648479dbd6269053dae48be31cfa74b267d6a2d"
+    },
+    {
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/bay-structural-section.png",
+      "sha256": "a257891b26c69ed0b89c89831523126339b4d8bf9449bc10fe9995ac53431007"
+    }
+  ],
+  "observed": [
+    "Lower standing view shows a straight constant-width flight entering one allocated bay; level lower-room approach remains outside it.",
+    "Upper standing view shows a full landing before the descending flight and perimeter guards seated on slab edges.",
+    "Structural cutaway shows both lanes meeting at one supported intermediate landing; waist ends overlap their actual receiving slabs. The listed section-only hidden layers are recorded in captures.json.",
+    "Whole turbine slab and lower return cap were replaced with complete thickness and two deliberate rectangular openings, including the existing gallery stair well. No diagonal route cuts were retained in these plates."
+  ],
+  "unfinished": [
+    "Dam spillway L12 is still an unfinished proposed service connection buried in unpunched saved terrain.",
+    "Native broad flat sampling still reports493invalidposes;ordinary13/13links and13/13flights passing is not whole-map acceptance.",
+    "Shared gameplay renderer/collision/navigation/room/portal/acoustic/spawn/service integration remains unverified."
+  ],
+  "checks": {
+    "all13flights_pass_both_directions": true,
+    "five_of_six_complete_vertical_links_pass": true,
+    "all13ordinary_links_pass_both_directions": true,
+    "passing_direction_regressions": 0,
+    "tread_rise_m": 0.16666666666666666,
+    "tread_depth_m": 0.3,
+    "clear_authored_flight_width_m": 1.8,
+    "saved_terrain_unchanged": true
+  }
+}

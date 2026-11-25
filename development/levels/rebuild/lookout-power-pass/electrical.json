@@ -1,0 +1,745 @@
+{
+  "exports": {
+    "blend": "36050df717dd27045154f3ad9815e02994f758605351c3925a67a1d25d945fb0",
+    "glb": "f5e5617bd4766bf626a74b1074aaa706ba03d6ce3b4f9f6ab6be1b8c49b0d008",
+    "hcs2": "49ea511ae777234f6bc25615660c466f1600b4d1622e57029729262d511cf57c"
+  },
+  "retained_components": 377,
+  "added_components": 108,
+  "shelter": [
+    34,
+    66,
+    39.6,
+    69.6
+  ],
+  "plant": {
+    "level_trace_generator_refined": {
+      "asset_sha256": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+      "position": [
+        35.35,
+        0.018,
+        68.84
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          34.574997,
+          0.018,
+          68.399994
+        ],
+        [
+          36.125,
+          1.173,
+          69.279999
+        ]
+      ]
+    },
+    "level_electrical_bank_worn": {
+      "asset_sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+      "position": [
+        37.75,
+        0.06,
+        69.13
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          36.639999,
+          0.06,
+          68.899994
+        ],
+        [
+          38.860001,
+          2.178305,
+          69.269997
+        ]
+      ]
+    }
+  },
+  "loads": [
+    {
+      "id": "lookout-service-light",
+      "room": 13,
+      "space": "roadhead-shelter",
+      "circuit": "WP-YARD",
+      "mount": [
+        36.68,
+        2.59,
+        67.160004
+      ],
+      "emitter": [
+        36.68,
+        2.406,
+        67.160004
+      ],
+      "support": "College shelter lamp timber fixing block"
+    },
+    {
+      "id": "lookout-hut-light-1",
+      "room": 3,
+      "space": "hut",
+      "circuit": "WP-03",
+      "mount": [
+        13.0,
+        8.84,
+        17.0
+      ],
+      "emitter": [
+        13.0,
+        8.656,
+        17.0
+      ],
+      "support": "Ceiling cap hut"
+    },
+    {
+      "id": "lookout-hut-light-2",
+      "room": 3,
+      "space": "hut",
+      "circuit": "WP-03",
+      "mount": [
+        15.0,
+        8.84,
+        23.0
+      ],
+      "emitter": [
+        15.0,
+        8.656,
+        23.0
+      ],
+      "support": "Ceiling cap hut"
+    },
+    {
+      "id": "lookout-store-light-1",
+      "room": 5,
+      "space": "store",
+      "circuit": "WP-05",
+      "mount": [
+        43.0,
+        8.84,
+        34.0
+      ],
+      "emitter": [
+        43.0,
+        8.656,
+        34.0
+      ],
+      "support": "Ceiling cap store"
+    },
+    {
+      "id": "lookout-cab-light-1",
+      "room": 10,
+      "space": "cab",
+      "circuit": "WP-10",
+      "mount": [
+        27.0,
+        18.0,
+        5.5
+      ],
+      "emitter": [
+        27.0,
+        17.816,
+        5.5
+      ],
+      "support": "WLD-04 restart cab closed roof region0"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "lookout-switch-03",
+      "circuit": "WP-03",
+      "space": "hut",
+      "room": 3,
+      "at": [
+        16.0,
+        7.25,
+        14.081
+      ],
+      "support": "Wall hut N",
+      "feet": [
+        16,
+        6,
+        16
+      ]
+    },
+    {
+      "id": "lookout-switch-05",
+      "circuit": "WP-05",
+      "space": "store",
+      "room": 5,
+      "at": [
+        47.0,
+        7.25,
+        39.879002
+      ],
+      "support": "Lookout terrace store south door east pier region0",
+      "feet": [
+        47,
+        6,
+        38.5
+      ]
+    },
+    {
+      "id": "lookout-switch-10",
+      "circuit": "WP-10",
+      "space": "cab",
+      "room": 10,
+      "at": [
+        27.5,
+        16.25,
+        7.799
+      ],
+      "support": "WLD-04 restart cab south end pier region0",
+      "feet": [
+        27.5,
+        15,
+        6.45
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "weatherproof generator feed",
+      "points": [
+        [
+          35.1,
+          0.29,
+          69.2
+        ],
+        [
+          35.1,
+          0.3,
+          69.38
+        ],
+        [
+          35.1,
+          2.292,
+          69.38
+        ],
+        [
+          38.58,
+          2.292,
+          69.38
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "bank lead 1",
+      "points": [
+        [
+          36.8522,
+          2.168,
+          69.17
+        ],
+        [
+          36.8522,
+          2.292,
+          69.17
+        ],
+        [
+          36.8522,
+          2.292,
+          69.38
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "bank lead 2",
+      "points": [
+        [
+          37.6122,
+          2.168,
+          69.17
+        ],
+        [
+          37.6122,
+          2.292,
+          69.17
+        ],
+        [
+          37.6122,
+          2.292,
+          69.38
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "bank lead 3",
+      "points": [
+        [
+          38.3722,
+          2.168,
+          69.17
+        ],
+        [
+          38.3722,
+          2.292,
+          69.17
+        ],
+        [
+          38.3722,
+          2.292,
+          69.38
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "buried main from shelter wall service boot",
+      "points": [
+        [
+          38.58,
+          2.292,
+          69.38
+        ],
+        [
+          39.39,
+          2.292,
+          69.38
+        ],
+        [
+          39.39,
+          -0.37,
+          69.38
+        ],
+        [
+          39.79,
+          -0.37,
+          69.38
+        ]
+      ],
+      "radius": 0.032,
+      "visible": true
+    },
+    {
+      "id": "shelter lighting branch on wall and purlin",
+      "points": [
+        [
+          38.58,
+          2.292,
+          69.38
+        ],
+        [
+          39.42,
+          2.292,
+          69.38
+        ],
+        [
+          39.42,
+          2.57,
+          67.16
+        ],
+        [
+          36.68,
+          2.57,
+          67.16
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "WP-03 switch drop",
+      "points": [
+        [
+          16.0,
+          7.302,
+          14.109
+        ],
+        [
+          16.0,
+          8.77000015258789,
+          14.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "WP-03 ceiling branch",
+      "points": [
+        [
+          16.0,
+          8.77000015258789,
+          14.109
+        ],
+        [
+          16.0,
+          8.822,
+          14.109
+        ],
+        [
+          16.0,
+          8.822,
+          14.239
+        ],
+        [
+          13.0,
+          8.822,
+          14.239
+        ],
+        [
+          13.0,
+          8.822,
+          17.0
+        ],
+        [
+          15.0,
+          8.822,
+          17.0
+        ],
+        [
+          15.0,
+          8.822,
+          23.0
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "WP-05 switch drop",
+      "points": [
+        [
+          47.0,
+          7.302,
+          39.851002
+        ],
+        [
+          47.0,
+          8.77000015258789,
+          39.851002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "WP-05 ceiling branch",
+      "points": [
+        [
+          47.0,
+          8.77000015258789,
+          39.851002
+        ],
+        [
+          47.0,
+          8.822,
+          39.851002
+        ],
+        [
+          47.0,
+          8.822,
+          39.721002
+        ],
+        [
+          43.0,
+          8.822,
+          39.721002
+        ],
+        [
+          43.0,
+          8.822,
+          34.0
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "WP-10 switch drop",
+      "points": [
+        [
+          27.5,
+          16.302,
+          7.771
+        ],
+        [
+          27.5,
+          17.93,
+          7.771
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "WP-10 ceiling branch",
+      "points": [
+        [
+          27.5,
+          17.93,
+          7.771
+        ],
+        [
+          27.5,
+          17.982,
+          7.771
+        ],
+        [
+          27.5,
+          17.982,
+          7.641
+        ],
+        [
+          27.0,
+          17.982,
+          7.641
+        ],
+        [
+          27.0,
+          17.982,
+          5.5
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "buried roadhead supply trunk",
+      "points": [
+        [
+          39.79,
+          -0.37,
+          69.38
+        ],
+        [
+          40.13,
+          -0.37,
+          69.38
+        ],
+        [
+          40.13,
+          -2.2,
+          69.38
+        ],
+        [
+          50.9,
+          -2.2,
+          69.38
+        ],
+        [
+          50.9,
+          -2.2,
+          12.8
+        ]
+      ],
+      "radius": 0.03,
+      "visible": false
+    },
+    {
+      "id": "buried hut branch",
+      "points": [
+        [
+          50.9,
+          -2.2,
+          12.8
+        ],
+        [
+          16,
+          -2.2,
+          12.8
+        ],
+        [
+          16,
+          5.4,
+          12.8
+        ],
+        [
+          16,
+          5.4,
+          13.83
+        ]
+      ],
+      "radius": 0.03,
+      "visible": false
+    },
+    {
+      "id": "hut wall-backed riser and sealed north sleeve",
+      "points": [
+        [
+          16,
+          5.4,
+          13.83
+        ],
+        [
+          16,
+          8.77,
+          13.83
+        ],
+        [
+          16,
+          8.77,
+          14.24
+        ],
+        [
+          16,
+          8.822,
+          14.24
+        ],
+        [
+          16,
+          8.822,
+          14.109
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true
+    },
+    {
+      "id": "buried store branch",
+      "points": [
+        [
+          50.9,
+          -2.2,
+          40.25
+        ],
+        [
+          47,
+          -2.2,
+          40.25
+        ],
+        [
+          47,
+          5.3,
+          40.25
+        ]
+      ],
+      "radius": 0.03,
+      "visible": false
+    },
+    {
+      "id": "store wall-backed riser and sealed south sleeve",
+      "points": [
+        [
+          47,
+          5.3,
+          40.25
+        ],
+        [
+          47,
+          5.8,
+          40.25
+        ],
+        [
+          47,
+          5.8,
+          40.12
+        ],
+        [
+          47,
+          8.77,
+          40.12
+        ],
+        [
+          47,
+          8.77,
+          39.7
+        ],
+        [
+          47,
+          8.822,
+          39.7
+        ],
+        [
+          47,
+          8.822,
+          39.851
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true
+    },
+    {
+      "id": "buried tower branch",
+      "points": [
+        [
+          50.9,
+          -2.2,
+          12.8
+        ],
+        [
+          50.9,
+          -2.2,
+          1.9
+        ],
+        [
+          29.8,
+          -2.2,
+          1.9
+        ],
+        [
+          29.8,
+          5.54,
+          1.9
+        ]
+      ],
+      "radius": 0.03,
+      "visible": false
+    },
+    {
+      "id": "tower column riser and roof sleeve",
+      "points": [
+        [
+          29.8,
+          5.54,
+          1.9
+        ],
+        [
+          29.8,
+          5.9,
+          2.015
+        ],
+        [
+          29.8,
+          14.66,
+          2.015
+        ],
+        [
+          29.8,
+          14.8,
+          1.93
+        ],
+        [
+          29.8,
+          17.82,
+          1.93
+        ],
+        [
+          27,
+          17.82,
+          1.93
+        ],
+        [
+          27,
+          17.82,
+          2.22
+        ],
+        [
+          27,
+          17.982,
+          2.22
+        ],
+        [
+          27,
+          17.982,
+          5.5
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true
+    }
+  ],
+  "service_feeders": {
+    "WP-03": "Buried feeder to hut service boot, with the interior branch along the north head datums.",
+    "WP-05": "Buried feeder to store isolation point and ceiling branch.",
+    "WP-10": "Buried supply to tower foot and riser on fixed column behind the tower, independent of the stair.",
+    "WP-YARD": "Shelter branch ahead of local switches, obeys supply and breaker."
+  }
+}

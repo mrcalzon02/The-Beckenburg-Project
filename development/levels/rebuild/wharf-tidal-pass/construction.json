@@ -1,0 +1,234 @@
+{
+  "site": "WLD-06",
+  "source_exports": {
+    "development/levels/rebuild/wharf-foundation-pass/supported-wharf.glb": "1b2ff6d2f047b3a6b99f5d990f086e875708316e9b8347d55183840dcfd691f7",
+    "development/levels/rebuild/wharf-foundation-pass/supported-wharf.blend": "d56d51fb1dcc9bfb55dea0753a5c39e3e076eafb0d2d160e671f8166afdad846",
+    "development/levels/rebuild/wharf-foundation-pass/supported-wharf.hcs2": "819643f05534e0433dabb36373437f60367a70a30aa7cf6568705817b37341f8"
+  },
+  "builder_sha256": "06de236ba07521a4da3045ca04e539afa8b85eca67e85efd90b41d35d05c3b52",
+  "retained_native_parts": 660,
+  "new_native_triangles": 680,
+  "mean_tide_y": -1.45,
+  "sounding_order": "Z, new ground Y, retained ground samples",
+  "lower_bed_stations": [
+    [
+      2,
+      -4.5202,
+      [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ]
+    ],
+    [
+      24,
+      -4.5202,
+      [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ]
+    ],
+    [
+      34,
+      -4.7165,
+      [
+        -4.54646,
+        -3.96246
+      ]
+    ],
+    [
+      36,
+      -3.89,
+      [
+        -3.63629,
+        -3.63629,
+        -3.63629,
+        -3.63629
+      ]
+    ],
+    [
+      38,
+      -3.4137,
+      [
+        -3.2437,
+        -3.2437,
+        -3.2437,
+        -3.2437
+      ]
+    ],
+    [
+      41,
+      -2.7491,
+      [
+        -2.57914,
+        -2.57914,
+        -2.57785,
+        -2.57768
+      ]
+    ],
+    [
+      44,
+      -2.0621,
+      [
+        -1.89212,
+        -1.89212,
+        -1.88953,
+        -1.88885
+      ]
+    ],
+    [
+      46,
+      -1.6256,
+      [
+        -1.45559,
+        -1.45559,
+        -1.45073,
+        -1.4497
+      ]
+    ],
+    [
+      48,
+      -1.234,
+      [
+        -1.06398,
+        -1.06398,
+        -1.05524,
+        -1.05319
+      ]
+    ],
+    [
+      50,
+      -0.8344,
+      [
+        -0.66436,
+        -0.66436,
+        -0.65246,
+        -0.65001
+      ]
+    ],
+    [
+      52,
+      -0.3711,
+      [
+        -0.20106,
+        -0.20106,
+        -0.19422,
+        -0.19278
+      ]
+    ],
+    [
+      54,
+      -0.36,
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      56,
+      -0.36,
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      58,
+      -0.36,
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  ],
+  "dry_cell_bands": [
+    [
+      24.125,
+      31.575,
+      24.125,
+      39.875
+    ],
+    [
+      31.575,
+      34.425,
+      16.125,
+      47.875
+    ],
+    [
+      34.425,
+      35.875,
+      24.125,
+      39.875
+    ]
+  ],
+  "shared_water_placements": [
+    [
+      -169.0,
+      -158.0,
+      233.0,
+      24.125
+    ],
+    [
+      -169.0,
+      24.125,
+      24.125,
+      31.575
+    ],
+    [
+      39.875,
+      24.125,
+      233.0,
+      31.575
+    ],
+    [
+      -169.0,
+      31.575,
+      16.125,
+      34.425
+    ],
+    [
+      47.875,
+      31.575,
+      233.0,
+      34.425
+    ],
+    [
+      -169.0,
+      34.425,
+      24.125,
+      35.875
+    ],
+    [
+      39.875,
+      34.425,
+      233.0,
+      35.875
+    ],
+    [
+      -169.0,
+      35.875,
+      233.0,
+      54.0
+    ]
+  ],
+  "construction_capture": {
+    "path": "development/levels/rebuild/wharf-tidal-pass/captures/structure/wharf-estuary-and-shore.png",
+    "sha256": "ed2496ab7abcf83a7192acd74b29c7803084b4df9885654056b266b51c43598b",
+    "type": "Native export with diagnostic daylight mean-tide planes"
+  },
+  "exports": {
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.blend": "ca5201d133f89ff988061f61b5deed2a8abbf3cb35be0945262f042597ac5c52",
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.glb": "53cd80d825ac313e67e3bb19277b0be213d0b1fbd7d0c397369866091ba7a1f4",
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.hcs2": "af8f8b4474406b1fcb215a9cde8b50745c2e02008a6a2bc3e52ac091465eb145",
+    "development/levels/rebuild/wharf-tidal-pass/wharf-tide.water": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc"
+  }
+}

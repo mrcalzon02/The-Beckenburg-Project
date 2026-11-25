@@ -1,0 +1,1468 @@
+{
+  "board": {
+    "wall": "Wall plant N",
+    "floor": "Floor plant",
+    "source": "level_electrical_bank_worn",
+    "source_sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+    "bounds": [
+      [
+        36.889999,
+        -2.94,
+        22.120001
+      ],
+      [
+        39.110001,
+        -0.821695,
+        22.49
+      ]
+    ],
+    "connected_terminals": [
+      [
+        37.39,
+        -0.856,
+        22.219999923706055
+      ],
+      [
+        38.15,
+        -0.856,
+        22.219999923706055
+      ],
+      [
+        38.91,
+        -0.856,
+        22.219999923706055
+      ]
+    ],
+    "incoming_receiver": {
+      "component": "Wall plant N",
+      "at": [
+        38.150002,
+        -0.23,
+        22.08
+      ]
+    }
+  },
+  "sockets": [
+    {
+      "id": "prison-main-breaker",
+      "type": "breaker",
+      "room": 11,
+      "position": [
+        38.0,
+        -2.1,
+        22.509999999999998
+      ],
+      "yaw": 0,
+      "style": "PR-MAIN"
+    },
+    {
+      "id": "prison-switch-00",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        14.081,
+        1.25,
+        38.799999
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "PR-00"
+    },
+    {
+      "id": "prison-a-lower-gallery-load-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        15.0,
+        2.656,
+        28.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-a-lower-gallery-load-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        15.0,
+        2.656,
+        38.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-a-lower-gallery-load-3",
+      "type": "light",
+      "room": 0,
+      "position": [
+        15.0,
+        2.656,
+        49.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-01",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        16.4,
+        1.25,
+        67.759003
+      ],
+      "yaw": 3.141592653589793,
+      "style": "PR-01"
+    },
+    {
+      "id": "prison-reception-load-1",
+      "type": "light",
+      "room": 1,
+      "position": [
+        14.0,
+        2.656,
+        65.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-02",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        26.080999,
+        1.25,
+        65.099998
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "PR-02"
+    },
+    {
+      "id": "prison-sally-load-1",
+      "type": "light",
+      "room": 2,
+      "position": [
+        34.0,
+        3.656,
+        62.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-sally-load-2",
+      "type": "light",
+      "room": 2,
+      "position": [
+        34.0,
+        3.656,
+        65.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-03",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        16.0,
+        1.25,
+        4.081
+      ],
+      "yaw": 0.0,
+      "style": "PR-03"
+    },
+    {
+      "id": "prison-dining-load-1",
+      "type": "light",
+      "room": 3,
+      "position": [
+        16.0,
+        2.656,
+        8.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-dining-load-2",
+      "type": "light",
+      "room": 3,
+      "position": [
+        16.0,
+        2.656,
+        13.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-04",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        53.918999,
+        1.25,
+        38.799999
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "PR-04"
+    },
+    {
+      "id": "prison-b-lower-gallery-load-1",
+      "type": "light",
+      "room": 4,
+      "position": [
+        53.0,
+        2.656,
+        28.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-b-lower-gallery-load-2",
+      "type": "light",
+      "room": 4,
+      "position": [
+        53.0,
+        2.656,
+        38.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-b-lower-gallery-load-3",
+      "type": "light",
+      "room": 4,
+      "position": [
+        53.0,
+        2.656,
+        49.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-05",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        28.080999,
+        1.25,
+        11.7
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "PR-05"
+    },
+    {
+      "id": "prison-medical-link-load-1",
+      "type": "light",
+      "room": 5,
+      "position": [
+        30.0,
+        2.656,
+        8.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-medical-link-load-2",
+      "type": "light",
+      "room": 5,
+      "position": [
+        30.0,
+        2.656,
+        13.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-06",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        58.081001,
+        1.25,
+        42.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "PR-06"
+    },
+    {
+      "id": "prison-chapel-load-1",
+      "type": "light",
+      "room": 6,
+      "position": [
+        64.0,
+        3.656,
+        40.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-chapel-load-2",
+      "type": "light",
+      "room": 6,
+      "position": [
+        64.0,
+        3.656,
+        46.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-07",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        14.081,
+        4.65,
+        38.799999
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "PR-07"
+    },
+    {
+      "id": "prison-a-upper-gallery-load-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        15.0,
+        6.056,
+        31.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-a-upper-gallery-load-2",
+      "type": "light",
+      "room": 7,
+      "position": [
+        15.0,
+        6.056,
+        41.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-a-upper-gallery-load-3",
+      "type": "light",
+      "room": 7,
+      "position": [
+        15.0,
+        6.056,
+        53.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-08",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        58.081001,
+        1.25,
+        26.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "PR-08"
+    },
+    {
+      "id": "prison-isolation-link-load-1",
+      "type": "light",
+      "room": 8,
+      "position": [
+        59.5,
+        2.656,
+        23.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-isolation-link-load-2",
+      "type": "light",
+      "room": 8,
+      "position": [
+        59.5,
+        2.656,
+        30.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-09",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        20.0,
+        1.25,
+        67.759003
+      ],
+      "yaw": 3.141592653589793,
+      "style": "PR-09"
+    },
+    {
+      "id": "prison-records-load-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        20.0,
+        2.656,
+        65.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-10",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        53.918999,
+        4.65,
+        38.799999
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "PR-10"
+    },
+    {
+      "id": "prison-b-upper-gallery-load-1",
+      "type": "light",
+      "room": 10,
+      "position": [
+        53.0,
+        6.056,
+        31.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-b-upper-gallery-load-2",
+      "type": "light",
+      "room": 10,
+      "position": [
+        53.0,
+        6.056,
+        41.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-b-upper-gallery-load-3",
+      "type": "light",
+      "room": 10,
+      "position": [
+        53.0,
+        6.056,
+        53.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-switch-11",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        35.599998,
+        -1.75,
+        22.080999
+      ],
+      "yaw": 0.0,
+      "style": "PR-11"
+    },
+    {
+      "id": "prison-plant-load-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        38.0,
+        -0.344,
+        24.15
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "prison-plant-load-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        41.0,
+        -0.344,
+        29.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "loads": [
+    {
+      "id": "prison-a-lower-gallery-load-1",
+      "room": 0,
+      "space": "a-lower-gallery",
+      "circuit": "PR-00",
+      "mount": [
+        15.0,
+        2.84,
+        28.0
+      ],
+      "emitter": [
+        15.0,
+        2.656,
+        28.0
+      ],
+      "support": "Ceiling cap a-lower-gallery"
+    },
+    {
+      "id": "prison-a-lower-gallery-load-2",
+      "room": 0,
+      "space": "a-lower-gallery",
+      "circuit": "PR-00",
+      "mount": [
+        15.0,
+        2.84,
+        38.0
+      ],
+      "emitter": [
+        15.0,
+        2.656,
+        38.0
+      ],
+      "support": "Ceiling cap a-lower-gallery"
+    },
+    {
+      "id": "prison-a-lower-gallery-load-3",
+      "room": 0,
+      "space": "a-lower-gallery",
+      "circuit": "PR-00",
+      "mount": [
+        15.0,
+        2.84,
+        49.0
+      ],
+      "emitter": [
+        15.0,
+        2.656,
+        49.0
+      ],
+      "support": "Ceiling cap a-lower-gallery"
+    },
+    {
+      "id": "prison-reception-load-1",
+      "room": 1,
+      "space": "reception",
+      "circuit": "PR-01",
+      "mount": [
+        14.0,
+        2.84,
+        65.0
+      ],
+      "emitter": [
+        14.0,
+        2.656,
+        65.0
+      ],
+      "support": "Ceiling cap reception"
+    },
+    {
+      "id": "prison-sally-load-1",
+      "room": 2,
+      "space": "sally",
+      "circuit": "PR-02",
+      "mount": [
+        34.0,
+        3.84,
+        62.0
+      ],
+      "emitter": [
+        34.0,
+        3.656,
+        62.0
+      ],
+      "support": "Ceiling cap sally"
+    },
+    {
+      "id": "prison-sally-load-2",
+      "room": 2,
+      "space": "sally",
+      "circuit": "PR-02",
+      "mount": [
+        34.0,
+        3.84,
+        65.0
+      ],
+      "emitter": [
+        34.0,
+        3.656,
+        65.0
+      ],
+      "support": "Ceiling cap sally"
+    },
+    {
+      "id": "prison-dining-load-1",
+      "room": 3,
+      "space": "dining",
+      "circuit": "PR-03",
+      "mount": [
+        16.0,
+        2.84,
+        8.0
+      ],
+      "emitter": [
+        16.0,
+        2.656,
+        8.0
+      ],
+      "support": "Ceiling cap dining"
+    },
+    {
+      "id": "prison-dining-load-2",
+      "room": 3,
+      "space": "dining",
+      "circuit": "PR-03",
+      "mount": [
+        16.0,
+        2.84,
+        13.0
+      ],
+      "emitter": [
+        16.0,
+        2.656,
+        13.0
+      ],
+      "support": "Ceiling cap dining"
+    },
+    {
+      "id": "prison-b-lower-gallery-load-1",
+      "room": 4,
+      "space": "b-lower-gallery",
+      "circuit": "PR-04",
+      "mount": [
+        53.0,
+        2.84,
+        28.0
+      ],
+      "emitter": [
+        53.0,
+        2.656,
+        28.0
+      ],
+      "support": "Ceiling cap b-lower-gallery"
+    },
+    {
+      "id": "prison-b-lower-gallery-load-2",
+      "room": 4,
+      "space": "b-lower-gallery",
+      "circuit": "PR-04",
+      "mount": [
+        53.0,
+        2.84,
+        38.0
+      ],
+      "emitter": [
+        53.0,
+        2.656,
+        38.0
+      ],
+      "support": "Ceiling cap b-lower-gallery"
+    },
+    {
+      "id": "prison-b-lower-gallery-load-3",
+      "room": 4,
+      "space": "b-lower-gallery",
+      "circuit": "PR-04",
+      "mount": [
+        53.0,
+        2.84,
+        49.0
+      ],
+      "emitter": [
+        53.0,
+        2.656,
+        49.0
+      ],
+      "support": "Ceiling cap b-lower-gallery"
+    },
+    {
+      "id": "prison-medical-link-load-1",
+      "room": 5,
+      "space": "medical-link",
+      "circuit": "PR-05",
+      "mount": [
+        30.0,
+        2.84,
+        8.0
+      ],
+      "emitter": [
+        30.0,
+        2.656,
+        8.0
+      ],
+      "support": "Ceiling cap medical-link"
+    },
+    {
+      "id": "prison-medical-link-load-2",
+      "room": 5,
+      "space": "medical-link",
+      "circuit": "PR-05",
+      "mount": [
+        30.0,
+        2.84,
+        13.0
+      ],
+      "emitter": [
+        30.0,
+        2.656,
+        13.0
+      ],
+      "support": "Ceiling cap medical-link"
+    },
+    {
+      "id": "prison-chapel-load-1",
+      "room": 6,
+      "space": "chapel",
+      "circuit": "PR-06",
+      "mount": [
+        64.0,
+        3.84,
+        40.0
+      ],
+      "emitter": [
+        64.0,
+        3.656,
+        40.0
+      ],
+      "support": "Ceiling cap chapel"
+    },
+    {
+      "id": "prison-chapel-load-2",
+      "room": 6,
+      "space": "chapel",
+      "circuit": "PR-06",
+      "mount": [
+        64.0,
+        3.84,
+        46.0
+      ],
+      "emitter": [
+        64.0,
+        3.656,
+        46.0
+      ],
+      "support": "Ceiling cap chapel"
+    },
+    {
+      "id": "prison-a-upper-gallery-load-1",
+      "room": 7,
+      "space": "a-upper-gallery",
+      "circuit": "PR-07",
+      "mount": [
+        15.0,
+        6.24,
+        31.0
+      ],
+      "emitter": [
+        15.0,
+        6.056,
+        31.0
+      ],
+      "support": "Ceiling cap a-upper-gallery"
+    },
+    {
+      "id": "prison-a-upper-gallery-load-2",
+      "room": 7,
+      "space": "a-upper-gallery",
+      "circuit": "PR-07",
+      "mount": [
+        15.0,
+        6.24,
+        41.0
+      ],
+      "emitter": [
+        15.0,
+        6.056,
+        41.0
+      ],
+      "support": "Ceiling cap a-upper-gallery"
+    },
+    {
+      "id": "prison-a-upper-gallery-load-3",
+      "room": 7,
+      "space": "a-upper-gallery",
+      "circuit": "PR-07",
+      "mount": [
+        15.0,
+        6.24,
+        53.0
+      ],
+      "emitter": [
+        15.0,
+        6.056,
+        53.0
+      ],
+      "support": "Ceiling cap a-upper-gallery"
+    },
+    {
+      "id": "prison-isolation-link-load-1",
+      "room": 8,
+      "space": "isolation-link",
+      "circuit": "PR-08",
+      "mount": [
+        59.5,
+        2.84,
+        23.0
+      ],
+      "emitter": [
+        59.5,
+        2.656,
+        23.0
+      ],
+      "support": "Ceiling cap isolation-link"
+    },
+    {
+      "id": "prison-isolation-link-load-2",
+      "room": 8,
+      "space": "isolation-link",
+      "circuit": "PR-08",
+      "mount": [
+        59.5,
+        2.84,
+        30.0
+      ],
+      "emitter": [
+        59.5,
+        2.656,
+        30.0
+      ],
+      "support": "Ceiling cap isolation-link"
+    },
+    {
+      "id": "prison-records-load-1",
+      "room": 9,
+      "space": "records",
+      "circuit": "PR-09",
+      "mount": [
+        20.0,
+        2.84,
+        65.0
+      ],
+      "emitter": [
+        20.0,
+        2.656,
+        65.0
+      ],
+      "support": "Ceiling cap records"
+    },
+    {
+      "id": "prison-b-upper-gallery-load-1",
+      "room": 10,
+      "space": "b-upper-gallery",
+      "circuit": "PR-10",
+      "mount": [
+        53.0,
+        6.24,
+        31.0
+      ],
+      "emitter": [
+        53.0,
+        6.056,
+        31.0
+      ],
+      "support": "Ceiling cap b-upper-gallery"
+    },
+    {
+      "id": "prison-b-upper-gallery-load-2",
+      "room": 10,
+      "space": "b-upper-gallery",
+      "circuit": "PR-10",
+      "mount": [
+        53.0,
+        6.24,
+        41.0
+      ],
+      "emitter": [
+        53.0,
+        6.056,
+        41.0
+      ],
+      "support": "Ceiling cap b-upper-gallery"
+    },
+    {
+      "id": "prison-b-upper-gallery-load-3",
+      "room": 10,
+      "space": "b-upper-gallery",
+      "circuit": "PR-10",
+      "mount": [
+        53.0,
+        6.24,
+        53.0
+      ],
+      "emitter": [
+        53.0,
+        6.056,
+        53.0
+      ],
+      "support": "Ceiling cap b-upper-gallery"
+    },
+    {
+      "id": "prison-plant-load-1",
+      "room": 11,
+      "space": "plant",
+      "circuit": "PR-11",
+      "mount": [
+        38.0,
+        -0.16,
+        24.15
+      ],
+      "emitter": [
+        38.0,
+        -0.344,
+        24.15
+      ],
+      "support": "Ceiling cap plant"
+    },
+    {
+      "id": "prison-plant-load-2",
+      "room": 11,
+      "space": "plant",
+      "circuit": "PR-11",
+      "mount": [
+        41.0,
+        -0.16,
+        29.0
+      ],
+      "emitter": [
+        41.0,
+        -0.344,
+        29.0
+      ],
+      "support": "Ceiling cap plant"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "prison-switch-00",
+      "circuit": "PR-00",
+      "space": "a-lower-gallery",
+      "room": 0,
+      "at": [
+        14.081,
+        1.25,
+        38.799999
+      ],
+      "support": "Flat route shell Wall a-lower-gallery W.001",
+      "feet": [
+        15,
+        0,
+        38.8
+      ]
+    },
+    {
+      "id": "prison-switch-01",
+      "circuit": "PR-01",
+      "space": "reception",
+      "room": 1,
+      "at": [
+        16.4,
+        1.25,
+        67.759003
+      ],
+      "support": "PRISON clean reception S end",
+      "feet": [
+        16.4,
+        0,
+        66.8
+      ]
+    },
+    {
+      "id": "prison-switch-02",
+      "circuit": "PR-02",
+      "space": "sally",
+      "room": 2,
+      "at": [
+        26.080999,
+        1.25,
+        65.099998
+      ],
+      "support": "Wall public-wc E",
+      "feet": [
+        27.15,
+        0,
+        65.1
+      ]
+    },
+    {
+      "id": "prison-switch-03",
+      "circuit": "PR-03",
+      "space": "dining",
+      "room": 3,
+      "at": [
+        16.0,
+        1.25,
+        4.081
+      ],
+      "support": "Wall dining N",
+      "feet": [
+        16,
+        0,
+        5.2
+      ]
+    },
+    {
+      "id": "prison-switch-04",
+      "circuit": "PR-04",
+      "space": "b-lower-gallery",
+      "room": 4,
+      "at": [
+        53.918999,
+        1.25,
+        38.799999
+      ],
+      "support": "Wall b-lower-cell-05 W",
+      "feet": [
+        53,
+        0,
+        38.8
+      ]
+    },
+    {
+      "id": "prison-switch-05",
+      "circuit": "PR-05",
+      "space": "medical-link",
+      "room": 5,
+      "at": [
+        28.080999,
+        1.25,
+        11.7
+      ],
+      "support": "Wall medical-link W",
+      "feet": [
+        29.1,
+        0,
+        11.7
+      ]
+    },
+    {
+      "id": "prison-switch-06",
+      "circuit": "PR-06",
+      "space": "chapel",
+      "room": 6,
+      "at": [
+        58.081001,
+        1.25,
+        42.5
+      ],
+      "support": "Wall chapel W",
+      "feet": [
+        59.2,
+        0,
+        42.5
+      ]
+    },
+    {
+      "id": "prison-switch-07",
+      "circuit": "PR-07",
+      "space": "a-upper-gallery",
+      "room": 7,
+      "at": [
+        14.081,
+        4.65,
+        38.799999
+      ],
+      "support": "Wall a-upper-cell-05 E",
+      "feet": [
+        15,
+        3.4,
+        38.8
+      ]
+    },
+    {
+      "id": "prison-switch-08",
+      "circuit": "PR-08",
+      "space": "isolation-link",
+      "room": 8,
+      "at": [
+        58.081001,
+        1.25,
+        26.5
+      ],
+      "support": "Wall b-lower-cell-01 E",
+      "feet": [
+        59.25,
+        0,
+        26.5
+      ]
+    },
+    {
+      "id": "prison-switch-09",
+      "circuit": "PR-09",
+      "space": "records",
+      "room": 9,
+      "at": [
+        20.0,
+        1.25,
+        67.759003
+      ],
+      "support": "PRISON clean records S end",
+      "feet": [
+        20,
+        0,
+        66.75
+      ]
+    },
+    {
+      "id": "prison-switch-10",
+      "circuit": "PR-10",
+      "space": "b-upper-gallery",
+      "room": 10,
+      "at": [
+        53.918999,
+        4.65,
+        38.799999
+      ],
+      "support": "Wall b-upper-cell-05 W",
+      "feet": [
+        53,
+        3.4,
+        38.8
+      ]
+    },
+    {
+      "id": "prison-switch-11",
+      "circuit": "PR-11",
+      "space": "plant",
+      "room": 11,
+      "at": [
+        35.599998,
+        -1.75,
+        22.080999
+      ],
+      "support": "Wall plant N",
+      "feet": [
+        35.6,
+        -3,
+        23.15
+      ]
+    }
+  ],
+  "conduit": [
+    {
+      "id": "Prison distribution terminal 1",
+      "points": [
+        [
+          37.39,
+          -0.856,
+          22.219999923706055
+        ],
+        [
+          37.39,
+          -0.48,
+          22.219999923706055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "Prison distribution terminal 2",
+      "points": [
+        [
+          38.15,
+          -0.856,
+          22.219999923706055
+        ],
+        [
+          38.15,
+          -0.48,
+          22.219999923706055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "Prison distribution terminal 3",
+      "points": [
+        [
+          38.91,
+          -0.856,
+          22.219999923706055
+        ],
+        [
+          38.91,
+          -0.48,
+          22.219999923706055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "Prison distribution manifold",
+      "points": [
+        [
+          37.36,
+          -0.48,
+          22.219999923706055
+        ],
+        [
+          38.94,
+          -0.48,
+          22.219999923706055
+        ]
+      ],
+      "radius": 0.025,
+      "visible": true
+    },
+    {
+      "id": "Prison incoming distribution riser",
+      "points": [
+        [
+          38.15,
+          -0.492,
+          22.219999923706055
+        ],
+        [
+          38.15,
+          -0.23,
+          22.219999923706055
+        ],
+        [
+          38.15,
+          -0.23,
+          22.109999923706056
+        ]
+      ],
+      "radius": 0.019,
+      "visible": true
+    },
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          14.109,
+          1.302,
+          38.799999
+        ],
+        [
+          14.109,
+          2.7699999141693117,
+          38.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          16.4,
+          1.302,
+          67.731003
+        ],
+        [
+          16.4,
+          2.770000152587891,
+          67.731003
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          26.108999,
+          1.302,
+          65.099998
+        ],
+        [
+          26.108999,
+          3.2,
+          65.099998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          16.0,
+          1.302,
+          4.109
+        ],
+        [
+          16.0,
+          2.7699999141693117,
+          4.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          53.890999,
+          1.302,
+          38.799999
+        ],
+        [
+          53.890999,
+          2.770000152587891,
+          38.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          28.108999,
+          1.302,
+          11.7
+        ],
+        [
+          28.108999,
+          2.770000152587891,
+          11.7
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-06 switch drop",
+      "points": [
+        [
+          58.109001,
+          1.302,
+          42.5
+        ],
+        [
+          58.109001,
+          3.2,
+          42.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-07 switch drop",
+      "points": [
+        [
+          14.109,
+          4.702,
+          38.799999
+        ],
+        [
+          14.109,
+          6.170000247955322,
+          38.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-08 switch drop",
+      "points": [
+        [
+          58.109001,
+          1.302,
+          26.5
+        ],
+        [
+          58.109001,
+          2.770000152587891,
+          26.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-09 switch drop",
+      "points": [
+        [
+          20.0,
+          1.302,
+          67.731003
+        ],
+        [
+          20.0,
+          2.770000152587891,
+          67.731003
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          53.890999,
+          4.702,
+          38.799999
+        ],
+        [
+          53.890999,
+          6.170000247955322,
+          38.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-11 switch drop",
+      "points": [
+        [
+          35.599998,
+          -1.698,
+          22.108999
+        ],
+        [
+          35.599998,
+          -0.22999992191791535,
+          22.108999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    }
+  ],
+  "preserved_components": 1065,
+  "new_components": 73,
+  "exports": {
+    "blend": "f601618c503e6970c6f116ab9be68dc5c60ed96a90092803027248198060eeaf",
+    "glb": "6b180a6e9eff3b39fa6ae1234045b3a0dffa196c429bc51cfe1c013d488eb2cb",
+    "hcs2": "80ba93b598230ba98fcb4b220f4a8935e93ccf9c9a91ae8f6e89437888cc824d"
+  }
+}

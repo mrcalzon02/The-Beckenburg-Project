@@ -1,0 +1,28 @@
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\sample_roster_terrain.py", line 93, in <module>
+    for site in args.sites:sample(site.lower(),args.source_ref,mappings.get(site.lower()))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\sample_roster_terrain.py", line 15, in sample
+    source_bytes=source.read_bytes();layout_bytes=layout.read_bytes()
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\structures\\not-a-real-site\\rough-shell.glb'
+
+Error: script failed, file: 'tools/sample_roster_terrain.py', exiting.
+
+Blender quit
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\build_roster_editor_terrain.py", line 37, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\build_roster_editor_terrain.py", line 17, in main
+    subprocess.run([args.blender,'--background','--factory-startup','--python-exit-code','1','--python','tools/sample_roster_terrain.py','--','--sites',*sites,'--source-ref',seed,'--terrain-source',*args.terrain_source],cwd=ROOT,check=True)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:/Program Files/Blender Foundation/Blender 5.0/blender.exe', '--background', '--factory-startup', '--python-exit-code', '1', '--python', 'tools/sample_roster_terrain.py', '--', '--sites', 'wld-07', '--source-ref', 'de4edf80de20b86f9ac42f6a616913e109505894', '--terrain-source', 'WLD-07=NOT-A-REAL-SITE']' returned non-zero exit status 1.

@@ -1,0 +1,286 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-05": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "current_lanes": {
+        "samples": 4410,
+        "valid_standing": 4226,
+        "invalid_standing": 184,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 17,
+          "NO_CENTRE_SUPPORT": 136,
+          "NO_FOOT_SUPPORT_0.22_0.0": 11,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "PHYSICAL_COMPONENT": 16
+        },
+        "physical_components": [
+          [
+            "Bayed stair WLD-05 L09 step3",
+            10
+          ],
+          [
+            "Bayed stair WLD-05 L17 step2",
+            5
+          ],
+          [
+            "Bayed stair WLD-05 L09 step2",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 7
+      },
+      "after": {
+        "flat_links": 12,
+        "pass_both_directions": 7
+      },
+      "current_lanes": {
+        "samples": 4368,
+        "valid_standing": 3434,
+        "invalid_standing": 934,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 827,
+          "NO_FOOT_SUPPORT_0.0_0.22": 24,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 11,
+          "FOOT_HEIGHT_SPREAD": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 7,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 7,
+          "PHYSICAL_COMPONENT": 55
+        },
+        "physical_components": [
+          [
+            "274:L14 flight0 step13",
+            8
+          ],
+          [
+            "272:L14 flight0 step11",
+            8
+          ],
+          [
+            "271:L14 flight0 step10",
+            7
+          ],
+          [
+            "349:level_blockout_hydro_turbine.001",
+            6
+          ],
+          [
+            "122:L07 flight0 step2",
+            5
+          ],
+          [
+            "352:level_blockout_workbench.001",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-09 L18 flight1 part1",
+            4
+          ],
+          [
+            "281:L14 flight0 step20",
+            2
+          ],
+          [
+            "276:L14 flight0 step15",
+            2
+          ],
+          [
+            "284:L14 flight0 step23",
+            1
+          ],
+          [
+            "283:L14 flight0 step22",
+            1
+          ],
+          [
+            "282:L14 flight0 step21",
+            1
+          ],
+          [
+            "280:L14 flight0 step19",
+            1
+          ],
+          [
+            "279:L14 flight0 step18",
+            1
+          ],
+          [
+            "278:L14 flight0 step17",
+            1
+          ],
+          [
+            "277:L14 flight0 step16",
+            1
+          ],
+          [
+            "275:L14 flight0 step14",
+            1
+          ],
+          [
+            "273:L14 flight0 step12",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4551,
+        "valid_standing": 4120,
+        "invalid_standing": 431,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 17,
+          "NO_CENTRE_SUPPORT": 308,
+          "PHYSICAL_COMPONENT": 89,
+          "NO_FOOT_SUPPORT_0.0_0.22": 1,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 8
+        },
+        "physical_components": [
+          [
+            "128:L19 flight0 step2",
+            23
+          ],
+          [
+            "137:L19 flight0 step11",
+            11
+          ],
+          [
+            "136:L19 flight0 step10",
+            9
+          ],
+          [
+            "129:L19 flight0 step3",
+            6
+          ],
+          [
+            "130:L19 flight0 step4",
+            6
+          ],
+          [
+            "131:L19 flight0 step5",
+            6
+          ],
+          [
+            "132:L19 flight0 step6",
+            6
+          ],
+          [
+            "133:L19 flight0 step7",
+            6
+          ],
+          [
+            "134:L19 flight0 step8",
+            6
+          ],
+          [
+            "135:L19 flight0 step9",
+            6
+          ],
+          [
+            "138:L19 flight0 step12",
+            4
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-05": {
+      "before": {
+        "contract": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "contract_sha256": "fb8f57f5b50bc658d27bb5de280d8c9c6106693ae7434b1cfdf39fc22938a8c6",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "layout_sha256": "0b27efdb8f6a436741e6b508ca507a607409f7d874b94aa29806dba860e4fb5a",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/retaining-shoulder-pass/wld-05/construction.json",
+        "contract_sha256": "5c67385f04e18791448c2d718a2c5f35453ec4b95e2aab38b2001ee923cc6a48",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "layout_sha256": "0b27efdb8f6a436741e6b508ca507a607409f7d874b94aa29806dba860e4fb5a",
+        "native": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.hcs2",
+        "native_sha256": "df623702b4ed8760edb2168ae36f41b3f8d64e92886691c7f7b54bbc55d76f37"
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+        "contract_sha256": "b254f3da1b7a8991908b8fbaa40856ec118c011cbd2d15bb1e1b2a3ab4cd7c1c",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "layout_sha256": "ea48e832894e5dce626c734b6976612d6119a45a23669790ba26939b3b02aa9e",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+        "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/retaining-shoulder-pass/wld-09/construction.json",
+        "contract_sha256": "57f2b156e8635f860be1e4f7ab4db7bb37c3ef78b161b2b36eed84a12a840cee",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "layout_sha256": "ea48e832894e5dce626c734b6976612d6119a45a23669790ba26939b3b02aa9e",
+        "native": "development/levels/rebuild/retaining-shoulder-pass/wld-09/retained-cuts.hcs2",
+        "native_sha256": "70c75d9a07e90a0784b231b963a31411c1f4d2e7ea66d9c1a1a298055ad94721"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "contract_sha256": "17dbff5b0787ab13d24feae1ae56ed4d07022a3d4512bd3e2ef943a128b818f9",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "layout_sha256": "2dacbe38e45e78e9d555546426090086745e5011da8fec9cd8be63764ef32d0b",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/retaining-shoulder-pass/wld-13/construction.json",
+        "contract_sha256": "9ae309054f6a2521fdebed3c47c92905848999de99bcfd8124ae3928bfa0481e",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "layout_sha256": "2dacbe38e45e78e9d555546426090086745e5011da8fec9cd8be63764ef32d0b",
+        "native": "development/levels/rebuild/retaining-shoulder-pass/wld-13/retained-cuts.hcs2",
+        "native_sha256": "1106e40ff02df7fc12dc0b4525fbad0e0ab3c36c3a6727fb9faeadb7914bb3a0"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/stair-end-pass/roster.json": "723a0491f1d190c6137f60543353fd6c7013d9f026d081448c260a209eb2bc4d"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-failure-contacts.tsv": "f8d09fb25fbdb5c6365e80215d93bafd7b31e6583a13013939aa43e2c938c326",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-failure-input.tsv": "af0b1bddfacf665967d5380aed61f2b23c336224acec6918fc9809d2f8df6bdb",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-lane-input.tsv": "c62b70c8416df7cbb88885c5b42244fac5d6a3c8df8d27364456a93e8bd34ec7",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-lane-names.tsv": "97a6054553be464b594442fd897f7f631168c03301ee51792225cc1f7c9ab5ca",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-lanes.tsv": "66539917d469a73d68fa77cccbf04a7d407afca4a807d6d87b5707fbee9c1f30",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-links.tsv": "f686170221c56890a0010774cec2578cdedc76d977cffb167dd5d6fbaacb9784",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-names.tsv": "97a6054553be464b594442fd897f7f631168c03301ee51792225cc1f7c9ab5ca",
+    "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-paths.tsv": "69c503b732ba700e6b3ff126afce7c1d81c453bd61883bdc2d9335d7043e72db"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

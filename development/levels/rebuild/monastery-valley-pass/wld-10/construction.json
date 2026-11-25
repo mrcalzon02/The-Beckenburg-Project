@@ -1,0 +1,4229 @@
+{
+  "id": "WLD-10",
+  "stair_components": [
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17",
+    "Monastery bell flight 1 riser 01 region0",
+    "Monastery bell flight 1 riser 02 region0",
+    "Monastery bell flight 1 riser 03 region0",
+    "Monastery bell flight 1 riser 04 region0",
+    "Monastery bell flight 1 riser 05 region0",
+    "Monastery bell flight 1 riser 06 region0",
+    "Monastery bell flight 1 riser 07 region0",
+    "Monastery bell flight 1 riser 08 region0",
+    "Monastery bell flight 1 riser 09 region0",
+    "Monastery bell flight 1 riser 10 region0",
+    "Monastery bell flight 1 riser 11 region0",
+    "Monastery bell flight 1 riser 12 region0",
+    "Monastery bell flight 1 riser 13 region0",
+    "Monastery bell flight 1 riser 14 region0",
+    "Monastery bell flight 1 riser 15 region0",
+    "Monastery bell flight 1 riser 16 region0",
+    "Monastery bell flight 1 riser 17 region0",
+    "Monastery bell flight 2 riser 01 region0",
+    "Monastery bell flight 2 riser 02 region0",
+    "Monastery bell flight 2 riser 03 region0",
+    "Monastery bell flight 2 riser 04 region0",
+    "Monastery bell flight 2 riser 05 region0",
+    "Monastery bell flight 2 riser 06 region0",
+    "Monastery bell flight 2 riser 07 region0",
+    "Monastery bell flight 2 riser 08 region0",
+    "Monastery bell flight 2 riser 09 region0",
+    "Monastery bell flight 2 riser 10 region0",
+    "Monastery bell flight 2 riser 11 region0",
+    "Monastery bell flight 2 riser 12 region0",
+    "Monastery bell flight 2 riser 13 region0",
+    "Monastery bell flight 2 riser 14 region0",
+    "Monastery bell flight 2 riser 15 region0",
+    "Monastery bell flight 2 riser 16 region0",
+    "Monastery bell flight 2 riser 17 region0",
+    "Monastery bell stair common intermediate landing region0"
+  ],
+  "source_segment_map": {
+    "L16": {
+      "3": 0,
+      "7": 34
+    },
+    "L19": {
+      "3": 0
+    },
+    "L21": {
+      "2": 0
+    }
+  },
+  "status": "MONASTERY_FOUR_OPPOSING_EAVE_VALLEYS_DRAINED_STAGED",
+  "source_contract": "development/levels/rebuild/access-route-pass/assemblies/wld-10/construction.json",
+  "source_contract_sha256": "2fa537adfe9f2bf6a931fab19cc4299ac2f7f53cad877633f2294d059d98511c",
+  "source_glb": "development/levels/rebuild/monastery-handrail-pass/wld-10/monastery-with-handrails.glb",
+  "source_glb_sha256": "474bfe1249b5d4bfd3d942159df09bc2f5beb2c4b847393ea2adcc075c29f334",
+  "source_physics": "development/levels/rebuild/monastery-handrail-pass/wld-10/monastery-with-handrails.hcs2",
+  "source_physics_sha256": "b9e6d77184aae6908aab739ef125ed340cfc1dc02c851b3599e3be05b92e0eec",
+  "before_layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+  "before_layout_sha256": "a7d8cc1582ba87b1c6569fae9c659a3662d108ae72fd2e2d5e4d406f159d8b2f",
+  "before_segment_map": {
+    "L16": {
+      "3": 0,
+      "7": 34
+    },
+    "L19": {
+      "3": 0
+    },
+    "L21": {
+      "2": 0
+    }
+  },
+  "before_stair_components": [
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17",
+    "Monastery bell flight 1 riser 01 region0",
+    "Monastery bell flight 1 riser 02 region0",
+    "Monastery bell flight 1 riser 03 region0",
+    "Monastery bell flight 1 riser 04 region0",
+    "Monastery bell flight 1 riser 05 region0",
+    "Monastery bell flight 1 riser 06 region0",
+    "Monastery bell flight 1 riser 07 region0",
+    "Monastery bell flight 1 riser 08 region0",
+    "Monastery bell flight 1 riser 09 region0",
+    "Monastery bell flight 1 riser 10 region0",
+    "Monastery bell flight 1 riser 11 region0",
+    "Monastery bell flight 1 riser 12 region0",
+    "Monastery bell flight 1 riser 13 region0",
+    "Monastery bell flight 1 riser 14 region0",
+    "Monastery bell flight 1 riser 15 region0",
+    "Monastery bell flight 1 riser 16 region0",
+    "Monastery bell flight 1 riser 17 region0",
+    "Monastery bell flight 2 riser 01 region0",
+    "Monastery bell flight 2 riser 02 region0",
+    "Monastery bell flight 2 riser 03 region0",
+    "Monastery bell flight 2 riser 04 region0",
+    "Monastery bell flight 2 riser 05 region0",
+    "Monastery bell flight 2 riser 06 region0",
+    "Monastery bell flight 2 riser 07 region0",
+    "Monastery bell flight 2 riser 08 region0",
+    "Monastery bell flight 2 riser 09 region0",
+    "Monastery bell flight 2 riser 10 region0",
+    "Monastery bell flight 2 riser 11 region0",
+    "Monastery bell flight 2 riser 12 region0",
+    "Monastery bell flight 2 riser 13 region0",
+    "Monastery bell flight 2 riser 14 region0",
+    "Monastery bell flight 2 riser 15 region0",
+    "Monastery bell flight 2 riser 16 region0",
+    "Monastery bell flight 2 riser 17 region0",
+    "Monastery bell stair common intermediate landing region0"
+  ],
+  "layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+  "layout_sha256": "a7d8cc1582ba87b1c6569fae9c659a3662d108ae72fd2e2d5e4d406f159d8b2f",
+  "glb_sha256": "8ed209214dc705d9296526ad729d8d6b1158a9cdf6ef9350bf056418fe0774d7",
+  "physics_sha256": "fae7baf83b8db32ba50d642387c333469e1b8f00f34a76d6d7512646d6bc1677",
+  "removed_source_meshes": [],
+  "removed_native_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain WLD-10",
+  "native_terrain_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_closed_parts": [],
+  "new_closed_triangles": 0,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/adaptive-topology.bin": "6ec7b5877cbfbd6dd5896c72fadd2a91c80107a2491b39022e7f19405da7b5ac",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-cuts.tsv": "211bf02888f6bb656d6cbf4a62823af3e2e62fb0a1af93a2227801b53aaf3045",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-path-grading.sha256": "283f07805b5d0987778e255876d2c1f73f3e6bcd64134e06e299e45f117fcdff",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/source-provenance.json": "6a6b406baac36e798358dd724467705766bef52de68acbe2f00ead8299cf8ee6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2": "a58190a5ca2d7c6bb945b24224871781a5d567c764a06b26682ea70f583773de",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/tile_0_0.png": "5388501e58daf07983e2a968437c149b308e19e36015008b19340dade7b4d6b5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/verification.json": "ce89b5e2c1457e6d2b07966a2443679d3631bc2b9d95842a76160d5ffa7b8597",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/world.properties": "e3126d00dbf63360c9aaede72c1cf4bdacfc86a41630f55a718223f06f3ed26d",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous": "3d846ad345b1b3ef037b9b684a176bf3da69a213aa19ae58734158ba47677c5f",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/scene.bin": "a52916ab4ecab89939b75c30c778cf96472a8848343bfd970f71ee1e01c66cb6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-layers/tile_0_0.bin": "b12f4de5e1bd1834e72761412ecfb5c139db7bada31aa829d4c31595aa642a22",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj": "f26a35f4098bd5e04f4b38e922fec17bda4e1306e7ca82cd547555e0f4de935e",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj": "a020ebcce5ff2750aca46f07f1013b33787b5a10d827345e216ac63313b62f49",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj": "a8029d2b71a178c057969416e3b4bc984dfc1d54f8f171175d27b4f660e9b5f6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj": "453d79b0ab245809fc72da2ad7952bb0a8a7ab845490c2a238d02b32c4a60bd5"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [],
+  "deferred_walkway_beds": [],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "blend_sha256": "762675ca271af1dcbeacf2110e4ded77a4859ab18e11e2645153ae1e2d449ae3",
+  "access_route_changes": [
+    {
+      "site": "WLD-10",
+      "link": "L05",
+      "rooms": [
+        "west",
+        "north"
+      ],
+      "before": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          36.0
+        ],
+        [
+          11.0,
+          0.0,
+          21.5
+        ],
+        [
+          11.5,
+          0.0,
+          21.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          25.5,
+          0.0,
+          17.5
+        ],
+        [
+          27.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L06",
+      "rooms": [
+        "north",
+        "east"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          26.0,
+          0.0,
+          17.0
+        ],
+        [
+          25.5,
+          0.0,
+          18.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          28.0,
+          0.0,
+          21.0
+        ],
+        [
+          46.5,
+          0.0,
+          21.0
+        ],
+        [
+          47.0,
+          0.0,
+          21.5
+        ],
+        [
+          47.0,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L09",
+      "rooms": [
+        "garden",
+        "north"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          22.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          36.0
+        ],
+        [
+          29.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L11",
+      "rooms": [
+        "north",
+        "archive"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          18.5,
+          0.0,
+          17.0
+        ],
+        [
+          18.0,
+          0.0,
+          16.5
+        ],
+        [
+          18.0,
+          0.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L13",
+      "rooms": [
+        "vestry",
+        "north"
+      ],
+      "before": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          36.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          0.0,
+          9.0
+        ],
+        [
+          36.0,
+          0.0,
+          16.5
+        ],
+        [
+          35.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L15",
+      "rooms": [
+        "east",
+        "tower-base"
+      ],
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          26.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0.0,
+          36.0
+        ],
+        [
+          49.0,
+          0.0,
+          26.5
+        ],
+        [
+          49.5,
+          0.0,
+          26.0
+        ],
+        [
+          51.0,
+          0.0,
+          26.0
+        ],
+        [
+          53.5,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L17",
+      "rooms": [
+        "tower-base",
+        "rear"
+      ],
+      "before": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          60.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          53.0,
+          0.0,
+          23.0
+        ],
+        [
+          53.0,
+          0.0,
+          28.0
+        ],
+        [
+          54.0,
+          0.0,
+          28.5
+        ],
+        [
+          58.0,
+          0.0,
+          28.5
+        ],
+        [
+          59.0,
+          0.0,
+          23.5
+        ],
+        [
+          59.5,
+          0.0,
+          23.0
+        ],
+        [
+          63.0,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L20",
+      "rooms": [
+        "catacombs",
+        "chamber"
+      ],
+      "before": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          -3.0,
+          17.5
+        ],
+        [
+          18.5,
+          -3.0,
+          17.0
+        ],
+        [
+          18.0,
+          -3.0,
+          16.5
+        ],
+        [
+          18.0,
+          -3.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "roof_wings": [
+    {
+      "wing": "gatehouse",
+      "bounds": [
+        24,
+        56,
+        40,
+        62
+      ],
+      "ceiling": 3,
+      "ridge": 4.54,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "west-cloister",
+      "bounds": [
+        8,
+        22,
+        14,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "east-cloister",
+      "bounds": [
+        44,
+        22,
+        50,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "north-cloister",
+      "bounds": [
+        8,
+        16,
+        50,
+        22
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "south-cloister",
+      "bounds": [
+        8,
+        50,
+        50,
+        56
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "archive",
+      "bounds": [
+        8,
+        2,
+        28,
+        16
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "vestry",
+      "bounds": [
+        28,
+        2,
+        44,
+        16
+      ],
+      "ceiling": 3,
+      "ridge": 5.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "refectory",
+      "bounds": [
+        50,
+        30,
+        68,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 6.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "dormitory",
+      "bounds": [
+        -8,
+        22,
+        8,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "bell-tower",
+      "bounds": [
+        50,
+        16,
+        60,
+        30
+      ],
+      "ceiling": 9,
+      "ridge": 12.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "hip",
+      "ridge_axis": "z",
+      "facade_closures": []
+    }
+  ],
+  "new_parts": 62,
+  "roof_coverage_rays": 2388,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/wld-10.png",
+      "sha256": "d65a6fe24ec8746310333d9f705ae89b98b9db37ab67d87c5f8caed0e18158e4",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 99,
+  "wing_plan_builder": "tools/build_secure_sacred_roof_batch.py",
+  "wing_plan_sha256": "6f791db6028130471f88e4bfaa06743bb7d8142ff8af8a297bcecd24dec2706b",
+  "roof_generator_source": "tools/build_roster_enclosed_roofs.py",
+  "interface_added_flights": [
+    {
+      "link": "L16",
+      "segment": 34,
+      "layout_segment": 7,
+      "points": [
+        [
+          57.04,
+          3,
+          23.07
+        ],
+        [
+          57.04,
+          6,
+          17.8
+        ]
+      ]
+    }
+  ],
+  "saved_world": "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/adaptive-topology.bin": "6ec7b5877cbfbd6dd5896c72fadd2a91c80107a2491b39022e7f19405da7b5ac",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/authored-cuts.tsv": "211bf02888f6bb656d6cbf4a62823af3e2e62fb0a1af93a2227801b53aaf3045",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/authored-path-grading.sha256": "1b5aa1156c0eaf67c60d35a6e165e6cb9fc26ac777af446eef87b67552994238",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/earthworks-verification.json": "ecae1f7568e83423d64ca52287045b246ea5c1b936dcbb0c12573dd190052332",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/source-provenance.json": "f756061e2a2b0680449daec47b77358a39488cf2dd626229d90e9811011e296c",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2": "aa5c81f26ae2913640c648d652c02dd016b6c9d74a34bfde80f53aa7db7791fc",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/tile_0_0.png": "5388501e58daf07983e2a968437c149b308e19e36015008b19340dade7b4d6b5",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/verification.json": "f756061e2a2b0680449daec47b77358a39488cf2dd626229d90e9811011e296c",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/world.properties": "e3126d00dbf63360c9aaede72c1cf4bdacfc86a41630f55a718223f06f3ed26d",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous": "7dd60acc4a0e7a38eba5dcdbd4ec23c9074b7db3394d37a317021a00bb85cb47",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/scene.bin": "66ed8fe7320b4d9ca688b12387a596346bec9ab7e3317c6acd319c1ba560c62a",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj": "c89d1f94cc2990fc2d248274bac797ddff2898816d2520f111731d76907260ba",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj": "076f21e36f681771bce041b37dc338df2acb7dd621a29ae8b33f234edd85c261",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj": "ec33fe9710e0610ac5759cbd2fe9f9a4649585129372584a3dda1292c2956595",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj": "04e72507a485c38dbe94c62b4090af38e77d8ad4c798a1191284d4e2f53cbc81",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/terrain-layers/tile_0_0.bin": "6310eddb099020b29032935ca0fd309f45340e5ec2d174d6f48490193556f6fd"
+  },
+  "terrain_mesh": "WLD-10 saved ground",
+  "retired_study_strips": [
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L04 support 0",
+    "L05 support 1",
+    "L06 support 0",
+    "L07 support 1",
+    "L08 support 1",
+    "L09 support 0",
+    "L09 support 1",
+    "L11 support 0",
+    "L13 support 1",
+    "L17 support 1",
+    "L18 support 0",
+    "L18 support 1"
+  ],
+  "new_portals": [
+    {
+      "id": "public gate",
+      "axis": "z",
+      "boundary": 62,
+      "along": 32,
+      "sill_y": 0,
+      "clear_width": 2.16,
+      "clear_height": 2.36,
+      "rooms": [
+        "entry",
+        "gatehouse"
+      ]
+    },
+    {
+      "id": "inner gatehouse door",
+      "axis": "z",
+      "boundary": 56,
+      "along": 32,
+      "sill_y": 0,
+      "clear_width": 1.85,
+      "clear_height": 2.26,
+      "rooms": [
+        "gatehouse",
+        "south"
+      ]
+    },
+    {
+      "id": "south west cloister opening",
+      "axis": "z",
+      "boundary": 50,
+      "along": 11,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "west",
+        "south"
+      ]
+    },
+    {
+      "id": "south garden door",
+      "axis": "z",
+      "boundary": 50,
+      "along": 29,
+      "sill_y": 0,
+      "clear_width": 2.05,
+      "clear_height": 2.32,
+      "rooms": [
+        "garden",
+        "south"
+      ]
+    },
+    {
+      "id": "south east cloister opening",
+      "axis": "z",
+      "boundary": 50,
+      "along": 47,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "east",
+        "south"
+      ]
+    },
+    {
+      "id": "north west cloister opening",
+      "axis": "z",
+      "boundary": 22,
+      "along": 11,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "west",
+        "north"
+      ]
+    },
+    {
+      "id": "north garden door",
+      "axis": "z",
+      "boundary": 22,
+      "along": 29,
+      "sill_y": 0,
+      "clear_width": 2.05,
+      "clear_height": 2.32,
+      "rooms": [
+        "garden",
+        "north"
+      ]
+    },
+    {
+      "id": "north east cloister opening",
+      "axis": "z",
+      "boundary": 22,
+      "along": 47,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "east",
+        "north"
+      ]
+    },
+    {
+      "id": "archive cloister door",
+      "axis": "z",
+      "boundary": 16,
+      "along": 18,
+      "sill_y": 0,
+      "clear_width": 1.83,
+      "clear_height": 2.24,
+      "rooms": [
+        "north",
+        "archive"
+      ]
+    },
+    {
+      "id": "vestry cloister door",
+      "axis": "z",
+      "boundary": 16,
+      "along": 36,
+      "sill_y": 0,
+      "clear_width": 1.83,
+      "clear_height": 2.24,
+      "rooms": [
+        "north",
+        "vestry"
+      ]
+    },
+    {
+      "id": "archive vestry door",
+      "axis": "x",
+      "boundary": 28,
+      "along": 9,
+      "sill_y": 0,
+      "clear_width": 1.82,
+      "clear_height": 2.24,
+      "rooms": [
+        "archive",
+        "vestry"
+      ]
+    },
+    {
+      "id": "dormitory cloister door",
+      "axis": "x",
+      "boundary": 8,
+      "along": 36,
+      "sill_y": 0,
+      "clear_width": 1.85,
+      "clear_height": 2.26,
+      "rooms": [
+        "west",
+        "dorm"
+      ]
+    },
+    {
+      "id": "tower cloister door",
+      "axis": "x",
+      "boundary": 50,
+      "along": 26,
+      "sill_y": 0,
+      "clear_width": 1.85,
+      "clear_height": 2.26,
+      "rooms": [
+        "east",
+        "tower-base"
+      ]
+    },
+    {
+      "id": "tower service door",
+      "axis": "x",
+      "boundary": 60,
+      "along": 23,
+      "sill_y": 0,
+      "clear_width": 2,
+      "clear_height": 2.35,
+      "rooms": [
+        "tower-base",
+        "rear"
+      ]
+    },
+    {
+      "id": "dining hall cloister door",
+      "axis": "x",
+      "boundary": 50,
+      "along": 40,
+      "sill_y": 0,
+      "clear_width": 1.86,
+      "clear_height": 2.28,
+      "rooms": [
+        "east",
+        "refectory"
+      ]
+    },
+    {
+      "id": "refectory receiving door",
+      "axis": "z",
+      "boundary": 30,
+      "along": 64,
+      "sill_y": 0,
+      "clear_width": 2,
+      "clear_height": 2.35,
+      "rooms": [
+        "rear",
+        "refectory"
+      ]
+    },
+    {
+      "id": "memorial chamber door",
+      "axis": "z",
+      "boundary": 16,
+      "along": 18,
+      "sill_y": -3,
+      "clear_width": 1.82,
+      "clear_height": 2.24,
+      "rooms": [
+        "catacombs",
+        "chamber"
+      ]
+    }
+  ],
+  "new_interface_parts": [
+    "Monastery gatehouse lapped valley liner",
+    "Monastery gatehouse west tapered outlet shoe",
+    "Monastery gatehouse west hollow downpipe",
+    "Monastery gatehouse west pipe wall strap 1",
+    "Monastery gatehouse west pipe wall strap 2",
+    "Monastery gatehouse west pipe wall strap 3",
+    "Monastery gatehouse west stone sump foot",
+    "Monastery gatehouse west sump surround 1",
+    "Monastery gatehouse west sump surround 2",
+    "Monastery gatehouse west sump surround 3",
+    "Monastery gatehouse west sump surround 4",
+    "Monastery gatehouse west gravel sump bottom",
+    "Monastery gatehouse west sump discharge shoe",
+    "Monastery gatehouse east tapered outlet shoe",
+    "Monastery gatehouse east hollow downpipe",
+    "Monastery gatehouse east pipe wall strap 1",
+    "Monastery gatehouse east pipe wall strap 2",
+    "Monastery gatehouse east pipe wall strap 3",
+    "Monastery gatehouse east stone sump foot",
+    "Monastery gatehouse east sump surround 1",
+    "Monastery gatehouse east sump surround 2",
+    "Monastery gatehouse east sump surround 3",
+    "Monastery gatehouse east sump surround 4",
+    "Monastery gatehouse east gravel sump bottom",
+    "Monastery gatehouse east sump discharge shoe",
+    "Monastery dormitory lapped valley liner",
+    "Monastery dormitory north tapered outlet shoe",
+    "Monastery dormitory north hollow downpipe",
+    "Monastery dormitory north pipe wall strap 1",
+    "Monastery dormitory north pipe wall strap 2",
+    "Monastery dormitory north pipe wall strap 3",
+    "Monastery dormitory north stone sump foot",
+    "Monastery dormitory north sump surround 1",
+    "Monastery dormitory north sump surround 2",
+    "Monastery dormitory north sump surround 3",
+    "Monastery dormitory north sump surround 4",
+    "Monastery dormitory north gravel sump bottom",
+    "Monastery dormitory north sump discharge shoe",
+    "Monastery dormitory south tapered outlet shoe",
+    "Monastery dormitory south hollow downpipe",
+    "Monastery dormitory south pipe wall strap 1",
+    "Monastery dormitory south pipe wall strap 2",
+    "Monastery dormitory south pipe wall strap 3",
+    "Monastery dormitory south stone sump foot",
+    "Monastery dormitory south sump surround 1",
+    "Monastery dormitory south sump surround 2",
+    "Monastery dormitory south sump surround 3",
+    "Monastery dormitory south sump surround 4",
+    "Monastery dormitory south gravel sump bottom",
+    "Monastery dormitory south sump discharge shoe",
+    "Monastery refectory lapped valley liner",
+    "Monastery refectory south tapered outlet shoe",
+    "Monastery refectory south hollow downpipe",
+    "Monastery refectory south pipe wall strap 1",
+    "Monastery refectory south pipe wall strap 2",
+    "Monastery refectory south pipe wall strap 3",
+    "Monastery refectory south stone sump foot",
+    "Monastery refectory south sump surround 1",
+    "Monastery refectory south sump surround 2",
+    "Monastery refectory south sump surround 3",
+    "Monastery refectory south sump surround 4",
+    "Monastery refectory south gravel sump bottom",
+    "Monastery refectory south sump discharge shoe",
+    "Monastery north range lapped valley liner",
+    "Monastery north range west tapered outlet shoe",
+    "Monastery north range west hollow downpipe",
+    "Monastery north range west pipe wall strap 1",
+    "Monastery north range west pipe wall strap 2",
+    "Monastery north range west pipe wall strap 3",
+    "Monastery north range west stone sump foot",
+    "Monastery north range west sump surround 1",
+    "Monastery north range west sump surround 2",
+    "Monastery north range west sump surround 3",
+    "Monastery north range west sump surround 4",
+    "Monastery north range west gravel sump bottom",
+    "Monastery north range west sump discharge shoe",
+    "Monastery north range east tapered outlet shoe",
+    "Monastery north range east hollow downpipe",
+    "Monastery north range east pipe wall strap 1",
+    "Monastery north range east pipe wall strap 2",
+    "Monastery north range east pipe wall strap 3",
+    "Monastery north range east stone sump foot",
+    "Monastery north range east sump surround 1",
+    "Monastery north range east sump surround 2",
+    "Monastery north range east sump surround 3",
+    "Monastery north range east sump surround 4",
+    "Monastery north range east gravel sump bottom",
+    "Monastery north range east sump discharge shoe"
+  ],
+  "builder": "tools/build_monastery_roof_drainage.py",
+  "builder_sha256": "b893aaf95f73290f354dbd290dee26efecb5e4cc5ddb2bf6bb84075b66321fc9",
+  "before_construction": "development/levels/rebuild/monastery-handrail-pass/wld-10/construction.json",
+  "before_construction_sha256": "a5f48ad480934eb44d78ce0559d3052d9ef37896d6decf9fc3b51d7b058eb8a2",
+  "retained_native_records": 486,
+  "refuges": [
+    {
+      "id": "monastery-archive-cupboard",
+      "space": "archive",
+      "owner": 3,
+      "position": [
+        22,
+        0.0,
+        3.35
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          21.15,
+          0.0,
+          2.75
+        ],
+        [
+          22.85,
+          2.31,
+          4.052
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "monastery-dorm-cupboard",
+      "space": "dorm",
+      "owner": 5,
+      "position": [
+        -6.65,
+        0.0,
+        39
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          -7.25,
+          0.0,
+          38.150002
+        ],
+        [
+          -5.948,
+          2.31,
+          39.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "monastery-chamber-cupboard",
+      "space": "chamber",
+      "owner": 9,
+      "position": [
+        23,
+        -3.0,
+        3.35
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          22.15,
+          -3.0,
+          2.75
+        ],
+        [
+          23.85,
+          -0.69,
+          4.052
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "door_schedule_sha256": "d926a95a190d13bb5eb7a1bac54a9fd4719e243f1f6f651e1a6cdedac973758e",
+  "continuous_bell_grip": [
+    "bell flight 1 west",
+    "bell landing west",
+    "bell landing south",
+    "bell landing east",
+    "bell flight 2 east"
+  ],
+  "grip_radius_m": 0.027,
+  "grip_height_above_pitch_m": 0.96,
+  "furnished_fixed_mounts": [
+    {
+      "rail": "bell flight 1 west",
+      "receiver": "Monastery bell stair west string wall",
+      "attachment": [
+        54.09099847412109,
+        1.2414,
+        18.294325999999998
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 west",
+      "receiver": "Monastery bell stair west string wall",
+      "attachment": [
+        54.09099847412109,
+        2.0097,
+        19.643973
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 west",
+      "receiver": "Monastery bell stair west string wall",
+      "attachment": [
+        54.09099847412109,
+        2.9553000000000003,
+        21.305077
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 west",
+      "receiver": "Monastery bell stair west string wall",
+      "attachment": [
+        54.09099847412109,
+        3.7236000000000002,
+        22.654724
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 west",
+      "receiver": "Monastery bell stair west string wall",
+      "attachment": [
+        54.09099847412109,
+        1.005,
+        17.87905
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "bell flight 1 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        55.90900152587891,
+        1.2378,
+        18.288002
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        55.90900152587891,
+        1.9944000000000002,
+        19.617096
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        55.90900152587891,
+        2.9256,
+        21.252904
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        55.90900152587891,
+        3.6822000000000004,
+        22.581998000000002
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 1 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        55.90900152587891,
+        1.005,
+        17.87905
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "bell flight 1 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        55.90900152587891,
+        3.915,
+        22.99095
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "bell flight 2 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        56.13099938964844,
+        4.2378,
+        22.581998000000002
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        56.13099938964844,
+        4.9944,
+        21.252904
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        56.13099938964844,
+        5.9256,
+        19.617096
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        56.13099938964844,
+        6.682200000000001,
+        18.288002
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        56.13099938964844,
+        4.005,
+        22.99095
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "bell flight 2 central",
+      "receiver": "Monastery bell stair central string wall",
+      "attachment": [
+        56.13099938964844,
+        6.915,
+        17.87905
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "bell flight 2 east",
+      "receiver": "Monastery bell stair east string wall",
+      "attachment": [
+        57.948998626708985,
+        4.196400000000001,
+        22.654724
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 east",
+      "receiver": "Monastery bell stair east string wall",
+      "attachment": [
+        57.948998626708985,
+        4.9647,
+        21.305077
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 east",
+      "receiver": "Monastery bell stair east string wall",
+      "attachment": [
+        57.948998626708985,
+        5.9103,
+        19.643973
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 east",
+      "receiver": "Monastery bell stair east string wall",
+      "attachment": [
+        57.948998626708985,
+        6.6786,
+        18.294325999999998
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell flight 2 east",
+      "receiver": "Monastery bell stair east string wall",
+      "attachment": [
+        57.948998626708985,
+        6.915,
+        17.87905
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "bell landing west",
+      "receiver": "Monastery bell intermediate landing west parapet region0",
+      "attachment": [
+        54.09099847412109,
+        3.96,
+        23.216
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing west",
+      "receiver": "Monastery bell intermediate landing west parapet region0",
+      "attachment": [
+        54.09099847412109,
+        3.96,
+        23.6905
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing west",
+      "receiver": "Monastery bell intermediate landing west parapet region0",
+      "attachment": [
+        54.09099847412109,
+        3.96,
+        24.2745
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing west",
+      "receiver": "Monastery bell intermediate landing west parapet region0",
+      "attachment": [
+        54.09099847412109,
+        3.96,
+        24.749
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing south",
+      "receiver": "Monastery bell intermediate landing south parapet region0",
+      "attachment": [
+        54.5122,
+        3.96,
+        25.029000457763672
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing south",
+      "receiver": "Monastery bell intermediate landing south parapet region0",
+      "attachment": [
+        55.4456,
+        3.96,
+        25.029000457763672
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing south",
+      "receiver": "Monastery bell intermediate landing south parapet region0",
+      "attachment": [
+        56.5944,
+        3.96,
+        25.029000457763672
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing south",
+      "receiver": "Monastery bell intermediate landing south parapet region0",
+      "attachment": [
+        57.5278,
+        3.96,
+        25.029000457763672
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing east",
+      "receiver": "Monastery bell intermediate landing east parapet region0",
+      "attachment": [
+        57.948998626708985,
+        3.96,
+        24.749
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing east",
+      "receiver": "Monastery bell intermediate landing east parapet region0",
+      "attachment": [
+        57.948998626708985,
+        3.96,
+        24.2745
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing east",
+      "receiver": "Monastery bell intermediate landing east parapet region0",
+      "attachment": [
+        57.948998626708985,
+        3.96,
+        23.6905
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "bell landing east",
+      "receiver": "Monastery bell intermediate landing east parapet region0",
+      "attachment": [
+        57.948998626708985,
+        3.96,
+        23.216
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb north",
+      "receiver": "Monastery west catacomb well north coping region0",
+      "attachment": [
+        13.0908,
+        0.6873333333333332,
+        18.091000381469726
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb north",
+      "receiver": "Monastery west catacomb stair north lining region0",
+      "attachment": [
+        14.4584,
+        -0.07244444444444476,
+        18.241
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb north",
+      "receiver": "Monastery west catacomb stair north lining region0",
+      "attachment": [
+        16.1416,
+        -1.007555555555556,
+        18.241
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb north",
+      "receiver": "Monastery west catacomb stair north lining region0",
+      "attachment": [
+        17.5092,
+        -1.7673333333333336,
+        18.241
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb north",
+      "receiver": "Monastery west catacomb well north coping region0",
+      "attachment": [
+        12.67,
+        0.9211111111111111,
+        18.091000381469726
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "west catacomb north",
+      "receiver": "Monastery west catacomb stair north lining region0",
+      "attachment": [
+        17.93,
+        -2.0011111111111113,
+        18.241
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "west catacomb south",
+      "receiver": "Monastery west catacomb well south coping region0",
+      "attachment": [
+        13.0908,
+        0.6873333333333332,
+        19.908999618530274
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb south",
+      "receiver": "Monastery west catacomb stair south lining region0",
+      "attachment": [
+        14.4584,
+        -0.07244444444444476,
+        19.759
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb south",
+      "receiver": "Monastery west catacomb stair south lining region0",
+      "attachment": [
+        16.1416,
+        -1.007555555555556,
+        19.759
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb south",
+      "receiver": "Monastery west catacomb stair south lining region0",
+      "attachment": [
+        17.5092,
+        -1.7673333333333336,
+        19.759
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "west catacomb south",
+      "receiver": "Monastery west catacomb well south coping region0",
+      "attachment": [
+        12.67,
+        0.9211111111111111,
+        19.908999618530274
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "west catacomb south",
+      "receiver": "Monastery west catacomb stair south lining region0",
+      "attachment": [
+        17.93,
+        -2.0011111111111113,
+        19.759
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "east catacomb north",
+      "receiver": "Monastery east catacomb well north coping region0",
+      "attachment": [
+        31.2092,
+        0.6873333333333332,
+        18.091000381469726
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb north",
+      "receiver": "Monastery east catacomb stair north lining region0",
+      "attachment": [
+        29.8416,
+        -0.07244444444444476,
+        18.241
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb north",
+      "receiver": "Monastery east catacomb stair north lining region0",
+      "attachment": [
+        28.1584,
+        -1.007555555555556,
+        18.241
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb north",
+      "receiver": "Monastery east catacomb stair north lining region0",
+      "attachment": [
+        26.7908,
+        -1.7673333333333336,
+        18.241
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb north",
+      "receiver": "Monastery east catacomb well north coping region0",
+      "attachment": [
+        31.63,
+        0.9211111111111111,
+        18.091000381469726
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "east catacomb north",
+      "receiver": "Monastery east catacomb stair north lining region0",
+      "attachment": [
+        26.37,
+        -2.0011111111111113,
+        18.241
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "east catacomb south",
+      "receiver": "Monastery east catacomb well south coping region0",
+      "attachment": [
+        31.2092,
+        0.6873333333333332,
+        19.908999618530274
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb south",
+      "receiver": "Monastery east catacomb stair south lining region0",
+      "attachment": [
+        29.8416,
+        -0.07244444444444476,
+        19.759
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb south",
+      "receiver": "Monastery east catacomb stair south lining region0",
+      "attachment": [
+        28.1584,
+        -1.007555555555556,
+        19.759
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb south",
+      "receiver": "Monastery east catacomb stair south lining region0",
+      "attachment": [
+        26.7908,
+        -1.7673333333333336,
+        19.759
+      ],
+      "closed_return": false
+    },
+    {
+      "rail": "east catacomb south",
+      "receiver": "Monastery east catacomb well south coping region0",
+      "attachment": [
+        31.63,
+        0.9211111111111111,
+        19.908999618530274
+      ],
+      "closed_return": true
+    },
+    {
+      "rail": "east catacomb south",
+      "receiver": "Monastery east catacomb stair south lining region0",
+      "attachment": [
+        26.37,
+        -2.0011111111111113,
+        19.759
+      ],
+      "closed_return": true
+    }
+  ],
+  "valleys": [
+    {
+      "id": "gatehouse",
+      "axis": "x",
+      "seam": 56,
+      "span": [
+        24,
+        40
+      ],
+      "roof_lips": [
+        "south-cloister roof south",
+        "gatehouse roof north"
+      ],
+      "profiles": [
+        [
+          [
+            24,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            24,
+            3.282,
+            56
+          ],
+          [
+            24,
+            3.5116660385131837,
+            56.62
+          ]
+        ],
+        [
+          [
+            25.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            25.0,
+            3.2866,
+            56
+          ],
+          [
+            25.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            26.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            26.0,
+            3.2912,
+            56
+          ],
+          [
+            26.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            27.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            27.0,
+            3.2958,
+            56
+          ],
+          [
+            27.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            28.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            28.0,
+            3.3004000000000002,
+            56
+          ],
+          [
+            28.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            29.0,
+            3.4703328399658204,
+            55.38
+          ],
+          [
+            29.0,
+            3.305,
+            56
+          ],
+          [
+            29.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            30.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            30.0,
+            3.3096,
+            56
+          ],
+          [
+            30.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            31.0,
+            3.4703328399658204,
+            55.38
+          ],
+          [
+            31.0,
+            3.3142,
+            56
+          ],
+          [
+            31.0,
+            3.5116660385131837,
+            56.62
+          ]
+        ],
+        [
+          [
+            32.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            32.0,
+            3.3188,
+            56
+          ],
+          [
+            32.0,
+            3.5116660385131837,
+            56.62
+          ]
+        ],
+        [
+          [
+            33.0,
+            3.4703328399658204,
+            55.38
+          ],
+          [
+            33.0,
+            3.3142,
+            56
+          ],
+          [
+            33.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            34.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            34.0,
+            3.3096,
+            56
+          ],
+          [
+            34.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            35.0,
+            3.4703328399658204,
+            55.38
+          ],
+          [
+            35.0,
+            3.305,
+            56
+          ],
+          [
+            35.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            36.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            36.0,
+            3.3004000000000002,
+            56
+          ],
+          [
+            36.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            37.0,
+            3.4703328399658204,
+            55.38
+          ],
+          [
+            37.0,
+            3.2958,
+            56
+          ],
+          [
+            37.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            38.0,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            38.0,
+            3.2912,
+            56
+          ],
+          [
+            38.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            39.0,
+            3.4703328399658204,
+            55.38
+          ],
+          [
+            39.0,
+            3.2866,
+            56
+          ],
+          [
+            39.0,
+            3.5116650848388673,
+            56.62
+          ]
+        ],
+        [
+          [
+            40,
+            3.470331886291504,
+            55.38
+          ],
+          [
+            40,
+            3.282,
+            56
+          ],
+          [
+            40,
+            3.5116650848388673,
+            56.62
+          ]
+        ]
+      ],
+      "outfalls": [
+        {
+          "side": "west",
+          "position": [
+            23.52,
+            56.6
+          ],
+          "normal": [
+            0,
+            1
+          ],
+          "mounts": [
+            {
+              "object": "Monastery shared gatehouse and south cloister wall inner gatehouse door preceding pier region0",
+              "face": [
+                23.520000457763672,
+                0.6499999761581421,
+                56.119998931884766
+              ],
+              "shoulder": [
+                23.52,
+                0.65,
+                56.6
+              ]
+            },
+            {
+              "object": "Monastery shared gatehouse and south cloister wall inner gatehouse door preceding pier region0",
+              "face": [
+                23.520000457763672,
+                1.5499999523162842,
+                56.119998931884766
+              ],
+              "shoulder": [
+                23.52,
+                1.55,
+                56.6
+              ]
+            },
+            {
+              "object": "Monastery shared gatehouse and south cloister wall inner gatehouse door preceding pier region0",
+              "face": [
+                23.520000457763672,
+                2.5999999046325684,
+                56.119998931884766
+              ],
+              "shoulder": [
+                23.52,
+                2.6,
+                56.6
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              23.25,
+              -0.33712291717529297,
+              56.62,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.25,
+              -0.3189277648925781,
+              56.89,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.25,
+              -0.30073249340057373,
+              57.160000000000004,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.52,
+              -0.3350491523742676,
+              56.62,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.52,
+              -0.3168538808822632,
+              56.89,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.52,
+              -0.2986586093902588,
+              57.160000000000004,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.79,
+              -0.3329751491546631,
+              56.62,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.79,
+              -0.31477999687194824,
+              56.89,
+              "WLD-10 saved ground"
+            ],
+            [
+              23.79,
+              -0.29658472537994385,
+              57.160000000000004,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              24,
+              3.470331886291504,
+              55.38
+            ],
+            [
+              24,
+              3.282,
+              56
+            ],
+            [
+              24,
+              3.5116660385131837,
+              56.62
+            ]
+          ],
+          "rim_y": -0.22158472537994384,
+          "liner_low_point": [
+            24,
+            3.282,
+            56
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": -0.13658472537994382,
+          "soakaway": [
+            23.52,
+            -0.22158472537994384,
+            56.89
+          ]
+        },
+        {
+          "side": "east",
+          "position": [
+            40.48,
+            56.6
+          ],
+          "normal": [
+            0,
+            1
+          ],
+          "mounts": [
+            {
+              "object": "Monastery shared gatehouse and south cloister wall end pier region0",
+              "face": [
+                40.47999954223633,
+                0.6499999761581421,
+                56.119998931884766
+              ],
+              "shoulder": [
+                40.48,
+                0.65,
+                56.6
+              ]
+            },
+            {
+              "object": "Monastery shared gatehouse and south cloister wall end pier region0",
+              "face": [
+                40.47999954223633,
+                1.5499999523162842,
+                56.119998931884766
+              ],
+              "shoulder": [
+                40.48,
+                1.55,
+                56.6
+              ]
+            },
+            {
+              "object": "Monastery shared gatehouse and south cloister wall end pier region0",
+              "face": [
+                40.47999954223633,
+                2.5999999046325684,
+                56.119998931884766
+              ],
+              "shoulder": [
+                40.48,
+                2.6,
+                56.6
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              40.209999999999994,
+              -0.2967345714569092,
+              56.62,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.209999999999994,
+              -0.280590295791626,
+              56.89,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.209999999999994,
+              -0.2644460201263428,
+              57.160000000000004,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.48,
+              -0.3007160425186157,
+              56.62,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.48,
+              -0.28457188606262207,
+              56.89,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.48,
+              -0.26842761039733887,
+              57.160000000000004,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.75,
+              -0.30307531356811523,
+              56.62,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.75,
+              -0.2885533571243286,
+              56.89,
+              "WLD-10 saved ground"
+            ],
+            [
+              40.75,
+              -0.27240920066833496,
+              57.160000000000004,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              40,
+              3.470331886291504,
+              55.38
+            ],
+            [
+              40,
+              3.282,
+              56
+            ],
+            [
+              40,
+              3.5116650848388673,
+              56.62
+            ]
+          ],
+          "rim_y": -0.18944602012634276,
+          "liner_low_point": [
+            40,
+            3.282,
+            56
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": -0.10444602012634276,
+          "soakaway": [
+            40.48,
+            -0.18944602012634276,
+            56.89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dormitory",
+      "axis": "z",
+      "seam": 8,
+      "span": [
+        22,
+        50
+      ],
+      "roof_lips": [
+        "dormitory roof east",
+        "west-cloister roof west"
+      ],
+      "profiles": [
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            22
+          ],
+          [
+            8,
+            3.282,
+            22
+          ],
+          [
+            8.62,
+            3.470333793640137,
+            22
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            23.75
+          ],
+          [
+            8,
+            3.29005,
+            23.75
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            23.75
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            25.5
+          ],
+          [
+            8,
+            3.2981,
+            25.5
+          ],
+          [
+            8.62,
+            3.470333793640137,
+            25.5
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            27.25
+          ],
+          [
+            8,
+            3.30615,
+            27.25
+          ],
+          [
+            8.62,
+            3.470331886291504,
+            27.25
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            29.0
+          ],
+          [
+            8,
+            3.3142,
+            29.0
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            29.0
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            30.75
+          ],
+          [
+            8,
+            3.32225,
+            30.75
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            30.75
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.475498893737793,
+            32.5
+          ],
+          [
+            8,
+            3.3303,
+            32.5
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            32.5
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            34.25
+          ],
+          [
+            8,
+            3.33835,
+            34.25
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            34.25
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            36.0
+          ],
+          [
+            8,
+            3.3464,
+            36.0
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            36.0
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            37.75
+          ],
+          [
+            8,
+            3.33835,
+            37.75
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            37.75
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            39.5
+          ],
+          [
+            8,
+            3.3303,
+            39.5
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            39.5
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            41.25
+          ],
+          [
+            8,
+            3.32225,
+            41.25
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            41.25
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            43.0
+          ],
+          [
+            8,
+            3.3142,
+            43.0
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            43.0
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            44.75
+          ],
+          [
+            8,
+            3.30615,
+            44.75
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            44.75
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            46.5
+          ],
+          [
+            8,
+            3.2981,
+            46.5
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            46.5
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            48.25
+          ],
+          [
+            8,
+            3.29005,
+            48.25
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            48.25
+          ]
+        ],
+        [
+          [
+            7.38,
+            3.4754998474121095,
+            50
+          ],
+          [
+            8,
+            3.282,
+            50
+          ],
+          [
+            8.62,
+            3.4703328399658204,
+            50
+          ]
+        ]
+      ],
+      "outfalls": [
+        {
+          "side": "north",
+          "position": [
+            7.48,
+            21.57
+          ],
+          "normal": [
+            -1,
+            0
+          ],
+          "mounts": [
+            {
+              "object": "Wall north W",
+              "face": [
+                7.920000076293945,
+                0.6499999761581421,
+                21.56999969482422
+              ],
+              "shoulder": [
+                7.48,
+                0.65,
+                21.57
+              ]
+            },
+            {
+              "object": "Wall north W",
+              "face": [
+                7.920000076293945,
+                1.5499999523162842,
+                21.56999969482422
+              ],
+              "shoulder": [
+                7.48,
+                1.55,
+                21.57
+              ]
+            },
+            {
+              "object": "Wall north W",
+              "face": [
+                7.920000076293945,
+                2.5999999046325684,
+                21.56999969482422
+              ],
+              "shoulder": [
+                7.48,
+                2.6,
+                21.57
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              6.92,
+              0.225941002368927,
+              21.3,
+              "WLD-10 saved ground"
+            ],
+            [
+              6.92,
+              0.22145849466323853,
+              21.57,
+              "WLD-10 saved ground"
+            ],
+            [
+              6.92,
+              0.21697604656219482,
+              21.84,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              0.2030012607574463,
+              21.3,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              0.19851863384246826,
+              21.57,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              0.19403624534606934,
+              21.84,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              0.17943644523620605,
+              21.3,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              0.17557883262634277,
+              21.57,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              0.1710963249206543,
+              21.84,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              7.38,
+              3.4754998474121095,
+              22
+            ],
+            [
+              8,
+              3.282,
+              22
+            ],
+            [
+              8.62,
+              3.470333793640137,
+              22
+            ]
+          ],
+          "rim_y": 0.300941002368927,
+          "liner_low_point": [
+            8,
+            3.282,
+            22
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": 0.38594100236892703,
+          "soakaway": [
+            7.19,
+            0.300941002368927,
+            21.57
+          ]
+        },
+        {
+          "side": "south",
+          "position": [
+            7.48,
+            50.43
+          ],
+          "normal": [
+            -1,
+            0
+          ],
+          "mounts": [
+            {
+              "object": "Wall south W",
+              "face": [
+                7.920000076293945,
+                0.6499999761581421,
+                50.43000030517578
+              ],
+              "shoulder": [
+                7.48,
+                0.65,
+                50.43
+              ]
+            },
+            {
+              "object": "Wall south W",
+              "face": [
+                7.920000076293945,
+                1.5499999523162842,
+                50.43000030517578
+              ],
+              "shoulder": [
+                7.48,
+                1.55,
+                50.43
+              ]
+            },
+            {
+              "object": "Wall south W",
+              "face": [
+                7.920000076293945,
+                2.5999999046325684,
+                50.43000030517578
+              ],
+              "shoulder": [
+                7.48,
+                2.6,
+                50.43
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              6.92,
+              -0.32660651206970215,
+              50.16,
+              "WLD-10 saved ground"
+            ],
+            [
+              6.92,
+              -0.3291114568710327,
+              50.43,
+              "WLD-10 saved ground"
+            ],
+            [
+              6.92,
+              -0.3316164016723633,
+              50.7,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              -0.330166220664978,
+              50.16,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              -0.3326711654663086,
+              50.43,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              -0.3351759910583496,
+              50.7,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              -0.33372581005096436,
+              50.16,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              -0.3362307548522949,
+              50.43,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              -0.3387356996536255,
+              50.7,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              7.38,
+              3.4754998474121095,
+              50
+            ],
+            [
+              8,
+              3.282,
+              50
+            ],
+            [
+              8.62,
+              3.4703328399658204,
+              50
+            ]
+          ],
+          "rim_y": -0.25160651206970214,
+          "liner_low_point": [
+            8,
+            3.282,
+            50
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": -0.16660651206970212,
+          "soakaway": [
+            7.19,
+            -0.25160651206970214,
+            50.43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "refectory",
+      "axis": "z",
+      "seam": 50,
+      "span": [
+        30,
+        50
+      ],
+      "roof_lips": [
+        "east-cloister roof east",
+        "refectory roof west"
+      ],
+      "profiles": [
+        [
+          [
+            49.38,
+            3.470331886291504,
+            30
+          ],
+          [
+            50,
+            3.374,
+            30
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            30
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            31.25
+          ],
+          [
+            50,
+            3.36825,
+            31.25
+          ],
+          [
+            50.62,
+            3.4634425430297853,
+            31.25
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            32.5
+          ],
+          [
+            50,
+            3.3625,
+            32.5
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            32.5
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            33.75
+          ],
+          [
+            50,
+            3.35675,
+            33.75
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            33.75
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            35.0
+          ],
+          [
+            50,
+            3.351,
+            35.0
+          ],
+          [
+            50.62,
+            3.463444450378418,
+            35.0
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.470331886291504,
+            36.25
+          ],
+          [
+            50,
+            3.34525,
+            36.25
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            36.25
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            37.5
+          ],
+          [
+            50,
+            3.3395,
+            37.5
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            37.5
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            38.75
+          ],
+          [
+            50,
+            3.33375,
+            38.75
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            38.75
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.470331886291504,
+            40.0
+          ],
+          [
+            50,
+            3.328,
+            40.0
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            40.0
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            41.25
+          ],
+          [
+            50,
+            3.32225,
+            41.25
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            41.25
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            42.5
+          ],
+          [
+            50,
+            3.3165,
+            42.5
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            42.5
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            43.75
+          ],
+          [
+            50,
+            3.31075,
+            43.75
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            43.75
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            45.0
+          ],
+          [
+            50,
+            3.305,
+            45.0
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            45.0
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            46.25
+          ],
+          [
+            50,
+            3.2992500000000002,
+            46.25
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            46.25
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            47.5
+          ],
+          [
+            50,
+            3.2935,
+            47.5
+          ],
+          [
+            50.62,
+            3.463444450378418,
+            47.5
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            48.75
+          ],
+          [
+            50,
+            3.28775,
+            48.75
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            48.75
+          ]
+        ],
+        [
+          [
+            49.38,
+            3.4703328399658204,
+            50
+          ],
+          [
+            50,
+            3.282,
+            50
+          ],
+          [
+            50.62,
+            3.4634434967041017,
+            50
+          ]
+        ]
+      ],
+      "outfalls": [
+        {
+          "side": "south",
+          "position": [
+            50.52,
+            50.43
+          ],
+          "normal": [
+            1,
+            0
+          ],
+          "mounts": [
+            {
+              "object": "Wall south E",
+              "face": [
+                50.08000183105469,
+                0.6499999761581421,
+                50.43000030517578
+              ],
+              "shoulder": [
+                50.52,
+                0.65,
+                50.43
+              ]
+            },
+            {
+              "object": "Wall south E",
+              "face": [
+                50.08000183105469,
+                1.5499999523162842,
+                50.43000030517578
+              ],
+              "shoulder": [
+                50.52,
+                1.55,
+                50.43
+              ]
+            },
+            {
+              "object": "Wall south E",
+              "face": [
+                50.08000183105469,
+                2.5999999046325684,
+                50.43000030517578
+              ],
+              "shoulder": [
+                50.52,
+                2.6,
+                50.43
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              50.54,
+              -0.16000008583068848,
+              50.16,
+              "Bearing skirt 0115"
+            ],
+            [
+              50.54,
+              -0.3203856945037842,
+              50.43,
+              "WLD-10 saved ground"
+            ],
+            [
+              50.54,
+              -0.3203076124191284,
+              50.7,
+              "WLD-10 saved ground"
+            ],
+            [
+              50.81,
+              -0.15999996662139893,
+              50.16,
+              "Bearing skirt 0115"
+            ],
+            [
+              50.81,
+              -0.31919920444488525,
+              50.43,
+              "WLD-10 saved ground"
+            ],
+            [
+              50.81,
+              -0.31919920444488525,
+              50.7,
+              "WLD-10 saved ground"
+            ],
+            [
+              51.080000000000005,
+              -0.16000008583068848,
+              50.16,
+              "Bearing skirt 0115"
+            ],
+            [
+              51.080000000000005,
+              -0.31801271438598633,
+              50.43,
+              "WLD-10 saved ground"
+            ],
+            [
+              51.080000000000005,
+              -0.31801271438598633,
+              50.7,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              49.38,
+              3.4703328399658204,
+              50
+            ],
+            [
+              50,
+              3.282,
+              50
+            ],
+            [
+              50.62,
+              3.4634434967041017,
+              50
+            ]
+          ],
+          "rim_y": -0.08499996662139893,
+          "liner_low_point": [
+            50,
+            3.282,
+            50
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": 3.337860107754942e-08,
+          "soakaway": [
+            50.81,
+            -0.08499996662139893,
+            50.43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north range",
+      "axis": "x",
+      "seam": 16,
+      "span": [
+        8,
+        44
+      ],
+      "roof_lips": [
+        [
+          "archive roof south",
+          "vestry roof south"
+        ],
+        "north-cloister roof north"
+      ],
+      "profiles": [
+        [
+          [
+            8,
+            3.50871346282959,
+            15.38
+          ],
+          [
+            8,
+            3.282,
+            16
+          ],
+          [
+            8,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            10.25,
+            3.50871346282959,
+            15.38
+          ],
+          [
+            10.25,
+            3.29235,
+            16
+          ],
+          [
+            10.25,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            12.5,
+            3.5087144165039064,
+            15.38
+          ],
+          [
+            12.5,
+            3.3027,
+            16
+          ],
+          [
+            12.5,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            14.75,
+            3.50871346282959,
+            15.38
+          ],
+          [
+            14.75,
+            3.31305,
+            16
+          ],
+          [
+            14.75,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            17.0,
+            3.5087144165039064,
+            15.38
+          ],
+          [
+            17.0,
+            3.3234,
+            16
+          ],
+          [
+            17.0,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            19.25,
+            3.50871346282959,
+            15.38
+          ],
+          [
+            19.25,
+            3.33375,
+            16
+          ],
+          [
+            19.25,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            21.5,
+            3.5087144165039064,
+            15.38
+          ],
+          [
+            21.5,
+            3.3441,
+            16
+          ],
+          [
+            21.5,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            23.75,
+            3.50871346282959,
+            15.38
+          ],
+          [
+            23.75,
+            3.35445,
+            16
+          ],
+          [
+            23.75,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            26.0,
+            3.50871346282959,
+            15.38
+          ],
+          [
+            26.0,
+            3.3648000000000002,
+            16
+          ],
+          [
+            26.0,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            27.998,
+            3.5087144165039064,
+            15.38
+          ],
+          [
+            27.998,
+            3.3556092,
+            16
+          ],
+          [
+            27.998,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            28.002,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            28.002,
+            3.3555908,
+            16
+          ],
+          [
+            28.002,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            28.25,
+            3.4732844619750978,
+            15.38
+          ],
+          [
+            28.25,
+            3.35445,
+            16
+          ],
+          [
+            28.25,
+            3.470333793640137,
+            16.62
+          ]
+        ],
+        [
+          [
+            30.5,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            30.5,
+            3.3441,
+            16
+          ],
+          [
+            30.5,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            32.75,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            32.75,
+            3.33375,
+            16
+          ],
+          [
+            32.75,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            35.0,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            35.0,
+            3.3234,
+            16
+          ],
+          [
+            35.0,
+            3.470333793640137,
+            16.62
+          ]
+        ],
+        [
+          [
+            37.25,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            37.25,
+            3.31305,
+            16
+          ],
+          [
+            37.25,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            39.5,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            39.5,
+            3.3027,
+            16
+          ],
+          [
+            39.5,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            41.75,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            41.75,
+            3.29235,
+            16
+          ],
+          [
+            41.75,
+            3.4703328399658204,
+            16.62
+          ]
+        ],
+        [
+          [
+            44,
+            3.473285415649414,
+            15.38
+          ],
+          [
+            44,
+            3.282,
+            16
+          ],
+          [
+            44,
+            3.4703328399658204,
+            16.62
+          ]
+        ]
+      ],
+      "outfalls": [
+        {
+          "side": "west",
+          "position": [
+            7.48,
+            16.57
+          ],
+          "normal": [
+            -1,
+            0
+          ],
+          "mounts": [
+            {
+              "object": "Wall north W",
+              "face": [
+                7.920000076293945,
+                0.6499999761581421,
+                16.56999969482422
+              ],
+              "shoulder": [
+                7.48,
+                0.65,
+                16.57
+              ]
+            },
+            {
+              "object": "Wall north W",
+              "face": [
+                7.920000076293945,
+                1.5499999523162842,
+                16.56999969482422
+              ],
+              "shoulder": [
+                7.48,
+                1.55,
+                16.57
+              ]
+            },
+            {
+              "object": "Wall north W",
+              "face": [
+                7.920000076293945,
+                2.5999999046325684,
+                16.56999969482422
+              ],
+              "shoulder": [
+                7.48,
+                2.6,
+                16.57
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              6.92,
+              0.283217191696167,
+              16.3,
+              "WLD-10 saved ground"
+            ],
+            [
+              6.92,
+              0.28123968839645386,
+              16.57,
+              "WLD-10 saved ground"
+            ],
+            [
+              6.92,
+              0.2792620062828064,
+              16.84,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              0.2576407194137573,
+              16.3,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              0.25566309690475464,
+              16.57,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.19,
+              0.25368553400039673,
+              16.84,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              0.2320641279220581,
+              16.3,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              0.2300865650177002,
+              16.57,
+              "WLD-10 saved ground"
+            ],
+            [
+              7.460000000000001,
+              0.22810900211334229,
+              16.84,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              8,
+              3.50871346282959,
+              15.38
+            ],
+            [
+              8,
+              3.282,
+              16
+            ],
+            [
+              8,
+              3.4703328399658204,
+              16.62
+            ]
+          ],
+          "rim_y": 0.358217191696167,
+          "liner_low_point": [
+            8,
+            3.282,
+            16
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": 0.443217191696167,
+          "soakaway": [
+            7.19,
+            0.358217191696167,
+            16.57
+          ]
+        },
+        {
+          "side": "east",
+          "position": [
+            44.48,
+            15.48
+          ],
+          "normal": [
+            0,
+            -1
+          ],
+          "mounts": [
+            {
+              "object": "Monastery north range doors end pier region0",
+              "face": [
+                44.47999954223633,
+                0.6499999761581421,
+                15.880000114440918
+              ],
+              "shoulder": [
+                44.48,
+                0.65,
+                15.48
+              ]
+            },
+            {
+              "object": "Monastery north range doors end pier region0",
+              "face": [
+                44.47999954223633,
+                1.5499999523162842,
+                15.880000114440918
+              ],
+              "shoulder": [
+                44.48,
+                1.55,
+                15.48
+              ]
+            },
+            {
+              "object": "Monastery north range doors end pier region0",
+              "face": [
+                44.47999954223633,
+                2.5999999046325684,
+                15.880000114440918
+              ],
+              "shoulder": [
+                44.48,
+                2.6,
+                15.48
+              ]
+            }
+          ],
+          "bearing_samples": [
+            [
+              44.209999999999994,
+              -0.16000008583068848,
+              14.920000000000002,
+              "Bearing skirt 0087"
+            ],
+            [
+              44.209999999999994,
+              -0.16000008583068848,
+              15.190000000000001,
+              "Bearing skirt 0087"
+            ],
+            [
+              44.209999999999994,
+              -0.15999996662139893,
+              15.46,
+              "Bearing skirt 0087"
+            ],
+            [
+              44.48,
+              -0.3508647680282593,
+              14.920000000000002,
+              "WLD-10 saved ground"
+            ],
+            [
+              44.48,
+              -0.3507329225540161,
+              15.190000000000001,
+              "WLD-10 saved ground"
+            ],
+            [
+              44.48,
+              -0.35060107707977295,
+              15.46,
+              "WLD-10 saved ground"
+            ],
+            [
+              44.75,
+              -0.34770047664642334,
+              14.920000000000002,
+              "WLD-10 saved ground"
+            ],
+            [
+              44.75,
+              -0.3475687503814697,
+              15.190000000000001,
+              "WLD-10 saved ground"
+            ],
+            [
+              44.75,
+              -0.34743690490722656,
+              15.46,
+              "WLD-10 saved ground"
+            ]
+          ],
+          "entry_section": [
+            [
+              44,
+              3.473285415649414,
+              15.38
+            ],
+            [
+              44,
+              3.282,
+              16
+            ],
+            [
+              44,
+              3.4703328399658204,
+              16.62
+            ]
+          ],
+          "rim_y": -0.08499996662139893,
+          "liner_low_point": [
+            44,
+            3.282,
+            16
+          ],
+          "pipe_top": 3.153,
+          "pipe_bottom": 3.337860107754942e-08,
+          "soakaway": [
+            44.48,
+            -0.08499996662139893,
+            15.190000000000001
+          ]
+        }
+      ]
+    }
+  ]
+}

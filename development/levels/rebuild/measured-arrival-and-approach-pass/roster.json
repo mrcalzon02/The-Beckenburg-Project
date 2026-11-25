@@ -1,0 +1,402 @@
+{
+  "active_sources": [
+    {
+      "id": "ACADEMY",
+      "construction": "development/levels/rebuild/stair-interface-construction-pass/academy/construction.json",
+      "layout": "development/levels/rebuild/stair-interface-construction-pass/academy/authored-layout.json",
+      "glb": "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.glb",
+      "native": "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.hcs2",
+      "blend": "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.blend",
+      "glb_sha256": "f819ce31cf09bf04e3d3302b0003af1a55ab2827ebde9ab63483a8557d387ad6",
+      "native_sha256": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea"
+    },
+    {
+      "id": "ASYLUM",
+      "construction": "development/levels/rebuild/institution-earthworks-pass/asylum/construction.json",
+      "layout": "development/levels/rebuild/institution-earthworks-pass/asylum/authored-layout.json",
+      "glb": "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.glb",
+      "native": "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.hcs2",
+      "blend": "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.blend",
+      "glb_sha256": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+      "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9"
+    },
+    {
+      "id": "CHURCH",
+      "construction": "development/levels/rebuild/estate-parish-pass/church/construction.json",
+      "layout": "development/levels/rebuild/estate-parish-pass/church/authored-layout.json",
+      "glb": "development/levels/rebuild/estate-parish-pass/church/estate-parish.glb",
+      "native": "development/levels/rebuild/estate-parish-pass/church/estate-parish.hcs2",
+      "blend": "development/levels/rebuild/estate-parish-pass/church/estate-parish.blend",
+      "glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+      "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82"
+    },
+    {
+      "id": "COLLEGE",
+      "construction": "development/levels/rebuild/college-ground-pass/college/construction.json",
+      "layout": "development/levels/rebuild/college-ground-pass/college/authored-layout.json",
+      "glb": "development/levels/rebuild/college-ground-pass/college/campus-grounds.glb",
+      "native": "development/levels/rebuild/college-ground-pass/college/campus-grounds.hcs2",
+      "blend": "development/levels/rebuild/college-ground-pass/college/campus-grounds.blend",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768"
+    },
+    {
+      "id": "FARMHOUSE",
+      "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json",
+      "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/authored-layout.json",
+      "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.glb",
+      "native": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.hcs2",
+      "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.blend",
+      "glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+      "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810"
+    },
+    {
+      "id": "MANSION",
+      "construction": "development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json",
+      "layout": "development/levels/rebuild/interior-stair-landing-pass/mansion/authored-layout.json",
+      "glb": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.glb",
+      "native": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.hcs2",
+      "blend": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.blend",
+      "glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093",
+      "native_sha256": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee"
+    },
+    {
+      "id": "PRISON",
+      "construction": "development/levels/rebuild/stair-cell-construction-pass/prison/construction.json",
+      "layout": "development/levels/rebuild/stair-cell-construction-pass/prison/authored-layout.json",
+      "glb": "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.glb",
+      "native": "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.hcs2",
+      "blend": "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.blend",
+      "glb_sha256": "1f8ae458d2f7f9de28a42b11c87298547d4da9665e1a58efa23b2a25334b18cf",
+      "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d"
+    },
+    {
+      "id": "SCHOOL",
+      "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.json",
+      "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/school/authored-layout.json",
+      "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb",
+      "native": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2",
+      "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.blend",
+      "glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+      "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+    },
+    {
+      "id": "WLD-03",
+      "construction": "development/levels/rebuild/canyon-marsh-pass/wld-03/construction.json",
+      "layout": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
+      "glb": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.glb",
+      "native": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.hcs2",
+      "blend": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.blend",
+      "glb_sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "native_sha256": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1"
+    },
+    {
+      "id": "WLD-04",
+      "construction": "development/levels/rebuild/lookout-landing-pass/wld-04/construction.json",
+      "layout": "development/levels/rebuild/lookout-landing-pass/wld-04/authored-layout.json",
+      "glb": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.glb",
+      "native": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.hcs2",
+      "blend": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.blend",
+      "glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc",
+      "native_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be"
+    },
+    {
+      "id": "WLD-05",
+      "construction": "development/levels/rebuild/mine-yard-pass/wld-05/construction.json",
+      "layout": "development/levels/rebuild/mine-yard-pass/wld-05/authored-layout.json",
+      "glb": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.glb",
+      "native": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2",
+      "blend": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.blend",
+      "glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c"
+    },
+    {
+      "id": "WLD-06",
+      "construction": "development/levels/rebuild/doorway-construction-pass/wld-06/construction.json",
+      "layout": "development/levels/rebuild/doorway-construction-pass/wld-06/authored-layout.json",
+      "glb": "development/levels/rebuild/doorway-construction-pass/wld-06/clean-doorways.glb",
+      "native": "development/levels/rebuild/doorway-construction-pass/wld-06/clean-doorways.hcs2",
+      "blend": "development/levels/rebuild/doorway-construction-pass/wld-06/clean-doorways.blend",
+      "glb_sha256": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+      "native_sha256": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252"
+    },
+    {
+      "id": "WLD-07",
+      "construction": "development/levels/rebuild/cemetery-grounds-pass/wld-07/construction.json",
+      "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+      "glb": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.glb",
+      "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.hcs2",
+      "blend": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.blend",
+      "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+      "glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "construction": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/construction.json",
+      "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-layout.json",
+      "glb": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.glb",
+      "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.hcs2",
+      "blend": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.blend",
+      "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695",
+      "glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4"
+    },
+    {
+      "id": "WLD-08",
+      "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/construction.json",
+      "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+      "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.glb",
+      "native": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.hcs2",
+      "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.blend",
+      "glb_sha256": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+      "native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c"
+    },
+    {
+      "id": "WLD-09",
+      "construction": "development/levels/rebuild/dam-east-hall-pass/wld-09/construction.json",
+      "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+      "glb": "development/levels/rebuild/dam-east-hall-pass/wld-09/east-hall-bearings.glb",
+      "native": "development/levels/rebuild/dam-east-hall-pass/wld-09/east-hall-bearings.hcs2",
+      "blend": "development/levels/rebuild/dam-east-hall-pass/wld-09/east-hall-bearings.blend",
+      "glb_sha256": "4da4bf8b65310c24aea04296abe06cb1d47b7b9ef59ad1187a8f13c0f22c369f",
+      "native_sha256": "f2aff54d45c3671868a5fc34c278c1b3ed18e9672c05550b75a4753dd4b4ead9"
+    },
+    {
+      "id": "WLD-10",
+      "construction": "development/levels/rebuild/monastery-cloister-pass/wld-10/construction.json",
+      "layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+      "glb": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.glb",
+      "native": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.hcs2",
+      "blend": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.blend",
+      "glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "native_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e"
+    },
+    {
+      "id": "WLD-11",
+      "construction": "development/levels/rebuild/canyon-marsh-pass/wld-11/construction.json",
+      "layout": "development/levels/rebuild/canyon-marsh-pass/wld-11/authored-layout.json",
+      "glb": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.glb",
+      "native": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.hcs2",
+      "blend": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.blend",
+      "native_sha256": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca",
+      "glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252"
+    },
+    {
+      "id": "WLD-12",
+      "construction": "development/levels/rebuild/workyard-station-pass/wld-12/construction.json",
+      "layout": "development/levels/rebuild/workyard-station-pass/wld-12/authored-layout.json",
+      "glb": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.glb",
+      "native": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.hcs2",
+      "blend": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.blend",
+      "glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6",
+      "native_sha256": "4cd10a7f7086c0e769103fc504ae164b7ebc5fa19b766d700dfbf117e59dc424"
+    },
+    {
+      "id": "WLD-13",
+      "construction": "development/levels/rebuild/workyard-station-pass/wld-13/construction.json",
+      "layout": "development/levels/rebuild/workyard-station-pass/wld-13/authored-layout.json",
+      "glb": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.glb",
+      "native": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.hcs2",
+      "blend": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.blend",
+      "glb_sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662",
+      "native_sha256": "c0f2810f1bd0d1b7f8f055c3c659c3184bf0d4971f19f49410839faa49e9f11f"
+    },
+    {
+      "id": "WLD-14",
+      "construction": "development/levels/rebuild/coast-entrances-pass/wld-14/construction.json",
+      "layout": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
+      "glb": "development/levels/rebuild/coast-entrances-pass/wld-14/coast-entrances.glb",
+      "native": "development/levels/rebuild/coast-entrances-pass/wld-14/coast-entrances.hcs2",
+      "blend": "development/levels/rebuild/coast-entrances-pass/wld-14/coast-entrances.blend",
+      "glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781",
+      "native_sha256": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0"
+    },
+    {
+      "id": "WLD-15",
+      "construction": "development/levels/rebuild/coast-entrances-pass/wld-15/construction.json",
+      "layout": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
+      "glb": "development/levels/rebuild/coast-entrances-pass/wld-15/coast-entrances.glb",
+      "native": "development/levels/rebuild/coast-entrances-pass/wld-15/coast-entrances.hcs2",
+      "blend": "development/levels/rebuild/coast-entrances-pass/wld-15/coast-entrances.blend",
+      "glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5",
+      "native_sha256": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e"
+    },
+    {
+      "id": "WLD-16",
+      "construction": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/construction.json",
+      "layout": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/authored-layout.json",
+      "glb": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/saved-earthworks.glb",
+      "native": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/saved-earthworks.hcs2",
+      "blend": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/saved-earthworks.blend",
+      "glb_sha256": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+      "native_sha256": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9"
+    },
+    {
+      "id": "WLD-17",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.blend",
+      "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c"
+    },
+    {
+      "id": "WLD-18",
+      "construction": "development/levels/rebuild/service-portal-construction-pass/wld-18/construction.json",
+      "layout": "development/levels/rebuild/service-portal-construction-pass/wld-18/authored-layout.json",
+      "glb": "development/levels/rebuild/service-portal-construction-pass/wld-18/clean-doorways.glb",
+      "native": "development/levels/rebuild/service-portal-construction-pass/wld-18/clean-doorways.hcs2",
+      "blend": "development/levels/rebuild/service-portal-construction-pass/wld-18/clean-doorways.blend",
+      "glb_sha256": "2a7d37a51dc9c3d14ffb6e73bf0a8a2e209c61bb5591a207145e89c59f27b993",
+      "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b"
+    }
+  ],
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "decision": "PHYSICAL_STAIR_LANDING_INTERFACES_CONSTRUCTED_VERIFICATION_PENDING",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "ASYLUM",
+      "decision": "SAVED_INSTITUTION_EARTHWORKS_CONSTRUCTED_RUNTIME_OPEN",
+      "doorway_cleanup": "ENTRANCE_BLOCK_CONSTRUCTED_REMAINING_ROOMS_OPEN"
+    },
+    {
+      "id": "CHURCH",
+      "decision": "ESTATE_FARM_PARISH_FOUNDED_ENTRANCES_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "COLLEGE",
+      "decision": "COLLEGE_SAVED_GROUNDS_NATIVE_REVIEW_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "FARMHOUSE",
+      "decision": "MEASURED_PHYSICAL_APPROACHES_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "MANSION",
+      "decision": "INTERIOR_LANDINGS_AND_DOOR_APPROACHES_NATIVE_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "PRISON",
+      "decision": "STRUCTURAL_CELLS_CONSTRUCTED_REMAINING_ARCHITECTURE_AND_RUNTIME_OPEN",
+      "doorway_cleanup": "ENTRANCE_BLOCK_CONSTRUCTED_REMAINING_ROOMS_OPEN"
+    },
+    {
+      "id": "SCHOOL",
+      "decision": "MEASURED_PHYSICAL_APPROACHES_RUNTIME_OPEN",
+      "doorway_cleanup": "ENTRANCE_BLOCK_CONSTRUCTED_REMAINING_ROOMS_OPEN"
+    },
+    {
+      "id": "WLD-03",
+      "decision": "CANYON_AND_MARSH_FOUNDED_ARCHITECTURE_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-04",
+      "decision": "LOOKOUT_FOUNDED_LANDINGS_AND_FITTED_DOORS_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-05",
+      "decision": "MINE_GEOGRAPHIC_YARD_AND_ENCLOSED_STAIR_CELLS_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-06",
+      "decision": "GROUND_ROOM_DOORWAYS_REBUILT_RUNTIME_OPEN",
+      "doorway_cleanup": "CONSTRUCTED_REVIEW_OPEN"
+    },
+    {
+      "id": "WLD-07",
+      "decision": "CEMETERY_AUTHORED_GROUNDS_AND_DOORWAYS_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "decision": "CEMETERY_AUTHORED_GROUNDS_AND_DOORWAYS_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-08",
+      "decision": "MEASURED_PHYSICAL_APPROACHES_RUNTIME_OPEN",
+      "doorway_cleanup": "CONSTRUCTED_REVIEW_OPEN"
+    },
+    {
+      "id": "WLD-09",
+      "decision": "DAM_EAST_HALL_WALL_BEARINGS_NATIVE_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-10",
+      "decision": "MONASTERY_GEOGRAPHIC_COURTS_AND_FOUNDED_BELL_STAIR_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-11",
+      "decision": "CANYON_AND_MARSH_FOUNDED_ARCHITECTURE_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-12",
+      "decision": "FOUNDED_WORKYARD_AND_STATION_APPROACHES_RUNTIME_OPEN",
+      "doorway_cleanup": "CONSTRUCTED_REVIEW_OPEN"
+    },
+    {
+      "id": "WLD-13",
+      "decision": "FOUNDED_WORKYARD_AND_STATION_APPROACHES_RUNTIME_OPEN",
+      "doorway_cleanup": "CONSTRUCTED_REVIEW_OPEN"
+    },
+    {
+      "id": "WLD-14",
+      "decision": "VERIFIED_COAST_ENTRANCE_ARCHITECTURE_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-15",
+      "decision": "VERIFIED_COAST_ENTRANCE_ARCHITECTURE_RUNTIME_OPEN",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-16",
+      "decision": "SAVED_SITE_EARTHWORKS_CONSTRUCTED_RUNTIME_OPEN",
+      "doorway_cleanup": "CONSTRUCTED_REVIEW_OPEN"
+    },
+    {
+      "id": "WLD-17",
+      "decision": "RETAIN_PRIOR_SOURCE",
+      "doorway_cleanup": "PENDING_INDIVIDUAL_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-18",
+      "decision": "GROUND_ROOM_DOORWAYS_REBUILT_RUNTIME_OPEN",
+      "doorway_cleanup": "CONSTRUCTED_REVIEW_OPEN"
+    },
+    {
+      "id": "CASTLE",
+      "decision": "RETAIN_PRIOR_SOURCE",
+      "doorway_cleanup": "PRESERVE_MATURE_AUTHORITY"
+    },
+    {
+      "id": "HOUSE",
+      "decision": "RETAIN_PRIOR_SOURCE",
+      "doorway_cleanup": "PRESERVE_MATURE_AUTHORITY"
+    },
+    {
+      "id": "WLD-01",
+      "decision": "RETAIN_PRIOR_SOURCE",
+      "doorway_cleanup": "PRESERVE_MATURE_AUTHORITY"
+    },
+    {
+      "id": "WLD-02",
+      "decision": "RETAIN_PRIOR_SOURCE",
+      "doorway_cleanup": "PRESERVE_MATURE_AUTHORITY"
+    }
+  ],
+  "baseline": "development/levels/rebuild/interior-stair-landing-pass/roster.json"
+}

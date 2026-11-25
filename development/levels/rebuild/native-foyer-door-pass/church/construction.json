@@ -1,0 +1,1710 @@
+{
+  "id": "CHURCH",
+  "status": "MEASURED_DECK_AND_THRESHOLD_APPROACHES_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+  "source_contract_sha256": "98b0aed5798e4a56b102c499396313995ac507f0678242374e8ebab42d785eb7",
+  "source_glb": "development/levels/rebuild/estate-parish-pass/church/estate-parish.glb",
+  "source_glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+  "source_physics": "development/levels/rebuild/estate-parish-pass/church/estate-parish.hcs2",
+  "source_physics_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82",
+  "before_layout": "development/levels/rebuild/estate-parish-pass/church/authored-layout.json",
+  "before_layout_sha256": "46b87324ba917112d462f38761409a9494c1c28090ee54c0b4b4add79d1ada17",
+  "layout": "development/levels/rebuild/native-foyer-door-pass/church/authored-layout.json",
+  "layout_sha256": "5fc8bd682d042ca70b84d449a4dcc2b997cdbd14ec1d07306cb4543df64577b9",
+  "before_segment_map": {
+    "L35": {
+      "3": 0
+    },
+    "L33": {
+      "3": 0
+    },
+    "L34": {
+      "3": 0
+    }
+  },
+  "source_segment_map": {
+    "L35": {
+      "3": 0
+    },
+    "L33": {
+      "3": 0
+    },
+    "L34": {
+      "3": 0
+    }
+  },
+  "before_stair_components": [
+    "CHURCH bay L33 tread 1",
+    "CHURCH bay L33 tread 2",
+    "CHURCH bay L33 tread 3",
+    "CHURCH bay L33 tread 4",
+    "CHURCH bay L33 tread 5",
+    "CHURCH bay L33 tread 6",
+    "CHURCH bay L33 tread 7",
+    "CHURCH bay L33 tread 8",
+    "CHURCH bay L33 tread 9",
+    "CHURCH bay L33 tread 10",
+    "CHURCH bay L33 tread 11",
+    "CHURCH bay L33 tread 12",
+    "CHURCH bay L33 tread 13",
+    "CHURCH bay L33 tread 14",
+    "CHURCH bay L33 tread 15",
+    "CHURCH bay L33 tread 16",
+    "CHURCH bay L33 tread 17",
+    "CHURCH bay L34 tread 1",
+    "CHURCH bay L34 tread 2",
+    "CHURCH bay L34 tread 3",
+    "CHURCH bay L34 tread 4",
+    "CHURCH bay L34 tread 5",
+    "CHURCH bay L34 tread 6",
+    "CHURCH bay L34 tread 7",
+    "CHURCH bay L34 tread 8",
+    "CHURCH bay L34 tread 9",
+    "CHURCH bay L34 tread 10",
+    "CHURCH bay L34 tread 11",
+    "CHURCH bay L34 tread 12",
+    "CHURCH bay L34 tread 13",
+    "CHURCH bay L34 tread 14",
+    "CHURCH bay L34 tread 15",
+    "CHURCH bay L34 tread 16",
+    "CHURCH bay L34 tread 17",
+    "CHURCH bay L35 tread 1",
+    "CHURCH bay L35 tread 2",
+    "CHURCH bay L35 tread 3",
+    "CHURCH bay L35 tread 4",
+    "CHURCH bay L35 tread 5",
+    "CHURCH bay L35 tread 6",
+    "CHURCH bay L35 tread 7",
+    "CHURCH bay L35 tread 8",
+    "CHURCH bay L35 tread 9",
+    "CHURCH bay L35 tread 10",
+    "CHURCH bay L35 tread 11",
+    "CHURCH bay L35 tread 12",
+    "CHURCH bay L35 tread 13",
+    "CHURCH bay L35 tread 14",
+    "CHURCH bay L35 tread 15",
+    "CHURCH bay L35 tread 16",
+    "CHURCH bay L35 tread 17"
+  ],
+  "stair_components": [
+    "CHURCH bay L33 tread 1",
+    "CHURCH bay L33 tread 2",
+    "CHURCH bay L33 tread 3",
+    "CHURCH bay L33 tread 4",
+    "CHURCH bay L33 tread 5",
+    "CHURCH bay L33 tread 6",
+    "CHURCH bay L33 tread 7",
+    "CHURCH bay L33 tread 8",
+    "CHURCH bay L33 tread 9",
+    "CHURCH bay L33 tread 10",
+    "CHURCH bay L33 tread 11",
+    "CHURCH bay L33 tread 12",
+    "CHURCH bay L33 tread 13",
+    "CHURCH bay L33 tread 14",
+    "CHURCH bay L33 tread 15",
+    "CHURCH bay L33 tread 16",
+    "CHURCH bay L33 tread 17",
+    "CHURCH bay L34 tread 1",
+    "CHURCH bay L34 tread 2",
+    "CHURCH bay L34 tread 3",
+    "CHURCH bay L34 tread 4",
+    "CHURCH bay L34 tread 5",
+    "CHURCH bay L34 tread 6",
+    "CHURCH bay L34 tread 7",
+    "CHURCH bay L34 tread 8",
+    "CHURCH bay L34 tread 9",
+    "CHURCH bay L34 tread 10",
+    "CHURCH bay L34 tread 11",
+    "CHURCH bay L34 tread 12",
+    "CHURCH bay L34 tread 13",
+    "CHURCH bay L34 tread 14",
+    "CHURCH bay L34 tread 15",
+    "CHURCH bay L34 tread 16",
+    "CHURCH bay L34 tread 17",
+    "CHURCH bay L35 tread 1",
+    "CHURCH bay L35 tread 2",
+    "CHURCH bay L35 tread 3",
+    "CHURCH bay L35 tread 4",
+    "CHURCH bay L35 tread 5",
+    "CHURCH bay L35 tread 6",
+    "CHURCH bay L35 tread 7",
+    "CHURCH bay L35 tread 8",
+    "CHURCH bay L35 tread 9",
+    "CHURCH bay L35 tread 10",
+    "CHURCH bay L35 tread 11",
+    "CHURCH bay L35 tread 12",
+    "CHURCH bay L35 tread 13",
+    "CHURCH bay L35 tread 14",
+    "CHURCH bay L35 tread 15",
+    "CHURCH bay L35 tread 16",
+    "CHURCH bay L35 tread 17"
+  ],
+  "glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+  "physics_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      22.0,
+      0,
+      51.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        21.4,
+        51.85
+      ],
+      [
+        21.4,
+        51.5
+      ],
+      [
+        22.6,
+        51.5
+      ],
+      [
+        22.6,
+        51.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          21.4,
+          51.85
+        ],
+        [
+          21.4,
+          51.5
+        ],
+        [
+          22.6,
+          51.5
+        ],
+        [
+          22.6,
+          51.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing CHURCH 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 50,
+  "new_triangles": 12,
+  "removed_source_meshes": [
+    "Arrival end bearing CHURCH 0",
+    "CHURCH bay retained outside L30 support 0 region0",
+    "Flat route shell Wall vestibule S",
+    "Flat route shell Wall vestibule S.001",
+    "Header chapel E",
+    "Header vestibule S",
+    "Header vestry N",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L17 support 1",
+    "L18 support 1",
+    "L30 support 1",
+    "Saved editor macroterrain CHURCH",
+    "Wall chapel E",
+    "Wall chapel E.001",
+    "Wall vestry N",
+    "Wall vestry N.001"
+  ],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "78e6b17cd5569879d8e23fa382103eb46ededba313fcd97cf7b332d64bf4dca6",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "geometry_unchanged": true,
+  "roof_wings": [
+    {
+      "wing": "nave-and-choir",
+      "bounds": [
+        18,
+        12,
+        26,
+        34
+      ],
+      "ceiling": 6,
+      "ridge": 9.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "vestibule",
+      "bounds": [
+        18,
+        34,
+        26,
+        39
+      ],
+      "ceiling": 3,
+      "ridge": 4.74,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "chancel",
+      "bounds": [
+        18,
+        6,
+        26,
+        12
+      ],
+      "ceiling": 5,
+      "ridge": 7.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "side-chapel",
+      "bounds": [
+        26,
+        14,
+        34,
+        26
+      ],
+      "ceiling": 4,
+      "ridge": 6.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "vestry",
+      "bounds": [
+        26,
+        6,
+        34,
+        14
+      ],
+      "ceiling": 3,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "music-and-crypt-entry",
+      "bounds": [
+        26,
+        26,
+        34,
+        34
+      ],
+      "ceiling": 6,
+      "ridge": 8.040000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "belfry",
+      "bounds": [
+        10,
+        26,
+        18,
+        34
+      ],
+      "ceiling": 9,
+      "ridge": 12.74,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "hip",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "confessional-and-consultation",
+      "bounds": [
+        10,
+        18,
+        18,
+        26
+      ],
+      "ceiling": 3,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    }
+  ],
+  "roof_coverage_rays": 616,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/church.png",
+      "sha256": "6f2ad52fe2496d55f73003d2e56c7903017a71ae515039bd7cbc4ad9fd48002e",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 207,
+  "wing_plan_builder": "tools/build_secure_sacred_roof_batch.py",
+  "wing_plan_sha256": "6f791db6028130471f88e4bfaa06743bb7d8142ff8af8a297bcecd24dec2706b",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "roof_generator_source": "tools/build_roster_enclosed_roofs.py",
+  "interface_added_flights": [],
+  "new_interface_parts": [
+    "St. Brigid Parish Vestry court and east shoulder region0",
+    "St. Brigid Parish Chapel garden sill region0",
+    "St. Brigid Parish Parish front porch region0",
+    "St. Brigid Parish Crypt exterior court region0",
+    "St. Brigid Parish vestibule S facade vestibule s exterior doorway preceding pier region0",
+    "St. Brigid Parish vestibule S facade vestibule s exterior doorway lintel region0",
+    "St. Brigid Parish vestibule s exterior doorway fitted frame",
+    "St. Brigid Parish vestibule S facade end pier region0",
+    "St. Brigid Parish chapel E facade chapel e exterior doorway preceding pier region0",
+    "St. Brigid Parish chapel E facade chapel e exterior doorway lintel region0",
+    "St. Brigid Parish chapel e exterior doorway fitted frame",
+    "St. Brigid Parish chapel E facade end pier region0",
+    "St. Brigid Parish vestry N facade vestry n exterior doorway preceding pier region0",
+    "St. Brigid Parish vestry N facade vestry n exterior doorway lintel region0",
+    "St. Brigid Parish vestry n exterior doorway fitted frame",
+    "St. Brigid Parish vestry N facade end pier region0"
+  ],
+  "architectural_plan": {
+    "flights": [
+      [
+        "L33",
+        [
+          18,
+          26,
+          21,
+          34
+        ],
+        19.5,
+        27.6,
+        32.4,
+        0,
+        3,
+        1.5,
+        17
+      ],
+      [
+        "L34",
+        [
+          10,
+          26,
+          18,
+          34
+        ],
+        16.5,
+        27.6,
+        32.4,
+        3,
+        6,
+        1.5,
+        17
+      ],
+      [
+        "L35",
+        [
+          26,
+          26,
+          34,
+          34
+        ],
+        31.5,
+        27.6,
+        32.4,
+        -3,
+        0,
+        1.5,
+        17
+      ]
+    ],
+    "floors": [
+      [
+        [
+          18,
+          26,
+          26,
+          34
+        ],
+        0,
+        []
+      ],
+      [
+        [
+          18,
+          26,
+          21,
+          34
+        ],
+        3,
+        [
+          [
+            18.55,
+            27.35,
+            20.45,
+            32.4
+          ]
+        ]
+      ],
+      [
+        [
+          18,
+          26,
+          21,
+          34
+        ],
+        6,
+        []
+      ],
+      [
+        [
+          10,
+          26,
+          18,
+          34
+        ],
+        3,
+        []
+      ],
+      [
+        [
+          10,
+          26,
+          18,
+          34
+        ],
+        6,
+        [
+          [
+            15.55,
+            27.35,
+            17.45,
+            32.4
+          ]
+        ]
+      ],
+      [
+        [
+          10,
+          26,
+          18,
+          34
+        ],
+        9,
+        []
+      ],
+      [
+        [
+          26,
+          26,
+          34,
+          34
+        ],
+        -3,
+        []
+      ],
+      [
+        [
+          26,
+          26,
+          34,
+          34
+        ],
+        0,
+        [
+          [
+            30.55,
+            27.35,
+            32.45,
+            32.4
+          ]
+        ]
+      ],
+      [
+        [
+          26,
+          26,
+          34,
+          34
+        ],
+        3,
+        []
+      ]
+    ],
+    "rooms": [
+      [
+        [
+          18,
+          26,
+          21,
+          34
+        ],
+        3,
+        6,
+        {
+          "W": [
+            [
+              33.1,
+              1.05
+            ]
+          ],
+          "E": [
+            [
+              33.1,
+              1.05
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          10,
+          26,
+          18,
+          34
+        ],
+        3,
+        6,
+        {
+          "E": [
+            [
+              33.1,
+              1.05
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          10,
+          26,
+          18,
+          34
+        ],
+        6,
+        9,
+        {}
+      ],
+      [
+        [
+          26,
+          26,
+          34,
+          34
+        ],
+        -3,
+        0,
+        {
+          "W": [
+            [
+              30,
+              1.05
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          26,
+          26,
+          34,
+          34
+        ],
+        0,
+        3,
+        {
+          "N": [
+            [
+              28.5,
+              1.05
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "doorways": [
+    {
+      "id": "CHURCH bay indexed door 0",
+      "axis": "x",
+      "boundary": 18,
+      "along": 33.1,
+      "sill_y": 3,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        17.88,
+        18.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "CHURCH bay indexed door 1",
+      "axis": "x",
+      "boundary": 21,
+      "along": 33.1,
+      "sill_y": 3,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        20.88,
+        21.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "CHURCH bay indexed door 2",
+      "axis": "x",
+      "boundary": 26,
+      "along": 30,
+      "sill_y": -3,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "CHURCH bay indexed door 3",
+      "axis": "z",
+      "boundary": 26,
+      "along": 28.5,
+      "sill_y": 0,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "CHURCH bay indexed door 4",
+      "axis": "x",
+      "boundary": 26,
+      "along": 32.7,
+      "sill_y": 3,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "CHURCH bay indexed door 5",
+      "axis": "x",
+      "boundary": 29,
+      "along": 28,
+      "sill_y": 3,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        28.88,
+        29.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "CHURCH bay indexed door 6",
+      "axis": "x",
+      "boundary": 29,
+      "along": 32,
+      "sill_y": 3,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        28.88,
+        29.12
+      ],
+      "frame_depth": 0.24
+    }
+  ],
+  "bay_builder": "tools/build_household_sacred_bays.py",
+  "bay_builder_sha256": "d820e70eeb98238f66998c3613a6bfc73b2d11e4df58b3ce836e277c2a041831",
+  "retained_native_records": 244,
+  "source_terrain": "Exact original saved editor owner and holes retained; no excavations",
+  "removed_coplanar_route_solids": [
+    {
+      "name": "CHURCH bay retained outside L16 support 1 region0",
+      "actual_floor_owners": [
+        "Floor chapel"
+      ],
+      "top": 0.0,
+      "bottom": -0.11999999731779099,
+      "unowned_top_area": 0
+    }
+  ],
+  "wall_caps_seated_under_floors": [
+    {
+      "original": "Wall rear-nave N",
+      "result": "CHURCH seated wall cap 0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Header rear-nave N",
+      "result": "CHURCH seated wall cap 1",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Header rear-nave W",
+      "result": "CHURCH seated wall cap 2",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Header parish-lobby N",
+      "result": "CHURCH seated wall cap 3",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Header parish-lobby N.002",
+      "result": "CHURCH seated wall cap 4",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall parish-lobby S",
+      "result": "CHURCH seated wall cap 5",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Header parish-lobby W",
+      "result": "CHURCH seated wall cap 6",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall office N",
+      "result": "CHURCH seated wall cap 7",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall office W",
+      "result": "CHURCH seated wall cap 8",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall office E",
+      "result": "CHURCH seated wall cap 9",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall records N",
+      "result": "CHURCH seated wall cap 10",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall records E",
+      "result": "CHURCH seated wall cap 11",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall parish-wc N",
+      "result": "CHURCH seated wall cap 12",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall parish-wc S",
+      "result": "CHURCH seated wall cap 13",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall parish-wc W",
+      "result": "CHURCH seated wall cap 14",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall conversation-entry S",
+      "result": "CHURCH seated wall cap 15",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall consultation S",
+      "result": "CHURCH seated wall cap 16",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Wall crypt-aisle S",
+      "result": "CHURCH seated wall cap 17",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Header crypt-aisle W",
+      "result": "CHURCH seated wall cap 18",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Wall crypt-memorial N",
+      "result": "CHURCH seated wall cap 19",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Wall crypt-memorial S",
+      "result": "CHURCH seated wall cap 20",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Wall vault-west-b S",
+      "result": "CHURCH seated wall cap 21",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Flat route shell Wall rear-nave S",
+      "result": "CHURCH seated wall cap 22",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall rear-nave W",
+      "result": "CHURCH seated wall cap 23",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall rear-nave W.001",
+      "result": "CHURCH seated wall cap 24",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall parish-lobby N",
+      "result": "CHURCH seated wall cap 25",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall parish-lobby N.001",
+      "result": "CHURCH seated wall cap 26",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall parish-lobby N.002",
+      "result": "CHURCH seated wall cap 27",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall parish-lobby W",
+      "result": "CHURCH seated wall cap 28",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall parish-lobby W.001",
+      "result": "CHURCH seated wall cap 29",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall parish-lobby E",
+      "result": "CHURCH seated wall cap 30",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall office S",
+      "result": "CHURCH seated wall cap 31",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall office S.001",
+      "result": "CHURCH seated wall cap 32",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall records S",
+      "result": "CHURCH seated wall cap 33",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "Flat route shell Wall crypt-aisle W",
+      "result": "CHURCH seated wall cap 34",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Flat route shell Wall crypt-aisle W.001",
+      "result": "CHURCH seated wall cap 35",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Flat route shell Wall crypt-memorial E",
+      "result": "CHURCH seated wall cap 36",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH retained outside wall 0",
+      "result": "CHURCH retained outside wall 0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "CHURCH retained outside wall 1",
+      "result": "CHURCH retained outside wall 1",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 18, 21, 3, 6) end region0",
+      "result": "CHURCH bay wall ('z', 26, 18, 21, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 34, 18, 21, 3, 6) end region0",
+      "result": "CHURCH bay wall ('z', 34, 18, 21, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 18, 26, 34, 3, 6) pier0 region0",
+      "result": "CHURCH bay wall ('x', 18, 26, 34, 3, 6) pier0 region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 18, 26, 34, 3, 6) lintel0 region0",
+      "result": "CHURCH bay wall ('x', 18, 26, 34, 3, 6) lintel0 region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 18, 26, 34, 3, 6) end region0",
+      "result": "CHURCH bay wall ('x', 18, 26, 34, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 21, 26, 34, 3, 6) pier0 region0",
+      "result": "CHURCH bay wall ('x', 21, 26, 34, 3, 6) pier0 region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 21, 26, 34, 3, 6) lintel0 region0",
+      "result": "CHURCH bay wall ('x', 21, 26, 34, 3, 6) lintel0 region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 21, 26, 34, 3, 6) end region0",
+      "result": "CHURCH bay wall ('x', 21, 26, 34, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 10, 18, 3, 6) end region0",
+      "result": "CHURCH bay wall ('z', 26, 10, 18, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 34, 10, 18, 3, 6) end region0",
+      "result": "CHURCH bay wall ('z', 34, 10, 18, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 10, 26, 34, 3, 6) end region0",
+      "result": "CHURCH bay wall ('x', 10, 26, 34, 3, 6) end region0",
+      "old_top": 6.0,
+      "new_top": 5.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 10, 18, 6, 9) end region0",
+      "result": "CHURCH bay wall ('z', 26, 10, 18, 6, 9) end region0",
+      "old_top": 9.0,
+      "new_top": 8.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 34, 10, 18, 6, 9) end region0",
+      "result": "CHURCH bay wall ('z', 34, 10, 18, 6, 9) end region0",
+      "old_top": 9.0,
+      "new_top": 8.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 10, 26, 34, 6, 9) end region0",
+      "result": "CHURCH bay wall ('x', 10, 26, 34, 6, 9) end region0",
+      "old_top": 9.0,
+      "new_top": 8.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 18, 26, 34, 6, 9) end region0",
+      "result": "CHURCH bay wall ('x', 18, 26, 34, 6, 9) end region0",
+      "old_top": 9.0,
+      "new_top": 8.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 26, 34, -3, 0) end region0",
+      "result": "CHURCH bay wall ('z', 26, 26, 34, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH bay wall ('z', 34, 26, 34, -3, 0) end region0",
+      "result": "CHURCH bay wall ('z', 34, 26, 34, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH bay wall ('x', 26, 26, 34, -3, 0) pier0 region0",
+      "result": "CHURCH bay wall ('x', 26, 26, 34, -3, 0) pier0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH bay wall ('x', 26, 26, 34, -3, 0) lintel0 region0",
+      "result": "CHURCH bay wall ('x', 26, 26, 34, -3, 0) lintel0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH bay wall ('x', 26, 26, 34, -3, 0) end region0",
+      "result": "CHURCH bay wall ('x', 26, 26, 34, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH bay wall ('x', 34, 26, 34, -3, 0) end region0",
+      "result": "CHURCH bay wall ('x', 34, 26, 34, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 26, 34, 0, 3) pier0 region0",
+      "result": "CHURCH bay wall ('z', 26, 26, 34, 0, 3) pier0 region0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 26, 34, 0, 3) lintel0 region0",
+      "result": "CHURCH bay wall ('z', 26, 26, 34, 0, 3) lintel0 region0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 26, 26, 34, 0, 3) end region0",
+      "result": "CHURCH bay wall ('z', 26, 26, 34, 0, 3) end region0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "CHURCH bay wall ('z', 34, 26, 34, 0, 3) end region0",
+      "result": "CHURCH bay wall ('z', 34, 26, 34, 0, 3) end region0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 26, 26, 34, 0, 3) end region0",
+      "result": "CHURCH bay wall ('x', 26, 26, 34, 0, 3) end region0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    },
+    {
+      "original": "CHURCH bay wall ('x', 34, 26, 34, 0, 3) end region0",
+      "result": "CHURCH bay wall ('x', 34, 26, 34, 0, 3) end region0",
+      "old_top": 3.0,
+      "new_top": 2.88
+    }
+  ],
+  "saved_world": "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/adaptive-topology.bin": "a7b38304ac31ca6808818173aa53e795556170aa47cfecaade45c7d6beff407a",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/authored-cuts.tsv": "29790df980d12a3f27b09a04385a66afb576e4d49c1f5e0e603e38f209c432f3",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/earthworks-verification.json": "3b7be799a17c12b159c875051711bfcabd75be8ae38e8fd6c4f223adadf87128",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/source-provenance.json": "5037bacb29ce9a9b44ab255b03d1cc35b7b26de7c8c74ca84cb6d67b32eb89e5",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/terrain-physics.hcs2": "f5543b62f600f149258b505230c22b65103912dd221a82c5f2b2c08ad76dee16",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/tile_0_0.png": "afd05938b7ead3bca462a60c71fe23a2d14b3532887b5c6bc6ee80483c77b38f",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/verification.json": "5037bacb29ce9a9b44ab255b03d1cc35b7b26de7c8c74ca84cb6d67b32eb89e5",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/world.properties": "bde6105f86156aa33558244a2a666ee304c11947a61a91e8a1337e2acbdd9086",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/scene-package/.scene.bin.editor.previous": "b67462d18191e4fb547bc4c92228080ed667c506888c9894018997d522b1d66a",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/scene-package/scene.bin": "0048e46c6e411da035770c64cf6d02531be3a96637e54dd47a7545272cd46e4b",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/scene-package/meshes/site.obj": "3ba70a055274b5cf0e806538ee78af35d48c222c902e4addce8289e07e37db7e",
+    "development/levels/rebuild/estate-parish-pass/worlds/church/terrain-world/terrain-layers/tile_0_0.bin": "6e651a6f1d78d5fd61169f93a890fbc445b124e5eb04f79c51946e346f7b087c"
+  },
+  "terrain_mesh": "CHURCH saved ground",
+  "retired_study_strips": [
+    "CHURCH bay retained outside L30 support 0 region0",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L17 support 1",
+    "L18 support 1",
+    "L30 support 1"
+  ],
+  "new_portals": [
+    {
+      "id": "vestibule s exterior doorway",
+      "axis": "z",
+      "boundary": 39,
+      "along": 22,
+      "sill_y": 0,
+      "clear_width": 1.75,
+      "clear_height": 2.2,
+      "rooms": [
+        "vestibule",
+        "entry"
+      ],
+      "link": "L02"
+    },
+    {
+      "id": "chapel e exterior doorway",
+      "axis": "x",
+      "boundary": 34,
+      "along": 20,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.2,
+      "rooms": [
+        "chapel",
+        "grounds"
+      ],
+      "link": "L17"
+    },
+    {
+      "id": "vestry n exterior doorway",
+      "axis": "z",
+      "boundary": 6,
+      "along": 28.5,
+      "sill_y": 0,
+      "clear_width": 1.35,
+      "clear_height": 2.2,
+      "rooms": [
+        "vestry",
+        "grounds"
+      ],
+      "link": "L18"
+    }
+  ],
+  "builder": "tools/build_estate_parish.py",
+  "builder_sha256": "c11260b6b30d827b7b57d0fd8960f4eaab4d58977b3c7bec3796840eb3b220f9",
+  "approach_builder": "tools/build_fitted_approaches.py",
+  "approach_builder_sha256": "bc9f59f96b296607411221657fd2c2524df966ab442167c7c19c18db4eeb9c00",
+  "measured_approaches": {
+    "crypt_frame": [
+      28.5,
+      0,
+      26
+    ],
+    "west_well_rim_limits_x": [
+      30.45,
+      30.53
+    ]
+  },
+  "superseded_guides": [
+    {
+      "id": "L08",
+      "a": "nave",
+      "b": "conversation-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          19.0
+        ],
+        [
+          18,
+          0,
+          22
+        ],
+        [
+          16.0,
+          0,
+          22.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        22
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L09",
+      "a": "conversation-entry",
+      "b": "confessional",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          22.0
+        ],
+        [
+          14,
+          0,
+          20
+        ],
+        [
+          12.0,
+          0,
+          20.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L10",
+      "a": "conversation-entry",
+      "b": "consultation",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          22.0
+        ],
+        [
+          14,
+          0,
+          24
+        ],
+        [
+          12.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        24
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L12",
+      "a": "chancel",
+      "b": "vestry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          9.0
+        ],
+        [
+          26,
+          0,
+          9
+        ],
+        [
+          28.5,
+          0,
+          10.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        9
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L14",
+      "a": "vestry",
+      "b": "vestry-wash",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          31,
+          0,
+          8
+        ],
+        [
+          32.5,
+          0,
+          8.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        8
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L15",
+      "a": "vestry",
+      "b": "vestments",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          31,
+          0,
+          12
+        ],
+        [
+          32.5,
+          0,
+          12.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        12
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L16",
+      "a": "chapel",
+      "b": "crypt-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          28.5,
+          0,
+          26
+        ],
+        [
+          30.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        26
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L19",
+      "a": "choir-stair",
+      "b": "choir",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          19.5,
+          3,
+          33.1
+        ],
+        [
+          21,
+          3,
+          33.1
+        ],
+        [
+          23.5,
+          3,
+          33.1
+        ],
+        [
+          23.5,
+          3,
+          30
+        ]
+      ],
+      "threshold": [
+        21,
+        3,
+        33
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L20",
+      "a": "choir-stair",
+      "b": "tower-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          19.5,
+          3,
+          33.1
+        ],
+        [
+          18,
+          3,
+          33.1
+        ],
+        [
+          14,
+          3,
+          33.1
+        ],
+        [
+          14,
+          3,
+          30
+        ]
+      ],
+      "threshold": [
+        18,
+        3,
+        33.25
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L21",
+      "a": "choir",
+      "b": "music-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.5,
+          3,
+          30
+        ],
+        [
+          23.5,
+          3,
+          32.7
+        ],
+        [
+          26,
+          3,
+          32.7
+        ],
+        [
+          27.5,
+          3,
+          32.7
+        ],
+        [
+          27.5,
+          3,
+          30
+        ]
+      ],
+      "threshold": [
+        26,
+        3,
+        32.7
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L22",
+      "a": "music-entry",
+      "b": "music-archive",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          27.5,
+          3,
+          30
+        ],
+        [
+          27.5,
+          3,
+          28
+        ],
+        [
+          29,
+          3,
+          28
+        ],
+        [
+          31.5,
+          3,
+          28
+        ]
+      ],
+      "threshold": [
+        29,
+        3,
+        28
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L23",
+      "a": "music-entry",
+      "b": "organ-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          27.5,
+          3,
+          30
+        ],
+        [
+          27.5,
+          3,
+          32
+        ],
+        [
+          29,
+          3,
+          32
+        ],
+        [
+          31.5,
+          3,
+          32
+        ]
+      ],
+      "threshold": [
+        29,
+        3,
+        32
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L24",
+      "a": "crypt-stair",
+      "b": "crypt-aisle",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          -3,
+          30.0
+        ],
+        [
+          26,
+          -3,
+          30
+        ],
+        [
+          24.0,
+          -3,
+          30
+        ],
+        [
+          24.0,
+          -3,
+          23.0
+        ]
+      ],
+      "threshold": [
+        26,
+        -3,
+        30
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ]
+}

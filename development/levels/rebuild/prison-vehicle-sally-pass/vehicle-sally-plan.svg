@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="670" viewBox="0 0 800 670" role="img" aria-labelledby="title desc">
+ <title id="title">Prison vehicle sally facade and gate</title>
+ <desc id="desc">Measured south opening with a full-width lintel and supported eave. The gate opens east into the sally and clears the three-metre by 3.04-metre vehicle profile. The north yard gate is independent. The forecourt and sally floor share a zero datum.</desc>
+ <rect width="800" height="670" fill="#15202b"/>
+ <g font-family="sans-serif" fill="#e8edf4" font-size="14">
+  <text x="31" y="41" font-size="25">Beckenburg Penitentiary · south vehicle sally</text>
+  <text x="31" y="70" fill="#a6bacd">North-up plan and south elevation · dimensions in metres</text>
+  <path d="M80 123 H704 V300 H80Z" fill="#243647" stroke="#7b8ea2"/>
+  <text x="91" y="149">Sally floor · 0.00</text>
+  <path d="M344 123 H438" stroke="#9bb0c4" stroke-width="7"/>
+  <text x="465" y="131" fill="#adc1d5">Separate yard gate</text>
+  <path d="M80 300 H333 M450 300 H704" stroke="#8194a6" stroke-width="11"/>
+  <path d="M333 285 H450" stroke="#f1bf71" stroke-width="7"/>
+  <path d="M455 285 H572" stroke="#82d0c4" stroke-width="7"/>
+  <path d="M333 270 H572 M565 264 L572 270 L565 276" fill="none" stroke="#b3c3d1"/>
+  <text x="463" y="252" fill="#82d0c4">Leaf parks 3.13 m east</text>
+  <path d="M391.5 225 V350" stroke="#e6edf4" stroke-dasharray="5 5" stroke-width="2"/>
+  <rect x="312" y="290" width="9" height="9" fill="#df9756"/>
+  <rect x="312" y="305" width="9" height="9" fill="#df9756"/>
+  <text x="91" y="330" fill="#dfaa72">Manual release on each pier face</text>
+  <text x="466" y="330" fill="#adc1d5">Retained level forecourt</text>
+  <path d="M31 378 H765" stroke="#365169"/>
+  <text x="31" y="410" font-size="17">South elevation</text>
+  <path d="M80 437 H704 V457 H80 Z" fill="#596d80"/>
+  <path d="M80 457 H704 V469 H80 Z" fill="#6e8399"/>
+  <path d="M80 469 H704 V502 H80 Z" fill="#52667a"/>
+  <path d="M80 502 H333 V617 H80 Z M450 502 H704 V617 H450 Z" fill="#384f63"/>
+  <path d="M80 618 H704" stroke="#a6bacd" stroke-width="2"/>
+  <rect x="335" y="504" width="113" height="111" fill="none" stroke="#f1bf71" stroke-width="3"/>
+  <path d="M348 504 V615 M361 504 V615 M374 504 V615 M387 504 V615 M401 504 V615 M414 504 V615 M427 504 V615 M440 504 V615 M335 556 H448" stroke="#f1bf71" stroke-width="3"/>
+  <text x="495" y="452" fill="#edf3f8">Eave closure · 4.00 to 4.24</text>
+  <text x="495" y="486">Continuous head · 3.04 to 3.84</text>
+  <text x="333" y="645">3.00 wide × 3.04 high</text>
+ </g>
+</svg>

@@ -1,0 +1,2827 @@
+{
+  "status": "NATIVE_COLLEGE_ELECTRICAL_FIT",
+  "baseline_glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+  "baseline_physics_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768",
+  "layout_sha256": "d2cb5341768ebdd586f75a3981745ece9a78a09433f7214636957eaed2f642ad",
+  "glb_sha256": "45d471762394a1c5544b8db72849b76871e6069a6760874dbb6caa327aaf5763",
+  "physics_sha256": "6f518e5042973f3a8289b1e00080cc628991ddd564ddb967cf9b988382a199cd",
+  "blend_sha256": "58326360b4867ec0158c433b19557d741179a556b54279b8df3487916e6f7f6d",
+  "added_parts": 145,
+  "added_triangles": 19892,
+  "original_terrain_footing_contacts": [
+    0.0,
+    -0.001005,
+    -0.004019,
+    0.0,
+    0.0,
+    -0.000377,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "equipment": {
+    "level_trace_generator_refined": {
+      "sha256": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+      "origin": [
+        27.5,
+        0.08,
+        30.36
+      ],
+      "yaw": 0,
+      "placed_bounds": [
+        [
+          26.725,
+          0.08,
+          29.92
+        ],
+        [
+          28.275,
+          1.235,
+          30.800001
+        ]
+      ]
+    },
+    "level_electrical_bank_worn": {
+      "sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+      "origin": [
+        15.8,
+        -2.94,
+        33.76
+      ],
+      "yaw": 3.141592653589793,
+      "placed_bounds": [
+        [
+          14.690001,
+          -2.94,
+          33.529999
+        ],
+        [
+          16.91,
+          -0.821695,
+          33.899998
+        ]
+      ]
+    }
+  },
+  "switches": [
+    {
+      "id": "college-switch-00",
+      "circuit": "EM-00",
+      "space": "teaching-lobby",
+      "room": 0,
+      "at": [
+        27.919001,
+        1.25,
+        55.150002
+      ],
+      "support": "Flat route shell Wall meeting W",
+      "feet": [
+        27,
+        0,
+        55.15
+      ]
+    },
+    {
+      "id": "college-switch-01",
+      "circuit": "EM-01",
+      "space": "admin",
+      "room": 1,
+      "at": [
+        28.080999,
+        1.25,
+        51.099998
+      ],
+      "support": "Wall public-wc E",
+      "feet": [
+        29.2,
+        0,
+        51.1
+      ]
+    },
+    {
+      "id": "college-switch-02",
+      "circuit": "EM-02",
+      "space": "seminar",
+      "room": 2,
+      "at": [
+        19.919001,
+        1.25,
+        26.799999
+      ],
+      "support": "Flat route shell Wall seminar E",
+      "feet": [
+        18.6,
+        0,
+        26.8
+      ]
+    },
+    {
+      "id": "college-switch-03",
+      "circuit": "EM-03",
+      "space": "lab",
+      "room": 3,
+      "at": [
+        15.919,
+        1.25,
+        16.4
+      ],
+      "support": "Wall lab-wash W",
+      "feet": [
+        14.8,
+        0,
+        16.4
+      ]
+    },
+    {
+      "id": "college-switch-04",
+      "circuit": "EM-04",
+      "space": "cafe",
+      "room": 4,
+      "at": [
+        42.120998,
+        1.25,
+        56.099998
+      ],
+      "support": "COLLEGE cafe left pier region0",
+      "feet": [
+        43.35,
+        0,
+        56.1
+      ]
+    },
+    {
+      "id": "college-switch-05",
+      "circuit": "EM-05",
+      "space": "lecture",
+      "room": 5,
+      "at": [
+        19.919001,
+        1.25,
+        42.599998
+      ],
+      "support": "Flat route shell Wall teaching-hall W.002",
+      "feet": [
+        18.7,
+        0,
+        42.6
+      ]
+    },
+    {
+      "id": "college-switch-06",
+      "circuit": "EM-06",
+      "space": "issue",
+      "room": 6,
+      "at": [
+        32.599998,
+        1.25,
+        19.879
+      ],
+      "support": "COLLEGE issue right pier region0",
+      "feet": [
+        32.6,
+        0,
+        18.7
+      ]
+    },
+    {
+      "id": "college-switch-07",
+      "circuit": "EM-07",
+      "space": "bridge-lobby",
+      "room": 7,
+      "at": [
+        41.799999,
+        4.85,
+        16.080999
+      ],
+      "support": "Wall upper-stacks S",
+      "feet": [
+        41.8,
+        3.6,
+        17.25
+      ]
+    },
+    {
+      "id": "college-switch-08",
+      "circuit": "EM-08",
+      "space": "upper-library-landing",
+      "room": 8,
+      "at": [
+        28.080999,
+        4.85,
+        17.5
+      ],
+      "support": "Wall upper-library-landing W",
+      "feet": [
+        29.4,
+        3.6,
+        17.5
+      ]
+    },
+    {
+      "id": "college-switch-09",
+      "circuit": "EM-09",
+      "space": "upper-res-hall",
+      "room": 9,
+      "at": [
+        50.081001,
+        4.85,
+        46.599998
+      ],
+      "support": "Wall res-west-2 E",
+      "feet": [
+        51.25,
+        3.6,
+        46.6
+      ]
+    },
+    {
+      "id": "college-switch-10",
+      "circuit": "EM-10",
+      "space": "upper-teaching",
+      "room": 10,
+      "at": [
+        23.919001,
+        4.85,
+        32.599998
+      ],
+      "support": "COLLEGE retained outside wall 7",
+      "feet": [
+        22.8,
+        3.6,
+        32.6
+      ]
+    },
+    {
+      "id": "college-switch-11",
+      "circuit": "EM-11",
+      "space": "maintenance",
+      "room": 11,
+      "at": [
+        18.200001,
+        -1.75,
+        33.918999
+      ],
+      "support": "Wall maintenance S",
+      "feet": [
+        18.2,
+        -3,
+        32.65
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "id": "college-load-teaching-hall-1",
+      "room": 0,
+      "space": "teaching-hall",
+      "circuit": "EM-00",
+      "mount": [
+        22.0,
+        3.44,
+        21.0
+      ],
+      "emitter": [
+        22.0,
+        3.256,
+        21.0
+      ],
+      "support": "Floor upper-teaching"
+    },
+    {
+      "id": "college-load-teaching-hall-2",
+      "room": 0,
+      "space": "teaching-hall",
+      "circuit": "EM-00",
+      "mount": [
+        22.0,
+        3.44,
+        32.0
+      ],
+      "emitter": [
+        22.0,
+        3.256,
+        32.0
+      ],
+      "support": "Floor upper-teaching"
+    },
+    {
+      "id": "college-load-teaching-hall-3",
+      "room": 0,
+      "space": "teaching-hall",
+      "circuit": "EM-00",
+      "mount": [
+        22.0,
+        3.44,
+        43.0
+      ],
+      "emitter": [
+        22.0,
+        3.256,
+        43.0
+      ],
+      "support": "Floor upper-teaching"
+    },
+    {
+      "id": "college-load-teaching-lobby-1",
+      "room": 0,
+      "space": "teaching-lobby",
+      "circuit": "EM-00",
+      "mount": [
+        24.0,
+        3.44,
+        58.0
+      ],
+      "emitter": [
+        24.0,
+        3.256,
+        58.0
+      ],
+      "support": "Ceiling cap teaching-lobby"
+    },
+    {
+      "id": "college-load-lecture-wall-1",
+      "room": 5,
+      "space": "lecture",
+      "circuit": "EM-05",
+      "mount": [
+        6.08,
+        2.7,
+        40.599998
+      ],
+      "emitter": [
+        6.264,
+        2.7,
+        40.599998
+      ],
+      "support": "Wall lecture W"
+    },
+    {
+      "id": "college-load-lecture-wall-2",
+      "room": 5,
+      "space": "lecture",
+      "circuit": "EM-05",
+      "mount": [
+        6.08,
+        2.7,
+        47.200001
+      ],
+      "emitter": [
+        6.264,
+        2.7,
+        47.200001
+      ],
+      "support": "Wall lecture W"
+    },
+    {
+      "id": "college-load-seminar-1",
+      "room": 2,
+      "space": "seminar",
+      "circuit": "EM-02",
+      "mount": [
+        10.62,
+        3.44,
+        29.0
+      ],
+      "emitter": [
+        10.62,
+        3.256,
+        29.0
+      ],
+      "support": "Floor upper-seminar"
+    },
+    {
+      "id": "college-load-seminar-2",
+      "room": 2,
+      "space": "seminar",
+      "circuit": "EM-02",
+      "mount": [
+        15.24,
+        3.44,
+        29.0
+      ],
+      "emitter": [
+        15.24,
+        3.256,
+        29.0
+      ],
+      "support": "Floor upper-seminar"
+    },
+    {
+      "id": "college-load-lab-1",
+      "room": 3,
+      "space": "lab",
+      "circuit": "EM-03",
+      "mount": [
+        11.0,
+        3.44,
+        13.96
+      ],
+      "emitter": [
+        11.0,
+        3.256,
+        13.96
+      ],
+      "support": "Floor project"
+    },
+    {
+      "id": "college-load-lab-2",
+      "room": 3,
+      "space": "lab",
+      "circuit": "EM-03",
+      "mount": [
+        11.0,
+        3.44,
+        17.92
+      ],
+      "emitter": [
+        11.0,
+        3.256,
+        17.92
+      ],
+      "support": "Floor project"
+    },
+    {
+      "id": "college-load-lab-entry-1",
+      "room": 3,
+      "space": "lab-entry",
+      "circuit": "EM-03",
+      "mount": [
+        10.62,
+        3.44,
+        23.0
+      ],
+      "emitter": [
+        10.62,
+        3.256,
+        23.0
+      ],
+      "support": "Floor project"
+    },
+    {
+      "id": "college-load-lab-entry-2",
+      "room": 3,
+      "space": "lab-entry",
+      "circuit": "EM-03",
+      "mount": [
+        15.24,
+        3.44,
+        23.0
+      ],
+      "emitter": [
+        15.24,
+        3.256,
+        23.0
+      ],
+      "support": "Floor project"
+    },
+    {
+      "id": "college-load-teaching-stair-1",
+      "room": 0,
+      "space": "teaching-stair",
+      "circuit": "EM-00",
+      "mount": [
+        27.0,
+        3.3,
+        37.959999
+      ],
+      "emitter": [
+        27.0,
+        3.116,
+        37.959999
+      ],
+      "support": "COLLEGE bay complete plate ([24, 34, 30, 46], 3.6) region0"
+    },
+    {
+      "id": "college-load-teaching-stair-2",
+      "room": 0,
+      "space": "teaching-stair",
+      "circuit": "EM-00",
+      "mount": [
+        27.0,
+        3.3,
+        41.919998
+      ],
+      "emitter": [
+        27.0,
+        3.116,
+        41.919998
+      ],
+      "support": "COLLEGE bay complete plate ([24, 34, 30, 46], 3.6) region0"
+    },
+    {
+      "id": "college-load-admin-1",
+      "room": 1,
+      "space": "admin",
+      "circuit": "EM-01",
+      "mount": [
+        32.0,
+        3.44,
+        50.0
+      ],
+      "emitter": [
+        32.0,
+        3.256,
+        50.0
+      ],
+      "support": "Floor tutorial"
+    },
+    {
+      "id": "college-load-meeting-1",
+      "room": 1,
+      "space": "meeting",
+      "circuit": "EM-01",
+      "mount": [
+        32.0,
+        3.44,
+        56.0
+      ],
+      "emitter": [
+        32.0,
+        3.256,
+        56.0
+      ],
+      "support": "Ceiling cap meeting"
+    },
+    {
+      "id": "college-load-library-stair-wall-1",
+      "room": 6,
+      "space": "library-stair",
+      "circuit": "EM-06",
+      "mount": [
+        33.880001,
+        2.85,
+        7.96
+      ],
+      "emitter": [
+        33.696003,
+        2.85,
+        7.96
+      ],
+      "support": "COLLEGE bay wall ('x', 34, 4, 16, 0, 3.6) end region0"
+    },
+    {
+      "id": "college-load-library-stair-wall-2",
+      "room": 6,
+      "space": "library-stair",
+      "circuit": "EM-06",
+      "mount": [
+        33.880001,
+        2.85,
+        11.92
+      ],
+      "emitter": [
+        33.696003,
+        2.85,
+        11.92
+      ],
+      "support": "COLLEGE bay wall ('x', 34, 4, 16, 0, 3.6) end region0"
+    },
+    {
+      "id": "college-load-issue-1",
+      "room": 6,
+      "space": "issue",
+      "circuit": "EM-06",
+      "mount": [
+        31.0,
+        3.44,
+        18.0
+      ],
+      "emitter": [
+        31.0,
+        3.256,
+        18.0
+      ],
+      "support": "Floor upper-library-landing"
+    },
+    {
+      "id": "college-load-res-hall-1",
+      "room": 0,
+      "space": "res-hall",
+      "circuit": "EM-00",
+      "mount": [
+        52.0,
+        3.44,
+        37.0
+      ],
+      "emitter": [
+        52.0,
+        3.256,
+        37.0
+      ],
+      "support": "Floor upper-res-hall"
+    },
+    {
+      "id": "college-load-res-hall-2",
+      "room": 0,
+      "space": "res-hall",
+      "circuit": "EM-00",
+      "mount": [
+        52.0,
+        3.44,
+        48.0
+      ],
+      "emitter": [
+        52.0,
+        3.256,
+        48.0
+      ],
+      "support": "Floor upper-res-hall"
+    },
+    {
+      "id": "college-load-res-hall-3",
+      "room": 0,
+      "space": "res-hall",
+      "circuit": "EM-00",
+      "mount": [
+        52.0,
+        3.44,
+        59.0
+      ],
+      "emitter": [
+        52.0,
+        3.256,
+        59.0
+      ],
+      "support": "Floor upper-res-hall"
+    },
+    {
+      "id": "college-load-cafe-1",
+      "room": 4,
+      "space": "cafe",
+      "circuit": "EM-04",
+      "mount": [
+        46.0,
+        3.44,
+        55.279999
+      ],
+      "emitter": [
+        46.0,
+        3.256,
+        55.279999
+      ],
+      "support": "Floor res-west-3"
+    },
+    {
+      "id": "college-load-cafe-2",
+      "room": 4,
+      "space": "cafe",
+      "circuit": "EM-04",
+      "mount": [
+        46.0,
+        3.44,
+        60.560001
+      ],
+      "emitter": [
+        46.0,
+        3.256,
+        60.560001
+      ],
+      "support": "Floor res-west-4"
+    },
+    {
+      "id": "college-load-north-cross-1",
+      "room": 0,
+      "space": "north-cross",
+      "circuit": "EM-00",
+      "mount": [
+        58.0,
+        3.44,
+        40.0
+      ],
+      "emitter": [
+        58.0,
+        3.256,
+        40.0
+      ],
+      "support": "Floor upper-north-cross"
+    },
+    {
+      "id": "college-load-north-stair-wall-1",
+      "room": 0,
+      "space": "north-stair",
+      "circuit": "EM-00",
+      "mount": [
+        62.080002,
+        2.85,
+        33.959999
+      ],
+      "emitter": [
+        62.264,
+        2.85,
+        33.959999
+      ],
+      "support": "Wall staff-wc E"
+    },
+    {
+      "id": "college-load-north-stair-wall-2",
+      "room": 0,
+      "space": "north-stair",
+      "circuit": "EM-00",
+      "mount": [
+        62.080002,
+        2.85,
+        37.919998
+      ],
+      "emitter": [
+        62.264,
+        2.85,
+        37.919998
+      ],
+      "support": "Wall staff-rest E"
+    },
+    {
+      "id": "college-load-res-cellar-stair-1",
+      "room": 0,
+      "space": "res-cellar-stair",
+      "circuit": "EM-00",
+      "mount": [
+        46.0,
+        3.44,
+        69.959999
+      ],
+      "emitter": [
+        46.0,
+        3.256,
+        69.959999
+      ],
+      "support": "Ceiling cap res-cellar-stair"
+    },
+    {
+      "id": "college-load-res-cellar-stair-2",
+      "room": 0,
+      "space": "res-cellar-stair",
+      "circuit": "EM-00",
+      "mount": [
+        46.0,
+        3.44,
+        73.919998
+      ],
+      "emitter": [
+        46.0,
+        3.256,
+        73.919998
+      ],
+      "support": "Ceiling cap res-cellar-stair"
+    },
+    {
+      "id": "college-load-rear-hall-1",
+      "room": 0,
+      "space": "rear-hall",
+      "circuit": "EM-00",
+      "mount": [
+        52.0,
+        3.44,
+        74.0
+      ],
+      "emitter": [
+        52.0,
+        3.256,
+        74.0
+      ],
+      "support": "Ceiling cap rear-hall"
+    },
+    {
+      "id": "college-load-upper-teaching-1",
+      "room": 10,
+      "space": "upper-teaching",
+      "circuit": "EM-10",
+      "mount": [
+        22.0,
+        7.04,
+        21.0
+      ],
+      "emitter": [
+        22.0,
+        6.856,
+        21.0
+      ],
+      "support": "Ceiling cap upper-teaching"
+    },
+    {
+      "id": "college-load-upper-teaching-2",
+      "room": 10,
+      "space": "upper-teaching",
+      "circuit": "EM-10",
+      "mount": [
+        22.0,
+        7.04,
+        32.0
+      ],
+      "emitter": [
+        22.0,
+        6.856,
+        32.0
+      ],
+      "support": "Ceiling cap upper-teaching"
+    },
+    {
+      "id": "college-load-upper-teaching-3",
+      "room": 10,
+      "space": "upper-teaching",
+      "circuit": "EM-10",
+      "mount": [
+        22.0,
+        7.04,
+        43.0
+      ],
+      "emitter": [
+        22.0,
+        6.856,
+        43.0
+      ],
+      "support": "Ceiling cap upper-teaching"
+    },
+    {
+      "id": "college-load-upper-teaching-stair-1",
+      "room": 10,
+      "space": "upper-teaching-stair",
+      "circuit": "EM-10",
+      "mount": [
+        27.0,
+        6.9,
+        37.959999
+      ],
+      "emitter": [
+        27.0,
+        6.716,
+        37.959999
+      ],
+      "support": "COLLEGE bay complete plate ([24, 34, 30, 46], 7.2) region0"
+    },
+    {
+      "id": "college-load-upper-teaching-stair-2",
+      "room": 10,
+      "space": "upper-teaching-stair",
+      "circuit": "EM-10",
+      "mount": [
+        27.0,
+        6.9,
+        41.919998
+      ],
+      "emitter": [
+        27.0,
+        6.716,
+        41.919998
+      ],
+      "support": "COLLEGE bay complete plate ([24, 34, 30, 46], 7.2) region0"
+    },
+    {
+      "id": "college-load-upper-library-stair-1",
+      "room": 8,
+      "space": "upper-library-stair",
+      "circuit": "EM-08",
+      "mount": [
+        31.0,
+        6.9,
+        7.96
+      ],
+      "emitter": [
+        31.0,
+        6.716,
+        7.96
+      ],
+      "support": "COLLEGE bay complete plate ([28, 4, 34, 16], 7.2) region0"
+    },
+    {
+      "id": "college-load-upper-library-stair-2",
+      "room": 8,
+      "space": "upper-library-stair",
+      "circuit": "EM-08",
+      "mount": [
+        31.0,
+        6.9,
+        11.92
+      ],
+      "emitter": [
+        31.0,
+        6.716,
+        11.92
+      ],
+      "support": "COLLEGE bay complete plate ([28, 4, 34, 16], 7.2) region0"
+    },
+    {
+      "id": "college-load-upper-library-landing-1",
+      "room": 8,
+      "space": "upper-library-landing",
+      "circuit": "EM-08",
+      "mount": [
+        31.0,
+        7.04,
+        18.0
+      ],
+      "emitter": [
+        31.0,
+        6.856,
+        18.0
+      ],
+      "support": "Ceiling cap upper-library-landing"
+    },
+    {
+      "id": "college-load-bridge-lobby-1",
+      "room": 7,
+      "space": "bridge-lobby",
+      "circuit": "EM-07",
+      "mount": [
+        40.599998,
+        7.04,
+        18.0
+      ],
+      "emitter": [
+        40.599998,
+        6.856,
+        18.0
+      ],
+      "support": "Ceiling cap bridge-lobby"
+    },
+    {
+      "id": "college-load-bridge-lobby-2",
+      "room": 7,
+      "space": "bridge-lobby",
+      "circuit": "EM-07",
+      "mount": [
+        47.200001,
+        7.04,
+        18.0
+      ],
+      "emitter": [
+        47.200001,
+        6.856,
+        18.0
+      ],
+      "support": "Ceiling cap bridge-lobby"
+    },
+    {
+      "id": "college-load-bridge-1",
+      "room": 7,
+      "space": "bridge",
+      "circuit": "EM-07",
+      "mount": [
+        52.0,
+        7.04,
+        22.0
+      ],
+      "emitter": [
+        52.0,
+        6.856,
+        22.0
+      ],
+      "support": "Ceiling cap bridge"
+    },
+    {
+      "id": "college-load-bridge-return-1",
+      "room": 7,
+      "space": "bridge-return",
+      "circuit": "EM-07",
+      "mount": [
+        52.0,
+        7.04,
+        25.0
+      ],
+      "emitter": [
+        52.0,
+        6.856,
+        25.0
+      ],
+      "support": "Ceiling cap bridge-return"
+    },
+    {
+      "id": "college-load-upper-res-hall-1",
+      "room": 9,
+      "space": "upper-res-hall",
+      "circuit": "EM-09",
+      "mount": [
+        52.0,
+        7.04,
+        43.0
+      ],
+      "emitter": [
+        52.0,
+        6.856,
+        43.0
+      ],
+      "support": "Ceiling cap upper-res-hall"
+    },
+    {
+      "id": "college-load-upper-res-hall-2",
+      "room": 9,
+      "space": "upper-res-hall",
+      "circuit": "EM-09",
+      "mount": [
+        52.0,
+        7.04,
+        52.0
+      ],
+      "emitter": [
+        52.0,
+        6.856,
+        52.0
+      ],
+      "support": "Ceiling cap upper-res-hall"
+    },
+    {
+      "id": "college-load-upper-res-hall-3",
+      "room": 9,
+      "space": "upper-res-hall",
+      "circuit": "EM-09",
+      "mount": [
+        52.0,
+        7.04,
+        61.0
+      ],
+      "emitter": [
+        52.0,
+        6.856,
+        61.0
+      ],
+      "support": "Ceiling cap upper-res-hall"
+    },
+    {
+      "id": "college-load-upper-north-cross-1",
+      "room": 9,
+      "space": "upper-north-cross",
+      "circuit": "EM-09",
+      "mount": [
+        58.0,
+        7.04,
+        40.0
+      ],
+      "emitter": [
+        58.0,
+        6.856,
+        40.0
+      ],
+      "support": "Ceiling cap upper-north-cross"
+    },
+    {
+      "id": "college-load-upper-north-stair-1",
+      "room": 9,
+      "space": "upper-north-stair",
+      "circuit": "EM-09",
+      "mount": [
+        65.0,
+        7.04,
+        33.959999
+      ],
+      "emitter": [
+        65.0,
+        6.856,
+        33.959999
+      ],
+      "support": "Ceiling cap upper-north-stair"
+    },
+    {
+      "id": "college-load-upper-north-stair-2",
+      "room": 9,
+      "space": "upper-north-stair",
+      "circuit": "EM-09",
+      "mount": [
+        65.0,
+        7.04,
+        37.919998
+      ],
+      "emitter": [
+        65.0,
+        6.856,
+        37.919998
+      ],
+      "support": "Ceiling cap upper-north-stair"
+    },
+    {
+      "id": "college-load-res-west-1-1",
+      "room": 9,
+      "space": "res-west-1",
+      "circuit": "EM-09",
+      "mount": [
+        46.0,
+        7.04,
+        38.0
+      ],
+      "emitter": [
+        46.0,
+        6.856,
+        38.0
+      ],
+      "support": "Ceiling cap res-west-1"
+    },
+    {
+      "id": "college-load-res-east-1-1",
+      "room": 9,
+      "space": "res-east-1",
+      "circuit": "EM-09",
+      "mount": [
+        58.0,
+        7.04,
+        34.0
+      ],
+      "emitter": [
+        58.0,
+        6.856,
+        34.0
+      ],
+      "support": "Ceiling cap res-east-1"
+    },
+    {
+      "id": "college-load-west-tunnel-1",
+      "room": 11,
+      "space": "west-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        22.0,
+        -0.16,
+        21.0
+      ],
+      "emitter": [
+        22.0,
+        -0.344,
+        21.0
+      ],
+      "support": "Floor teaching-hall"
+    },
+    {
+      "id": "college-load-west-tunnel-2",
+      "room": 11,
+      "space": "west-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        22.0,
+        -0.16,
+        32.0
+      ],
+      "emitter": [
+        22.0,
+        -0.344,
+        32.0
+      ],
+      "support": "Floor teaching-hall"
+    },
+    {
+      "id": "college-load-west-tunnel-3",
+      "room": 11,
+      "space": "west-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        22.0,
+        -0.16,
+        43.0
+      ],
+      "emitter": [
+        22.0,
+        -0.344,
+        43.0
+      ],
+      "support": "Floor teaching-hall"
+    },
+    {
+      "id": "college-load-maintenance-1",
+      "room": 11,
+      "space": "maintenance",
+      "circuit": "EM-11",
+      "mount": [
+        16.0,
+        -0.16,
+        29.0
+      ],
+      "emitter": [
+        16.0,
+        -0.344,
+        29.0
+      ],
+      "support": "Floor seminar"
+    },
+    {
+      "id": "college-load-west-cellar-stair-1",
+      "room": 11,
+      "space": "west-cellar-stair",
+      "circuit": "EM-11",
+      "mount": [
+        27.0,
+        -0.3,
+        37.959999
+      ],
+      "emitter": [
+        27.0,
+        -0.484,
+        37.959999
+      ],
+      "support": "COLLEGE bay complete plate ([24, 34, 30, 46], 0) region0"
+    },
+    {
+      "id": "college-load-west-cellar-stair-2",
+      "room": 11,
+      "space": "west-cellar-stair",
+      "circuit": "EM-11",
+      "mount": [
+        27.0,
+        -0.3,
+        41.919998
+      ],
+      "emitter": [
+        27.0,
+        -0.484,
+        41.919998
+      ],
+      "support": "COLLEGE bay complete plate ([24, 34, 30, 46], 0) region0"
+    },
+    {
+      "id": "college-load-cross-tunnel-1",
+      "room": 11,
+      "space": "cross-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        35.279999,
+        -0.3,
+        40.0
+      ],
+      "emitter": [
+        35.279999,
+        -0.484,
+        40.0
+      ],
+      "support": "COLLEGE cross-tunnel reinforced crown region0"
+    },
+    {
+      "id": "college-load-cross-tunnel-2",
+      "room": 11,
+      "space": "cross-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        40.560001,
+        -0.3,
+        40.0
+      ],
+      "emitter": [
+        40.560001,
+        -0.484,
+        40.0
+      ],
+      "support": "COLLEGE cross-tunnel reinforced crown region0"
+    },
+    {
+      "id": "college-load-east-tunnel-1",
+      "room": 11,
+      "space": "east-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        44.0,
+        -0.16,
+        48.0
+      ],
+      "emitter": [
+        44.0,
+        -0.344,
+        48.0
+      ],
+      "support": "Floor union-common"
+    },
+    {
+      "id": "college-load-east-tunnel-2",
+      "room": 11,
+      "space": "east-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        44.0,
+        -0.16,
+        54.0
+      ],
+      "emitter": [
+        44.0,
+        -0.344,
+        54.0
+      ],
+      "support": "Floor cafe"
+    },
+    {
+      "id": "college-load-east-tunnel-3",
+      "room": 11,
+      "space": "east-tunnel",
+      "circuit": "EM-11",
+      "mount": [
+        44.0,
+        -0.16,
+        60.0
+      ],
+      "emitter": [
+        44.0,
+        -0.344,
+        60.0
+      ],
+      "support": "Floor cafe"
+    },
+    {
+      "id": "college-load-east-cellar-stair-wall-1",
+      "room": 11,
+      "space": "east-cellar-stair",
+      "circuit": "EM-11",
+      "mount": [
+        42.099998,
+        -0.4,
+        69.959999
+      ],
+      "emitter": [
+        42.283997,
+        -0.4,
+        69.959999
+      ],
+      "support": "Bearing skirt 0126"
+    },
+    {
+      "id": "college-load-east-cellar-stair-wall-2",
+      "room": 11,
+      "space": "east-cellar-stair",
+      "circuit": "EM-11",
+      "mount": [
+        42.099998,
+        -0.4,
+        73.919998
+      ],
+      "emitter": [
+        42.283997,
+        -0.4,
+        73.919998
+      ],
+      "support": "Bearing skirt 0131"
+    },
+    {
+      "id": "college-load-green-wall-1",
+      "room": 12,
+      "space": "green",
+      "circuit": "EM-YARD",
+      "mount": [
+        25.0,
+        2.65,
+        62.119999
+      ],
+      "emitter": [
+        25.0,
+        2.65,
+        62.303997
+      ],
+      "support": "COLLEGE teaching-lobby right pier region0"
+    },
+    {
+      "id": "college-load-green-wall-2",
+      "room": 12,
+      "space": "green",
+      "circuit": "EM-YARD",
+      "mount": [
+        41.880001,
+        2.65,
+        64.0
+      ],
+      "emitter": [
+        41.696003,
+        2.65,
+        64.0
+      ],
+      "support": "COLLEGE cafe right pier region0"
+    },
+    {
+      "id": "college-load-teaching-library-link-1",
+      "room": 7,
+      "space": "teaching-library-link",
+      "circuit": "EM-07",
+      "mount": [
+        26.0,
+        7.04,
+        14.0
+      ],
+      "emitter": [
+        26.0,
+        6.856,
+        14.0
+      ],
+      "support": "Ceiling cap teaching-library-link"
+    },
+    {
+      "id": "college-load-res-bridge-approach-1",
+      "room": 7,
+      "space": "res-bridge-approach",
+      "circuit": "EM-07",
+      "mount": [
+        52.0,
+        7.04,
+        30.0
+      ],
+      "emitter": [
+        52.0,
+        6.856,
+        30.0
+      ],
+      "support": "Ceiling cap res-bridge-approach"
+    },
+    {
+      "id": "college-load-maintenance-board",
+      "room": 11,
+      "space": "maintenance",
+      "circuit": "EM-11",
+      "mount": [
+        16.4,
+        -0.16,
+        32.400002
+      ],
+      "emitter": [
+        16.4,
+        -0.344,
+        32.400002
+      ],
+      "support": "Floor seminar"
+    }
+  ],
+  "cable_runs": [
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          27.891001,
+          1.302,
+          55.150002
+        ],
+        [
+          27.891001,
+          3.2,
+          55.150002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          28.108999,
+          1.302,
+          51.099998
+        ],
+        [
+          28.108999,
+          3.2,
+          51.099998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          19.891001,
+          1.302,
+          26.799999
+        ],
+        [
+          19.891001,
+          3.2,
+          26.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          15.891,
+          1.302,
+          16.4
+        ],
+        [
+          15.891,
+          3.2,
+          16.4
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          42.148998,
+          1.302,
+          56.099998
+        ],
+        [
+          42.148998,
+          3.2,
+          56.099998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          19.891001,
+          1.302,
+          42.599998
+        ],
+        [
+          19.891001,
+          2.78,
+          42.599998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-06 switch drop",
+      "points": [
+        [
+          32.599998,
+          1.302,
+          19.851
+        ],
+        [
+          32.599998,
+          3.2,
+          19.851
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-07 switch drop",
+      "points": [
+        [
+          41.799999,
+          4.902,
+          16.108999
+        ],
+        [
+          41.799999,
+          6.800000000000001,
+          16.108999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-08 switch drop",
+      "points": [
+        [
+          28.108999,
+          4.902,
+          17.5
+        ],
+        [
+          28.108999,
+          6.800000000000001,
+          17.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-09 switch drop",
+      "points": [
+        [
+          50.109001,
+          4.902,
+          46.599998
+        ],
+        [
+          50.109001,
+          6.800000000000001,
+          46.599998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          23.891001,
+          4.902,
+          32.599998
+        ],
+        [
+          23.891001,
+          6.800000000000001,
+          32.599998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-11 switch drop",
+      "points": [
+        [
+          18.200001,
+          -1.698,
+          33.890999
+        ],
+        [
+          18.200001,
+          -0.23000016033649445,
+          33.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "bank terminal 1",
+      "points": [
+        [
+          14.9022,
+          -0.832,
+          33.8
+        ],
+        [
+          14.9022,
+          -0.387,
+          33.8
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "bank terminal 2",
+      "points": [
+        [
+          15.6622,
+          -0.832,
+          33.8
+        ],
+        [
+          15.6622,
+          -0.387,
+          33.8
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "bank terminal 3",
+      "points": [
+        [
+          16.4222,
+          -0.832,
+          33.8
+        ],
+        [
+          16.4222,
+          -0.387,
+          33.8
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "maintenance main raceway",
+      "points": [
+        [
+          14.78,
+          -0.387,
+          33.8
+        ],
+        [
+          19.73,
+          -0.387,
+          33.8
+        ],
+        [
+          19.73,
+          -0.387,
+          28.0
+        ]
+      ],
+      "radius": 0.033,
+      "visible": true
+    },
+    {
+      "id": "sealed connection at maintenance lintel",
+      "points": [
+        [
+          19.73,
+          -0.387,
+          28
+        ],
+        [
+          20.18,
+          -0.387,
+          28
+        ]
+      ],
+      "radius": 0.026,
+      "visible": false
+    },
+    {
+      "id": "west service tunnel overhead feed",
+      "points": [
+        [
+          20.23,
+          -0.39,
+          28
+        ],
+        [
+          23.77,
+          -0.39,
+          28
+        ],
+        [
+          23.77,
+          -0.39,
+          30.36
+        ],
+        [
+          23.94,
+          -0.39,
+          30.36
+        ]
+      ],
+      "radius": 0.032,
+      "visible": true
+    },
+    {
+      "id": "weatherproof exterior riser",
+      "points": [
+        [
+          24.19,
+          0.24,
+          30.36
+        ],
+        [
+          24.19,
+          -0.31,
+          30.36
+        ],
+        [
+          24.6,
+          -0.31,
+          30.36
+        ]
+      ],
+      "radius": 0.032,
+      "visible": true
+    },
+    {
+      "id": "buried generator duct",
+      "points": [
+        [
+          24.6,
+          -0.31,
+          30.36
+        ],
+        [
+          27.25,
+          -0.31,
+          30.36
+        ],
+        [
+          27.25,
+          -0.31,
+          30.8
+        ],
+        [
+          27.25,
+          0.1,
+          30.8
+        ],
+        [
+          27.25,
+          0.31,
+          30.8
+        ],
+        [
+          27.25,
+          0.31,
+          30.7
+        ]
+      ],
+      "radius": 0.036,
+      "visible": false
+    },
+    {
+      "id": "sealed external main cable passage",
+      "points": [
+        [
+          23.94,
+          -0.39,
+          30.36
+        ],
+        [
+          24.19,
+          -0.39,
+          30.36
+        ],
+        [
+          24.19,
+          -0.31,
+          30.36
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    }
+  ],
+  "sockets": [
+    {
+      "id": "college-switch-00",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        27.919001,
+        1.25,
+        55.150002
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EM-00"
+    },
+    {
+      "id": "college-switch-01",
+      "type": "switch",
+      "room": 1,
+      "position": [
+        28.080999,
+        1.25,
+        51.099998
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EM-01"
+    },
+    {
+      "id": "college-switch-02",
+      "type": "switch",
+      "room": 2,
+      "position": [
+        19.919001,
+        1.25,
+        26.799999
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EM-02"
+    },
+    {
+      "id": "college-switch-03",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        15.919,
+        1.25,
+        16.4
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EM-03"
+    },
+    {
+      "id": "college-switch-04",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        42.120998,
+        1.25,
+        56.099998
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EM-04"
+    },
+    {
+      "id": "college-switch-05",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        19.919001,
+        1.25,
+        42.599998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EM-05"
+    },
+    {
+      "id": "college-switch-06",
+      "type": "switch",
+      "room": 6,
+      "position": [
+        32.599998,
+        1.25,
+        19.879
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EM-06"
+    },
+    {
+      "id": "college-switch-07",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        41.799999,
+        4.85,
+        16.080999
+      ],
+      "yaw": 0.0,
+      "style": "EM-07"
+    },
+    {
+      "id": "college-switch-08",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        28.080999,
+        4.85,
+        17.5
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EM-08"
+    },
+    {
+      "id": "college-switch-09",
+      "type": "switch",
+      "room": 9,
+      "position": [
+        50.081001,
+        4.85,
+        46.599998
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "EM-09"
+    },
+    {
+      "id": "college-switch-10",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        23.919001,
+        4.85,
+        32.599998
+      ],
+      "yaw": -1.5707963267948966,
+      "style": "EM-10"
+    },
+    {
+      "id": "college-switch-11",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        18.200001,
+        -1.75,
+        33.918999
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EM-11"
+    },
+    {
+      "id": "college-load-teaching-hall-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        22.0,
+        3.256,
+        21.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-teaching-hall-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        22.0,
+        3.256,
+        32.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-teaching-hall-3",
+      "type": "light",
+      "room": 0,
+      "position": [
+        22.0,
+        3.256,
+        43.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-teaching-lobby-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        24.0,
+        3.256,
+        58.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-lecture-wall-1",
+      "type": "light",
+      "room": 5,
+      "position": [
+        6.264,
+        2.7,
+        40.599998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-lecture-wall-2",
+      "type": "light",
+      "room": 5,
+      "position": [
+        6.264,
+        2.7,
+        47.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-seminar-1",
+      "type": "light",
+      "room": 2,
+      "position": [
+        10.62,
+        3.256,
+        29.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-seminar-2",
+      "type": "light",
+      "room": 2,
+      "position": [
+        15.24,
+        3.256,
+        29.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-lab-1",
+      "type": "light",
+      "room": 3,
+      "position": [
+        11.0,
+        3.256,
+        13.96
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-lab-2",
+      "type": "light",
+      "room": 3,
+      "position": [
+        11.0,
+        3.256,
+        17.92
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-lab-entry-1",
+      "type": "light",
+      "room": 3,
+      "position": [
+        10.62,
+        3.256,
+        23.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-lab-entry-2",
+      "type": "light",
+      "room": 3,
+      "position": [
+        15.24,
+        3.256,
+        23.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-teaching-stair-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        27.0,
+        3.116,
+        37.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-teaching-stair-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        27.0,
+        3.116,
+        41.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-admin-1",
+      "type": "light",
+      "room": 1,
+      "position": [
+        32.0,
+        3.256,
+        50.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-meeting-1",
+      "type": "light",
+      "room": 1,
+      "position": [
+        32.0,
+        3.256,
+        56.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-library-stair-wall-1",
+      "type": "light",
+      "room": 6,
+      "position": [
+        33.696003,
+        2.85,
+        7.96
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-library-stair-wall-2",
+      "type": "light",
+      "room": 6,
+      "position": [
+        33.696003,
+        2.85,
+        11.92
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-issue-1",
+      "type": "light",
+      "room": 6,
+      "position": [
+        31.0,
+        3.256,
+        18.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-hall-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        52.0,
+        3.256,
+        37.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-hall-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        52.0,
+        3.256,
+        48.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-hall-3",
+      "type": "light",
+      "room": 0,
+      "position": [
+        52.0,
+        3.256,
+        59.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-cafe-1",
+      "type": "light",
+      "room": 4,
+      "position": [
+        46.0,
+        3.256,
+        55.279999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-cafe-2",
+      "type": "light",
+      "room": 4,
+      "position": [
+        46.0,
+        3.256,
+        60.560001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-north-cross-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        58.0,
+        3.256,
+        40.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-north-stair-wall-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        62.264,
+        2.85,
+        33.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-north-stair-wall-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        62.264,
+        2.85,
+        37.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-cellar-stair-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        46.0,
+        3.256,
+        69.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-cellar-stair-2",
+      "type": "light",
+      "room": 0,
+      "position": [
+        46.0,
+        3.256,
+        73.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-rear-hall-1",
+      "type": "light",
+      "room": 0,
+      "position": [
+        52.0,
+        3.256,
+        74.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-teaching-1",
+      "type": "light",
+      "room": 10,
+      "position": [
+        22.0,
+        6.856,
+        21.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-teaching-2",
+      "type": "light",
+      "room": 10,
+      "position": [
+        22.0,
+        6.856,
+        32.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-teaching-3",
+      "type": "light",
+      "room": 10,
+      "position": [
+        22.0,
+        6.856,
+        43.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-teaching-stair-1",
+      "type": "light",
+      "room": 10,
+      "position": [
+        27.0,
+        6.716,
+        37.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-teaching-stair-2",
+      "type": "light",
+      "room": 10,
+      "position": [
+        27.0,
+        6.716,
+        41.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-library-stair-1",
+      "type": "light",
+      "room": 8,
+      "position": [
+        31.0,
+        6.716,
+        7.96
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-library-stair-2",
+      "type": "light",
+      "room": 8,
+      "position": [
+        31.0,
+        6.716,
+        11.92
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-library-landing-1",
+      "type": "light",
+      "room": 8,
+      "position": [
+        31.0,
+        6.856,
+        18.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-bridge-lobby-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        40.599998,
+        6.856,
+        18.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-bridge-lobby-2",
+      "type": "light",
+      "room": 7,
+      "position": [
+        47.200001,
+        6.856,
+        18.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-bridge-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        52.0,
+        6.856,
+        22.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-bridge-return-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        52.0,
+        6.856,
+        25.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-res-hall-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        52.0,
+        6.856,
+        43.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-res-hall-2",
+      "type": "light",
+      "room": 9,
+      "position": [
+        52.0,
+        6.856,
+        52.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-res-hall-3",
+      "type": "light",
+      "room": 9,
+      "position": [
+        52.0,
+        6.856,
+        61.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-north-cross-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        58.0,
+        6.856,
+        40.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-north-stair-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        65.0,
+        6.856,
+        33.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-upper-north-stair-2",
+      "type": "light",
+      "room": 9,
+      "position": [
+        65.0,
+        6.856,
+        37.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-west-1-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        46.0,
+        6.856,
+        38.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-east-1-1",
+      "type": "light",
+      "room": 9,
+      "position": [
+        58.0,
+        6.856,
+        34.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-west-tunnel-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        22.0,
+        -0.344,
+        21.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-west-tunnel-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        22.0,
+        -0.344,
+        32.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-west-tunnel-3",
+      "type": "light",
+      "room": 11,
+      "position": [
+        22.0,
+        -0.344,
+        43.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-maintenance-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        16.0,
+        -0.344,
+        29.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-west-cellar-stair-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        27.0,
+        -0.484,
+        37.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-west-cellar-stair-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        27.0,
+        -0.484,
+        41.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-cross-tunnel-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        35.279999,
+        -0.484,
+        40.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-cross-tunnel-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        40.560001,
+        -0.484,
+        40.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-east-tunnel-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        44.0,
+        -0.344,
+        48.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-east-tunnel-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        44.0,
+        -0.344,
+        54.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-east-tunnel-3",
+      "type": "light",
+      "room": 11,
+      "position": [
+        44.0,
+        -0.344,
+        60.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-east-cellar-stair-wall-1",
+      "type": "light",
+      "room": 11,
+      "position": [
+        42.283997,
+        -0.4,
+        69.959999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-east-cellar-stair-wall-2",
+      "type": "light",
+      "room": 11,
+      "position": [
+        42.283997,
+        -0.4,
+        73.919998
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-green-wall-1",
+      "type": "light",
+      "room": 12,
+      "position": [
+        25.0,
+        2.65,
+        62.303997
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-green-wall-2",
+      "type": "light",
+      "room": 12,
+      "position": [
+        41.696003,
+        2.65,
+        64.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-teaching-library-link-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        26.0,
+        6.856,
+        14.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-res-bridge-approach-1",
+      "type": "light",
+      "room": 7,
+      "position": [
+        52.0,
+        6.856,
+        30.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-load-maintenance-board",
+      "type": "light",
+      "room": 11,
+      "position": [
+        16.4,
+        -0.344,
+        32.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "college-generator",
+      "type": "generator",
+      "room": 12,
+      "position": [
+        27.465,
+        0.555,
+        29.993
+      ],
+      "yaw": 3.141592653589793,
+      "style": "EMERGENCY-MAIN"
+    },
+    {
+      "id": "college-breaker",
+      "type": "breaker",
+      "room": 11,
+      "position": [
+        15.8,
+        -2.1,
+        33.53
+      ],
+      "yaw": 0,
+      "style": "EMERGENCY-MAIN"
+    }
+  ],
+  "sources": {
+    "button_12": "5b1b74c3c82f9aea7c8263ff12bc37ae205c0b1b396b135449d9cd728bb01e5e",
+    "level_electrical_bank_worn": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+    "level_trace_generator_refined": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1",
+    "level_utility_light": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0",
+    "light_switch_1": "6cc8c501605743d0d13bb96b840e8da01d5ea8825d8c13ee284f72f90742159e"
+  }
+}

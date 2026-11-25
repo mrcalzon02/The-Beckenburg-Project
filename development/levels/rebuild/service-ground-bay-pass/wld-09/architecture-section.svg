@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900"><defs><pattern id="void" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#e9f5fa"/><path d="M0 10L10 0" stroke="#c3dde9"/></pattern><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#147fa2"/></marker></defs><style>text{font-family:Arial,sans-serif;fill:#233746}.title{font-size:31px;font-weight:bold}.sub{font-size:17px;fill:#526570}.label{font-size:17px}.small{font-size:14px}.note{font-size:15px;fill:#526570}.head{font-size:22px;font-weight:bold}.wall{stroke:#334b57;stroke-width:4;fill:none}.route{stroke:#147fa2;stroke-width:4;fill:none;marker-end:url(#arrow)}.dim{stroke:#68818c;stroke-width:1;fill:none}</style><rect width="1440" height="900" fill="#f4f6f3"/><text class="title" x="36" y="49">Dam: coordinated stair sections</text><text class="sub" x="36" y="79">The same bay cuts both the turbine floor (−6) and lower return roof (−7). No diagonal floor wound.</text>
+<text x="100" y="137" class="head">A — LOWER FLIGHT</text>
+<text x="100" y="166" class="sub">Section along Z; constant X = 60.3</text>
+<line x1="100" y1="666.0" x2="555" y2="666.0" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="55" y="671.0" class="small">Y -10</text>
+<line x1="100" y1="445.99999999999994" x2="555" y2="445.99999999999994" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="55" y="450.99999999999994" class="small">Y -8</text>
+<line x1="100" y1="335.99999999999994" x2="555" y2="335.99999999999994" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="55" y="340.99999999999994" class="small">Y -7</text>
+<line x1="100" y1="225.99999999999994" x2="555" y2="225.99999999999994" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="55" y="230.99999999999994" class="small">Y -6</text>
+<rect x="100.0" y="225.99999999999994" width="104.39999999999984" height="33.0" fill="#536b77"/>
+<rect x="100.0" y="335.99999999999994" width="104.39999999999984" height="33.0" fill="#536b77"/>
+<rect x="517.5999999999997" y="225.99999999999994" width="34.80000000000018" height="33.0" fill="#536b77"/>
+<rect x="517.5999999999997" y="335.99999999999994" width="34.80000000000018" height="33.0" fill="#536b77"/>
+<rect x="100.0" y="666.0" width="452.39999999999986" height="33.0" fill="#536b77"/>
+<rect x="413.19999999999993" y="445.99999999999994" width="104.39999999999975" height="33.0" fill="#739eac"/>
+<polygon points="204.39999999999984,666.0 204.39999999999984,647.6666666666667 221.79999999999967,647.6666666666667 221.79999999999967,629.3333333333333 239.19999999999993,629.3333333333333 239.19999999999993,611.0 256.59999999999974,611.0 256.59999999999974,592.6666666666667 274.0,592.6666666666667 274.0,574.3333333333333 291.39999999999986,574.3333333333333 291.39999999999986,556.0 308.80000000000007,556.0 308.80000000000007,537.6666666666667 326.19999999999993,537.6666666666667 326.19999999999993,519.3333333333333 343.59999999999974,519.3333333333333 343.59999999999974,501.0 361.0,501.0 361.0,482.6666666666667 378.39999999999986,482.6666666666667 378.39999999999986,464.33333333333326 395.80000000000007,464.33333333333326 395.80000000000007,445.99999999999994 413.19999999999993,445.99999999999994 413.19999999999993,490.0 204.39999999999984,710.0" fill="#97b6bf" stroke="#334b57" stroke-width="2"/>
+<rect x="419.0" y="479.0" width="17.4" height="33.0" fill="#334b57"/>
+<text x="188.39999999999984" y="759" class="small">36.4</text>
+<text x="397.19999999999993" y="759" class="small">40.0</text>
+<text x="501.5999999999997" y="759" class="small">41.8</text>
+<text x="190" y="790" class="note">Z coordinates / metres</text>
+<text x="810" y="137" class="head">B — RETURN FLIGHT</text>
+<text x="810" y="166" class="sub">Section along Z; constant X = 62.5</text>
+<line x1="810" y1="666.0" x2="1265" y2="666.0" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="765" y="671.0" class="small">Y -10</text>
+<line x1="810" y1="445.99999999999994" x2="1265" y2="445.99999999999994" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="765" y="450.99999999999994" class="small">Y -8</text>
+<line x1="810" y1="335.99999999999994" x2="1265" y2="335.99999999999994" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="765" y="340.99999999999994" class="small">Y -7</text>
+<line x1="810" y1="225.99999999999994" x2="1265" y2="225.99999999999994" stroke="#c2ced0" stroke-dasharray="4 4"/>
+<text x="765" y="230.99999999999994" class="small">Y -6</text>
+<rect x="810.0" y="225.99999999999994" width="104.39999999999986" height="33.0" fill="#536b77"/>
+<rect x="810.0" y="335.99999999999994" width="104.39999999999986" height="33.0" fill="#536b77"/>
+<rect x="1227.5999999999997" y="225.99999999999994" width="34.80000000000018" height="33.0" fill="#536b77"/>
+<rect x="1227.5999999999997" y="335.99999999999994" width="34.80000000000018" height="33.0" fill="#536b77"/>
+<rect x="810.0" y="666.0" width="452.39999999999986" height="33.0" fill="#536b77"/>
+<rect x="1123.1999999999998" y="445.99999999999994" width="104.39999999999986" height="33.0" fill="#739eac"/>
+<polygon points="1123.1999999999998,445.99999999999994 1123.1999999999998,427.6666666666666 1105.8000000000002,427.6666666666666 1105.8000000000002,409.3333333333333 1088.3999999999999,409.3333333333333 1088.3999999999999,390.99999999999994 1071.0,390.99999999999994 1071.0,372.6666666666666 1053.5999999999997,372.6666666666666 1053.5999999999997,354.3333333333333 1036.1999999999998,354.3333333333333 1036.1999999999998,335.99999999999994 1018.8000000000001,335.99999999999994 1018.8000000000001,317.6666666666666 1001.3999999999999,317.6666666666666 1001.3999999999999,299.3333333333333 984.0,299.3333333333333 984.0,280.99999999999994 966.5999999999997,280.99999999999994 966.5999999999997,262.6666666666666 949.1999999999999,262.6666666666666 949.1999999999999,244.33333333333331 931.7999999999997,244.33333333333331 931.7999999999997,225.99999999999994 914.3999999999999,225.99999999999994 914.3999999999999,270.0 1123.1999999999998,490.0" fill="#97b6bf" stroke="#334b57" stroke-width="2"/>
+<rect x="1129.0" y="479.0" width="17.4" height="33.0" fill="#334b57"/>
+<text x="898.3999999999999" y="759" class="small">36.4</text>
+<text x="1107.1999999999998" y="759" class="small">40.0</text>
+<text x="1211.5999999999997" y="759" class="small">41.8</text>
+<text x="900" y="790" class="note">Z coordinates / metres</text>
+<text x="100" y="825" class="label">Both flights occupy the same 4.4 × 5.4 m rectangular opening and meet at the same Y −8 landing.</text>
+<text x="100" y="847" class="note">Cheek walls connect to the Y −10 slab; the upper arrival remains level before the first descending tread.</text>
+<text x="36" y="872" class="note">Native construction drawings • dimensions in metres • exported model 9ca45264727b42c4 • runtime acceptance OPEN</text>
+</svg>

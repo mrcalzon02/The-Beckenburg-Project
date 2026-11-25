@@ -1,7 +1,7 @@
 {
   "id": "WLD-15",
   "title": "MV Saint Elara",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Engine-deck source, breaker and switched lamp installed in the native mission",
   "generator_required": true,
   "generator_location_intent": "Static auxiliary marine genset/service compartment; not a propulsion or sailing mechanic",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,20 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-15/layout.json"
+  "source_layout": "development/levels/layouts/wld-15/layout.json",
+  "installed_plan": "development/levels/rebuild/saint-elara/construction.json",
+  "circuits": [
+    {
+      "id": "SE-MAIN",
+      "source": "elara-generator",
+      "breaker": "elara-breaker"
+    },
+    {
+      "id": "SE-ENGINE",
+      "switch": "elara-engine-switch",
+      "loads": [
+        "elara-engine-light"
+      ]
+    }
+  ]
 }

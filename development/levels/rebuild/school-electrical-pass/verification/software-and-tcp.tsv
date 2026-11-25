@@ -1,0 +1,36 @@
+measure	result
+native_scene_revision	2e5d19fc5d9397a115eab5a3effff41925d8cbe53c936330293ca34b9a23ddcd
+packaged_solo_case	Normal School selection and supported cargo spawn
+retained_ritual_anchors	3 supported and correctly owned
+SCHOOL-z-36-22.5	400 foyer / entry PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-z-30-21.5	401 corridor / foyer PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-x-25-31.5	403 foyer / interview PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-x-25-34.5	404 foyer / visitor-wc PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-z-33-28.75	405 interview / office PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-court-science-W	406 grounds / science PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-court-class-a-W	407 grounds / class-a PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-court-gym-N	408 grounds / gym PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-court-receiving-E	409 receiving / grounds PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-main-stair-N-28.6	410 service-stair / main-stair PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-main-stair-W-21	411 corridor / main-stair PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-main-stair-E-21	412 main-stair / health-link PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-main-stair-E-26	413 main-stair / dining PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-upper-stair-S-26.5	414 upper-stair / upper-lobby PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-upper-stair-W-29	415 upper-corridor / upper-stair PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-service-stair-N-29.1	416 grounds / service-stair PASS fitted swing, body, sight, objects, aim and acoustics
+SCHOOL-cell-lower-stair-W-13	417 plant / lower-stair PASS fitted swing, body, sight, objects, aim and acoustics
+library-upper-corridor	418 library / upper-corridor PASS fitted swing, body, sight, objects, aim and acoustics
+classroom-upper-corridor	419 class-b / upper-corridor PASS fitted swing, body, sight, objects, aim and acoustics
+upper-lobby-assembly	420 upper-lobby / assembly PASS fitted swing, body, sight, objects, aim and acoustics
+all_open_crossing	PASS
+contiguous_cargo_to_foyer_both_ways_and_postures	PASS
+space_link_direction_replays	156
+connected_mission_owners	15 supported spawns and four measured transitions
+cargo_owner_receipt	Van interior 14, forecourt 13
+assembly_wall_and_head_closure	41 solid rays
+spaces	40
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+plant_breaker_and_independent_room_switches	12 controls and 26 fitted loads
+global_breaker_blackout	26 extinguished loads and 496383 altered pixels
+packaged_tcp_case	Four peers, physical cargo departure and new assembly door crossing
+packaged_tcp_power	Host ghost trip and physically aimed breaker reset

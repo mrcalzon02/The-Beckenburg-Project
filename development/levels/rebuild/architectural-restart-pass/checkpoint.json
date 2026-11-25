@@ -1,0 +1,58 @@
+{
+  "baseline": "8e35236d684bc2c8c1924d5c4232e8dc1c820422",
+  "source_authority": "development/levels/rebuild/architectural-restart-pass/roster.json",
+  "scope": [
+    "WLD-04 tower assembly",
+    "WLD-09 workshop envelope and shared doorway"
+  ],
+  "roster_packets": 29,
+  "other_source_rows_exact": true,
+  "export_verification": [
+    {
+      "closed_positive_new_solids": 172,
+      "retained_native_records": 212,
+      "retained_source_buffer_and_asset_arrays_exact": true,
+      "export_native_triangles_match": true,
+      "terrain_and_saved_holes_unchanged": true,
+      "runtime_acceptance": false
+    },
+    {
+      "closed_positive_new_solids": 8,
+      "retained_native_records": 441,
+      "retained_source_buffer_and_asset_arrays_exact": true,
+      "export_native_triangles_match": true,
+      "terrain_and_saved_holes_unchanged": true,
+      "runtime_acceptance": false
+    }
+  ],
+  "stair_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "flat_regressions": [
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_1_AT_34_OF_41"
+    }
+  ],
+  "open": [
+    "Lookout clearing L12 ground approach and older L04/L11 landing fragments; four other ground links",
+    "Dam L12 spillway and L18 emergency stair",
+    "All other unreviewed roster assemblies",
+    "Shared gameplay geometry ownership, rendering, collision, navigation, rooms, portals, acoustics, spawns and services"
+  ],
+  "runtime_acceptance": false,
+  "publication_branch": "map/roster-structure-batch",
+  "held_pr": 86,
+  "held_parent": "map/house-default"
+}

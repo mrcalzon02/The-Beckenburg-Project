@@ -1,0 +1,321 @@
+{
+  "id": "WLD-04",
+  "status": "ACTUAL_OCCUPIED_ROOM_TERRAIN_COMPOSITE_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-04/supported-terrain.glb",
+  "source_glb_sha256": "4398c1b2fa117ba6bc649cdbb187daa29c8c93f6b09e46200e07500bba990221",
+  "source_physics": "development/levels/rebuild/terrain-fit-pass/wld-04/supported-terrain.hcs2",
+  "source_physics_sha256": "cc2a609ff7ea9c0a69512b6fb19551e43fdbc3048e60dc1b08447b3c7fbc2d50",
+  "layout": "development/levels/rebuild/wld-04/rough-layout.json",
+  "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+  "saved_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world",
+  "saved_native_sha256": "28bea13f9e8d4e5349e22ae363569bd44e573cd0f5a1f48343ecead60e48d8bf",
+  "preserved_nonterrain_parts": 241,
+  "replaced_terrain_parts": 1,
+  "saved_terrain_triangles": 8375,
+  "glb_sha256": "b2a7f7098eeec354036c86c826b8d6a67448546db3ce34840b78e35e252c379a",
+  "physics_sha256": "bf1ad671016f9f75c7bc189066a8d5ad430081935875e3d6a9eb3455b5a23d26",
+  "composer_sha256": "ef0e7db1ff5d00660184d632a4f5b0c948e47e7190edb19b540e00c7ac4e1da5",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-overview.png",
+      "sha256": "2c18130940cfab4db690b18accabe895a92a0ff441236be6f0017c87db2693fc",
+      "type": "native reimported occupied-room terrain candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-terrain-only.png",
+      "sha256": "a84e78f28314dd94ac6e3973b4b8afb518bf2230c5cb7255b03f2ee4abb92ba6",
+      "type": "native reimported occupied-room terrain candidate"
+    }
+  ],
+  "remaining": "Independent non-terrain mesh/UV/pose preservation and complete flat/stair movement comparison; actual terrain/foundation/cave/retaining/roof fit and runtime/network/hardware acceptance remain open.",
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1099948,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      216
+    ]
+  },
+  "excavation_collars": [],
+  "floor_repairs": [
+    {
+      "name": "Restored ruin floor 0",
+      "footprint": [
+        [
+          44.04938507080078,
+          23.0
+        ],
+        [
+          44.04938507080078,
+          23.790068810565845
+        ],
+        [
+          43.14935461941896,
+          23.610062968552853
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 1",
+      "footprint": [
+        [
+          44.04938507080078,
+          23.0
+        ],
+        [
+          43.14935461941896,
+          23.610062968552853
+        ],
+        [
+          40.09903556967204,
+          23.0
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 2",
+      "footprint": [
+        [
+          40.0,
+          22.98019291338345
+        ],
+        [
+          40.0,
+          21.837366104125977
+        ],
+        [
+          44.04938507080078,
+          21.837366104125977
+        ],
+        [
+          44.04938507080078,
+          23.0
+        ],
+        [
+          40.09903556967204,
+          23.0
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 3",
+      "footprint": [
+        [
+          44.04938507080078,
+          24.0070550101144
+        ],
+        [
+          42.82228971653439,
+          23.831755673790628
+        ],
+        [
+          43.14935461941896,
+          23.610062968552853
+        ],
+        [
+          44.04938507080078,
+          23.790068810565845
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 4",
+      "footprint": [
+        [
+          42.82228971653439,
+          23.831755673790628
+        ],
+        [
+          40.0,
+          23.42857142857143
+        ],
+        [
+          40.0,
+          23.0
+        ],
+        [
+          40.09903556967204,
+          23.0
+        ],
+        [
+          43.14935461941896,
+          23.610062968552853
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 5",
+      "footprint": [
+        [
+          40.0,
+          23.0
+        ],
+        [
+          40.0,
+          22.98019291338345
+        ],
+        [
+          40.09903556967204,
+          23.0
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 6",
+      "footprint": [
+        [
+          40.0,
+          21.529586791992188
+        ],
+        [
+          44.04938507080078,
+          21.529586791992188
+        ],
+        [
+          44.04938507080078,
+          21.744036876910833
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 7",
+      "footprint": [
+        [
+          40.0,
+          21.837366104125977
+        ],
+        [
+          40.0,
+          21.529586791992188
+        ],
+        [
+          44.04938507080078,
+          21.744036876910833
+        ],
+        [
+          44.04938507080078,
+          21.837366104125977
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 8",
+      "footprint": [
+        [
+          44.04938507080078,
+          30.0
+        ],
+        [
+          40,
+          30
+        ],
+        [
+          40.0,
+          28.75
+        ],
+        [
+          44.04938507080078,
+          29.762346267700195
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 9",
+      "footprint": [
+        [
+          40.0,
+          28.75
+        ],
+        [
+          40.0,
+          26.0
+        ],
+        [
+          44.04938507080078,
+          26.0
+        ],
+        [
+          44.04938507080078,
+          29.762346267700195
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 10",
+      "footprint": [
+        [
+          40.0,
+          26.0
+        ],
+        [
+          40.0,
+          25.74477366106174
+        ],
+        [
+          42.822289716534385,
+          23.831755673790628
+        ],
+        [
+          44.04938507080078,
+          24.0070550101144
+        ],
+        [
+          44.04938507080078,
+          26.0
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    },
+    {
+      "name": "Restored ruin floor 11",
+      "footprint": [
+        [
+          40.0,
+          25.74477366106174
+        ],
+        [
+          40.0,
+          23.42857142857143
+        ],
+        [
+          42.822289716534385,
+          23.831755673790628
+        ]
+      ],
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "reason": "False diagonal-shaft AABB removed this floor; replace only outside actual flight polygons and existing tops"
+    }
+  ]
+}

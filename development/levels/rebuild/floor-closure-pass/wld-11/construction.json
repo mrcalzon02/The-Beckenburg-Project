@@ -1,0 +1,326 @@
+{
+  "id": "WLD-11",
+  "status": "FLOOR_CAP_RESTORATION_CANDIDATE_RUNTIME_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.glb",
+  "source_glb_sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+  "source_physics": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.hcs2",
+  "source_physics_sha256": "bbb06bffe3af3091d2eae604475c9df0c914919ba90f8a938f70b6f084498239",
+  "layout": "development/levels/layouts/wld-11/layout.json",
+  "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "new_parts": 0,
+  "new_triangles": 0,
+  "restored_area_m2": 0,
+  "plates": [],
+  "decisions": [
+    {
+      "zone": "house-a",
+      "role": "floor",
+      "elevation": 1.2,
+      "actual_shafts": [
+        {
+          "link": "L02",
+          "segment": 0,
+          "polygon": [
+            [
+              32.89799913085948,
+              69.7183993046876
+            ],
+            [
+              40.89799913085948,
+              59.71839930468759
+            ],
+            [
+              39.10200086914052,
+              58.28160069531241
+            ],
+            [
+              31.102000869140515,
+              68.2816006953124
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor house-a",
+        "L07 support 0",
+        "L07 support 1",
+        "L09 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "house-a",
+      "role": "ceiling-cap",
+      "elevation": 4.2,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap house-a"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "house-b",
+      "role": "floor",
+      "elevation": 1.2,
+      "actual_shafts": [
+        {
+          "link": "L02",
+          "segment": 0,
+          "polygon": [
+            [
+              32.89799913085948,
+              69.7183993046876
+            ],
+            [
+              40.89799913085948,
+              59.71839930468759
+            ],
+            [
+              39.10200086914052,
+              58.28160069531241
+            ],
+            [
+              31.102000869140515,
+              68.2816006953124
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor house-b",
+        "L08 support 0",
+        "L08 support 1",
+        "L12 support 0",
+        "L14 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "house-b",
+      "role": "ceiling-cap",
+      "elevation": 4.2,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap house-b"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "chapel",
+      "role": "floor",
+      "elevation": 1.2,
+      "actual_shafts": [
+        {
+          "link": "L02",
+          "segment": 0,
+          "polygon": [
+            [
+              32.89799913085948,
+              69.7183993046876
+            ],
+            [
+              40.89799913085948,
+              59.71839930468759
+            ],
+            [
+              39.10200086914052,
+              58.28160069531241
+            ],
+            [
+              31.102000869140515,
+              68.2816006953124
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor chapel",
+        "L09 support 0",
+        "L09 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "chapel",
+      "role": "ceiling-cap",
+      "elevation": 4.2,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap chapel"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "warehouse",
+      "role": "floor",
+      "elevation": 1.2,
+      "actual_shafts": [
+        {
+          "link": "L02",
+          "segment": 0,
+          "polygon": [
+            [
+              32.89799913085948,
+              69.7183993046876
+            ],
+            [
+              40.89799913085948,
+              59.71839930468759
+            ],
+            [
+              39.10200086914052,
+              58.28160069531241
+            ],
+            [
+              31.102000869140515,
+              68.2816006953124
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor warehouse",
+        "L05 support 1",
+        "L06 support 0",
+        "L10 support 0",
+        "L10 support 1",
+        "L11 support 0",
+        "L11 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "warehouse",
+      "role": "ceiling-cap",
+      "elevation": 4.2,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap warehouse"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "shack",
+      "role": "floor",
+      "elevation": 1.2,
+      "actual_shafts": [
+        {
+          "link": "L02",
+          "segment": 0,
+          "polygon": [
+            [
+              32.89799913085948,
+              69.7183993046876
+            ],
+            [
+              40.89799913085948,
+              59.71839930468759
+            ],
+            [
+              39.10200086914052,
+              58.28160069531241
+            ],
+            [
+              31.102000869140515,
+              68.2816006953124
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor shack",
+        "L12 support 0",
+        "L12 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "shack",
+      "role": "ceiling-cap",
+      "elevation": 4.2,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap shack"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "pump",
+      "role": "floor",
+      "elevation": 1.2,
+      "actual_shafts": [
+        {
+          "link": "L02",
+          "segment": 0,
+          "polygon": [
+            [
+              32.89799913085948,
+              69.7183993046876
+            ],
+            [
+              40.89799913085948,
+              59.71839930468759
+            ],
+            [
+              39.10200086914052,
+              58.28160069531241
+            ],
+            [
+              31.102000869140515,
+              68.2816006953124
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor pump",
+        "L14 support 0",
+        "L14 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "pump",
+      "role": "ceiling-cap",
+      "elevation": 4.2,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap pump"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    }
+  ],
+  "discarded_boundary_noise": [],
+  "retained_glb_resources": {
+    "original_static_resources_preserved": true,
+    "no_new_geometry": true
+  },
+  "glb_sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+  "physics_sha256": "bbb06bffe3af3091d2eae604475c9df0c914919ba90f8a938f70b6f084498239",
+  "generator_sha256": "6effb668806dddf424cf37763d4115b2553afe829684efd5d5748b5dba0c5d1b",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-11-whole-site.png",
+      "sha256": "3a8411868791374e417050c59cb5a693af746b6a62f36d98cabcee9adecad2c7",
+      "type": "native full export overview"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-11-repaired-plates.png",
+      "sha256": "436912b75c1787f071e8572c7688100dd397ed21e9b5887b6fcb10c9f4483649",
+      "type": "native isolated newly restored structural plates; context hidden for inspection"
+    }
+  ],
+  "remaining": "Independent exact export/solid/shaft/optical checks, continuous flat/stair regression, standing captures and whole-site structure/light/runtime/network/performance acceptance."
+}

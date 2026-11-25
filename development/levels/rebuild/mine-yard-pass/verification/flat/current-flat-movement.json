@@ -1,0 +1,65 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-05": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 4938,
+        "valid_standing": 4938,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-05": {
+      "before": {
+        "contract": "development/levels/rebuild/retaining-shoulder-pass/wld-05/construction.json",
+        "contract_sha256": "2c0e61bb923386fb9336239d5b9c512888b466a2409693c68125877c817948cb",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "layout_sha256": "0b27efdb8f6a436741e6b508ca507a607409f7d874b94aa29806dba860e4fb5a",
+        "native": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.hcs2",
+        "native_sha256": "df623702b4ed8760edb2168ae36f41b3f8d64e92886691c7f7b54bbc55d76f37"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/mine-yard-pass/wld-05/construction.json",
+        "contract_sha256": "1fe6fb503fa5980e644e5b0dbddc3429f0b7e27bc80fc6a57c582adc42850c43",
+        "layout": "development/levels/rebuild/mine-yard-pass/wld-05/authored-layout.json",
+        "layout_sha256": "e1b4884ee2e2ee6c6756433a384c61a58253ba2f11a9b14b44964ceb27ce25d4",
+        "native": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2",
+        "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/cemetery-grounds-pass/roster.json": "29def2e915f8d326bec8651d9ff744e82afc3e5f9a5147052836b7dc523f05b5"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-lane-input.tsv": "a7a2144b8ca638ef52a27e8d6e3e46607bd87ace21c7daeca30210141d3f0216",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-lane-names.tsv": "018e53786003e38edeb7330283c6e10e09ba7ac5af2bb2bfa8e7b8f3a6f48655",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-lanes.tsv": "5ee893e64f1a9ab4e950e0b8b69fcc8f3acea637b0c6cff4afa6f388e4045e67",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-links.tsv": "813f95f794d3ca53b3efd741be18d183665b05077e9624783fd9f2052a76623c",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-names.tsv": "224aee0e5b437ca7ebb2cb61d8749a0f698068bd29dbfd884b227a30afaaef49",
+    "development/levels/rebuild/mine-yard-pass/verification/flat/current-flat-paths.tsv": "002e474bebfd690ab4955afe3075811894b3fcc801ae95e396bdd4f13799eddc"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

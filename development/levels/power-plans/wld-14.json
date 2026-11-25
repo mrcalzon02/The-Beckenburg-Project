@@ -1,7 +1,7 @@
 {
   "id": "WLD-14",
   "title": "Morrow Point Lightstation",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Oil-house source, breaker and switched lamp installed in the native mission",
   "generator_required": true,
   "generator_location_intent": "Already planned oil/generator house at the keeper station",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,20 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-14/layout.json"
+  "source_layout": "development/levels/layouts/wld-14/layout.json",
+  "installed_plan": "development/levels/rebuild/morrow-point/construction.json",
+  "circuits": [
+    {
+      "id": "MP-MAIN",
+      "source": "morrow-generator",
+      "breaker": "morrow-breaker"
+    },
+    {
+      "id": "MP-OIL",
+      "switch": "morrow-oil-house-switch",
+      "loads": [
+        "morrow-oil-house-light"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="825" height="544" viewBox="0 0 825 544" role="img" aria-labelledby="title desc">
+  <title id="title">Beckenburg Penitentiary plant layout and circuits</title>
+  <desc id="desc">The main breaker is founded on the north wall of the lower plant. A supported plant stair and doorway deliver the operator to the working aisle. The utility bank feeds twelve individually switched circuits and twenty-six mounted lights.</desc>
+  <rect width="825" height="544" fill="#151e28"/>
+  <g font-family="sans-serif" font-size="14" fill="#e7edf4">
+   <text x="28" y="38" font-size="25">Beckenburg Penitentiary · power layout</text>
+   <text x="28" y="65" fill="#a9bacd">Measured lower plant plan and room circuit schedule</text>
+   <text x="28" y="106" font-size="17">Plant floor datum −3.00 m</text>
+   <path d="M 75 122 H 396 V 384 H 75 V 338 M 75 299 V 122" fill="#203142" stroke="#74869a" stroke-width="3"/>
+   <path d="M 75 299 H 37 V 338 H 75" fill="none" stroke="#74869a" stroke-width="3"/>
+   <text x="34" y="360" fill="#a9bacd">From lower stair</text>
+   <rect x="187" y="122" width="51" height="14" fill="#f7c577"/>
+   <rect x="152" y="121" width="8" height="9" fill="#f7c577"/>
+   <path d="M 240 131 H 260" stroke="#f7c577"/>
+   <text x="266" y="136">Main breaker</text>
+   <text x="111" y="153" fill="#f7c577">Plant switch</text>
+   <path d="M 213 151 V 190" stroke="#879bad" stroke-width="2"/>
+   <text x="141" y="208" fill="#b5c3cf">Working aisle</text>
+   <circle cx="212.6" cy="168.9" r="7" fill="#8ad5c7"/>
+   <circle cx="281.4" cy="275" r="7" fill="#8ad5c7"/>
+   <text x="227" y="298" fill="#8ad5c7">Plant lights</text>
+   <path d="M 35 405 H 396" stroke="#344859"/>
+   <text x="28" y="430" fill="#a9bacd">North at top. Equipment positions are shown in plan.</text>
+   <text x="438" y="106" font-size="17">Main breaker and twelve switched circuits</text>
+   <rect x="438" y="122" width="335" height="32" rx="4" fill="#785f39"/>
+   <text x="449" y="144">PR-MAIN · utility distribution and blackout</text>
+   <rect x="438" y="168" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="446" y="184" fill="#f7c577">PR-00</text>
+   <text x="493" y="184">3 lights</text>
+   <text x="446" y="201">West lower gallery</text>
+   <rect x="438" y="220" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="446" y="236" fill="#f7c577">PR-01</text>
+   <text x="493" y="236">1 light</text>
+   <text x="446" y="253">Reception</text>
+   <rect x="438" y="272" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="446" y="288" fill="#f7c577">PR-02</text>
+   <text x="493" y="288">2 lights</text>
+   <text x="446" y="305">Sally port</text>
+   <rect x="438" y="324" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="446" y="340" fill="#f7c577">PR-03</text>
+   <text x="493" y="340">2 lights</text>
+   <text x="446" y="357">Dining</text>
+   <rect x="438" y="376" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="446" y="392" fill="#f7c577">PR-04</text>
+   <text x="493" y="392">3 lights</text>
+   <text x="446" y="409">East lower gallery</text>
+   <rect x="438" y="428" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="446" y="444" fill="#f7c577">PR-05</text>
+   <text x="493" y="444">2 lights</text>
+   <text x="446" y="461">Medical</text>
+   <rect x="616" y="168" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="624" y="184" fill="#f7c577">PR-06</text>
+   <text x="671" y="184">2 lights</text>
+   <text x="624" y="201">Chapel</text>
+   <rect x="616" y="220" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="624" y="236" fill="#f7c577">PR-07</text>
+   <text x="671" y="236">3 lights</text>
+   <text x="624" y="253">West upper gallery</text>
+   <rect x="616" y="272" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="624" y="288" fill="#f7c577">PR-08</text>
+   <text x="671" y="288">2 lights</text>
+   <text x="624" y="305">Isolation</text>
+   <rect x="616" y="324" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="624" y="340" fill="#f7c577">PR-09</text>
+   <text x="671" y="340">1 light</text>
+   <text x="624" y="357">Records</text>
+   <rect x="616" y="376" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="624" y="392" fill="#f7c577">PR-10</text>
+   <text x="671" y="392">3 lights</text>
+   <text x="624" y="409">East upper gallery</text>
+   <rect x="616" y="428" width="157" height="42" rx="4" fill="#243546"/>
+   <text x="624" y="444" fill="#f7c577">PR-11</text>
+   <text x="671" y="444">2 lights</text>
+   <text x="624" y="461">Plant</text>
+   <text x="438" y="505" fill="#a9bacd">The sally gate has manual releases on both faces.</text>
+  </g>
+</svg>

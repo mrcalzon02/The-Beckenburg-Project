@@ -1,0 +1,763 @@
+{
+  "id": "WLD-10",
+  "stair_components": [
+    "160:L16 flight0 step1",
+    "161:L16 flight0 step2",
+    "162:L16 flight0 step3",
+    "163:L16 flight0 step4",
+    "164:L16 flight0 step5",
+    "165:L16 flight0 step6",
+    "166:L16 flight0 step7",
+    "167:L16 flight0 step8",
+    "168:L16 flight0 step9",
+    "169:L16 flight0 step10",
+    "170:L16 flight0 step11",
+    "171:L16 flight0 step12",
+    "172:L16 flight0 step13",
+    "173:L16 flight0 step14",
+    "174:L16 flight0 step15",
+    "175:L16 flight0 step16",
+    "176:L16 flight0 step17",
+    "177:L16 flight0 step18",
+    "178:L16 flight0 step19",
+    "179:L16 flight0 step20",
+    "180:L16 flight0 step21",
+    "181:L16 flight0 step22",
+    "182:L16 flight0 step23",
+    "183:L16 flight0 step24",
+    "184:L16 flight0 step25",
+    "185:L16 flight0 step26",
+    "186:L16 flight0 step27",
+    "187:L16 flight0 step28",
+    "188:L16 flight0 step29",
+    "189:L16 flight0 step30",
+    "190:L16 flight0 step31",
+    "191:L16 flight0 step32",
+    "192:L16 flight0 step33",
+    "193:L16 flight0 step34",
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "217:L21 landing1",
+    "218:L21 landing2",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17"
+  ],
+  "source_segment_map": {},
+  "status": "AUTHORED_NATIVE_ROOM_ACCESS_ROUTES_NOT_RUNTIME_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+  "source_contract_sha256": "2fa537adfe9f2bf6a931fab19cc4299ac2f7f53cad877633f2294d059d98511c",
+  "source_glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+  "source_glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+  "source_physics": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+  "source_physics_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a",
+  "before_layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+  "before_layout_sha256": "4097cacabc693ecc1a660adab28f760175822eb5872306c5c43af1484b893ec6",
+  "before_segment_map": {},
+  "before_stair_components": [
+    "160:L16 flight0 step1",
+    "161:L16 flight0 step2",
+    "162:L16 flight0 step3",
+    "163:L16 flight0 step4",
+    "164:L16 flight0 step5",
+    "165:L16 flight0 step6",
+    "166:L16 flight0 step7",
+    "167:L16 flight0 step8",
+    "168:L16 flight0 step9",
+    "169:L16 flight0 step10",
+    "170:L16 flight0 step11",
+    "171:L16 flight0 step12",
+    "172:L16 flight0 step13",
+    "173:L16 flight0 step14",
+    "174:L16 flight0 step15",
+    "175:L16 flight0 step16",
+    "176:L16 flight0 step17",
+    "177:L16 flight0 step18",
+    "178:L16 flight0 step19",
+    "179:L16 flight0 step20",
+    "180:L16 flight0 step21",
+    "181:L16 flight0 step22",
+    "182:L16 flight0 step23",
+    "183:L16 flight0 step24",
+    "184:L16 flight0 step25",
+    "185:L16 flight0 step26",
+    "186:L16 flight0 step27",
+    "187:L16 flight0 step28",
+    "188:L16 flight0 step29",
+    "189:L16 flight0 step30",
+    "190:L16 flight0 step31",
+    "191:L16 flight0 step32",
+    "192:L16 flight0 step33",
+    "193:L16 flight0 step34",
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "217:L21 landing1",
+    "218:L21 landing2",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17"
+  ],
+  "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+  "layout_sha256": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82",
+  "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+  "physics_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a",
+  "removed_source_meshes": [
+    "Saved editor macroterrain WLD-10"
+  ],
+  "removed_native_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain WLD-10",
+  "native_terrain_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_closed_parts": [],
+  "new_closed_triangles": 0,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/adaptive-topology.bin": "6ec7b5877cbfbd6dd5896c72fadd2a91c80107a2491b39022e7f19405da7b5ac",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-cuts.tsv": "211bf02888f6bb656d6cbf4a62823af3e2e62fb0a1af93a2227801b53aaf3045",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-path-grading.sha256": "283f07805b5d0987778e255876d2c1f73f3e6bcd64134e06e299e45f117fcdff",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/source-provenance.json": "6a6b406baac36e798358dd724467705766bef52de68acbe2f00ead8299cf8ee6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2": "a58190a5ca2d7c6bb945b24224871781a5d567c764a06b26682ea70f583773de",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/tile_0_0.png": "5388501e58daf07983e2a968437c149b308e19e36015008b19340dade7b4d6b5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/verification.json": "ce89b5e2c1457e6d2b07966a2443679d3631bc2b9d95842a76160d5ffa7b8597",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/world.properties": "e3126d00dbf63360c9aaede72c1cf4bdacfc86a41630f55a718223f06f3ed26d",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous": "3d846ad345b1b3ef037b9b684a176bf3da69a213aa19ae58734158ba47677c5f",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/scene.bin": "a52916ab4ecab89939b75c30c778cf96472a8848343bfd970f71ee1e01c66cb6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-layers/tile_0_0.bin": "b12f4de5e1bd1834e72761412ecfb5c139db7bada31aa829d4c31595aa642a22",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj": "f26a35f4098bd5e04f4b38e922fec17bda4e1306e7ca82cd547555e0f4de935e",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj": "a020ebcce5ff2750aca46f07f1013b33787b5a10d827345e216ac63313b62f49",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj": "a8029d2b71a178c057969416e3b4bc984dfc1d54f8f171175d27b4f660e9b5f6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj": "453d79b0ab245809fc72da2ad7952bb0a8a7ab845490c2a238d02b32c4a60bd5"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [],
+  "deferred_walkway_beds": [],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Actual native/current-route/standing/vertical regression, physical footing probes, exported/editable/visual checks and all per-map terrain/edge/runtime/services/art/network/hardware gates; no unlock or production-ready claim.",
+  "blend_sha256": "6d6f2d01d5b92e06ea16c7b28909b583f0f94bf1a6978cd529a901ceb17f3a33",
+  "access_route_changes": [
+    {
+      "site": "WLD-10",
+      "link": "L05",
+      "rooms": [
+        "west",
+        "north"
+      ],
+      "before": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          36.0
+        ],
+        [
+          11.0,
+          0.0,
+          21.5
+        ],
+        [
+          11.5,
+          0.0,
+          21.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          25.5,
+          0.0,
+          17.5
+        ],
+        [
+          27.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L06",
+      "rooms": [
+        "north",
+        "east"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          26.0,
+          0.0,
+          17.0
+        ],
+        [
+          25.5,
+          0.0,
+          18.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          28.0,
+          0.0,
+          21.0
+        ],
+        [
+          46.5,
+          0.0,
+          21.0
+        ],
+        [
+          47.0,
+          0.0,
+          21.5
+        ],
+        [
+          47.0,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L09",
+      "rooms": [
+        "garden",
+        "north"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          22.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          36.0
+        ],
+        [
+          29.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L11",
+      "rooms": [
+        "north",
+        "archive"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          18.5,
+          0.0,
+          17.0
+        ],
+        [
+          18.0,
+          0.0,
+          16.5
+        ],
+        [
+          18.0,
+          0.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L13",
+      "rooms": [
+        "vestry",
+        "north"
+      ],
+      "before": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          36.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          0.0,
+          9.0
+        ],
+        [
+          36.0,
+          0.0,
+          16.5
+        ],
+        [
+          35.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L15",
+      "rooms": [
+        "east",
+        "tower-base"
+      ],
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          26.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0.0,
+          36.0
+        ],
+        [
+          49.0,
+          0.0,
+          26.5
+        ],
+        [
+          49.5,
+          0.0,
+          26.0
+        ],
+        [
+          51.0,
+          0.0,
+          26.0
+        ],
+        [
+          53.5,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L17",
+      "rooms": [
+        "tower-base",
+        "rear"
+      ],
+      "before": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          60.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          53.0,
+          0.0,
+          23.0
+        ],
+        [
+          53.0,
+          0.0,
+          28.0
+        ],
+        [
+          54.0,
+          0.0,
+          28.5
+        ],
+        [
+          58.0,
+          0.0,
+          28.5
+        ],
+        [
+          59.0,
+          0.0,
+          23.5
+        ],
+        [
+          59.5,
+          0.0,
+          23.0
+        ],
+        [
+          63.0,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L20",
+      "rooms": [
+        "catacombs",
+        "chamber"
+      ],
+      "before": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          -3.0,
+          17.5
+        ],
+        [
+          18.5,
+          -3.0,
+          17.0
+        ],
+        [
+          18.0,
+          -3.0,
+          16.5
+        ],
+        [
+          18.0,
+          -3.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    }
+  ],
+  "geometry_unchanged": true,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock."
+}

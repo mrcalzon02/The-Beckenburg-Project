@@ -27,6 +27,18 @@ public final class LanVoiceClientAudio implements AutoCloseable {
     private volatile LanChat.Channel transmit;
     private volatile boolean closed,connected,muted;
     private volatile int playbackVolume=80;
+    private volatile double spectralHearingGain=1.0;
+    /** Ghost voice packets get the same perceptual envelope as GHEAR.
+     * This never changes host admission or another hunter's voice mix.
+     */
+    public void setSpectralHearingGain(double gain){
+        if(!Double.isFinite(gain)||gain<0||gain>1)
+            throw new IllegalArgumentException("Invalid spectral hearing gain");
+        if(seat==6)spectralHearingGain=gain;
+    }
+    static int scaledVoiceGain(int packetGain,int playbackVolume,double hearingGain){
+        return (int)Math.round(packetGain*playbackVolume*hearingGain/100.0);
+    }
     private volatile Mixer.Info selectedMicrophone;
     public static java.util.List<Mixer.Info> microphones(){
         var compatible=new java.util.ArrayList<Mixer.Info>();
@@ -59,6 +71,7 @@ public final class LanVoiceClientAudio implements AutoCloseable {
         if(port<1||port>65535||seat<0||seat>6)
             throw new IllegalArgumentException("invalid voice connection");
         this.seat=seat;this.status=Objects.requireNonNull(status);
+        spectralHearingGain=seat==6?0:1;
         long[] key=LanVoicePacket.parseToken(token);hi=key[0];lo=key[1];
         server=new InetSocketAddress(Objects.requireNonNull(host),port);
         udp=new DatagramSocket();
@@ -207,7 +220,8 @@ public final class LanVoiceClientAudio implements AutoCloseable {
                             LanVoicePacket.Frame packet=q.pollFirst();
                             if(packet==null)continue;
                             byte[] samples=packet.samples();
-                            int gain=packet.gain()*playbackVolume/100;
+                            int gain=scaledVoiceGain(packet.gain(),playbackVolume,
+                                seat==6?spectralHearingGain:1.0);
                             for(int i=0;i<samples.length;i++)
                                 sums[i]+=LanVoiceCodec.decode(samples[i])*gain/100;
                         }

@@ -1,0 +1,54 @@
+{
+  "controls": [
+    {
+      "case": "one-centimetre-ground-shift",
+      "variant": "legacy",
+      "new_blocks": 2,
+      "sweep_block": true
+    },
+    {
+      "case": "one-centimetre-ground-shift",
+      "variant": "current",
+      "new_blocks": 0,
+      "sweep_block": false
+    },
+    {
+      "case": "new-low-roof",
+      "variant": "legacy",
+      "new_blocks": 2,
+      "sweep_block": true
+    },
+    {
+      "case": "new-low-roof",
+      "variant": "current",
+      "new_blocks": 2,
+      "sweep_block": true
+    },
+    {
+      "case": "missing-ground",
+      "variant": "legacy",
+      "new_blocks": 2,
+      "sweep_block": true
+    },
+    {
+      "case": "missing-ground",
+      "variant": "current",
+      "new_blocks": 2,
+      "sweep_block": true
+    },
+    {
+      "case": "height-outside-original-budget",
+      "variant": "legacy",
+      "new_blocks": 2,
+      "sweep_block": true
+    },
+    {
+      "case": "height-outside-original-budget",
+      "variant": "current",
+      "new_blocks": 2,
+      "sweep_block": true
+    }
+  ],
+  "source_sha256": "b37abfb192651a6857f9457ac117e8396d0ce08cdb51d64dd573f0de5d63ece9",
+  "scope": "Separate scene grounding only; unchanged2cm budget, literal body and production movement queries. Roof/missing support/excessive height negatives remain rejected."
+}

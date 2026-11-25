@@ -1,0 +1,15 @@
+site	link	segment	direction	x	y	z	reason	component
+WLD-17	route-03:0/right	0	pose	39.883582899982564	2.0	55.53433159993024	NO_FOOT_SUPPORT_0.0_-0.22	-
+WLD-17	route-10:0/left	1	pose	30.48	4.0	22.75	PHYSICAL_COMPONENT	163:route-10 flight0 step2
+WLD-17	route-10:0/left	2	pose	30.48	4.0	22.5	PHYSICAL_COMPONENT	163:route-10 flight0 step2
+WLD-17	route-10:0/left	3	pose	30.48	4.0	22.25	PHYSICAL_COMPONENT	163:route-10 flight0 step2
+WLD-17	route-10:0/left	4	pose	30.48	4.0	22.0	NO_FOOT_SUPPORT_0.0_-0.22	-
+WLD-17	route-10:0/right	5	pose	29.52	4.0	22.0	NO_FOOT_SUPPORT_0.0_-0.22	-
+WLD-17	route-11:3/left	6	pose	19.52	0.0	16.0	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-11:3/left	7	pose	19.52	0.0	16.25	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-11:3/left	8	pose	19.52	0.0	16.5	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-11:3/left	9	pose	19.52	0.0	16.75	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-11 flight0 part1
+WLD-17	route-12:3/left	10	pose	55.52	0.0	16.0	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-17	route-12:3/left	11	pose	55.52	0.0	16.25	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-17	route-12:3/left	12	pose	55.52	0.0	16.5	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1
+WLD-17	route-12:3/left	13	pose	55.52	0.0	16.75	PHYSICAL_COMPONENT	Rebuilt stair WLD-17 route-12 flight0 part1

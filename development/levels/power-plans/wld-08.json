@@ -1,7 +1,8 @@
 {
   "id": "WLD-08",
   "title": "Northwatch Research Station",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Twelve staged circuits verified in native software, OpenGL and live TCP; packaged acceptance pending",
+  "staged_electrical_checkpoint": "development/levels/rebuild/northwatch-complete-power-pass/checkpoint.json",
   "generator_required": true,
   "generator_location_intent": "Insulated station utility shelter and isolated service board",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",

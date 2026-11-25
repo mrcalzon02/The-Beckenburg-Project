@@ -1,0 +1,1056 @@
+{
+  "schema": "beckenburg.agentic-map-builder-readiness/v1",
+  "source_commit": "3160f2723b57cb9b96d758ff5242dc8895f58d2c",
+  "reviewed_utc": "2026-11-10",
+  "editor_service_ci": {
+    "run_id": 42861975784,
+    "conclusion": "success"
+  },
+  "description": "Capability and evidence inventory, NOT implementation progress. PROVEN is fixture-scoped. 28 base maps plus one annex are not completed by listing them.",
+  "status_legend": {
+    "PROVEN": "Native fixture or CI tested within stated scope",
+    "HUMAN_ONLY": "Human editor/module has it but native map agent cannot invoke it",
+    "PARTIAL": "Source exists, unified agent/runtime parity incomplete",
+    "GAP": "Agent construction path cannot yet perform it",
+    "GATE": "Requires end-to-end acceptance evidence"
+  },
+  "groups": [
+    {
+      "code": "A",
+      "name": "Scene identity, map roster and persistence"
+    },
+    {
+      "code": "B",
+      "name": "Architecture, rooms and vertical construction"
+    },
+    {
+      "code": "C",
+      "name": "Terrain, outdoor world, water and infrastructure"
+    },
+    {
+      "code": "D",
+      "name": "Assets, models, materials and furnishing"
+    },
+    {
+      "code": "E",
+      "name": "Shared gameplay systems and authored services"
+    },
+    {
+      "code": "F",
+      "name": "Observation, verification and visual review"
+    },
+    {
+      "code": "G",
+      "name": "Agent abilities, permissions and planning"
+    },
+    {
+      "code": "H",
+      "name": "Concurrent task allocation and recovery"
+    },
+    {
+      "code": "I",
+      "name": "Shipping, review gates and full-map confidence"
+    }
+  ],
+  "counts": {
+    "PROVEN": 24,
+    "HUMAN_ONLY": 8,
+    "PARTIAL": 10,
+    "GAP": 66,
+    "GATE": 16
+  },
+  "requirements": [
+    {
+      "id": "A01",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Authoritative Castle editor scene",
+      "exit_test": "Castle agent alters the same singleton used by the runtime and human editor"
+    },
+    {
+      "id": "A02",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Headless built-in mission scene",
+      "exit_test": "EditorAgentCli opens HouseMap.Site and reads native LevelAuthoringSession"
+    },
+    {
+      "id": "A03",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Open all 28 base sites plus mortuary annex",
+      "exit_test": "Every roster ID, including WLD-14 and annex, opens a real editable runtime-linked scene"
+    },
+    {
+      "id": "A04",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Native Morrow Point Lightstation adapter",
+      "exit_test": "WLD-14 source geometry, layout, HCS2, assets and runtime share one edit/save interface"
+    },
+    {
+      "id": "A05",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "HUMAN_ONLY",
+      "capability": "Create a template-based custom investigation level",
+      "exit_test": "Expose existing USER cloning with validated IDs, authoring root and catalog identity"
+    },
+    {
+      "id": "A06",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Create an empty non-template level",
+      "exit_test": "Author an original building, terrain, rooms, docks and systems without fake template geometry"
+    },
+    {
+      "id": "A07",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Canonical per-site source and dependency manifest",
+      "exit_test": "One version-pinned manifest resolves layout, scene, terrain, GLBs, physics, nav, rooms, water, power, sound and game hooks"
+    },
+    {
+      "id": "A08",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Stable native object IDs and expected revisions",
+      "exit_test": "Original and reconstructed IDs survive move, undo, redo, save and reopen; stale revisions fail"
+    },
+    {
+      "id": "A09",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Hierarchy with parents, layers and typed components",
+      "exit_test": "Native mission and game adapters round-trip real parent/child and component state without flattening or dropping it"
+    },
+    {
+      "id": "A10",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Atomic save, recover-previous, reopen and shared history",
+      "exit_test": "Validate journal, competing-writer rejection, backup and exact disk readback in native scenes"
+    },
+    {
+      "id": "A11",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Original/rebuilt House source compatibility",
+      "exit_test": "Legacy and rebuilt source versions round-trip with fixture protections and migrations"
+    },
+    {
+      "id": "A12",
+      "group": "Scene identity, map roster and persistence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Promote reviewed output into actual game source",
+      "exit_test": "Saved map becomes selectable and starts the actual case with the same geometry and references"
+    },
+    {
+      "id": "B01",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Castle surface creation and removal",
+      "exit_test": "put-surface and remove-surface edit native Castle WALL/FLOOR/ROOF/VOID records"
+    },
+    {
+      "id": "B02",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Mission structural creation and editing",
+      "exit_test": "Agent can create/update/delete walls, floors, roofs and foundations in a mission, not only move props"
+    },
+    {
+      "id": "B03",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Wall thickness and physical joins",
+      "exit_test": "Renderer, standing collision, room sealing and sound obstruction agree at wall corners"
+    },
+    {
+      "id": "B04",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Floors with depth, slab underside and support",
+      "exit_test": "Multi-level floors block skylight and provide correct upper/lower physics"
+    },
+    {
+      "id": "B05",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Real roofs, gables, returns and eave joins",
+      "exit_test": "Ceiling/roof closure passes sun/weather/sound leaks from interior and exterior"
+    },
+    {
+      "id": "B06",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Actual door apertures, frames and swings",
+      "exit_test": "Every authored leaf is matched to a physical opening and shares collision, portal and light data"
+    },
+    {
+      "id": "B07",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Window apertures, sills, shutters and visibility",
+      "exit_test": "Real window voids and glass/blocked variants match LOS, light, sound and geometry"
+    },
+    {
+      "id": "B08",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Stairs, landings, flight continuity and guards",
+      "exit_test": "Ascending/descending native player capsules pass flights without clipping or unprotected drops"
+    },
+    {
+      "id": "B09",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Ramps, tunnels, cellar cuts and vertical connections",
+      "exit_test": "Cut actual blocking floor/terrain geometry; test support, body and optical passage"
+    },
+    {
+      "id": "B10",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Room creation, child spaces and zone mapping",
+      "exit_test": "Create real rooms and subordinate spaces, with explicit map to stable gameplay zones"
+    },
+    {
+      "id": "B11",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Supported object transforms",
+      "exit_test": "Castle agent edits prop transforms; mission agent currently changes XYZ position only"
+    },
+    {
+      "id": "B12",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "HUMAN_ONLY",
+      "capability": "Mission props add, remove, rotate and scale",
+      "exit_test": "Expose already human-supported add/remove/rotate/scale as typed native agent operations"
+    },
+    {
+      "id": "B13",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Prefab groups and reusable building sections",
+      "exit_test": "Compose, place, update and version matched rooms/stair modules without duplicate hardcoded geometry"
+    },
+    {
+      "id": "B14",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P1",
+      "status": "HUMAN_ONLY",
+      "capability": "Grid, workplane and viewport-guided drawing",
+      "exit_test": "Provide machine-readable snaps, measured anchors and exact supported positions rather than screen gestures"
+    },
+    {
+      "id": "B15",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Structural edit validators and supports",
+      "exit_test": "A real unsupported beam, floating floor or impossible clearance fails before saving"
+    },
+    {
+      "id": "B16",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Atomic architectural batches",
+      "exit_test": "Castle bounded history exists; use the same transactional boundary for entire mission shell edits"
+    },
+    {
+      "id": "B17",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Measured construction anchors and scale references",
+      "exit_test": "Approve support/pivot/size against authoritative meshes and room dimensions"
+    },
+    {
+      "id": "B18",
+      "group": "Architecture, rooms and vertical construction",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Path and objective-aware room layout",
+      "exit_test": "Human-approved spatial program becomes rooms, openings and connected routes with measurable clearances"
+    },
+    {
+      "id": "C01",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "HUMAN_ONLY",
+      "capability": "Stitched 16-bit heightfield creation/import",
+      "exit_test": "Expose existing import/generate/open/export to agent, retaining non-overwrite safety"
+    },
+    {
+      "id": "C02",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "HUMAN_ONLY",
+      "capability": "Human adaptive topology and seam tools",
+      "exit_test": "Agent commands validate split/merge/cross-tile seams with transactional undo"
+    },
+    {
+      "id": "C03",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "HUMAN_ONLY",
+      "capability": "Layered terrain, material brushes and cross-tile sculpt",
+      "exit_test": "Typed brush edits modify saved terrain and exact native triangles"
+    },
+    {
+      "id": "C04",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Physical cave/subterranean topology",
+      "exit_test": "Combine existing cutout, cavity and ramp modules into one native editable map scene"
+    },
+    {
+      "id": "C05",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Unified agent terrain sculpt/cut/foundation commands",
+      "exit_test": "One interface edits terrain and updates the actual scene, collision, LOS and associated structures"
+    },
+    {
+      "id": "C06",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Outdoor terrain runtime/physics parity for all sites",
+      "exit_test": "Per-site exact authored terrain—not planning heightmaps—feeds rendered world and physics"
+    },
+    {
+      "id": "C07",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P1",
+      "status": "PARTIAL",
+      "capability": "Roads, paths, rails, retaining banks and crossings",
+      "exit_test": "Make editable route geometry with physical elevation, guards and vehicle/van access"
+    },
+    {
+      "id": "C08",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P1",
+      "status": "PARTIAL",
+      "capability": "Shoreline, tide, water and weather joins",
+      "exit_test": "Water cannot intrude sealed rooms and actual shoreline geometry shares physics"
+    },
+    {
+      "id": "C09",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Van arrival grade and terrain-linked staging",
+      "exit_test": "Regrade arrival, orient van, preserve doors/equipment access and extraction geometry"
+    },
+    {
+      "id": "C10",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Perimeter barriers and horizon closure",
+      "exit_test": "Standing/crouch/ghost containment and near/far view from highest accessible floors"
+    },
+    {
+      "id": "C11",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P1",
+      "status": "GATE",
+      "capability": "Terrain LOD, streaming and long-range visibility",
+      "exit_test": "Camera LOD cannot alter native walking or scope rays; measured no-crack/occlusion tests"
+    },
+    {
+      "id": "C12",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Desquareify and natural grading pass",
+      "exit_test": "Remove arbitrary zone-shaped pads; prove authored terrain and foundation contact"
+    },
+    {
+      "id": "C13",
+      "group": "Terrain, outdoor world, water and infrastructure",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Multi-map terrain ownership and source revisions",
+      "exit_test": "Independent agents cannot modify adjacent/shared terrain without locked ownership and merge checks"
+    },
+    {
+      "id": "D01",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Live native asset catalog and fingerprints",
+      "exit_test": "Agent reads human palette pages and a stable catalog identity"
+    },
+    {
+      "id": "D02",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Castle prop placement and field edits",
+      "exit_test": "Agent places/deletes props and edits allowed Castle fields in shared history"
+    },
+    {
+      "id": "D03",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P0",
+      "status": "HUMAN_ONLY",
+      "capability": "Mission prop creation, deletion and duplication",
+      "exit_test": "Provide stable-ID equivalent of already functional human mission placement tools"
+    },
+    {
+      "id": "D04",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Mission rotate/scale/replace via typed API",
+      "exit_test": "Agent changes yaw, scale and approved mesh while preserving collision footprint and attachments"
+    },
+    {
+      "id": "D05",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "HUMAN_ONLY",
+      "capability": "Actual mesh topology and GLB authoring",
+      "exit_test": "Bridge tested human Model Editor operations instead of duplicating meshes or generating artwork"
+    },
+    {
+      "id": "D06",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "PROVEN",
+      "capability": "Bounded material layer opacity edit",
+      "exit_test": "Existing material MCP changes selected face layer opacity, validates and saves"
+    },
+    {
+      "id": "D07",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Agent-accessible mesh/UV/texture tools beyond opacity",
+      "exit_test": "Expose existing operations with native source preservation, real game readback and undo"
+    },
+    {
+      "id": "D08",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Paint, assign and inspect site materials",
+      "exit_test": "Author surface material, trim, wetness, wear, decals and UV alignment on actual geometry"
+    },
+    {
+      "id": "D09",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Snap, drop-to-support and mount fittings",
+      "exit_test": "Use source bounds and sockets so shelves/lamps/fixtures touch legitimate support without blocking circulation"
+    },
+    {
+      "id": "D10",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Multi-select, scatter, replacement and variants",
+      "exit_test": "Bounded reproducible instancing/prefabs preserve density, original UVs and walking clearances"
+    },
+    {
+      "id": "D11",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Source/provenance/asset availability checks",
+      "exit_test": "Reject missing/misaligned runtime assets; preserve approved originals and correctly packaged GLBs"
+    },
+    {
+      "id": "D12",
+      "group": "Assets, models, materials and furnishing",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Asset-reference remap and replacement dependency graph",
+      "exit_test": "A replaced model updates existing supported references without changing unrelated fixtures"
+    },
+    {
+      "id": "E01",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Mission prop/collider runtime parity check",
+      "exit_test": "Native test confirms current unsaved props and corresponding actual colliders"
+    },
+    {
+      "id": "E02",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Create rooms, portals and gameplay-zone ownership",
+      "exit_test": "Rendered, collision, visibility, portal and acoustic topology share authored boundaries"
+    },
+    {
+      "id": "E03",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Author navigable corridors and multilayer navmesh",
+      "exit_test": "Validate capsules, stairs, doors and dynamic obstructions for player and ghost agents"
+    },
+    {
+      "id": "E04",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Door/window game interaction contracts",
+      "exit_test": "Socket, leaf, hinge, lock/interaction, sound and collision share one native component"
+    },
+    {
+      "id": "E05",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Castle ceiling-lamp, source and power edits",
+      "exit_test": "Existing Castle agent inserts and changes lamp; native emitter/renderer test passed"
+    },
+    {
+      "id": "E06",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Mission lighting, shadow and switch commands",
+      "exit_test": "Set lights/switches in mission rooms, verify native emitter clearance and targeted invalidation"
+    },
+    {
+      "id": "E07",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Electrical generators, breakers and circuits",
+      "exit_test": "Site generator/distribution connects fixtures to real trip/reset and network authority"
+    },
+    {
+      "id": "E08",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Hiding positions and difficulty budget",
+      "exit_test": "Indoor/outdoor candidates share HidingBudget.MAXIMUM and zero-cover difficulty is enforceable"
+    },
+    {
+      "id": "E09",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Evidence and investigation equipment sockets",
+      "exit_test": "EMF, DOTS, camera, placement, observation and evidence constraints use real case systems"
+    },
+    {
+      "id": "E10",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Ghost, hunter and equipment spawns",
+      "exit_test": "Real hostile navigation, fairness, chase routes and equipment positions are host-authoritative"
+    },
+    {
+      "id": "E11",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Rituals, objective triggers and safe extraction",
+      "exit_test": "Three ritual modes, required objectives and van departure remain reachable and playable"
+    },
+    {
+      "id": "E12",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Acoustic rooms, material absorption and portals",
+      "exit_test": "Real geometry and open/closed portal revisions drive sound occlusion"
+    },
+    {
+      "id": "E13",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Weather, wind, water, fog and environmental time controls",
+      "exit_test": "Site-linked modules are editable and checked against live renderer and simulation"
+    },
+    {
+      "id": "E14",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Story props, loose-object physics and scripted encounters",
+      "exit_test": "Authored details retain support, interaction, deterministic physics and scene references"
+    },
+    {
+      "id": "E15",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Network host/guest and mission persistence acceptance",
+      "exit_test": "Solo and real TCP case flows share exact map revision with saving, loading and progression"
+    },
+    {
+      "id": "E16",
+      "group": "Shared gameplay systems and authored services",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Camera, monitoring and device mount references",
+      "exit_test": "Van-mounted and site cameras, observers, lighting and stationary equipment preserve owner boundaries"
+    },
+    {
+      "id": "F01",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Revision, hierarchy, nodes, properties and palette pages",
+      "exit_test": "Read bounded native state from the active editor and reject stale revisions"
+    },
+    {
+      "id": "F02",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Native change receipts and conflict rejection",
+      "exit_test": "Batch edit, undo, action log, request sequences and no-duplicate retries work"
+    },
+    {
+      "id": "F03",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Saved bytes and position proof",
+      "exit_test": "Compare exact current node position and native diskState; save/reopen round trip"
+    },
+    {
+      "id": "F04",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Actual scene renderer PNG capture",
+      "exit_test": "Get real game/editor pixels with metadata, not a synthetic preview"
+    },
+    {
+      "id": "F05",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Fixed-camera before/after on one School edit",
+      "exit_test": "Matched camera proof shows a validated one-step prop adjustment"
+    },
+    {
+      "id": "F06",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Mission runtime-parity and open-routes diagnostics",
+      "exit_test": "Existing two named native tests run, with limited open-door coverage"
+    },
+    {
+      "id": "F07",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Castle cellar, sockets and scene diagnostics",
+      "exit_test": "Existing named Castle tests cover focused cellar passage and wall/door sockets"
+    },
+    {
+      "id": "F08",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Full 3D route sweeps and clearance matrix",
+      "exit_test": "Every required room and approach passes both directions, crouch/standing and locked/open doors"
+    },
+    {
+      "id": "F09",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Exact structural fit and mesh-overlap scanner",
+      "exit_test": "Check supports, wall/ceiling bleed, hanging fixtures, UV bleed and physical prop clearance"
+    },
+    {
+      "id": "F10",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Roof/terrain/water/light leak matrix",
+      "exit_test": "Capture and test day/night, ceiling closure, basement cuts, shoreline and sound separation"
+    },
+    {
+      "id": "F11",
+      "group": "Observation, verification and visual review",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "All-room acoustic and line-of-sight audit",
+      "exit_test": "Measure generated room/portal/sound graphs against actual scene and speakers"
+    },
+    {
+      "id": "F12",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Actual investigation encounter and AI test scenes",
+      "exit_test": "Evidentiary gameplay, ghost pursuit, rituals, cameras and objectives run on edited map"
+    },
+    {
+      "id": "F13",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Host/guest full-round acceptance for authored map",
+      "exit_test": "Multiplayer, case result, economy and next-load survive installed runtime"
+    },
+    {
+      "id": "F14",
+      "group": "Observation, verification and visual review",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Standard camera viewpoints and structured visual regression",
+      "exit_test": "Capture van arrival, each floor, exterior skyline, high point and critical room at stable angles"
+    },
+    {
+      "id": "F15",
+      "group": "Observation, verification and visual review",
+      "priority": "P1",
+      "status": "GATE",
+      "capability": "Measured in-game frame timing, memory and long-view cost",
+      "exit_test": "Record p50/p95/p99, loading/bake cost, render mode and real hardware results"
+    },
+    {
+      "id": "F16",
+      "group": "Observation, verification and visual review",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Defect ledger linkage with exact before/after evidence",
+      "exit_test": "Every failed check produces source ID, coordinates, error, severity and reproducer"
+    },
+    {
+      "id": "F17",
+      "group": "Observation, verification and visual review",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Automated diff review and visual-meaning scoring",
+      "exit_test": "Distinguish camera moves from geometry and detect clipping rather than merely changed pixels"
+    },
+    {
+      "id": "F18",
+      "group": "Observation, verification and visual review",
+      "priority": "P1",
+      "status": "GATE",
+      "capability": "Human visual/design acceptance",
+      "exit_test": "Reviewer accepts layout, composition, readable evidence, atmosphere and safety before promotion"
+    },
+    {
+      "id": "G01",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Opt-in authenticated loopback observation/edit scopes",
+      "exit_test": "Only authorized editor sessions can use the real scene; port closes with window"
+    },
+    {
+      "id": "G02",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Typed allowlisted command discovery and schema validation",
+      "exit_test": "MCP advertises only real host operations and rejects unsupported types/fields"
+    },
+    {
+      "id": "G03",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "One local Ollama-selected editor transaction",
+      "exit_test": "Bounded School pilot selected a real prop move, saved/reopened and captured pixels"
+    },
+    {
+      "id": "G04",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Structured natural-language map-build goal",
+      "exit_test": "Convert build-map brief into site identity, required functions, constraints and acceptance goals"
+    },
+    {
+      "id": "G05",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Planner with staged S00–S11 construction tasks",
+      "exit_test": "Decompose physical map build into dependency-ordered measurable construction and tests"
+    },
+    {
+      "id": "G06",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Semantic high-level scene commands",
+      "exit_test": "create-room, build-wall-run, cut-opening, make-stairs, place-service, place-prefab use trusted ops"
+    },
+    {
+      "id": "G07",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Read enough world/structure to plan",
+      "exit_test": "Expose room volumes, terrain/mesh faces, supports, sockets, doors, nav and referenced objects"
+    },
+    {
+      "id": "G08",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Observe–edit–test–critique–repair iteration loop",
+      "exit_test": "Agent reviews actual result and autonomously chooses the next verified edit or stops safely"
+    },
+    {
+      "id": "G09",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Bounded corrective replanning on failures",
+      "exit_test": "Failure is classified; command replans within same scene/constraints, not arbitrary code edits"
+    },
+    {
+      "id": "G10",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Objective progress scoring vs bookkeeping",
+      "exit_test": "Count changed geometry and real gameplay integration, not task names, reports or unchanged copies"
+    },
+    {
+      "id": "G11",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Model context/ability and cost controls",
+      "exit_test": "Report planner model, source fingerprint, prompt budget, latency, decisions and rejection rate"
+    },
+    {
+      "id": "G12",
+      "group": "Agent abilities, permissions and planning",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Escalation and human approval checkpoints",
+      "exit_test": "Unclear provenance, scope expansion, destructive changes and final map promotion require review"
+    },
+    {
+      "id": "H01",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Single-session scene revision and atomic edit history",
+      "exit_test": "One trusted scene owner applies each batch with stale revision rejection and rollback"
+    },
+    {
+      "id": "H02",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Native per-document save writer lock",
+      "exit_test": "Simultaneous conflicting saves reject rather than overwrite supported native files"
+    },
+    {
+      "id": "H03",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Durable map task queue and dependency DAG",
+      "exit_test": "Each work item has map ID, phase, inputs, owner, dependencies, artifact paths and state"
+    },
+    {
+      "id": "H04",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Per-map worker lease and one-writer rule",
+      "exit_test": "Never permit two independently editing processes to own one scene/revision"
+    },
+    {
+      "id": "H05",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Parallel independent map workers",
+      "exit_test": "Run two or more distinct site sessions in isolation with controlled resource budgets"
+    },
+    {
+      "id": "H06",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "capability": "Isolated disposable map workspace",
+      "exit_test": "Single School pilot uses an isolated temp home; extend to each concurrent map and shared source"
+    },
+    {
+      "id": "H07",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Shared asset-library version pins and cross-map locks",
+      "exit_test": "Model/texture changes coordinate all consuming maps and cannot silently mutate another task"
+    },
+    {
+      "id": "H08",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Task-level quotas and max-iteration budgets",
+      "exit_test": "Cap per-task commands, tokens, runtime, inference calls, memory and asset imports"
+    },
+    {
+      "id": "H09",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Persistent iteration checkpoints across runner restarts",
+      "exit_test": "Resume from verified scene revision, saved hashes and completed DAG nodes"
+    },
+    {
+      "id": "H10",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "PROVEN",
+      "capability": "Same-session request idempotency and retry receipts",
+      "exit_test": "Duplicate action with same sequence returns original result; wrong payload is rejected"
+    },
+    {
+      "id": "H11",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Cross-session retry and uncertain-write reconciliation",
+      "exit_test": "After reconnect, inspect authoritative scene/receipts before performing any non-idempotent action"
+    },
+    {
+      "id": "H12",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Branch and scene-file conflict reconciliation",
+      "exit_test": "Integrate concurrently completed work without force-push, silent overwrite or stale source commit"
+    },
+    {
+      "id": "H13",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P0",
+      "status": "GAP",
+      "capability": "Iterative concurrent acceptance fixture",
+      "exit_test": "Two maps, two task types, several edit/review rounds, failures injected, exact output checked"
+    },
+    {
+      "id": "H14",
+      "group": "Concurrent task allocation and recovery",
+      "priority": "P1",
+      "status": "GAP",
+      "capability": "Compact user-facing progress and intervention",
+      "exit_test": "Show tasks actually constructing, passing and blocked, plus reviewer actions and proofs"
+    },
+    {
+      "id": "I01",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "A complete Lighthouse first-principles pilot",
+      "exit_test": "WLD-14 tower, keeper house, covered passage, generator, cistern and coast physically built and reviewed"
+    },
+    {
+      "id": "I02",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "One real new mission map created entirely through agent operations",
+      "exit_test": "No hardcoded substitute geometry, renamed metadata or mock-only report counted"
+    },
+    {
+      "id": "I03",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "End-to-end source/renderer/collision/nav/rooms/acoustics parity",
+      "exit_test": "Each authored revision is consumed by gameplay and every required subsystem"
+    },
+    {
+      "id": "I04",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Independent input and integration test before merge",
+      "exit_test": "Source SHA, artifacts, original state, retries and build/launch/host acceptance recorded"
+    },
+    {
+      "id": "I05",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Human approval and version-safe promotion",
+      "exit_test": "Reviewed source is merged without force-push, old saves preserved, map appears in installed game"
+    },
+    {
+      "id": "I06",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Complete 29-location stage and acceptance register",
+      "exit_test": "28 bases plus annex remain distinct; counts never equate packets with finished maps"
+    },
+    {
+      "id": "I07",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P1",
+      "status": "GATE",
+      "capability": "Repeatable result under bounded resource usage",
+      "exit_test": "Repeated identical plan produces equivalent native scene/validation and controlled cost"
+    },
+    {
+      "id": "I08",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Fail closed on incomplete essential runtime behavior",
+      "exit_test": "A green construction check cannot override failed game launch, required multiplayer or updater"
+    },
+    {
+      "id": "I09",
+      "group": "Shipping, review gates and full-map confidence",
+      "priority": "P0",
+      "status": "GATE",
+      "capability": "Continuous error discovery and smaller next batch",
+      "exit_test": "Agent audits actual build/test evidence, fixes one class of defect and resumes only validated work"
+    }
+  ]
+}

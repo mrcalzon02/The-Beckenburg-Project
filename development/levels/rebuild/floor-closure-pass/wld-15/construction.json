@@ -1,0 +1,748 @@
+{
+  "id": "WLD-15",
+  "status": "FLOOR_CAP_RESTORATION_CANDIDATE_RUNTIME_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.glb",
+  "source_glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+  "source_physics": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.hcs2",
+  "source_physics_sha256": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3",
+  "layout": "development/levels/rebuild/wld-15/rough-layout.json",
+  "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+  "new_parts": 0,
+  "new_triangles": 0,
+  "restored_area_m2": 0,
+  "plates": [],
+  "decisions": [
+    {
+      "zone": "processing",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "route-13",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              24.0
+            ],
+            [
+              22.1,
+              34.0
+            ],
+            [
+              23.9,
+              34.0
+            ],
+            [
+              23.9,
+              24.0
+            ]
+          ]
+        },
+        {
+          "link": "route-14",
+          "segment": 0,
+          "polygon": [
+            [
+              34.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              1.9
+            ],
+            [
+              34.6,
+              1.9
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor processing",
+        "route-08 support 0",
+        "route-09 support 0",
+        "route-10 support 0",
+        "route-11 support 0",
+        "route-12 support 0",
+        "route-13 landing0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "processing",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [
+        {
+          "link": "route-17",
+          "segment": 1,
+          "polygon": [
+            [
+              23.9,
+              46.0
+            ],
+            [
+              23.9,
+              36.0
+            ],
+            [
+              22.1,
+              36.0
+            ],
+            [
+              22.1,
+              46.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap processing",
+        "Floor net",
+        "route-18 support 0",
+        "route-19 landing0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "galley",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "route-13",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              24.0
+            ],
+            [
+              22.1,
+              34.0
+            ],
+            [
+              23.9,
+              34.0
+            ],
+            [
+              23.9,
+              24.0
+            ]
+          ]
+        },
+        {
+          "link": "route-14",
+          "segment": 0,
+          "polygon": [
+            [
+              34.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              1.9
+            ],
+            [
+              34.6,
+              1.9
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor galley",
+        "route-06 support 0",
+        "route-07 support 0",
+        "route-08 support 0",
+        "route-09 support 0",
+        "route-12 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "galley",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [
+        {
+          "link": "route-17",
+          "segment": 1,
+          "polygon": [
+            [
+              23.9,
+              46.0
+            ],
+            [
+              23.9,
+              36.0
+            ],
+            [
+              22.1,
+              36.0
+            ],
+            [
+              22.1,
+              46.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor crew",
+        "route-17 landing2",
+        "route-18 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "mess",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "route-13",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              24.0
+            ],
+            [
+              22.1,
+              34.0
+            ],
+            [
+              23.9,
+              34.0
+            ],
+            [
+              23.9,
+              24.0
+            ]
+          ]
+        },
+        {
+          "link": "route-14",
+          "segment": 0,
+          "polygon": [
+            [
+              34.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              1.9
+            ],
+            [
+              34.6,
+              1.9
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor mess",
+        "route-06 support 0",
+        "route-07 support 0",
+        "route-08 support 0",
+        "route-09 support 0",
+        "route-12 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "mess",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [
+        {
+          "link": "route-17",
+          "segment": 1,
+          "polygon": [
+            [
+              23.9,
+              46.0
+            ],
+            [
+              23.9,
+              36.0
+            ],
+            [
+              22.1,
+              36.0
+            ],
+            [
+              22.1,
+              46.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor crew",
+        "route-18 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "engine",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor engine",
+        "route-13 landing2",
+        "route-16 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "engine",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "route-13",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              24.0
+            ],
+            [
+              22.1,
+              34.0
+            ],
+            [
+              23.9,
+              34.0
+            ],
+            [
+              23.9,
+              24.0
+            ]
+          ]
+        },
+        {
+          "link": "route-14",
+          "segment": 0,
+          "polygon": [
+            [
+              34.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              1.9
+            ],
+            [
+              34.6,
+              1.9
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor galley",
+        "Floor mess",
+        "Floor processing",
+        "route-06 support 0",
+        "route-07 support 0",
+        "route-08 support 0",
+        "route-09 support 0",
+        "route-12 support 0",
+        "route-13 landing0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hold",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor hold",
+        "route-15 support 0",
+        "route-16 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hold",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "route-13",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              24.0
+            ],
+            [
+              22.1,
+              34.0
+            ],
+            [
+              23.9,
+              34.0
+            ],
+            [
+              23.9,
+              24.0
+            ]
+          ]
+        },
+        {
+          "link": "route-14",
+          "segment": 0,
+          "polygon": [
+            [
+              34.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              1.9
+            ],
+            [
+              34.6,
+              1.9
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor fore.002",
+        "Floor fore.004",
+        "Floor fore.007",
+        "Floor processing",
+        "route-08 support 0",
+        "route-09 support 0",
+        "route-10 support 0",
+        "route-11 support 0",
+        "route-12 support 0",
+        "route-13 landing0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "pump",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor pump",
+        "route-15 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "pump",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "route-13",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              24.0
+            ],
+            [
+              22.1,
+              34.0
+            ],
+            [
+              23.9,
+              34.0
+            ],
+            [
+              23.9,
+              24.0
+            ]
+          ]
+        },
+        {
+          "link": "route-14",
+          "segment": 0,
+          "polygon": [
+            [
+              34.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              0.09999999999999998
+            ],
+            [
+              28.6,
+              1.9
+            ],
+            [
+              34.6,
+              1.9
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor fore",
+        "Floor fore.001",
+        "Floor fore.002",
+        "Floor fore.003",
+        "Floor fore.004",
+        "Floor fore.005",
+        "Floor fore.006",
+        "Floor fore.007",
+        "route-10 support 0",
+        "route-11 support 0",
+        "route-14 flight0 step17"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "crew",
+      "role": "floor",
+      "elevation": 3,
+      "actual_shafts": [
+        {
+          "link": "route-17",
+          "segment": 1,
+          "polygon": [
+            [
+              23.9,
+              46.0
+            ],
+            [
+              23.9,
+              36.0
+            ],
+            [
+              22.1,
+              36.0
+            ],
+            [
+              22.1,
+              46.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor crew",
+        "route-17 landing2",
+        "route-18 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "crew",
+      "role": "ceiling-cap",
+      "elevation": 6,
+      "actual_shafts": [
+        {
+          "link": "route-19",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              14.0
+            ],
+            [
+              22.1,
+              24.0
+            ],
+            [
+              23.9,
+              24.0
+            ],
+            [
+              23.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap crew"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "bridge",
+      "role": "floor",
+      "elevation": 6,
+      "actual_shafts": [
+        {
+          "link": "route-19",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              14.0
+            ],
+            [
+              22.1,
+              24.0
+            ],
+            [
+              23.9,
+              24.0
+            ],
+            [
+              23.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor bridge",
+        "route-19 landing2"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "bridge",
+      "role": "ceiling-cap",
+      "elevation": 9,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap bridge"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "net",
+      "role": "floor",
+      "elevation": 3,
+      "actual_shafts": [
+        {
+          "link": "route-17",
+          "segment": 1,
+          "polygon": [
+            [
+              23.9,
+              46.0
+            ],
+            [
+              23.9,
+              36.0
+            ],
+            [
+              22.1,
+              36.0
+            ],
+            [
+              22.1,
+              46.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor net",
+        "route-18 support 0",
+        "route-19 landing0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "net",
+      "role": "ceiling-cap",
+      "elevation": 6,
+      "actual_shafts": [
+        {
+          "link": "route-19",
+          "segment": 1,
+          "polygon": [
+            [
+              22.1,
+              14.0
+            ],
+            [
+              22.1,
+              24.0
+            ],
+            [
+              23.9,
+              24.0
+            ],
+            [
+              23.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap net"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    }
+  ],
+  "discarded_boundary_noise": [],
+  "retained_glb_resources": {
+    "original_static_resources_preserved": true,
+    "no_new_geometry": true
+  },
+  "glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+  "physics_sha256": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3",
+  "generator_sha256": "6effb668806dddf424cf37763d4115b2553afe829684efd5d5748b5dba0c5d1b",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-15-whole-site.png",
+      "sha256": "0e84557bdc571d3159ab828fb1f98afed53ae0923f79ffaf0081f7e7696d7002",
+      "type": "native full export overview"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-15-repaired-plates.png",
+      "sha256": "6b6c4024f15134ef80f7ff3cbf9d101df6874144cc55b6b49f88854e0c3232c1",
+      "type": "native isolated newly restored structural plates; context hidden for inspection"
+    }
+  ],
+  "remaining": "Independent exact export/solid/shaft/optical checks, continuous flat/stair regression, standing captures and whole-site structure/light/runtime/network/performance acceptance."
+}

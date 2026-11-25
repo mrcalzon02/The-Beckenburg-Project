@@ -1,0 +1,273 @@
+{
+  "exports": {
+    "blend": "7b60c61511386857e2296f2b37f75e8d6abfbfaf07b26036b6159b6baf95a368",
+    "glb": "fef1de7f0fd426305b22a89c9d8a11c3583e635e2a32731dc05eac6a70aa6d8e",
+    "hcs2": "6b4407d2bb1807127044085c9b1caa0fa049149621a12b10cf37d375a96f2920"
+  },
+  "retained_components": 1288,
+  "added_components": 28,
+  "items": [
+    {
+      "asset": "level_blockout_workbench",
+      "sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        [
+          49.674999,
+          0.0,
+          48.260002
+        ],
+        [
+          51.424999,
+          0.91,
+          49.040001
+        ]
+      ],
+      "pivot": [
+        50.54999923706055,
+        -0.029999999329447746,
+        48.650001525878906
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab",
+      "route_clearance_m": 2.675
+    },
+    {
+      "asset": "level_blockout_assay_balance",
+      "sha256": "54a7ee536d288597bf3274ee701214fe5acb7c1ff76e88e629e9d6628da6703f",
+      "bounds": [
+        [
+          50.634499,
+          0.9105,
+          48.504303
+        ],
+        [
+          51.245499,
+          1.3946,
+          48.7957
+        ]
+      ],
+      "pivot": [
+        50.939998626708984,
+        0.9105000495910645,
+        48.650001525878906
+      ],
+      "yaw": 0,
+      "scale": 0.47,
+      "support": [
+        "Mine case assay bench 01"
+      ],
+      "route_clearance_m": 3.6345
+    },
+    {
+      "asset": "level_story_letters",
+      "sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "bounds": [
+        [
+          50.148785,
+          0.9105,
+          48.594845
+        ],
+        [
+          50.291218,
+          0.92881,
+          48.705158
+        ]
+      ],
+      "pivot": [
+        50.21683883666992,
+        0.9102400541305542,
+        48.65013122558594
+      ],
+      "yaw": 0,
+      "scale": 0.52,
+      "support": [
+        "Mine case assay bench 01"
+      ],
+      "route_clearance_m": 3.1488
+    },
+    {
+      "asset": "level_blockout_workbench",
+      "sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        [
+          12.775,
+          0.0,
+          48.16
+        ],
+        [
+          14.525,
+          0.91,
+          48.939999
+        ]
+      ],
+      "pivot": [
+        13.649999618530273,
+        -0.029999999329447746,
+        48.54999923706055
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab",
+      "route_clearance_m": 4.5922
+    },
+    {
+      "asset": "level_event_phone_worn",
+      "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+      "bounds": [
+        [
+          13.878,
+          0.9105,
+          48.439999
+        ],
+        [
+          14.162001,
+          1.077619,
+          48.66
+        ]
+      ],
+      "pivot": [
+        14.020000457763672,
+        0.9105000495910645,
+        48.54999923706055
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": [
+        "Mine case crew dispatch bench 01"
+      ],
+      "route_clearance_m": 5.4992
+    },
+    {
+      "asset": "level_trace_journal",
+      "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+      "bounds": [
+        [
+          13.201699,
+          0.9105,
+          48.472
+        ],
+        [
+          13.4383,
+          0.93104,
+          48.627998
+        ]
+      ],
+      "pivot": [
+        13.319999694824219,
+        0.9105000495910645,
+        48.54999923706055
+      ],
+      "yaw": 0,
+      "scale": 0.52,
+      "support": [
+        "Mine case crew dispatch bench 01"
+      ],
+      "route_clearance_m": 5.102
+    },
+    {
+      "asset": "level_blockout_mine_hoist_winch",
+      "sha256": "dba4c62943354a9a8a9f7a35172150ba545deb46a3a454a530d1da3a71484592",
+      "bounds": [
+        [
+          51.417149,
+          -6.0,
+          10.285399
+        ],
+        [
+          53.222851,
+          -4.6701,
+          11.1746
+        ]
+      ],
+      "pivot": [
+        52.28684997558594,
+        -6.003900051116943,
+        10.729999542236328
+      ],
+      "yaw": 0,
+      "scale": 0.78,
+      "support": "measured existing slab",
+      "route_clearance_m": 3.7183
+    },
+    {
+      "asset": "level_blockout_cave_rockfall_heap",
+      "sha256": "79d392adfa43d4d72791b1d4ec75c3151789ade84cdf1852efa8b220ae5deb3c",
+      "bounds": [
+        [
+          52.013775,
+          -6.0,
+          8.98892
+        ],
+        [
+          53.386223,
+          -5.676,
+          10.03108
+        ]
+      ],
+      "pivot": [
+        52.696224212646484,
+        -6.0,
+        9.48165512084961
+      ],
+      "yaw": 0,
+      "scale": 0.6,
+      "support": "measured existing slab",
+      "route_clearance_m": 4.9835
+    },
+    {
+      "asset": "level_blockout_mine_sorting_bins",
+      "sha256": "44093dc23ad23648a077110af73b1200b64d72467a4b1b7d36fe7d529a1b2594",
+      "bounds": [
+        [
+          22.904001,
+          -6.0,
+          36.014
+        ],
+        [
+          25.336,
+          -4.968,
+          36.886002
+        ]
+      ],
+      "pivot": [
+        24.1200008392334,
+        -6.0,
+        36.45000076293945
+      ],
+      "yaw": 0,
+      "scale": 0.8,
+      "support": "measured existing slab",
+      "route_clearance_m": 3.215
+    },
+    {
+      "asset": "level_blockout_mine_pick_tool_rack",
+      "sha256": "d5e0de7e317c42b979f2f0a72d956ae0bcab1679fd245bb36178d04e41400484",
+      "bounds": [
+        [
+          3.6625,
+          0.0,
+          39.747002
+        ],
+        [
+          4.9375,
+          1.59375,
+          40.053001
+        ]
+      ],
+      "pivot": [
+        4.300000190734863,
+        -0.0042500002309679985,
+        39.900001525878906
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "support": "measured existing slab",
+      "route_clearance_m": 3.0625
+    }
+  ],
+  "records": [
+    "ASSAY_LEDGER",
+    "RESCUE_TALLY"
+  ]
+}

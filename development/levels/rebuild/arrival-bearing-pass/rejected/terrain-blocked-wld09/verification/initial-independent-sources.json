@@ -1,0 +1,402 @@
+{
+  "status": "PASS_SCOPED_SOURCE_NOT_MAP_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243",
+      "native_sha256": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+      "blend_sha256": "82181fef010e1528592ffb04800b0c261ba60f0907f8bdcdb851d568fc9fd383",
+      "source_contract_sha256": "8c04b3f8bde35f28a8331fafdc7f12abe44934a14360a709988e88e471891821",
+      "packed_images": 13,
+      "retained_native_parts": 627,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing ACADEMY 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "ASYLUM",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+      "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+      "blend_sha256": "fd10518f8d4dd3224dfa6029e857b5213ec2a676d2d94ffb0801faf7ebbd1092",
+      "source_contract_sha256": "ec7435865a974c4861790d5127d438c0a3bc227924a6998b7183ee63bdcfff2c",
+      "packed_images": 10,
+      "retained_native_parts": 685,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing ASYLUM 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "CHURCH",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7",
+      "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+      "blend_sha256": "8d6f3a0a08da7bceaa6ffba049681a40d4b280fccfd27e94296b6bf3ebff684d",
+      "source_contract_sha256": "de4b261c9ee3c010d2cff0cbb82a4f2c58035d8e906067e66227349b35d6bcfd",
+      "packed_images": 7,
+      "retained_native_parts": 360,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing CHURCH 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "COLLEGE",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+      "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+      "blend_sha256": "213456ca837a54a3ec51db37aa6408e0825f0774cabaa1aba64e19554c1595b7",
+      "source_contract_sha256": "074da9b3451b22481298dedeced8fbf7498dfb7c8492e8d1733891f7fffcaff4",
+      "packed_images": 10,
+      "retained_native_parts": 834,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing COLLEGE 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "388ac64c2d6dfb1438d877c072d35b187d11a27eff2087b3ee1d87f6df4874fe",
+      "native_sha256": "f668b6cbb16efdb3958f5fb23ae227442bdf33a04051e6bb5868e1e53292013d",
+      "blend_sha256": "8cf1c84661eb7889622a96450053050e9520cb226fe23556fc6c6ebb6d4565f4",
+      "source_contract_sha256": "d800deb4f3f10b5f1a6686121ecd3b0e864fe8737732dc35b1393a1223c0e975",
+      "packed_images": 10,
+      "retained_native_parts": 414,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing FARMHOUSE 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "MANSION",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+      "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+      "blend_sha256": "4681afc2cd919ba8d13942f78cb9c653eb95518a7f7080f5aa51b567d1a851d3",
+      "source_contract_sha256": "2900fcb736176889d6b3c88fc40de09492a807108cfb3591a33b0cf47958caa2",
+      "packed_images": 12,
+      "retained_native_parts": 589,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing MANSION 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "PRISON",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+      "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+      "blend_sha256": "84ebdcf234547bc3ac31448c2be3ee87676072e7fa0c436088f7b5e7193f39a0",
+      "source_contract_sha256": "9be1b8fa5a43d7ec9ee0606f648fb6d72efee071d58b44815262ad551d276b67",
+      "packed_images": 7,
+      "retained_native_parts": 901,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing PRISON 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "SCHOOL",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+      "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+      "blend_sha256": "6e9787493a3f25334f0ec8af3fafe8fd29bf68535c7f5e0166ab2b93c0bd0f36",
+      "source_contract_sha256": "8cd23efdde3fe0da20838e38cfefb04c3679680c80e087bf1b00b7d7acfd068e",
+      "packed_images": 11,
+      "retained_native_parts": 438,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing SCHOOL 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-03",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+      "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+      "blend_sha256": "ef9f0b1898563fe52e499f4006e792ae0cc6d9ab7dbda5bde1532bf2c933b6c3",
+      "source_contract_sha256": "76094d241d0dc97ffd0fddced916bdeeae5b0bb3e56ffbf16e2795791b30b402",
+      "packed_images": 12,
+      "retained_native_parts": 201,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-03 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-04",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+      "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0",
+      "blend_sha256": "e108900e8105cefb4f05598c98f97dc2635f95004f86b646b7593c910da4ea93",
+      "source_contract_sha256": "6a5dc4ca85eaa9fd95e47c01abaa72999a3c41da82837a96e8e0c83e5cb28124",
+      "packed_images": 6,
+      "retained_native_parts": 284,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-04 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-05",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "f7ffd6d8cef1cfe3b114b33ceeb5308946690c1992288af0e3dca6e1c2c2ca5c",
+      "native_sha256": "9d82c6c1a087a9074e57dffef7bc034f5d3386aa960914327760f41ce434c1e2",
+      "blend_sha256": "9eebf20c790fbc8ad3d262554a052c7aca765edc61716e4160374a0e9c8104b7",
+      "source_contract_sha256": "100bb8a7e76b92ed0e18bf0a8e422e078fb98847f5cdf468d14e8838da8b2027",
+      "packed_images": 12,
+      "retained_native_parts": 281,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-05 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-06",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8",
+      "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+      "blend_sha256": "604936b90ddbfa85bf53dd0f1cdd10b9d6a81b994d960a78cc54b7ddca79bc1c",
+      "source_contract_sha256": "a5e6bcf049806f194cd98cde3089d4bb73826186e9148c7179a42eee1db44b4c",
+      "packed_images": 9,
+      "retained_native_parts": 383,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-06 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-08",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "8d8ed465a39e9310a2c5908377338efa62d55ac9a026842910cd446a2576d45f",
+      "native_sha256": "705681e346e1447d24dff4ea01a9130945d4a230934aa770f99ee7efe051b25e",
+      "blend_sha256": "560e832f904eb3f3872b9faf8d67f6279873afb61ea95eb1817a15355e60a802",
+      "source_contract_sha256": "c98d4e5f9714e7dade0d8a99644ea6b85c37ee57722c93074c0d65787709be55",
+      "packed_images": 14,
+      "retained_native_parts": 259,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-08 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-09",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "d5c5561100ac317da15b28e728a6f359628d9cc058589cf0186e0958cbb8ccce",
+      "native_sha256": "a0fdb46c31f984633f6436879539c906a0b4c1310fcb91982fd85b61f5a68f43",
+      "blend_sha256": "7fbc780d001c095d0c565858d114bd26da16dd3a3fad00e053666fd6bfa324d5",
+      "source_contract_sha256": "9b1bdde94983929de236c57a88dea175df3825199e064d7d143fb2f62e11c904",
+      "packed_images": 12,
+      "retained_native_parts": 314,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-09 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-10",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "ac976befb5199a73d530e329b32d61a103f84d47c6629faaab9c6d80f3dc7e36",
+      "native_sha256": "4993026e84e4b9d1aca2f15dcec72e7e0ca7ad9a594e3bff5ec8cb466f393dc0",
+      "blend_sha256": "a75afaa763373c9a1c6a95f5220c53b24137dcb3778314e8a8965614badf28b8",
+      "source_contract_sha256": "bda0ecbe847647920f672a0cdb78328d799d63c862b73fb511417e2c2dcc76c5",
+      "packed_images": 9,
+      "retained_native_parts": 357,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-10 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-11",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b",
+      "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+      "blend_sha256": "6a68bcaee4f760f832728c99fcd1fba346e539f7b41a09c711f4fea6a6407d80",
+      "source_contract_sha256": "d7d1b67744fb855913abe4dd847bfcd1f07cf5317e5bdb4298b77ab69c9412fd",
+      "packed_images": 6,
+      "retained_native_parts": 360,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-11 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-12",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c",
+      "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+      "blend_sha256": "0f8abd0e2445231a1dd15fa999ce853569be73411d0f893298f689087ff9d016",
+      "source_contract_sha256": "d0ef3e3b645528f9a01b95ed62616695398e002007ed99b6c2f57f1459b15143",
+      "packed_images": 9,
+      "retained_native_parts": 197,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-12 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-13",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "710ccc729436a7522495bfd0092db38ec2c52c9dddb091da1fde0ad4a412539a",
+      "native_sha256": "89e9da35994a7d6aa371d09f4ab40591090c6ff5efb56c338d124d5674daf457",
+      "blend_sha256": "7b3bec81bc736fa99b6eb4f0182f7d100bbdcd5a248f851cb9ecf0103241e3ea",
+      "source_contract_sha256": "bc35499ccd94edd55f9d17307e943cd63ae8e0ea3f2696dc5210ffbb4f5a68c9",
+      "packed_images": 11,
+      "retained_native_parts": 213,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-13 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-14",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+      "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+      "blend_sha256": "1291b22cb4c1bf450d3325a5a8b2fd8ddf8e30b38f326749c572ff6601840661",
+      "source_contract_sha256": "30205f075de4adf2adc51fe5e2a15f7c1e27d84f76f0f098b803b61c8a81b278",
+      "packed_images": 9,
+      "retained_native_parts": 695,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-14 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-16",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c",
+      "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+      "blend_sha256": "e7591c3410facd36ffbdd324ff54d0264f0eb8b9ecac1645c59cfa619a5614fb",
+      "source_contract_sha256": "e03cb9a3c891b1b9946436cf1156b60f0a7621381148af363c2ef8544a02aaec",
+      "packed_images": 10,
+      "retained_native_parts": 230,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-16 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-17",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+      "blend_sha256": "e600b705928487da7359ff398961f70eaade50ba81e8a3ff412ff1e12dcf0668",
+      "source_contract_sha256": "3cbb4435a2c82b751dc81be6d5a9a15ce99173f9303226066c3d49dd12557a0f",
+      "packed_images": 11,
+      "retained_native_parts": 256,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-17 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "7bd52a27880d366df6d70eaf3653fb5aee8cea6dcd241bddcf2f870fef6ddb0c",
+      "native_sha256": "3ca38ad737d20d6ec6cead7d75493d91ec43dc53f47af29a8d25ab5bbb5063d6",
+      "blend_sha256": "eb62c9477856a4803116b8dc003ec139a8f1bf4fabfa120f8c90abdeed17685c",
+      "source_contract_sha256": "adebc0458308a8b7066d486050da1ed81307b4951bbcbb7de92051131b2f5550",
+      "packed_images": 13,
+      "retained_native_parts": 329,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-18 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    }
+  ],
+  "checker_sha256": "70f945662dd84fd0d7c2aa773ac6215733fb274bd6fd6eaa9dd4aa6c4a1daff2"
+}

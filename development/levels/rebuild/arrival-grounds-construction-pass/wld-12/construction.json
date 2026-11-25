@@ -1,0 +1,779 @@
+{
+  "id": "WLD-12",
+  "status": "SAVED_GEOGRAPHIC_EARTHWORKS_CONSTRUCTION_RUNTIME_OPEN",
+  "source_glb": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.glb",
+  "source_glb_sha256": "b56720f8730c695a2c96c0de344a46c8041ca4469977d100e38503fbd1de3ac2",
+  "source_physics": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.hcs2",
+  "source_physics_sha256": "e18d1e85a3860eb0b6fac4fd19e46a4822f1a798f9ca83e239d4f67d1d6e683d",
+  "before_layout": "development/levels/rebuild/constant-flight-construction-pass/wld-12/authored-layout.json",
+  "before_layout_sha256": "543af34cff497cbbf40574c22c250267a342ae32fdaf05be3b620d7bee280e99",
+  "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/authored-layout.json",
+  "layout_sha256": "1604f1a01f7088c425be0193a9905e13e175c2905bad9acff37912b981480389",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "2": 0
+    },
+    "L17": {
+      "3": 0
+    },
+    "L18": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "2": 0
+    },
+    "L17": {
+      "3": 0
+    },
+    "L18": {}
+  },
+  "before_stair_components": [
+    "WLD-12 L16 constant tread 0 region0",
+    "WLD-12 L16 constant tread 1 region0",
+    "WLD-12 L16 constant tread 2 region0",
+    "WLD-12 L16 constant tread 3 region0",
+    "WLD-12 L16 constant tread 4 region0",
+    "WLD-12 L16 constant tread 5 region0",
+    "WLD-12 L16 constant tread 6 region0",
+    "WLD-12 L16 constant tread 7 region0",
+    "WLD-12 L16 constant tread 8 region0",
+    "WLD-12 L16 constant tread 9 region0",
+    "WLD-12 L16 constant tread 10 region0",
+    "WLD-12 L16 constant tread 11 region0",
+    "WLD-12 L16 constant tread 12 region0",
+    "WLD-12 L16 constant tread 13 region0",
+    "WLD-12 L16 constant tread 14 region0",
+    "WLD-12 L16 constant tread 15 region0",
+    "WLD-12 L16 constant tread 16 region0",
+    "WLD-12 L17 constant tread 0 region0",
+    "WLD-12 L17 constant tread 1 region0",
+    "WLD-12 L17 constant tread 2 region0",
+    "WLD-12 L17 constant tread 3 region0",
+    "WLD-12 L17 constant tread 4 region0",
+    "WLD-12 L17 constant tread 5 region0",
+    "WLD-12 L17 constant tread 6 region0",
+    "WLD-12 L17 constant tread 7 region0",
+    "WLD-12 L17 constant tread 8 region0",
+    "WLD-12 L17 constant tread 9 region0",
+    "WLD-12 L17 constant tread 10 region0",
+    "WLD-12 L17 constant tread 11 region0",
+    "WLD-12 L17 constant tread 12 region0",
+    "WLD-12 L17 constant tread 13 region0",
+    "WLD-12 L17 constant tread 14 region0",
+    "WLD-12 L17 constant tread 15 region0",
+    "WLD-12 L17 constant tread 16 region0",
+    "WLD-12 L17 constant tread 17 region0"
+  ],
+  "stair_components": [
+    "WLD-12 L16 constant tread 0 region0",
+    "WLD-12 L16 constant tread 1 region0",
+    "WLD-12 L16 constant tread 2 region0",
+    "WLD-12 L16 constant tread 3 region0",
+    "WLD-12 L16 constant tread 4 region0",
+    "WLD-12 L16 constant tread 5 region0",
+    "WLD-12 L16 constant tread 6 region0",
+    "WLD-12 L16 constant tread 7 region0",
+    "WLD-12 L16 constant tread 8 region0",
+    "WLD-12 L16 constant tread 9 region0",
+    "WLD-12 L16 constant tread 10 region0",
+    "WLD-12 L16 constant tread 11 region0",
+    "WLD-12 L16 constant tread 12 region0",
+    "WLD-12 L16 constant tread 13 region0",
+    "WLD-12 L16 constant tread 14 region0",
+    "WLD-12 L16 constant tread 15 region0",
+    "WLD-12 L16 constant tread 16 region0",
+    "WLD-12 L17 constant tread 0 region0",
+    "WLD-12 L17 constant tread 1 region0",
+    "WLD-12 L17 constant tread 2 region0",
+    "WLD-12 L17 constant tread 3 region0",
+    "WLD-12 L17 constant tread 4 region0",
+    "WLD-12 L17 constant tread 5 region0",
+    "WLD-12 L17 constant tread 6 region0",
+    "WLD-12 L17 constant tread 7 region0",
+    "WLD-12 L17 constant tread 8 region0",
+    "WLD-12 L17 constant tread 9 region0",
+    "WLD-12 L17 constant tread 10 region0",
+    "WLD-12 L17 constant tread 11 region0",
+    "WLD-12 L17 constant tread 12 region0",
+    "WLD-12 L17 constant tread 13 region0",
+    "WLD-12 L17 constant tread 14 region0",
+    "WLD-12 L17 constant tread 15 region0",
+    "WLD-12 L17 constant tread 16 region0",
+    "WLD-12 L17 constant tread 17 region0"
+  ],
+  "removed_source_meshes": [
+    "Bayed stair WLD-12 L17 step1",
+    "Bayed stair WLD-12 L17 step2",
+    "Bayed stair WLD-12 L17 step3",
+    "Bayed stair WLD-12 L17 step4",
+    "Bayed stair WLD-12 L17 step5",
+    "Bayed stair WLD-12 L17 step6",
+    "Bayed stair WLD-12 L17 step7",
+    "Bayed stair WLD-12 L17 step8",
+    "Bayed stair WLD-12 L17 step9",
+    "Bayed stair WLD-12 L17 step10",
+    "Bayed stair WLD-12 L17 step11",
+    "Bayed stair WLD-12 L17 step12",
+    "Bayed stair WLD-12 L17 step13",
+    "Bayed stair WLD-12 L17 step14",
+    "Bayed stair WLD-12 L17 step15",
+    "Bayed stair WLD-12 L17 step16",
+    "Bayed stair WLD-12 L17 step17",
+    "Bayed shell Floor lower"
+  ],
+  "removed_native_parts": [
+    "Supported guard WLD-12 L17 1 -1 0",
+    "Supported guard WLD-12 L17 1 -1 1",
+    "Supported guard WLD-12 L17 1 -1 2",
+    "Supported guard WLD-12 L17 1 -1 3",
+    "Supported guard WLD-12 L17 1 -1 4",
+    "Supported guard WLD-12 L17 1 -1 5",
+    "Supported guard WLD-12 L17 1 -1 6",
+    "Supported guard WLD-12 L17 1 -1 7",
+    "Side stringer WLD-12 L17 -1",
+    "Supported guard WLD-12 L17 1 1 0",
+    "Supported guard WLD-12 L17 1 1 1",
+    "Supported guard WLD-12 L17 1 1 2",
+    "Supported guard WLD-12 L17 1 1 3",
+    "Supported guard WLD-12 L17 1 1 4",
+    "Supported guard WLD-12 L17 1 1 5",
+    "Supported guard WLD-12 L17 1 1 6",
+    "Supported guard WLD-12 L17 1 1 7",
+    "Side stringer WLD-12 L17 1"
+  ],
+  "new_parts": 26,
+  "new_triangles": 396,
+  "restored_shaft_parts": [
+    "Restored bay WLD-12 trestle floor region0.001"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Bayed shell Floor lower",
+      "new_mesh": "Bayed shell Bayed shell Floor lower",
+      "removed_volume_m3": 0.29936833520966744
+    }
+  ],
+  "design": {
+    "points": {
+      "L17": [
+        [
+          31,
+          -3,
+          32
+        ],
+        [
+          31,
+          -3,
+          38
+        ],
+        [
+          13,
+          0,
+          38
+        ],
+        [
+          11,
+          0,
+          38
+        ],
+        [
+          11,
+          0,
+          42
+        ]
+      ]
+    },
+    "build": [
+      "L17"
+    ],
+    "shared": {},
+    "reason": "Railway: straight transverse return stair ends on a level west-side landing before the north/south return path; no diagonal ascent across the trestle approach.",
+    "preserve_upper_hubs": false
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2907148,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      184,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234
+    ]
+  },
+  "glb_sha256": "b68741246303506eb5b0b8323cd15439e33339c6b1ec6c3995ba802465ad342d",
+  "physics_sha256": "767eb0fec3da9f95b1831d49d06b665b2904be7f489bd828e481ff21348e8b77",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Guard returns/end enclosures, complete landing perimeter protection, source-terrain/water/shore interfaces, remaining flat routes and actual runtime geometry/room/portal/acoustic/spawn/service integration remain open. Native movement is not runtime acceptance. Original saved terrain-hole data is unchanged.",
+  "guard_flights": [
+    {
+      "link": "L17",
+      "segment": 1,
+      "width": 2,
+      "bay_count_per_side": 9,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    }
+  ],
+  "new_guard_parts": 58,
+  "flared_wing_parts": 38,
+  "end_builder_sha256": "475667f39ca83a77fd0c8136f1b5b42ec64c9f9e7baf60c94da0df2c2a30c3b7",
+  "source_contract": "development/levels/rebuild/constant-flight-construction-pass/wld-12/construction.json",
+  "blend_sha256": "f3421a4d3d1a51d47e1b9a5939e77759997109cf45e9e0f7fcf9a3e1f6ff2e4a",
+  "constant_flights": [
+    {
+      "platform": [
+        [
+          10,
+          36
+        ],
+        [
+          16,
+          36
+        ],
+        [
+          16,
+          44.5
+        ],
+        [
+          10,
+          44.5
+        ]
+      ],
+      "soil_receivers": [
+        {
+          "x": 10.3,
+          "z": 44.75,
+          "soil_y": -0.35000038146972656,
+          "bottom_y": -0.7000003814697265
+        },
+        {
+          "x": 15.7,
+          "z": 44.75,
+          "soil_y": -0.11322593688964844,
+          "bottom_y": -0.4632259368896484
+        }
+      ],
+      "construction": "Area service platform on south native-soil-founded piles and continuous bearings into retaining walls; high uphill edge held by real retaining parapets; separate from constant treads"
+    },
+    {
+      "link": "L16",
+      "from_point": [
+        28,
+        0,
+        32.3
+      ],
+      "to_point": [
+        28,
+        -3,
+        28
+      ],
+      "gross_width": 1.8,
+      "nominal_clear_width": 1.5,
+      "risers": 17,
+      "regular_rise": 0.17647058823529413,
+      "constant_tread_depth": 0.25294117647058806
+    },
+    {
+      "link": "L17",
+      "from_point": [
+        31,
+        -3,
+        38
+      ],
+      "to_point": [
+        13,
+        0,
+        38
+      ],
+      "gross_width": 1.8,
+      "nominal_clear_width": 1.5,
+      "risers": 18,
+      "regular_rise": 0.16666666666666666,
+      "constant_tread_depth": 1.0
+    }
+  ],
+  "removed_flared_or_conflicting_parts": [
+    "Arrival end bearing WLD-12 0",
+    "Authored stair end WLD-12 L16 0 high region0",
+    "Authored stair end WLD-12 L17 0 high region0",
+    "Bay landing WLD-12 L16 7 region0",
+    "Bay landing WLD-12 L17 2 region0",
+    "Bay landing WLD-12 L17 2 region1",
+    "Bay landing WLD-12 L17 2 region2",
+    "Bay landing WLD-12 L17 6 region0",
+    "Bay landing WLD-12 L17 6 region1",
+    "Bay landing WLD-12 L17 6 region2",
+    "Bay landing WLD-12 L17 6 region3",
+    "Bayed shell Bayed shell Floor lower",
+    "Bayed shell Floor trestle.001",
+    "Bayed stair WLD-12 L16 step0",
+    "Bayed stair WLD-12 L16 step1",
+    "Bayed stair WLD-12 L16 step10",
+    "Bayed stair WLD-12 L16 step11",
+    "Bayed stair WLD-12 L16 step12",
+    "Bayed stair WLD-12 L16 step13",
+    "Bayed stair WLD-12 L16 step14",
+    "Bayed stair WLD-12 L16 step15",
+    "Bayed stair WLD-12 L16 step16",
+    "Bayed stair WLD-12 L16 step17",
+    "Bayed stair WLD-12 L16 step18",
+    "Bayed stair WLD-12 L16 step19",
+    "Bayed stair WLD-12 L16 step2",
+    "Bayed stair WLD-12 L16 step20",
+    "Bayed stair WLD-12 L16 step21",
+    "Bayed stair WLD-12 L16 step3",
+    "Bayed stair WLD-12 L16 step4",
+    "Bayed stair WLD-12 L16 step5",
+    "Bayed stair WLD-12 L16 step6",
+    "Bayed stair WLD-12 L16 step7",
+    "Bayed stair WLD-12 L16 step8",
+    "Bayed stair WLD-12 L16 step9",
+    "Bayed stair WLD-12 L17 step0",
+    "End-flared guard WLD-12 L17 1 -1 1",
+    "End-flared guard WLD-12 L17 1 -1 2",
+    "End-flared guard WLD-12 L17 1 -1 3",
+    "End-flared guard WLD-12 L17 1 -1 4",
+    "End-flared guard WLD-12 L17 1 -1 5",
+    "End-flared guard WLD-12 L17 1 -1 6",
+    "End-flared guard WLD-12 L17 1 -1 7",
+    "End-flared guard WLD-12 L17 1 1 1",
+    "End-flared guard WLD-12 L17 1 1 2",
+    "End-flared guard WLD-12 L17 1 1 3",
+    "End-flared guard WLD-12 L17 1 1 4",
+    "End-flared guard WLD-12 L17 1 1 5",
+    "End-flared guard WLD-12 L17 1 1 6",
+    "End-flared guard WLD-12 L17 1 1 7",
+    "Flared stringer WLD-12 L17 -1 0",
+    "Flared stringer WLD-12 L17 -1 1.6",
+    "Flared stringer WLD-12 L17 -1 16.4",
+    "Flared stringer WLD-12 L17 1 0",
+    "Flared stringer WLD-12 L17 1 1.6",
+    "Flared stringer WLD-12 L17 1 16.4",
+    "Flared tread WLD-12 L17 -1 0 region0",
+    "Flared tread WLD-12 L17 -1 1 region0",
+    "Flared tread WLD-12 L17 -1 10 region0",
+    "Flared tread WLD-12 L17 -1 11 region0",
+    "Flared tread WLD-12 L17 -1 12 region0",
+    "Flared tread WLD-12 L17 -1 13 region0",
+    "Flared tread WLD-12 L17 -1 14 region0",
+    "Flared tread WLD-12 L17 -1 15 region0",
+    "Flared tread WLD-12 L17 -1 16 region0",
+    "Flared tread WLD-12 L17 -1 17 region0",
+    "Flared tread WLD-12 L17 -1 18 region0",
+    "Flared tread WLD-12 L17 -1 2 region0",
+    "Flared tread WLD-12 L17 -1 3 region0",
+    "Flared tread WLD-12 L17 -1 4 region0",
+    "Flared tread WLD-12 L17 -1 5 region0",
+    "Flared tread WLD-12 L17 -1 6 region0",
+    "Flared tread WLD-12 L17 -1 7 region0",
+    "Flared tread WLD-12 L17 -1 8 region0",
+    "Flared tread WLD-12 L17 -1 9 region0",
+    "Flared tread WLD-12 L17 1 19 region0",
+    "Flared tread WLD-12 L17 1 20 region0",
+    "Flared tread WLD-12 L17 1 21 region0",
+    "Flared tread WLD-12 L17 1 22 region0",
+    "Flared tread WLD-12 L17 1 23 region0",
+    "Flared tread WLD-12 L17 1 24 region0",
+    "Flared tread WLD-12 L17 1 25 region0",
+    "Flared tread WLD-12 L17 1 26 region0",
+    "Flared tread WLD-12 L17 1 27 region0",
+    "Flared tread WLD-12 L17 1 28 region0",
+    "Flared tread WLD-12 L17 1 29 region0",
+    "Flared tread WLD-12 L17 1 30 region0",
+    "Flared tread WLD-12 L17 1 31 region0",
+    "Flared tread WLD-12 L17 1 32 region0",
+    "Flared tread WLD-12 L17 1 33 region0",
+    "Flared tread WLD-12 L17 1 34 region0",
+    "Flared tread WLD-12 L17 1 35 region0",
+    "Flared tread WLD-12 L17 1 36 region0",
+    "Flared tread WLD-12 L17 1 37 region0",
+    "Floor trestle",
+    "Floor trestle.002",
+    "Floor trestle.003",
+    "Floor trestle.004",
+    "Floor trestle.005",
+    "Floor trestle.006",
+    "Floor trestle.007",
+    "Floor trestle.008",
+    "Indoor route bearing WLD-12 lower L16 3 region0",
+    "Indoor route bearing WLD-12 lower L17 0 region0",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L03 support 1",
+    "L04 support 0",
+    "L05 support 0",
+    "L06 support 1",
+    "L07 support 0",
+    "L07 support 1",
+    "L08 support 0",
+    "L09 support 1",
+    "L10 support 0",
+    "L10 support 1",
+    "L13 support 1",
+    "L14 support 0",
+    "L15 support 0",
+    "L15 support 1",
+    "L18 support 0",
+    "Orthogonal stair WLD-12 L17 step0",
+    "Orthogonal stair WLD-12 L17 step1",
+    "Orthogonal stair WLD-12 L17 step10",
+    "Orthogonal stair WLD-12 L17 step11",
+    "Orthogonal stair WLD-12 L17 step12",
+    "Orthogonal stair WLD-12 L17 step13",
+    "Orthogonal stair WLD-12 L17 step14",
+    "Orthogonal stair WLD-12 L17 step15",
+    "Orthogonal stair WLD-12 L17 step16",
+    "Orthogonal stair WLD-12 L17 step17",
+    "Orthogonal stair WLD-12 L17 step18",
+    "Orthogonal stair WLD-12 L17 step19",
+    "Orthogonal stair WLD-12 L17 step2",
+    "Orthogonal stair WLD-12 L17 step3",
+    "Orthogonal stair WLD-12 L17 step4",
+    "Orthogonal stair WLD-12 L17 step5",
+    "Orthogonal stair WLD-12 L17 step6",
+    "Orthogonal stair WLD-12 L17 step7",
+    "Orthogonal stair WLD-12 L17 step8",
+    "Orthogonal stair WLD-12 L17 step9",
+    "Restored bay WLD-12 trestle floor region0",
+    "Restored bay WLD-12 trestle floor region0.001",
+    "Restored bay WLD-12 trestle floor region1",
+    "Retained upper hub WLD-12 L17 2 region0",
+    "Retained upper hub WLD-12 L17 2 region1",
+    "Retained upper hub WLD-12 L17 3 region0",
+    "Retained upper hub WLD-12 L17 3 region1",
+    "Saved editor stair bench terrain WLD-12"
+  ],
+  "saved_world": "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/adaptive-topology.bin": "0b819d9108bc00c1f57140cde8725965c007f836e155528721589a07ff68d169",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/authored-cuts.tsv": "c8cd27f884e2709001922bfc0772b11474dab45b48a547212c709a2e347cc28e",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/authored-path-grading.sha256": "7887a5954f43125cd2083ba2a95f871e184f910a029bae189df8b66c5b17f526",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/earthworks-verification.json": "3c0c5d5c9664d89e2a8aad0f0513e6e47ca2bb0f6d823e7cf348e4791138f439",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/source-provenance.json": "19d11f90daf0b252c816776255d5959d81c5f78edc57c9cd1b43f992a51e2876",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/stair-cell-punch-verification.json": "3927198e6fc0cb8dd02c578339ff666ef94d65adfc11da8c5e9f5a97284de8c9",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2": "946264509a68265fcdbe5e2941ae4c759ff970df4c657b2b8980fc0d0f3eaf40",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/verification.json": "3c0c5d5c9664d89e2a8aad0f0513e6e47ca2bb0f6d823e7cf348e4791138f439",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous": "6511b544e5812027ac2204dd7a2b8c243cf5bcc5c259763accbc840f283b7a02",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/scene-package/scene.bin": "849ef6c3941c58e15563b2d03c39937a16c3fb83639468ee7ac70c9eb7749485",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj": "8e36661f0235454e117a92038ce9c870649f06c925b8e75a124050ecc72516ac",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj": "7a6972fa932983f54140182b82092bb8364877164653dcaa1fedffed1afa0c85",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj": "af566a262b478f7565fb9ca421dc89a174916907a2710e37690b6ca98f126de5",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj": "ad4b9d0066c77f9f84237f3e8726781fac6734319ff73d09075ce07cf0f7f3a9",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin": "dd9a5e52007c942b9990e772641200fe24eb1cd566048e05efc402fcf48119c6"
+  },
+  "cell_builder": "tools/build_constant_flight_cells.py",
+  "cell_builder_sha256": "e4d9682ce316c5d280cf31ea3e839c2304b79a47bca447784f33cb2bb9ae6c7b",
+  "terrain_punch_builder": "tools/java/RebuildStairCellPunches.java",
+  "terrain_punch_builder_sha256": "57288fc8976428f996f625bcfe2b44e0b7777e115eefe8848b1b72ca088b6455",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/arrival-grounds-construction-batch/wld-12.png",
+      "sha256": "a5a5533266c1e4fdf410aa9e05ed133f0e7ba2d10264a54da36cfadb77b7031f",
+      "type": "native exported actual saved terrain earthworks with roof cutaway; not gameplay"
+    }
+  ],
+  "program_files_sha256": {
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-12/features.tsv": "bc418cf2379f9aacea9b778d3a0baf0dddc15ab50eb1629258db3cffc7859cf8",
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-12/protected-rooms.tsv": "d61a20f13da6fe7ebb1e9555e407c0a21d1c71ad555d0f5fd422685e121b56a5",
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-12/saved-grid.tsv": "e801c26946184a6bb3a8dcfaa0a39398e9061a32ee4bdeba2847cc3e672d9428",
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-12/underlays.tsv": "43188e624e5c66f36cc84a452db80dfe331dd64d5d613e37e1717d5ae529b417"
+  },
+  "approach_structure_parts": [
+    "WLD-12 maintenance platform south entry return 0",
+    "WLD-12 maintenance platform south entry return 1",
+    "WLD-12 east trestle founded approach abutment region0",
+    "WLD-12 east trestle full-width approach deck region0",
+    "WLD-12 east trestle approach edge guard 30.14",
+    "WLD-12 east trestle approach edge guard 34.86",
+    "WLD-12 founded north trestle approach abutment region0",
+    "WLD-12 north trestle approach deck edge region0"
+  ],
+  "removed_platform_guards": [
+    "WLD-12 constant-cell guard platform south edge 0",
+    "WLD-12 constant-cell guard platform south edge 1",
+    "WLD-12 constant-cell guard platform south edge 2"
+  ],
+  "approach_soil_receivers": [
+    {
+      "x": 28.25,
+      "z": 43.8,
+      "soil_y": -0.032932281494140625
+    },
+    {
+      "x": 28.25,
+      "z": 44.75,
+      "soil_y": 0.0
+    },
+    {
+      "x": 28.25,
+      "z": 45.75,
+      "soil_y": 0.0
+    },
+    {
+      "x": 34,
+      "z": 43.8,
+      "soil_y": -0.03579139709472656
+    },
+    {
+      "x": 34,
+      "z": 44.75,
+      "soil_y": 0.0
+    },
+    {
+      "x": 34,
+      "z": 45.75,
+      "soil_y": 0.0
+    },
+    {
+      "x": 39.75,
+      "z": 43.8,
+      "soil_y": 0.0
+    },
+    {
+      "x": 39.75,
+      "z": 44.75,
+      "soil_y": 0.0
+    },
+    {
+      "x": 39.75,
+      "z": 45.75,
+      "soil_y": 0.0
+    },
+    {
+      "x": 42.6,
+      "z": 30.1,
+      "soil_y": 0.0
+    },
+    {
+      "x": 42.6,
+      "z": 32.5,
+      "soil_y": 0.0
+    },
+    {
+      "x": 42.6,
+      "z": 34.9,
+      "soil_y": 0.0
+    },
+    {
+      "x": 43.25,
+      "z": 30.1,
+      "soil_y": 0.0
+    },
+    {
+      "x": 43.25,
+      "z": 32.5,
+      "soil_y": 0.0
+    },
+    {
+      "x": 43.25,
+      "z": 34.9,
+      "soil_y": 0.0
+    },
+    {
+      "x": 43.9,
+      "z": 30.1,
+      "soil_y": 0.0
+    },
+    {
+      "x": 43.9,
+      "z": 32.5,
+      "soil_y": 0.0
+    },
+    {
+      "x": 43.9,
+      "z": 34.9,
+      "soil_y": 0.0
+    }
+  ],
+  "earthworks": [
+    {
+      "name": "Railway public and maintenance approach",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          24,
+          72
+        ],
+        [
+          43,
+          72
+        ],
+        [
+          49,
+          81
+        ],
+        [
+          47,
+          99
+        ],
+        [
+          43,
+          103
+        ],
+        [
+          26,
+          103
+        ],
+        [
+          23,
+          95
+        ]
+      ]
+    },
+    {
+      "name": "Railway cutting and coach workgrounds",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "arrival",
+      "polygon": [
+        [
+          11,
+          43
+        ],
+        [
+          17,
+          40
+        ],
+        [
+          41,
+          40
+        ],
+        [
+          46,
+          44
+        ],
+        [
+          45,
+          75
+        ],
+        [
+          38,
+          79
+        ],
+        [
+          12,
+          78
+        ],
+        [
+          7,
+          65
+        ],
+        [
+          7,
+          48
+        ]
+      ]
+    },
+    {
+      "name": "Railway siding and crossing apron",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "arrival",
+      "polygon": [
+        [
+          41,
+          12
+        ],
+        [
+          63,
+          11
+        ],
+        [
+          66,
+          23
+        ],
+        [
+          65,
+          72
+        ],
+        [
+          61,
+          79
+        ],
+        [
+          46,
+          79
+        ],
+        [
+          41,
+          72
+        ]
+      ]
+    }
+  ],
+  "earthworks_verification": {
+    "site": "WLD-12",
+    "changed_vertices": 1010,
+    "raised_vertices": 830,
+    "lowered_vertices": 180,
+    "max_change_m": 4.866773605,
+    "source_height_sha256": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "saved_topology_sha256": "0b819d9108bc00c1f57140cde8725965c007f836e155528721589a07ff68d169",
+    "saved_cuts_sha256": "c8cd27f884e2709001922bfc0772b11474dab45b48a547212c709a2e347cc28e",
+    "hole_controls": 1943,
+    "disk_reopen_verified": true,
+    "physics_sha256": "946264509a68265fcdbe5e2941ae4c759ff970df4c657b2b8980fc0d0f3eaf40",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-12/terrain-world",
+  "removed_redundant_cottage_walks": [
+    "WLD-12 constant-cell guard platform south edge 0",
+    "WLD-12 constant-cell guard platform south edge 1",
+    "WLD-12 constant-cell guard platform south edge 2"
+  ],
+  "source_terrain_physics_sha256": "77b9627441c661a3c612fbfc6d3b645cdbd00d4c286409ea9d9104f25f09ffb2",
+  "terrain_writer": "tools/java/RebuildInstitutionEarthworks.java",
+  "terrain_writer_sha256": "a8baf56f63c7640dddfce02a4f1abacfbbe80696e79c48181137b9afaee536fe",
+  "terrain_composer": "tools/compose_arrival_grounds.py",
+  "terrain_composer_sha256": "252bc0bfc9df034ed83d0fe064b89d0a28810d627fbe88dd1a881155c572a2e1"
+}

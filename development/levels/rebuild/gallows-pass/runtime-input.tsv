@@ -1,0 +1,174 @@
+SOURCE	2dfd13e282cad531908f8efaea9e456c7eec0b780f23dc8321955074b8863c78	7985938b07ea8512b6b80c6503c395bfb228f06e92a97ae48e7ce75c9f6307ea
+DOCK	36.0	0	94.0	0
+ROOM	tunnel	0	28	-8	40	22	0	3	false	Tunnel mouth / dry bore	34	0	7
+ROOM	coach-a	1	16	46	24	62	0	3	false	Derailed passenger coach	20	0	54
+ROOM	coach-b	2	44	46	52	62	0	3	false	Derailed baggage coach	48	0	54
+ROOM	store	3	52	16	64	30	0	3	false	Track stores hut	58	0	23
+ROOM	signal	4	12	62	28	76	0	3	false	Signal hut	20	0	69
+ROOM	refuge	5	40	0	52	12	0	3	false	Tunnel maintenance refuge	46	0	6
+ROOM	lower	6	28	22	34	42	-3	3	true	Lower service walkway	31	-3	32
+ROOM	west-return	7	6	22	16	62	0	3	true	Cutting west return path	11	0	42
+ROOM	siding	8	52	30	62	76	0	3	true	Maintenance siding	57	0	53
+ROOM	cutting	9	28	42	40	76	0	3	true	Rail cutting	34	0	59
+ROOM	trestle	10	28	22	40	42	0	3	true	Trestle guarded deck	34	0	32
+ROOM	crossing	11	40	12	62	22	0	3	true	North maintenance crossing	51	0	17
+ROOM	entry	12	28	76	44	88	0	3	true	Rail access gate	36	0	82
+ROOM	stage	13	28	88	44	100	0	3	true	Maintenance-road van apron	36	0	90.2
+SPACE	signal-apron	12	18.6	75.96	31	82	0	3	true
+SPACE	siding-approach	12	42	75.5	59	83	0	3	true
+SPACE	west-signal-approach	7	12	60	15.5	62.0	0	3	true
+SPACE	west-track-approach	9	24	52	30	56	0	3	true
+SPACE	east-track-approach	9	38	52	44	56	0	3	true
+SPACE	trestle-return	11	39.5	16	50	34.9	0	3	true
+SPACE	refuge-apron	11	44.4	12	50	17	0	3	true
+SPACE	ballast-siding-return	8	47.5	32.6	57	35.4	0	3	true
+SPACE	walkway-north-flight	6	26.8	26.5	29.2	33.4	-3	3	true
+SPACE	west-flight	6	12.3	36.8	32.25	39.2	-3	3	true
+TREAD	WLD-12 L16 constant tread 0 region0
+TREAD	WLD-12 L16 constant tread 1 region0
+TREAD	WLD-12 L16 constant tread 2 region0
+TREAD	WLD-12 L16 constant tread 3 region0
+TREAD	WLD-12 L16 constant tread 4 region0
+TREAD	WLD-12 L16 constant tread 5 region0
+TREAD	WLD-12 L16 constant tread 6 region0
+TREAD	WLD-12 L16 constant tread 7 region0
+TREAD	WLD-12 L16 constant tread 8 region0
+TREAD	WLD-12 L16 constant tread 9 region0
+TREAD	WLD-12 L16 constant tread 10 region0
+TREAD	WLD-12 L16 constant tread 11 region0
+TREAD	WLD-12 L16 constant tread 12 region0
+TREAD	WLD-12 L16 constant tread 13 region0
+TREAD	WLD-12 L16 constant tread 14 region0
+TREAD	WLD-12 L16 constant tread 15 region0
+TREAD	WLD-12 L16 constant tread 16 region0
+TREAD	WLD-12 L17 constant tread 0 region0
+TREAD	WLD-12 L17 constant tread 1 region0
+TREAD	WLD-12 L17 constant tread 2 region0
+TREAD	WLD-12 L17 constant tread 3 region0
+TREAD	WLD-12 L17 constant tread 4 region0
+TREAD	WLD-12 L17 constant tread 5 region0
+TREAD	WLD-12 L17 constant tread 6 region0
+TREAD	WLD-12 L17 constant tread 7 region0
+TREAD	WLD-12 L17 constant tread 8 region0
+TREAD	WLD-12 L17 constant tread 9 region0
+TREAD	WLD-12 L17 constant tread 10 region0
+TREAD	WLD-12 L17 constant tread 11 region0
+TREAD	WLD-12 L17 constant tread 12 region0
+TREAD	WLD-12 L17 constant tread 13 region0
+TREAD	WLD-12 L17 constant tread 14 region0
+TREAD	WLD-12 L17 constant tread 15 region0
+TREAD	WLD-12 L17 constant tread 16 region0
+TREAD	WLD-12 L17 constant tread 17 region0
+OPEN	940	13	12	36	0	88	2	z	trail
+OPEN	941	12	8	56	0	76	2	z	trail
+OPEN	942	9	10	34	0	42	2	z	trail
+OPEN	943	10	6	28	-1.5	30.15	1.5	z	stair
+OPEN	944	6	7	22	-1.5	38	1.5	x	stair
+OPEN	945	11	8	48	0	33	2	z	trail
+OPEN	946	11	10	40	0	32	2	x	trail
+RITUAL	banishment	3	58.0	0	23.0
+RITUAL	cleansing	5	46.0	0	6.0
+RITUAL	absolution	4	20.0	0	69.0
+SERVICE	gallows-generator	generator	4	24.0	0.56	74.07900099999999	3.141592653589793	GP-MAIN
+SERVICE	gallows-breaker	breaker	4	26.1	0.89	75.203994	3.141592653589793	GP-MAIN
+SERVICE	gallows-signal-switch	switch	4	23.0	1.25	75.878998	3.141592653589793	GP-SIGNAL
+SERVICE	gallows-signal-light	light	4	24.4	2.42	75.695999	0	native-string
+SERVICE	gallows-tunnel-switch	switch	0	39.758999	1.25	18.299999	-1.5707963267948966	GP-TUNNEL
+SERVICE	gallows-tunnel-light	light	0	39.576	2.36	13.4	0	native-string
+SERVICE	gallows-coach-a-switch	switch	1	16.240999	1.25	51.599998	1.5707963267948966	GP-COACH-A
+SERVICE	gallows-coach-a-light	light	1	16.424	2.36	49.700001	0	native-string
+SERVICE	gallows-coach-b-switch	switch	2	51.758999	1.25	56.5	-1.5707963267948966	GP-COACH-B
+SERVICE	gallows-coach-b-light	light	2	51.576	2.36	58.200001	0	native-string
+SERVICE	gallows-store-switch	switch	3	52.241001	1.25	26.700001	1.5707963267948966	GP-STORE
+SERVICE	gallows-store-light	light	3	52.424	2.36	24.75	0	native-string
+SERVICE	gallows-refuge-switch	switch	5	40.241001	1.25	9.7	1.5707963267948966	GP-REFUGE
+SERVICE	gallows-refuge-light	light	5	40.424	2.36	8.2	0	native-string
+SERVICE	Gallows operator radio	native-device	4	17.190718	1.022	64.31123699999999	0	RADIO
+SERVICE	Gallows signal register	native_story	4	17.587999	1.00072	64.181999	0	GALLOWS_SIGNAL_REGISTER
+SERVICE	Gallows tunnel telephone	native-device	5	49.400002	0.821	8.975001	0	PHONE
+COVER	gallows-signal-cupboard	4	15	0	72.5	-1.5707963267948966
+COVER	gallows-store-cupboard	3	61.5	0	24	1.5707963267948966
+COVER	gallows-refuge-cupboard	5	49.5	0	3.0	1.5707963267948966
+POINT	L01	36.0	0	90.372
+POINT	L01	36	0	88
+POINT	L01	36	0	82
+POINT	L02	36	0	82
+POINT	L02	29.4	0	80.9
+POINT	L02	24.1	0	79.25
+POINT	L02	20	0	78.08
+POINT	L02	20	0	76
+POINT	L02	20	0	69
+POINT	L03	20.0	0	69.0
+POINT	L03	28.0	0	69.0
+POINT	L03	34.0	0	69.0
+POINT	L03	34.0	0	59.0
+POINT	L04	36	0	82
+POINT	L04	43	0	80.5
+POINT	L04	48.6	0	78.1
+POINT	L04	54.5	0	76.75
+POINT	L04	57	0	75.4
+POINT	L04	57	0	53
+POINT	L05	34	0	59
+POINT	L05	30	0	59
+POINT	L05	30	0	54
+POINT	L05	20	0	54
+POINT	L06	20	0	54
+POINT	L06	16	0	54
+POINT	L06	13	0	54
+POINT	L06	13	0	46
+POINT	L06	13	0	42
+POINT	L06	11	0	42
+POINT	L07	11	0	42
+POINT	L07	13	0	42
+POINT	L07	13	0	46
+POINT	L07	14	0	46
+POINT	L07	14	0	62
+POINT	L07	14	0	69
+POINT	L07	20	0	69
+POINT	L08	34	0	59
+POINT	L08	38	0	59
+POINT	L08	38	0	54
+POINT	L08	48	0	54
+POINT	L09	48.0	0	54.0
+POINT	L09	52.0	0	54.0
+POINT	L09	57.0	0	54.0
+POINT	L09	57.0	0	53.0
+POINT	L10	34.0	0	59.0
+POINT	L10	34.0	0	42.0
+POINT	L10	34.0	0	32.0
+POINT	L11	34.0	0	32.0
+POINT	L11	34.0	0	22.0
+POINT	L11	34.0	0	7.0
+POINT	L12	34.0	0	7.0
+POINT	L12	40.0	0	6.0
+POINT	L12	46.0	0	6.0
+POINT	L13	46.0	0	6.0
+POINT	L13	46.0	0	12.0
+POINT	L13	46.0	0	17.0
+POINT	L13	51.0	0	17.0
+POINT	L14	51	0	17
+POINT	L14	48	0	17
+POINT	L14	48	0	34
+POINT	L14	57	0	34
+POINT	L14	57	0	53
+POINT	L15	57	0	53
+POINT	L15	58	0	53
+POINT	L15	58	0	23
+POINT	L16	31	0	33.4
+POINT	L16	28	0	33.4
+POINT	L16	28	0	32.3
+POINT	L16	28	-3	27.87
+POINT	L16	28	-3	26.78
+POINT	L16	31	-3	26.78
+POINT	L16	31	-3	28
+POINT	L17	31	-3	32
+POINT	L17	32.27	-3	32
+POINT	L17	32.27	-3	38
+POINT	L17	31.36	-3	38
+POINT	L17	13	0	38
+POINT	L17	11	0	38
+POINT	L17	11	0	42
+POINT	L18	51	0	17
+POINT	L18	46	0	17
+POINT	L18	46	0	32
+POINT	L18	34	0	32

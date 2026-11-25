@@ -1,0 +1,309 @@
+{
+  "id": "SCHOOL",
+  "status": "ENCLOSED_ROOF_CONSTRUCTION_RUNTIME_INTEGRATION_OPEN",
+  "source_contract": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+  "source_contract_sha256": "b049585fc5a93d5231e0bb15bb3b505eeb181a2dd87a4b0b2738209c75120ebc",
+  "source_glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+  "source_glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+  "source_physics": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+  "source_physics_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+  "before_layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+  "before_layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11",
+  "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+  "layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "382:L43 flight0 step1",
+    "383:L43 flight0 step2",
+    "384:L43 flight0 step3",
+    "385:L43 flight0 step4",
+    "386:L43 flight0 step5",
+    "387:L43 flight0 step6",
+    "388:L43 flight0 step7",
+    "389:L43 flight0 step8",
+    "390:L43 flight0 step9",
+    "391:L43 flight0 step10",
+    "392:L43 flight0 step11",
+    "393:L43 flight0 step12",
+    "394:L43 flight0 step13",
+    "395:L43 flight0 step14",
+    "396:L43 flight0 step15",
+    "397:L43 flight0 step16",
+    "398:L43 flight0 step17",
+    "399:L43 flight0 step18",
+    "400:L43 flight0 step19",
+    "401:L43 flight0 step20",
+    "402:L44 flight0 step1",
+    "403:L44 flight0 step2",
+    "404:L44 flight0 step3",
+    "405:L44 flight0 step4",
+    "406:L44 flight0 step5",
+    "407:L44 flight0 step6",
+    "408:L44 flight0 step7",
+    "409:L44 flight0 step8",
+    "410:L44 flight0 step9",
+    "411:L44 flight0 step10",
+    "412:L44 flight0 step11",
+    "413:L44 flight0 step12",
+    "414:L44 flight0 step13",
+    "415:L44 flight0 step14",
+    "416:L44 flight0 step15",
+    "417:L44 flight0 step16",
+    "418:L44 flight0 step17"
+  ],
+  "stair_components": [
+    "382:L43 flight0 step1",
+    "383:L43 flight0 step2",
+    "384:L43 flight0 step3",
+    "385:L43 flight0 step4",
+    "386:L43 flight0 step5",
+    "387:L43 flight0 step6",
+    "388:L43 flight0 step7",
+    "389:L43 flight0 step8",
+    "390:L43 flight0 step9",
+    "391:L43 flight0 step10",
+    "392:L43 flight0 step11",
+    "393:L43 flight0 step12",
+    "394:L43 flight0 step13",
+    "395:L43 flight0 step14",
+    "396:L43 flight0 step15",
+    "397:L43 flight0 step16",
+    "398:L43 flight0 step17",
+    "399:L43 flight0 step18",
+    "400:L43 flight0 step19",
+    "401:L43 flight0 step20",
+    "402:L44 flight0 step1",
+    "403:L44 flight0 step2",
+    "404:L44 flight0 step3",
+    "405:L44 flight0 step4",
+    "406:L44 flight0 step5",
+    "407:L44 flight0 step6",
+    "408:L44 flight0 step7",
+    "409:L44 flight0 step8",
+    "410:L44 flight0 step9",
+    "411:L44 flight0 step10",
+    "412:L44 flight0 step11",
+    "413:L44 flight0 step12",
+    "414:L44 flight0 step13",
+    "415:L44 flight0 step14",
+    "416:L44 flight0 step15",
+    "417:L44 flight0 step16",
+    "418:L44 flight0 step17"
+  ],
+  "glb_sha256": "97cd14efb251c2666c4ab66d9ce82fb74d99858e75a9d78fef89c26a8563e9b3",
+  "physics_sha256": "35532dc7ce334d0d6752dc93143896e4f4bac97e66cf4f8a1693c3504b063211",
+  "arrival_bearing": {
+    "link": "L42",
+    "anchor": [
+      28.0,
+      0,
+      51.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L42 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        27.4,
+        51.85
+      ],
+      [
+        27.4,
+        51.5
+      ],
+      [
+        28.6,
+        51.5
+      ],
+      [
+        28.6,
+        51.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          27.4,
+          51.85
+        ],
+        [
+          27.4,
+          51.5
+        ],
+        [
+          28.6,
+          51.5
+        ],
+        [
+          28.6,
+          51.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing SCHOOL 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 30,
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "adfcef98821fdbcd495f144968f54820eb04f51860cda20f96b6f55b63efc829",
+  "access_route_changes": [
+    {
+      "site": "SCHOOL",
+      "link": "L08",
+      "rooms": [
+        "main-stair",
+        "service-stair"
+      ],
+      "before": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          20
+        ],
+        [
+          28.5,
+          0,
+          16.0
+        ],
+        [
+          28.6,
+          0,
+          16.0
+        ]
+      ],
+      "after": [
+        [
+          26.5,
+          0.0,
+          25.0
+        ],
+        [
+          28.5,
+          0.0,
+          20.0
+        ],
+        [
+          28.5,
+          0.0,
+          18.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28.5,
+        0,
+        20
+      ],
+      "source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/school/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.blend",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_wings": [
+    {
+      "wing": "teaching",
+      "bounds": [
+        10,
+        12,
+        30,
+        36
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "assembly",
+      "bounds": [
+        30,
+        24,
+        42,
+        36
+      ],
+      "ceiling": 8.1,
+      "ridge": 10.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "gym",
+      "bounds": [
+        38,
+        8,
+        50,
+        24
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.440000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "health",
+      "bounds": [
+        30,
+        12,
+        38,
+        24
+      ],
+      "ceiling": 3.6,
+      "ridge": 5.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "receiving",
+      "bounds": [
+        42,
+        28,
+        46,
+        36
+      ],
+      "ceiling": 3.6,
+      "ridge": 4.54,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "roof_coverage_rays": 944,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/school.png",
+      "sha256": "0feff6cf826ede30d2f57342b0eb15af075be63e8f7b0e63ff649eaf999b9b01",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51",
+  "remaining": "Runtime map adapter/rooms/portals/acoustics/spawns/services and native scene rendering are not integrated. Detailed roof step flashing, drainage, gutters, standing-height join/optical review and terrain/foundation defects remain open. Existing candidate availability unchanged."
+}

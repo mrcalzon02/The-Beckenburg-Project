@@ -1,0 +1,147 @@
+{
+  "site": "WLD-13",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/layouts/wld-13/layout.json",
+  "source_layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "structure_glb_sha256": "d7a3bc3daa6449abcabde4dd3e23d0ab22d7b67e95d52b6702fe659bdee7ff04",
+  "furnished_glb_sha256": "b3f160d9fdebbd04f8480a9879911c5886ea115d0468afd4af981e8b52887c15",
+  "native_sha256": "b710fb2c334d1826ec582555dc03eb65f25d13e51dc5f62904245221cd712fc2",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "WLD-13:processing:0:0",
+      "zone": "processing",
+      "purpose": "Fish-processing floor / Wharf fish processing/sorting station / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_fish_sorting_bench",
+      "asset": "level_blockout_fish_sorting_bench",
+      "source_sha256": "7903a1648b2d1743a979e67bb8e18d50c4f44557f0f6f70217e4cdc982160d2d",
+      "bounds": [
+        34.869998931884766,
+        -27.165000915527344,
+        0.0,
+        37.130001068115234,
+        -26.15999984741211,
+        1.0750000476837158
+      ],
+      "rect": [
+        34.87000000476837,
+        26.16,
+        37.12999999523163,
+        27.16499999523163
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-13:cold:1:0",
+      "zone": "cold",
+      "purpose": "Refrigerated stores / Three-level freestanding shelf / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_storage_shelf",
+      "asset": "level_blockout_storage_shelf",
+      "source_sha256": "9e7baa1f1c128734b572d4e83de878db8ed2643eba544287eeb3034e74d88df1",
+      "bounds": [
+        50.965999603271484,
+        -26.90999984741211,
+        0.0,
+        52.61600112915039,
+        -26.15999984741211,
+        1.7999999523162842
+      ],
+      "rect": [
+        50.96600000476837,
+        26.16,
+        52.61599998092651,
+        26.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "WLD-13:office:2:0",
+      "zone": "office",
+      "purpose": "Managers office / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_headmaster_desk",
+      "asset": "level_blockout_headmaster_desk",
+      "source_sha256": "0c5e6f6383716091ccd60c36337dc6bae4fa2b0d9b0320e7b46c55c04516a617",
+      "bounds": [
+        26.126001358032227,
+        -15.020000457763672,
+        0.0,
+        27.97599983215332,
+        -14.15999984741211,
+        0.8050000071525574
+      ],
+      "rect": [
+        26.125999995231627,
+        14.16,
+        27.976000019073485,
+        15.020000014305115
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "WLD-13:bunk:3:0",
+      "zone": "bunk",
+      "purpose": "Workers bunkhouse / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_camp_field_cot",
+      "asset": "level_blockout_camp_field_cot",
+      "source_sha256": "bed0b8ba5acec83bd08a44d865d27b658691dd7d2d2526166f1a4deebb3b308f",
+      "bounds": [
+        -4.880000114440918,
+        -46.10000228881836,
+        0.0,
+        -4.0,
+        -44.15999984741211,
+        0.6850000023841858
+      ],
+      "rect": [
+        -4.879999999046325,
+        44.16,
+        -4.000000003814697,
+        46.100000057220456
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-13:stores:4:0",
+      "zone": "stores",
+      "purpose": "Packing / dry stores / Pallet of strapped canning crates / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_cannery_cargo_pallet",
+      "asset": "level_blockout_cannery_cargo_pallet",
+      "source_sha256": "6881ba5f93c4dafedf976866835d5c543eb21a309559b48f547bd73cd5a8f6df",
+      "bounds": [
+        38.152000427246094,
+        -15.200000762939453,
+        0.0,
+        39.87200164794922,
+        -14.15999984741211,
+        0.9875000715255737
+      ],
+      "rect": [
+        38.15199999427795,
+        14.16,
+        39.87200002288818,
+        15.199999961853027
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 156
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "26a5a4b61d615d878a735c8fb8c112476359ebb3565544ac8cda70ee85808a28",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

@@ -45,7 +45,15 @@ public interface GpuWorldRenderer {
     record Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,
                  float affineWarp,List<Surface> surfaces,boolean worldSpace,
                  float cameraX,float cameraY,float cameraZ,float yaw,float pitch,
-                 boolean lampOn,float lampIntensity,float lampReach,float lampWidth,boolean flameLamp) {
+                 boolean lampOn,float lampIntensity,float lampReach,float lampWidth,boolean flameLamp,
+                 LevelAtmosphere.Policy atmosphere) {
+        public Frame(long sceneId,long frameId,int width,int height,float focal,float vertexSnap,
+                     float affineWarp,List<Surface> surfaces,boolean worldSpace,
+                     float cameraX,float cameraY,float cameraZ,float yaw,float pitch,
+                     boolean lampOn,float lampIntensity,float lampReach,float lampWidth,boolean flameLamp){
+            this(sceneId,frameId,width,height,focal,vertexSnap,affineWarp,surfaces,worldSpace,
+                cameraX,cameraY,cameraZ,yaw,pitch,lampOn,lampIntensity,lampReach,lampWidth,flameLamp,null);
+        }
         public Frame(long sceneId,long frameId,int width,int height,float focal,
                      float vertexSnap,float affineWarp,List<Surface> surfaces) {
             this(sceneId,frameId,width,height,focal,vertexSnap,affineWarp,

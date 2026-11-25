@@ -1,0 +1,3255 @@
+{
+  "status": "ACTUAL_NATIVE_ROOM_SOCKET_CONNECTIVITY_NOT_GLOBAL_MAP_ACCEPTANCE",
+  "groups": [
+    {
+      "site": "ASYLUM",
+      "room": "spine",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "upper-spine",
+      "y": "3.4",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "service-link",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "main-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "service",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "service-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "1",
+      "connected_pairs": "0,2"
+    },
+    {
+      "site": "ASYLUM",
+      "room": "upper-stair",
+      "y": "3.4",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "cellar-stair",
+      "y": "-3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "cellar-service",
+      "y": "-3.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "issue",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "library-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "north-cross",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "north-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "1",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "rear-hall",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "res-cellar-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "COLLEGE",
+      "room": "upper-library-stair",
+      "y": "3.6",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "COLLEGE",
+      "room": "upper-library-landing",
+      "y": "3.6",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "upper-north-cross",
+      "y": "3.6",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "upper-north-stair",
+      "y": "3.6",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "east-tunnel",
+      "y": "-3",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "east-cellar-stair",
+      "y": "-3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "teaching-library-link",
+      "y": "3.6",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "upper-hall",
+      "y": "3.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "upper-stair",
+      "y": "3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "barn-aisle",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "loft-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "loft-landing",
+      "y": "3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "hayloft",
+      "y": "3.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "hall",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "grand-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "library",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "service",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "service-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "gallery",
+      "y": "3.6",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "MANSION",
+      "room": "guest-a-entry",
+      "y": "3.6",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "upper-service",
+      "y": "3.6",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "upper-service-stair",
+      "y": "3.6",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "attic-stair",
+      "y": "7.2",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "attic-passage",
+      "y": "7.2",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "a-upper-gallery",
+      "y": "3.4",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "b-upper-gallery",
+      "y": "3.4",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "a-front-link",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "a-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "a-upper-stair",
+      "y": "3.4",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "PRISON",
+      "room": "b-front-link",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "b-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "b-upper-stair",
+      "y": "3.4",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "PRISON",
+      "room": "lower-stair",
+      "y": "-3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "plant",
+      "y": "-3.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "SCHOOL",
+      "room": "main-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "SCHOOL",
+      "room": "service-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "1",
+      "connected_pairs": "0,2"
+    },
+    {
+      "site": "WLD-03",
+      "room": "dwellings",
+      "y": "8",
+      "nodes": "2",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "0",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "gallery",
+      "y": "8.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "fork",
+      "y": "8.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "lower-cave",
+      "y": "4",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "return",
+      "y": "4.0",
+      "nodes": "2",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "1",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "alcove",
+      "y": "8.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-04",
+      "room": "clearing",
+      "y": "6",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "WLD-04",
+      "room": "foot",
+      "y": "6.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-08",
+      "room": "lab",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-08",
+      "room": "radio",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-08",
+      "room": "generator",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-08",
+      "room": "array",
+      "y": "0",
+      "nodes": "2",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "0",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-08",
+      "room": "shelter",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "west",
+      "y": "0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "WLD-10",
+      "room": "north",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "0",
+      "components": "3",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "east",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "garden",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "archive",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "vestry",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "tower-base",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": "0,2"
+    },
+    {
+      "site": "WLD-10",
+      "room": "rear",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "WLD-10",
+      "room": "catacombs",
+      "y": "-3",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "0",
+      "components": "3",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "chamber",
+      "y": "-3.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-14",
+      "room": "workroom",
+      "y": "0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-14",
+      "room": "store",
+      "y": "0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "WLD-14",
+      "room": "stairs",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-14",
+      "room": "service-stair",
+      "y": "0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-15",
+      "room": "aft",
+      "y": "0",
+      "nodes": "5",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "0,4",
+      "connected_pairs": "2,3"
+    },
+    {
+      "site": "WLD-15",
+      "room": "galley",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-15",
+      "room": "mess",
+      "y": "0.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-15",
+      "room": "pump",
+      "y": "-3",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-15",
+      "room": "hold",
+      "y": "-3.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-17",
+      "room": "yard",
+      "y": "4",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "0",
+      "components": "3",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-17",
+      "room": "west",
+      "y": "4.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-17",
+      "room": "east",
+      "y": "4.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-18",
+      "room": "crew",
+      "y": "-8",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "WLD-18",
+      "room": "pump",
+      "y": "-8.0",
+      "nodes": "1",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    }
+  ],
+  "identities": {
+    "ASYLUM:spine:0": [
+      {
+        "point": [
+          27.5,
+          0,
+          31.0
+        ],
+        "links": [
+          "L05",
+          "L07",
+          "L09",
+          "L24",
+          "L25",
+          "L28",
+          "L32",
+          "L33",
+          "L44"
+        ]
+      }
+    ],
+    "ASYLUM:upper-spine:3.4": [
+      {
+        "point": [
+          27.5,
+          3.4,
+          26.0
+        ],
+        "links": [
+          "L16",
+          "L18",
+          "L62"
+        ]
+      }
+    ],
+    "ASYLUM:service-link:0": [
+      {
+        "point": [
+          44.5,
+          0,
+          18.0
+        ],
+        "links": [
+          "L29",
+          "L54",
+          "L55"
+        ]
+      }
+    ],
+    "ASYLUM:main-stair:0.0": [
+      {
+        "point": [
+          30.5,
+          0.0,
+          25.0
+        ],
+        "links": [
+          "L32"
+        ]
+      },
+      {
+        "point": [
+          32,
+          0,
+          22
+        ],
+        "links": [
+          "L77"
+        ]
+      }
+    ],
+    "ASYLUM:service:0": [
+      {
+        "point": [
+          55.5,
+          0,
+          37.0
+        ],
+        "links": [
+          "L35",
+          "L53",
+          "L76"
+        ]
+      }
+    ],
+    "ASYLUM:service-stair:0.0": [
+      {
+        "point": [
+          57.0,
+          0.0,
+          19.0
+        ],
+        "links": [
+          "L53",
+          "L54"
+        ]
+      },
+      {
+        "point": [
+          57.0,
+          0,
+          18.0
+        ],
+        "links": [
+          "L74"
+        ]
+      },
+      {
+        "point": [
+          57,
+          0,
+          18.8
+        ],
+        "links": [
+          "L78"
+        ]
+      }
+    ],
+    "ASYLUM:upper-stair:3.4": [
+      {
+        "point": [
+          30.0,
+          3.4,
+          25.0
+        ],
+        "links": [
+          "L62"
+        ]
+      },
+      {
+        "point": [
+          32,
+          3.4,
+          27.44
+        ],
+        "links": [
+          "L77"
+        ]
+      }
+    ],
+    "ASYLUM:cellar-stair:-3.0": [
+      {
+        "point": [
+          55.5,
+          -3.0,
+          18.0
+        ],
+        "links": [
+          "L63"
+        ]
+      },
+      {
+        "point": [
+          57,
+          -3,
+          14
+        ],
+        "links": [
+          "L78"
+        ]
+      }
+    ],
+    "ASYLUM:cellar-service:-3.0": [
+      {
+        "point": [
+          55.5,
+          -3.0,
+          37.0
+        ],
+        "links": [
+          "L63",
+          "L64"
+        ]
+      }
+    ],
+    "COLLEGE:issue:0": [
+      {
+        "point": [
+          31.0,
+          0,
+          18.0
+        ],
+        "links": [
+          "L17",
+          "L19"
+        ]
+      }
+    ],
+    "COLLEGE:library-stair:0.0": [
+      {
+        "point": [
+          29.5,
+          0.0,
+          10.0
+        ],
+        "links": [
+          "L19"
+        ]
+      },
+      {
+        "point": [
+          31,
+          0,
+          6
+        ],
+        "links": [
+          "L81"
+        ]
+      }
+    ],
+    "COLLEGE:north-cross:0": [
+      {
+        "point": [
+          58.0,
+          0,
+          40
+        ],
+        "links": [
+          "L33",
+          "L34"
+        ]
+      }
+    ],
+    "COLLEGE:north-stair:0.0": [
+      {
+        "point": [
+          63.5,
+          0.0,
+          36.0
+        ],
+        "links": [
+          "L34"
+        ]
+      },
+      {
+        "point": [
+          65.0,
+          0,
+          36.0
+        ],
+        "links": [
+          "L45"
+        ]
+      },
+      {
+        "point": [
+          65,
+          0,
+          32
+        ],
+        "links": [
+          "L82"
+        ]
+      }
+    ],
+    "COLLEGE:rear-hall:0": [
+      {
+        "point": [
+          52.0,
+          0,
+          74.0
+        ],
+        "links": [
+          "L42",
+          "L43",
+          "L44"
+        ]
+      }
+    ],
+    "COLLEGE:res-cellar-stair:0.0": [
+      {
+        "point": [
+          46.0,
+          0.0,
+          73.0
+        ],
+        "links": [
+          "L43"
+        ]
+      },
+      {
+        "point": [
+          46,
+          0,
+          72.8
+        ],
+        "links": [
+          "L85"
+        ]
+      }
+    ],
+    "COLLEGE:upper-library-stair:3.6": [
+      {
+        "point": [
+          31.0,
+          3.6,
+          12.0
+        ],
+        "links": [
+          "L51"
+        ]
+      },
+      {
+        "point": [
+          31,
+          3.6,
+          11.760000000000002
+        ],
+        "links": [
+          "L81"
+        ]
+      },
+      {
+        "point": [
+          29.0,
+          3.6,
+          10.0
+        ],
+        "links": [
+          "L87"
+        ]
+      }
+    ],
+    "COLLEGE:upper-library-landing:3.6": [
+      {
+        "point": [
+          31.0,
+          3.6,
+          18.0
+        ],
+        "links": [
+          "L51",
+          "L52"
+        ]
+      }
+    ],
+    "COLLEGE:upper-north-cross:3.6": [
+      {
+        "point": [
+          58.0,
+          3.6,
+          40
+        ],
+        "links": [
+          "L62",
+          "L63"
+        ]
+      }
+    ],
+    "COLLEGE:upper-north-stair:3.6": [
+      {
+        "point": [
+          63.0,
+          3.6,
+          36.0
+        ],
+        "links": [
+          "L63"
+        ]
+      },
+      {
+        "point": [
+          65,
+          3.6,
+          37.760000000000005
+        ],
+        "links": [
+          "L82"
+        ]
+      }
+    ],
+    "COLLEGE:east-tunnel:-3": [
+      {
+        "point": [
+          44,
+          -3,
+          54.0
+        ],
+        "links": [
+          "L70",
+          "L71"
+        ]
+      }
+    ],
+    "COLLEGE:east-cellar-stair:-3.0": [
+      {
+        "point": [
+          44.5,
+          -3.0,
+          72.0
+        ],
+        "links": [
+          "L71"
+        ]
+      },
+      {
+        "point": [
+          46,
+          -3,
+          68
+        ],
+        "links": [
+          "L85"
+        ]
+      }
+    ],
+    "COLLEGE:teaching-library-link:3.6": [
+      {
+        "point": [
+          26.0,
+          3.6,
+          14
+        ],
+        "links": [
+          "L86",
+          "L87"
+        ]
+      }
+    ],
+    "FARMHOUSE:upper-hall:3.0": [
+      {
+        "point": [
+          21.5,
+          3.0,
+          19.0
+        ],
+        "links": [
+          "L13",
+          "L14",
+          "L15",
+          "L16",
+          "L17",
+          "L18"
+        ]
+      }
+    ],
+    "FARMHOUSE:upper-stair:3.0": [
+      {
+        "point": [
+          24.5,
+          3.0,
+          18.5
+        ],
+        "links": [
+          "L13"
+        ]
+      },
+      {
+        "point": [
+          24.5,
+          3,
+          18.4
+        ],
+        "links": [
+          "L34"
+        ]
+      }
+    ],
+    "FARMHOUSE:barn-aisle:0": [
+      {
+        "point": [
+          37,
+          0,
+          16.5
+        ],
+        "links": [
+          "L22",
+          "L23",
+          "L24",
+          "L25",
+          "L26",
+          "L27",
+          "L28"
+        ]
+      }
+    ],
+    "FARMHOUSE:loft-stair:0.0": [
+      {
+        "point": [
+          39.5,
+          0.0,
+          17.5
+        ],
+        "links": [
+          "L28"
+        ]
+      },
+      {
+        "point": [
+          41,
+          0,
+          17.5
+        ],
+        "links": [
+          "L36"
+        ]
+      }
+    ],
+    "FARMHOUSE:loft-landing:3.0": [
+      {
+        "point": [
+          41.0,
+          3.0,
+          22.5
+        ],
+        "links": [
+          "L29"
+        ]
+      },
+      {
+        "point": [
+          41,
+          3,
+          22.3
+        ],
+        "links": [
+          "L36"
+        ]
+      }
+    ],
+    "FARMHOUSE:hayloft:3.0": [
+      {
+        "point": [
+          35.0,
+          3.0,
+          20.0
+        ],
+        "links": [
+          "L29"
+        ]
+      }
+    ],
+    "MANSION:hall:0": [
+      {
+        "point": [
+          24.0,
+          0,
+          40.0
+        ],
+        "links": [
+          "L05",
+          "L06",
+          "L07",
+          "L10",
+          "L11"
+        ]
+      }
+    ],
+    "MANSION:grand-stair:0.0": [
+      {
+        "point": [
+          22.5,
+          0.0,
+          30.0
+        ],
+        "links": [
+          "L06",
+          "L08"
+        ]
+      },
+      {
+        "point": [
+          24,
+          0,
+          26
+        ],
+        "links": [
+          "L58"
+        ]
+      }
+    ],
+    "MANSION:library:0.0": [
+      {
+        "point": [
+          14.0,
+          0.0,
+          30.0
+        ],
+        "links": [
+          "L08",
+          "L09",
+          "L29"
+        ]
+      }
+    ],
+    "MANSION:service:0": [
+      {
+        "point": [
+          41.5,
+          0,
+          22.0
+        ],
+        "links": [
+          "L21",
+          "L22",
+          "L23",
+          "L24"
+        ]
+      }
+    ],
+    "MANSION:service-stair:0.0": [
+      {
+        "point": [
+          43.0,
+          0.0,
+          8.0
+        ],
+        "links": [
+          "L23",
+          "L28"
+        ]
+      },
+      {
+        "point": [
+          44.5,
+          0,
+          5
+        ],
+        "links": [
+          "L59",
+          "L60"
+        ]
+      }
+    ],
+    "MANSION:gallery:3.6": [
+      {
+        "point": [
+          24.0,
+          3.6,
+          37.0
+        ],
+        "links": [
+          "L32",
+          "L36",
+          "L42"
+        ]
+      },
+      {
+        "point": [
+          24,
+          3.6,
+          31.76
+        ],
+        "links": [
+          "L58"
+        ]
+      }
+    ],
+    "MANSION:guest-a-entry:3.6": [
+      {
+        "point": [
+          18.0,
+          3.6,
+          28.5
+        ],
+        "links": [
+          "L36",
+          "L37"
+        ]
+      }
+    ],
+    "MANSION:upper-service:3.6": [
+      {
+        "point": [
+          41.5,
+          3.6,
+          22.0
+        ],
+        "links": [
+          "L43",
+          "L48",
+          "L49",
+          "L50"
+        ]
+      }
+    ],
+    "MANSION:upper-service-stair:3.6": [
+      {
+        "point": [
+          43.0,
+          3.6,
+          8.0
+        ],
+        "links": [
+          "L50"
+        ]
+      },
+      {
+        "point": [
+          41.5,
+          3.6,
+          11
+        ],
+        "links": [
+          "L60",
+          "L61"
+        ]
+      }
+    ],
+    "MANSION:attic-stair:7.2": [
+      {
+        "point": [
+          43.0,
+          7.2,
+          8.0
+        ],
+        "links": [
+          "L51"
+        ]
+      },
+      {
+        "point": [
+          41.5,
+          7.2,
+          5
+        ],
+        "links": [
+          "L61"
+        ]
+      }
+    ],
+    "MANSION:attic-passage:7.2": [
+      {
+        "point": [
+          41.5,
+          7.2,
+          21.0
+        ],
+        "links": [
+          "L51",
+          "L52",
+          "L53"
+        ]
+      }
+    ],
+    "PRISON:a-upper-gallery:3.4": [
+      {
+        "point": [
+          15.0,
+          3.4,
+          41.0
+        ],
+        "links": [
+          "L009",
+          "L046"
+        ]
+      }
+    ],
+    "PRISON:b-upper-gallery:3.4": [
+      {
+        "point": [
+          53.0,
+          3.4,
+          41.0
+        ],
+        "links": [
+          "L025",
+          "L062"
+        ]
+      }
+    ],
+    "PRISON:a-front-link:0": [
+      {
+        "point": [
+          13.0,
+          0,
+          55.0
+        ],
+        "links": [
+          "L034",
+          "L045",
+          "L073"
+        ]
+      }
+    ],
+    "PRISON:a-stair:0.0": [
+      {
+        "point": [
+          18.0,
+          0.0,
+          54.5
+        ],
+        "links": [
+          "L045"
+        ]
+      },
+      {
+        "point": [
+          18,
+          0,
+          48
+        ],
+        "links": [
+          "L047"
+        ]
+      }
+    ],
+    "PRISON:a-upper-stair:3.4": [
+      {
+        "point": [
+          18.0,
+          3.4,
+          54.0
+        ],
+        "links": [
+          "L046"
+        ]
+      },
+      {
+        "point": [
+          18,
+          3.4,
+          53.44
+        ],
+        "links": [
+          "L047"
+        ]
+      }
+    ],
+    "PRISON:b-front-link:0": [
+      {
+        "point": [
+          55.0,
+          0,
+          55.0
+        ],
+        "links": [
+          "L050",
+          "L061",
+          "L078"
+        ]
+      }
+    ],
+    "PRISON:b-stair:0.0": [
+      {
+        "point": [
+          50.0,
+          0.0,
+          54.5
+        ],
+        "links": [
+          "L061"
+        ]
+      },
+      {
+        "point": [
+          50,
+          0,
+          48
+        ],
+        "links": [
+          "L063"
+        ]
+      }
+    ],
+    "PRISON:b-upper-stair:3.4": [
+      {
+        "point": [
+          50.0,
+          3.4,
+          54.0
+        ],
+        "links": [
+          "L062"
+        ]
+      },
+      {
+        "point": [
+          50,
+          3.4,
+          53.44
+        ],
+        "links": [
+          "L063"
+        ]
+      }
+    ],
+    "PRISON:lower-stair:-3.0": [
+      {
+        "point": [
+          30.0,
+          -3.0,
+          29.5
+        ],
+        "links": [
+          "L105"
+        ]
+      },
+      {
+        "point": [
+          30,
+          -3,
+          24
+        ],
+        "links": [
+          "L112"
+        ]
+      }
+    ],
+    "PRISON:plant:-3.0": [
+      {
+        "point": [
+          39.0,
+          -3.0,
+          28.0
+        ],
+        "links": [
+          "L105"
+        ]
+      }
+    ],
+    "SCHOOL:main-stair:0.0": [
+      {
+        "point": [
+          26.5,
+          0.0,
+          25.0
+        ],
+        "links": [
+          "L08",
+          "L09",
+          "L14",
+          "L19"
+        ]
+      },
+      {
+        "point": [
+          25,
+          0,
+          22
+        ],
+        "links": [
+          "L43"
+        ]
+      }
+    ],
+    "SCHOOL:service-stair:0.0": [
+      {
+        "point": [
+          28.5,
+          0.0,
+          18.5
+        ],
+        "links": [
+          "L08"
+        ]
+      },
+      {
+        "point": [
+          28.6,
+          0,
+          16.0
+        ],
+        "links": [
+          "L36"
+        ]
+      },
+      {
+        "point": [
+          28.5,
+          0,
+          18.3
+        ],
+        "links": [
+          "L44"
+        ]
+      }
+    ],
+    "WLD-03:dwellings:8": [
+      {
+        "point": [
+          34.0,
+          8,
+          31.0
+        ],
+        "links": [
+          "L08"
+        ]
+      },
+      {
+        "point": [
+          36.0,
+          8.0,
+          31.0
+        ],
+        "links": [
+          "L09"
+        ]
+      }
+    ],
+    "WLD-03:gallery:8.0": [
+      {
+        "point": [
+          55.0,
+          8.0,
+          31.0
+        ],
+        "links": [
+          "L09",
+          "L10",
+          "L16"
+        ]
+      },
+      {
+        "point": [
+          57,
+          8,
+          33.5
+        ],
+        "links": [
+          "L13"
+        ]
+      }
+    ],
+    "WLD-03:fork:8.0": [
+      {
+        "point": [
+          71.0,
+          8.0,
+          31.0
+        ],
+        "links": [
+          "L10",
+          "L11"
+        ]
+      }
+    ],
+    "WLD-03:lower-cave:4": [
+      {
+        "point": [
+          57,
+          4,
+          26.5
+        ],
+        "links": [
+          "L13"
+        ]
+      },
+      {
+        "point": [
+          55.0,
+          4.0,
+          31.0
+        ],
+        "links": [
+          "L14"
+        ]
+      }
+    ],
+    "WLD-03:return:4.0": [
+      {
+        "point": [
+          57.0,
+          4.0,
+          14.0
+        ],
+        "links": [
+          "L14"
+        ]
+      },
+      {
+        "point": [
+          57.0,
+          4,
+          13.0
+        ],
+        "links": [
+          "L15"
+        ]
+      }
+    ],
+    "WLD-03:alcove:8.0": [
+      {
+        "point": [
+          54.0,
+          8.0,
+          46.0
+        ],
+        "links": [
+          "L16"
+        ]
+      }
+    ],
+    "WLD-04:clearing:6": [
+      {
+        "point": [
+          30,
+          6,
+          22
+        ],
+        "links": [
+          "L04",
+          "L05",
+          "L07",
+          "L11"
+        ]
+      },
+      {
+        "point": [
+          30.0,
+          6.0,
+          21.5
+        ],
+        "links": [
+          "L12"
+        ]
+      }
+    ],
+    "WLD-04:foot:6.0": [
+      {
+        "point": [
+          30.0,
+          6.0,
+          9.0
+        ],
+        "links": [
+          "L12"
+        ]
+      },
+      {
+        "point": [
+          26,
+          6,
+          12.2
+        ],
+        "links": [
+          "L13"
+        ]
+      }
+    ],
+    "WLD-08:lab:0": [
+      {
+        "point": [
+          11.0,
+          0,
+          35.0
+        ],
+        "links": [
+          "L03",
+          "L04",
+          "L13",
+          "L17"
+        ]
+      }
+    ],
+    "WLD-08:radio:0": [
+      {
+        "point": [
+          26.0,
+          0,
+          19.0
+        ],
+        "links": [
+          "L09",
+          "L10",
+          "L12"
+        ]
+      }
+    ],
+    "WLD-08:generator:0.0": [
+      {
+        "point": [
+          11.0,
+          0.0,
+          17.0
+        ],
+        "links": [
+          "L12",
+          "L13",
+          "L20"
+        ]
+      }
+    ],
+    "WLD-08:array:0": [
+      {
+        "point": [
+          53.0,
+          0,
+          10.0
+        ],
+        "links": [
+          "L14",
+          "L15"
+        ]
+      },
+      {
+        "point": [
+          53.0,
+          0.0,
+          11.0
+        ],
+        "links": [
+          "L16"
+        ]
+      }
+    ],
+    "WLD-08:shelter:0.0": [
+      {
+        "point": [
+          66.0,
+          0.0,
+          14.0
+        ],
+        "links": [
+          "L16"
+        ]
+      }
+    ],
+    "WLD-10:west:0": [
+      {
+        "point": [
+          11.0,
+          0,
+          36.0
+        ],
+        "links": [
+          "L04",
+          "L05",
+          "L10"
+        ]
+      },
+      {
+        "point": [
+          11,
+          0,
+          24
+        ],
+        "links": [
+          "L21"
+        ]
+      }
+    ],
+    "WLD-10:north:0.0": [
+      {
+        "point": [
+          29.0,
+          0.0,
+          17.0
+        ],
+        "links": [
+          "L05",
+          "L06",
+          "L11",
+          "L13"
+        ]
+      },
+      {
+        "point": [
+          29.0,
+          0.0,
+          21.0
+        ],
+        "links": [
+          "L09"
+        ]
+      },
+      {
+        "point": [
+          31.7,
+          0,
+          19
+        ],
+        "links": [
+          "L19"
+        ]
+      }
+    ],
+    "WLD-10:east:0.0": [
+      {
+        "point": [
+          47.0,
+          0.0,
+          36.0
+        ],
+        "links": [
+          "L06",
+          "L07",
+          "L14",
+          "L15"
+        ]
+      }
+    ],
+    "WLD-10:garden:0": [
+      {
+        "point": [
+          29.0,
+          0,
+          36.0
+        ],
+        "links": [
+          "L08",
+          "L09"
+        ]
+      }
+    ],
+    "WLD-10:archive:0.0": [
+      {
+        "point": [
+          18.0,
+          0.0,
+          9.0
+        ],
+        "links": [
+          "L11",
+          "L12"
+        ]
+      }
+    ],
+    "WLD-10:vestry:0": [
+      {
+        "point": [
+          36.0,
+          0,
+          9.0
+        ],
+        "links": [
+          "L12",
+          "L13"
+        ]
+      }
+    ],
+    "WLD-10:tower-base:0.0": [
+      {
+        "point": [
+          53.5,
+          0.0,
+          23.0
+        ],
+        "links": [
+          "L15"
+        ]
+      },
+      {
+        "point": [
+          55,
+          0,
+          17.5
+        ],
+        "links": [
+          "L16"
+        ]
+      },
+      {
+        "point": [
+          53.0,
+          0.0,
+          23.0
+        ],
+        "links": [
+          "L17"
+        ]
+      }
+    ],
+    "WLD-10:rear:0.0": [
+      {
+        "point": [
+          63.0,
+          0.0,
+          23.0
+        ],
+        "links": [
+          "L17"
+        ]
+      },
+      {
+        "point": [
+          64.0,
+          0,
+          23.0
+        ],
+        "links": [
+          "L18"
+        ]
+      }
+    ],
+    "WLD-10:catacombs:-3": [
+      {
+        "point": [
+          26.3,
+          -3,
+          19
+        ],
+        "links": [
+          "L19"
+        ]
+      },
+      {
+        "point": [
+          29.0,
+          -3.0,
+          17.5
+        ],
+        "links": [
+          "L20"
+        ]
+      },
+      {
+        "point": [
+          18,
+          -3,
+          19
+        ],
+        "links": [
+          "L21"
+        ]
+      }
+    ],
+    "WLD-10:chamber:-3.0": [
+      {
+        "point": [
+          18.0,
+          -3.0,
+          9.0
+        ],
+        "links": [
+          "L20"
+        ]
+      }
+    ],
+    "WLD-14:workroom:0": [
+      {
+        "point": [
+          22.0,
+          0,
+          36.0
+        ],
+        "links": [
+          "route-05",
+          "route-06",
+          "route-15"
+        ]
+      }
+    ],
+    "WLD-14:store:0": [
+      {
+        "point": [
+          35.0,
+          0,
+          36.0
+        ],
+        "links": [
+          "route-06",
+          "route-07",
+          "route-16"
+        ]
+      },
+      {
+        "point": [
+          34.5,
+          0.0,
+          36.0
+        ],
+        "links": [
+          "route-09"
+        ]
+      }
+    ],
+    "WLD-14:stairs:0.0": [
+      {
+        "point": [
+          43.5,
+          0.0,
+          41.0
+        ],
+        "links": [
+          "route-09"
+        ]
+      },
+      {
+        "point": [
+          45,
+          0,
+          48
+        ],
+        "links": [
+          "route-10"
+        ]
+      }
+    ],
+    "WLD-14:service-stair:0": [
+      {
+        "point": [
+          14,
+          0,
+          44
+        ],
+        "links": [
+          "route-14"
+        ]
+      },
+      {
+        "point": [
+          15.5,
+          0.0,
+          40.5
+        ],
+        "links": [
+          "route-15"
+        ]
+      }
+    ],
+    "WLD-15:aft:0": [
+      {
+        "point": [
+          32,
+          0,
+          48
+        ],
+        "links": [
+          "route-03"
+        ]
+      },
+      {
+        "point": [
+          26,
+          0,
+          46
+        ],
+        "links": [
+          "route-05",
+          "route-17"
+        ]
+      },
+      {
+        "point": [
+          31.5,
+          0.0,
+          45.5
+        ],
+        "links": [
+          "route-06"
+        ]
+      },
+      {
+        "point": [
+          32.5,
+          0.0,
+          45.5
+        ],
+        "links": [
+          "route-07"
+        ]
+      },
+      {
+        "point": [
+          32.0,
+          0,
+          47.0
+        ],
+        "links": [
+          "route-12"
+        ]
+      }
+    ],
+    "WLD-15:galley:0.0": [
+      {
+        "point": [
+          28.0,
+          0.0,
+          35.0
+        ],
+        "links": [
+          "route-06",
+          "route-08"
+        ]
+      }
+    ],
+    "WLD-15:mess:0.0": [
+      {
+        "point": [
+          36.0,
+          0.0,
+          35.0
+        ],
+        "links": [
+          "route-07",
+          "route-09"
+        ]
+      }
+    ],
+    "WLD-15:pump:-3": [
+      {
+        "point": [
+          28.6,
+          -3,
+          1
+        ],
+        "links": [
+          "route-14"
+        ]
+      },
+      {
+        "point": [
+          32.0,
+          -3.0,
+          -0.5
+        ],
+        "links": [
+          "route-15"
+        ]
+      }
+    ],
+    "WLD-15:hold:-3.0": [
+      {
+        "point": [
+          32.0,
+          -3.0,
+          14.0
+        ],
+        "links": [
+          "route-15",
+          "route-16"
+        ]
+      }
+    ],
+    "WLD-17:yard:4": [
+      {
+        "point": [
+          40,
+          4,
+          48
+        ],
+        "links": [
+          "route-03"
+        ]
+      },
+      {
+        "point": [
+          31.5,
+          4.0,
+          42.5
+        ],
+        "links": [
+          "route-04"
+        ]
+      },
+      {
+        "point": [
+          36.5,
+          4.0,
+          42.5
+        ],
+        "links": [
+          "route-05"
+        ]
+      }
+    ],
+    "WLD-17:west:4.0": [
+      {
+        "point": [
+          16.0,
+          4.0,
+          33.0
+        ],
+        "links": [
+          "route-04",
+          "route-06",
+          "route-08"
+        ]
+      }
+    ],
+    "WLD-17:east:4.0": [
+      {
+        "point": [
+          52.0,
+          4.0,
+          33.0
+        ],
+        "links": [
+          "route-05",
+          "route-07",
+          "route-09"
+        ]
+      }
+    ],
+    "WLD-18:crew:-8": [
+      {
+        "point": [
+          18,
+          -8,
+          32
+        ],
+        "links": [
+          "route-16"
+        ]
+      },
+      {
+        "point": [
+          15.0,
+          -8.0,
+          32.0
+        ],
+        "links": [
+          "route-17"
+        ]
+      },
+      {
+        "point": [
+          12,
+          -8,
+          29
+        ],
+        "links": [
+          "route-18"
+        ]
+      }
+    ],
+    "WLD-18:pump:-8.0": [
+      {
+        "point": [
+          15.0,
+          -8.0,
+          20.0
+        ],
+        "links": [
+          "route-17"
+        ]
+      }
+    ]
+  },
+  "source_bindings": {
+    "ASYLUM": {
+      "id": "ASYLUM",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+      "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+      "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+      "layout_sha256": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56"
+    },
+    "COLLEGE": {
+      "id": "COLLEGE",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+      "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+      "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+      "layout_sha256": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752"
+    },
+    "FARMHOUSE": {
+      "id": "FARMHOUSE",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+      "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+      "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e",
+      "layout_sha256": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e"
+    },
+    "MANSION": {
+      "id": "MANSION",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+      "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+      "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+      "layout_sha256": "75e016d3e318419dee89e3a2a98d63ad1eca32aa32af458ad8b958499eb75790"
+    },
+    "PRISON": {
+      "id": "PRISON",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+      "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+      "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+      "layout_sha256": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85"
+    },
+    "SCHOOL": {
+      "id": "SCHOOL",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+      "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+      "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+      "layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11"
+    },
+    "WLD-03": {
+      "id": "WLD-03",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.blend",
+      "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+      "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+      "layout_sha256": "367f260d73ecd9827abb20ed673218d974098bfa222b3ef3de752b22c484e785"
+    },
+    "WLD-04": {
+      "id": "WLD-04",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+      "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+      "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0",
+      "layout_sha256": "50c8e710135b36abda5022e6e13fc5ac8b14f72e8ebba79f28a507ba258b5b96"
+    },
+    "WLD-08": {
+      "id": "WLD-08",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+      "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+      "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2",
+      "layout_sha256": "f0f3e03431e2fc332f8a9dea5e18a0bf21407277b21a2f970846f0e9882159b0"
+    },
+    "WLD-10": {
+      "id": "WLD-10",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-10/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.blend",
+      "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+      "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a",
+      "layout_sha256": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82"
+    },
+    "WLD-14": {
+      "id": "WLD-14",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+      "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+      "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+      "layout_sha256": "c803f91192ede6b739fdf6a50bf7a3c9676c96f9fd93d0da8903078dd22b2cec"
+    },
+    "WLD-15": {
+      "id": "WLD-15",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+      "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+      "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+      "layout_sha256": "ce8a9511d5fd2d96c6ec45c414fa71d08ff0ced8c98d5d8a409246c187951958"
+    },
+    "WLD-17": {
+      "id": "WLD-17",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.blend",
+      "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+      "layout_sha256": "bf10438c0785f251426e68048a315a9bf3c8fb68c8a4e6d8e21f663c6e9f8639"
+    },
+    "WLD-18": {
+      "id": "WLD-18",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+      "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+      "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c",
+      "layout_sha256": "d6bb00cadf5ba7ea90415d546fda876740f342ccb89f8617030f8ec45ec2c1dd"
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RoomSocketConnectivityProbe.java": "572240df2d6c57179fdc23f13608c15e969d3bbc7fe0118466a34eaeb60829ed",
+    "tools/audit_room_socket_connectivity.py": "1dc7f772512660374dcf512aaa943fe8fbf25e9b9774e051fa21a969eed6e9d4"
+  },
+  "invalid_socket_groups": [
+    {
+      "site": "ASYLUM",
+      "room": "service-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "1",
+      "connected_pairs": "0,2"
+    },
+    {
+      "site": "COLLEGE",
+      "room": "north-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "1",
+      "connected_pairs": ""
+    },
+    {
+      "site": "SCHOOL",
+      "room": "service-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "1",
+      "components": "1",
+      "invalid_indices": "1",
+      "connected_pairs": "0,2"
+    },
+    {
+      "site": "WLD-03",
+      "room": "dwellings",
+      "y": "8",
+      "nodes": "2",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "0",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "return",
+      "y": "4.0",
+      "nodes": "2",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "1",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-08",
+      "room": "array",
+      "y": "0",
+      "nodes": "2",
+      "valid_nodes": "1",
+      "direct_edges": "0",
+      "components": "1",
+      "invalid_indices": "0",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-15",
+      "room": "aft",
+      "y": "0",
+      "nodes": "5",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "0,4",
+      "connected_pairs": "2,3"
+    }
+  ],
+  "unresolved_multi_component_groups": [
+    {
+      "site": "ASYLUM",
+      "room": "main-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "upper-stair",
+      "y": "3.4",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "ASYLUM",
+      "room": "cellar-stair",
+      "y": "-3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "library-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "north-stair",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "1",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "upper-library-stair",
+      "y": "3.6",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    },
+    {
+      "site": "COLLEGE",
+      "room": "upper-north-stair",
+      "y": "3.6",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "COLLEGE",
+      "room": "east-cellar-stair",
+      "y": "-3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": "loft-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "grand-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "service-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "upper-service-stair",
+      "y": "3.6",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "MANSION",
+      "room": "attic-stair",
+      "y": "7.2",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "a-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "b-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "PRISON",
+      "room": "lower-stair",
+      "y": "-3.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "SCHOOL",
+      "room": "main-stair",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "gallery",
+      "y": "8.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-03",
+      "room": "lower-cave",
+      "y": "4",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-04",
+      "room": "foot",
+      "y": "6.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "north",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "0",
+      "components": "3",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-10",
+      "room": "tower-base",
+      "y": "0.0",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": "0,2"
+    },
+    {
+      "site": "WLD-10",
+      "room": "catacombs",
+      "y": "-3",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "0",
+      "components": "3",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-14",
+      "room": "stairs",
+      "y": "0.0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-14",
+      "room": "service-stair",
+      "y": "0",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-15",
+      "room": "aft",
+      "y": "0",
+      "nodes": "5",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "0,4",
+      "connected_pairs": "2,3"
+    },
+    {
+      "site": "WLD-15",
+      "room": "pump",
+      "y": "-3",
+      "nodes": "2",
+      "valid_nodes": "2",
+      "direct_edges": "0",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-17",
+      "room": "yard",
+      "y": "4",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "0",
+      "components": "3",
+      "invalid_indices": "",
+      "connected_pairs": ""
+    },
+    {
+      "site": "WLD-18",
+      "room": "crew",
+      "y": "-8",
+      "nodes": "3",
+      "valid_nodes": "3",
+      "direct_edges": "1",
+      "components": "2",
+      "invalid_indices": "",
+      "connected_pairs": "0,1"
+    }
+  ],
+  "scope": "All unique incident route endpoints in rooms touched by adopted routes; strict standing and bidirectional5cm direct production sweeps. Convex room bounds must contain endpoint joins. Multiple components mean no direct connection was proven, not no possible indirect route. Invalid original sockets remain open. No room-name-only connectivity inference."
+}

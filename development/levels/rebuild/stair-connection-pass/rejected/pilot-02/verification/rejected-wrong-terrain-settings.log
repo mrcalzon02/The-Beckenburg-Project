@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\author_connection_terrain.py", line 7, in <module>
+    if __name__=='__main__':author.main(preview_root=BASE/'captures/stair-connection-batch')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\author_stair_terrain.py", line 28, in main
+    image=Image.open(old/'tile_0_0.png');assert image.size==(65,65);heights=[int(v)/65535*64-32 for v in image.get_flattened_data()];(samples/'heights.txt').write_bytes(('\n'.join(format(y,'.12f') for y in heights)+'\n').encode());(samples/'settings.tsv').write_bytes((BASE/'terrain-overall-pass/samples'/site.lower()/'settings.tsv').read_bytes());(samples/'cuts.tsv').write_bytes((old/'authored-cuts.tsv').read_bytes());assert not (old/'authored-path-grading.sha256').exists(),'Existing authored grading requires explicit reconciliation'
+                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\terrain-overall-pass\\samples\\wld-17\\settings.tsv'

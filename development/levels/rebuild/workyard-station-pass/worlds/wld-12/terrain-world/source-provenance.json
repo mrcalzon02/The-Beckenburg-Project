@@ -1,0 +1,38 @@
+{
+  "source_world": "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-12/terrain-world",
+  "writer": "tools/java/RebuildTieredEarthworks.java",
+  "writer_sha256": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+  "grade": {
+    "site": "WLD-12",
+    "changed_vertices": 36,
+    "raised_vertices": 36,
+    "lowered_vertices": 0,
+    "max_change_m": 0.259385765,
+    "source_height_sha256": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "saved_topology_sha256": "0b819d9108bc00c1f57140cde8725965c007f836e155528721589a07ff68d169",
+    "saved_cuts_sha256": "c8cd27f884e2709001922bfc0772b11474dab45b48a547212c709a2e347cc28e",
+    "hole_controls": 1943,
+    "disk_reopen_verified": true,
+    "physics_sha256": "6887437088a76b81e8ee2b8e7aa4033e2253854812c51d5f3884a73a0a18482c",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "native_terrain_sha256": "69b5077281d79c0d6e9c74c1260490891ac1f50416c55bc4acf9c549ff8929ab",
+  "landing_foundation": {
+    "bounds": [
+      31.25,
+      37.5,
+      33.25,
+      39.25
+    ],
+    "source": "tools/java/RebuildStairCellPunches.java",
+    "source_sha256": "57288fc8976428f996f625bcfe2b44e0b7777e115eefe8848b1b72ca088b6455",
+    "readback": {
+      "source_height_and_layers_unchanged": true,
+      "disk_reopen_verified": true,
+      "prior_and_new_hole_controls": 1944,
+      "cutouts_before": 2966,
+      "cutouts_after": 2987,
+      "physics_sha256": "69b5077281d79c0d6e9c74c1260490891ac1f50416c55bc4acf9c549ff8929ab"
+    }
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "source": {
+    "id": "WLD-05",
+    "construction": "development/levels/rebuild/retaining-shoulder-pass/wld-05/construction.json",
+    "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+    "glb": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.glb",
+    "native": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.hcs2",
+    "blend": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.blend",
+    "glb_sha256": "189a4277319e46bbff7f9fc3950831459d54bf087f0ae038c196aa8391e46fbc",
+    "native_sha256": "df623702b4ed8760edb2168ae36f41b3f8d64e92886691c7f7b54bbc55d76f37"
+  },
+  "retired": [
+    "Arrival end bearing WLD-05 0",
+    "Authored stair end WLD-05 L09 0 high region0",
+    "Authored stair end WLD-05 L09 0 high region1",
+    "Authored stair end WLD-05 L09 0 high region2",
+    "Authored stair end WLD-05 L17 0 high region0",
+    "Authored stair end WLD-05 L17 0 low region0",
+    "Bay landing WLD-05 L09 3 region0",
+    "Bayed shell Floor haul",
+    "Bayed shell Floor vent.002",
+    "Bayed shell Restored bay WLD-05 vent floor region0",
+    "Bayed shell Restored ceiling-cap haul 0 region1",
+    "Bayed stair WLD-05 L09 step0",
+    "Bayed stair WLD-05 L09 step1",
+    "Bayed stair WLD-05 L09 step10",
+    "Bayed stair WLD-05 L09 step11",
+    "Bayed stair WLD-05 L09 step12",
+    "Bayed stair WLD-05 L09 step13",
+    "Bayed stair WLD-05 L09 step14",
+    "Bayed stair WLD-05 L09 step15",
+    "Bayed stair WLD-05 L09 step16",
+    "Bayed stair WLD-05 L09 step17",
+    "Bayed stair WLD-05 L09 step18",
+    "Bayed stair WLD-05 L09 step19",
+    "Bayed stair WLD-05 L09 step2",
+    "Bayed stair WLD-05 L09 step20",
+    "Bayed stair WLD-05 L09 step21",
+    "Bayed stair WLD-05 L09 step22",
+    "Bayed stair WLD-05 L09 step23",
+    "Bayed stair WLD-05 L09 step24",
+    "Bayed stair WLD-05 L09 step25",
+    "Bayed stair WLD-05 L09 step26",
+    "Bayed stair WLD-05 L09 step27",
+    "Bayed stair WLD-05 L09 step28",
+    "Bayed stair WLD-05 L09 step29",
+    "Bayed stair WLD-05 L09 step3",
+    "Bayed stair WLD-05 L09 step30",
+    "Bayed stair WLD-05 L09 step31",
+    "Bayed stair WLD-05 L09 step32",
+    "Bayed stair WLD-05 L09 step33",
+    "Bayed stair WLD-05 L09 step34",
+    "Bayed stair WLD-05 L09 step35",
+    "Bayed stair WLD-05 L09 step4",
+    "Bayed stair WLD-05 L09 step5",
+    "Bayed stair WLD-05 L09 step6",
+    "Bayed stair WLD-05 L09 step7",
+    "Bayed stair WLD-05 L09 step8",
+    "Bayed stair WLD-05 L09 step9",
+    "Bayed stair WLD-05 L17 step0",
+    "Bayed stair WLD-05 L17 step1",
+    "Bayed stair WLD-05 L17 step10",
+    "Bayed stair WLD-05 L17 step11",
+    "Bayed stair WLD-05 L17 step12",
+    "Bayed stair WLD-05 L17 step13",
+    "Bayed stair WLD-05 L17 step14",
+    "Bayed stair WLD-05 L17 step15",
+    "Bayed stair WLD-05 L17 step16",
+    "Bayed stair WLD-05 L17 step17",
+    "Bayed stair WLD-05 L17 step18",
+    "Bayed stair WLD-05 L17 step19",
+    "Bayed stair WLD-05 L17 step2",
+    "Bayed stair WLD-05 L17 step20",
+    "Bayed stair WLD-05 L17 step21",
+    "Bayed stair WLD-05 L17 step22",
+    "Bayed stair WLD-05 L17 step23",
+    "Bayed stair WLD-05 L17 step24",
+    "Bayed stair WLD-05 L17 step25",
+    "Bayed stair WLD-05 L17 step26",
+    "Bayed stair WLD-05 L17 step27",
+    "Bayed stair WLD-05 L17 step28",
+    "Bayed stair WLD-05 L17 step29",
+    "Bayed stair WLD-05 L17 step3",
+    "Bayed stair WLD-05 L17 step30",
+    "Bayed stair WLD-05 L17 step31",
+    "Bayed stair WLD-05 L17 step32",
+    "Bayed stair WLD-05 L17 step33",
+    "Bayed stair WLD-05 L17 step34",
+    "Bayed stair WLD-05 L17 step4",
+    "Bayed stair WLD-05 L17 step5",
+    "Bayed stair WLD-05 L17 step6",
+    "Bayed stair WLD-05 L17 step7",
+    "Bayed stair WLD-05 L17 step8",
+    "Bayed stair WLD-05 L17 step9",
+    "Ceiling cap haul",
+    "Ceiling cap haul.001",
+    "Ceiling cap haul.002",
+    "Ceiling cap haul.003",
+    "Ceiling cap haul.004",
+    "Ceiling cap vent",
+    "Ceiling cap vent.001",
+    "Ceiling cap vent.002",
+    "Ceiling cap vent.003",
+    "Ceiling cap vent.004",
+    "East stair hub bearing ledge 0 region0",
+    "East stair hub bearing ledge 0 region1",
+    "East stair hub bearing ledge 0 region2",
+    "Flat route shell Wall assay W",
+    "Flat route shell Wall assay W.001",
+    "Flat route shell Wall shack E",
+    "Flat route shell Wall shack E.001",
+    "Flat route shell Wall shack N",
+    "Flat route shell Wall shack N.001",
+    "Flat route shell Wall stores E",
+    "Flat route shell Wall stores E.001",
+    "Flat route shell Wall stores S.001",
+    "Flat route shell Wall wash W",
+    "Flat route shell Wall wash W.001",
+    "Floor shack",
+    "Floor shack.001",
+    "Floor shack.002",
+    "Floor shack.003",
+    "Floor shack.004",
+    "Floor vent",
+    "Floor vent.001",
+    "Floor vent.003",
+    "Floor vent.004",
+    "Header assay W",
+    "Header shack E",
+    "Header shack N",
+    "Header stores E",
+    "Header wash W",
+    "Indoor route bearing WLD-05 vent L16 7 region0",
+    "Indoor route bearing WLD-05 vent L18 1 region0",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L03 support 0",
+    "L05 support 0",
+    "L06 support 0",
+    "L06 support 1",
+    "L08 support 0",
+    "L08 support 1",
+    "L10 support 0",
+    "L13 support 1",
+    "Restored bay WLD-05 haul ceiling-cap region0",
+    "Restored ceiling-cap haul 0 region0",
+    "Restored ceiling-cap haul 0 region2",
+    "Retaining shoulder WLD-05 L08 2 1 1",
+    "Retaining shoulder WLD-05 L08 2 1 2",
+    "Retaining shoulder WLD-05 L08 2 1 3",
+    "Rooted cut walkway WLD-05 0",
+    "Rooted cut walkway WLD-05 1",
+    "Rooted cut walkway WLD-05 10",
+    "Rooted cut walkway WLD-05 11",
+    "Rooted cut walkway WLD-05 12",
+    "Rooted cut walkway WLD-05 13",
+    "Rooted cut walkway WLD-05 14",
+    "Rooted cut walkway WLD-05 15",
+    "Rooted cut walkway WLD-05 16",
+    "Rooted cut walkway WLD-05 17",
+    "Rooted cut walkway WLD-05 18",
+    "Rooted cut walkway WLD-05 19",
+    "Rooted cut walkway WLD-05 2",
+    "Rooted cut walkway WLD-05 20",
+    "Rooted cut walkway WLD-05 21",
+    "Rooted cut walkway WLD-05 22",
+    "Rooted cut walkway WLD-05 23",
+    "Rooted cut walkway WLD-05 24",
+    "Rooted cut walkway WLD-05 25",
+    "Rooted cut walkway WLD-05 26",
+    "Rooted cut walkway WLD-05 27",
+    "Rooted cut walkway WLD-05 28",
+    "Rooted cut walkway WLD-05 29",
+    "Rooted cut walkway WLD-05 3",
+    "Rooted cut walkway WLD-05 30",
+    "Rooted cut walkway WLD-05 31",
+    "Rooted cut walkway WLD-05 32",
+    "Rooted cut walkway WLD-05 33",
+    "Rooted cut walkway WLD-05 34",
+    "Rooted cut walkway WLD-05 35",
+    "Rooted cut walkway WLD-05 36",
+    "Rooted cut walkway WLD-05 37",
+    "Rooted cut walkway WLD-05 38",
+    "Rooted cut walkway WLD-05 39",
+    "Rooted cut walkway WLD-05 4",
+    "Rooted cut walkway WLD-05 40",
+    "Rooted cut walkway WLD-05 41",
+    "Rooted cut walkway WLD-05 42",
+    "Rooted cut walkway WLD-05 43",
+    "Rooted cut walkway WLD-05 44",
+    "Rooted cut walkway WLD-05 45",
+    "Rooted cut walkway WLD-05 46",
+    "Rooted cut walkway WLD-05 47",
+    "Rooted cut walkway WLD-05 48",
+    "Rooted cut walkway WLD-05 49",
+    "Rooted cut walkway WLD-05 5",
+    "Rooted cut walkway WLD-05 50",
+    "Rooted cut walkway WLD-05 51",
+    "Rooted cut walkway WLD-05 52",
+    "Rooted cut walkway WLD-05 53",
+    "Rooted cut walkway WLD-05 54",
+    "Rooted cut walkway WLD-05 55",
+    "Rooted cut walkway WLD-05 56",
+    "Rooted cut walkway WLD-05 57",
+    "Rooted cut walkway WLD-05 58",
+    "Rooted cut walkway WLD-05 59",
+    "Rooted cut walkway WLD-05 6",
+    "Rooted cut walkway WLD-05 60",
+    "Rooted cut walkway WLD-05 61",
+    "Rooted cut walkway WLD-05 62",
+    "Rooted cut walkway WLD-05 63",
+    "Rooted cut walkway WLD-05 64",
+    "Rooted cut walkway WLD-05 65",
+    "Rooted cut walkway WLD-05 66",
+    "Rooted cut walkway WLD-05 67",
+    "Rooted cut walkway WLD-05 68",
+    "Rooted cut walkway WLD-05 69",
+    "Rooted cut walkway WLD-05 7",
+    "Rooted cut walkway WLD-05 70",
+    "Rooted cut walkway WLD-05 71",
+    "Rooted cut walkway WLD-05 72",
+    "Rooted cut walkway WLD-05 73",
+    "Rooted cut walkway WLD-05 74",
+    "Rooted cut walkway WLD-05 75",
+    "Rooted cut walkway WLD-05 76",
+    "Rooted cut walkway WLD-05 77",
+    "Rooted cut walkway WLD-05 8",
+    "Rooted cut walkway WLD-05 9",
+    "Saved editor circulation terrain WLD-05"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          82.0
+        ],
+        [
+          28.0,
+          0,
+          76.0
+        ],
+        [
+          28.0,
+          0,
+          69.0
+        ],
+        [
+          30.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          76.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L02": {
+      "id": "L02",
+      "a": "entry",
+      "b": "shack",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          69.0
+        ],
+        [
+          11.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L03": {
+      "id": "L03",
+      "a": "entry",
+      "b": "assay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          69.0
+        ],
+        [
+          47.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L04": {
+      "id": "L04",
+      "a": "shack",
+      "b": "stores",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0,
+          54.0
+        ],
+        [
+          8.0,
+          0,
+          46.0
+        ],
+        [
+          8.0,
+          0,
+          38.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          8.0,
+          0,
+          46.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L05": {
+      "id": "L05",
+      "a": "stores",
+      "b": "adit",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          8.0,
+          0,
+          38.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L06": {
+      "id": "L06",
+      "a": "adit",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          30.0,
+          0,
+          52.0
+        ],
+        [
+          30.0,
+          0,
+          62.0
+        ],
+        [
+          30.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          30.0,
+          0,
+          62.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L08": {
+      "id": "L08",
+      "a": "wash",
+      "b": "adit",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          47.0,
+          0,
+          38.0
+        ],
+        [
+          47.0,
+          0,
+          44.0
+        ],
+        [
+          40.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          40.0,
+          0,
+          44.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L09": {
+      "id": "L09",
+      "a": "adit",
+      "b": "haul",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          30,
+          0,
+          52
+        ],
+        [
+          28.3,
+          0,
+          52
+        ],
+        [
+          28.3,
+          0,
+          49
+        ],
+        [
+          28,
+          -6,
+          31
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    "L17": {
+      "id": "L17",
+      "a": "vent",
+      "b": "adit",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          11,
+          -6,
+          52
+        ],
+        [
+          26.5,
+          0,
+          52
+        ],
+        [
+          30,
+          0,
+          52
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    }
+  }
+}

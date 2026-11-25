@@ -1,0 +1,846 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_AUTHORED_SHARED_AND_SEPARATE_STAIR_BAYS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-03",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-03/construction.json",
+      "remaining_failed_flights": [
+        {
+          "site": "WLD-03",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "START_BLOCKED",
+          "authored_up": "BLOCKED_AT_63_OF_180",
+          "authored_down": "BLOCKED_AT_54_OF_180"
+        },
+        {
+          "site": "WLD-03",
+          "variant": "after_bearing",
+          "link": "L07",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "BLOCKED_AT_11_OF_285",
+          "authored_up": "BLOCKED_AT_137_OF_285",
+          "authored_down": "BLOCKED_AT_27_OF_285"
+        }
+      ],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-03",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segments": "1",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "START_BLOCKED",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_63_OF_180",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_54_OF_180"
+        },
+        {
+          "site": "WLD-03",
+          "variant": "after_bearing",
+          "link": "L07",
+          "segments": "1",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "BLOCKED_SEGMENT_0_AT_11_OF_285",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_137_OF_285",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_27_OF_285"
+        }
+      ]
+    },
+    {
+      "id": "WLD-04",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-04/construction.json",
+      "remaining_failed_flights": [
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L03",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "START_UNSUPPORTED",
+          "authored_up": "START_BLOCKED",
+          "authored_down": "START_BLOCKED"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segment": "0",
+          "legacy_up": "START_UNSUPPORTED",
+          "legacy_down": "BLOCKED_AT_16_OF_142",
+          "authored_up": "START_BLOCKED",
+          "authored_down": "BLOCKED_AT_17_OF_142"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L06",
+          "segment": "0",
+          "legacy_up": "START_UNSUPPORTED",
+          "legacy_down": "START_UNSUPPORTED",
+          "authored_up": "START_BLOCKED",
+          "authored_down": "BLOCKED_AT_29_OF_227"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L11",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "BLOCKED_AT_17_OF_318",
+          "authored_up": "BLOCKED_AT_160_OF_318",
+          "authored_down": "BLOCKED_AT_154_OF_318"
+        }
+      ],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L03",
+          "segments": "1",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "START_UNSUPPORTED",
+          "authored_forward": "START_BLOCKED",
+          "authored_reverse": "START_BLOCKED"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segments": "1",
+          "legacy_forward": "START_UNSUPPORTED",
+          "legacy_reverse": "BLOCKED_SEGMENT_0_AT_16_OF_142",
+          "authored_forward": "START_BLOCKED",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_17_OF_142"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L06",
+          "segments": "1",
+          "legacy_forward": "START_UNSUPPORTED",
+          "legacy_reverse": "START_UNSUPPORTED",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_29_OF_227",
+          "authored_reverse": "START_BLOCKED"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L11",
+          "segments": "1",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "BLOCKED_SEGMENT_0_AT_17_OF_318",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_160_OF_318",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_154_OF_318"
+        }
+      ]
+    },
+    {
+      "id": "WLD-05",
+      "status": "AUTHORED_SHARED_SEPARATE_BAY_CANDIDATE_RUNTIME_AND_TERRAIN_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-bay-pass/wld-05/construction.json",
+      "new_parts": 35,
+      "new_triangles": 636,
+      "replaced_source_parts": 51,
+      "design": {
+        "points": {
+          "L15": [
+            [
+              11,
+              -6,
+              34.5
+            ],
+            [
+              5,
+              -6,
+              34.5
+            ],
+            [
+              5,
+              -6,
+              33.65
+            ],
+            [
+              5,
+              -10,
+              27.5
+            ],
+            [
+              5,
+              -10,
+              26.25
+            ],
+            [
+              11,
+              -10,
+              26.25
+            ],
+            [
+              11,
+              -10,
+              27.5
+            ]
+          ],
+          "L16": [
+            [
+              11,
+              -10,
+              31
+            ],
+            [
+              11,
+              -10,
+              27.5
+            ],
+            [
+              11,
+              -10,
+              26.25
+            ],
+            [
+              5,
+              -10,
+              26.25
+            ],
+            [
+              5,
+              -10,
+              27.5
+            ],
+            [
+              5,
+              -6,
+              33.65
+            ],
+            [
+              5,
+              -6,
+              34.5
+            ],
+            [
+              5,
+              -6,
+              52
+            ],
+            [
+              11,
+              -6,
+              52
+            ]
+          ]
+        },
+        "build": [
+          "L15"
+        ],
+        "shared": {
+          "L16": "L15"
+        },
+        "reason": "Separate lower shaft from room centre and upper return walkway; both links share the actual revised west-ore stair."
+      },
+      "passing_flight_gains": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "site": "WLD-05",
+          "variant": "after_bearing",
+          "link": "L17",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "BLOCKED_AT_8_OF_190",
+          "authored_up": "BLOCKED_AT_178_OF_190",
+          "authored_down": "BLOCKED_AT_9_OF_190"
+        }
+      ],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-05",
+          "variant": "after_bearing",
+          "link": "L17",
+          "segments": "1",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "BLOCKED_SEGMENT_0_AT_8_OF_190",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_178_OF_190",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_9_OF_190"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 3510,
+        "baseline_valid": 2849,
+        "new_block": 0,
+        "baseline_sweep": 2729,
+        "new_sweep_block": 0,
+        "after_valid": 3111,
+        "recovered_pose": 262,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-06",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-08",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-09",
+      "status": "AUTHORED_SHARED_SEPARATE_BAY_CANDIDATE_RUNTIME_AND_TERRAIN_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-bay-pass/wld-09/construction.json",
+      "new_parts": 15,
+      "new_triangles": 438,
+      "replaced_source_parts": 72,
+      "design": {
+        "points": {
+          "L08": [
+            [
+              50,
+              -6,
+              35
+            ],
+            [
+              52,
+              -6,
+              35
+            ],
+            [
+              52,
+              -6,
+              39
+            ],
+            [
+              42,
+              -6,
+              48
+            ],
+            [
+              42,
+              -6,
+              58
+            ],
+            [
+              43.75,
+              -6,
+              58
+            ],
+            [
+              43.75,
+              -6,
+              56
+            ],
+            [
+              45,
+              -6,
+              55
+            ]
+          ],
+          "L11": [
+            [
+              50,
+              -6,
+              35
+            ],
+            [
+              52,
+              -6,
+              35
+            ],
+            [
+              52,
+              -6,
+              39
+            ],
+            [
+              42,
+              -6,
+              48
+            ],
+            [
+              42,
+              -6,
+              58
+            ],
+            [
+              43.75,
+              -6,
+              58
+            ],
+            [
+              43.75,
+              -6,
+              56
+            ],
+            [
+              45,
+              -6,
+              55
+            ],
+            [
+              70,
+              0,
+              35
+            ]
+          ],
+          "L12": [
+            [
+              70,
+              0,
+              35
+            ],
+            [
+              45,
+              -6,
+              55
+            ],
+            [
+              43.75,
+              -6,
+              56
+            ],
+            [
+              43.75,
+              -6,
+              58
+            ],
+            [
+              70,
+              -6,
+              58
+            ],
+            [
+              70,
+              -6,
+              55
+            ]
+          ],
+          "L18": [
+            [
+              58,
+              -10,
+              43
+            ],
+            [
+              70,
+              -5,
+              43
+            ],
+            [
+              74,
+              -5,
+              43
+            ],
+            [
+              74,
+              0,
+              28.05
+            ],
+            [
+              74,
+              0,
+              27
+            ],
+            [
+              70,
+              0,
+              27
+            ]
+          ]
+        },
+        "build": [],
+        "retain_flights": [
+          "L18"
+        ],
+        "shared": {
+          "L11": "L09",
+          "L12": "L09"
+        },
+        "landing_pockets": [
+          {
+            "link": "L11",
+            "centre": [
+              45,
+              -6,
+              55
+            ],
+            "width": 2.5
+          }
+        ],
+        "hub_landings": [
+          {
+            "link": "L11",
+            "elevation": 0,
+            "polygon": [
+              [
+                69,
+                34
+              ],
+              [
+                71.25,
+                34
+              ],
+              [
+                71.25,
+                36.25
+              ],
+              [
+                69,
+                36.25
+              ]
+            ]
+          }
+        ],
+        "reason": "Use one existing main east stair with a lower service catwalk; remove duplicate converging columns that block each other and the return stair."
+      },
+      "passing_flight_gains": [
+        {
+          "link": "L11",
+          "source_segment": "0"
+        },
+        {
+          "link": "L12",
+          "source_segment": "0"
+        },
+        {
+          "link": "L18",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "flat_comparison": {
+        "samples": 3123,
+        "baseline_valid": 2322,
+        "new_block": 0,
+        "baseline_sweep": 2223,
+        "new_sweep_block": 0,
+        "after_valid": 2351,
+        "recovered_pose": 29,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-11",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-12",
+      "status": "AUTHORED_SHARED_SEPARATE_BAY_CANDIDATE_RUNTIME_AND_TERRAIN_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-bay-pass/wld-12/construction.json",
+      "new_parts": 52,
+      "new_triangles": 734,
+      "replaced_source_parts": 36,
+      "design": {
+        "points": {
+          "L16": [
+            [
+              31,
+              0,
+              33.4
+            ],
+            [
+              28,
+              0,
+              33.4
+            ],
+            [
+              28,
+              0,
+              32.3
+            ],
+            [
+              28,
+              -3,
+              28
+            ],
+            [
+              28,
+              -3,
+              26.5
+            ],
+            [
+              31,
+              -3,
+              26.5
+            ],
+            [
+              31,
+              -3,
+              28
+            ]
+          ],
+          "L17": [
+            [
+              31,
+              -3,
+              32
+            ],
+            [
+              31,
+              -3,
+              36
+            ],
+            [
+              11,
+              0,
+              42
+            ]
+          ]
+        },
+        "build": [
+          "L16",
+          "L17"
+        ],
+        "shared": {},
+        "reason": "West-edge descending bay and separate lower return lead-in avoid both crossed columns and the upper trestle walkway."
+      },
+      "passing_flight_gains": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-12",
+          "variant": "after_bearing",
+          "link": "L16",
+          "segments": "6",
+          "legacy_forward": "BLOCKED_SEGMENT_0_AT_28_OF_30",
+          "legacy_reverse": "START_BLOCKED",
+          "authored_forward": "BLOCKED_SEGMENT_3_AT_1_OF_15",
+          "authored_reverse": "START_BLOCKED"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 4173,
+        "baseline_valid": 3388,
+        "new_block": 0,
+        "baseline_sweep": 3267,
+        "new_sweep_block": 0,
+        "after_valid": 3389,
+        "recovered_pose": 1,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-13",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-14",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-15",
+          "variant": "after_bearing",
+          "link": "route-17",
+          "segments": "3",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "BLOCKED_SEGMENT_1_AT_6_OF_100",
+          "authored_forward": "START_BLOCKED",
+          "authored_reverse": "BLOCKED_SEGMENT_2_AT_28_OF_30"
+        }
+      ]
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-17",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-17/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-17",
+          "variant": "after_bearing",
+          "link": "route-03",
+          "segments": "2",
+          "legacy_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+          "legacy_reverse": "START_BLOCKED",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+          "authored_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_83"
+        }
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-18/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-18",
+          "variant": "after_bearing",
+          "link": "route-13",
+          "segments": "5",
+          "legacy_forward": "BLOCKED_SEGMENT_2_AT_1_OF_68",
+          "legacy_reverse": "START_BLOCKED",
+          "authored_forward": "BLOCKED_SEGMENT_4_AT_38_OF_40",
+          "authored_reverse": "START_BLOCKED"
+        }
+      ]
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_LATEST_SHELL_LANDING_FLOOR_SOURCE_NO_BAY_REVISION_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    }
+  ],
+  "aggregate": {
+    "revised_sites": 3,
+    "closed_new_parts": 102,
+    "new_triangles": 1808,
+    "replaced_source_parts": 159,
+    "flight_gains": 6,
+    "complete_link_gains": 5,
+    "remaining_failed_flights": 7,
+    "remaining_failed_links": 11,
+    "flat_samples": 110409,
+    "baseline_valid": 99987,
+    "qualified_sweeps": 94972,
+    "recovered_poses": 292,
+    "new_flat_blocks": 0,
+    "new_flat_sweep_failures": 0
+  },
+  "source_sha": "e8ed8e66b7e1d4c460ca7e7b084ed062fc1eec97",
+  "reconciled_sha": "535ff78a6e0311727bc285fe97729faa67d7f67a"
+}

@@ -1,0 +1,105 @@
+{
+  "status": "VERIFIED_DRAFT_TREE_ASSETS_AND_GALLERY_CHECK",
+  "implementation": "99e9eae107ef7c1642b9c1753b623fb02ca19dd0",
+  "git_tree": "65791ce6086a189524ce21207c52856218c0a30c",
+  "assets": {
+    "development/levels/rebuild/captures/college-electrical-batch/college-software-generator-supplied.png": {
+      "git_blob": "196d8500eb894beee0036d1a124b577f42311122",
+      "sha256": "79c045bea766f385a95324f4095050aec35a17cb2e1a2d9a1debd12d33b56003",
+      "bytes": 116460
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-software-maintenance-board-supplied.png": {
+      "git_blob": "059b06f0434281dde2f054bde76601406240f67b",
+      "sha256": "a4a76f3aff8fb09963b0220634d14048ca2d4154183bdebced0b24cbed87e55e",
+      "bytes": 155469
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-software-maintenance-board-blackout.png": {
+      "git_blob": "00d6dd34bf5beaee46c0507bf48c09b658e65484",
+      "sha256": "656e440647604a6e05b69cc152c7774f30a306679d6188bac10addb08355394e",
+      "bytes": 50816
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-software-maintenance-board-handheld.png": {
+      "git_blob": "2e9fbacd555559b075d046befe9bc6a317003c57",
+      "sha256": "66e836e02cc4cd1780314892b422e5e5eda1eac05e596855920773334870be7b",
+      "bytes": 169799
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-software-cross-tunnel-supplied.png": {
+      "git_blob": "3f7f17d9f10b6a1c60b824630a975c3c09dbcb1d",
+      "sha256": "1958cd58ff48080d67b8a882b65ed0366550a5472a9bd4132e5f17fadc867f9f",
+      "bytes": 97977
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-software-cross-tunnel-blackout.png": {
+      "git_blob": "ea4c84d9b211c5d04a04e646f6b725a8d215e0f9",
+      "sha256": "a74822b72ab0192c94dc9d430466a5564e17e1ff1b1a892c6ca5d0c225ad6dc9",
+      "bytes": 10658
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-opengl-maintenance-board-supplied.png": {
+      "git_blob": "6090c75e1027b21e111b0adf6beaf900f708fe91",
+      "sha256": "856afbb54091b756b5d530de9c3b9c36dc6fd5154339ebe0240c0e7a3b1de76e",
+      "bytes": 150845
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-opengl-maintenance-board-blackout.png": {
+      "git_blob": "974d75cab9ead369228a125abc49b90e3fb427ca",
+      "sha256": "fbbebead22628967c9efc39984edd668db2f81b5fc7b1136bdc407aa1123b76b",
+      "bytes": 50908
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-opengl-cross-tunnel-supplied.png": {
+      "git_blob": "28baea03eb4b2d895ff524cf5753ba2e44b210e4",
+      "sha256": "d881756be8463aa15dd8c62a7ab4ac1c03528a5b8deee79ca64168ab6092b439",
+      "bytes": 92532
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-opengl-cross-tunnel-blackout.png": {
+      "git_blob": "edc432af22be45078fa748b4cf10b721d47a8739",
+      "sha256": "e61838ffc67ce2ae1365ec7824bce258974d7ee3e106fe853bf84e866b8e7bac",
+      "bytes": 11528
+    },
+    "development/levels/rebuild/captures/college-electrical-batch/college-electrical-layout.png": {
+      "git_blob": "2cf3199e7507452da49ee7c3d324fb0db96090a4",
+      "sha256": "5fd26a7141a95362ae2cc22b477300a8a293769be2e976da794665be52207135",
+      "bytes": 68305
+    },
+    "development/levels/rebuild/college-electrical-pass/college/college-electrical.glb": {
+      "git_blob": "8ec8dcb9188534624556ff330a7c1ca4eeaa62d9",
+      "sha256": "45d471762394a1c5544b8db72849b76871e6069a6760874dbb6caa327aaf5763",
+      "bytes": 4832080
+    },
+    "development/levels/rebuild/college-electrical-pass/college/college-electrical.hcs2": {
+      "git_blob": "632e0b82f15ee7cf73d0b6739398ae54904c5632",
+      "sha256": "6f518e5042973f3a8289b1e00080cc628991ddd564ddb967cf9b988382a199cd",
+      "bytes": 1684465
+    },
+    "development/levels/rebuild/college-electrical-pass/college/college-electrical.blend": {
+      "git_blob": "47e13ba979bfcaea9b8805a9c57a20495eecb327",
+      "sha256": "58326360b4867ec0158c433b19557d741179a556b54279b8df3487916e6f7f6d",
+      "bytes": 1606124
+    }
+  },
+  "pull_request": {
+    "baseRefName": "map/house-default",
+    "baseRefOid": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "headRefName": "map/roster-structure-batch",
+    "headRefOid": "99e9eae107ef7c1642b9c1753b623fb02ca19dd0",
+    "isDraft": true,
+    "state": "OPEN",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86"
+  },
+  "gallery": {
+    "conclusion": "success",
+    "databaseId": 44251703924,
+    "headSha": "99e9eae107ef7c1642b9c1753b623fb02ca19dd0",
+    "status": "completed",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44251703924"
+  },
+  "public_pages": {
+    "html_url": "https://mrcalzon02.github.io/The-Beckenburg-Project/",
+    "source": {
+      "branch": "main",
+      "path": "/"
+    },
+    "status": "built",
+    "current_gallery_http": 200,
+    "new_plan_http": 404,
+    "new_opengl_frame_http": 404,
+    "new_assets_deployment": "HELD_PENDING_ACCEPTED_INTEGRATION"
+  }
+}

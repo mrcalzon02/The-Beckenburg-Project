@@ -1,0 +1,51 @@
+check	result
+scene_revision	a36bea99dd0edcbdbc1bae8c728dc1e072f98258ea92e1c8c7dde9a2bf8a857e
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+body_contacts_at_perimeter	1302
+jump_height_contacts	1302
+standing_optical_contacts	651
+supported_crossings_blocked	1172
+original_invisible_edges_with_exterior_ground	3
+canonical_ramp_retreat_both_postures	PASS
+measured_tread_datums	6
+walked_authored_links_and_journeys_both_postures	35
+working_doors	16
+connected_supported_owners	15
+optics_object_passage_room_acoustics_and_replica_state	PASS
+northwatch-dorm-cupboard_protected_floor_samples	69
+northwatch-lab-cupboard_protected_floor_samples	69
+northwatch-shelter-cupboard_protected_floor_samples	69
+northwatch_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+shed_task_light_energy	2.7330460062003774 supplied, 0.187 stopped, 0.187 tripped, 0.187 switched off
+northwatch-lab-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+lab_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-radio-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+radio_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-records-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+records_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-store-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+store_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-dorm-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+dorm_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-mess-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+mess_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-shelter-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+shelter_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-array-service-light-01_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+northwatch-array-service-light-02_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+array_visible_blackout	238480 changed pixels; 1.5167058516196448 mean RGB increase
+array_circuit_energy	2 fixtures independently switched and cut by source or breaker
+northwatch-court-service-light-03_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+northwatch-court-service-light-04_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+court_visible_blackout	367782 changed pixels; 2.671876959247649 mean RGB increase
+court_circuit_energy	2 fixtures independently switched and cut by source or breaker
+northwatch-tunnel-n-service-light-09_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-n-service-light-10_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+tunnel-n_visible_blackout	441683 changed pixels; 3.6773484848484848 mean RGB increase
+tunnel-n_circuit_energy	2 fixtures independently switched and cut by source or breaker
+northwatch-tunnel-service-light-05_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-service-light-06_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-service-light-07_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-service-light-08_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+tunnel_visible_blackout	354252 changed pixels; 2.024762931034483 mean RGB increase
+tunnel_circuit_energy	4 fixtures independently switched and cut by source or breaker

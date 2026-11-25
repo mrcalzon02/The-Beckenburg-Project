@@ -1,0 +1,184 @@
+{
+  "scope": "Native joined movement sweeps across actual building entrances and exterior courts.",
+  "source_files_sha256": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/verify_estate_parish.py": "e4018eb4cb450457c099bfe3526ce1444f7e88b250a0f4dd52ff7d793420db2e"
+  },
+  "evidence_sha256": {
+    "complete-journey-input.tsv": "4228fc58c3d6df7f22a2cc8a573056fa2fa8012aa19e417e6527e52c7e4491cd",
+    "complete-journey-sweeps.tsv": "b5c938ca6c723d268ae965dff773a7653770a556ebd8cd9c9f90562f4cce1f65"
+  },
+  "journeys": [
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J01",
+      "segments": "5",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van to foyer",
+      "links": [
+        1,
+        2
+      ]
+    },
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J02",
+      "segments": "10",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van to ballroom",
+      "links": [
+        1,
+        -31,
+        -30
+      ]
+    },
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J03",
+      "segments": "19",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Library to service stairs",
+      "links": [
+        29,
+        -31,
+        -28
+      ]
+    },
+    {
+      "site": "MANSION",
+      "variant": "after",
+      "link": "J04",
+      "segments": "9",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Receiving to ballroom",
+      "links": [
+        26,
+        -30
+      ]
+    },
+    {
+      "site": "FARMHOUSE",
+      "variant": "after",
+      "link": "J01",
+      "segments": "6",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van to mudroom",
+      "links": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "site": "FARMHOUSE",
+      "variant": "after",
+      "link": "J02",
+      "segments": "11",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Prep to repair workshop",
+      "links": [
+        11,
+        30
+      ]
+    },
+    {
+      "site": "FARMHOUSE",
+      "variant": "after",
+      "link": "J03",
+      "segments": "13",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Barn north to laundry",
+      "links": [
+        -22,
+        33
+      ]
+    },
+    {
+      "site": "FARMHOUSE",
+      "variant": "after",
+      "link": "J04",
+      "segments": "10",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van to the barn south door",
+      "links": [
+        1,
+        2,
+        23
+      ]
+    },
+    {
+      "site": "CHURCH",
+      "variant": "after",
+      "link": "J01",
+      "segments": "4",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van to vestibule",
+      "links": [
+        1,
+        2
+      ]
+    },
+    {
+      "site": "CHURCH",
+      "variant": "after",
+      "link": "J02",
+      "segments": "9",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Vestry around to the chapel",
+      "links": [
+        18,
+        -17
+      ]
+    },
+    {
+      "site": "CHURCH",
+      "variant": "after",
+      "link": "J03",
+      "segments": "16",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Vestry around to the vestibule",
+      "links": [
+        18,
+        30,
+        2
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "status": "COLLEGE_ELECTRICAL_STAGED_GAMEPLAY_PASS_SITE_ACCEPTANCE_OPEN",
+  "baseline": "f46c49108a189c4e34eb791cb6374d6becd559b9",
+  "staged_native_revision": "3f4e14c71a713d3eda79a81bad32077dac4bc1cfd2ab75b5b7b2cc6522e82999",
+  "native_files": {
+    "college-electrical.glb": {
+      "sha256": "45d471762394a1c5544b8db72849b76871e6069a6760874dbb6caa327aaf5763"
+    },
+    "college-electrical.hcs2": {
+      "sha256": "6f518e5042973f3a8289b1e00080cc628991ddd564ddb967cf9b988382a199cd"
+    },
+    "college-electrical.blend": {
+      "sha256": "58326360b4867ec0158c433b19557d741179a556b54279b8df3487916e6f7f6d"
+    }
+  },
+  "source_schedule": "college/electrical.json",
+  "geometry_readback": "verification/structural-readback.json",
+  "circuit_plan": "electrical-layout.svg",
+  "room_and_traversal": {
+    "total_context_spaces": 81,
+    "searchable_spaces": 40,
+    "stable_owners": 15,
+    "ritual_anchors": 3,
+    "route_directions_standing": 88,
+    "route_directions_crouched": 88,
+    "acoustic_graph_edges": 15,
+    "physical_apertures": 10,
+    "sealed_context_seams": 56,
+    "sealed_context_samples": 1283,
+    "body_leaks": 0,
+    "optical_leaks": 0
+  },
+  "electrical": {
+    "controls_with_standing_and_crouched_aim": 14,
+    "mounted_switches": 12,
+    "connected_lights": 68,
+    "surface_and_buried_runs": 21,
+    "load_effects_verified_for_all_circuits": true,
+    "min_measured_light_energy_drop": 2.6452,
+    "max_blackout_ambient_sample": 0.9,
+    "no_battery_change": true,
+    "physical_starter_reset_and_peer_reconnect": true,
+    "real_accepted_ghost_electrical_trip": true,
+    "loopback_peers": 4
+  },
+  "pixel_difference": {
+    "pixels": {
+      "software": {
+        "maintenance-board": 433383,
+        "cross-tunnel": 410882
+      },
+      "opengl": {
+        "maintenance-board": 395724,
+        "cross-tunnel": 397029
+      }
+    },
+    "definition": "Per backend, RGB channel sum increases by at least 15 from blackout in same fixed 960x600 camera",
+    "graphics_hardware": "NVIDIA RTX 5070, OpenGL 3.3.0 driver 616.64",
+    "software": "verification/software-runtime.txt",
+    "opengl": "verification/opengl-runtime.txt"
+  },
+  "test_regressions": {
+    "HollowCreekRuntimeTest": "PASS",
+    "HollowCreekPowerTest": "PASS",
+    "HollowCreekNativePhysicsTest": "PASS",
+    "GroundRecoverySupportParityTest": "PASS",
+    "LevelEnclosureTest": "PASS",
+    "ArchitecturalPlansTest": "PASS",
+    "PlayerJumpTest": "PASS",
+    "LanWorldTest": "PASS"
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-software-generator-supplied.png",
+      "backend": "software",
+      "sha256": "79c045bea766f385a95324f4095050aec35a17cb2e1a2d9a1debd12d33b56003"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-software-maintenance-board-supplied.png",
+      "backend": "software",
+      "sha256": "a4a76f3aff8fb09963b0220634d14048ca2d4154183bdebced0b24cbed87e55e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-software-maintenance-board-blackout.png",
+      "backend": "software",
+      "sha256": "656e440647604a6e05b69cc152c7774f30a306679d6188bac10addb08355394e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-software-maintenance-board-handheld.png",
+      "backend": "software",
+      "sha256": "66e836e02cc4cd1780314892b422e5e5eda1eac05e596855920773334870be7b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-software-cross-tunnel-supplied.png",
+      "backend": "software",
+      "sha256": "1958cd58ff48080d67b8a882b65ed0366550a5472a9bd4132e5f17fadc867f9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-software-cross-tunnel-blackout.png",
+      "backend": "software",
+      "sha256": "a74822b72ab0192c94dc9d430466a5564e17e1ff1b1a892c6ca5d0c225ad6dc9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-opengl-maintenance-board-supplied.png",
+      "backend": "opengl",
+      "sha256": "856afbb54091b756b5d530de9c3b9c36dc6fd5154339ebe0240c0e7a3b1de76e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-opengl-maintenance-board-blackout.png",
+      "backend": "opengl",
+      "sha256": "fbbebead22628967c9efc39984edd668db2f81b5fc7b1136bdc407aa1123b76b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-opengl-cross-tunnel-supplied.png",
+      "backend": "opengl",
+      "sha256": "d881756be8463aa15dd8c62a7ab4ac1c03528a5b8deee79ca64168ab6092b439"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-opengl-cross-tunnel-blackout.png",
+      "backend": "opengl",
+      "sha256": "e61838ffc67ce2ae1365ec7824bce258974d7ee3e106fe853bf84e866b8e7bac"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-electrical-batch/college-electrical-layout.png",
+      "backend": "engineering plan",
+      "sha256": "5fd26a7141a95362ae2cc22b477300a8a293769be2e976da794665be52207135"
+    }
+  ],
+  "active_roster": "roster.json",
+  "remaining_acceptance": [
+    "Fit and operate the actual door leaves throughout the College and finish guard details.",
+    "Finish plumbing, heating, ventilation, and visible branches where required, then audit completed materials and contents.",
+    "Audit the exterior containment and remaining stage and case contracts, including public selection, full peer map dispatch and release."
+  ],
+  "release": "HELD_DRAFT_REVIEW",
+  "next_action": "Fit College door leaves to the actual public and service frames, complete guards and whole-site containment, then replay ordinary arrival and the case with all services.",
+  "packaged_runtime": {
+    "build": "build.cmd package",
+    "java_release": 17,
+    "result": "PASS",
+    "tests": {
+      "CollegeNativeElectricalTest": "PASS",
+      "GroundRecoverySupportParityTest": "PASS",
+      "ArchitecturalPlansTest": "PASS",
+      "LevelEnclosureTest": "PASS",
+      "LanWorldRenderTest": "PASS"
+    }
+  },
+  "known_baseline_control": {
+    "test": "AuthoredLevelNetworkTest",
+    "result": "FAIL on the original live House window acknowledgement in both exact baseline and candidate",
+    "baseline": "f46c49108a189c4e34eb791cb6374d6becd559b9",
+    "baseline_reproduction": "verification/house-window-baseline.txt",
+    "candidate_reproduction": "verification/house-window-candidate.txt",
+    "ledger": "DEV-592",
+    "scope": "The staged College software, GPU and localhost case checks pass."
+  }
+}

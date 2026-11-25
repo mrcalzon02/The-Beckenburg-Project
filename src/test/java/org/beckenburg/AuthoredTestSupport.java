@@ -27,6 +27,24 @@ final class AuthoredTestSupport {
             throw failure;
         }
     }
+    static void checkSoloLauncher(SiteCatalog.Location location, HouseMap expected) throws Exception {
+        var directory=java.nio.file.Files.createTempDirectory("beckenburg-solo-review");
+        var profile=directory.resolve("career.properties");
+        try(var local=new LocalInvestigation(new ProfileStore(profile),location,CharacterVisuals.Hunter.OBSERVER,
+                MissionWeather.Mode.FIXED,EvidenceSignals.Weather.CLEAR,1,null,0)){
+            var host=(LanHost)LanSafeAreaBarrierTest.field(local,"host");
+            var map=(HouseMap)LanSafeAreaBarrierTest.field(host,"map");
+            var world=(LanWorld)LanSafeAreaBarrierTest.field(host,"world");
+            var player=world.body(0);
+            check(local.running()&&map.site()==expected.site()&&map.level().revision().equals(expected.level().revision())
+                &&map.roomAt(player.x(),player.y(),player.z())==HouseMap.EXTRACTION_ROOM,
+                "Normal solo launcher rejected the site revision or cargo spawn "+location);
+        }finally{
+            java.nio.file.Files.deleteIfExists(profile);
+            java.nio.file.Files.deleteIfExists(directory);
+        }
+    }
+
     static final HouseMap.Site[] SITES={HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL};
     /** Cardinal hearing fixtures must share actual room AND floor support;
      * an X offset across the House stairs can otherwise enter another storey. */

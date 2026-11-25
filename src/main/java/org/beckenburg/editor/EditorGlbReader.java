@@ -1,5 +1,7 @@
 package org.beckenburg.editor;
 
+import java.awt.image.BufferedImage;
+
 import java.io.*;
 import java.nio.*;
 import java.nio.charset.StandardCharsets;
@@ -11,9 +13,9 @@ import org.beckenburg.editor.EditorMeshPipeline.*;
 public final class EditorGlbReader {
     private EditorGlbReader(){}
     public static final class Material {
-        private final int index;private final String name,alpha,origin,defaultOrigin;private final byte[] png;private final double[] color;private final int wrapS,wrapT;private final double cutoff;
-        private Material(int index,String name,byte[] png,double[] color,int wrapS,int wrapT,String alpha,double cutoff,String origin,String defaultOrigin){this.index=index;this.name=name;this.png=png.clone();this.color=color.clone();this.wrapS=wrapS;this.wrapT=wrapT;this.alpha=alpha;this.cutoff=cutoff;this.origin=origin;this.defaultOrigin=defaultOrigin;}
-        public int index(){return index;}public String name(){return name;}public byte[] png(){return png.clone();}public double[] color(){return color.clone();}public int wrapS(){return wrapS;}public int wrapT(){return wrapT;}public String alpha(){return alpha;}public double cutoff(){return cutoff;}public String explicitOrigin(){return origin;}public String defaultOrigin(){return defaultOrigin;}
+        private final int index;private final String name,alpha,origin,defaultOrigin;private final byte[] png;private final double[] color;private final int wrapS,wrapT;private final double cutoff;private final boolean textured;
+        private Material(int index,String name,byte[] png,double[] color,int wrapS,int wrapT,String alpha,double cutoff,String origin,String defaultOrigin,boolean textured){this.textured=textured;this.index=index;this.name=name;this.png=png.clone();this.color=color.clone();this.wrapS=wrapS;this.wrapT=wrapT;this.alpha=alpha;this.cutoff=cutoff;this.origin=origin;this.defaultOrigin=defaultOrigin;}
+        public boolean hasTexture(){return textured;}public int index(){return index;}public String name(){return name;}public byte[] png(){return png.clone();}public double[] color(){return color.clone();}public int wrapS(){return wrapS;}public int wrapT(){return wrapT;}public String alpha(){return alpha;}public double cutoff(){return cutoff;}public String explicitOrigin(){return origin;}public String defaultOrigin(){return defaultOrigin;}
         public EditorMeshMaterial nativeMaterial()throws IOException{try{return new EditorMeshMaterial(key(index),name.isBlank()?"Material "+index:name,png,new EditorMeshMaterial.Color(color[0],color[1],color[2],color[3]),wrapS,wrapT,EditorMeshMaterial.Alpha.valueOf(alpha),cutoff,EditorMeshMaterial.Origin.valueOf(origin==null?defaultOrigin:origin),Map.of("sourceMaterialIndex",Integer.toString(index)));}catch(IllegalArgumentException invalid){throw new IOException("Source material exceeds native authoring capabilities",invalid);}}
     }
     public record Primitive(int node,int primitive,int positionAccessor,List<Vertex> local,List<Vertex> world,List<Integer> indices,int material,List<Long> positionIds,List<Long> faceIds){
@@ -29,6 +31,7 @@ public final class EditorGlbReader {
         public String fingerprint(){return fingerprint;}
         public byte[] trailing(){var view=ByteBuffer.wrap(original).order(ByteOrder.LITTLE_ENDIAN);int binHeader=20+view.getInt(12);return Arrays.copyOfRange(original,binHeader+8+view.getInt(binHeader),original.length);}
         public byte[] original(){return original.clone();}public byte[] binary(){return binary.clone();}public Map<String,Object> root(){return root;}public List<Material> materials(){return materials;}public List<Primitive> primitives(){return primitives;}public double[] world(int node){return world[node]==null?null:world[node].clone();}
+        public String nodeName(int index){return String.valueOf(obj(arr(root.get("nodes")).get(index)).getOrDefault("name",""));}
         public String partLabel(String part){try{if(!part.startsWith("glb_node_"))return part;int index=Integer.parseInt(part.substring(9));return "Node "+index+": "+String.valueOf(obj(arr(root.get("nodes")).get(index)).getOrDefault("name",part));}catch(RuntimeException invalid){return part;}}
         public List<EditorMeshMaterial> nativeMaterials()throws IOException{
             var found=nativeMaterials;if(found!=null)return found;var result=new ArrayList<EditorMeshMaterial>();for(var m:materials)result.add(m.nativeMaterial());try{EditorMeshMaterial.validateTable(result);}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material budget",bad);}nativeMaterials=List.copyOf(result);return nativeMaterials;
@@ -43,7 +46,7 @@ public final class EditorGlbReader {
         public Mesh mesh(String name)throws IOException{
             var triangles=new ArrayList<Triangle>();var ids=new ArrayList<Long>();var sources=new HashMap<String,Long>();
             for(var face:faces){var p=face.primitive();int i=face.triangle()*3;var a=p.indices.get(i);var b=p.indices.get(i+1);var c=p.indices.get(i+2);triangles.add(new Triangle(p.part(),p.world.get(a),p.world.get(b),p.world.get(c),key(p.material)));for(int index:new int[]{a,b,c})ids.add(sources.computeIfAbsent(p.node+":"+(p.positionIds.isEmpty()?p.positionAccessor+":"+index:"native:"+p.positionIds.get(index)),k->(long)sources.size()));}
-            try{return new Mesh(name,triangles,original.length,ids,nativeMaterials(),this,java.util.stream.LongStream.range(0,triangles.size()).boxed().toList(),frames);}catch(UncheckedIOException e){throw e.getCause();}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material/mesh budgets",bad);}
+            try{return new Mesh(name,triangles,original.length,ids,nativeMaterials(),this,java.util.stream.LongStream.range(0,triangles.size()).boxed().toList(),frames,EditorMeshQuad.readGlb(root,triangles.size()));}catch(UncheckedIOException e){throw e.getCause();}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material/mesh budgets",bad);}
         }
         @Override public boolean equals(Object o){return o==this||o instanceof Document d&&Arrays.equals(original,d.original);}
         @Override public int hashCode(){return Arrays.hashCode(original);}
@@ -53,11 +56,18 @@ public final class EditorGlbReader {
     private static Map<String,Object> freezeMap(Map<String,Object> map){var copy=new LinkedHashMap<String,Object>();for(var e:map.entrySet())copy.put(e.getKey(),freeze(e.getValue()));return Collections.unmodifiableMap(copy);}
     private static Object freeze(Object value){if(value instanceof Map<?,?> m)return freezeMap(obj(m));if(value instanceof List<?> l){var out=new ArrayList<Object>();for(var item:l)out.add(freeze(item));return Collections.unmodifiableList(out);}return value;}
     public static Document read(byte[] source)throws IOException{
-        if(source==null||source.length>4_000_000)throw new IOException("GLB size");
-        try{return decode(source.clone());}catch(ClassCastException|IndexOutOfBoundsException|IllegalArgumentException|NullPointerException|ArithmeticException bad){throw new IOException("Invalid GLB structure",bad);}
+        return read(source,false);
     }
-    private static Document decode(byte[] bytes)throws IOException{
-        if(bytes==null||bytes.length<28||bytes.length>4_000_000)throw new IOException("GLB size");var b=ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN);
+    /** Scene-sized GLB input for hash-verified authored level exports. */
+    public static Document readLevel(byte[] source)throws IOException{
+        return read(source,true);
+    }
+    private static Document read(byte[] source,boolean level)throws IOException{
+        if(source==null||source.length>(level?16_000_000:4_000_000))throw new IOException("GLB size");
+        try{return decode(source.clone(),level);}catch(ClassCastException|IndexOutOfBoundsException|IllegalArgumentException|NullPointerException|ArithmeticException bad){throw new IOException("Invalid GLB structure",bad);}
+    }
+    private static Document decode(byte[] bytes,boolean level)throws IOException{
+        if(bytes.length<28)throw new IOException("GLB size");var b=ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN);
         if(b.getInt(0)!=0x46546c67||b.getInt(4)!=2||b.getInt(8)!=bytes.length)throw new IOException("Not glTF2 binary");int jsonLength=b.getInt(12);
         if(jsonLength<=0||jsonLength>bytes.length-28||b.getInt(16)!=0x4e4f534a)throw new IOException("Invalid GLB JSON chunk");int binaryStart=20+jsonLength;
         if(binaryStart+8>bytes.length||b.getInt(binaryStart+4)!=0x004e4942)throw new IOException("Missing GLB binary buffer");int binaryLength=b.getInt(binaryStart);binaryStart+=8;if(binaryLength<0||(long)binaryStart+binaryLength>bytes.length)throw new IOException("GLB binary bounds");
@@ -65,26 +75,57 @@ public final class EditorGlbReader {
         int chunkEnd=binaryStart+binaryLength;for(int offset=chunkEnd;offset<bytes.length;){if(bytes.length-offset<8)throw new IOException("Truncated GLB trailing chunk");int length=b.getInt(offset),type=b.getInt(offset+4);if(length<0||length%4!=0||(long)offset+8+length>bytes.length||type==0x4e4f534a||type==0x004e4942)throw new IOException("Invalid GLB trailing chunk");offset+=8+length;}
         var buffers=arr(root.get("buffers"));if(buffers.isEmpty()||obj(buffers.get(0)).containsKey("uri"))throw new IOException("GLB buffer0 must use its actual binary chunk");int declared=get(obj(buffers.get(0)),"byteLength",-1);if(declared<0||declared>binaryLength)throw new IOException("GLB declared binary length");int storedLength=binaryLength;binaryLength=declared;
         var views=arr(root.get("bufferViews"));var accessors=arr(root.get("accessors"));var nodes=arr(root.get("nodes"));var meshes=arr(root.get("meshes"));var images=arr(root.get("images"));var sourceMaterials=arr(root.get("materials"));var textures=arr(root.get("textures"));var samplers=root.get("samplers")==null?List.<Object>of():arr(root.get("samplers"));
-        if(views.size()>4096||accessors.size()>4096||nodes.size()>128||meshes.size()>128||images.size()>64||sourceMaterials.size()>256)throw new IOException("GLB budget exceeded");
-        var materials=new ArrayList<Material>();long decodedPixels=0;
+        int resourceLimit=level?16384:4096,nodeLimit=level?4096:128,faceLimit=level?200000:50000;
+        if(views.size()>resourceLimit||accessors.size()>resourceLimit||nodes.size()>nodeLimit||meshes.size()>nodeLimit
+            ||images.size()>64||sourceMaterials.size()>256)throw new IOException("GLB budget exceeded");
+        var materials=new ArrayList<Material>();var textured=new boolean[sourceMaterials.size()];long decodedPixels=0;
         for(int i=0;i<sourceMaterials.size();i++){
-            var material=obj(sourceMaterials.get(i));var pbr=obj(material.get("pbrMetallicRoughness"));var base=pbr.get("baseColorTexture");if(base==null)throw new IOException("Material has no original texture");var texture=obj(textures.get(integer(obj(base).get("index"))));int sampler=get(texture,"sampler",-1);if(sampler< -1||sampler>=samplers.size())throw new IOException("Invalid glTF sampler");var sampling=sampler<0?Map.<String,Object>of():obj(samplers.get(sampler));int wrapS=get(sampling,"wrapS",10497),wrapT=get(sampling,"wrapT",10497);if(!wrap(wrapS)||!wrap(wrapT))throw new IOException("Unsupported glTF wrap");
-            var image=obj(images.get(integer(texture.get("source"))));if(!"image/png".equals(image.get("mimeType"))||!image.containsKey("bufferView"))throw new IOException("Unsupported embedded image");var view=obj(views.get(integer(image.get("bufferView"))));int offset=get(view,"byteOffset",0),length=get(view,"byteLength",-1);if(get(view,"buffer",0)!=0||length<33||offset<0||(long)offset+length>binaryLength)throw new IOException("Image buffer bounds");
-            byte[] png=Arrays.copyOfRange(bytes,binaryStart+offset,binaryStart+offset+length);int w=ByteBuffer.wrap(png).getInt(16),h=ByteBuffer.wrap(png).getInt(20);if(w<2||h<2||w>2048||h>2048||(decodedPixels+=(long)w*h)>67_108_864)throw new IOException("Invalid/oversized embedded PNG");var picture=ImageIO.read(new ByteArrayInputStream(png));if(picture==null||picture.getWidth()!=w||picture.getHeight()!=h)throw new IOException("Invalid PNG");
+            var material=obj(sourceMaterials.get(i));var pbr=obj(material.get("pbrMetallicRoughness"));var base=pbr.get("baseColorTexture");
+            int wrapS=10497,wrapT=10497;
+            byte[] png;
+            if(base==null){
+                if(!level)throw new IOException("Material has no original texture");
+                png=WHITE_TEXTURE;
+            }else{
+                textured[i]=true;
+                var texture=obj(textures.get(integer(obj(base).get("index"))));int sampler=get(texture,"sampler",-1);
+                if(sampler< -1||sampler>=samplers.size())throw new IOException("Invalid glTF sampler");
+                var sampling=sampler<0?Map.<String,Object>of():obj(samplers.get(sampler));
+                wrapS=get(sampling,"wrapS",10497);wrapT=get(sampling,"wrapT",10497);
+                if(!wrap(wrapS)||!wrap(wrapT))throw new IOException("Invalid glTF wrap");
+                var image=obj(images.get(integer(texture.get("source"))));
+                if(!"image/png".equals(image.get("mimeType"))||!image.containsKey("bufferView"))throw new IOException("Unsupported embedded image");
+                var view=obj(views.get(integer(image.get("bufferView"))));int offset=get(view,"byteOffset",0),length=get(view,"byteLength",-1);
+                if(get(view,"buffer",0)!=0||length<33||offset<0||(long)offset+length>binaryLength)throw new IOException("Image buffer bounds");
+                png=Arrays.copyOfRange(bytes,binaryStart+offset,binaryStart+offset+length);
+                int w=ByteBuffer.wrap(png).getInt(16),h=ByteBuffer.wrap(png).getInt(20);
+                if(w<2||h<2||w>2048||h>2048||(decodedPixels+=(long)w*h)>67_108_864)throw new IOException("Invalid/oversized embedded PNG");
+                var picture=ImageIO.read(new ByteArrayInputStream(png));
+                if(picture==null||picture.getWidth()!=w||picture.getHeight()!=h)throw new IOException("Invalid PNG");
+            }
             String alpha=String.valueOf(material.getOrDefault("alphaMode","OPAQUE"));if(!Set.of("OPAQUE","MASK","BLEND").contains(alpha))throw new IOException("Unsupported glTF alpha mode");double cutoff=material.containsKey("alphaCutoff")?num(material.get("alphaCutoff")):.5;if(!Double.isFinite(cutoff)||cutoff<0||cutoff>1)throw new IOException("Invalid alpha cutoff");String origin=null;
             if(material.get("extras") instanceof Map<?,?> extra&&extra.get("beckenburgUvOrigin")!=null){origin=String.valueOf(extra.get("beckenburgUvOrigin"));if(!Set.of("TOP_LEFT","BOTTOM_LEFT").contains(origin))throw new IOException("Unknown authored material UV origin");}
-            materials.add(new Material(i,String.valueOf(material.getOrDefault("name","")),png,vec(pbr.get("baseColorFactor"),1,1,1,1),wrapS,wrapT,alpha,cutoff,origin,"Beckenburg EditorAssetPipeline".equals(obj(root.get("asset")).get("generator"))?"BOTTOM_LEFT":"TOP_LEFT"));
+            materials.add(new Material(i,String.valueOf(material.getOrDefault("name","")),png,vec(pbr.get("baseColorFactor"),1,1,1,1),wrapS,wrapT,alpha,cutoff,origin,"Beckenburg EditorAssetPipeline".equals(obj(root.get("asset")).get("generator"))?"BOTTOM_LEFT":"TOP_LEFT",textured[i]));
         }
         double[][] world=sceneTransforms(root,nodes);var primitives=new ArrayList<Primitive>();int faces=0,declaredVertices=0;
         for(int ni=0;ni<nodes.size();ni++){
             var node=obj(nodes.get(ni));if(!node.containsKey("mesh")||world[ni]==null)continue;var list=arr(obj(meshes.get(integer(node.get("mesh")))).get("primitives"));
             for(int pi=0;pi<list.size();pi++){
-                var primitive=obj(list.get(pi));if(get(primitive,"mode",4)!=4||!primitive.containsKey("indices"))throw new IOException("Only indexed GL triangles supported");var attrs=obj(primitive.get("attributes"));int position=integer(attrs.get("POSITION"));var pos=obj(accessors.get(position));var uv=obj(accessors.get(integer(attrs.get("TEXCOORD_0"))));var indices=obj(accessors.get(integer(primitive.get("indices"))));int count=get(pos,"count",-1),ic=get(indices,"count",-1);
-                if(count<3||count>50000||get(uv,"count",-1)!=count||ic<3||ic>150000||ic%3!=0||(faces+=ic/3)>50000||(declaredVertices+=count)>500000)throw new IOException("Triangle buffer budget");if(get(pos,"componentType",-1)!=5126||get(uv,"componentType",-1)!=5126||!"VEC3".equals(pos.get("type"))||!"VEC2".equals(uv.get("type")))throw new IOException("Unsupported vertex layout");int material=get(primitive,"material",-1);if(material<0||material>=materials.size())throw new IOException("Invalid material binding");Map<String,Object> normal=null;
+                var primitive=obj(list.get(pi));if(get(primitive,"mode",4)!=4||!primitive.containsKey("indices"))throw new IOException("Only indexed GL triangles supported");
+                var attrs=obj(primitive.get("attributes"));int position=integer(attrs.get("POSITION"));var pos=obj(accessors.get(position));
+                int material=get(primitive,"material",-1);
+                if(material<0||material>=materials.size())throw new IOException("Invalid material binding");
+                var uv=attrs.containsKey("TEXCOORD_0")?obj(accessors.get(integer(attrs.get("TEXCOORD_0")))):null;
+                var indices=obj(accessors.get(integer(primitive.get("indices"))));int count=get(pos,"count",-1),ic=get(indices,"count",-1);
+                if(count<3||count>50000||ic<3||ic>150000||ic%3!=0||(faces+=ic/3)>faceLimit||(declaredVertices+=count)>500000)throw new IOException("Triangle buffer budget");
+                if(get(pos,"componentType",-1)!=5126||!"VEC3".equals(pos.get("type"))
+                    ||(uv==null?(!level||textured[material]):get(uv,"count",-1)!=count||get(uv,"componentType",-1)!=5126||!"VEC2".equals(uv.get("type"))))
+                    throw new IOException("Unsupported vertex layout");
+                Map<String,Object> normal=null;
                 if(attrs.containsKey("NORMAL")){normal=obj(accessors.get(integer(attrs.get("NORMAL"))));if(get(normal,"count",-1)!=count||get(normal,"componentType",-1)!=5126||!"VEC3".equals(normal.get("type")))throw new IOException("Invalid vertex normal");}
                 var local=new ArrayList<Vertex>();var transformed=new ArrayList<Vertex>();double[] matrix=world[ni];
                 for(int i=0;i<count;i++){
-                    double x=component(b,binaryStart,binaryLength,views,pos,i,0,3),y=component(b,binaryStart,binaryLength,views,pos,i,1,3),z=component(b,binaryStart,binaryLength,views,pos,i,2,3),u=component(b,binaryStart,binaryLength,views,uv,i,0,2),v=component(b,binaryStart,binaryLength,views,uv,i,1,2);Normal n=normal==null?null:new Normal(component(b,binaryStart,binaryLength,views,normal,i,0,3),component(b,binaryStart,binaryLength,views,normal,i,1,3),component(b,binaryStart,binaryLength,views,normal,i,2,3));local.add(new Vertex(x,y,z,u,v,n));
+                    double x=component(b,binaryStart,binaryLength,views,pos,i,0,3),y=component(b,binaryStart,binaryLength,views,pos,i,1,3),z=component(b,binaryStart,binaryLength,views,pos,i,2,3),u=uv==null?0:component(b,binaryStart,binaryLength,views,uv,i,0,2),v=uv==null?0:component(b,binaryStart,binaryLength,views,uv,i,1,2);Normal n=normal==null?null:new Normal(component(b,binaryStart,binaryLength,views,normal,i,0,3),component(b,binaryStart,binaryLength,views,normal,i,1,3),component(b,binaryStart,binaryLength,views,normal,i,2,3));local.add(new Vertex(x,y,z,u,v,n));
                     double rx=matrix[0]*x+matrix[1]*y+matrix[2]*z+matrix[3],ry=matrix[4]*x+matrix[5]*y+matrix[6]*z+matrix[7],rz=matrix[8]*x+matrix[9]*y+matrix[10]*z+matrix[11];Normal transformedNormal=null;
                     if(n!=null){double a=matrix[0],bb=matrix[1],c=matrix[2],d=matrix[4],e=matrix[5],f=matrix[6],g=matrix[8],h=matrix[9],j=matrix[10],det=a*(e*j-f*h)-bb*(d*j-f*g)+c*(d*h-e*g);if(Math.abs(det)<1e-12)throw new IOException("Singular normal transform");double nx=((e*j-f*h)*n.x()+(f*g-d*j)*n.y()+(d*h-e*g)*n.z())/det,ny=((c*h-bb*j)*n.x()+(a*j-c*g)*n.y()+(bb*g-a*h)*n.z())/det,nz=((bb*f-c*e)*n.x()+(c*d-a*f)*n.y()+(a*e-bb*d)*n.z())/det;double length=Math.sqrt(nx*nx+ny*ny+nz*nz);if(!Double.isFinite(length)||length<1e-8)throw new IOException("Invalid normal length");transformedNormal=new Normal(nx/length,ny/length,nz/length);}
                     transformed.add(new Vertex(rx,ry,rz,u,v,transformedNormal));
@@ -96,6 +137,14 @@ public final class EditorGlbReader {
     }
     static List<Long> identities(Map<String,Object> primitive,String key,int expected,ByteBuffer binary,int start,int length,List<Object> views)throws IOException{
         Map<?,?> metadata=primitive.get("extras") instanceof Map<?,?> extras?extras:Map.of();if(primitive.get("extensions") instanceof Map<?,?> extensions&&extensions.get("BECK_native_mesh") instanceof Map<?,?> nativeData)metadata=nativeData;if(!metadata.containsKey(key))return List.of();var descriptor=obj(metadata.get(key));if(get(descriptor,"componentType",-1)!=5125||get(descriptor,"count",-1)!=expected)throw new IOException("Invalid native GLB identity metadata");int view=get(descriptor,"bufferView",-1);if(view<0||view>=views.size())throw new IOException("Native GLB identity buffer missing");var accessor=new LinkedHashMap<String,Object>();accessor.put("bufferView",view);var result=new ArrayList<Long>();for(int i=0;i<expected;i++)result.add(Integer.toUnsignedLong(index(binary,start,length,views,accessor,i,5125)));return List.copyOf(result);
+    }
+    private static final byte[] WHITE_TEXTURE=whiteTexture();
+    private static byte[] whiteTexture(){
+        var image=new BufferedImage(2,2,BufferedImage.TYPE_INT_RGB);
+        for(int y=0;y<2;y++)for(int x=0;x<2;x++)image.setRGB(x,y,0xffffff);
+        var out=new ByteArrayOutputStream();
+        try{ImageIO.write(image,"png",out);}catch(IOException failure){throw new ExceptionInInitializerError(failure);}
+        return out.toByteArray();
     }
     private static boolean wrap(int value){return value==10497||value==33071||value==33648;}
     @SuppressWarnings("unchecked") static Map<String,Object> obj(Object value){return (Map<String,Object>)value;}

@@ -1,0 +1,402 @@
+{
+  "source": {
+    "id": "WLD-07-MORTUARY",
+    "construction": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+    "layout": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/authored-layout.json",
+    "glb": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.glb",
+    "native": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+    "blend": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.blend",
+    "native_sha256": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+    "glb_sha256": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9"
+  },
+  "retired": [
+    "Ceiling cap chamber",
+    "Ceiling cap ossuary",
+    "Ceiling cap ossuary.001",
+    "Ceiling cap ossuary.002",
+    "Flat route shell Wall chapel N",
+    "Flat route shell Wall chapel N.001",
+    "Flat route shell Wall chapel S",
+    "Flat route shell Wall chapel S.001",
+    "Flat route shell Wall cottage E",
+    "Flat route shell Wall cottage E.001",
+    "Flat route shell Wall cottage N",
+    "Flat route shell Wall cottage N.001",
+    "Flat route shell Wall cottage S",
+    "Flat route shell Wall cottage S.001",
+    "Flat route shell Wall east-stair S",
+    "Flat route shell Wall east-stair S.001",
+    "Flat route shell Wall mort-cold S",
+    "Flat route shell Wall mort-cold S.001",
+    "Flat route shell Wall mort-hall E.001",
+    "Flat route shell Wall mort-hall E.002",
+    "Flat route shell Wall mort-hall S",
+    "Flat route shell Wall mort-office W",
+    "Flat route shell Wall mort-office W.001",
+    "Flat route shell Wall mort-prep W.001",
+    "Flat route shell Wall mort-reception E",
+    "Flat route shell Wall mort-reception E.001",
+    "Flat route shell Wall mort-reception S",
+    "Flat route shell Wall mort-reception S.001",
+    "Flat route shell Wall mort-reception W",
+    "Flat route shell Wall mort-reception W.001",
+    "Flat route shell Wall mort-reception W.002",
+    "Flat route shell Wall mort-viewing E",
+    "Flat route shell Wall mort-viewing E.001",
+    "Flat route shell Wall mort-viewing W",
+    "Flat route shell Wall mort-viewing W.001",
+    "Flat route shell Wall tool W",
+    "Flat route shell Wall tool W.001",
+    "Flat route shell Wall west-stair S",
+    "Flat route shell Wall west-stair S.001",
+    "Floor east-stair",
+    "Floor east-stair.001",
+    "Floor east-stair.002",
+    "Floor east-stair.003",
+    "Floor east-stair.004",
+    "Floor east-stair.005",
+    "Floor east-stair.006",
+    "Floor east-stair.007",
+    "Floor west-stair",
+    "Floor west-stair.001",
+    "Floor west-stair.002",
+    "Floor west-stair.003",
+    "Floor west-stair.004",
+    "Floor west-stair.005",
+    "Floor west-stair.006",
+    "Floor west-stair.007",
+    "Header chapel N",
+    "Header chapel S",
+    "Header cottage E",
+    "Header cottage N",
+    "Header cottage S",
+    "Header east-stair S",
+    "Header mort-cold S",
+    "Header mort-reception E",
+    "Header mort-reception S",
+    "Header mort-reception W",
+    "Header mort-reception W.001",
+    "Header mort-viewing E",
+    "Header mort-viewing W",
+    "Header west-stair S",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L02 support 1",
+    "L03 support 0",
+    "L04 support 0",
+    "L05 support 1",
+    "L06 support 0",
+    "L06 support 1",
+    "L07 support 0",
+    "L07 support 1",
+    "L08 support 0",
+    "L09 support 0",
+    "L09 support 1",
+    "L10 support 0",
+    "L10 support 1",
+    "L12 support 0",
+    "L12 support 1",
+    "L12 support 2",
+    "L13 support 0",
+    "L13 support 1",
+    "L13 support 2",
+    "L14 landing1",
+    "L15 landing0",
+    "Saved editor terrain WLD-07-MORTUARY",
+    "Wall mort-bay E",
+    "Wall mort-bay S",
+    "Wall mort-cold W",
+    "mort-16 support 0",
+    "mort-16 support 1"
+  ],
+  "superseded_guides": {
+    "L03": {
+      "id": "L03",
+      "a": "entry",
+      "b": "chapel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          15.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L04": {
+      "id": "L04",
+      "a": "entry",
+      "b": "cottage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          39.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L05": {
+      "id": "L05",
+      "a": "chapel",
+      "b": "garden",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          47.0
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          15.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          15.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L08": {
+      "id": "L08",
+      "a": "east-graves",
+      "b": "cottage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          41.0,
+          0,
+          29.0
+        ],
+        [
+          39.0,
+          0,
+          38.0
+        ],
+        [
+          39.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          39.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L12": {
+      "id": "L12",
+      "a": "garden",
+      "b": "west-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15,
+          0,
+          29
+        ],
+        [
+          7.5,
+          0,
+          20
+        ],
+        [
+          7.5,
+          0,
+          16
+        ],
+        [
+          8.5,
+          0,
+          16
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          7.5,
+          0,
+          20
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L13": {
+      "id": "L13",
+      "a": "east-graves",
+      "b": "east-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          41,
+          0,
+          29
+        ],
+        [
+          48.5,
+          0,
+          20
+        ],
+        [
+          48.5,
+          0,
+          16
+        ],
+        [
+          47.5,
+          0,
+          16
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.5,
+          0,
+          20
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "mort-16": {
+      "id": "mort-16",
+      "a": "entry",
+      "b": "mort-reception",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28,
+          0,
+          66
+        ],
+        [
+          54,
+          0,
+          66
+        ],
+        [
+          66,
+          0,
+          59
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    "mort-18": {
+      "id": "mort-18",
+      "a": "mort-viewing",
+      "b": "mort-prep",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          66.0,
+          0,
+          47.0
+        ],
+        [
+          78.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    "mort-20": {
+      "id": "mort-20",
+      "a": "mort-cold",
+      "b": "mort-office",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          78.0,
+          0,
+          54.0
+        ],
+        [
+          78.0,
+          0,
+          62.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    "mort-21": {
+      "id": "mort-21",
+      "a": "mort-office",
+      "b": "mort-reception",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          78.0,
+          0,
+          62.0
+        ],
+        [
+          66.0,
+          0,
+          59.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    "mort-22": {
+      "id": "mort-22",
+      "a": "mort-reception",
+      "b": "mort-bay",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          66.0,
+          0,
+          59.0
+        ],
+        [
+          66.0,
+          0,
+          70.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    }
+  }
+}

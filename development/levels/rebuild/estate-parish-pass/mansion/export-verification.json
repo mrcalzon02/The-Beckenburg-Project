@@ -1,0 +1,33 @@
+{
+  "glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d",
+  "native_sha256": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46",
+  "retained_native_records": 647,
+  "new_closed_parts": 22,
+  "aperture_rays": 45,
+  "sill_controls": 30,
+  "independent_standing": 6,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-overview.png",
+      "sha256": "31d46d35751c8a6b64ef2ea98506def4759f358f1709a702139f22e494c380f9",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-forecourt.png",
+      "sha256": "9f5938abcf376e42810018549cb4bca724d0c18f32d072bbfa2c83e42edcbdff",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-service-court.png",
+      "sha256": "a9017c67a63c5f42bd12ce4997b4f7f91f49755e00cd2c8a38aeb690d8716470",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-ballroom-terrace.png",
+      "sha256": "40343aac809f3b66f120c8d7179eac684cc41de01d30cf021c7a95e5bbaa96d0",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    }
+  ]
+}

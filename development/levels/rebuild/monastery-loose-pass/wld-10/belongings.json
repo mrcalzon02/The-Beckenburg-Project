@@ -1,0 +1,110 @@
+{
+  "id": "WLD-10",
+  "status": "MONASTERY_NATIVE_LOOSE_BELONGINGS_STAGED",
+  "source": {
+    "blend": "development/levels/rebuild/monastery-landscape-pass/wld-10/monastery-with-landscape.blend",
+    "glb": "development/levels/rebuild/monastery-landscape-pass/wld-10/monastery-with-landscape.glb",
+    "native": "development/levels/rebuild/monastery-landscape-pass/wld-10/monastery-with-landscape.hcs2",
+    "construction": "development/levels/rebuild/monastery-landscape-pass/wld-10/construction.json"
+  },
+  "source_hashes": {
+    "development/levels/rebuild/monastery-landscape-pass/wld-10/monastery-with-landscape.blend": "0bd000c7f43b88f5ecee1b0f2cef817381f958f92aeb7720f707e8913e4d29ad",
+    "development/levels/rebuild/monastery-landscape-pass/wld-10/monastery-with-landscape.glb": "3adf478548affea1ed70fec8b3275e79225cf15e2b5738246f3ef81c4b4049e5",
+    "development/levels/rebuild/monastery-landscape-pass/wld-10/monastery-with-landscape.hcs2": "b6eb26142eda17d261e83d583c20ab8111afba84bcfca83f24c95248204466d1",
+    "development/levels/rebuild/monastery-landscape-pass/wld-10/construction.json": "b9026898350c93874d4fc6b3ee4b5bbad88e34016680ef7143e449da9b1ad1e4"
+  },
+  "placements": [
+    {
+      "id": "PORTER_DELIVERY_LEDGER",
+      "room": 0,
+      "kind": "BOOK",
+      "support": "Monastery furnished gate storage shelf 01",
+      "x": 25.1,
+      "y": 1.29,
+      "z": 58.04,
+      "yaw": 0,
+      "source": "assets/runtime/models/level_loose_book_worn.glb",
+      "sha256": "cbeb20e3f7d0575e196cc3c14c6b16607a2c9d1623cb22301b62f523126a3bc8",
+      "contact_probes": 32,
+      "mesh_radius": 0.138698,
+      "mesh_height": 0.041
+    },
+    {
+      "id": "ARCHIVE_BRASS_CANDLESTICK",
+      "room": 3,
+      "kind": "CANDLESTICK",
+      "support": "Monastery furnished archive reading table 01",
+      "x": 19.43,
+      "y": 0.86,
+      "z": 11.92,
+      "yaw": 0.42,
+      "source": "assets/runtime/models/level_loose_candlestick_worn.glb",
+      "sha256": "efdfb52216d5d3f28c614624154c29c4ab4a32a4bd5b239aa0f1674c03362134",
+      "contact_probes": 48,
+      "mesh_radius": 0.065,
+      "mesh_height": 0.33
+    },
+    {
+      "id": "REFECTORY_COMMON_MUG",
+      "room": 4,
+      "kind": "MUG",
+      "support": "Monastery furnished north refectory table 01",
+      "x": 55.62,
+      "y": 0.86,
+      "z": 34.95,
+      "yaw": -0.38,
+      "source": "assets/runtime/models/level_loose_mug_worn.glb",
+      "sha256": "449cdc544ed7304630ad63a128acabb03d8fb3b85182abdb04d7b50c90d3320a",
+      "contact_probes": 48,
+      "mesh_radius": 0.094942,
+      "mesh_height": 0.112
+    },
+    {
+      "id": "REFECTORY_EXTRA_BOWL",
+      "room": 4,
+      "kind": "BOWL",
+      "support": "Monastery furnished south refectory table 01",
+      "x": 62.79,
+      "y": 0.86,
+      "z": 46.37,
+      "yaw": 0.67,
+      "source": "assets/runtime/models/level_loose_bowl_worn.glb",
+      "sha256": "de51ea6ee547f9d47ee5a4160c6f638da896ea02f0231d132face0e455aa6e83",
+      "contact_probes": 60,
+      "mesh_radius": 0.1,
+      "mesh_height": 0.081
+    },
+    {
+      "id": "BELL_RINGER_TEA_TIN",
+      "room": 7,
+      "kind": "TIN",
+      "support": "Monastery bell floor around upper stair well region0",
+      "x": 59.27,
+      "y": 6.0,
+      "z": 24.32,
+      "yaw": -0.52,
+      "source": "assets/runtime/models/level_loose_tin_worn.glb",
+      "sha256": "fef263a52b924f87a3aaccc1a4cbf7064de1f77abe278c8478080f83c682a40e",
+      "contact_probes": 48,
+      "mesh_radius": 0.070328,
+      "mesh_height": 0.17
+    },
+    {
+      "id": "MEMORIAL_OIL_BOTTLE",
+      "room": 9,
+      "kind": "BOTTLE",
+      "support": "Floor chamber",
+      "x": 21.75,
+      "y": -3.0,
+      "z": 12.0,
+      "yaw": 0.34,
+      "source": "assets/runtime/models/level_loose_bottle_worn.glb",
+      "sha256": "32eeea775d1972c0e58ed60352152a2023c476730519e931c29e3987151a8571",
+      "contact_probes": 48,
+      "mesh_radius": 0.057369,
+      "mesh_height": 0.28
+    }
+  ],
+  "builder": "tools/prepare_monastery_loose.py",
+  "builder_sha256": "9d8e7bbbdbc3d35590282f8afd5e86cda006064089b1c6db4e7a4a9369232bee"
+}

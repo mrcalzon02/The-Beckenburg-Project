@@ -1,0 +1,48 @@
+{
+  "glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6",
+  "native_sha256": "4cd10a7f7086c0e769103fc504ae164b7ebc5fa19b766d700dfbf117e59dc424",
+  "retained_native_records": 242,
+  "new_closed_parts": 7,
+  "aperture_rays": 9,
+  "sill_controls": 6,
+  "independent_standing": 9,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-overview.png",
+      "sha256": "1b23a56de92adee7fbba600c4b742d19f03d5f63abdc453ad3b02c5cc1261ed3",
+      "source_glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-forecourt.png",
+      "sha256": "ed2a364d3355718e427b270e34ce2a727062c65858eb331378812ad2b37af1c0",
+      "source_glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-signal-hut-door.png",
+      "sha256": "84564f27cacc16b0e246e6b70ed9db5601cf53724a64e43808db4c2a00cf21a5",
+      "source_glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-siding-court.png",
+      "sha256": "18b06fd16353ccee70eeebbb132ed35f444148ea2f1af85a53d16478d364eafc",
+      "source_glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-lower-landing.png",
+      "sha256": "d101bb5c9fde84d963be4364ed9990d3e150244328685cb71fdac2b1c3c6829b",
+      "source_glb_sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-forecourt-before.png",
+      "sha256": "7bd7c7e81728d6947eab05def141085fa022aafea84f2ab750d87ebec63c9888",
+      "source_glb_sha256": "971e67684a6f53245f877f43940d3f60de3347fdc723af6a72ed8aebced609ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-12-lower-landing-before.png",
+      "sha256": "789aa21be7f76a91c706d1976a5a983df9ec39b9451dcb3f97f654b13aa9900f",
+      "source_glb_sha256": "971e67684a6f53245f877f43940d3f60de3347fdc723af6a72ed8aebced609ad"
+    }
+  ]
+}

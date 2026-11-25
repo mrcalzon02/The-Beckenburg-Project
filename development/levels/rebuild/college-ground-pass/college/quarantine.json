@@ -1,0 +1,411 @@
+{
+  "source": {
+    "id": "COLLEGE",
+    "construction": "development/levels/rebuild/service-ground-bay-pass/college/construction.json",
+    "layout": "development/levels/rebuild/service-ground-bay-pass/college/authored-layout.json",
+    "glb": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.glb",
+    "native": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.hcs2",
+    "blend": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.blend",
+    "glb_sha256": "7f5e8feeb59c9c31789f7c7bc0bbd75ddb60e40fbd867ea60ab1cb3d5e320db5",
+    "native_sha256": "69732edabc42400709d504bc099747f8daaebb0b867a3574cfc86bd2d9a6d009"
+  },
+  "removed": [
+    "Arrival end bearing COLLEGE 0",
+    "COLLEGE bay retained outside L03 support 0 region0",
+    "Ceiling cap cross-tunnel",
+    "Flat route shell Wall issue S",
+    "Flat route shell Wall issue S.001",
+    "Flat route shell Wall north-stair E",
+    "Flat route shell Wall north-stair E.001",
+    "Flat route shell Wall rear-hall S",
+    "Flat route shell Wall rear-hall S.001",
+    "Flat route shell Wall teaching-lobby S",
+    "Flat route shell Wall teaching-lobby S.001",
+    "Header issue S",
+    "Header north-stair E",
+    "Header rear-hall S",
+    "Header teaching-lobby S",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L02 support 1",
+    "L17 support 0",
+    "L24 support 0",
+    "L44 support 1",
+    "L45 support 1",
+    "L55 support 0",
+    "L70 support 0",
+    "L86 support 0",
+    "Saved editor macroterrain COLLEGE",
+    "Wall cafe W"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.0,
+          0,
+          96.5
+        ],
+        [
+          32,
+          0,
+          90
+        ],
+        [
+          32,
+          0,
+          84.0
+        ],
+        [
+          37.5,
+          0,
+          84.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        90
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L02": {
+      "id": "L02",
+      "a": "entry",
+      "b": "green",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          84.0
+        ],
+        [
+          32,
+          0,
+          84.0
+        ],
+        [
+          32,
+          0,
+          78
+        ],
+        [
+          32,
+          0,
+          39.0
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        78
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L03": {
+      "id": "L03",
+      "a": "green",
+      "b": "teaching-lobby",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          24,
+          0,
+          62
+        ],
+        [
+          24.0,
+          0,
+          58.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        62
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L17": {
+      "id": "L17",
+      "a": "green",
+      "b": "issue",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          31,
+          0,
+          20
+        ],
+        [
+          31.0,
+          0,
+          18.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        20
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L24": {
+      "id": "L24",
+      "a": "green",
+      "b": "res-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          52,
+          0,
+          70
+        ],
+        [
+          52.0,
+          0,
+          48.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        70
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L44": {
+      "id": "L44",
+      "a": "rear-hall",
+      "b": "green",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          52,
+          0,
+          78
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        78
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L04": {
+      "id": "L04",
+      "a": "teaching-lobby",
+      "b": "teaching-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          58.0
+        ],
+        [
+          22,
+          0,
+          54
+        ],
+        [
+          22.0,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        54
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L08": {
+      "id": "L08",
+      "a": "lab-entry",
+      "b": "lab",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          13.0,
+          0,
+          23.0
+        ],
+        [
+          12,
+          0,
+          22
+        ],
+        [
+          11.0,
+          0,
+          16.0
+        ]
+      ],
+      "threshold": [
+        12,
+        0,
+        22
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L14": {
+      "id": "L14",
+      "a": "teaching-lobby",
+      "b": "meeting",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          58.0
+        ],
+        [
+          28,
+          0,
+          56
+        ],
+        [
+          32.0,
+          0,
+          56.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        56
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L76": {
+      "id": "L76",
+      "a": "res-bridge-approach",
+      "b": "res-east-1",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          30.0
+        ],
+        [
+          54,
+          3.6,
+          33
+        ],
+        [
+          58.0,
+          3.6,
+          34.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.6,
+        33
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L45": {
+      "id": "L45",
+      "a": "north-stair",
+      "b": "green",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          65.0,
+          0,
+          36.0
+        ],
+        [
+          68,
+          0,
+          36
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "threshold": [
+        68,
+        0,
+        36
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    }
+  }
+}

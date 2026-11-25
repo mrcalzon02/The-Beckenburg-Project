@@ -1,0 +1,31 @@
+{
+  "passed": [
+    "DoorSwingTest",
+    "LanWorldTest",
+    "AuthoredLevelStateTest",
+    "LanWorldRenderTest",
+    "AuthoredSitePhysicsTest"
+  ],
+  "retained_staged_school_reachable_spaces": 40,
+  "legacy_baseline_and_candidate_failure": {
+    "class": "ArchitecturalPlansTest",
+    "baseline": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+    "site": "HOUSE",
+    "message": "open door traversal 14",
+    "portal_center": [
+      19.8,
+      0,
+      20.5
+    ],
+    "from": [
+      19.8,
+      0,
+      19.9
+    ],
+    "to": [
+      19.8,
+      0,
+      21.1
+    ]
+  }
+}

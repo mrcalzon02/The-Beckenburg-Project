@@ -1,0 +1,16 @@
+measure	result
+native_scene_revision	6291632de2cdbf98ea25253e1b823a2f10cc965a88b19768a6f26404275477c1
+packaged_solo_case	Regular Prison selection and supported cargo spawn
+PRISON-z-68-14	Closed/open/guest body, sight, aim, acoustics and object checks passed
+PRISON-x-18-65	Closed/open/guest body, sight, aim, acoustics and object checks passed
+sally_gate_collision	Both directions and postures agree with each replicated state
+sally_gate_optics	Real bars block sight and objects, with gaps between the bars
+sally_gate_acoustics	Bar and gap paths differ; the open aperture clears the centre line
+sally_gate_releases	Both manual levers are visible and reachable in both states
+plant_breaker_and_independent_room_switches	12 controls and 26 fitted loads
+global_breaker_blackout	26 extinguished loads and 501375 altered pixels
+staged_mission_owners	15 supported owners and three retained ritual mounts
+staged_connected_route_replays	60 physical link direction and posture combinations
+tcp_ghost_trip_and_plant_reset	Ghost triggered the outage and a hunter physically reset the native Prison breaker
+tcp_blackout_gate_release	A hunter opened from sally, closed and reopened from the yard, and walked the actual threshold twice.
+supported_cargo_arrival	Van to reception and return in both postures

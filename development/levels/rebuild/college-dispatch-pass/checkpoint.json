@@ -1,0 +1,106 @@
+{
+  "status": "COLLEGE_NATIVE_DRAFT_DISPATCH_VERIFIED_FULL_ACCEPTANCE_OPEN",
+  "baseline": "533e60173d2a523b7b9b1b861a9384ea3ccac136",
+  "source_roster": "../college-services-pass/roster.json",
+  "source_checkpoint": "../college-services-pass/checkpoint.json",
+  "review_property": "beckenburg.review.collegeNative=true",
+  "level_revision": "authored-campus-candidate-d48d47cd9c6f8cc1",
+  "scene_revision": "e80366f411643069531a4dd087473012eb07081f599404919c44f8a762383907",
+  "packages_with_exact_source_readback": [
+    "Windows software JAR",
+    "Windows OpenGL JAR"
+  ],
+  "source_assets": {
+    "college-services.glb": {
+      "path": "development/levels/rebuild/college-services-pass/college/college-services.glb",
+      "size": 11775544,
+      "sha256": "75894ba104362afd296af116945d58b23099cf5c17a0994e531ba7ce93e8e5f8"
+    },
+    "college-services.hcs2": {
+      "path": "development/levels/rebuild/college-services-pass/college/college-services.hcs2",
+      "size": 4855522,
+      "sha256": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa"
+    },
+    "college-runtime.tsv": {
+      "path": "development/levels/rebuild/college-services-pass/verification/runtime.tsv",
+      "size": 19873,
+      "sha256": "087fe60aef1d8576210e5363b708ddccbe990dc3b0efc983b56561560010533c"
+    }
+  },
+  "gameplay": {
+    "named_site": "COLLEGE",
+    "accessible_spaces": 40,
+    "stable_owners": 15,
+    "operable_leaves": 18,
+    "physical_lights": 68,
+    "ritual_reservations": 3,
+    "ordinary_tcp_peers": 4,
+    "ordinary_tcp_arrival_steps": 9,
+    "van_first_pose": [
+      30.9,
+      0.5,
+      96.25
+    ],
+    "arrival_last_pose": [
+      28.11,
+      0,
+      96.25
+    ],
+    "source_route_directions_replayed": 88,
+    "postures": 2,
+    "guide_control": "Replacing the guide rows with an invented through-wall route preserved the room and scene revisions and blocked travel and sight.",
+    "legacy_authoring": "Default and saved pre-existing College authoring stayed in their original coordinate space. Mismatched advertised revisions were rejected."
+  },
+  "opengl": "NVIDIA GeForce RTX 5070 / OpenGL 3.3.0 NVIDIA 616.64",
+  "captures": [
+    {
+      "renderer": "software",
+      "view": "teaching-entrance",
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-software-dispatch-teaching-entrance.png",
+      "size": 378345,
+      "sha256": "29d5774aeb14c5839c09ce294116eac838bc659a5c8021e5a42da2177ab1df96"
+    },
+    {
+      "renderer": "software",
+      "view": "lecture-heating",
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-software-dispatch-lecture-heating.png",
+      "size": 206614,
+      "sha256": "01cb81ceef74d4ddefcd614a77b45ecf42404baad916d41e6d47ac84f1ec8552"
+    },
+    {
+      "renderer": "opengl",
+      "view": "teaching-entrance",
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-opengl-dispatch-teaching-entrance.png",
+      "size": 333455,
+      "sha256": "aafab58803216512b29f0a878e39f17ad1aad1993e3425d35b6c7456fc5b81d2"
+    },
+    {
+      "renderer": "opengl",
+      "view": "lecture-heating",
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-opengl-dispatch-lecture-heating.png",
+      "size": 173285,
+      "sha256": "0dab5766a33ee09be7e43fb4c04d97a75f406f0801c31680e1bd0689ca2fdcd5"
+    }
+  ],
+  "passing_logs": [
+    "verification/package.txt",
+    "verification/software-runtime.txt",
+    "verification/opengl-runtime.txt",
+    "verification/services-replay.txt",
+    "verification/LevelAuthoringSessionTest.txt",
+    "verification/AuthoredLevelNetworkTest.txt",
+    "verification/AuthoredLevelPhysicsTest.txt"
+  ],
+  "open_checks": [
+    "LivedLevelDressingTest fails on both the prior held runtime classes and this revision in an isolated profile. See the two furnishing logs.",
+    "College functional furnishing, real hiding and evidence placements, wear and wider case acceptance remain open."
+  ],
+  "publication": {
+    "draft_pull_request": 86,
+    "head": "map/roster-structure-batch",
+    "held_base": "map/house-default",
+    "held_base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "public_promotion": false
+  }
+}
