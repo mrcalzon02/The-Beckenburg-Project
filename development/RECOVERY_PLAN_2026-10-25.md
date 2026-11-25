@@ -2419,3 +2419,8 @@ The [estate checkpoint](levels/rebuild/asylum-enclosure-pass/checkpoint.json) fo
 ### Blackwater Dam continuous native investigation
 
 The [Blackwater checkpoint](levels/rebuild/dam-investigation-pass/checkpoint.json) follows 9efa2310 and uses the same ordinary Windows archive. All seven Blackwater archive entries matched the existing source manifest. A continuous three-peer case operated eight leaves and used both switchbacks. The three walk-in refuges worked while standing and crouched. The fitted lower valve rite settled as CLEANSED. The held draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Readback on main cb220372fb721fbe588f49d3dc488f6dbba1602d showed passing multiplayer 44863686526 and OpenGL 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. This checkpoint is local.
+
+
+### Northwatch continuous native investigation
+
+The [station checkpoint](levels/rebuild/northwatch-investigation-pass/checkpoint.json) follows Blackwater 63bcece7 on the same ordinary Windows archive. Its three real peers observe the archive witness, ward, both tunnel stairs, three refuges, five fitted leaves and laboratory banishment. The paired RTX 5070 archive repeats both named renderer reviews from the archived payloads. Held draft and installer status follow the Blackwater checkpoint.

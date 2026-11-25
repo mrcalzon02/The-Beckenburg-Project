@@ -20,7 +20,7 @@ GPU=ROOT/"gpu-client/target/BeckenburgGPU.jar"
 RESOURCE=Path("org/beckenburg/sites/wld-08")
 RUNTIME_PAYLOADS=("station-with-furnishings.glb","station-with-furnishings.hcs2","runtime-input.tsv","door-schedule.tsv")
 REVIEW_CLASSES=(
-    "NorthwatchNamedReview","NorthwatchDoorRuntime","NorthwatchDistributionReview",
+    "NorthwatchNamedReview","NorthwatchInvestigationReview","NorthwatchDoorRuntime","NorthwatchDistributionReview",
     "NorthwatchPowerReview","NorthwatchWaterReview","NorthwatchFurnishingReview",
     "NativeSchoolInteriorReview","NativeSchoolDoorReview","CemeteryRefugeReview","WharfPowerChecks",
 )
@@ -68,21 +68,43 @@ def package():
     print("PASS all production Java sources and five exact archived Northwatch resources",flush=True)
 
 
+def check_ordinary_archive():
+    resources=json.loads((STAGE/"checkpoint.json").read_bytes())["packaged_resources"]
+    with ZipFile(BASE_JAR) as archive:
+        for name,metadata in resources.items():
+            assert sha256(archive.read(name)).hexdigest()==metadata["sha256"],name
+        assert b"Main-Class: org.beckenburg.InvestigationGame" in archive.read("META-INF/MANIFEST.MF")
+    print("PASS five exact Northwatch resources in the ordinary game archive",flush=True)
+
+
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument("--gpu",action="store_true")
+    mode=parser.add_mutually_exclusive_group()
+    mode.add_argument("--gpu",action="store_true")
+    mode.add_argument("--investigation",action="store_true")
     parser.add_argument("--reuse-package",action="store_true")
     parser.add_argument("--package-only",action="store_true")
     args=parser.parse_args()
-    if not args.reuse_package:
+    if args.investigation:
+        if args.reuse_package or args.package_only:
+            parser.error("--investigation uses the existing ordinary game archive")
+        check_ordinary_archive()
+    elif not args.reuse_package:
         package()
     if args.package_only:
         return
-    verifier=BUILD/("opengl" if args.gpu else "software")
+    archive=BASE_JAR if args.investigation else REVIEW_JAR
+    verifier=BUILD/("investigation" if args.investigation else "opengl" if args.gpu else "software")
     verifier.mkdir(parents=True,exist_ok=True)
     sources=[str(ROOT/"tools/java"/(name+".java")) for name in REVIEW_CLASSES]
-    run([jdk("javac"),"--release","17","-encoding","UTF-8","-cp",str(REVIEW_JAR),"-d",str(verifier),*sources])
-    cp=os.pathsep.join(map(str,(verifier,REVIEW_JAR,GPU) if args.gpu else (verifier,REVIEW_JAR)))
+    run([jdk("javac"),"--release","17","-encoding","UTF-8","-cp",str(archive),"-d",str(verifier),*sources])
+    cp=os.pathsep.join(map(str,(verifier,archive,GPU) if args.gpu else (verifier,archive)))
+    if args.investigation:
+        report=BUILD/"investigation.tsv"
+        report.unlink(missing_ok=True)
+        subprocess.run([jdk("java"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
+                        "org.beckenburg.NorthwatchInvestigationReview",str(report)],cwd=ROOT,check=True,timeout=660)
+        return
     run([jdk("java"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,"org.beckenburg.NorthwatchNamedReview",str(STAGE),
          *(["--gpu"] if args.gpu else [])])
 

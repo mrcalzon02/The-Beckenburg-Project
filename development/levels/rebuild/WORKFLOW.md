@@ -1618,3 +1618,8 @@ The [measured enclosure](asylum-enclosure-pass/enclosure-plan.svg) joins 971 ret
 ### Blackwater Hydroelectric Dam continuous investigation
 
 The [packaged live case](dam-investigation-pass/case.tsv) follows one hunter from the cargo deck through eight fitted doors and two switchbacks to the lower valve installation. All three fitted refuges protect the hunter from the threshold to the rear while standing and crouched. The witness receives the workshop EMF observation, the host accepts the anchor ward, and all three peers receive the cleansing result. [Checkpoint](dam-investigation-pass/checkpoint.json)
+
+
+### Northwatch continuous investigation
+
+The [packaged live case](northwatch-investigation-pass/case.tsv) reaches the archive through the built station, takes the exterior array route to the shelter and dormitory, then crosses the heated service tunnel on the two fitted stairs. Five leaves and all three walk-in refuges work along the same case, which finishes banished at the laboratory. The current RTX OpenGL archive repeats both the [Northwatch](northwatch-investigation-pass/northwatch-opengl.tsv) and [Blackwater](northwatch-investigation-pass/blackwater-opengl.tsv) named scene reviews. [Checkpoint](northwatch-investigation-pass/checkpoint.json)
