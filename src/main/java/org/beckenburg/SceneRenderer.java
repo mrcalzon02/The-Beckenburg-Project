@@ -407,7 +407,7 @@ public final class SceneRenderer {
         for(var f:map.fixtures().states()){
             String mesh=f.kind().mesh();
             boolean embedded=map.fixtures().embedded(f.id());
-            if(f.kind()==HauntedFixtures.Kind.TELEVISION)GlbProps.updateTelevision(GlbProps.televisionMaterial(f.x(),f.y(),f.z()),f.active()&&(roomLights==null||roomLights.breaker()),roomLightTick);
+            if(f.kind()==HauntedFixtures.Kind.TELEVISION)GlbProps.updateTelevision(GlbProps.televisionMaterial(f.x(),f.y(),f.z()),f.active()&&(roomLights==null||roomLights.supplied()),roomLightTick);
             if(!embedded&&mesh!=null&&f.kind()!=HauntedFixtures.Kind.LIGHT_SWITCH){
                 double yaw=f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0);
                 var pose=new FixtureMeshPose(mesh,f.x(),f.y(),f.z(),f.scale(),yaw);

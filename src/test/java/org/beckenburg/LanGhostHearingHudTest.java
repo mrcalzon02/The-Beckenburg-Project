@@ -6,6 +6,19 @@ import java.awt.image.BufferedImage;
 /** The spectral hearing caption works when audio is muted and ages out on a host tick. */
 public final class LanGhostHearingHudTest {
     static void ok(boolean value,String label){if(!value)throw new AssertionError(label);}
+    private static void checkSourceUpdates(LanGhostPanel panel,RoomLighting circuits){
+        panel.onEvent("LIGHTS|111111111111|1");
+        panel.onEvent("SOURCE|0");
+        ok(circuits.breaker()&&!circuits.supplied()&&circuits.brightness(0,0)<.1,
+            "Ghost view goes dark when the generator stops");
+        panel.onEvent("LIGHTS|111111111111|0");
+        panel.onEvent("SOURCE|1");
+        ok(circuits.sourceRunning()&&!circuits.supplied(),
+            "Generator restart keeps a tripped breaker open in the ghost view");
+        panel.onEvent("LIGHTS|111111111111|1");
+        ok(circuits.supplied()&&circuits.brightness(0,0)>.9,
+            "Breaker reset restores lighting from the running generator");
+    }
     public static void main(String[] args)throws Exception{
         System.setProperty("beckenburg.audio.mute","true");
         try(LanHost server=new LanHost("127.0.0.1",0);
@@ -21,6 +34,10 @@ public final class LanGhostHearingHudTest {
                 panel.onEvent("GHEAR|DOOR|LEFT|NEAR|17");
             });
             try{
+                var field=LanGhostPanel.class.getDeclaredField("lights");
+                field.setAccessible(true);
+                var circuits=(RoomLighting)field.get(view[0]);
+                SwingUtilities.invokeAndWait(()->checkSourceUpdates(view[0],circuits));
                 // Let the real Swing/host-clock hearing envelope advance; never
                 // sleep on EDT, because that would prevent the 110ms timer.
                 boolean visible=false;
@@ -50,6 +67,6 @@ public final class LanGhostHearingHudTest {
                 SwingUtilities.invokeAndWait(()->view[0].close());
             }
         }
-        System.out.println("PASS: mute-safe spectral sound overlay, EDT and stale-event expiry");
+        System.out.println("PASS: mute-safe spectral sound overlay, EDT, stale-event expiry and ghost-view power updates");
     }
 }

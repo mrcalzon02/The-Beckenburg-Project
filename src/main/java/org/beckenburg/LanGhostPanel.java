@@ -66,6 +66,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             List<String> p=LanProtocol.parts(packet);
             if(p.size()==3&&p.get(0).equals("SITE")){
                 map=HouseMap.forNetworkRevision(HouseMap.Site.valueOf(p.get(1)),p.get(2));
+                lights.setSourceRunning(true);
                 map.configureHiding(camera.hidingDensity);
                 buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
@@ -84,6 +85,8 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 map.clutter().acceptOne(p.get(1));
             }else if(p.size()==2&&p.get(0).equals("HIDECONFIG")){
                 camera.hidingDensity=LanProtocol.integer(p.get(1),0,100);map.configureHiding(camera.hidingDensity);
+            }else if(p.size()==2&&p.get(0).equals("SOURCE")){
+                lights.setSourceRunning(LanProtocol.integer(p.get(1),0,1)==1);
             }else if(p.size()==3&&p.get(0).equals("LIGHTS")){
                 lights.acceptSnapshot(p.get(1));lights.setBreaker(LanProtocol.integer(p.get(2),0,1)==1);
             }else if(p.size()==2&&p.get(0).equals("DOORS")){
@@ -232,7 +235,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         if(!hearingEnabled()&&hearingGain<=0){soundRipples.clear();hearing=null;}
         atmosphere.setActive(isShowing()&&!finished);
         buildingAudio.setActive(isShowing()&&!finished);
-        buildingAudio.setContext(room,lights.breaker());buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.breaker());camera.roomLightTick=tick;
+        buildingAudio.setContext(room,lights.supplied());
+        buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.supplied());
+        camera.roomLightTick=tick;
         atmosphere.setOutside(room>=0&&map.outside(room));
         if(!isDisplayable()||finished){repaint();return;}
         try{

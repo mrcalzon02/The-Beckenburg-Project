@@ -961,7 +961,7 @@ public final class LanHost implements AutoCloseable {
                     notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
                     reply(peer,"ACCEPT|POWER|"+(lights.breaker()?"ON":"OFF"));
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.BREAKER);
-                    if(lights.breaker())actorCue(peer.slot,LanSound.Cue.ELECTRIC_HUM);
+                    if(lights.supplied())actorCue(peer.slot,LanSound.Cue.ELECTRIC_HUM);
                 }
                 case "VANDOOR" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
@@ -1854,7 +1854,7 @@ public final class LanHost implements AutoCloseable {
                     answerHunter(peer,"SKILL",outcome);
                     if(outcome.accepted()){
                         if(skill==HunterDiscipline.Ability.SURVEY){
-                            mission.setEvidenceHeating(lights.breaker());
+                            mission.setEvidenceHeating(lights.supplied());
                             int room=hunterRooms[peer.slot];
                             int age=tick-lastEvidenceEventTick;
                             int event=age>=0&&age<=40
@@ -3175,7 +3175,7 @@ public final class LanHost implements AutoCloseable {
                 reading=pulse==null
                     ?station.tool().equals("SOUND_SENSOR")
                         ?"Ambient "+RoomAcousticPresets.noiseFloor(map.level(),
-                            station.room(),lights.breaker())+"/10 / monitoring"
+                            station.room(),lights.supplied())+"/10 / monitoring"
                         :"No movement / monitoring"
                     :pulse.kind()+" "+pulse.strength()+"/10 / activity detected";
             }else{
