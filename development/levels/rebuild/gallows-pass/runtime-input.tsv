@@ -1,4 +1,4 @@
-SOURCE	d5d5d0fa6ae055fde143d493ec11861f3cb43160d9cc1f88c2dd71182f9f4e55	f0e0659079aaa246b7ebe382b11698847e908d349c036c77d5e1d5506c252f1e
+SOURCE	3822be231b5a914dbbaeaa8d919920f92e12169cfcf4fee249bcc29f9a2e4c9f	ad4f85fb39e126e3bb704e6e9aa30c58169f6e6c242f7091e1325c8990153a7a
 DOCK	36.0	0	94.0	0
 ROOM	tunnel	0	28	-8	40	22	0	3	false	Tunnel mouth / dry bore	34	0	7
 ROOM	coach-a	1	16	46	24	62	0	3	false	Derailed passenger coach	20	0	54
@@ -73,6 +73,17 @@ SERVICE	gallows-generator	generator	4	24.0	0.56	74.07900099999999	3.141592653589
 SERVICE	gallows-breaker	breaker	4	26.1	0.89	75.203994	3.141592653589793	GP-MAIN
 SERVICE	gallows-signal-switch	switch	4	23.0	1.25	75.878998	3.141592653589793	GP-SIGNAL
 SERVICE	gallows-signal-light	light	4	24.4	2.42	75.695999	0	native-string
+SERVICE	gallows-tunnel-switch	switch	0	39.758999	1.25	18.299999	-1.5707963267948966	GP-TUNNEL
+SERVICE	gallows-tunnel-light	light	0	39.576	2.36	13.4	0	native-string
+SERVICE	gallows-coach-a-switch	switch	1	16.240999	1.25	51.599998	1.5707963267948966	GP-COACH-A
+SERVICE	gallows-coach-a-light	light	1	16.424	2.36	49.700001	0	native-string
+SERVICE	gallows-coach-b-switch	switch	2	51.758999	1.25	56.5	-1.5707963267948966	GP-COACH-B
+SERVICE	gallows-coach-b-light	light	2	51.576	2.36	58.200001	0	native-string
+SERVICE	gallows-store-switch	switch	3	52.241001	1.25	26.700001	1.5707963267948966	GP-STORE
+SERVICE	gallows-store-light	light	3	52.424	2.36	24.75	0	native-string
+SERVICE	gallows-refuge-switch	switch	5	40.241001	1.25	9.7	1.5707963267948966	GP-REFUGE
+SERVICE	gallows-refuge-light	light	5	40.424	2.36	8.2	0	native-string
+SERVICE	Gallows operator radio	native-device	4	17.190718	1.022	64.31123699999999	0	RADIO
 COVER	gallows-signal-cupboard	4	15	0	72.5	-1.5707963267948966
 COVER	gallows-store-cupboard	3	61.5	0	24	1.5707963267948966
 COVER	gallows-refuge-cupboard	5	49.5	0	3.0	1.5707963267948966

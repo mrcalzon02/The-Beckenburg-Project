@@ -406,15 +406,16 @@ public final class SceneRenderer {
     private void eventFixtures(List<Face> out,HouseMap map){
         for(var f:map.fixtures().states()){
             String mesh=f.kind().mesh();
+            boolean embedded=map.fixtures().embedded(f.id());
             if(f.kind()==HauntedFixtures.Kind.TELEVISION)GlbProps.updateTelevision(GlbProps.televisionMaterial(f.x(),f.y(),f.z()),f.active()&&(roomLights==null||roomLights.breaker()),roomLightTick);
-            if(mesh!=null&&f.kind()!=HauntedFixtures.Kind.LIGHT_SWITCH){
+            if(!embedded&&mesh!=null&&f.kind()!=HauntedFixtures.Kind.LIGHT_SWITCH){
                 double yaw=f.yaw()+(f.active()&&f.kind()==HauntedFixtures.Kind.ALARM_CLOCK?Math.sin(roomLightTick*2)*.018:0);
                 var pose=new FixtureMeshPose(mesh,f.x(),f.y(),f.z(),f.scale(),yaw);
                 out.addAll(dynamicGeometry(new DynamicGeometryKey(true,f.id()),pose,()->{
                     var faces=new ArrayList<Face>();imported(faces,mesh,f.x(),f.y(),f.z(),f.scale(),yaw);return faces;
                 }));
             }
-            if(f.active()&&(f.kind()==HauntedFixtures.Kind.FIRE_ALARM||f.kind()==HauntedFixtures.Kind.RADIO||f.kind()==HauntedFixtures.Kind.BOOM_BOX)){
+            if(!embedded&&f.active()&&(f.kind()==HauntedFixtures.Kind.FIRE_ALARM||f.kind()==HauntedFixtures.Kind.RADIO||f.kind()==HauntedFixtures.Kind.BOOM_BOX)){
                 double y=f.kind()==HauntedFixtures.Kind.FIRE_ALARM?.27:f.kind()==HauntedFixtures.Kind.RADIO?.164:.197;
                 int color=f.kind()==HauntedFixtures.Kind.FIRE_ALARM&&roomLightTick%8<4?0xffefd0:0xc29f4c;
                 quad(out,fixturePoint(f,-.038,y-.010,.088),fixturePoint(f,.038,y-.010,.088),fixturePoint(f,.038,y+.010,.088),fixturePoint(f,-.038,y+.010,.088),color);

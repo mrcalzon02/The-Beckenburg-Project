@@ -9,7 +9,7 @@ public final class HauntedFixtures {
     }
     public record State(int id,Kind kind,int room,double x,double y,double z,double yaw,double scale,boolean active,int water,int until,int revision){}
     public record Sound(State source,LanSound.Cue cue){}
-    private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active,mains;
+    private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active,mains,embedded;
         State state(){return new State(id,kind,room,x,y,z,yaw,scale,active,water,until,revision);}}
     static final String NATIVE_BASIN_SOCKET="water-basin";
     static final String NATIVE_DEVICE_SOCKET="native-device";
@@ -26,10 +26,11 @@ public final class HauntedFixtures {
                 if(s.type().equals(NATIVE_BASIN_SOCKET))add(Kind.SINK_BATH,s.room(),s.x(),s.y(),s.z(),s.yaw());
                 if(s.type().equals(NATIVE_DEVICE_SOCKET)){
                     Kind kind=Kind.valueOf(s.style());
-                    if(kind!=Kind.WASHING_MACHINE)throw new IllegalArgumentException("Unsupported native device: "+kind);
+                    if(kind!=Kind.WASHING_MACHINE&&kind!=Kind.RADIO)throw new IllegalArgumentException("Unsupported native device: "+kind);
                     add(kind,s.room(),s.x(),s.y(),s.z(),s.yaw());
                     var fixture=fixtures.get(fixtures.size()-1);
                     fixture.mains=true;
+                    fixture.embedded=true;
                     nativeDevices.put(s.id(),fixture);
                 }
             }
@@ -72,6 +73,7 @@ public final class HauntedFixtures {
             add(Kind.FIRE_ALARM,s.room(),bx,r.y()+2.0,bz,byaw);
         }
     }
+    synchronized boolean embedded(int id){return get(id).embedded;}
     synchronized State nativeDevice(String component){
         var fixture=nativeDevices.get(component);
         return fixture==null?null:fixture.state();
@@ -85,7 +87,7 @@ public final class HauntedFixtures {
     public synchronized void toggleFocused(int id,LooseClutter.Observer o,int tick){
         var target=InteractionFocus.pick(map,o,List.of());
         if(!o.exposed()||target==null||target.kind()!=InteractionFocus.Kind.FIXTURE||!target.id().equals(""+id))throw new IllegalArgumentException("look directly at the fixture");
-        Fixture f=get(id);if(f.mains&&!powered)throw new IllegalArgumentException(f.kind==Kind.WASHING_MACHINE?"Washing machine has no mains power":"Television has no mains power");f.active=!f.active;f.until=0;f.revision++;
+        Fixture f=get(id);if(f.mains&&!powered)throw new IllegalArgumentException(switch(f.kind){case WASHING_MACHINE->"Washing machine has no mains power";case RADIO->"Radio has no mains power";default->"Television has no mains power";});f.active=!f.active;f.until=0;f.revision++;
     }
     public synchronized void toggle(int id,LooseClutter.Observer o,int tick){
         toggleFocused(id,o,tick);

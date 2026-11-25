@@ -93,6 +93,50 @@ def power(assembly, signal):
         (23, 2.60, 75.72), (24.4, 2.60, 75.72), (24.4, 2.49, 75.72)), .014)
 
 
+def room_lighting(assembly, zones):
+    branches = (
+        ("tunnel",39.1,18.3,13.4,1),
+        ("coach-a",16.85,51.6,49.7,-1),
+        ("coach-b",51.1,56.5,58.2,1),
+        ("store",52.9,26.7,24.75,-1),
+        ("refuge",40.95,9.7,8.2,-1),
+    )
+    for room,x,switch_z,lamp_z,side in branches:
+        zone=zones[room]
+        circuit=f"GP-{room.upper()}"
+        switch=f"gallows-{room}-switch"
+        assembly.switch(zone,x,switch_z,side,0)
+        assembly.sockets[-1].update(id=switch,style=circuit)
+        assembly.controllers[-1].update(id=switch,circuit=circuit)
+        drop=assembly.routes[-1]["points"][-1]
+        assembly.mounted_lamp(zone,f"gallows-{room}-light",point(x,zone["y"]+2.36,lamp_z),
+                              point(side,0,0),1.6,point(0,0,1))
+        lamp=assembly.loads[-1]
+        lamp["circuit"]=circuit
+        wall_x,wall_y,mount_z=lamp["mount"]
+        face_x=wall_x-.028*side
+        assert abs(face_x-drop[0])<.012, room
+        assembly.raceway(f"Gallows {room} light branch",
+                         (drop,(face_x,drop[1],mount_z),(face_x,wall_y+.12,mount_z)),.012)
+
+
+def signal_radio(assembly, desk):
+    x,z=17.2,64.2
+    hit,normal,_,_ = bvh(desk).ray_cast(point(x,1.45,z),point(0,-1,0),.75)
+    assert hit is not None and normal.z>.98, "Signal radio needs the operator desk"
+    radio=assembly.place("level_event_radio_worn",Matrix.Translation(point(x,hit.z+.002,z)),
+                         "operator radio","working desk radio","signal")
+    assert len(radio)==1
+    radio[0].name="Gallows operator radio"
+    low, high=bounds(radio)
+    assert abs(low[1]-hit.z)<.012, (hit,low)
+    ray_y=low[1]+.075
+    face,_,_,_=bvh(radio).ray_cast(point((low[0]+high[0])/2,ray_y,high[2]+.8),point(0,0,-1),1.6)
+    assert face is not None
+    px,py,pz=world(face)
+    assembly.effect(radio[0].name,"native-device",OWNERS["signal"][0],(px,py,pz+.035),0,"RADIO")
+
+
 def furnishings(assembly):
     installed = []
     for asset, zone, label, x, z, yaw in (
@@ -112,6 +156,8 @@ def furnishings(assembly):
             for pz in (low[2] + .025, high[2] - .025):
                 hit, normal, support = assembly.measured(point(px, .18, pz), point(0, -1, 0), .28, label)
                 assert abs(hit.z) < .006 and normal.z > .98, (label, px, pz, support.name)
+        if label=="Signal operator desk":
+            signal_radio(assembly,parts)
         installed.append(dict(label=label, room=zone, asset=asset, origin=[x, 0, z], yaw=yaw,
                               bounds=[low, high]))
     return installed
@@ -189,6 +235,7 @@ def build():
     assembly = Assembly()
     refuges = cupboards(assembly, zones, REFUGES, site="gallows", floor_roles=("floor",))
     power(assembly, zones["signal"])
+    room_lighting(assembly,zones)
     installed = furnishings(assembly) + railway_kit(assembly)
     for piece in assembly.built:
         piece.name = piece.name.replace("College ", "Gallows ", 1)
