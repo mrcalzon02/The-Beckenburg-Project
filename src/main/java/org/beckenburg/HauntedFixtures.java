@@ -26,10 +26,14 @@ public final class HauntedFixtures {
                 if(s.type().equals(NATIVE_BASIN_SOCKET))add(Kind.SINK_BATH,s.room(),s.x(),s.y(),s.z(),s.yaw());
                 if(s.type().equals(NATIVE_DEVICE_SOCKET)){
                     Kind kind=Kind.valueOf(s.style());
-                    if(kind!=Kind.WASHING_MACHINE&&kind!=Kind.RADIO&&kind!=Kind.TOWER_BELL&&kind!=Kind.WATER_PUMP&&kind!=Kind.PHONE)throw new IllegalArgumentException("Unsupported native device: "+kind);
+                    boolean mains=switch(kind){
+                        case WASHING_MACHINE,RADIO,WATER_PUMP -> true;
+                        case TOWER_BELL,PHONE,SINK_BATH -> false;
+                        default -> throw new IllegalArgumentException("Unsupported native device: "+kind);
+                    };
                     add(kind,s.room(),s.x(),s.y(),s.z(),s.yaw());
                     var fixture=fixtures.get(fixtures.size()-1);
-                    fixture.mains=kind!=Kind.TOWER_BELL&&kind!=Kind.PHONE;
+                    fixture.mains=mains;
                     fixture.embedded=true;
                     nativeDevices.put(s.id(),fixture);
                 }

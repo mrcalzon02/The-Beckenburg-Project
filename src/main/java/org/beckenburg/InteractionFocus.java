@@ -94,7 +94,9 @@ public final class InteractionFocus {
                             SiteStories.document(map.level().id(),socket.style()).title(),hit.fraction()*2);
                     else{
                         var device=map.fixtures().nativeDevice(hit.component());
-                        if(device!=null)candidate(targets,Kind.FIXTURE,""+device.id(),label(device.kind().name()),hit.fraction()*2);
+                        if(device!=null)candidate(targets,Kind.FIXTURE,""+device.id(),
+                            device.kind()==HauntedFixtures.Kind.SINK_BATH?"Wash basin":label(device.kind().name()),
+                            hit.fraction()*2);
                     }
                 }
             }

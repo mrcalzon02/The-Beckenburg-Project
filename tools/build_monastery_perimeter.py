@@ -7,7 +7,7 @@ import sys
 
 import bpy
 import math
-from mathutils import Vector
+from mathutils import Matrix, Vector
 from mathutils.geometry import delaunay_2d_cdt
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,8 +16,9 @@ from append_static_glb import append
 from build_circulation_construction import native_write
 from build_college_containment import distance_to_edge_squared, inside, loop_area, station, surveyed_terrain_loops
 from build_college_grounds import import_scene, terrain_tree
-from build_college_electrical import point
+from build_college_electrical import bounds, point, world
 from build_deliberate_entrances import write
+from build_mine_case import Case, DOWN
 from build_mine_drainage import mesh_object, slab
 from build_monastery import rel
 from build_monastery_ground_drainage import BASE, SCHEDULES
@@ -36,6 +37,7 @@ STAGE = BASE/"monastery-perimeter-pass"
 OUT = STAGE/"wld-10"
 PLAN = ROOT/"development/levels/edge-sky-plans/wld-10/plan.json"
 STEM = "monastery-with-perimeter"
+VESTRY_TROUGH = "Monastery furnished vestry wash trough 01"
 STATUS = "MONASTERY_FOUNDED_PERIMETER_SOURCE_STAGED"
 GATE_A, GATE_B = (36,94.18), (28,94.18)
 OUTER = [(-55,-31),(-22,-47),(28,-53),(81,-49),(116,-32),(141,19),
@@ -284,6 +286,33 @@ def fit_bell():
     return parts,rope.name
 
 
+def fit_vestry_basin():
+    bpy.data.objects.remove(bpy.data.objects[VESTRY_TROUGH],do_unlink=True)
+    case=Case()
+    x,z=38.53,2.72
+    basin=case.place("level_bath_basin",Matrix.Translation(point(x,0,z)),
+                     "vestry basin","floor-bearing stone washbasin","vestry")
+    assert len(basin)==1
+    basin[0].name="Monastery vestry basin"
+    lo,hi=bounds(basin)
+    assert abs(lo[1])<.004
+    for px in (x-.08,x+.08):
+        for pz in (z-.08,z+.08):
+            hit,normal,_,_=case.support_surfaces.ray_cast(point(px,.16,pz),DOWN,.24)
+            assert hit is not None and abs(hit.z)<.004 and normal.z>.98,(px,pz)
+    hit,_,_=case.measured(point(x,.65,z-.27),point(0,0,-1),.50,"Vestry plumbing wall")
+    _,_,back=world(hit)
+    copper=material("Monastery basin aged copper",(.31,.17,.09))
+    drain=material("Monastery basin sealed iron waste",(.16,.17,.16))
+    case.tube("Vestry basin supply riser",(x,.13,back+.035),(x,.97,back+.035),.017,copper)
+    case.tube("Vestry basin supply union",(x,.97,back+.035),(x,.97,z-.14),.017,copper)
+    case.tube("Vestry basin waste union",(x,.25,z-.09),(x,.25,back+.026),.027,drain)
+    for part in case.built:
+        part.name=part.name.replace("College ","Monastery ",1)
+        part["zone"]="vestry"
+    return case.built,basin[0].name,dict(floor=0,wall=back,bounds=[lo,hi],center=[x,.86,z])
+
+
 def build():
     prior=json.loads((PRIOR/"checkpoint.json").read_bytes())
     roster=json.loads((PRIOR/"roster.json").read_bytes())
@@ -304,23 +333,26 @@ def build():
     walls,rows=make_boundary(ground,apron,plan,stone,wood,iron)
     assert old_ground==records(ground)
     bell,rope=fit_bell()
-    additions=[apron,*walls,*bell]
+    wash,basin,vestry=fit_vestry_basin()
+    additions=[apron,*walls,*bell,*wash]
     OUT.mkdir(parents=True,exist_ok=True)
     model,collision,blend=(OUT/(STEM+ext) for ext in (".glb",".hcs2",".blend"))
     fragment=ROOT/"build/monastery-perimeter-fragment.glb"
     intermediate=ROOT/"build/monastery-perimeter-unpruned.glb"
     export(fragment,additions)
-    append(source["glb"],fragment,intermediate,reuse_embedded_images=True)
+    append(source["glb"],fragment,intermediate,remove_mesh_names={VESTRY_TROUGH},reuse_embedded_images=True)
     compact(intermediate,model)
     budget=audit_level_budget(model)
     assert budget["bytes"]<16_000_000
     def optical_rope(obj):
         triangles=records(obj)
         return [(face,2) for face,_ in triangles] if obj.name==rope else triangles
-    native=native_write(source["native"],collision,set(),additions,
-                        open_components={apron.name,rope},mesh_records=optical_rope)
+    native=native_write(source["native"],collision,{VESTRY_TROUGH},additions,
+                        open_components={apron.name,rope,*(part.name for part in wash)},mesh_records=optical_rope)
     previous,merged=split_native(source["native"]),split_native(collision)
-    assert merged[:len(previous)]==previous and len(merged)==len(previous)+len(additions)
+    retained=[part for part in previous if part[0]!=VESTRY_TROUGH]
+    assert len(retained)==len(previous)-1
+    assert merged[:len(retained)]==retained and len(merged)==len(retained)+len(additions)
     bpy.ops.file.pack_all()
     bpy.ops.wm.save_as_mainfile(filepath=str(blend),compress=True)
     loaded=import_scene(model)
@@ -334,10 +366,13 @@ def build():
     runtime=OUT/"runtime-input.tsv"
     with runtime.open("a",encoding="utf-8",newline="\n") as manifest:
         manifest.write(f"DEVICE\t{rope}\tTOWER_BELL\t7\t53.2\t7.25\t26.765\t0\n")
+        x,y,z=vestry["center"]
+        manifest.write(f"DEVICE\t{basin}\tSINK_BATH\t10\t{x}\t{y}\t{z}\t0\n")
     write_tsv(OUT/"boundary-survey.tsv",[("span","x0","z0","x1","z1","stations","clearance","footing_low","crest_min","crest_max"),
               *((r["name"],*r["start"],*r["end"],r["stations"],r["exposed_height"],r["foundation_low"],*r["crest"]) for r in rows)])
     receipt=dict(status=STATUS,prior=rel(PRIOR/"checkpoint.json"),plan=rel(PLAN),plan_sha256=sha(PLAN),
-                 surveyed_terrain=survey,boundary=rows,model_budget=budget,prior_native_parts=len(previous),
+                 surveyed_terrain=survey,boundary=rows,model_budget=budget,prior_native_parts=len(retained),
+                 replaced_fixture=VESTRY_TROUGH,vestry_basin=vestry,
                  matched_new_parts=[name for name,_ in native], bell_pull=rope, geometry={rel(p):sha(p) for p in (blend,model,collision)})
     construction=OUT/"construction.json"
     write(construction,receipt)
