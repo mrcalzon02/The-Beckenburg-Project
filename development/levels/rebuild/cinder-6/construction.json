@@ -1,9 +1,9 @@
 {
   "source": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
   "exports": {
-    "blend": "2853008332febc3eaed573a410018caefd95cef76dfd6c0596cf6796332a941d",
-    "glb": "e77709bdd95a2aa89ffdf2f85ad3e295393360eb09d652a963e6fe36557eb44a",
-    "hcs2": "161bf0e2f6f3800206c51082f3ef9a1c0710907250b78b7cf632ca0fae8db361"
+    "blend": "735fb6638e51eed8b870c892efbd6b997be763892ecf28a54aef1ecddd3028da",
+    "glb": "c9bc6b4ffa11950a6fa60040dc40924f6fa6e56a64db1df1311928d418b0dcdd",
+    "hcs2": "b24cc4005266c657edcea43dc19dc01d1eda61c6faee9a42f2b704c485123aba"
   },
   "retained_components": 615,
   "pockets": [
@@ -1448,5 +1448,26 @@
         ]
       }
     }
-  ]
+  ],
+  "staging_enclosure": {
+    "gate": [
+      28,
+      99.58,
+      36
+    ],
+    "fence_returns": [
+      [
+        24.1,
+        84.06,
+        99.58
+      ],
+      [
+        39.9,
+        84.06,
+        99.58
+      ]
+    ],
+    "mounted_posts": 16,
+    "road_head_owner": 13
+  }
 }

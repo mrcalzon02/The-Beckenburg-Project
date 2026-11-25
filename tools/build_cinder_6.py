@@ -15,6 +15,7 @@ from build_college_electrical import bounds, point, world
 from build_lookout_native_arrival import table
 from build_mine_case import Case, DOWN
 from build_prison_sally_gate import export
+from build_roster_foundations import material
 from build_school_electrical import cupboards
 from review_roster_macroterrain import sha
 from verify_college_electrical import native_records
@@ -33,6 +34,7 @@ ANCHORS = {
 CHILDREN = {"entry": 13, "pump": 10, "escape-lower-connector": 3}
 RECEIVERS = (
     ("service forecourt",13,(16.6,70,40,84),0,3,True),
+    ("staging road head",13,(24,96,40,99.58),0,3,True),
     ("west stair head",1,(16.7,46.9,28,49.1),0,3,False),
     ("west flight",5,(16.5,31.6,19.5,47.25),-4,3.95,False),
     ("east flight",7,(50.5,36.8,53.5,47.25),-4,3.95,False),
@@ -178,6 +180,66 @@ def fit_workrooms(case):
     return furnishings
 
 
+def fit_staging_enclosure(case):
+    gate_z=99.58
+    west,east=24.10,39.90
+    cladding=material("Cinder oxidized pressed steel security panels",(.225,.256,.243))
+    steel=material("Cinder dark painted steel fence frames",(.11,.13,.126))
+    concrete=material("Cinder exposed aggregate fence footings",(.38,.37,.32))
+
+    def grade(x,z):
+        contact,normal,_,_=case.support_surfaces.ray_cast(point(x,.90,z),DOWN,1.3)
+        assert contact is not None and normal.z>.94,("Roadside foundation",x,z)
+        return contact.z
+
+    posts=set()
+    def post(x,z):
+        if (x,z) in posts:return
+        posts.add((x,z))
+        foot=(x-.15,z-.15,x+.15,z+.15)
+        levels=[grade(px,pz) for px in (foot[0],foot[2]) for pz in (foot[1],foot[3])]
+        base=min(levels)
+        case.box("Cinder fence concrete footing",foot,base-.24,max(levels)+.035,
+                 concrete,"buried and grounded security fence footing","stage")
+        case.box("Cinder square security post",(x-.06,z-.06,x+.06,z+.06),base,2.65,
+                 steel,"steel post anchored in its concrete footing","stage")
+
+    def panel(x0,z0,x1,z1,gate=False):
+        # Each supported infill sits between its posts. Rail and hinge faces
+        # remain visible from the road while the solid leaves stop collision.
+        along_x=z0==z1
+        width=.048 if gate else .032
+        label="closed vehicle gate leaf" if gate else "pressed steel security fence panel"
+        rect=(x0-.015,z0-width,x1+.015,z1+width) if along_x else (x0-width,z0-.015,x1+width,z1+.015)
+        base=min(grade(x0,z0),grade((x0+x1)/2,(z0+z1)/2),grade(x1,z1))
+        case.box("Cinder "+label,rect,base+.025,2.48,cladding,label,"stage")
+        frame=(rect[0]-.015,rect[1]-.026,rect[2]+.015,rect[3]+.026) if along_x else (
+               rect[0]-.026,rect[1]-.015,rect[2]+.026,rect[3]+.015)
+        for height in (.26,1.28,2.38):
+            case.box("Cinder "+label+" cross rail",frame,height,height+.075,
+                     steel,"bolted steel rail carries the metal infill","stage")
+
+    for x in (west,east):
+        stations=[84.06,87.16,90.27,93.37,96.48,gate_z]
+        for z in stations:post(x,z)
+        for z0,z1 in zip(stations,stations[1:]):panel(x,z0,x,z1)
+
+    for x0,x1 in ((west,26.03),(26.03,28),(36,37.97),(37.97,east)):
+        post(x0,gate_z)
+        post(x1,gate_z)
+        panel(x0,gate_z,x1,gate_z)
+    panel(28,gate_z,32,gate_z,True)
+    panel(32,gate_z,36,gate_z,True)
+    for x in (28.09,35.91):
+        for y in (.43,1.92):
+            case.box("Cinder vehicle gate hinge plate",(x-.16,gate_z-.11,x+.16,gate_z-.025),
+                     y,y+.12,steel,"steel gate hinge joins leaf to its grounded post","stage")
+    case.box("Cinder vehicle gate center latch",(31.73,gate_z-.11,32.27,gate_z-.025),
+             1.29,1.39,steel,"closed vehicle-gate latch","stage")
+    return dict(gate=[28,gate_z,36],fence_returns=[[west,84.06,gate_z],[east,84.06,gate_z]],
+                mounted_posts=len(posts),road_head_owner=13)
+
+
 def build():
     OUT.mkdir(parents=True,exist_ok=True)
     source={ext:SOURCE/f"surveyed-thresholds.{ext}" for ext in ("blend","glb","hcs2")}
@@ -198,6 +260,7 @@ def build():
     gallery_power(assembly,zones["upperring"],29)
     gallery_power(assembly,zones["lowring"],2)
     workrooms=fit_workrooms(assembly)
+    staging_enclosure=fit_staging_enclosure(assembly)
     for obj in assembly.built:
         obj.name=obj.name.removeprefix("College ").replace("Mine case ","Cinder ",1)
     target={ext:OUT/f"facility.{ext}" for ext in source}
@@ -249,7 +312,8 @@ def build():
     (OUT/"construction.json").write_text(json.dumps(dict(
         source=layout_path.relative_to(ROOT).as_posix(),exports={k:sha(p) for k,p in target.items()},
         retained_components=len(prior),pockets=pockets,services=assembly.sockets,
-        controllers=assembly.controllers,fixtures=assembly.loads,workrooms=workrooms),indent=2)+"\n",
+        controllers=assembly.controllers,fixtures=assembly.loads,workrooms=workrooms,
+        staging_enclosure=staging_enclosure),indent=2)+"\n",
         encoding="utf-8",newline="\n")
 
 
