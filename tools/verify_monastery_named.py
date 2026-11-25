@@ -14,7 +14,7 @@ STAGE = ROOT / "development/levels/rebuild/monastery-perimeter-pass"
 GAME = ROOT / "build/beckenburg-game.jar"
 GPU = ROOT / "gpu-client/target/BeckenburgGPU.jar"
 RESOURCE = "org/beckenburg/sites/wld-10/"
-CLASSES = (*SHARED_REVIEW_CLASSES, "MonasteryNamedReview", "MonasteryPerimeterReview", "MonasteryLooseReview", "MonasteryPowerReview", "MonasteryDoorReview")
+CLASSES = (*SHARED_REVIEW_CLASSES, "MonasteryNamedReview", "MonasteryInvestigationReview", "MonasteryPerimeterReview", "MonasteryLooseReview", "MonasteryPowerReview", "MonasteryDoorReview")
 
 
 def verify_archive(path, main_class):
@@ -31,7 +31,9 @@ def verify_archive(path, main_class):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--gpu", action="store_true")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--gpu", action="store_true")
+    mode.add_argument("--investigation", action="store_true")
     args = parser.parse_args()
     verify_archive(GAME, "org.beckenburg.InvestigationGame")
     if args.gpu:
@@ -48,7 +50,11 @@ def main():
         native = ROOT / ".lwjgl/3.3.3+5/x64"
         if os.name == "nt" and native.is_dir():
             command.append("-Dorg.lwjgl.librarypath=" + str(native))
-    command.extend(("-cp", cp, "org.beckenburg.MonasteryNamedReview", str(STAGE)))
+    if args.investigation:
+        command.extend(("-cp", cp, "org.beckenburg.MonasteryInvestigationReview",
+                        str(ROOT / "build/monastery-investigation.tsv")))
+    else:
+        command.extend(("-cp", cp, "org.beckenburg.MonasteryNamedReview", str(STAGE)))
     if args.gpu:
         command.append("--gpu")
     subprocess.run(command, cwd=ROOT, check=True, timeout=120 if args.gpu else 480)

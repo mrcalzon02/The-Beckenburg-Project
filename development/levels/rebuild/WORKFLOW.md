@@ -1598,3 +1598,8 @@ Thirteen operating leaves now share the measured architecture with player bodies
 The [measured plan](monastery-perimeter-pass/wld-10/perimeter-plan.svg) links the closed outer carriage gate and masonry enclosure to the original site. The extended ground joins 1,137 retained edges. Sealed room and garden cuts, 1,634 prior collision parts, operating doors, and the van placement retain their exact source. [Checkpoint](monastery-perimeter-pass/checkpoint.json)
 
 Both named renderer reviews passed 5,048 supported boundary sweeps, over-gate and spectral tests, all 84 route replays, and the three walk-in refuges. Software also passed the four-player power and furnishing checks. Wall and landscape finishes, directional scenery, authored encounters, full investigation and installer acceptance remain open. Publication remains pending on the held draft branch.
+
+
+### Monastery of Ashen Bells full named investigation
+
+The [live case transcript](monastery-investigation-pass/case.tsv) records the exact perimeter revision from cargo to the lower banishment circle. Three real TCP clients confirm instrument observations, identified Wraith, refectory anchor ward, rejected remote rite, guarded lower rite, BANISHED result and payout. All three walk-in refuges admit standing and crouched movement, conceal only inside their fitted interiors and reject a spectral sweep. The solo retreat and other perimeter checks remain linked in the [source checkpoint](monastery-perimeter-pass/checkpoint.json).
