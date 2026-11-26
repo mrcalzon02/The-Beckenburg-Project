@@ -16,6 +16,20 @@ The identity reconciliation preserves both pinned source histories and their ori
 
 ## Recorded defects
 
+### DEV-803 — GPU workflow omits canonical packaging and shared atmosphere inputs from push triggers
+
+**Status:** FIXED_TRIGGER_COVERAGE_VERIFIED; exact follow-up GPU workflow run pending · **Affected:** GPU renderer acceptance scheduling in .github/workflows/gpu-renderer.yml
+
+Changes limited to build.cmd, build.sh or src/main/java/org/beckenburg/LevelAtmosphere.java could alter GPU packaging or rendered atmosphere without scheduling GPU acceptance. No GPU run was created for the large b8dbc2e984335622cadafef05d6af7a997f1115e integration push.
+
+Cause / uncertainty: The GPU job consumes these shared build and atmosphere inputs, but its push.paths filter omitted them. Workflow scheduling is distinct from a passing GPU execution; the absence of a run supplies no renderer verdict.
+
+Fix / next action: Add precisely build.cmd, build.sh and src/main/java/org/beckenburg/LevelAtmosphere.java to the existing push.paths list. Preserve every prior path, workflow self-trigger, job, permission and assertion. Publish the scoped follow-up, then inspect its actual exact-source GPU run.
+
+Evidence and verification: Static YAML and trigger validation on 2026-11-26 passed: exactly three dependency paths added, prior paths preserved in order, each new dependency matches, and jobs/permissions/assertions unchanged. The implementation is based on integration b8dbc2e984335622cadafef05d6af7a997f1115e and preserves subsequent 3d20c147a2c27fa2d852d31e9527bb61196e0811, whose only additions are 85 NPC capture PNGs and two CSVs. No GPU execution is claimed by this record; the enclosing follow-up run must provide that evidence.
+
+Older-map obligation: This fixes CI trigger coverage only. Keep exact workflow/source bindings and map-specific runtime, installed-platform and physical GPU acceptance separate. Retain all prior captures and failed or superseded runs.
+
 ### DEV-797 — Parallel and cached sanctuary haze can lose the current level atmosphere policy during integration
 
 **Status:** FIXED_SOURCE_PARITY_VERIFIED; physical renderer acceptance remains separate · **Affected:** SafeAreaHaze and LevelAtmosphere integration; parallel scanlines and held-clock sanctuary frames

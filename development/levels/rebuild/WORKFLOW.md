@@ -1,5 +1,11 @@
 # Full map rebuild — execution continuity
 
+## Published integration CI continuity — 26 November 2026
+
+The integration was published as `b8dbc2e984335622cadafef05d6af7a997f1115e`. [Gallery CI 45892939726](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45892939726) passes from a full checkout: all 15,311 PNGs and 32 animation attachments were read from actual working bytes, with no parent metadata reuse. The subsequent `github-actions[bot]` commit `3d20c147a2c27fa2d852d31e9527bb61196e0811` adds 85 NPC capture PNGs and two CSVs only; it is preserved. Its new captures still require the next gallery reindex and deployed-byte verification.
+
+DEV-803 adds the three missing GPU push dependencies: `build.cmd`, `build.sh` and `LevelAtmosphere.java`. Static trigger checks pass; jobs, permissions and assertions are unchanged. **Next:** inspect the exact follow-up GPU run, gallery regeneration and latest Pages deployment, and record terminal CI results separately. Original local test reports, their JAR limitation and map-acceptance boundaries remain unchanged. No physical GPU or new map acceptance is claimed.
+
 ## Current integration checkpoint — 26 November 2026
 
 Implementation resumed with the owner's authorization. The [local integration checkpoint](verification/map-integration-2026-11-26/README.md) combines main `9f1cf5e2b5535b2ded46eba07d55c78f61211775` and saved candidate `d9f706f44984aaf05cadaf0911eb058880056bb2`, from common base `7c4fe3be13e9f330aeaf554002ac0df97dc1ea71`. It retains exact source/resource digests, build commands, original failed evidence and separate current retests. The [29-map diagnostic](../MAP_DEVELOPMENT_DIAGNOSTIC_2026-11-26.md) remains historical and pinned.

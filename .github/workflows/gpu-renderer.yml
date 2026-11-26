@@ -3,6 +3,10 @@ on:
   push:
     branches: [main, 'performance/**']
     paths:
+      # Canonical resource packaging and shared atmosphere affect the GPU bundle.
+      - 'build.cmd'
+      - 'build.sh'
+      - 'src/main/java/org/beckenburg/LevelAtmosphere.java'
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'

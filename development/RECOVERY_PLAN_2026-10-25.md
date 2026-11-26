@@ -1,5 +1,11 @@
 # Beckenburg recovery program â€” authoritative active development contract
 
+## 2026-11-26 — published integration CI continuity
+
+The integration was published as `b8dbc2e984335622cadafef05d6af7a997f1115e`. [Gallery CI 45892939726](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45892939726) passes from a full checkout: all 15,311 PNGs and 32 animation attachments were read from actual working bytes, with no parent metadata reuse. The subsequent `github-actions[bot]` commit `3d20c147a2c27fa2d852d31e9527bb61196e0811` adds 85 NPC capture PNGs and two CSVs only; it is preserved. Its new captures still require the next gallery reindex and deployed-byte verification.
+
+DEV-803 adds the three missing GPU push dependencies: `build.cmd`, `build.sh` and `LevelAtmosphere.java`. Static trigger checks pass; jobs, permissions and assertions are unchanged. **Next:** inspect the exact follow-up GPU run, gallery regeneration and latest Pages deployment, and record terminal CI results separately. Original local test reports, their JAR limitation and map-acceptance boundaries remain unchanged. No physical GPU or new map acceptance is claimed.
+
 ## 2026-11-26 — roster integration and local functional acceptance
 
 The owner authorized resuming the saved roster work. The combined source reconciles main `9f1cf5e2b5535b2ded46eba07d55c78f61211775` with `map/roster-structure-batch` candidate `d9f706f44984aaf05cadaf0911eb058880056bb2`, from base `7c4fe3be13e9f330aeaf554002ac0df97dc1ea71`. The [integration checkpoint](levels/rebuild/verification/map-integration-2026-11-26/README.md) records actual commands, final source digests, raw failures and distinct passing retests. The original diagnostic and both branches' histories remain pinned.
