@@ -1,0 +1,5 @@
+LAN tick failure: ghost tick must advance exactly once
+Exception in thread "main" java.lang.AssertionError: Real host tick arms source location
+	at org.beckenburg.HouseEncounterNetworkTest.check(HouseEncounterNetworkTest.java:11)
+	at org.beckenburg.HouseEncounterNetworkTest.scenario(HouseEncounterNetworkTest.java:54)
+	at org.beckenburg.HouseEncounterNetworkTest.main(HouseEncounterNetworkTest.java:88)

@@ -1,0 +1,107 @@
+{
+  "status": "WHARF_TIDAL_SHORE_DRY_UNDERCROFT_AND_NATIVE_ARRIVAL_VERIFIED",
+  "prior_commit": "39ebf8dc7c73ddb047597c57696c62b12943e675",
+  "prior_gallery": 45356280331,
+  "mean_tide_y": -1.45,
+  "native_revision": "272b6b6367669e7dffe2930fd4248bc0cd9e349117f23a5d1b00ea2cc5801968",
+  "water_revision": "bdcf9556462c6fbe6bd70a6b29d1684ec9c4882407a1cc724bf52e774519ed0f",
+  "shared_native_collision_parts_retained": 660,
+  "added_bed_triangles": 680,
+  "support_and_renderer_scope": "Staged game review via HouseMap",
+  "physical_cargo_and_ramp_replay": true,
+  "linked_routes": 19,
+  "all_routes_both_directions_both_postures": true,
+  "software": {
+    "scene_revision": "272b6b6367669e7dffe2930fd4248bc0cd9e349117f23a5d1b00ea2cc5801968",
+    "water_revision": "bdcf9556462c6fbe6bd70a6b29d1684ec9c4882407a1cc724bf52e774519ed0f",
+    "dry_samples": "4930",
+    "immersed_wall_rays_blocked": "2664",
+    "submerged_bed_samples": "12",
+    "water_blocked_otherwise_supported_bed_samples": "9",
+    "routes_replayed_both_directions_and_postures": "19",
+    "canonical_cargo_and_ramp": "passed",
+    "crossdock_rail_blocked_crossings": "14",
+    "foreground_tide_pixels": "304137",
+    "shore_boardwalk_tide_pixels": "251606",
+    "dry_undercroft_tide_pixels": "0",
+    "renderer": "Software"
+  },
+  "opengl": {
+    "scene_revision": "272b6b6367669e7dffe2930fd4248bc0cd9e349117f23a5d1b00ea2cc5801968",
+    "water_revision": "bdcf9556462c6fbe6bd70a6b29d1684ec9c4882407a1cc724bf52e774519ed0f",
+    "dry_samples": "4930",
+    "immersed_wall_rays_blocked": "2664",
+    "submerged_bed_samples": "12",
+    "water_blocked_otherwise_supported_bed_samples": "9",
+    "routes_replayed_both_directions_and_postures": "19",
+    "canonical_cargo_and_ramp": "passed",
+    "crossdock_rail_blocked_crossings": "14",
+    "foreground_tide_pixels": "304136",
+    "shore_boardwalk_tide_pixels": "251604",
+    "dry_undercroft_tide_pixels": "0",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  },
+  "exports": {
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.blend": "ca5201d133f89ff988061f61b5deed2a8abbf3cb35be0945262f042597ac5c52",
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.glb": "53cd80d825ac313e67e3bb19277b0be213d0b1fbd7d0c397369866091ba7a1f4",
+    "development/levels/rebuild/wharf-tidal-pass/tidal-wharf.hcs2": "af8f8b4474406b1fcb215a9cde8b50745c2e02008a6a2bc3e52ac091465eb145",
+    "development/levels/rebuild/wharf-tidal-pass/wharf-tide.water": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc"
+  },
+  "evidence_sha256": {
+    "development/levels/rebuild/wharf-tidal-pass/construction.json": "4a7c0d94d901543b3c2d97ab7e2d161b200035936addfefdcf7b338ebf2c45bf",
+    "development/levels/rebuild/wharf-tidal-pass/review-input.tsv": "e8b05814c3981f16c959041e7b9854cc579eb8fe5f192c24ec52e14e9e26a00b",
+    "development/levels/rebuild/wharf-tidal-pass/verification/runtime.tsv": "cdc1f2393a42660355bb67b7a7015053f3c936289e5150b801155f5e6ef3a1f5",
+    "development/levels/rebuild/wharf-tidal-pass/verification/opengl.tsv": "346e7140a09bf7568c945c5921b8e1fecbf501e1119a2c74d87d9cd3badc008b",
+    "tools/build_wharf_tide.py": "06de236ba07521a4da3045ca04e539afa8b85eca67e85efd90b41d35d05c3b52",
+    "tools/verify_wharf_tide.py": "7561760e3af5a81f090bd007519313944c22fe1e0cdc2bd9a475975b27d4334d",
+    "tools/java/WharfTideReview.java": "5ca855b4fa08b5ff9843725b77e0d379ab447091a9f53479152e0e57b1309aa0"
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-canonical-arrival.png",
+      "sha256": "21a529cfac180a9b49b9977ea0b4a440a76e6c8fa3ade3a3036764d450c3d08e",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-crossdock-tide.png",
+      "sha256": "4db1f5de1d56c5a643270cf9fc4bcf5078a92ea2c98808920995e0cffc032485",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-dry-undercroft.png",
+      "sha256": "cf48fd5f125da3539a2134666a86505f9ca2a73eb54b65069fcf9eafe1cdcb88",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-shore-boardwalk.png",
+      "sha256": "382a2ce0f768e08f079b9873ad23e5130b98e7f5c707c1fd3c7b9c4f17af2ad7",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/structure/wharf-estuary-and-shore.png",
+      "sha256": "ed2496ab7abcf83a7192acd74b29c7803084b4df9885654056b266b51c43598b",
+      "type": "Native construction snapshot, mean tide at the shared water datum"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-canonical-arrival.png",
+      "sha256": "5350ee0375b8aa67016228f2d6b258c401f0ffbe1d12f0ee2ae697e3b5baaa4d",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-crossdock-tide.png",
+      "sha256": "28c75730cbd191b80f3b93ca506dfd55bbcd1d8de1b80585a83d4a8841bcaf9d",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-dry-undercroft.png",
+      "sha256": "cc2843e057e6195862d30c75861fc3a2dd7e937375b15fb0567a436ed7e7965d",
+      "type": "Software game renderer"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-tidal-pass/captures/wharf-shore-boardwalk.png",
+      "sha256": "8b198306a4fd72d328c87742b5d78d292a3e16de730473c0213b49ec29330ad2",
+      "type": "Software game renderer"
+    }
+  ],
+  "open": "Fit and test the landward perimeter and road gate, then bind the Wharf's physical door leaves, room and acoustic graph, powered services and full walk-in refuges before named dispatch."
+}

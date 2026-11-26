@@ -1,0 +1,24 @@
+{
+  "source_export": {
+    "blend": "0f4522d97595bf800292facf9aaa0ec6321d216f9bfef565ded72b8a9564818b",
+    "glb": "9b50981a344427fe5c5677f63d461e1b6eb35f4e1ce5efd648c44582690b8df9",
+    "hcs2": "26e528df3a85a452f87653585b139c1194c7dcb5686fd4921f6dbba9a9054f76"
+  },
+  "retained_collision_components": 1698,
+  "checked_source_texture_bindings": 85,
+  "original_image_entries": 64,
+  "fitted_image_entries": 47,
+  "packed_source_images": 89,
+  "measured_floor_contacts_per_export": 1344,
+  "retained_geometry_bvh_contact_checks": 0,
+  "changed_triangle_matches_per_export": 53896,
+  "floor_m": 3.6,
+  "furniture_count_by_asset": {
+    "bed_5": 16,
+    "level_student_desk": 16,
+    "chair_mp_5": 16,
+    "wardrobe_mp_1": 16
+  },
+  "fitted_working_doors": 2,
+  "captive_closed_doors": 6
+}

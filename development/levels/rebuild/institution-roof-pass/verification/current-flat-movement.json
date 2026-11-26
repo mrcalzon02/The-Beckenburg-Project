@@ -1,0 +1,415 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 34
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 34
+      },
+      "current_lanes": {
+        "samples": 8643,
+        "valid_standing": 8386,
+        "invalid_standing": 257,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 20,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+          "NO_CENTRE_SUPPORT": 157,
+          "NO_FOOT_SUPPORT_0.0_0.22": 5,
+          "NO_FOOT_SUPPORT_0.22_0.0": 4,
+          "FOOT_HEIGHT_SPREAD": 9,
+          "PHYSICAL_COMPONENT": 60
+        },
+        "physical_components": [
+          [
+            "500:L67 flight0 step2",
+            12
+          ],
+          [
+            "194:Wall lab-wash W",
+            9
+          ],
+          [
+            "508:L67 flight0 step10",
+            7
+          ],
+          [
+            "509:L67 flight0 step11",
+            7
+          ],
+          [
+            "507:L67 flight0 step9",
+            7
+          ],
+          [
+            "195:Wall lab-wash E",
+            6
+          ],
+          [
+            "501:L67 flight0 step3",
+            3
+          ],
+          [
+            "502:L67 flight0 step4",
+            2
+          ],
+          [
+            "297:Wall student-wc S.001",
+            2
+          ],
+          [
+            "Flat route shell Wall upper-north N.001",
+            2
+          ],
+          [
+            "504:L67 flight0 step6",
+            1
+          ],
+          [
+            "503:L67 flight0 step5",
+            1
+          ],
+          [
+            "499:L67 flight0 step1",
+            1
+          ]
+        ]
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 35
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 35
+      },
+      "current_lanes": {
+        "samples": 8652,
+        "valid_standing": 7360,
+        "invalid_standing": 1292,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 304,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 20,
+          "NO_CENTRE_SUPPORT": 916,
+          "NO_FOOT_SUPPORT_0.0_0.22": 13,
+          "FOOT_HEIGHT_SPREAD": 26,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 9
+        },
+        "physical_components": [
+          [
+            "136:Wall main-stair E",
+            24
+          ],
+          [
+            "Flat route shell Wall service E",
+            20
+          ],
+          [
+            "366:Wall lift N",
+            14
+          ],
+          [
+            "213:Wall clinical-clean N",
+            12
+          ],
+          [
+            "226:Wall clinical-service N",
+            12
+          ],
+          [
+            "149:Wall service-link S",
+            12
+          ],
+          [
+            "262:Wall hydro-dry S",
+            12
+          ],
+          [
+            "279:Wall washup N",
+            12
+          ],
+          [
+            "39:Wall ground-linen S",
+            10
+          ],
+          [
+            "8:Wall ground-north-b N",
+            10
+          ],
+          [
+            "10:Wall ground-north-b E",
+            9
+          ],
+          [
+            "216:Wall clinical-clean E",
+            9
+          ],
+          [
+            "223:Wall clinical-soiled E",
+            9
+          ],
+          [
+            "303:Wall service W.001",
+            9
+          ],
+          [
+            "281:Wall washup E",
+            9
+          ],
+          [
+            "368:Wall lift W",
+            8
+          ],
+          [
+            "243:Wall staff-wc E",
+            8
+          ],
+          [
+            "340:Wall quiet-lobby E",
+            7
+          ],
+          [
+            "292:Wall food-store E",
+            7
+          ],
+          [
+            "312:Wall refuse S",
+            6
+          ],
+          [
+            "214:Wall clinical-clean S",
+            6
+          ],
+          [
+            "Flat route shell Wall clinical-soiled N.001",
+            5
+          ],
+          [
+            "548:L77 flight0 step17",
+            5
+          ],
+          [
+            "547:L77 flight0 step16",
+            5
+          ],
+          [
+            "549:L77 flight0 step18",
+            4
+          ]
+        ]
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 30
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 30
+      },
+      "current_lanes": {
+        "samples": 8820,
+        "valid_standing": 8148,
+        "invalid_standing": 672,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 41,
+          "NO_CENTRE_SUPPORT": 415,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2,
+          "FOOT_HEIGHT_SPREAD": 22,
+          "PHYSICAL_COMPONENT": 183,
+          "NO_FOOT_SUPPORT_0.0_0.22": 6
+        },
+        "physical_components": [
+          [
+            "160:Wall union-common W",
+            17
+          ],
+          [
+            "164:Wall cafe W",
+            14
+          ],
+          [
+            "159:Wall union-common S",
+            10
+          ],
+          [
+            "92:Wall meeting S",
+            9
+          ],
+          [
+            "643:L82 flight0 step15",
+            9
+          ],
+          [
+            "156:Wall laundry W",
+            8
+          ],
+          [
+            "Flat route shell Wall admin S",
+            7
+          ],
+          [
+            "185:Wall staff-rest E",
+            7
+          ],
+          [
+            "641:L82 flight0 step13",
+            7
+          ],
+          [
+            "644:L82 flight0 step16",
+            7
+          ],
+          [
+            "657:L84 flight0 step7",
+            7
+          ],
+          [
+            "659:L84 flight0 step9",
+            7
+          ],
+          [
+            "Flat route shell Wall admin N",
+            6
+          ],
+          [
+            "642:L82 flight0 step14",
+            6
+          ],
+          [
+            "157:Wall laundry E",
+            6
+          ],
+          [
+            "655:L84 flight0 step5",
+            6
+          ],
+          [
+            "Flat route shell Wall meeting W",
+            5
+          ],
+          [
+            "183:Wall staff-rest S",
+            5
+          ],
+          [
+            "590:L80 flight0 step2",
+            5
+          ],
+          [
+            "640:L82 flight0 step12",
+            4
+          ],
+          [
+            "184:Wall staff-rest W",
+            4
+          ],
+          [
+            "98:Wall records S",
+            3
+          ],
+          [
+            "22:Wall teaching-lobby E",
+            3
+          ],
+          [
+            "440:Wall res-east-1 W",
+            3
+          ],
+          [
+            "43:Wall lab S.001",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": {
+        "contract": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+        "contract_sha256": "2027524ee0d4d712567d799617cf41f36ea4e345e14756ea51b59e369c594f4f",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "layout_sha256": "e6bf03a8d384fee58fad7d649c10651cf6e1ede97b314df6aa10fae8aad17348",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+        "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-roof-pass/academy/construction.json",
+        "contract_sha256": "8d014388cb6299bf335ff4755bd3105bc0bc7103a365e94fe2d6e47f92d97340",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "layout_sha256": "e6bf03a8d384fee58fad7d649c10651cf6e1ede97b314df6aa10fae8aad17348",
+        "native": "development/levels/rebuild/institution-roof-pass/academy/enclosed-roofs.hcs2",
+        "native_sha256": "d7014c708dfd91a70e6a1e378c0ed2046b8766554d1df179dff523fe48bdc86c"
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "contract_sha256": "137eee1e1ae8ceed1f9eeca70a6b6d33af57e774ddd1de830ceaf79d1a97d84d",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "layout_sha256": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-roof-pass/asylum/construction.json",
+        "contract_sha256": "0ade274905dc7410babafdf3cf7713e82caf8a4e9aac78fff393be9cba66c6a5",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "layout_sha256": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56",
+        "native": "development/levels/rebuild/institution-roof-pass/asylum/enclosed-roofs.hcs2",
+        "native_sha256": "f93eeb4507a8be044b33de347229066baf8e35aa5918f0a205801a6d0bc87053"
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "contract_sha256": "f6d683f9d3fef0764a476381a691f9cc412b1d95315b724cb37d52351f6696a6",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "layout_sha256": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-roof-pass/college/construction.json",
+        "contract_sha256": "ddbf97f072d191bfe435b2c2ee36ee622cbdb12ea0985059d67f00b62a357755",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "layout_sha256": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752",
+        "native": "development/levels/rebuild/institution-roof-pass/college/enclosed-roofs.hcs2",
+        "native_sha256": "b9c87b36b4df8a3101092838cb26e7cd9d833a5667b0157c8438a88ac88cc42d"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/development/levels/rebuild/retaining-shoulder-pass/roster.json": "508271a111d9390b4f320ca9b4a1cb2aa0e406b57ee40d4ea3b363ae514c2e65"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-failure-contacts.tsv": "af800687939cb6fcace7e760bba9ea091a39eb1058c0e99c2d667a8c0af05242",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-failure-input.tsv": "be20c4133f927884521e3bf4c43e873749d52cdc93a5410359c305089fcb1814",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-lane-input.tsv": "6e10b3123e748178f1ca853f35b085bbc14eafd2e09f2ccd44e822afe9e3b69f",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-lane-names.tsv": "faa90123011c83532d0eb064248c29f327c50042f5fe2b51fb676013daf44cd4",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-lanes.tsv": "048b0ab5d2dad0ddec7bcbf8d3579860467d524495ee0e90a6d194653bdf5d2d",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-links.tsv": "83e5ef63b2e70aa9c188dc7b4e4e3604205010c1e4a2a6f9a9212697917890ff",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-names.tsv": "faa90123011c83532d0eb064248c29f327c50042f5fe2b51fb676013daf44cd4",
+    "development/levels/rebuild/institution-roof-pass/verification/current-flat-paths.tsv": "ce4d9087190046b9d10dfbc5756f6363def94274ccd10055395154e3506afc21"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance.",
+  "exact_checkout_source_snapshots": {
+    "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/development/levels/rebuild/retaining-shoulder-pass/roster.json": "development/levels/rebuild/retaining-shoulder-pass/roster.json"
+  }
+}

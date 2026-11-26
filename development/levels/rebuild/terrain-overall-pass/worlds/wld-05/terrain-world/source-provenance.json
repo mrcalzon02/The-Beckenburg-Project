@@ -1,0 +1,24 @@
+{
+  "id": "WLD-05",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -10,
+    -6,
+    0
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Rock rises behind the adit; surface water drains east of the mine entrance and workyard.",
+  "construction_response": "Adit portal requires a rock face and buried tunnel roof. The minus-six/minus-ten workings stay underground, not giant open pits punched through all surface ground.",
+  "source_layout": "development/levels/rebuild/wld-05/rough-layout.json",
+  "source_layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
+  "spec_sha256": "fc4a1624f238f8018614199e34c99af3b1af94d2dcd5b1712fcd408f9d28a713",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.2487618017638953,
+    7.607628883546496
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

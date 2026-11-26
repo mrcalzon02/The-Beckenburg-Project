@@ -1,0 +1,16 @@
+check	result
+native_scene_revision	bb73c9c042e93735c1eb9d5461b5a1a51d7d73c81f46ba8e4189c3c5d995b0b7
+level_revision	bb73c9c042e93735c1eb9d5461b5a1a51d7d73c81f46ba8e4189c3c5d995b0b7-a0cea63dd67ce7a3
+collision_sha256	cfe51c6bc4ef7fc253945bee672d3c71e837c10c6b5995b8348db1a2f348faa3
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+retained_door_sweeps	13
+original_route_replays	84
+monastery-archive-cupboard_protected_floor_samples	69
+monastery-dorm-cupboard_protected_floor_samples	69
+monastery-chamber-cupboard_protected_floor_samples	69
+monastery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+samples_across_full_protected_volume	2475
+samples_within_one_centimeter_of_four_interior_corners	60
+cargo_arrival_and_return_replays	12
+disabled_refuge_cue_pixels	0

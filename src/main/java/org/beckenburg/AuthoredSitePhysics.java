@@ -15,7 +15,7 @@ public final class AuthoredSitePhysics {
     public static final int SUPPORT=1,OPTICAL=2,BODY=4;
     public static final double MAX_GRADE=.20,RADIUS=.22,MAX_STEP=.25;
     private static final int MAX_BYTES=32_000_000,MAX_TRIANGLES=500_000,MAX_PARTS=16384,MAX_REFS=8_000_000;
-    private static final double CELL=2,CONTACT=.005;
+    private static final double CELL=2,CONTACT=.005,GRATE_REACH=.022;
     public record Triangle(Vec a,Vec b,Vec c,int flags,int component){}
     public record Support(double y,double grade,int triangle){}
     private record Part(String name,boolean closed,int first,int count,double[] bounds){}
@@ -26,26 +26,93 @@ public final class AuthoredSitePhysics {
     private final Map<Long,int[]> bins;
     private final List<Collider> blockers;
     private final String sha256;
+    private final boolean[] steps,grates;
+    private final boolean hasSteps;
 
-    private AuthoredSitePhysics(float[] xyz,byte[] flags,int[] owner,Part[] parts,List<Collider> blockers,String sha)throws IOException{
+    private AuthoredSitePhysics(float[] xyz,byte[] flags,int[] owner,Part[] parts,List<Collider> blockers,String sha,Set<String> stairComponents,Set<String> grateComponents)throws IOException{
         this.xyz=xyz;this.flags=flags;this.owner=owner;this.parts=parts;this.blockers=List.copyOf(blockers);sha256=sha;
+        steps=new boolean[parts.length];var unresolved=new HashSet<>(stairComponents);
+        for(int p=0;p<parts.length;p++)if(stairComponents.contains(parts[p].name())){
+            if(!unresolved.remove(parts[p].name()))throw new IOException("Ambiguous authored stair component");
+            Part part=parts[p];boolean support=false;
+            for(int i=part.first();i<part.first()+part.count();i++)support|=(flags[i]&SUPPORT)!=0;
+            if(!part.closed()||!support)throw new IOException("Authored stair must be a closed supported solid");
+            steps[p]=true;
+        }
+        if(!unresolved.isEmpty())throw new IOException("Unknown authored stair component: "+unresolved);
+        hasSteps=!stairComponents.isEmpty();
+        grates=new boolean[parts.length];
+        var unresolvedGrates=new HashSet<>(grateComponents);
+        for(int p=0;p<parts.length;p++)if(grateComponents.contains(parts[p].name())){
+            var part=parts[p];
+            var bounds=part.bounds();
+            if(!unresolvedGrates.remove(part.name())||!part.closed()||steps[p]
+                    ||bounds[4]-bounds[1]>.05||bounds[3]-bounds[0]>.70||bounds[5]-bounds[2]>.70)
+                throw new IOException("Invalid authored walking grate "+part.name());
+            grates[p]=true;
+        }
+        if(!unresolvedGrates.isEmpty())throw new IOException("Unknown authored walking grate: "+unresolvedGrates);
         for(var b:blockers)if(!finite(b.x(),b.y(),b.z(),b.halfX(),b.halfZ(),b.height(),b.yaw())||b.halfX()<=0||b.halfZ()<=0||b.height()<=0)throw new IOException("Invalid movement-only blocker");
         long refs=0;
         for(int i=0;i<flags.length;i++){
-            int n=i*9;long dx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6])))-cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6])))+1;
-            long dz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8])))-cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8])))+1;
+            int n=i*9;
+            double pad=grates[owner[i]]?GRATE_REACH:0;
+            long dx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6]))+pad)-cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6]))-pad)+1;
+            long dz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8]))+pad)-cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8]))-pad)+1;
             refs+=dx*dz;if(refs>MAX_REFS)throw new IOException("Native geometry spatial budget exceeded");
         }
         var lists=new HashMap<Long,ArrayList<Integer>>();
         for(int i=0;i<flags.length;i++){
-            int n=i*9;int ax=cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6]))),bx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6])));
-            int az=cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8]))),bz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8])));
+            int n=i*9;
+            double pad=grates[owner[i]]?GRATE_REACH:0;
+            int ax=cell(Math.min(xyz[n],Math.min(xyz[n+3],xyz[n+6]))-pad),bx=cell(Math.max(xyz[n],Math.max(xyz[n+3],xyz[n+6]))+pad);
+            int az=cell(Math.min(xyz[n+2],Math.min(xyz[n+5],xyz[n+8]))-pad),bz=cell(Math.max(xyz[n+2],Math.max(xyz[n+5],xyz[n+8]))+pad);
             for(int x=ax;x<=bx;x++)for(int z=az;z<=bz;z++)lists.computeIfAbsent(key(x,z),k->new ArrayList<>()).add(i);
         }
         var result=new HashMap<Long,int[]>();for(var e:lists.entrySet())result.put(e.getKey(),e.getValue().stream().mapToInt(Integer::intValue).toArray());bins=Map.copyOf(result);
     }
+    /** Use the exact fitted leaf triangles as non-supporting physical and optical surfaces. */
+    static AuthoredSitePhysics meshObstacles(String partName,GlbProps.Model model)throws IOException{
+        var faces=model.triangles();
+        int total=faces.size();
+        if(total<1||total>MAX_TRIANGLES)throw new IOException("Invalid native obstacle face count");
+        var coords=new float[total*9];
+        var allFlags=new byte[total];
+        Arrays.fill(allFlags,(byte)(OPTICAL|BODY));
+        double[] bounds={Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,
+                         Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY};
+        int at=0;
+        for(var face:faces){
+            for(var vertex:List.of(face.a(),face.b(),face.c())){
+                for(double v:new double[]{vertex.x(),vertex.y(),vertex.z()}){
+                    if(!Double.isFinite(v)||Math.abs(v)>=256)throw new IOException("Out-of-domain native obstacle vertex");
+                    int axis=at%3;
+                    coords[at++]=(float)v;
+                    bounds[axis]=Math.min(bounds[axis],v);
+                    bounds[axis+3]=Math.max(bounds[axis+3],v);
+                }
+            }
+        }
+        // Separate or overlapping library pieces retain their exact surface
+        // obstacles without being interpreted as one closed solid.
+        var parts=new Part[]{new Part(partName,false,0,total,bounds)};
+        return new AuthoredSitePhysics(coords,allFlags,new int[total],parts,List.of(),"",Set.of(),Set.of());
+    }
+
     public static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers)throws IOException{
+        return read(source,expectedSha,blockers,Set.of());
+    }
+    /** Explicit, caller-authored stair identities for this exact hash-bound payload.
+     * Existing consumers retain literal geometry behavior through the three-argument reader.
+     * This does not infer stairs from component names or change optical/physical queries.
+     */
+    public static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers,Set<String> stairComponents)throws IOException{
+        return read(source,expectedSha,blockers,stairComponents,Set.of());
+    }
+    static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers,
+                                    Set<String> stairComponents,Set<String> grateComponents)throws IOException{
         Objects.requireNonNull(source);Objects.requireNonNull(blockers);
+        stairComponents=Set.copyOf(stairComponents);
         byte[] data=source.readNBytes(MAX_BYTES+1);if(data.length>MAX_BYTES)throw new IOException("Native geometry byte budget exceeded");
         String sha;
         try{sha=HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(data));}catch(NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
@@ -73,7 +140,7 @@ public final class AuthoredSitePhysics {
                 parts[p]=new Part(name,closed==1,first,n,bounds);
             }
             if(cursor!=triangles||in.read()!=-1)throw new IOException("Truncated/trailing native geometry records");
-            return new AuthoredSitePhysics(xyz,flags,owner,parts,blockers,sha);
+            return new AuthoredSitePhysics(xyz,flags,owner,parts,blockers,sha,stairComponents,Set.copyOf(grateComponents));
         }catch(EOFException truncated){throw new IOException("Truncated native geometry",truncated);}
     }
     private static AuthoredSitePhysics hollowCreek;
@@ -110,9 +177,28 @@ public final class AuthoredSitePhysics {
         for(int i:list){
             if((flags[i]&SUPPORT)==0)continue;Vec a=v(i,0),b=v(i,1),c=v(i,2);double abx=b.x()-a.x(),abz=b.z()-a.z(),acx=c.x()-a.x(),acz=c.z()-a.z(),den=abx*acz-abz*acx;
             if(Math.abs(den)<1e-14)continue;double dx=x-a.x(),dz=z-a.z(),u=(dx*acz-dz*acx)/den,w=(abx*dz-abz*dx)/den;
-            if(u< -1e-7||w< -1e-7||u+w>1+1e-7)continue;
+            // Independently transformed GLB tread solids can round a shared
+            // join a few micrometres apart in float32. Bound this seam allowance
+            // in world metres, only on explicitly authored steps. It cannot
+            // bridge a missing tread or widen ordinary floor edges.
+            double tu=1e-7,tw=1e-7,te=1e-7;
+            if(steps[owner[i]]){
+                tu=Math.max(tu,1e-5*Math.hypot(acx,acz)/Math.abs(den));
+                tw=Math.max(tw,1e-5*Math.hypot(abx,abz)/Math.abs(den));
+                te=Math.max(te,1e-5*Math.hypot(acx-abx,acz-abz)/Math.abs(den));
+            }
+            double y;
+            if(u< -tu||w< -tw||u+w>1+te){
+                if(!grates[owner[i]])continue;
+                var bounds=parts[owner[i]].bounds();
+                y=bounds[4];
+                // A shoe can span a narrow slot between the real bars, within
+                // the cover footprint. Optical and body tests keep the gaps.
+                if(x<bounds[0]||x>bounds[3]||z<bounds[2]||z>bounds[5]
+                        ||a.y()!=y||b.y()!=y||c.y()!=y
+                        ||pointTriangle(new Vec(x,y,z),a,b,c)>GRATE_REACH*GRATE_REACH)continue;
+            }else y=a.y()+u*(b.y()-a.y())+w*(c.y()-a.y());
             Vec normal=cross(sub(b,a),sub(c,a));if(normal.y()<=0)continue;double grade=Math.hypot(normal.x(),normal.z())/normal.y();if(grade>MAX_GRADE+1e-5)continue;
-            double y=a.y()+u*(b.y()-a.y())+w*(c.y()-a.y());
             if(Math.abs(y-previousY)<=maxDelta+1e-6&&(best==null||y>best.y()))best=new Support(y,grade,i);
         }return best;
     }
@@ -140,6 +226,26 @@ public final class AuthoredSitePhysics {
         if(!point(a)||!point(b)||norm2(sub(b,a))>128*128)return false;Vec d=sub(b,a);if(norm2(d)<1e-16)return true;
         return rayCells(a,b,i->{if((flags[i]&OPTICAL)==0)return true;double t=ray(i,a,d);return !Double.isFinite(t)||t<=1e-6||t>=1-1e-6;});
     }
+    record OpticalHit(String component, double fraction) {}
+
+    OpticalHit firstOpticalHit(Vec start, Vec end) {
+        if (!point(start) || !point(end)) return null;
+        Vec delta = sub(end, start);
+        double[] nearest = {Double.POSITIVE_INFINITY};
+        int[] component = {-1};
+        rayCells(start, end, i -> {
+            if ((flags[i]&OPTICAL) != 0) {
+                double fraction = ray(i, start, delta);
+                if (fraction > 1e-6 && fraction < nearest[0]) {
+                    nearest[0] = fraction;
+                    component[0] = owner[i];
+                }
+            }
+            return true;
+        });
+        return component[0] < 0 ? null : new OpticalHit(componentName(component[0]), nearest[0]);
+    }
+
     /** Per closed component parity preserves hollow rooms and overlapping solids. */
     private boolean insideSolid(Vec p){
         for(int part=0;part<parts.length;part++){
@@ -174,6 +280,9 @@ public final class AuthoredSitePhysics {
         return Math.min(Math.min(pointTriangle(p,a,b,c),pointTriangle(q,a,b,c)),Math.min(segments(p,q,a,b),Math.min(segments(p,q,b,c),segments(p,q,c,a))));
     }
     public boolean bodyBlocked(Vec feet,double height,double radius){
+        return bodyBlocked(feet,height,radius,false);
+    }
+    private boolean bodyBlocked(Vec feet,double height,double radius,boolean walkingSteps){
         if(!point(feet)||!finite(height,radius)||radius<.01||radius>.4||height<radius*2||height>2.5)return true;
         Vec a=add(feet,new Vec(0,radius,0)),b=add(feet,new Vec(0,height-radius,0));double limit=(radius-CONTACT)*(radius-CONTACT);
         for(Collider c:blockers){
@@ -183,7 +292,13 @@ public final class AuthoredSitePhysics {
         }
         for(int x=cell(feet.x()-radius);x<=cell(feet.x()+radius);x++)for(int z=cell(feet.z()-radius);z<=cell(feet.z()+radius);z++){
             int[] list=bins.get(key(x,z));if(list==null)continue;
-            for(int i:list)if((flags[i]&BODY)!=0&&capsuleTriangle(a,b,i)<limit)return true;
+            for(int i:list)if((flags[i]&BODY)!=0){
+                // A conventional step-up controller clears only the low lip of a
+                // specifically authored tread. Walls, roofs, props, blockers and
+                // higher stair solids retain their complete capsule collision.
+                if(walkingSteps&&steps[owner[i]]&&parts[owner[i]].bounds()[4]<=feet.y()+MAX_STEP+1e-6)continue;
+                if(capsuleTriangle(a,b,i)<limit)return true;
+            }
         }return insideSolid(add(feet,new Vec(0,height/2,0)));
     }
     /**
@@ -216,8 +331,21 @@ public final class AuthoredSitePhysics {
         return List.copyOf(hits);
     }
     public boolean traversable(Vec feet,double height){
-        if(!point(feet)||support(feet.x(),feet.z(),feet.y(),.006)==null||bodyBlocked(feet,height,RADIUS))return false;
-        for(double[] d:new double[][]{{RADIUS,0},{-RADIUS,0},{0,RADIUS},{0,-RADIUS}})if(support(feet.x()+d[0],feet.z()+d[1],feet.y(),.08)==null)return false;
+        if(!point(feet))return false;
+        Support centre=support(feet.x(),feet.z(),feet.y(),.006);if(centre==null)return false;
+        if(!hasSteps){
+            if(bodyBlocked(feet,height,RADIUS))return false;
+            for(double[] d:new double[][]{{RADIUS,0},{-RADIUS,0},{0,RADIUS},{0,-RADIUS}})if(support(feet.x()+d[0],feet.z()+d[1],feet.y(),.08)==null)return false;
+            return true;
+        }
+        boolean walkingSteps=steps[owner[centre.triangle()]];
+        var neighbours=new ArrayList<Support>(4);
+        for(double[] d:new double[][]{{RADIUS,0},{-RADIUS,0},{0,RADIUS},{0,-RADIUS}}){
+            Support s=support(feet.x()+d[0],feet.z()+d[1],feet.y(),MAX_STEP);
+            if(s==null)return false;neighbours.add(s);walkingSteps|=steps[owner[s.triangle()]];
+        }
+        if(!walkingSteps)for(double[] d:new double[][]{{RADIUS,0},{-RADIUS,0},{0,RADIUS},{0,-RADIUS}})if(support(feet.x()+d[0],feet.z()+d[1],feet.y(),.08)==null)return false;
+        if(bodyBlocked(feet,height,RADIUS,walkingSteps))return false;
         return true;
     }
     public Vec resolveMove(Vec from,double x,double z,double height){

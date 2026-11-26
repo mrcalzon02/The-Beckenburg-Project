@@ -1,0 +1,86 @@
+[
+  {
+    "test": "CastleHomeInteractionTest",
+    "exit": 1,
+    "seconds": 3.48,
+    "log": "/dev/shm/beckenburg-map-validation/CastleHomeInteractionTest.log"
+  },
+  {
+    "test": "CastleRebuildUpgradeTest",
+    "exit": 0,
+    "seconds": 5.0,
+    "log": "/dev/shm/beckenburg-map-validation/CastleRebuildUpgradeTest.log"
+  },
+  {
+    "test": "CastleDocumentRecoveryTest",
+    "exit": 0,
+    "seconds": 2.09,
+    "log": "/dev/shm/beckenburg-map-validation/CastleDocumentRecoveryTest.log"
+  },
+  {
+    "test": "CastleSnapshotContractTest",
+    "exit": 0,
+    "seconds": 3.13,
+    "log": "/dev/shm/beckenburg-map-validation/CastleSnapshotContractTest.log"
+  },
+  {
+    "test": "HouseDefaultPromotionTest",
+    "exit": 0,
+    "seconds": 26.59,
+    "log": "/dev/shm/beckenburg-map-validation/HouseDefaultPromotionTest.log"
+  },
+  {
+    "test": "HouseRebuildUpgradeTest",
+    "exit": 0,
+    "seconds": 75.85,
+    "log": "/dev/shm/beckenburg-map-validation/HouseRebuildUpgradeTest.log"
+  },
+  {
+    "test": "HouseParcelBoundaryTest",
+    "exit": 0,
+    "seconds": 4.3,
+    "log": "/dev/shm/beckenburg-map-validation/HouseParcelBoundaryTest.log"
+  },
+  {
+    "test": "HouseEncounterTest",
+    "exit": 0,
+    "seconds": 24.76,
+    "log": "/dev/shm/beckenburg-map-validation/HouseEncounterTest.log"
+  },
+  {
+    "test": "HouseEncounterSessionTest",
+    "exit": 1,
+    "seconds": 2.47,
+    "log": "/dev/shm/beckenburg-map-validation/HouseEncounterSessionTest.log"
+  },
+  {
+    "test": "HouseEncounterNetworkTest",
+    "exit": 0,
+    "seconds": 2.63,
+    "log": "/dev/shm/beckenburg-map-validation/HouseEncounterNetworkTest.log"
+  },
+  {
+    "test": "PortalLightReachabilityTest",
+    "exit": 0,
+    "seconds": 2.48,
+    "log": "/dev/shm/beckenburg-map-validation/PortalLightReachabilityTest.log"
+  },
+  {
+    "test": "OpticalEvidenceTest",
+    "exit": 0,
+    "seconds": 3.24,
+    "log": "/dev/shm/beckenburg-map-validation/OpticalEvidenceTest.log"
+  },
+  {
+    "test": "CountyCampaignMapNavigationTest",
+    "exit": 0,
+    "seconds": 5.28,
+    "log": "/dev/shm/beckenburg-map-validation/CountyCampaignMapNavigationTest.log"
+  },
+  {
+    "test": "SiteSelectionTest",
+    "exit": 1,
+    "seconds": 17.64,
+    "log": "/dev/shm/beckenburg-map-validation/SiteSelectionTest.log"
+  }
+]

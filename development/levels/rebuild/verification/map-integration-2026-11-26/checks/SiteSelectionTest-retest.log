@@ -1,0 +1,8 @@
+2026-11-26T20:13:31.267770595Z [main] RENDER SLOW stage=idle faces=79052 visible_faces=35274 culled_faces=43778 target=320x200 build_ms=1253 lighting_raster_ms=590
+2026-11-26T20:13:33.567909921Z [main] RENDER SLOW stage=idle faces=221931 visible_faces=68853 culled_faces=153078 target=320x200 build_ms=276 lighting_raster_ms=258
+2026-11-26T20:13:38.055797024Z [main] RENDER SLOW stage=idle faces=253514 visible_faces=163491 culled_faces=90023 target=320x200 build_ms=1603 lighting_raster_ms=674
+2026-11-26T20:13:40.482634623Z [main] RENDER SLOW stage=idle faces=70413 visible_faces=29942 culled_faces=40471 target=320x200 build_ms=818 lighting_raster_ms=1079
+Exception in thread "main" java.lang.AssertionError: shipped source models and walls render for MV Saint Elara / PLAYABLE
+	at org.beckenburg.SiteSelectionTest.ok(SiteSelectionTest.java:8)
+	at org.beckenburg.SiteSelectionTest.checkCatalog(SiteSelectionTest.java:52)
+	at org.beckenburg.SiteSelectionTest.main(SiteSelectionTest.java:14)

@@ -1,0 +1,70 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_CARETAKER_SUPPLY_AND_BREAKER_VERIFIED",
+  "previous_commit": "c4ea82293f6209c825b3d79ff3fb881ff989d9df",
+  "previous_gallery": 45377307998,
+  "sites": {
+    "WLD-07": {
+      "exports": {
+        "development/levels/rebuild/cemetery-power-pass/wld-07/caretaker-power.blend": "59587cb0e03cec1388ede7aabcdc3123e28aed56c181569cea9c601db6a1205a",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/caretaker-power.glb": "c33243e10a947f16c9789d1e293a2be59b69a5da05cd79c7cca5b29eeae966b9",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/caretaker-power.hcs2": "f9a02bf9e93df3caeed6334c76810dfdb73c6a71daa5fc40cdc395b00d646b98"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-power-pass/wld-07/power-software.tsv": "8f4be7a8d2df5a478f44a32f16199efa3784fa4f60192634ffe578c0c7e8eced",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/power-opengl.tsv": "cdcd927e57f5433b056eae081cd44648971def66222ccc9bc0f0491c9c6c85f9",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/construction.json": "7fd048c1447f83981b9707e263387a665d989c14caa5d3dddd281a1141e3d355",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/room-layout.tsv": "65a2c0b2dfb9fa823f4d6524d7655e6b1c4f5195ed134296e87a4a5b41770663",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/door-schedule.tsv": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6",
+        "development/levels/rebuild/cemetery-power-pass/wld-07/captures/structure/caretaker-service-yard.png": "96a998631a1f86dff2ab52b90f3b1537cf33df97b80d78c68deedc3005fb4f72"
+      },
+      "source": {
+        "blend": "d4ff369f9b19f58f51a452dc7a06163609a3ffaf4ef31be5f79fb931d56b5d79",
+        "glb": "e68dbbaa1062ee96a8ad400537c8a0e1de022ab964d0a2c36679e9c37e1329f4",
+        "hcs2": "d7d4e9aa3fa2eae7b124a2ffe2ed3c1749a749a1dc8ad27a8c2987b875707f00"
+      },
+      "native_scene_revision": "2440ae3effb6e8f3f809f065414809a38d8ab526ca63b9c8abffd94bee25866a",
+      "soil_samples": 609,
+      "added_parts": 58,
+      "latent_source_and_breaker_states": "PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset",
+      "rendered_lamp_response": {
+        "software": "441091 changed pixels; 6.690457810867294 mean RGB increase",
+        "opengl": "399876 changed pixels; 6.262949973876698 mean RGB increase"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "exports": {
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/caretaker-power.blend": "852612b1363c02db362df5ad3f8be75bacea630df680d7f182ce6bcf2eccfef6",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/caretaker-power.glb": "7815ddaaa9bf37bd04cc86e6e265cfbcd31e3e1f101aa49abdddafa2df09d1c9",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/caretaker-power.hcs2": "a16f59a472a2d6eb1dc99754cc35ae40dc04f82116bd08187a9367e8c53ca4a0"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/power-software.tsv": "2adbe8005a90eae0bca9855872b27ad2575c97766725ccd8938490a4c3827239",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/power-opengl.tsv": "af119377c50f1e3cd5f998733ab7c754491e596eb94ffaa2142605c47d0b72f0",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/construction.json": "2b8e20d8474037afc6200f94c42c0f266bb02654b0fe49bfee67e346aa37df71",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/room-layout.tsv": "f007e4a3e526ca7005dbaf99c1bf327728fd9ee07ab3dca3556970aa363f1509",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/door-schedule.tsv": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77",
+        "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/structure/caretaker-service-yard.png": "62e4d29f5725834409500e10f8b01818e12263bc817010242d1bd71f4aef3efd"
+      },
+      "source": {
+        "blend": "d4ff369f9b19f58f51a452dc7a06163609a3ffaf4ef31be5f79fb931d56b5d79",
+        "glb": "e68dbbaa1062ee96a8ad400537c8a0e1de022ab964d0a2c36679e9c37e1329f4",
+        "hcs2": "d7d4e9aa3fa2eae7b124a2ffe2ed3c1749a749a1dc8ad27a8c2987b875707f00"
+      },
+      "native_scene_revision": "14ffe220a3f38b5fe2bccb87529e9d372962c50fd16b9b44869048c58198c4e5",
+      "soil_samples": 609,
+      "added_parts": 58,
+      "latent_source_and_breaker_states": "PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset",
+      "rendered_lamp_response": {
+        "software": "441357 changed pixels; 6.687631269592477 mean RGB increase",
+        "opengl": "399899 changed pixels; 6.2704258098223615 mean RGB increase"
+      }
+    }
+  },
+  "rejected_initial_ramp": {
+    "cause": "Toe protruded 9 mm above surveyed soil and obstructed capsule travel just beyond the threshold.",
+    "observed_station": "On axis at X49.4, Z58.379 to 58.353, a real geometric contact, with ground support still present.",
+    "remedy": "Seat the front edge 20 mm under tested soil and slope naturally onto the formed floor."
+  },
+  "installed_branch": "Caretaker shelter lamp supplied by attached weatherproof conduit and distribution cabinet",
+  "remaining": "Complete actual distributed plant feeds and switched fixtures in the cemetery and annex buildings, then case and named integration."
+}

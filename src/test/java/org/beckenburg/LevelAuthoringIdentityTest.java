@@ -19,15 +19,15 @@ public final class LevelAuthoringIdentityTest {
         var home=Files.createTempDirectory("mission-identity-");
         String previous=System.getProperty("user.home");System.setProperty("user.home",home.toString());
         try{
-            for(var builtIn:HouseMap.Site.values())if(builtIn!=HouseMap.Site.USER&&builtIn!=HouseMap.Site.HOLLOW_CREEK){
+            for(var builtIn:HouseMap.Site.values())if(LevelPlans.editableTemplate(builtIn)){
                 var baseline=new LevelAuthoringSession(builtIn);baseline.validate();
                 check(baseline.props().equals(LevelPlans.buildSource(builtIn).props()),"Opening "+builtIn+" preserves all shipped native props");
             }
-            var site=HouseMap.Site.HOUSE;var nativeSource=LevelPlans.buildSource(site);
+            var site=HouseMap.Site.HOUSE;var nativeSource=LevelPlans.legacyHouseSource();
             // Historical versionless BSCN v1 coordinates belong to the
             // original building, not the newly dispatched source.
             LevelAuthoringSession.saveProps(LevelAuthoringSession.path(site),"beckenburg/house",
-                LevelPlans.legacyHouseSource().props());
+                nativeSource.props());
             var session=new LevelAuthoringSession(site);var original=session.snapshot();
             String first=session.nodeId(0),second=session.nodeId(1);
             check(first.equals("prop-0")&&second.equals("prop-1"),"Legacy BSCN node identity preserved");
@@ -67,12 +67,12 @@ public final class LevelAuthoringIdentityTest {
             var secondUser=new LevelAuthoringSession(HouseMap.Site.USER);
             byte[] secondBytes=Files.readAllBytes(secondUser.documentPath());
             check(firstUser.documentPath().equals(ownedPath)&&firstUser.id().equals(ownedId),"USER session identity and path pinned at open");
-            int userChair=-1;
+            int ownedCount=firstUser.size(),userChair=-1;
             for(int i=0;i<firstUser.size();i++)
                 if(firstUser.prop(i).mesh().equals("chair_mp_5")){userChair=i;break;}
             check(userChair>=0,"Fresh House has an independently editable dining chair");
             firstUser.remove(userChair);firstUser.save();firstUser.reopen();
-            check(firstUser.size()==nativeSource.props().size()-1,"Older session reopens its own source while another project is selected");
+            check(firstUser.size()==ownedCount-1,"Older session reopens its own source while another project is selected");
             check(java.util.Arrays.equals(secondBytes,Files.readAllBytes(secondUser.documentPath())),"Older USER session cannot overwrite active second project");
             UserLevelLibrary.activate("OwnedFirst");
             check(new HouseMap(HouseMap.Site.USER).level().props().equals(firstUser.props()),"Real selected game reads first project's own saved changes");

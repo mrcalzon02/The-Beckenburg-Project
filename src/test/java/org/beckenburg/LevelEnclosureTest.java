@@ -3,14 +3,20 @@ import java.util.*;
 /** Physical perimeter closure, fully supported arrival module and visible readable objects. */
 public final class LevelEnclosureTest {
  static void check(boolean yes,String why){if(!yes)throw new AssertionError(why);}
- public static void main(String[]args)throws Exception{
-  for(var site:AuthoredTestSupport.SITES){
-   var map=new HouseMap(site);var edges=LevelEnclosure.edges(map.level().rooms());var barriers=map.level().sockets().stream().filter(s->s.type().equals("enclosure")).toList();check(edges.size()==barriers.size()&&edges.size()>=4,"incomplete visible perimeter");
+ private static void templatePerimeter(HouseMap map,List<LevelDefinition.Socket> barriers){
+   var edges=LevelEnclosure.edges(map.level().rooms());check(edges.size()==barriers.size()&&edges.size()>=4,"incomplete visible perimeter");
    for(int i=0;i<edges.size();i++){
     var e=edges.get(i);var s=barriers.get(i);check(map.level().colliders().stream().anyMatch(c->Math.hypot(c.x()-s.x(),c.z()-s.z())<.001&&Math.abs(c.halfX()-e.length()/2)<.001),"visible barrier lacks exact collision");
-    for(double t=.08;t<1;t+=.14){double x=e.x0()+(e.x1()-e.x0())*t+e.inwardX()*.18,z=e.z0()+(e.z1()-e.z0())*t+e.inwardZ()*.18;check(!map.traversable(x,0,z),"walked through boundary "+site);}
+    for(double t=.08;t<1;t+=.14){double x=e.x0()+(e.x1()-e.x0())*t+e.inwardX()*.18,z=e.z0()+(e.z1()-e.z0())*t+e.inwardZ()*.18;check(!map.traversable(x,0,z),"walked through boundary "+map.site());}
     check(!map.clearLineOfSight(s.x()-e.inwardX()*.4,.7,s.z()-e.inwardZ()*.4,s.x()+e.inwardX()*.4,.7,s.z()+e.inwardZ()*.4),"barrier does not obstruct at its physical height");
    }
+ }
+ public static void main(String[]args)throws Exception{
+  for(var site:AuthoredTestSupport.SITES){
+   var map=new HouseMap(site);
+   var barriers=map.level().sockets().stream().filter(s->s.type().equals("enclosure")).toList();
+   if(HouseParcelBoundary.geometry(map.level())!=null)HouseParcelBoundaryTest.verify(map);
+   else templatePerimeter(map,barriers);
    for(double z=VanArrivalStreet.ROAD_END+.4;z<VanStaging.FRONT-VanStaging.RAMP_LENGTH-.2;z+=.18)for(double x:new double[]{-.75,0,.75}){var p=map.van().world(x,z);check(map.traversable(p.x(),0,p.z()),"shared road has unsupported/blocked lane "+site+" "+x+","+z);}
    // Reading an indoor document is allowed after opening its real doors.
    // Keep the original closed-door perimeter/road checks above unchanged.

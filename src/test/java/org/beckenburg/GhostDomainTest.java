@@ -13,6 +13,30 @@ public final class GhostDomainTest {
         return ai;
     }
     public static void main(String[] args) {
+        var wardedMap = new HouseMap();
+        var wardedAi = new GhostDomain(wardedMap,4);
+        var wardedHuman = new GhostDomain(wardedMap,4);
+        var landing = wardedMap.spawn(5);
+        int initialEnergy = wardedAi.energy();
+        wardedMap.setTemporarySafeAreas(List.of(new SafeAreaBarrier.Volume(
+            landing.x(),landing.y(),landing.z(),30,2,3)));
+        ok(!wardedAi.observe().exits().contains(5),"fully warded destinations are hidden");
+        ok(!submit(wardedAi,wardedHuman,GhostDomain.Action.DRIFT,5,1).applied(),
+            "fully warded destinations reject drift");
+        ok(wardedAi.room()==4 && wardedAi.energy()==initialEnergy,"ward rejection preserves ghost state");
+        wardedMap.setTemporarySafeAreas(List.of());
+        ok(submit(wardedAi,wardedHuman,GhostDomain.Action.DRIFT,5,2).applied(),
+            "ward rejection does not consume drift cooldown");
+
+        var mortuary = new HouseMap(HouseMap.Site.MORTUARY);
+        mortuary.setTemporarySafeAreas(List.of(new SafeAreaBarrier.Volume(78,0,54,7.8,1.65,2.5)));
+        var replacement = SafeAreaBarrier.ghostSpawn(mortuary,11);
+        ok(replacement!=null,"a warded primary room can use its supported preparation room");
+        var space = mortuary.nativeInvestigation().spaceAt(replacement.x(),replacement.y(),replacement.z());
+        ok(space!=null && space.id().equals("mort-prep"),"replacement uses the authored preparation room");
+        ok(!SafeAreaBarrier.protectedAt(mortuary,replacement.x(),replacement.y(),replacement.z()),
+            "replacement footing is outside the ward");
+
         HouseMap map=new HouseMap();
         var shade=new GhostDomain(map,4,GhostIdentity.Type.SHADE);
         for(int tick=1;tick<=400;tick++)shade.advance(tick,-1,0);

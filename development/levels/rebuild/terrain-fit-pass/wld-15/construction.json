@@ -1,0 +1,616 @@
+{
+  "id": "WLD-15",
+  "status": "NATIVE_BEARING_CONSTRUCTION_CANDIDATE_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/furnishings/wld-15/furnished.glb",
+  "source_glb_sha256": "dbba6887c3731f22af0c8cd55b809b53f4238228d56643467575bd25b7332bad",
+  "source_physics": "development/levels/rebuild/furnishings/wld-15/furnished-physics.hcs2",
+  "source_physics_sha256": "fea0949e315c4d18af47b553879d58bbd156953b65863739283cc6e75ebe0879",
+  "layout": "development/levels/rebuild/wld-15/rough-layout.json",
+  "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+  "new_parts": 2,
+  "new_triangles": 24,
+  "original_physics_parts_byte_preserved": true,
+  "render_native_new_parts_exact": true,
+  "construction": [
+    {
+      "name": "Bearing pile 0000",
+      "kind": "pile",
+      "zone": "route-route-05",
+      "top_y": -0.11999998986721039,
+      "terrain_probe_points": [
+        [
+          18.86,
+          45.86
+        ],
+        [
+          19.14,
+          45.86
+        ],
+        [
+          19.14,
+          46.14
+        ],
+        [
+          18.86,
+          46.14
+        ]
+      ],
+      "ground_y": [
+        -5.144412994384766,
+        -5.155418395996094,
+        -5.155414581298828,
+        -5.144416809082031
+      ],
+      "bottom_y": [
+        -5.555418395996094,
+        -5.555418395996094,
+        -5.555418395996094,
+        -5.555418395996094
+      ],
+      "footprint": [
+        [
+          18.86,
+          45.86
+        ],
+        [
+          19.14,
+          45.86
+        ],
+        [
+          19.14,
+          46.14
+        ],
+        [
+          18.86,
+          46.14
+        ]
+      ],
+      "supports": "route-05 support 0",
+      "bearing_point": [
+        19.0,
+        46.0
+      ]
+    },
+    {
+      "name": "Bearing pile 0001",
+      "kind": "pile",
+      "zone": "route-route-05",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          22.36,
+          45.86
+        ],
+        [
+          22.64,
+          45.86
+        ],
+        [
+          22.64,
+          46.14
+        ],
+        [
+          22.36,
+          46.14
+        ]
+      ],
+      "ground_y": [
+        -5.239902496337891,
+        -5.241466522216797,
+        -5.241462707519531,
+        -5.239906311035156
+      ],
+      "bottom_y": [
+        -5.641466522216797,
+        -5.641466522216797,
+        -5.641466522216797,
+        -5.641466522216797
+      ],
+      "footprint": [
+        [
+          22.36,
+          45.86
+        ],
+        [
+          22.64,
+          45.86
+        ],
+        [
+          22.64,
+          46.14
+        ],
+        [
+          22.36,
+          46.14
+        ]
+      ],
+      "supports": "route-17 flight0 step1",
+      "bearing_point": [
+        22.5,
+        46.0
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          64.0
+        ],
+        [
+          26.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          26.0,
+          64.0
+        ],
+        [
+          28.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          28.0,
+          64.0
+        ],
+        [
+          30.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          30.0,
+          64.0
+        ],
+        [
+          32.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          32.0,
+          64.0
+        ],
+        [
+          34.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          34.0,
+          64.0
+        ],
+        [
+          36.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          64.0
+        ],
+        [
+          38.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          38.0,
+          64.0
+        ],
+        [
+          40.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          76.0
+        ],
+        [
+          26.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          26.0,
+          76.0
+        ],
+        [
+          28.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          28.0,
+          76.0
+        ],
+        [
+          30.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          30.0,
+          76.0
+        ],
+        [
+          32.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          32.0,
+          76.0
+        ],
+        [
+          34.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          34.0,
+          76.0
+        ],
+        [
+          36.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          76.0
+        ],
+        [
+          38.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          38.0,
+          76.0
+        ],
+        [
+          40.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          64.0
+        ],
+        [
+          24.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          66.0
+        ],
+        [
+          24.0,
+          68.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          68.0
+        ],
+        [
+          24.0,
+          70.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          70.0
+        ],
+        [
+          24.0,
+          72.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          72.0
+        ],
+        [
+          24.0,
+          74.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.0,
+          74.0
+        ],
+        [
+          24.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          40.0,
+          64.0
+        ],
+        [
+          40.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          40.0,
+          66.0
+        ],
+        [
+          40.0,
+          68.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          40.0,
+          68.0
+        ],
+        [
+          40.0,
+          70.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          40.0,
+          70.0
+        ],
+        [
+          40.0,
+          72.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          40.0,
+          72.0
+        ],
+        [
+          40.0,
+          74.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          40.0,
+          74.0
+        ],
+        [
+          40.0,
+          76.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "zone": "portpier",
+      "point": [
+        16.4,
+        40.4
+      ]
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "zone": "portpier",
+      "point": [
+        21.6,
+        40.4
+      ]
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "zone": "portpier",
+      "point": [
+        21.6,
+        71.6
+      ]
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "zone": "portpier",
+      "point": [
+        16.4,
+        71.6
+      ]
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "zone": "route-route-04",
+      "point": [
+        28.0,
+        68.0
+      ]
+    },
+    {
+      "type": "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED",
+      "zone": "route-route-04",
+      "point": [
+        25.0,
+        68.0
+      ]
+    },
+    {
+      "type": "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED",
+      "zone": "route-route-04",
+      "point": [
+        22.0,
+        68.0
+      ]
+    },
+    {
+      "type": "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED",
+      "zone": "route-route-04",
+      "point": [
+        19.0,
+        68.0
+      ]
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "zone": "route-route-05",
+      "point": [
+        26.0,
+        46.0
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-15-overview.png",
+      "sha256": "5909c27abbf8bc8d46595db1fe66543e9739dcf646d4cda359e8dcd2937e59fa",
+      "type": "native exported terrain/support construction candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-15-support-side.png",
+      "sha256": "1d358556435601df90fc942cae435f9743c3ff59965b1dcc345587efd766bfe5",
+      "type": "native exported terrain/support construction candidate"
+    }
+  ],
+  "glb_sha256": "731cde313c6ec175529340e3f82cf4cc3a82bcd6fafc9c286420a765eb7e78fb",
+  "physics_sha256": "7a2b187d28e3be294e7460e9c715a2760dff9d0fd42f283f16d24d8698df5a6c",
+  "generator_sha256": "e2710b3e7d4fa7c3178a2bff2d1252284d16962cc78031c091911e4673b2c94b",
+  "limitations": "No master replacement or runtime unlock. Coarse foundation/pile construction only; actual native route regression, whole-site terrain fit, remaining unsupported spans/retaining/caves/water/guards and canonical van arrival require separate evidence."
+}

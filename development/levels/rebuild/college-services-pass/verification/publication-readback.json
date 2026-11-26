@@ -1,0 +1,49 @@
+{
+  "implementation_commit": "48f364ec9a06e68b91d0f1b25067f1189e5b6990",
+  "tree": "cce5acfab82c396ebd5e9e57ee44c92ceb2e384c",
+  "remote_blobs": {
+    "development/levels/rebuild/college-services-pass/college/college-services.blend": {
+      "git_blob": "4d09e02c6e0ba8986705ae8f9b04e77907120426",
+      "sha256": "fc67fc65ad62dde693af43636d1f50cd9f7d4a9f4157b082cc9356a1b8a7bb04",
+      "bytes": 3826328
+    },
+    "development/levels/rebuild/college-services-pass/college/college-services.glb": {
+      "git_blob": "dc6a2d8f507afaee47fd3dea95dc2b6471d29bdb",
+      "sha256": "75894ba104362afd296af116945d58b23099cf5c17a0994e531ba7ce93e8e5f8",
+      "bytes": 11775544
+    },
+    "development/levels/rebuild/college-services-pass/college/college-services.hcs2": {
+      "git_blob": "10db629ff496a3b7fe50ba38b528ad921f581abd",
+      "sha256": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa",
+      "bytes": 4855522
+    },
+    "development/levels/rebuild/captures/college-services-batch/college-native-plant-and-maintenance-cutaway.png": {
+      "git_blob": "27a5d4e030b2a300d1bccf27d5bf98725a5ef9a0",
+      "sha256": "a890abe0c050f656a7598f52ee5353f7e183ab6ec94c8644f71b484be119420d",
+      "bytes": 1362053
+    },
+    "development/levels/rebuild/captures/college-services-batch/college-opengl-lab-fume-extract.png": {
+      "git_blob": "3b408f006f710e76b629135d724bf633016a5722",
+      "sha256": "75cc76ce8c6344e056dc30a1b1659c2514d8d35b9d4126f548652f9f7a89275d",
+      "bytes": 188491
+    }
+  },
+  "status": "DRAFT_NATIVE_SERVICES_PUBLISHED_AND_VERIFIED",
+  "branch": "map/roster-structure-batch",
+  "pull_request": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86",
+  "held_base": {
+    "branch": "map/house-default",
+    "commit": "5c3daf923a7359554dc075c9e99be139bbcb1441"
+  },
+  "hosted_gallery": {
+    "run": 44274760766,
+    "conclusion": "success",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44274760766"
+  },
+  "pages": {
+    "branch": "main",
+    "current_source_commit": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "public_gallery_http": 200,
+    "draft_capture_http": 404
+  }
+}

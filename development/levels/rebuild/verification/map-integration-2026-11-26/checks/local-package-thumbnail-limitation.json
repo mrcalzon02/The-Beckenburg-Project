@@ -1,0 +1,11 @@
+{
+  "scope": "Local package staging fixture limitation; existing case/source bindings are unchanged. This is not a source PNG deletion or native packet mismatch.",
+  "resource": "org/beckenburg/mission-board/wld-06.png",
+  "tested_jar_sha256": "f83b71c540f1c195be03ea396f8f2d7349920dd93951cb4ba9755452a69c5237",
+  "tested_jar_entry_bytes": 0,
+  "source_path": "assets/runtime/mission-board/wld-06.png",
+  "restored_source_bytes": 629117,
+  "unchanged_staged_source_git_blob": "60ed0033dd935d970c7f9f9be200cdd4cfadf3eb",
+  "restored_source_sha256": "09856139aeb3ca284c151a89140041a54544103eb2420bb4288f7cabeb2d6495",
+  "required_followup": "Exact enclosing-commit CI must build the normal complete package and validate desktop/installer/UI operation. The local case tests and101 native resource comparisons do not certify this thumbnail or full UI packaging."
+}

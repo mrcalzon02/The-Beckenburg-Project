@@ -1,0 +1,29 @@
+{
+  "status": "ROUGH_CONSTRUCTION_REVIEW_OPEN",
+  "sheets": [
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",
+      "sha256": "8255b8e90f2cfd33559ae7cfd4dc0137e8840de94671c126820f885962db6d43",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-02.png",
+      "sha256": "8dcddce4145cfae416fcb4638d7f064878eaf2f252e1430a8dd376b615de5e02",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-03.png",
+      "sha256": "17af33d7e6e0d1068d637c2637a68bbf76ed15f9d0a2fe1f8ca610ff84e8866a",
+      "observed": true
+    }
+  ],
+  "construction_score_out_of_5": 3,
+  "finish_score_out_of_5": 1,
+  "findings": [
+    "Actual brown/stone deck planes now connect the exterior route envelopes, retaining source cyan route strips and amber stairs.",
+    "Marsh piles connect to the closed deck undersides; intermediate framing and guards remain sparse.",
+    "Lighthouse headland cliffs/water edges and motel rectangular terrain remain visually crude; no landscape acceptance.",
+    "Vessel hull and existing cuts remain; no new land foundations under the ship.",
+    "Native workbench export views only; no canonical van arrival or runtime/gameplay acceptance."
+  ]
+}

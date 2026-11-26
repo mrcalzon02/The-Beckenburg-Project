@@ -1,0 +1,263 @@
+ROOM	stage	13	28	76	44	88	0	3	true	Dam access van apron	39.8	0	80.3
+ROOM	entry	12	28	62	44	76	0	3	true	Dam service forecourt	36.0	0	69.0
+ROOM	crest	11	8	48	72	56	0	3	true	Guarded dam crest	40.0	0	52.0
+ROOM	control	0	8	34	26	48	0	3	false	Control room	17.0	0	41.0
+ROOM	office	1	8	22	26	34	0	3	false	Shift records office	17.0	0	28.0
+ROOM	west-stair	2	26	22	36	48	0	3	false	West service stair enclosure	31	0	46.5
+ROOM	turbine	3	36	22	64	48	-6	8	false	Turbine hall	50.0	-6	35.0
+ROOM	workshop	4	36	48	54	62	-6	3	false	Maintenance workshop	45.0	-6	55.0
+ROOM	east-stair	5	64	22	70.5	48	0	3	false	East external stair court	67	0	46.5
+ROOM	gallery	6	36	22	64	32	-10	4	false	Lower service gallery	50.0	-10	27.0
+ROOM	valve	7	36	32	50	48	-10	3	false	Valve inspection room	43.0	-10	40.0
+ROOM	return	8	50	32	64	48	-10	3	false	Lower maintenance return	57.0	-10	40.0
+ROOM	spillway	9	64	48	72	56	-6	5.4	false	Guarded spillway observation	70.8	-6	50.3
+ROOM	plant	10	36	8	54	22	-6	3	false	Switchgear room	45.0	-6	15.0
+SPACE	west-lower-stair	2	26	22	36	48	-6	6	false	West stair lower hall	34.7	-6	35
+SPACE	east-lower-stair	5	64	22	70.5	48	-6	6	false	East stair lower hall	69.2	-6	35
+SPACE	east-service-catwalk	11	70.5	33.75	73.2	48.2	0	3	true	East service catwalk	72	0	47
+SPACE	dam-closed-channel	11	72.72	14.97	75.06	44.56	-7.18	2	true	Contained water	73.89	-7.18	31
+RITUAL	banishment	4	45.0	-6	55.0
+RITUAL	cleansing	7	43.0	-10	40.0
+RITUAL	absolution	1	17.0	0	28.0
+STEP	WLD-09 L14 open-under service flight tread1
+STEP	WLD-09 L14 open-under service flight tread2
+STEP	WLD-09 L14 open-under service flight tread3
+STEP	WLD-09 L14 open-under service flight tread4
+STEP	WLD-09 L14 open-under service flight tread5
+STEP	WLD-09 L14 open-under service flight tread6
+STEP	WLD-09 L14 open-under service flight tread7
+STEP	WLD-09 L14 open-under service flight tread8
+STEP	WLD-09 L14 open-under service flight tread9
+STEP	WLD-09 L14 open-under service flight tread10
+STEP	WLD-09 L14 open-under service flight tread11
+STEP	WLD-09 L14 open-under service flight tread12
+STEP	WLD-09 L14 open-under service flight tread13
+STEP	WLD-09 L14 open-under service flight tread14
+STEP	WLD-09 L14 open-under service flight tread15
+STEP	WLD-09 L14 open-under service flight tread16
+STEP	WLD-09 L14 open-under service flight tread17
+STEP	WLD-09 L14 open-under service flight tread18
+STEP	WLD-09 L14 open-under service flight tread19
+STEP	WLD-09 L14 open-under service flight tread20
+STEP	WLD-09 L14 open-under service flight tread21
+STEP	WLD-09 L14 open-under service flight tread22
+STEP	WLD-09 L14 open-under service flight tread23
+STEP	WLD-09 contained main tread 0
+STEP	WLD-09 contained main tread 1
+STEP	WLD-09 contained main tread 2
+STEP	WLD-09 contained main tread 3
+STEP	WLD-09 contained main tread 4
+STEP	WLD-09 contained main tread 5
+STEP	WLD-09 contained main tread 6
+STEP	WLD-09 contained main tread 7
+STEP	WLD-09 contained main tread 8
+STEP	WLD-09 contained main tread 9
+STEP	WLD-09 contained main tread 10
+STEP	WLD-09 contained main tread 11
+STEP	WLD-09 contained main tread 12
+STEP	WLD-09 contained main tread 13
+STEP	WLD-09 contained main tread 14
+STEP	WLD-09 contained main tread 15
+STEP	WLD-09 contained main tread 16
+STEP	WLD-09 contained main tread 17
+STEP	WLD-09 contained main tread 18
+STEP	WLD-09 contained main tread 19
+STEP	WLD-09 contained main tread 20
+STEP	WLD-09 contained main tread 21
+STEP	WLD-09 contained main tread 22
+STEP	WLD-09 contained main tread 23
+STEP	WLD-09 contained main tread 24
+STEP	WLD-09 contained main tread 25
+STEP	WLD-09 contained main tread 26
+STEP	WLD-09 contained main tread 27
+STEP	WLD-09 contained main tread 28
+STEP	WLD-09 contained main tread 29
+STEP	WLD-09 contained main tread 30
+STEP	WLD-09 contained main tread 31
+STEP	WLD-09 contained main tread 32
+STEP	WLD-09 contained main tread 33
+STEP	WLD-09 west contained main tread 0 west
+STEP	WLD-09 west contained main tread 1 west
+STEP	WLD-09 west contained main tread 2 west
+STEP	WLD-09 west contained main tread 3 west
+STEP	WLD-09 west contained main tread 4 west
+STEP	WLD-09 west contained main tread 5 west
+STEP	WLD-09 west contained main tread 6 west
+STEP	WLD-09 west contained main tread 7 west
+STEP	WLD-09 west contained main tread 8 west
+STEP	WLD-09 west contained main tread 9 west
+STEP	WLD-09 west contained main tread 10 west
+STEP	WLD-09 west contained main tread 11 west
+STEP	WLD-09 west contained main tread 12 west
+STEP	WLD-09 west contained main tread 13 west
+STEP	WLD-09 west contained main tread 14 west
+STEP	WLD-09 west contained main tread 15 west
+STEP	WLD-09 west contained main tread 16 west
+STEP	WLD-09 west contained main tread 17 west
+STEP	WLD-09 west contained main tread 18 west
+STEP	WLD-09 west contained main tread 19 west
+STEP	WLD-09 west contained main tread 20 west
+STEP	WLD-09 west contained main tread 21 west
+STEP	WLD-09 west contained main tread 22 west
+STEP	WLD-09 west contained main tread 23 west
+STEP	WLD-09 west contained main tread 24 west
+STEP	WLD-09 west contained main tread 25 west
+STEP	WLD-09 west contained main tread 26 west
+STEP	WLD-09 west contained main tread 27 west
+STEP	WLD-09 west contained main tread 28 west
+STEP	WLD-09 west contained main tread 29 west
+STEP	WLD-09 west contained main tread 30 west
+STEP	WLD-09 west contained main tread 31 west
+STEP	WLD-09 west contained main tread 32 west
+STEP	WLD-09 west contained main tread 33 west
+STEP	WLD-09 service bay L18 tread 0
+STEP	WLD-09 service bay L18 tread 1
+STEP	WLD-09 service bay L18 tread 2
+STEP	WLD-09 service bay L18 tread 3
+STEP	WLD-09 service bay L18 tread 4
+STEP	WLD-09 service bay L18 tread 5
+STEP	WLD-09 service bay L18 tread 6
+STEP	WLD-09 service bay L18 tread 7
+STEP	WLD-09 service bay L18 tread 8
+STEP	WLD-09 service bay L18 tread 9
+STEP	WLD-09 service bay L18 tread 10
+STEP	WLD-09 service bay L18 tread 11
+STEP	WLD-09 service bay L18 tread 12
+STEP	WLD-09 service bay L18 tread 13
+STEP	WLD-09 service bay L18 tread 14
+STEP	WLD-09 service bay L18 tread 15
+STEP	WLD-09 service bay L18 tread 16
+STEP	WLD-09 service bay L18 tread 17
+STEP	WLD-09 service bay L18 tread 18
+STEP	WLD-09 service bay L18 tread 19
+STEP	WLD-09 service bay L18 tread 20
+STEP	WLD-09 service bay L18 tread 21
+STEP	WLD-09 service bay L18 tread 22
+STEP	WLD-09 service bay L18 tread 23
+SPACE	crest-forecourt-transition	12	35.8	56	44	62	0	3	true	Service forecourt approach	40	0	59
+SPACE	haul-flight	6	54.9	22.55	57.1	31.2	-10	4.05	false	Gallery haul stair	56	-10	23.5
+SPACE	return-flight	8	59.25	34.6	63.55	42	-10	4.05	false	Lower return stair bay	62.5	-8	40.88
+OPEN	900	13	14	36	0	78.372	2.15	z	trail
+OPEN	901	12	13	36	0	76	3.2	z	trail
+OPEN	902	11	12	40	0	56	3.2	z	trail
+OPEN	903	3	6	56	-8	27	1.8	z	stair
+OPEN	904	3	8	62.5	-8	40	1.8	z	stair
+POINT	L01	36.0	0	78.372
+POINT	L01	36	0	76
+POINT	L01	36.0	0	69.0
+POINT	L02	36	0	69
+POINT	L02	40	0	69
+POINT	L02	40	0	52
+POINT	L03	40.0	0	52.0
+POINT	L03	17.0	0	52.0
+POINT	L03	17.0	0	48.0
+POINT	L03	17.0	0	41.0
+POINT	L04	17.0	0	41.0
+POINT	L04	17.0	0	34.0
+POINT	L04	17.0	0	28.0
+POINT	L05	17	0	28
+POINT	L05	26	0	28
+POINT	L05	28.5	0	28
+POINT	L05	28.5	0	46.5
+POINT	L05	31	0	46.5
+POINT	L06	31	0	46.5
+POINT	L06	31	0	52
+POINT	L06	40	0	52
+POINT	L07	31	0	46.5
+POINT	L07	31	0	45.23
+POINT	L07	31	-3	35.7
+POINT	L07	31	-3	34.3
+POINT	L07	31	-6	24.78
+POINT	L07	31	-6	23.5
+POINT	L07	34.7	-6	23.5
+POINT	L07	34.7	-6	35
+POINT	L07	50	-6	35
+POINT	L08	50	-6	35
+POINT	L08	52	-6	35
+POINT	L08	52	-6	43
+POINT	L08	45	-6	43
+POINT	L08	45	-6	48
+POINT	L08	45	-6	55
+POINT	L09	45	-6	55
+POINT	L09	45	-6	48
+POINT	L09	45	-6	43
+POINT	L09	52	-6	43
+POINT	L09	52	-6	35
+POINT	L09	50	-6	35
+POINT	L09	64	-6	35
+POINT	L09	69.25	-6	35
+POINT	L09	69.25	-6	23.5
+POINT	L09	67	-6	23.5
+POINT	L09	67	-6	24.78
+POINT	L09	67	-3	34.3
+POINT	L09	67	-3	35.7
+POINT	L09	67	0	45.23
+POINT	L09	67	0	46.5
+POINT	L10	67	0	46.5
+POINT	L10	68	0	46.5
+POINT	L10	68	0	52
+POINT	L10	40	0	52
+POINT	L11	50	-6	35
+POINT	L11	64	-6	35
+POINT	L11	69.25	-6	35
+POINT	L11	69.25	-6	23.5
+POINT	L11	67	-6	23.5
+POINT	L11	67	-6	24.78
+POINT	L11	67	-3	34.3
+POINT	L11	67	-3	35.7
+POINT	L11	67	0	45.23
+POINT	L11	67	0	46.5
+POINT	L12	67	0	46.5
+POINT	L12	67	0	45.23
+POINT	L12	67	-3	35.7
+POINT	L12	67	-3	34.3
+POINT	L12	67	-6	24.78
+POINT	L12	67	-6	23.5
+POINT	L12	69.25	-6	23.5
+POINT	L12	69.25	-6	35
+POINT	L12	69.25	-6	46.4
+POINT	L12	68	-6	46.4
+POINT	L12	68	-6	48
+POINT	L12	68	-6	50.3
+POINT	L12	70.8	-6	50.3
+POINT	L13	50	-6	35
+POINT	L13	45	-6	23.2
+POINT	L13	45	-6	20.8
+POINT	L13	45	-6	15
+POINT	L14	56	-6	30.74
+POINT	L14	56	-10	23.26
+POINT	L15	50	-10	27
+POINT	L15	43	-10	30.8
+POINT	L15	43	-10	33.2
+POINT	L15	43	-10	40
+POINT	L16	43.0	-10	40.0
+POINT	L16	50.0	-10	40.0
+POINT	L16	57.0	-10	40.0
+POINT	L17	57	-10	40
+POINT	L17	57	-10	32
+POINT	L17	57	-10	29
+POINT	L17	50	-10	29
+POINT	L17	50	-10	27
+POINT	L18	57	-10	40
+POINT	L18	57	-10	35
+POINT	L18	60.3	-10	35
+POINT	L18	60.3	-10	36.19
+POINT	L18	60.3	-8	40.22
+POINT	L18	60.3	-8	40.88
+POINT	L18	62.5	-8	40.88
+POINT	L18	62.5	-8	40.22
+POINT	L18	62.5	-6	36.19
+POINT	L18	62.5	-6	35.0
+POINT	L18	64	-6	35
+POINT	L18	69.25	-6	35
+POINT	L18	69.25	-6	23.5
+POINT	L18	67	-6	23.5
+POINT	L18	67	-6	24.78
+POINT	L18	67	-3	34.3
+POINT	L18	67	-3	35.7
+POINT	L18	67	0	45.23
+POINT	L18	67	0	46.5
+POINT	EAST-CATWALK	67	0	46.5
+POINT	EAST-CATWALK	68	0	46.5
+POINT	EAST-CATWALK	68	0	47
+POINT	EAST-CATWALK	72	0	47

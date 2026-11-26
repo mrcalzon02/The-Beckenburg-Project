@@ -1,0 +1,10 @@
+Exception in thread "main" java.io.IOException: GLB budget exceeded
+	at org.beckenburg.editor.EditorGlbReader.decode(EditorGlbReader.java:79)
+	at org.beckenburg.editor.EditorGlbReader.read(EditorGlbReader.java:66)
+	at org.beckenburg.editor.EditorGlbReader.readLevel(EditorGlbReader.java:62)
+	at org.beckenburg.GlbProps.decodeLevel(GlbProps.java:511)
+	at org.beckenburg.NativeInvestigationScene.read(NativeInvestigationScene.java:84)
+	at org.beckenburg.CollegeNativeLevel.decode(CollegeNativeLevel.java:118)
+	at org.beckenburg.CollegeNativeLevel.read(CollegeNativeLevel.java:76)
+	at org.beckenburg.CollegeNativeRuntimeReview.load(CollegeNativeRuntimeReview.java:29)
+	at org.beckenburg.CollegeResidenceTest.main(CollegeResidenceTest.java:157)

@@ -1,3 +1,5 @@
+[Definitive model library: existing roughs, refinements, source masters and asset lookup](ASSET_LIBRARY.md)
+
 [NPC/AI host telemetry, map audits and scenario replay](docs/wiki/psx-npc-ai-telemetry-navigation.md)\n[NPC / AI editor module guide](docs/wiki/psx-npc-ai-authoring.md) · [Machine contract](docs/development/psx-npc-ai-authoring.json)\n\n[PSX animation guide](docs/wiki/psx-animation-authoring.md) · [Campaign editor design](docs/wiki/psx-era-editor-campaign-tools.md) · [Retro SFX authoring](docs/wiki/psx-arrow-audio-design.md) · [Menu/campaign/billboard guide](docs/wiki/psx-editor-menu-campaign-billboards.md) · [Deduplicated PDF intake JSON](docs/development/psx-reference-ingestion-2026-10-30.json)
 
 [Asset importer / over-regression guide](docs/wiki/psx-asset-import-and-regression.md) · [Machine rules](docs/development/psx-asset-import-reference.json)

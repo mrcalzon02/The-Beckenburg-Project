@@ -1,0 +1,1224 @@
+{
+  "sleeves": [
+    {
+      "id": "shed to radio",
+      "faces": [
+        {
+          "face": [
+            19.76,
+            2.791,
+            13.15
+          ],
+          "receiver": "WLD-08 clean generator E pier0"
+        },
+        {
+          "face": [
+            20.24,
+            2.791,
+            13.15
+          ],
+          "receiver": "WLD-08 clean radio W pier0"
+        }
+      ]
+    },
+    {
+      "id": "radio to records",
+      "faces": [
+        {
+          "face": [
+            31.76,
+            2.791,
+            13.15
+          ],
+          "receiver": "WLD-08 clean radio E pier0"
+        },
+        {
+          "face": [
+            32.240002,
+            2.791,
+            13.15
+          ],
+          "receiver": "WLD-08 clean records W pier0"
+        }
+      ]
+    },
+    {
+      "id": "shed to lab",
+      "faces": [
+        {
+          "face": [
+            15.0,
+            2.791,
+            25.76
+          ],
+          "receiver": "WLD-08 clean generator S end"
+        },
+        {
+          "face": [
+            15.0,
+            2.791,
+            26.24
+          ],
+          "receiver": "WLD-08 clean lab N end"
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "id": "NW-MAIN north wall and ceiling takeoff",
+      "contact": [
+        13.2,
+        2.485,
+        8.24
+      ]
+    },
+    {
+      "id": "NW-MAIN north wall and ceiling takeoff",
+      "contact": [
+        14.55,
+        2.485,
+        8.24
+      ]
+    },
+    {
+      "id": "NW-MAIN north wall and ceiling takeoff",
+      "contact": [
+        15.0,
+        2.665,
+        8.24
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        8.8975
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        10.1125
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        11.3275
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        12.5425
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        13.721364
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        14.864091
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        16.006819
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        17.149546
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        18.292273
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        19.434999
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        20.577726
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        21.720455
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        22.863182
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        24.005909
+      ]
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "contact": [
+        15.0,
+        2.84,
+        25.148636
+      ]
+    },
+    {
+      "id": "NW-MAIN shed to radio",
+      "contact": [
+        15.59,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN shed to radio",
+      "contact": [
+        16.77,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN shed to radio",
+      "contact": [
+        17.950001,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN shed to radio",
+      "contact": [
+        19.129999,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        20.851999,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        21.996,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        23.139999,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        24.284,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        25.427999,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        26.572001,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        27.716,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        28.860001,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        30.004,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "contact": [
+        31.148001,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        15.0,
+        2.84,
+        26.285
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        14.483334,
+        2.84,
+        26.290001
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        13.45,
+        2.84,
+        26.290001
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        12.416667,
+        2.84,
+        26.290001
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        11.383333,
+        2.84,
+        26.290001
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        10.35,
+        2.84,
+        26.290001
+      ]
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "contact": [
+        9.316667,
+        2.84,
+        26.290001
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        8.8,
+        2.84,
+        26.863249
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        8.8,
+        2.84,
+        28.05175
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        8.8,
+        2.84,
+        29.24025
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        8.8,
+        2.84,
+        30.428749
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        8.8,
+        2.84,
+        31.61725
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        8.8,
+        2.84,
+        32.805752
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        9.333333,
+        2.84,
+        33.400002
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        10.4,
+        2.84,
+        33.400002
+      ]
+    },
+    {
+      "id": "NW-00 switched leg",
+      "contact": [
+        11.466666,
+        2.84,
+        33.400002
+      ]
+    },
+    {
+      "id": "NW-03 supply to switch",
+      "contact": [
+        20.290001,
+        2.84,
+        13.65625
+      ]
+    },
+    {
+      "id": "NW-03 supply to switch",
+      "contact": [
+        20.290001,
+        2.84,
+        14.66875
+      ]
+    },
+    {
+      "id": "NW-03 supply to switch",
+      "contact": [
+        20.290001,
+        2.84,
+        15.68125
+      ]
+    },
+    {
+      "id": "NW-03 supply to switch",
+      "contact": [
+        20.290001,
+        2.84,
+        16.69375
+      ]
+    },
+    {
+      "id": "NW-03 switched leg",
+      "contact": [
+        20.842098,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-03 switched leg",
+      "contact": [
+        21.988298,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-03 switched leg",
+      "contact": [
+        23.134499,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-03 switched leg",
+      "contact": [
+        24.280699,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-03 switched leg",
+      "contact": [
+        25.426899,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-03 switched leg",
+      "contact": [
+        26.0,
+        2.84,
+        16.6
+      ]
+    },
+    {
+      "id": "NW-04 supply to switch",
+      "contact": [
+        32.285,
+        2.84,
+        13.15
+      ]
+    },
+    {
+      "id": "NW-04 supply to switch",
+      "contact": [
+        32.290001,
+        2.84,
+        13.65625
+      ]
+    },
+    {
+      "id": "NW-04 supply to switch",
+      "contact": [
+        32.290001,
+        2.84,
+        14.66875
+      ]
+    },
+    {
+      "id": "NW-04 supply to switch",
+      "contact": [
+        32.290001,
+        2.84,
+        15.68125
+      ]
+    },
+    {
+      "id": "NW-04 supply to switch",
+      "contact": [
+        32.290001,
+        2.84,
+        16.69375
+      ]
+    },
+    {
+      "id": "NW-04 switched leg",
+      "contact": [
+        32.842102,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-04 switched leg",
+      "contact": [
+        33.9883,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-04 switched leg",
+      "contact": [
+        35.134499,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-04 switched leg",
+      "contact": [
+        36.280701,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-04 switched leg",
+      "contact": [
+        37.426899,
+        2.84,
+        17.200001
+      ]
+    },
+    {
+      "id": "NW-04 switched leg",
+      "contact": [
+        38.0,
+        2.84,
+        16.6
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "northwatch-switch-00",
+      "type": "switch",
+      "room": 0,
+      "position": [
+        8.8,
+        1.25,
+        26.240999
+      ],
+      "yaw": 0.0,
+      "style": "NW-00"
+    },
+    {
+      "id": "northwatch-lab-task-light",
+      "type": "light",
+      "room": 0,
+      "position": [
+        12.0,
+        2.656,
+        33.400002
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-switch-03",
+      "type": "switch",
+      "room": 3,
+      "position": [
+        20.240999,
+        1.25,
+        17.200001
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "NW-03"
+    },
+    {
+      "id": "northwatch-radio-task-light",
+      "type": "light",
+      "room": 3,
+      "position": [
+        26.0,
+        2.656,
+        16.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-switch-04",
+      "type": "switch",
+      "room": 4,
+      "position": [
+        32.241001,
+        1.25,
+        17.200001
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "NW-04"
+    },
+    {
+      "id": "northwatch-records-task-light",
+      "type": "light",
+      "room": 4,
+      "position": [
+        38.0,
+        2.656,
+        16.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "loads": [
+    {
+      "id": "northwatch-lab-task-light",
+      "room": 0,
+      "space": "lab",
+      "circuit": "NW-00",
+      "mount": [
+        12.0,
+        2.84,
+        33.400002
+      ],
+      "emitter": [
+        12.0,
+        2.656,
+        33.400002
+      ],
+      "support": "Ceiling cap lab"
+    },
+    {
+      "id": "northwatch-radio-task-light",
+      "room": 3,
+      "space": "radio",
+      "circuit": "NW-03",
+      "mount": [
+        26.0,
+        2.84,
+        16.0
+      ],
+      "emitter": [
+        26.0,
+        2.656,
+        16.0
+      ],
+      "support": "Ceiling cap radio"
+    },
+    {
+      "id": "northwatch-records-task-light",
+      "room": 4,
+      "space": "records",
+      "circuit": "NW-04",
+      "mount": [
+        38.0,
+        2.84,
+        16.0
+      ],
+      "emitter": [
+        38.0,
+        2.656,
+        16.0
+      ],
+      "support": "Ceiling cap records"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "northwatch-switch-00",
+      "circuit": "NW-00",
+      "space": "lab",
+      "room": 0,
+      "at": [
+        8.8,
+        1.25,
+        26.240999
+      ],
+      "support": "WLD-08 clean lab N end",
+      "feet": [
+        8.8,
+        0,
+        27.44
+      ]
+    },
+    {
+      "id": "northwatch-switch-03",
+      "circuit": "NW-03",
+      "space": "radio",
+      "room": 3,
+      "at": [
+        20.240999,
+        1.25,
+        17.200001
+      ],
+      "support": "WLD-08 clean radio W pier0",
+      "feet": [
+        21.44,
+        0,
+        17.2
+      ]
+    },
+    {
+      "id": "northwatch-switch-04",
+      "circuit": "NW-04",
+      "space": "records",
+      "room": 4,
+      "at": [
+        32.241001,
+        1.25,
+        17.200001
+      ],
+      "support": "WLD-08 clean records W pier0",
+      "feet": [
+        33.44,
+        0,
+        17.2
+      ]
+    }
+  ],
+  "raceways": [
+    {
+      "id": "shed to radio sealed sleeve",
+      "points": [
+        [
+          19.720000000000002,
+          2.791,
+          13.15
+        ],
+        [
+          20.279999999999998,
+          2.791,
+          13.15
+        ]
+      ],
+      "radius": 0.02,
+      "visible": false
+    },
+    {
+      "id": "radio to records sealed sleeve",
+      "points": [
+        [
+          31.720000000000002,
+          2.791,
+          13.15
+        ],
+        [
+          32.28,
+          2.791,
+          13.15
+        ]
+      ],
+      "radius": 0.02,
+      "visible": false
+    },
+    {
+      "id": "shed to lab sealed sleeve",
+      "points": [
+        [
+          15.0,
+          2.791,
+          25.720000000000002
+        ],
+        [
+          15.0,
+          2.791,
+          26.279999999999998
+        ]
+      ],
+      "radius": 0.02,
+      "visible": false
+    },
+    {
+      "id": "NW-00 switch drop",
+      "points": [
+        [
+          8.8,
+          1.302,
+          26.268999
+        ],
+        [
+          8.8,
+          2.7699999141693117,
+          26.268999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-03 switch drop",
+      "points": [
+        [
+          20.268999,
+          1.302,
+          17.200001
+        ],
+        [
+          20.268999,
+          2.770000152587891,
+          17.200001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-04 switch drop",
+      "points": [
+        [
+          32.269001,
+          1.302,
+          17.200001
+        ],
+        [
+          32.269001,
+          2.770000152587891,
+          17.200001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN north wall and ceiling takeoff",
+      "points": [
+        [
+          11.9,
+          2.44,
+          8.29
+        ],
+        [
+          15,
+          2.44,
+          8.29
+        ],
+        [
+          15,
+          2.791,
+          8.29
+        ]
+      ],
+      "radius": 0.025,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN shed overhead",
+      "points": [
+        [
+          15,
+          2.791,
+          8.29
+        ],
+        [
+          15,
+          2.791,
+          13.15
+        ],
+        [
+          15,
+          2.791,
+          25.72
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN shed to radio",
+      "points": [
+        [
+          15,
+          2.791,
+          13.15
+        ],
+        [
+          19.72,
+          2.791,
+          13.15
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN radio to records",
+      "points": [
+        [
+          20.28,
+          2.791,
+          13.15
+        ],
+        [
+          31.72,
+          2.791,
+          13.15
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-00 supply to switch",
+      "points": [
+        [
+          15.0,
+          2.791,
+          26.28
+        ],
+        [
+          15.0,
+          2.791,
+          26.29
+        ],
+        [
+          8.8,
+          2.791,
+          26.29
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-00 switch junction link",
+      "points": [
+        [
+          8.8,
+          2.791,
+          26.29
+        ],
+        [
+          8.8,
+          2.7699999141693117,
+          26.268999
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-00 switched leg riser",
+      "points": [
+        [
+          8.8,
+          2.7699999141693117,
+          26.268999
+        ],
+        [
+          8.8,
+          2.791,
+          26.268999
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-00 switched leg",
+      "points": [
+        [
+          8.8,
+          2.791,
+          26.268999
+        ],
+        [
+          8.8,
+          2.791,
+          33.4
+        ],
+        [
+          12,
+          2.791,
+          33.4
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-03 supply to switch",
+      "points": [
+        [
+          20.29,
+          2.791,
+          13.15
+        ],
+        [
+          20.29,
+          2.791,
+          17.2
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-03 switch junction link",
+      "points": [
+        [
+          20.29,
+          2.791,
+          17.2
+        ],
+        [
+          20.268999,
+          2.770000152587891,
+          17.200001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-03 switched leg riser",
+      "points": [
+        [
+          20.268999,
+          2.770000152587891,
+          17.200001
+        ],
+        [
+          20.268999,
+          2.791,
+          17.200001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-03 switched leg",
+      "points": [
+        [
+          20.268999,
+          2.791,
+          17.200001
+        ],
+        [
+          26,
+          2.791,
+          17.200001
+        ],
+        [
+          26,
+          2.791,
+          16
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-04 supply to switch",
+      "points": [
+        [
+          32.28,
+          2.791,
+          13.15
+        ],
+        [
+          32.29,
+          2.791,
+          13.15
+        ],
+        [
+          32.29,
+          2.791,
+          17.2
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    },
+    {
+      "id": "NW-04 switch junction link",
+      "points": [
+        [
+          32.29,
+          2.791,
+          17.2
+        ],
+        [
+          32.269001,
+          2.770000152587891,
+          17.200001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-04 switched leg riser",
+      "points": [
+        [
+          32.269001,
+          2.770000152587891,
+          17.200001
+        ],
+        [
+          32.269001,
+          2.791,
+          17.200001
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-04 switched leg",
+      "points": [
+        [
+          32.269001,
+          2.791,
+          17.200001
+        ],
+        [
+          38,
+          2.791,
+          17.200001
+        ],
+        [
+          38,
+          2.791,
+          16
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    }
+  ],
+  "canonical_assets": {
+    "light_switch_1": "6cc8c501605743d0d13bb96b840e8da01d5ea8825d8c13ee284f72f90742159e",
+    "level_utility_light": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+  },
+  "exports": {
+    "development/levels/rebuild/northwatch-distribution-pass/wld-08/station-with-distribution.blend": "3f097d43ccba66d97a2f169a6b21e5badf9211a2d326865f2a9b61ddb162ee95",
+    "development/levels/rebuild/northwatch-distribution-pass/wld-08/station-with-distribution.glb": "04223fa97de8c54bf2b0e5c0d63f94e11d1321695d937da9bacb73973f9993db",
+    "development/levels/rebuild/northwatch-distribution-pass/wld-08/station-with-distribution.hcs2": "ae3a1dff4499c2481ccc5414685a014676b1d7c1f83c0e24d063ff6340cf3d4d"
+  },
+  "previous_scene": "12c68e2b6ff68a636ddee4d6cb6c5c4930dd32d7a6bc72ff315ed6e8863b9d46",
+  "retained_collision_parts": 564,
+  "added_collision_parts": 113
+}

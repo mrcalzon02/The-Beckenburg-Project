@@ -1,0 +1,70 @@
+{
+  "status": "NORTHWATCH_FOUNDED_STATION_PERIMETER_AND_RETAINED_JOURNEYS_VERIFIED",
+  "id": "WLD-08",
+  "previous_commit": "a881aeb79bd3b9ea1c12f067259c1eabb8123465",
+  "previous_gallery": 45387394833,
+  "source_layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+  "layout_sha256": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+  "exports": {
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.blend": "5d10ec2e7c9a3ae3264d2f540592f231149d032e047121abc87bd2e7bff7f7b3",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.glb": "60c8d60a95a99d7e7e8d475bee205ec2e19e3d9e73b01880e733448102a0de1e",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/bounded-station.hcs2": "7994b50ccaedc842d967a4d4d25891e7fe8c43d9d4bd9cb726a961caf8336931"
+  },
+  "evidence": {
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/boundary-opengl.tsv": "f7648b647ca7198b6e387d69f863eaef011144e316a47137eb3e19e41dbfaa42",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/boundary-software.tsv": "fec891592bff8ce269527e96ee9545c3983b69d720942810c9ddb639b4e55046",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/boundary-stations.tsv": "6a7ee1b4fd257a551889b81eb71c657479d2cba5e9c06ddbecf3dd799db8d1c3",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/array-edge-screen.png": "c5fc439f2189343f0ddae9c8ac3c85d4c1de393b612be55804c2914d4cab4aab",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/continued-lane-and-station.png": "3cedd4f836a947e1591c444f75440a528fdba4b8f1d7328f040884e077f1fb86",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/array-edge-screen.png": "c3435ab07d399db4d48fed54cd6c6aa6fcfedf043dc47c7e88b676cc206128d7",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/continued-lane-and-station.png": "76b99f934d65041638faa365ab5fb6514a5f4d5d1a5ecbcb7928e2aaf45e6efc",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/opengl/road-gate-from-apron.png": "071e7bae6fcf9e3b7bc5c4df6b1b141d02fc4b0b2a961e8504bbdff5a6051e46",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/road-gate-from-apron.png": "82fee0cfb4ae8e22fbf2f3fe2d4ca42399fa16b4691c3ac6ed9770fab6e9f6cd",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/array-windbreak.png": "42841ea9288cb335a7bd24c4fb50d5ac530efdd58716541b7bb8dbc36d74e18f",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/roadhead-and-vehicle-gate.png": "1649c46c5c895aff19dac9da346bb42ffaae91a36e4e8faa1a259c6285e1aa7e",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/structure/station-perimeter.png": "d795c60774e83afbe8cc96b1d435f58a83b9c574a39294da7f4f85eb509c67bf",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/construction.json": "8376f6356d6d5a2fdaa58e94540c31008adbd705704c875bacbee26b235e4199",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/perimeter-plan.svg": "5b2e1f89c7f2d5b4b8ba1227c63678484c46896e6bbb75e2a27e5bd48b100398",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/retained-route-datums.tsv": "473412764f097f10ccb3b1485f02d170de54bff53cc8e47098efad44423e9a06",
+    "development/levels/rebuild/northwatch-boundary-pass/wld-08/runtime-input.tsv": "50975c4c6183171b1bdcbe12374373966d977fefc020f925577534f3e573aff2"
+  },
+  "scene_revision": "48e346df60d2a1cdd7ac6deeeb027a3877a9c6b7da1c185163cf70ba0b66b6c5",
+  "native_parts_retained": 426,
+  "foundation_spans": 92,
+  "soil_samples": 3807,
+  "terrain": {
+    "joined_rim_edges": 1004,
+    "retained_cut_edges": [
+      20,
+      128
+    ],
+    "exterior_faces": 2402,
+    "road_faces": 33,
+    "area_m2": 17258.375
+  },
+  "gate_slats": {
+    "seated_slats": 42,
+    "overlapping_joints_corrected": 41,
+    "source_max_overlap_m": 0.065
+  },
+  "checks": {
+    "body_contacts_at_perimeter": 1302,
+    "jump_height_contacts": 1302,
+    "standing_optical_contacts": 651,
+    "supported_crossings_blocked": 1172,
+    "original_invisible_edges_with_exterior_ground": 3,
+    "canonical_ramp_retreat_both_postures": "PASS",
+    "measured_tread_datums": 6,
+    "walked_authored_links_and_journeys_both_postures": 23
+  },
+  "renderers": [
+    "Software",
+    "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  ],
+  "pending": [
+    "Operating doors and full room and acoustic ownership",
+    "Power and other site services",
+    "Walk-in safe zones",
+    "Named case, final finish and release acceptance"
+  ]
+}

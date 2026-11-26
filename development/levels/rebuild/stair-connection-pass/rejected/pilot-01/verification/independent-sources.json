@@ -1,0 +1,62 @@
+{
+  "status": "PASS_SCOPED_SOURCE_SOLID_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-04",
+      "retained_source_meshes": 225,
+      "replaced_source_parts": 52,
+      "closed_new_parts": 63,
+      "new_triangles": 788,
+      "packed_images": 6,
+      "blend_sha256": "62182953f8bf671d98d8e73fe44639abc5a8bd68a104ce90e74af33df1e5fc03",
+      "glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+      "physics_sha256": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85"
+    },
+    {
+      "id": "WLD-05",
+      "retained_source_meshes": 210,
+      "replaced_source_parts": 72,
+      "closed_new_parts": 80,
+      "new_triangles": 1102,
+      "packed_images": 12,
+      "blend_sha256": "eb4b5797a132a4722b535430b5ddb17fff46c5844195f345b7d8c4b843de0c1f",
+      "glb_sha256": "9590e1d278ef2ce17058f68dba03bccc9c0d0857892010f16f8615f359050c18",
+      "physics_sha256": "fd5534f30a3773d87616038f0fd22fdaebca7ada410657c94c20f0ff5b984683"
+    },
+    {
+      "id": "WLD-15",
+      "retained_source_meshes": 219,
+      "replaced_source_parts": 0,
+      "closed_new_parts": 3,
+      "new_triangles": 60,
+      "packed_images": 13,
+      "blend_sha256": "3e894ffd29331f129a49c15513d7fab0c421f61a77a4c93fcc5ec02f64576492",
+      "glb_sha256": "dfb08915bb4aca584cb6f3640441853b37256a3e7cc6d8c1c51ac00baa2fe6f6",
+      "physics_sha256": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c"
+    },
+    {
+      "id": "WLD-17",
+      "retained_source_meshes": 260,
+      "replaced_source_parts": 0,
+      "closed_new_parts": 3,
+      "new_triangles": 44,
+      "packed_images": 11,
+      "blend_sha256": "2aa3cd17858d7f77d496a693c0275048634f3157162991fe3e6c128c4fc84616",
+      "glb_sha256": "0132d1ab531a166dd8d0dbd755bcd6f9be0189ded232faf520b32dee0eba0257",
+      "physics_sha256": "dca9a773b030a02a861b1d7161637d66c0784d21b64e5fa9a7ed74fb3ff6d903"
+    },
+    {
+      "id": "WLD-18",
+      "retained_source_meshes": 332,
+      "replaced_source_parts": 0,
+      "closed_new_parts": 1,
+      "new_triangles": 12,
+      "packed_images": 13,
+      "blend_sha256": "47518f111ca2ca11031f03c470f1e8bfefd335d69c1d58fa54d1f0a4f0877005",
+      "glb_sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
+      "physics_sha256": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346"
+    }
+  ],
+  "checker_sha256": "f282c0dccd98f7b44a36f26a44b5b69b23a98d4c5328fded2a3c2d54b3699dfc",
+  "limitations": "No full map, guard/support engineering, runtime/network or hardware acceptance."
+}

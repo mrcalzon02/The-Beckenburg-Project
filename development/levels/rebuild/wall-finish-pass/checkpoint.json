@@ -1,0 +1,33 @@
+{
+  "status": "ROSTER_NATIVE_WALL_FINISH_VERIFIED",
+  "sites": {
+    "native_exports": 25,
+    "dedicated_existing_sites": [
+      "CASTLE",
+      "HOUSE",
+      "WLD-01",
+      "WLD-02"
+    ],
+    "new_wall_triangles": 61147
+  },
+  "source_roster": "development/levels/rebuild/asylum-enclosure-pass/roster.json",
+  "packages": [
+    {
+      "path": "build/beckenburg-game.jar",
+      "sha256": "f95fcef52dcdab383314546d2a8bb7c81221f431a0461cb4b59b2471885da4a0"
+    },
+    {
+      "path": "gpu-client/target/BeckenburgGPU.jar",
+      "sha256": "02ce79ad5dae23875049d0f8065eaef3253bc23063c101bb84f69f8b852da712"
+    }
+  ],
+  "review": [
+    "25-source audit checked immutable triangle positions and unaffected material names and UVs",
+    "software and RTX 5070 OpenGL render the same three native standing viewpoints",
+    "House, Farmhouse and School surface integrity; Blackpine stair visual; Hollow Creek facilities assets; Castle physical construction"
+  ],
+  "remaining": [
+    "Native integration of source-only sites",
+    "Default site selection, installer and overall map acceptance"
+  ]
+}

@@ -574,7 +574,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     siteChoice.setEnabled(false);
                     lobbyLock.setEnabled(hosted!=null);hostInfo.setEnabled(hosted!=null);
                     role.setEnabled(false);
-                    status.setText("Seat "+client.seat()+" / "+MissionSites.title(selectedSite.name()));
+                    status.setText("Seat "+client.seat()+" / "+MissionSites.title(selectedSite().name()));
                     if("GHOST".equals(client.seat()))avatar.showGhost(
                         remoteLook!=null?remoteLook:localLook,remoteLook!=null);
                     else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
@@ -682,17 +682,33 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         return queue::post;
     }
     private void receive(String event){
-        if(event.equals("INFO|network connection ended")){
+        boolean siteFrame=event.startsWith("SITE|");
+        boolean incompatibleSite=false;
+        if(siteFrame){
+            try{
+                var parts=LanProtocol.parts(event);
+                if(parts.size()!=3)throw new IllegalArgumentException("invalid site frame");
+                HouseMap.Site receivedSite=HouseMap.Site.valueOf(parts.get(1));
+                if(!siteMaps.get(receivedSite).level().revision().equals(parts.get(2)))
+                    throw new IllegalArgumentException("incompatible level revision");
+                selectedSite=receivedSite;
+                siteChoice.setSelectedItem(receivedSite);
+            }catch(IllegalArgumentException rejected){
+                incompatibleSite=true;
+            }
+        }
+        if(incompatibleSite||event.equals("INFO|network connection ended")){
             // This event is a transport loss, NOT necessarily the death of the
             // authoritative listen-host process. Keep a running local host alive.
             connectionGeneration++;
             // Capture the host-issued per-seat reconnect capability before closing
             // the old socket. It is not the local installation/player profile ID.
-            resumeTicket=connection==null?null:connection.resumeTicket();
-            if(connection!=null){
+            resumeTicket=connection==null||incompatibleSite?null:connection.resumeTicket();
+            if(connection!=null&&!incompatibleSite){
                 resumeAddress=connection.address();resumePort=connection.port();
                 saveResume(connection);
             }
+            if(incompatibleSite)clearSavedResume();
             boolean localHostSurvives=keepRunningLocalHost(hosted,resumeTicket);
             if(hosted!=null&&!localHostSurvives)resumeTicket=null;
             reconnect.setEnabled(resumeTicket!=null);
@@ -717,19 +733,20 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             hostInfo.setEnabled(localHostSurvives);
             if(role.getSelectedIndex()==1)avatar.showGhost(localLook,false);
             else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
-            status.setText(localHostSurvives
+            status.setText(incompatibleSite?"Disconnected — incompatible location version":localHostSurvives
                 ?"Local host still running — reconnect your reserved seat"
                 :"Disconnected — host or server connection lost");
             caseStatus.setText(localHostSurvives?"Case: active on local host":"Case: connection ended");
             teamStatus.setText("Team: disconnected");
             setCommandEnabled(false);equipmentPage.disconnect();closeWorld();
-            appendLog(resumeTicket==null?"Connection ended. You can host or join a fresh match.\n":
+            if(incompatibleSite)appendLog("The host's location revision is unavailable in this build or local map selection.\n");
+            else appendLog(resumeTicket==null?"Connection ended. You can host or join a fresh match.\n":
                 "Connection interrupted. Reconnect to the same mission while the host reserves your seat.\n");
             return;
         }
         if(worldView!=null)worldView.onEvent(event);
         if(ghostView!=null)ghostView.onEvent(event);
-        if(event.startsWith("GABILITIES|"))return;
+        if(siteFrame||event.startsWith("GABILITIES|"))return;
         if(event.startsWith("REJECT|")||event.startsWith("ERROR|")||event.startsWith("ACCEPT|"))equipmentPage.notice(event);
         if(event.startsWith("REJECT|")&&pendingStart){
             pendingStart=false;startCommandSent=false;waitingReadyAck=false;
@@ -745,22 +762,6 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 if(serverReady&&waitingReadyAck&&pendingStart){
                     waitingReadyAck=false;
                     dispatchStartRound();
-                }
-            }
-            return;
-        }
-        if(event.startsWith("SITE|")){
-            var parts=LanProtocol.parts(event);
-            if(parts.size()==3){
-                try{
-                    HouseMap.Site receivedSite=HouseMap.Site.valueOf(parts.get(1));
-                    if(!siteMaps.get(receivedSite).level().revision().equals(parts.get(2)))
-                        throw new IllegalArgumentException("incompatible level revision");
-                    selectedSite=receivedSite;
-                    siteChoice.setSelectedItem(receivedSite);
-
-                }catch(IllegalArgumentException rejected){
-                    appendLog("Unsupported location version received.\n");
                 }
             }
             return;
@@ -864,6 +865,9 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             appendLog(event+"\n");
             log.setCaretPosition(log.getDocument().getLength());
         }
+    }
+    private HouseMap.Site selectedSite(){
+        return selectedSite;
     }
     private static String teamRoom(HouseMap map,String raw){
         int room=LanProtocol.integer(raw,-1,HouseMap.ROOM_COUNT-1);

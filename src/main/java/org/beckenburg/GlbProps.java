@@ -564,7 +564,13 @@ public final class GlbProps {
         return decode(bytes,resourceName);
     }
     private static synchronized Model decode(byte[] bytes,String resourceName)throws IOException{
-        var source=org.beckenburg.editor.EditorGlbReader.read(bytes);int[] materialIds=new int[source.materials().size()];
+        return decode(org.beckenburg.editor.EditorGlbReader.read(bytes),resourceName);
+    }
+    static synchronized Model decodeLevel(byte[] bytes)throws IOException{
+        return decode(org.beckenburg.editor.EditorGlbReader.readLevel(bytes),null);
+    }
+    private static Model decode(org.beckenburg.editor.EditorGlbReader.Document source,String resourceName)throws IOException{
+        int[] materialIds=new int[source.materials().size()];
         for(var material:source.materials()){
             int i=material.index();var picture=sourcePicture(material.png(),bookCoverMaterial(resourceName));
             materialIds[i]=TEXTURE_BASE+textures.size();if(material.alpha().equals("BLEND"))gltfBlendMaterials.add(materialIds[i]);else if(material.alpha().equals("MASK"))gltfMaskCutoffs.put(materialIds[i],material.cutoff());
@@ -577,8 +583,25 @@ public final class GlbProps {
                 material.alpha().equals("MASK")?material.cutoff():-1));
             materialNames.add(material.name());diffuseFactors.add(material.color());if("monitoring_screen_mp_1".equals(resourceName)&&"crt_screen_mp_2".equals(material.name()))vanCrtMaterial=materialIds[i];
         }
-        var result=new ArrayList<Triangle>();for(var face:source.faces()){var primitive=face.primitive();int i=face.triangle()*3;
-            var a=primitive.world().get(primitive.indices().get(i));var b=primitive.world().get(primitive.indices().get(i+1));var c=primitive.world().get(primitive.indices().get(i+2));result.add(new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[primitive.material()]));
+        var finishes=new java.util.IdentityHashMap<org.beckenburg.editor.EditorGlbReader.Primitive,LevelSurfaceFinish.Selection>();
+        if(resourceName==null){
+            boolean ship=source.materials().stream().anyMatch(material->material.name().equals("Saint Elara painted bulkheads"));
+            for(var primitive:source.primitives()){
+                var finish=LevelSurfaceFinish.finish(source.nodeName(primitive.node()),source.materials().get(primitive.material()),ship);
+                if(finish!=null)finishes.put(primitive,finish);
+            }
+        }
+        var result=new ArrayList<Triangle>(source.faces().size());
+        for(var face:source.faces()){
+            var primitive=face.primitive();
+            int i=face.triangle()*3;
+            var a=primitive.world().get(primitive.indices().get(i));
+            var b=primitive.world().get(primitive.indices().get(i+1));
+            var c=primitive.world().get(primitive.indices().get(i+2));
+            int material=primitive.material();
+            var triangle=new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[material]);
+            var finish=finishes.get(primitive);
+            result.add(finish==null?triangle:LevelSurfaceFinish.apply(triangle,finish,source.materials().get(material)));
         }
         // The photo GLBs reuse the front-of-camera atlas on their rear LCD
         // polygons. Give only those two real faces an unpowered glass surface,

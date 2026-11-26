@@ -1,0 +1,151 @@
+{
+  "scope": 29,
+  "stage": "BREADTH_BY_STAGE_STRUCTURAL_BLOCKING",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/academy/implementation.json"
+    },
+    {
+      "id": "ASYLUM",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/asylum/implementation.json"
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_STRUCTURE_AUDIT_REQUIRED",
+      "evidence": null
+    },
+    {
+      "id": "CHURCH",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/church/implementation.json"
+    },
+    {
+      "id": "COLLEGE",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/college/implementation.json"
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/farmhouse/implementation.json"
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_STRUCTURE_AUDIT_REQUIRED",
+      "evidence": null
+    },
+    {
+      "id": "MANSION",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/mansion/implementation.json"
+    },
+    {
+      "id": "PRISON",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/prison/implementation.json"
+    },
+    {
+      "id": "SCHOOL",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/school/implementation.json"
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_STRUCTURE_AUDIT_REQUIRED",
+      "evidence": null
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_STRUCTURE_AUDIT_REQUIRED",
+      "evidence": null
+    },
+    {
+      "id": "WLD-03",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-03/implementation.json"
+    },
+    {
+      "id": "WLD-04",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-04/implementation.json"
+    },
+    {
+      "id": "WLD-05",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-05/implementation.json"
+    },
+    {
+      "id": "WLD-06",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-06/implementation.json"
+    },
+    {
+      "id": "WLD-07",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-07/implementation.json"
+    },
+    {
+      "id": "WLD-08",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-08/implementation.json"
+    },
+    {
+      "id": "WLD-09",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-09/implementation.json"
+    },
+    {
+      "id": "WLD-10",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-10/implementation.json"
+    },
+    {
+      "id": "WLD-11",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-11/implementation.json"
+    },
+    {
+      "id": "WLD-12",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-12/implementation.json"
+    },
+    {
+      "id": "WLD-13",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-13/implementation.json"
+    },
+    {
+      "id": "WLD-14",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-14/implementation.json"
+    },
+    {
+      "id": "WLD-15",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-15/implementation.json"
+    },
+    {
+      "id": "WLD-16",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-16/implementation.json"
+    },
+    {
+      "id": "WLD-17",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-17/implementation.json"
+    },
+    {
+      "id": "WLD-18",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-18/implementation.json"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/structures/wld-07-mortuary/implementation.json"
+    }
+  ]
+}

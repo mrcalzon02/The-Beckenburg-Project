@@ -1,0 +1,70 @@
+{
+  "site": "WLD-11",
+  "status": "MOURNING_MARSH_PLAYABLE_NATIVE_REVIEW_UNDER_DISPATCH_FLAG",
+  "prior_commit": "20923573",
+  "source": "development/levels/rebuild/canyon-marsh-pass/wld-11/construction.json",
+  "review_property": "beckenburg.review.mourningMarshNative",
+  "campaign_ordinal": 19,
+  "retained_native_components": 356,
+  "supported_refuge_contacts": 36,
+  "finished_wall_triangles": 489,
+  "packaged_resources": {
+    "marsh-review.glb": "04dad79374c6e6ebf84edfc76d1cde0e32230c8c146cc1d52ff5362b5692f2d0",
+    "marsh-review.hcs2": "7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71",
+    "runtime-input.tsv": "b55e5267a4851130916c9c0be20ee5e63b7e641c84e7bbb528053fa9bceb8278",
+    "door-schedule.tsv": "e32e128bc5884ad74045a4eb5f8ef9bc3bf5b40cacd7c838b928dd1c85100277"
+  },
+  "packages": {
+    "build/beckenburg-game.jar": "1a3aaf2a6dab2e6cec1f176b067e21838b25dc549502853307c81231e75bdc01",
+    "gpu-client/target/BeckenburgGPU.jar": "bd18aab6e335b2dae508b33dd0eccea13dd69bbb50d8375f4e7b5d6042fae310"
+  },
+  "software": {
+    "revision": "0cb439e597ca1a9cd15bc7f70209529a96050a4e407498292988d7921f04f2aa-3b0473fa1cdb23df",
+    "collision_sha256": "7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71",
+    "causeway_turn": "The supported outside edge retains the causeway owner at normal step length",
+    "physical_door_states": "7 fitted doors; standing and crouched crossing, object, sight, aim and acoustics",
+    "route_replays": "56",
+    "owner_spawns": "14 native-supported regions and the expedition van",
+    "deck_guards": "3 supported edge sweeps in each posture stopped on the actual rails",
+    "marsh-house-b-cupboard_protected_floor_samples": "69",
+    "marsh-house-a-cupboard_protected_floor_samples": "69",
+    "marsh-chapel-cupboard_protected_floor_samples": "69",
+    "mourning_marsh_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "renderer": "Software"
+  },
+  "opengl": {
+    "revision": "0cb439e597ca1a9cd15bc7f70209529a96050a4e407498292988d7921f04f2aa-3b0473fa1cdb23df",
+    "collision_sha256": "7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71",
+    "causeway_turn": "The supported outside edge retains the causeway owner at normal step length",
+    "physical_door_states": "7 fitted doors; standing and crouched crossing, object, sight, aim and acoustics",
+    "route_replays": "56",
+    "owner_spawns": "14 native-supported regions and the expedition van",
+    "deck_guards": "3 supported edge sweeps in each posture stopped on the actual rails",
+    "marsh-house-b-cupboard_protected_floor_samples": "69",
+    "marsh-house-a-cupboard_protected_floor_samples": "69",
+    "marsh-chapel-cupboard_protected_floor_samples": "69",
+    "mourning_marsh_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  },
+  "live_case": {
+    "named_revision": "0cb439e597ca1a9cd15bc7f70209529a96050a4e407498292988d7921f04f2aa-3b0473fa1cdb23df",
+    "collision_sha256": "7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71",
+    "levee_stair": "PASS The cargo ramp and supported seven-riser levee stair reached the +1.20 m deck",
+    "marsh-house-b-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "warehouse_anchor": "PASS Warehouse evidence replicated, and the host accepted the anchor ward and refused the remote rite",
+    "marsh-house-a-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "marsh-chapel-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "chapel_rite": "PASS ABSOLVED reported to all three peers; 396 credits and 132 XP"
+  },
+  "publication": {
+    "branch": "map/roster-structure-batch",
+    "held_draft_head": "2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf",
+    "status": "local checkpoint; earlier automated review rejected publication"
+  },
+  "remaining": [
+    "Shared water behavior and complete perimeter containment",
+    "Working pump, source and circuits",
+    "Room fit, site-specific sound and story",
+    "Default dispatch, all rites and installer validation"
+  ]
+}

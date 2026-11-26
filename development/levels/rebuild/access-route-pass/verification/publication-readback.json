@@ -1,0 +1,1226 @@
+{
+  "observed_utc": "2026-11-08T15:54:47.224567+00:00",
+  "source_checkpoint": "a9d04b445c11179ec8a3d52c15ce7e6547857b2a",
+  "remote_head_verified": "a9d04b445c11179ec8a3d52c15ce7e6547857b2a",
+  "remote_tree_sha": "a9d04b445c11179ec8a3d52c15ce7e6547857b2a",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local committed tree for every changed source/model/native/editable/capture/verification/tooling/gallery file.",
+  "verified_blob_count": 301,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "97d9585f7cecaab4ec5027fa3c4acb2113db65b1"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "64a4c1d8247fc7620d3243505e446f2564538737"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "5b8ad037ec564947b72cdc7d25769fea76d9480a"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "d5230b1b1ec8d9fac8e92f8648000aa3736cb9ab"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "37377a7504e0ed5ee98252c9c154e3190d128e77"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "811cecd7a8792a553316b444f51ff98c6e7201c1"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "bbcaff30a7b4863ab2228c3dcb3b5b9911b28fdd"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/NEXT.md",
+      "sha": "2cecace99a59a9ad30c88375361698c5d06f9dc6"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/README.md",
+      "sha": "7dc79de6a892ec4c669a1032a047ab60e99713e5"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+      "sha": "4df02f3c175c217f80f7a5c5544a30afe678eb44"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+      "sha": "08709199d38c5fa82f457635d2381795aacf1be5"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+      "sha": "30b7f8dd0990faca51e6e112f696a3e0a7eb3435"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+      "sha": "bfdfeea6378afa52afc57ae1cf2a9bca3764d6e8"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+      "sha": "17e67284c387b6c09742a2092d7bf6eda7c5bab9"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+      "sha": "b389e59f7e6d1fad8d244b7813b864c4962b6e56"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+      "sha": "da7364dabf57fdfcc20dcdbcbb75a00c9ecce30a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+      "sha": "44734a7e5a63facfb8fabf18fee3346d83c186b4"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+      "sha": "01a810e8ec90dd2c840083602d6de4efa1149e8d"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+      "sha": "255e530a2e744644bf7121c338f29346533afa19"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+      "sha": "bf26c27d3601d522af78f06f0e441b95816eb28b"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+      "sha": "48deac4d9a239d02b49b10d8586e90d665f65d8a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+      "sha": "46018e2df8a6eb748a6c12d82b533763c84716f3"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+      "sha": "fcbf1b6b9fe8f4d1c1464d8252af894656f6711d"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+      "sha": "c21f5b6304b5f06e162dd7df535755b76133661c"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+      "sha": "3c25f9c5fe76552ff4ff4fd63274cd2c38a618b8"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+      "sha": "1e1d8d5965862dd5b96952cebff15e369bf8924c"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+      "sha": "19249e70dd5d24f1c46f72309b531e5db5c4659d"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+      "sha": "050fcf50ceab624eecfa74c31384afb226eb70cf"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+      "sha": "7fafde0c2ab30365506b0def471b4963adeac7c4"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+      "sha": "1edc4148e571c7d0f02669adb348cca8e56bfc25"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+      "sha": "b57c01eef30483f7ca182415d4963c8c655dc236"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+      "sha": "3d96e6930c4bcb8d9d4a8608ee77b67dd19654e9"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+      "sha": "4f69e468ae22a6f2c10764abb677c6c4b45e7478"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+      "sha": "9b697131190346d165445b5930b2e4d31be8e398"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+      "sha": "b040dfd245ef96adf5394b3259ff7e76800dce46"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+      "sha": "47fb8eb862f81aad663a995f4c7c4db997148e19"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+      "sha": "6daa83179bd33184b584a7803cb98c12bb973dc9"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+      "sha": "f7d85421b4e7ff567cec35329647b7fc7484c5c2"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+      "sha": "1f47c1d2e43d4219b5c08be2efb711d8fc631f70"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.blend",
+      "sha": "e23fcf0db134064fd2df7ca53ce939a6486bd626"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+      "sha": "4bf926adfc7c281da02053aa0b4b9188ff2c50ac"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+      "sha": "5c2ae23a979319b6511b2a51c7e9267b013e220b"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+      "sha": "73bafc1a5b05abb497b4cb244bd27b2f61db2c4b"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+      "sha": "8be14c89e1196d50bec9e52cf409362d9fa3c875"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+      "sha": "28ed2f1be0edabcab2b2e3a79948981b042a984b"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+      "sha": "cce3ef1399e699d3a0d10eb260a57a10f204ef88"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+      "sha": "c11ddc81d4f47b0401da9a213c37c81443526990"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+      "sha": "5814a507660287f8db217e22accbf0491c5a7945"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+      "sha": "59d58a86549eebe2407ff2c3dcb518d0da058e3a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+      "sha": "4ad36064e1b53bb2e6af02bfaf2cb495eb5d034d"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+      "sha": "a16c27275b6f84f5e28681072e36ea8c400a7ef8"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+      "sha": "dec8282388916be2b5c820320a8b33bd66d0db1a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+      "sha": "151a934747f5b3748c4fb8fab9bf1d376208e03b"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+      "sha": "8cda76de38ae928bc7fcd930f4e6c04918204ae4"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.blend",
+      "sha": "c80952dd47b3dbfb18f66a6a233fccac44c29201"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.glb",
+      "sha": "4b1af0671ca57fef770556837a25c052718030c8"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.hcs2",
+      "sha": "60a66d7a415620b0ede001c939e8bdc3a166cce8"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+      "sha": "fcb5284d252551eac50cd3cd4edcf2767ccb002f"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-10/construction.json",
+      "sha": "b2adc4b4813dabc6e178447280e1f52877b4a4a9"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+      "sha": "38239474c8e505dc9004746ba599dbfa05809ebe"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+      "sha": "e3ca59b9ca07f4d1605c8d618cfb086f6323662d"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+      "sha": "83ea557c7748cf489c2e1a6efe25f15094655740"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+      "sha": "2104835155ee73d632470c7050551ef5854e9b26"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+      "sha": "53ddd4a8fc20d3ca2a184bf02c7513f104d49e83"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+      "sha": "00a96508c8466e9636883ca2b822b25dd1ce49ab"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+      "sha": "811b125029e4ebdd9aa1c7ad93528878a5ebe5de"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+      "sha": "051f568b9f22d3eb0762bd2c58713e247844d8c5"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+      "sha": "404b8f4856420a53a2eda83516d6dc6b1721edc7"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+      "sha": "3ae2978cd118f3e48bfa899792261f88103509df"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.blend",
+      "sha": "76ec5e0eab7bec40be2801b076f6dc82fac86915"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+      "sha": "08da74c2aa5d7a4e1dc73a3f846947cca19574f8"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+      "sha": "274fc33365b76725cf788fdd844034ed03d6fb9a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+      "sha": "9421fce7a3a2cf08ad617a98cbe545a162b7c428"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+      "sha": "8260d814df56c0dfd5a49860f2460bbc4e38ef79"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+      "sha": "ca9a6398e9f0a3e31d20c5b6322152233000f5d9"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+      "sha": "4f9ddfe47c8dad0dcaa11d8d9e0d74601e26d809"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+      "sha": "1492c726733bbf1c51c27307ce7c4c662721281f"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+      "sha": "50b9dcff858af69c3c06aae70da36b60468e9a4a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+      "sha": "750f39e714d020597e181376147f9b9384c6a682"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/roster.json",
+      "sha": "0dcf448597a10f5d8131c28eb17faabdc2a6fcde"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/archive-index.json",
+      "sha": "42f14efbad40a1e582d746cb446e690b9eb4d30a"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/authoring.json",
+      "sha": "e5906cdf5cc912b28d10ae50b43568faea765b6c"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/captures.json",
+      "sha": "defbbe48f5fc3af0750cf5e409b3940b26cd3c1b"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-failure-contacts.tsv",
+      "sha": "236d3f19a5315a7e9a60ce42b8b666e513e403ab"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-failure-input.tsv.gz",
+      "sha": "d907de3508ee3fdaaf70efa69fded0529b19b628"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-lane-input.tsv.gz",
+      "sha": "e67f6687617fb6d21d75ade55488a5692b22eaa3"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-lanes.tsv.gz",
+      "sha": "bc0d346f822fb94132e3c52abf313914c7616283"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-links.tsv",
+      "sha": "2d571b553a3212314d22b24c082b5f94e867e7ce"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-movement.json",
+      "sha": "a7f44ba136f12404941cd02860c0368c6231894f"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/current-flat-paths.tsv",
+      "sha": "b53c0d462bd9f5e6d054d6b0133d085ac756a89c"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/generators/review_access_routes-primary.py",
+      "sha": "459db280d12c1da2890d473885fe63eb4f0966a6"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/primary-floor-captures.json",
+      "sha": "da7877472edd0b38bfc6ee089bd7d2e95f96ba4c"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/rejected-capture-study.json",
+      "sha": "8e1cad0ecb5a28f0e4e87a7f242b4ea29bc4f7af"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/remaining-routes.json",
+      "sha": "6d7a39bec5fac9b209a2fb2bad7d68815a644f23"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/room-socket-connectivity.json",
+      "sha": "81a8339dfd73d5bd21c58ecb44f01deb3c0b2eb0"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/room-socket-input.tsv",
+      "sha": "63ff4bc2eb9960820577dfcdf8b7afbbf21bef0d"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/room-socket-results.tsv",
+      "sha": "450b5c1cb1fce8d68d7862b565ebfd82327f7736"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/room-socket-stairs.tsv",
+      "sha": "d23f726c66fc5cf1327af84fd11a56a9c44f3513"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/sheets.json",
+      "sha": "bd418cddab211e1f243ef161996b0078e56368f3"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/source-preservation.json",
+      "sha": "30bf9ba93d9eb6070ff804de01a30d7d0cfe7dc6"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/stair-movement.json",
+      "sha": "71299a52908b46471303c2bf8fa872c7bbdc6ae6"
+    },
+    {
+      "path": "development/levels/rebuild/access-route-pass/verification/visual-review.json",
+      "sha": "5d6ab0a1566eccac321f45c9ed3eabac2442f65f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",
+      "sha": "9d35a3cd857ee45bbbf6f14ec20bf976ecc55409"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-before.png",
+      "sha": "8a901af7179262c287bbc2b1cc7cb883637f2242"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-route-detail-after.png",
+      "sha": "4ab4df09650e101b6afcd60f2410707db23a9ace"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-route-detail-before.png",
+      "sha": "d654e70a5df6a0aeed29625b3218541dd6cd2a14"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-y0p0-route-sheet.png",
+      "sha": "9b6d76e572d85bba44b1ce77c432a2e395d74854"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-floor-plan-after.png",
+      "sha": "60128e1a07b2035e78c27696e195ce56a2ecbe90"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-floor-plan-before.png",
+      "sha": "ac80ce9019845e2cf378f27695404bb43444eed0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-route-detail-after.png",
+      "sha": "debc8b6edecfa93230ce6599dd26a80f4f2c4892"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-route-detail-before.png",
+      "sha": "8e6c67cddd2dbd6a3cfb1fe62d5346e8a02dc1a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-y0p0-route-sheet.png",
+      "sha": "3b0361ea57b3abe8ff9e9c51fba0e8ca2255a8ae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-floor-plan-after.png",
+      "sha": "10070980041bed9046bc63bbf33f85700e5e92f1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-floor-plan-before.png",
+      "sha": "ba490bd7e3c48ed2bc7ec340250f275d1f044c96"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-route-detail-after.png",
+      "sha": "83e59196585443b538c890af6c17980e86839c8f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-route-detail-before.png",
+      "sha": "8af1381295b4c251bb0f88142673a46a7c36b277"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-y3p0-route-sheet.png",
+      "sha": "0768f3f9f2d68a7a01c5eccaa3f3ba9d1ce75dfc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-floor-plan-after.png",
+      "sha": "1a59be8af5a8f18028677c9618df387f784dab21"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-floor-plan-before.png",
+      "sha": "7ea4457045a52a22842e6c823c25e4afab673d74"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-route-detail-after.png",
+      "sha": "f2beb0a4536e0a5d0607a9f0f37da11b5ee39f6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-route-detail-before.png",
+      "sha": "9df57b250ce859306d6045e6e1b3b50927cccb27"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-y0p0-route-sheet.png",
+      "sha": "14e96d7680e042ea436913c93eb43aaf9166f7c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-floor-plan-after.png",
+      "sha": "f0db8667f13a2d8ebdc5ec1a7639f5ef75f158b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-floor-plan-before.png",
+      "sha": "91f0c274661fe2e586d8a563a586b7dc77b4037f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-route-detail-after.png",
+      "sha": "afbd31d1076c85f50f6eee496a33a6e28f5f8c6d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-route-detail-before.png",
+      "sha": "1bdae9fb5e6732ace6abb3d1b61290ce40f4c565"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-y0p0-route-sheet.png",
+      "sha": "369098a2b0e46715d3a0e3bcbf5317650c43c9c5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-floor-plan-after.png",
+      "sha": "8ac7dac1ab4b97a9fcfeab87f9d7be9817f5d3ed"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-floor-plan-before.png",
+      "sha": "5adefe9184d53beb9e15ad5dd75b1f9a51b44bf3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-route-detail-after.png",
+      "sha": "626c8c79f93619e447c2f3d9b968a74d5a97b759"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-route-detail-before.png",
+      "sha": "48826c4279edd65ce04a480d78707a63af9bdaad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-y0p0-route-sheet.png",
+      "sha": "2ec0f9e74ec82299ea32f89c5148d70342154d7d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-floor-plan-after.png",
+      "sha": "9690a04c5308b9d12dfee3c322aad9415180abd6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-floor-plan-before.png",
+      "sha": "f2b12909dd577fc2adec49d08df88dda515cf8b5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-route-detail-after.png",
+      "sha": "966c532620366904ba5666912978cd2a32c81f57"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-route-detail-before.png",
+      "sha": "14403724e30e019b4817eddb46dd76a10d682a96"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-y8p0-route-sheet.png",
+      "sha": "4b1cc4637206ad91021a99afa9eda967401c4d22"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-floor-plan-after.png",
+      "sha": "eaf61b05abb38806c454fc645eb8d9fff24488f0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-floor-plan-before.png",
+      "sha": "6dc5bb3ccaccf75171f980aeb3e5875502ecdf50"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-route-detail-after.png",
+      "sha": "88188cf27cb3a5b087bfebc1ffce150ee527098f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-route-detail-before.png",
+      "sha": "1a142861292dc37042ba4749ce0935346dc6b47a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-y6p0-route-sheet.png",
+      "sha": "873c825f2eead792eb9bf66a77bb67c8458e79c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-floor-plan-after.png",
+      "sha": "18f47b4ae2fe5239322c2047e1327fe8ef186b4e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-floor-plan-before.png",
+      "sha": "ad26bb69083b5be535128c5d52bb94ec5843972c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-route-detail-after.png",
+      "sha": "2b97cef57b0061d52a838ef596399852188f5c39"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-route-detail-before.png",
+      "sha": "972e7aa5bf9d1bf43aca26f23760cc8ca57d54f8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-y0p0-route-sheet.png",
+      "sha": "949a90a2c9bdd5d6eeb55dd1455f670adaf2c7e5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-floor-plan-after.png",
+      "sha": "b56245e5b386cff0b5bdc68c19d4b98d04b5cad3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-floor-plan-before.png",
+      "sha": "a7ce711a1090f0faff3ccd308d59f6c4d2fefbf2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-route-detail-after.png",
+      "sha": "1c12b61c7fbadb0b80f33a402d32d4b0cfb5711c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-route-detail-before.png",
+      "sha": "446ce23c8237b8de205421d6f3b1c4654989a0cf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-y0p0-route-sheet.png",
+      "sha": "ca7d6e63ba65b6751ed4a4a30c8f13a4b898e97b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-floor-plan-after.png",
+      "sha": "7a0b8f527a69e7950b43526ac89ed8ffd8a0e96b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-floor-plan-before.png",
+      "sha": "d8b844126fd27f5cf7b41ba15517d0929aa6a182"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-route-detail-after.png",
+      "sha": "9bd3792bc3f01699534569032243e3f2f135ef02"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-route-detail-before.png",
+      "sha": "d8e62cf59595c3aeb7b76e5008f92e5d41e3c64a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-y0p0-route-sheet.png",
+      "sha": "098471e6aa9f255bdc299db7d98c0a94ffdaf7a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-floor-plan-after.png",
+      "sha": "60a927a31d09a1d0a2af608a5499ebd4797cefc7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-floor-plan-before.png",
+      "sha": "69024c741b3f911c6637616cddcfda0a67f9de04"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-route-detail-after.png",
+      "sha": "b26196494f73bec8e350f230e6fc2280c0eb703e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-route-detail-before.png",
+      "sha": "569abf532ae071ab4c9318705bd0fe43a044ce32"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-y0p0-route-sheet.png",
+      "sha": "4155ed196182805c3c9afb14bd3e1d6f52c1d4e4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-floor-plan-after.png",
+      "sha": "0af92321f97bf1d8304a4d01cf588917574a494a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-floor-plan-before.png",
+      "sha": "d34c04b6841b2b5bc8a0b6e0859efcc1b88347c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-route-detail-after.png",
+      "sha": "7833eb19bd6213bc1359460fa2a5c2cd7a58ddc3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-route-detail-before.png",
+      "sha": "ced10834f6d4b028d2079963cd883adff3663d9b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-y4p0-route-sheet.png",
+      "sha": "416813378ef87bf480ac223ee8b17b53f8f047f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-floor-plan-after.png",
+      "sha": "56a0660d73f05ec388d59d9b0fff9cb58367c777"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-floor-plan-before.png",
+      "sha": "d5dc098453c991b199bd53cf50df7847e7116e83"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-route-detail-after.png",
+      "sha": "e857fe774042c8f37b6b3a892440d81d9e0dd7bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-route-detail-before.png",
+      "sha": "9d61520760d87ea40b9691b8637f1bb387f2114a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-yminus8p0-route-sheet.png",
+      "sha": "555825b398068c51d3a793a567329861bac9154c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-floor-plan-after.png",
+      "sha": "8a2ef3a051d3b74c492fd2b02fa3d8887233e871"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-floor-plan-before.png",
+      "sha": "eabd361c8115be708821d9503215822b6cfcd0fd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-detail-after.png",
+      "sha": "e7050391f1d5e9664873fbfc40440e4f9dbb4325"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-detail-before.png",
+      "sha": "87cf317be0fb5e1ec0a33493bf1987186e9a3043"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-sheet.png",
+      "sha": "d79aab8e6d0e8a348ac3380ea848f8f92617bebd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-floor-plan-after.png",
+      "sha": "7cc1e0c3f111ef78f0af6579f4c16127fb724994"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-floor-plan-before.png",
+      "sha": "76120e72e406b5c95d043c30a3b32be370fa3e63"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-detail-after.png",
+      "sha": "384a1823967ac87bb8a1be24d4237730d592ec67"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-detail-before.png",
+      "sha": "d95edbcd6b13d63f7673cc7790fbead8033b898c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-sheet.png",
+      "sha": "2dc05b674383abb069e95b134a69961230294c85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-floor-plan-after.png",
+      "sha": "857d86337978d84fd60e4b8fd90829445add07f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-floor-plan-before.png",
+      "sha": "d03df912c3f57fd4ec906c476dd297e9d48bf801"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-detail-after.png",
+      "sha": "f9c553545ebb9c98f6bd5dcbe7ded714db4aa4df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-detail-before.png",
+      "sha": "3eb5aaa10c6d4d6fe6fb24a90b5ec1b2b912b6f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-sheet.png",
+      "sha": "56c52be7eba939627d89ce1ff4c6827d2b419196"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-floor-plan-after.png",
+      "sha": "391426103928d132554e463cd6ca92c60c23e0df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-floor-plan-before.png",
+      "sha": "26f7700b73a9f0bac665455f8e6580f071ae298a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-detail-after.png",
+      "sha": "195086be7f4f85d1d87d535fc106bea645a06159"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-detail-before.png",
+      "sha": "3ef0ac80613e5606cc41e3806d5cd28221bfee26"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-sheet.png",
+      "sha": "533429a1907f7b5b4a229f4e0aa58b3c29ac42d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-floor-plan-after.png",
+      "sha": "a8452f5788802f96d7557aa36852dc498df81640"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-floor-plan-before.png",
+      "sha": "8b67513989303b200bf28dab6e682182a1262aff"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-detail-after.png",
+      "sha": "d728b2dc8bc178e7d90789faf8c3c311c2795bc9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-detail-before.png",
+      "sha": "8ca69604e28bd111c9e90e8853547264c23fe6fb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-sheet.png",
+      "sha": "fbacc242f9e1a124d1547c44bb28506d8cb1223c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-floor-plan-after.png",
+      "sha": "30cf3d33b664313a469c6bea86f58d8903803965"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-floor-plan-before.png",
+      "sha": "a974ed800d4cfe65774e90f8e70f025d011dee8c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-detail-after.png",
+      "sha": "33ce8c16b65dc4891db7d3f6e8e4f860128b1af8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-detail-before.png",
+      "sha": "a26bcef05524b3adb302ee36010abfba14fa4895"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-sheet.png",
+      "sha": "dfdaaa07f998a71ee75746c2a965c4ab9a16fab6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-floor-plan-after.png",
+      "sha": "311633ef52d37cab12b46727d084e338b65ba179"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-floor-plan-before.png",
+      "sha": "ec0f75affa16572075da33baa9ebb7431fef2ecb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-detail-after.png",
+      "sha": "59f83235fc1b18245bd28d3b04128f984fb317a6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-detail-before.png",
+      "sha": "27e64d01ba7c1be5049d06851e75003137b234c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-sheet.png",
+      "sha": "a921b95d2c93a034b5bef6eeba3517c87d75dbd3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-floor-plan-after.png",
+      "sha": "dffc1e483ba5fb6be02d9bdcc93c6c59e794ef2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-floor-plan-before.png",
+      "sha": "11b268dfc6160600fe123f4b5777ba9492b666d7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-detail-after.png",
+      "sha": "6412773b9a483a77dd89839afbceacbefbf61438"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-detail-before.png",
+      "sha": "83253d6fbed33871ab7b64843977e2407d8fe9eb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-sheet.png",
+      "sha": "a09369d6426720d3d6efe0e4b6af4dae54bd7ad2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-floor-plan-after.png",
+      "sha": "d16e1087222c7568dff70e945eaaf0631c00f5f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-floor-plan-before.png",
+      "sha": "684dc8c7963707eb494bdf937ad28327ea602730"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-detail-after.png",
+      "sha": "fcfe9866f262bdf8bca3c88ae32e03c733626597"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-detail-before.png",
+      "sha": "2f7b949ab72b9f0d47a05e94dc5b50a44af7a99b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-sheet.png",
+      "sha": "4408cd1b423fa8113ca3df232e4fb0e4c9960a17"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-floor-plan-after.png",
+      "sha": "5696e77358e79fe3960a6e1a26f0bb32ba7f5fff"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-floor-plan-before.png",
+      "sha": "56dbe017fcd2c84e146baaca0744b7807f42a641"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-detail-after.png",
+      "sha": "0e8edc35d801180f0268dc3e9261144685a01684"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-detail-before.png",
+      "sha": "45cf798d0ed2ecacac991784758ca3bbfe5a7d9d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-sheet.png",
+      "sha": "912f8effadd7b2a5714c1ac522bda88b96786dc0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-floor-plan-after.png",
+      "sha": "325eb887928fd7d10a4e348d6f51ee87156d6678"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-floor-plan-before.png",
+      "sha": "b91b1319af76b542cd89d2f2571fe44f6af1a3e0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-detail-after.png",
+      "sha": "2c1f48d9431b1fc83b0b602a5b47356b380de61e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-detail-before.png",
+      "sha": "04499f96cd267140412addd93db14b04b287ded5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-sheet.png",
+      "sha": "1cad3eb54f8726efecdbc1c3877057a84f407132"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-floor-plan-after.png",
+      "sha": "027bf16f696f9d12beaed8be35e715ff0101ae20"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-floor-plan-before.png",
+      "sha": "f8677fb5ebe78b1853ebc825386717e9cf965a61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-detail-after.png",
+      "sha": "7472ca1496c96a2b30de59a50761c524fac782cf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-detail-before.png",
+      "sha": "553b4b57c3a921f283caa23b2e132364d2a6243c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-sheet.png",
+      "sha": "6183c6d381bf7e243a2a5d57cec2f268ad7be2ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-floor-plan-after.png",
+      "sha": "c43a55035470ca45068df425160a1a78b75563e3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-floor-plan-before.png",
+      "sha": "777e9bd9cb353d41b6407e13b05f473216647d7f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-route-detail-after.png",
+      "sha": "ac8b0255ce32465c1d3f8a04017aef5ce1c01f61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-route-detail-before.png",
+      "sha": "74cc60a54b798d85d741c4046f549b7ff0843383"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-floor-plan-after.png",
+      "sha": "f646a4110015a1b16704f8a2ebf4d9ad7d9dcb30"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-floor-plan-before.png",
+      "sha": "83744d0378e0ddf2f88b466e9066c2bc299db757"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-route-detail-after.png",
+      "sha": "57560b757c76f8a7b0f4bf576e5d0244c40c4ffb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-route-detail-before.png",
+      "sha": "1d2c029b72e6a872931e8c033b305a0eec4b91d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-floor-plan-after.png",
+      "sha": "adae7eb1ab9f3f9a78951ac11f2035964262e725"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-floor-plan-before.png",
+      "sha": "2932275f0db7f92ef5e7786c0cb68fbf3ddb07de"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-route-detail-after.png",
+      "sha": "fc6ef129dfdf3baac4e06d962c4ae6a9852a7cbf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-route-detail-before.png",
+      "sha": "ebd86f4adb577e1fc64410e304b4cbffc6ab975a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-floor-plan-after.png",
+      "sha": "b4b81ecec3dffbe1e6f5ffb30b2289f4f353f903"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-floor-plan-before.png",
+      "sha": "fcdf3a1c7c2a9662e6ef4b39b08b7d4326cf7e89"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-route-detail-after.png",
+      "sha": "607d4fe3d507bafdda42fd411a3955d4548804b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-route-detail-before.png",
+      "sha": "43dc81cde42460b37411cc6d8e077ae424795f97"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-floor-plan-after.png",
+      "sha": "4a9a20809292542420150153334b06ef338a39bd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-floor-plan-before.png",
+      "sha": "16a2b5d3f8ddf56c49ad5dfb7b0cee7a57786646"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-route-detail-after.png",
+      "sha": "9ab070a506fb3fd33e60f722bd66e6e021686209"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-route-detail-before.png",
+      "sha": "87b4b07d9073aef85673fef6ac2ebe7244b0c2dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-floor-plan-after.png",
+      "sha": "77a76a43190b0265d9f2e3429a77ac95651275b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-floor-plan-before.png",
+      "sha": "310e0379259a7cfbf0886156a6a9011715fecac6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-route-detail-after.png",
+      "sha": "4cb97a9eeddae25afefa5bfb8d68c53ca6db884b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-route-detail-before.png",
+      "sha": "756806586b64e86fdc73234b15c695d084b6b514"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-floor-plan-after.png",
+      "sha": "f6e67eb5d4dbb4224a9fc1f0b0ea27dab0cc0e4c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-floor-plan-before.png",
+      "sha": "bba50f5a9997989d3b32eccd69b148b02442763c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-route-detail-after.png",
+      "sha": "9ae377f71734eec8209aa26f3e0ae552a8a8f151"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-route-detail-before.png",
+      "sha": "5a2c7d4ef941fb377b0859e3f4b52d66c5404fe2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-floor-plan-after.png",
+      "sha": "20f5391e8fa53dd40262d7c7e719ea69de9ed9d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-floor-plan-before.png",
+      "sha": "11bdf28c690eb4e64601756a9a6f96d32a990c40"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-route-detail-after.png",
+      "sha": "46e4ad38ff3f9a098f23cfb6f7637b8c167126cc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-route-detail-before.png",
+      "sha": "92f82ce3616047674357aea40688dc0985797050"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/README.md",
+      "sha": "f34c8f7776cafbd4e034d833710901de77879b02"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/mansion/authored-layout.json",
+      "sha": "083319b66b006e964e91dd745000b7bb2dc787a0"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/mansion/construction.json",
+      "sha": "e25f0e66cfd269abdeadc6d22f7de1de9c14d0ce"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/verification/design-input.tsv",
+      "sha": "c8c94020c3261dcb5c2145ee149a635587207a79"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/verification/design-results.tsv",
+      "sha": "c89e8319db8ad4d674b004c7659ea968dfbecfd9"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/verification/design-summary.json",
+      "sha": "80811cf3684a74afe49a47fec3af2c5c5008aebc"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/verification/source-bindings.json",
+      "sha": "d13dbe799f065b78e21039be8016c08cf36f92af"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/verification/stair-names.tsv",
+      "sha": "dc4d4dbc261704de4f32e2a0626b4f16bfb0292f"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/wld-08/authored-layout.json",
+      "sha": "1771ce7b9b0caa09bb2a59a0c8f334ce4f364f6c"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/wld-08/construction.json",
+      "sha": "09b8d46d29aeb1167dab49849eb7441083445c4d"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/wld-18/authored-layout.json",
+      "sha": "3491faa2e0d2e4dccf2b2011d7c22b81d1da650e"
+    },
+    {
+      "path": "development/levels/rebuild/circulation-layout-pass/wld-18/construction.json",
+      "sha": "bc10134a606f5044277728039a931c4625c3481b"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/README.md",
+      "sha": "0b09ee356642d9cc879dc70dfbd2c451c130f1ee"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/verification/input.tsv",
+      "sha": "c8c94020c3261dcb5c2145ee149a635587207a79"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/verification/results.tsv",
+      "sha": "d613281acb5f275c0cda764180a9c01340376564"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/verification/socket-candidates.tsv",
+      "sha": "064f8b682adad16fb08576380df42bbcf63db918"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/verification/source-bindings.json",
+      "sha": "b3a7d4f2d290afe90338414ab1d66c457b3b27f3"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/verification/stair-names.tsv",
+      "sha": "dc4d4dbc261704de4f32e2a0626b4f16bfb0292f"
+    },
+    {
+      "path": "development/levels/rebuild/room-access-pass/verification/summary.json",
+      "sha": "b630362b795653a3ea96ea8f7d71990beb07d195"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "cd8d14bfd0b3eb7362242b88ec8e58fa121d41a7"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "b6c6afa91988f6fc81a26a9d963311d58c25f2cd"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "8c2feddd8dcbbeb452b9d9074277a00aa2d7c0e0"
+    },
+    {
+      "path": "tools/audit_room_socket_connectivity.py",
+      "sha": "7388bf4e5d4c00baf4e953b4ec465fb248316668"
+    },
+    {
+      "path": "tools/author_access_routes.py",
+      "sha": "25e9fa70f40cff162a68c068eb72378ae1065a52"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "52e925b4f95f34f938e20ebd486ebeddb0261623"
+    },
+    {
+      "path": "tools/design_flat_routes.py",
+      "sha": "617bd2381ad92bbe9810518ed49bebf46782d37d"
+    },
+    {
+      "path": "tools/design_room_access.py",
+      "sha": "a531944c66db92e732edb857fc832977b02a2b3e"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "cc307d2ed8bd19e7377c6618fe4c2d3fb99a69b8"
+    },
+    {
+      "path": "tools/java/RoomAccessRouteDesigner.java",
+      "sha": "9e49f65d757dc8f8dbf224f9d2266035153b2895"
+    },
+    {
+      "path": "tools/java/RoomSocketConnectivityProbe.java",
+      "sha": "e1ab209ab18ff0a956504d630632386535894b45"
+    },
+    {
+      "path": "tools/review_access_routes.py",
+      "sha": "6e1f71f29929777d1236a6d28a9ca5a0a4418abb"
+    },
+    {
+      "path": "tools/verify_access_route_sources.py",
+      "sha": "04bf1796daf41c17f6aff5346d99fed3edf8caa5"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-sheet.png",
+      "status": 404
+    }
+  ],
+  "deployment_status": "OBSERVED_LIVE_PAGE_AND_NEW_IMAGE_SEPARATELY; no live deployment claim from source push"
+}

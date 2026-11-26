@@ -1,0 +1,134 @@
+{
+  "program": {
+    "WLD-14": {
+      "roadhead-to-tower": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        16,
+        17
+      ],
+      "keeper-ground-floor-loop": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "roadhead-to-oil-house": [
+        1,
+        2,
+        3,
+        -8,
+        18,
+        19
+      ]
+    },
+    "WLD-15": {
+      "roadhead-to-forecastle": [
+        1,
+        2,
+        3,
+        -12,
+        -11
+      ],
+      "boarding-service-loop": [
+        4,
+        5,
+        [
+          32,
+          0,
+          47
+        ],
+        -3
+      ],
+      "weather-deck-loop": [
+        -12,
+        -11,
+        -10,
+        -8,
+        -6,
+        [
+          32,
+          0,
+          47
+        ]
+      ]
+    }
+  },
+  "source_bindings": {
+    "WLD-14": {
+      "collision_sha256": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0",
+      "layout_sha256": "3e004cf4ac5b6f4a0efc6b82a3aa4c6465a8536fd44a32a0c411b8efef5980e9"
+    },
+    "WLD-15": {
+      "collision_sha256": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e",
+      "layout_sha256": "d389c14e47618257dfe6a890dc0541cb3cb2e4e24fc2af80f05f13f2873c1d18"
+    }
+  },
+  "results": [
+    {
+      "site": "WLD-14",
+      "variant": "coast",
+      "link": "roadhead-to-tower",
+      "segments": "20",
+      "legacy_forward": "BLOCKED_SEGMENT_19_AT_3_OF_13",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-14",
+      "variant": "coast",
+      "link": "keeper-ground-floor-loop",
+      "segments": "5",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-14",
+      "variant": "coast",
+      "link": "roadhead-to-oil-house",
+      "segments": "15",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-15",
+      "variant": "coast",
+      "link": "roadhead-to-forecastle",
+      "segments": "13",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-15",
+      "variant": "coast",
+      "link": "boarding-service-loop",
+      "segments": "9",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-15",
+      "variant": "coast",
+      "link": "weather-deck-loop",
+      "segments": "15",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    }
+  ]
+}

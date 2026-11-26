@@ -1,0 +1,142 @@
+{
+  "id": "WLD-13",
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world",
+  "source_height_sha256": "846f7bf4eca48accad59887a9385145c37e7b573d655b58f7e87dec085baafab",
+  "source_native_sha256": "a2e112bf28e991d6ee622dd29cf806167eef69c9c4a9249605d3b3866dfe1dfe",
+  "source": {
+    "id": "WLD-13",
+    "construction": "development/levels/rebuild/arrival-bearing-pass/wld-13/construction.json",
+    "layout": "development/levels/rebuild/arrival-bearing-pass/wld-13/authored-layout.json",
+    "glb": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.glb",
+    "native": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.hcs2",
+    "blend": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.blend",
+    "native_sha256": "89e9da35994a7d6aa371d09f4ab40591090c6ff5efb56c338d124d5674daf457",
+    "glb_sha256": "710ccc729436a7522495bfd0092db38ec2c52c9dddb091da1fde0ad4a412539a"
+  },
+  "program": [
+    {
+      "link": "L17",
+      "segment": 0,
+      "points": [
+        [
+          0.0,
+          0,
+          53.0
+        ],
+        [
+          -8.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L17",
+      "segment": 1,
+      "points": [
+        [
+          -8.0,
+          0,
+          53.0
+        ],
+        [
+          -12.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L17",
+      "segment": 2,
+      "points": [
+        [
+          -12.0,
+          0,
+          53.0
+        ],
+        [
+          -12.0,
+          0,
+          44.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "points": [
+        [
+          -12.0,
+          0,
+          44.0
+        ],
+        [
+          -12.0,
+          0,
+          35.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L18",
+      "segment": 1,
+      "points": [
+        [
+          -12.0,
+          0,
+          35.0
+        ],
+        [
+          -8.0,
+          0,
+          35.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "points": [
+        [
+          -8.0,
+          0,
+          35.0
+        ],
+        [
+          0.0,
+          0,
+          35.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "prior_grades_retained_exactly": true,
+  "new_basement_punches": [],
+  "reason": "Remove measured soil/body intersections while preserving original landform away from circulation and every saved basement punch"
+}

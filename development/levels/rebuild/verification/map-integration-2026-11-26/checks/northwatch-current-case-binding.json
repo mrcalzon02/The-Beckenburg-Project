@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-11-26T20:20:23.516838+00:00",
+  "java": "/tmp/beckenburg-jdk17/jdk-17.0.21.1+2/bin/java",
+  "compile_release": 17,
+  "classpath": "build/beckenburg-game.jar:build/northwatch-integration-check",
+  "heap_max": "1024m",
+  "timeout_seconds": 660,
+  "ordinary_host_tick_millis": 100,
+  "game_jar_sha256": "f83b71c540f1c195be03ea396f8f2d7349920dd93951cb4ba9755452a69c5237",
+  "game_jar_bytes": 450123048,
+  "resource_sha256": {
+    "station-with-furnishings.glb": "2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190",
+    "station-with-furnishings.hcs2": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909",
+    "runtime-input.tsv": "b690d597ca98f97c41344deba94f704267cb7961f5a3f94e6e789dc27f1dafef",
+    "door-schedule.tsv": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d",
+    "source-hashes.tsv": "a91ea06ed15a55c158b55666f5bb14f6ded4880ecb41f9bd036024327651d03e"
+  },
+  "review_source_sha256": {
+    "tools/java/NorthwatchNamedReview.java": "da2e97fda93646679cb9acee7b13340bb84dae5fe6d3dea22fa7971ea8b51179",
+    "tools/java/NorthwatchInvestigationReview.java": "21efca6843c6036e66f52233724b052d0721e9967db01df371766ed91bdbc2be",
+    "tools/java/NorthwatchDoorRuntime.java": "9a35bdceb3bbe08732007cc5ca0f85d305c1c470cd3d1cff1cae7d6fff8bac9e",
+    "tools/java/NorthwatchDistributionReview.java": "67411e741b20f9feb3931f4399e70d6bae8a6e3b59403d780a97a782a3be1525",
+    "tools/java/NorthwatchPowerReview.java": "aa8b2c2b913506e482bc7cb93cd9f5a29692acad155cbff414ac2a37a5e7188e",
+    "tools/java/NorthwatchWaterReview.java": "3f706105ad23765b2e386e24db3e7596000485c8560dfef711df523c47a306a2",
+    "tools/java/NorthwatchFurnishingReview.java": "cdcb7249f1756b2301951995591e8ebc251fd9bbecc5372f6def692d3f2ab9fd",
+    "tools/java/NativeSchoolInteriorReview.java": "12ad66a97dba633a13600d94cd00183e23f19cebe6d79a7d74c9addbc0babcd0",
+    "tools/java/NativeSchoolDoorReview.java": "e1d6855adfded0834cad615c45274eafc3e28f19fdc7a1becccf54c4b6fc0358",
+    "tools/java/CemeteryRefugeReview.java": "476e8f05039202d57bf47dd2fafd161156bfd7d58a34cfbf2e05564c9fa0d320",
+    "tools/java/WharfPowerChecks.java": "fd1da2186b5019845df4554575c6a759297bdaf0e513b671acddd1046b81736c",
+    "src/test/java/org/beckenburg/VerificationPreferencesFactory.java": "34640d2d77ac9f87bc023292f578f5f58915d054fb1f34407a75cba510b07e44"
+  },
+  "command": [
+    "/tmp/beckenburg-jdk17/jdk-17.0.21.1+2/bin/java",
+    "-Xmx1024m",
+    "-Duser.home=/dev/shm/beckenburg-map-validation/homes/NorthwatchCurrentCase-packaged",
+    "-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory",
+    "-Djava.awt.headless=true",
+    "-ea",
+    "-cp",
+    "build/beckenburg-game.jar:build/northwatch-integration-check",
+    "org.beckenburg.NorthwatchInvestigationReview",
+    "/dev/shm/beckenburg-map-validation/northwatch-current-case.tsv"
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 202.7,
+  "finished_utc": "2026-11-26T20:23:46.570035+00:00",
+  "log_sha256": "86247d6c0d17b2fe38a4b2dd5fe485ef6cda79ac2dd960ea9af11209c1811646",
+  "receipt_sha256": "4a80c274631b9dbbb115470f3ee1bfc26d65e71339c8f3d27b6af490871e3f1a"
+}

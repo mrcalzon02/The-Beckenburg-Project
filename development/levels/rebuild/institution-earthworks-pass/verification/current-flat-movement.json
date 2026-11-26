@@ -1,0 +1,275 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "ASYLUM": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 36
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 10848,
+        "valid_standing": 10812,
+        "invalid_standing": 36,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 36
+        },
+        "physical_components": [
+          [
+            "ASYLUM-x-35-52 indexed jambs and head",
+            6
+          ],
+          [
+            "ASYLUM-z-54-39.5 indexed jambs and head",
+            6
+          ],
+          [
+            "ASYLUM-court-ground-south-a-S indexed exterior jambs and head",
+            6
+          ],
+          [
+            "Flat route shell Wall clinical-soiled N.001",
+            5
+          ],
+          [
+            "Flat route shell Wall upper-wc E.001",
+            3
+          ],
+          [
+            "248:Wall hydro-change W.001",
+            2
+          ],
+          [
+            "250:Wall hydro-change E.001",
+            2
+          ],
+          [
+            "Flat route shell Wall hydro-bath W.001",
+            2
+          ],
+          [
+            "Flat route shell Wall quiet-lobby N.001",
+            2
+          ],
+          [
+            "Flat route shell Wall treatment N",
+            1
+          ],
+          [
+            "Flat route shell Wall treatment E.001",
+            1
+          ]
+        ]
+      }
+    },
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 31
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 34
+      },
+      "current_lanes": {
+        "samples": 7209,
+        "valid_standing": 7122,
+        "invalid_standing": 87,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 21,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3,
+          "NO_CENTRE_SUPPORT": 60,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3
+        },
+        "physical_components": [
+          [
+            "PRISON-x-18-65 indexed jambs and head",
+            8
+          ],
+          [
+            "Flat route shell Wall plant-stair W.001",
+            4
+          ],
+          [
+            "Flat route shell Wall medical-link E",
+            3
+          ],
+          [
+            "Flat route shell Wall a-lower-gallery S",
+            2
+          ],
+          [
+            "Flat route shell Wall b-lower-gallery S.001",
+            2
+          ],
+          [
+            "585:Wall plant-stair S.001",
+            1
+          ],
+          [
+            "584:Wall plant-stair S",
+            1
+          ]
+        ]
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 42,
+        "pass_both_directions": 36
+      },
+      "after": {
+        "flat_links": 42,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 8229,
+        "valid_standing": 8129,
+        "invalid_standing": 100,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 64,
+          "NO_CENTRE_SUPPORT": 33,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3
+        },
+        "physical_components": [
+          [
+            "418:L44 flight0 step17",
+            8
+          ],
+          [
+            "SCHOOL-x-25-31.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-x-25-34.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-z-33-28.75 indexed jambs and head",
+            6
+          ],
+          [
+            "410:L44 flight0 step9",
+            6
+          ],
+          [
+            "415:L44 flight0 step14",
+            6
+          ],
+          [
+            "SCHOOL-court-science-W indexed exterior jambs and head",
+            4
+          ],
+          [
+            "SCHOOL-court-class-a-W indexed exterior jambs and head",
+            4
+          ],
+          [
+            "411:L44 flight0 step10",
+            3
+          ],
+          [
+            "412:L44 flight0 step11",
+            3
+          ],
+          [
+            "413:L44 flight0 step12",
+            3
+          ],
+          [
+            "414:L44 flight0 step13",
+            3
+          ],
+          [
+            "416:L44 flight0 step15",
+            3
+          ],
+          [
+            "417:L44 flight0 step16",
+            3
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "ASYLUM": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-courts-pass/asylum/construction.json",
+        "contract_sha256": "002fd2468f3ce88fbe8d11764f3084fb3d1bdc7c17998db49466c3d70b8228e6",
+        "layout": "development/levels/rebuild/institution-courts-pass/asylum/authored-layout.json",
+        "layout_sha256": "a91c849f31d02ca38463e7fa45ed5427e84f2e159283b166f8f76caa89d7b940",
+        "native": "development/levels/rebuild/institution-courts-pass/asylum/constructed-courts.hcs2",
+        "native_sha256": "362248ef7be9871dbb42267c9cc477492d1ad304a4c2c41aa07c545b4905e81f"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-earthworks-pass/asylum/construction.json",
+        "contract_sha256": "5ce9a4bd9d3d133e7648f24cbbc926c61f6eb62956a5c002f5b9f7bbd9641796",
+        "layout": "development/levels/rebuild/institution-earthworks-pass/asylum/authored-layout.json",
+        "layout_sha256": "2953f04e828ea4b5367b39f3355ba803f0ad0114f0c77e7e462d7fd3e7fd44e9",
+        "native": "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.hcs2",
+        "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9"
+      }
+    },
+    "PRISON": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-courts-pass/prison/construction.json",
+        "contract_sha256": "ef4954b03ea9c9e623cf061ff7590865718a2ff191908b7ebfc12101bb918580",
+        "layout": "development/levels/rebuild/institution-courts-pass/prison/authored-layout.json",
+        "layout_sha256": "c54d12e29122ac34fe87f5293a1ec2fde97b31484176f0900bd9b89a52f17d25",
+        "native": "development/levels/rebuild/institution-courts-pass/prison/constructed-courts.hcs2",
+        "native_sha256": "77bb50fb99699ff1a06cd836ab9b8d88ca8c525425e935b7e937e41680621b05"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-earthworks-pass/prison/construction.json",
+        "contract_sha256": "cbf4ae6ba113a8a464a7f288072ad30be1f90c9d3a91f82efe3e5ad2e7bf89fd",
+        "layout": "development/levels/rebuild/institution-earthworks-pass/prison/authored-layout.json",
+        "layout_sha256": "d92b991b9f33af21f5a585f367861cba3089e94deb7bb124123b095758766b55",
+        "native": "development/levels/rebuild/institution-earthworks-pass/prison/saved-earthworks.hcs2",
+        "native_sha256": "a4bbba55f07231eea3f4c90c96d0f8a66680d6367a773fb5828e0074a39a81af"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-courts-pass/school/construction.json",
+        "contract_sha256": "082d6306f96192c6d661754e35633035258b42c5e39fcaabe9a3b634f6c95065",
+        "layout": "development/levels/rebuild/institution-courts-pass/school/authored-layout.json",
+        "layout_sha256": "aa7c5e8750c611eca6cbb5587e6535d11ac1bf805c88804a359e1c52ba37ebf5",
+        "native": "development/levels/rebuild/institution-courts-pass/school/constructed-courts.hcs2",
+        "native_sha256": "fd842b2e4bd4f844c39811347809a4341ce80f1d0223fe70e773ce99083a9621"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-earthworks-pass/school/construction.json",
+        "contract_sha256": "45804cc2b4b90efdccd4e2582590ea201ef89a58d46ecffdc83f1818433544f4",
+        "layout": "development/levels/rebuild/institution-earthworks-pass/school/authored-layout.json",
+        "layout_sha256": "c224be02132c681344ffbdd4c141d9b8d87e5f395c23188b5384d7d41ef5d9b1",
+        "native": "development/levels/rebuild/institution-earthworks-pass/school/saved-earthworks.hcs2",
+        "native_sha256": "00b584d4b7aa27401f6fcdef7fc5c1e7a2bed112d219cdfc5d206e33ce96c26c"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-courts-pass/roster.json": "cda5c95899c0d3499dd0684215fd78002db612e96643b1e6366af5f6cb1e45af"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-failure-contacts.tsv": "12ba749c14721f80ada47eba7dcdb308c7955c97d6cacaa143771f30e4099656",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-failure-input.tsv": "fd803d6a1f4822dabfc778f5698ff3f05e27167ffdac8760aaf80167dba9eaf3",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lane-input.tsv": "ef80abb227aaaac6ba883af8447dd5f1355f7827aa0274b3cd5d7442e2367132",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lane-names.tsv": "322e063dd4733bbe6f232e639c063c950e97d57c764af9d1fbe1e32365c0848a",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lanes.tsv": "c80f27dd94375c859523fcb9604a65088f48325c883d9e704afba9d574106c24",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-links.tsv": "246b5a00fc79665d62e300e32ad331f249268f12f077610593dc3d6a11fc6757",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-names.tsv": "322e063dd4733bbe6f232e639c063c950e97d57c764af9d1fbe1e32365c0848a",
+    "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-paths.tsv": "31a0ab86af0feecbc5055156a3e30f3bd2bd2499ee839ccdf974fc170ea84c48"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

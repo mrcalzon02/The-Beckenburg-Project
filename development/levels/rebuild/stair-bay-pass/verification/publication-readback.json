@@ -1,0 +1,404 @@
+{
+  "observed_utc": "2026-11-08T09:49:16.544826+00:00",
+  "source_checkpoint": "e8ed8e66b7e1d4c460ca7e7b084ed062fc1eec97",
+  "remote_head_verified": "b4b63ccb88cd818ff21378a96e9602a0ce8ee573",
+  "remote_tree_sha": "31baf861d57952f6aadd68056856528daa39344f",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of authored shared/separate bay source and checkpoint binding paths",
+  "checkpoints": [
+    {
+      "commit": "e8ed8e66b7e1d4c460ca7e7b084ed062fc1eec97",
+      "changed_files": 91
+    },
+    {
+      "commit": "8f77d72cd7e56a0db3443932c19dfd375ea9e6f0",
+      "changed_files": 1
+    },
+    {
+      "commit": "b4b63ccb88cd818ff21378a96e9602a0ce8ee573",
+      "changed_files": 4
+    }
+  ],
+  "verified_file_count": 92,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "538a306f91b3c543b8380bc3e2fff87ddf6735a3"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "d90b17afed7916ab568b8f448796a7c7631048f5"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "bec93021fb6137bc3118889a8aab883043eba0f8"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "f841c1b379824bcb944eabbbe384a4b7fd0a3b05"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "ccb515a6145c4e4a6288081ee65d5cadfc08409f"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "21f72b21e185caf82224d2ad784e22f726c2da45"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "deb44fda9ade4089d04225094b1e0e3d7d001da0"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "ca8b219e1d3ffa9ef01541921c10d76f4fd1f36e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-1.png",
+      "sha": "c7e9fddd0dba8cd9781a1fe2c0c6c53453cf237f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-2.png",
+      "sha": "5ad59755e8077ef2f65e235dabb1b9e9f4ee67f0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-3.png",
+      "sha": "3d12050608614d3d670468a26f16e7b946ed55ab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-4.png",
+      "sha": "baa665afb60150ba27f114ccd44252bdf8154b97"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-cutaway.png",
+      "sha": "1c29f2a24dd68a023c1bff42b07e93920373d50c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-native-context--1.png",
+      "sha": "0628421e297d186dd545731864f67e4479e0c8b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-native-context-1.png",
+      "sha": "c53a2effa6137a0877a48221691d9578cbd59b9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-whole-site.png",
+      "sha": "88e298dbf475e811475e5059fb6c8c8612fa2d7d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-cutaway.png",
+      "sha": "f9b279721aa3b752272b512d536c6e2f634d2c68"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-native-context--1.png",
+      "sha": "60e68c36e04f4f62f10aaa06045a364a55c81e9e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-native-context-1.png",
+      "sha": "b5bbef44f5b1d770e3a8cc597df1caf8b62d84c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-whole-site.png",
+      "sha": "67bc7c656e3bcfe174c389e305b07d12c042df0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-cutaway.png",
+      "sha": "0f4eb65601b60871bc068a5d766fbebea6a01539"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-native-context--1.png",
+      "sha": "fab3a7bcbc391ed1adb36253094b74b2835bad9c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-native-context-1.png",
+      "sha": "66b85229286f0cbcd30d45e8da8ed5251c460ddf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-cutaway.png",
+      "sha": "734d39a83d662b054350f7173380d236f8ba3962"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-native-context--1.png",
+      "sha": "4456793ec0ac2e9faa8be19b86b8aa9413df570b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-native-context-1.png",
+      "sha": "ef5ef9e248fb63c0f9a4b55fadefaa2712346f5b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-whole-site.png",
+      "sha": "084a44dff5b8af2e687f51c872762f933c9798bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-cutaway.png",
+      "sha": "d88e730fa639e4681492011b6eb89883d934f16c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-native-context--1.png",
+      "sha": "7eefd505da4ce30edac75e0662862f4123ce7d10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-native-context-1.png",
+      "sha": "e6207713b6725743dd890df90a647ab14b6ed824"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-shaft-plan.png",
+      "sha": "c2f96276138f264fda3adf7f3d8773d9377c35e7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-whole-site.png",
+      "sha": "e6a28f569ffc59329cacfcb75147a246ffddc72f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-cutaway.png",
+      "sha": "792625763569acca4af29ccc838e4af170ad2a0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-native-context--1.png",
+      "sha": "19ac910cbe1150dc830af1682b4179dbdc689b78"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-native-context-1.png",
+      "sha": "9c2a1df2b366f7cd5d1df040d27b29586dffffd1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-shaft-plan.png",
+      "sha": "87312b6aadab7e7b1ebdb2f1229cbd850bc947ae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-whole-site.png",
+      "sha": "b63d57beef4af2ab4e4e35ccadf25b5a087da49d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-cutaway.png",
+      "sha": "44b928c97346bcc801f19474a4b4057b0a3717f0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-native-context--1.png",
+      "sha": "17430758e9bfc81a936d54ebf21af13f2d824133"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-native-context-1.png",
+      "sha": "7740e34c850601a92d7f94da8a987394cb31384d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-shaft-plan.png",
+      "sha": "5b0f11802a0d1fd0971e13eefb71699ea17275e2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-cutaway.png",
+      "sha": "74d625c543d8912882e7ca0294947deee0d1ad1c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-native-context--1.png",
+      "sha": "d7a296e553e8b976be85abeca24bd31a1a443d06"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-native-context-1.png",
+      "sha": "d063115cdd27f40d95243de784b6b445ae97d5a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-shaft-plan.png",
+      "sha": "22479f06c22b873332bea29a84a932eda21d0b4a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-whole-site.png",
+      "sha": "880c77c433895781d55367f69cf6cc079c4056b3"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "82866e44fdf9b580ff748e839262b2238c9af2cd"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/NEXT.md",
+      "sha": "8e431c8ece4b7787f088f3fec4f963cc92d9c8a7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/bay-flat-contacts.tsv",
+      "sha": "6669f261ef6a9a56e911017107cb9dac9b04adda"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/bay-flat-failures.tsv",
+      "sha": "9f9bd91f309fa905098ecee67681f91c11c08600"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/bay-path-contacts.tsv",
+      "sha": "36d7d80aeaf22efc363b2311188239b66ee11a97"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/bay-path-failures.tsv",
+      "sha": "ea6e87a417a48865607a7a5881fb6597fa1c5a52"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/first-bay-failure-contacts.tsv",
+      "sha": "68c82a9746da7bfdeb34202301d8d571de96cae1"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/first-bay-native-route-fit.json",
+      "sha": "3394109b6a21fe0da23509d91d00c968c05bb853"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/first-bay-native-route-probes.tsv",
+      "sha": "9db6cd53913d17ef7c15f20c7c8ca406961f7354"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/first-bay-stair-movement.json",
+      "sha": "2e65c278953d4c863d07917cba7ff617f89e0009"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/rejected/observed-construction-failures.txt",
+      "sha": "5ad2796c4cc0723a48a876e642fab01c2674ec17"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/roster.json",
+      "sha": "3d245b113de775d4838ad60320a4b4f3ee013b40"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/complete-route-sweeps.tsv",
+      "sha": "51801014bf8fce6c0ae74b9013d562b648e18ef9"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/failure-contacts.tsv",
+      "sha": "4ea3e59995f06fefdf030895febaee324a3d9e6d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/flight-sweeps.tsv",
+      "sha": "32ae6ce582b7463f4062683de421fdc58c0f5bb4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/independent-sources.json",
+      "sha": "1cef921b851bdc97707966a2cc04b6a52453bac9"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/native-route-fit.json",
+      "sha": "31b7570b16782b402826fae15b30c3c931ff52b8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/native-route-probes.tsv",
+      "sha": "9c4476f7708f51412170cffa78d2452ed8ac4558"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/remaining-links.json",
+      "sha": "010cc2120ec2af72187276239ffd96cf2f5eeaf9"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/stair-movement.json",
+      "sha": "740d914abaaa20394c25dc942357a6f26065ae77"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/verification/visual-review.json",
+      "sha": "674e36de4899a57669c96a558afb225334c7c14c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-05/authored-layout.json",
+      "sha": "8e9678cc5e188356a566cba915c58bf128fb0913"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-05/bayed-stairs.blend",
+      "sha": "a9cb80931d358c223956782018df1325e7a68593"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-05/bayed-stairs.glb",
+      "sha": "61ca8ccd69fa81b3887ef1f503ad91b58649fa79"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-05/bayed-stairs.hcs2",
+      "sha": "79165fabbfc240f238317aee618232f9aa59166b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-05/construction.json",
+      "sha": "fccac774986d6b7ac209a042da5ae438f78b5e6e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-09/authored-layout.json",
+      "sha": "1f1c32cf89d8526188d39f91dfff93a81a36ae6d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-09/bayed-stairs.blend",
+      "sha": "a75b4b9bfbda86e8d42bcf4f32d0fd9f902a73d7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-09/bayed-stairs.glb",
+      "sha": "109cbecda86af4c99f072b821832a29eaa470ca5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-09/bayed-stairs.hcs2",
+      "sha": "9561b433ac39e33a0eaf481baccf7e6b7ae7e828"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-09/construction.json",
+      "sha": "767feaf985a03323340da9277a9143fad47b7850"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-12/authored-layout.json",
+      "sha": "8ec606e47986d3bcb10f7b85aaa62889a9ca9a3e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.blend",
+      "sha": "46ea15dd1f49ee03866094808d9762b0c662a20b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.glb",
+      "sha": "ab3368ef30e939b8b0d1b9a0f11cf6afd0f91653"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.hcs2",
+      "sha": "73749a952cc0a325ed57bac2e3599da1ab4b6f6b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-bay-pass/wld-12/construction.json",
+      "sha": "aec5e37e3af8147238ce6aad69ca06b66635c643"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "312957b5c79347b6f1c4aefb755b933e516a953e"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "bfa8d377a3a29e93af6e0d828fcdadbc04dacedd"
+    },
+    {
+      "path": "src/test/java/org/beckenburg/LanVanExtractionIntegrationTest.java",
+      "sha": "c3c1a1a2275b178752b0ad6eab73042b7688ff98"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "36f477c8ee766f07b9571adf4e5113d3bb056a96"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "6746bb6eb903d7722ebd01e6501f92dd9deea060"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "fe25a1848a1bd02b36936d365becdfec743817a9"
+    },
+    {
+      "path": "tools/build_stair_bays.py",
+      "sha": "907a70501bd05eb8c111b635c471b6eea0604754"
+    },
+    {
+      "path": "tools/check_stair_bays.py",
+      "sha": "0b258b1f38fe1060a715d84e3795a35532a1d637"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "c5551c7c919e44d1ccfeb7490f10a13a62cfcf97"
+    },
+    {
+      "path": "tools/render_stair_bays.py",
+      "sha": "c8693f66c2aeafe0b98e660c20373ca42534dbbc"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/stair-bay-batch/bay-sheet-2.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

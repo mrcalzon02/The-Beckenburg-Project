@@ -1,0 +1,142 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "ASYLUM": {
+      "layout": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+      "variants": {
+        "before_bearing": {
+          "contract": "5ce9a4bd9d3d133e7648f24cbbc926c61f6eb62956a5c002f5b9f7bbd9641796",
+          "physics": "362248ef7be9871dbb42267c9cc477492d1ad304a4c2c41aa07c545b4905e81f",
+          "glb": "9afbf7cfce26b6397541d273bb4e17862d543028033ab1d9db8430737ead5dc8",
+          "layout": "a91c849f31d02ca38463e7fa45ed5427e84f2e159283b166f8f76caa89d7b940"
+        },
+        "after_bearing": {
+          "contract": "5ce9a4bd9d3d133e7648f24cbbc926c61f6eb62956a5c002f5b9f7bbd9641796",
+          "physics": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9",
+          "glb": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+          "layout": "2953f04e828ea4b5367b39f3355ba803f0ad0114f0c77e7e462d7fd3e7fd44e9"
+        }
+      }
+    },
+    "PRISON": {
+      "layout": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+      "variants": {
+        "before_bearing": {
+          "contract": "cbf4ae6ba113a8a464a7f288072ad30be1f90c9d3a91f82efe3e5ad2e7bf89fd",
+          "physics": "77bb50fb99699ff1a06cd836ab9b8d88ca8c525425e935b7e937e41680621b05",
+          "glb": "945f951a64e62a1d88035f0799dc8ec87bd8aef592fa7fb31057ad8b1edf3846",
+          "layout": "c54d12e29122ac34fe87f5293a1ec2fde97b31484176f0900bd9b89a52f17d25"
+        },
+        "after_bearing": {
+          "contract": "cbf4ae6ba113a8a464a7f288072ad30be1f90c9d3a91f82efe3e5ad2e7bf89fd",
+          "physics": "a4bbba55f07231eea3f4c90c96d0f8a66680d6367a773fb5828e0074a39a81af",
+          "glb": "7e6606cbcd7cd136d4532647a1a1ffe096640cce71bfc51c6d584fe0fb7a121b",
+          "layout": "d92b991b9f33af21f5a585f367861cba3089e94deb7bb124123b095758766b55"
+        }
+      }
+    },
+    "SCHOOL": {
+      "layout": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+      "variants": {
+        "before_bearing": {
+          "contract": "45804cc2b4b90efdccd4e2582590ea201ef89a58d46ecffdc83f1818433544f4",
+          "physics": "fd842b2e4bd4f844c39811347809a4341ce80f1d0223fe70e773ce99083a9621",
+          "glb": "3284a12d58054c96e2b8777158e7c43e4e361dc1d4b89c1181da11488fe3ef0e",
+          "layout": "aa7c5e8750c611eca6cbb5587e6535d11ac1bf805c88804a359e1c52ba37ebf5"
+        },
+        "after_bearing": {
+          "contract": "45804cc2b4b90efdccd4e2582590ea201ef89a58d46ecffdc83f1818433544f4",
+          "physics": "00b584d4b7aa27401f6fcdef7fc5c1e7a2bed112d219cdfc5d206e33ce96c26c",
+          "glb": "3cfc6a9af3f2fadb9a1a6baf02950c854c98185c939c04ca77872d934df9496a",
+          "layout": "c224be02132c681344ffbdd4c141d9b8d87e5f395c23188b5384d7d41ef5d9b1"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "7fba3d56a0f27af8f8dca7db4921a30bdaba7ac26f00a9eb5c2cc0f2b3fa5dd0",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-courts-pass/roster.json": "cda5c95899c0d3499dd0684215fd78002db612e96643b1e6366af5f6cb1e45af",
+    "development/levels/rebuild/movement-chains.json": "36f6e9e7a913163fb457beee851a412b7584cff2be6ee55dbcd640ae662a6d4b"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "SCHOOL": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      }
+    },
+    "after_bearing": {
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "SCHOOL": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 7,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 7,
+      "authored_reverse": 7
+    },
+    "after_bearing": {
+      "routes": 7,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 7,
+      "authored_reverse": 7
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [],
+    "results": [],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

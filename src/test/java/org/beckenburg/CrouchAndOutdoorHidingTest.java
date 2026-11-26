@@ -6,7 +6,9 @@ import org.beckenburg.LevelDefinition.*;
 public final class CrouchAndOutdoorHidingTest {
     private static void check(boolean b,String why){if(!b)throw new AssertionError(why);}
     public static void main(String[] args)throws Exception{
-        var base=new HouseMap();var l=base.level();
+        // The authored shrub and low-headroom route use the legacy House coordinates.
+        var l=LevelPlans.legacyHouseSource();
+        var base=new HouseMap(HouseMap.Site.HOUSE,l);
         var colliders=new ArrayList<>(l.colliders());colliders.add(new Collider(8.8,1.30,6.8,.85,.7,.25,0));
         var low=new LevelDefinition(l.id(),"low-cover-test",l.title(),l.rooms(),l.portals(),l.stairs(),l.voids(),l.props(),l.sockets(),colliders,l.dock(),l.ambience());
         var map=new HouseMap(HouseMap.Site.HOUSE,low);map.configureHiding(100);

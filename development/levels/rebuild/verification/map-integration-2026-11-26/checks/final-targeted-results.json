@@ -1,0 +1,37 @@
+[
+  {
+    "test": "HousePorchVisualCaptureTest",
+    "exit": 0,
+    "seconds": 8.75,
+    "log": "/dev/shm/beckenburg-map-validation/HousePorchVisualCaptureTest-final.log",
+    "classpath": "build/classes:build/test"
+  },
+  {
+    "test": "EditorGlbAuthoringTest",
+    "exit": 0,
+    "seconds": 0.52,
+    "log": "/dev/shm/beckenburg-map-validation/EditorGlbAuthoringTest-final.log",
+    "classpath": "build/classes:build/test"
+  },
+  {
+    "test": "EditorMeshMaterialTest",
+    "exit": 0,
+    "seconds": 0.27,
+    "log": "/dev/shm/beckenburg-map-validation/EditorMeshMaterialTest-final.log",
+    "classpath": "build/classes:build/test"
+  },
+  {
+    "test": "PortalFluxCacheTest",
+    "exit": 0,
+    "seconds": 1.98,
+    "log": "/dev/shm/beckenburg-map-validation/PortalFluxCacheTest-final.log",
+    "classpath": "build/classes:build/test"
+  },
+  {
+    "test": "BeckenburgFullRoundE2ETest",
+    "exit": 0,
+    "seconds": 111.16,
+    "log": "/dev/shm/beckenburg-map-validation/BeckenburgFullRoundE2ETest-final.log",
+    "classpath": "build/beckenburg-game.jar:build/test"
+  }
+]

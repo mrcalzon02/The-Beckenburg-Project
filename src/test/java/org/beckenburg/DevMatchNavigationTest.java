@@ -52,10 +52,10 @@ public final class DevMatchNavigationTest {
         check(adjusted!=null,"The rebuilt porch must support the formerly stalled hunter");
         var stalled=new LevelDefinition.Vec(historic.x(),adjusted,historic.z());
         check(map.envelope()!=null&&map.envelope().parts().stream()
-                .anyMatch(part->part.name().equals("porch-approach-bevel")&&part.support())
+                .anyMatch(part->part.name().equals("porch-deck")&&part.support())
                 &&map.envelope().parts().stream()
-                    .anyMatch(part->part.name().equals("porch-interior-threshold")&&part.support()),
-            "Both physical 4cm porch edges require real authored support, not collision exemptions");
+                    .anyMatch(part->part.name().equals("porch-apron")&&part.support()),
+            "Fresh House has a physical flush porch slab and grounded apron");
         var entry=map.level().portalsFrom(13).stream()
             .filter(p->p.door()&&p.joins(13,0)).findFirst().orElseThrow();
         var command=new HunterFieldNavigation(map).to(150,
@@ -110,14 +110,13 @@ public final class DevMatchNavigationTest {
         }
         check(map.roomAt(position.x(),position.y(),position.z())==0,
             "Physical walk must enter the interior foyer without a room jump: "+position);
-        // Real 3-seat TCP AI and six deterministic return paths once stopped
-        // at x19.7,z19.8 because the interior floor won over the sloped
-        // physical threshold's support. Walk OUT through the same open door,
-        // testing both directions with the production swept capsule.
+        // Walk OUT through the same open door with the production swept
+        // capsule. The fresh assembly is flush; archived raised-envelope
+        // transitions have separate compatibility coverage.
         var inside=position;
         Double shallowSupport=map.supportNear(19.8,20.05,0);
-        check(shallowSupport!=null&&shallowSupport>.005&&shallowSupport<.04,
-            "Inner porch bevel must own its real rising floor instead of flat y=0");
+        check(shallowSupport!=null&&Math.abs(shallowSupport-entry.y())<1e-8,
+            "Fresh interior threshold shares the actual foyer and porch sill datum");
         for(int step=0;step<12&&position.z()<21.55;step++){
             var next=map.resolveMove(position,approachX,
                 Math.min(21.55,position.z()+.24));

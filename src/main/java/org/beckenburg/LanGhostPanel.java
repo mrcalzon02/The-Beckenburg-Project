@@ -90,9 +90,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         try{
             List<String> p=LanProtocol.parts(packet);
             if(p.size()==3&&p.get(0).equals("SITE")){
-                map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));
+                map=HouseMap.forNetworkRevision(HouseMap.Site.valueOf(p.get(1)),p.get(2));
+                lights.setSourceRunning(true);
                 map.configureHiding(camera.hidingDensity);
-                if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
                 abilities=null;hostLoadout=false;
@@ -113,6 +113,8 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 map.clutter().acceptOne(p.get(1));
             }else if(p.size()==2&&p.get(0).equals("HIDECONFIG")){
                 camera.hidingDensity=LanProtocol.integer(p.get(1),0,100);map.configureHiding(camera.hidingDensity);visualMotion.invalidateCollision();
+            }else if(p.size()==2&&p.get(0).equals("SOURCE")){
+                lights.setSourceRunning(LanProtocol.integer(p.get(1),0,1)==1);
             }else if(p.size()==3&&p.get(0).equals("LIGHTS")){
                 lights.acceptSnapshot(p.get(1));lights.setBreaker(LanProtocol.integer(p.get(2),0,1)==1);
             }else if(p.size()==2&&p.get(0).equals("DOORS")){
@@ -129,9 +131,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 }
             }else if(p.size()==7&&p.get(0).equals("GPOSE")){
                 int next=LanProtocol.integer(p.get(1),0,HouseMap.EXTRACTION_ROOM-1);
-                double x=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;
+                double x=LanProtocol.worldX(map,p.get(2));
                 double y=LanProtocol.integer(p.get(3),-50000,50000)/1000.0;
-                double z=LanProtocol.integer(p.get(4),0,map.height()*1000)/1000.0;
+                double z=LanProtocol.worldZ(map,p.get(4));
                 LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
                 if(map.roomAt(x,y,z)!=next)throw new IllegalArgumentException("inconsistent spectral coordinates");
@@ -150,9 +152,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     // new hunter cues still require the open host gate.
                 }
             }else if(p.size()==7&&p.get(0).equals("GCOMPANION")){
-                double x=LanProtocol.integer(p.get(1),0,map.width()*1000)/1000.0;
+                double x=LanProtocol.worldX(map,p.get(1));
                 double y=LanProtocol.integer(p.get(2),-50000,50000)/1000.0;
-                double z=LanProtocol.integer(p.get(3),0,map.height()*1000)/1000.0;
+                double z=LanProtocol.worldZ(map,p.get(3));
                 int heading=LanProtocol.integer(p.get(4),0,359);
                 boolean ancient=LanProtocol.integer(p.get(5),0,1)==1;
                 int sentTick=LanProtocol.integer(p.get(6),0,99999999);
@@ -294,7 +296,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         if(!hearingEnabled()&&hearingGain<=0){soundRipples.clear();hearing=null;}
         atmosphere.setActive(isShowing()&&!finished);
         buildingAudio.setActive(isShowing()&&!finished);
-        buildingAudio.setContext(room,lights.breaker());buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.breaker());camera.roomLightTick=tick;
+        buildingAudio.setContext(room,lights.supplied());
+        buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.supplied());
+        camera.roomLightTick=tick;
         atmosphere.setOutside(room>=0&&map.outside(room));
         if(!isDisplayable()||finished){repaint();return;}
         refreshRealtimeInput();

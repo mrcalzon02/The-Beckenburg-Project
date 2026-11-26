@@ -1,0 +1,5 @@
+Historical initial facade-enabled construction terminal excerpt, before correction.
+File tools/build_roster_enclosed_roofs.py, line67, in build
+wallmat=next(o.data.materials[0] for o in originals if o.get('role')=='rough shell wall' and o.data.materials)
+NameError: name 'originals' is not defined
+The first attempt stopped before export. The current helper uses its actual oldobjects import list.

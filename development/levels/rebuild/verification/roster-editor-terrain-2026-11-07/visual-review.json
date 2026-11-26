@@ -1,0 +1,34 @@
+{
+  "scope": "Three saved terrain inspections and independently reimported GLB cutaways actually viewed",
+  "views": [
+    {
+      "path": "development/levels/rebuild/previews/wld-14-saved-terrain.png",
+      "sha256": "236850d0265247635f5562badc5396aa499426d0a7e603d14c698edc32916dca"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
+      "sha256": "da22da42028c394286084cd3e77293d8a0e3e7e2add791e3cb04ba7511a88993"
+    },
+    {
+      "path": "development/levels/rebuild/previews/wld-18-saved-terrain.png",
+      "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/structure-export-cutaway.png",
+      "sha256": "3ff295e8385e5afb2a72cc9a3de2e8436c4f3519e002e8a3b6de74579c40642f"
+    },
+    {
+      "path": "development/levels/rebuild/previews/wld-07-mortuary-saved-terrain.png",
+      "sha256": "f7a67fb5496c6c7f00f5d7582899d1c0abd008ddb6760597eb8a4862be03eee1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-cutaway.png",
+      "sha256": "15750cb53de683ab558db385ef79cc3408417a6f066c83ba3bc6d83ba826edb6"
+    }
+  ],
+  "ratings_out_of_5": {
+    "native_aperture_legibility": 4,
+    "finished_terrain": 1
+  },
+  "rationale": "Foundation/stair/shaft voids are visible and match saved physical geometry; rough caps and unfilled soil cuts are unfinished. Perimeters remain proposal rectangles; lighthouse cliff fringe is visibly rough. No terrain/desquareify/location acceptance."
+}

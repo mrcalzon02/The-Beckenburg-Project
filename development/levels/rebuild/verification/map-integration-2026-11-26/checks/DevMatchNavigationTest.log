@@ -1,0 +1,16 @@
+DEV PORCH entry=(19.800,20.500) from=(19.595,22.555) initial=WALK
+DEV PORCH x=19.600 z=22.700 feet=-0.010 support=-0.009500005734459475 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.600 feet=-0.006 support=-0.006333341182928579 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.555 feet=-0.005 support=-0.0049083421347395914 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.500 feet=-0.003 support=-0.00316667663139757 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.450 feet=-0.002 support=-0.0015833443556320641 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.400 feet=-0.000 support=-1.2079866560169017E-8 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.350 feet=0.000 support=0.0 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.250 feet=0.000 support=0.0 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=22.100 feet=0.000 support=0.0 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=21.900 feet=0.000 support=0.0 traversable=true envelope=[] terrain=[]
+DEV PORCH x=19.600 z=21.600 feet=0.000 support=0.0 traversable=true envelope=[] terrain=[]
+DEV PORCH direct_short_step=Vec[x=19.62, y=0.0, z=22.245] nearestDoor=null
+PASS: bidirectional physical doorway/threshold traversal
+PASS: genuine 4cm walkable porch bevel, open door and continuous capsule entry
+PASS: six van aisle routes, supported ramps and two genuine house entrances

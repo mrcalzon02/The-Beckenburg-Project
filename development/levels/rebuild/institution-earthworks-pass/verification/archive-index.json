@@ -1,0 +1,24 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 12505122,
+      "original_sha256": "ef80abb227aaaac6ba883af8447dd5f1355f7827aa0274b3cd5d7442e2367132",
+      "archive_bytes": 189564,
+      "archive_sha256": "7e6e154b5557744320e77d68af162b0c6190e38b6a19c7203572a870f5842ed8",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/institution-earthworks-pass/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 2250855,
+      "original_sha256": "c80f27dd94375c859523fcb9604a65088f48325c883d9e704afba9d574106c24",
+      "archive_bytes": 130449,
+      "archive_sha256": "9202a64a0bff5d17371edc660e0e7e0f1f2ebc0b3d97e657fdd9b71814801fb1",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

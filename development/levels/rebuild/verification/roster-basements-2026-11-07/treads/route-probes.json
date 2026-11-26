@@ -1,0 +1,312 @@
+{
+  "status": "MEASURED_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "kernel": "Current compiled AuthoredSitePhysics; JAR supplies dependencies",
+  "kernel_source_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "authored_stairs": true,
+  "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sources": {
+    "ACADEMY": {
+      "source_glb_sha256": "8216e8d3c110c1dbf801f81a82e755808a6bff1add13f5f3cefc855c0af940ee",
+      "physics_sha256": "de6a63a3ce505f1f886afd908a9f6ecc828c40904aa5216c1cd984cb5c51226e",
+      "physics_contract_sha256": "15039f092ce95e6d5e09b870b6fdd4676832c20404dae96ee391d58453c75edc"
+    },
+    "ASYLUM": {
+      "source_glb_sha256": "95daca6096a01765c0c1be6b8fe0c5bc86a8e36a1650dc75d3a380ae0e8ce0f5",
+      "physics_sha256": "288d0a0a826fc9eb7efb5af59db6ce852e00e9cdd429d974bb551ba9b86a8d8b",
+      "physics_contract_sha256": "6a9f0fbda00e76dc75fe16903dc9953329773f96a3f4a74b144f64ee323462bc"
+    },
+    "CHURCH": {
+      "source_glb_sha256": "8a373afc79aa1bedfa331f6fa1609818f6425323c2647c2eebe27944774d2a5a",
+      "physics_sha256": "5c9b89dc120a1396f4ff720b9d837585446246eaa0ac3b4946bc9a9fa614b8bf",
+      "physics_contract_sha256": "c82f8e1311c907ff8f5270259c999a6e9ab8a4558c67169f212dad1d119a831c"
+    },
+    "COLLEGE": {
+      "source_glb_sha256": "9afcf1b48b0261f249d4c4659bb1e39a2158482ea393305de0f9cb08de617fce",
+      "physics_sha256": "58db0298c04c0d2ed9e455df4001e3c6ad8eb1ab74f4f96ce305e6f3fa0ba5b3",
+      "physics_contract_sha256": "ce0d129a9efac872add73c24abd0553e67500b3edbe5eeb3e9adeabcb5f5707c"
+    },
+    "FARMHOUSE": {
+      "source_glb_sha256": "1badb2ec0dcd257154607221785bf5afae2f333610ce50f727799bfb308d8bc6",
+      "physics_sha256": "1063508ccfb6205602764c756aa8c3e63eec8522316db60db481ac9c84648f27",
+      "physics_contract_sha256": "17664c42417be151d5b2e6c355b380a9f2006b4c0d4c20379938f00989acfbc8"
+    },
+    "MANSION": {
+      "source_glb_sha256": "40e15fb5b8c00232901a67afb96c6032da5072cd33abe49ae367e57b7486f8ce",
+      "physics_sha256": "5a82285f463ab96bf93f634d1db07e94c598e68ccc7efb7a0eecad08f38c58cb",
+      "physics_contract_sha256": "26bd2d7820d386b8694f4d45aac4b22121d28f62f39b5eaa2483c15424e45519"
+    },
+    "PRISON": {
+      "source_glb_sha256": "5959bd48b3912d4b75b9a07bab076e90ec4ac6c616fdd428d4dd6e88ee241a0b",
+      "physics_sha256": "e1b4969cc444aa98b756272504837230df9abbd2d7c7118e55b0e4e4ae19ec2f",
+      "physics_contract_sha256": "0ea07bd62b6e3de697898aacc2726b20cfa8e1d2de3db412bbd0511d3e3b3639"
+    },
+    "SCHOOL": {
+      "source_glb_sha256": "a47981703f2d94c102d3f231ccca3b91a4f00145f62976153d3124a1c7a4c1e0",
+      "physics_sha256": "694d57bf67c6ae0c80b1dfb6eaaed16ca5e767148f402320e93df569349fc7d3",
+      "physics_contract_sha256": "84d597a5349205c73ea0d348df9f68a4de70ee15e8eb3c08e83c657a3606d7e7"
+    },
+    "WLD-03": {
+      "source_glb_sha256": "90c023afab9d9bab9a3d113ba0752a43b5c667d1d1af9f9ac174c34130296ee6",
+      "physics_sha256": "c432db931b7884bd393df49d1fe4aee15b091195e1c36f74afc7a32a7536f9e7",
+      "physics_contract_sha256": "e98a796f9ffa99210b92e4c24e2322b3f1a18bf3d909380fd40827ae549a1267"
+    },
+    "WLD-04": {
+      "source_glb_sha256": "f9430d28dab5fed8459be1082a0ba0525786e059d8d12471c8a55988ca27cf3f",
+      "physics_sha256": "3ea9593088d54f639e125ef1057bb5665f18c7ccb1aaed9be987018680aa14ff",
+      "physics_contract_sha256": "16370400a0fec14761575bd951ad920f4fbb56497fb2efe4485776de8d1dce1c"
+    },
+    "WLD-05": {
+      "source_glb_sha256": "881f5de0ff5028b262cd9586776e8b8ef09c4fa8b60d438dd251f6957e5c6cb4",
+      "physics_sha256": "f89cf620a702943462c3d6d77bcec199a95662b4db09d9aeb3345c2b5441a557",
+      "physics_contract_sha256": "2a582feb1039af650cb9dbd141495eb396d7a9b31fdc21aa786bb3eb6837141b"
+    },
+    "WLD-06": {
+      "source_glb_sha256": "c062fec987ceba2c2e634023a500ed10b700ae28100d5f5bf522cb4bbf6b1ad6",
+      "physics_sha256": "32b2d6d1869245e194b70d4d39624c098e83764d1fd664798aca63be06c0eeff",
+      "physics_contract_sha256": "63409e29dc0232b4d0a4912a65eeee35eb948cf85222646024ed86127fc8a245"
+    },
+    "WLD-07": {
+      "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+      "physics_sha256": "e816fc8b848b4e1bf03e2e1fc50e12c8bec9a2c1adf98d6ab6dd9b22a2ef62ff",
+      "physics_contract_sha256": "e2f88adb10f4fa8170e3704ccd6a62e0e5cbe60eeb361783c5166fedc7b2f5a5"
+    },
+    "WLD-08": {
+      "source_glb_sha256": "382520c14bcac309421045ed23fea4e45fa9fd37a2c907ec469e6453da331528",
+      "physics_sha256": "29f517c1d5399ea0f47cd9f960c0a452831770ffd657563ed6c989a858079a5c",
+      "physics_contract_sha256": "d0368ff2274db8fe936f6519b9de4b4a3eebf6100479de01d776b7999cbee3d4"
+    },
+    "WLD-09": {
+      "source_glb_sha256": "393eba93b055778a7e8332a12d15d5af6822c6022d0700f3055ca8c1acb7d67d",
+      "physics_sha256": "ebb96b1927c941a6a6159b4404632d3ef1c0988a04493e15dfd2b6d526039a07",
+      "physics_contract_sha256": "c0f00d27bdd8ff7ddc00842e9d61f4f1daa4dea2f874dc78fd8154c83c26b34d"
+    },
+    "WLD-10": {
+      "source_glb_sha256": "dc3308df180e244b2db488c32dea528118d7f93aabb8643e4001ee178d822b6e",
+      "physics_sha256": "93ec0a7cc0e60bbd0386acd647f7317ecb20b0dde3c0b212466fddc689489ca3",
+      "physics_contract_sha256": "241142acdafa5f6d02f61b5e53e7690e07ccda619bf99b0532610d7698119d73"
+    },
+    "WLD-11": {
+      "source_glb_sha256": "e57f2dddd89709047f4b607a9bf566d2b5ff936306a3c443f1b14facb2834e4f",
+      "physics_sha256": "320087e410d0dbfc400bb92de0c00fae81d3db116affedb70b54ca1ca2af05c2",
+      "physics_contract_sha256": "fbf6d7b40ba0a5e73f9b78ee0cd1687d5195a4d606af28c230c14ed7830c6b18"
+    },
+    "WLD-12": {
+      "source_glb_sha256": "c4e0b1d6c702d756d059ad6aea9f2f143b60e5f0e3b8fb6b4d96e8b041c523fa",
+      "physics_sha256": "d89b02c71781369c363e605a4e2fb4349da694e08e80ace23695e647c48aa15e",
+      "physics_contract_sha256": "d4b62e0e42d819cf4182f88c08f7eed2735ed597c3db58e05ad1bd547b1d3cec"
+    },
+    "WLD-13": {
+      "source_glb_sha256": "b3f160d9fdebbd04f8480a9879911c5886ea115d0468afd4af981e8b52887c15",
+      "physics_sha256": "ed9a5f51e1feef0e02cffdc47889bf3bcea8b42404249a2616a363bcafeba99d",
+      "physics_contract_sha256": "0b8362f07438398cdcc87a71ff5046e92d51e5b1ba9605eaa7a770d086ba7789"
+    },
+    "WLD-14": {
+      "source_glb_sha256": "9b7d8ea6dc90b73f1bee8b06802986c5c77424bec121ec72a027dfb78ffbaab0",
+      "physics_sha256": "f439368e12f70d4383b5db995fd56ae8d11291a46c4066006b3c461fe76f75e5",
+      "physics_contract_sha256": "10d93a80bd82a2d45dd13a621039557f91e21fb8f4dd6375e9254232293cd0eb"
+    },
+    "WLD-15": {
+      "source_glb_sha256": "dbba6887c3731f22af0c8cd55b809b53f4238228d56643467575bd25b7332bad",
+      "physics_sha256": "fea0949e315c4d18af47b553879d58bbd156953b65863739283cc6e75ebe0879",
+      "physics_contract_sha256": "b42e27dc32c9e84cfb7385444e2562867085c29694bb6d4a01ebbbd9315413dd"
+    },
+    "WLD-16": {
+      "source_glb_sha256": "1e3341905eedc10272186cc845893acb244840c31ffecba58837f4b8e26d23fc",
+      "physics_sha256": "fdd525f5bfe137795e3747f283905753e30cbba90d4bd0b24d671e79c626ee20",
+      "physics_contract_sha256": "31ca89fbda6baccbe547d12eb6d32783cecdc90af2848332c537f5597a5d6028"
+    },
+    "WLD-17": {
+      "source_glb_sha256": "7bfc9ab10908cc97d8ec5a563cb051923d788fc7003b9783230cf842499ad6b5",
+      "physics_sha256": "d5c35a266ae3342d316257e03b3511c00cf6bcd5f4e45f8eb42a68c238391404",
+      "physics_contract_sha256": "68f6b043adaedab3701b0ed6d93c135287254790b0f8178cb0764e52500db80f"
+    },
+    "WLD-18": {
+      "source_glb_sha256": "a19b539b5712add8136ce780993b8322e3b38143590c364d6aa0ed4008802f95",
+      "physics_sha256": "35b0bf7d433bbcf0bf6b9745db40a3245b4aa8c250901ff0ef8c9c1ca63715a2",
+      "physics_contract_sha256": "a03c54ae5b5131882542da5c5f6af1514a3b52555833c64bd6d53b2e97378c80"
+    },
+    "WLD-07-MORTUARY": {
+      "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+      "physics_sha256": "3e4074303668851ac3c8c646fd12353d4cbd9c56f1cc96c6889be1f25ba2f322",
+      "physics_contract_sha256": "5b8d97071ede67476c24623d0ff6ca764ba00c34a60d78bbda72f8fe3027ff4a"
+    }
+  },
+  "sites": {
+    "ACADEMY": {
+      "treads": 57,
+      "supported": 57,
+      "spine_clear": 57,
+      "body_clear": 3,
+      "traversable": 57
+    },
+    "ASYLUM": {
+      "treads": 36,
+      "supported": 36,
+      "spine_clear": 36,
+      "body_clear": 2,
+      "traversable": 36
+    },
+    "CHURCH": {
+      "treads": 51,
+      "supported": 51,
+      "spine_clear": 51,
+      "body_clear": 3,
+      "traversable": 51
+    },
+    "COLLEGE": {
+      "treads": 94,
+      "supported": 94,
+      "spine_clear": 94,
+      "body_clear": 5,
+      "traversable": 94
+    },
+    "FARMHOUSE": {
+      "treads": 51,
+      "supported": 51,
+      "spine_clear": 51,
+      "body_clear": 3,
+      "traversable": 51
+    },
+    "MANSION": {
+      "treads": 77,
+      "supported": 77,
+      "spine_clear": 77,
+      "body_clear": 4,
+      "traversable": 77
+    },
+    "PRISON": {
+      "treads": 55,
+      "supported": 55,
+      "spine_clear": 55,
+      "body_clear": 3,
+      "traversable": 55
+    },
+    "SCHOOL": {
+      "treads": 37,
+      "supported": 37,
+      "spine_clear": 37,
+      "body_clear": 2,
+      "traversable": 37
+    },
+    "WLD-03": {
+      "treads": 69,
+      "supported": 69,
+      "spine_clear": 69,
+      "body_clear": 46,
+      "traversable": 68
+    },
+    "WLD-04": {
+      "treads": 153,
+      "supported": 153,
+      "spine_clear": 153,
+      "body_clear": 99,
+      "traversable": 149
+    },
+    "WLD-05": {
+      "treads": 114,
+      "supported": 114,
+      "spine_clear": 114,
+      "body_clear": 85,
+      "traversable": 109
+    },
+    "WLD-06": {
+      "treads": 28,
+      "supported": 28,
+      "spine_clear": 28,
+      "body_clear": 28,
+      "traversable": 28
+    },
+    "WLD-07": {
+      "treads": 34,
+      "supported": 34,
+      "spine_clear": 34,
+      "body_clear": 2,
+      "traversable": 34
+    },
+    "WLD-08": {
+      "treads": 42,
+      "supported": 42,
+      "spine_clear": 42,
+      "body_clear": 29,
+      "traversable": 40
+    },
+    "WLD-09": {
+      "treads": 215,
+      "supported": 215,
+      "spine_clear": 215,
+      "body_clear": 179,
+      "traversable": 204
+    },
+    "WLD-10": {
+      "treads": 68,
+      "supported": 68,
+      "spine_clear": 68,
+      "body_clear": 3,
+      "traversable": 68
+    },
+    "WLD-11": {
+      "treads": 7,
+      "supported": 7,
+      "spine_clear": 7,
+      "body_clear": 7,
+      "traversable": 7
+    },
+    "WLD-12": {
+      "treads": 34,
+      "supported": 34,
+      "spine_clear": 34,
+      "body_clear": 17,
+      "traversable": 32
+    },
+    "WLD-13": {
+      "treads": 17,
+      "supported": 17,
+      "spine_clear": 17,
+      "body_clear": 16,
+      "traversable": 16
+    },
+    "WLD-14": {
+      "treads": 176,
+      "supported": 176,
+      "spine_clear": 176,
+      "body_clear": 176,
+      "traversable": 176
+    },
+    "WLD-15": {
+      "treads": 68,
+      "supported": 68,
+      "spine_clear": 68,
+      "body_clear": 49,
+      "traversable": 68
+    },
+    "WLD-16": {
+      "treads": 0,
+      "supported": 0,
+      "spine_clear": 0,
+      "body_clear": 0,
+      "traversable": 0
+    },
+    "WLD-17": {
+      "treads": 87,
+      "supported": 87,
+      "spine_clear": 87,
+      "body_clear": 43,
+      "traversable": 85
+    },
+    "WLD-18": {
+      "treads": 116,
+      "supported": 116,
+      "spine_clear": 116,
+      "body_clear": 68,
+      "traversable": 113
+    },
+    "WLD-07-MORTUARY": {
+      "treads": 34,
+      "supported": 34,
+      "spine_clear": 34,
+      "body_clear": 2,
+      "traversable": 34
+    }
+  },
+  "limitation": "Tread-centre support and spine rays do not prove swept movement. Full body/traversable failures remain blockers; no editor UI or playable unlock."
+}

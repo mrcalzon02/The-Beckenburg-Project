@@ -286,6 +286,8 @@ SchoolWashroomAccessTest
 ChurchUpperDoorTest
 AuthoredLevelStateTest
 AuthoredLevelNetworkTest
+CollegeNativeDispatchTest
+HollowCreekDispatchTest
 AuthoredLevelRitualCaseTest
 AuthoredUtilitiesTest
 SoloElevationTest
@@ -397,6 +399,10 @@ HouseTemplateCompatibilityTest
 HouseRebuildUpgradeTest
 EditorSceneRetentionTest
 SourceImageSharingTest
+HouseEncounterTest
+HouseEncounterSessionTest
+HouseEncounterNetworkTest
+HouseDefaultPromotionTest
 LevelAuthoringRecoveryTest
 CastleWorldTerrainTest
 CastleCellarConstructionTest
@@ -432,3 +438,5 @@ CastleStoryTest
 CastleLooseClutterTest
 HidingAreaHazeTest
 GhostElectricalTest
+AuthoredStairPhysicsTest
+LevelAtmosphereTest

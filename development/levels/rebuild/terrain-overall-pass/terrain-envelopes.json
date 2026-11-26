@@ -1,0 +1,1940 @@
+{
+  "scope": 29,
+  "owner_priority": "Overall terrain layers and elevation relationships before further local connector fixes; coherent blockout reshuffles authorized",
+  "source_sha256": "872de02cec2d207db68ce4cb197962e00daa4eeb6a1825aa46eb506a8ac10450",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/academy/rough-layout.json",
+      "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+      "physics_sha256": "96cf919591158191c9e048ce776de6bbc53f1a99e53125201cd8e988f6a3f702",
+      "site_bounds": [
+        3,
+        0,
+        62,
+        82
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3.6
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "quad",
+          "y": 0,
+          "bounds": [
+            22,
+            22,
+            42,
+            42
+          ]
+        },
+        {
+          "id": "grounds",
+          "y": 0,
+          "bounds": [
+            3,
+            0,
+            62,
+            55
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            3,
+            55,
+            62,
+            68
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            68,
+            40,
+            81
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "ASYLUM",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/asylum/rough-layout.json",
+      "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+      "physics_sha256": "adf982bcf25dd3e4633103ba8d6c38ea2027960c122c51fb4ab9c663a0379d51",
+      "site_bounds": [
+        4,
+        0,
+        64,
+        84
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3.4
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "court",
+          "y": 0,
+          "bounds": [
+            10,
+            29,
+            26,
+            40
+          ]
+        },
+        {
+          "id": "grounds",
+          "y": 0,
+          "bounds": [
+            4,
+            0,
+            64,
+            58
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            4,
+            58,
+            64,
+            70
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            70,
+            40,
+            83
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED"
+    },
+    {
+      "id": "CHURCH",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/church/rough-layout.json",
+      "layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+      "physics_sha256": "ef8e570c44410eb33a108c2d5a0def9dedc4151b509528e1ae841a1c49a06e1e",
+      "site_bounds": [
+        1,
+        0,
+        44,
+        59
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3,
+        6
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "grounds",
+          "y": 0,
+          "bounds": [
+            4,
+            0,
+            40,
+            39
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            1,
+            39,
+            44,
+            58.4
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            14,
+            45,
+            30,
+            58
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "COLLEGE",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/college/rough-layout.json",
+      "layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+      "physics_sha256": "98d521e7ae1240dc7c83c446714aea472a2b9fbeab5aad8edf28a08d1daf9a28",
+      "site_bounds": [
+        3,
+        0,
+        72,
+        104
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3.6
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "green",
+          "y": 0,
+          "bounds": [
+            3,
+            0,
+            72,
+            78
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            3,
+            78,
+            72,
+            90
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            90,
+            40,
+            103
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/farmhouse/rough-layout.json",
+      "layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+      "physics_sha256": "df8144beaa435ae215a37d5a82eec4eeee18de1041dd07d73a2de6e13f5bb360",
+      "site_bounds": [
+        3,
+        0,
+        50,
+        51
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "grounds",
+          "y": 0,
+          "bounds": [
+            3,
+            0,
+            48,
+            34
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            3,
+            34,
+            50,
+            50
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            18,
+            38,
+            34,
+            50
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED"
+    },
+    {
+      "id": "MANSION",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/mansion/rough-layout.json",
+      "layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+      "physics_sha256": "8d2e37040c9217888dd11eeccd2682c6c9dc50389e116cd00ab24611a2c90129",
+      "site_bounds": [
+        3,
+        0,
+        57,
+        79
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3.6,
+        7.2
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "garden",
+          "y": 0,
+          "bounds": [
+            3,
+            0,
+            57,
+            50
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            3,
+            50,
+            57,
+            65
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            20,
+            65,
+            36,
+            78
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "PRISON",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/prison/rough-layout.json",
+      "layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+      "physics_sha256": "4a33e507295d951c1943f4840400d55a1ed8d3a778a9ef646ad270ce39567c9c",
+      "site_bounds": [
+        -4,
+        -4,
+        78,
+        94
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3.4
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "yard",
+          "y": 0,
+          "bounds": [
+            22,
+            22,
+            46,
+            58
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            0,
+            68,
+            76,
+            94
+          ]
+        },
+        {
+          "id": "north-service",
+          "y": 0,
+          "bounds": [
+            0,
+            0,
+            76,
+            4
+          ]
+        },
+        {
+          "id": "east-service",
+          "y": 0,
+          "bounds": [
+            70,
+            4,
+            76,
+            68
+          ]
+        },
+        {
+          "id": "west-service",
+          "y": 0,
+          "bounds": [
+            0,
+            4,
+            6,
+            58
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            78,
+            44,
+            92
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "SCHOOL",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/school/rough-layout.json",
+      "layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+      "physics_sha256": "0297b82335e7f000d80613b954c2ac5c117f0fda68488fcd3bced3b88a2e62e9",
+      "site_bounds": [
+        1,
+        2,
+        55,
+        59
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3.6
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "grounds",
+          "y": 0,
+          "bounds": [
+            5,
+            2,
+            55,
+            36
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            1,
+            36,
+            55,
+            58.4
+          ]
+        },
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            18,
+            45,
+            38,
+            58
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED"
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED"
+    },
+    {
+      "id": "WLD-03",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+      "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+      "physics_sha256": "df72c23b0f1b098b156463f44b78a91eb5141514e1c447c1cebb46f3973ff3c5",
+      "site_bounds": [
+        0,
+        0,
+        86,
+        96
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        0,
+        4,
+        8
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            26,
+            80,
+            42,
+            92
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            26,
+            66,
+            42,
+            80
+          ]
+        },
+        {
+          "id": "floor",
+          "y": 0,
+          "bounds": [
+            20,
+            40,
+            48,
+            66
+          ]
+        },
+        {
+          "id": "lower-path",
+          "y": 4,
+          "bounds": [
+            4,
+            22,
+            20,
+            46
+          ]
+        },
+        {
+          "id": "upper-path",
+          "y": 8,
+          "bounds": [
+            20,
+            10,
+            48,
+            22
+          ]
+        },
+        {
+          "id": "dwellings",
+          "y": 8,
+          "bounds": [
+            20,
+            22,
+            48,
+            40
+          ]
+        },
+        {
+          "id": "return",
+          "y": 4,
+          "bounds": [
+            48,
+            4,
+            66,
+            22
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-04",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/wld-04/rough-layout.json",
+      "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+      "physics_sha256": "195acf6e74631b70d37795ca561fc113c5d2e2c5f80c186c535f197417200240",
+      "site_bounds": [
+        0,
+        -2,
+        58,
+        88
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        0,
+        3,
+        6,
+        10.5,
+        12.75,
+        15
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            20,
+            72,
+            36,
+            84
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            20,
+            60,
+            36,
+            72
+          ]
+        },
+        {
+          "id": "lower",
+          "y": 0,
+          "bounds": [
+            8,
+            42,
+            20,
+            60
+          ]
+        },
+        {
+          "id": "bend",
+          "y": 3,
+          "bounds": [
+            20,
+            30,
+            36,
+            42
+          ]
+        },
+        {
+          "id": "clearing",
+          "y": 6,
+          "bounds": [
+            20,
+            14,
+            40,
+            30
+          ]
+        },
+        {
+          "id": "return",
+          "y": 3,
+          "bounds": [
+            36,
+            42,
+            50,
+            60
+          ]
+        },
+        {
+          "id": "foot",
+          "y": 6,
+          "bounds": [
+            24,
+            2,
+            36,
+            14
+          ]
+        },
+        {
+          "id": "landing",
+          "y": 10.5,
+          "bounds": [
+            25.25,
+            2.7,
+            31.55,
+            4.2
+          ]
+        },
+        {
+          "id": "deck",
+          "y": 15,
+          "bounds": [
+            30,
+            2,
+            36,
+            8
+          ]
+        },
+        {
+          "id": "upper-turn-platform",
+          "y": 12.75,
+          "bounds": [
+            27.45,
+            8.1,
+            31.55,
+            9.6
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-05",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/wld-05/rough-layout.json",
+      "layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
+      "physics_sha256": "1ce872aff686d228abf086957cdc32eee10d39083560531c204571dbd73217c4",
+      "site_bounds": [
+        -2,
+        4,
+        58,
+        92
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -10,
+        -6,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            20,
+            76,
+            36,
+            88
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            20,
+            62,
+            40,
+            76
+          ]
+        },
+        {
+          "id": "adit",
+          "y": 0,
+          "bounds": [
+            20,
+            42,
+            40,
+            62
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-06",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/layouts/wld-06/layout.json",
+      "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+      "physics_sha256": "67056fdabbd566f8799e5523bbbc68eb534fd65d7d0604fcf82a4e28c80cbea6",
+      "site_bounds": [
+        0,
+        2,
+        64,
+        84
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -2.5,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            68,
+            40,
+            80
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            20,
+            54,
+            44,
+            68
+          ]
+        },
+        {
+          "id": "quay",
+          "y": 0,
+          "bounds": [
+            20,
+            36,
+            44,
+            54
+          ]
+        },
+        {
+          "id": "pier-w",
+          "y": 0,
+          "bounds": [
+            20,
+            10,
+            24,
+            36
+          ]
+        },
+        {
+          "id": "pier-e",
+          "y": 0,
+          "bounds": [
+            40,
+            10,
+            44,
+            36
+          ]
+        },
+        {
+          "id": "crossdock",
+          "y": 0,
+          "bounds": [
+            20,
+            6,
+            44,
+            10
+          ]
+        },
+        {
+          "id": "west-stair",
+          "y": 0,
+          "bounds": [
+            12,
+            28,
+            24,
+            38
+          ]
+        },
+        {
+          "id": "east-stair",
+          "y": 0,
+          "bounds": [
+            40,
+            28,
+            52,
+            38
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-07",
+      "status": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/rebuild/wld-07/rough-layout.json",
+      "layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+      "physics_sha256": "d2ce97f5669ff08ff37807ae0a2ab9bd658567bb02bdcb4e8efbb085f1433f6f",
+      "site_bounds": [
+        2,
+        -4,
+        58,
+        88
+      ],
+      "ground_parts": [
+        {
+          "component": "0:Saved editor terrain WLD-07",
+          "triangles": 5491,
+          "min_y": -0.19775693118572235,
+          "max_y": 0.799328625202179
+        }
+      ],
+      "terrain_triangles": 5491,
+      "occupied_floor_levels": [
+        -3,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            20,
+            72,
+            36,
+            84
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            20,
+            60,
+            36,
+            72
+          ]
+        },
+        {
+          "id": "avenue",
+          "y": 0,
+          "bounds": [
+            24,
+            20,
+            32,
+            60
+          ]
+        },
+        {
+          "id": "garden",
+          "y": 0,
+          "bounds": [
+            6,
+            20,
+            24,
+            38
+          ]
+        },
+        {
+          "id": "east-graves",
+          "y": 0,
+          "bounds": [
+            32,
+            20,
+            50,
+            38
+          ]
+        },
+        {
+          "id": "old-graves",
+          "y": 0,
+          "bounds": [
+            16,
+            4,
+            40,
+            20
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-08",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/layouts/wld-08/layout.json",
+      "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+      "physics_sha256": "f38f0fca2f850d81cfb3b41cb435a30f688de4898af0fbf0a26c7a4c39ddc249",
+      "site_bounds": [
+        -2,
+        -4,
+        74,
+        86
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -2.5,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            70,
+            40,
+            82
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            56,
+            40,
+            70
+          ]
+        },
+        {
+          "id": "court",
+          "y": 0,
+          "bounds": [
+            20,
+            26,
+            44,
+            56
+          ]
+        },
+        {
+          "id": "array",
+          "y": 0,
+          "bounds": [
+            44,
+            0,
+            62,
+            20
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-09",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/wld-09/rough-layout.json",
+      "layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+      "physics_sha256": "716d448d22ea94d7b77c0df8d61bf9b5e7423e1756e96172f417114c32a57a4f",
+      "site_bounds": [
+        4,
+        4,
+        80,
+        92
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -10,
+        -6,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            28,
+            76,
+            44,
+            88
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            28,
+            62,
+            44,
+            76
+          ]
+        },
+        {
+          "id": "crest",
+          "y": 0,
+          "bounds": [
+            8,
+            48,
+            72,
+            56
+          ]
+        },
+        {
+          "id": "east-stair",
+          "y": 0,
+          "bounds": [
+            64,
+            22,
+            76,
+            48
+          ]
+        },
+        {
+          "id": "spillway",
+          "y": -6,
+          "bounds": [
+            64,
+            48,
+            76,
+            62
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-10",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/wld-10/rough-layout.json",
+      "layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+      "physics_sha256": "f9a230e11ceabae5286bb16a96c13af22315820c68b9020a257afc2fd4707c65",
+      "site_bounds": [
+        -12,
+        -2,
+        72,
+        90
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        6
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            74,
+            40,
+            86
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            62,
+            40,
+            74
+          ]
+        },
+        {
+          "id": "garden",
+          "y": 0,
+          "bounds": [
+            14,
+            22,
+            44,
+            50
+          ]
+        },
+        {
+          "id": "rear",
+          "y": 0,
+          "bounds": [
+            60,
+            16,
+            68,
+            30
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-11",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/layouts/wld-11/layout.json",
+      "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "physics_sha256": "fa7499298aafa9e644ace387b8f06fd4b3ce61afee7ce6428903689d39310739",
+      "site_bounds": [
+        8,
+        -10,
+        70,
+        92
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        0,
+        1.2
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            76,
+            40,
+            88
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            62,
+            40,
+            76
+          ]
+        },
+        {
+          "id": "main",
+          "y": 1.2,
+          "bounds": [
+            28,
+            14,
+            32,
+            62
+          ]
+        },
+        {
+          "id": "service",
+          "y": 1.2,
+          "bounds": [
+            48,
+            14,
+            52,
+            62
+          ]
+        },
+        {
+          "id": "south-deck",
+          "y": 1.2,
+          "bounds": [
+            28,
+            56,
+            52,
+            62
+          ]
+        },
+        {
+          "id": "north-deck",
+          "y": 1.2,
+          "bounds": [
+            28,
+            8,
+            52,
+            14
+          ]
+        },
+        {
+          "id": "ferry",
+          "y": 1.2,
+          "bounds": [
+            28,
+            -6,
+            40,
+            8
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-12",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/rebuild/wld-12/rough-layout.json",
+      "layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+      "physics_sha256": "1ceba3dbac4c7b1c0f8e470f8151d90f788bd7b0323b9782b8dc5800d9217364",
+      "site_bounds": [
+        2,
+        -12,
+        68,
+        104
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        -3,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            28,
+            88,
+            44,
+            100
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            28,
+            76,
+            44,
+            88
+          ]
+        },
+        {
+          "id": "cutting",
+          "y": 0,
+          "bounds": [
+            28,
+            42,
+            40,
+            76
+          ]
+        },
+        {
+          "id": "siding",
+          "y": 0,
+          "bounds": [
+            52,
+            30,
+            62,
+            76
+          ]
+        },
+        {
+          "id": "trestle",
+          "y": 0,
+          "bounds": [
+            28,
+            22,
+            40,
+            42
+          ]
+        },
+        {
+          "id": "lower",
+          "y": -3,
+          "bounds": [
+            28,
+            22,
+            34,
+            42
+          ]
+        },
+        {
+          "id": "west-return",
+          "y": 0,
+          "bounds": [
+            6,
+            22,
+            16,
+            62
+          ]
+        },
+        {
+          "id": "crossing",
+          "y": 0,
+          "bounds": [
+            40,
+            12,
+            62,
+            22
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-13",
+      "status": "CONTINUOUS_TERRAIN_SOURCE_ABSENT",
+      "layout": "development/levels/layouts/wld-13/layout.json",
+      "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+      "physics_sha256": "6484039ad47ba100f36d4c80f5857940e3632b218c7c9374a4c36011a12cbac8",
+      "site_bounds": [
+        -20,
+        -4,
+        68,
+        92
+      ],
+      "ground_parts": [],
+      "terrain_triangles": 0,
+      "occupied_floor_levels": [
+        0,
+        3
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            76,
+            40,
+            88
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            62,
+            44,
+            76
+          ]
+        },
+        {
+          "id": "dock",
+          "y": 0,
+          "bounds": [
+            24,
+            0,
+            48,
+            14
+          ]
+        },
+        {
+          "id": "forest",
+          "y": 0,
+          "bounds": [
+            -16,
+            26,
+            -8,
+            62
+          ]
+        },
+        {
+          "id": "side-yard",
+          "y": 0,
+          "bounds": [
+            48,
+            44,
+            64,
+            62
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-14",
+      "status": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/rebuild/wld-14/rough-layout.json",
+      "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+      "physics_sha256": "730217e401b801a1e33869bb237c16c74930cf45c8a744cb3220bdde202632c4",
+      "site_bounds": [
+        -4,
+        -8,
+        68,
+        94
+      ],
+      "ground_parts": [
+        {
+          "component": "1:Saved editor terrain WLD-14",
+          "triangles": 10146,
+          "min_y": -16.683359146118164,
+          "max_y": 1.7944610118865967
+        }
+      ],
+      "terrain_triangles": 10146,
+      "occupied_floor_levels": [
+        0,
+        3.2,
+        3.6,
+        7.2,
+        10.8,
+        14.4,
+        18.0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            78,
+            40,
+            90
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            66,
+            40,
+            78
+          ]
+        },
+        {
+          "id": "porch",
+          "y": 0,
+          "bounds": [
+            24,
+            54,
+            40,
+            66
+          ]
+        },
+        {
+          "id": "yard",
+          "y": 0,
+          "bounds": [
+            48,
+            46,
+            62,
+            60
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-15",
+      "status": "PROPOSAL_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/rebuild/wld-15/rough-layout.json",
+      "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+      "physics_sha256": "164f20d94da7be63b4cbbda654724e6f907e1f66f7a8cbf633a730a8f69bcf2e",
+      "site_bounds": [
+        0,
+        -14,
+        64,
+        98
+      ],
+      "ground_parts": [
+        {
+          "component": "0:Authored quay terrain",
+          "triangles": 3584,
+          "min_y": -5.2490410804748535,
+          "max_y": 0.0
+        }
+      ],
+      "terrain_triangles": 3584,
+      "occupied_floor_levels": [
+        -3,
+        0,
+        3,
+        6
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            80,
+            40,
+            92
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            76,
+            40,
+            80
+          ]
+        },
+        {
+          "id": "quay",
+          "y": 0,
+          "bounds": [
+            24,
+            64,
+            40,
+            76
+          ]
+        },
+        {
+          "id": "portpier",
+          "y": 0,
+          "bounds": [
+            16,
+            40,
+            22,
+            72
+          ]
+        },
+        {
+          "id": "aft",
+          "y": 0,
+          "bounds": [
+            22,
+            40,
+            42,
+            54
+          ]
+        },
+        {
+          "id": "side",
+          "y": 0,
+          "bounds": [
+            40,
+            8,
+            42,
+            40
+          ]
+        },
+        {
+          "id": "fore",
+          "y": 0,
+          "bounds": [
+            24,
+            -2,
+            40,
+            8
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-16",
+      "status": "PROPOSAL_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/rebuild/wld-16/rough-layout.json",
+      "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+      "physics_sha256": "2da003017853167ee7f149f22204f64f5bfd51f1c64497e215aaaf10c1115f52",
+      "site_bounds": [
+        0,
+        8,
+        62,
+        80
+      ],
+      "ground_parts": [
+        {
+          "component": "0:Authored roadside terrain",
+          "triangles": 2232,
+          "min_y": -0.7613649368286133,
+          "max_y": 1.1990084648132324
+        }
+      ],
+      "terrain_triangles": 2232,
+      "occupied_floor_levels": [
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            18,
+            62,
+            34,
+            74
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            18,
+            52,
+            34,
+            62
+          ]
+        },
+        {
+          "id": "court",
+          "y": 0,
+          "bounds": [
+            16,
+            20,
+            36,
+            42
+          ]
+        },
+        {
+          "id": "westwalk",
+          "y": 0,
+          "bounds": [
+            13,
+            20,
+            16,
+            48
+          ]
+        },
+        {
+          "id": "eastwalk",
+          "y": 0,
+          "bounds": [
+            36,
+            20,
+            39,
+            48
+          ]
+        },
+        {
+          "id": "northwalk",
+          "y": 0,
+          "bounds": [
+            13,
+            17,
+            39,
+            20
+          ]
+        },
+        {
+          "id": "service",
+          "y": 0,
+          "bounds": [
+            46,
+            20,
+            56,
+            54
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-17",
+      "status": "PROPOSAL_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/layouts/wld-17/layout.json",
+      "layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+      "physics_sha256": "03e5cec34a07e9f990e93a0c0d2a86d080f5b6f017d4b31b4cde4fd0bebb61d4",
+      "site_bounds": [
+        0,
+        0,
+        68,
+        100
+      ],
+      "ground_parts": [
+        {
+          "component": "0:Authored battery terrain",
+          "triangles": 3400,
+          "min_y": -0.6986137628555298,
+          "max_y": 6.900000095367432
+        }
+      ],
+      "terrain_triangles": 3400,
+      "occupied_floor_levels": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            82,
+            40,
+            94
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            68,
+            40,
+            82
+          ]
+        },
+        {
+          "id": "approach",
+          "y": 2,
+          "bounds": [
+            24,
+            54,
+            40,
+            68
+          ]
+        },
+        {
+          "id": "yard",
+          "y": 4,
+          "bounds": [
+            24,
+            34,
+            44,
+            54
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-18",
+      "status": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/rebuild/wld-18/rough-layout.json",
+      "layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+      "physics_sha256": "678de2a40490e67ad44a9a8a86ec97309d01af96222bfbe1dee62cf9167b57df",
+      "site_bounds": [
+        0,
+        0,
+        64,
+        102
+      ],
+      "ground_parts": [
+        {
+          "component": "1:Saved editor terrain WLD-18",
+          "triangles": 9313,
+          "min_y": -0.33936065435409546,
+          "max_y": 1.549340009689331
+        }
+      ],
+      "terrain_triangles": 9313,
+      "occupied_floor_levels": [
+        -8,
+        -4,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            24,
+            84,
+            40,
+            96
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            24,
+            70,
+            40,
+            84
+          ]
+        },
+        {
+          "id": "yard",
+          "y": 0,
+          "bounds": [
+            28,
+            54,
+            52,
+            70
+          ]
+        },
+        {
+          "id": "upperring",
+          "y": -4,
+          "bounds": [
+            22,
+            18,
+            42,
+            38
+          ]
+        },
+        {
+          "id": "lowring",
+          "y": -8,
+          "bounds": [
+            22,
+            18,
+            42,
+            38
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+      "layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+      "physics_sha256": "b31718bc499bc53fcf742a69798b30821fe75fd9abb2d3e0d19c1ccf002cda6d",
+      "site_bounds": [
+        2,
+        -4,
+        90,
+        88
+      ],
+      "ground_parts": [
+        {
+          "component": "0:Saved editor terrain WLD-07-MORTUARY",
+          "triangles": 9014,
+          "min_y": -0.19775693118572235,
+          "max_y": 0.799328625202179
+        }
+      ],
+      "terrain_triangles": 9014,
+      "occupied_floor_levels": [
+        -3,
+        0
+      ],
+      "exterior_floor_reservations": [
+        {
+          "id": "stage",
+          "y": 0,
+          "bounds": [
+            20,
+            72,
+            36,
+            84
+          ]
+        },
+        {
+          "id": "entry",
+          "y": 0,
+          "bounds": [
+            20,
+            60,
+            36,
+            72
+          ]
+        },
+        {
+          "id": "avenue",
+          "y": 0,
+          "bounds": [
+            24,
+            20,
+            32,
+            60
+          ]
+        },
+        {
+          "id": "garden",
+          "y": 0,
+          "bounds": [
+            6,
+            20,
+            24,
+            38
+          ]
+        },
+        {
+          "id": "east-graves",
+          "y": 0,
+          "bounds": [
+            32,
+            20,
+            50,
+            38
+          ]
+        },
+        {
+          "id": "old-graves",
+          "y": 0,
+          "bounds": [
+            16,
+            4,
+            40,
+            20
+          ]
+        }
+      ],
+      "next_action": "Settle broad landform/height layers, drainage and foundation envelope first; review terrain/building relationships and move blockouts or stair bays where required. Then engineer paths, retaining edges and terrain entrances. No acceptance from route strips."
+    }
+  ],
+  "limitation": "Ground presence/range only, not terrain acceptance, geographic coherence or coverage under every location. Four mature sources retained; canonical van/edges/foundations and all acceptance gates remain separate."
+}

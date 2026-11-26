@@ -1,0 +1,114 @@
+{
+  "status": "SEACLIFF_LOWER_PARTITIONS_AND_POWER_VERIFIED_NORMAL_DISPATCH_OPEN",
+  "previous": "5df3ea04622b5c0c01460a93f5960dd5d7e86c8f",
+  "roster": "roster.json",
+  "plan": {
+    "path": "development/levels/rebuild/seacliff-lower-partitions-pass/seacliff-lower-service-plan.svg",
+    "bytes": 3358,
+    "sha256": "bf504dc781ad8d675ed5d92d3dea8429e4a9f854ea9efbb9677871742b1b7f36"
+  },
+  "replaced_complete_partition_runs": 4,
+  "new_operable_doors": 5,
+  "receiving_floor_bearings": 45,
+  "sealed_former_gap_controls": 5,
+  "guide_replays_per_renderer": 68,
+  "inherited_power_loads_replayed": 7,
+  "assets": [
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/authored-layout.json",
+      "bytes": 59725,
+      "sha256": "7759d22285ee940c3679aae8f4539b16a8fd39bb41735c308c623f33ff106c65"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/construction.json",
+      "bytes": 29260,
+      "sha256": "766b44450f3313596a65283b22e6b6404082ada25944410de945a4872a3be103"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/lower-service-partitions.blend",
+      "bytes": 772007,
+      "sha256": "da4cb77021d6a83af3b40f423ccc1821153464cde0af2f695cd7cea059eccae7"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/lower-service-partitions.glb",
+      "bytes": 4299100,
+      "sha256": "6e0ed73df261a31413aac4e7858914386f33d1b1a4f0235d36f3597a5972db09"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/lower-service-partitions.hcs2",
+      "bytes": 648609,
+      "sha256": "27369d23fc0a887bdefde02bcf23ef37f00b056bc3e6db6829ad15b36e1349d3"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/partitions.json",
+      "bytes": 4876,
+      "sha256": "0c5e41728c24481ea0a5b112e219ce951878db735d1f2b0b6b16fa8a1bdcb7d3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/verification/inherited-wall-survey.txt",
+      "bytes": 2264,
+      "sha256": "1fe1b34cc49392adaa96cbc5e1380fd0c83c0bb5820c6efbfd085b3d3d6c0e14"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/verification/opengl.tsv",
+      "bytes": 1212,
+      "sha256": "f0d05b46bf0cc75b3ab04ea0906ef8922db3727fd17dc090e2c206367ebe5e44"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/verification/opengl.txt",
+      "bytes": 983,
+      "sha256": "c25c22858082bc7d0edf4230d133f1b52a01dddcdad0aff08dde53f2013199de"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/verification/runtime.tsv",
+      "bytes": 10335,
+      "sha256": "be47b3a5d332a96b204c81ee76f5179d2b1daef67576f93268b12557233ab86b"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/verification/software.tsv",
+      "bytes": 1212,
+      "sha256": "c3d862589c1668e7cb86e0edf82f5843b841927eba6957b3c70e2e32f72f6580"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/verification/software.txt",
+      "bytes": 397,
+      "sha256": "4e8d9d36fdf52944b4c83f08eeb38f0b335f8f45105f1d88731c431a7f430bc8"
+    }
+  ],
+  "captures": [
+    {
+      "renderer": "software",
+      "state": "closed",
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-software-lower-gallery-closed.png",
+      "bytes": 365058,
+      "sha256": "f18e1bcde09870d4cfc4294696ee1df68b759b6a43774912226b112480fc89a3"
+    },
+    {
+      "renderer": "software",
+      "state": "open",
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-software-lower-gallery-open.png",
+      "bytes": 324062,
+      "sha256": "1cb8a2624126cca24693bc46d1389f1ca959db1ef73c36350018a02691ae3150"
+    },
+    {
+      "renderer": "opengl",
+      "state": "closed",
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-closed.png",
+      "bytes": 365327,
+      "sha256": "e7e2b43d703d9ea641139cb7002ab64e07a016b542f1f1a7b79b176f4ab230d5"
+    },
+    {
+      "renderer": "opengl",
+      "state": "open",
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-open.png",
+      "bytes": 320658,
+      "sha256": "2c4e41ce855cbbebc8aacc039de505197aca6db00fbea66967da7e7b6d2423e2"
+    }
+  ],
+  "acceptance_remaining": [
+    "Normal mission dispatch requires the remaining physically measured room links and the matching host and peer scene.",
+    "Whole-site power, human ghost and reconnect, evidence, hiding, finish and full case acceptance remain open."
+  ]
+}

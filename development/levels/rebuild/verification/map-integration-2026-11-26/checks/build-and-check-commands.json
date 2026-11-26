@@ -1,0 +1,37 @@
+{
+  "working_directory": "/dev/shm/beckenburg-map-integration",
+  "command_provenance": "Production and test compile/package invocations recorded by the root execution owner. Northwatch command is copied from its hash-bound execution receipt. Catalogue command is recorded by its execution owner. Glob expansion occurred in the shell.",
+  "production_compile": "/tmp/beckenburg-jdk17/jdk-17.0.21.1+2/bin/javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java water-module/src/main/java/dev/mrcalzon/water/*.java lighting-module/src/main/java/dev/mrcalzon/lighting/*.java src/main/java/dev/mrcalzon/weather/*.java src/main/java/org/beckenburg/editor/*.java src/main/java/org/beckenburg/editor/ai/*.java src/main/java/org/beckenburg/*.java",
+  "test_compile": "/tmp/beckenburg-jdk17/jdk-17.0.21.1+2/bin/javac --release 17 -encoding UTF-8 -cp build/classes -d build/test @/dev/shm/beckenburg-map-validation/test-sources.txt",
+  "test_source_count": 709,
+  "test_source_list_sha256": "86ec4e21bf48e5822286c45b8faff6d89a8dfccf872a6d5939764265b827c91a",
+  "package": "jar --create --file build/beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build/classes hbnet -C build/classes org/beckenburg -C build/classes dev/mrcalzon/weather -C build/classes dev/mrcalzon/water -C build/classes dev/mrcalzon/lighting",
+  "northwatch": [
+    "/tmp/beckenburg-jdk17/jdk-17.0.21.1+2/bin/java",
+    "-Xmx1024m",
+    "-Duser.home=/dev/shm/beckenburg-map-validation/homes/NorthwatchCurrentCase-packaged",
+    "-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory",
+    "-Djava.awt.headless=true",
+    "-ea",
+    "-cp",
+    "build/beckenburg-game.jar:build/northwatch-integration-check",
+    "org.beckenburg.NorthwatchInvestigationReview",
+    "/dev/shm/beckenburg-map-validation/northwatch-current-case.tsv"
+  ],
+  "catalogue": [
+    "/tmp/beckenburg-jdk17/jdk-17.0.21.1+2/bin/java",
+    "-Xmx1024m",
+    "-Duser.home=/dev/shm/beckenburg-map-validation/homes/SiteSelectionTest-supported-cameras-final-1024m",
+    "-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory",
+    "-Djava.awt.headless=true",
+    "-ea",
+    "-cp",
+    "build/classes:build/test",
+    "org.beckenburg.SiteSelectionTest"
+  ],
+  "gallery": [
+    "python tools/build_development_gallery.py --tracked-only",
+    "python tools/build_development_gallery.py --tracked-only --check"
+  ],
+  "scope": "No generated JAR is committed; source/resources and command/evidence receipts are retained. Runtime tests used isolated temporary homes. Linux headless software results do not substitute for installed Windows or physical GPU acceptance."
+}

@@ -1,0 +1,100 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-14": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 12
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 2880,
+        "valid_standing": 2880,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "flat_links": 15,
+        "pass_both_directions": 12
+      },
+      "after": {
+        "flat_links": 15,
+        "pass_both_directions": 15
+      },
+      "current_lanes": {
+        "samples": 3843,
+        "valid_standing": 3843,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-14": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+        "contract_sha256": "e3fd60612be293114caf6f4e4526e04ec7dc8227c393221d81d647decc539380",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+        "layout_sha256": "c803f91192ede6b739fdf6a50bf7a3c9676c96f9fd93d0da8903078dd22b2cec",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/coast-entrances-pass/wld-14/construction.json",
+        "contract_sha256": "6d06ad81545bd51166a32085fc71c037b5a9ce1a9bfbd27c4d5086af77f8fd68",
+        "layout": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
+        "layout_sha256": "3e004cf4ac5b6f4a0efc6b82a3aa4c6465a8536fd44a32a0c411b8efef5980e9",
+        "native": "development/levels/rebuild/coast-entrances-pass/wld-14/coast-entrances.hcs2",
+        "native_sha256": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0"
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+        "contract_sha256": "689e79a3cd0f8227123f1dadc4280fe9ecd3f316e12ddb91a4f9c3a80e658cdd",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+        "layout_sha256": "ce8a9511d5fd2d96c6ec45c414fa71d08ff0ced8c98d5d8a409246c187951958",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/coast-entrances-pass/wld-15/construction.json",
+        "contract_sha256": "08863124fc1e145446435beca5dfac5fd22784525cb04ee2308cb6791682e59a",
+        "layout": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
+        "layout_sha256": "d389c14e47618257dfe6a890dc0541cb3cb2e4e24fc2af80f05f13f2873c1d18",
+        "native": "development/levels/rebuild/coast-entrances-pass/wld-15/coast-entrances.hcs2",
+        "native_sha256": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/monastery-cloister-pass/roster.json": "ab7df804f7c3ac478de1c298e01084556d0c77f4397a474e561ca984efcbe70c"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-lane-input.tsv": "ab867f7b2b49aae00f107805389f2a282c1dfc2ac1d656a05fbc739f66b5453d",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-lane-names.tsv": "870bd14d19617ddb1de936ddec01117471bfb38f8bebb06785fdb98eb90eb060",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-lanes.tsv": "1514393a2cc1a0db890a57ecb8a20e1d9bfa5a82a838114cae3a20873854c2a3",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-links.tsv": "218b705845049d823cc876755995e4dd49f1d2bc793ba35b46828be92d6ad0b0",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-names.tsv": "7bdd7806d8d9ae15bf8fe8f61b568c04fee663400e4fc2940e392b73b0241655",
+    "development/levels/rebuild/coast-entrances-pass/verification/flat/current-flat-paths.tsv": "5928be09cfbf411333f74d5cebd4742abec01f0ac4a35444a316cc5aa4944a58"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

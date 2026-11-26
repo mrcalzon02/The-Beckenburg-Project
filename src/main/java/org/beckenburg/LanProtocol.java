@@ -5,9 +5,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Bounded version-2 XYZ LAN frames, intentionally not Java object deserialization. */
+/** Bounded version-3 XYZ LAN frames, intentionally not Java object deserialization.
+ * Version3 adds authored location audio vocabulary; reject older clients before
+ * sending cues they cannot decode. Existing XYZ/object frames retain their shape. */
 public final class LanProtocol {
-    public static final int VERSION=2, DEFAULT_PORT=27717, MAX_FRAME=512, MAX_FIELDS=13;
+    public static final int VERSION=3, DEFAULT_PORT=27717, MAX_FRAME=512, MAX_FIELDS=13;
     private LanProtocol() { }
     public static List<String> parts(String frame) {
         if (frame==null || frame.length()>MAX_FRAME || frame.indexOf('\r')>=0 || frame.indexOf('\n')>=0)
@@ -26,6 +28,12 @@ public final class LanProtocol {
         int number=Integer.parseInt(value);
         if(number<min||number>max)throw new IllegalArgumentException("integer outside bounds");
         return number;
+    }
+    static double worldX(HouseMap map,String value){
+        return integer(value,map.networkMinX()*1000,map.width()*1000)/1000.0;
+    }
+    static double worldZ(HouseMap map,String value){
+        return integer(value,map.networkMinZ()*1000,map.height()*1000)/1000.0;
     }
     public static long sequence(String value) {
         if(value==null||!value.matches("[0-9]{1,15}"))throw new IllegalArgumentException("invalid sequence");

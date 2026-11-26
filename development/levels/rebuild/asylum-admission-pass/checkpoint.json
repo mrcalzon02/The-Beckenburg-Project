@@ -1,0 +1,121 @@
+{
+  "status": "NATIVE_ASYLUM_ADMISSION_DOORS_AND_ARRIVAL_STAGED",
+  "prior_commit": "5120d6e1b949fead94bc45eee1fb8e609cf7d91d",
+  "native_scene_revision": "a88902efa6e025d8f6bced4310029f3b3fe83ae92b5285cea2b93f88857cae73",
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.glb",
+    "native": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.hcs2",
+    "blend": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.blend",
+    "glb_sha256": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+    "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-admission-pass/asylum-admission-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-admission-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-admission-pass/verification/staged-admission.tsv"
+  },
+  "retained_structural_geometry": "Exact baseline Blender structure, GLB and HCS2; hinged leaves fitted during staged native loading.",
+  "fitted_door_sets": 4,
+  "fitted_editor_poses": 8,
+  "verified_editor_triangles": 8544,
+  "retained_search_space_count": 40,
+  "scoped_route_direction_and_posture_replays": 16,
+  "verified": [
+    "Native aperture and installed hinge sweep",
+    "Both staged body, acoustics, sight, object and open-snapshot checks",
+    "Canonical van ramps and separate exterior/vehicle gameplay ownership",
+    "Software and RTX 5070 OpenGL native render of the same source"
+  ],
+  "still_open": [
+    "Patient court, interior security fit and full connected gameplay ownership",
+    "Plant and utility services and actual ordinary case dispatch",
+    "Full containment, investigation and production acceptance"
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/arrival.tsv",
+      "bytes": 5146,
+      "sha256": "7af18885d5f3684cfb7ed84d8c20857a15ab12b151868a10aa65c4769c51a5fb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/door-survey.tsv",
+      "bytes": 575,
+      "sha256": "99da37df2f892600a5a5cf808c7be762578f83e6014d7afbbcf1d4f71f7bafb6"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/asylum-admission-plan.svg",
+      "bytes": 2709,
+      "sha256": "6488bbb6357b7c4d8de1b92a38fbe3f789f68d61db1a2d9a85ac21d56ef81f6d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/asylum-admission-fitted.blend",
+      "bytes": 1063045,
+      "sha256": "69c19cdc7e83258fc3fae98d1c6c1cc3726b772badacc6a063691cc9822a654e"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/verified-cargo-guide.tsv",
+      "bytes": 186,
+      "sha256": "b48b89d0b671837c6b6edb24ae00b8f0515aa6d70d1c7dbbae5d18781ebb1d13"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/verification/editable-door-poses.tsv",
+      "bytes": 216,
+      "sha256": "93dd839a9933d2090d7626fe7746d38b94cf0cf907beba8d2a2beaba9c8e7b80"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/verification/opengl.tsv",
+      "bytes": 615,
+      "sha256": "cf7fe9e97de3fd8704c0859ab980c7d63e7d61d99302a38ed72774efffc210db"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/verification/staged-admission.tsv",
+      "bytes": 615,
+      "sha256": "cf7fe9e97de3fd8704c0859ab980c7d63e7d61d99302a38ed72774efffc210db"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-470-closed.png",
+      "bytes": 402360,
+      "sha256": "8b62947e3b2b3b506fb6b87e10e2f6017edc1195499a5efa217421225505de62"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-470-open.png",
+      "bytes": 357536,
+      "sha256": "101b751781e149013bed379d567ae941ad098bfce431350a5742b85e4d211f54"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-473-closed.png",
+      "bytes": 400155,
+      "sha256": "2c219060be024ab432bdf72d2633fb8ef52abd6dc3702cbe1dee58a42f8e7ab0"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-473-open.png",
+      "bytes": 358438,
+      "sha256": "eb398ae651e7261c89f7305dba7c5a4fbc2000d73222e409e0bce0a351dca1b0"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-470-closed.png",
+      "bytes": 404983,
+      "sha256": "78bf58ac488e4e8f90fcd432bb724a990be8334d6d2723816c9bbef12a4dba6f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-470-open.png",
+      "bytes": 349498,
+      "sha256": "1c8ea96f60bbf99bd854af8eed29eb155fc0d30c3962b53641be0433f666d3bf"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-473-closed.png",
+      "bytes": 403152,
+      "sha256": "e82bd2c2b4052f3b15d3ec8b0cdd633c7347555dad110e5d3ca8d0a912b5b659"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-473-open.png",
+      "bytes": 350693,
+      "sha256": "984bfebf09986b4dd47d6f08f1b344bc245f61a69d282120a6b8c6eb7431fd0d"
+    }
+  ]
+}

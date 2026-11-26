@@ -1,0 +1,9 @@
+named_revision	8962ca516a9b89a25045dcdb895660e8b20cc1ec590d38576a74daf5870e3f87-bf962dda717fbe41
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+perimeter_optical_rays	2484
+perimeter_body_probes	2484
+supported_perimeter_sweeps	4838
+perimeter_span_endpoints	48
+prior_open_edge_and_airborne_limit	PASS negative controls reproduced on the old archive
+road_seam_footprints	152
+running_jump_and_spectral_edge	PASS jump landed inside the closed road gate and the ghost stopped at its room boundary

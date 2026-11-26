@@ -1,7 +1,10 @@
 {
   "id": "WLD-10",
   "title": "Monastery of Ashen Bells",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Staged source, breaker and twelve room circuits verified in software, OpenGL and a four-player host session",
+  "staged_checkpoint": "development/levels/rebuild/monastery-vertical-power-pass/checkpoint.json",
+  "staged_fixture_count": 36,
+  "remaining": "Named packaged mission acceptance, independent-source and evidence-camera checks in the complete case",
   "generator_required": true,
   "generator_location_intent": "Monastery service court enclosure away from ritual clear areas",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",

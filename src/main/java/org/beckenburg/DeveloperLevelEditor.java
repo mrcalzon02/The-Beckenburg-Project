@@ -102,7 +102,7 @@ public final class DeveloperLevelEditor extends JPanel {
         var names=new ArrayList<String>();
         names.add("CASTLE BECKENBURG");
         for(var site:HouseMap.Site.values())
-            if(site!=HouseMap.Site.HOLLOW_CREEK&&site!=HouseMap.Site.USER)
+            if(LevelPlans.editableTemplate(site))
                 names.add(site.name());
         try{
             for(String id:UserLevelLibrary.names())names.add("USER: "+id);
@@ -146,7 +146,7 @@ public final class DeveloperLevelEditor extends JPanel {
         id=id.strip();
         var sources=new ArrayList<HouseMap.Site>();
         for(var site:HouseMap.Site.values())
-            if(site!=HouseMap.Site.HOLLOW_CREEK&&site!=HouseMap.Site.USER)sources.add(site);
+            if(LevelPlans.editableTemplate(site))sources.add(site);
         HouseMap.Site template=(HouseMap.Site)JOptionPane.showInputDialog(window,
             "Choose an existing level as the initial architecture and gameplay scaffold.",
             "NEW LEVEL",JOptionPane.PLAIN_MESSAGE,null,sources.toArray(),

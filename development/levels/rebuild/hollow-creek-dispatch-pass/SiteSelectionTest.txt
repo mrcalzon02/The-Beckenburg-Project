@@ -1,0 +1,3 @@
+2026-11-19T08:41:49.666002300Z [main] RENDER SLOW stage=idle faces=79052 visible_faces=35274 culled_faces=43778 target=320x200 build_ms=1037 lighting_raster_ms=272
+2026-11-19T08:41:51.785120500Z [main] RENDER SLOW stage=idle faces=80025 visible_faces=29793 culled_faces=50232 target=320x200 build_ms=245 lighting_raster_ms=128
+PASS: nine built-in dispatch sources with real headless rendering; unselected USER and Hollow Creek remain unavailable

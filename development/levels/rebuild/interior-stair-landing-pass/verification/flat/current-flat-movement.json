@@ -1,0 +1,100 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "current_lanes": {
+        "samples": 8565,
+        "valid_standing": 8565,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 8505,
+        "valid_standing": 8505,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "MANSION": {
+      "before": {
+        "contract": "development/levels/rebuild/estate-parish-pass/mansion/construction.json",
+        "contract_sha256": "c2383bb099db18445ad6782e80e2a0282903b9f85b5ca4f845ed7066fda1abf7",
+        "layout": "development/levels/rebuild/estate-parish-pass/mansion/authored-layout.json",
+        "layout_sha256": "efacc9cb27837f27ff9316c1b10b28f0ca381ae3dfef7492778b1b656901cbf8",
+        "native": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.hcs2",
+        "native_sha256": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json",
+        "contract_sha256": "fe9560b8c2cb6dd3ec5d4d3be79482cc1fcf7af478880983763437ca75c6ed9d",
+        "layout": "development/levels/rebuild/interior-stair-landing-pass/mansion/authored-layout.json",
+        "layout_sha256": "941b29b1bfeabb850ad28bd96eb61d6f45fc618289c13542773239f01630b2e6",
+        "native": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.hcs2",
+        "native_sha256": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-cell-construction-pass/school/construction.json",
+        "contract_sha256": "1b7efc3a04e29fa7964afa640a26c0c918e2eba1808b772fac3c9fc570b22cc1",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/school/authored-layout.json",
+        "layout_sha256": "82eff95555fe23a5e4dde13d7aabc28ceadc5f714e19167e4665ef6e474f84d4",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/school/constructed-cells.hcs2",
+        "native_sha256": "cc4fbc9e4b65ac12eab3b58adf9b14f5c9cbbab713efcf2b5ebb1b61b478e5aa"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/interior-stair-landing-pass/school/construction.json",
+        "contract_sha256": "9ad40a1f0179204433e43818e359797a4c8ca870fb63325bbb72f7536c965bc1",
+        "layout": "development/levels/rebuild/interior-stair-landing-pass/school/authored-layout.json",
+        "layout_sha256": "b33055e65965a1d8711fcdb9fa31de505e9db49a962111bf46d47d8194a5282c",
+        "native": "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.hcs2",
+        "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/lookout-landing-pass/roster.json": "3df23ccd48cc2a0c5357272baa49f96bc8e107ca0f1b280dcc8fdd3f5b96a7be"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-lane-input.tsv": "9bbd89923510d8b778115b6e46a5cda05684a373d2bdcefae00cc6e9cd5501be",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-lane-names.tsv": "253f2b8cecdafc63d1deb05df8b124d08a4f3b7e4695d25b94fa1f734825a28b",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-lanes.tsv": "d918e95caf4f61be0e4571bb3aa90f21b927fe211fe2a346e5c3ee7b56dbe20e",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-links.tsv": "2ff137d8a659288a984a637602f55ce3e0d1fc466606decbe58cbc21369bb2fe",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-names.tsv": "253f2b8cecdafc63d1deb05df8b124d08a4f3b7e4695d25b94fa1f734825a28b",
+    "development/levels/rebuild/interior-stair-landing-pass/verification/flat/current-flat-paths.tsv": "da687f11485bfa0bfd43ce4d39ad3caa91f4d11d69a3b7e20fd15f6a649feace"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

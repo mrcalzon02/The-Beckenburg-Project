@@ -1,0 +1,17 @@
+2026-11-26T20:17:16.544502575Z [main] RENDER SLOW stage=idle faces=108930 visible_faces=35488 culled_faces=73442 target=320x200 build_ms=1601 lighting_raster_ms=1700
+SITE_RENDER HOUSE room=0 feet=(19.000,0.000,19.400) colours=179 physical_pixels=64000
+SITE_RENDER MANSION room=0 feet=(23.000,0.000,30.000) colours=51 physical_pixels=63989
+SITE_RENDER PRISON room=0 feet=(23.000,0.000,32.000) colours=61 physical_pixels=64000
+SITE_RENDER ASYLUM room=0 feet=(24.000,0.000,32.000) colours=56 physical_pixels=63989
+2026-11-26T20:17:18.560411362Z [main] RENDER SLOW stage=idle faces=314685 visible_faces=175779 culled_faces=138906 target=320x200 build_ms=410 lighting_raster_ms=551
+SITE_RENDER SCHOOL room=0 feet=(24.000,0.000,35.000) colours=138 physical_pixels=64000
+SITE_RENDER FARMHOUSE room=0 feet=(23.000,0.000,24.500) colours=94 physical_pixels=63987
+SITE_RENDER ACADEMY room=0 feet=(24.000,0.000,32.000) colours=39 physical_pixels=63989
+SITE_RENDER COLLEGE room=0 feet=(25.000,0.000,36.000) colours=57 physical_pixels=64000
+SITE_RENDER CHURCH room=0 feet=(23.000,0.000,30.000) colours=100 physical_pixels=63998
+2026-11-26T20:17:21.236786051Z [main] RENDER SLOW stage=idle faces=192055 visible_faces=54515 culled_faces=137540 target=320x200 build_ms=781 lighting_raster_ms=329
+SITE_RENDER HOLLOW_CREEK room=0 feet=(32.000,0.999,66.000) colours=198 physical_pixels=44719
+SITE_RENDER SEACLIFF room=0 feet=(34.000,4.000,30.000) colours=70 physical_pixels=64000
+2026-11-26T20:17:24.861965997Z [main] RENDER SLOW stage=idle faces=118522 visible_faces=87066 culled_faces=31456 target=320x200 build_ms=965 lighting_raster_ms=2007
+SITE_RENDER BLACKPINE room=0 feet=(43.000,1.003,25.000) colours=53 physical_pixels=63998
+SITE_RENDER LOOKOUT room=3 feet=(12.000,6.000,20.000) colours=122 physical_pixels=64000

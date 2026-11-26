@@ -77,17 +77,14 @@ public final class SafeAreaHaze {
             double x,double eye,double z,double yaw,double pitch,double clock,HouseMap map){
         var shells=new java.util.ArrayList<Shell>();
         for(var socket:HidingBudget.candidates(map.level()))if(HidingBudget.available(map.level(),socket,map.hidingDensity())){
-            if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity()))
-                shells.add(new Pocket(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),Math.hypot(.35,.31),1.65,2.02),socket.yaw(),.35,.31));
-            else if(socket.type().equals("outdoor-hide")&&OutdoorHiding.available(map.level(),socket,map.hidingDensity())){
-                // Mark the actual refuge asset so opaque leaves cannot hide the cue.
-                // Eligibility and concealment still use the authored standing/crouch pocket.
-                double radius=.36,coverHeight=1.15,shoulder=.70;
-                for(var prop:map.level().props())if(prop.mesh().equals("level_shrub_refuge")&&Math.hypot(prop.x()-socket.x(),prop.z()-socket.z())<.2){
-                    var b=SceneRenderer.castleBounds(prop.mesh());radius=Math.hypot(b[3]/2,b[5]/2)*prop.scale()+.04;
-                    coverHeight=Math.max(1.15,prop.y()+b[1]+b[4]*prop.scale()-socket.y()+.12);shoulder=coverHeight*.90;
-                }
-                shells.add(new Dome(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),radius,shoulder,coverHeight)));
+            if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity())){
+                double halfZ=(LevelClosets.ENTRY_Z-LevelClosets.BACK_Z)*.5;
+                var center=LevelClosets.world(socket,0,0,(LevelClosets.ENTRY_Z+LevelClosets.BACK_Z)*.5);
+                var veil=new SafeAreaBarrier.Volume(center.x(),center.y(),center.z(),
+                    Math.hypot(LevelClosets.HALF_X,halfZ),1.65,LevelClosets.HEAD);
+                shells.add(new Pocket(veil,socket.yaw(),LevelClosets.HALF_X,halfZ));
+            }else if(socket.type().equals("outdoor-hide")&&OutdoorHiding.available(map.level(),socket,map.hidingDensity())){
+                shells.add(new Dome(OutdoorHiding.footprint(map.level(),socket)));
             }
         }
         return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,shells,null);
@@ -115,6 +112,8 @@ public final class SafeAreaHaze {
     private static int drawShells(int[] pixels,double[] depths,int width,int height,double focal,
             double x,double eye,double z,double yaw,double pitch,double clock,List<? extends Shell> shells,RayCache cache){
         if(!Double.isFinite(clock))throw new IllegalArgumentException("finite barrier animation clock required");
+        // Capture immutable fog policy before dispatching scanlines to worker threads.
+        var atmosphere=LevelAtmosphere.policy();
         int changed=0;double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
         // Only width/focal determine horizontal projection. Camera movement,
         // ray depth, opacity, pixels and all dynamic scene effects remain live.
@@ -175,7 +174,9 @@ public final class SafeAreaHaze {
                                         oz+dz*sceneDepth,invRadius,invCap))continue;
                             double hit=shell.hit(ox,oy,oz,dx,dy,dz);
                             if(hit<.035||hit>=sceneDepth-.008)continue;
-                            pixels[at]=shade(pixels[at],a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
+                            double alpha=opacity(a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
+                            pixels[at]=blend(pixels[at],alpha,LevelAtmosphere.shadePixel(
+                                0xa9dfff,hit,col,row,width,height,focal,atmosphere));
                             shaded++;
                         }
                         continue;
@@ -193,7 +194,8 @@ public final class SafeAreaHaze {
                         if(hit<0 && sceneDepth>=0 && sceneDepth<=-hit)continue;
                         double alpha=alphas[ray];
                         if(sameClock && alpha>0){
-                            pixels[at]=blend(pixels[at],alpha);
+                            pixels[at]=blend(pixels[at],alpha,LevelAtmosphere.shadePixel(
+                                0xa9dfff,hit,col,row,width,height,focal,atmosphere));
                             shaded++;
                             continue;
                         }
@@ -211,7 +213,8 @@ public final class SafeAreaHaze {
                         }
                         alpha=opacity(a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
                         alphas[ray]=alpha;
-                        pixels[at]=blend(pixels[at],alpha);
+                        pixels[at]=blend(pixels[at],alpha,LevelAtmosphere.shadePixel(
+                                0xa9dfff,hit,col,row,width,height,focal,atmosphere));
                         shaded++;
                     }
                 }
@@ -221,15 +224,11 @@ public final class SafeAreaHaze {
         }return changed;
     }
 
-    private static int shade(int old,SafeAreaBarrier.Volume area,double x,double y,double z,double clock){
-        return blend(old,opacity(area,x,y,z,clock));
-    }
-
-    private static int blend(int old,double alpha){
+    private static int blend(int old,double alpha,int colour){
         double keep=1-alpha;
-        int r=(int)(((old>>16)&255)*keep+0xa9*alpha);
-        int g=(int)(((old>>8)&255)*keep+0xdf*alpha);
-        int b=(int)((old&255)*keep+0xff*alpha);
+        int r=(int)(((old>>16)&255)*keep+((colour>>16)&255)*alpha);
+        int g=(int)(((old>>8)&255)*keep+((colour>>8)&255)*alpha);
+        int b=(int)((old&255)*keep+(colour&255)*alpha);
         return (r<<16)|(g<<8)|b;
     }
 

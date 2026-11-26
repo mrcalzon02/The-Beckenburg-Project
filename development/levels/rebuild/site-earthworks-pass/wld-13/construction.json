@@ -1,0 +1,1537 @@
+{
+  "id": "WLD-13",
+  "status": "SAVED_GEOGRAPHIC_EARTHWORKS_CONSTRUCTION_RUNTIME_OPEN",
+  "source_glb": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.glb",
+  "source_glb_sha256": "7188c304814f64d530f24a8da978b82729ba83662e2a147f7bf0b8af6daf1f7c",
+  "source_physics": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.hcs2",
+  "source_physics_sha256": "802c6b51ba9c51a9654be569c7ec13228e751f5b97782b149fba821c26f23df1",
+  "before_layout": "development/levels/rebuild/courts-and-docks-pass/wld-13/authored-layout.json",
+  "before_layout_sha256": "3fffc39d5a3fe0336571ae509c14d31428d8372e85ea6379421ac26febe3818c",
+  "layout": "development/levels/rebuild/site-earthworks-pass/wld-13/authored-layout.json",
+  "layout_sha256": "7d9f54c3753700ea50882e842319685df2a2cdbcc6e1106db8ef9f1a5203887c",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {},
+    "L19": {
+      "3": 0
+    }
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {},
+    "L19": {
+      "3": 0
+    }
+  },
+  "before_stair_components": [
+    "Orthogonal stair WLD-13 L19 step3",
+    "Orthogonal stair WLD-13 L19 step4",
+    "Orthogonal stair WLD-13 L19 step5",
+    "Orthogonal stair WLD-13 L19 step6",
+    "Orthogonal stair WLD-13 L19 step7",
+    "Orthogonal stair WLD-13 L19 step8",
+    "Orthogonal stair WLD-13 L19 step9",
+    "Orthogonal stair WLD-13 L19 step10",
+    "Orthogonal stair WLD-13 L19 step11",
+    "Orthogonal stair WLD-13 L19 step12",
+    "Orthogonal stair WLD-13 L19 step13",
+    "Orthogonal stair WLD-13 L19 step14",
+    "Orthogonal stair WLD-13 L19 step15",
+    "Orthogonal stair WLD-13 L19 step16",
+    "Orthogonal stair WLD-13 L19 step17",
+    "Orthogonal stair WLD-13 L19 step18",
+    "Orthogonal stair WLD-13 L19 step19",
+    "Orthogonal stair WLD-13 L19 step20"
+  ],
+  "stair_components": [
+    "Orthogonal stair WLD-13 L19 step3",
+    "Orthogonal stair WLD-13 L19 step4",
+    "Orthogonal stair WLD-13 L19 step5",
+    "Orthogonal stair WLD-13 L19 step6",
+    "Orthogonal stair WLD-13 L19 step7",
+    "Orthogonal stair WLD-13 L19 step8",
+    "Orthogonal stair WLD-13 L19 step9",
+    "Orthogonal stair WLD-13 L19 step10",
+    "Orthogonal stair WLD-13 L19 step11",
+    "Orthogonal stair WLD-13 L19 step12",
+    "Orthogonal stair WLD-13 L19 step13",
+    "Orthogonal stair WLD-13 L19 step14",
+    "Orthogonal stair WLD-13 L19 step15",
+    "Orthogonal stair WLD-13 L19 step16",
+    "Orthogonal stair WLD-13 L19 step17",
+    "Orthogonal stair WLD-13 L19 step18",
+    "Orthogonal stair WLD-13 L19 step19",
+    "Orthogonal stair WLD-13 L19 step20"
+  ],
+  "removed_source_meshes": [
+    "L19 flight0 step1",
+    "L19 flight0 step2",
+    "L19 flight0 step3",
+    "L19 flight0 step4",
+    "L19 flight0 step5",
+    "L19 flight0 step6",
+    "L19 flight0 step7",
+    "L19 flight0 step8",
+    "L19 flight0 step9",
+    "L19 flight0 step10",
+    "L19 flight0 step11",
+    "L19 flight0 step12",
+    "L19 flight0 step13",
+    "L19 flight0 step14",
+    "L19 flight0 step15",
+    "L19 flight0 step16",
+    "L19 flight0 step17",
+    "Floor processing",
+    "Floor gallery.002",
+    "Floor gallery.004"
+  ],
+  "removed_native_parts": [
+    "94:L01 support 0",
+    "95:L01 support 1",
+    "105:L07 support 1",
+    "106:L08 support 0",
+    "114:L12 support 1",
+    "115:L13 support 0",
+    "124:L17 support 1",
+    "125:L18 support 0",
+    "Arrival end bearing WLD-13 0",
+    "Rooted cut walkway WLD-13 0",
+    "Rooted cut walkway WLD-13 1",
+    "Rooted cut walkway WLD-13 2",
+    "Rooted cut walkway WLD-13 3",
+    "Rooted cut walkway WLD-13 4",
+    "Rooted cut walkway WLD-13 5",
+    "Rooted cut walkway WLD-13 6",
+    "Rooted cut walkway WLD-13 7",
+    "Rooted cut walkway WLD-13 8",
+    "Rooted cut walkway WLD-13 9",
+    "Rooted cut walkway WLD-13 10",
+    "Rooted cut walkway WLD-13 11",
+    "Rooted cut walkway WLD-13 12",
+    "Rooted cut walkway WLD-13 13",
+    "Rooted cut walkway WLD-13 14",
+    "Rooted cut walkway WLD-13 15",
+    "Rooted cut walkway WLD-13 16",
+    "Rooted cut walkway WLD-13 17",
+    "Rooted cut walkway WLD-13 18",
+    "Rooted cut walkway WLD-13 19",
+    "Rooted cut walkway WLD-13 20",
+    "Rooted cut walkway WLD-13 21",
+    "Rooted cut walkway WLD-13 22",
+    "Rooted cut walkway WLD-13 23",
+    "Rooted cut walkway WLD-13 24",
+    "Rooted cut walkway WLD-13 25",
+    "Rooted cut walkway WLD-13 26",
+    "Rooted cut walkway WLD-13 27",
+    "Rooted cut walkway WLD-13 28",
+    "Rooted cut walkway WLD-13 29",
+    "Rooted cut walkway WLD-13 30",
+    "Rooted cut walkway WLD-13 31",
+    "Rooted cut walkway WLD-13 32",
+    "Rooted cut walkway WLD-13 33",
+    "Rooted cut walkway WLD-13 34",
+    "Rooted cut walkway WLD-13 35",
+    "Rooted cut walkway WLD-13 36",
+    "Rooted cut walkway WLD-13 37",
+    "Rooted cut walkway WLD-13 38",
+    "Rooted cut walkway WLD-13 39",
+    "Rooted cut walkway WLD-13 40",
+    "Rooted cut walkway WLD-13 41",
+    "Rooted cut walkway WLD-13 42",
+    "Rooted cut walkway WLD-13 43",
+    "Rooted cut walkway WLD-13 44",
+    "Rooted cut walkway WLD-13 45",
+    "Rooted cut walkway WLD-13 46",
+    "Rooted cut walkway WLD-13 47",
+    "Rooted cut walkway WLD-13 48",
+    "Rooted cut walkway WLD-13 49",
+    "Rooted cut walkway WLD-13 50",
+    "Rooted cut walkway WLD-13 51",
+    "Rooted cut walkway WLD-13 52",
+    "Rooted cut walkway WLD-13 53",
+    "Rooted cut walkway WLD-13 54",
+    "Rooted cut walkway WLD-13 55",
+    "Rooted cut walkway WLD-13 56",
+    "Rooted cut walkway WLD-13 57",
+    "Rooted cut walkway WLD-13 58",
+    "Rooted cut walkway WLD-13 59",
+    "Rooted cut walkway WLD-13 60",
+    "Rooted cut walkway WLD-13 61",
+    "Rooted cut walkway WLD-13 62",
+    "Rooted cut walkway WLD-13 63",
+    "Rooted cut walkway WLD-13 64",
+    "Rooted cut walkway WLD-13 65",
+    "Rooted cut walkway WLD-13 66",
+    "Rooted cut walkway WLD-13 67",
+    "Rooted cut walkway WLD-13 68",
+    "Rooted cut walkway WLD-13 69",
+    "Rooted cut walkway WLD-13 70",
+    "Rooted cut walkway WLD-13 71",
+    "Rooted cut walkway WLD-13 72",
+    "Rooted cut walkway WLD-13 73",
+    "Rooted cut walkway WLD-13 74",
+    "Rooted cut walkway WLD-13 75",
+    "Rooted cut walkway WLD-13 76",
+    "Rooted cut walkway WLD-13 77",
+    "Rooted cut walkway WLD-13 78",
+    "Rooted cut walkway WLD-13 79",
+    "Rooted cut walkway WLD-13 80",
+    "Rooted cut walkway WLD-13 81",
+    "Rooted cut walkway WLD-13 82",
+    "Rooted cut walkway WLD-13 83",
+    "Rooted cut walkway WLD-13 84",
+    "Rooted cut walkway WLD-13 85",
+    "Rooted cut walkway WLD-13 86",
+    "Rooted cut walkway WLD-13 87",
+    "Rooted cut walkway WLD-13 88",
+    "Rooted cut walkway WLD-13 89",
+    "Rooted cut walkway WLD-13 90",
+    "Rooted cut walkway WLD-13 91",
+    "Rooted cut walkway WLD-13 92",
+    "Rooted cut walkway WLD-13 93",
+    "Rooted cut walkway WLD-13 94",
+    "Rooted cut walkway WLD-13 95",
+    "Rooted cut walkway WLD-13 96",
+    "Orthogonal stair WLD-13 L19 step0",
+    "Orthogonal stair WLD-13 L19 step1",
+    "Orthogonal stair WLD-13 L19 step2",
+    "Bayed shell Floor processing"
+  ],
+  "new_parts": 25,
+  "new_triangles": 380,
+  "restored_shaft_parts": [
+    "Restored bay WLD-13 gallery floor region0"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Floor processing",
+      "new_mesh": "Bayed shell Floor processing",
+      "removed_volume_m3": 0.11170140820884455
+    },
+    {
+      "source_mesh": "Floor gallery.002",
+      "new_mesh": "Bayed shell Floor gallery.002",
+      "removed_volume_m3": 0.74905640027532
+    },
+    {
+      "source_mesh": "Floor gallery.004",
+      "new_mesh": "Bayed shell Floor gallery.004",
+      "removed_volume_m3": 0.7490564004561993
+    }
+  ],
+  "design": {
+    "points": {
+      "L19": [
+        [
+          36,
+          0,
+          41
+        ],
+        [
+          36,
+          0,
+          53
+        ],
+        [
+          27,
+          0,
+          53
+        ],
+        [
+          27,
+          0,
+          51
+        ],
+        [
+          27,
+          3,
+          43
+        ],
+        [
+          27,
+          3,
+          41
+        ]
+      ]
+    },
+    "build": [
+      "L19"
+    ],
+    "shared": {},
+    "preserve_upper_hubs": false,
+    "reason": "House the gallery flight within the mezzanine strip; close the former transverse shaft and reserve the new longitudinal opening."
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2580968,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      0,
+      86,
+      88,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143
+    ]
+  },
+  "glb_sha256": "7d2396e598dee9508ebf4b144f9753267eb09c3b32c437cb1116f3307b2d1863",
+  "physics_sha256": "c1a3a3a656be8a52e4d7090745b46d01d04a49c22bcd03ef1fed8170fd089c11",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Removal deliberately exposes incomplete terrain, thresholds and earlier route-cut wall/floor damage. Do not refill with path extrusions or claim maps accepted. Deliberate authored site structures remain subject to architectural review.",
+  "source_contract": "development/levels/rebuild/courts-and-docks-pass/wld-13/construction.json",
+  "blend_sha256": "5cb2eb3263e362fe47653d470ae189d293abf01930fc530a6887f4959de13ed7",
+  "circulation_builder": "tools/build_circulation_construction.py",
+  "circulation_builder_sha256": "55486ade0ec5720b4beaf4456124a54d96c924a0e0c8f6d142056703979bf021",
+  "intermediate_stair_source": {
+    "id": "WLD-13",
+    "status": "AUTHORED_SHARED_STAIR_BAY_CANDIDATE_TERRAIN_RUNTIME_GATES_OPEN",
+    "source_glb": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.glb",
+    "source_glb_sha256": "6656f438f5437d6dd3372dbb470ee98c1a234308b83f904a16f8a916f08b9733",
+    "source_physics": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.hcs2",
+    "source_physics_sha256": "5d1767a5b6792fe058fb17c847477cafb70ec48c2a5e862c561c9b7f0a06d98c",
+    "before_layout": "development/levels/rebuild/entrance-construction-pass/wld-13/authored-layout.json",
+    "before_layout_sha256": "fc3d50b23ea898eab68e6e51a9e0adda96be89dfcadd8971745b5a333be6608e",
+    "layout": "development/levels/rebuild/circulation-construction-pass/stair-source/wld-13/authored-layout.json",
+    "layout_sha256": "098a1bc085ad785c6107cbcaf0c00c8f5d4a0056bcd1eb872f6f5abb35fbf035",
+    "before_segment_map": {
+      "L01": {},
+      "L02": {},
+      "L03": {},
+      "L04": {},
+      "L05": {},
+      "L06": {},
+      "L07": {},
+      "L08": {},
+      "L09": {},
+      "L10": {},
+      "L11": {},
+      "L12": {},
+      "L13": {},
+      "L14": {},
+      "L15": {},
+      "L16": {},
+      "L17": {},
+      "L18": {},
+      "L19": {
+        "0": 0
+      }
+    },
+    "source_segment_map": {
+      "L01": {},
+      "L02": {},
+      "L03": {},
+      "L04": {},
+      "L05": {},
+      "L06": {},
+      "L07": {},
+      "L08": {},
+      "L09": {},
+      "L10": {},
+      "L11": {},
+      "L12": {},
+      "L13": {},
+      "L14": {},
+      "L15": {},
+      "L16": {},
+      "L17": {},
+      "L18": {},
+      "L19": {
+        "3": 0
+      }
+    },
+    "before_stair_components": [
+      "127:L19 flight0 step1",
+      "128:L19 flight0 step2",
+      "129:L19 flight0 step3",
+      "130:L19 flight0 step4",
+      "131:L19 flight0 step5",
+      "132:L19 flight0 step6",
+      "133:L19 flight0 step7",
+      "134:L19 flight0 step8",
+      "135:L19 flight0 step9",
+      "136:L19 flight0 step10",
+      "137:L19 flight0 step11",
+      "138:L19 flight0 step12",
+      "139:L19 flight0 step13",
+      "140:L19 flight0 step14",
+      "141:L19 flight0 step15",
+      "142:L19 flight0 step16",
+      "143:L19 flight0 step17"
+    ],
+    "stair_components": [
+      "Orthogonal stair WLD-13 L19 step0",
+      "Orthogonal stair WLD-13 L19 step1",
+      "Orthogonal stair WLD-13 L19 step2",
+      "Orthogonal stair WLD-13 L19 step3",
+      "Orthogonal stair WLD-13 L19 step4",
+      "Orthogonal stair WLD-13 L19 step5",
+      "Orthogonal stair WLD-13 L19 step6",
+      "Orthogonal stair WLD-13 L19 step7",
+      "Orthogonal stair WLD-13 L19 step8",
+      "Orthogonal stair WLD-13 L19 step9",
+      "Orthogonal stair WLD-13 L19 step10",
+      "Orthogonal stair WLD-13 L19 step11",
+      "Orthogonal stair WLD-13 L19 step12",
+      "Orthogonal stair WLD-13 L19 step13",
+      "Orthogonal stair WLD-13 L19 step14",
+      "Orthogonal stair WLD-13 L19 step15",
+      "Orthogonal stair WLD-13 L19 step16",
+      "Orthogonal stair WLD-13 L19 step17",
+      "Orthogonal stair WLD-13 L19 step18",
+      "Orthogonal stair WLD-13 L19 step19",
+      "Orthogonal stair WLD-13 L19 step20"
+    ],
+    "removed_source_meshes": [
+      "L19 flight0 step1",
+      "L19 flight0 step2",
+      "L19 flight0 step3",
+      "L19 flight0 step4",
+      "L19 flight0 step5",
+      "L19 flight0 step6",
+      "L19 flight0 step7",
+      "L19 flight0 step8",
+      "L19 flight0 step9",
+      "L19 flight0 step10",
+      "L19 flight0 step11",
+      "L19 flight0 step12",
+      "L19 flight0 step13",
+      "L19 flight0 step14",
+      "L19 flight0 step15",
+      "L19 flight0 step16",
+      "L19 flight0 step17",
+      "Floor processing",
+      "Floor gallery.002",
+      "Floor gallery.004"
+    ],
+    "removed_native_parts": [
+      "127:L19 flight0 step1",
+      "128:L19 flight0 step2",
+      "129:L19 flight0 step3",
+      "130:L19 flight0 step4",
+      "131:L19 flight0 step5",
+      "132:L19 flight0 step6",
+      "133:L19 flight0 step7",
+      "134:L19 flight0 step8",
+      "135:L19 flight0 step9",
+      "136:L19 flight0 step10",
+      "137:L19 flight0 step11",
+      "138:L19 flight0 step12",
+      "139:L19 flight0 step13",
+      "140:L19 flight0 step14",
+      "141:L19 flight0 step15",
+      "142:L19 flight0 step16",
+      "143:L19 flight0 step17",
+      "0:Floor processing",
+      "86:Floor gallery.002",
+      "88:Floor gallery.004"
+    ],
+    "new_parts": 25,
+    "new_triangles": 380,
+    "restored_shaft_parts": [
+      "Restored bay WLD-13 gallery floor region0"
+    ],
+    "shell_changes": [
+      {
+        "source_mesh": "Floor processing",
+        "new_mesh": "Bayed shell Floor processing",
+        "removed_volume_m3": 0.11170140820884455
+      },
+      {
+        "source_mesh": "Floor gallery.002",
+        "new_mesh": "Bayed shell Floor gallery.002",
+        "removed_volume_m3": 0.74905640027532
+      },
+      {
+        "source_mesh": "Floor gallery.004",
+        "new_mesh": "Bayed shell Floor gallery.004",
+        "removed_volume_m3": 0.7490564004561993
+      }
+    ],
+    "design": {
+      "points": {
+        "L19": [
+          [
+            36,
+            0,
+            41
+          ],
+          [
+            36,
+            0,
+            53
+          ],
+          [
+            27,
+            0,
+            53
+          ],
+          [
+            27,
+            0,
+            51
+          ],
+          [
+            27,
+            3,
+            43
+          ],
+          [
+            27,
+            3,
+            41
+          ]
+        ]
+      },
+      "build": [
+        "L19"
+      ],
+      "shared": {},
+      "preserve_upper_hubs": false,
+      "reason": "House the gallery flight within the mezzanine strip; close the former transverse shaft and reserve the new longitudinal opening."
+    },
+    "retained_glb_resources": {
+      "original_binary_bytes_preserved": 2580968,
+      "original_static_resources_preserved": true,
+      "replaced_scene_nodes": [
+        0,
+        86,
+        88,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143
+      ]
+    },
+    "glb_sha256": "13475541b21ad80db95ff2db5c90ec6c2a7ad833f411818619ac139eccfb3af4",
+    "physics_sha256": "0410c57fc553a33360389beace897448388e1150f46701de0e331b3a2796e065",
+    "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+    "remaining": "Independent exact source/solid/native and all25route regression; real saved terrain grading/punches, guard/framing/finish and runtime ownership integration remain open."
+  },
+  "construction_proof": [],
+  "removed_parts": [
+    "Entrance rebuild WLD-13 continuous approach pavement region0",
+    "Entrance rebuild WLD-13 continuous approach pavement region1",
+    "Entrance rebuild WLD-13 continuous approach pavement region2",
+    "Entrance rebuild WLD-13 continuous approach pavement region3",
+    "Entrance rebuild WLD-13 approach bearing 2",
+    "Entrance rebuild WLD-13 approach bearing 3",
+    "Entrance rebuild WLD-13 approach bearing 4",
+    "Entrance rebuild WLD-13 approach bearing 5",
+    "Entrance rebuild WLD-13 approach bearing 6",
+    "Entrance rebuild WLD-13 approach bearing 7",
+    "Entrance rebuild WLD-13 approach bearing 8",
+    "Entrance rebuild WLD-13 approach bearing 9",
+    "Entrance rebuild WLD-13 approach bearing 10",
+    "Entrance rebuild WLD-13 approach bearing 11",
+    "Entrance rebuild WLD-13 approach bearing 12",
+    "Entrance rebuild WLD-13 approach bearing 13",
+    "Entrance rebuild WLD-13 approach bearing 14",
+    "Entrance rebuild WLD-13 approach bearing 15",
+    "Entrance rebuild WLD-13 approach bearing 16",
+    "Entrance rebuild WLD-13 approach bearing 17",
+    "Entrance rebuild WLD-13 approach bearing 19",
+    "Entrance rebuild WLD-13 approach bearing 20",
+    "Entrance rebuild WLD-13 approach bearing 21",
+    "Entrance rebuild WLD-13 approach bearing 22",
+    "Entrance rebuild WLD-13 approach bearing 23",
+    "Entrance rebuild WLD-13 approach bearing 24",
+    "Entrance rebuild WLD-13 approach bearing 25"
+  ],
+  "changed_flat_routes": [
+    "L09"
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/site-earthworks-batch/wld-13.png",
+      "sha256": "5434dfb2024665adf206a430c3133b631417ca122e35bd92e75a327de4b29eb0",
+      "type": "native exported actual saved terrain earthworks with roof cutaway; not gameplay"
+    }
+  ],
+  "study_solid_removal": [
+    "L01 support 0",
+    "L01 support 1",
+    "L07 support 1",
+    "L08 support 0",
+    "L12 support 1",
+    "L13 support 0",
+    "L17 support 1",
+    "L18 support 0",
+    "Arrival end bearing WLD-13 0",
+    "Rooted cut walkway WLD-13 0",
+    "Rooted cut walkway WLD-13 1",
+    "Rooted cut walkway WLD-13 2",
+    "Rooted cut walkway WLD-13 3",
+    "Rooted cut walkway WLD-13 4",
+    "Rooted cut walkway WLD-13 5",
+    "Rooted cut walkway WLD-13 6",
+    "Rooted cut walkway WLD-13 7",
+    "Rooted cut walkway WLD-13 8",
+    "Rooted cut walkway WLD-13 9",
+    "Rooted cut walkway WLD-13 10",
+    "Rooted cut walkway WLD-13 11",
+    "Rooted cut walkway WLD-13 12",
+    "Rooted cut walkway WLD-13 13",
+    "Rooted cut walkway WLD-13 14",
+    "Rooted cut walkway WLD-13 15",
+    "Rooted cut walkway WLD-13 16",
+    "Rooted cut walkway WLD-13 17",
+    "Rooted cut walkway WLD-13 18",
+    "Rooted cut walkway WLD-13 19",
+    "Rooted cut walkway WLD-13 20",
+    "Rooted cut walkway WLD-13 21",
+    "Rooted cut walkway WLD-13 22",
+    "Rooted cut walkway WLD-13 23",
+    "Rooted cut walkway WLD-13 24",
+    "Rooted cut walkway WLD-13 25",
+    "Rooted cut walkway WLD-13 26",
+    "Rooted cut walkway WLD-13 27",
+    "Rooted cut walkway WLD-13 28",
+    "Rooted cut walkway WLD-13 29",
+    "Rooted cut walkway WLD-13 30",
+    "Rooted cut walkway WLD-13 31",
+    "Rooted cut walkway WLD-13 32",
+    "Rooted cut walkway WLD-13 33",
+    "Rooted cut walkway WLD-13 34",
+    "Rooted cut walkway WLD-13 35",
+    "Rooted cut walkway WLD-13 36",
+    "Rooted cut walkway WLD-13 37",
+    "Rooted cut walkway WLD-13 38",
+    "Rooted cut walkway WLD-13 39",
+    "Rooted cut walkway WLD-13 40",
+    "Rooted cut walkway WLD-13 41",
+    "Rooted cut walkway WLD-13 42",
+    "Rooted cut walkway WLD-13 43",
+    "Rooted cut walkway WLD-13 44",
+    "Rooted cut walkway WLD-13 45",
+    "Rooted cut walkway WLD-13 46",
+    "Rooted cut walkway WLD-13 47",
+    "Rooted cut walkway WLD-13 48",
+    "Rooted cut walkway WLD-13 49",
+    "Rooted cut walkway WLD-13 50",
+    "Rooted cut walkway WLD-13 51",
+    "Rooted cut walkway WLD-13 52",
+    "Rooted cut walkway WLD-13 53",
+    "Rooted cut walkway WLD-13 54",
+    "Rooted cut walkway WLD-13 55",
+    "Rooted cut walkway WLD-13 56",
+    "Rooted cut walkway WLD-13 57",
+    "Rooted cut walkway WLD-13 58",
+    "Rooted cut walkway WLD-13 59",
+    "Rooted cut walkway WLD-13 60",
+    "Rooted cut walkway WLD-13 61",
+    "Rooted cut walkway WLD-13 62",
+    "Rooted cut walkway WLD-13 63",
+    "Rooted cut walkway WLD-13 64",
+    "Rooted cut walkway WLD-13 65",
+    "Rooted cut walkway WLD-13 66",
+    "Rooted cut walkway WLD-13 67",
+    "Rooted cut walkway WLD-13 68",
+    "Rooted cut walkway WLD-13 69",
+    "Rooted cut walkway WLD-13 70",
+    "Rooted cut walkway WLD-13 71",
+    "Rooted cut walkway WLD-13 72",
+    "Rooted cut walkway WLD-13 73",
+    "Rooted cut walkway WLD-13 74",
+    "Rooted cut walkway WLD-13 75",
+    "Rooted cut walkway WLD-13 76",
+    "Rooted cut walkway WLD-13 77",
+    "Rooted cut walkway WLD-13 78",
+    "Rooted cut walkway WLD-13 79",
+    "Rooted cut walkway WLD-13 80",
+    "Rooted cut walkway WLD-13 81",
+    "Rooted cut walkway WLD-13 82",
+    "Rooted cut walkway WLD-13 83",
+    "Rooted cut walkway WLD-13 84",
+    "Rooted cut walkway WLD-13 85",
+    "Rooted cut walkway WLD-13 86",
+    "Rooted cut walkway WLD-13 87",
+    "Rooted cut walkway WLD-13 88",
+    "Rooted cut walkway WLD-13 89",
+    "Rooted cut walkway WLD-13 90",
+    "Rooted cut walkway WLD-13 91",
+    "Rooted cut walkway WLD-13 92",
+    "Rooted cut walkway WLD-13 93",
+    "Rooted cut walkway WLD-13 94",
+    "Rooted cut walkway WLD-13 95",
+    "Rooted cut walkway WLD-13 96",
+    "Bayed shell Floor processing",
+    "Orthogonal stair WLD-13 L19 step0",
+    "Orthogonal stair WLD-13 L19 step1",
+    "Orthogonal stair WLD-13 L19 step2"
+  ],
+  "correction_builder": "tools/remove_study_solids.py",
+  "correction_builder_sha256": "e824e5cdcf731922eff22afaa948f4e08d14a7304a5bbb4ce19d0bed5c60bb9d",
+  "area_construction": [
+    {
+      "area": "shore loading dock",
+      "footprint": [
+        [
+          24,
+          0
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          48,
+          14
+        ],
+        [
+          24,
+          14
+        ]
+      ],
+      "kind": "timber",
+      "surface_y": 0,
+      "depth": 0.2,
+      "piers": [
+        {
+          "x": 24.4,
+          "z": 0.4,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 24.4,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 24.4,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579654693603516
+          ]
+        },
+        {
+          "x": 24.4,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 24.4,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 24.4,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 27.299999999999997,
+          "z": 0.4,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 27.299999999999997,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 27.299999999999997,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 27.299999999999997,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 27.299999999999997,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 27.299999999999997,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 30.2,
+          "z": 0.4,
+          "bottom_y": -4.9296623229980465,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579662322998047,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 30.2,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 30.2,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 30.2,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 30.2,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 30.2,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.140361785888672,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 33.099999999999994,
+          "z": 0.4,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 33.099999999999994,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 33.099999999999994,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 33.099999999999994,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 33.099999999999994,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 33.099999999999994,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 36.0,
+          "z": 0.4,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 36.0,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 36.0,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 36.0,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 36.0,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.5062713623046875,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 36.0,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 38.9,
+          "z": 0.4,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 38.9,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 38.9,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 38.9,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 38.9,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 38.9,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 41.8,
+          "z": 0.4,
+          "bottom_y": -4.9296623229980465,
+          "soil_y": [
+            -4.579662322998047,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 41.8,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 41.8,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 41.8,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 41.8,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 41.8,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        },
+        {
+          "x": 44.7,
+          "z": 0.4,
+          "bottom_y": -4.9296623229980465,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579662322998047
+          ]
+        },
+        {
+          "x": 44.7,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579654693603516,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 44.7,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 44.7,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 44.7,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 44.7,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.140361785888672
+          ]
+        },
+        {
+          "x": 47.599999999999994,
+          "z": 0.4,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 47.599999999999994,
+          "z": 3.0399999999999996,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 47.599999999999994,
+          "z": 5.68,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 47.599999999999994,
+          "z": 8.319999999999999,
+          "bottom_y": -4.929658508300781,
+          "soil_y": [
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781,
+            -4.579658508300781
+          ]
+        },
+        {
+          "x": 47.599999999999994,
+          "z": 10.959999999999999,
+          "bottom_y": -4.87835464477539,
+          "soil_y": [
+            -4.528354644775391,
+            -4.528354644775391,
+            -4.506275177001953,
+            -4.506275177001953
+          ]
+        },
+        {
+          "x": 47.599999999999994,
+          "z": 13.6,
+          "bottom_y": -4.549798583984375,
+          "soil_y": [
+            -4.199798583984375,
+            -4.199798583984375,
+            -4.1403656005859375,
+            -4.1403656005859375
+          ]
+        }
+      ],
+      "omitted_pier_positions_in_saved_soil_voids": [],
+      "framing_grid_x": [
+        24.4,
+        27.299999999999997,
+        30.2,
+        33.099999999999994,
+        36.0,
+        38.9,
+        41.8,
+        44.7,
+        47.599999999999994
+      ],
+      "framing_grid_z": [
+        0.4,
+        3.0399999999999996,
+        5.68,
+        8.319999999999999,
+        10.959999999999999,
+        13.6
+      ],
+      "only_actual_stair_shafts_cut": true
+    },
+    {
+      "area": "cannery service yard",
+      "footprint": [
+        [
+          8,
+          56
+        ],
+        [
+          48,
+          56
+        ],
+        [
+          48,
+          44
+        ],
+        [
+          64,
+          44
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          44,
+          72
+        ],
+        [
+          24,
+          72
+        ],
+        [
+          8,
+          64
+        ]
+      ],
+      "kind": "paved",
+      "surface_y": 0,
+      "depth": 0.2,
+      "foundation_bottom_y": -1.2665172576904298,
+      "actual_soil_range": [
+        -0.9165172576904297,
+        -0.37549400329589844
+      ],
+      "construction": "Area retaining/fill foundation below pavement; not a centerline support"
+    }
+  ],
+  "area_builder": "tools/build_site_courts_and_docks.py",
+  "area_builder_sha256": "b14887e9823d4f4634a40bd55e2a6eeee285d158ddfae51e9623164565421376",
+  "saved_world": "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/adaptive-topology.bin": "3611b9192f5854f597e0fffb28653f0ba277be549753f7655fdeca6c1d172ee7",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/authored-cuts.tsv": "aaa496fb9cb2232a4d3562644d7f9e9202f67ef12ffac1a01adb71988898b750",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/authored-path-grading.sha256": "61d1e7e64fc19608766baf5273db705703c1123a3be64fbdfdd5e176f091895c",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/earthworks-verification.json": "25f67b395f088541c86cfc7102d119a18941dc150f1916bd0c28984828ab3f98",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/source-provenance.json": "8018acbfdfc17f242923e70228afc1e5b378a6bfd691db6706ff179d916f22f9",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/terrain-physics.hcs2": "c6e1e69aeedd014b7134c8ebd6e6787725814c500307702f3e7f1f0bf87e0509",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/tile_0_0.png": "846f7bf4eca48accad59887a9385145c37e7b573d655b58f7e87dec085baafab",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/verification.json": "25f67b395f088541c86cfc7102d119a18941dc150f1916bd0c28984828ab3f98",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/world.properties": "5f1431ab44c44a32c2e07c9cd2c6a82caf366c9baf1067e24807556e8bc085d7",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/previous-authoring/source-provenance.json": "b4435dd4068bd948e66fc28f5fd5ef2036b52396bba706789712c8c322691205",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/previous-authoring/verification.json": "e6a0eabf03203f2f04b07b276db54c487c0add0d8b36afc8c1c8ce39a0c3310f",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/scene-package/.scene.bin.editor.previous": "6fbdab6b087195564cd6ebb43109ca6e1f0fced95c7341639acb516c8235669a",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/scene-package/scene.bin": "a27daa63ba03c07b143fa035b7c2ed89156175c0d518b4d951dd4e1c477b9642",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-0-0.obj": "f1836685401214756e73d29c3320b3586818c4b29d3547049acad61b9b99b5db",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-0-1.obj": "15fd9a7d53bda742745bfd98cbe5ccaee77dfba1becbb15c8d1003cdcf7e86e8",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-1-0.obj": "97dde12b47976b711f47e566c919fba1d15997c6c2a0824b1a4d08645456891c",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-1-1.obj": "519c651496c0522badc422c9d3c4ce77a5c3e566239326dd5aa8877eadff34c0",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-13/terrain-world/terrain-layers/tile_0_0.bin": "cd245184c08f4aa2a2073d6b1fe16ad7682d896b22f439ef1a85bcbf6ce2deb2"
+  },
+  "earthworks": [
+    {
+      "name": "Cannery arrival clearing",
+      "material": "GRAVEL",
+      "feather": 5.0,
+      "profile": "arrival",
+      "polygon": [
+        [
+          26.0,
+          72.0
+        ],
+        [
+          42.0,
+          72.0
+        ],
+        [
+          46.0,
+          78.0
+        ],
+        [
+          44.0,
+          88.0
+        ],
+        [
+          38.0,
+          92.0
+        ],
+        [
+          26.0,
+          92.0
+        ],
+        [
+          22.0,
+          85.0
+        ],
+        [
+          22.0,
+          77.0
+        ]
+      ]
+    },
+    {
+      "name": "Workers woodland clearing",
+      "material": "DIRT",
+      "feather": 4.0,
+      "profile": "woodland",
+      "polygon": [
+        [
+          -15.0,
+          28.0
+        ],
+        [
+          -10.0,
+          25.0
+        ],
+        [
+          -8.0,
+          28.0
+        ],
+        [
+          -8.0,
+          60.0
+        ],
+        [
+          -12.0,
+          64.0
+        ],
+        [
+          -16.0,
+          58.0
+        ],
+        [
+          -18.0,
+          45.0
+        ],
+        [
+          -17.0,
+          34.0
+        ]
+      ]
+    }
+  ],
+  "earthworks_verification": {
+    "site": "WLD-13",
+    "changed_vertices": 367,
+    "raised_vertices": 278,
+    "lowered_vertices": 89,
+    "max_change_m": 2.085623026,
+    "source_height_sha256": "846f7bf4eca48accad59887a9385145c37e7b573d655b58f7e87dec085baafab",
+    "saved_topology_sha256": "3611b9192f5854f597e0fffb28653f0ba277be549753f7655fdeca6c1d172ee7",
+    "saved_cuts_sha256": "aaa496fb9cb2232a4d3562644d7f9e9202f67ef12ffac1a01adb71988898b750",
+    "hole_controls": 1917,
+    "disk_reopen_verified": true,
+    "physics_sha256": "c6e1e69aeedd014b7134c8ebd6e6787725814c500307702f3e7f1f0bf87e0509",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world",
+  "removed_redundant_cottage_walks": [],
+  "source_terrain_physics_sha256": "feac68cfb77d3128275eedae107a1d866bb724588f30dd451d9c442a3c5ec379",
+  "terrain_writer": "tools/java/RebuildSiteEarthworks.java",
+  "terrain_writer_sha256": "8e71ef9d0f62ea7ddaa0b268227a8cfe1472eb1fa1bef6e8eedbdfe740254d4f",
+  "terrain_composer": "tools/compose_site_earthworks.py",
+  "terrain_composer_sha256": "1688d6e16804e6c6e3b7be49fc3efcc0cc2c530964b05ee58d9005ded4639f3b"
+}

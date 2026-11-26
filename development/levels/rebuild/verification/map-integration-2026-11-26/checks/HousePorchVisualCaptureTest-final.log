@@ -1,0 +1,11 @@
+2026-11-26T20:25:03.298842787Z [main] RENDER SLOW stage=idle faces=128131 visible_faces=70337 culled_faces=57794 target=960x600 build_ms=1497 lighting_raster_ms=3081
+01-front-door-closed 4699ms
+02-front-door-open 601ms
+03-exterior-porch-apron 429ms
+2026-11-26T20:25:05.310783016Z [main] RENDER SLOW stage=idle faces=77684 visible_faces=2953 culled_faces=74731 target=960x600 build_ms=2 lighting_raster_ms=400
+04-interior-threshold 463ms
+HOUSE PORCH ACTUAL GAME CAPTURE build/e2e/house-porch-capture/briar-rebuild-01-front-door-closed.png palette=448
+HOUSE PORCH ACTUAL GAME CAPTURE build/e2e/house-porch-capture/briar-rebuild-02-front-door-open.png palette=1743
+HOUSE PORCH ACTUAL GAME CAPTURE build/e2e/house-porch-capture/briar-rebuild-03-exterior-porch-apron.png palette=704
+HOUSE PORCH ACTUAL GAME CAPTURE build/e2e/house-porch-capture/briar-rebuild-04-interior-threshold.png palette=3989
+PASS: four real 960x600 House porch screenshots, flush slab and grounded apron

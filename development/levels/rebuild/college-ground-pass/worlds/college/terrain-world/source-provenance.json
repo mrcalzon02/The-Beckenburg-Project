@@ -1,0 +1,317 @@
+{
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world",
+  "features": "development/levels/rebuild/college-ground-pass/program/college/features.tsv",
+  "features_sha256": "1c126075c1a34003b24c35d25db104631b1346f9a4a0162b6a396ecd337a4682",
+  "protected_room_bounds": [
+    [
+      20,
+      10,
+      24,
+      54
+    ],
+    [
+      20,
+      54,
+      28,
+      62
+    ],
+    [
+      6,
+      34,
+      20,
+      54
+    ],
+    [
+      6,
+      24,
+      20,
+      34
+    ],
+    [
+      6,
+      10,
+      16,
+      22
+    ],
+    [
+      16,
+      10,
+      20,
+      16
+    ],
+    [
+      16,
+      16,
+      20,
+      22
+    ],
+    [
+      6,
+      22,
+      20,
+      24
+    ],
+    [
+      24,
+      34,
+      30,
+      46
+    ],
+    [
+      24,
+      46,
+      28,
+      50
+    ],
+    [
+      24,
+      50,
+      28,
+      54
+    ],
+    [
+      28,
+      46,
+      36,
+      54
+    ],
+    [
+      28,
+      54,
+      36,
+      58
+    ],
+    [
+      28,
+      58,
+      36,
+      62
+    ],
+    [
+      28,
+      4,
+      34,
+      16
+    ],
+    [
+      28,
+      16,
+      34,
+      20
+    ],
+    [
+      34,
+      10,
+      38,
+      20
+    ],
+    [
+      38,
+      10,
+      54,
+      20
+    ],
+    [
+      34,
+      4,
+      42,
+      10
+    ],
+    [
+      42,
+      4,
+      48,
+      10
+    ],
+    [
+      48,
+      4,
+      54,
+      10
+    ],
+    [
+      50,
+      26,
+      54,
+      70
+    ],
+    [
+      42,
+      26,
+      50,
+      34
+    ],
+    [
+      42,
+      34,
+      50,
+      42
+    ],
+    [
+      42,
+      42,
+      50,
+      50
+    ],
+    [
+      42,
+      50,
+      50,
+      66
+    ],
+    [
+      54,
+      22,
+      62,
+      30
+    ],
+    [
+      54,
+      30,
+      58,
+      34
+    ],
+    [
+      58,
+      30,
+      62,
+      34
+    ],
+    [
+      54,
+      34,
+      62,
+      38
+    ],
+    [
+      54,
+      38,
+      62,
+      42
+    ],
+    [
+      54,
+      42,
+      58,
+      50
+    ],
+    [
+      58,
+      42,
+      62,
+      50
+    ],
+    [
+      54,
+      50,
+      62,
+      58
+    ],
+    [
+      54,
+      58,
+      62,
+      66
+    ],
+    [
+      54,
+      66,
+      62,
+      70
+    ],
+    [
+      62,
+      30,
+      68,
+      42
+    ],
+    [
+      62,
+      58,
+      68,
+      70
+    ],
+    [
+      42,
+      66,
+      50,
+      78
+    ],
+    [
+      50,
+      70,
+      54,
+      78
+    ],
+    [
+      20,
+      10,
+      24,
+      54
+    ],
+    [
+      12,
+      10,
+      20,
+      24
+    ],
+    [
+      12,
+      24,
+      20,
+      34
+    ],
+    [
+      24,
+      34,
+      30,
+      46
+    ],
+    [
+      30,
+      38,
+      46,
+      42
+    ],
+    [
+      42,
+      42,
+      46,
+      66
+    ],
+    [
+      42,
+      66,
+      50,
+      78
+    ]
+  ],
+  "writer": "tools/java/RebuildTieredEarthworks.java",
+  "writer_sha256": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+  "before_files": {
+    "adaptive-topology.bin": "fcfa3f31f18641d1abca7e90a2615eed0afa74ed9ca513a33dccf8029b54b4c7",
+    "authored-cuts.tsv": "ddd3fda4e59876ed473231e01d870bd412b5326f34d40f81f98ee6d8caa4ed16",
+    "source-provenance.json": "c73f868b5d5d5b9a6c98a5889be519eef3487ac56d7b87af4250372b70a8001c",
+    "terrain-physics.hcs2": "0942938b1fdf3a8a9efd86891570567ef456517364e1e2940012b08e25e5c3e4",
+    "tile_0_0.png": "1b15b4a56df41d361dd85213f6feee0ac1752aa9d780fe6e119f17a26b656097",
+    "verification.json": "3828143e4e55756f3df11ef36966efad782c545e0f7117379032298f9aefa06b",
+    "world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+    "scene-package/scene.bin": "a04a67217f3e629b8a5587cb09e34f3ab132a7062c7b66887687baaba53fa3cb",
+    "scene-package/meshes/site.obj": "8b325ab45b8a7c6cc935d4aeb910a16d6d7fc19de275538a8b40ff4fb6537da4"
+  },
+  "van_triangle_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "published_terrain": {
+    "site": "COLLEGE",
+    "changed_vertices": 636,
+    "raised_vertices": 628,
+    "lowered_vertices": 8,
+    "max_change_m": 1.023941398,
+    "source_height_sha256": "1b15b4a56df41d361dd85213f6feee0ac1752aa9d780fe6e119f17a26b656097",
+    "saved_topology_sha256": "fcfa3f31f18641d1abca7e90a2615eed0afa74ed9ca513a33dccf8029b54b4c7",
+    "saved_cuts_sha256": "ddd3fda4e59876ed473231e01d870bd412b5326f34d40f81f98ee6d8caa4ed16",
+    "hole_controls": 1603,
+    "disk_reopen_verified": true,
+    "physics_sha256": "7dbe1dbc67fb455b51a19848ada2fcfd459dae1378f0a17e0d94f1302b1158e5",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  }
+}

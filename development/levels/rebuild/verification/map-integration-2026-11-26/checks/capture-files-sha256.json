@@ -1,0 +1,71 @@
+{
+  "renderer": "Headless software SceneRenderer",
+  "scope": "Nine PNG diagnostics plus source/provenance files; original initial door-animation frame is retained and is not the settled open-leaf image. No physical-hardware or whole-map acceptance.",
+  "files": [
+    {
+      "path": "development/captures/map-integration-2026-11-26/elara-invalid-house-camera.png",
+      "bytes": 1986,
+      "sha256": "1f9c617eb0d9564f92e597ed7645b1417ec0e000cbb7bcaa97514769c8e2e2a6"
+    },
+    {
+      "path": "development/captures/map-integration-2026-11-26/elara-invalid-house-camera.txt",
+      "bytes": 219,
+      "sha256": "b37a4b93f45a6db5f5a9dfcb28eb3b843bc4cc68f696540eae61804ebc623aba"
+    },
+    {
+      "path": "development/captures/map-integration-2026-11-26/elara-supported-galley-camera.png",
+      "bytes": 36553,
+      "sha256": "df58b2bdaa877a1e43934fc217715a843b6d1283c39f3cb86c47ae46b0c56de2"
+    },
+    {
+      "path": "development/captures/map-integration-2026-11-26/elara-supported-galley-camera.txt",
+      "bytes": 219,
+      "sha256": "0b501b8be720e6e6a079ae0bf8fc7a7fa070fb80b982f24408eaf530bd9cf949"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-encounter/original-wooden-train-windup.wav",
+      "bytes": 19244,
+      "sha256": "64262fc58ad1bcd873aaa355542dd0c19577fa7c6113550df56d29d2d64f83b9"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-encounter/train-after-runtime.png",
+      "bytes": 255881,
+      "sha256": "efa3760be67314970bfa1398f92b767b1655c911c398a4706520440f47695cbc"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-encounter/train-before-runtime.png",
+      "bytes": 255765,
+      "sha256": "b04f79a1ee04bfb355240e6e792fd02586927c6db8683d035b848ba65ad9aba8"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-porch/briar-rebuild-01-front-door-closed.png",
+      "bytes": 400544,
+      "sha256": "2cc81c280b6beb7cda3e8f178330b5b1d3ad4184f25ea401a4d146b5ce403ded"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-porch/briar-rebuild-02-front-door-open.png",
+      "bytes": 556831,
+      "sha256": "0f42480e2d616a171fd3c182ad45bd989b606911ba32534521a63531489de0f4"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-porch/briar-rebuild-03-exterior-porch-apron.png",
+      "bytes": 508526,
+      "sha256": "dd2ecaee8195db1b31e51f2a03a36a9ef3b47bb750d4fa9ab158ce74b935974e"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-porch/briar-rebuild-04-interior-threshold.png",
+      "bytes": 775428,
+      "sha256": "deffdd63aa795db04db7945fc865bab35a1ba5080a08c950e72ae8f66c1e904e"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-porch/diagnostic-first-frame-after-open-command.png",
+      "bytes": 513048,
+      "sha256": "76868ac94b357338152d6def892a11a16f955aa04427af528ab168b95319b2f7"
+    },
+    {
+      "path": "development/levels/rebuild/verification/map-integration-2026-11-26/captures/house-porch/source.txt",
+      "bytes": 321,
+      "sha256": "62694a0e142941a9859fe12206c09222409b36cdf406fab7ba2e99ddfa835275"
+    }
+  ]
+}

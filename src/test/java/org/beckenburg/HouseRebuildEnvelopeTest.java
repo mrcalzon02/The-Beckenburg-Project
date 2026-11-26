@@ -24,6 +24,17 @@ public final class HouseRebuildEnvelopeTest {
         }
         check(first&&second,"Unsupported assembly junction "+a+" / "+b+" at "+point);
     }
+    static Vec walk(HouseMap map,Vec from,double x,double z,double height){
+        int steps=Math.max(1,(int)Math.ceil(Math.hypot(x-from.x(),z-from.z())/.1));
+        Vec at=from;
+        for(int i=1;i<=steps;i++){
+            double nx=from.x()+(x-from.x())*i/steps,nz=from.z()+(z-from.z())*i/steps;
+            Vec next=map.resolveMove(at,nx,nz,height);
+            check(next!=null,"Arrival stopped from "+at+" towards "+nx+","+nz+" at body height "+height);
+            at=next;
+        }
+        return at;
+    }
     public static void main(String[] args)throws Exception{
         var map=HouseRebuildEnvelope.map();var level=map.level();var base=HouseRebuildLandscape.source();var g=map.envelope();
         check(base.revision().equals("first-principles-landscape-v1-09a90b8dc9035bf9"),"Frozen landscape network revision changed");
@@ -40,8 +51,20 @@ public final class HouseRebuildEnvelopeTest {
             if(hi>lo)check(Math.abs((p.alongX()?p.x():p.z())-(q.alongX()?q.x():q.z()))>=(p.width()+q.width())/2+.12,"Overlapping opening/frame reservations "+p.id()+"/"+q.id());
         }
         check(level.props().equals(base.props())&&level.dock().equals(base.dock()),"Furniture/van moved");
-        check(level.colliders().size()==base.colliders().size()&&level.colliders().containsAll(base.colliders().subList(0,5)),"Fixture solids changed");
-        check(base.sockets().stream().filter(s->!s.type().equals("parcel_fence")).allMatch(level.sockets()::contains),"Source service/terrain/garden sockets changed");
+        long oldFenceBoxes=base.sockets().stream().filter(HouseParcelBoundary::primaryPanel).count();
+        check(level.colliders().size()==base.colliders().size()-oldFenceBoxes
+            &&level.colliders().containsAll(base.colliders().subList(0,5)),"Unexpected fixture or parcel colliders");
+        check(base.sockets().stream().filter(s->!s.type().equals("parcel_fence")&&!s.type().equals("world-terrain"))
+            .allMatch(level.sockets()::contains),"Source service/garden sockets changed");
+        var oldTerrain=base.sockets().stream().filter(s->s.type().equals("world-terrain")).findFirst().orElseThrow();
+        var terrain=level.sockets().stream().filter(s->s.type().equals("world-terrain")).toList();
+        check(terrain.equals(List.of(new Socket(oldTerrain.id(),oldTerrain.type(),oldTerrain.room(),oldTerrain.x(),
+            oldTerrain.y(),oldTerrain.z(),oldTerrain.yaw(),HouseRebuildEnvelope.PORCH_WORLD))),"Saved terrain is not bound to this envelope");
+        for(double x=18.4;x<=21.21;x+=.2)for(double z=20.65;z<=22.26;z+=.2){
+            var land=map.worldSurface().support(x,z,0,.2);
+            check(land!=null&&land.y()<=-.01&&land.y()>=-.16,"Soil must support the slab below walking grade at "+x+","+z);
+            check(Math.abs(g.physics().support(x,z,0,.2).y())<1e-8,"Slab walking surface differs from sill at "+x+","+z);
+        }
         var residences=SceneRenderer.class.getDeclaredMethod("streetResidence",List.class,VanStaging.class,VanStreetHouses.House.class);residences.setAccessible(true);
         double nearest=Double.POSITIVE_INFINITY;int shifted=0;
         for(int i=0;i<VanStreetHouses.HOMES.size();i++){
@@ -85,9 +108,70 @@ public final class HouseRebuildEnvelopeTest {
         check(g.physics().clearSight(new Vec(13,8,15),new Vec(20,8,15)),"Clear sky above roof blocked");
         check(!g.physics().clearSight(new Vec(16.8,6.5,22),new Vec(16.8,6.5,19)),"Gable is open");
         check(!g.physics().clearSight(new Vec(19.8,3.6,21.6),new Vec(19.8,2,21.6)),"Porch roof is open");
-        check(map.traversable(19.8,.04,21.7),"Porch arrival blocked");
-        check(!map.traversable(18.43,.04,22.22),"Porch post has no body contact");
-        check(Math.abs(map.groundHeight(19.8,21.7,13)-.04)<1e-8,"Porch floor and feet differ");
+        var entry=level.portals().stream().filter(p->p.id()==14).findFirst().orElseThrow();
+        check(map.traversable(19.8,entry.y(),21.7),"Porch arrival blocked");
+        check(!map.traversable(18.43,entry.y(),22.22),"Porch post has no body contact");
+        check(Math.abs(porchFloor-entry.y())<1e-8,"Full porch floor and sill differ");
+        var slab=g.parts().stream().filter(p->p.name().equals("porch-deck")).findFirst().orElseThrow();
+        check(slab.support()&&slab.triangles().size()==12,"Porch slab is not a closed receiving volume");
+        double underside=slab.triangles().stream().flatMap(t->java.util.stream.Stream.of(t.a(),t.b(),t.c()))
+            .mapToDouble(v->v.p().y()).min().orElseThrow();
+        check(Math.abs(underside-(entry.y()-.16))<1e-8,"Porch slab lost its full thickness");
+        var apron=g.parts().stream().filter(p->p.name().equals("porch-apron")).findFirst().orElseThrow();
+        check(apron.support()&&apron.triangles().size()==12,"Porch apron is not a closed receiving volume");
+        double toeY=g.physics().support(entry.x(),23,0,.2).y();
+        check(Math.abs(toeY-map.worldSurface().support(entry.x(),23,0,.2).y())<.001,
+            "The apron toe must meet the saved forecourt formation");
+        check(g.digest().equals(new HouseMap(HouseMap.Site.HOUSE).envelope().digest()),
+            "The default House does not use the verified entrance assembly");
+        check(map.resolveMove(new Vec(entry.x(),entry.y(),entry.z()+.6),entry.x(),entry.z()-.6)==null,
+            "Closed foyer does not stop arrival");
+        map.toggleDoor(entry.id());
+        for(double x:new double[]{entry.x()-.25,entry.x(),entry.x()+.25}){
+            for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                Vec outside=new Vec(x,entry.y(),entry.z()+.6),inside=new Vec(x,entry.y(),entry.z()-.6);
+                check(map.resolveMove(outside,x,inside.z(),h)!=null&&map.resolveMove(inside,x,outside.z(),h)!=null,
+                    "Open foyer lost standing or crouched clearance at "+x);
+            }
+        }
+        for(double x:new double[]{entry.x()-.25,entry.x(),entry.x()+.25}){
+            for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                double yardZ=entry.z()+3.1,foyerZ=entry.z()-.6;
+                double yardY=map.groundHeight(x,yardZ,13);
+                Vec yard=new Vec(x,yardY,yardZ),foyer=new Vec(x,entry.y(),foyerZ);
+                check(Math.abs(walk(map,yard,x,foyerZ,h).y()-entry.y())<1e-8,"Foyer movement missed sill datum");
+                check(Math.abs(walk(map,foyer,x,yardZ,h).y()-yardY)<1e-8,"Return missed saved terrain");
+            }
+        }
+        map.toggleDoor(entry.id());
+        var old=HouseRebuildEnvelope.build(level.rooms(),level.portals(),"gable-v1|1.88|0.4|0.16|3.0|1.9|3.0|2.55|0.04");
+        check(Math.abs(old.physics().support(19.8,21.7,0,.2).y()-.04)<1e-6&&!old.digest().equals(g.digest()),
+            "Prior envelope geometry or the new revision binding was lost");
+        for(String name:List.of("porch-approach-bevel","porch-interior-threshold"))
+            check(old.parts().stream().anyMatch(part->part.name().equals(name)&&part.support()),
+                "Saved raised porch lost its physical transition: "+name);
+        var legacySockets=new ArrayList<>(level.sockets());
+        legacySockets.replaceAll(socket->socket.type().equals("structure-envelope")
+            ?new Socket(socket.id(),socket.type(),socket.room(),socket.x(),socket.y(),socket.z(),socket.yaw(),
+                "gable-v1|1.88|0.4|0.16|3.0|1.9|3.0|2.55|0.04")
+            :socket.type().equals("world-terrain")?oldTerrain:socket);
+        var legacyLevel=new LevelDefinition(level.id(),"raised-porch-compatibility",level.title(),
+            level.rooms(),level.portals(),level.stairs(),level.voids(),level.props(),legacySockets,
+            level.colliders(),level.dock(),level.ambience(),level.water(),level.sounds());
+        var legacyMap=new HouseMap(HouseMap.Site.HOUSE,legacyLevel);
+        Double raisedSupport=legacyMap.supportNear(19.8,20.05,0);
+        check(raisedSupport!=null&&raisedSupport>.005&&raisedSupport<.04,
+            "Saved inner bevel retains physical support precedence over the flat room floor");
+        legacyMap.toggleDoor(entry.id());
+        for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            Vec yard=new Vec(entry.x(),legacyMap.groundHeight(entry.x(),23.14,13),23.14);
+            Vec foyer=walk(legacyMap,yard,entry.x(),20.14,height);
+            check(legacyMap.roomAt(foyer.x(),foyer.y(),foyer.z())==0,
+                "Saved raised porch still admits an ordinary player capsule");
+            Vec returned=walk(legacyMap,foyer,entry.x(),yard.z(),height);
+            check(Math.abs(returned.y()-yard.y())<1e-8,
+                "Saved raised porch retains its supported return path");
+        }
         int openings=0;
         for(var p:level.portals())if(p.door()||p.kind().equals("window")){
             boolean front=p.alongX()&&(Math.abs(p.z()-g.north())<.01||Math.abs(p.z()-g.south())<.01),side=!p.alongX()&&(Math.abs(p.x()-g.west())<.01||Math.abs(p.x()-g.east())<.01);

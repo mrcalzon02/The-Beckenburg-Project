@@ -1,7 +1,7 @@
 {
   "id": "WLD-18",
   "title": "Site Cinder-6",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Lower plant source and nine individually switched lamps installed in the native mission",
   "generator_required": true,
   "generator_location_intent": "Surface maintenance generator near service building; decommissioned weapon systems remain inert",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,85 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-18/layout.json"
+  "source_layout": "development/levels/layouts/wld-18/layout.json",
+  "installed_plan": "development/levels/rebuild/cinder-6/construction.json",
+  "circuits": [
+    {
+      "id": "C6-MAIN",
+      "source": "cinder-generator",
+      "breaker": "cinder-breaker"
+    },
+    {
+      "id": "C6-00",
+      "room": 0,
+      "switch": "cinder-servicehouse-switch",
+      "loads": [
+        "cinder-servicehouse-light"
+      ]
+    },
+    {
+      "id": "C6-01",
+      "room": 1,
+      "switch": "cinder-head-switch",
+      "loads": [
+        "cinder-head-light"
+      ]
+    },
+    {
+      "id": "C6-02",
+      "room": 2,
+      "switch": "cinder-shop-switch",
+      "loads": [
+        "cinder-shop-light"
+      ]
+    },
+    {
+      "id": "C6-04",
+      "room": 4,
+      "switch": "cinder-records-switch",
+      "loads": [
+        "cinder-records-light"
+      ]
+    },
+    {
+      "id": "C6-05",
+      "room": 5,
+      "switch": "cinder-west-switch",
+      "loads": [
+        "cinder-west-light"
+      ]
+    },
+    {
+      "id": "C6-07",
+      "room": 7,
+      "switch": "cinder-exhibit-switch",
+      "loads": [
+        "cinder-exhibit-light"
+      ]
+    },
+    {
+      "id": "C6-08",
+      "room": 8,
+      "switch": "cinder-east-switch",
+      "loads": [
+        "cinder-east-light"
+      ]
+    },
+    {
+      "id": "C6-10",
+      "room": 10,
+      "switch": "cinder-crew-switch",
+      "loads": [
+        "cinder-crew-light"
+      ]
+    },
+    {
+      "id": "C6-11",
+      "room": 11,
+      "switch": "cinder-plant-switch",
+      "loads": [
+        "cinder-plant-light"
+      ]
+    }
+  ]
 }

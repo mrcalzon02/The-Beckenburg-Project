@@ -1,0 +1,13 @@
+check	result
+revision	0cb439e597ca1a9cd15bc7f70209529a96050a4e407498292988d7921f04f2aa-3b0473fa1cdb23df
+collision_sha256	7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71
+causeway_turn	The supported outside edge retains the causeway owner at normal step length
+physical_door_states	7 fitted doors; standing and crouched crossing, object, sight, aim and acoustics
+route_replays	56
+owner_spawns	14 native-supported regions and the expedition van
+deck_guards	3 supported edge sweeps in each posture stopped on the actual rails
+marsh-house-b-cupboard_protected_floor_samples	69
+marsh-house-a-cupboard_protected_floor_samples	69
+marsh-chapel-cupboard_protected_floor_samples	69
+mourning_marsh_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64

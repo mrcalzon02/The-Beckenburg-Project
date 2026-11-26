@@ -1,0 +1,798 @@
+package org.beckenburg;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import org.beckenburg.LevelDefinition.Socket;
+import org.beckenburg.LevelDefinition.Vec;
+import org.beckenburg.NativeSchoolInteriorReview.Peer;
+
+/** Physically replays the Mine's surfaces, doors and level changes in the shared game world. */
+public final class NativeMineThresholdReview {
+    private NativeMineThresholdReview(){}
+
+    public static void main(String[] args)throws Exception{
+        if(!List.of(args).contains("--gpu")){review(args);return;}
+        var desktop=Class.forName("org.beckenburg.gpu.GpuDesktop");
+        var start=desktop.getDeclaredMethod("startGpu");
+        var stop=desktop.getDeclaredMethod("stopReviewGpu");
+        start.setAccessible(true);
+        stop.setAccessible(true);
+        start.invoke(null);
+        try{review(args);}finally{stop.invoke(null);}
+    }
+
+    private static void review(String[] args)throws Exception{
+        var packet=Path.of(args[0]);
+        var arrival=rows(packet.resolve("arrival.tsv"));
+        var routes=new LinkedHashMap<String,List<Vec>>();
+        var stories=new ArrayList<String[]>();
+        for(var row:arrival){
+            if(row[0].equals("POINT"))routes.computeIfAbsent(row[1],id->new ArrayList<>()).add(point(row,2));
+            if(row[0].equals("STORY"))stories.add(row);
+        }
+        var source=arrival.get(0);
+        var sumpDocument=packet.resolve("mine-sump.water");
+        var water=Files.isRegularFile(sumpDocument)?dev.mrcalzon.water.WaterDocument.read(Files.newInputStream(sumpDocument))
+            :WorldWater.load("wld-05");
+        MineNativeLevel.Source authored;
+        try(var model=Files.newInputStream(Path.of(source[1]));var physics=Files.newInputStream(Path.of(source[3]))){
+            authored=MineNativeLevel.read(arrival,rows(packet.resolve("door-survey.tsv")),rows(packet.resolve("mission.tsv")),
+                model,physics,water);
+        }
+        var site=List.of(args).contains("--named")?HouseMap.Site.MINE:HouseMap.Site.USER;
+        var level=authored.level();
+        var scene=authored.scene();
+        var doors=authored.doors();
+        if(site==HouseMap.Site.MINE){
+            var selection=MissionSites.byId("WLD-05");
+            require(selection.location()==SiteCatalog.Location.MINE&&selection.playable(),"Mine unavailable through named selection");
+            var selected=new HouseMap(site);
+            require(selected.level().equals(level)&&selected.nativeInvestigation().revision().equals(scene.revision()),
+                "Named Mine does not use the exact authored stage and water");
+        }
+        var map=reviewMap(site,level,scene);
+        var guest=reviewMap(site,level,scene);
+        require(map.valid(),"Disconnected Mine case owners");
+        require(RitualSites.valid(map),"Unsupported Mine ritual position");
+        boolean gpu=List.of(args).contains("--gpu");
+        var captures=packet.resolve(gpu?"captures/opengl":"captures");
+        Files.createDirectories(captures);
+        var errors=new ArrayList<String>();
+        for(var door:doors){
+            try{
+                require(NativeSchoolInteriorReview.sweep(scene.physics(),door),"Blocked leaf swing "+door.frameId());
+                NativeSchoolInteriorReview.audit(map,door,false);
+                if(door.portal().id()>=705)
+                    NativeSchoolInteriorReview.render(map,door.portal(),captures.resolve("mine-"+door.portal().id()+"-closed.png"),1);
+                map.toggleDoor(door.portal().id(),System.nanoTime()-2_000_000_000L);
+                guest.applyDoorSnapshot(map.doorSnapshot());
+                NativeSchoolInteriorReview.audit(map,door,true);
+                NativeSchoolInteriorReview.audit(guest,door,true);
+                if(door.portal().id()>=705)
+                    NativeSchoolInteriorReview.render(map,door.portal(),captures.resolve("mine-"+door.portal().id()+"-open.png"),1);
+            }catch(AssertionError problem){
+                errors.add(problem.getMessage());
+                if(!map.doorOpen(door.portal().id()))map.toggleDoor(door.portal().id(),System.nanoTime()-2_000_000_000L);
+            }
+        }
+
+        var van=map.van();
+        var cargo=van.world(0,0);
+        var lip=van.world(0,VanStaging.FRONT);
+        var deck=new Vec(cargo.x(),van.floorY(),cargo.z());
+        var ramp=new Vec(lip.x(),van.floorY(),lip.z());
+        var arrivalGuide=new ArrayList<>(List.of(deck,ramp));
+        arrivalGuide.addAll(routes.get("L01"));
+        routes.put("L01",arrivalGuide);
+        for(var route:routes.entrySet()){
+            try{walkBoth(map,route.getValue(),route.getKey());}
+            catch(AssertionError problem){errors.add(problem.getMessage());}
+        }
+        require(errors.isEmpty(),String.join("\n",errors));
+        var loop=new ArrayList<Vec>();
+        join(loop,routes.get("L01"),false);
+        join(loop,routes.get("L06"),true);
+        for(String id:List.of("L09","L10","L18","L17","L06"))join(loop,routes.get(id),false);
+        join(loop,routes.get("L01"),true);
+        walkBoth(map,loop,"cargo to haul and ventilation return");
+        var evidence=new ArrayList<>(List.of("measure\tresult","native_scene_revision\t"+scene.revision(),
+            "staged_case_revision\t"+level.revision(),"supported_case_owners\t14 supported owners and actual cargo van",
+            "fitted_thresholds\t8 fitted sets, four standing/crouched body tests per state, sight, aim, sound and object behavior",
+            "physical_routes\t"+routes.size()+" routes with exact native standing/crouched replay in both directions"));
+        if(site==HouseMap.Site.MINE)evidence.add("named_mine_packaged_selection\tOrdinary mission roster, named HouseMap and network revision load the exact staged scene and water");
+        evidence.add("joined_mine_loop\tFour complete walks from cargo through haul and vent stairs, then back to the cargo deck");
+        for(var riteSite:RitualSites.all(map))
+            evidence.add("mine_"+riteSite.rite().name().toLowerCase(java.util.Locale.ROOT)+"\t"+riteSite.room()+" "+riteSite.x()+" "+riteSite.y()+" "+riteSite.z());
+        var former=Path.of("development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2");
+        AuthoredSitePhysics previous;
+        try(var raw=Files.newInputStream(former)){
+            previous=AuthoredSitePhysics.read(raw,"892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c",List.of());
+        }
+        for(int id:new int[]{706,707}){
+            var p=doors.stream().filter(candidate->candidate.portal().id()==id).findFirst().orElseThrow().portal();
+            int samples=0;
+            for(double lane:new double[]{-.54,0,.54})for(double depth:new double[]{.28,.46,.68,.86,.96}){
+                double x=p.x()+(p.alongX()?lane:-depth),z=p.z()+(p.alongX()?-depth:lane);
+                var support=scene.physics().support(x,z,0,.025);
+                require(support!=null&&Math.abs(support.y())<.002&&map.traversable(x,0,z),
+                    "Mine stair-side landing is missing at "+x+","+z);
+                samples++;
+            }
+            double oldX=p.x()-(p.alongX()?0:.96),oldZ=p.z()-(p.alongX()?.96:0);
+            var old=previous.support(oldX,oldZ,0,.025);
+            require(old==null||Math.abs(old.y())>.025,"Former Mine export already had the new level platform "+id);
+            evidence.add("shaft_landing_"+id+"\t"+samples+" level, standing capsule supports; former face has no level support at .96 m past the sill");
+
+        }
+        capture(map,new Vec(30.4,0,75),-.30,captures.resolve("mine-roadhead-and-van.png"));
+        capture(map,map.spawn(4),0,captures.resolve("mine-lower-haul-stair.png"));
+        if(Files.isRegularFile(packet.resolve("rail-probes.tsv")))
+            auditRails(map,scene,packet,captures,evidence);
+        var slabProbes=packet.resolve("slab-probes.tsv");
+        if(Files.isRegularFile(slabProbes))auditSlabs(map,scene,rows(slabProbes),captures,evidence);
+        var drainageProbes=packet.resolve("drainage-probes.tsv");
+        if(Files.isRegularFile(drainageProbes))auditDrainage(map,scene,rows(drainageProbes),captures,evidence);
+        if(Files.isRegularFile(sumpDocument))auditSump(map,scene,captures,evidence);
+        boolean refuges=!HidingBudget.candidates(level).isEmpty();
+        if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
+        var switchFeet=packet.resolve("switches.tsv");
+        if(map.hasGenerator())auditPower(map,captures,evidence);
+        if(Files.isRegularFile(switchFeet))auditSwitches(map,rows(switchFeet),captures,evidence);
+        if(!stories.isEmpty())auditCase(map,stories,captures,evidence);
+        if(List.of(args).contains("--lan")){
+            live(site,level,scene,evidence);
+            if(Files.isRegularFile(switchFeet))liveSwitches(site,level,scene,rows(switchFeet),evidence);
+            if(refuges)liveCover(site,level,scene,evidence);
+            if(!stories.isEmpty())liveStories(site,level,scene,stories,evidence);
+        }
+        NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
+        var output=packet.resolve("verification");
+        Files.createDirectories(output);
+        boolean named=site==HouseMap.Site.MINE;
+        String name=(named?"named-":"")+(gpu?"opengl.tsv":"native-review.tsv");
+        Files.write(output.resolve(name),evidence);
+        evidence.forEach(System.out::println);
+    }
+
+    private static void auditRails(HouseMap map,NativeInvestigationScene scene,Path packet,Path captures,List<String> report)
+            throws Exception{
+        var tested=rows(packet.resolve("rail-probes.tsv"));
+        require(tested.size()==10,"Mine must check both guards and both rail sides on each shaft flight");
+        for(var row:tested){
+            var center=point(row,1);
+            boolean acrossX=row[4].equals("z");
+            double dx=acrossX?.065:0,dz=acrossX?0:.065;
+            require(!scene.physics().clearSight(new Vec(center.x()-dx,center.y(),center.z()-dz),
+                new Vec(center.x()+dx,center.y(),center.z()+dz)),"Missing physical Mine grip "+row[0]+" at "+center);
+        }
+        double z=30.55;
+        var low=scene.physics().support(5,z,-8,.40);
+        require(low!=null,"Missing lower stair support at guard check");
+        var at=new Vec(5,low.y(),z);
+        for(double posture:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            require(map.traversable(at.x(),at.y(),at.z(),posture),"Lower stair no longer clears the player");
+            require(map.resolveMove(at,4.27,z,posture)==null&&map.resolveMove(at,5.73,z,posture)==null,
+                "A player crossed the lower stair guard");
+        }
+        capture(map,new Vec(5,-10,26.53),0,captures.resolve("mine-lower-guard-approach.png"));
+        capture(map,new Vec(28.35,-3,40.60),0,captures.resolve("mine-haul-wall-handrails.png"));
+        report.add("staged_rail_collision\t10 actual grip cross-sections; lower guards block a sideways standing or crouched capsule while retaining the walking lane");
+    }
+
+    private static void auditSlabs(HouseMap map,NativeInvestigationScene scene,List<String[]> probes,
+            Path captures,List<String> report)throws Exception{
+        var physics=scene.physics();
+        int opening=0, sump=0;
+        for(var row:probes){
+            var at=point(row,1);
+            var support=physics.support(at.x(),at.z(),at.y(),.003);
+            boolean expected=Boolean.parseBoolean(row[4]);
+            require(expected?support!=null&&Math.abs(support.y()-at.y())<.001:support==null,
+                "Slab or real opening differs from the authored assembly: "+row[0]+" "+at+" / "+support);
+            if(!expected){
+                if(at.y()<-9)sump++;
+                else opening++;
+            }
+        }
+        require(probes.size()==3168&&opening>=35,"Incomplete lower-chamber floor and stair-opening sample set");
+        for(int i=0;i<3;i++){
+            double x=i==0?4.065:i==1?5.935:5;
+            double z=i<2?30.2:27.315;
+            double dx=i<2?.075:0,dz=i<2?0:.075;
+            for(double y:new double[]{-4.945,-5.44})
+                require(!physics.clearSight(new Vec(x-dx,y,z-dz),new Vec(x+dx,y,z+dz)),
+                    "Missing backed upper opening rail "+i+" / "+y);
+            var outside=i==0?new Vec(3.67,-6,z):i==1?new Vec(6.33,-6,z):new Vec(x,-6,26.92);
+            for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                require(map.traversable(outside.x(),outside.y(),outside.z(),height),"No upper guard-side walking clearance");
+                require(map.resolveMove(outside,x,z,height)==null,"Player crossed a physical upper shaft guard");
+            }
+        }
+        capture(map,new Vec(8.5,-6,32.65),-1.86,captures.resolve("mine-ore-west-shaft-guard.png"));
+        capture(map,new Vec(7.75,-10,25.6),-.70,captures.resolve("mine-lower-landing-slab.png"));
+        report.add("lower_and_ore_west_slab_probes\t"+probes.size()+" native probes, "+opening+
+            " open tread-bay points, six physical rail intersections, both-posture guard rejection on three sides");
+        if(sump>0)report.add("mine_sump_slab_cut\t"+sump+" intentional open points in the real lower slab well");
+    }
+
+    private static void auditDrainage(HouseMap map,NativeInvestigationScene scene,List<String[]> probes,
+            Path captures,List<String> report)throws Exception{
+        var physics=scene.physics();
+        int roofs=0, mouths=0, pans=0, soil=0;
+        var lastGrade=new java.util.HashMap<String,Double>();
+        for(var row:probes){
+            var at=point(row,2);
+            switch(row[0]){
+                case "ROOF" -> {
+                    require(!physics.clearSight(new Vec(at.x(),at.y()+.032,at.z()),new Vec(at.x(),at.y()-.013,at.z())),
+                            "No native weather skin at "+row[1]+" / "+at);
+                    roofs++;
+                }
+                case "OPEN" -> {
+                    require(physics.clearSight(new Vec(at.x(),at.y()+.12,at.z()),new Vec(at.x(),at.y()-.054,at.z())),
+                            "Obstructed physical gutter opening at "+row[1]+" / "+at);
+                    mouths++;
+                }
+                case "PAN" -> {
+                    require(!physics.clearSight(new Vec(at.x(),at.y()+.028,at.z()),new Vec(at.x(),at.y()-.015,at.z())),
+                            "Missing gutter pan beside outlet "+row[1]+" / "+at);
+                    pans++;
+                }
+                case "BED" -> {
+                    var support=physics.support(at.x(),at.z(),at.y(),.012);
+                    require(support!=null&&Math.abs(support.y()-at.y())<.002,"Saved filter bed mismatch "+row[1]+" / "+at);
+                    var prior=lastGrade.put(row[1],support.y());
+                    require(prior==null||support.y()<prior-.007,"Filter apron lacks clear fall "+row[1]+" / "+at);
+                    soil++;
+                }
+                default -> throw new IOException("Unknown Mine runoff probe "+row[0]);
+            }
+        }
+        require(roofs==28&&mouths==6&&pans==6&&soil==6,"Incomplete Mine roof, pipe and terrain drainage probes");
+        capture(map,new Vec(28,0,73.52),1.83,captures.resolve("mine-roadhead-weathering.png"));
+        capture(map,new Vec(38.05,0,58.4),-2.30,captures.resolve("mine-shaft-weathering.png"));
+        report.add("mine_runoff_geometry\t28 physical roof surface locations, six open gutter throats and adjacent pans, six saved terrain samples with verified downhill fall");
+    }
+
+    private static void auditSump(HouseMap map,NativeInvestigationScene scene,Path captures,List<String> report)
+            throws Exception{
+        var water=WorldWater.module(map.level().water()).bodies();
+        require(water.size()==1&&water.get(0).id().equals("mine-lower-sump"),"Wrong immutable Mine water document");
+        var reservoir=water.get(0);
+        var physics=scene.physics();
+        double cy=reservoir.y(), cx=18.345, cz=38.475;
+        for(double x:new double[]{17.56,18.345,19.13})for(double z:new double[]{37.68,38.475,39.27}){
+            var bed=physics.support(x,z,-11.12,.012);
+            require(reservoir.wet(x,z)&&Math.abs(reservoir.depth(x,z)-.63)<.002&&bed!=null
+                &&Math.abs(bed.y()+11.12)<.002,"Mine water lacks an exact contained bed");
+            require(!map.traversable(x,-11.12,z),"Mine water is playable through its basin");
+        }
+        for(double[] p:new double[][]{{17.21,cz},{19.46,cz},{cx,37.22},{cx,39.72}}){
+            require(!reservoir.wet(p[0],p[1]),"Mine water projects beyond the contained well");
+            require(!physics.clearSight(new Vec(cx,cy,cz),new Vec(p[0],cy,p[1])),"An actual Mine sump wall is missing");
+        }
+        var starts=List.of(new Vec(cx,-10,36.86),new Vec(cx,-10,40.13),new Vec(16.65,-10,37.37));
+        var limits=List.of(new Vec(cx,-10,37.205),new Vec(cx,-10,39.75),new Vec(17.064,-10,37.37));
+        for(int i=0;i<starts.size();i++){
+            var at=starts.get(i);var border=limits.get(i);
+            for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                require(map.traversable(at.x(),at.y(),at.z(),h),"No dry Mine sump inspection aisle "+at);
+                require(map.resolveMove(at,border.x(),border.z(),h)==null,"A player crossed a sump safety rail "+border);
+            }
+        }
+        for(double[] edge:new double[][]{{17.064,38.4,.06,0},{19.62,38.4,.06,0},
+                                         {18.35,37.205,0,.06},{18.35,39.75,0,.06}}){
+            for(double y:new double[]{-8.91,-9.43})
+                require(!physics.clearSight(new Vec(edge[0]-edge[2],y,edge[1]-edge[3]),
+                    new Vec(edge[0]+edge[2],y,edge[1]+edge[3])),"Missing physical sump guard");
+        }
+        var r=new SceneRenderer();
+        r.setRenderSize(880,580);
+        r.setPsxPreset(PsxPipeline.Preset.OFF);
+        r.x=17.1;r.z=35.6;r.eyeHeight=-10+HunterPosture.STANDING_EYE;
+        require(map.traversable(r.x,-10,r.z),"Sump standing capture lies outside a real aisle");
+        r.yaw=.42;r.pitch=-.49;r.lamp=true;
+        r.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(r,map,captures.resolve("mine-sump-water.png"));
+        require(r.waterStatistics!=null&&r.waterStatistics.pixels()>150,
+                "The shared water renderer did not draw the actual Mine basin "+r.waterStatistics);
+        report.add("mine_sump_water\tNine exact wall-contained wet samples, four dry outside probes, blocked standing and crouched guard crossings, and visible native water");
+    }
+
+    private static InteractionFocus.Target storyFocus(HouseMap map,int seat,Vec at,Vec target,String doc){
+        double dx=target.x()-at.x(),dz=target.z()-at.z();
+        double yaw=Math.atan2(dx,dz),pitch=Math.atan2(target.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        var focus=InteractionFocus.pick(map,new LooseClutter.Observer(seat,at.x(),at.y(),at.z(),yaw,pitch,true),List.of());
+        require(focus!=null&&focus.kind()==InteractionFocus.Kind.INTERFACE&&focus.id().equals("STORY_"+doc),
+            "Unreachable Mine document "+doc+" from "+at+" / "+focus);
+        return focus;
+    }
+
+    private static void auditCase(HouseMap map,List<String[]> stories,Path captures,List<String> report)throws Exception{
+        require(stories.size()==2&&SiteCaseFiles.forSite(map.level().id()).reference().equals("BB / WLD-05"),
+            "Mine case briefing or records missing");
+        for(var row:stories){
+            var at=point(row,10);
+            var target=point(row,13);
+            int room=Integer.parseInt(row[3]);
+            walkBoth(map,List.of(map.spawn(room),at),"Mine document "+row[2]);
+            storyFocus(map,0,at,target,row[2]);
+            var image=new java.awt.image.BufferedImage(880,580,java.awt.image.BufferedImage.TYPE_INT_RGB);
+            var g=image.createGraphics();
+            try{SiteStories.draw(g,880,580,map,row[2]);}finally{g.dispose();}
+            javax.imageio.ImageIO.write(image,"png",captures.resolve("mine-record-"+row[2]+".png").toFile());
+        }
+        for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            require(map.resolveMove(new Vec(52.0,-6,13.1),52.0,12.18,h)==null
+                    &&map.resolveMove(new Vec(49.92,-6,10.64),50.79,10.64,h)==null,
+                "Player crossed into sealed hoist display");
+        }
+        require(map.roomAt(52,-6,10.7)==-1&&map.roomAt(49,-6,14)==8,
+            "Sealed scenery was assigned playable ownership or removed the legal lift approach");
+        capture(map,new Vec(49,-6,14),2.45,captures.resolve("mine-collapsed-hoist.png"));
+        report.add("mine_case_records\tTwo physical readable records, an authored dispatch briefing, and a fixed two-sided hoist barrier");
+    }
+
+    private static void liveStories(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String[]> stories,
+            List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        try(var host=reviewHost(map);
+            var first=new Peer(host,false,"Mine assay");
+            var second=new Peer(host,false,"Mine rescue");
+            var witness=new Peer(host,false,"Mine witness");
+            var ghost=new Peer(host,true,"Mine ghost")){
+            for(var peer:List.of(first,second,witness,ghost)){
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
+                peer.client.ready();
+            }
+            first.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            first.client.start();
+            first.await("INFO|mission started");
+            for(int seat=0;seat<stories.size();seat++){
+                var row=stories.get(seat);
+                var peer=seat==0?first:second;
+                int room=Integer.parseInt(row[3]);
+                for(int owner:NativeSchoolInteriorReview.missionRoute(map,room)){
+                    peer.client.move(owner);
+                    peer.awaitExact("ACCEPT|MOVE|"+owner);
+                }
+                peer.client.view3D();
+                peer.awaitExact("ACCEPT|VIEW3D");
+                var start=NativeSchoolInteriorReview.body(peer.await("BODY|"+seat+"|"));
+                require(start.equals(map.spawn(room)),"Incorrect Mine story room spawn");
+                var at=walkPeer(peer,seat,start,d(row,10),d(row,12));
+                var target=point(row,13);
+                var focus=storyFocus(map,seat,at,target,row[2]);
+                double dx=target.x()-at.x(),dz=target.z()-at.z();
+                double yaw=Math.atan2(dx,dz),pitch=Math.atan2(target.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+                peer.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+                peer.client.interact(focus,yaw,pitch);
+                peer.awaitExact("INTERACTED|INTERFACE|STORY_"+row[2]);
+            }
+        }
+        report.add("staged_tcp_mine_records\tBoth physically aimed case records opened through the real four-peer host");
+    }
+
+    private static void capture(HouseMap map,Vec at,double yaw,Path target)throws Exception{
+        require(map.traversable(at.x(),at.y(),at.z()),"Unsupported standing Mine capture "+at);
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.x=at.x();renderer.z=at.z();renderer.eyeHeight=at.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=yaw;renderer.pitch=-.06;renderer.lamp=true;
+        renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(renderer,map,target);
+    }
+
+    private static void join(List<Vec> target,List<Vec> segment,boolean reverse){
+        var use=new ArrayList<>(segment);
+        if(reverse)Collections.reverse(use);
+        require(target.isEmpty()||target.get(target.size()-1).equals(use.get(0)),"Joined Mine route lost its actual threshold");
+        target.addAll(target.isEmpty()?use:use.subList(1,use.size()));
+    }
+
+    private static void live(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        var clientMap=reviewMap(site,level,scene);
+        try(var host=reviewHost(map);
+            var scout=new Peer(host,false,"Roadhead");
+            var haul=new Peer(host,false,"Haul");
+            var vent=new Peer(host,false,"Ventilation");
+            var ghost=new Peer(host,true,"Ghost")){
+            for(var peer:List.of(scout,haul,vent,ghost)){
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
+                peer.client.ready();
+            }
+            scout.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            scout.client.start();
+            scout.await("INFO|mission started");
+            scout.client.view3D();
+            scout.awaitExact("ACCEPT|VIEW3D");
+            var at=NativeSchoolInteriorReview.body(scout.await("BODY|0|"));
+            require(map.roomAt(at.x(),at.y(),at.z())==14,"Scout did not start on the loaded cargo deck");
+            for(int n=0;n<13;n++)at=NativeSchoolInteriorReview.step(scout,0,0,-100);
+            require(map.roomAt(at.x(),at.y(),at.z())==13&&Math.abs(at.y())<.025,"Scout missed the roadhead");
+            if(map.hasGenerator())livePower(clientMap,host,scout,haul,ghost,at,report);
+            for(int room:NativeSchoolInteriorReview.missionRoute(map,3)){
+                haul.client.move(room);
+                haul.awaitExact("ACCEPT|MOVE|"+room);
+            }
+            haul.client.view3D();
+            haul.awaitExact("ACCEPT|VIEW3D");
+            at=NativeSchoolInteriorReview.body(haul.await("BODY|1|"));
+            require(at.equals(map.spawn(3)),"Haul peer missed the shared headhouse floor");
+            for(int n=0;n<5;n++)at=NativeSchoolInteriorReview.step(haul,1,-100,0);
+            for(int n=0;n<8;n++)at=NativeSchoolInteriorReview.step(haul,1,0,-100);
+            refused(haul,0,-100);
+            open(clientMap,haul,1,at,Math.PI,706);
+            scout.awaitExact("DOORS|706");
+            for(int n=0;n<5;n++)at=NativeSchoolInteriorReview.step(haul,1,0,-100);
+            require(map.roomAt(at.x(),at.y(),at.z())==4&&Math.abs(at.y())<.02,"Haul peer crossed past the level receiving landing "+at);
+            for(int n=0;n<11;n++)at=NativeSchoolInteriorReview.step(haul,1,0,-100);
+            require(at.y()<-1.2,"Haul peer could not descend the actual new treads "+at);
+            for(int n=0;n<16;n++)at=NativeSchoolInteriorReview.step(haul,1,0,100);
+            require(map.roomAt(at.x(),at.y(),at.z())==3,"Haul peer missed the return to the headhouse");
+
+            clientMap.applyDoorSnapshot("706");
+            for(int room:NativeSchoolInteriorReview.missionRoute(map,3)){
+                vent.client.move(room);
+                vent.awaitExact("ACCEPT|MOVE|"+room);
+            }
+            vent.client.view3D();
+            vent.awaitExact("ACCEPT|VIEW3D");
+            at=NativeSchoolInteriorReview.body(vent.await("BODY|2|"));
+            require(at.equals(map.spawn(3)),"Ventilation peer missed the shared landing");
+            for(int n=0;n<10;n++)at=NativeSchoolInteriorReview.step(vent,2,-100,0);
+            refused(vent,-100,0);
+            open(clientMap,vent,2,at,-Math.PI/2,707);
+            scout.awaitExact("DOORS|706,707");
+            for(int n=0;n<4;n++)at=NativeSchoolInteriorReview.step(vent,2,-100,0);
+            require(map.roomAt(at.x(),at.y(),at.z())==10&&Math.abs(at.y())<.02,"Vent peer missed the level receiving landing "+at);
+            for(int n=0;n<10;n++)at=NativeSchoolInteriorReview.step(vent,2,-100,0);
+            require(at.y()<-1.1,"Vent peer could not descend the actual new treads "+at);
+            for(int n=0;n<14;n++)at=NativeSchoolInteriorReview.step(vent,2,100,0);
+            require(map.roomAt(at.x(),at.y(),at.z())==3,"Vent peer missed the return to the headhouse");
+        }
+        report.add("staged_tcp_mine\tFour peers, real cargo ramp, both closed stair doors reject crossing, both aimed opens replicate, level receiving landings followed by descent and return");
+    }
+
+    private static void auditPower(HouseMap map,Path captures,List<String> report)throws Exception{
+        var arrival=new Vec(36.75,.018,69.68);
+        var generator=map.level().socket("generator",13);
+        var breaker=RoomLighting.breaker(map);
+        for(var socket:List.of(generator,breaker)){
+            var at=new Vec(socket.x(),.018,socket.z()+1.18);
+            walkBoth(map,List.of(arrival,at),socket.id()+" operating position");
+            var focus=powerFocus(map,at,socket);
+            require(focus!=null&&focus.id().equals(socket.id()),"Mine plant misses aimed focus from "+at+" at "+socket.id()+": "+focus);
+        }
+        var lights=new RoomLighting();
+        var fixtures=new FixtureLighting(map);
+        for(var load:map.level().sockets().stream().filter(s->s.type().equals("light")).toList()){
+            double[] energy=new double[3];
+            for(int state=0;state<energy.length;state++){
+                lights.setSourceRunning(state!=1);
+                lights.setBreaker(state!=2);
+                fixtures.frame(lights,0);
+                energy[state]=fixtures.sample(load.room(),load.x(),load.y()-.65,load.z()).energy();
+            }
+            require(energy[0]>2*energy[1]&&energy[0]>2*energy[2],"Mine load stays energized "+load.id());
+            report.add(load.id()+"\t"+energy[0]+" supplied / "+energy[1]+" source disabled / "+energy[2]+" breaker tripped");
+        }
+        for(boolean supplied:new boolean[]{true,false}){
+            lights.setBreaker(supplied);
+            var renderer=new SceneRenderer();
+            renderer.setRenderSize(880,580);
+            renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+            renderer.roomLights=lights;
+            renderer.x=36.75;
+            renderer.z=71.93;
+            renderer.eyeHeight=HunterPosture.STANDING_EYE;
+            renderer.yaw=Math.PI;
+            renderer.pitch=-.09;
+            NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve(supplied?"mine-yard-powered.png":"mine-yard-tripped.png"));
+        }
+    }
+
+    private static void auditSwitches(HouseMap map,List<String[]> positions,Path captures,List<String> report)
+            throws Exception{
+        require(positions.size()==12,"Expected twelve independently mounted Mine room switches");
+        var lights=new RoomLighting();
+        var fixtures=new FixtureLighting(map);
+        for(var row:positions){
+            int room=Integer.parseInt(row[0]);
+            var at=point(row,1);
+            var sw=map.level().socket("switch",room);
+            var load=map.level().socket("light",room);
+            require(sw!=null&&load!=null,"Missing physical Mine switch or connected fixture for "+room);
+            // The stairs occupy the haul center and ore-west edge. Use the actual side aisles.
+            var guide=switch(room){
+                case 4 -> List.of(map.spawn(room),new Vec(22,-6,31),at);
+                case 5 -> List.of(map.spawn(room),new Vec(8,-6,26.56),new Vec(3.4,-6,26.56),at);
+                default -> List.of(map.spawn(room),at);
+            };
+            walkBoth(map,guide,sw.id()+" operating position");
+            var focus=powerFocus(map,at,sw);
+            require(focus!=null&&focus.kind()==InteractionFocus.Kind.SWITCH&&focus.id().equals(Integer.toString(room)),
+                "Mine circuit "+room+" misses aimed focus from "+at+": "+focus);
+            double dx=sw.x()-at.x(),dz=sw.z()-at.z();
+            require(lights.aimed(map,at.x(),at.y(),at.z(),Math.atan2(dx,dz))==room,
+                "Mine circuit "+room+" is outside shared switch reach");
+            fixtures.frame(lights,0);
+            double supplied=fixtureEnergy(fixtures,load);
+            require(!lights.toggle(room),"Mine switch did not turn off its room");
+            fixtures.frame(lights,0);
+            double switched=fixtureEnergy(fixtures,load);
+            require(supplied>1.25*switched,"Mine switch failed to darken its actual fixture "+load.id()+" "+supplied+" / "+switched);
+            require(lights.toggle(room),"Mine switch failed to restore the circuit");
+            fixtures.frame(lights,0);
+            require(Math.abs(supplied-fixtureEnergy(fixtures,load))<.0001,"Mine switch did not restore the original output");
+            report.add(sw.id()+"\t"+supplied+" supplied / "+switched+" locally switched off; aimed reach and both-posture approach pass");
+        }
+        for(boolean powered:new boolean[]{true,false}){
+            lights.setBreaker(powered);
+            reviewCircuitView(map,lights,new Vec(43.9,0,54.4),2.15,"assay",powered,captures);
+            reviewCircuitView(map,lights,new Vec(24.2,-6,30.4),1.7,"haul",powered,captures);
+            reviewCircuitView(map,lights,new Vec(15.2,-10,33.8),-2.3,"lower",powered,captures);
+        }
+    }
+
+    private static double fixtureEnergy(FixtureLighting fixtures,Socket load){
+        return fixtures.sampleNormal(load.room(),load.x(),load.y()-.55,load.z(),0,1,0).energy();
+    }
+
+    private static void reviewCircuitView(HouseMap map,RoomLighting lights,Vec at,double yaw,String room,
+            boolean powered,Path captures)throws Exception{
+        require(map.traversable(at.x(),at.y(),at.z()),"Unsupported Mine circuit camera "+at);
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.roomLights=lights;
+        renderer.x=at.x();
+        renderer.z=at.z();
+        renderer.eyeHeight=at.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=yaw;
+        renderer.pitch=-.02;
+        NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve("mine-"+room+(powered?"-powered":"-tripped")+".png"));
+    }
+
+    private static InteractionFocus.Target powerFocus(HouseMap map,Vec at,Socket socket){
+        double dx=socket.x()-at.x(),dz=socket.z()-at.z();
+        double yaw=Math.atan2(dx,dz),pitch=Math.atan2(socket.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        return InteractionFocus.pick(map,new LooseClutter.Observer(0,at.x(),at.y(),at.z(),yaw,pitch,true),List.of());
+    }
+
+    private static void livePower(HouseMap map,LanHost host,Peer operator,Peer witness,Peer ghost,Vec at,
+            List<String> report)throws Exception{
+        ghost.client.viewGhost3D();
+        ghost.awaitExact("ACCEPT|GVIEW3D");
+        ghost.awaitExact("SITE|"+map.site()+"|"+map.level().revision());
+        ghost.await("GPOSE|");
+        NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
+        var generator=map.level().socket("generator",13);
+        var breaker=RoomLighting.breaker(map);
+        var lights=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
+        at=walkPeer(operator,0,at,28,72.20);
+        at=walkPeer(operator,0,at,generator.x(),72.20);
+        at=walkPeer(operator,0,at,generator.x(),generator.z()+1.18);
+        usePower(map,operator,at,generator);
+        witness.awaitExact("SOURCE|0");
+        require(!lights.sourceRunning()&&!lights.breaker()&&!lights.supplied(),"Mine source stop changed the tripped breaker");
+        Thread.sleep(400);
+        usePower(map,operator,at,generator);
+        witness.awaitExact("SOURCE|1");
+        require(lights.sourceRunning()&&!lights.breaker()&&!lights.supplied(),"Mine generator restart bypassed the tripped breaker");
+        at=walkPeer(operator,0,at,breaker.x(),generator.z()+1.18);
+        at=walkPeer(operator,0,at,breaker.x(),breaker.z()+1.18);
+        usePower(map,operator,at,breaker);
+        witness.awaitExact("LIGHTS|111111111111|1");
+        require(lights.supplied(),"Mine physical breaker reset did not restore supply");
+        operator.client.view3D();
+        operator.awaitExact("ACCEPT|VIEW3D");
+        operator.awaitExact("LIGHTS|111111111111|1");
+        operator.awaitExact("SOURCE|1");
+        report.add("staged_tcp_mine_power\tGhost tripped the Mine breaker, a peer walked from cargo to the service shed, stopped and restarted the generator, then reset the breaker; witness and view resync confirmed both states");
+    }
+
+    private static Vec walkPeer(Peer operator,int seat,Vec at,double x,double z)throws Exception{
+        for(int step=0;step<60;step++){
+            double dx=x-at.x(),dz=z-at.z(),distance=Math.hypot(dx,dz);
+            if(distance<.165)return at;
+            double scale=Math.min(100/distance,310);
+            at=NativeSchoolInteriorReview.step(operator,seat,(int)Math.round(dx*scale),(int)Math.round(dz*scale));
+        }
+        throw new AssertionError("Mine operator cannot walk to "+x+","+z+" from "+at);
+    }
+
+    private static void usePower(HouseMap map,Peer operator,Vec at,Socket socket)throws Exception{
+        var focus=powerFocus(map,at,socket);
+        String expected=socket.type().equals("switch")?Integer.toString(socket.room()):socket.id();
+        require(focus!=null&&focus.id().equals(expected),"Live Mine interaction missed "+socket.id()+" from "+at+": "+focus);
+        double dx=socket.x()-at.x(),dz=socket.z()-at.z();
+        double yaw=Math.atan2(dx,dz),pitch=Math.atan2(socket.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        operator.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+        operator.client.interact(focus,yaw,pitch);
+        operator.awaitExact("ACCEPT|INTERACT|"+focus.name());
+    }
+
+    private static void liveSwitches(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String[]> positions,
+            List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        try(var host=reviewHost(map);
+            var assay=new Peer(host,false,"Assay");
+            var lower=new Peer(host,false,"Lower workings");
+            var witness=new Peer(host,false,"Witness");
+            var ghost=new Peer(host,true,"Ghost")){
+            for(var peer:List.of(assay,lower,witness,ghost)){
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
+                peer.client.ready();
+            }
+            assay.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            assay.client.start();
+            assay.await("INFO|mission started");
+            var lights=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
+            var assayFeet=reachCircuit(map,assay,0,1,positions);
+            var lowerFeet=reachCircuit(map,lower,1,9,positions);
+            var lowerSwitch=level.socket("switch",9);
+            usePower(map,assay,assayFeet,level.socket("switch",1));
+            witness.awaitExact("LIGHTS|101111111111|1");
+            require(!lights.on(1)&&lights.on(9)&&lights.supplied(),"Assay switch changed another circuit or the supply");
+            usePower(map,lower,lowerFeet,lowerSwitch);
+            witness.awaitExact("LIGHTS|101111111011|1");
+            require(!lights.on(1)&&!lights.on(9)&&lights.supplied(),"Lower switch changed another circuit or the supply");
+            Thread.sleep(400);
+            usePower(map,assay,assayFeet,level.socket("switch",1));
+            witness.awaitExact("LIGHTS|111111111011|1");
+            usePower(map,lower,lowerFeet,lowerSwitch);
+            witness.awaitExact("LIGHTS|111111111111|1");
+            ghost.client.viewGhost3D();
+            ghost.awaitExact("ACCEPT|GVIEW3D");
+            ghost.await("GPOSE|");
+            NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
+            Thread.sleep(400);
+            usePower(map,lower,lowerFeet,lowerSwitch);
+            witness.awaitExact("LIGHTS|111111111011|0");
+            require(!lights.on(9)&&lights.sourceRunning()&&!lights.supplied(),"Mine switch bypassed a live breaker trip");
+
+            var ticket=lower.client.resumeTicket();
+            require(ticket!=null,"Missing lower workings resume ticket");
+            ((java.net.Socket)NativeSchoolInteriorReview.field(lower.client,"socket")).close();
+            witness.await("PEER|LOST|1");
+            var frames=new java.util.concurrent.LinkedBlockingQueue<String>();
+            try(var resumed=new LanClient("127.0.0.1",host.port(),ticket,frames::offer)){
+                awaitReconnect(frames,"INFO|mission resumed");
+                resumed.view3D();
+                awaitReconnect(frames,"ACCEPT|VIEW3D");
+                awaitReconnect(frames,"SITE|"+site+"|"+level.revision());
+                awaitReconnect(frames,"LIGHTS|111111111011|0");
+                awaitReconnect(frames,"SOURCE|1");
+                var feet=NativeSchoolInteriorReview.body(awaitReconnect(frames,"BODY|1|"));
+                require(feet.equals(lowerFeet),"Mine reconnect lost the supported body "+feet+" / "+lowerFeet);
+            }
+            report.add("staged_tcp_mine_switches\tAimed assay and lower-working switches replicate independently; a lower switch stays off across ghost trip and reconnect with running source, open breaker and exact supported pose");
+        }
+    }
+
+    private static Vec reachCircuit(HouseMap map,Peer peer,int seat,int room,List<String[]> positions)throws Exception{
+        for(int owner:NativeSchoolInteriorReview.missionRoute(map,room)){
+            peer.client.move(owner);
+            peer.awaitExact("ACCEPT|MOVE|"+owner);
+        }
+        peer.client.view3D();
+        peer.awaitExact("ACCEPT|VIEW3D");
+        var at=NativeSchoolInteriorReview.body(peer.await("BODY|"+seat+"|"));
+        require(at.equals(map.spawn(room)),"Wrong supported spawn for Mine circuit "+room+": "+at);
+        var target=positions.stream().filter(row->Integer.parseInt(row[0])==room).findFirst().orElseThrow();
+        return walkPeer(peer,seat,at,d(target,1),d(target,3));
+    }
+
+    private static String awaitReconnect(java.util.concurrent.BlockingQueue<String> frames,String prefix)throws Exception{
+        long start=System.nanoTime();
+        while(System.nanoTime()-start<5_000_000_000L){
+            var row=frames.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
+            if(row!=null&&row.startsWith(prefix))return row;
+            require(row==null||!row.startsWith("REJECT|"),"Mine resume rejected: "+row);
+        }
+        throw new AssertionError("Missing Mine resume frame "+prefix);
+    }
+
+    private static void liveCover(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{
+        var map=reviewMap(site,level,scene);
+        var fullCover=new CustomContract(3,100,150,100,100,100,100,100,CustomContract.Sprint.LIMITED,100,true,true);
+        map.configureHiding(100);
+        try(var host=reviewHost(map,fullCover);
+            var crew=new Peer(host,false,"Crew house");
+            var assay=new Peer(host,false,"Assay office");
+            var wash=new Peer(host,false,"Wash house");
+            var ghost=new Peer(host,true,"Ghost")){
+            var hunters=List.of(crew,assay,wash);
+            for(var peer:List.of(crew,assay,wash,ghost)){
+                peer.awaitExact("SITE|"+site+"|"+level.revision());
+                peer.client.ready();
+            }
+            crew.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            crew.client.start();
+            crew.await("INFO|mission started");
+            var owners=List.of(0,1,11);
+            for(int seat=0;seat<hunters.size();seat++){
+                var hunter=hunters.get(seat);
+                int owner=owners.get(seat);
+                var refuge=level.socket("hide",owner);
+                for(int room:NativeSchoolInteriorReview.missionRoute(map,owner)){
+                    hunter.client.move(room);
+                    hunter.awaitExact("ACCEPT|MOVE|"+room);
+                }
+                hunter.client.view3D();
+                hunter.awaitExact("ACCEPT|VIEW3D");
+                var at=NativeSchoolInteriorReview.body(hunter.await("BODY|"+seat+"|"));
+                require(at.equals(map.spawn(owner)),"Hunter missed Mine refuge room "+owner);
+                var approach=LevelClosets.world(refuge,0,0,1.18);
+                at=walkPeer(hunter,seat,at,approach.x(),approach.z());
+                require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Protection leaked past a refuge opening "+owner);
+                var entry=LevelClosets.world(refuge,0,0,.22);
+                at=walkPeer(hunter,seat,at,entry.x(),entry.z());
+                require(SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Failed to cross the native Mine refuge "+owner);
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|1");
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|0");
+                at=walkPeer(hunter,seat,at,approach.x(),approach.z());
+                require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Protection persisted outside the refuge "+owner);
+            }
+        }
+        report.add("staged_tcp_mine_cover\tThree physical walk-in refuges each accept live entry, hiding, reveal and exit at maximum cover");
+    }
+
+    private static void refused(Peer peer,int dx,int dz)throws Exception{
+        Thread.sleep(125);
+        peer.client.step(dx,dz);
+        peer.awaitExact("REJECT|blocked by world collision");
+    }
+
+    private static void open(HouseMap clientMap,Peer peer,int seat,Vec at,double yaw,int id)throws Exception{
+        double pitch=-.11;
+        var eye=new LooseClutter.Observer(seat,at.x(),at.y(),at.z(),yaw,pitch,true);
+        var focus=InteractionFocus.pick(clientMap,eye,List.of());
+        require(focus!=null&&focus.kind()==InteractionFocus.Kind.DOOR&&focus.id().equals(Integer.toString(id)),
+            "No live aim on fitted Mine door "+id+": "+at+" / "+focus);
+        peer.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+        peer.client.interact(focus,yaw,pitch);
+        peer.awaitExact("ACCEPT|INTERACT|Open door");
+    }
+
+    private static HouseMap reviewMap(HouseMap.Site site,LevelDefinition level,NativeInvestigationScene scene){
+        return site==HouseMap.Site.MINE?HouseMap.forNetworkRevision(site,level.revision()):new HouseMap(site,level,null,scene);
+    }
+
+    private static LanHost reviewHost(HouseMap map)throws IOException{
+        return reviewHost(map,CustomContract.standard(3));
+    }
+
+    private static LanHost reviewHost(HouseMap map,CustomContract contract)throws IOException{
+        return map.site()==HouseMap.Site.MINE
+            ?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,false,false,map.site())
+            :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,map);
+    }
+
+    private static void walkBoth(HouseMap map,List<Vec> points,String id){
+        var reverse=new ArrayList<>(points);
+        Collections.reverse(reverse);
+        for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+            NativeSchoolInteriorReview.walk(map,points,height,"Mine "+id);
+            NativeSchoolInteriorReview.walk(map,reverse,height,"Mine reverse "+id);
+        }
+    }
+
+    private static List<String[]> rows(Path file)throws IOException{
+        return Files.readAllLines(file).stream().map(line->line.split("\\t",-1)).toList();
+    }
+
+    private static double d(String[] row,int column){return Double.parseDouble(row[column]);}
+    private static Vec point(String[] row,int column){return new Vec(d(row,column),d(row,column+1),d(row,column+2));}
+    private static void require(boolean ok,String reason){if(!ok)throw new AssertionError(reason);}
+}

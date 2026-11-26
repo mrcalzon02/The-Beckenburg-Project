@@ -1,0 +1,100 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5289,
+        "valid_standing": 5289,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5139,
+        "valid_standing": 5139,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/service-portal-construction-pass/wld-12/construction.json",
+        "contract_sha256": "e5aa083f86a8a562989500b5c103b948184229cde1c679f2ad33430965b171c6",
+        "layout": "development/levels/rebuild/service-portal-construction-pass/wld-12/authored-layout.json",
+        "layout_sha256": "45a81936541a7925c26628656f6a1c8e507cb6ef2af78d634494c86773a4fdfe",
+        "native": "development/levels/rebuild/service-portal-construction-pass/wld-12/clean-doorways.hcs2",
+        "native_sha256": "ce32d6cfa1e3875c86851177ea7b940fbcafa9f8948004065b2baef12ddd7896"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/workyard-station-pass/wld-12/construction.json",
+        "contract_sha256": "012b6519d8533c49e728063fb313ac5e5d185d6da0d13f1e8285d5cced734295",
+        "layout": "development/levels/rebuild/workyard-station-pass/wld-12/authored-layout.json",
+        "layout_sha256": "7cf29de2df23931406983621a0c808e29b0973bed031db969052593d71716730",
+        "native": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.hcs2",
+        "native_sha256": "4cd10a7f7086c0e769103fc504ae164b7ebc5fa19b766d700dfbf117e59dc424"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/doorway-construction-pass/wld-13/construction.json",
+        "contract_sha256": "6515417b6eee4706bade6e43c4164c90ec813768475f97a0924dc82a0abf8732",
+        "layout": "development/levels/rebuild/doorway-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "aef6aad97d542c76af3fc9f37298beae76963c5cc85a0638cafefd3008be4770",
+        "native": "development/levels/rebuild/doorway-construction-pass/wld-13/clean-doorways.hcs2",
+        "native_sha256": "2dc43269dc372584820c005a88d7a0abeb6de50398c7b3c4c7ce830b56bbced2"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/workyard-station-pass/wld-13/construction.json",
+        "contract_sha256": "04bb402d3f8109e762aa6ebac4d235f7225b21e1135f388fb1c594675c7868b6",
+        "layout": "development/levels/rebuild/workyard-station-pass/wld-13/authored-layout.json",
+        "layout_sha256": "12c5783d50d43b56ca67e7ae5107c637c3988e64924b035a70bb5d5879b9837a",
+        "native": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.hcs2",
+        "native_sha256": "c0f2810f1bd0d1b7f8f055c3c659c3184bf0d4971f19f49410839faa49e9f11f"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/estate-parish-pass/roster.json": "fc8b538a82026bca2c8f1a1d33a2bba5c03b8f833117409640b7f7da6292665d"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-lane-input.tsv": "815bad7976236afd88336624754f0772f8ac371aff250d346447827dcdaab98e",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-lane-names.tsv": "a2166111ff510a863c10194d5849048af281b7c6fdef4638c72695981f42843c",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-lanes.tsv": "1905d2b44bc5031140591b1a1d96e270a64b73d8ae67f190fef9432f10c1926f",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-links.tsv": "547b41b6010fe33cc84ce1cb049d007b4233d3756d7dc04c37cd151e353142b9",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-names.tsv": "a2166111ff510a863c10194d5849048af281b7c6fdef4638c72695981f42843c",
+    "development/levels/rebuild/workyard-station-pass/verification/flat/current-flat-paths.tsv": "071ee1c8c66033f1f5d6a9c4f0b9dc4614bae0da9be8abe10f0def2636f42539"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

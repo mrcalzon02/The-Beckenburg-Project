@@ -1,0 +1,567 @@
+{
+  "status": "MONASTERY_FOUNDED_PERIMETER_SOURCE_STAGED",
+  "prior": "development/levels/rebuild/monastery-loose-pass/checkpoint.json",
+  "plan": "development/levels/edge-sky-plans/wld-10/plan.json",
+  "plan_sha256": "5ac8405ed26e6c51a72d21b88672da356fc9ec768f2632133bea449439b355ae",
+  "surveyed_terrain": {
+    "exterior_seam_edges": 1137,
+    "preserved_interior_edges": [
+      493,
+      111,
+      48,
+      48,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      28,
+      28
+    ],
+    "exterior_area_m2": 28761.12,
+    "new_faces": 4680,
+    "road_boundary_constraints": 6
+  },
+  "boundary": [
+    {
+      "name": "Monastery estate bank masonry 01",
+      "start": [
+        -14.6842,
+        18.1409
+      ],
+      "end": [
+        -12.492,
+        14.2196
+      ],
+      "stations": 11,
+      "exposed_height": 2.2,
+      "foundation_low": 1.7674,
+      "crest": [
+        4.2965,
+        4.4265
+      ]
+    },
+    {
+      "name": "Monastery estate bank masonry 02",
+      "start": [
+        -12.492,
+        14.2196
+      ],
+      "end": [
+        -5.5106,
+        3.4047
+      ],
+      "stations": 30,
+      "exposed_height": 2.2,
+      "foundation_low": 1.2558,
+      "crest": [
+        3.8121,
+        4.4353
+      ]
+    },
+    {
+      "name": "Monastery estate wall masonry 03",
+      "start": [
+        -5.5106,
+        3.4047
+      ],
+      "end": [
+        3.508,
+        -5.7804
+      ],
+      "stations": 30,
+      "exposed_height": 2.06,
+      "foundation_low": -0.0399,
+      "crest": [
+        2.3543,
+        3.6689
+      ]
+    },
+    {
+      "name": "Monastery estate wall masonry 04",
+      "start": [
+        3.508,
+        -5.7804
+      ],
+      "end": [
+        21.508,
+        -7.7403
+      ],
+      "stations": 42,
+      "exposed_height": 2.06,
+      "foundation_low": -0.6967,
+      "crest": [
+        1.6941,
+        2.3543
+      ]
+    },
+    {
+      "name": "Monastery estate wall masonry 05",
+      "start": [
+        21.508,
+        -7.7403
+      ],
+      "end": [
+        39.508,
+        -5.7804
+      ],
+      "stations": 42,
+      "exposed_height": 2.06,
+      "foundation_low": -0.7355,
+      "crest": [
+        1.6476,
+        1.6975
+      ]
+    },
+    {
+      "name": "Monastery estate wall masonry 06",
+      "start": [
+        39.508,
+        -5.7804
+      ],
+      "end": [
+        44.0,
+        -5.2817
+      ],
+      "stations": 12,
+      "exposed_height": 2.06,
+      "foundation_low": -0.7201,
+      "crest": [
+        1.6517,
+        1.6754
+      ]
+    },
+    {
+      "name": "Monastery estate wall masonry 07",
+      "start": [
+        44.0,
+        -5.2817
+      ],
+      "end": [
+        50.6842,
+        -1.8591
+      ],
+      "stations": 18,
+      "exposed_height": 2.06,
+      "foundation_low": -0.6948,
+      "crest": [
+        1.6754,
+        1.7957
+      ]
+    },
+    {
+      "name": "Monastery estate wall masonry 08",
+      "start": [
+        50.6842,
+        -1.8591
+      ],
+      "end": [
+        63.2481,
+        4.1741
+      ],
+      "stations": 32,
+      "exposed_height": 2.06,
+      "foundation_low": -0.5793,
+      "crest": [
+        1.7957,
+        2.8305
+      ]
+    },
+    {
+      "name": "Monastery estate cliff masonry 09",
+      "start": [
+        63.2481,
+        4.1741
+      ],
+      "end": [
+        74.6842,
+        12.1409
+      ],
+      "stations": 32,
+      "exposed_height": 2.06,
+      "foundation_low": 0.0963,
+      "crest": [
+        2.5589,
+        3.1681
+      ]
+    },
+    {
+      "name": "Monastery estate cliff masonry 10",
+      "start": [
+        74.6842,
+        12.1409
+      ],
+      "end": [
+        76.984,
+        16.0
+      ],
+      "stations": 11,
+      "exposed_height": 2.06,
+      "foundation_low": -0.0675,
+      "crest": [
+        2.4245,
+        2.5589
+      ]
+    },
+    {
+      "name": "Monastery estate cliff masonry 11",
+      "start": [
+        76.984,
+        16.0
+      ],
+      "end": [
+        78.1084,
+        33.0
+      ],
+      "stations": 39,
+      "exposed_height": 2.06,
+      "foundation_low": -0.3769,
+      "crest": [
+        2.0738,
+        2.508
+      ]
+    },
+    {
+      "name": "Monastery estate cliff masonry 12",
+      "start": [
+        78.1084,
+        33.0
+      ],
+      "end": [
+        76.984,
+        50.0
+      ],
+      "stations": 39,
+      "exposed_height": 2.06,
+      "foundation_low": -0.7606,
+      "crest": [
+        1.6904,
+        2.0738
+      ]
+    },
+    {
+      "name": "Monastery estate cliff masonry 13",
+      "start": [
+        76.984,
+        50.0
+      ],
+      "end": [
+        74.3062,
+        53.6409
+      ],
+      "stations": 12,
+      "exposed_height": 2.06,
+      "foundation_low": -0.7606,
+      "crest": [
+        1.6904,
+        1.8193
+      ]
+    },
+    {
+      "name": "Monastery estate cliff masonry 14",
+      "start": [
+        74.3062,
+        53.6409
+      ],
+      "end": [
+        62.0376,
+        72.9875
+      ],
+      "stations": 52,
+      "exposed_height": 2.06,
+      "foundation_low": -0.9984,
+      "crest": [
+        1.3824,
+        1.8186
+      ]
+    },
+    {
+      "name": "Monastery estate gate masonry 15",
+      "start": [
+        62.0376,
+        72.9875
+      ],
+      "end": [
+        46.3062,
+        89.6409
+      ],
+      "stations": 52,
+      "exposed_height": 2.06,
+      "foundation_low": -0.9808,
+      "crest": [
+        1.4016,
+        1.8163
+      ]
+    },
+    {
+      "name": "Monastery estate gate masonry 16",
+      "start": [
+        46.3062,
+        89.6409
+      ],
+      "end": [
+        40.0,
+        93.7183
+      ],
+      "stations": 18,
+      "exposed_height": 2.06,
+      "foundation_low": -0.6071,
+      "crest": [
+        1.7994,
+        1.8846
+      ]
+    },
+    {
+      "name": "Monastery estate gate masonry 17",
+      "start": [
+        40.0,
+        93.7183
+      ],
+      "end": [
+        36,
+        94.18
+      ],
+      "stations": 10,
+      "exposed_height": 2.06,
+      "foundation_low": -0.6401,
+      "crest": [
+        1.7656,
+        1.7994
+      ]
+    },
+    {
+      "name": "Monastery estate gate masonry 19",
+      "start": [
+        28,
+        94.18
+      ],
+      "end": [
+        19.508,
+        93.7804
+      ],
+      "stations": 20,
+      "exposed_height": 2.06,
+      "foundation_low": -0.6894,
+      "crest": [
+        1.7108,
+        1.7434
+      ]
+    },
+    {
+      "name": "Monastery estate gate masonry 20",
+      "start": [
+        19.508,
+        93.7804
+      ],
+      "end": [
+        2.7798,
+        76.4277
+      ],
+      "stations": 55,
+      "exposed_height": 2.06,
+      "foundation_low": -0.7422,
+      "crest": [
+        1.635,
+        1.8558
+      ]
+    },
+    {
+      "name": "Monastery estate bank masonry 21",
+      "start": [
+        2.7798,
+        76.4277
+      ],
+      "end": [
+        -12.492,
+        57.7804
+      ],
+      "stations": 55,
+      "exposed_height": 2.2,
+      "foundation_low": -0.6762,
+      "crest": [
+        1.8628,
+        2.4329
+      ]
+    },
+    {
+      "name": "Monastery estate bank masonry 22",
+      "start": [
+        -12.492,
+        57.7804
+      ],
+      "end": [
+        -14.3062,
+        53.6409
+      ],
+      "stations": 12,
+      "exposed_height": 2.2,
+      "foundation_low": -0.4968,
+      "crest": [
+        2.1382,
+        2.4329
+      ]
+    },
+    {
+      "name": "Monastery estate bank masonry 23",
+      "start": [
+        -14.3062,
+        53.6409
+      ],
+      "end": [
+        -14.6842,
+        46.1409
+      ],
+      "stations": 18,
+      "exposed_height": 2.2,
+      "foundation_low": -0.4968,
+      "crest": [
+        2.037,
+        2.3287
+      ]
+    },
+    {
+      "name": "Monastery estate bank masonry 24",
+      "start": [
+        -14.6842,
+        46.1409
+      ],
+      "end": [
+        -16.7699,
+        32.1409
+      ],
+      "stations": 33,
+      "exposed_height": 2.2,
+      "foundation_low": -0.1961,
+      "crest": [
+        2.3287,
+        3.5183
+      ]
+    },
+    {
+      "name": "Monastery estate bank masonry 25",
+      "start": [
+        -16.7699,
+        32.1409
+      ],
+      "end": [
+        -14.6842,
+        18.1409
+      ],
+      "stations": 33,
+      "exposed_height": 2.2,
+      "foundation_low": 0.8427,
+      "crest": [
+        3.5183,
+        4.2965
+      ]
+    },
+    {
+      "name": "fixed outer carriage gate",
+      "start": [
+        36,
+        94.18
+      ],
+      "end": [
+        28,
+        94.18
+      ],
+      "stations": 9,
+      "exposed_height": 2.4694,
+      "foundation_low": -0.4142,
+      "crest": [
+        2.1202,
+        2.4602
+      ]
+    }
+  ],
+  "model_budget": {
+    "triangles": 195071,
+    "declared_vertices": 308323,
+    "bytes": 12274976
+  },
+  "prior_native_parts": 1633,
+  "replaced_fixture": "Monastery furnished vestry wash trough 01",
+  "vestry_basin": {
+    "floor": 0,
+    "wall": 2.08,
+    "bounds": [
+      [
+        38.199997,
+        0.0,
+        2.47
+      ],
+      [
+        38.860001,
+        1.136,
+        2.97
+      ]
+    ],
+    "center": [
+      38.53,
+      0.86,
+      2.72
+    ]
+  },
+  "matched_new_parts": [
+    "Monastery fitted exterior terrain",
+    "Monastery estate bank masonry 01",
+    "Monastery estate bank masonry 02",
+    "Monastery estate wall masonry 03",
+    "Monastery estate wall masonry 04",
+    "Monastery estate wall masonry 05",
+    "Monastery estate wall masonry 06",
+    "Monastery estate wall masonry 07",
+    "Monastery estate wall masonry 08",
+    "Monastery estate cliff masonry 09",
+    "Monastery estate cliff masonry 10",
+    "Monastery estate cliff masonry 11",
+    "Monastery estate cliff masonry 12",
+    "Monastery estate cliff masonry 13",
+    "Monastery estate cliff masonry 14",
+    "Monastery estate gate masonry 15",
+    "Monastery estate gate masonry 16",
+    "Monastery estate gate masonry 17",
+    "Monastery estate gate masonry 19",
+    "Monastery estate gate masonry 20",
+    "Monastery estate bank masonry 21",
+    "Monastery estate bank masonry 22",
+    "Monastery estate bank masonry 23",
+    "Monastery estate bank masonry 24",
+    "Monastery estate bank masonry 25",
+    "Monastery outer west gate pier",
+    "Monastery outer west pier coping",
+    "Monastery outer east gate pier",
+    "Monastery outer east pier coping",
+    "Monastery outer west closed carriage leaf",
+    "Monastery outer west gate brace 1",
+    "Monastery outer west gate brace 2",
+    "Monastery outer west gate brace 3",
+    "Monastery outer west hinge strap 1",
+    "Monastery outer west hinge strap 2",
+    "Monastery outer east closed carriage leaf",
+    "Monastery outer east gate brace 1",
+    "Monastery outer east gate brace 2",
+    "Monastery outer east gate brace 3",
+    "Monastery outer east hinge strap 1",
+    "Monastery outer east hinge strap 2",
+    "Monastery outer gate centre astragal",
+    "Monastery bell oak post 52.19",
+    "Monastery bell oak post 54.21",
+    "Monastery bell bearing beam",
+    "Monastery bell rope pulley beam",
+    "Monastery bell hanger",
+    "Monastery cast bronze bell",
+    "Monastery bell pull rope",
+    "Monastery vestry basin",
+    "Monastery Vestry basin supply riser",
+    "Monastery Vestry basin supply union",
+    "Monastery Vestry basin waste union"
+  ],
+  "bell_pull": "Monastery bell pull rope",
+  "geometry": {
+    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.blend": "1d0d9c8e7b28ff392240956f40eedd648d26ba27187e3a0578098609cd063be2",
+    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.glb": "d6000d728798ab71b50b0f393673bd1684a7f9401eef2a0406afdbd00ccccab4",
+    "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.hcs2": "a996deca5936ec2072a2781038467c52f93230e8b5759f95c347e4fb77715237"
+  }
+}

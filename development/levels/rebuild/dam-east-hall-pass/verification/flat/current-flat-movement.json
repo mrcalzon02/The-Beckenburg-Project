@@ -1,0 +1,65 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6087,
+        "valid_standing": 6087,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/construction.json",
+        "contract_sha256": "71ad7b422d27696ddedc44bc2ba1573b5828b7abd19e9052179f72ab208e552c",
+        "layout": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/authored-layout.json",
+        "layout_sha256": "e1f6811e1095bebd416baa9be9aa428347d5e55cacd481a61a6bc4a5ca5dfca7",
+        "native": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.hcs2",
+        "native_sha256": "acb40c7c046e1f3512286db59a867c619889532733982f7dae6c8309881f7daf"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/dam-east-hall-pass/wld-09/construction.json",
+        "contract_sha256": "9153641e4ce904485903c01bc01ab201617d14a28d003cf962972e77fa5f0b2d",
+        "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+        "layout_sha256": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+        "native": "development/levels/rebuild/dam-east-hall-pass/wld-09/east-hall-bearings.hcs2",
+        "native_sha256": "f2aff54d45c3671868a5fc34c278c1b3ed18e9672c05550b75a4753dd4b4ead9"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/workyard-station-pass/roster.json": "1cc025a45dce4e12ac3b48084477b804de285fca8782490f3a448b735ff3b115"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-lane-input.tsv": "fa3ab4619541217388fe7b1e9e2de79c7dac85095d1a246e47500f75b272e386",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-lane-names.tsv": "5412d86f0a37b58929448073a50404451889a28b5bffe74b7a32eca2a70205b3",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-lanes.tsv": "e244c9cf9760951bfbca711637949f753f3da83a458b79cf79336c5f4c10d647",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-links.tsv": "9697a68856bc646dbb36def8e8e2519b18b8f331229b14b2d029c9e7f31213f3",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-names.tsv": "5412d86f0a37b58929448073a50404451889a28b5bffe74b7a32eca2a70205b3",
+    "development/levels/rebuild/dam-east-hall-pass/verification/flat/current-flat-paths.tsv": "339c56f20c787e98047a3765036f27d9f91f9399f65feaad0fe242e3292d5b22"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

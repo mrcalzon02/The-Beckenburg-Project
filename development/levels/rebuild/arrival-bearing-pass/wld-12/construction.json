@@ -1,0 +1,233 @@
+{
+  "id": "WLD-12",
+  "status": "PHYSICAL_ARRIVAL_END_BEARING_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/flat-circulation-pass/wld-12/construction.json",
+  "source_contract_sha256": "e4c9d31898aa3b4ff10f8b080b0900ec081de90888df3e3f2ee90385ef1c9965",
+  "source_glb": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.glb",
+  "source_glb_sha256": "5df37d8e883429903e37e5bbbee836f6514dd8fe81346272b5da111dd9b483f3",
+  "source_physics": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.hcs2",
+  "source_physics_sha256": "da0e062878daef37a57daeedcd46bf4b9a0c9f80616a4edb5e4494ffbe00e2cc",
+  "before_layout": "development/levels/rebuild/flat-circulation-pass/wld-12/authored-layout.json",
+  "before_layout_sha256": "756abc1558d99a94a37cbb808da954d27abfb1d5cffccdde64afdc47877582e3",
+  "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+  "layout_sha256": "d79a2409663db7b39a695ea441f07155ca3b9bfdb20d4c0c53ee70db8e33a792",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "2": 0
+    },
+    "L17": {
+      "1": 0
+    },
+    "L18": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "2": 0
+    },
+    "L17": {
+      "1": 0
+    },
+    "L18": {}
+  },
+  "before_stair_components": [
+    "Authored stair end WLD-12 L16 0 high region0",
+    "Authored stair end WLD-12 L17 0 high region0",
+    "Bayed stair WLD-12 L16 step0",
+    "Bayed stair WLD-12 L16 step1",
+    "Bayed stair WLD-12 L16 step2",
+    "Bayed stair WLD-12 L16 step3",
+    "Bayed stair WLD-12 L16 step4",
+    "Bayed stair WLD-12 L16 step5",
+    "Bayed stair WLD-12 L16 step6",
+    "Bayed stair WLD-12 L16 step7",
+    "Bayed stair WLD-12 L16 step8",
+    "Bayed stair WLD-12 L16 step9",
+    "Bayed stair WLD-12 L16 step10",
+    "Bayed stair WLD-12 L16 step11",
+    "Bayed stair WLD-12 L16 step12",
+    "Bayed stair WLD-12 L16 step13",
+    "Bayed stair WLD-12 L16 step14",
+    "Bayed stair WLD-12 L16 step15",
+    "Bayed stair WLD-12 L16 step16",
+    "Bayed stair WLD-12 L16 step17",
+    "Bayed stair WLD-12 L16 step18",
+    "Bayed stair WLD-12 L16 step19",
+    "Bayed stair WLD-12 L16 step20",
+    "Bayed stair WLD-12 L16 step21",
+    "Bayed stair WLD-12 L17 step0",
+    "Bayed stair WLD-12 L17 step1",
+    "Bayed stair WLD-12 L17 step2",
+    "Bayed stair WLD-12 L17 step3",
+    "Bayed stair WLD-12 L17 step4",
+    "Bayed stair WLD-12 L17 step5",
+    "Bayed stair WLD-12 L17 step6",
+    "Bayed stair WLD-12 L17 step7",
+    "Bayed stair WLD-12 L17 step8",
+    "Bayed stair WLD-12 L17 step9",
+    "Bayed stair WLD-12 L17 step10",
+    "Bayed stair WLD-12 L17 step11",
+    "Bayed stair WLD-12 L17 step12",
+    "Bayed stair WLD-12 L17 step13",
+    "Bayed stair WLD-12 L17 step14",
+    "Bayed stair WLD-12 L17 step15",
+    "Bayed stair WLD-12 L17 step16",
+    "Bayed stair WLD-12 L17 step17",
+    "Retained upper hub WLD-12 L17 2 region0",
+    "Retained upper hub WLD-12 L17 2 region1",
+    "Retained upper hub WLD-12 L17 3 region0",
+    "Retained upper hub WLD-12 L17 3 region1",
+    "Bay landing WLD-12 L16 7 region0",
+    "Bay landing WLD-12 L17 2 region0",
+    "Bay landing WLD-12 L17 2 region1",
+    "Bay landing WLD-12 L17 2 region2"
+  ],
+  "stair_components": [
+    "Authored stair end WLD-12 L16 0 high region0",
+    "Authored stair end WLD-12 L17 0 high region0",
+    "Bayed stair WLD-12 L16 step0",
+    "Bayed stair WLD-12 L16 step1",
+    "Bayed stair WLD-12 L16 step2",
+    "Bayed stair WLD-12 L16 step3",
+    "Bayed stair WLD-12 L16 step4",
+    "Bayed stair WLD-12 L16 step5",
+    "Bayed stair WLD-12 L16 step6",
+    "Bayed stair WLD-12 L16 step7",
+    "Bayed stair WLD-12 L16 step8",
+    "Bayed stair WLD-12 L16 step9",
+    "Bayed stair WLD-12 L16 step10",
+    "Bayed stair WLD-12 L16 step11",
+    "Bayed stair WLD-12 L16 step12",
+    "Bayed stair WLD-12 L16 step13",
+    "Bayed stair WLD-12 L16 step14",
+    "Bayed stair WLD-12 L16 step15",
+    "Bayed stair WLD-12 L16 step16",
+    "Bayed stair WLD-12 L16 step17",
+    "Bayed stair WLD-12 L16 step18",
+    "Bayed stair WLD-12 L16 step19",
+    "Bayed stair WLD-12 L16 step20",
+    "Bayed stair WLD-12 L16 step21",
+    "Bayed stair WLD-12 L17 step0",
+    "Bayed stair WLD-12 L17 step1",
+    "Bayed stair WLD-12 L17 step2",
+    "Bayed stair WLD-12 L17 step3",
+    "Bayed stair WLD-12 L17 step4",
+    "Bayed stair WLD-12 L17 step5",
+    "Bayed stair WLD-12 L17 step6",
+    "Bayed stair WLD-12 L17 step7",
+    "Bayed stair WLD-12 L17 step8",
+    "Bayed stair WLD-12 L17 step9",
+    "Bayed stair WLD-12 L17 step10",
+    "Bayed stair WLD-12 L17 step11",
+    "Bayed stair WLD-12 L17 step12",
+    "Bayed stair WLD-12 L17 step13",
+    "Bayed stair WLD-12 L17 step14",
+    "Bayed stair WLD-12 L17 step15",
+    "Bayed stair WLD-12 L17 step16",
+    "Bayed stair WLD-12 L17 step17",
+    "Retained upper hub WLD-12 L17 2 region0",
+    "Retained upper hub WLD-12 L17 2 region1",
+    "Retained upper hub WLD-12 L17 3 region0",
+    "Retained upper hub WLD-12 L17 3 region1",
+    "Bay landing WLD-12 L16 7 region0",
+    "Bay landing WLD-12 L17 2 region0",
+    "Bay landing WLD-12 L17 2 region1",
+    "Bay landing WLD-12 L17 2 region2"
+  ],
+  "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c",
+  "physics_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      36.0,
+      0,
+      94.0
+    ],
+    "route_width": 2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        35.0,
+        94.35
+      ],
+      [
+        35.0,
+        94.0
+      ],
+      [
+        37.0,
+        94.0
+      ],
+      [
+        37.0,
+        94.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          35.0,
+          94.35
+        ],
+        [
+          35.0,
+          94.0
+        ],
+        [
+          37.0,
+          94.0
+        ],
+        [
+          37.0,
+          94.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-12 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-12 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f"
+}

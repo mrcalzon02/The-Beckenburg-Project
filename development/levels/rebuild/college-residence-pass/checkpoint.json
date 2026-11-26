@@ -1,0 +1,277 @@
+{
+  "status": "COLLEGE_RESIDENCE_FITOUT_VERIFIED_DRAFT_FULL_ACCEPTANCE_OPEN",
+  "baseline_commit": "9782a6e9fbf6b917555916ca2f7ca801012a878d",
+  "review_setting": "-Dbeckenburg.review.collegeNative=true",
+  "level_revision": "authored-campus-candidate-ffb69966d951e26e",
+  "scene_revision": "19b7e24c082c3556dc89f379a9e778d93cbf66bf8b01b24f21df2e50c1c2e7e1",
+  "roster": "roster.json",
+  "plan": {
+    "path": "development/levels/rebuild/college-residence-pass/college-residence-plan.svg",
+    "bytes": 12273,
+    "sha256": "aecbc9a5b285ef2b1ff23fe99c0e6434532fd49e395a7d3f8c4222335f9f865d"
+  },
+  "fit_schedule": "college/residence.json",
+  "reopened_native_export": "verification/structural-readback.json",
+  "source_files": {
+    "authored-layout.json": {
+      "path": "development/levels/rebuild/college-residence-pass/college/authored-layout.json",
+      "bytes": 393394,
+      "sha256": "6079faa27952610820e75a577ef7d9218652aaec08003d1ba7526fe8c96fcb49"
+    },
+    "college-residence.blend": {
+      "path": "development/levels/rebuild/college-residence-pass/college/college-residence.blend",
+      "bytes": 4661360,
+      "sha256": "0f4522d97595bf800292facf9aaa0ec6321d216f9bfef565ded72b8a9564818b"
+    },
+    "college-residence.glb": {
+      "path": "development/levels/rebuild/college-residence-pass/college/college-residence.glb",
+      "bytes": 13040052,
+      "sha256": "9b50981a344427fe5c5677f63d461e1b6eb35f4e1ce5efd648c44582690b8df9"
+    },
+    "college-residence.hcs2": {
+      "path": "development/levels/rebuild/college-residence-pass/college/college-residence.hcs2",
+      "bytes": 6847610,
+      "sha256": "26e528df3a85a452f87653585b139c1194c7dcb5686fd4921f6dbba9a9054f76"
+    },
+    "construction.json": {
+      "path": "development/levels/rebuild/college-residence-pass/college/construction.json",
+      "bytes": 47860,
+      "sha256": "3f1b4da2b3ab765b3bd8b6edce4cd88ed9213fec5d5f2f7cef52722bcdfacc06"
+    },
+    "residence.json": {
+      "path": "development/levels/rebuild/college-residence-pass/college/residence.json",
+      "bytes": 62296,
+      "sha256": "6add47e24e4537bd5edecff74b64614165af03b552979fbb1fb9ceca1cdbdc6a"
+    }
+  },
+  "packaged_exact_resources": {
+    "college-native.glb": {
+      "path": "development/levels/rebuild/college-residence-pass/college/college-residence.glb",
+      "bytes": 13040052,
+      "sha256": "9b50981a344427fe5c5677f63d461e1b6eb35f4e1ce5efd648c44582690b8df9"
+    },
+    "college-native.hcs2": {
+      "path": "development/levels/rebuild/college-residence-pass/college/college-residence.hcs2",
+      "bytes": 6847610,
+      "sha256": "26e528df3a85a452f87653585b139c1194c7dcb5686fd4921f6dbba9a9054f76"
+    },
+    "college-runtime.tsv": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/runtime.tsv",
+      "bytes": 20205,
+      "sha256": "a33f426de03a820ee71e9e46067689f4e05bc1097d19458580e23af8d653e096"
+    }
+  },
+  "packages_verified": [
+    "Windows Java",
+    "Windows RTX OpenGL"
+  ],
+  "architectural_scope": {
+    "residence_rooms": 8,
+    "constructed_bed_places": 16,
+    "furniture_instances": 64,
+    "replaced_overlapping_source_walls": 17,
+    "residence_operable_doors": 2,
+    "residence_fixed_entrances": 6,
+    "width_at_the_fitted_frames_m": 1.4,
+    "upper_floor_m": 3.6,
+    "accessible_site_spaces": 40,
+    "stable_owners": 15,
+    "adjacency_guidance": "The two inherited guides follow the actual existing slab and cross the surveyed new jambs. Their records have zero physical authority."
+  },
+  "gameplay": {
+    "furniture_approaches_per_posture": 48,
+    "postures": [
+      "standing",
+      "crouching"
+    ],
+    "existing_directional_routes": 88,
+    "total_operable_doors": 20,
+    "door_mover_sweeps": 480,
+    "door_optical_rays": 360,
+    "near_jamb_rays": 240,
+    "door_small_object_sweeps": 360,
+    "sealed_residence_thresholds": 6,
+    "fixed_leaf_hunter_sweeps": 60,
+    "each_of_fixed_leaf_sight_and_small_item_sweeps": 120,
+    "replicated_door_actions_per_renderer_run": 40,
+    "power_fixture_loads": 68,
+    "ordinary_tcp_peers": 4,
+    "ordinary_bedroom_entrance": [
+      48.9,
+      3.6,
+      37.18
+    ]
+  },
+  "corrections": {
+    "DEV-605": {
+      "reproduction": "verification/before-partitions.txt",
+      "finding": "The before mesh showed duplicate full wall runs plus bare apertures at X 50 and 54 m. Retained slab and circuit positions determine the built runs."
+    },
+    "DEV-606": {
+      "before_image_entries": 73,
+      "limit": 64,
+      "verified_export_image_entries": 47,
+      "retained_texture_bindings_compared": 85,
+      "reproduction": "verification/physical-first.txt"
+    },
+    "DEV-607": {
+      "rejected_candidate_glb": "d8d6487f1934e9c68f395202eead7d68170eed437aa009551c3eaefe32ccf596",
+      "observed_triangle_intersections_before": 305,
+      "fixture": "res-east-3 wardrobe-a",
+      "as_built_center_z": 52.16,
+      "clearance_to_riser_m": 0.55
+    }
+  },
+  "evidence_logs": {
+    "package.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/package.txt",
+      "bytes": 430,
+      "sha256": "c51afd72b046e8c89fe74b86aa0838b70b745a36c560b2594985965a492ccb91"
+    },
+    "ordinary-dispatch.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/ordinary-dispatch.txt",
+      "bytes": 455,
+      "sha256": "3e52fd10769ffc09cc4a473e02acde47bf06d5336bc704e2bc670b974d66a22a"
+    },
+    "software.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/software.txt",
+      "bytes": 4169,
+      "sha256": "7ddf3cbf0443fd3ccd7ea357e72d977c1f10723eda71a069398964bf94f6572c"
+    },
+    "opengl.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/opengl.txt",
+      "bytes": 7009,
+      "sha256": "c66a6b1a5e7785a01f57bd7d8c4a6df73ee092a474bc3628194c41c137dfc301"
+    },
+    "AuthoredLevelPhysicsTest.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/AuthoredLevelPhysicsTest.txt",
+      "bytes": 86,
+      "sha256": "8692030c8a39789d356887dd79041433488fed2d5c913f2e79beb41fb3946c95"
+    },
+    "AuthoredLevelNetworkTest.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/AuthoredLevelNetworkTest.txt",
+      "bytes": 412,
+      "sha256": "2384a6b90c09ef0c3ed753bfe13229d841455796fae2e236f6920268c7333222"
+    },
+    "LevelAuthoringSessionTest.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/LevelAuthoringSessionTest.txt",
+      "bytes": 86,
+      "sha256": "2a6a8e4beb879a35a53df4e6b560baddceed02c1545a4431753ca0722a275978"
+    },
+    "physical-first.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/physical-first.txt",
+      "bytes": 741,
+      "sha256": "2b81908cf68aef7e496bca875ad427bab59218f740e19a03c6de1190dcea8d63"
+    },
+    "before-partitions.txt": {
+      "path": "development/levels/rebuild/college-residence-pass/verification/before-partitions.txt",
+      "bytes": 2469,
+      "sha256": "cbd8f35023c5625f996921474a0f532e4450b72951b723934d90486f75e9ca70"
+    }
+  },
+  "captures": [
+    {
+      "renderer": "software",
+      "title": "Working bedroom door closed from the upper corridor",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-leaf-closed.png",
+      "bytes": 259032,
+      "sha256": "e6aa894ae7cf9fbebdf7de32a2fce1bc0e950b082491d7a8a5d2cc004c0276bf"
+    },
+    {
+      "renderer": "software",
+      "title": "Matched upper corridor view with the actual bedroom door open",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-leaf-open.png",
+      "bytes": 217144,
+      "sha256": "c609dba56fbc46f621e86422ff1e02e8c840db1a10d627897c3dfa91c02812f7"
+    },
+    {
+      "renderer": "software",
+      "title": "West room twin beds, storage and retained radiator at standing height",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-twin.png",
+      "bytes": 337587,
+      "sha256": "98c957edab522f27f3384ffdcd65bf424f2a706d04fc69d155201081d10fb66c"
+    },
+    {
+      "renderer": "software",
+      "title": "East room twin beds and storage at standing height",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-east-twin.png",
+      "bytes": 341858,
+      "sha256": "f36a49a936f2abdfc8a2a3a4efa5a623cba71bc34fd67dbd5483b91e519cb748"
+    },
+    {
+      "renderer": "software",
+      "title": "West room study desk and chair at standing height",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-study.png",
+      "bytes": 332991,
+      "sha256": "8687de44c9ac5ab23da3ecd2c1de2203345f43bf3d8065b920890640e8d28847"
+    },
+    {
+      "renderer": "software",
+      "title": "Standing upper corridor view of three fixed closed context leaves",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-fixed-context-leaves.png",
+      "bytes": 355569,
+      "sha256": "b0d8096a04bbb50705120f68193da905a975a51881ff334d4f1039ff30f98903"
+    },
+    {
+      "renderer": "opengl",
+      "title": "Working bedroom door closed from the upper corridor",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-leaf-closed.png",
+      "bytes": 264904,
+      "sha256": "fd43f91cd7107fc04000cae976fc8333a65d9e93f6dad01510e90394fb312057"
+    },
+    {
+      "renderer": "opengl",
+      "title": "Matched upper corridor view with the actual bedroom door open",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-leaf-open.png",
+      "bytes": 219001,
+      "sha256": "c2b52e3a859464e51b61568101c9fdc1c8b7dedee5f924b6590b02b1e574541d"
+    },
+    {
+      "renderer": "opengl",
+      "title": "West room twin beds, storage and retained radiator at standing height",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-twin.png",
+      "bytes": 329711,
+      "sha256": "7a3dbc8fb7decb4299fb3843e58c9f9a527d8fea13f4c220a9ac6a6e65463181"
+    },
+    {
+      "renderer": "opengl",
+      "title": "East room twin beds and storage at standing height",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-east-twin.png",
+      "bytes": 305177,
+      "sha256": "ce41db06ec183c00746d3347477d09809143b3b48a186b20ee17592fa163503a"
+    },
+    {
+      "renderer": "opengl",
+      "title": "West room study desk and chair at standing height",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-study.png",
+      "bytes": 327464,
+      "sha256": "8fee86f3f7557dd7791683a3c0dd21dd74922a02a02337f6eb8a47cc9d02c2a0"
+    },
+    {
+      "renderer": "opengl",
+      "title": "Standing upper corridor view of three fixed closed context leaves",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-fixed-context-leaves.png",
+      "bytes": 343446,
+      "sha256": "6cacec0f7574352b8c30adb610e7c6ac9636639c9653625eb10b8a7d201aa60b"
+    },
+    {
+      "renderer": "native reimport",
+      "title": "Actual upper residence export cutaway with ceilings hidden for review",
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-native-residence-cutaway.png",
+      "bytes": 1392639,
+      "sha256": "58afd7171f0fd1896594399881e84569c86b20fea11115036b2c26f5572ab75a"
+    }
+  ],
+  "hardware": "NVIDIA GeForce RTX 5070, OpenGL 3.3.0 NVIDIA 616.64",
+  "open": [
+    "Other College work rooms need fitted furniture, usable evidence and hiding placements, final surfaces and complete case acceptance.",
+    "Radiator and electrical operation are verified. Complete lighting and real hardware frame performance acceptance for the whole map remain open.",
+    "The previous held furnishing regression is recorded in the dispatch checkpoint."
+  ],
+  "publication": {
+    "draft_pull_request": 86,
+    "head": "map/roster-structure-batch",
+    "held_parent": "map/house-default",
+    "public_promotion": false
+  }
+}

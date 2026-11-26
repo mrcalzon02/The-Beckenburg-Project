@@ -1,0 +1,5 @@
+site	variant	link	segments	legacy_forward	legacy_reverse	authored_forward	authored_reverse
+WLD-10	monastery	cloister	14	PASS	PASS	PASS	PASS
+WLD-10	monastery	garden	13	PASS	PASS	PASS	PASS
+WLD-10	monastery	catacombs	17	BLOCKED_SEGMENT_8_AT_1_OF_54	BLOCKED_SEGMENT_3_AT_1_OF_54	PASS	PASS
+WLD-10	monastery	service	15	PASS	PASS	PASS	PASS

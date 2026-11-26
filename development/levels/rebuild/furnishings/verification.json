@@ -1,0 +1,277 @@
+{
+  "scope": 29,
+  "generated": 25,
+  "retained": 4,
+  "instances": 124,
+  "source_designs": 60,
+  "prop_triangles": 16120,
+  "uniform_rough_fit_budgets": [
+    {
+      "id": "CHURCH:choir:2:0",
+      "asset": "level_blockout_organ_pipe_console",
+      "scale": 0.96,
+      "bounds": [
+        21.662078857421875,
+        -27.32160186767578,
+        3.0,
+        23.831680297851562,
+        -26.160001754760742,
+        5.779200077056885
+      ]
+    },
+    {
+      "id": "CHURCH:confessional:3:0",
+      "asset": "level_blockout_confessional_screen",
+      "scale": 0.92,
+      "bounds": [
+        10.15999984741211,
+        -20.353281021118164,
+        0.0,
+        11.540000915527344,
+        -18.531679153442383,
+        2.4149999618530273
+      ]
+    },
+    {
+      "id": "FARMHOUSE:hayloft:3:0",
+      "asset": "level_blockout_barn_hayloft_bales",
+      "scale": 0.8,
+      "bounds": [
+        32.299198150634766,
+        -17.29199981689453,
+        3.0,
+        34.283199310302734,
+        -16.15999984741211,
+        4.319999694824219
+      ]
+    }
+  ],
+  "packets": [
+    {
+      "id": "ACADEMY",
+      "instances": 6,
+      "prop_triangles": 828,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/academy-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/academy-room-reception.png"
+      ]
+    },
+    {
+      "id": "ASYLUM",
+      "instances": 6,
+      "prop_triangles": 712,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/asylum-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/asylum-room-ground-north-a.png"
+      ]
+    },
+    {
+      "id": "CHURCH",
+      "instances": 5,
+      "prop_triangles": 780,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/church-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/church-room-nave.png"
+      ]
+    },
+    {
+      "id": "COLLEGE",
+      "instances": 5,
+      "prop_triangles": 628,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/college-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/college-room-lecture.png"
+      ]
+    },
+    {
+      "id": "FARMHOUSE",
+      "instances": 6,
+      "prop_triangles": 700,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/farmhouse-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/farmhouse-room-stall-a.png"
+      ]
+    },
+    {
+      "id": "MANSION",
+      "instances": 6,
+      "prop_triangles": 736,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/mansion-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/mansion-room-library.png"
+      ]
+    },
+    {
+      "id": "PRISON",
+      "instances": 5,
+      "prop_triangles": 504,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/prison-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/prison-room-a-lower-cell-01.png"
+      ]
+    },
+    {
+      "id": "SCHOOL",
+      "instances": 6,
+      "prop_triangles": 868,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/school-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/school-room-class-a.png"
+      ]
+    },
+    {
+      "id": "WLD-03",
+      "instances": 3,
+      "prop_triangles": 396,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-03-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-03-room-shelter.png"
+      ]
+    },
+    {
+      "id": "WLD-04",
+      "instances": 3,
+      "prop_triangles": 300,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-04-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-04-room-hut.png"
+      ]
+    },
+    {
+      "id": "WLD-05",
+      "instances": 5,
+      "prop_triangles": 668,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-05-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-05-room-ore-west.png"
+      ]
+    },
+    {
+      "id": "WLD-06",
+      "instances": 4,
+      "prop_triangles": 736,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-06-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-06-room-cottage-a.png"
+      ]
+    },
+    {
+      "id": "WLD-07",
+      "instances": 4,
+      "prop_triangles": 544,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-07-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-07-room-chapel.png"
+      ]
+    },
+    {
+      "id": "WLD-08",
+      "instances": 5,
+      "prop_triangles": 700,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-08-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-08-room-lab.png"
+      ]
+    },
+    {
+      "id": "WLD-09",
+      "instances": 5,
+      "prop_triangles": 780,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-09-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-09-room-turbine.png"
+      ]
+    },
+    {
+      "id": "WLD-10",
+      "instances": 4,
+      "prop_triangles": 504,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-10-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-10-room-archive.png"
+      ]
+    },
+    {
+      "id": "WLD-11",
+      "instances": 4,
+      "prop_triangles": 456,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-11-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-11-room-house-a.png"
+      ]
+    },
+    {
+      "id": "WLD-12",
+      "instances": 4,
+      "prop_triangles": 708,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-12-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-12-room-signal.png"
+      ]
+    },
+    {
+      "id": "WLD-13",
+      "instances": 5,
+      "prop_triangles": 540,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-13-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-13-room-processing.png"
+      ]
+    },
+    {
+      "id": "WLD-14",
+      "instances": 4,
+      "prop_triangles": 600,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-14-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png"
+      ]
+    },
+    {
+      "id": "WLD-15",
+      "instances": 5,
+      "prop_triangles": 628,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-15-room-processing.png"
+      ]
+    },
+    {
+      "id": "WLD-16",
+      "instances": 10,
+      "prop_triangles": 1188,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-16-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-16-room-office.png"
+      ]
+    },
+    {
+      "id": "WLD-17",
+      "instances": 4,
+      "prop_triangles": 492,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-17-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-17-room-barracks.png"
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "instances": 5,
+      "prop_triangles": 540,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-18-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-18-room-shop.png"
+      ]
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "instances": 5,
+      "prop_triangles": 584,
+      "images": [
+        "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-export-overview.png",
+        "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-room-mort-prep.png"
+      ]
+    }
+  ],
+  "status": "INITIAL_SPATIAL_ALLOCATION_NOT_FULL_FURNISHING_OR_RUNTIME_ACCEPTANCE"
+}

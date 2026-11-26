@@ -1,0 +1,71 @@
+check	result
+scene_revision	c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e
+renderer	Software
+body_contacts_at_perimeter	1302
+jump_height_contacts	1302
+standing_optical_contacts	651
+supported_crossings_blocked	1172
+original_invisible_edges_with_exterior_ground	3
+canonical_ramp_retreat_both_postures	PASS
+measured_tread_datums	6
+walked_authored_links_and_journeys_both_postures	39
+working_doors	16
+connected_supported_owners	15
+optics_object_passage_room_acoustics_and_replica_state	PASS
+northwatch_live_shed_supply	PASS ghost trip, van and two doors in blackout, aimed source stop/start, reconnect, breaker and branch switch
+shed-wash-basin_live	PASS aimed fill, shutoff and drained witness state from the actual shed aisle
+FUEL_AND_HEAT_WORKSHEET_live_reading	PASS real approach and host-authorized read
+lab_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+lab-wash-basin_live	PASS aimed fill, shutoff and drained witness state from the fitted lab
+store_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+radio_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+records_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+WINTER_RELAY_LOG_live_reading	PASS real approach and host-authorized read
+dorm_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+mess_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+shelter_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+array_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+court_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+tunnel-n_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+tunnel_live_aimed_switch	PASS through physical door; witness received only the selected branch change
+four_peer_van_to_generator_two_aimed_doors	PASS
+northwatch-dorm-cupboard_protected_floor_samples	69
+northwatch-lab-cupboard_protected_floor_samples	69
+northwatch-shelter-cupboard_protected_floor_samples	69
+northwatch_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+northwatch-lab-cupboard_live_entry_hide_reveal_exit	PASS
+northwatch-dorm-cupboard_live_entry_hide_reveal_exit	PASS
+northwatch-shelter-cupboard_live_entry_hide_reveal_exit	PASS
+shed_task_light_energy	2.7330460062003774 supplied, 0.187 stopped, 0.187 tripped, 0.187 switched off
+northwatch-lab-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+lab_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-radio-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+radio_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-records-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+records_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-store-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+store_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-dorm-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+dorm_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-mess-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+mess_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-shelter-task-light_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+shelter_circuit_energy	1 fixtures independently switched and cut by source or breaker
+northwatch-array-service-light-01_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+northwatch-array-service-light-02_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+array_circuit_energy	2 fixtures independently switched and cut by source or breaker
+northwatch-court-service-light-03_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+northwatch-court-service-light-04_energy	3.468237008024456 supplied, 0.9000000000000001 switch off, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+court_circuit_energy	2 fixtures independently switched and cut by source or breaker
+northwatch-tunnel-n-service-light-09_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-n-service-light-10_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+tunnel-n_circuit_energy	2 fixtures independently switched and cut by source or breaker
+northwatch-tunnel-service-light-05_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-service-light-06_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-service-light-07_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+northwatch-tunnel-service-light-08_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+tunnel_circuit_energy	4 fixtures independently switched and cut by source or breaker
+shed-wash-basin_water	PASS fill, shutoff, drain, sound with mains off
+lab-wash-basin_water	PASS fill, shutoff, drain, sound with mains off
+WINTER_RELAY_LOG_standing_and_crouched_focus	PASS
+FUEL_AND_HEAT_WORKSHEET_standing_and_crouched_focus	PASS

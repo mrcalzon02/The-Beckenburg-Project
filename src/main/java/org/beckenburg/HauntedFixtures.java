@@ -3,20 +3,41 @@ import java.util.*;
 import org.beckenburg.LevelDefinition.*;
 /** Authored event fixtures. Only accepted host events or physical player use change state. */
 public final class HauntedFixtures {
-    public enum Kind { PHONE,ALARM_CLOCK,FIRE_ALARM,RADIO,BOOM_BOX,SINK_BATH,SINK_KITCHEN,WASHING_MACHINE,SMOKE_ALARM,TELEVISION,TABLE_LAMP,LIGHT_SWITCH;
-        public String mesh(){if(this==LIGHT_SWITCH)return "light_switch_1";return name().startsWith("SINK")||(this==WASHING_MACHINE||this==TELEVISION||this==TABLE_LAMP)?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
-        public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM,SMOKE_ALARM->LanSound.Cue.FIRE_BELL;case TABLE_LAMP,LIGHT_SWITCH->LanSound.Cue.SWITCH;case WASHING_MACHINE,TELEVISION->LanSound.Cue.ELECTRIC_HUM;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;default->LanSound.Cue.RUNNING_WATER;};}
+    public enum Kind { PHONE,ALARM_CLOCK,FIRE_ALARM,RADIO,BOOM_BOX,SINK_BATH,SINK_KITCHEN,WASHING_MACHINE,SMOKE_ALARM,TELEVISION,TABLE_LAMP,LIGHT_SWITCH,TOWER_BELL,WATER_PUMP;
+        public String mesh(){if(this==LIGHT_SWITCH)return "light_switch_1";return name().startsWith("SINK")||(this==WASHING_MACHINE||this==TELEVISION||this==TABLE_LAMP||this==TOWER_BELL||this==WATER_PUMP)?null:"level_event_"+name().toLowerCase(Locale.ROOT)+"_worn";}
+        public LanSound.Cue cue(){return switch(this){case PHONE->LanSound.Cue.PHONE_RING;case ALARM_CLOCK->LanSound.Cue.ALARM_BELL;case FIRE_ALARM,SMOKE_ALARM->LanSound.Cue.FIRE_BELL;case TABLE_LAMP,LIGHT_SWITCH->LanSound.Cue.SWITCH;case WASHING_MACHINE,TELEVISION,WATER_PUMP->LanSound.Cue.ELECTRIC_HUM;case RADIO,BOOM_BOX->LanSound.Cue.RADIO_PLAY;case TOWER_BELL->LanSound.Cue.TOWER_BELL;default->LanSound.Cue.RUNNING_WATER;};}
     }
     public record State(int id,Kind kind,int room,double x,double y,double z,double yaw,double scale,boolean active,int water,int until,int revision){}
     public record Sound(State source,LanSound.Cue cue){}
-    private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active;
+    private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active,mains,embedded;
         State state(){return new State(id,kind,room,x,y,z,yaw,scale,active,water,until,revision);}}
+    static final String NATIVE_BASIN_SOCKET="water-basin";
+    static final String NATIVE_DEVICE_SOCKET="native-device";
+    static final double BASIN_RIM_Y=.86;
     private boolean powered=true;
-    public synchronized void power(boolean on){powered=on;if(!on)for(var f:fixtures)if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&f.active){f.active=false;f.revision++;}}
+    public synchronized void power(boolean on){powered=on;if(!on)for(var f:fixtures)if(f.mains&&f.active){f.active=false;f.revision++;}}
     private final HouseMap map;private final List<Fixture> fixtures=new ArrayList<>();
+    private final Map<String,Fixture> nativeDevices=new HashMap<>();
     private void add(Kind kind,int room,double x,double y,double z,double yaw){add(kind,room,x,y,z,yaw,1);}
-    private void add(Kind kind,int room,double x,double y,double z,double yaw,double scale){var f=new Fixture();f.id=fixtures.size()+1;f.kind=kind;f.room=room;f.x=x;f.y=y;f.z=z;f.yaw=yaw;f.scale=scale;fixtures.add(f);}
+    private void add(Kind kind,int room,double x,double y,double z,double yaw,double scale){var f=new Fixture();f.id=fixtures.size()+1;f.kind=kind;f.mains=kind==Kind.TELEVISION||kind==Kind.TABLE_LAMP;f.room=room;f.x=x;f.y=y;f.z=z;f.yaw=yaw;f.scale=scale;fixtures.add(f);}
     public HauntedFixtures(HouseMap map){this.map=map;
+        if(map.nativeInvestigation()!=null)
+            for(var s:map.level().sockets()){
+                if(s.type().equals(NATIVE_BASIN_SOCKET))add(Kind.SINK_BATH,s.room(),s.x(),s.y(),s.z(),s.yaw());
+                if(s.type().equals(NATIVE_DEVICE_SOCKET)){
+                    Kind kind=Kind.valueOf(s.style());
+                    boolean mains=switch(kind){
+                        case WASHING_MACHINE,RADIO,WATER_PUMP -> true;
+                        case TOWER_BELL,PHONE,SINK_BATH -> false;
+                        default -> throw new IllegalArgumentException("Unsupported native device: "+kind);
+                    };
+                    add(kind,s.room(),s.x(),s.y(),s.z(),s.yaw());
+                    var fixture=fixtures.get(fixtures.size()-1);
+                    fixture.mains=mains;
+                    fixture.embedded=true;
+                    nativeDevices.put(s.id(),fixture);
+                }
+            }
         if(map.site()!=HouseMap.Site.HOUSE&&map.site()!=HouseMap.Site.FARMHOUSE&&map.site()!=HouseMap.Site.SCHOOL)return;
         for(var s:map.level().sockets())if(s.type().equals("device")){add(Kind.valueOf(s.style()),s.room(),s.x(),s.y(),s.z(),s.yaw());if(s.style().equals("LIGHT_SWITCH"))fixtures.get(fixtures.size()-1).active=true;}
         for(var p:map.level().props()){
@@ -30,6 +51,9 @@ public final class HauntedFixtures {
             if(p.mesh().equals("level_bath_basin"))add(Kind.SINK_BATH,p.room(),p.x(),p.y()+.86*p.scale(),p.z(),p.yaw(),p.scale());
             if(p.mesh().equals("level_kitchen_counter"))add(Kind.SINK_KITCHEN,p.room(),p.x()-Math.cos(p.yaw())*.6*p.scale(),p.y()+.92*p.scale(),p.z()-Math.sin(p.yaw())*.6*p.scale(),p.yaw(),p.scale());
         }
+        // Native rooms have authored device sockets on their actual walls.
+        // The legacy fallback searches the synthetic rectangular room shell.
+        if(map.nativeInvestigation()!=null)return;
         for(var s:map.level().sockets())if(s.type().equals("switch")){
             var r=map.level().room(s.room());double x=s.x(),z=s.z(),yaw;
             if(Math.abs(x-r.x0())<.2){x=r.x0()+.108;yaw=-Math.PI/2;}
@@ -53,6 +77,11 @@ public final class HauntedFixtures {
             add(Kind.FIRE_ALARM,s.room(),bx,r.y()+2.0,bz,byaw);
         }
     }
+    synchronized boolean embedded(int id){return get(id).embedded;}
+    synchronized State nativeDevice(String component){
+        var fixture=nativeDevices.get(component);
+        return fixture==null?null:fixture.state();
+    }
     public synchronized List<State> states(){return fixtures.stream().map(Fixture::state).toList();}
     private Fixture get(int id){return fixtures.stream().filter(f->f.id==id).findFirst().orElseThrow(()->new IllegalArgumentException("unknown fixture"));}
     public synchronized State state(int id){return get(id).state();}
@@ -62,12 +91,21 @@ public final class HauntedFixtures {
     public synchronized void toggleFocused(int id,LooseClutter.Observer o,int tick){
         var target=InteractionFocus.pick(map,o,List.of());
         if(!o.exposed()||target==null||target.kind()!=InteractionFocus.Kind.FIXTURE||!target.id().equals(""+id))throw new IllegalArgumentException("look directly at the fixture");
-        Fixture f=get(id);if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&!powered)throw new IllegalArgumentException("Television has no mains power");f.active=!f.active;f.until=0;f.revision++;
+        Fixture f=get(id);if(f.mains&&!powered)throw new IllegalArgumentException(switch(f.kind){case WASHING_MACHINE->"Washing machine has no mains power";case RADIO->"Radio has no mains power";case WATER_PUMP->"Pump has no mains power";default->"Television has no mains power";});
+        if(f.kind==Kind.TOWER_BELL){ring(f,tick);return;}
+        f.active=!f.active;f.until=0;f.revision++;
     }
     public synchronized void toggle(int id,LooseClutter.Observer o,int tick){
         toggleFocused(id,o,tick);
     }
-    public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&!powered)return;if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");f.active=true;f.until=tick+200;f.revision++;}
+    private static void ring(Fixture f,int tick){
+        if(f.active)return;
+        f.active=true;f.until=tick+42;f.revision++;
+    }
+    public synchronized void activate(int id,int room,int tick){Fixture f=get(id);if(f.mains&&!powered)return;if(f.room!=room)throw new IllegalArgumentException("fixture is in another room");
+        if(f.kind==Kind.TOWER_BELL){ring(f,tick);return;}
+        f.active=true;f.until=tick+200;f.revision++;
+    }
     public synchronized void witness(GhostDomain.Resolution event,int tick,int requested){
         if(!event.applied()||!(event.action()==GhostDomain.Action.DISTURB||event.action()==GhostDomain.Action.MANIFEST||event.action()==GhostDomain.Action.SIGNATURE))return;
         if(requested>0){activate(requested,event.room(),tick);return;}

@@ -1,0 +1,890 @@
+{
+  "version": 1,
+  "id": "WLD-12",
+  "title": "Gallows Pass Railway",
+  "region": "Highland Frontier",
+  "scale": "Medium-large / linear railway with return",
+  "status": "rough-layout-only",
+  "intent": "A bounded railway cutting runs past derailed coaches to a tunnel. A maintenance siding path parallels the track, while a guarded trestle has a service walkway beneath its deck.",
+  "site_bounds": [
+    2,
+    -12,
+    68,
+    104
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Maintenance-road van apron",
+      "bounds": [
+        28,
+        88,
+        44,
+        100
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Rail access gate",
+      "bounds": [
+        28,
+        76,
+        44,
+        88
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "signal",
+      "name": "Signal hut",
+      "bounds": [
+        12,
+        62,
+        28,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cutting",
+      "name": "Rail cutting",
+      "bounds": [
+        28,
+        42,
+        40,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "coach-a",
+      "name": "Derailed passenger coach",
+      "bounds": [
+        16,
+        46,
+        24,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "coach-b",
+      "name": "Derailed baggage coach",
+      "bounds": [
+        44,
+        46,
+        52,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "siding",
+      "name": "Maintenance siding",
+      "bounds": [
+        52,
+        30,
+        62,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "store",
+      "name": "Track stores hut",
+      "bounds": [
+        52,
+        16,
+        64,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "trestle",
+      "name": "Trestle guarded deck",
+      "bounds": [
+        28,
+        22,
+        40,
+        42
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects",
+      "constructed_surface": "Measured guarded trestle/service-walk deck, not terrain fill"
+    },
+    {
+      "id": "tunnel",
+      "name": "Tunnel mouth / dry bore",
+      "bounds": [
+        28,
+        -8,
+        40,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "refuge",
+      "name": "Tunnel maintenance refuge",
+      "bounds": [
+        40,
+        0,
+        52,
+        12
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "lower",
+      "name": "Lower service walkway",
+      "bounds": [
+        28,
+        22,
+        34,
+        42
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects",
+      "constructed_surface": "Measured guarded trestle/service-walk deck, not terrain fill"
+    },
+    {
+      "id": "west-return",
+      "name": "Cutting west return path",
+      "bounds": [
+        6,
+        22,
+        16,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "crossing",
+      "name": "North maintenance crossing",
+      "bounds": [
+        40,
+        12,
+        62,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          94.0
+        ],
+        [
+          36.0,
+          0,
+          88.0
+        ],
+        [
+          36.0,
+          0,
+          82.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          88.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "signal",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          20.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L03",
+      "a": "signal",
+      "b": "cutting",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          20.0,
+          0,
+          69.0
+        ],
+        [
+          28.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          59.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          69.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L04",
+      "a": "entry",
+      "b": "siding",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L05",
+      "a": "cutting",
+      "b": "coach-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          59.0
+        ],
+        [
+          20.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L06",
+      "a": "coach-a",
+      "b": "west-return",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          20.0,
+          0,
+          54.0
+        ],
+        [
+          16.0,
+          0,
+          54.0
+        ],
+        [
+          11.0,
+          0,
+          42.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          0,
+          54.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "west-return",
+      "b": "signal",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          11.0,
+          0,
+          42.0
+        ],
+        [
+          14.0,
+          0,
+          62.0
+        ],
+        [
+          20.0,
+          0,
+          69.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          14.0,
+          0,
+          62.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L08",
+      "a": "cutting",
+      "b": "coach-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          59.0
+        ],
+        [
+          48.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L09",
+      "a": "coach-b",
+      "b": "siding",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          48.0,
+          0,
+          54.0
+        ],
+        [
+          52.0,
+          0,
+          54.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          52.0,
+          0,
+          54.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L10",
+      "a": "cutting",
+      "b": "trestle",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          59.0
+        ],
+        [
+          34.0,
+          0,
+          42.0
+        ],
+        [
+          34.0,
+          0,
+          32.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          42.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L11",
+      "a": "trestle",
+      "b": "tunnel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          32.0
+        ],
+        [
+          34.0,
+          0,
+          22.0
+        ],
+        [
+          34.0,
+          0,
+          7.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          22.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L12",
+      "a": "tunnel",
+      "b": "refuge",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          34.0,
+          0,
+          7.0
+        ],
+        [
+          40.0,
+          0,
+          6.0
+        ],
+        [
+          46.0,
+          0,
+          6.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          40.0,
+          0,
+          6.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L13",
+      "a": "refuge",
+      "b": "crossing",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          46.0,
+          0,
+          6.0
+        ],
+        [
+          46.0,
+          0,
+          12.0
+        ],
+        [
+          51.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          46.0,
+          0,
+          12.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "crossing",
+      "b": "siding",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          51.0,
+          0,
+          17.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L15",
+      "a": "siding",
+      "b": "store",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          57.0,
+          0,
+          53.0
+        ],
+        [
+          57.0,
+          0,
+          30.0
+        ],
+        [
+          58.0,
+          0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          57.0,
+          0,
+          30.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L16",
+      "a": "trestle",
+      "b": "lower",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          31,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          32.3
+        ],
+        [
+          28,
+          -3,
+          28
+        ],
+        [
+          28,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          28
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Authored flight coordinates; riser<=180mm, tread>=240mm. Actual export support/headroom and later runtime capsule/guard tests remain required.",
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5
+    },
+    {
+      "id": "L17",
+      "a": "lower",
+      "b": "west-return",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          31,
+          -3,
+          32
+        ],
+        [
+          31,
+          -3,
+          36
+        ],
+        [
+          11,
+          0,
+          42
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "crossing",
+      "b": "trestle",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          51.0,
+          0,
+          17.0
+        ],
+        [
+          34.0,
+          0,
+          32.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "signal",
+      "cutting",
+      "coach-b",
+      "siding",
+      "entry"
+    ],
+    [
+      "trestle",
+      "tunnel",
+      "refuge",
+      "crossing",
+      "trestle"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      36.0,
+      0,
+      94.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        36.0,
+        0,
+        90.372
+      ],
+      [
+        36.0,
+        0,
+        82.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "store",
+      "point": [
+        58.0,
+        0,
+        23.0
+      ],
+      "installation": "Track-store containment frame"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "refuge",
+      "point": [
+        46.0,
+        0,
+        6.0
+      ],
+      "installation": "Maintenance purification stand"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "signal",
+      "point": [
+        20.0,
+        0,
+        69.0
+      ],
+      "installation": "Passenger remembrance records table"
+    }
+  ],
+  "circulation": "Parallel siding prevents the entire mission becoming a single corridor. Coach interiors have two ground-supported exits; derailment does not imply mandatory climbing. Tunnel refuge cross-passage returns to the siding; trestle walkway provides a guarded secondary path.",
+  "systems": "Wind through cutting, loose sheet metal, signal wiring and rail-borne sound remain ordinary baselines. There is no moving train hazard until actual telegraph and simulation support exists.",
+  "campaign": "Signal register, carriage inventories and timetable contradictions form a transport case that can tie remote supply routes together without prescribing supernatural cause.",
+  "refine": [
+    "Make coach orientation and end-door support physically believable; the rectangles are footprint reservations.",
+    "Engineer trestle deck, lower stairs, rail barriers and tunnel rock support; visible voids cannot be traversable ghost-only shortcuts.",
+    "Limit mission to the authored tunnel segment; a locked maintenance end is a visible world boundary, not an infinite railway."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ],
+  "structural_route_revision": {
+    "status": "AUTHORED_NATIVE_ROUTE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+    "original_source": "development/levels/layouts/wld-12/layout.json",
+    "original_sha256": "a873a8669fdec20b35cdcfdb0c8b97e39b9ef18b26aa545423b61961918b155d",
+    "original_links": {
+      "L16": {
+        "id": "L16",
+        "a": "trestle",
+        "b": "lower",
+        "kind": "stairs",
+        "width": 2,
+        "points": [
+          [
+            34.0,
+            0,
+            32.0
+          ],
+          [
+            31.0,
+            -3,
+            32.0
+          ]
+        ],
+        "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+        "rise_m": 3,
+        "construction": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+      }
+    },
+    "reason": "Replace eight zero/short-run reservations with physically measurable circulation; shared native export/headroom checks follow"
+  },
+  "stair_bay_revision": {
+    "reason": "West-edge descending bay and separate lower return lead-in avoid both crossed columns and the upper trestle walkway.",
+    "shared_physical_flights": {}
+  },
+  "current_saved_editor_terrain": {
+    "world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world",
+    "scene_package": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/scene.bin",
+    "native_physics": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2",
+    "mesh_chunks": [
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj"
+    ],
+    "files_sha256": {
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/adaptive-topology.bin": "9dc0268d4f305252f5ef08e952814650eaf7e2e781ac0cf33aef1a02068f6431",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-cuts.tsv": "47b4e89866a0bbf2771bb7250fe680d392802465df0ccf038217ac641fc59756",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-path-grading.sha256": "c2e41981b39b9eae58f1ed59efd4148b10ca0d1ee775f533c7b278c26cbdeb0f",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/source-provenance.json": "b3662797f6cda9c2604d719f91fa45a6a4f2f5addaf25f48d15e81f53ea59e94",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2": "b509faa5450f786f0a54cf81fcd66f9b3ca02ae533bd4ebbb33ebdafe69fc5fa",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/verification.json": "556fdce954c363fe7170bd6ea881022447e4765a07665ab85be39c19d69743a1",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous": "222e50b774abb5631f499886fca9043a6d0c5b82a97a9bed0cb30e9595654381",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/scene.bin": "a3fca68f6910d01f936f37c280fc21dd0ca728e7f3f5653192605f5008daed49",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin": "059472b53a7738aae2558e7d1c2a1895bb3e221b5103d3469a3ead43904caa32",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj": "b0ef6b4ee1f6a0919ef56c92ec7aff7baed87e428fabbcdbf59f5bae1317d932",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj": "9a3d53ad3d9702cc5142007d753e817f8498c622e5e5bc6b65937d7ca6795a72",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj": "f29b30ea7344195695151c7c7ead620a0a91ae31bda23316857377dea59eaca7",
+      "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj": "abcc924decb544b8dbf48cefc7c900b28d6dd09273df4d7d412a09e601747f04"
+    },
+    "source_height_unchanged": true
+  }
+}

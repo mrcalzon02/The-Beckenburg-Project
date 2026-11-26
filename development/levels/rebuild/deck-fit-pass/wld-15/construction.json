@@ -1,0 +1,1663 @@
+{
+  "id": "WLD-15",
+  "status": "PHYSICAL_DECK_CANDIDATE_NOT_RUNTIME_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-15/supported-terrain.glb",
+  "source_glb_sha256": "731cde313c6ec175529340e3f82cf4cc3a82bcd6fafc9c286420a765eb7e78fb",
+  "source_physics": "development/levels/rebuild/terrain-fit-pass/wld-15/supported-terrain.hcs2",
+  "source_physics_sha256": "7a2b187d28e3be294e7460e9c715a2760dff9d0fd42f283f16d24d8698df5a6c",
+  "layout": "development/levels/rebuild/wld-15/rough-layout.json",
+  "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+  "zones": [
+    "quay",
+    "portpier"
+  ],
+  "decks": [
+    {
+      "name": "Floor exterior deck quay 0",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          34.6,
+          64.0
+        ],
+        [
+          40,
+          64
+        ],
+        [
+          40.0,
+          65.25
+        ],
+        [
+          34.6,
+          66.15
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 1",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          40.0,
+          65.25
+        ],
+        [
+          40.0,
+          67.25
+        ],
+        [
+          34.6,
+          67.25
+        ],
+        [
+          34.6,
+          66.15
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 2",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          40.0,
+          68.75
+        ],
+        [
+          40.0,
+          70.0
+        ],
+        [
+          34.6,
+          70.0
+        ],
+        [
+          34.6,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 3",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          40.0,
+          67.25
+        ],
+        [
+          40.0,
+          68.75
+        ],
+        [
+          34.6,
+          68.75
+        ],
+        [
+          34.6,
+          67.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 4",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          40.0,
+          70.0
+        ],
+        [
+          40,
+          76
+        ],
+        [
+          34.6,
+          76.0
+        ],
+        [
+          34.6,
+          70.0
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 5",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          24,
+          64
+        ],
+        [
+          31.25,
+          64.0
+        ],
+        [
+          31.25,
+          66.70833333333333
+        ],
+        [
+          28.0,
+          67.25
+        ],
+        [
+          24.0,
+          67.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 6",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          31.25,
+          66.70833333333333
+        ],
+        [
+          31.25,
+          67.25
+        ],
+        [
+          28.0,
+          67.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 7",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          31.25,
+          68.75
+        ],
+        [
+          31.25,
+          70.0
+        ],
+        [
+          24.0,
+          70.0
+        ],
+        [
+          24.0,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 8",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          31.25,
+          67.25
+        ],
+        [
+          31.25,
+          68.75
+        ],
+        [
+          28.0,
+          68.75
+        ],
+        [
+          28.0,
+          67.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 9",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.75,
+          64.0
+        ],
+        [
+          34.6,
+          64.0
+        ],
+        [
+          34.6,
+          66.15
+        ],
+        [
+          32.75,
+          66.45833333333333
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 10",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          34.6,
+          66.15
+        ],
+        [
+          34.6,
+          67.25
+        ],
+        [
+          32.75,
+          67.25
+        ],
+        [
+          32.75,
+          66.45833333333333
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 11",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          34.6,
+          68.75
+        ],
+        [
+          34.6,
+          70.0
+        ],
+        [
+          32.9,
+          70.0
+        ],
+        [
+          32.80625,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 12",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          34.6,
+          67.25
+        ],
+        [
+          34.6,
+          68.75
+        ],
+        [
+          32.80625,
+          68.75
+        ],
+        [
+          32.75,
+          68.0
+        ],
+        [
+          32.75,
+          67.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 13",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.9,
+          70.0
+        ],
+        [
+          32.75,
+          70.0
+        ],
+        [
+          32.75,
+          68.75
+        ],
+        [
+          32.80625,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 14",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.75,
+          68.75
+        ],
+        [
+          32.75,
+          68.0
+        ],
+        [
+          32.80625,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 15",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.75,
+          68.75
+        ],
+        [
+          32.75,
+          70.0
+        ],
+        [
+          31.25,
+          70.0
+        ],
+        [
+          31.25,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 16",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.75,
+          68.0
+        ],
+        [
+          32.75,
+          68.75
+        ],
+        [
+          31.25,
+          68.75
+        ],
+        [
+          31.25,
+          68.0
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 17",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          34.6,
+          70.0
+        ],
+        [
+          34.6,
+          76.0
+        ],
+        [
+          33.35,
+          76.0
+        ],
+        [
+          32.9,
+          70.0
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 18",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          33.35,
+          76.0
+        ],
+        [
+          32.75,
+          76.0
+        ],
+        [
+          32.75,
+          70.0
+        ],
+        [
+          32.9,
+          70.0
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck quay 19",
+      "zone": "quay",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          31.25,
+          76.0
+        ],
+        [
+          24,
+          76
+        ],
+        [
+          24.0,
+          70.0
+        ],
+        [
+          31.25,
+          70.0
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 20",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          19.0,
+          68.75
+        ],
+        [
+          19.0,
+          72.0
+        ],
+        [
+          16,
+          72
+        ],
+        [
+          16.0,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 21",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          19.0,
+          46.75
+        ],
+        [
+          19.0,
+          68.75
+        ],
+        [
+          16.0,
+          68.75
+        ],
+        [
+          16.0,
+          47.39285714285714
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 22",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          19.0,
+          46.75
+        ],
+        [
+          16.0,
+          47.39285714285714
+        ],
+        [
+          16.0,
+          46.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 23",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          16,
+          40
+        ],
+        [
+          19.0,
+          40.0
+        ],
+        [
+          19.0,
+          45.25
+        ],
+        [
+          16.0,
+          45.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 24",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          19.0,
+          45.25
+        ],
+        [
+          19.0,
+          46.75
+        ],
+        [
+          16.0,
+          46.75
+        ],
+        [
+          16.0,
+          45.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 25",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          22.0,
+          46.75
+        ],
+        [
+          22.0,
+          67.25
+        ],
+        [
+          19.0,
+          67.25
+        ],
+        [
+          19.0,
+          46.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 26",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          19.0,
+          40.0
+        ],
+        [
+          22,
+          40
+        ],
+        [
+          22.0,
+          45.25
+        ],
+        [
+          19.0,
+          45.25
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "name": "Floor exterior deck portpier 27",
+      "zone": "portpier",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          22.0,
+          68.75
+        ],
+        [
+          22,
+          72
+        ],
+        [
+          19.0,
+          72.0
+        ],
+        [
+          19.0,
+          68.75
+        ]
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    }
+  ],
+  "coplanar_subtractions": [
+    {
+      "zone": "quay",
+      "coplanar_receivers": [
+        "route-02 support 0",
+        "route-03 support 0",
+        "route-04 support 0"
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    },
+    {
+      "zone": "portpier",
+      "coplanar_receivers": [
+        "route-04 support 0",
+        "route-05 support 0"
+      ],
+      "apertures": [
+        [
+          22.1,
+          24.0,
+          23.9,
+          34.0
+        ],
+        [
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
+        ]
+      ]
+    }
+  ],
+  "discarded_boundary_residues": [],
+  "supports": [
+    {
+      "name": "Deck bearing 0",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          24.0,
+          63.65
+        ],
+        [
+          26.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          24.0,
+          64.1
+        ],
+        [
+          26.0,
+          64.1
+        ],
+        [
+          26.0,
+          63.65
+        ],
+        [
+          24.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 5",
+      "bearing_point": [
+        25.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 1",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          26.0,
+          63.65
+        ],
+        [
+          28.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          26.0,
+          64.1
+        ],
+        [
+          28.0,
+          64.1
+        ],
+        [
+          28.0,
+          63.65
+        ],
+        [
+          26.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 5",
+      "bearing_point": [
+        27.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 2",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          28.0,
+          63.65
+        ],
+        [
+          30.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          28.0,
+          64.1
+        ],
+        [
+          30.0,
+          64.1
+        ],
+        [
+          30.0,
+          63.65
+        ],
+        [
+          28.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 5",
+      "bearing_point": [
+        29.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 3",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          30.0,
+          63.65
+        ],
+        [
+          32.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          30.0,
+          64.1
+        ],
+        [
+          32.0,
+          64.1
+        ],
+        [
+          32.0,
+          63.65
+        ],
+        [
+          30.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 5",
+      "bearing_point": [
+        31.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 4",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          32.0,
+          63.65
+        ],
+        [
+          34.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          32.0,
+          64.1
+        ],
+        [
+          34.0,
+          64.1
+        ],
+        [
+          34.0,
+          63.65
+        ],
+        [
+          32.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 9",
+      "bearing_point": [
+        33.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 5",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          34.0,
+          63.65
+        ],
+        [
+          36.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          34.0,
+          64.1
+        ],
+        [
+          36.0,
+          64.1
+        ],
+        [
+          36.0,
+          63.65
+        ],
+        [
+          34.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 0",
+      "bearing_point": [
+        35.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 6",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          36.0,
+          63.65
+        ],
+        [
+          38.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          36.0,
+          64.1
+        ],
+        [
+          38.0,
+          64.1
+        ],
+        [
+          38.0,
+          63.65
+        ],
+        [
+          36.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 0",
+      "bearing_point": [
+        37.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 7",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          38.0,
+          63.65
+        ],
+        [
+          40.0,
+          63.65
+        ]
+      ],
+      "ground_y": [
+        -0.17499923706054688,
+        -0.17499923706054688
+      ],
+      "bottom_y": [
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469,
+        -0.5249992370605469
+      ],
+      "footprint": [
+        [
+          38.0,
+          64.1
+        ],
+        [
+          40.0,
+          64.1
+        ],
+        [
+          40.0,
+          63.65
+        ],
+        [
+          38.0,
+          63.65
+        ]
+      ],
+      "supports": "Floor exterior deck quay 0",
+      "bearing_point": [
+        39.0,
+        64.04
+      ]
+    },
+    {
+      "name": "Deck bearing 8",
+      "kind": "pile",
+      "zone": "portpier",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          16.259999999999998,
+          40.26
+        ],
+        [
+          16.54,
+          40.26
+        ],
+        [
+          16.54,
+          40.54
+        ],
+        [
+          16.259999999999998,
+          40.54
+        ]
+      ],
+      "ground_y": [
+        -5.027080535888672,
+        -5.04052734375,
+        -5.040523529052734,
+        -5.027080535888672
+      ],
+      "bottom_y": [
+        -5.44052734375,
+        -5.44052734375,
+        -5.44052734375,
+        -5.44052734375
+      ],
+      "footprint": [
+        [
+          16.259999999999998,
+          40.26
+        ],
+        [
+          16.54,
+          40.26
+        ],
+        [
+          16.54,
+          40.54
+        ],
+        [
+          16.259999999999998,
+          40.54
+        ]
+      ],
+      "supports": "Floor exterior deck portpier 23",
+      "bearing_point": [
+        16.4,
+        40.4
+      ]
+    },
+    {
+      "name": "Deck bearing 9",
+      "kind": "pile",
+      "zone": "portpier",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          21.46,
+          40.26
+        ],
+        [
+          21.740000000000002,
+          40.26
+        ],
+        [
+          21.740000000000002,
+          40.54
+        ],
+        [
+          21.46,
+          40.54
+        ]
+      ],
+      "ground_y": [
+        -5.224750518798828,
+        -5.2315673828125,
+        -5.2315673828125,
+        -5.224754333496094
+      ],
+      "bottom_y": [
+        -5.6315673828125,
+        -5.6315673828125,
+        -5.6315673828125,
+        -5.6315673828125
+      ],
+      "footprint": [
+        [
+          21.46,
+          40.26
+        ],
+        [
+          21.740000000000002,
+          40.26
+        ],
+        [
+          21.740000000000002,
+          40.54
+        ],
+        [
+          21.46,
+          40.54
+        ]
+      ],
+      "supports": "Floor exterior deck portpier 26",
+      "bearing_point": [
+        21.6,
+        40.4
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED",
+      "zone": "portpier",
+      "point": [
+        21.6,
+        71.6
+      ]
+    },
+    {
+      "type": "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED",
+      "zone": "portpier",
+      "point": [
+        16.4,
+        71.6
+      ]
+    }
+  ],
+  "new_deck_parts": 28,
+  "new_support_parts": 10,
+  "new_triangles": 452,
+  "glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+  "physics_sha256": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3",
+  "generator_sha256": "786d4e3517abbe2eadad9f6634a9621174464713606fe9d679ef0fecb8668752",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-15-overview.png",
+      "sha256": "a9c82ec29fb15954b6b44fe0d8803ec801efbdabc40a9b2bfb3837e887e63ca8",
+      "type": "native exported physical deck candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-15-deck-side.png",
+      "sha256": "7e4be7cd63b8aa1deaa0e5dc5a45e3104bb91878f5092b8add0e6042adf8d86a",
+      "type": "native exported physical deck candidate"
+    }
+  ],
+  "limitations": "Rough closed slabs and bearing candidates. Guards, intermediate framing, terrain conflicts, all-site boundaries, canonical van, runtime integration and gameplay/network/performance remain open. Prior source bytes, model pivots/materials and saved terrain holes must be independently verified."
+}

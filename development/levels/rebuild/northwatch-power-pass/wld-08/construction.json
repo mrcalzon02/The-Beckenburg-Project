@@ -1,0 +1,656 @@
+{
+  "exports": {
+    "development/levels/rebuild/northwatch-power-pass/wld-08/station-with-power.blend": "425beec7f2e86c03628f935a229f87be6724530e740fc7351350f2fcec6ca25c",
+    "development/levels/rebuild/northwatch-power-pass/wld-08/station-with-power.glb": "098052011343ea608a1d81c2b20d6c666ab8a6620e5da5659ef3051d6cee7a12",
+    "development/levels/rebuild/northwatch-power-pass/wld-08/station-with-power.hcs2": "a5da2a8dbb08e9dc2f0a2ba5d1620571a243c36f00393d9f488f223628f1b60b"
+  },
+  "previous_scene": "4590b1b872769d9c27b1f117dffee20daf4a5484a7f5238b7846033ee74634c3",
+  "equipment": {
+    "level_trace_generator_refined": {
+      "position": [
+        9.05,
+        0,
+        9.12
+      ],
+      "yaw": 3.141592653589793,
+      "bounds": [
+        [
+          8.275001,
+          0.0,
+          8.679999
+        ],
+        [
+          9.825,
+          1.155,
+          9.56
+        ]
+      ],
+      "sha256": "ccfe04347591e335c96981f981eeb27e21de4dcc4d76532a2fd8857e666481c1"
+    },
+    "level_electrical_bank_worn": {
+      "position": [
+        5.55,
+        0.042,
+        8.54
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          4.44,
+          0.042,
+          8.4
+        ],
+        [
+          6.66,
+          2.160305,
+          8.77
+        ]
+      ],
+      "sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab"
+    }
+  },
+  "bearings": [
+    {
+      "part": "cabinet plinth",
+      "point": [
+        4.35,
+        0.0,
+        8.31
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        4.35,
+        0.0,
+        8.52
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        4.35,
+        0.0,
+        8.91
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        5.55,
+        0.0,
+        8.31
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        5.55,
+        0.0,
+        8.52
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        5.55,
+        0.0,
+        8.91
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        6.75,
+        0.0,
+        8.31
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        6.75,
+        0.0,
+        8.52
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "cabinet plinth",
+      "point": [
+        6.75,
+        0.0,
+        8.91
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        8.62,
+        0.0,
+        8.86
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        8.62,
+        0.0,
+        9.12
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        8.62,
+        0.0,
+        9.42
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        9.05,
+        0.0,
+        8.86
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        9.05,
+        0.0,
+        9.12
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        9.05,
+        0.0,
+        9.42
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        9.48,
+        0.0,
+        8.86
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        9.48,
+        0.0,
+        9.12
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "diesel base",
+      "point": [
+        9.48,
+        0.0,
+        9.42
+      ],
+      "structure": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        4.4,
+        0.66,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        4.4,
+        1.59,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        4.4,
+        2.44,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        5.55,
+        0.66,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        5.55,
+        1.59,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        5.55,
+        2.44,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        6.7,
+        0.66,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        6.7,
+        1.59,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        6.7,
+        2.44,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        8.25,
+        0.66,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        8.25,
+        1.59,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        8.25,
+        2.44,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        9.05,
+        0.66,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        9.05,
+        1.59,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "wall fixings",
+      "point": [
+        9.05,
+        2.44,
+        8.24
+      ],
+      "structure": "WLD-08 clean generator N end"
+    },
+    {
+      "part": "ceiling clip",
+      "point": [
+        7.65,
+        2.84,
+        8.75
+      ],
+      "structure": "Ceiling cap generator"
+    },
+    {
+      "part": "ceiling clip",
+      "point": [
+        7.65,
+        2.84,
+        9.65
+      ],
+      "structure": "Ceiling cap generator"
+    },
+    {
+      "part": "ceiling clip",
+      "point": [
+        7.65,
+        2.84,
+        10.5
+      ],
+      "structure": "Ceiling cap generator"
+    }
+  ],
+  "services": [
+    {
+      "id": "northwatch-generator",
+      "type": "generator",
+      "room": 5,
+      "position": [
+        9.085,
+        0.457,
+        9.450999999999999
+      ],
+      "yaw": 0,
+      "style": "NW-MAIN"
+    },
+    {
+      "id": "northwatch-breaker",
+      "type": "breaker",
+      "room": 5,
+      "position": [
+        5.55,
+        0.882,
+        8.774999999999999
+      ],
+      "yaw": 0,
+      "style": "NW-MAIN"
+    },
+    {
+      "id": "northwatch-switch-05",
+      "type": "switch",
+      "room": 5,
+      "position": [
+        11.9,
+        1.25,
+        8.241
+      ],
+      "yaw": 0.0,
+      "style": "NW-05"
+    },
+    {
+      "id": "northwatch-shed-task-light",
+      "type": "light",
+      "room": 5,
+      "position": [
+        7.65,
+        2.656,
+        10.6
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "loads": [
+    {
+      "id": "northwatch-shed-task-light",
+      "room": 5,
+      "space": "generator",
+      "circuit": "NW-05",
+      "mount": [
+        7.65,
+        2.84,
+        10.6
+      ],
+      "emitter": [
+        7.65,
+        2.656,
+        10.6
+      ],
+      "support": "Ceiling cap generator"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "northwatch-switch-05",
+      "circuit": "NW-05",
+      "space": "generator",
+      "room": 5,
+      "at": [
+        11.9,
+        1.25,
+        8.241
+      ],
+      "support": "WLD-08 clean generator N end",
+      "feet": [
+        11.9,
+        0,
+        9.45
+      ]
+    }
+  ],
+  "raceways": [
+    {
+      "id": "shed generator output and wall riser",
+      "points": [
+        [
+          9.3,
+          0.38,
+          8.8229995803833
+        ],
+        [
+          9.3,
+          0.38,
+          8.29
+        ],
+        [
+          9.3,
+          2.44,
+          8.29
+        ],
+        [
+          4.89,
+          2.44,
+          8.29
+        ]
+      ],
+      "radius": 0.026,
+      "visible": true
+    },
+    {
+      "id": "shed cabinet lead 1",
+      "points": [
+        [
+          4.9277999999999995,
+          2.15,
+          8.5
+        ],
+        [
+          4.9277999999999995,
+          2.44,
+          8.5
+        ],
+        [
+          4.9277999999999995,
+          2.44,
+          8.29
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "shed cabinet lead 2",
+      "points": [
+        [
+          5.6878,
+          2.15,
+          8.5
+        ],
+        [
+          5.6878,
+          2.44,
+          8.5
+        ],
+        [
+          5.6878,
+          2.44,
+          8.29
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "shed cabinet lead 3",
+      "points": [
+        [
+          6.4478,
+          2.15,
+          8.5
+        ],
+        [
+          6.4478,
+          2.44,
+          8.5
+        ],
+        [
+          6.4478,
+          2.44,
+          8.29
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "NW-05 switch drop",
+      "points": [
+        [
+          11.9,
+          1.302,
+          8.269
+        ],
+        [
+          11.9,
+          2.770000152587891,
+          8.269
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-05 shed switch branch",
+      "points": [
+        [
+          8.25,
+          2.44,
+          8.29
+        ],
+        [
+          11.9,
+          2.44,
+          8.29
+        ],
+        [
+          11.9,
+          2.44,
+          8.269
+        ],
+        [
+          11.9,
+          2.770000152587891,
+          8.269
+        ]
+      ],
+      "radius": 0.014,
+      "visible": true
+    },
+    {
+      "id": "NW-05 shed lighting branch",
+      "points": [
+        [
+          11.9,
+          2.770000152587891,
+          8.269
+        ],
+        [
+          7.65,
+          2.770000152587891,
+          8.269
+        ],
+        [
+          7.65,
+          2.81,
+          8.269
+        ],
+        [
+          7.65,
+          2.81,
+          10.6
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true
+    }
+  ],
+  "operator_aisle": [
+    [
+      11,
+      0,
+      16
+    ],
+    [
+      11,
+      0,
+      13
+    ],
+    [
+      9.085,
+      0,
+      11.03
+    ],
+    [
+      5.55,
+      0,
+      11.03
+    ]
+  ],
+  "retained_collision_parts": 525,
+  "added_collision_parts": 39
+}

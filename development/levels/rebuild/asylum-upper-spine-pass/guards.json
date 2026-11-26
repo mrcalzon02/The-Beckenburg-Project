@@ -1,0 +1,51 @@
+{
+  "source_asset_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+  "runs": [
+    {
+      "side": "west",
+      "x0": 31.005,
+      "z0": 21.955,
+      "x1": 31.005,
+      "z1": 27.44,
+      "sill": 3.4,
+      "height": 1.05,
+      "bays": 3,
+      "support_vertices": 162,
+      "receivers": [
+        "Floor upper-stair",
+        "Floor upper-stair.001"
+      ]
+    },
+    {
+      "side": "east",
+      "x0": 32.995,
+      "z0": 21.955,
+      "x1": 32.995,
+      "z1": 27.44,
+      "sill": 3.4,
+      "height": 1.05,
+      "bays": 3,
+      "support_vertices": 162,
+      "receivers": [
+        "Floor upper-stair.005",
+        "Floor upper-stair.006"
+      ]
+    },
+    {
+      "side": "north",
+      "x0": 31.005,
+      "z0": 21.955,
+      "x1": 32.995,
+      "z1": 21.955,
+      "sill": 3.4,
+      "height": 1.05,
+      "bays": 1,
+      "support_vertices": 54,
+      "receivers": [
+        "Floor upper-stair",
+        "Floor upper-stair.003",
+        "Floor upper-stair.005"
+      ]
+    }
+  ]
+}

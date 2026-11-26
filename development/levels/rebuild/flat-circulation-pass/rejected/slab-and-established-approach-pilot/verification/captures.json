@@ -1,0 +1,274 @@
+[
+  {
+    "site": "ACADEMY",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-before.png",
+    "sha256": "1bc23fa37ac7a93256108ba522643aa5bb8903d293a2374c946c5b430756c2be",
+    "source_glb_sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+    "eye": [
+      43.5,
+      1.62,
+      48
+    ],
+    "target": [
+      44.3,
+      1.62,
+      54
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
+    "sha256": "d8ac9aca698f66cc06bbf766f787d7e193eebb38f65491e825c75e83f91e6a73",
+    "source_glb_sha256": "5131ab35dc312bbc227b89c03dbd087c0856fbc1efc8849cb7eab885863b51d7",
+    "eye": [
+      43.5,
+      1.62,
+      48
+    ],
+    "target": [
+      44.3,
+      1.62,
+      54
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-whole-site.png",
+    "sha256": "c9933e1cd95d432a6e655fc669a9e01482e924bb028ec0ff72194b0fe561ea4b",
+    "source_glb_sha256": "5131ab35dc312bbc227b89c03dbd087c0856fbc1efc8849cb7eab885863b51d7",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "ASYLUM",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-whole-site.png",
+    "sha256": "dbb3cad43f68a299c2c8bdf0ecd68354c0c94ae14261a5f31e67a8606bfe152a",
+    "source_glb_sha256": "2e20110b5a48c8d8142697b95c05bcde2c1854c494ac36f73fbcef9bb4ff855a",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "CHURCH",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/church-whole-site.png",
+    "sha256": "06a96689c8e53924b0081b6ad46b45466041019b88416b6315d21ba71b81f9be",
+    "source_glb_sha256": "00b17d8cd5807f6daa3c8e10b937e7d313e7b9b8593df7d58475a64e777d5cba",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "COLLEGE",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/college-whole-site.png",
+    "sha256": "c6e462f81664bdd68eb3cb82d981a2cdd2b8e94c674f3f8856a4762062f0ac76",
+    "source_glb_sha256": "66b3d7d0a438602292369e4a7ec30a6bffa07ef759fa4508f05ace0bef202b6d",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "FARMHOUSE",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/farmhouse-whole-site.png",
+    "sha256": "e29cebe0d815dd8b6c6cd591c9c8ed3cc0a3d019cc2a67b6554904b0ea1b705e",
+    "source_glb_sha256": "ee9058d1958abe0d93b3093881933216820338e0c8c3f1f073e9aac98823edeb",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "MANSION",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/mansion-whole-site.png",
+    "sha256": "79eea25e04640878bd532cd098928c94cf0909c35d0d83497c94a3cb76386a80",
+    "source_glb_sha256": "5562d6845316cd3843d299fc2da50ba650c244e94223e34deb5822df7a47e3a6",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "PRISON",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/prison-whole-site.png",
+    "sha256": "24ca919e019196fc41e50c3a9adb3518c2d17f7a23c8163ab4ace0e494ced2cc",
+    "source_glb_sha256": "97f52f7ebffadc09083691f6718eb34b9b5f8be88784c4c3fa791112b1f56cf4",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "SCHOOL",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/school-whole-site.png",
+    "sha256": "67e07adbd0d952bc38bf25f139fb4e4b6caf34c2d3496ceb8822d9ba57228fe7",
+    "source_glb_sha256": "d5c3070f532c346319198b19f81ba85d919d34f978c2e0ad479fb4afa40485f8",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-03",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-03-whole-site.png",
+    "sha256": "2420195430a4aa072b207fc00033cdeb2ff4263e58aead9cbba410fbf8cb483a",
+    "source_glb_sha256": "0dc10f348422abb9842224728b29a46284e898536e860c59220346d766addcc3",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-04-whole-site.png",
+    "sha256": "69a32b54e405246d649ae4b6de49b74368acc99aa92466a06f9b15d6c3ec70ad",
+    "source_glb_sha256": "e3d520f20b44a0c27dce5610f59d8e0f2a51f479fb9009fe2f326d1bc4c2e35c",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-05",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-05-whole-site.png",
+    "sha256": "135cd2ad2a950d4fc7093a3cb2661403c88d02b583cb660216e0524220610a5c",
+    "source_glb_sha256": "dbd8a714de2ab4d25f42df6d1c7deecb5a015a01329afbe5948efef3eddb621b",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-06",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-06-whole-site.png",
+    "sha256": "169ef46b0134766edb74d524db13cea2eb2db5964a89078f0ae673197afd6992",
+    "source_glb_sha256": "56797941c79cd614a8f8315f73069083511b96f766c8066fca6ea522742cac69",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-07",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-whole-site.png",
+    "sha256": "2944814be4fc0b216e2e99b60eb2107be3e43c8e83a8854d23479757778e98f1",
+    "source_glb_sha256": "71d146e0fdba4c45cceb04330d78fd7ff2b291c0c8b0f9483399847f28d5e256",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-07-MORTUARY",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-mortuary-whole-site.png",
+    "sha256": "b35ca750ff50cd9f7c7ea1024c5dd5fd68f436b8c3d81fe9ba381884fdc3acd7",
+    "source_glb_sha256": "773ef6595213692054965297f6547b31b44ec817e07f27cf37446edbe8e759e8",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-08",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-before.png",
+    "sha256": "7186ed6c36fb1f31f47a2fb8013c7ae3680109590229965d777d1e0233e0871e",
+    "source_glb_sha256": "5847fa47893086dfe45c274e9df08b4562cc07bc6edcdfef26d3e5ff44ad853d",
+    "eye": [
+      23,
+      1.62,
+      19
+    ],
+    "target": [
+      18,
+      1.62,
+      19
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-08",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-after.png",
+    "sha256": "bdcb32c428f65a7756305f9fa8954ff125ad63ed1eb3afb9c99825089b683cd1",
+    "source_glb_sha256": "652300e5d60131ecfdc210eecd625e8ec301c584f4e53f6875d6d20f7bab3cf0",
+    "eye": [
+      23,
+      1.62,
+      19
+    ],
+    "target": [
+      18,
+      1.62,
+      19
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-08",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-whole-site.png",
+    "sha256": "9a966c0f17626f01fd3deacf451137478af532061817de2e7c6ccb1803b882b6",
+    "source_glb_sha256": "652300e5d60131ecfdc210eecd625e8ec301c584f4e53f6875d6d20f7bab3cf0",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-10",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-10-whole-site.png",
+    "sha256": "18675a379d5b5113824f4349e34b99fd1aaabe862d301863bbd3c69196cbd57a",
+    "source_glb_sha256": "1aadbf0ab3fe12d6fa6330c6b8bf393d3347e26d8e0e072d265f5f86cb30b374",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-11",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-11-whole-site.png",
+    "sha256": "ce27e6f49203d9497e1262996827cf4336a3f063984b276d2937473b291f79fd",
+    "source_glb_sha256": "b057eddfb50254e78a33c08fdce17cbb7cdec9492c9db0ff7a1ae867c2a62c98",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-12-whole-site.png",
+    "sha256": "ade4bb85cd6a6248c5893fdeceba04e80623abfb2605e94241f43cb2ebd72cfb",
+    "source_glb_sha256": "aff307f2c80e9fe08d9f4dbf96f346df26134a6767b19040f61ba81f036b6de1",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-13",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-13-whole-site.png",
+    "sha256": "30c8d570bc5af0028131e2e8832a9a7d10dfe153c6d8e4edade273750374d794",
+    "source_glb_sha256": "1a8d349811d70f38225aef7f19351de78f5268a3f9198bb3e7ea37df65d94a61",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-14",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-14-whole-site.png",
+    "sha256": "adaa3ac13e716b1a8c2f7c92f58b4e87a6b42f301ec24ef0fdc88a612e5df6ed",
+    "source_glb_sha256": "f5dd05073924ba0daf284a2d9c60f4399e4febdddb3f7c7a2a122010a72f4f9b",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-15",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-15-whole-site.png",
+    "sha256": "2b1a8d381d581c26b6db8263f68e8400326ce7355e42508ddd4bff670cf4abb1",
+    "source_glb_sha256": "465ceb649c6d3dff2fde580f5c458150bc8bca36c3d16b596678b237d0c905c8",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-16",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-16-whole-site.png",
+    "sha256": "182620786e67f1e18d976eca455ab41ba526c6e9caf963cb32e681467259fec6",
+    "source_glb_sha256": "0d4ab82117b1ae02dd635ca348a2e2c3a7b1ca739d1fa1a6b80cf2a5aba5668e",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-17",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-17-whole-site.png",
+    "sha256": "594bfa798609952c0808dab3a656ebeba94e26041028d457539329eebdd91971",
+    "source_glb_sha256": "b6bb1731b95cfff1bfaa6d09f5498fa4287d0e6d4b8cf3e95007188acb76a7e8",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-18-whole-site.png",
+    "sha256": "95a9d15c0bc4df6bc5b0c83e9c43eff48cb25b2e77fc681b57cb8b97ebd7e96f",
+    "source_glb_sha256": "d04df062a0b6d61c4ee9e4026ca6d44e0697e379f7fd7636a3e065d6a0361fac",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-09-whole-site.png",
+    "sha256": "afcf330ade8e436fef154d6e6c862d3c521b318e4350d625282ac04ad2062ed1",
+    "source_glb_sha256": "62050ce3fc39e81b73c7f49653c1d01fb54bd283a9f0c8b44a39921be0b81cb0",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  }
+]

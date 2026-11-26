@@ -1,0 +1,153 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "WLD-07": {
+      "layout": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+      "variants": {
+        "before_bearing": {
+          "contract": "ed63fa1ae0fafc8ba120b699a27c704a3b3fb801c739bf6bbf79028bc6f53200",
+          "physics": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+          "glb": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+          "layout": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1"
+        },
+        "after_bearing": {
+          "contract": "ed63fa1ae0fafc8ba120b699a27c704a3b3fb801c739bf6bbf79028bc6f53200",
+          "physics": "f0c45a79c99c72e30902c0580d6f9bce680f0c5e7b309c810db3eccc03aa729e",
+          "glb": "ba66ad066c2781e775220d961850c40dca36e5469b845b33e43970754760d316",
+          "layout": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1"
+        }
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "layout": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+      "variants": {
+        "before_bearing": {
+          "contract": "e44b4caa81041c886c7f91cd98295ccef9c1090eacbc6eead850d962ff2673a9",
+          "physics": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695",
+          "glb": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+          "layout": "4a021c79f3fb595440bd53663d06f98000e4ef74f675df8dbc413e926501e404"
+        },
+        "after_bearing": {
+          "contract": "e44b4caa81041c886c7f91cd98295ccef9c1090eacbc6eead850d962ff2673a9",
+          "physics": "412e2e4b406a97aa3ece75c32a34141fe3a3a15b67ca7cc8eb202f45665d9b17",
+          "glb": "0d6b5130715c65987fd9e394e3088610d44a11637d0c3afcce41ae65ffeafa65",
+          "layout": "4a021c79f3fb595440bd53663d06f98000e4ef74f675df8dbc413e926501e404"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "4292ef0f20d33a73506f593e76d3cf6d12b15acb64ec9295c4f3d44dcc0710de",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "c75cb09beb0b444247fd78d427bbfc6dbce76ac238caa28eec32463717575d3d",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/cemetery-grounds-pass/roster.json": "29def2e915f8d326bec8651d9ff744e82afc3e5f9a5147052836b7dc523f05b5",
+    "development/levels/rebuild/movement-chains.json": "2350f45af21848b60df378913d0cfbae165de15bc97bd0eb2710c5e8cf53c162"
+  },
+  "dependency_jar_sha256": "a7d9d2043ec15756d67b06b8fc685d2932b031e142b56134ed72410c6d58f53e",
+  "sites": {
+    "before_bearing": {
+      "WLD-07": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-07-MORTUARY": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      }
+    },
+    "after_bearing": {
+      "WLD-07": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-07-MORTUARY": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 4,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 4,
+      "authored_reverse": 4
+    },
+    "after_bearing": {
+      "routes": 4,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 4,
+      "authored_reverse": 4
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "declared_new_vertical_routes": [],
+  "authored_routes": [
+    {
+      "site": "WLD-07",
+      "variant": "before_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "18",
+      "legacy_forward": "BLOCKED_SEGMENT_5_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_9_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-07",
+      "variant": "after_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "18",
+      "legacy_forward": "BLOCKED_SEGMENT_5_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_9_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "variant": "before_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "18",
+      "legacy_forward": "BLOCKED_SEGMENT_5_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_9_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "variant": "after_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "18",
+      "legacy_forward": "BLOCKED_SEGMENT_5_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_9_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    }
+  ],
+  "cross_link_chains": {
+    "bindings": [],
+    "results": [],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

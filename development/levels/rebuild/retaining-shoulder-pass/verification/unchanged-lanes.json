@@ -1,0 +1,7 @@
+{
+  "samples": 13329,
+  "new_invalid_positions": [],
+  "baseline": "development/levels/rebuild/access-route-pass/verification/current-flat-lanes.tsv.gz",
+  "baseline_sha256": "69ca0c3a04c8854ffe6f64099e47e9b67881574b540c3ddc680c9ecd10f826a1",
+  "scope": "Exact source-native SHA equality and exact site/link/lane/XYZ keys. Not map acceptance."
+}

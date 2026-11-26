@@ -1,0 +1,295 @@
+{
+  "id": "WLD-11",
+  "title": "Mourning Marsh",
+  "source": "layouts\\wld-11\\layout.json",
+  "source_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "zones": 13,
+  "routes": 14,
+  "shell_openings": [
+    {
+      "zone": "house-a",
+      "side": "E",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "house-a",
+      "side": "E",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "house-b",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "house-b",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "E",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "E",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "W",
+      "link": "L10",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "W",
+      "link": "L10",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "warehouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 87,
+  "issues": [
+    {
+      "zone": "main",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "service",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "south-deck",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "north-deck",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "house-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "house-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "chapel",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "warehouse",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "shack",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "ferry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "zone": "pump",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
+        ]
+      ]
+    },
+    {
+      "link": "L02",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Replace long boardwalk envelopes with measured supports, continuous deck meshes and invariant rails; ensure 2 m clear width.",
+    "Define flood plane and collision once per mission; no required wading, swimming or leap.",
+    "The entrance rise needs a real supported ramp and level intermediate landings."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "3f003fbe53dce8a75202a6c3427cf54ccd5019147cb5131397b6b63da40737a2",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "946692ca5819a0ff9f463d1825a14a52f4d9bb8ddca85e55751842545cbdb10a",
+    "independently_reimported": true,
+    "meshes": 83,
+    "triangles": 1012,
+    "floor_parts": 6,
+    "ceiling_cap_parts": 6,
+    "stair_treads": 7,
+    "checked_closed_solids": 83,
+    "measured_depth_parts": 12,
+    "exported_cap_rays": 6,
+    "route_support_solids": 26,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-11/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-11/layout.json": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+    "development/levels/blockouts/wld-11/rough-shell.blend": "51bf1fec4af047a401a047260523b5c91365e04c692a7be46257f377af55b6dc",
+    "development/levels/blockouts/wld-11/rough-shell.glb": "0e9642e80ae5ecb725c2fdb2e0e7d4aa6477bf6404bc04ade243c393afd68d7f"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

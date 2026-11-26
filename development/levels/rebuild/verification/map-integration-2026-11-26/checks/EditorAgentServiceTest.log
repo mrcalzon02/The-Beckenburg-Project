@@ -1,0 +1,20 @@
+Exception in thread "main" java.lang.IllegalStateException: Model unavailable: kenney_medieval_wall_pane_wood_window
+	at org.beckenburg.GlbProps.model(GlbProps.java:365)
+	at org.beckenburg.SceneRenderer.imported(SceneRenderer.java:445)
+	at org.beckenburg.SceneRenderer.imported(SceneRenderer.java:440)
+	at org.beckenburg.SceneRenderer.streetResidence(SceneRenderer.java:931)
+	at org.beckenburg.SceneRenderer.arrivalSurroundings(SceneRenderer.java:1018)
+	at org.beckenburg.SceneRenderer.roadsideModels(SceneRenderer.java:1007)
+	at org.beckenburg.SceneRenderer.scene(SceneRenderer.java:1346)
+	at org.beckenburg.SceneRenderer.render(SceneRenderer.java:3863)
+	at org.beckenburg.SceneRenderer.render(SceneRenderer.java:3829)
+	at org.beckenburg.SceneRenderer.render(SceneRenderer.java:3826)
+	at org.beckenburg.SceneRenderer.drawPractice(SceneRenderer.java:3818)
+	at org.beckenburg.LevelEditorAgent.lambda$capture$10(LevelEditorAgent.java:515)
+	at org.beckenburg.SceneRenderer.renderExactFrame(SceneRenderer.java:72)
+	at org.beckenburg.LevelEditorAgent.capture(LevelEditorAgent.java:515)
+	at org.beckenburg.editor.EditorAgentService.capture(EditorAgentService.java:290)
+	at org.beckenburg.EditorAgentServiceTest.main(EditorAgentServiceTest.java:106)
+Caused by: java.io.IOException: Missing packaged licensed mesh /org/beckenburg/models/kenney_medieval_wall_pane_wood_window.glb
+	at org.beckenburg.GlbProps.model(GlbProps.java:359)
+	... 15 more

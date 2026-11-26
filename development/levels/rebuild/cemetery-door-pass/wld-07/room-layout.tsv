@@ -1,0 +1,136 @@
+SPACE	stage	13	13	72	43	86	0	3	true	Cemetery-lane van apron
+SPACE	entry	12	20	55	49	72	0	3	true	Lychgate and entry court
+SPACE	avenue	10	24	20	32	60	0	3	true	Main cemetery avenue
+SPACE	chapel	0	6	38	24	56	0	3	false	Ruined chapel
+SPACE	cottage	1	32	38	46	56	0	3	false	Caretaker cottage
+SPACE	garden	7	6	20	24	38	0	3	true	Memorial garden
+SPACE	east-graves	8	32	20	51	38	0	3	true	East grave plots
+SPACE	old-graves	9	16	4	40	20	0	3	true	Old numbered markers
+SPACE	tool	2	46	42	54	52	0	3	false	Caretaker tool store
+SPACE	west-stair	3	6	12	16	20	0	3	false	West ossuary vestibule
+SPACE	east-stair	4	40	12	50	20	0	3	false	East ossuary vestibule
+SPACE	ossuary	5	14	12	42	20	-3	2.85	false	Ossuary passage
+SPACE	chamber	6	16	0	28	12	-3	3	false	Memorial record chamber
+SPACE	chapel-court	11	5	55	20	69	0	3	true	Chapel forecourt
+SPACE	west-stair-flight	3	8.5	14.9	14	17.1	-3	2.92	false	west-stair lower flight
+SPACE	east-stair-flight	4	42	14.9	47.5	17.1	-3	2.92	false	east-stair lower flight
+ANCHOR	0	chapel	15	0	47
+ANCHOR	1	cottage	39	0	47
+ANCHOR	2	tool	50	0	47
+ANCHOR	3	west-stair	7.5	0	16
+ANCHOR	4	east-stair	48.5	0	16
+ANCHOR	5	ossuary	28	-3	16
+ANCHOR	6	chamber	22	-3	6
+ANCHOR	12	entry	28	0	66
+ANCHOR	13	stage	25	0	74
+ANCHOR	7	garden	15	0	29
+ANCHOR	8	east-graves	41	0	29
+ANCHOR	9	old-graves	28	0	12
+ANCHOR	10	avenue	28	0	40
+ANCHOR	11	chapel-court	15	0	57.12
+RITUAL	banishment	6	22.0	-3	6.0
+RITUAL	cleansing	1	39.0	0	47.0
+RITUAL	absolution	7	15.0	0	29.0
+TREAD	104:L14 flight0 step1
+TREAD	105:L14 flight0 step2
+TREAD	106:L14 flight0 step3
+TREAD	107:L14 flight0 step4
+TREAD	108:L14 flight0 step5
+TREAD	109:L14 flight0 step6
+TREAD	110:L14 flight0 step7
+TREAD	111:L14 flight0 step8
+TREAD	112:L14 flight0 step9
+TREAD	113:L14 flight0 step10
+TREAD	114:L14 flight0 step11
+TREAD	115:L14 flight0 step12
+TREAD	116:L14 flight0 step13
+TREAD	117:L14 flight0 step14
+TREAD	118:L14 flight0 step15
+TREAD	119:L14 flight0 step16
+TREAD	120:L14 flight0 step17
+TREAD	122:L15 flight0 step1
+TREAD	123:L15 flight0 step2
+TREAD	124:L15 flight0 step3
+TREAD	125:L15 flight0 step4
+TREAD	126:L15 flight0 step5
+TREAD	127:L15 flight0 step6
+TREAD	128:L15 flight0 step7
+TREAD	129:L15 flight0 step8
+TREAD	130:L15 flight0 step9
+TREAD	131:L15 flight0 step10
+TREAD	132:L15 flight0 step11
+TREAD	133:L15 flight0 step12
+TREAD	134:L15 flight0 step13
+TREAD	135:L15 flight0 step14
+TREAD	136:L15 flight0 step15
+TREAD	137:L15 flight0 step16
+TREAD	138:L15 flight0 step17
+POINT	L01	28.0	0	78.0
+POINT	L01	28.0	0	72.0
+POINT	L01	28.0	0	66.0
+POINT	L02	28.0	0	66.0
+POINT	L02	28.0	0	60.0
+POINT	L02	28.0	0	40.0
+POINT	L03	28	0	66
+POINT	L03	23	0	62
+POINT	L03	15	0	62
+POINT	L03	15	0	56
+POINT	L03	15	0	47
+POINT	L04	28	0	66
+POINT	L04	33	0	62
+POINT	L04	39	0	62
+POINT	L04	39	0	56
+POINT	L04	39	0	47
+POINT	L05	15	0	47
+POINT	L05	15	0	38
+POINT	L05	15	0	29
+POINT	L06	15.0	0	29.0
+POINT	L06	24.0	0	29.0
+POINT	L06	28.0	0	40.0
+POINT	L07	28.0	0	40.0
+POINT	L07	32.0	0	29.0
+POINT	L07	41.0	0	29.0
+POINT	L08	41	0	29
+POINT	L08	39	0	34
+POINT	L08	39	0	38
+POINT	L08	39	0	47
+POINT	L09	15.0	0	29.0
+POINT	L09	20.0	0	20.0
+POINT	L09	28.0	0	12.0
+POINT	L10	28.0	0	12.0
+POINT	L10	36.0	0	20.0
+POINT	L10	41.0	0	29.0
+POINT	L11	39.0	0	47.0
+POINT	L11	46.0	0	47.0
+POINT	L11	50.0	0	47.0
+POINT	L12	15	0	29
+POINT	L12	11.5	0	24
+POINT	L12	7.5	0	23
+POINT	L12	7.5	0	20
+POINT	L12	7.5	0	16
+POINT	L12	8.5	0	16
+POINT	L13	41	0	29
+POINT	L13	45	0	24
+POINT	L13	48.5	0	23
+POINT	L13	48.5	0	20
+POINT	L13	48.5	0	16
+POINT	L13	47.5	0	16
+POINT	L14	8.5	0	16
+POINT	L14	14.2	-3	16
+POINT	L14	28	-3	16
+POINT	L15	28	-3	16
+POINT	L15	41.8	-3	16
+POINT	L15	47.5	0	16
+POINT	L16	28.0	-3	16.0
+POINT	L16	22.0	-3	12.0
+POINT	L16	22.0	-3	6.0
+OPEN	900	13	12	28	0	72	z	2	trail
+OPEN	901	12	10	28	0	59.9	z	2	trail
+OPEN	902	3	5	14	-3	16	x	1.5	stair
+OPEN	903	4	5	42	-3	16	x	1.5	stair
+OPEN	904	5	6	22	-3	12	z	1.5	arch
+OPEN	905	12	11	20	0	63	x	2	trail
+OPEN	906	7	10	24	0	29	x	2	trail
+OPEN	907	10	8	32	0	29	x	2	trail
+OPEN	908	7	9	20	0	20	z	2	trail
+OPEN	909	9	8	36	0	20	z	2	trail

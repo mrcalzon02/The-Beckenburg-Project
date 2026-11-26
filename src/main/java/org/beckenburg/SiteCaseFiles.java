@@ -41,6 +41,29 @@ public final class SiteCaseFiles {
                 "ACCESS: Ground classrooms, cafeteria, nurse room and gym; upper library and assembly rooms; basement plant. Corridors are the main withdrawal routes.",
                 "SERVICES: Old coal and oil plant retained out of service beside a modern boiler. Radiators heat occupied rooms; no underfloor heat. Toilets and washbasins show later repairs.",
                 "TRACES: Coursework beneath relief registers, meal records, medical supplies and caretaker isolation notes. Children's belongings are human history, never automatic evidence of a child ghost."));
+            case "wld-04" -> new File("BB / WLD-04",identity.title(),identity.address(),List.of(
+                "The ranger station recorded wind and smoke bearings from the tower. A roadhead supply shelter serves the lower approach.",
+                "Late 2022: The lookout relayed interrupted calls from the forest road. A radio keeper maintained the signal for travellers.",
+                "During return surveys, Meridian volunteers copied bearings and kept the ranger-room transcript with the receiver."),List.of(
+                "OBJECTIVE: Investigate the ranger station and clearing, identify the current threat, and carry out the appropriate rite.",
+                "ACCESS: The hut and ranger store have walk-in refuges. The contour return reaches the roadhead. The tower is an optional branch with one stair approach.",
+                "SERVICES: The roadhead shelter holds the diesel generator and breaker. Starting the engine leaves a tripped breaker open.",
+                "RECORDS: Read the ranger transcript on the lower circuit. The optional cab log preserves later bearings. Gather instrument evidence for the current case."));
+            case "wld-05" -> new File("BB / WLD-05",identity.title(),identity.address(),List.of(
+                "The assay office recorded ore grades and crew wages. Surface stores and the wash house served the haul workings.",
+                "Late 2022: A return party checked both stair approaches. The crew tally carries unresolved entries."),
+                List.of("OBJECTIVE: Identify the current threat and carry out the appropriate rite before withdrawing to the van.",
+                "ACCESS: The haul stairs and ventilation stairs connect the headhouse and workings. The collapsed hoist bay is sealed behind a fixed guard.",
+                "SERVICES: The roadhead generator and breaker supply the working lights. The lower sump is guarded.",
+                "RECORDS: The assay ledger and rescue tally describe past work and the return party. Collect instrument evidence for the current case."));
+            case "wld-06" -> new File("BB / WLD-06",identity.title(),identity.address(),List.of(
+                "The shore cottages served two fishing households. Catch passed through the fish house and both piers shared the cross-dock.",
+                "Late 2022: Crews made repeated rescue crossings after the land routes broke. The departure tally and a reused catch sheet record the fuel allotments and landings."),
+                List.of("OBJECTIVE: Investigate the current threat, perform the appropriate rite, and withdraw to the van.",
+                "ACCESS: Follow shore street to the cottages and quay. The cross-dock joins the piers. Both guarded stairs lead to the dry undercroft. Stay on the decks at the water's edge.",
+                "SERVICES: The shore-street generator and breaker supply six room circuits. Refuge cupboards stand in the cottages and net shed.",
+                "RECORDS: Read the boathouse departure tally and fish house crossing sheet. Collect evidence of the current haunting using your instruments."));
+            case "wld-07","wld-07-mortuary" -> cemeteryFile(id,identity);
             default -> {
                 var story=WorldLore.SITES.stream().filter(s->s.id().equals(id)).findFirst().orElse(null);
                 yield new File("BB / "+id.toUpperCase(java.util.Locale.ROOT),story==null?identity.title():story.title(),identity.address(),
@@ -49,6 +72,19 @@ public final class SiteCaseFiles {
             }
         };
     }
+    private static File cemeteryFile(String id,SiteStories.Identity identity){
+        boolean annex=id.equals("wld-07-mortuary");
+        return new File(annex?"BB / WLD-07 / VALE":"BB / WLD-07",identity.title(),identity.address(),
+            List.of(identity.history(),
+                "Late 2022: Search parties separated last sightings from memorial entries while families waited for word."),
+            List.of("OBJECTIVE: Investigate the current threat, carry out the appropriate rite, and return to the van.",
+                annex?"ACCESS: Enter the mortuary through the visitor hall or receiving bay. The cemetery has two stairs into the ossuary."
+                     :"ACCESS: The chapel links the forecourt and memorial garden. Both stair pavilions descend to the ossuary.",
+                "SERVICES: The caretaker shelter houses the generator and breaker behind the cottage. Starting the generator leaves a tripped breaker open.",
+                annex?"RECORDS: Read the memorial register in the lower archive and the visitor register at Vale reception."
+                     :"RECORDS: Read the memorial register in the lower archive. Collect current evidence with your instruments."));
+    }
+
     public static List<String> page(HouseMap map,int page,List<String> status){
         var f=forSite(map.level().id());
         return switch(Math.floorMod(page,3)){

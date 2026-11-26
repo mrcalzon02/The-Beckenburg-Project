@@ -1,0 +1,153 @@
+{
+  "views": [
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-rejected-prior-construction.png",
+      "sha256": "d8e3f1ef472d55daf6e33c6abaaca571634f2b6aaec866cea15c2c84576cbe14",
+      "site": "college",
+      "links": [
+        "L84"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_TRANSITIONS",
+      "source_glb_sha256": "d22736d78c590bd44f0799f48e3623188b9e566cd7284fa5747adcd65d19d819",
+      "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-rejected-prior-top.png",
+      "sha256": "a21c158a55591bb841d6fe78243caadba035c2c49759460d2424bf4bdc588266",
+      "site": "college",
+      "links": [
+        "L84"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_TRANSITIONS",
+      "source_glb_sha256": "d22736d78c590bd44f0799f48e3623188b9e566cd7284fa5747adcd65d19d819",
+      "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-landing-candidate-construction.png",
+      "sha256": "8150579fd3ec7678c7f130049566f9811ca5704962331ee2dc67e2393aac9158",
+      "site": "college",
+      "links": [
+        "L84"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "CANDIDATE_FITTED_LANDINGS_GUARDS_AND_RUNTIME_OPEN",
+      "source_glb_sha256": "d9ddcbdadc2a130d2e747a95ddf3b682e398b43ec825fb3db4090ac2f3ad9f18",
+      "source_ref": "CURRENT_CANDIDATE"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-landing-candidate-top.png",
+      "sha256": "aed947036969123722c0be80b81810797ad0d81b58db132582889f2ad480eebf",
+      "site": "college",
+      "links": [
+        "L84"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "CANDIDATE_FITTED_LANDINGS_GUARDS_AND_RUNTIME_OPEN",
+      "source_glb_sha256": "d9ddcbdadc2a130d2e747a95ddf3b682e398b43ec825fb3db4090ac2f3ad9f18",
+      "source_ref": "CURRENT_CANDIDATE"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-rejected-prior-construction.png",
+      "sha256": "d13cc62e3896693ed448e4cee8f1db803db24f0414937d55e72ea2dbfb227e56",
+      "site": "mansion",
+      "links": [
+        "L59",
+        "L60"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_TRANSITIONS",
+      "source_glb_sha256": "35b198492962b42deadbcaad57e16d6e96eb57a4a33a39d06f76c224e45c9d0e",
+      "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-rejected-prior-top.png",
+      "sha256": "3fb7edcce846165461970dde9743b32a7ae78666ad02df7a6c38869352643219",
+      "site": "mansion",
+      "links": [
+        "L59",
+        "L60"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_TRANSITIONS",
+      "source_glb_sha256": "35b198492962b42deadbcaad57e16d6e96eb57a4a33a39d06f76c224e45c9d0e",
+      "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-landing-candidate-construction.png",
+      "sha256": "5592752f3c94eab6a4040335acbc7e64caea7eb0a308e5df8239881702257b3c",
+      "site": "mansion",
+      "links": [
+        "L59",
+        "L60"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "CANDIDATE_FITTED_LANDINGS_GUARDS_AND_RUNTIME_OPEN",
+      "source_glb_sha256": "7cb1eee8af296d2c5a5eba97f338e3d623b6533b8a53b92f89d5e0b1079a7d68",
+      "source_ref": "CURRENT_CANDIDATE"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-landing-candidate-top.png",
+      "sha256": "319644f8efe6ca697e0f30fdb71fb73bee619aabde3f1a8542cffd70d69d348b",
+      "site": "mansion",
+      "links": [
+        "L59",
+        "L60"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "CANDIDATE_FITTED_LANDINGS_GUARDS_AND_RUNTIME_OPEN",
+      "source_glb_sha256": "7cb1eee8af296d2c5a5eba97f338e3d623b6533b8a53b92f89d5e0b1079a7d68",
+      "source_ref": "CURRENT_CANDIDATE"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-rejected-prior-construction.png",
+      "sha256": "6b925ba60ecb340c02b0a2f981e3f9f2e4a57574747cbbd09409be17563632ea",
+      "site": "wld-14",
+      "links": [
+        "route-24"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_TRANSITIONS",
+      "source_glb_sha256": "4087b9f31f04544945c70fd9a60723aa78417c283102b479bd9c8ee82de68c03",
+      "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-rejected-prior-top.png",
+      "sha256": "3419a1736d40806b50ba01c8734b042039c6b81070102e2916a3031dda33f9a0",
+      "site": "wld-14",
+      "links": [
+        "route-24"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_TRANSITIONS",
+      "source_glb_sha256": "4087b9f31f04544945c70fd9a60723aa78417c283102b479bd9c8ee82de68c03",
+      "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-landing-candidate-construction.png",
+      "sha256": "0a24dd3470d618216b20a3c79b2bc98a93813c2d5526ac7838e92b9dc1bb542c",
+      "site": "wld-14",
+      "links": [
+        "route-24"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "CANDIDATE_FITTED_LANDINGS_GUARDS_AND_RUNTIME_OPEN",
+      "source_glb_sha256": "59e78531f2ee9f7c7f08dcf4c27c54dc296babeb56eb6950503948cfca48a21c",
+      "source_ref": "CURRENT_CANDIDATE"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-landing-candidate-top.png",
+      "sha256": "a68dfb7ac2b9dbc861185e0d61a44e61af5511f4cdcde80bf9cc441e7f0b90d4",
+      "site": "wld-14",
+      "links": [
+        "route-24"
+      ],
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_LANDING_CONSTRUCTION",
+      "status": "CANDIDATE_FITTED_LANDINGS_GUARDS_AND_RUNTIME_OPEN",
+      "source_glb_sha256": "59e78531f2ee9f7c7f08dcf4c27c54dc296babeb56eb6950503948cfca48a21c",
+      "source_ref": "CURRENT_CANDIDATE"
+    }
+  ],
+  "limitation": "Actual export inspection; isolated geometry has surroundings hidden. No finished material/guards/runtime acceptance."
+}

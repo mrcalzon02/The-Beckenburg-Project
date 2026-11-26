@@ -1,0 +1,136 @@
+{
+  "status": "NATIVE_SCHOOL_PACKAGED_REVIEW_AND_POWERED_CASE",
+  "prior_commit": "476ee987a34620f109d6f59e1335e5ef8d1ae779",
+  "native_scene_revision": "2e5d19fc5d9397a115eab5a3effff41925d8cbe53c936330293ca34b9a23ddcd",
+  "review_property": "beckenburg.review.schoolNative",
+  "source_roster": "development/levels/rebuild/school-electrical-pass/roster.json",
+  "plan": "development/levels/rebuild/school-mission-graph-pass/assembly-partition-plan.svg",
+  "nonphysical_routes": "development/levels/rebuild/school-electrical-pass/circulation.tsv",
+  "authored_search_spaces": 40,
+  "stable_gameplay_owners": 15,
+  "fitted_door_sets": 20,
+  "whole_site_route_replays": 156,
+  "matched_editor_poses": 40,
+  "matched_editor_triangles": 35600,
+  "native_services": {
+    "circuits": 12,
+    "loads": 26,
+    "alarm_sockets": 12,
+    "cupboards": 3,
+    "connected_lugs": 3,
+    "retained_components": 509,
+    "added_components": 79
+  },
+  "verified_modes": [
+    "Windows JAR solo location selection",
+    "four-player TCP selection and assembly crossing",
+    "host-authoritative breaker trip and physical reset",
+    "software and NVIDIA RTX 5070 OpenGL capture"
+  ],
+  "regressions": [
+    "HauntedFixturesTest",
+    "HidingBudgetTest",
+    "SeacliffDispatchTest",
+    "BlackpineDispatchTest (passed isolated rerun)",
+    "LevelAuthoringIdentityTest",
+    "LanAcousticsTest",
+    "RoomAcousticPresetsTest"
+  ],
+  "still_open": [
+    "room-by-room optical containment and services",
+    "complete evidence, ritual, rescue and progression case",
+    "representative and worst-case Windows GPU operating measurements",
+    "final runtime acceptance and release promotion"
+  ],
+  "assets": [
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/school-electrical.blend",
+      "bytes": 1034869,
+      "sha256": "9a6d83adb659b9271ad266486ed5a7481a849aa9a15c39ae34ec586494163af1"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/school-fitted-doors.blend",
+      "bytes": 1253503,
+      "sha256": "845d32f59108910068d3ff51030b33a77d8802ef6334560c1392281240208150"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/school-electrical.glb",
+      "bytes": 3774052,
+      "sha256": "f98180dff6296b89935a05cbbfa92778dfcf990c56dc80e817f875aa0e2989d9"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/school-electrical.hcs2",
+      "bytes": 1190670,
+      "sha256": "14543c43d51b0e58c78c6aae9c2edd57708ad7f3598f04a47471c668c4d75244"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/authored-layout.json",
+      "bytes": 268962,
+      "sha256": "ebaf1dc381f68ab0fbcae7da61bae48b924b13ea7c2523f91210afbde024a27c"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/electrical.json",
+      "bytes": 21327,
+      "sha256": "21dcc397e1c716cb32de04d1ba6e6e3a60b5753c5737df94defeb07efbd00d80"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/mission.tsv",
+      "bytes": 604,
+      "sha256": "75503c9f8383246cf188d0518a36c5380297cccfa1a25e32460137dc3b715fd3"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/circulation.tsv",
+      "bytes": 6710,
+      "sha256": "6075a6e2578c380810072d8bbf6541f84a4cc9f3a484f7e894093e47aeb4c579"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/door-schedule.tsv",
+      "bytes": 7491,
+      "sha256": "b4037a0a0e71625a2897b69aead8e532e5794f299f8e7933090b951e5d531a36"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/verification/editable-door-poses.tsv",
+      "bytes": 894,
+      "sha256": "a9070568fb86280926535678ca6bb97eb434e6b56a8f8e12bac7554c293ab878"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/verification/opengl.tsv",
+      "bytes": 2941,
+      "sha256": "0c5cea68befb474ae29c3ba83ec4d1cfee71956d7a7b5e0927d6814b58b3c1b9"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/verification/software-and-tcp.tsv",
+      "bytes": 3099,
+      "sha256": "02cdfd91847a6faff303175609d5043f13d8e6ab7af60225a9fdf522c818f33d"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",
+      "bytes": 338792,
+      "sha256": "2ce55f5fc3611094900af9d449c88a9ce10f3643d9be439d01084cd7bf8939cb"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-blackout-opengl.png",
+      "bytes": 242525,
+      "sha256": "b98fe03a8df02bf20b51ca8e1890fc78ab98bfb2090cafe40073250eeae8647b"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-blackout-software.png",
+      "bytes": 241098,
+      "sha256": "6a1c38b6745439358b9b86e5204ce01321d70d2db5a922ddaf9ffa7a3ac8beed"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-powered-opengl.png",
+      "bytes": 398111,
+      "sha256": "9380f419a58843c1b583bb7ee998df87b82cbbba64398caf078fc2f5f5669aad"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-powered-software.png",
+      "bytes": 409779,
+      "sha256": "09d0fe829354f0b5fdc1a243487991537ea3f56426ac3c53c9a707b53df01721"
+    }
+  ]
+}

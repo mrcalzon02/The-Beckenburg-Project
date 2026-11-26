@@ -118,6 +118,7 @@ public final class LanHost implements AutoCloseable {
     private final int[] hunterRooms=new int[HUNTERS];
     private final long[] hunterSequences=new long[HUNTERS];
     private final HouseMap map;
+    private final HouseEncounter houseEncounter;
     private final RoomLighting lights=new RoomLighting();
     private final AmbientSanity ambientSanity=new AmbientSanity();
     private final LanWorld world;
@@ -307,6 +308,7 @@ public final class LanHost implements AutoCloseable {
         map=Objects.requireNonNull(authored);
         if(map.site()!=site)throw new IllegalArgumentException("Authored site mismatch");
         world=new LanWorld(map);
+        houseEncounter=new HouseEncounter(map);
         ghostPose=new LanGhostSpatial(map,anchor);
         if(!map.valid()||!RitualSites.valid(map))
             throw new IllegalArgumentException("unplayable authored investigation site");
@@ -1102,7 +1104,7 @@ public final class LanHost implements AutoCloseable {
                     notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
                     reply(peer,"ACCEPT|POWER|"+(lights.breaker()?"ON":"OFF"));
                     recordSound(peer.slot,LanGhostPursuit.Sound.EQUIPMENT,LanSound.Cue.BREAKER);
-                    if(lights.breaker())actorCue(peer.slot,LanSound.Cue.ELECTRIC_HUM);
+                    if(lights.supplied())actorCue(peer.slot,LanSound.Cue.ELECTRIC_HUM);
                 }
                 case "VANDOOR" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
@@ -1458,7 +1460,7 @@ public final class LanHost implements AutoCloseable {
                         case "UV_LIGHT" -> {
                             boolean enabled=gear.toggle(id);
                             notifyHunters("GEARFX|"+peer.slot+"|UV_LIGHT|"+(enabled?1:0));
-                            reading=enabled&&!uvEvidence.visible(map,world.body(peer.slot),gear.owned(id),tick,true).isEmpty()
+                            reading=enabled&&!uvEvidence.visible(map,world.body(peer.slot),gear.owned(id),tick,true,world.crouched(peer.slot)).isEmpty()
                                 ?"UV light / genuine surface trace":"UV light / no visible trace";
                         }
                         case "FLASHLIGHT","HEAD_GEAR","FIRELIGHT" -> {
@@ -2044,7 +2046,7 @@ public final class LanHost implements AutoCloseable {
                     answerHunter(peer,"SKILL",outcome);
                     if(outcome.accepted()){
                         if(skill==HunterDiscipline.Ability.SURVEY){
-                            mission.setEvidenceHeating(lights.breaker());
+                            mission.setEvidenceHeating(lights.supplied());
                             int room=hunterRooms[peer.slot];
                             int age=tick-lastEvidenceEventTick;
                             int event=age>=0&&age<=40
@@ -2156,8 +2158,8 @@ public final class LanHost implements AutoCloseable {
                     GhostDomain.Resolution result=ghost.dispatch(new GhostDomain.Command(action,room,++hostGhostActionSequence,GhostDomain.Source.HUMAN));
                     if(!result.applied())throw new IllegalArgumentException(result.reason());
                     actionCadence.completed(tick,result);
-                    reply(peer,"ACCEPT|GHOST|"+action+"|"+result.energy());
                     ghostPose.syncRoom(ghost.room());
+                    reply(peer,"ACCEPT|GHOST|"+action+"|"+result.energy());
                     onGhostTravel(from,ghost.room());
                     resolveGhostAction(result);
                     if(peer.ghostWorldMode)reply(peer,ghostPose.frame(tick));
@@ -2976,7 +2978,7 @@ public final class LanHost implements AutoCloseable {
         synchronized(mutex){
             long enteredAt=queuedAt==0?0:System.nanoTime();
             try{
-        if(!running)return;
+        if(!running){if(everStarted)houseEncounter.cancel();return;}
         long tickTime=aiDiagnostics.begin();
         try{tick++;
             mission.advanceClassClock(tick);
@@ -3011,6 +3013,18 @@ public final class LanHost implements AutoCloseable {
                 for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null&&seats[seat].worldMode){
                     var cue=LanSound.project(map,world.body(seat),room,noise.x(),noise.y(),noise.z(),LanSound.Cue.IMPACT,tick);
                     if(cue!=null)reply(seats[seat],cue.frame());
+                }
+            }
+            var encounterObservers=clutterObservers().stream().filter(o->seats[o.seat()]!=null&&seats[o.seat()].worldMode).toList();
+            var locationSound=houseEncounter.advance(tick,encounterObservers);
+            if(locationSound!=null){
+                for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null&&seats[seat].worldMode&&mission.alive(seat)){
+                    var cue=LanSound.project(map,world.body(seat),locationSound.room(),locationSound.x(),locationSound.y(),locationSound.z(),locationSound.cue(),tick);
+                    if(cue!=null)reply(seats[seat],cue.frame());
+                }
+                Peer spirit=seats[GHOST_SEAT];if(spirit!=null&&spirit.ghostWorldMode){var p=ghostPose.pose();
+                    var cue=LanSound.project(map,new LanWorld.Body(p.x(),p.y(),p.z(),0,p.room()),locationSound.room(),locationSound.x(),locationSound.y(),locationSound.z(),locationSound.cue(),tick);
+                    if(cue!=null)reply(spirit,cue.frame());
                 }
             }
             broadcastClutter();
@@ -3207,7 +3221,7 @@ public final class LanHost implements AutoCloseable {
                     Peer viewer=seats[seat];
                     var visible=uvEvidence.visible(map,world.body(seat),
                         equipment[seat].owned("UV_LIGHT"),tick,
-                        equipment[seat].powered("UV_LIGHT"));
+                        equipment[seat].powered("UV_LIGHT"),world.crouched(seat));
                     // UV marks are genuine host evidence and fade at their
                     // authored born tick. Repeating an identical 96-mark list
                     // every 300ms wastes TCP bandwidth and UI work. TCP FIFO
@@ -3488,7 +3502,7 @@ public final class LanHost implements AutoCloseable {
                 reading=pulse==null
                     ?station.tool().equals("SOUND_SENSOR")
                         ?"Ambient "+RoomAcousticPresets.noiseFloor(map.level(),
-                            station.room(),lights.breaker())+"/10 / monitoring"
+                            station.room(),lights.supplied())+"/10 / monitoring"
                         :"No movement / monitoring"
                     :pulse.kind()+" "+pulse.strength()+"/10 / activity detected";
             }else{
@@ -3569,7 +3583,7 @@ public final class LanHost implements AutoCloseable {
                 aiDiagnosticsCsv());
         for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
         for(Socket s:transports)try{s.close();}catch(IOException ignored){}
-        synchronized(mutex){for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
+        synchronized(mutex){houseEncounter.cancel();for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
         clock.shutdownNow();workers.shutdownNow();
     }
     private static final class Reservation {

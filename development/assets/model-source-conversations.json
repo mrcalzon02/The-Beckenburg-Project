@@ -1,0 +1,40 @@
+{
+  "status": "PARTIAL_HISTORY_RECOVERED_LOCAL_SOURCE_REFERENCES_VERIFIED",
+  "sources": [
+    {
+      "id": "6aed02d7-4bd4-83e8-9fa5-6ab9071863a4",
+      "title": "Continue Map Modeling",
+      "url": "https://chatgpt.com/c/6aed02d7-4bd4-83e8-9fa5-6ab9071863a4",
+      "history_status": "LATEST_TURN_READ_SOURCE_REFERENCES_CONFIRMED",
+      "referenced_commit": "533ad1cc3547b735e677159a0c34889ac9247e4a",
+      "local_references": [
+        "development/levels/primitive-props-v1/catalog.json",
+        "development/levels/primitive-props-v1/refinement/index.json",
+        "development/levels/primitive-props-v1/site-kits/index.json"
+      ],
+      "remaining": "Older history/attachments not exhaustively reviewed; latest source references already exist locally."
+    },
+    {
+      "id": "6aecd6f0-6b90-83e8-aee9-269bd7bff42b",
+      "title": "Continue Map Prop Modeling",
+      "url": "https://chatgpt.com/c/6aecd6f0-6b90-83e8-aee9-269bd7bff42b",
+      "history_status": "HISTORY_LOAD_TIMED_OUT",
+      "local_references": [],
+      "remaining": "Retry history retrieval and trace any additional artifacts without treating the stockpile as absent."
+    },
+    {
+      "id": "6aec37d7-9848-83e8-aaaa-a68233bd9345",
+      "title": "Map Prop Modeling",
+      "url": "https://chatgpt.com/c/6aec37d7-9848-83e8-aaaa-a68233bd9345",
+      "history_status": "RECENT_THREE_TURNS_READ_SOURCE_REFERENCES_CONFIRMED",
+      "referenced_commit": "5e6046f3d35c8d90e7fc90a6ef07dc36d45d45e7",
+      "local_references": [
+        "development/levels/primitive-props-v1/models",
+        "development/levels/primitive-props-v1/site-kits/index.json",
+        "development/levels/primitive-props-v1/relic-review/relic-inventory.json",
+        "development/levels/primitive-props-v1/crypt-review/castle-crypt-count.json"
+      ],
+      "remaining": "Older history/attachments not exhaustively reviewed. Historical139/160model counts are superseded by the current local index."
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "status": "THREE_MAP_ROOF_CONSTRUCTION_RUNTIME_OPEN",
+  "active_sources": [
+    {
+      "id": "ACADEMY",
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+      "glb_sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+      "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+    },
+    {
+      "id": "ASYLUM",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+      "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+      "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+    },
+    {
+      "id": "CHURCH",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+      "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+      "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+    },
+    {
+      "id": "COLLEGE",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+      "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+      "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+    },
+    {
+      "id": "FARMHOUSE",
+      "construction": "development/levels/rebuild/roof-construction-pass/farmhouse/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+      "glb": "development/levels/rebuild/roof-construction-pass/farmhouse/enclosed-roofs.glb",
+      "native": "development/levels/rebuild/roof-construction-pass/farmhouse/enclosed-roofs.hcs2",
+      "blend": "development/levels/rebuild/roof-construction-pass/farmhouse/enclosed-roofs.blend",
+      "glb_sha256": "2fbfec9b1ac463b2caba3d8dd38548eb7374783134490a5f1403762db758929e",
+      "native_sha256": "901a74a9065d8eb3f7cc4f0004869f1210aab213ebfcae114b308d46c78041f9"
+    },
+    {
+      "id": "MANSION",
+      "construction": "development/levels/rebuild/roof-construction-pass/mansion/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+      "glb": "development/levels/rebuild/roof-construction-pass/mansion/enclosed-roofs.glb",
+      "native": "development/levels/rebuild/roof-construction-pass/mansion/enclosed-roofs.hcs2",
+      "blend": "development/levels/rebuild/roof-construction-pass/mansion/enclosed-roofs.blend",
+      "glb_sha256": "802cd08d8cdc6436021514f12191b770961a26b6bc0222e1811dc8bf270dd8c3",
+      "native_sha256": "853da0dafd5668449f886bbdbbbfc2cf218aa8355e00f8ab84aad1eb69be6d8a"
+    },
+    {
+      "id": "PRISON",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+      "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+      "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+    },
+    {
+      "id": "SCHOOL",
+      "construction": "development/levels/rebuild/roof-construction-pass/school/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+      "glb": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.glb",
+      "native": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.hcs2",
+      "blend": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.blend",
+      "glb_sha256": "97cd14efb251c2666c4ab66d9ce82fb74d99858e75a9d78fef89c26a8563e9b3",
+      "native_sha256": "35532dc7ce334d0d6752dc93143896e4f4bac97e66cf4f8a1693c3504b063211"
+    },
+    {
+      "id": "WLD-03",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.blend",
+      "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+      "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d"
+    },
+    {
+      "id": "WLD-04",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+      "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+      "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+    },
+    {
+      "id": "WLD-05",
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+      "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+      "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+    },
+    {
+      "id": "WLD-06",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+      "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+      "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+    },
+    {
+      "id": "WLD-07",
+      "construction": "development/levels/rebuild/flat-circulation-pass/wld-07/construction.json",
+      "layout": "development/levels/rebuild/flat-circulation-pass/wld-07/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.glb",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.hcs2",
+      "blend": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.blend",
+      "native_sha256": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+      "glb_sha256": "c0835f2a8da1d2d5fb74397a5870087cbee1bf353e143c7a272a90d3f1ac2fc5"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "construction": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+      "layout": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.glb",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+      "blend": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.blend",
+      "native_sha256": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+      "glb_sha256": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9"
+    },
+    {
+      "id": "WLD-08",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+      "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+      "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+    },
+    {
+      "id": "WLD-09",
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+      "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+    },
+    {
+      "id": "WLD-10",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-10/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.blend",
+      "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+      "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+    },
+    {
+      "id": "WLD-11",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.blend",
+      "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+      "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b"
+    },
+    {
+      "id": "WLD-12",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+      "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+      "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+    },
+    {
+      "id": "WLD-13",
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+      "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+      "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+    },
+    {
+      "id": "WLD-14",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+      "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+      "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+    },
+    {
+      "id": "WLD-15",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+      "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+      "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+    },
+    {
+      "id": "WLD-16",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+      "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+      "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+    },
+    {
+      "id": "WLD-17",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.blend",
+      "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c"
+    },
+    {
+      "id": "WLD-18",
+      "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+      "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+      "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+      "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+      "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+      "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+      "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+    }
+  ],
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "ASYLUM",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "CHURCH",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "COLLEGE",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "FARMHOUSE",
+      "decision": "ENCLOSED_ROOFS_BUILT_RUNTIME_OPEN"
+    },
+    {
+      "id": "MANSION",
+      "decision": "ENCLOSED_ROOFS_BUILT_RUNTIME_OPEN"
+    },
+    {
+      "id": "PRISON",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "SCHOOL",
+      "decision": "ENCLOSED_ROOFS_BUILT_RUNTIME_OPEN"
+    },
+    {
+      "id": "WLD-03",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-04",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-05",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-06",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-07",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-08",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-09",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-10",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-11",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-12",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-13",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-14",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-15",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-16",
+      "decision": "RETAIN_CURRENT_SOURCE_PENDING_CONSTRUCTION"
+    },
+    {
+      "id": "WLD-17",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "WLD-18",
+      "decision": "AUTHORED_CIRCULATION_REVISED_ON_EXACT_EXISTING_GEOMETRY"
+    },
+    {
+      "id": "CASTLE",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN"
+    },
+    {
+      "id": "HOUSE",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN"
+    },
+    {
+      "id": "WLD-01",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN"
+    },
+    {
+      "id": "WLD-02",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN"
+    }
+  ],
+  "baseline": "development/levels/rebuild/access-route-pass/roster.json"
+}

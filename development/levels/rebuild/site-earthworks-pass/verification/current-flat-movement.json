@@ -1,0 +1,160 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 15
+      },
+      "current_lanes": {
+        "samples": 5076,
+        "valid_standing": 5058,
+        "invalid_standing": 18,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 12,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+          "PHYSICAL_COMPONENT": 4
+        },
+        "physical_components": [
+          [
+            "WLD-06 east pier shaft rim 2.001",
+            3
+          ],
+          [
+            "WLD-06 east pier shaft rim 1.001",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 12
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5268,
+        "valid_standing": 5243,
+        "invalid_standing": 25,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5,
+          "NO_CENTRE_SUPPORT": 12,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2,
+          "PHYSICAL_COMPONENT": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1,
+          "NO_FOOT_SUPPORT_0.0_0.22": 2
+        },
+        "physical_components": [
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 15
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5181,
+        "valid_standing": 4881,
+        "invalid_standing": 300,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 300
+        },
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/courts-and-docks-pass/wld-06/construction.json",
+        "contract_sha256": "6bfe36790e78a25a22a06dd3676f8b71b8871b4fa4b8021955aa5ca49166124b",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-06/authored-layout.json",
+        "layout_sha256": "622a9e678dd4c2629fd5eed1f9d29fa399c50cb4dcef3218941875f75993af6b",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-06/courts-and-docks.hcs2",
+        "native_sha256": "0bbee6b1ccf813e9b72ce14f948055a0ae940cb565138ccbaea5197c260d8e97"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/site-earthworks-pass/wld-06/construction.json",
+        "contract_sha256": "fde52fd261e6c2e7b995469e5b1a21efe72a33fa5f385dcf94952fb2fa66ec3f",
+        "layout": "development/levels/rebuild/site-earthworks-pass/wld-06/authored-layout.json",
+        "layout_sha256": "0f36a73f23ea0e3d2314039ac4368761ef7e7155f06f647da76c6304b6535ff2",
+        "native": "development/levels/rebuild/site-earthworks-pass/wld-06/saved-earthworks.hcs2",
+        "native_sha256": "583ba481446fcabdd75507261e1640b3d7bf60405435afebefdc53a2068fd84a"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/courts-and-docks-pass/wld-08/construction.json",
+        "contract_sha256": "69456219c9f0df54b21b5669828065aa3e905b10d48367682f0e3db2e07d9d17",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-08/authored-layout.json",
+        "layout_sha256": "a59da680fa7d75b52d00bff3ed3a8a05b931accbb5d894c0b1e6303932234d56",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-08/courts-and-docks.hcs2",
+        "native_sha256": "93523955a11c4fafe82b90c60040e8cc07ae78a5c04ad1c23296fc95323253f9"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/site-earthworks-pass/wld-08/construction.json",
+        "contract_sha256": "a01c9f3000fe5ffb33939ce4f959fee4c98be0d05303255f49bc45e9294ea216",
+        "layout": "development/levels/rebuild/site-earthworks-pass/wld-08/authored-layout.json",
+        "layout_sha256": "78bfc6ca794322415a478c5ae96d8c1e8ddc78100fd7fbba780a5ebd969af07e",
+        "native": "development/levels/rebuild/site-earthworks-pass/wld-08/saved-earthworks.hcs2",
+        "native_sha256": "73c0e00e7694db453aacbbe1cb88664b60cec4ada6fdbc3532c0b7cc27e960ff"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/courts-and-docks-pass/wld-13/construction.json",
+        "contract_sha256": "2eea38d3ccc5bad55012d182ff1d7da67a7224903999ead3c96f88d7b89f033c",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-13/authored-layout.json",
+        "layout_sha256": "3fffc39d5a3fe0336571ae509c14d31428d8372e85ea6379421ac26febe3818c",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.hcs2",
+        "native_sha256": "802c6b51ba9c51a9654be569c7ec13228e751f5b97782b149fba821c26f23df1"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/site-earthworks-pass/wld-13/construction.json",
+        "contract_sha256": "f0e3b845da5949d38a861ca1573333ebd46cbd7db70e6ca48a291ddc45cbc48e",
+        "layout": "development/levels/rebuild/site-earthworks-pass/wld-13/authored-layout.json",
+        "layout_sha256": "7d9f54c3753700ea50882e842319685df2a2cdbcc6e1106db8ef9f1a5203887c",
+        "native": "development/levels/rebuild/site-earthworks-pass/wld-13/saved-earthworks.hcs2",
+        "native_sha256": "c1a3a3a656be8a52e4d7090745b46d01d04a49c22bcd03ef1fed8170fd089c11"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/courts-and-docks-pass/roster.json": "0c9304101555f72a3136db96648a21e701c410685ee6c58b310398ab6c538ae6"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-failure-contacts.tsv": "a0e5cf41b457053333d757b570d6587e2751410eecdf386c698b084afab35adc",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-failure-input.tsv": "0cbd9154752c1e374506031203edeb0228f5917ff0a17484f28f3c16db05696e",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-lane-input.tsv": "131925a8c490e3338c6dd6b1731035776ed84bd33b5f27c5dda2b8ca95a9b38e",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-lane-names.tsv": "5adf88502dbf199bd7149c9284abcb4a7a037c262a8c8332c20108f6c6051993",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-lanes.tsv": "c2bce150e7852260ca9a7c9c02225a93efd67a689012357e6b0ddea515cdb6ff",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-links.tsv": "216527af8b39848250237b7af8da5e160f9a73c3150a384d7952722eb7043ab8",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-names.tsv": "5adf88502dbf199bd7149c9284abcb4a7a037c262a8c8332c20108f6c6051993",
+    "development/levels/rebuild/site-earthworks-pass/verification/current-flat-paths.tsv": "bb7b76b7ae8feffa295f1a898214ce67fe1b721f2f4a1d0b970f592b0a07f593"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

@@ -1,7 +1,7 @@
 {
   "id": "WLD-16",
   "title": "Eight Pines Motor Lodge",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Plant equipment and twelve individually switched room lamps installed in the native mission",
   "generator_required": true,
   "generator_location_intent": "Motor lodge service yard with screened generator and plant-room distribution",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,109 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-16/layout.json"
+  "source_layout": "development/levels/layouts/wld-16/layout.json",
+  "installed_plan": "development/levels/rebuild/eight-pines/construction.json",
+  "circuits": [
+    {
+      "id": "EP-MAIN",
+      "source": "pines-generator",
+      "breaker": "pines-breaker"
+    },
+    {
+      "id": "EP-04",
+      "room": 4,
+      "switch": "pines-office-switch",
+      "loads": [
+        "pines-office-light"
+      ]
+    },
+    {
+      "id": "EP-09",
+      "room": 9,
+      "switch": "pines-manager-switch",
+      "loads": [
+        "pines-manager-light"
+      ]
+    },
+    {
+      "id": "EP-10",
+      "room": 10,
+      "switch": "pines-laundry-switch",
+      "loads": [
+        "pines-laundry-light"
+      ]
+    },
+    {
+      "id": "EP-11",
+      "room": 11,
+      "switch": "pines-plant-switch",
+      "loads": [
+        "pines-plant-light"
+      ]
+    },
+    {
+      "id": "EP-00",
+      "room": 0,
+      "switch": "pines-room1-switch",
+      "loads": [
+        "pines-room1-light"
+      ]
+    },
+    {
+      "id": "EP-01",
+      "room": 1,
+      "switch": "pines-room2-switch",
+      "loads": [
+        "pines-room2-light"
+      ]
+    },
+    {
+      "id": "EP-02",
+      "room": 2,
+      "switch": "pines-room3-switch",
+      "loads": [
+        "pines-room3-light"
+      ]
+    },
+    {
+      "id": "EP-03",
+      "room": 3,
+      "switch": "pines-room4-switch",
+      "loads": [
+        "pines-room4-light"
+      ]
+    },
+    {
+      "id": "EP-05",
+      "room": 5,
+      "switch": "pines-room5-switch",
+      "loads": [
+        "pines-room5-light"
+      ]
+    },
+    {
+      "id": "EP-06",
+      "room": 6,
+      "switch": "pines-room6-switch",
+      "loads": [
+        "pines-room6-light"
+      ]
+    },
+    {
+      "id": "EP-07",
+      "room": 7,
+      "switch": "pines-room7-switch",
+      "loads": [
+        "pines-room7-light"
+      ]
+    },
+    {
+      "id": "EP-08",
+      "room": 8,
+      "switch": "pines-room8-switch",
+      "loads": [
+        "pines-room8-light"
+      ]
+    }
+  ]
 }

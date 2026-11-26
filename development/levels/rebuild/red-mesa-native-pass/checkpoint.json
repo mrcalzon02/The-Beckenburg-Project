@@ -1,0 +1,65 @@
+{
+  "site": "WLD-03",
+  "status": "RED_MESA_PLAYABLE_NATIVE_REVIEW_UNDER_DISPATCH_FLAG",
+  "prior_commit": "6d677a92",
+  "source": "development/levels/rebuild/canyon-marsh-pass/wld-03/construction.json",
+  "review_property": "beckenburg.review.redMesaNative",
+  "campaign_ordinal": 11,
+  "retained_native_components": 246,
+  "supported_refuge_contacts": 36,
+  "packaged_resources": {
+    "red-mesa-review.glb": "9a9e1da271bcc6c082a8c3e65726af9bc99b36c8574ae35f912724786f847917",
+    "red-mesa-review.hcs2": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef",
+    "runtime-input.tsv": "4a311f03ea09d424f937c92e6d8bfbf273d0c4dbfae100d1333c1b972cbcece9",
+    "door-schedule.tsv": "c32ced12a60b42746475c19fb857c2624225ffd450902a905731434d5f24ef57"
+  },
+  "packages": {
+    "build/beckenburg-game.jar": "951bf73f6d900dbcb15364caf67163a473e8555e3181d9d4384aa13769ff11d9",
+    "gpu-client/target/BeckenburgGPU.jar": "26270d94980bf1f15e76c56129e355a2a0d21442ee2038f1328d0c7b48d73be3"
+  },
+  "software": {
+    "revision": "96a23f9f6e876d3774bdc9356aec088619b5cba6fb3b5491c79dda6d18450daf-ca58676626a3cfcd",
+    "collision_sha256": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef",
+    "physical_door_states": "4 fitted doors; standing and crouched crossing, object, sight, aim and acoustics",
+    "route_replays": "64",
+    "owner_spawns": "14 native-supported regions and the expedition van",
+    "red-mesa-wash-cupboard_protected_floor_samples": "69",
+    "red-mesa-shelter-cupboard_protected_floor_samples": "69",
+    "red-mesa-chamber-cupboard_protected_floor_samples": "69",
+    "red_mesa_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "renderer": "Software"
+  },
+  "opengl": {
+    "revision": "96a23f9f6e876d3774bdc9356aec088619b5cba6fb3b5491c79dda6d18450daf-ca58676626a3cfcd",
+    "collision_sha256": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef",
+    "physical_door_states": "4 fitted doors; standing and crouched crossing, object, sight, aim and acoustics",
+    "route_replays": "64",
+    "owner_spawns": "14 native-supported regions and the expedition van",
+    "red-mesa-wash-cupboard_protected_floor_samples": "69",
+    "red-mesa-shelter-cupboard_protected_floor_samples": "69",
+    "red-mesa-chamber-cupboard_protected_floor_samples": "69",
+    "red_mesa_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  },
+  "live_case": {
+    "named_revision": "96a23f9f6e876d3774bdc9356aec088619b5cba6fb3b5491c79dda6d18450daf-ca58676626a3cfcd",
+    "collision_sha256": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef",
+    "red-mesa-wash-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "red-mesa-shelter-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "terrace_stairs": "PASS The real shelter door and both pairs of retaining-bay flights reached +4 m and +8 m",
+    "gallery_anchor": "PASS Gallery evidence replicated, and the host accepted the anchor ward and refused the remote rite",
+    "red-mesa-chamber-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "chamber_rite": "PASS ABSOLVED reported to all three peers; 396 credits and 132 XP"
+  },
+  "publication": {
+    "branch": "map/roster-structure-batch",
+    "held_draft_head": "2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf",
+    "status": "local checkpoint; earlier automated approval rejected publication"
+  },
+  "remaining": [
+    "Reachable physical perimeter and drainage",
+    "Working source, distribution and room services",
+    "Site sound, archaeology, story and encounters",
+    "Default dispatch, all rites and installer validation"
+  ]
+}

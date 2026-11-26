@@ -1,0 +1,282 @@
+{
+  "status": "PASS_SCOPED_SOURCE_SOLID_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "retained_source_meshes": 523,
+      "replaced_source_parts": 167,
+      "closed_new_parts": 104,
+      "new_triangles": 3508,
+      "packed_images": 13,
+      "blend_sha256": "bdd016513e3905ed9fed5acb7fd93a23f73e15ebb8ba89b99f46baa9a1aeed2e",
+      "glb_sha256": "a7a30b3f8c4b569ee3056ddfee5ad1d71e3c072e921e1154610b1d39433822ae",
+      "physics_sha256": "f548b8696ed82994343dd1fe0ce853d10d3400708e896244758f007b91bda16e"
+    },
+    {
+      "id": "ASYLUM",
+      "retained_source_meshes": 579,
+      "replaced_source_parts": 176,
+      "closed_new_parts": 106,
+      "new_triangles": 3618,
+      "packed_images": 10,
+      "blend_sha256": "2985308854289d1802d806fb92686262ef9b57c8f60e4ddecdbdc73daeb9c074",
+      "glb_sha256": "abeb53b241297f971e0e45580c6c0bf3f76a415e8bc60c605efe89f23e9a4f3b",
+      "physics_sha256": "aa6b4b6ebf4584d978f77158ec399713a173976e562159ddbe527897c61fbab3"
+    },
+    {
+      "id": "CHURCH",
+      "retained_source_meshes": 327,
+      "replaced_source_parts": 81,
+      "closed_new_parts": 33,
+      "new_triangles": 1046,
+      "packed_images": 7,
+      "blend_sha256": "da75eb4b3bdd26fe54da6191ef607aad9e4c46fa6cb53511810af5cd95e705a6",
+      "glb_sha256": "377cbd0715c0efdb0bf5f7ca9ca5456f56511277ea5c6e0fca24f0b837f3f5ea",
+      "physics_sha256": "873387b91a485a16e39730cd6efb2a2135e37f6d18b70382317992216124a1b8"
+    },
+    {
+      "id": "COLLEGE",
+      "retained_source_meshes": 741,
+      "replaced_source_parts": 157,
+      "closed_new_parts": 93,
+      "new_triangles": 2952,
+      "packed_images": 10,
+      "blend_sha256": "0c399e733608c77422f73d197a22a21ad7f2db100510d95ddce5af07f795506e",
+      "glb_sha256": "1a82ccdae364f1ff0b0586e06746e3bb48d8292eaf6dbfe29861b87197e8e02d",
+      "physics_sha256": "604604f25733f534b808bc6c8367ceb38899003ec5b4529c88bcac5c75d1824c"
+    },
+    {
+      "id": "FARMHOUSE",
+      "retained_source_meshes": 323,
+      "replaced_source_parts": 142,
+      "closed_new_parts": 91,
+      "new_triangles": 3044,
+      "packed_images": 10,
+      "blend_sha256": "d97bc273de4c0bb409cd29fbc347c087a0eb5835a3f8eae662b1703469ece915",
+      "glb_sha256": "a1cc9849f76ef5f876d0f330820a948fe3d448978d41c74eb7b37fd8f8166a45",
+      "physics_sha256": "0207241287245ee3e0a068d91da9a2885180ee64f4b4dcd1c9095c48eaa8d67e"
+    },
+    {
+      "id": "MANSION",
+      "retained_source_meshes": 467,
+      "replaced_source_parts": 199,
+      "closed_new_parts": 122,
+      "new_triangles": 4188,
+      "packed_images": 12,
+      "blend_sha256": "3d61a9f0df4ddaba13bcc3044b9d594a7a3e4012e039b49ae16872f3ec08a041",
+      "glb_sha256": "e20b924cd56790aa0a3dfdc79d109075285a9e0278dfd365cf79c31f8743a323",
+      "physics_sha256": "3b75ec332548f823e0503e204ee89dd225e53c922cdd640a2fbb775019ca429c"
+    },
+    {
+      "id": "PRISON",
+      "retained_source_meshes": 784,
+      "replaced_source_parts": 177,
+      "closed_new_parts": 114,
+      "new_triangles": 3482,
+      "packed_images": 7,
+      "blend_sha256": "56096de0070fb75a37379cc3dec1e7701d7572ae83295e6d75f91f43ebb7840e",
+      "glb_sha256": "09d9955353f94b7582f6344fdac00c8319a8e72f095517059220f1eece83f148",
+      "physics_sha256": "b49b00454cde3bdb4565dc7d28c6d0e428dde88315d6eb4fd5048674d0e388bd"
+    },
+    {
+      "id": "SCHOOL",
+      "retained_source_meshes": 308,
+      "replaced_source_parts": 200,
+      "closed_new_parts": 130,
+      "new_triangles": 4684,
+      "packed_images": 11,
+      "blend_sha256": "9da6d3170d18c559fa8a9c753e0ad1fe0cff65b9a597648ffdae685caadb0925",
+      "glb_sha256": "7918ff3ca2095514c9d5d726b77c3c86448adad9a309270409d050554db18690",
+      "physics_sha256": "9a393deb78dae76676bde5f2ab9100de8d01d175d62245d4b70e57d8f5a5533f"
+    },
+    {
+      "id": "WLD-03",
+      "retained_source_meshes": 180,
+      "replaced_source_parts": 29,
+      "closed_new_parts": 18,
+      "new_triangles": 568,
+      "packed_images": 12,
+      "blend_sha256": "0359b1086dddf7e79773e4024fff023688d0df65fa5396690bedfbef3cfd4bd4",
+      "glb_sha256": "1f431778750604bd1c0cf55f7cf82400baeb9815e9de5211452d758f29eff1fe",
+      "physics_sha256": "6ff1e3f5ab67747ceb9ac41677eb4fb5965c7b125b10e7c8d26495df37b1274b"
+    },
+    {
+      "id": "WLD-04",
+      "retained_source_meshes": 275,
+      "replaced_source_parts": 13,
+      "closed_new_parts": 9,
+      "new_triangles": 278,
+      "packed_images": 6,
+      "blend_sha256": "1a1ad46eb9de627af214423d4c83b7dda27860dfd2f9d9baca82b1c9b8c57348",
+      "glb_sha256": "6c168e0a6b25221320dd5b52aac8a6fbcc48b8c5e062a000f734d141d46e33dc",
+      "physics_sha256": "501093519e6571ed19d5628f96cefd8c9074a331c99edddefa2677dcb94db905"
+    },
+    {
+      "id": "WLD-05",
+      "retained_source_meshes": 249,
+      "replaced_source_parts": 41,
+      "closed_new_parts": 32,
+      "new_triangles": 1042,
+      "packed_images": 12,
+      "blend_sha256": "4c55b26c206c6d8197b6c5d40af240a5dd2108d4c1abe2bbb5a4938681461e8b",
+      "glb_sha256": "8dc4804e4f77904b0bece24f0ebca382ce7155b2d4df55dd062086e455a79454",
+      "physics_sha256": "760d5d1fd74fb7812418acfeb421419c230b9d76d2cdb3dbd0757e5e094aa76c"
+    },
+    {
+      "id": "WLD-06",
+      "retained_source_meshes": 365,
+      "replaced_source_parts": 23,
+      "closed_new_parts": 18,
+      "new_triangles": 540,
+      "packed_images": 9,
+      "blend_sha256": "1c453be6966fe39ff9c11707c43573c1f4bdb5f051b8f9db70462787d925e981",
+      "glb_sha256": "73dca896208524ab037bd63f4722b14939c42a2272fdd0bbc852fa9a0ac713d5",
+      "physics_sha256": "79821cf51f4a836dd6865da84f541b80687443853598c9e25aecf8578858f198"
+    },
+    {
+      "id": "WLD-07",
+      "retained_source_meshes": 121,
+      "replaced_source_parts": 26,
+      "closed_new_parts": 20,
+      "new_triangles": 568,
+      "packed_images": 8,
+      "blend_sha256": "d7c8c029d11e0e128c934b73f2f5d93f4e9a1915d4517036cae43e6e42c9e38c",
+      "glb_sha256": "c0835f2a8da1d2d5fb74397a5870087cbee1bf353e143c7a272a90d3f1ac2fc5",
+      "physics_sha256": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "retained_source_meshes": 169,
+      "replaced_source_parts": 58,
+      "closed_new_parts": 44,
+      "new_triangles": 1264,
+      "packed_images": 14,
+      "blend_sha256": "73b78dea55170f6970653b90effa4430e87509a670210a9f11282f262be10557",
+      "glb_sha256": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9",
+      "physics_sha256": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82"
+    },
+    {
+      "id": "WLD-08",
+      "retained_source_meshes": 217,
+      "replaced_source_parts": 58,
+      "closed_new_parts": 39,
+      "new_triangles": 1432,
+      "packed_images": 14,
+      "blend_sha256": "bdecb9d045533a6819747b4b4540f25229f92368e72d4606f63f9c413ea00d19",
+      "glb_sha256": "99fbc1aadc8c382f925b41bf863eefd2a6792b237d903ad97203007cd188a346",
+      "physics_sha256": "712c56150d4e7fc42135190609c30c67cecae4c059f7e41cbff6d018a340c026"
+    },
+    {
+      "id": "WLD-09",
+      "retained_source_meshes": 287,
+      "replaced_source_parts": 39,
+      "closed_new_parts": 24,
+      "new_triangles": 900,
+      "packed_images": 12,
+      "blend_sha256": "024cde758269bb59ff98f212a4f3cb1c08676cb3b749faeff01494d09c565121",
+      "glb_sha256": "dfa0dc6a6c0b6d444848aa116d5114f34574274e1ba8fe468ebfacc03ad40408",
+      "physics_sha256": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9"
+    },
+    {
+      "id": "WLD-10",
+      "retained_source_meshes": 313,
+      "replaced_source_parts": 62,
+      "closed_new_parts": 41,
+      "new_triangles": 1350,
+      "packed_images": 9,
+      "blend_sha256": "afd1dbe46c95933d796c48a19537ba37e652ddc9eea602353882f444c59f3045",
+      "glb_sha256": "4ec4158aa2ed89159de03cf38e87250dd884438b4d5bd07810ef71d16d7f0180",
+      "physics_sha256": "67bf33884c36418ec93d57eef30cf899dc3b1ff9a456b83a2a28208698ac145f"
+    },
+    {
+      "id": "WLD-11",
+      "retained_source_meshes": 345,
+      "replaced_source_parts": 21,
+      "closed_new_parts": 15,
+      "new_triangles": 512,
+      "packed_images": 6,
+      "blend_sha256": "1bc64b0980516b68e7bfb242bad372abcdce3a95246392f2cf10c94f65c8051a",
+      "glb_sha256": "a8467a6e0c5b59c4b3ae18d4289e08d455b7e3f58f646b9e56b8d9ac2226a851",
+      "physics_sha256": "4eb95de0b8e6f4251d01b3455939c0747bbe8cdc6fa833ec9f6b3b9b564366e6"
+    },
+    {
+      "id": "WLD-12",
+      "retained_source_meshes": 166,
+      "replaced_source_parts": 34,
+      "closed_new_parts": 28,
+      "new_triangles": 912,
+      "packed_images": 9,
+      "blend_sha256": "633a1c01e6b57f7f65f98bf1a74506e072863bfd24e8f59b48af3b39398d066a",
+      "glb_sha256": "5df37d8e883429903e37e5bbbee836f6514dd8fe81346272b5da111dd9b483f3",
+      "physics_sha256": "da0e062878daef37a57daeedcd46bf4b9a0c9f80616a4edb5e4494ffbe00e2cc"
+    },
+    {
+      "id": "WLD-13",
+      "retained_source_meshes": 170,
+      "replaced_source_parts": 63,
+      "closed_new_parts": 40,
+      "new_triangles": 1270,
+      "packed_images": 11,
+      "blend_sha256": "a59a60971313e380385f886adfc178414320b4dad3bda8d79c1495f640e5532b",
+      "glb_sha256": "92034c9c5a24c6deee74bec163d08fe76e94bee60ee5da109d238c394aecc214",
+      "physics_sha256": "55132f292414635d0cc8f00e7fe501e8f3a3b17a36c8eaa685fd119e9620b784"
+    },
+    {
+      "id": "WLD-14",
+      "retained_source_meshes": 654,
+      "replaced_source_parts": 52,
+      "closed_new_parts": 41,
+      "new_triangles": 1190,
+      "packed_images": 9,
+      "blend_sha256": "4c22223867621f3e42456daa4357de87c21948eeda3f6e3bf5484d3a9f834d55",
+      "glb_sha256": "8775054acaaf098f9bf70be98139664b320e6aeb29996add2f47d3d4ecd39cec",
+      "physics_sha256": "d15fe2d88a16151a9f9bffa7f32d2d56997d254c6731fa4d4bb139d4bcef941d"
+    },
+    {
+      "id": "WLD-15",
+      "retained_source_meshes": 187,
+      "replaced_source_parts": 35,
+      "closed_new_parts": 30,
+      "new_triangles": 888,
+      "packed_images": 13,
+      "blend_sha256": "eb7ae53b277b9b22f3b5a0a0dd949b6254b62f762d25319c4cd4f9adb484373d",
+      "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+      "physics_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+    },
+    {
+      "id": "WLD-16",
+      "retained_source_meshes": 199,
+      "replaced_source_parts": 33,
+      "closed_new_parts": 31,
+      "new_triangles": 902,
+      "packed_images": 10,
+      "blend_sha256": "c9b8031e8d255e6a1b8fab0330596f01b4fbb7efa39a8c1d822d852dd02d5fb8",
+      "glb_sha256": "21138278f6d0d1c739d1553d921aff519e53ae24d11f245cac37c1347a4db553",
+      "physics_sha256": "b9cddbea86c91d3254d78575d8bebc9eedb13db419576d8bf183a8e7e7de7314"
+    },
+    {
+      "id": "WLD-17",
+      "retained_source_meshes": 226,
+      "replaced_source_parts": 39,
+      "closed_new_parts": 30,
+      "new_triangles": 938,
+      "packed_images": 11,
+      "blend_sha256": "a8eaad3f794871c2c8ff191132d34f2b7b40c2e66df59d0c59be5ce32e339b84",
+      "glb_sha256": "c24a2b367c59930b49bd8e41cb5a9308d30614c4ae844424733f53f126cbd1dc",
+      "physics_sha256": "5b2ffe426f4fcf283302228cb06f287a553ddb9f07b5143c3861ae9166c2cdbf"
+    },
+    {
+      "id": "WLD-18",
+      "retained_source_meshes": 299,
+      "replaced_source_parts": 34,
+      "closed_new_parts": 30,
+      "new_triangles": 818,
+      "packed_images": 13,
+      "blend_sha256": "6d723074438329bcc14f1b89222be7f21abd9860a6389d6d1ac8972f98593075",
+      "glb_sha256": "5b76ba44bf0a9265374c084e1e5aa66cbd2eda5c96ddbcd1a2baeceae7dc615d",
+      "physics_sha256": "904f4536c95ec05f6f9fc0f9f7d2a7548f77b994363116ccac2072742ebfd68c"
+    }
+  ],
+  "checker_sha256": "62f1e2ac2299b81b5f54ec0569fa746e5eb19b0419c4b5839edad3742bcc6517",
+  "limitations": "No full map, guard/support engineering, runtime/network or hardware acceptance."
+}

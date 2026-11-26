@@ -1,0 +1,17 @@
+ANCHOR	0	spine	27.5	0	31
+ANCHOR	1	admission	30.5	0	54
+ANCHOR	2	day	18	0	40.85
+ANCHOR	3	dining	35	0	45
+ANCHOR	4	ground-ward-link	18	0	20.5
+ANCHOR	5	treatment	40	0	35
+ANCHOR	6	hydro-change	47	0	32.5
+ANCHOR	7	upper-spine	27.5	3.4	31
+ANCHOR	8	records	41	0	56
+ANCHOR	9	quiet-lobby	49.5	0	14
+ANCHOR	10	chapel	16	0	6
+ANCHOR	11	plant	40	-3	30
+ANCHOR	12	court	18	0	34.5
+ANCHOR	13	entry	34	0	64
+TRANSITION	483	L73	12	13	18	0	58	1.4	z	trail
+TRANSITION	484	L77	0	7	32	3.4	27.44	1.6	z	stair
+TRANSITION	485	L78	11	0	57	0	18.8	1.5	z	stair

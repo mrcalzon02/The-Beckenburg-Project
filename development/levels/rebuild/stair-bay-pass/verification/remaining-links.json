@@ -1,0 +1,186 @@
+{
+  "flights": [
+    {
+      "site": "WLD-03",
+      "variant": "after_bearing",
+      "link": "L04",
+      "segment": "0",
+      "legacy_up": "START_BLOCKED",
+      "legacy_down": "START_BLOCKED",
+      "authored_up": "BLOCKED_AT_63_OF_180",
+      "authored_down": "BLOCKED_AT_54_OF_180"
+    },
+    {
+      "site": "WLD-03",
+      "variant": "after_bearing",
+      "link": "L07",
+      "segment": "0",
+      "legacy_up": "START_BLOCKED",
+      "legacy_down": "BLOCKED_AT_11_OF_285",
+      "authored_up": "BLOCKED_AT_137_OF_285",
+      "authored_down": "BLOCKED_AT_27_OF_285"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L03",
+      "segment": "0",
+      "legacy_up": "START_BLOCKED",
+      "legacy_down": "START_UNSUPPORTED",
+      "authored_up": "START_BLOCKED",
+      "authored_down": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L04",
+      "segment": "0",
+      "legacy_up": "START_UNSUPPORTED",
+      "legacy_down": "BLOCKED_AT_16_OF_142",
+      "authored_up": "START_BLOCKED",
+      "authored_down": "BLOCKED_AT_17_OF_142"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L06",
+      "segment": "0",
+      "legacy_up": "START_UNSUPPORTED",
+      "legacy_down": "START_UNSUPPORTED",
+      "authored_up": "START_BLOCKED",
+      "authored_down": "BLOCKED_AT_29_OF_227"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L11",
+      "segment": "0",
+      "legacy_up": "START_BLOCKED",
+      "legacy_down": "BLOCKED_AT_17_OF_318",
+      "authored_up": "BLOCKED_AT_160_OF_318",
+      "authored_down": "BLOCKED_AT_154_OF_318"
+    },
+    {
+      "site": "WLD-05",
+      "variant": "after_bearing",
+      "link": "L17",
+      "segment": "0",
+      "legacy_up": "START_BLOCKED",
+      "legacy_down": "BLOCKED_AT_8_OF_190",
+      "authored_up": "BLOCKED_AT_178_OF_190",
+      "authored_down": "BLOCKED_AT_9_OF_190"
+    }
+  ],
+  "complete_links": [
+    {
+      "site": "WLD-03",
+      "variant": "after_bearing",
+      "link": "L04",
+      "segments": "1",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_63_OF_180",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_54_OF_180"
+    },
+    {
+      "site": "WLD-03",
+      "variant": "after_bearing",
+      "link": "L07",
+      "segments": "1",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_11_OF_285",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_137_OF_285",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_27_OF_285"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L03",
+      "segments": "1",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "START_UNSUPPORTED",
+      "authored_forward": "START_BLOCKED",
+      "authored_reverse": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L04",
+      "segments": "1",
+      "legacy_forward": "START_UNSUPPORTED",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_16_OF_142",
+      "authored_forward": "START_BLOCKED",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_17_OF_142"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L06",
+      "segments": "1",
+      "legacy_forward": "START_UNSUPPORTED",
+      "legacy_reverse": "START_UNSUPPORTED",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_29_OF_227",
+      "authored_reverse": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L11",
+      "segments": "1",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_17_OF_318",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_160_OF_318",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_154_OF_318"
+    },
+    {
+      "site": "WLD-05",
+      "variant": "after_bearing",
+      "link": "L17",
+      "segments": "1",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_8_OF_190",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_178_OF_190",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_9_OF_190"
+    },
+    {
+      "site": "WLD-12",
+      "variant": "after_bearing",
+      "link": "L16",
+      "segments": "6",
+      "legacy_forward": "BLOCKED_SEGMENT_0_AT_28_OF_30",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "BLOCKED_SEGMENT_3_AT_1_OF_15",
+      "authored_reverse": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-15",
+      "variant": "after_bearing",
+      "link": "route-17",
+      "segments": "3",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "BLOCKED_SEGMENT_1_AT_6_OF_100",
+      "authored_forward": "START_BLOCKED",
+      "authored_reverse": "BLOCKED_SEGMENT_2_AT_28_OF_30"
+    },
+    {
+      "site": "WLD-17",
+      "variant": "after_bearing",
+      "link": "route-03",
+      "segments": "2",
+      "legacy_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+      "authored_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_83"
+    },
+    {
+      "site": "WLD-18",
+      "variant": "after_bearing",
+      "link": "route-13",
+      "segments": "5",
+      "legacy_forward": "BLOCKED_SEGMENT_2_AT_1_OF_68",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "BLOCKED_SEGMENT_4_AT_38_OF_40",
+      "authored_reverse": "START_BLOCKED"
+    }
+  ]
+}

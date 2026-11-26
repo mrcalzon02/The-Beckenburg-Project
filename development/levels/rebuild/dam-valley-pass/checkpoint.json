@@ -1,0 +1,110 @@
+{
+  "id": "WLD-09",
+  "status": "DAM_JOINED_VALLEY_AND_FOUNDED_PHYSICAL_PERIMETER_STAGED",
+  "other_roster_entries_preserved": 28,
+  "prior_commit": "d28cdbb2a07fd5c00aafb1a8819dbd7ce0a4fc6a",
+  "prior_gallery": 45417734486,
+  "input_roster": "development/levels/rebuild/dam-tailrace-pass/roster.json",
+  "authored_layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+  "saved_world": "development/levels/rebuild/dam-catwalk-ground-pass/worlds/wld-09/civil-terrain",
+  "valley": {
+    "exact_joined_rim_edges": 1159,
+    "preserved_excavation_edges": 185,
+    "extension_triangles": 2718,
+    "road_triangles": 12,
+    "retained_road_surface_faces": 46,
+    "area_m2": 27890.0
+  },
+  "retaining_and_shore_spans": 94,
+  "closed_vehicle_gate": [
+    [
+      40,
+      89.6
+    ],
+    [
+      32,
+      89.6
+    ]
+  ],
+  "reused_gate_source": "development/levels/primitive-props-v1/models/level_blockout_prison_sally_gate.glb",
+  "retained_native_records": 511,
+  "added_native_records": 107,
+  "boundary": {
+    "native_sha256": "ab88e0df4d6372932d10913d3695677d91e3e8353a1300c1792242fefb8acfbe",
+    "bank_stations": "384",
+    "shore_stations": "203",
+    "closed_road_gate_stations": "61",
+    "grounded_and_elevated_capsule_blocks": "3888",
+    "bidirectional_approaches_with_clear_feet_blocked": "1216",
+    "supported_roadhead_and_exterior_grade_controls": "7",
+    "standing_arrival_capture": "PASS"
+  },
+  "strict_standing": 6087,
+  "ordinary_links": 13,
+  "flights": 13,
+  "complete_vertical_links": 6,
+  "joined_journeys": 5,
+  "software": {
+    "scene_revision": "8798290b8d5a8254bbcf83b85e1e250667ee0879c73cf80a2bd7526bd5943343",
+    "level_revision": "8798290b8d5a8254bbcf83b85e1e250667ee0879c73cf80a2bd7526bd5943343-d2efe546e19bbb46",
+    "water_revision": "a7fd90e0ba964931361a65c598d9fecbfdd21ad0d7bc0fdc9cd16cee82ad7575",
+    "collision_sha256": "ab88e0df4d6372932d10913d3695677d91e3e8353a1300c1792242fefb8acfbe",
+    "renderer": "Software",
+    "dry_invert_stands_blocked_when_wet": "42",
+    "retaining_faces_and_sluices_blocked_rays": "36",
+    "supported_catwalk_guard_crossings_rejected": "6",
+    "water_pixels_from_both_catwalk_views": "25752/9454",
+    "dry_control_water_pixels": "0",
+    "canonical_van_cargo": "PASS"
+  },
+  "opengl": {
+    "scene_revision": "8798290b8d5a8254bbcf83b85e1e250667ee0879c73cf80a2bd7526bd5943343",
+    "level_revision": "8798290b8d5a8254bbcf83b85e1e250667ee0879c73cf80a2bd7526bd5943343-d2efe546e19bbb46",
+    "water_revision": "a7fd90e0ba964931361a65c598d9fecbfdd21ad0d7bc0fdc9cd16cee82ad7575",
+    "collision_sha256": "ab88e0df4d6372932d10913d3695677d91e3e8353a1300c1792242fefb8acfbe",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "dry_invert_stands_blocked_when_wet": "42",
+    "retaining_faces_and_sluices_blocked_rays": "36",
+    "supported_catwalk_guard_crossings_rejected": "6",
+    "water_pixels_from_both_catwalk_views": "25750/9454",
+    "dry_control_water_pixels": "0",
+    "canonical_van_cargo": "PASS"
+  },
+  "remaining_acceptance": [
+    "Upstream reservoir and covered hydraulic connection",
+    "Named mission bounds, rooms, operating doors, power and full walk-in refuges",
+    "Finish, representative performance and release acceptance"
+  ],
+  "project_bytes_sha256": {
+    "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+    "development/levels/rebuild/dam-tailrace-pass/wld-09/dam-tailrace.water": "e3bdb4e6ea09e631791616102b1f812dee11c1511b29528d0e8f5d6e89e8c01c",
+    "development/levels/rebuild/dam-tailrace-pass/wld-09/runtime-zones.tsv": "f13f87d5671c2ee9c89210437f666ee0fa900204b85fde83a6189cb35f9b592b",
+    "development/levels/rebuild/dam-valley-pass/README.md": "04126818213d0df4cc19b054f4aac340b169231062555df6c7f6f383315a5aa0",
+    "development/levels/rebuild/dam-valley-pass/roster.json": "a8803f1748c9b877b5672a7b4ddff9391dd4116b542815113db7c02daccd3d88",
+    "development/levels/rebuild/dam-valley-pass/verification/complete-route-sweeps.tsv": "1e3c31c90b62e789e5547775f309907f2a5005aeb87685f3b5b4202fdb2d809d",
+    "development/levels/rebuild/dam-valley-pass/verification/current-flat-links.tsv": "9697a68856bc646dbb36def8e8e2519b18b8f331229b14b2d029c9e7f31213f3",
+    "development/levels/rebuild/dam-valley-pass/verification/current-flat-movement.json": "296f6934ddde0c96df0924f25853852afbcfc795e17b60e780e1a7c1ea6ffb94",
+    "development/levels/rebuild/dam-valley-pass/verification/flight-sweeps.tsv": "2631d16af42901fa541c018a8b82bd24a63c977f9028b0b653bc6087c2c65efd",
+    "development/levels/rebuild/dam-valley-pass/verification/joined-journeys.tsv": "be7e9c5b84166a8c38eeffaa8ce07ed31b3b2a37895fc22922ab3ba283bcd5ff",
+    "development/levels/rebuild/dam-valley-pass/verification/stair-movement.json": "f75edb917c3fb000f024cc36262627f4adbaca281f90331ebec1f057857e7365",
+    "development/levels/rebuild/dam-valley-pass/wld-09/boundary-body-review.tsv": "b7b2e5567e82231d17b25188bfa512457a1ce4aa1a438a07de7145ba7b3cc1e7",
+    "development/levels/rebuild/dam-valley-pass/wld-09/boundary-stations.tsv": "996f2c79ddb7bbbbe10de58b1973cdd072da89456ffff3fe8d36a0e32cbb9ccb",
+    "development/levels/rebuild/dam-valley-pass/wld-09/bounded-dam-opengl.tsv": "cf94e065ff041b96697696e5267835e08551c6c51366e585e45e17cd5f5f2437",
+    "development/levels/rebuild/dam-valley-pass/wld-09/bounded-dam-software.tsv": "a13bd708be456cdfaf18554dd18863892e021f4ac34b765ea88b62e61793afcc",
+    "development/levels/rebuild/dam-valley-pass/wld-09/bounded-dam.blend": "f1338e121947dd92737a7d01b7f3ac00d458ff03ef56329b1aa512aff05a5a3f",
+    "development/levels/rebuild/dam-valley-pass/wld-09/bounded-dam.glb": "e9e22ea6e62ce429b2d54b58d5aa50f581d2e44b6aa27f2c8dafe1bc68890c9f",
+    "development/levels/rebuild/dam-valley-pass/wld-09/bounded-dam.hcs2": "ab88e0df4d6372932d10913d3695677d91e3e8353a1300c1792242fefb8acfbe",
+    "development/levels/rebuild/dam-valley-pass/wld-09/captures/opengl/bounded-dam-water.png": "155d46c8ad8e6011e62e6bc7a42acc02323cc48782597a2287f06b05f25c4e5d",
+    "development/levels/rebuild/dam-valley-pass/wld-09/captures/software/bounded-dam-water.png": "cb51d1fee0435c00bfdd3cbdd2b68ffbce3e8e7eebb5ccb9be1ac9288ef9e2e6",
+    "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/arrival-standing.png": "382959428ed516b614533da7f65226962abea663a23aa74bd83805897ccdae0f",
+    "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/blackwater-valley.png": "8530740330c39b55c4f33f5c17a8d4aa4e133e06d763511b8ce02bd978c0836a",
+    "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/east-cut-and-tailrace.png": "1d453142a2442e95bebd35743229b6ad9f4cbce1d2b87e419938b589f0d61f59",
+    "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/south-roadhead.png": "2ef47eca1d09a81071af7991b868b1020c5e518cd4213dea68e996bfd907377f",
+    "development/levels/rebuild/dam-valley-pass/wld-09/construction.json": "971e5e758df474c6e8e054e348139cae93ee9660fdd9be53ecf404844f2dc222",
+    "development/levels/rebuild/dam-valley-pass/wld-09/export-verification.json": "225ab8e49de6920413f1fb60895f5732f30a1c8142d461ed70e56c283ab782eb",
+    "development/levels/rebuild/dam-valley-pass/wld-09/valley-plan.svg": "ec6d5be0661df1c8db0e4235f8e701b31176522fab43ee8393896b9f4bbd0680",
+    "tools/build_dam_valley.py": "e0d146dca01739745022d3a7dbc7f22d42b039648adde218f31edd2f7cbc458f",
+    "tools/java/DamTailraceReview.java": "886983e78763de28d64fdda75e1d2092dafeaa3bf7c5ef480d04470741740660",
+    "tools/java/DamValleyBoundaryReview.java": "9ed829bf69d9ec29b8eb335296a87cf261f78281a64a01fb596ab85112b05d25"
+  }
+}

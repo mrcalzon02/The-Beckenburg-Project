@@ -5,7 +5,8 @@ import org.beckenburg.LevelDefinition.*;
 /** First remote construction graybox. Intentionally separate from selectable-site unlocks. */
 public final class BlackpineLevel {
     private BlackpineLevel(){}
-    public static HouseMap map(){return new HouseMap(HouseMap.Site.FARMHOUSE,build());}
+    static final String REVIEW_PROPERTY = "beckenburg.review.blackpine";
+    public static HouseMap map(){return new HouseMap(HouseMap.Site.BLACKPINE);}
     public static LevelDefinition build(){
         var b=new LevelPlans.B("blackpine","Blackpine Logging Camp","woodland");
         b.r("Sawmill floor",40,20,52,38,0,6,"wood",43,25);

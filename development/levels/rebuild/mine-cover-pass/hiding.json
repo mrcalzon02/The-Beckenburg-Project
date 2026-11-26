@@ -1,0 +1,86 @@
+{
+  "exports": {
+    "blend": "6481333a9a7b8a6879290d207f5f3ae0437be40c0f80f7b018787a92ec339c95",
+    "glb": "525f86a879a911bd7cb8a0791b847cad83b45d62cb6d7647079c1a64035be2cd",
+    "hcs2": "621eaaf1eccc088d9412249704e7053bba07e7e25bb60cbba29c39fa03c8f4b2"
+  },
+  "retained_components": 272,
+  "added_components": 3,
+  "cupboards": [
+    {
+      "id": "mine-shack-cupboard",
+      "space": "shack",
+      "owner": 0,
+      "position": [
+        3.45,
+        0,
+        59
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          2.85,
+          0.0,
+          58.150002
+        ],
+        [
+          4.152,
+          2.31,
+          59.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "mine-assay-cupboard",
+      "space": "assay",
+      "owner": 1,
+      "position": [
+        52.55,
+        0,
+        58
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          51.848,
+          0.0,
+          57.150002
+        ],
+        [
+          53.149998,
+          2.31,
+          58.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "mine-wash-cupboard",
+      "space": "wash",
+      "owner": 11,
+      "position": [
+        52.55,
+        0,
+        34
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          51.848,
+          0.0,
+          33.150002
+        ],
+        [
+          53.149998,
+          2.31,
+          34.849998
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ]
+}

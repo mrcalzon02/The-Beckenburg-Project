@@ -1,0 +1,248 @@
+{
+  "status": "ASYLUM_THIRTEEN_FITTED_DOOR_SETS_PACKAGED_OPT_IN",
+  "prior_commit": "d3cebcc9174239d7078ec69e025c0bea7dac934f",
+  "native_scene_revision": "12f46db72b263caddd51c5a754d557ee3201dc3adfb0fd0b87cb15af41bc4faf",
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/asylum-power-pass/asylum-power.glb",
+    "native": "development/levels/rebuild/asylum-power-pass/asylum-power.hcs2",
+    "blend": "development/levels/rebuild/asylum-power-pass/asylum-power.blend",
+    "glb_sha256": "edd86035872657d97d325b7aca5b69871c1923758784d28aaebb94e2e0e12d21",
+    "native_sha256": "f85345bbd5d065a07d012577a9afb5958fe5fee7f3bd06b141546829ed934ed4",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-interior-door-pass/asylum-interior-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-interior-door-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-interior-door-pass/verification/staged-admission.tsv",
+    "staged_room_bindings": "development/levels/rebuild/asylum-interior-door-pass/mission.tsv",
+    "blend_sha256": "53928f58911531194fad2137ddcf7d0f4f29b0a3ec6b6c87f46fb3323d4047fa",
+    "staged_services": "development/levels/rebuild/asylum-interior-door-pass/services.tsv",
+    "staged_electrical_installation": "development/levels/rebuild/asylum-power-pass/electrical.json",
+    "aperture_measurements": "development/levels/rebuild/asylum-interior-door-pass/architectural-apertures.tsv"
+  },
+  "new_doors": 7,
+  "total_fitted_door_sets": 13,
+  "matched_editor_poses": 26,
+  "matched_editor_triangles": 29904,
+  "physical_routes": 45,
+  "direction_posture_replays": 180,
+  "lan_peers": 4,
+  "verified": [
+    "Named masonry jambs and headers define seven supported apertures at ground datum (1.40 m by 2.45 m).",
+    "Static world GLB and HCS2, the original stairs, and the power and cupboard coordinates are retained.",
+    "Closed and open movement, object clearance, sight, handle focus and acoustic checks use the exact fitted doors.",
+    "Live hunter approach, closed collision, aimed use, replicated state and threshold crossing both ways for the day-spine door.",
+    "Packaged opt-in solo and four-peer LAN, physical extraction van approach, breaker and full-height cover regressions.",
+    "Software and RTX 5070 OpenGL geometry captures."
+  ],
+  "still_open": [
+    "Other individual room enclosures and redundant coplanar wall components.",
+    "Complete evidence, ritual, rescue and extraction and default-release acceptance."
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/architectural-apertures.tsv",
+      "bytes": 1053,
+      "sha256": "84981c631c03ece35820fb33bb41aa67a041b92e0f1a9d3db5ce1ecf101c5933"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/arrival.tsv",
+      "bytes": 9025,
+      "sha256": "39c57e7de182d37a4c8af74160be69a53e3df17218253e02809f74682dfe30df"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/asylum-interior-fitted.blend",
+      "bytes": 1320062,
+      "sha256": "4032de273c548f94d10d383995e81b6b3215343b7021b4df411dcf8d5b39aff5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/door-survey.tsv",
+      "bytes": 1894,
+      "sha256": "d6f57e067cd12eeb7c9771b2773dceeb11336243afa211359a4ff433e542537d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/interior-threshold-plan.svg",
+      "bytes": 9916,
+      "sha256": "79e65d0cfa7bc2fd4d57c74cbaf0700bf76a9c8ed47a678e91bdcb91b40ef9b7"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/mission.tsv",
+      "bytes": 524,
+      "sha256": "9f5386bc53f4a42ade52f3d3124709def54bc2ebc9d702e5d459a8706e7a0008"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/roster.json",
+      "bytes": 27565,
+      "sha256": "b6f9fb28e97dda8a31b10ad7c372b55687366be19f59d73dded83d0903b784ae"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/services.tsv",
+      "bytes": 2793,
+      "sha256": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/verified-cargo-guide.tsv",
+      "bytes": 186,
+      "sha256": "b48b89d0b671837c6b6edb24ae00b8f0515aa6d70d1c7dbbae5d18781ebb1d13"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/verification/editable-door-poses.tsv",
+      "bytes": 606,
+      "sha256": "88789ae0dd140a86d3547cb78ef246f7f2a6b47e0175bec7f16164caefa956e3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/verification/opengl.tsv",
+      "bytes": 1941,
+      "sha256": "c7f53e2cec16725bb5ca2c41b1ac450cdf455a24732f267ef8bb82f58a1946e2"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/verification/staged-admission.tsv",
+      "bytes": 2388,
+      "sha256": "764ce5f06be45a764cf7e81e9223afc2ebb0b776477bc055896c77de3513b177"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-closed.png",
+      "bytes": 565292,
+      "sha256": "38ed0678dabd44ef3bc0ebf4a76a94ed6820967c37014251883546c37eef75fe"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-open.png",
+      "bytes": 529692,
+      "sha256": "f7082e0487c21d216015f837d75156c11924cc6346ae3f2adabfd0ae8a9e205d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-477-closed.png",
+      "bytes": 481435,
+      "sha256": "becf162cdf682d4a7717a144f601f4d0b49c49257fcb61820478fc01640005f6"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-477-open.png",
+      "bytes": 565839,
+      "sha256": "89398313c8cfe2c91fc41b06674f9ddaee1f4578b13c948724ccd622c5191674"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-478-closed.png",
+      "bytes": 558415,
+      "sha256": "d1a1b4d1e69e9eaa7d915cd67dbb0e6ed340d45659d65cb03ba4637045dffca7"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-478-open.png",
+      "bytes": 460155,
+      "sha256": "eadd444ef98afd211801cdf9b115ec6c73fb08544e27e381f70c426f0a3586b4"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-479-closed.png",
+      "bytes": 392400,
+      "sha256": "9bfa5b53f3b8f7b3fab23deb5610e2929cf489fe9be4118c41eb3cc33d1efce8"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-479-open.png",
+      "bytes": 466258,
+      "sha256": "8b25d654a87be04b225442214b584ad36f40b35027d964f69a871eb5c6a75204"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-480-closed.png",
+      "bytes": 587077,
+      "sha256": "8857ca105cb63d15743f7d6d6c3c3d3800bd0df58ecaf7d9aea96ae5aa755fde"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-480-open.png",
+      "bytes": 466377,
+      "sha256": "8a73bfc05f613d47be06fed8ccab20b67da42afdb0d5b38c82ae32f7f67ac39a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-481-closed.png",
+      "bytes": 569613,
+      "sha256": "31c8c4cb2458ea1f900ba95e2148ed5f82d92ad76c568704256d25d064990f42"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-481-open.png",
+      "bytes": 520067,
+      "sha256": "6987f0854399de09003d6f6f701ad00f2e6bd690e4831583d0fe03e06fd91ee5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-482-closed.png",
+      "bytes": 500919,
+      "sha256": "820503e254eaae566ae0e514f71dae23cc747d7a35dccdab84301b8c92c11c63"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-482-open.png",
+      "bytes": 536067,
+      "sha256": "d0c8d26349db2ec4ff64f360a65264e3986cb12f50e7cf859948219e57c3eb81"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-476-closed.png",
+      "bytes": 528954,
+      "sha256": "5bbfd9a4ab66fbdf42ff6eead811696cb3202537bb58c8dbc5eead0dd2693351"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-476-open.png",
+      "bytes": 511169,
+      "sha256": "783bb80b27e8416b825b0c9131b3f86e3293f84ae05fdfbc91217a99844dc105"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-477-closed.png",
+      "bytes": 526193,
+      "sha256": "b5db573bd54512b6b3913805bd42551c67954096e44a96801250f95b4ae3c7ad"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-477-open.png",
+      "bytes": 537814,
+      "sha256": "b8ef81e618ee53b6922e37a93d5573f0deee41d12acc39c5f2aa55e0d941c4b3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-478-closed.png",
+      "bytes": 495674,
+      "sha256": "6103e1f295ec87dd082a6328787bc0456f4c6eb966f1c592f0b9540e68d4acdb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-478-open.png",
+      "bytes": 389621,
+      "sha256": "39d430a4bd876085165a49ce6413e555c9207483350b05cd13b75fb1a95ba8b3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-479-closed.png",
+      "bytes": 494435,
+      "sha256": "6b3cb5c95f404133aab25715dcf9d211b76f12aee4fafebab2a754ff5bc9a02b"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-479-open.png",
+      "bytes": 451974,
+      "sha256": "2d3153508ba92d5ba9eca3c23e9552958fd7ccf2928c9677efb394ef8025b951"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-480-closed.png",
+      "bytes": 559683,
+      "sha256": "0679beeac3fbb46fd0b43e0447dbe05c768ce8bdff471fa9b2aa5c107a0ce3e9"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-480-open.png",
+      "bytes": 429074,
+      "sha256": "271e4db088199e4ae5bad1909dd30eb30a5245a4cfc6338db3cc800cf0d6c796"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-481-closed.png",
+      "bytes": 516291,
+      "sha256": "ae5ad7e6205c4b12db6902d26299aab5d5f40f75bad65885014fbeb379714411"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-481-open.png",
+      "bytes": 473887,
+      "sha256": "79f69ea9bd24e355cc858f672868312a240b1a05a30f9a5bc6ac116d3fc119b8"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-482-closed.png",
+      "bytes": 496642,
+      "sha256": "e34b7220de2d927c933b005e82e4d08c31f7cfe3a02e84ec0d142363a6cf4b56"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-interior-door-pass/captures/opengl/asylum-482-open.png",
+      "bytes": 535947,
+      "sha256": "ff49e5504cf45b38932ecfad17a869a5acb58467165e0022d09f3293def080e4"
+    }
+  ]
+}

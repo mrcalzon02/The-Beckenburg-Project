@@ -1,0 +1,3386 @@
+{
+  "status": "FAIL_NEW_FULL_FOOT_STANDING_REGRESSIONS",
+  "samples": 119775,
+  "before_decoded_sha256": "069e5cb49c4ddc6742092d2af875b45325612733e0ac919a9eadd11ab66178d7",
+  "after_decoded_sha256": "3b522775885d219c7b61e50fbf4744528e2067cd59cf31426bb4314daa44d24c",
+  "regressions": [
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "50.5",
+        "0",
+        "61.5"
+      ],
+      "before_ground_y": "-0.008545052260160446",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "50.75",
+        "0",
+        "61.5"
+      ],
+      "before_ground_y": "0.007202258333563805",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "50.5",
+        "0",
+        "61.88"
+      ],
+      "before_ground_y": "-0.013369344621896775",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "50.75",
+        "0",
+        "61.88"
+      ],
+      "before_ground_y": "0.00237796585075554",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "50.25",
+        "0",
+        "61.12"
+      ],
+      "before_ground_y": "-0.019468070492148368",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "50.5",
+        "0",
+        "61.12"
+      ],
+      "before_ground_y": "-0.003720759898424117",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "50.75",
+        "0",
+        "61.12"
+      ],
+      "before_ground_y": "0.012026550695300134",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "centre",
+      "point": [
+        "60.0",
+        "0",
+        "47.75"
+      ],
+      "before_ground_y": "0.013550011441111565",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "centre",
+      "point": [
+        "60.0",
+        "0",
+        "47.5"
+      ],
+      "before_ground_y": "0.00317387655377388",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "centre",
+      "point": [
+        "60.0",
+        "0",
+        "47.25"
+      ],
+      "before_ground_y": "-0.007202258333563805",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "centre",
+      "point": [
+        "60.0",
+        "0",
+        "47.0"
+      ],
+      "before_ground_y": "-0.01757839322090149",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "left",
+      "point": [
+        "60.38",
+        "0",
+        "48.25"
+      ],
+      "before_ground_y": "0.019731746390461838",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "left",
+      "point": [
+        "60.38",
+        "0",
+        "48.0"
+      ],
+      "before_ground_y": "0.01130876630544654",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "left",
+      "point": [
+        "60.38",
+        "0",
+        "47.75"
+      ],
+      "before_ground_y": "9.326314181088547E-4",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "left",
+      "point": [
+        "60.38",
+        "0",
+        "47.5"
+      ],
+      "before_ground_y": "-0.009443503469228828",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "left",
+      "point": [
+        "60.38",
+        "0",
+        "47.25"
+      ],
+      "before_ground_y": "-0.019819638356566513",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "47.75"
+      ],
+      "before_ground_y": "0.019448539060540546",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "47.5"
+      ],
+      "before_ground_y": "0.008183718798682127",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "47.25"
+      ],
+      "before_ground_y": "-0.0021924160886555577",
+      "after_ground_y": "-"
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "47.0"
+      ],
+      "before_ground_y": "-0.012568550975993242",
+      "after_ground_y": "-"
+    }
+  ],
+  "recovered": [
+    {
+      "site": "ACADEMY",
+      "link": "L02:1",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "55.5"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:1",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "55.25"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:1",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "55.0"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "centre",
+      "point": [
+        "60.0",
+        "0",
+        "54.75"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "centre",
+      "point": [
+        "60.0",
+        "0",
+        "54.5"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "55.0"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "54.75"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "54.5"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "54.25"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02:2",
+      "lane": "right",
+      "point": [
+        "59.62",
+        "0",
+        "54.0"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42:0",
+      "lane": "right",
+      "point": [
+        "57.0",
+        "0",
+        "49.62"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42:1",
+      "lane": "centre",
+      "point": [
+        "56.81716417910448",
+        "0",
+        "49.832089552238806"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42:1",
+      "lane": "left",
+      "point": [
+        "57.07419807894362",
+        "0",
+        "49.55220819463619"
+      ]
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42:1",
+      "lane": "left",
+      "point": [
+        "56.89136225804809",
+        "0",
+        "49.38429774687499"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "82.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "81.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "81.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "81.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "81.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "80.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "80.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "80.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "80.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "79.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "79.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "79.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "79.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "78.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "78.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "78.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "78.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "77.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "77.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "77.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "77.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "76.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "76.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "76.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "76.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "82.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "81.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "81.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "81.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "81.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "80.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "80.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "80.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "80.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "79.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "79.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "79.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "79.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "78.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "78.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "78.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "78.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "77.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "77.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "77.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "77.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "76.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "76.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "76.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "76.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "82.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "81.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "81.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "81.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "81.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "80.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "80.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "80.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "80.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "79.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "79.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "79.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "79.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "78.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "78.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "78.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "78.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "77.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "77.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "77.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "77.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "76.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "76.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "76.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:0",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "76.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "76.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "75.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "75.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "75.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "75.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "74.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "74.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "74.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "74.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "73.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "73.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "73.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "73.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "72.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "72.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "72.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "72.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "71.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "71.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "71.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "71.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "70.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "70.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "70.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "70.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "69.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "69.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "69.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "69.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "76.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "75.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "75.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "75.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "75.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "74.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "74.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "74.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "74.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "73.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "73.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "73.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "73.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "72.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "72.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "72.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "72.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "71.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "71.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "71.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "71.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "70.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "70.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "70.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "70.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "69.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "69.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "69.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "left",
+      "point": [
+        "36.73",
+        "0",
+        "69.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "76.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "75.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "75.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "75.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "75.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "74.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "74.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "74.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "74.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "73.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "73.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "73.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "73.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "72.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "72.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "72.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "72.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "71.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "71.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "71.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "71.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "70.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "70.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "70.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "70.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "69.75"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "69.5"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "69.25"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L01:1",
+      "lane": "right",
+      "point": [
+        "35.27",
+        "0",
+        "69.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.0",
+        "0",
+        "69.0"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.05714285714286",
+        "0",
+        "68.75714285714285"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.114285714285714",
+        "0",
+        "68.51428571428572"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.17142857142857",
+        "0",
+        "68.27142857142857"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.22857142857143",
+        "0",
+        "68.02857142857142"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.285714285714285",
+        "0",
+        "67.78571428571429"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.34285714285714",
+        "0",
+        "67.54285714285714"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.4",
+        "0",
+        "67.3"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.457142857142856",
+        "0",
+        "67.05714285714286"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.51428571428571",
+        "0",
+        "66.81428571428572"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.57142857142857",
+        "0",
+        "66.57142857142857"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.628571428571426",
+        "0",
+        "66.32857142857142"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.68571428571428",
+        "0",
+        "66.08571428571429"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.74285714285714",
+        "0",
+        "65.84285714285714"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.8",
+        "0",
+        "65.6"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.857142857142854",
+        "0",
+        "65.35714285714286"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.91428571428571",
+        "0",
+        "65.11428571428571"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "36.97142857142857",
+        "0",
+        "64.87142857142857"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.028571428571425",
+        "0",
+        "64.62857142857143"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.08571428571429",
+        "0",
+        "64.38571428571429"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.142857142857146",
+        "0",
+        "64.14285714285714"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.2",
+        "0",
+        "63.9"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.25714285714286",
+        "0",
+        "63.65714285714286"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.31428571428572",
+        "0",
+        "63.41428571428571"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.371428571428574",
+        "0",
+        "63.17142857142857"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.42857142857143",
+        "0",
+        "62.92857142857143"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.48571428571429",
+        "0",
+        "62.68571428571428"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.542857142857144",
+        "0",
+        "62.44285714285714"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.6",
+        "0",
+        "62.2"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "centre",
+      "point": [
+        "37.65714285714286",
+        "0",
+        "61.957142857142856"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "36.71059453288351",
+        "0",
+        "69.16719871361965"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "36.76773739002637",
+        "0",
+        "68.92434157076251"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "36.824880247169226",
+        "0",
+        "68.68148442790537"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "36.88202310431208",
+        "0",
+        "68.43862728504823"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "36.93916596145494",
+        "0",
+        "68.19577014219108"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "36.9963088185978",
+        "0",
+        "67.95291299933395"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.053451675740654",
+        "0",
+        "67.7100558564768"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.11059453288351",
+        "0",
+        "67.46719871361965"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.16773739002637",
+        "0",
+        "67.22434157076252"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.224880247169224",
+        "0",
+        "66.98148442790537"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.28202310431208",
+        "0",
+        "66.73862728504822"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.33916596145494",
+        "0",
+        "66.49577014219108"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.396308818597795",
+        "0",
+        "66.25291299933394"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.45345167574065",
+        "0",
+        "66.0100558564768"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.51059453288351",
+        "0",
+        "65.76719871361965"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.567737390026366",
+        "0",
+        "65.52434157076252"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.62488024716922",
+        "0",
+        "65.28148442790537"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.68202310431208",
+        "0",
+        "65.03862728504822"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.73916596145494",
+        "0",
+        "64.79577014219109"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.7963088185978",
+        "0",
+        "64.55291299933394"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.85345167574066",
+        "0",
+        "64.3100558564768"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.910594532883515",
+        "0",
+        "64.06719871361965"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "left",
+      "point": [
+        "37.96773739002637",
+        "0",
+        "63.824341570762506"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.346548324259345",
+        "0",
+        "68.5899441435232"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.4036911814022",
+        "0",
+        "68.34708700066606"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.46083403854506",
+        "0",
+        "68.10422985780892"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.517976895687916",
+        "0",
+        "67.86137271495177"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.57511975283077",
+        "0",
+        "67.61851557209464"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.63226260997363",
+        "0",
+        "67.37565842923749"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.68940546711649",
+        "0",
+        "67.13280128638034"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.746548324259344",
+        "0",
+        "66.88994414352321"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.8036911814022",
+        "0",
+        "66.64708700066606"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.86083403854506",
+        "0",
+        "66.40422985780891"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.917976895687914",
+        "0",
+        "66.16137271495177"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "35.97511975283077",
+        "0",
+        "65.91851557209463"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.03226260997363",
+        "0",
+        "65.67565842923749"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.089405467116485",
+        "0",
+        "65.43280128638034"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.14654832425934",
+        "0",
+        "65.1899441435232"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.2036911814022",
+        "0",
+        "64.94708700066606"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.260834038545056",
+        "0",
+        "64.70422985780891"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.31797689568791",
+        "0",
+        "64.46137271495178"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.37511975283078",
+        "0",
+        "64.21851557209463"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.432262609973634",
+        "0",
+        "63.97565842923749"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.48940546711649",
+        "0",
+        "63.73280128638035"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.54654832425935",
+        "0",
+        "63.48994414352321"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.603691181402205",
+        "0",
+        "63.24708700066606"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.66083403854506",
+        "0",
+        "63.00422985780892"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.71797689568792",
+        "0",
+        "62.76137271495178"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.775119752830776",
+        "0",
+        "62.518515572094636"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.83226260997363",
+        "0",
+        "62.275658429237495"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.88940546711649",
+        "0",
+        "62.032801286380355"
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02:0",
+      "lane": "right",
+      "point": [
+        "36.946548324259346",
+        "0",
+        "61.78994414352321"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "25.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "25.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "25.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "24.75",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "24.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "24.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "24.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "23.75",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "23.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "23.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "23.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "22.75",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "22.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "22.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "22.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "21.75",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "21.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "21.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "21.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "20.75",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "20.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "20.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "20.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "19.75",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "19.5",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "19.25",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "left",
+      "point": [
+        "19.0",
+        "0",
+        "47.52"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "24.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "24.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "23.75",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "23.5",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "23.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "23.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "22.75",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "22.5",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "22.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "22.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "21.75",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "21.5",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "21.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "21.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "20.75",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "20.5",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "20.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "20.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "19.75",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "19.5",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "19.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "19.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "18.75",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "18.5",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "18.25",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:0",
+      "lane": "right",
+      "point": [
+        "18.0",
+        "0",
+        "48.48"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:1",
+      "lane": "right",
+      "point": [
+        "17.52",
+        "0",
+        "48.0"
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-07:1",
+      "lane": "right",
+      "point": [
+        "17.52",
+        "0",
+        "47.8"
+      ]
+    }
+  ],
+  "recovered_by_site": {
+    "ACADEMY": 14,
+    "WLD-09": 244,
+    "WLD-18": 55
+  },
+  "scope": "Exact same source positions/lanes/height, actual production standing footprints. Continuous complete routes and historical body-only tables remain separate."
+}

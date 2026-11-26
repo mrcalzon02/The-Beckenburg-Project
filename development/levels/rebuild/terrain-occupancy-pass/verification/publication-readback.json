@@ -1,0 +1,796 @@
+{
+  "observed_utc": "2026-11-08T07:42:36.435745+00:00",
+  "source_checkpoint": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
+  "remote_head_verified": "337b6e40201c6949a37f04d69e2aa6dda5f2c4c5",
+  "remote_tree_sha": "700b247977e18f5d89344479c2052be854320171",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of occupied-room terrain source and checkpoint binding paths",
+  "checkpoints": [
+    {
+      "commit": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
+      "changed_files": 191
+    },
+    {
+      "commit": "337b6e40201c6949a37f04d69e2aa6dda5f2c4c5",
+      "changed_files": 3
+    }
+  ],
+  "verified_file_count": 191,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "47c25b90a50ea9fcb2ca4296e8fa300dfc498da5"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "1f567ae8a587f3545212b52f52092cc888c3d527"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "e788e397a879ce98f96c72c18a0761aac37873d1"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "40f12cb4d7e0eb314ddc77cabeea6c124bc91d6c"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "f83d046b26132379fc8124b50adf4201c20f6e98"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "19102335792a10dafbe7ec05d9a8b4556eb09105"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "5f2d8c0cde0a8631a44af9c582f87e32f822d5d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",
+      "sha": "45295938143ee298347668404e0a2f704540ddf6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-02.png",
+      "sha": "36e3b2d5c82590060814a1fa1d789c6e97afc1e9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-capture-manifest.json",
+      "sha": "5f4fa73bef77fd2e39c73317c73b7486335373cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-01.png",
+      "sha": "3c44c1b54f28449506ae51a5dff53f68645b4a7e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-02.png",
+      "sha": "f8ce39dffc1c3de1da381427696dc2fc94181c86"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-03.png",
+      "sha": "5adcb583538efe0655694155a505ed500069e60b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-04.png",
+      "sha": "fb57136f22fbf0bc709c0b6a33dbbb6278945595"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-overview.png",
+      "sha": "8c5223004bc4602c1740b33941349e2b09d587dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-room-after.png",
+      "sha": "b40640fa7b95fdefab9430e2c7faf678cb126f3f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-room-before.png",
+      "sha": "f26f1fda05cf046af54dce4f5e5d332991895a73"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-saved-terrain.png",
+      "sha": "bd816ea37fe6d5eaaec1a1d9e603b24604314753"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-terrain-only.png",
+      "sha": "3db522766fc48304b5a9fba3b8e014a0f1a37963"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-overview.png",
+      "sha": "702cfce45e9a732627092ee9fa8af39b702f0591"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-room-after.png",
+      "sha": "8d1c3f65ee8e793b9e1af64be4bee66fea6cd29b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-room-before.png",
+      "sha": "9ffb05dda3bc8e08f1bcc7ec39637d4bdc547d19"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-saved-terrain.png",
+      "sha": "c0ceb85e358f53becf006ff0780ff0d1f8510533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-terrain-only.png",
+      "sha": "89b11ed19b751080701230d5ba638b69006b644c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-overview.png",
+      "sha": "42cbf4abe7a15adbaacfc5d46b39dbdcaf4882d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-room-after.png",
+      "sha": "cc12fc2f601bd5d938d4827164f1156ead55c724"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-room-before.png",
+      "sha": "c27f360d89800156f739a07294d20b716865dd07"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-saved-terrain.png",
+      "sha": "6ff95614d8e152c9ffd5d030365b9150c5648e2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-terrain-only.png",
+      "sha": "964159b69bd332a3c3820bce11134bb22a1f7149"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-overview.png",
+      "sha": "6374227eaef74855fa03da6b947abbb8ca7b5dd6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-room-after.png",
+      "sha": "f986d2eaf64702d00c865a17dab6b481a878ee73"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-room-before.png",
+      "sha": "140c34df93d1bfd3a53b16f0e9e55d5858452212"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-saved-terrain.png",
+      "sha": "23bfdc08fb112b341b932c91ee0cc5fd31e81d6e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-terrain-only.png",
+      "sha": "0ef2f566b2d8051ffb7aec6e5123568680a9992f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-overview.png",
+      "sha": "09180b2489be4ef79c17c694a5d2d95bd3e8c1be"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-room-after.png",
+      "sha": "6d9f8ac2ccc1cb7f1787ff693cf3569003841a34"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-room-before.png",
+      "sha": "8803f84acee9e0d5d94e65c328ada7f6f0e4ab20"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-saved-terrain.png",
+      "sha": "914013c6b53eaaa01a94c3e9cd514b59072a5f24"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-terrain-only.png",
+      "sha": "e6c67a4857a30f5bbcf2e00ea46b69da574cbc0f"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "9663b122d9b56051c3d592bc4a9b7e5b62871b81"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/README.md",
+      "sha": "64a4f95756a9783f0c0bcb53b243b58531c77d5c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/after-room-terrain.json",
+      "sha": "ac8b058052a8d10e7ca4d1c191f247c7cc5537ec"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/NEXT.md",
+      "sha": "240ac060cd2129fc20d26bfdf3ce83eb40ba74e9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/construction.json",
+      "sha": "36c43fb55eac78778c5a7cc0d12801d33140b1bc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/occupied-terrain.blend",
+      "sha": "24a7f1c0a3c74fe1d56ee37a9abf258605ced790"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/occupied-terrain.glb",
+      "sha": "3e5ddaafb44fd362cfa34ee5ba265cb93fc930f8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/occupied-terrain.hcs2",
+      "sha": "95b3f7d55c27ea9b6509330d55cd3b68997dc165"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/NEXT.md",
+      "sha": "f9673f39806338c853e4efd2f65fd2883e488423"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/construction.json",
+      "sha": "5289907b9716c673d45ed8651e63f4376c9b483b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/occupied-terrain.blend",
+      "sha": "cf587d180e087200b908097660e2f3c82da81e2a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/occupied-terrain.glb",
+      "sha": "28ef035febeb613a195aa4edcce2db062c25033b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/occupied-terrain.hcs2",
+      "sha": "10dc99402cdf273f9897312e6615b0b4562ab972"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/NEXT.md",
+      "sha": "b68f015f1bd15d7a2eadd6ff87107508b2250adb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/construction.json",
+      "sha": "3e97b7cfd6a661164a7b7845e2dac255575a4f15"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/occupied-terrain.blend",
+      "sha": "a2f3ddd8ff075b1c4fbfe8cfce85177ff9b7d255"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/occupied-terrain.glb",
+      "sha": "00d332466df9e1a5c6344fbc081c442b9fe5bb38"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/occupied-terrain.hcs2",
+      "sha": "535c3903c0745b8be64c8fdaaea50f51805f9e12"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/NEXT.md",
+      "sha": "856c75cf1cce8b1c8907f1de825657350edd21fb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/construction.json",
+      "sha": "fd667fccaed81305287b78c1da245289603c8b55"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/occupied-terrain.blend",
+      "sha": "e610f05b3fb2667be2a286b60a3fa540ca7da9e7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/occupied-terrain.glb",
+      "sha": "a3f90972c0b0fd7e290bb1ecba18fe912f85024a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/occupied-terrain.hcs2",
+      "sha": "d34a641003b1f8468fa3201252734ffe28b946d0"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/NEXT.md",
+      "sha": "e806ec4fb53bce448cc4ae74aaec50adedd4a7d9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/construction.json",
+      "sha": "1dbeae5e91aa295c3e3fcdb9d21abb4fcc35c6af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/occupied-terrain.blend",
+      "sha": "34084889b88dece73fa81b1a04b05605fc486435"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/occupied-terrain.glb",
+      "sha": "31179daae58de949652c80122bfdb4a2d5db0c3b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/occupied-terrain.hcs2",
+      "sha": "384c18e61b74f503f29933255b5ac0fea6d8f886"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/baseline-room-terrain.json",
+      "sha": "97e224fd711bcf05ad46ad3d349a9912f1c69cac"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/review-views.json",
+      "sha": "6f8118689a21fad4aff3322b9b19bff5c5e48299"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+      "sha": "a8b50e95c97115c3a5157c42873793b7738b327d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-03/cuts.tsv",
+      "sha": "9e02be3354706befc65318d62f375d055caa8127"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-03/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-03/heights.txt",
+      "sha": "3585ddd2b4aeaceffec7515cf492b4ff09a18e57"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-03/provenance.json",
+      "sha": "2cc08b771fbaab86c5b56a5371ddba0c42864ee8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-03/settings.tsv",
+      "sha": "e1ab7f346ff4fef78170b4eadf04509920ffd689"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-04/cuts.tsv",
+      "sha": "4189562371e8ba1df26b0452453457df6dcae7af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-04/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-04/heights.txt",
+      "sha": "ccb8a02591b5a187ffd19d212ae4a877b55afe08"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-04/provenance.json",
+      "sha": "58790ff92fcfd0edb1aa2b23a1c73bc11ffbf15b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-04/settings.tsv",
+      "sha": "72ccc0d4f6fa5ea01e0b0eee8c1e5b4a54b8790b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-09/cuts.tsv",
+      "sha": "1617ffd073e52908911c7f78b9e47e6d91a3dcdf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-09/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-09/heights.txt",
+      "sha": "5b76a3ac997de8a2306fe3127f240b547ab156af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-09/provenance.json",
+      "sha": "df0abd7ed836e26d951ed4f984189fe8669a8478"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-09/settings.tsv",
+      "sha": "8a324bf8755e149686c74283a25ca691bd5c215d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-14/cuts.tsv",
+      "sha": "60831eb1091a4290f7cd53da6b2e20aa6e7fd423"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-14/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-14/heights.txt",
+      "sha": "f9c6bdc2e64fe970d4dcc8d833bfae6b264bf0f6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-14/provenance.json",
+      "sha": "1a42c766dced6b647f38820bbc21068b5c48e224"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-14/settings.tsv",
+      "sha": "2432ae1d833453c6aece409e1db94cd3e647296e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-17/cuts.tsv",
+      "sha": "247c9d7619ad51760ff6fd7d9513a33ae0a95d84"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-17/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-17/heights.txt",
+      "sha": "e4608e24875ef0810c5c072ad1076863f65f9544"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-17/provenance.json",
+      "sha": "6d31e718a6d40d4b794cfc9c066fafc078d95289"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-17/settings.tsv",
+      "sha": "76d71b92c1508d9910fa1bbadd6a0d3c5f69e987"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/samples/wld-17/source.png",
+      "sha": "8fd3249560978b89c156baa3fe2cb905206aaa5c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/all25-room-terrain.log",
+      "sha": "361683d279a75d68e40292fa079493655698b755"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/authoring-repeat.log",
+      "sha": "1b40991bd0a83457faa82228d1e03714d6f0b4da"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/authoring.log",
+      "sha": "7f504f673e9d9f28cffa47cf1129f7a437923449"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/circle-revision.log",
+      "sha": "23cae091cca41d8f45d8e3de798807cf40de8370"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/complete-route-sweeps.tsv",
+      "sha": "362e56f696d95a490d29750fcf98e6297b95d403"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/composition.log",
+      "sha": "6c68199359bce92abc9379995dc85c26775c463e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/failure-contacts.tsv",
+      "sha": "1e42c6a70bcb7ba19ef7261f8082eb0e3e355cf1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/flat-movement.log",
+      "sha": "ec20e70799f2020ba7f7c05f825fb3fcd55ae593"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/flight-sweeps.tsv",
+      "sha": "b729c492c36a69ea3612afdf9f64b50edc714a9d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.json",
+      "sha": "817fb011f1ce4f473898995325049214f91bd95f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.log",
+      "sha": "da451f0f7e5b6ff38a161bfb50fb8453bcf5ea85"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/native-route-fit.json",
+      "sha": "370b7f7a08dccf290665af81dbceff9bb842b900"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/native-route-probes.tsv",
+      "sha": "fe21fa45fbc0882daf633f77c51cca11dfc1b6c0"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/paired-native-views.log",
+      "sha": "d5257b2a19ca352f37a4760f3d219e3eb1f8d924"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/rejected-first-route-probes.tsv",
+      "sha": "d56322e444db57ba69d9738b86609a062951c66c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/rejected-first-route-regression.json",
+      "sha": "fc8c32dba9b10ff55261ecfcabc7245df948312d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/rejected-retained-step-drift.log",
+      "sha": "72b80a1b8caa47483004a6e992e31c832dddb0f0"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/saved-world-repeat.json",
+      "sha": "c371413a17c462d579a20ef8cfca41cfffb923fb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json",
+      "sha": "8df6aaacdbe6239ce01c4f29d269a7e8ec002f73"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.log",
+      "sha": "d1c351d1f9675f36244bbe10f9c08780d287e6eb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/tool-source-hashes.json",
+      "sha": "d91334ebd6b7ace37e2e9a0c968d70ea7614cc66"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/verification/visual-review.json",
+      "sha": "e2b8b8be1f5dacf5d4348c7782a3ffee4aef0153"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/wld-03-world.json",
+      "sha": "77779d755710f7011fa05b177a0ac4089010172e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/wld-04-world.json",
+      "sha": "9d764d1b29045dc9ba49faa123f1a4fc5d1a8b3f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/wld-09-world.json",
+      "sha": "5e4fb30f9e56b2c5b57c75526d873594d5bdd7b4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/wld-14-world.json",
+      "sha": "28b3cfe6f96f22362a497d5d9de5b2408afb34ab"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/wld-17-world.json",
+      "sha": "b9793415fe070da50017889aab085d63297c50e7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/adaptive-topology.bin",
+      "sha": "0f299d3a609ad7a95caaa5cb6ca92addc4f4156c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/authored-cuts.tsv",
+      "sha": "9e02be3354706befc65318d62f375d055caa8127"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "246cb586bc7d3a1c306efb35ec87726c66400895"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "395ab14d9d99c435657c503a4cb2bb2b82a91165"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "440cd5517396e3a4e24361768ee28ad321d93c02"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "befa79402b6c7b6fa9c4d555d8d7539a5661f578"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "7371e1c480f5b0fd7fcd5a99400d5b7e264926ad"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/scene.bin",
+      "sha": "23c7d7c04e768de6a2495ee4955e77add5baa8a5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/source-provenance.json",
+      "sha": "2cc08b771fbaab86c5b56a5371ddba0c42864ee8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2",
+      "sha": "e0ef378e3385e11aa5a7811c525cd104601b01cc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/tile_0_0.png",
+      "sha": "56047e844183d09c2e118e184144d4c5299e3224"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/verification.json",
+      "sha": "1ea56fefcda9d76d0ac539d20ea218da54cfec25"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/world.properties",
+      "sha": "33d5803c482aa81906073fe23effe1ac96852d9c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/adaptive-topology.bin",
+      "sha": "d8ba50df547bbfbeb8a36e15c94112523004cfc6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/authored-cuts.tsv",
+      "sha": "4189562371e8ba1df26b0452453457df6dcae7af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "de3300b9bf0eb6d465d254db8f982b1c0bfffc11"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/scene-package/meshes/site.obj",
+      "sha": "bf55e426bddd4ea0122f7cda5db3e29f4c073770"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/scene-package/scene.bin",
+      "sha": "83c13d0b78078915eb2dc856b6d64eaf50dd9e34"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/source-provenance.json",
+      "sha": "58790ff92fcfd0edb1aa2b23a1c73bc11ffbf15b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/terrain-physics.hcs2",
+      "sha": "c239277d7ad57d31b85bbad16681fd13e26211e2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/tile_0_0.png",
+      "sha": "c91b8e605b74d22197d9a19bcfc2e16028ad679c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/verification.json",
+      "sha": "223abb0ffd5e3d96535a61c732f8a625e4fe2278"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world/world.properties",
+      "sha": "87756329f2a14dccb2a97381e4e47e3aa225dcab"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/adaptive-topology.bin",
+      "sha": "d4a9a29619e186c990ce23ded01824acbbcac9c8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/authored-cuts.tsv",
+      "sha": "1617ffd073e52908911c7f78b9e47e6d91a3dcdf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "07f2b8193fdb0b2158ec45a81cf872db6a0c7572"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "e3374bc43dca1f22472b2a021bef16bef43a9621"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "d9328907734d776279df08bb6be69c5939a3a462"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "a5c415747da2762cf554e5e801efdbdd3f6784e7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "ec3937c35aace56f597911ede8547e55c352ed68"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/scene-package/scene.bin",
+      "sha": "a9ee5a8055a50c29117fe996a8dad4ad9d9773a5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/source-provenance.json",
+      "sha": "df0abd7ed836e26d951ed4f984189fe8669a8478"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/terrain-physics.hcs2",
+      "sha": "a01e3610e61710fa4a6b6e75be63e27c88b6fdfd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/tile_0_0.png",
+      "sha": "17529f679f581d6c22b9c93ada0088e9381e261f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/verification.json",
+      "sha": "bcdfce574cb9e5fcde892832f060562bd404e54e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-09/terrain-world/world.properties",
+      "sha": "acf4a1a5a06aaa0e1d4a9a42fc7fb6dee1fb5726"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/adaptive-topology.bin",
+      "sha": "c8e43be077fcc3b9efdfe4742022eaba7cb15cd5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/authored-cuts.tsv",
+      "sha": "60831eb1091a4290f7cd53da6b2e20aa6e7fd423"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "1ca035ba67e2478db78d125b8c3e613314f8974a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/scene-package/meshes/site.obj",
+      "sha": "c812464e0ebc33cd1dc6fc883a4ab5baf786a58c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/scene-package/scene.bin",
+      "sha": "7c0fc0f4678db7ac2b3023ba521873ca46ae2896"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/source-provenance.json",
+      "sha": "1a42c766dced6b647f38820bbc21068b5c48e224"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/terrain-physics.hcs2",
+      "sha": "416361da80037620270e92c46d7d5ddf6656061f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/tile_0_0.png",
+      "sha": "ed601975d02bfb8f5c6b7784bd1f816d7253250c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/verification.json",
+      "sha": "d943c7a1cb828dac42c320ee235e6e2646200fdd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-14/terrain-world/world.properties",
+      "sha": "8685602166f847f72387cb4f482b6179b3448fc9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/adaptive-topology.bin",
+      "sha": "07489e7f83baf16f3a9d4053c73a9cf409afa0a8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/authored-cuts.tsv",
+      "sha": "247c9d7619ad51760ff6fd7d9513a33ae0a95d84"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/scene-package/meshes/site.obj",
+      "sha": "640ca9e87bc9fe7604ad6ad5053a4ebdf8bffee4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/scene-package/scene.bin",
+      "sha": "85d9c7ca77053969f7e61d8933d78d73c160bf8c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/source-provenance.json",
+      "sha": "6d31e718a6d40d4b794cfc9c066fafc078d95289"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/terrain-physics.hcs2",
+      "sha": "f302b60c8e5c711379e2f269288f0d74e3b17311"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/tile_0_0.png",
+      "sha": "8fd3249560978b89c156baa3fe2cb905206aaa5c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/verification.json",
+      "sha": "ec3fd7ed0e234172ec26188e38cb5a9a147aa918"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/world.properties",
+      "sha": "85df1d00c258e4b6bd2f478cd04c0e0a4f03bcd0"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "b74dbc36a22f6bc5717351a78543198da645b576"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "f2ccd2f36e9a1005b26d416ffefe4e0dfd04e0c7"
+    },
+    {
+      "path": "tools/append_static_glb.py",
+      "sha": "55a6ba74aaf65092d6ef1b1f895ab86dacf76a86"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "3aa0b124eca268ee660d403757d5ef1700aa80c2"
+    },
+    {
+      "path": "tools/audit_room_terrain.py",
+      "sha": "dc06a69a919b508e15e9046b9d4ca8e8247f444f"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "098e85be025d051b1db1288b64bdd685ab39a070"
+    },
+    {
+      "path": "tools/author_room_terrain.py",
+      "sha": "8cc6d9b0f3b4f382b9d942360f90c91db962b22b"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "4aad2b45a7cab89351640e236486883f954caae0"
+    },
+    {
+      "path": "tools/check_room_terrain.py",
+      "sha": "d355033f9805074251d51e77a4d35022d6cbe21f"
+    },
+    {
+      "path": "tools/compose_room_terrain.py",
+      "sha": "f8dc0c0796d8ee0374bdea23cd2f848bd6270f0d"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "665387368ce1ce57ba5b8cc2284a0257a4aee048"
+    },
+    {
+      "path": "tools/java/FurnishingRouteProbe.java",
+      "sha": "2ceb0d146f6fbc142eb1796a698bc8f024d5c978"
+    },
+    {
+      "path": "tools/render_room_terrain.py",
+      "sha": "fc3f81b633d6d0078e0ad118eab860a474b27473"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

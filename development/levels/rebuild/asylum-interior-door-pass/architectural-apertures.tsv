@@ -1,0 +1,8 @@
+portal	route	low_jamb	high_jamb	header	near_space	far_space	sill_m	clear_width_m	clear_height_m	wall_thickness_m
+476	L09	Flat route shell Wall ground-ward-link E	Flat route shell Wall ground-ward-link E.001	Header ground-ward-link E	ground-ward-link	spine	0.0	1.4	2.45	0.16
+477	L25	Flat route shell Wall spine W.003	Flat route shell Wall spine W.004	Header spine W.006	spine	day	0.0	1.4	2.45	0.16
+478	L33	Flat route shell Wall spine E.002	Flat route shell Wall spine E.003	Header spine E.004	spine	clinical-link	0.0	1.4	2.45	0.16
+479	L40	Wall treatment E	Flat route shell Wall treatment E.001	Header treatment E	treatment	hydro-change	0.0	1.4	2.45	0.16
+480	L44	Flat route shell Wall spine E.003	Flat route shell Wall spine E.004	Header spine E.006	spine	dining	0.0	1.4	2.45	0.16
+481	L55	Flat route shell Wall service-link N	Flat route shell Wall service-link N.001	Header service-link N	service-link	quiet-lobby	0.0	1.4	2.45	0.16
+482	L71	Flat route shell Wall chapel S	Flat route shell Wall chapel S.001	Header chapel S	grounds	chapel	0.0	1.4	2.45	0.16

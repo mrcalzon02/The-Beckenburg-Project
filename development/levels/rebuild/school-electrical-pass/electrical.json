@@ -1,0 +1,1190 @@
+{
+  "board": {
+    "position": [
+      23.259999923706054,
+      -2.94,
+      16.45
+    ],
+    "source": "level_electrical_bank_worn",
+    "source_sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab",
+    "wall": "Wall plant W",
+    "bounds": [
+      [
+        23.120001,
+        -2.94,
+        15.340001
+      ],
+      [
+        23.49,
+        -0.821695,
+        17.560001
+      ]
+    ],
+    "floor": -3.0,
+    "breaker_x": 23.509999999999998,
+    "connected_terminals": [
+      [
+        23.219999923706055,
+        -0.856,
+        15.54
+      ],
+      [
+        23.219999923706055,
+        -0.856,
+        16.3
+      ],
+      [
+        23.219999923706055,
+        -0.856,
+        17.06
+      ]
+    ],
+    "incoming_receiver": {
+      "component": "Wall plant W",
+      "at": [
+        23.08,
+        -0.23,
+        16.299999
+      ]
+    }
+  },
+  "hiding_cupboards": [
+    {
+      "id": "school-foyer-cupboard",
+      "space": "foyer",
+      "owner": 0,
+      "position": [
+        20.92,
+        0,
+        34.1
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          20.32,
+          0.0,
+          33.25
+        ],
+        [
+          21.622,
+          2.31,
+          34.949997
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "school-staff-cupboard",
+      "space": "staff",
+      "owner": 1,
+      "position": [
+        26.29,
+        0,
+        18.55
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          25.588001,
+          0.0,
+          17.699999
+        ],
+        [
+          26.890001,
+          2.31,
+          19.4
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "school-library-cupboard",
+      "space": "library",
+      "owner": 8,
+      "position": [
+        12.3,
+        3.6,
+        25.1
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          11.45,
+          3.6,
+          24.5
+        ],
+        [
+          13.150001,
+          5.91,
+          25.802
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "circuit_count": 12,
+  "controllers": [
+    {
+      "id": "school-switch-00",
+      "circuit": "RV-00",
+      "space": "foyer",
+      "room": 0,
+      "at": [
+        24.0,
+        1.25,
+        35.758999
+      ],
+      "support": "SCHOOL clean foyer S end",
+      "feet": [
+        24,
+        0,
+        35.1
+      ],
+      "alarm": {
+        "id": "school-alarm-00",
+        "position": [
+          24.32,
+          2.0,
+          35.733997
+        ],
+        "support": "SCHOOL clean foyer S end"
+      }
+    },
+    {
+      "id": "school-switch-01",
+      "circuit": "RV-01",
+      "space": "corridor",
+      "room": 1,
+      "at": [
+        22.999001,
+        1.25,
+        22.5
+      ],
+      "support": "SCHOOL cell main-stair W end region0",
+      "feet": [
+        22.1,
+        0,
+        22.5
+      ],
+      "alarm": {
+        "id": "school-alarm-01",
+        "position": [
+          22.974001,
+          2.0,
+          22.18
+        ],
+        "support": "SCHOOL cell main-stair W end region0"
+      }
+    },
+    {
+      "id": "school-switch-02",
+      "circuit": "RV-02",
+      "space": "class-a",
+      "room": 2,
+      "at": [
+        10.241,
+        1.25,
+        30.0
+      ],
+      "support": "SCHOOL court-door class-a W end",
+      "feet": [
+        11.1,
+        0,
+        30
+      ],
+      "alarm": {
+        "id": "school-alarm-02",
+        "position": [
+          10.266,
+          2.0,
+          30.32
+        ],
+        "support": "SCHOOL court-door class-a W end"
+      }
+    },
+    {
+      "id": "school-switch-03",
+      "circuit": "RV-03",
+      "space": "science",
+      "room": 3,
+      "at": [
+        10.241,
+        1.25,
+        18.5
+      ],
+      "support": "SCHOOL court-door science W end",
+      "feet": [
+        11.1,
+        0,
+        18.5
+      ],
+      "alarm": {
+        "id": "school-alarm-03",
+        "position": [
+          10.266,
+          2.0,
+          18.82
+        ],
+        "support": "SCHOOL court-door science W end"
+      }
+    },
+    {
+      "id": "school-switch-04",
+      "circuit": "RV-04",
+      "space": "dining",
+      "room": 4,
+      "at": [
+        30.080999,
+        1.25,
+        30.0
+      ],
+      "support": "Flat route shell Wall dining W.001",
+      "feet": [
+        30.85,
+        0,
+        30
+      ],
+      "alarm": {
+        "id": "school-alarm-04",
+        "position": [
+          30.105999,
+          2.0,
+          30.32
+        ],
+        "support": "Flat route shell Wall dining W.001"
+      }
+    },
+    {
+      "id": "school-switch-05",
+      "circuit": "RV-05",
+      "space": "health-link",
+      "room": 5,
+      "at": [
+        30.000999,
+        1.25,
+        18.799999
+      ],
+      "support": "SCHOOL cell service-stair E end region0",
+      "feet": [
+        31,
+        0,
+        18.8
+      ],
+      "alarm": {
+        "id": "school-alarm-05",
+        "position": [
+          30.025999,
+          2.0,
+          19.120001
+        ],
+        "support": "SCHOOL cell service-stair E end region0"
+      }
+    },
+    {
+      "id": "school-switch-06",
+      "circuit": "RV-06",
+      "space": "gym",
+      "room": 6,
+      "at": [
+        49.918999,
+        1.25,
+        12.0
+      ],
+      "support": "Flat route shell Wall gym E",
+      "feet": [
+        49.15,
+        0,
+        12
+      ],
+      "alarm": {
+        "id": "school-alarm-06",
+        "position": [
+          49.893997,
+          2.0,
+          11.68
+        ],
+        "support": "Flat route shell Wall gym E"
+      }
+    },
+    {
+      "id": "school-switch-07",
+      "circuit": "RV-07",
+      "space": "upper-corridor",
+      "room": 7,
+      "at": [
+        20.080999,
+        4.85,
+        25.1
+      ],
+      "support": "Flat route shell Wall upper-corridor W.001",
+      "feet": [
+        21.05,
+        3.6,
+        25.1
+      ],
+      "alarm": {
+        "id": "school-alarm-07",
+        "position": [
+          20.105999,
+          5.6,
+          25.42
+        ],
+        "support": "Flat route shell Wall library E"
+      }
+    },
+    {
+      "id": "school-switch-08",
+      "circuit": "RV-08",
+      "space": "library",
+      "room": 8,
+      "at": [
+        19.919001,
+        4.85,
+        27.0
+      ],
+      "support": "Flat route shell Wall upper-corridor W.001",
+      "feet": [
+        18.9,
+        3.6,
+        27
+      ],
+      "alarm": {
+        "id": "school-alarm-08",
+        "position": [
+          19.894001,
+          5.6,
+          26.68
+        ],
+        "support": "Flat route shell Wall upper-corridor W.001"
+      }
+    },
+    {
+      "id": "school-switch-09",
+      "circuit": "RV-09",
+      "space": "class-b",
+      "room": 9,
+      "at": [
+        19.919001,
+        4.85,
+        15.5
+      ],
+      "support": "Flat route shell Wall upper-corridor W",
+      "feet": [
+        18.9,
+        3.6,
+        15.5
+      ],
+      "alarm": {
+        "id": "school-alarm-09",
+        "position": [
+          19.894001,
+          5.6,
+          15.18
+        ],
+        "support": "Flat route shell Wall upper-corridor W"
+      }
+    },
+    {
+      "id": "school-switch-10",
+      "circuit": "RV-10",
+      "space": "assembly",
+      "room": 10,
+      "at": [
+        30.080999,
+        4.85,
+        31.0
+      ],
+      "support": "Entrance rebuild School assembly west north pier",
+      "feet": [
+        31,
+        3.6,
+        31
+      ],
+      "alarm": {
+        "id": "school-alarm-10",
+        "position": [
+          30.105999,
+          5.6,
+          31.32
+        ],
+        "support": "Entrance rebuild School assembly west north pier"
+      }
+    },
+    {
+      "id": "school-switch-11",
+      "circuit": "RV-11",
+      "space": "plant",
+      "room": 11,
+      "at": [
+        23.080999,
+        -1.75,
+        18.799999
+      ],
+      "support": "Wall plant W",
+      "feet": [
+        24.1,
+        -3,
+        18.8
+      ],
+      "alarm": {
+        "id": "school-alarm-11",
+        "position": [
+          23.105999,
+          -1.0,
+          19.120001
+        ],
+        "support": "Wall plant W"
+      }
+    }
+  ],
+  "loads": [
+    {
+      "id": "school-foyer-load-1",
+      "room": 0,
+      "space": "foyer",
+      "circuit": "RV-00",
+      "mount": [
+        22.5,
+        3.44,
+        33.0
+      ],
+      "emitter": [
+        22.5,
+        3.256,
+        33.0
+      ],
+      "support": "Floor upper-corridor"
+    },
+    {
+      "id": "school-corridor-load-1",
+      "room": 1,
+      "space": "corridor",
+      "circuit": "RV-01",
+      "mount": [
+        21.5,
+        3.44,
+        16.0
+      ],
+      "emitter": [
+        21.5,
+        3.256,
+        16.0
+      ],
+      "support": "Floor upper-corridor"
+    },
+    {
+      "id": "school-corridor-load-2",
+      "room": 1,
+      "space": "corridor",
+      "circuit": "RV-01",
+      "mount": [
+        21.5,
+        3.44,
+        24.0
+      ],
+      "emitter": [
+        21.5,
+        3.256,
+        24.0
+      ],
+      "support": "Floor upper-corridor"
+    },
+    {
+      "id": "school-corridor-load-3",
+      "room": 1,
+      "space": "corridor",
+      "circuit": "RV-01",
+      "mount": [
+        21.5,
+        3.44,
+        28.0
+      ],
+      "emitter": [
+        21.5,
+        3.256,
+        28.0
+      ],
+      "support": "Floor upper-corridor"
+    },
+    {
+      "id": "school-class-a-load-1",
+      "room": 2,
+      "space": "class-a",
+      "circuit": "RV-02",
+      "mount": [
+        15.0,
+        3.44,
+        27.0
+      ],
+      "emitter": [
+        15.0,
+        3.256,
+        27.0
+      ],
+      "support": "Floor library"
+    },
+    {
+      "id": "school-class-a-load-2",
+      "room": 2,
+      "space": "class-a",
+      "circuit": "RV-02",
+      "mount": [
+        15.0,
+        3.44,
+        31.0
+      ],
+      "emitter": [
+        15.0,
+        3.256,
+        31.0
+      ],
+      "support": "Floor library"
+    },
+    {
+      "id": "school-science-load-1",
+      "room": 3,
+      "space": "science",
+      "circuit": "RV-03",
+      "mount": [
+        15.0,
+        3.44,
+        15.0
+      ],
+      "emitter": [
+        15.0,
+        3.256,
+        15.0
+      ],
+      "support": "Floor class-b"
+    },
+    {
+      "id": "school-science-load-2",
+      "room": 3,
+      "space": "science",
+      "circuit": "RV-03",
+      "mount": [
+        15.0,
+        3.44,
+        18.5
+      ],
+      "emitter": [
+        15.0,
+        3.256,
+        18.5
+      ],
+      "support": "Floor class-b"
+    },
+    {
+      "id": "school-dining-load-1",
+      "room": 4,
+      "space": "dining",
+      "circuit": "RV-04",
+      "mount": [
+        33.0,
+        3.44,
+        27.0
+      ],
+      "emitter": [
+        33.0,
+        3.256,
+        27.0
+      ],
+      "support": "Floor assembly"
+    },
+    {
+      "id": "school-dining-load-2",
+      "room": 4,
+      "space": "dining",
+      "circuit": "RV-04",
+      "mount": [
+        35.0,
+        3.44,
+        32.0
+      ],
+      "emitter": [
+        35.0,
+        3.256,
+        32.0
+      ],
+      "support": "Floor assembly"
+    },
+    {
+      "id": "school-health-link-load-1",
+      "room": 5,
+      "space": "health-link",
+      "circuit": "RV-05",
+      "mount": [
+        31.0,
+        3.44,
+        16.0
+      ],
+      "emitter": [
+        31.0,
+        3.256,
+        16.0
+      ],
+      "support": "Ceiling cap health-link"
+    },
+    {
+      "id": "school-health-link-load-2",
+      "room": 5,
+      "space": "health-link",
+      "circuit": "RV-05",
+      "mount": [
+        31.0,
+        3.44,
+        22.0
+      ],
+      "emitter": [
+        31.0,
+        3.256,
+        22.0
+      ],
+      "support": "Ceiling cap health-link"
+    },
+    {
+      "id": "school-gym-load-1",
+      "room": 6,
+      "space": "gym",
+      "circuit": "RV-06",
+      "mount": [
+        49.919998,
+        2.85,
+        11.0
+      ],
+      "emitter": [
+        49.736,
+        2.85,
+        11.0
+      ],
+      "support": "Flat route shell Wall gym E"
+    },
+    {
+      "id": "school-gym-load-2",
+      "room": 6,
+      "space": "gym",
+      "circuit": "RV-06",
+      "mount": [
+        49.919998,
+        2.85,
+        15.0
+      ],
+      "emitter": [
+        49.736,
+        2.85,
+        15.0
+      ],
+      "support": "Flat route shell Wall gym E"
+    },
+    {
+      "id": "school-gym-load-3",
+      "room": 6,
+      "space": "gym",
+      "circuit": "RV-06",
+      "mount": [
+        49.919998,
+        2.85,
+        19.0
+      ],
+      "emitter": [
+        49.736,
+        2.85,
+        19.0
+      ],
+      "support": "Flat route shell Wall gym E"
+    },
+    {
+      "id": "school-gym-load-4",
+      "room": 6,
+      "space": "gym",
+      "circuit": "RV-06",
+      "mount": [
+        49.919998,
+        2.85,
+        22.0
+      ],
+      "emitter": [
+        49.736,
+        2.85,
+        22.0
+      ],
+      "support": "Flat route shell Wall gym E"
+    },
+    {
+      "id": "school-upper-corridor-load-1",
+      "room": 7,
+      "space": "upper-corridor",
+      "circuit": "RV-07",
+      "mount": [
+        21.5,
+        7.04,
+        15.0
+      ],
+      "emitter": [
+        21.5,
+        6.856,
+        15.0
+      ],
+      "support": "Ceiling cap upper-corridor"
+    },
+    {
+      "id": "school-upper-corridor-load-2",
+      "room": 7,
+      "space": "upper-corridor",
+      "circuit": "RV-07",
+      "mount": [
+        21.5,
+        7.04,
+        23.0
+      ],
+      "emitter": [
+        21.5,
+        6.856,
+        23.0
+      ],
+      "support": "Ceiling cap upper-corridor"
+    },
+    {
+      "id": "school-upper-corridor-load-3",
+      "room": 7,
+      "space": "upper-corridor",
+      "circuit": "RV-07",
+      "mount": [
+        21.5,
+        7.04,
+        32.0
+      ],
+      "emitter": [
+        21.5,
+        6.856,
+        32.0
+      ],
+      "support": "Ceiling cap upper-corridor"
+    },
+    {
+      "id": "school-library-load-1",
+      "room": 8,
+      "space": "library",
+      "circuit": "RV-08",
+      "mount": [
+        15.0,
+        7.04,
+        27.0
+      ],
+      "emitter": [
+        15.0,
+        6.856,
+        27.0
+      ],
+      "support": "Ceiling cap library"
+    },
+    {
+      "id": "school-library-load-2",
+      "room": 8,
+      "space": "library",
+      "circuit": "RV-08",
+      "mount": [
+        15.0,
+        7.04,
+        33.0
+      ],
+      "emitter": [
+        15.0,
+        6.856,
+        33.0
+      ],
+      "support": "Ceiling cap library"
+    },
+    {
+      "id": "school-class-b-load-1",
+      "room": 9,
+      "space": "class-b",
+      "circuit": "RV-09",
+      "mount": [
+        15.0,
+        7.04,
+        15.0
+      ],
+      "emitter": [
+        15.0,
+        6.856,
+        15.0
+      ],
+      "support": "Ceiling cap class-b"
+    },
+    {
+      "id": "school-class-b-load-2",
+      "room": 9,
+      "space": "class-b",
+      "circuit": "RV-09",
+      "mount": [
+        15.0,
+        7.04,
+        19.0
+      ],
+      "emitter": [
+        15.0,
+        6.856,
+        19.0
+      ],
+      "support": "Ceiling cap class-b"
+    },
+    {
+      "id": "school-assembly-load-1",
+      "room": 10,
+      "space": "assembly",
+      "circuit": "RV-10",
+      "mount": [
+        34.0,
+        7.940001,
+        27.0
+      ],
+      "emitter": [
+        34.0,
+        7.756001,
+        27.0
+      ],
+      "support": "Ceiling cap assembly"
+    },
+    {
+      "id": "school-assembly-load-2",
+      "room": 10,
+      "space": "assembly",
+      "circuit": "RV-10",
+      "mount": [
+        38.0,
+        7.940001,
+        32.0
+      ],
+      "emitter": [
+        38.0,
+        7.756001,
+        32.0
+      ],
+      "support": "Ceiling cap assembly"
+    },
+    {
+      "id": "school-plant-load-1",
+      "room": 11,
+      "space": "plant",
+      "circuit": "RV-11",
+      "mount": [
+        25.1,
+        -0.16,
+        16.0
+      ],
+      "emitter": [
+        25.1,
+        -0.344,
+        16.0
+      ],
+      "support": "Floor staff"
+    }
+  ],
+  "local_drops": [
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          24.0,
+          1.302,
+          35.730999
+        ],
+        [
+          24.0,
+          3.2,
+          35.730999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          22.971001,
+          1.302,
+          22.5
+        ],
+        [
+          22.971001,
+          2.130000047683716,
+          22.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          10.269,
+          1.302,
+          30.0
+        ],
+        [
+          10.269,
+          3.2,
+          30.0
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          10.269,
+          1.302,
+          18.5
+        ],
+        [
+          10.269,
+          3.2,
+          18.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          30.108999,
+          1.302,
+          30.0
+        ],
+        [
+          30.108999,
+          3.2,
+          30.0
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          30.028999,
+          1.302,
+          18.799999
+        ],
+        [
+          30.028999,
+          2.130000047683716,
+          18.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-06 switch drop",
+      "points": [
+        [
+          49.890999,
+          1.302,
+          12.0
+        ],
+        [
+          49.890999,
+          2.78,
+          12.0
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-07 switch drop",
+      "points": [
+        [
+          20.108999,
+          4.902,
+          25.1
+        ],
+        [
+          20.108999,
+          6.800000000000001,
+          25.1
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-08 switch drop",
+      "points": [
+        [
+          19.891001,
+          4.902,
+          27.0
+        ],
+        [
+          19.891001,
+          6.800000000000001,
+          27.0
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-09 switch drop",
+      "points": [
+        [
+          19.891001,
+          4.902,
+          15.5
+        ],
+        [
+          19.891001,
+          6.800000000000001,
+          15.5
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          30.108999,
+          4.902,
+          31.0
+        ],
+        [
+          30.108999,
+          6.800000000000001,
+          31.0
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-11 switch drop",
+      "points": [
+        [
+          23.108999,
+          -1.698,
+          18.799999
+        ],
+        [
+          23.108999,
+          -0.22999992191791535,
+          18.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "School switchgear terminal 1",
+      "points": [
+        [
+          23.219999923706055,
+          -0.856,
+          15.54
+        ],
+        [
+          23.219999923706055,
+          -0.48,
+          15.54
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "School switchgear terminal 2",
+      "points": [
+        [
+          23.219999923706055,
+          -0.856,
+          16.3
+        ],
+        [
+          23.219999923706055,
+          -0.48,
+          16.3
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "School switchgear terminal 3",
+      "points": [
+        [
+          23.219999923706055,
+          -0.856,
+          17.06
+        ],
+        [
+          23.219999923706055,
+          -0.48,
+          17.06
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "School switchgear manifold",
+      "points": [
+        [
+          23.219999923706055,
+          -0.48,
+          15.51
+        ],
+        [
+          23.219999923706055,
+          -0.48,
+          17.09
+        ]
+      ],
+      "radius": 0.025,
+      "visible": true
+    },
+    {
+      "id": "School plant incoming riser",
+      "points": [
+        [
+          23.219999923706055,
+          -0.492,
+          16.3
+        ],
+        [
+          23.219999923706055,
+          -0.23,
+          16.3
+        ],
+        [
+          23.109999923706056,
+          -0.23,
+          16.3
+        ]
+      ],
+      "radius": 0.019,
+      "visible": true
+    }
+  ],
+  "retained_native_components": 509,
+  "new_native_components": 79,
+  "exports": {
+    "blend": "9a6d83adb659b9271ad266486ed5a7481a849aa9a15c39ae34ec586494163af1",
+    "glb": "f98180dff6296b89935a05cbbfa92778dfcf990c56dc80e817f875aa0e2989d9",
+    "hcs2": "14543c43d51b0e58c78c6aae9c2edd57708ad7f3598f04a47471c668c4d75244"
+  }
+}

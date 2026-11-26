@@ -1,0 +1,54 @@
+{
+  "scope": "Python resource validation only; minimal ZIP fixtures do not claim Java execution or a completed game case",
+  "candidate_sha": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+  "resource_hashes": {
+    "station-with-furnishings.glb": "2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190",
+    "station-with-furnishings.hcs2": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909",
+    "runtime-input.tsv": "b690d597ca98f97c41344deba94f704267cb7961f5a3f94e6e789dc27f1dafef",
+    "door-schedule.tsv": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d",
+    "source-hashes.tsv": "a91ea06ed15a55c158b55666f5bb14f6ded4880ecb41f9bd036024327651d03e"
+  },
+  "checks": [
+    {
+      "check": "five current resource files match pinned candidate Git blobs and current SOURCE manifest",
+      "status": "PASS"
+    },
+    {
+      "check": "resource gate accepts an archive fixture containing all five exact current source payloads",
+      "status": "PASS"
+    },
+    {
+      "check": "ordinary and reused-review paths accept the current exact packet",
+      "status": "PASS"
+    },
+    {
+      "check": "one-byte archive model mutation",
+      "status": "PASS",
+      "rejection": "Northwatch archive payload mismatch: org/beckenburg/sites/wld-08/station-with-furnishings.glb: expected 2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190, got 7de7c4011a6f7e22c55f3b769e1f4f4b2df6a253c864df58c9f1a5be5f9d7e21"
+    },
+    {
+      "check": "archive runtime schedule mutation",
+      "status": "PASS",
+      "rejection": "Northwatch archive payload mismatch: org/beckenburg/sites/wld-08/runtime-input.tsv: expected b690d597ca98f97c41344deba94f704267cb7961f5a3f94e6e789dc27f1dafef, got 63d67cffb74971574e3fe0ff900e3a96325380392b55cc9ea4827e575f778073"
+    },
+    {
+      "check": "reuse-package refuses stale/corrupt model before any Java launch",
+      "status": "PASS",
+      "rejection": "Northwatch archive payload mismatch: org/beckenburg/sites/wld-08/station-with-furnishings.glb: expected 2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190, got 7de7c4011a6f7e22c55f3b769e1f4f4b2df6a253c864df58c9f1a5be5f9d7e21"
+    },
+    {
+      "check": "local model mutation disagrees with unchanged current SOURCE manifest",
+      "status": "PASS",
+      "rejection": "Northwatch source hash mismatch: station-with-furnishings.glb: expected 2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190, got 7de7c4011a6f7e22c55f3b769e1f4f4b2df6a253c864df58c9f1a5be5f9d7e21"
+    },
+    {
+      "check": "historical furnishing/named checkpoints and prior case receipt untouched",
+      "status": "PASS"
+    }
+  ],
+  "historical_receipt_hashes": {
+    "/dev/shm/beckenburg-map-integration/development/levels/rebuild/northwatch-furnishing-pass/checkpoint.json": "abfc914d187f8170e652d49277aae71e89df86c4dba4a680c365c7c2796510d8",
+    "/dev/shm/beckenburg-map-integration/development/levels/rebuild/northwatch-named-pass/checkpoint.json": "7efffa41b1e2008a3586533029b2d52b059a104b35aeb74287d941ada4fd8b03",
+    "/dev/shm/beckenburg-map-integration/development/levels/rebuild/northwatch-investigation-pass/case.tsv": "890dc3b3303c7ccfe014580b07676e50ad45386ec997848b2db27f244c8e5197"
+  }
+}

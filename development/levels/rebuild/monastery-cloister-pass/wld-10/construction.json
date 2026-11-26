@@ -1,0 +1,1492 @@
+{
+  "id": "WLD-10",
+  "stair_components": [
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17",
+    "Monastery bell flight 1 riser 01 region0",
+    "Monastery bell flight 1 riser 02 region0",
+    "Monastery bell flight 1 riser 03 region0",
+    "Monastery bell flight 1 riser 04 region0",
+    "Monastery bell flight 1 riser 05 region0",
+    "Monastery bell flight 1 riser 06 region0",
+    "Monastery bell flight 1 riser 07 region0",
+    "Monastery bell flight 1 riser 08 region0",
+    "Monastery bell flight 1 riser 09 region0",
+    "Monastery bell flight 1 riser 10 region0",
+    "Monastery bell flight 1 riser 11 region0",
+    "Monastery bell flight 1 riser 12 region0",
+    "Monastery bell flight 1 riser 13 region0",
+    "Monastery bell flight 1 riser 14 region0",
+    "Monastery bell flight 1 riser 15 region0",
+    "Monastery bell flight 1 riser 16 region0",
+    "Monastery bell flight 1 riser 17 region0",
+    "Monastery bell flight 2 riser 01 region0",
+    "Monastery bell flight 2 riser 02 region0",
+    "Monastery bell flight 2 riser 03 region0",
+    "Monastery bell flight 2 riser 04 region0",
+    "Monastery bell flight 2 riser 05 region0",
+    "Monastery bell flight 2 riser 06 region0",
+    "Monastery bell flight 2 riser 07 region0",
+    "Monastery bell flight 2 riser 08 region0",
+    "Monastery bell flight 2 riser 09 region0",
+    "Monastery bell flight 2 riser 10 region0",
+    "Monastery bell flight 2 riser 11 region0",
+    "Monastery bell flight 2 riser 12 region0",
+    "Monastery bell flight 2 riser 13 region0",
+    "Monastery bell flight 2 riser 14 region0",
+    "Monastery bell flight 2 riser 15 region0",
+    "Monastery bell flight 2 riser 16 region0",
+    "Monastery bell flight 2 riser 17 region0",
+    "Monastery bell stair common intermediate landing region0"
+  ],
+  "source_segment_map": {
+    "L16": {
+      "3": 0,
+      "7": 34
+    },
+    "L19": {
+      "3": 0
+    },
+    "L21": {
+      "2": 0
+    }
+  },
+  "status": "MONASTERY_GEOGRAPHIC_COURTS_AND_FOUNDED_BELL_STAIR_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/access-route-pass/assemblies/wld-10/construction.json",
+  "source_contract_sha256": "2fa537adfe9f2bf6a931fab19cc4299ac2f7f53cad877633f2294d059d98511c",
+  "source_glb": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/enclosed-roofs.glb",
+  "source_glb_sha256": "ba20299a6d3a738a1b36d0e2a9292db5d10291393fd8e9602adb72d87696ae22",
+  "source_physics": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/enclosed-roofs.hcs2",
+  "source_physics_sha256": "b13a1c1216c585751423192eb4d7947b3c09af24bc66ac78afda0d86aef6897e",
+  "before_layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+  "before_layout_sha256": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82",
+  "before_segment_map": {},
+  "before_stair_components": [
+    "160:L16 flight0 step1",
+    "161:L16 flight0 step2",
+    "162:L16 flight0 step3",
+    "163:L16 flight0 step4",
+    "164:L16 flight0 step5",
+    "165:L16 flight0 step6",
+    "166:L16 flight0 step7",
+    "167:L16 flight0 step8",
+    "168:L16 flight0 step9",
+    "169:L16 flight0 step10",
+    "170:L16 flight0 step11",
+    "171:L16 flight0 step12",
+    "172:L16 flight0 step13",
+    "173:L16 flight0 step14",
+    "174:L16 flight0 step15",
+    "175:L16 flight0 step16",
+    "176:L16 flight0 step17",
+    "177:L16 flight0 step18",
+    "178:L16 flight0 step19",
+    "179:L16 flight0 step20",
+    "180:L16 flight0 step21",
+    "181:L16 flight0 step22",
+    "182:L16 flight0 step23",
+    "183:L16 flight0 step24",
+    "184:L16 flight0 step25",
+    "185:L16 flight0 step26",
+    "186:L16 flight0 step27",
+    "187:L16 flight0 step28",
+    "188:L16 flight0 step29",
+    "189:L16 flight0 step30",
+    "190:L16 flight0 step31",
+    "191:L16 flight0 step32",
+    "192:L16 flight0 step33",
+    "193:L16 flight0 step34",
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "217:L21 landing1",
+    "218:L21 landing2",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17"
+  ],
+  "layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+  "layout_sha256": "a7d8cc1582ba87b1c6569fae9c659a3662d108ae72fd2e2d5e4d406f159d8b2f",
+  "glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+  "physics_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e",
+  "removed_source_meshes": [
+    "Arrival end bearing WLD-10 0",
+    "Flat route shell Wall archive E",
+    "Flat route shell Wall archive E.001",
+    "Flat route shell Wall archive S.001",
+    "Flat route shell Wall catacombs N",
+    "Flat route shell Wall catacombs N.001",
+    "Flat route shell Wall chamber S.001",
+    "Flat route shell Wall east E",
+    "Flat route shell Wall east E.001",
+    "Flat route shell Wall east E.002",
+    "Flat route shell Wall east N",
+    "Flat route shell Wall east N.001",
+    "Flat route shell Wall east S",
+    "Flat route shell Wall east S.001",
+    "Flat route shell Wall gatehouse N",
+    "Flat route shell Wall gatehouse N.001",
+    "Flat route shell Wall gatehouse S",
+    "Flat route shell Wall gatehouse S.001",
+    "Flat route shell Wall north N",
+    "Flat route shell Wall north N.001",
+    "Flat route shell Wall north N.002",
+    "Flat route shell Wall north S.001",
+    "Flat route shell Wall north S.002",
+    "Flat route shell Wall refectory N",
+    "Flat route shell Wall refectory N.001",
+    "Flat route shell Wall refectory W",
+    "Flat route shell Wall south N.001",
+    "Flat route shell Wall south N.002",
+    "Flat route shell Wall south S",
+    "Flat route shell Wall south S.001",
+    "Flat route shell Wall tower-base E",
+    "Flat route shell Wall tower-base E.001",
+    "Flat route shell Wall tower-base W",
+    "Flat route shell Wall tower-base W.001",
+    "Flat route shell Wall vestry S",
+    "Flat route shell Wall vestry S.001",
+    "Flat route shell Wall west N",
+    "Flat route shell Wall west N.001",
+    "Flat route shell Wall west S",
+    "Flat route shell Wall west S.001",
+    "Flat route shell Wall west W",
+    "Flat route shell Wall west W.001",
+    "Floor bell",
+    "Floor bell.001",
+    "Floor bell.002",
+    "Floor bell.003",
+    "Floor bell.004",
+    "Floor bell.005",
+    "Floor bell.006",
+    "Floor bell.007",
+    "Floor north",
+    "Floor north.001",
+    "Floor north.002",
+    "Floor north.003",
+    "Floor north.004",
+    "Floor north.005",
+    "Floor north.006",
+    "Floor north.007",
+    "Floor north.008",
+    "Floor north.009",
+    "Floor north.010",
+    "Floor north.011",
+    "Floor north.012",
+    "Header archive E",
+    "Header catacombs N",
+    "Header east E",
+    "Header east E.002",
+    "Header east N",
+    "Header east S",
+    "Header gatehouse N",
+    "Header gatehouse S",
+    "Header north N",
+    "Header north N.002",
+    "Header north S.004",
+    "Header refectory N",
+    "Header south N.004",
+    "Header tower-base E",
+    "Header tower-base W",
+    "Header west N",
+    "Header west S",
+    "Header west W",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L04 support 0",
+    "L05 support 1",
+    "L06 support 0",
+    "L07 support 1",
+    "L08 support 1",
+    "L09 support 0",
+    "L09 support 1",
+    "L11 support 0",
+    "L13 support 1",
+    "L16 flight0 step1",
+    "L16 flight0 step10",
+    "L16 flight0 step11",
+    "L16 flight0 step12",
+    "L16 flight0 step13",
+    "L16 flight0 step14",
+    "L16 flight0 step15",
+    "L16 flight0 step16",
+    "L16 flight0 step17",
+    "L16 flight0 step18",
+    "L16 flight0 step19",
+    "L16 flight0 step2",
+    "L16 flight0 step20",
+    "L16 flight0 step21",
+    "L16 flight0 step22",
+    "L16 flight0 step23",
+    "L16 flight0 step24",
+    "L16 flight0 step25",
+    "L16 flight0 step26",
+    "L16 flight0 step27",
+    "L16 flight0 step28",
+    "L16 flight0 step29",
+    "L16 flight0 step3",
+    "L16 flight0 step30",
+    "L16 flight0 step31",
+    "L16 flight0 step32",
+    "L16 flight0 step33",
+    "L16 flight0 step34",
+    "L16 flight0 step4",
+    "L16 flight0 step5",
+    "L16 flight0 step6",
+    "L16 flight0 step7",
+    "L16 flight0 step8",
+    "L16 flight0 step9",
+    "L17 support 1",
+    "L18 support 0",
+    "L18 support 1",
+    "L21 landing1",
+    "L21 landing2",
+    "Saved editor circulation terrain WLD-10",
+    "Wall north E"
+  ],
+  "removed_native_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain WLD-10",
+  "native_terrain_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_closed_parts": [],
+  "new_closed_triangles": 0,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/adaptive-topology.bin": "6ec7b5877cbfbd6dd5896c72fadd2a91c80107a2491b39022e7f19405da7b5ac",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-cuts.tsv": "211bf02888f6bb656d6cbf4a62823af3e2e62fb0a1af93a2227801b53aaf3045",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-path-grading.sha256": "283f07805b5d0987778e255876d2c1f73f3e6bcd64134e06e299e45f117fcdff",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/source-provenance.json": "6a6b406baac36e798358dd724467705766bef52de68acbe2f00ead8299cf8ee6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2": "a58190a5ca2d7c6bb945b24224871781a5d567c764a06b26682ea70f583773de",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/tile_0_0.png": "5388501e58daf07983e2a968437c149b308e19e36015008b19340dade7b4d6b5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/verification.json": "ce89b5e2c1457e6d2b07966a2443679d3631bc2b9d95842a76160d5ffa7b8597",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/world.properties": "e3126d00dbf63360c9aaede72c1cf4bdacfc86a41630f55a718223f06f3ed26d",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous": "3d846ad345b1b3ef037b9b684a176bf3da69a213aa19ae58734158ba47677c5f",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/scene.bin": "a52916ab4ecab89939b75c30c778cf96472a8848343bfd970f71ee1e01c66cb6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-layers/tile_0_0.bin": "b12f4de5e1bd1834e72761412ecfb5c139db7bada31aa829d4c31595aa642a22",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj": "f26a35f4098bd5e04f4b38e922fec17bda4e1306e7ca82cd547555e0f4de935e",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj": "a020ebcce5ff2750aca46f07f1013b33787b5a10d827345e216ac63313b62f49",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj": "a8029d2b71a178c057969416e3b4bc984dfc1d54f8f171175d27b4f660e9b5f6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj": "453d79b0ab245809fc72da2ad7952bb0a8a7ab845490c2a238d02b32c4a60bd5"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [],
+  "deferred_walkway_beds": [],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "blend_sha256": "f11e87c0a903dd3318870ff04e5c8445ff8f6b5d2e652117f4af960c05b3367b",
+  "access_route_changes": [
+    {
+      "site": "WLD-10",
+      "link": "L05",
+      "rooms": [
+        "west",
+        "north"
+      ],
+      "before": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          36.0
+        ],
+        [
+          11.0,
+          0.0,
+          21.5
+        ],
+        [
+          11.5,
+          0.0,
+          21.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          25.5,
+          0.0,
+          17.5
+        ],
+        [
+          27.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L06",
+      "rooms": [
+        "north",
+        "east"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          26.0,
+          0.0,
+          17.0
+        ],
+        [
+          25.5,
+          0.0,
+          18.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          28.0,
+          0.0,
+          21.0
+        ],
+        [
+          46.5,
+          0.0,
+          21.0
+        ],
+        [
+          47.0,
+          0.0,
+          21.5
+        ],
+        [
+          47.0,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L09",
+      "rooms": [
+        "garden",
+        "north"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          22.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          36.0
+        ],
+        [
+          29.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L11",
+      "rooms": [
+        "north",
+        "archive"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          18.5,
+          0.0,
+          17.0
+        ],
+        [
+          18.0,
+          0.0,
+          16.5
+        ],
+        [
+          18.0,
+          0.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L13",
+      "rooms": [
+        "vestry",
+        "north"
+      ],
+      "before": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          36.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          0.0,
+          9.0
+        ],
+        [
+          36.0,
+          0.0,
+          16.5
+        ],
+        [
+          35.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L15",
+      "rooms": [
+        "east",
+        "tower-base"
+      ],
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          26.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0.0,
+          36.0
+        ],
+        [
+          49.0,
+          0.0,
+          26.5
+        ],
+        [
+          49.5,
+          0.0,
+          26.0
+        ],
+        [
+          51.0,
+          0.0,
+          26.0
+        ],
+        [
+          53.5,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L17",
+      "rooms": [
+        "tower-base",
+        "rear"
+      ],
+      "before": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          60.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          53.0,
+          0.0,
+          23.0
+        ],
+        [
+          53.0,
+          0.0,
+          28.0
+        ],
+        [
+          54.0,
+          0.0,
+          28.5
+        ],
+        [
+          58.0,
+          0.0,
+          28.5
+        ],
+        [
+          59.0,
+          0.0,
+          23.5
+        ],
+        [
+          59.5,
+          0.0,
+          23.0
+        ],
+        [
+          63.0,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L20",
+      "rooms": [
+        "catacombs",
+        "chamber"
+      ],
+      "before": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          -3.0,
+          17.5
+        ],
+        [
+          18.5,
+          -3.0,
+          17.0
+        ],
+        [
+          18.0,
+          -3.0,
+          16.5
+        ],
+        [
+          18.0,
+          -3.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "roof_wings": [
+    {
+      "wing": "gatehouse",
+      "bounds": [
+        24,
+        56,
+        40,
+        62
+      ],
+      "ceiling": 3,
+      "ridge": 4.54,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "west-cloister",
+      "bounds": [
+        8,
+        22,
+        14,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "east-cloister",
+      "bounds": [
+        44,
+        22,
+        50,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "north-cloister",
+      "bounds": [
+        8,
+        16,
+        50,
+        22
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "south-cloister",
+      "bounds": [
+        8,
+        50,
+        50,
+        56
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "archive",
+      "bounds": [
+        8,
+        2,
+        28,
+        16
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "vestry",
+      "bounds": [
+        28,
+        2,
+        44,
+        16
+      ],
+      "ceiling": 3,
+      "ridge": 5.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "refectory",
+      "bounds": [
+        50,
+        30,
+        68,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 6.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "dormitory",
+      "bounds": [
+        -8,
+        22,
+        8,
+        50
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "bell-tower",
+      "bounds": [
+        50,
+        16,
+        60,
+        30
+      ],
+      "ceiling": 9,
+      "ridge": 12.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "hip",
+      "ridge_axis": "z",
+      "facade_closures": []
+    }
+  ],
+  "new_parts": 62,
+  "roof_coverage_rays": 2388,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/wld-10.png",
+      "sha256": "d65a6fe24ec8746310333d9f705ae89b98b9db37ab67d87c5f8caed0e18158e4",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 99,
+  "wing_plan_builder": "tools/build_secure_sacred_roof_batch.py",
+  "wing_plan_sha256": "6f791db6028130471f88e4bfaa06743bb7d8142ff8af8a297bcecd24dec2706b",
+  "roof_generator_source": "tools/build_roster_enclosed_roofs.py",
+  "interface_added_flights": [
+    {
+      "link": "L16",
+      "segment": 34,
+      "layout_segment": 7,
+      "points": [
+        [
+          57.04,
+          3,
+          23.07
+        ],
+        [
+          57.04,
+          6,
+          17.8
+        ]
+      ]
+    }
+  ],
+  "saved_world": "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/adaptive-topology.bin": "6ec7b5877cbfbd6dd5896c72fadd2a91c80107a2491b39022e7f19405da7b5ac",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/authored-cuts.tsv": "211bf02888f6bb656d6cbf4a62823af3e2e62fb0a1af93a2227801b53aaf3045",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/authored-path-grading.sha256": "1b5aa1156c0eaf67c60d35a6e165e6cb9fc26ac777af446eef87b67552994238",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/earthworks-verification.json": "ecae1f7568e83423d64ca52287045b246ea5c1b936dcbb0c12573dd190052332",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/source-provenance.json": "f756061e2a2b0680449daec47b77358a39488cf2dd626229d90e9811011e296c",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2": "aa5c81f26ae2913640c648d652c02dd016b6c9d74a34bfde80f53aa7db7791fc",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/tile_0_0.png": "5388501e58daf07983e2a968437c149b308e19e36015008b19340dade7b4d6b5",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/verification.json": "f756061e2a2b0680449daec47b77358a39488cf2dd626229d90e9811011e296c",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/world.properties": "e3126d00dbf63360c9aaede72c1cf4bdacfc86a41630f55a718223f06f3ed26d",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous": "7dd60acc4a0e7a38eba5dcdbd4ec23c9074b7db3394d37a317021a00bb85cb47",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/scene.bin": "66ed8fe7320b4d9ca688b12387a596346bec9ab7e3317c6acd319c1ba560c62a",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj": "c89d1f94cc2990fc2d248274bac797ddff2898816d2520f111731d76907260ba",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj": "076f21e36f681771bce041b37dc338df2acb7dd621a29ae8b33f234edd85c261",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj": "ec33fe9710e0610ac5759cbd2fe9f9a4649585129372584a3dda1292c2956595",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj": "04e72507a485c38dbe94c62b4090af38e77d8ad4c798a1191284d4e2f53cbc81",
+    "development/levels/rebuild/monastery-cloister-pass/worlds/wld-10/terrain-world/terrain-layers/tile_0_0.bin": "6310eddb099020b29032935ca0fd309f45340e5ec2d174d6f48490193556f6fd"
+  },
+  "terrain_mesh": "WLD-10 saved ground",
+  "retired_study_strips": [
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L04 support 0",
+    "L05 support 1",
+    "L06 support 0",
+    "L07 support 1",
+    "L08 support 1",
+    "L09 support 0",
+    "L09 support 1",
+    "L11 support 0",
+    "L13 support 1",
+    "L17 support 1",
+    "L18 support 0",
+    "L18 support 1"
+  ],
+  "new_portals": [
+    {
+      "id": "public gate",
+      "axis": "z",
+      "boundary": 62,
+      "along": 32,
+      "sill_y": 0,
+      "clear_width": 2.16,
+      "clear_height": 2.36,
+      "rooms": [
+        "entry",
+        "gatehouse"
+      ]
+    },
+    {
+      "id": "inner gatehouse door",
+      "axis": "z",
+      "boundary": 56,
+      "along": 32,
+      "sill_y": 0,
+      "clear_width": 1.85,
+      "clear_height": 2.26,
+      "rooms": [
+        "gatehouse",
+        "south"
+      ]
+    },
+    {
+      "id": "south west cloister opening",
+      "axis": "z",
+      "boundary": 50,
+      "along": 11,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "west",
+        "south"
+      ]
+    },
+    {
+      "id": "south garden door",
+      "axis": "z",
+      "boundary": 50,
+      "along": 29,
+      "sill_y": 0,
+      "clear_width": 2.05,
+      "clear_height": 2.32,
+      "rooms": [
+        "garden",
+        "south"
+      ]
+    },
+    {
+      "id": "south east cloister opening",
+      "axis": "z",
+      "boundary": 50,
+      "along": 47,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "east",
+        "south"
+      ]
+    },
+    {
+      "id": "north west cloister opening",
+      "axis": "z",
+      "boundary": 22,
+      "along": 11,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "west",
+        "north"
+      ]
+    },
+    {
+      "id": "north garden door",
+      "axis": "z",
+      "boundary": 22,
+      "along": 29,
+      "sill_y": 0,
+      "clear_width": 2.05,
+      "clear_height": 2.32,
+      "rooms": [
+        "garden",
+        "north"
+      ]
+    },
+    {
+      "id": "north east cloister opening",
+      "axis": "z",
+      "boundary": 22,
+      "along": 47,
+      "sill_y": 0,
+      "clear_width": 1.92,
+      "clear_height": 2.32,
+      "rooms": [
+        "east",
+        "north"
+      ]
+    },
+    {
+      "id": "archive cloister door",
+      "axis": "z",
+      "boundary": 16,
+      "along": 18,
+      "sill_y": 0,
+      "clear_width": 1.83,
+      "clear_height": 2.24,
+      "rooms": [
+        "north",
+        "archive"
+      ]
+    },
+    {
+      "id": "vestry cloister door",
+      "axis": "z",
+      "boundary": 16,
+      "along": 36,
+      "sill_y": 0,
+      "clear_width": 1.83,
+      "clear_height": 2.24,
+      "rooms": [
+        "north",
+        "vestry"
+      ]
+    },
+    {
+      "id": "archive vestry door",
+      "axis": "x",
+      "boundary": 28,
+      "along": 9,
+      "sill_y": 0,
+      "clear_width": 1.82,
+      "clear_height": 2.24,
+      "rooms": [
+        "archive",
+        "vestry"
+      ]
+    },
+    {
+      "id": "dormitory cloister door",
+      "axis": "x",
+      "boundary": 8,
+      "along": 36,
+      "sill_y": 0,
+      "clear_width": 1.85,
+      "clear_height": 2.26,
+      "rooms": [
+        "west",
+        "dorm"
+      ]
+    },
+    {
+      "id": "tower cloister door",
+      "axis": "x",
+      "boundary": 50,
+      "along": 26,
+      "sill_y": 0,
+      "clear_width": 1.85,
+      "clear_height": 2.26,
+      "rooms": [
+        "east",
+        "tower-base"
+      ]
+    },
+    {
+      "id": "tower service door",
+      "axis": "x",
+      "boundary": 60,
+      "along": 23,
+      "sill_y": 0,
+      "clear_width": 2,
+      "clear_height": 2.35,
+      "rooms": [
+        "tower-base",
+        "rear"
+      ]
+    },
+    {
+      "id": "dining hall cloister door",
+      "axis": "x",
+      "boundary": 50,
+      "along": 40,
+      "sill_y": 0,
+      "clear_width": 1.86,
+      "clear_height": 2.28,
+      "rooms": [
+        "east",
+        "refectory"
+      ]
+    },
+    {
+      "id": "refectory receiving door",
+      "axis": "z",
+      "boundary": 30,
+      "along": 64,
+      "sill_y": 0,
+      "clear_width": 2,
+      "clear_height": 2.35,
+      "rooms": [
+        "rear",
+        "refectory"
+      ]
+    },
+    {
+      "id": "memorial chamber door",
+      "axis": "z",
+      "boundary": 16,
+      "along": 18,
+      "sill_y": -3,
+      "clear_width": 1.82,
+      "clear_height": 2.24,
+      "rooms": [
+        "catacombs",
+        "chamber"
+      ]
+    }
+  ],
+  "new_interface_parts": [
+    "Monastery gatehouse public elevation public gate preceding pier region0",
+    "Monastery gatehouse public elevation public gate bearing lintel region0",
+    "Monastery public gate fitted frame",
+    "Monastery gatehouse public elevation end pier region0",
+    "Monastery shared gatehouse and south cloister wall inner gatehouse door preceding pier region0",
+    "Monastery shared gatehouse and south cloister wall inner gatehouse door bearing lintel region0",
+    "Monastery inner gatehouse door fitted frame",
+    "Monastery shared gatehouse and south cloister wall end pier region0",
+    "Monastery south courtyard elevation south west cloister opening preceding pier region0",
+    "Monastery south courtyard elevation south west cloister opening bearing lintel region0",
+    "Monastery south west cloister opening fitted frame",
+    "Monastery south courtyard elevation south garden door preceding pier region0",
+    "Monastery south courtyard elevation south garden door bearing lintel region0",
+    "Monastery south garden door fitted frame",
+    "Monastery south courtyard elevation south east cloister opening preceding pier region0",
+    "Monastery south courtyard elevation south east cloister opening bearing lintel region0",
+    "Monastery south east cloister opening fitted frame",
+    "Monastery south courtyard elevation end pier region0",
+    "Monastery north courtyard elevation north west cloister opening preceding pier region0",
+    "Monastery north courtyard elevation north west cloister opening bearing lintel region0",
+    "Monastery north west cloister opening fitted frame",
+    "Monastery north courtyard elevation north garden door preceding pier region0",
+    "Monastery north courtyard elevation north garden door bearing lintel region0",
+    "Monastery north garden door fitted frame",
+    "Monastery north courtyard elevation north east cloister opening preceding pier region0",
+    "Monastery north courtyard elevation north east cloister opening bearing lintel region0",
+    "Monastery north east cloister opening fitted frame",
+    "Monastery north courtyard elevation end pier region0",
+    "Monastery north range doors archive cloister door preceding pier region0",
+    "Monastery north range doors archive cloister door bearing lintel region0",
+    "Monastery archive cloister door fitted frame",
+    "Monastery north range doors vestry cloister door preceding pier region0",
+    "Monastery north range doors vestry cloister door bearing lintel region0",
+    "Monastery vestry cloister door fitted frame",
+    "Monastery north range doors end pier region0",
+    "Monastery archive and vestry shared wall archive vestry door preceding pier region0",
+    "Monastery archive and vestry shared wall archive vestry door bearing lintel region0",
+    "Monastery archive vestry door fitted frame",
+    "Monastery archive and vestry shared wall end pier region0",
+    "Monastery western dormitory partition dormitory cloister door preceding pier region0",
+    "Monastery western dormitory partition dormitory cloister door bearing lintel region0",
+    "Monastery dormitory cloister door fitted frame",
+    "Monastery western dormitory partition end pier region0",
+    "Monastery western tower elevation tower cloister door preceding pier region0",
+    "Monastery western tower elevation tower cloister door bearing lintel region0",
+    "Monastery tower cloister door fitted frame",
+    "Monastery western tower elevation end pier region0",
+    "Monastery tower service elevation tower service door preceding pier region0",
+    "Monastery tower service elevation tower service door bearing lintel region0",
+    "Monastery tower service door fitted frame",
+    "Monastery tower service elevation end pier region0",
+    "Monastery refectory cloister wall dining hall cloister door preceding pier region0",
+    "Monastery refectory cloister wall dining hall cloister door bearing lintel region0",
+    "Monastery dining hall cloister door fitted frame",
+    "Monastery refectory cloister wall end pier region0",
+    "Monastery refectory receiving elevation refectory receiving door preceding pier region0",
+    "Monastery refectory receiving elevation refectory receiving door bearing lintel region0",
+    "Monastery refectory receiving door fitted frame",
+    "Monastery refectory receiving elevation end pier region0",
+    "Monastery memorial chamber partition memorial chamber door preceding pier region0",
+    "Monastery memorial chamber partition memorial chamber door bearing lintel region0",
+    "Monastery memorial chamber door fitted frame",
+    "Monastery memorial chamber partition end pier region0",
+    "Monastery north cloister continuous vaulted deck region0",
+    "Monastery west catacomb well north coping region0",
+    "Monastery west catacomb well south coping region0",
+    "Monastery west catacomb stair north lining region0",
+    "Monastery west catacomb stair south lining region0",
+    "Monastery west catacomb low-end guard region0",
+    "Monastery east catacomb well north coping region0",
+    "Monastery east catacomb well south coping region0",
+    "Monastery east catacomb stair north lining region0",
+    "Monastery east catacomb stair south lining region0",
+    "Monastery east catacomb low-end guard region0",
+    "Monastery garden bed 1 retaining surround region0",
+    "Monastery garden bed 1 planted soil region0",
+    "Monastery garden bed 2 retaining surround region0",
+    "Monastery garden bed 2 planted soil region0",
+    "Monastery garden bed 3 retaining surround region0",
+    "Monastery garden bed 3 planted soil region0",
+    "Monastery garden bed 4 retaining surround region0",
+    "Monastery garden bed 4 planted soil region0",
+    "Monastery bell floor around upper stair well region0",
+    "Monastery bell flight 1 riser 01 region0",
+    "Monastery bell flight 1 riser 02 region0",
+    "Monastery bell flight 1 riser 03 region0",
+    "Monastery bell flight 1 riser 04 region0",
+    "Monastery bell flight 1 riser 05 region0",
+    "Monastery bell flight 1 riser 06 region0",
+    "Monastery bell flight 1 riser 07 region0",
+    "Monastery bell flight 1 riser 08 region0",
+    "Monastery bell flight 1 riser 09 region0",
+    "Monastery bell flight 1 riser 10 region0",
+    "Monastery bell flight 1 riser 11 region0",
+    "Monastery bell flight 1 riser 12 region0",
+    "Monastery bell flight 1 riser 13 region0",
+    "Monastery bell flight 1 riser 14 region0",
+    "Monastery bell flight 1 riser 15 region0",
+    "Monastery bell flight 1 riser 16 region0",
+    "Monastery bell flight 1 riser 17 region0",
+    "Monastery bell flight 2 riser 01 region0",
+    "Monastery bell flight 2 riser 02 region0",
+    "Monastery bell flight 2 riser 03 region0",
+    "Monastery bell flight 2 riser 04 region0",
+    "Monastery bell flight 2 riser 05 region0",
+    "Monastery bell flight 2 riser 06 region0",
+    "Monastery bell flight 2 riser 07 region0",
+    "Monastery bell flight 2 riser 08 region0",
+    "Monastery bell flight 2 riser 09 region0",
+    "Monastery bell flight 2 riser 10 region0",
+    "Monastery bell flight 2 riser 11 region0",
+    "Monastery bell flight 2 riser 12 region0",
+    "Monastery bell flight 2 riser 13 region0",
+    "Monastery bell flight 2 riser 14 region0",
+    "Monastery bell flight 2 riser 15 region0",
+    "Monastery bell flight 2 riser 16 region0",
+    "Monastery bell flight 2 riser 17 region0",
+    "Monastery bell stair common intermediate landing region0",
+    "Monastery bell stair west string wall",
+    "Monastery bell stair central string wall",
+    "Monastery bell stair east string wall",
+    "Monastery bell intermediate landing west parapet region0",
+    "Monastery bell intermediate landing south parapet region0",
+    "Monastery bell intermediate landing east parapet region0",
+    "Monastery bell upper well south guard region0",
+    "Monastery bell upper well west guard region0",
+    "Monastery bell upper well east guard region0"
+  ],
+  "builder": "tools/build_monastery.py",
+  "builder_sha256": "6d1bc7222d8bf97e34dc554424a93e96374df791a13fd3da68c23c6c9526363b"
+}

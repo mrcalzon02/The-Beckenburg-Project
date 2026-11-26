@@ -1,0 +1,57 @@
+{
+  "id": "PRISON",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3.4
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [
+    {
+      "zone": "staff",
+      "building_bounds": [
+        42,
+        64,
+        46.8,
+        68
+      ],
+      "authored_excavation_bounds": [
+        42.0,
+        64.0,
+        47.0,
+        68.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    },
+    {
+      "zone": "staff-wc",
+      "building_bounds": [
+        46.8,
+        64,
+        50,
+        68
+      ],
+      "authored_excavation_bounds": [
+        46.75,
+        64.0,
+        50.0,
+        68.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    }
+  ],
+  "drainage": "Security compound drainage runs inside the west perimeter and out beside the service approach.",
+  "construction_response": "Wall panels need continuous concrete foundations, including the known unsupported perimeter pieces. Shape compound corners and arrival sally port around real construction, not the grounds rectangle.",
+  "source_layout": "development/levels/rebuild/prison/rough-layout.json",
+  "source_layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+  "spec_sha256": "d95256a938236079c1ffa9ca79d7c80fb92e12e4f75c1f0880f9cfdcb6ad1376",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.2248744480230194,
+    1.1052590321889533
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

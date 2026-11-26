@@ -1,0 +1,45 @@
+2026-11-08T00:04:57.285970700Z [main] RENDER SLOW stage=idle faces=113684 visible_faces=61491 culled_faces=52193 target=640x400 build_ms=1037 lighting_raster_ms=1690
+CAPTURED room 0 upper Entrance and coat vestibule: six matched states; visual inspection pending
+2026-11-08T00:04:59.441163700Z [main] RENDER SLOW stage=idle faces=111704 visible_faces=52897 culled_faces=58807 target=640x400 build_ms=2 lighting_raster_ms=671
+CAPTURED room 0 floor Entrance and coat vestibule: six matched states; visual inspection pending
+CAPTURED room 1 upper Family sitting room: six matched states; visual inspection pending
+2026-11-08T00:05:02.183173100Z [main] RENDER SLOW stage=idle faces=92892 visible_faces=14719 culled_faces=78173 target=640x400 build_ms=1 lighting_raster_ms=256
+CAPTURED room 1 floor Family sitting room: six matched states; visual inspection pending
+CAPTURED room 2 upper Kitchen and cellar access: six matched states; visual inspection pending
+CAPTURED room 2 floor Kitchen and cellar access: six matched states; visual inspection pending
+2026-11-08T00:05:04.716272300Z [main] RENDER SLOW stage=idle faces=77681 visible_faces=10521 culled_faces=67160 target=640x400 build_ms=1 lighting_raster_ms=206
+CAPTURED room 3 upper Family dining room: six matched states; visual inspection pending
+CAPTURED room 3 floor Family dining room: six matched states; visual inspection pending
+2026-11-08T00:05:07.169622Z [main] RENDER SLOW stage=idle faces=104819 visible_faces=41923 culled_faces=62896 target=640x400 build_ms=2 lighting_raster_ms=692
+CAPTURED room 4 upper Stair and service passage: six matched states; visual inspection pending
+2026-11-08T00:05:09.556664700Z [main] RENDER SLOW stage=idle faces=108177 visible_faces=34232 culled_faces=73945 target=640x400 build_ms=1 lighting_raster_ms=374
+CAPTURED room 4 floor Stair and service passage: six matched states; visual inspection pending
+CAPTURED room 5 upper Upper landing and linen storage: six matched states; visual inspection pending
+2026-11-08T00:05:11.960680300Z [main] RENDER SLOW stage=idle faces=118604 visible_faces=58151 culled_faces=60453 target=640x400 build_ms=1 lighting_raster_ms=785
+CAPTURED room 5 floor Upper landing and linen storage: six matched states; visual inspection pending
+CAPTURED room 6 upper Parents bedroom and dressing: six matched states; visual inspection pending
+2026-11-08T00:05:14.542855100Z [main] RENDER SLOW stage=idle faces=98637 visible_faces=29672 culled_faces=68965 target=640x400 build_ms=1 lighting_raster_ms=371
+CAPTURED room 6 floor Parents bedroom and dressing: six matched states; visual inspection pending
+CAPTURED room 7 upper Child bedroom and study: six matched states; visual inspection pending
+CAPTURED room 7 floor Child bedroom and study: six matched states; visual inspection pending
+CAPTURED room 8 upper Family bathroom: six matched states; visual inspection pending
+2026-11-08T00:05:17.917371800Z [main] RENDER SLOW stage=idle faces=84518 visible_faces=21970 culled_faces=62548 target=640x400 build_ms=1 lighting_raster_ms=318
+CAPTURED room 8 floor Family bathroom: six matched states; visual inspection pending
+CAPTURED room 9 upper Cellar work passage: six matched states; visual inspection pending
+CAPTURED room 9 floor Cellar work passage: six matched states; visual inspection pending
+2026-11-08T00:05:21.019531300Z [main] RENDER SLOW stage=idle faces=92966 visible_faces=17950 culled_faces=75016 target=640x400 build_ms=1 lighting_raster_ms=217
+CAPTURED room 10 upper Heating hot-water and laundry: six matched states; visual inspection pending
+CAPTURED room 10 floor Heating hot-water and laundry: six matched states; visual inspection pending
+2026-11-08T00:05:23.420360400Z [main] RENDER SLOW stage=idle faces=109338 visible_faces=37392 culled_faces=71946 target=640x400 build_ms=1 lighting_raster_ms=331
+CAPTURED room 11 upper Household and seasonal store: six matched states; visual inspection pending
+CAPTURED room 11 floor Household and seasonal store: six matched states; visual inspection pending
+CAPTURED room 12 upper Rear garden and patio reservation: six matched states; visual inspection pending
+CAPTURED room 12 floor Rear garden and patio reservation: six matched states; visual inspection pending
+2026-11-08T00:05:25.855202700Z [main] RENDER SLOW stage=idle faces=95707 visible_faces=47645 culled_faces=48062 target=640x400 build_ms=2 lighting_raster_ms=350
+CAPTURED room 13 upper Street and entrance approach: six matched states; visual inspection pending
+CAPTURED room 13 floor Street and entrance approach: six matched states; visual inspection pending
+2026-11-08T00:05:28.040946700Z [main] RENDER SLOW stage=idle faces=101212 visible_faces=58303 culled_faces=42909 target=640x400 build_ms=1 lighting_raster_ms=354
+CAPTURED room 14 upper Van cargo interior: six matched states; visual inspection pending
+2026-11-08T00:05:30.145125400Z [main] RENDER SLOW stage=idle faces=100655 visible_faces=55644 culled_faces=45011 target=640x400 build_ms=1 lighting_raster_ms=286
+CAPTURED room 14 floor Van cargo interior: six matched states; visual inspection pending
+REVIEW REQUIRED: actual software runtime captures only; no GPU parity, whole-room or physical FPS acceptance

@@ -1,0 +1,40 @@
+{
+  "retained_native_records": 114,
+  "closed_parts": 83,
+  "door_profile_rays": 135,
+  "door_sill_rays": 180,
+  "cover_soffit_rays": 18,
+  "roof_cover_rays": 27,
+  "old_shortcuts_closed": 2,
+  "glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+  "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695",
+  "saved_editor_terrain_exact": true,
+  "van_triangle_count": 2689,
+  "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/overview.png",
+      "sha256": "68300908f1e714af7910abc556af0162ccf821c983499b5930ea3f5792456230",
+      "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/public-entry.png",
+      "sha256": "f5aabb573a5cb5bdd211e01564604e903daa481d8a6a2d1ecbbff524af1c87b5",
+      "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/receiving-door.png",
+      "sha256": "55db7bd5ea9afaa310d9ce50a961dd1aed301faa8f667e86326b3b9f405b4391",
+      "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/staff-transfer.png",
+      "sha256": "2732d0144651b6a1b17d5153e8047829c7603ecece014ebb11c9eea89b94479f",
+      "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+      "hidden": []
+    }
+  ]
+}

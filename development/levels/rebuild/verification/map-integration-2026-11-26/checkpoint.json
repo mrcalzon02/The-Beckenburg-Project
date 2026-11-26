@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-26",
+  "status": "LOCAL_INTEGRATION_FUNCTIONAL_CHECKS_PASSED_EXTERNAL_ACCEPTANCE_OPEN",
+  "source_inputs": {
+    "main": "9f1cf5e2b5535b2ded46eba07d55c78f61211775",
+    "candidate": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+    "merge_base": "7c4fe3be13e9f330aeaf554002ac0df97dc1ea71"
+  },
+  "source_scope": "Combined integration worktree with scoped repairs. Parent SHAs identify inputs, not the tested merged revision. The enclosing commit and attached source-file hashes identify the delivered checkpoint.",
+  "map_stage_acceptance_changed": false,
+  "build": {
+    "java_release": 17,
+    "test_sources_compiled": 709,
+    "all_tests_executed": false,
+    "production_compile_log": "checks/compile-main-java17.log",
+    "test_compile_log": "checks/compile-tests-java17.log",
+    "test_source_list": "checks/test-sources.txt",
+    "ordinary_game_jar_sha256": "f83b71c540f1c195be03ea396f8f2d7349920dd93951cb4ba9755452a69c5237",
+    "ordinary_game_jar_bytes": 450123048,
+    "jar_committed": false,
+    "native_packet_resources_verified": 101,
+    "resource_receipt": "checks/resource-manifest-verification.json",
+    "commands": "checks/build-and-check-commands.json",
+    "full_normal_packaging_acceptance": "PENDING_EXACT_COMMIT_CI",
+    "local_package_limitations": [
+      {
+        "resource": "org/beckenburg/mission-board/wld-06.png",
+        "tested_jar_bytes": 0,
+        "restored_source_bytes": 629117,
+        "source_git_blob": "60ed0033dd935d970c7f9f9be200cdd4cfadf3eb",
+        "evidence": "checks/local-package-thumbnail-limitation.json",
+        "impact": "Native101-resource comparisons and recorded case bindings remain valid. The tested local JAR is not full UI/installer packaging proof."
+      }
+    ]
+  },
+  "verification": [
+    {
+      "group": "Castle gate, native recovery and saved-source identity",
+      "status": "PASS_LOCAL_HEADLESS",
+      "evidence": [
+        "checks/CastleHomeInteractionTest-capture-validation.log",
+        "checks/CastleRebuildUpgradeTest.log",
+        "checks/CastleDocumentRecoveryTest.log",
+        "checks/CastleSnapshotContractTest.log"
+      ]
+    },
+    {
+      "group": "House source, migration, parcel, porch movement and editor identity",
+      "status": "PASS_LOCAL_HEADLESS",
+      "evidence": [
+        "checks/HouseDefaultPromotionTest.log",
+        "checks/HouseRebuildUpgradeTest.log",
+        "checks/HouseParcelBoundaryTest.log",
+        "checks/DevMatchNavigationTest.log",
+        "checks/HouseTemplateCompatibilityTest.log",
+        "checks/HouseRebuildEnvelopeTest-after-kenney.log",
+        "checks/LevelAuthoringIdentityTest.log",
+        "checks/LevelAuthoringSessionTest.log",
+        "checks/EditorAgentServiceTest-after-kenney.log",
+        "checks/GroundRecoverySupportParityTest.log"
+      ]
+    },
+    {
+      "group": "House authored encounter and photo/ownership negatives",
+      "status": "PASS_LOCAL_SOLO_AND_TCP",
+      "evidence": [
+        "checks/HouseEncounterTest.log",
+        "checks/HouseEncounterSessionTest-retest.log",
+        "checks/HouseEncounterNetworkTest.log",
+        "checks/SoloEquipmentUseTest-retest.log"
+      ]
+    },
+    {
+      "group": "Main portal lighting, optical evidence and merged sanctuary atmosphere policy",
+      "status": "PASS_LOCAL_HEADLESS",
+      "evidence": [
+        "checks/PortalLightReachabilityTest.log",
+        "checks/OpticalEvidenceTest.log",
+        "checks/SafeAreaHazeColumnsTest.log"
+      ]
+    },
+    {
+      "group": "Ordinary LAN selection, protocol, visual motion and realtime clock",
+      "status": "PASS_LOCAL_HEADLESS",
+      "evidence": [
+        "checks/CountyCampaignMapNavigationTest.log",
+        "checks/LanLobbySiteCacheTest.log",
+        "checks/LanProtocolTest.log",
+        "checks/LanMovementGateTest.log",
+        "checks/LanRealtimeClockTest.log",
+        "checks/LanVisualMotionTest.log",
+        "checks/LanAcousticsTest.log"
+      ]
+    },
+    {
+      "group": "Current-resource Northwatch packaged continuous case",
+      "status": "PASS",
+      "evidence": [
+        "checks/NorthwatchCurrentCase.log",
+        "checks/northwatch-current-case.tsv",
+        "checks/northwatch-current-case-binding.json",
+        "checks/northwatch-validator-checks.json"
+      ],
+      "scope": "Ordinary packaged JAR; three TCP peers; continuous arrival/archive, three walk-in refuges, both tunnel stairs and BANISHED result/payout. No installed/GPU/whole-map acceptance."
+    },
+    {
+      "group": "All public investigation-source catalogue renders",
+      "status": "PASS_28_OF_28",
+      "heap_megabytes": 1024,
+      "evidence": [
+        "checks/SiteSelectionTest-supported-cameras-final-1024m.log",
+        "checks/SiteSelectionTest-supported-cameras-final-1024m.json",
+        "checks/catalogue-supported-camera-results.json"
+      ],
+      "scope": "Supported authored cameras, >20 distinct colours and >5% real geometry pixels at320x200; source availability/render smoke only."
+    },
+    {
+      "group": "Settled House door-state capture",
+      "status": "PASS_FINAL_SETTLED_POSE",
+      "evidence": [
+        "checks/HousePorchVisualCaptureTest-final.log",
+        "checks/final-targeted-results.json",
+        "checks/capture-files-sha256.json",
+        "captures/house-porch/diagnostic-first-frame-after-open-command.png"
+      ],
+      "scope": "Four real960x600 headless software frames; settled open/closed pose and distinct-pixel assertions. Original first animation frame preserved. No GPU or whole-map acceptance.",
+      "seconds": 8.75
+    },
+    {
+      "group": "Sparse-safe gallery preservation",
+      "status": "PASS_FINAL_STAGED_GENERATION_AND_CHECK",
+      "png_entries": 15311,
+      "historical_staged_png_entries": 15302,
+      "new_integration_diagnostics": 9,
+      "scope": "Exact parent path/blob metadata or actual hashed bytes; this is evidence-index integrity, not fresh map/image acceptance.",
+      "evidence": [
+        "checks/gallery-verification.json"
+      ]
+    },
+    {
+      "group": "Ordinary packaged full multiplayer round",
+      "status": "PASS",
+      "seconds": 111.16,
+      "evidence": [
+        "checks/BeckenburgFullRoundE2ETest-final.log",
+        "checks/final-targeted-results.json"
+      ],
+      "scope": "Real host/hunter/remote hunter/human ghost join, shared evidence/hypothesis, ward/rite, ABSOLVED for all seats, hunter settlement and post-round command rejection. No installed desktop or physical GPU acceptance."
+    },
+    {
+      "group": "Native GLB/material retention and main portal-flux cache",
+      "status": "PASS",
+      "evidence": [
+        "checks/EditorGlbAuthoringTest-final.log",
+        "checks/EditorMeshMaterialTest-final.log",
+        "checks/PortalFluxCacheTest-final.log",
+        "checks/final-targeted-results.json"
+      ]
+    }
+  ],
+  "defects": {
+    "production_integration": [
+      "DEV-797"
+    ],
+    "verification_or_evidence_tools": [
+      "DEV-798",
+      "DEV-799",
+      "DEV-800",
+      "DEV-801",
+      "DEV-802"
+    ],
+    "appended_to_registry": true,
+    "canonical_registry_records": 795,
+    "retained_historical_note_headings": 136
+  },
+  "remaining": [
+    "Inspect exact enclosing-commit CI after publication, including normal packaging of the restored WLD-06 mission-board thumbnail; the tested local JAR contains an empty thumbnail and is not full UI/installer proof.",
+    "Complete installed solo and host/guest Castle-to-case-to-results-to-Castle round-trip; inspect physical gate retreat and saved profile/loadout persistence.",
+    "Run exact committed-source Windows installer/desktop, multiplayer release gates and physical GPU/input/lighting review; current local software checks do not substitute for these.",
+    "Repair seven remaining historical case-harness result waits from live requiredRitualTicks at the unchanged ordinary host clock, then replay each exact final packet.",
+    "Refresh the remaining five stale final-collision receipts from DEV-747: Red Mesa, Blackwater, Mourning Marsh, Gallows and Greywater. Northwatch now has a new current-resource receipt; preserve its older transcript.",
+    "Resume native runtime/editor integration for the still-gated or missing institutional adapters from the pinned29-map diagnostic; no map stage is advanced by this checkpoint."
+  ],
+  "source_files_receipt": "checks/source-files-sha256.json",
+  "source_fingerprint_sha256": "a2e0119a7693c05b23065f8de8b6afbe287333d9b896f107b6ba26f48e804d61",
+  "network_compatibility": "Same-build protocol3 LAN; older JOIN/RESUME peers intentionally reject, as covered by the encounter network check."
+}

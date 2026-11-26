@@ -1,0 +1,437 @@
+{
+  "scope": "Exact raw snapshots; filenames containing final may describe failed historical attempts. README/checkpoint selects current results. The incomplete porch snapshot is not a passing result.",
+  "files": [
+    {
+      "source_name": "BeckenburgFullRoundE2ETest-final.log",
+      "retained_path": "BeckenburgFullRoundE2ETest-final.log",
+      "bytes": 770,
+      "sha256": "66e36f6ab278a94bd6480df60e7da2932ae6eb63d7261ed128c2e614aa0cfd81"
+    },
+    {
+      "source_name": "CastleDocumentRecoveryTest.log",
+      "retained_path": "CastleDocumentRecoveryTest.log",
+      "bytes": 173,
+      "sha256": "90cd0cbf6339db63a6433d272beee7325aa55f76570438d114ff612d28a489d5"
+    },
+    {
+      "source_name": "CastleHomeInteractionTest-capture-validation.log",
+      "retained_path": "CastleHomeInteractionTest-capture-validation.log",
+      "bytes": 304,
+      "sha256": "964e03933a57c672d8be78c6161157769087b1a6b1fdea1166124b2598430ce7"
+    },
+    {
+      "source_name": "CastleHomeInteractionTest.log",
+      "retained_path": "CastleHomeInteractionTest.log",
+      "bytes": 2091,
+      "sha256": "bfb2bc76353d5c05bb70961e1924ebe69c24e2025e753e838d34ff838fbf68bc"
+    },
+    {
+      "source_name": "CastleRebuildUpgradeTest.log",
+      "retained_path": "CastleRebuildUpgradeTest.log",
+      "bytes": 286,
+      "sha256": "9aab077bfa755ad67767f07b0aa1cc5c8f6539f54d07e952b8851c9892570f47"
+    },
+    {
+      "source_name": "CastleSnapshotContractTest.log",
+      "retained_path": "CastleSnapshotContractTest.log",
+      "bytes": 179,
+      "sha256": "11c5a80c58c4dd77dccdd707b4e32f5cf75c424c4f0c402776a014ccd9a78a70"
+    },
+    {
+      "source_name": "CountyCampaignMapNavigationTest.log",
+      "retained_path": "CountyCampaignMapNavigationTest.log",
+      "bytes": 99,
+      "sha256": "788e33f329868adb22c972216c53db84d26bb1d8ecfeeb61295ce5a4189d2312"
+    },
+    {
+      "source_name": "DevMatchNavigationTest.log",
+      "retained_path": "DevMatchNavigationTest.log",
+      "bytes": 1470,
+      "sha256": "c0690c3028f5aff9621cde5c6ae49b2f7e186a234f7216bc86ed4b362283ec55"
+    },
+    {
+      "source_name": "EditorAgentServiceTest-after-kenney.log",
+      "retained_path": "EditorAgentServiceTest-after-kenney.log",
+      "bytes": 309,
+      "sha256": "c6a9dea1720cf4b17452d1e3f0060fd6a2167aa878eff095e8884eefe2b35485"
+    },
+    {
+      "source_name": "EditorAgentServiceTest.log",
+      "retained_path": "EditorAgentServiceTest.log",
+      "bytes": 1437,
+      "sha256": "5fff4f8a555012f58d0f2e4e62751202b223cdfeb81c7d082fc9c87a9517863f"
+    },
+    {
+      "source_name": "EditorGlbAuthoringTest-final.log",
+      "retained_path": "EditorGlbAuthoringTest-final.log",
+      "bytes": 291,
+      "sha256": "d5e1e900c87d0de8ffad7ce1d280e6649c07089b9003836e258c807e39619986"
+    },
+    {
+      "source_name": "EditorMeshMaterialTest-final.log",
+      "retained_path": "EditorMeshMaterialTest-final.log",
+      "bytes": 185,
+      "sha256": "6a6e11b47a9825a679772353263f962551836fb2234834a0aca476b4ea97168d"
+    },
+    {
+      "source_name": "GroundRecoverySupportParityTest.log",
+      "retained_path": "GroundRecoverySupportParityTest.log",
+      "bytes": 147,
+      "sha256": "b4a5404a106cec2ad2856f368513867ae3301e54ec20d1694f19303eb8bedc1e"
+    },
+    {
+      "source_name": "HouseDefaultPromotionTest.log",
+      "retained_path": "HouseDefaultPromotionTest.log",
+      "bytes": 614,
+      "sha256": "e5bb33737c3e9df56a5bba557dcdea045500e781f70adf196abe8992993e889f"
+    },
+    {
+      "source_name": "HouseEncounterNetworkTest.log",
+      "retained_path": "HouseEncounterNetworkTest.log",
+      "bytes": 422,
+      "sha256": "575a90e138cd64e741b264906ea40ba311b3739e94e4be747470ef672d0f3ffc"
+    },
+    {
+      "source_name": "HouseEncounterSessionTest-recompile.log",
+      "retained_path": "HouseEncounterSessionTest-recompile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_name": "HouseEncounterSessionTest-retest.log",
+      "retained_path": "HouseEncounterSessionTest-retest.log",
+      "bytes": 155,
+      "sha256": "a7567a26cbd6c5144c419776db71aa3eab0ccb9bafa1b29b77397ab5e36649d7"
+    },
+    {
+      "source_name": "HouseEncounterSessionTest.log",
+      "retained_path": "HouseEncounterSessionTest.log",
+      "bytes": 292,
+      "sha256": "0b5cc682c6c8cc484aa820fd9cf6925dc46323768b2796c9bb1ac4f115e0d953"
+    },
+    {
+      "source_name": "HouseEncounterTest-capture-validation.log",
+      "retained_path": "HouseEncounterTest-capture-validation.log",
+      "bytes": 347,
+      "sha256": "046d2cf278611908ef73f9a29934ff1fa3e663d0e71391e3698895c6064ac285"
+    },
+    {
+      "source_name": "HouseEncounterTest.log",
+      "retained_path": "HouseEncounterTest.log",
+      "bytes": 181,
+      "sha256": "89cc3d73cd792172db125f17571be97b0b0460cb1039160d0913abbeb87bc553"
+    },
+    {
+      "source_name": "HouseParcelBoundaryTest.log",
+      "retained_path": "HouseParcelBoundaryTest.log",
+      "bytes": 363,
+      "sha256": "b6e9271011ffce6763220a41beebf5ede677b65dac62597a742cfd1781b59df8"
+    },
+    {
+      "source_name": "HousePorchVisualCaptureTest-capture-validation.log",
+      "retained_path": "HousePorchVisualCaptureTest-capture-validation.log",
+      "bytes": 812,
+      "sha256": "3b83aa81b7084afd99ca4ded3fed50b5a1a431db1f1ae67ecf3c9900d23dc646"
+    },
+    {
+      "source_name": "HousePorchVisualCaptureTest-final.log",
+      "retained_path": "HousePorchVisualCaptureTest-final.log",
+      "bytes": 972,
+      "sha256": "dc0f38c8ef840b6ee3be2e064cc1b9443bdef1f5788c056d34c27b0114be4920"
+    },
+    {
+      "source_name": "HousePorchVisualCaptureTest-settled.log",
+      "retained_path": "HousePorchVisualCaptureTest-settled-incomplete-snapshot.log",
+      "bytes": 219,
+      "sha256": "5d87ebfbb2d5447eeff4a9feed78c00737dd132f832a4a0979ffb0758a822a02"
+    },
+    {
+      "source_name": "HouseRebuildEnvelopeTest-after-kenney.log",
+      "retained_path": "HouseRebuildEnvelopeTest-after-kenney.log",
+      "bytes": 431,
+      "sha256": "de47cb3f2cafd7c4df320b6d519ca2b1e2bcb3abc3b5f53b9cacd95e18e6abad"
+    },
+    {
+      "source_name": "HouseRebuildEnvelopeTest.log",
+      "retained_path": "HouseRebuildEnvelopeTest.log",
+      "bytes": 1074,
+      "sha256": "ebdf093443b22d03e82fe075879df978d5fa3b4332872e4c00533bcdf1430679"
+    },
+    {
+      "source_name": "HouseRebuildUpgradeTest.log",
+      "retained_path": "HouseRebuildUpgradeTest.log",
+      "bytes": 845,
+      "sha256": "8b1bac71858a0d338d28d7a8a99d8d0704405d8bd8e53e5961ff3f8c2698ca71"
+    },
+    {
+      "source_name": "HouseTemplateCompatibilityTest.log",
+      "retained_path": "HouseTemplateCompatibilityTest.log",
+      "bytes": 191,
+      "sha256": "591486cb07b8eb8b5662263dd7d80ffcc8ab17619b303d33451617d9b79e1380"
+    },
+    {
+      "source_name": "KenneyMedievalAssets.log",
+      "retained_path": "KenneyMedievalAssets.log",
+      "bytes": 39,
+      "sha256": "d32ddf4bb8d0e5a40fafccf5ebb75618f507e9b33ca138188c1de66090fb889d"
+    },
+    {
+      "source_name": "LanAcousticsTest.log",
+      "retained_path": "LanAcousticsTest.log",
+      "bytes": 79,
+      "sha256": "2063e29852bbb1ec70f41c6e37dbf5300ca736170e809a4bdb681ac57bc63719"
+    },
+    {
+      "source_name": "LanLobbySiteCacheTest.log",
+      "retained_path": "LanLobbySiteCacheTest.log",
+      "bytes": 69,
+      "sha256": "8152cf14b3daeace378b7c4af5d5ac2db15a798900f751ccb9d24c09cf90351f"
+    },
+    {
+      "source_name": "LanMovementGateTest.log",
+      "retained_path": "LanMovementGateTest.log",
+      "bytes": 89,
+      "sha256": "3fb1444c46c540be3950e37f75a952f2af544b3cbf570a8f2fd4c361f185522c"
+    },
+    {
+      "source_name": "LanProtocolTest.log",
+      "retained_path": "LanProtocolTest.log",
+      "bytes": 74,
+      "sha256": "687f2991a13571717ab89b67cf62922c8566f46fa29f2a2a7b2ad097c6184bee"
+    },
+    {
+      "source_name": "LanRealtimeClockTest.log",
+      "retained_path": "LanRealtimeClockTest.log",
+      "bytes": 83,
+      "sha256": "1963ebf6558cdcf18fca504a108a17d6796f1a032a44c93cc70b2ffa762d8dbc"
+    },
+    {
+      "source_name": "LanVisualMotionTest.log",
+      "retained_path": "LanVisualMotionTest.log",
+      "bytes": 126,
+      "sha256": "a42774840b465622e03678f10ba02748a6caab4aefac2a311dcf2c19134f3624"
+    },
+    {
+      "source_name": "LevelAuthoringIdentityTest.log",
+      "retained_path": "LevelAuthoringIdentityTest.log",
+      "bytes": 160,
+      "sha256": "e9b8fbc258f41377640a80738aa58440c17026f1dbcd6fd825f60ecd9c790cbf"
+    },
+    {
+      "source_name": "LevelAuthoringSessionTest.log",
+      "retained_path": "LevelAuthoringSessionTest.log",
+      "bytes": 86,
+      "sha256": "2a6a8e4beb879a35a53df4e6b560baddceed02c1545a4431753ca0722a275978"
+    },
+    {
+      "source_name": "NorthwatchCurrentCase-before-duration-fix.log",
+      "retained_path": "NorthwatchCurrentCase-before-duration-fix.log",
+      "bytes": 1066,
+      "sha256": "0077592a67d06c3b59a4d001e9731e66642b5301f2aed70ad74d753840e05f51"
+    },
+    {
+      "source_name": "NorthwatchCurrentCase-before-protocol-fix.log",
+      "retained_path": "NorthwatchCurrentCase-before-protocol-fix.log",
+      "bytes": 846,
+      "sha256": "44e5294a9674816c1ca3bbc96b7b1823aec983122c5b67fe520560921804f1b3"
+    },
+    {
+      "source_name": "NorthwatchCurrentCase-compile.log",
+      "retained_path": "NorthwatchCurrentCase-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_name": "NorthwatchCurrentCase.log",
+      "retained_path": "NorthwatchCurrentCase.log",
+      "bytes": 698,
+      "sha256": "86247d6c0d17b2fe38a4b2dd5fe485ef6cda79ac2dd960ea9af11209c1811646"
+    },
+    {
+      "source_name": "OpticalEvidenceTest.log",
+      "retained_path": "OpticalEvidenceTest.log",
+      "bytes": 306,
+      "sha256": "c5eeea3e2a929374cb14285eb1f45a0065b5cda1424769960ec238410645e9ed"
+    },
+    {
+      "source_name": "PortalFluxCacheTest-final.log",
+      "retained_path": "PortalFluxCacheTest-final.log",
+      "bytes": 791,
+      "sha256": "bbb1b4d80766fe8fadbed260d96325c140de93e92a8fd2ff86b358d53c904796"
+    },
+    {
+      "source_name": "PortalLightReachabilityTest.log",
+      "retained_path": "PortalLightReachabilityTest.log",
+      "bytes": 753,
+      "sha256": "bfa9377b9e49bcb2b41e051262eeb0a27662a543da17056a9e4be3cbff5c9d82"
+    },
+    {
+      "source_name": "SafeAreaHazeColumnsTest.log",
+      "retained_path": "SafeAreaHazeColumnsTest.log",
+      "bytes": 127,
+      "sha256": "fc1acd4975cd167dc2f52482d5fe2c48093465244a6001c698e1035e9136de35"
+    },
+    {
+      "source_name": "SiteSelectionTest-retest.log",
+      "retained_path": "SiteSelectionTest-retest.log",
+      "bytes": 993,
+      "sha256": "4f96b53755e579fbedb523f1ef6839adbc5d71bbd34486f57100fa8403495f3c"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras-768m.json",
+      "retained_path": "SiteSelectionTest-supported-cameras-768m.json",
+      "bytes": 184,
+      "sha256": "17a1b481fef040964a032c8bff83b6de1bf003a12c9e0d985bed726ad37d8cc7"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras-768m.log",
+      "retained_path": "SiteSelectionTest-supported-cameras-768m.log",
+      "bytes": 511,
+      "sha256": "b308d4816b359e4ac18b69138bf22cd8762e935a993c13fb3179ad84010e051b"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras-final-1024m.json",
+      "retained_path": "SiteSelectionTest-supported-cameras-final-1024m.json",
+      "bytes": 191,
+      "sha256": "31a7efc4a546d798220a2fd33c05dd3584343c1ba33112f0899b211fee458619"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras-final-1024m.log",
+      "retained_path": "SiteSelectionTest-supported-cameras-final-1024m.log",
+      "bytes": 3381,
+      "sha256": "c64860298329fea7257dfd3fec669cffde71a6d2143fb4ef7f68b6ab8f33c92e"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras-final.json",
+      "retained_path": "SiteSelectionTest-supported-cameras-final.json",
+      "bytes": 185,
+      "sha256": "73cd9132568e838ff2d89c9be3dd6b031fc2e6d4c23dd880cd2e41c2da068d88"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras-final.log",
+      "retained_path": "SiteSelectionTest-supported-cameras-final.log",
+      "bytes": 4484,
+      "sha256": "ec17bd21d709c3f872c3b741b3f561053092b2ca8d4236a11fca5ccef226005d"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras.json",
+      "retained_path": "SiteSelectionTest-supported-cameras.json",
+      "bytes": 180,
+      "sha256": "b5187a4046942de5f38ab876d7a5f17788d5512d9ebf5371c392f935e72b0fc6"
+    },
+    {
+      "source_name": "SiteSelectionTest-supported-cameras.log",
+      "retained_path": "SiteSelectionTest-supported-cameras.log",
+      "bytes": 1802,
+      "sha256": "37164b8eb5cc2fdd1d89a1365f57e6611da192d1ea5c4fe9979957323975cea8"
+    },
+    {
+      "source_name": "SiteSelectionTest.log",
+      "retained_path": "SiteSelectionTest.log",
+      "bytes": 1110,
+      "sha256": "72ea5b6bbb41ee5a980486dc91b8cb9231113186d740f784e42743ec840433f9"
+    },
+    {
+      "source_name": "SoloEquipmentUseTest-retest.log",
+      "retained_path": "SoloEquipmentUseTest-retest.log",
+      "bytes": 75,
+      "sha256": "389218e46cc856dde2d6d010cc310b71a3679c40d3d68a47731d85cee734b8bd"
+    },
+    {
+      "source_name": "TierModelForge.log",
+      "retained_path": "TierModelForge.log",
+      "bytes": 96,
+      "sha256": "a24c721af3d47836d4f1f2761c79615d0f67ab11ed3939a06db96c93f5632702"
+    },
+    {
+      "source_name": "UiAssetBake.log",
+      "retained_path": "UiAssetBake.log",
+      "bytes": 80,
+      "sha256": "2c17b5656c58517bdcbad1ebaf6d6b792ed522035ae70eac4f47e005e0fe29ac"
+    },
+    {
+      "source_name": "catalogue-supported-camera-results-partial.json",
+      "retained_path": "catalogue-supported-camera-results-partial.json",
+      "bytes": 4859,
+      "sha256": "59fd5c8c5f997187c009c6a737d4e42744d0b774a78ba69b6c04fca54b12037a"
+    },
+    {
+      "source_name": "catalogue-supported-camera-results.json",
+      "retained_path": "catalogue-supported-camera-results.json",
+      "bytes": 5259,
+      "sha256": "13a079cbe54a254fa5f3fee26c55f4064e58b9404bdf83e96cc1632ab21d40e7"
+    },
+    {
+      "source_name": "compile-main-java17.log",
+      "retained_path": "compile-main-java17.log",
+      "bytes": 143,
+      "sha256": "b4234ea01d8c2ee285cc944e1266f80d280b0c94786e141d162f0c2660cf68a6"
+    },
+    {
+      "source_name": "compile-main.log",
+      "retained_path": "compile-main.log",
+      "bytes": 198,
+      "sha256": "5e7935dba206dc7bf40626fd1bdafb589f815286eebe230ccea3f2a5ef76e64d"
+    },
+    {
+      "source_name": "compile-tests-java17.log",
+      "retained_path": "compile-tests-java17.log",
+      "bytes": 144,
+      "sha256": "eb379b67f359295c14a99415521c49c935dc7699bc5c9ca85c2012bcb2221a11"
+    },
+    {
+      "source_name": "final-targeted-results.json",
+      "retained_path": "final-targeted-results.json",
+      "bytes": 1074,
+      "sha256": "df5b28eabad44509c2c134447aa139c849e5313613ed6512d9472cd6fee6e1cb"
+    },
+    {
+      "source_name": "house-test-results.json",
+      "retained_path": "house-test-results.json",
+      "bytes": 1760,
+      "sha256": "698d098dfc66d5bddb69aceee163193b5dec8e17161a3eec48b82bc2d0edb6ae"
+    },
+    {
+      "source_name": "northwatch-current-case-binding.json",
+      "retained_path": "northwatch-current-case-binding.json",
+      "bytes": 3164,
+      "sha256": "f34289b3348cfca826e1fd72e86aa0863ec5291547750ebc90d55b1b76ce525a"
+    },
+    {
+      "source_name": "northwatch-current-case.tsv",
+      "retained_path": "northwatch-current-case.tsv",
+      "bytes": 890,
+      "sha256": "4a80c274631b9dbbb115470f3ee1bfc26d65e71339c8f3d27b6af490871e3f1a"
+    },
+    {
+      "source_name": "northwatch-current-classpath-resources.json",
+      "retained_path": "northwatch-current-classpath-resources.json",
+      "bytes": 481,
+      "sha256": "889df034a9f9defa7094049401e9ef9f562cf3e9f38885c232b026a1ea3ac990"
+    },
+    {
+      "source_name": "northwatch-validator-checks.json",
+      "retained_path": "northwatch-validator-checks.json",
+      "bytes": 3243,
+      "sha256": "fd72421fb1d95527297dc7b68346c6a5246d2acd54cdc141d935d16c4b07b441"
+    },
+    {
+      "source_name": "package-jar.log",
+      "retained_path": "package-jar.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_name": "resource-manifest-verification.json",
+      "retained_path": "resource-manifest-verification.json",
+      "bytes": 40337,
+      "sha256": "90e231c160c4cf5aa1ed893001fa9f8a35800aaa4ab56bfb7d1cbc88508f4ab8"
+    },
+    {
+      "source_name": "root-functional-results.json",
+      "retained_path": "root-functional-results.json",
+      "bytes": 2268,
+      "sha256": "6f245b16c5a6c1965c8132882edc1a63383975643e5649f1113363ad1f30ca53"
+    }
+  ]
+}

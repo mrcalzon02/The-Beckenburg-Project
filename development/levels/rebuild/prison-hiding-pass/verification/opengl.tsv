@@ -1,0 +1,15 @@
+measure	result
+native_scene_revision	ba7e72b6631fe1f7c30a734235d0c96fe3523616145571962f884a500dd86d8f
+packaged_solo_case	Regular Prison selection and supported cargo spawn
+PRISON-z-68-14	Closed/open/guest body, sight, aim, acoustics and object checks passed
+PRISON-x-18-65	Closed/open/guest body, sight, aim, acoustics and object checks passed
+sally_gate_collision	Both directions and postures agree with each replicated state
+sally_gate_optics	Real bars block sight and objects, with gaps between the bars
+sally_gate_acoustics	Bar and gap paths differ; the open aperture clears the centre line
+sally_gate_releases	Both manual levers are visible and reachable in both states
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+plant_breaker_and_independent_room_switches	12 controls and 26 fitted loads
+global_breaker_blackout	26 extinguished loads and 483071 altered pixels
+staged_mission_owners	15 supported owners and three retained ritual mounts
+staged_connected_route_replays	60 physical link direction and posture combinations
+supported_cargo_arrival	Van to reception and return in both postures

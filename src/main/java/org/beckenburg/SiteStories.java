@@ -13,8 +13,104 @@ public final class SiteStories {
   case "farmhouse"->new Identity("Hollowmere Farm","4 Mill Road, Beckenburg","Farmhouse dated 1798. Repaired after the 1947 winter; the landing washroom and shed laundry were later additions. The orchard and drying yard remain in use.");
   case "blackpine"->new Identity("Blackpine Logging Camp","North Forest logging road","A shuttered working camp. Payroll records and a shipping manifest disagree about the final crews. This fictional history does not identify the current haunting.");
   case "school"->new Identity("Ravenshade School","8 School Road, Beckenburg","Founded in 1894. The infant department opened in 1911 and a secondary extension followed in 1956. Successive coal, oil and modern boilers survive below the school.");
+  case "wld-04"->new Identity("Widow's Peak Fire Lookout","North Forest service road, Widow's Peak",
+   "The station logged weather, wind and smoke bearings. It became an emergency relay in late 2022. A radio keeper later maintained the road signal for travellers.");
+  case "wld-05"->new Identity("Dead Man's Claim","Highland Frontier mine service road",
+   "The assay office recorded grades and wages for the haul crews. The lower workings closed before Emergence Day. A rescue party returned with a tally and marked its withdrawal through the ventilation route.");
+  case "wld-06"->new Identity(WharfNativeLevel.TITLE,"Shore street, Coastal Territories",
+   "Fishing households and the two working piers shared a repair berth and fish landing. When the roads broke in late 2022, the crews ferried refugees and rationed their remaining fuel.");
+  case "wld-07"->new Identity("Saint Bartholomew's Forgotten Cemetery","Cemetery lane, Northern Woodlands",
+   "The parish kept separate registers for numbered plots and memorials. The caretaker maintained the grounds and both stairs to the ossuary. A rescue party used the old register to account for missing people in late 2022.");
+  case "wld-07-mortuary"->new Identity("Saint Bartholomew's Cemetery and Vale Mortuary","Cemetery lane, Northern Woodlands",
+   "Vale Mortuary later opened beside the burial grounds, with a public entrance and a separate vehicle receiving bay. The visitor registry and the parish register record different kinds of arrivals.");
+  case "wld-08"->new Identity("Northwatch Research Station","Northwatch service road, Northern Expanse",
+   "An insulated research station kept weather and radio logs. After the first attacks the remaining crew rationed heat and tried to re-establish a safe link.");
+  case "wld-10"->new Identity(MonasteryNativeLevel.TITLE,"Highland Frontier mountain road",
+   "The monastery kept a daily bell register and ran a communal refectory. In late 2022 the gatehouse began taking in travellers, and the refectory recorded the extra places at supper.");
+  case "wld-16"->new Identity("Eight Pines Motor Lodge","Highway 6, Beckenburg outskirts",
+   "Eight roadside rooms shared a reception desk, linen room and heating plant. When traffic stopped in late 2022, the manager kept a register of stranded travellers.");
+  case "wld-17"->new Identity("Seacliff Battery","Headland service road, Coastal Territories",
+   "A coastal watch station with a raised director room and lower living and service quarters. Its crew kept a separate record of ships and cliff-road traffic.");
+  case "wld-13"->new Identity("Greywater Cannery","Forest-road loading gate, Coastal Territories",
+   "The cannery's dock, cold stores, packing floor, and staff buildings operated as one shift. The last departure was never signed off.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
+  case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
+   "Final entry on the regular ranger frequency, late 2022.",
+   "Ground crews reported the forest road interrupted beyond the lower gate. The radio keeper relayed travellers' reports from the ranger room and directed groups to the roadhead.",
+   "A later hand copied the channel numbers and marked which replies were heard. The missing replies remain unconfirmed."));
+  case "SIGHTING_LOG"->lookoutDocument(site,id,"Cab sighting log",List.of(
+   "Fire watch bearings and wind log, Widow's Peak observation deck.",
+   "Ordinary smoke bearings stop halfway down the page. The following lines list an emergency frequency and times of calls from the road.",
+   "A Meridian team added a return bearing to the lower gate. Its note recommends making contact from the ranger room when the tower stairs are unsafe."));
+  case "ASSAY_LEDGER"->mineDocument(site,id,"Assay and wages ledger",List.of(
+   "Dead Man's Claim assay office. Final entries before suspension.",
+   "The west ore samples are entered against the haul crew's wages. The foreman has struck out the lift allocation and moved the stores tally to the surface.",
+   "A later pencil note asks the crew to leave the sampling bench clear for the return party."));
+  case "RESCUE_TALLY"->mineDocument(site,id,"Return party tally",List.of(
+   "Crew house dispatch bench. Late 2022.",
+   "The return party checked the haul stairs and marked the ventilation way back to the headhouse. Two names are ticked on return. The last line is blank.",
+   "The writer asks the next party to carry a lamp and leave someone at the roadhead. The lift remains out of service."));
+  case "DEPARTURE_TALLY"->wharfDocument(site,id,"Boathouse departure tally",List.of(
+   "Boathouse repair bench. First week after the shore road closed.",
+   "The coxswain lists the people aboard each crossing by household. The transferred fuel cans are struck off as they go. Two berths were left empty for the return crew.",
+   "A later hand rings the last landing time. Leave the western mooring line out for boats returning in the dark."));
+  case "CROSSING_SHEET"->wharfDocument(site,id,"Catch and crossing sheet",List.of(
+   "Fish house sorting bench. The catch weights stop halfway down the sheet.",
+   "The remaining lines list fuel issued against crossings and people waiting on the dock. Use the cross-dock to reach the other pier. The loose outer berth is closed until it can be inspected.",
+   "A Meridian surveyor later copied this sheet and left the original at the bench."));
+  case "MEMORIAL_REGISTER"->cemeteryDocument(site,id,false,"Memorial register",List.of(
+   "Parish copy. Plot numbers run east from the avenue. Replacement stones keep the original number.",
+   "The last two caretaker signatures overlap. One hand has crossed out the succession date and left room for a parish countersignature.",
+   "Late 2022. The rescue party copied a second list of missing people. Keep it separate from the memorial entries until someone brings word."));
+  case "VISITOR_REGISTER"->cemeteryDocument(site,id,true,"Vale visitor register",List.of(
+   "Visitors sign in at reception and wait for the attendant before entering the viewing room.",
+   "The lined entries are names of visitors. Transfers are recorded on a separate sheet kept at the receiving bay.",
+   "Late 2022. The attendant has circled three addresses for the next search party and written a time to meet at the cemetery gate."));
+  case "WINTER_RELAY_LOG"->northwatchDocument(site,id,"Winter relay log",List.of(
+   "Northwatch operations record, late 2022. The regular weather call moved to the emergency channel after the road was cut.",
+   "The instrument array still sent hourly readings. The signal faded when ice loaded the mast, then returned after the crew cleared it.",
+   "The last two replies are marked unconfirmed. The next crew should compare this log with the fuel and heat worksheet in the shed."));
+  case "FUEL_AND_HEAT_WORKSHEET"->northwatchDocument(site,id,"Fuel and heat worksheet",List.of(
+   "Shed copy. Keep the tunnel lamps on during travel and run the service court lights only while the crew crosses.",
+   "The spare fuel went to the generator. A crew member marked the fuel level again after the last interrupted relay call.",
+   "Keep water in the cistern and the lab approach clear for the relief team."));
+  case "ASHEN_BELLS_REGISTER"->monasteryDocument(site,id,"Ashen Bells register",List.of(
+   "Archive copy of the daily bell register. The bell for supper was struck twice on feast days.",
+   "Late 2022. The porter began counting travellers at dusk. When the road fell quiet, supper was moved earlier so the kitchen could spare lamp oil.",
+   "The final entry asks the next porter to leave a lamp by the gatehouse door."));
+  case "REFECTORY_RATION_SHEET"->monasteryDocument(site,id,"Refectory ration sheet",List.of(
+   "The kitchen copy lists bread, dry peas, and the number of people expected for supper.",
+   "A second hand adds places for the travellers sleeping in the north range. Two bowls are marked for collection by people who could not join the common table.",
+   "The cook pencilled tomorrow's bread count in the margin. The line for delivery from the road is empty."));
+  case "PINES_GUEST_REGISTER"->{
+   if(!site.equals("wld-16"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Eight Pines guest register",List.of(
+    "Late 2022. West wing keys are on their hooks. Move arriving families to the east wing when the west rooms fill.",
+    "If the heating trips again, use the laundry door to reach the plant. Keep the loading aisle clear for clean blankets.",
+    "The last party wrote an expected arrival time beside their room numbers. No arrival was entered."));
+  }
+  case "SEACLIFF_DIRECTOR_LOG"->{
+   if(!site.equals("wld-17"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Seacliff director's log",List.of(
+    "Late 2022. The morning watch logged two vessels beyond the headland. By evening the road party had still not returned.",
+    "Keep someone at the gallery door when the lower crew changes watch. The new stair lamp is on the west side of the landing.",
+    "The last watch left a pair of bearings for the relief crew. The space for the time of their arrival is blank."));
+  }
+  case "GALLOWS_SIGNAL_REGISTER"->{
+   if(!site.equals("wld-12"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Gallows signal register",List.of(
+    "The passenger service is suspended. Leave the approach signal at danger until the permanent-way crew reports back.",
+    "The crew checked in on the tunnel refuge telephone before inspecting the trestle. Spare rail fittings are in the track stores.",
+    "The last line is a request to send a replacement lamp. There is no signature in the return column."));
+  }
+  case "GREYWATER_DISPATCH_LOG"->{
+   if(!site.equals("wld-13"))throw new IllegalArgumentException("Unknown readable object");
+   yield new Document(id,"Greywater dispatch log",List.of(
+    "Last outbound shift, late 2022. Mark each crate at the packing door before sending it to the dock.",
+    "The refrigeration belt stopped at dusk. The night crew moved the remaining stock to the cold room by hand, then checked the boiler.",
+    "The driver signed in at the gate. No one signed the load out."));
+  }
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -22,6 +118,43 @@ public final class SiteStories {
   case "MENDING"->new Document(id,"Inherited mending tin",List.of(place.address(),"A faded tin, wooden thread bobbins, crossed scissors and carefully saved needles. The lid has been kept with it.","Useful things outlived the people who first bought them; the household kept repairing instead of replacing."));
   case "BOOTS"->new Document(id,"Work boots by the laundry",List.of(place.address(),"Mud-darkened leather, worn soles and re-laced eyelets. Left beside the washing area to dry before the next day's work."));
   default->throw new IllegalArgumentException("Unknown readable object");};}
+ static String nativeBelonging(String site,String id){
+  if(site.equals("wld-10"))return switch(id){
+   case "PORTER_DELIVERY_LEDGER" -> "The porter's clothbound ledger has a square of clean fabric where a gate key used to rest.";
+   case "ARCHIVE_BRASS_CANDLESTICK" -> "A brass holder kept within reach of the archive desk. Old wax has gathered around its foot.";
+   case "REFECTORY_COMMON_MUG" -> "A chipped mug left beside the common table's ration sheet.";
+   case "REFECTORY_EXTRA_BOWL" -> "A spare blue bowl set out between the last two places in the refectory.";
+   case "BELL_RINGER_TEA_TIN" -> "A dented tea tin beside the bell gallery's wall. A strip of felt muffles the lid.";
+   case "MEMORIAL_OIL_BOTTLE" -> "A corked stoneware bottle beside the old memorial stalls. The dry rim still smells faintly of lamp oil.";
+   default -> throw new IllegalArgumentException("Unknown native belonging "+id);
+  };
+  throw new IllegalArgumentException("Unknown native belongings for "+site);
+ }
+ private static Document monasteryDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-10"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
+ private static Document northwatchDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-08"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
+ private static Document cemeteryDocument(String site,String id,boolean annexOnly,String title,List<String> lines){
+  if(!site.equals("wld-07-mortuary")&&(annexOnly||!site.equals("wld-07")))
+   throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
+ private static Document wharfDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-06"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
+ private static Document mineDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-05"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
+ private static Document lookoutDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-04"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
  private static void reading(LevelPlans.B b,String id,String mesh,int room,String parent,double top,double side,double depth){
   var support=b.props.stream().filter(p->p.room()==room&&p.mesh().equals(parent)).findFirst().orElse(null);if(support==null)throw new IllegalStateException("Missing narrative support "+b.id+" "+parent+" room "+room);
   double x=support.x()+side*Math.cos(support.yaw())-depth*Math.sin(support.yaw()),z=support.z()+side*Math.sin(support.yaw())+depth*Math.cos(support.yaw());

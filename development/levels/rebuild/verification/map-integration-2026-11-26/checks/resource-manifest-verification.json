@@ -1,0 +1,917 @@
+{
+  "source_main": "9f1cf5e2b5535b2ded46eba07d55c78f61211775",
+  "source_candidate": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+  "scope": "All101nativepacketresourcescheckedbyte-for-byte in locally assembled ordinary InvestigationGame JAR; Windows installer/GPU gates separate",
+  "jar_sha256": "f83b71c540f1c195be03ea396f8f2d7349920dd93951cb4ba9755452a69c5237",
+  "resources": [
+    {
+      "source": "development/levels/rebuild/seacliff-room-services/battery.glb",
+      "resource": "org/beckenburg/sites/seacliff-native.glb",
+      "candidate_blob": "bef5e3b20338ac51ba433a335909b55b7d475049",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "04c4c47fd884a1e931bf8c283a31f3ec9b0fb40558544b0a1cb8bd7fca7c925f",
+      "bytes": 6619948
+    },
+    {
+      "source": "development/levels/rebuild/seacliff-room-services/battery.hcs2",
+      "resource": "org/beckenburg/sites/seacliff-native.hcs2",
+      "candidate_blob": "681ccf4271fa69decd0fa8dec3fe56293fe215c9",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "829d5fe47ccfd35aed7da4089b76e65e0a6d94f18c8a330a95060ce8b3252079",
+      "bytes": 1221243
+    },
+    {
+      "source": "development/levels/rebuild/seacliff-room-services/runtime.tsv",
+      "resource": "org/beckenburg/sites/seacliff-runtime.tsv",
+      "candidate_blob": "79fe1601b20e33f7a1e038c62e3bb1f327df9e39",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "3da91c22e7b38b13a9fa846e111ba082aca3cc3390e847cab71e1040c8e97d79",
+      "bytes": 14458
+    },
+    {
+      "source": "development/levels/rebuild/college-residence-pass/college/college-residence.glb",
+      "resource": "org/beckenburg/sites/college-native.glb",
+      "candidate_blob": "596bfd52d6ad6021e9ea358d32c4a332d1d10115",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "9b50981a344427fe5c5677f63d461e1b6eb35f4e1ce5efd648c44582690b8df9",
+      "bytes": 13040052
+    },
+    {
+      "source": "development/levels/rebuild/college-residence-pass/college/college-residence.hcs2",
+      "resource": "org/beckenburg/sites/college-native.hcs2",
+      "candidate_blob": "94b6b65cf2deedf9c258ccdb86fcf18b6a53be1d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "26e528df3a85a452f87653585b139c1194c7dcb5686fd4921f6dbba9a9054f76",
+      "bytes": 6847610
+    },
+    {
+      "source": "development/levels/rebuild/college-residence-pass/verification/runtime.tsv",
+      "resource": "org/beckenburg/sites/college-runtime.tsv",
+      "candidate_blob": "ff69827f3e6da0af915d690a4b1a1375ff694520",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a33f426de03a820ee71e9e46067689f4e05bc1097d19458580e23af8d653e096",
+      "bytes": 20205
+    },
+    {
+      "source": "development/levels/rebuild/school-electrical-pass/school-electrical.glb",
+      "resource": "org/beckenburg/sites/school-electrical.glb",
+      "candidate_blob": "b8d8b559f48af217af65d8ac19809f9ea6f8156f",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "f98180dff6296b89935a05cbbfa92778dfcf990c56dc80e817f875aa0e2989d9",
+      "bytes": 3774052
+    },
+    {
+      "source": "development/levels/rebuild/school-electrical-pass/school-electrical.hcs2",
+      "resource": "org/beckenburg/sites/school-electrical.hcs2",
+      "candidate_blob": "b6e10216a060467818c8bb1026fe887edc62aaca",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "14543c43d51b0e58c78c6aae9c2edd57708ad7f3598f04a47471c668c4d75244",
+      "bytes": 1190670
+    },
+    {
+      "source": "development/levels/rebuild/school-electrical-pass/circulation.tsv",
+      "resource": "org/beckenburg/sites/school-circulation.tsv",
+      "candidate_blob": "467d06cd1b8bac2d5b6e698b74d39e7126307eb5",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6075a6e2578c380810072d8bbf6541f84a4cc9f3a484f7e894093e47aeb4c579",
+      "bytes": 6710
+    },
+    {
+      "source": "development/levels/rebuild/school-electrical-pass/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/school-door-schedule.tsv",
+      "candidate_blob": "7d0522b5edd3574edb0666a179898d00943146bd",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b4037a0a0e71625a2897b69aead8e532e5794f299f8e7933090b951e5d531a36",
+      "bytes": 7491
+    },
+    {
+      "source": "development/levels/rebuild/school-electrical-pass/mission.tsv",
+      "resource": "org/beckenburg/sites/school-mission.tsv",
+      "candidate_blob": "e69cd687da98c8194d8dd9282e991445f82455f1",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b0362cd9ee0216e5fb128580c3335596cd16632e1ea7f7916f91bb3799d85705",
+      "bytes": 587
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.glb",
+      "resource": "org/beckenburg/sites/prison-vehicle-sally.glb",
+      "candidate_blob": "636cbd7dcd617c6f95cf621c6c614a991d124c06",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6dffd2d22029521e7a07a63c9e1260bfb2b90afa28de4a2b58a032b6c7909bb1",
+      "bytes": 4372664
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.hcs2",
+      "resource": "org/beckenburg/sites/prison-vehicle-sally.hcs2",
+      "candidate_blob": "40eeeb1e50303708219a5f57d8ceb377dfc2cc0e",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c0b786825f6d999ec7aaacd57777daf3883e9d63e209d61b1d5d61d6cab5840b",
+      "bytes": 1415747
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/arrival.tsv",
+      "resource": "org/beckenburg/sites/prison-arrival.tsv",
+      "candidate_blob": "f2117450a4b9656620d5f430edb4c57da441b18e",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "871ecea52aded5d740c18edff7e466559654c36076f434b2d9ab4c14c7487f2b",
+      "bytes": 5370
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/door-survey.tsv",
+      "resource": "org/beckenburg/sites/prison-door-survey.tsv",
+      "candidate_blob": "359d4044134bb74eaef3792af09ce1c07d5ba420",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "35c3febfdef458b1b804c6dd26334430dffec09003ac398367dee9202d4f2523",
+      "bytes": 281
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/mission.tsv",
+      "resource": "org/beckenburg/sites/prison-mission.tsv",
+      "candidate_blob": "94a95a5fe7af90ddeb4b3399f7902c23ffba935b",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "5c8546b6b301e3d455b099f7893eacf0ec7f46dfb572ef44f63f2655d0a227a1",
+      "bytes": 3854
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/gate.tsv",
+      "resource": "org/beckenburg/sites/prison-gate.tsv",
+      "candidate_blob": "e124728aef65c5da1a1520243126b22e8113e6d8",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "2cdbeb22df9c20131f4236bac4072680437feef91d2558a58bb48c11b71a00aa",
+      "bytes": 311
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/vehicle-gate.tsv",
+      "resource": "org/beckenburg/sites/prison-vehicle-gate.tsv",
+      "candidate_blob": "742b977374f77f6bed008ecd0acf9462855abc26",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "938ccff90139e19b2b4bcecdb01c871f8187e5e8476764641f58275da650609a",
+      "bytes": 332
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/services.tsv",
+      "resource": "org/beckenburg/sites/prison-services.tsv",
+      "candidate_blob": "4fd1ae3376db3be2a4c0bf56d70b88350a966262",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "043b00352c6ced18c3b32b6376511691cd755327a00316358bd37ce2acd5cbbb",
+      "bytes": 2831
+    },
+    {
+      "source": "development/levels/rebuild/prison-sally-gate-pass/sally-moving-panel.glb",
+      "resource": "org/beckenburg/sites/prison-sally-moving-panel.glb",
+      "candidate_blob": "c03c64ac6800a5921b43ad1afa8e6fe28cd8042a",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b69bd8e296ea63e627811689b7a7e5ed2d4ed5e0f82133d7fe3acf2bfd125cb2",
+      "bytes": 22120
+    },
+    {
+      "source": "development/levels/rebuild/prison-vehicle-sally-pass/vehicle-moving-panel.glb",
+      "resource": "org/beckenburg/sites/prison-vehicle-moving-panel.glb",
+      "candidate_blob": "75cf036ca1ddb4e069cc4fd74e573c1117fd4b8d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "87d14f73ab08b7ccca4d24ffd1e5cb6646bdfffce8bbc7f9209acfb2ee15fb39",
+      "bytes": 22664
+    },
+    {
+      "source": "development/levels/rebuild/lookout-case-pass/lookout-case.glb",
+      "resource": "org/beckenburg/sites/lookout-case.glb",
+      "candidate_blob": "c7fb494ce0ec8ff279e6ed16981df30d0f315a2d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b576880e706b4cc27ae2519c8ee065b015cfabaceaf533ee8254ad6ef1cef2f5",
+      "bytes": 7815540
+    },
+    {
+      "source": "development/levels/rebuild/lookout-case-pass/lookout-case.hcs2",
+      "resource": "org/beckenburg/sites/lookout-case.hcs2",
+      "candidate_blob": "932ce38b72bf3496d889769328a30851db29e5a0",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c41dfb6f7304985ee253d91f6c11627639662b06d06b16f2753d5f0e59ad1777",
+      "bytes": 1460771
+    },
+    {
+      "source": "development/levels/rebuild/lookout-case-pass/arrival.tsv",
+      "resource": "org/beckenburg/sites/lookout-arrival.tsv",
+      "candidate_blob": "13aa8d2853aa14072518fe4f5ed97521968cf001",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "31c5aabe27c819c77ed0e7eb39ce171c0a2d3bb882a0eb5b2f6f0ed8f6ab751b",
+      "bytes": 10299
+    },
+    {
+      "source": "development/levels/rebuild/lookout-case-pass/door-survey.tsv",
+      "resource": "org/beckenburg/sites/lookout-door-survey.tsv",
+      "candidate_blob": "64e54acf1450558ef2a0d40a22a2a95052820f6f",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c2188663f2ec38340ad40c738ca5fc95a8bfb4dd5c92a399947830fd04f82198",
+      "bytes": 1070
+    },
+    {
+      "source": "development/levels/rebuild/lookout-case-pass/mission.tsv",
+      "resource": "org/beckenburg/sites/lookout-mission.tsv",
+      "candidate_blob": "d06d7cc7afc921f233e97a9f813662163d321edc",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "0ded5b04082c903a1bbcbcffaed8337066605dde7746475c8adcd3c9740a02cf",
+      "bytes": 726
+    },
+    {
+      "source": "development/levels/rebuild/mine-case-pass/mine-case.glb",
+      "resource": "org/beckenburg/sites/mine-case.glb",
+      "candidate_blob": "db29d449a82276e18e80e5346562512a2e7fcb82",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "fef1de7f0fd426305b22a89c9d8a11c3583e635e2a32731dc05eac6a70aa6d8e",
+      "bytes": 8983408
+    },
+    {
+      "source": "development/levels/rebuild/mine-case-pass/mine-case.hcs2",
+      "resource": "org/beckenburg/sites/mine-case.hcs2",
+      "candidate_blob": "6c5c402f9af03640b3a8cbd28530866d90e2ab31",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6b4407d2bb1807127044085c9b1caa0fa049149621a12b10cf37d375a96f2920",
+      "bytes": 2468039
+    },
+    {
+      "source": "development/levels/rebuild/mine-case-pass/arrival.tsv",
+      "resource": "org/beckenburg/sites/mine-arrival.tsv",
+      "candidate_blob": "9ad0c7afe2a8ad7427d2b32584e9f2c46e00eeb5",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c1cfbb885ed0da3b50d3d6d06a13af65077e23227d694401feb1cbc97f8b6d2c",
+      "bytes": 10865
+    },
+    {
+      "source": "development/levels/rebuild/mine-case-pass/door-survey.tsv",
+      "resource": "org/beckenburg/sites/mine-door-survey.tsv",
+      "candidate_blob": "cec76f974d2a2b098a1c81e8bd4108cbe22162e1",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6d02d3c0edbc949f4b0210e62aa23547f4dd9696d0c63c5f6ba0ba695d58f0b0",
+      "bytes": 1214
+    },
+    {
+      "source": "development/levels/rebuild/mine-case-pass/mission.tsv",
+      "resource": "org/beckenburg/sites/mine-mission.tsv",
+      "candidate_blob": "efd9c09423f4dd35ff9523e575a466826ee778d3",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "2356f2d43e1b2323114a2a9d9ee20705fee6d72bb8394b49cc3f9e24f0df8462",
+      "bytes": 697
+    },
+    {
+      "source": "development/levels/rebuild/mine-case-pass/mine-sump.water",
+      "resource": "org/beckenburg/sites/mine-sump.water",
+      "candidate_blob": "74e0c4c9f0bd2e1c6d9131ca3fa652c2a9004d42",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6001ddd6088a78541d85eff4dc38bb1d83ce5294f10b5e16c5b2a5eb83624dd1",
+      "bytes": 481
+    },
+    {
+      "source": "development/levels/rebuild/wharf-case-pass/wharf-case.glb",
+      "resource": "org/beckenburg/sites/wharf-case.glb",
+      "candidate_blob": "7f4e4e110a4f2d98004fee3acd3eb6e57cb6dcca",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "28fd1f0578233d204ea601389517383ce495d495fde1b7a2f455b95dc3e82a90",
+      "bytes": 6794988
+    },
+    {
+      "source": "development/levels/rebuild/wharf-case-pass/wharf-case.hcs2",
+      "resource": "org/beckenburg/sites/wharf-case.hcs2",
+      "candidate_blob": "d3c74bbe2fa2a2a198bf3b50fbb83c6106f11574",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "f8373bc5fe2e07d9090581276ea330839ba600f2c30aeda80e8f6406cd39bffe",
+      "bytes": 2084747
+    },
+    {
+      "source": "development/levels/rebuild/wharf-case-pass/room-layout.tsv",
+      "resource": "org/beckenburg/sites/wharf-room-layout.tsv",
+      "candidate_blob": "82adff72389b14dbcdadbebd055f185faa9f850b",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "35949ffd915aa7652878aa86001ce5815fb59dd3d900286e64ead01f5e814076",
+      "bytes": 7229
+    },
+    {
+      "source": "development/levels/rebuild/wharf-case-pass/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wharf-door-schedule.tsv",
+      "candidate_blob": "38b44434a598940d1122a7eb45c5c58cc4603438",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "0f5bd05208f580731ddc4456b1d652b4608477ebadd2edf9af1d0fd70f1685e7",
+      "bytes": 1136
+    },
+    {
+      "source": "development/levels/rebuild/wharf-landward-pass/wharf-tide.water",
+      "resource": "org/beckenburg/sites/wharf-tide.water",
+      "candidate_blob": "4ea33ff27287b873dc848f43aef45d6897f0f12b",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c479bfaf453a91e6a4a6df35300609561e6b322d91a4db49f9f66bec920a42cc",
+      "bytes": 3195
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.glb",
+      "resource": "org/beckenburg/sites/wld-07/furnished-grounds.glb",
+      "candidate_blob": "b97d6f9df269294c40acb51957093ab21749ff3b",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "92082fab09a374986afc7cdfcb1e1f97f7b8bbd9fb9090948b94ff08eec8e172",
+      "bytes": 4364500
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.hcs2",
+      "resource": "org/beckenburg/sites/wld-07/furnished-grounds.hcs2",
+      "candidate_blob": "bfdda94976d896707305e0f817779b88083b2c8a",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "37751f18a66a66885135ea9d594f05bbc352bc6e7e8695d8947fb97c9e42ce8d",
+      "bytes": 1397028
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/room-layout.tsv",
+      "resource": "org/beckenburg/sites/wld-07/room-layout.tsv",
+      "candidate_blob": "2d31e9b576636dc846c348eddea291a726bcffe0",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "589c30ee55793b2e7f0ed096d5fac23714933f4383f6547d47cd29e978383d10",
+      "bytes": 6446
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-07/door-schedule.tsv",
+      "candidate_blob": "1de9f4642af3a38c6fe677bcd3d61e2376d65fb3",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6",
+      "bytes": 1002
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.glb",
+      "resource": "org/beckenburg/sites/wld-07-mortuary/furnished-grounds.glb",
+      "candidate_blob": "451d704581582cf3b6f6925be2592afc9a8ed1e3",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "50b13ad6feaac78123357a402b966d8fc7081f587769833f0e9a1a747a0d277d",
+      "bytes": 6513688
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.hcs2",
+      "resource": "org/beckenburg/sites/wld-07-mortuary/furnished-grounds.hcs2",
+      "candidate_blob": "4f448bc891c8f8577d8968bd663dc2dc46a1d25a",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "3dcbda073a08bd12ff81296893691229e22df0a28c3095ef18ff3174fe3213de",
+      "bytes": 1969629
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/room-layout.tsv",
+      "resource": "org/beckenburg/sites/wld-07-mortuary/room-layout.tsv",
+      "candidate_blob": "4bd88ee748a5e1cf05aebca9cff7374f75f93b45",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "cc740ae323a51071fb8f69427b5dd03458b26dd2a1e180d6da1f15e622621f39",
+      "bytes": 9445
+    },
+    {
+      "source": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-07-mortuary/door-schedule.tsv",
+      "candidate_blob": "f1317589435b7b7a264497edca975ebfbe55c8de",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77",
+      "bytes": 2614
+    },
+    {
+      "source": "development/levels/rebuild/red-mesa-native-pass/red-mesa-review.glb",
+      "resource": "org/beckenburg/sites/wld-03/red-mesa-review.glb",
+      "candidate_blob": "6236972e7aefc9a163bd394604a1a220c4b0555d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6e7719e5d7a12d6ee0410ad26eb8cba717b73c51aa4beab81f545552be99f2fb",
+      "bytes": 6481716
+    },
+    {
+      "source": "development/levels/rebuild/red-mesa-native-pass/red-mesa-review.hcs2",
+      "resource": "org/beckenburg/sites/wld-03/red-mesa-review.hcs2",
+      "candidate_blob": "e36f7a8fc2925e61699f33968efa3fe6aa5dc6fe",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a0efc3684305df4e21536f13d682ce4a12a5f74a845dd6f132943025fa802c48",
+      "bytes": 1246012
+    },
+    {
+      "source": "development/levels/rebuild/red-mesa-native-pass/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-03/runtime-input.tsv",
+      "candidate_blob": "b8fdd041527d6a583fe96f327190faed337a0f0d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "719b976ab48514c99a070fddfa918ef8433ab821017cf51ed55c0194df99bf38",
+      "bytes": 9623
+    },
+    {
+      "source": "development/levels/rebuild/red-mesa-native-pass/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-03/door-schedule.tsv",
+      "candidate_blob": "68d3839953f7cf5efa4210689b6febc74dab9cba",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c32ced12a60b42746475c19fb857c2624225ffd450902a905731434d5f24ef57",
+      "bytes": 622
+    },
+    {
+      "source": "development/levels/rebuild/mourning-marsh-native-pass/marsh-review.glb",
+      "resource": "org/beckenburg/sites/wld-11/marsh-review.glb",
+      "candidate_blob": "f9bae23b8bccd82a307926ba251e60ff05c9557b",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "bf20a91a15eb0b3aead99b8d6a0a643de3099afdb2e3d0adb40771295283ab5a",
+      "bytes": 4298900
+    },
+    {
+      "source": "development/levels/rebuild/mourning-marsh-native-pass/marsh-review.hcs2",
+      "resource": "org/beckenburg/sites/wld-11/marsh-review.hcs2",
+      "candidate_blob": "5fae51380fdd6d8d197b99d123f139c091108f3f",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "3035bfc8ac1c63184df5c910959f2e3a21523cb81d57cc91b3c91307581032fa",
+      "bytes": 1164027
+    },
+    {
+      "source": "development/levels/rebuild/mourning-marsh-native-pass/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-11/runtime-input.tsv",
+      "candidate_blob": "dde6d2228cd2b2c2b7037fe51518f17bdbf47fd9",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "5398fd38d5603056041e9f704e38aa80e6d8646a57b78882e17c9ccba169c571",
+      "bytes": 4570
+    },
+    {
+      "source": "development/levels/rebuild/mourning-marsh-native-pass/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-11/door-schedule.tsv",
+      "candidate_blob": "687ba01b2bdb0d8ebc138fdb275a568ffe979ee6",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "e32e128bc5884ad74045a4eb5f8ef9bc3bf5b40cacd7c838b928dd1c85100277",
+      "bytes": 1021
+    },
+    {
+      "source": "development/levels/rebuild/gallows-pass/railway.glb",
+      "resource": "org/beckenburg/sites/wld-12/railway.glb",
+      "candidate_blob": "5c90f1230f7a8245e0aab401a0041ca6618c2e33",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "2dfd13e282cad531908f8efaea9e456c7eec0b780f23dc8321955074b8863c78",
+      "bytes": 9848084
+    },
+    {
+      "source": "development/levels/rebuild/gallows-pass/railway.hcs2",
+      "resource": "org/beckenburg/sites/wld-12/railway.hcs2",
+      "candidate_blob": "8e98356bf3007848c6e1048106f64fd554276e78",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "7985938b07ea8512b6b80c6503c395bfb228f06e92a97ae48e7ce75c9f6307ea",
+      "bytes": 1577593
+    },
+    {
+      "source": "development/levels/rebuild/gallows-pass/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-12/runtime-input.tsv",
+      "candidate_blob": "995e391df6a91e3042eff2a960131402a78ed1a9",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a434e4150bd62b7b4b72633d6e08cdd964d78e59aecc663b5b32f9e70b7cbef4",
+      "bytes": 6642
+    },
+    {
+      "source": "development/levels/rebuild/gallows-pass/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-12/door-schedule.tsv",
+      "candidate_blob": "70caac9387dd17f5b27517f792b68d143d9eee8f",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "ee2bca92664145d5b3d9cdef5b142166eba47311313b75e748c4712046899e86",
+      "bytes": 1757
+    },
+    {
+      "source": "development/levels/rebuild/cinder-6/facility.glb",
+      "resource": "org/beckenburg/sites/wld-18/facility.glb",
+      "candidate_blob": "a4fc421c9850fa0967a314f209303b2d95e1dedf",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "c9bc6b4ffa11950a6fa60040dc40924f6fa6e56a64db1df1311928d418b0dcdd",
+      "bytes": 8398308
+    },
+    {
+      "source": "development/levels/rebuild/cinder-6/facility.hcs2",
+      "resource": "org/beckenburg/sites/wld-18/facility.hcs2",
+      "candidate_blob": "b2e77997050baa5b86f1b0aef6a93bb916915ebf",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b24cc4005266c657edcea43dc19dc01d1eda61c6faee9a42f2b704c485123aba",
+      "bytes": 2121051
+    },
+    {
+      "source": "development/levels/rebuild/cinder-6/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-18/runtime-input.tsv",
+      "candidate_blob": "ca201301aabe9623c9c72a9e3491749084d301af",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "40b9cb88a302b67e5e275eac9955864a66bb019de05ac23ebef62df8ed243265",
+      "bytes": 13312
+    },
+    {
+      "source": "development/levels/rebuild/cinder-6/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-18/door-schedule.tsv",
+      "candidate_blob": "fbff40ad47968325829a6d6933c45776f9e8bfd3",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "7083379a38f08f9cd3346940be324f0a9d4bb1e2fdcad0eacf0ca788dd1c0d86",
+      "bytes": 1710
+    },
+    {
+      "source": "development/levels/rebuild/eight-pines/motor-lodge.glb",
+      "resource": "org/beckenburg/sites/wld-16/motor-lodge.glb",
+      "candidate_blob": "494034d248f557085a68b0da56bd712bcc24f148",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "6e29fa9ba05f23bf298c46ef15bfc4946f3a33d64558ede05c1e23609f3a6d58",
+      "bytes": 5391504
+    },
+    {
+      "source": "development/levels/rebuild/eight-pines/motor-lodge.hcs2",
+      "resource": "org/beckenburg/sites/wld-16/motor-lodge.hcs2",
+      "candidate_blob": "0c466b932407a902d28004220ee9e9f729b580f0",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "50f94be7ba2df82006958f429181526842a79bc629e2581bf04b0282b29a543d",
+      "bytes": 1520990
+    },
+    {
+      "source": "development/levels/rebuild/eight-pines/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-16/runtime-input.tsv",
+      "candidate_blob": "8e113e206697309d23dc24e5815d927dd6edf0ba",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "53563644f79e6f05cd9e4678e3449ea6e69d75d64526622ba6053641d90d404f",
+      "bytes": 5246
+    },
+    {
+      "source": "development/levels/rebuild/eight-pines/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-16/door-schedule.tsv",
+      "candidate_blob": "eabc2a6626f90224d8fb4131d9deb6b97aea9e7d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "161e2eb1784212e8604bc721850ab1f5fab044dc4bbf3bb829a1d4d887ce11ff",
+      "bytes": 2235
+    },
+    {
+      "source": "development/levels/rebuild/saint-elara/vessel.glb",
+      "resource": "org/beckenburg/sites/wld-15/vessel.glb",
+      "candidate_blob": "2eeb70d5af8dbff6bfd88f9b4660d83c132d004d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "03112abbfdac30cf3cc487a8d0f1f896d41d6f4a475430b98a9d0d24b05d8299",
+      "bytes": 2423892
+    },
+    {
+      "source": "development/levels/rebuild/saint-elara/vessel.hcs2",
+      "resource": "org/beckenburg/sites/wld-15/vessel.hcs2",
+      "candidate_blob": "54273634ea25edd5f1b8848f62be79fe5c4f286e",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "93a9ccc4fe0882ee82a2518e9127c17aac116e184fbd7c24c4ecd2de01ff17df",
+      "bytes": 1216920
+    },
+    {
+      "source": "development/levels/rebuild/saint-elara/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-15/runtime-input.tsv",
+      "candidate_blob": "6c86f9fef7c9c883aa7eec8dccafbc6af1f6038d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "05f408ddbd121045839a53f1a156ecde2eec964d55ba30af47495a3ee852c905",
+      "bytes": 8778
+    },
+    {
+      "source": "development/levels/rebuild/saint-elara/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-15/door-schedule.tsv",
+      "candidate_blob": "da377ba3498040b5469dee6857c764de4e1df6b1",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "f4645e1ab877b589e7383e24aa6944b4d0c8cfc10f28ddc6f4d0bf926e8abe11",
+      "bytes": 1094
+    },
+    {
+      "source": "development/levels/rebuild/morrow-point/lightstation.glb",
+      "resource": "org/beckenburg/sites/wld-14/lightstation.glb",
+      "candidate_blob": "583b180a8f40a869f2f20063776cd317b081a58a",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a5237915e7215ff80617387962d696741d51367448afa748fa57067a604ebd56",
+      "bytes": 9530096
+    },
+    {
+      "source": "development/levels/rebuild/morrow-point/lightstation.hcs2",
+      "resource": "org/beckenburg/sites/wld-14/lightstation.hcs2",
+      "candidate_blob": "51da9d166ffaa4c124b4a415d6b2cafa990339e5",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "cc0bc2824c2e3671882e05f436f6633cc2d79efbdcd2e4a02bc9ee8503ffb5d1",
+      "bytes": 3337084
+    },
+    {
+      "source": "development/levels/rebuild/morrow-point/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-14/runtime-input.tsv",
+      "candidate_blob": "ad179416a40ae28fa13783df1778c04d00f2cca8",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "859752756d988d7f7333593cb7d11ab48a96da22494b55e346ab563c5f108225",
+      "bytes": 22944
+    },
+    {
+      "source": "development/levels/rebuild/morrow-point/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-14/door-schedule.tsv",
+      "candidate_blob": "cffb8133622b67fc0f228133feb081875cf9a950",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "48fb1be9ccb7c0be16bf162e6b0f9a28f3536147a45d9b704e8fecf60aba1835",
+      "bytes": 926
+    },
+    {
+      "source": "development/levels/rebuild/greywater-native-pass/greywater-review.glb",
+      "resource": "org/beckenburg/sites/wld-13/greywater-review.glb",
+      "candidate_blob": "416cfc8dbafeea4169529fd13ef36ce11b9e17f1",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "08aa018ec0e21a15cef390be8b6664902fafb4a44ba97d422d3c6f85d04d6a4e",
+      "bytes": 7477728
+    },
+    {
+      "source": "development/levels/rebuild/greywater-native-pass/greywater-review.hcs2",
+      "resource": "org/beckenburg/sites/wld-13/greywater-review.hcs2",
+      "candidate_blob": "54309b12884ca732544eb5fa8a7a6441e2c8102d",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "13e8dcc3f44895f72f1461e76b6a4f16d8a28a836e153037b8ad64f101220a25",
+      "bytes": 1492054
+    },
+    {
+      "source": "development/levels/rebuild/greywater-native-pass/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-13/runtime-input.tsv",
+      "candidate_blob": "2b9f0d838a12d6f7dd492c3f4e21fadc216821a2",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "e9776b4c708b6de6fc37f7ef8d6142a4f2caebe864f8e6655556c9f9e583b02d",
+      "bytes": 6096
+    },
+    {
+      "source": "development/levels/rebuild/greywater-native-pass/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-13/door-schedule.tsv",
+      "candidate_blob": "ba2427b4f5d6efdfedefcd3d602fd89406b546e1",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "fab731bca043db186fc6b396a5cdd09afa79c2d795147d5a8616d57e110d8fab",
+      "bytes": 2326
+    },
+    {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb",
+      "resource": "org/beckenburg/sites/wld-08/station-with-furnishings.glb",
+      "candidate_blob": "588a8529a6c09d624a3384322523f3a9d50a34c7",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "2a91ae44128c2b1f583863ff6d4640c237bf5117d041283e9f85367ab882c190",
+      "bytes": 12757304
+    },
+    {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2",
+      "resource": "org/beckenburg/sites/wld-08/station-with-furnishings.hcs2",
+      "candidate_blob": "82ab48376f28c4094ddcaa63c5e3d466f4397d48",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909",
+      "bytes": 2686389
+    },
+    {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-08/runtime-input.tsv",
+      "candidate_blob": "fef9e95f34999dd2a6d8313b3f27574be1d90927",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b690d597ca98f97c41344deba94f704267cb7961f5a3f94e6e789dc27f1dafef",
+      "bytes": 12387
+    },
+    {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-08/door-schedule.tsv",
+      "candidate_blob": "4d48a004917ccd58f84df695d58e105d2961093b",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d",
+      "bytes": 2455
+    },
+    {
+      "source": "development/levels/rebuild/northwatch-named-pass/source-hashes.tsv",
+      "resource": "org/beckenburg/sites/wld-08/source-hashes.tsv",
+      "candidate_blob": "7bf22d8f17a0f579aa73971a450ca5a7bc7d4528",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a91ea06ed15a55c158b55666f5bb14f6ded4880ecb41f9bd036024327651d03e",
+      "bytes": 137
+    },
+    {
+      "source": "development/levels/rebuild/dam-ventilation-pass/wld-09/dam-with-ventilation.glb",
+      "resource": "org/beckenburg/sites/wld-09/dam-with-ventilation.glb",
+      "candidate_blob": "2b125a668bff697bd9dcccb5a5a3d9ce16f20573",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "e29f46f0d973f2edf99a0ca7e3f0a4dd9f93c4491a9e4dad813cd6ff2564e82e",
+      "bytes": 14732388
+    },
+    {
+      "source": "development/levels/rebuild/dam-ventilation-pass/wld-09/dam-with-ventilation.hcs2",
+      "resource": "org/beckenburg/sites/wld-09/dam-with-ventilation.hcs2",
+      "candidate_blob": "566b0a7699db3029dd78c57b1204a5848f6f0cd5",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "2718d62de0cb6a17cbe62fbdd0fd097ca47cb6dbb50f379ccfcde3f576602cf7",
+      "bytes": 2730855
+    },
+    {
+      "source": "development/levels/rebuild/dam-ventilation-pass/wld-09/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-09/runtime-input.tsv",
+      "candidate_blob": "3abd0d24b99a1cf813a562cc5355301778708df3",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "7bb13f826ea890e2e3cedfd5922adbd47b7e2132c1da54099cf112df637fe867",
+      "bytes": 9463
+    },
+    {
+      "source": "development/levels/rebuild/dam-ventilation-pass/wld-09/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-09/door-schedule.tsv",
+      "candidate_blob": "2b034f1d9c57ee9eaeea895c83295eeb580d04af",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "e211d1d2fb065c054c658b88feeb34f031f5a8aba8aeebabc9a8a1feff2c6047",
+      "bytes": 2347
+    },
+    {
+      "source": "development/levels/rebuild/dam-ventilation-pass/wld-09/electrical-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-09/electrical-schedule.tsv",
+      "candidate_blob": "49610bd9903d0e103dd7a6e85677dad3e153fc63",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "bd5eaa1091b867ea9133601247d88f54922466dd1d9678cebe0cd017239940ff",
+      "bytes": 528
+    },
+    {
+      "source": "development/levels/rebuild/dam-ventilation-pass/wld-09/blackwater.water",
+      "resource": "org/beckenburg/sites/wld-09/blackwater.water",
+      "candidate_blob": "3701b117d293ea83d2a182c97f5f3e12469b019f",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "aff5c7744467cc5ce880756607be1738d075f1d72389f1b93ef8e89d48f3b61c",
+      "bytes": 879
+    },
+    {
+      "source": "development/levels/rebuild/dam-named-pass/source-hashes.tsv",
+      "resource": "org/beckenburg/sites/wld-09/source-hashes.tsv",
+      "candidate_blob": "6b38627186db42db21028f7fc5638e8d837efba4",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "fb521f94a51417934c6c69dd716f8731ed907791cb6dba1fe3bfa0a6aaef46e7",
+      "bytes": 518
+    },
+    {
+      "source": "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.glb",
+      "resource": "org/beckenburg/sites/wld-10/monastery-with-perimeter.glb",
+      "candidate_blob": "7f11bf280cdabf46fc0e282e6935168b8421793a",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "d6000d728798ab71b50b0f393673bd1684a7f9401eef2a0406afdbd00ccccab4",
+      "bytes": 12274976
+    },
+    {
+      "source": "development/levels/rebuild/monastery-perimeter-pass/wld-10/monastery-with-perimeter.hcs2",
+      "resource": "org/beckenburg/sites/wld-10/monastery-with-perimeter.hcs2",
+      "candidate_blob": "80a16d78e256efd0f8d83ebc439b9d55d29c71f0",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a996deca5936ec2072a2781038467c52f93230e8b5759f95c347e4fb77715237",
+      "bytes": 6471024
+    },
+    {
+      "source": "development/levels/rebuild/monastery-perimeter-pass/wld-10/runtime-input.tsv",
+      "resource": "org/beckenburg/sites/wld-10/runtime-input.tsv",
+      "candidate_blob": "08ca3b3139419190b95c0177293fb43128709e62",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "854e6513c6036fb027ce96c525198301e70c32a72502346492ef28ef51b23e43",
+      "bytes": 7230
+    },
+    {
+      "source": "development/levels/rebuild/monastery-perimeter-pass/wld-10/door-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-10/door-schedule.tsv",
+      "candidate_blob": "cf195a067e659e6a963cc125507ba23c7576c138",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "d926a95a190d13bb5eb7a1bac54a9fd4719e243f1f6f651e1a6cdedac973758e",
+      "bytes": 2181
+    },
+    {
+      "source": "development/levels/rebuild/monastery-perimeter-pass/wld-10/electrical-schedule.tsv",
+      "resource": "org/beckenburg/sites/wld-10/electrical-schedule.tsv",
+      "candidate_blob": "2dae79e9629eb02a54c5288dd84df53d6d21e2df",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "79f425a9671b9555ad834d0c5e357e1cb3544b2ae3902f443e56fc762d650f98",
+      "bytes": 3835
+    },
+    {
+      "source": "development/levels/rebuild/monastery-perimeter-pass/source-hashes.tsv",
+      "resource": "org/beckenburg/sites/wld-10/source-hashes.tsv",
+      "candidate_blob": "8d0515af16fe15b2bf8e2f940c3633fb3b34b8c7",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "59a353fa4b2d669d8996a956e8c4f75461f60b94efcfb6cfd64b9a87d94cbb16",
+      "bytes": 444
+    },
+    {
+      "source": "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.glb",
+      "resource": "org/beckenburg/sites/asylum-stair.glb",
+      "candidate_blob": "16f89d29ce0b47efb2e0f73d69c3ece738454d06",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "81445871322f28b78ddda557c27dbb291ab08febc19ae87ea13ce980d70cb3d1",
+      "bytes": 4666260
+    },
+    {
+      "source": "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.hcs2",
+      "resource": "org/beckenburg/sites/asylum-stair.hcs2",
+      "candidate_blob": "e2523285294e43bb8ad8e2b2127274e175d81984",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "7e3088c8b7f06d684ef277d05a222a9f48281b51bd0a38343e386ab52d07dc43",
+      "bytes": 1878166
+    },
+    {
+      "source": "development/levels/rebuild/asylum-enclosure-pass/arrival.tsv",
+      "resource": "org/beckenburg/sites/asylum-arrival.tsv",
+      "candidate_blob": "8393b113b972823f82e9a30c49b1a9cce0b8d2ce",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "b8992a93debcf696119da0cb69d9feb8f50cbe403d555a1050a5b82d5cb16c58",
+      "bytes": 9090
+    },
+    {
+      "source": "development/levels/rebuild/asylum-enclosure-pass/door-survey.tsv",
+      "resource": "org/beckenburg/sites/asylum-door-survey.tsv",
+      "candidate_blob": "5a316485814248d551f883451c7030db0601e024",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "d6f57e067cd12eeb7c9771b2773dceeb11336243afa211359a4ff433e542537d",
+      "bytes": 1894
+    },
+    {
+      "source": "development/levels/rebuild/asylum-enclosure-pass/mission.tsv",
+      "resource": "org/beckenburg/sites/asylum-mission.tsv",
+      "candidate_blob": "6b20d0f3744f33cabce091fd20008b0605d16a2c",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "9f5386bc53f4a42ade52f3d3124709def54bc2ebc9d702e5d459a8706e7a0008",
+      "bytes": 524
+    },
+    {
+      "source": "development/levels/rebuild/asylum-enclosure-pass/services.tsv",
+      "resource": "org/beckenburg/sites/asylum-services.tsv",
+      "candidate_blob": "04344cc005575e8e472e37484de9bbd6057bb62e",
+      "main_blob": null,
+      "source_status": "added",
+      "sha256": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f",
+      "bytes": 2793
+    }
+  ]
+}

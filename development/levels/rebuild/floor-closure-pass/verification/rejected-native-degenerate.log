@@ -1,0 +1,13 @@
+Exception in thread "main" java.io.IOException: Degenerate native triangle
+	at org.beckenburg.AuthoredSitePhysics.read(AuthoredSitePhysics.java:91)
+	at org.beckenburg.AuthoredSitePhysics.read(AuthoredSitePhysics.java:60)
+	at RosterStairMovementProbe.main(RosterStairMovementProbe.java:46)
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_roster_stairs.py", line 129, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_roster_stairs.py", line 97, in main
+    subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-cp',str(build)+os.pathsep+str(jar),'RosterStairMovementProbe',str(build/'names.tsv'),str(build/'flights.tsv'),str(build/'results.tsv'),str(build/'chains.tsv'),str(build/'full-paths.tsv')],check=True)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-cp', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\roster-stair-probe;C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\beckenburg-game.jar', 'RosterStairMovementProbe', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\roster-stair-probe\\names.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\roster-stair-probe\\flights.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\roster-stair-probe\\results.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\roster-stair-probe\\chains.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\roster-stair-probe\\full-paths.tsv']' returned non-zero exit status 1.

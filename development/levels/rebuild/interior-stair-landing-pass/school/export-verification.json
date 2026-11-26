@@ -1,0 +1,51 @@
+{
+  "bindings": {
+    "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.glb": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+    "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.hcs2": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865",
+    "development/levels/rebuild/stair-cell-construction-pass/school/constructed-cells.glb": "f0b52afe4fcd6a8ecc0c56de83c155e7f30cb92b71a70528abbcd17727f65dcb",
+    "development/levels/rebuild/stair-cell-construction-pass/school/constructed-cells.hcs2": "cc4fbc9e4b65ac12eab3b58adf9b14f5c9cbbab713efcf2b5ebb1b61b478e5aa"
+  },
+  "retained_native_records": 507,
+  "exact_terrain_records": 1,
+  "closed_additions": 5,
+  "controls": {
+    "aperture_rays": 36,
+    "standing_sills": 24,
+    "solid_jamb_rays": 8,
+    "floor_top_and_soffit": 252,
+    "open_well": 100,
+    "guard_post_seats": 144
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/school-east-stair-aisle.png",
+      "sha256": "9287dc6192dee038ee2a0466e8827f30225fd1924ed9efa56992ba7b2f2538d4",
+      "source_glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/school-north-service-entry.png",
+      "sha256": "de74c95e9282e0ea5e844d08f114edb012186901f72bf571e834e352d2b546ed",
+      "source_glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/school-lower-flight.png",
+      "sha256": "4e38c0aa66e3d5d97bae2f7bd299e4382d99573a6e62212a3f860b1c39423bd6",
+      "source_glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/school-east-stair-aisle-before.png",
+      "sha256": "e0248ded3aacab0494c7c3ae61a1c9c01faa62bd07f95061556084c892c02396",
+      "source_glb_sha256": "f0b52afe4fcd6a8ecc0c56de83c155e7f30cb92b71a70528abbcd17727f65dcb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/school-north-service-entry-before.png",
+      "sha256": "8e6c0101bdb952795ce7dcbd7c62ec988d49f936de94b44ebaf9b7016019b1b3",
+      "source_glb_sha256": "f0b52afe4fcd6a8ecc0c56de83c155e7f30cb92b71a70528abbcd17727f65dcb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/school-lower-flight-before.png",
+      "sha256": "e8d3a7f57aa662b2eee45e4c96415d8aece13d1e5aafc8447c5a14465035d6f0",
+      "source_glb_sha256": "f0b52afe4fcd6a8ecc0c56de83c155e7f30cb92b71a70528abbcd17727f65dcb"
+    }
+  ]
+}

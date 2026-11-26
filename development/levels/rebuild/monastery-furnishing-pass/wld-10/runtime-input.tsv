@@ -1,0 +1,200 @@
+ROOM	stage	13	24	74	40	86	0	3	true	Mountain-road van apron	35	0	79
+SPACE	entry	13	24	62	40	74	0	3	true	Monastery gate terrace	32.0	0	68.0
+ROOM	gatehouse	0	24	56	40	62	0	3	false	Gatehouse	32	0	59
+ROOM	west	1	8	22	14	50	0	3	false	West cloister	11	0	36
+ROOM	east	2	44	22	50	50	0	3	false	East cloister	47	0	36
+SPACE	north	2	8	16	50	22	0	3	false	North cloister	29.0	0	19.0
+SPACE	south	1	8	50	50	56	0	3	false	South cloister	29.0	0	53.0
+ROOM	garden	12	14	22	44	50	0	3	true	Herb garden	29	0	36
+ROOM	archive	3	8	2	28	16	0	3	false	Archive	18	0	9
+ROOM	refectory	4	50	30	68	50	0	3	false	Refectory	59	0	40
+ROOM	dorm	5	-8	22	8	50	0	3	false	Dormitory	0	0	36
+ROOM	tower-base	6	50	16	60	30	0	6	false	Bell tower stair base	52.97	0	24.5
+ROOM	bell	7	50	16	60	30	6	3	false	Bell chamber	58.86	6	17
+ROOM	catacombs	8	8	16	50	22	-3	3	false	Catacomb cross passage	23	-3	17.4
+ROOM	chamber	9	8	2	28	16	-3	3	false	Subterranean chapter chamber	18	-3	9
+ROOM	vestry	10	28	2	44	16	0	3	false	Wash / vestry	36	0	9
+ROOM	rear	11	60	16	68	30	0	3	true	Rear service terrace	64	0	23
+STEP	198:L19 flight0 step1
+STEP	199:L19 flight0 step2
+STEP	200:L19 flight0 step3
+STEP	201:L19 flight0 step4
+STEP	202:L19 flight0 step5
+STEP	203:L19 flight0 step6
+STEP	204:L19 flight0 step7
+STEP	205:L19 flight0 step8
+STEP	206:L19 flight0 step9
+STEP	207:L19 flight0 step10
+STEP	208:L19 flight0 step11
+STEP	209:L19 flight0 step12
+STEP	210:L19 flight0 step13
+STEP	211:L19 flight0 step14
+STEP	212:L19 flight0 step15
+STEP	213:L19 flight0 step16
+STEP	214:L19 flight0 step17
+STEP	219:L21 flight0 step1
+STEP	220:L21 flight0 step2
+STEP	221:L21 flight0 step3
+STEP	222:L21 flight0 step4
+STEP	223:L21 flight0 step5
+STEP	224:L21 flight0 step6
+STEP	225:L21 flight0 step7
+STEP	226:L21 flight0 step8
+STEP	227:L21 flight0 step9
+STEP	228:L21 flight0 step10
+STEP	229:L21 flight0 step11
+STEP	230:L21 flight0 step12
+STEP	231:L21 flight0 step13
+STEP	232:L21 flight0 step14
+STEP	233:L21 flight0 step15
+STEP	234:L21 flight0 step16
+STEP	235:L21 flight0 step17
+STEP	Monastery bell flight 1 riser 01 region0
+STEP	Monastery bell flight 1 riser 02 region0
+STEP	Monastery bell flight 1 riser 03 region0
+STEP	Monastery bell flight 1 riser 04 region0
+STEP	Monastery bell flight 1 riser 05 region0
+STEP	Monastery bell flight 1 riser 06 region0
+STEP	Monastery bell flight 1 riser 07 region0
+STEP	Monastery bell flight 1 riser 08 region0
+STEP	Monastery bell flight 1 riser 09 region0
+STEP	Monastery bell flight 1 riser 10 region0
+STEP	Monastery bell flight 1 riser 11 region0
+STEP	Monastery bell flight 1 riser 12 region0
+STEP	Monastery bell flight 1 riser 13 region0
+STEP	Monastery bell flight 1 riser 14 region0
+STEP	Monastery bell flight 1 riser 15 region0
+STEP	Monastery bell flight 1 riser 16 region0
+STEP	Monastery bell flight 1 riser 17 region0
+STEP	Monastery bell flight 2 riser 01 region0
+STEP	Monastery bell flight 2 riser 02 region0
+STEP	Monastery bell flight 2 riser 03 region0
+STEP	Monastery bell flight 2 riser 04 region0
+STEP	Monastery bell flight 2 riser 05 region0
+STEP	Monastery bell flight 2 riser 06 region0
+STEP	Monastery bell flight 2 riser 07 region0
+STEP	Monastery bell flight 2 riser 08 region0
+STEP	Monastery bell flight 2 riser 09 region0
+STEP	Monastery bell flight 2 riser 10 region0
+STEP	Monastery bell flight 2 riser 11 region0
+STEP	Monastery bell flight 2 riser 12 region0
+STEP	Monastery bell flight 2 riser 13 region0
+STEP	Monastery bell flight 2 riser 14 region0
+STEP	Monastery bell flight 2 riser 15 region0
+STEP	Monastery bell flight 2 riser 16 region0
+STEP	Monastery bell flight 2 riser 17 region0
+STEP	Monastery bell stair common intermediate landing region0
+RITUAL	banishment	9	18.0	-3	9.0
+RITUAL	cleansing	10	36.0	0	9.0
+RITUAL	absolution	4	59.0	0	40.0
+OPEN	934	2	1	47	0	50	1.92	z	trail
+OPEN	935	1	2	11	0	22	1.92	z	trail
+OPEN	950	13	14	32	0	76.372	2.15	z	trail
+OPEN	951	6	7	57.04	6	17.62	1.8	z	stair
+OPEN	952	2	8	29	-1.6	19	1.8	x	stair
+OPEN	953	2	8	15	-1.3	19	1.8	x	stair
+POINT	L01	32	0	76.372
+POINT	L01	32	0	74
+POINT	L01	32	0	68
+POINT	L02	32.0	0	68.0
+POINT	L02	32.0	0	62.0
+POINT	L02	32.0	0	59.0
+POINT	L03	32	0	59
+POINT	L03	32	0	56
+POINT	L03	32	0	54.9
+POINT	L03	29	0	53
+POINT	L04	29	0	53
+POINT	L04	11	0	53
+POINT	L04	11	0	50
+POINT	L04	11	0	36
+POINT	L05	11	0	36
+POINT	L05	11	0	22
+POINT	L05	11	0	20.98
+POINT	L05	23.6	0	20.98
+POINT	L05	23.6	0	17
+POINT	L05	29	0	17
+POINT	L06	29	0	17
+POINT	L06	47	0	17
+POINT	L06	47	0	22
+POINT	L06	47	0	36
+POINT	L07	47.0	0	36.0
+POINT	L07	47.0	0	50.0
+POINT	L07	47.0	0	53.0
+POINT	L07	29.0	0	53.0
+POINT	L08	29.0	0	53.0
+POINT	L08	29.0	0	50.0
+POINT	L08	29.0	0	36.0
+POINT	L09	29	0	36
+POINT	L09	29	0	22
+POINT	L09	29	0	20.98
+POINT	L09	23.6	0	20.98
+POINT	L09	23.6	0	17
+POINT	L09	29	0	17
+POINT	L10	11.0	0	36.0
+POINT	L10	8.0	0	36.0
+POINT	L10	0.0	0	36.0
+POINT	L11	29.0	0.0	17.0
+POINT	L11	18.5	0.0	17.0
+POINT	L11	18.0	0.0	16.5
+POINT	L11	18.0	0.0	9.0
+POINT	L12	18.0	0	9.0
+POINT	L12	28.0	0	9.0
+POINT	L12	36.0	0	9.0
+POINT	L13	36.0	0.0	9.0
+POINT	L13	36.0	0.0	16.5
+POINT	L13	35.5	0.0	17.0
+POINT	L13	29.0	0.0	17.0
+POINT	L14	47	0	36
+POINT	L14	47	0	40
+POINT	L14	50	0	40
+POINT	L14	59	0	40
+POINT	L15	47	0	36
+POINT	L15	47	0	26
+POINT	L15	50	0	26
+POINT	L15	51.4	0	26
+POINT	L15	52.97	0	24.5
+POINT	L16	52.97	0	24.5
+POINT	L16	52.97	0	17.0
+POINT	L16	55	0	17.0
+POINT	L16	55	0	17.59
+POINT	L16	55	3	23.28
+POINT	L16	55	3	24.1
+POINT	L16	57.04	3	24.1
+POINT	L16	57.04	3	23.28
+POINT	L16	57.04	6	17.59
+POINT	L16	57.04	6	17.0
+POINT	L16	58.86	6	17.0
+POINT	L17	52.97	0	24.5
+POINT	L17	52.97	0	27
+POINT	L17	59.03	0	27
+POINT	L17	59.03	0	23
+POINT	L17	60	0	23
+POINT	L17	64	0	23
+POINT	L18	64	0	23
+POINT	L18	64	0	30
+POINT	L18	64	0	40
+POINT	L18	59	0	40
+POINT	L19	29	0	17
+POINT	L19	32.5	0	17
+POINT	L19	32.5	0	19
+POINT	L19	31.91	0	19
+POINT	L19	26.08	-3	19
+POINT	L19	23	-3	19
+POINT	L19	23	-3	17.4
+POINT	L20	23	-3	17.4
+POINT	L20	21.25	-3	17.2
+POINT	L20	18	-3	17.2
+POINT	L20	18	-3	16
+POINT	L20	18	-3	9
+POINT	L21	23	-3	17.4
+POINT	L21	23	-3	19
+POINT	L21	18.21	-3	19
+POINT	L21	12.39	0	19
+POINT	L21	11	0	19
+POINT	L21	11	0	22
+POINT	L21	11	0	36
+COVER	monastery-archive-cupboard	3	22	0.0	3.35	0
+COVER	monastery-dorm-cupboard	5	-6.65	0.0	39	-1.5707963267948966
+COVER	monastery-chamber-cupboard	9	23	-3.0	3.35	0
+STORY	Monastery furnished ashen bells register 01	ASHEN_BELLS_REGISTER	3	level_trace_journal	19.726999	0.88438	12.194	0	19.75	0	13.73
+STORY	Monastery furnished refectory ration sheet 01	REFECTORY_RATION_SHEET	4	level_story_letters	56.056999	0.87798	34.664001	0	54.88	0	34.64

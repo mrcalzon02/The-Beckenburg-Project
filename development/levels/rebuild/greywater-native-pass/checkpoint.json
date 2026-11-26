@@ -1,0 +1,58 @@
+{
+  "site": "WLD-13",
+  "status": "GREYWATER_NATIVE_PLAYABLE_IN_ORDINARY_MISSION_PICKERS",
+  "prior_commit": "c0856ce7",
+  "campaign_ordinal": 21,
+  "construction": "development\\levels\\rebuild\\greywater-native-pass/construction.json",
+  "roster": "development\\levels\\rebuild\\greywater-native-pass/roster.json",
+  "packaged_resources": {
+    "greywater-review.glb": "81cfe77559fca5d53a08b0fab9aeb5bd70c2343270ca809f9c27ba5fc199637e",
+    "greywater-review.hcs2": "d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae",
+    "runtime-input.tsv": "cc5728a3c90ee9fc8638ff3e0687e261fed6328204f9b074c8af803978f7c479",
+    "door-schedule.tsv": "fab731bca043db186fc6b396a5cdd09afa79c2d795147d5a8616d57e110d8fab"
+  },
+  "packages": {
+    "build/beckenburg-game.jar": "fd8c4062491c307eb385c0a5a4dfadb9da82867aeb6d183db5538e66a574a2db",
+    "gpu-client/target/BeckenburgGPU.jar": "aa0fd349223446c94977b21f83063fd7c16ab16407758061f3c8593b110789a3"
+  },
+  "software": {
+    "revision": "847bf40dc6adb70b3cf35a632d7b1737e8a4f62525ee0a77479022605b3662cb-075b9768ec559ea6",
+    "collision_sha256": "d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae",
+    "physical_door_states": "16 fitted doors; standing and crouched crossing, object, sight, aim and acoustics",
+    "route_replays": "76",
+    "owner_spawns": "14 native-supported regions and the expedition van",
+    "mezzanine_guard": "The built rail stops a lateral step in both postures",
+    "boiler_light": "Aimable switch, powered lamp 2.6996139134430304, switched off 0.187, no supply 0.187",
+    "greywater-cold-cupboard_protected_floor_samples": "69",
+    "greywater-wash-cupboard_protected_floor_samples": "69",
+    "greywater-bunk-cupboard_protected_floor_samples": "69",
+    "greywater_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "renderer": "Software"
+  },
+  "opengl": {
+    "revision": "847bf40dc6adb70b3cf35a632d7b1737e8a4f62525ee0a77479022605b3662cb-075b9768ec559ea6",
+    "collision_sha256": "d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae",
+    "physical_door_states": "16 fitted doors; standing and crouched crossing, object, sight, aim and acoustics",
+    "route_replays": "76",
+    "owner_spawns": "14 native-supported regions and the expedition van",
+    "mezzanine_guard": "The built rail stops a lateral step in both postures",
+    "boiler_light": "Aimable switch, powered lamp 2.6996139134430304, switched off 0.187, no supply 0.187",
+    "greywater-cold-cupboard_protected_floor_samples": "69",
+    "greywater-wash-cupboard_protected_floor_samples": "69",
+    "greywater-bunk-cupboard_protected_floor_samples": "69",
+    "greywater_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  },
+  "live_case": {
+    "named_revision": "847bf40dc6adb70b3cf35a632d7b1737e8a4f62525ee0a77479022605b3662cb-075b9768ec559ea6",
+    "collision_sha256": "d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae",
+    "gallery_stair": "PASS Cargo approach, exterior door and the actual switch in floor elevation walked both ways",
+    "ghost_and_uv": "PASS The Spirit spawned on the processing floor and the equipped UV light revealed its live footprint",
+    "processing_anchor": "PASS Processing hall evidence replicated, and the host accepted the anchor ward and refused the remote rite",
+    "greywater-cold-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "boiler_controls": "PASS Operated the generator and breaker at their physical panels and witnessed source replication",
+    "greywater-wash-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "greywater-bunk-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "mess_rite": "PASS ABSOLVED reported to all three peers; 396 credits and 132 XP"
+  }
+}

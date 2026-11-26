@@ -1,5 +1,7 @@
 # Beckenburg production rules
 
+- Before creating, selecting, refining or placing a model, consult [ASSET_LIBRARY.md](ASSET_LIBRARY.md) and its canonical searchable index. Reuse the existing map-specific roughs and their site assignments for spatial blocking, model budgets and placement; refine them afterward. A selected sample is never the full library, and rough status is not a reason to invent a duplicate or substitute generic furniture. Preserve model IDs, source pivots, UVs and refinement history.
+
 - Recovery program is active until evidence closes all gates. At the start of each development session read `development/RECOVERY_PLAN_2026-10-25.md`, inspect `main` HEAD plus full-round/renderer/release workflow results, and prioritize the recovery gates before new feature or map expansion. Update its checkpoint log with exact SHA, passing/failing runs and the next action; do not infer successful gameplay from packaging or docs.
 
 - Closeout means finalize the requested implementation, commit it, push it to the authorized remote branch, and verify that the remote contains the commit. A plan or local-only change is not a completed delivery. Never force-push over concurrent work.
@@ -22,3 +24,5 @@
 - Renderer/performance work: follow the Beckenburg [A–G plan](development/performance/RENDERING_MILESTONES_A-G.md) and the portable, cross-project [playbook](development/performance/portable/README.md). Keep target-specific evidence separate from generic methodology; a good CI build cannot by itself prove FPS or operability on physical hardware. Do not autonomously modify another game repository merely because it is listed as an adoption candidate.
 
 - **Codex A–G finish handoff**: For any dedicated performance-completion session, start with development/performance/CODEX_HANDOFF.md and follow CODEX_PERFORMANCE_FINISH_PLAN.md and CODEX_PROGRESS_LOG.md. Do not treat the existence of the plan, a passing synthetic VBO diagnostic or Mesa FPS as completion. Protect pending installer/multiplayer CI and real Windows hardware acceptance.
+
+- **Architecture first:** Access/flow strips are nonphysical planning guidance. Design complete building floors, elevations, stair bays and normal doors first. Route guidance goes to/from actual doors and supported walkable areas. Never extrude routes into physical pads/corridors, carve a route through walls/floors/terrain, or treat a guidance strip as the traversability authority. Replace defective whole structural assemblies; validate movement against the finished geometry.

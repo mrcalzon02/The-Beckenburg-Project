@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="560" viewBox="0 0 750 560" role="img" aria-labelledby="title desc">
+  <title id="title">Penitentiary sally gate and manual releases</title>
+  <desc id="desc">Plan and sally face elevation of the measured 2.40 metre exercise yard opening. A single leaf slides 2.53 metres east along the mounted overhead rail. Manual release handles are fixed to both faces of the west pier. The dashed path is a movement guide.</desc>
+  <rect width="750" height="560" fill="#171f29"/>
+  <g font-family="sans-serif" fill="#e8edf2" font-size="14">
+    <text x="34" y="39" font-size="26">Sally port · exercise yard gate</text>
+    <text x="34" y="65" fill="#aabacc">Plan above · sally elevation below · metres</text>
+    <text x="38" y="107">Exercise yard</text>
+    <text x="38" y="214">Sally port</text>
+    <path d="M 116 149 H 252 V 169 H 116 Z M 432 149 H 690 V 169 H 432 Z" fill="#536478"/>
+    <path d="M 252 181 H 432" stroke="#f2bb71" stroke-width="8"/>
+    <path d="M 442 181 H 622" stroke="#79cfc4" stroke-width="7"/>
+    <path d="M 252 191 H 622 M 616 186 L 622 191 L 616 196" fill="none" stroke="#aabacc"/>
+    <path d="M 342 122 V 217" stroke="#e6eef4" stroke-width="2" stroke-dasharray="5 5"/>
+    <rect x="221" y="138" width="11" height="11" fill="#dd9854"/>
+    <rect x="221" y="169" width="11" height="11" fill="#dd9854"/>
+    <text x="38" y="239" fill="#aabacc">Manual releases on both faces of west pier</text>
+    <text x="443" y="215" fill="#79cfc4">Parked open · 2.53 m east</text>
+    <path d="M 35 264 H 716" stroke="#415367"/>
+    <path d="M 116 319 H 690 V 345 H 432 V 509 H 690 V 517 H 116 V 509 H 252 V 345 H 116 Z" fill="#536478"/>
+    <path d="M 224 337 H 628" stroke="#c5d0da" stroke-width="6"/>
+    <g stroke="#f2bb71" stroke-width="4" fill="none">
+      <rect x="254" y="346" width="176" height="159"/>
+      <path d="M 272 346 V 505 M 292 346 V 505 M 311 346 V 505 M 330 346 V 505 M 342 346 V 505 M 354 346 V 505 M 373 346 V 505 M 392 346 V 505 M 412 346 V 505 M 254 425 H 430"/>
+    </g>
+    <rect x="444" y="346" width="176" height="159" stroke="#79cfc4" stroke-width="3" fill="none" stroke-dasharray="7 5"/>
+    <rect x="219" y="420" width="15" height="15" fill="#dd9854"/>
+    <text x="34" y="430" fill="#dd9854">Sally release</text>
+    <text x="281" y="543">2.40 m clear × 2.60 m high</text>
+  </g>
+</svg>

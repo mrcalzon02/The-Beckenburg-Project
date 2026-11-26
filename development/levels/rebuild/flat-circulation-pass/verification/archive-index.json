@@ -1,0 +1,159 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-failure-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-failure-input.tsv.gz",
+      "original_bytes": 3582172,
+      "original_sha256": "d3e3a67dfedac74db2b5be69a80f8fa4bfdd0554ff52a2b85de69d085a6e5cfb",
+      "archive_bytes": 116988,
+      "archive_sha256": "004fb4c9fe64891875702705bbe0573dfc875e7108b62d970fba5aefd1da43ff",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 56387091,
+      "original_sha256": "7a9ca8d0008a8610621c0700ac5c7be236d1e01133654982e0f54016c0a3ae3b",
+      "archive_bytes": 1150882,
+      "archive_sha256": "6c1b87336e669796014d3b1e31e068bd0f238566c0ce53d8ce6188cba36855e7",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 10452142,
+      "original_sha256": "076cd31f4402df30fc9e172353f8735387946c3f82aefe06606964831ba7a366",
+      "archive_bytes": 788735,
+      "archive_sha256": "b3efe24b7572c75120e012f6c7a30c2f135e152e81f9d457c8aaddf501e75f2e",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10243311,
+      "original_sha256": "63dd2625485e299b342cbeccb1c9fc9e1b5a74577a3e331a5e539fc358c6f63e",
+      "archive_bytes": 1049763,
+      "archive_sha256": "172177fdea7ddc4ad14e61526dab7219e1241e32a54323b3d0dc0e093592f502",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10244951,
+      "original_sha256": "c902b28e8e8805d055096a3d16a7337ad945d1f5dcf073ad9080b47f0ec2f9b8",
+      "archive_bytes": 1048836,
+      "archive_sha256": "6af0f1463bd514422d030ed375262bf874bd93da77c748468cd4c46084c6883c",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-failure-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-failure-input.tsv.gz",
+      "original_bytes": 3026571,
+      "original_sha256": "728a6a3741d2ccc7c23da60ea330fff9e98f3a4415577fcbecd059c53751483b",
+      "archive_bytes": 165479,
+      "archive_sha256": "4db8cf73a71866efb8b2567904a93d1514bfc4bd644a95251e8bbf44af545630",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 53485306,
+      "original_sha256": "6d96da92b5d8a94a522cbb63bca7351530d045594ba7a81c7ff5a1c605b2fdc5",
+      "archive_bytes": 1371292,
+      "archive_sha256": "c8443b357980357a5e324742478f988745c0acef5a99dd1da0c831d07841e6e3",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 10523661,
+      "original_sha256": "a051798f3cf786c72b676898f2bf08a543c3d9766358d7d8815a35d2badcd9fe",
+      "archive_bytes": 1005944,
+      "archive_sha256": "c1129e7b93a9e90f6d36c429ba55bdbd15b67efca13d5a09e52d73884e8dca2c",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10244951,
+      "original_sha256": "c902b28e8e8805d055096a3d16a7337ad945d1f5dcf073ad9080b47f0ec2f9b8",
+      "archive_bytes": 1048836,
+      "archive_sha256": "6af0f1463bd514422d030ed375262bf874bd93da77c748468cd4c46084c6883c",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-failure-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-failure-input.tsv.gz",
+      "original_bytes": 3679013,
+      "original_sha256": "7d411e6e5df1f434c256c97340852e4bfc2232a46f4eb9cffb8c3a7588e1d6d0",
+      "archive_bytes": 119480,
+      "archive_sha256": "6b747ae11fe4df6a7066e386985283479346eba2dfb813a062db9a31a1b24d30",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 57837020,
+      "original_sha256": "6c2980d5702f0ccc95b50bc488f51b94564f79e1aeb2a7c120d792fdc7fa777d",
+      "archive_bytes": 1046614,
+      "archive_sha256": "8e9fdb31ebe97fd52b5e33f83f884fb2f1a7bbebdaf2cd5fe47c5f2965b05795",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 10498561,
+      "original_sha256": "cda79f422bc9a622fdaa5d2bcb1cca377bd96aecda30fde1c44425a57217b6ab",
+      "archive_bytes": 699372,
+      "archive_sha256": "40b51b4905b3f9b34f6151bb009f6b973323c7f286e988930eec511373ec493f",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10243663,
+      "original_sha256": "5236d60ec0d6546d02325496be6651c7bae39e5a13100f5260df91df7e8dec7b",
+      "archive_bytes": 1049886,
+      "archive_sha256": "baf08a3eb7e72a8d4ebd8e864414b1f3fdb11bc673d84bb0679d7658aecc35de",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-input.tsv.gz",
+      "original_bytes": 3755005,
+      "original_sha256": "c17041a01c663bb3d5fb13333f3017fb98ca3e5a4fdd01c970c179e3fccc505a",
+      "archive_bytes": 127625,
+      "archive_sha256": "3733ef2fb5714e2986badc7904953fd8b18f3a04b1c9da11821c60c52342a05d",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 56387091,
+      "original_sha256": "36f17a153de9e58a621265fda7aad993100ed2711e581e3eb2307aa4a40af2d3",
+      "archive_bytes": 1150857,
+      "archive_sha256": "77df8a0e9f936b1489ed18e86db545f5209e89e0834b83b99fc170c64bf60def",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 10453959,
+      "original_sha256": "0d442e654c460270c09c396ea25c0102b34254430c1f152d008f19b4f9fe3ee7",
+      "archive_bytes": 789948,
+      "archive_sha256": "6119b8c2f97ca349dc0ab7d9173817d0610fb1194bc22110d70debae1858db99",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-circulation-pass/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/flat-circulation-pass/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10244249,
+      "original_sha256": "4361e3c6769fc2cc00844405a4353ec95e2528ee23e02602b14ea707c8bb20d2",
+      "archive_bytes": 1049828,
+      "archive_sha256": "03110a1b25465367e8bcb5c219dde86a6f3ff8ea068c29cc3acf3c964d7ba009",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

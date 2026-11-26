@@ -1,0 +1,15 @@
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.beckenburg.HouseRebuildEnvelopeTest.main(HouseRebuildEnvelopeTest.java:74)
+Caused by: java.lang.IllegalStateException: Model unavailable: kenney_medieval_wall_pane_wood_window
+	at org.beckenburg.GlbProps.model(GlbProps.java:365)
+	at org.beckenburg.SceneRenderer.imported(SceneRenderer.java:445)
+	at org.beckenburg.SceneRenderer.imported(SceneRenderer.java:440)
+	at org.beckenburg.SceneRenderer.streetResidence(SceneRenderer.java:931)
+	... 5 more
+Caused by: java.io.IOException: Missing packaged licensed mesh /org/beckenburg/models/kenney_medieval_wall_pane_wood_window.glb
+	at org.beckenburg.GlbProps.model(GlbProps.java:359)
+	... 8 more

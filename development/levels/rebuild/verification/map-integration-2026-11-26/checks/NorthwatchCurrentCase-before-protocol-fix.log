@@ -1,0 +1,9 @@
+Diagnostic: original Hunter lobby portrait unavailable: lobby-hunters/cleric.png
+Diagnostic: original Hunter lobby portrait unavailable: lobby-hunters/observer.png
+Diagnostic: original Hunter lobby portrait unavailable: lobby-hunters/demonologist.png
+Exception in thread "main" java.lang.AssertionError: Missing live TCP frame ACCEPT|IDENTIFY|ENTITY IDENTIFIED WRAITH
+	at org.beckenburg.NativeSchoolInteriorReview$Peer.awaitMatching(NativeSchoolInteriorReview.java:237)
+	at org.beckenburg.NativeSchoolInteriorReview$Peer.await(NativeSchoolInteriorReview.java:221)
+	at org.beckenburg.NativeSchoolInteriorReview$Peer.await(NativeSchoolInteriorReview.java:217)
+	at org.beckenburg.NorthwatchInvestigationReview.review(NorthwatchInvestigationReview.java:63)
+	at org.beckenburg.NorthwatchInvestigationReview.main(NorthwatchInvestigationReview.java:22)

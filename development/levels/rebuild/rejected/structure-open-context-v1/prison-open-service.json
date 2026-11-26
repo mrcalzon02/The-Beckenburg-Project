@@ -1,0 +1,7 @@
+{
+  "id": "PRISON",
+  "status": "REVISE_FAILED_STRUCTURAL_CHECK",
+  "source": "development/levels/rebuild/prison/rough-layout.json",
+  "source_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+  "error": "('PRISON', 'L107', 'context boundary remains open')"
+}

@@ -1,0 +1,358 @@
+{
+  "id": "WLD-10",
+  "status": "MONASTERY_FITTED_DOORS_AND_OPEN_CLOISTER_STAGED",
+  "model": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.glb",
+  "native": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.hcs2",
+  "layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+  "source": "development/levels/rebuild/monastery-cloister-pass/wld-10/construction.json",
+  "glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+  "native_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e",
+  "layout_sha256": "a7d8cc1582ba87b1c6569fae9c659a3662d108ae72fd2e2d5e4d406f159d8b2f",
+  "leaf": "assets/runtime/models/door_1_loose.glb",
+  "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "architecture_retained": true,
+  "open_arcades": 4,
+  "doors": 13,
+  "frames": [
+    {
+      "id": "public gate",
+      "plane": [
+        61.866665,
+        62.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2.16,
+      "height": 2.36
+    },
+    {
+      "id": "inner gatehouse door",
+      "plane": [
+        55.866665,
+        56.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "width": 1.85,
+      "height": 2.26
+    },
+    {
+      "id": "south west cloister opening",
+      "plane": [
+        49.866665,
+        50.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.92,
+      "height": 2.32
+    },
+    {
+      "id": "south garden door",
+      "plane": [
+        49.866665,
+        50.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2.05,
+      "height": 2.32
+    },
+    {
+      "id": "south east cloister opening",
+      "plane": [
+        49.866665,
+        50.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.92,
+      "height": 2.32
+    },
+    {
+      "id": "north west cloister opening",
+      "plane": [
+        21.866667,
+        22.133333
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.92,
+      "height": 2.32
+    },
+    {
+      "id": "north garden door",
+      "plane": [
+        21.866667,
+        22.133333
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2.05,
+      "height": 2.32
+    },
+    {
+      "id": "north east cloister opening",
+      "plane": [
+        21.866667,
+        22.133333
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.92,
+      "height": 2.32
+    },
+    {
+      "id": "archive cloister door",
+      "plane": [
+        15.866667,
+        16.133333
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.83,
+      "height": 2.24
+    },
+    {
+      "id": "vestry cloister door",
+      "plane": [
+        15.866667,
+        16.133333
+      ],
+      "receiving_floor_samples": [
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.83,
+      "height": 2.24
+    },
+    {
+      "id": "archive vestry door",
+      "plane": [
+        27.866667,
+        28.133333
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.82,
+      "height": 2.24
+    },
+    {
+      "id": "dormitory cloister door",
+      "plane": [
+        7.866667,
+        8.133333
+      ],
+      "receiving_floor_samples": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.85,
+      "height": 2.26
+    },
+    {
+      "id": "tower cloister door",
+      "plane": [
+        49.866665,
+        50.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.85,
+      "height": 2.26
+    },
+    {
+      "id": "tower service door",
+      "plane": [
+        59.866665,
+        60.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2,
+      "height": 2.35
+    },
+    {
+      "id": "dining hall cloister door",
+      "plane": [
+        49.866665,
+        50.133335
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.86,
+      "height": 2.28
+    },
+    {
+      "id": "refectory receiving door",
+      "plane": [
+        29.866667,
+        30.133333
+      ],
+      "receiving_floor_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2,
+      "height": 2.35
+    },
+    {
+      "id": "memorial chamber door",
+      "plane": [
+        15.866667,
+        16.133333
+      ],
+      "receiving_floor_samples": [
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0,
+        -3.0
+      ],
+      "width": 1.82,
+      "height": 2.24
+    }
+  ]
+}

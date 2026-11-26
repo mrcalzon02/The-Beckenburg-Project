@@ -1,0 +1,121 @@
+{
+  "site": "WLD-17",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/layouts/wld-17/layout.json",
+  "source_layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+  "structure_glb_sha256": "47fc637027476bed7d1fc7a94b1759800cbdea7a9e3d11be3f7e3f5ad14eadcc",
+  "furnished_glb_sha256": "7bfc9ab10908cc97d8ec5a563cb051923d788fc7003b9783230cf842499ad6b5",
+  "native_sha256": "ea8393e6a3b79794b10ed5ed2bc6b0ea269dea821ac6a1f497e76965a3f88822",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-17:barracks:0:0",
+      "zone": "barracks",
+      "purpose": "Lower barrack room / Brackenhead barracks lockers and duty shelf / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_barracks_lockers",
+      "asset": "level_blockout_barracks_lockers",
+      "source_sha256": "2371aeb5e6d5be94e3da6c71fe40fc58b669e8f2d3de3d10cdf2710e70029e3f",
+      "bounds": [
+        10.845999717712402,
+        -14.989999771118164,
+        0.0,
+        13.095999717712402,
+        -14.15999984741211,
+        2.190000057220459
+      ],
+      "rect": [
+        10.846,
+        14.16,
+        13.096,
+        14.9899999833107
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-17:records:1:0",
+      "zone": "records",
+      "purpose": "Duty records room / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        25.8799991607666,
+        -14.687000274658203,
+        0.0,
+        26.96000099182129,
+        -14.160000801086426,
+        2.0
+      ],
+      "rect": [
+        25.87999999141693,
+        14.16,
+        26.960000034332275,
+        14.68699999511242
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "WLD-17:service:2:0",
+      "zone": "service",
+      "purpose": "Maintenance shelter / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        46.94599914550781,
+        -14.940000534057617,
+        4.0,
+        48.69599914550781,
+        -14.15999984741211,
+        4.909999847412109
+      ],
+      "rect": [
+        46.946,
+        14.16,
+        48.696,
+        14.93999997138977
+      ],
+      "floor_y": 4,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "WLD-17:plant:3:0",
+      "zone": "plant",
+      "purpose": "Ventilation and power room / Outdoor emergency generator and service skid / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_diesel_generator_skid",
+      "asset": "level_blockout_diesel_generator_skid",
+      "source_sha256": "ff430785a75f26bbb0d6e95fab8fb61dbff97e7ad9068b6b05aa1f9c1c4bfc22",
+      "bounds": [
+        58.70000076293945,
+        -18.256000518798828,
+        0.0,
+        59.84000015258789,
+        -16.055999755859375,
+        1.8600000143051147
+      ],
+      "rect": [
+        58.70000001430512,
+        16.055999990463256,
+        59.84,
+        18.256000038146972
+      ],
+      "floor_y": 0,
+      "yaw": -1.5707963267948966,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 192
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "e59f29b2e409a760f5147dfe9e01d87d09e8ace9239259296e77f496c229eb3a",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

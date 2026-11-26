@@ -1,0 +1,215 @@
+{
+  "source": {
+    "id": "WLD-14",
+    "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+    "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+    "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+    "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+    "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+    "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+    "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+  },
+  "retired": [
+    "Arrival end bearing WLD-14 0",
+    "Flat route shell Wall bed W",
+    "Flat route shell Wall bed W.001",
+    "Flat route shell Wall foyer S",
+    "Flat route shell Wall foyer S.001",
+    "Flat route shell Wall generator S",
+    "Flat route shell Wall generator S.001",
+    "Flat route shell Wall passage N",
+    "Flat route shell Wall passage N.001",
+    "Flat route shell Wall service-upper E",
+    "Flat route shell Wall study E",
+    "Flat route shell Wall study E.001",
+    "Flat route shell Wall upperhall W",
+    "Floor exterior deck porch 0",
+    "Floor exterior deck porch 1",
+    "Floor exterior deck porch 2",
+    "Floor exterior deck porch 3",
+    "Floor exterior deck porch 4",
+    "Floor exterior deck porch 5",
+    "Floor exterior deck porch 6",
+    "Floor exterior deck porch 7",
+    "Floor exterior deck porch 8",
+    "Floor exterior deck porch 9",
+    "Floor passage",
+    "Floor service-upper",
+    "Floor service-upper.001",
+    "Floor service-upper.002",
+    "Floor service-upper.003",
+    "Floor service-upper.004",
+    "Floor service-upper.005",
+    "Floor service-upper.006",
+    "Floor service-upper.007",
+    "Floor tower0",
+    "Floor upperhall",
+    "Floor upperhall.001",
+    "Floor upperhall.002",
+    "Floor upperhall.003",
+    "Floor upperhall.004",
+    "Floor upperhall.005",
+    "Floor upperhall.006",
+    "Floor upperhall.007",
+    "Header bed W",
+    "Header foyer S",
+    "Header generator S",
+    "Header passage N",
+    "Header study E",
+    "Saved editor occupied-room terrain WLD-14",
+    "Wall kitchen S",
+    "route-01 support 0",
+    "route-02 support 0",
+    "route-03 support 0",
+    "route-17 support 0",
+    "route-18 support 0",
+    "route-19 support 0"
+  ],
+  "superseded_guides": {
+    "route-01": {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          84.0
+        ],
+        [
+          32.0,
+          0,
+          72.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-03": {
+      "id": "route-03",
+      "a": "porch",
+      "b": "foyer",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          60.0
+        ],
+        [
+          28.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-11": {
+      "id": "route-11",
+      "a": "upperhall",
+      "b": "study",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          45.0,
+          3.2,
+          42.0
+        ],
+        [
+          35.0,
+          3.2,
+          48.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-13": {
+      "id": "route-13",
+      "a": "bed",
+      "b": "service-upper",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          22.0,
+          3.2,
+          48.0
+        ],
+        [
+          14.0,
+          3.2,
+          42.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-17": {
+      "id": "route-17",
+      "a": "passage",
+      "b": "tower0",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          22
+        ],
+        [
+          32,
+          0,
+          13
+        ],
+        [
+          34.8,
+          0,
+          10
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-18": {
+      "id": "route-18",
+      "a": "kitchen",
+      "b": "yard",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          37.0,
+          0,
+          48.0
+        ],
+        [
+          55.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-19": {
+      "id": "route-19",
+      "a": "yard",
+      "b": "generator",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          55.0,
+          0,
+          53.0
+        ],
+        [
+          53.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    }
+  }
+}

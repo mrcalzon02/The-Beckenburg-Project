@@ -1,0 +1,6 @@
+PASS light-locality aperture: radius stops, hard beam cone, diffuse backlight, door toggles, boundary fallback and cached frames
+PASS per-source second-door radius stop, real room connectivity, shadow candidate prune and revision-only rebuild
+PASS HOUSE cached every-door source reach and direct-ray RGB parity source_blocked_open_room_pairs=112
+PASS FARMHOUSE cached every-door source reach and direct-ray RGB parity source_blocked_open_room_pairs=202
+PASS SCHOOL cached every-door source reach and direct-ray RGB parity source_blocked_open_room_pairs=454
+PASS portal-gated lighting cross-map RGB/normal parity, door/circuit locality; rejected candidate samples=16380 safe local-only authored sources=1 connected-but-out-of-reach source-room pairs=768

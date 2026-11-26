@@ -1,0 +1,956 @@
+{
+  "id": "WLD-16",
+  "status": "SAVED_GEOGRAPHIC_EARTHWORKS_CONSTRUCTION_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/service-portal-construction-pass/wld-16/construction.json",
+  "source_contract_sha256": "d39911afab8e828c90791532495ab4494ce04103d3cf9dd4e135f4f8620d2900",
+  "source_glb": "development/levels/rebuild/service-portal-construction-pass/wld-16/clean-doorways.glb",
+  "source_glb_sha256": "fde1e97bd5adb5a1ca0dcdd9582b4a9f7ebc043232ce74a600bf2f2778498b20",
+  "source_physics": "development/levels/rebuild/service-portal-construction-pass/wld-16/clean-doorways.hcs2",
+  "source_physics_sha256": "17860ff253d1757d3b51d684d99070dd1f1f1f692fb81f3463c7421c7b7ed7c6",
+  "before_layout": "development/levels/rebuild/service-portal-construction-pass/wld-16/authored-layout.json",
+  "before_layout_sha256": "5adb8dd8d55d6f74f4676b57f3843db1ee6b4a6c9b4bdd6e2c1e454ed511afa8",
+  "layout": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/authored-layout.json",
+  "layout_sha256": "90d34babdcb1f358a740a4a62b310a823d5561fd7a9d4591aadf662103be2199",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [],
+  "stair_components": [],
+  "glb_sha256": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+  "physics_sha256": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9",
+  "arrival_bearing": {
+    "link": "route-01",
+    "anchor": [
+      26.0,
+      0,
+      68.0
+    ],
+    "route_width": 1.5,
+    "extension_metres": 0.35,
+    "contact_owner": "route-01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        25.25,
+        68.35
+      ],
+      [
+        25.25,
+        68.0
+      ],
+      [
+        26.75,
+        68.0
+      ],
+      [
+        26.75,
+        68.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          25.25,
+          68.35
+        ],
+        [
+          25.25,
+          68.0
+        ],
+        [
+          26.75,
+          68.0
+        ],
+        [
+          26.75,
+          68.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-16 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-16 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "gallery_builder": "tools/build_cinder_galleries.py",
+  "gallery_builder_sha256": "9744e7017d2b95428a135665b3aea1ff6c203754f86e4d13b25be930de7a6005",
+  "blend_sha256": "ee27a70bf67d64b2e080cd23ee56ef249af22e1488b9150c3592263d5faa49df",
+  "doorways": [
+    {
+      "id": "WLD-16-z-42-18-y0",
+      "axis": "z",
+      "boundary": 42,
+      "along": 18,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        42,
+        42.24
+      ],
+      "rooms": [
+        "office"
+      ],
+      "side": "N",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        18,
+        0,
+        42.120000000000005
+      ],
+      "boundary_center": [
+        18,
+        0,
+        42
+      ]
+    },
+    {
+      "id": "WLD-16-z-50-18-y0",
+      "axis": "z",
+      "boundary": 50,
+      "along": 18,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        49.76,
+        50
+      ],
+      "rooms": [
+        "office"
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        18,
+        0,
+        49.879999999999995
+      ],
+      "boundary_center": [
+        18,
+        0,
+        50
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-45-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 45,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13.24
+      ],
+      "rooms": [
+        "office",
+        "manager"
+      ],
+      "side": "W",
+      "frame_depth": 0.4800000000000004,
+      "frame_center": [
+        13.0,
+        0,
+        45
+      ],
+      "boundary_center": [
+        13,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "WLD-16-z-46-42.5-y0",
+      "axis": "z",
+      "boundary": 46,
+      "along": 42.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        45.76,
+        46.24
+      ],
+      "rooms": [
+        "laundry",
+        "plant"
+      ],
+      "side": "S",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        42.5,
+        0,
+        46.0
+      ],
+      "boundary_center": [
+        42.5,
+        0,
+        46
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-43-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 43,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "laundry"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        43
+      ],
+      "boundary_center": [
+        39,
+        0,
+        43
+      ]
+    },
+    {
+      "id": "WLD-16-x-46-49-y0",
+      "axis": "x",
+      "boundary": 46,
+      "along": 49,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        45.76,
+        46
+      ],
+      "rooms": [
+        "plant"
+      ],
+      "side": "E",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        45.879999999999995,
+        0,
+        49
+      ],
+      "boundary_center": [
+        46,
+        0,
+        49
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-22.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 22.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room1"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        22.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        22.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-27.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 27.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room2"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        27.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        27.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-32.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 32.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room3"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        32.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        32.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-37.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 37.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room4"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        37.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        37.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-22.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 22.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room5"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        22.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        22.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-27.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 27.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room6"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        27.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        27.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-32.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 32.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room7"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        32.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        32.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-37.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 37.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room8"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        37.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        37.5
+      ]
+    }
+  ],
+  "door_types": {
+    "pedestrian": {
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0
+    },
+    "service": {
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0
+    },
+    "loading": {
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0
+    }
+  },
+  "doorway_builder": "tools/build_service_portals.py",
+  "doorway_builder_sha256": "a0ebb98916c693d278d79eb010149cdb045e19c5df2d6227569ee0c1c7e53213",
+  "doorframe_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "doorframe_source_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "doorframe_parts": "Original catalog left jamb, right jamb and header; source master/UVs/materials preserved. Threshold/hardware studies retained in library, not placed as a blocked/raised opening.",
+  "removed_fragmented_walls": [
+    "Arrival end bearing WLD-16 0",
+    "Flat route shell Wall laundry E",
+    "Flat route shell Wall laundry N",
+    "Flat route shell Wall laundry N.001",
+    "Flat route shell Wall laundry S",
+    "Flat route shell Wall laundry S.001",
+    "Flat route shell Wall manager E",
+    "Flat route shell Wall office N",
+    "Flat route shell Wall office N.001",
+    "Flat route shell Wall office S",
+    "Flat route shell Wall office S.001",
+    "Flat route shell Wall office W",
+    "Flat route shell Wall office W.001",
+    "Flat route shell Wall plant N.001",
+    "Flat route shell Wall plant N.002",
+    "Flat route shell Wall room1 E",
+    "Flat route shell Wall room1 E.001",
+    "Flat route shell Wall room2 E",
+    "Flat route shell Wall room2 E.001",
+    "Flat route shell Wall room3 E",
+    "Flat route shell Wall room3 E.001",
+    "Flat route shell Wall room4 E",
+    "Flat route shell Wall room4 E.001",
+    "Flat route shell Wall room5 W",
+    "Flat route shell Wall room5 W.001",
+    "Flat route shell Wall room6 W",
+    "Flat route shell Wall room6 W.001",
+    "Flat route shell Wall room7 W",
+    "Flat route shell Wall room7 W.001",
+    "Flat route shell Wall room8 S",
+    "Flat route shell Wall room8 W",
+    "Flat route shell Wall room8 W.001",
+    "Header laundry N",
+    "Header laundry S",
+    "Header office N",
+    "Header office S",
+    "Header office W",
+    "Header plant N.001",
+    "Header room1 E",
+    "Header room2 E",
+    "Header room3 E",
+    "Header room4 E",
+    "Header room5 W",
+    "Header room6 W",
+    "Header room7 W",
+    "Header room8 W",
+    "Wall laundry W",
+    "Wall manager N",
+    "Wall manager S",
+    "Wall manager W",
+    "Wall office E",
+    "Wall plant E",
+    "Wall plant S",
+    "Wall plant W",
+    "Wall room1 N",
+    "Wall room1 S",
+    "Wall room1 W",
+    "Wall room2 S",
+    "Wall room2 W",
+    "Wall room3 S",
+    "Wall room3 W",
+    "Wall room4 W",
+    "Wall room5 E",
+    "Wall room5 N",
+    "Wall room5 S",
+    "Wall room6 E",
+    "Wall room6 S",
+    "Wall room7 E",
+    "Wall room7 S",
+    "Wall room8 E",
+    "route-01 support 0",
+    "route-02 support 0",
+    "route-03 support 0",
+    "route-04 support 0",
+    "route-06 support 0",
+    "route-07 support 0",
+    "route-08 support 0",
+    "route-09 support 0",
+    "route-10 support 0",
+    "route-12 support 0",
+    "route-13 support 0",
+    "route-13 support 1",
+    "route-14 support 0",
+    "route-14 support 1",
+    "route-15 support 0",
+    "route-16 support 0",
+    "route-17 support 0",
+    "route-18 support 0",
+    "route-19 support 0",
+    "route-20 support 0",
+    "route-21 support 0",
+    "route-22 support 0"
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-16.png",
+      "sha256": "b95f542d6a8c316e795d68f18dc7f025ae1da0e90cd16a8180d9a0c1499a3555",
+      "type": "native exported actual saved terrain earthworks with roof cutaway; not gameplay"
+    }
+  ],
+  "world": "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/adaptive-topology.bin": "773522c1865582b1cab2348c4e408651c13e99f33fe73d27bc5aa49ef33195d4",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/authored-cuts.tsv": "c5239d925269830f01d305384cf614511c9d53cf3a5c44aa6250ad1747f0c14d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/earthworks-verification.json": "03c3a9424fcb3d55e09598bd65e443f0a4ffae9c09d047872959d18213b4cdc8",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/source-provenance.json": "1d0e344d725cc31322f057f8ffb039c3786c5c8adcb14999f84bd9566f09fd54",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/terrain-physics.hcs2": "b2d6b4bb019a52e7bba93612f118a5f68a623b88ba69b03d6e72b44e39fe766d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/tile_0_0.png": "6a2078cc44d13f5c61a1894c743dfdad83a5e747172d2fb58ffeff27399b3496",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/verification.json": "03c3a9424fcb3d55e09598bd65e443f0a4ffae9c09d047872959d18213b4cdc8",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/world.properties": "f7ed25b987fd594c7f19f771f5c7116c386725bc4c8f5d8cc0fd0e31f057e545",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/scene-package/.scene.bin.editor.previous": "9a0b83ec2534ebc32d4f33c2eb782813583faad5895276308337ea44062da1db",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/scene-package/scene.bin": "38e7472503fb86a85d8a911e2bed8c2980d7b1e7eba1c37a30a827a7623c091f",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/scene-package/meshes/site.obj": "dac11a0ffe443ba643745cafbca2e4e5838ac38933e002b3807fc72585067dc3",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/terrain-layers/tile_0_0.bin": "79d9c9f32e58bde46a1334ec541c1a2c7eb741469f06cb43699d514651bf44d5"
+  },
+  "terrain_seed_builder": "tools/java/RosterTerrainBuild.java",
+  "terrain_seed_builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "seed_input_files_sha256": {
+    "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16/cuts.tsv": "c5239d925269830f01d305384cf614511c9d53cf3a5c44aa6250ad1747f0c14d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16/grades.tsv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16/heights.txt": "63e0d329fcf04b1885270a9c59bb34d00c62e8d413eb6a1a1d26d93df2d8f342",
+    "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16/provenance.json": "9d483aaad4204292b6cbc3fc127d0c3bad59483d3f5480647cd69a1c1eee330d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16/settings.tsv": "efd0ce1a12c7d68c1d4c2d25c5a68360bbecfa0fd0f19690abd3841b99e13d95",
+    "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16/source.png": "6a2078cc44d13f5c61a1894c743dfdad83a5e747172d2fb58ffeff27399b3496"
+  },
+  "original_terrain_mesh": "Authored roadside terrain",
+  "removed_interface_parts": [
+    "Floor office",
+    "Floor manager",
+    "Floor laundry",
+    "Floor plant",
+    "Floor room1",
+    "Floor room5",
+    "Floor room2",
+    "Floor room6",
+    "Floor room3",
+    "Floor room7",
+    "Floor room4",
+    "Floor room8",
+    "Floor exterior deck westwalk 0",
+    "Floor exterior deck westwalk 1",
+    "Floor exterior deck westwalk 2",
+    "Floor exterior deck westwalk 3",
+    "Floor exterior deck westwalk 4",
+    "Floor exterior deck westwalk 5",
+    "Floor exterior deck westwalk 6",
+    "Floor exterior deck westwalk 7",
+    "Floor exterior deck westwalk 8",
+    "Floor exterior deck westwalk 9",
+    "Floor exterior deck westwalk 10",
+    "Floor exterior deck westwalk 11",
+    "Floor exterior deck westwalk 12",
+    "Floor exterior deck westwalk 13",
+    "Floor exterior deck westwalk 14",
+    "Floor exterior deck westwalk 15",
+    "Floor exterior deck westwalk 16",
+    "Floor exterior deck westwalk 17",
+    "Floor exterior deck westwalk 18",
+    "Floor exterior deck westwalk 19",
+    "Floor exterior deck westwalk 20",
+    "Floor exterior deck westwalk 21",
+    "Floor exterior deck westwalk 22",
+    "Floor exterior deck westwalk 23",
+    "Floor exterior deck westwalk 24",
+    "Floor exterior deck eastwalk 25",
+    "Floor exterior deck eastwalk 26",
+    "Floor exterior deck eastwalk 27",
+    "Floor exterior deck eastwalk 28",
+    "Floor exterior deck eastwalk 29",
+    "Floor exterior deck eastwalk 30",
+    "Floor exterior deck eastwalk 31",
+    "Floor exterior deck eastwalk 32",
+    "Floor exterior deck eastwalk 33",
+    "Floor exterior deck eastwalk 34",
+    "Floor exterior deck eastwalk 35",
+    "Floor exterior deck eastwalk 36",
+    "Floor exterior deck eastwalk 37",
+    "Floor exterior deck eastwalk 38",
+    "Floor exterior deck eastwalk 39",
+    "Floor exterior deck eastwalk 40",
+    "Floor exterior deck eastwalk 41",
+    "Floor exterior deck eastwalk 42",
+    "Floor exterior deck eastwalk 43",
+    "Floor exterior deck eastwalk 44",
+    "Floor exterior deck eastwalk 45",
+    "Floor exterior deck eastwalk 46",
+    "Floor exterior deck eastwalk 47",
+    "Floor exterior deck eastwalk 48",
+    "Floor exterior deck eastwalk 49",
+    "Floor exterior deck eastwalk 50",
+    "Floor exterior deck eastwalk 51",
+    "Floor exterior deck eastwalk 52",
+    "Floor exterior deck northwalk 53",
+    "Floor exterior deck northwalk 54",
+    "Floor exterior deck northwalk 55",
+    "Floor exterior deck northwalk 56",
+    "Floor exterior deck northwalk 57",
+    "Floor exterior deck northwalk 58",
+    "Floor exterior deck northwalk 59",
+    "Floor exterior deck northwalk 60",
+    "Floor exterior deck northwalk 61",
+    "Floor exterior deck northwalk 62",
+    "Floor exterior deck northwalk 63",
+    "Floor exterior deck northwalk 64",
+    "Floor exterior deck northwalk 65"
+  ],
+  "new_interface_parts": [
+    "WLD-16 westwalk continuous founded floor region0",
+    "WLD-16 eastwalk continuous founded floor region0",
+    "WLD-16 northwalk continuous founded floor region0",
+    "WLD-16 office continuous founded floor region0",
+    "WLD-16 manager continuous founded floor region0",
+    "WLD-16 laundry continuous founded floor region0",
+    "WLD-16 plant continuous founded floor region0",
+    "WLD-16 room1 continuous founded floor region0",
+    "WLD-16 room5 continuous founded floor region0",
+    "WLD-16 room2 continuous founded floor region0",
+    "WLD-16 room6 continuous founded floor region0",
+    "WLD-16 room3 continuous founded floor region0",
+    "WLD-16 room7 continuous founded floor region0",
+    "WLD-16 room4 continuous founded floor region0",
+    "WLD-16 room8 continuous founded floor region0",
+    "WLD-16 north arcade full-width flush service apron region0"
+  ],
+  "program_files_sha256": {
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-16/features.tsv": "7b87a161c8d4cef53f8adb56ec81ce22ea1c6ef4e1cb5e5b08cc2e80b654711b",
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-16/protected-rooms.tsv": "365a539442b75dc84b2ddd706c2b4f989533050f4cac6ea0c61f25276d23988c",
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-16/saved-grid.tsv": "b883a47fc24ab021bbad5fb4953c9eefb85b4b7711fc8f35462dfff4389c3921",
+    "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-16/underlays.tsv": "c180e545ba1148a885828b642d7de0ea9b6bbe6ca6389731cfa1665a19725200"
+  },
+  "saved_world": "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/adaptive-topology.bin": "773522c1865582b1cab2348c4e408651c13e99f33fe73d27bc5aa49ef33195d4",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/authored-cuts.tsv": "c5239d925269830f01d305384cf614511c9d53cf3a5c44aa6250ad1747f0c14d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/earthworks-verification.json": "03c3a9424fcb3d55e09598bd65e443f0a4ffae9c09d047872959d18213b4cdc8",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/source-provenance.json": "1d0e344d725cc31322f057f8ffb039c3786c5c8adcb14999f84bd9566f09fd54",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/terrain-physics.hcs2": "b2d6b4bb019a52e7bba93612f118a5f68a623b88ba69b03d6e72b44e39fe766d",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/tile_0_0.png": "6a2078cc44d13f5c61a1894c743dfdad83a5e747172d2fb58ffeff27399b3496",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/verification.json": "03c3a9424fcb3d55e09598bd65e443f0a4ffae9c09d047872959d18213b4cdc8",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/world.properties": "f7ed25b987fd594c7f19f771f5c7116c386725bc4c8f5d8cc0fd0e31f057e545",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/scene-package/.scene.bin.editor.previous": "9a0b83ec2534ebc32d4f33c2eb782813583faad5895276308337ea44062da1db",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/scene-package/scene.bin": "38e7472503fb86a85d8a911e2bed8c2980d7b1e7eba1c37a30a827a7623c091f",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/scene-package/meshes/site.obj": "dac11a0ffe443ba643745cafbca2e4e5838ac38933e002b3807fc72585067dc3",
+    "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world/terrain-layers/tile_0_0.bin": "79d9c9f32e58bde46a1334ec541c1a2c7eb741469f06cb43699d514651bf44d5"
+  },
+  "earthworks": [
+    {
+      "name": "Motel court arcades and arrival clearing",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "arrival",
+      "polygon": [
+        [
+          4,
+          16
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          39,
+          14
+        ],
+        [
+          48,
+          17
+        ],
+        [
+          57,
+          25
+        ],
+        [
+          58,
+          52
+        ],
+        [
+          48,
+          59
+        ],
+        [
+          37,
+          61
+        ],
+        [
+          36,
+          76
+        ],
+        [
+          16,
+          76
+        ],
+        [
+          12,
+          59
+        ],
+        [
+          3,
+          52
+        ]
+      ]
+    },
+    {
+      "name": "Motel north service court",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "arrival",
+      "polygon": [
+        [
+          10,
+          13
+        ],
+        [
+          43,
+          13
+        ],
+        [
+          54,
+          16
+        ],
+        [
+          57,
+          23
+        ],
+        [
+          48,
+          26
+        ],
+        [
+          12,
+          23
+        ]
+      ]
+    }
+  ],
+  "earthworks_verification": {
+    "site": "WLD-16",
+    "changed_vertices": 805,
+    "raised_vertices": 456,
+    "lowered_vertices": 349,
+    "max_change_m": 1.082536101,
+    "source_height_sha256": "6a2078cc44d13f5c61a1894c743dfdad83a5e747172d2fb58ffeff27399b3496",
+    "saved_topology_sha256": "773522c1865582b1cab2348c4e408651c13e99f33fe73d27bc5aa49ef33195d4",
+    "saved_cuts_sha256": "c5239d925269830f01d305384cf614511c9d53cf3a5c44aa6250ad1747f0c14d",
+    "hole_controls": 12,
+    "disk_reopen_verified": true,
+    "physics_sha256": "b2d6b4bb019a52e7bba93612f118a5f68a623b88ba69b03d6e72b44e39fe766d",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/terrain-ownership-construction-pass/original-worlds/wld-16/terrain-world",
+  "removed_redundant_cottage_walks": [
+    "Floor office",
+    "Floor manager",
+    "Floor laundry",
+    "Floor plant",
+    "Floor room1",
+    "Floor room5",
+    "Floor room2",
+    "Floor room6",
+    "Floor room3",
+    "Floor room7",
+    "Floor room4",
+    "Floor room8",
+    "Floor exterior deck westwalk 0",
+    "Floor exterior deck westwalk 1",
+    "Floor exterior deck westwalk 2",
+    "Floor exterior deck westwalk 3",
+    "Floor exterior deck westwalk 4",
+    "Floor exterior deck westwalk 5",
+    "Floor exterior deck westwalk 6",
+    "Floor exterior deck westwalk 7",
+    "Floor exterior deck westwalk 8",
+    "Floor exterior deck westwalk 9",
+    "Floor exterior deck westwalk 10",
+    "Floor exterior deck westwalk 11",
+    "Floor exterior deck westwalk 12",
+    "Floor exterior deck westwalk 13",
+    "Floor exterior deck westwalk 14",
+    "Floor exterior deck westwalk 15",
+    "Floor exterior deck westwalk 16",
+    "Floor exterior deck westwalk 17",
+    "Floor exterior deck westwalk 18",
+    "Floor exterior deck westwalk 19",
+    "Floor exterior deck westwalk 20",
+    "Floor exterior deck westwalk 21",
+    "Floor exterior deck westwalk 22",
+    "Floor exterior deck westwalk 23",
+    "Floor exterior deck westwalk 24",
+    "Floor exterior deck eastwalk 25",
+    "Floor exterior deck eastwalk 26",
+    "Floor exterior deck eastwalk 27",
+    "Floor exterior deck eastwalk 28",
+    "Floor exterior deck eastwalk 29",
+    "Floor exterior deck eastwalk 30",
+    "Floor exterior deck eastwalk 31",
+    "Floor exterior deck eastwalk 32",
+    "Floor exterior deck eastwalk 33",
+    "Floor exterior deck eastwalk 34",
+    "Floor exterior deck eastwalk 35",
+    "Floor exterior deck eastwalk 36",
+    "Floor exterior deck eastwalk 37",
+    "Floor exterior deck eastwalk 38",
+    "Floor exterior deck eastwalk 39",
+    "Floor exterior deck eastwalk 40",
+    "Floor exterior deck eastwalk 41",
+    "Floor exterior deck eastwalk 42",
+    "Floor exterior deck eastwalk 43",
+    "Floor exterior deck eastwalk 44",
+    "Floor exterior deck eastwalk 45",
+    "Floor exterior deck eastwalk 46",
+    "Floor exterior deck eastwalk 47",
+    "Floor exterior deck eastwalk 48",
+    "Floor exterior deck eastwalk 49",
+    "Floor exterior deck eastwalk 50",
+    "Floor exterior deck eastwalk 51",
+    "Floor exterior deck eastwalk 52",
+    "Floor exterior deck northwalk 53",
+    "Floor exterior deck northwalk 54",
+    "Floor exterior deck northwalk 55",
+    "Floor exterior deck northwalk 56",
+    "Floor exterior deck northwalk 57",
+    "Floor exterior deck northwalk 58",
+    "Floor exterior deck northwalk 59",
+    "Floor exterior deck northwalk 60",
+    "Floor exterior deck northwalk 61",
+    "Floor exterior deck northwalk 62",
+    "Floor exterior deck northwalk 63",
+    "Floor exterior deck northwalk 64",
+    "Floor exterior deck northwalk 65"
+  ],
+  "source_terrain_physics_sha256": "c60e8005690f6978fbb4d827bb8fee38f93cc7c386a007679e91189a80ea859c",
+  "terrain_writer": "tools/java/RebuildInstitutionEarthworks.java",
+  "terrain_writer_sha256": "a8baf56f63c7640dddfce02a4f1abacfbbe80696e79c48181137b9afaee536fe",
+  "terrain_composer": "tools/compose_terrain_ownership.py",
+  "terrain_composer_sha256": "ed7bc16516fc5ba6056137d2fea8402c9ca3eb59fcca22c2f868acfb78cbccf2"
+}

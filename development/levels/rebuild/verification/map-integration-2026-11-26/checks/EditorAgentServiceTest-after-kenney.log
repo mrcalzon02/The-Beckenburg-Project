@@ -1,0 +1,2 @@
+2026-11-26T20:11:21.638678539Z [main] RENDER SLOW stage=idle faces=97324 visible_faces=49372 culled_faces=47952 target=320x200 build_ms=1344 lighting_raster_ms=1133
+PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI

@@ -1,0 +1,24 @@
+{
+  "id": "ASYLUM",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3.4
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Shallow central drainage saddle between pavilion groups, discharging beside the arrival neck.",
+  "construction_response": "Retain staggered pavilion datums. Inspect service spine drainage and move isolated outbuildings rather than spreading a site-wide raised slab.",
+  "source_layout": "development/levels/rebuild/asylum/rough-layout.json",
+  "source_layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+  "spec_sha256": "c0cab200fc40f70bc0bf9713002251e77f0618c19f3414090f2027c6d296444f",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -0.9172265834915453,
+    0.1399202793822215
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

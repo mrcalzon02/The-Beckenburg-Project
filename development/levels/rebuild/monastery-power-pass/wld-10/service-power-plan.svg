@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 620" role="img" aria-labelledby="title desc">
+<title id="title">Monastery service-court power and switch runs</title>
+<desc id="desc">Plan of the service-court and bell tower wall with mounted generator, breaker, four lights, two switches and the actual door.</desc>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#273733}.title{font-size:31px;font-weight:650}
+.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.branch{stroke:#25675a;stroke-width:2;stroke-dasharray:5 4;fill:none}
+.power{fill:#9b6538;stroke:#644124}.lamp{fill:#e5b647;stroke:#795b29}
+.switch{fill:#25675a}.door{stroke:#934c37;stroke-width:5}
+</style>
+<rect width="1050" height="620" fill="#f2ece0"/>
+<text x="26" y="47" class="title">Monastery of Ashen Bells · Service power</text>
+<text x="27" y="76" class="body">The service-court generator feeds a single breaker and two independently switched circuits.</text>
+<rect x="24" y="92" width="612" height="497" rx="8" fill="#fbf7eb" stroke="#cfc3ad"/>
+<rect x="653" y="92" width="373" height="497" rx="8" fill="#fbf7eb" stroke="#cfc3ad"/>
+<rect x="84.80" y="132.00" width="259.84" height="392.00" fill="#e4dfd0" stroke="#837866"/>
+<rect x="351.36" y="132.00" width="220.64" height="392.00" fill="#e5e7d7" stroke="#837866"/>
+<rect x="344.64" y="132.00" width="6.72" height="392.00" fill="#9e937e" stroke="#837866"/>
+<path class="door" d="M348.00 300.00V356.00"/>
+<rect x="355.14" y="167.70" width="24.64" height="43.40" fill="#ad7c53" stroke="#837866"/>
+<rect x="352.76" y="219.92" width="10.36" height="62.16" fill="#ad7c53" stroke="#837866"/>
+<text class="head" x="161.80" y="216.00">Tower base</text>
+<text class="head" x="479.60" y="216.00">Service court</text>
+<text class="head" x="460.00" y="328.00">Service door</text>
+<polyline class="branch" points="352.17,373.64 352.17,373.64"/>
+<polyline class="branch" points="343.83,373.08 343.83,373.08"/>
+<polyline class="branch" points="360.13,201.72 352.56,201.72"/>
+<polyline class="branch" points="352.56,201.72 352.56,201.72 352.56,251.00"/>
+<polyline class="branch" points="355.56,225.86 355.56,225.86 352.56,225.86"/>
+<polyline class="branch" points="355.56,247.14 355.56,247.14 352.56,247.14"/>
+<polyline class="branch" points="355.56,268.42 355.56,268.42 352.56,268.42"/>
+<polyline class="branch" points="352.56,251.00 352.56,251.00 352.56,388.20"/>
+<polyline class="branch" points="352.56,388.20 352.56,373.64 352.56,373.64"/>
+<polyline class="branch" points="352.56,373.64 352.56,407.52 352.56,407.52"/>
+<polyline class="branch" points="352.56,373.64 352.56,469.96 352.56,469.96"/>
+<polyline class="branch" points="343.44,388.20 343.44,373.08 343.44,373.08"/>
+<polyline class="branch" points="343.44,373.08 343.44,246.80 343.44,246.80"/>
+<polyline class="branch" points="343.44,373.08 343.44,409.20 343.44,409.20"/>
+<circle class="power" cx="377.60" cy="189.40" r="4.4"/>
+<circle class="power" cx="363.74" cy="251.00" r="4.4"/>
+<circle class="switch" cx="351.39" cy="373.64" r="4.4"/>
+<circle class="lamp" cx="356.51" cy="407.52" r="4.4"/>
+<circle class="lamp" cx="356.51" cy="469.96" r="4.4"/>
+<circle class="switch" cx="344.61" cy="373.08" r="4.4"/>
+<circle class="lamp" cx="339.49" cy="246.80" r="4.4"/>
+<circle class="lamp" cx="339.49" cy="409.20" r="4.4"/>
+<path d="M596 148v-27l-5 7m5-7l5 7" fill="none" stroke="#273733"/>
+<text class="small" x="596" y="166" text-anchor="middle">N</text>
+<text x="675" y="130" class="head">MON-MAIN</text>
+<text x="675" y="160" class="body">Generator and breaker under the wall hood</text>
+<path class="branch" d="M675 187h31"/><text x="717" y="192" class="body">Clipped surface conduit</text>
+<circle class="switch" cx="690" cy="217" r="5"/><text x="717" y="222" class="body">Wall switch</text>
+<circle class="lamp" cx="690" cy="248" r="5"/><text x="717" y="253" class="body">Mounted fixture</text>
+<text x="675" y="324" class="head">MON-11 · Service court</text>
+<text x="675" y="352" class="body">Two exterior loads switched at the service door.</text>
+<text x="675" y="410" class="head">MON-06 · Tower base</text>
+<text x="675" y="438" class="body">Two interior loads on their own wall switch.</text>
+<text x="675" y="464" class="body">The cable crosses in a sealed masonry sleeve.</text>
+<text x="675" y="535" class="small">Generator restart preserves a tripped breaker.</text>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "site": "ASYLUM",
+  "status": "PASS_ONE_CONTINUOUS_3D_TCP_CASE_WITH_ALL_LIVE_REFUGES",
+  "game_package_sha256": "de95df63a34798dc6fbe62709313306c0c92ac46ec383bb5f6a685a8500e837d",
+  "runtime_revision": "7a223b693831b0c377fde72b5067194ca26c3d0f2a9ad581d76fd9cbd2307ac3-2f4966c14d373858",
+  "native_source": "development/levels/rebuild/asylum-flight-rails-pass/checkpoint.json",
+  "verification": {
+    "case.tsv": "56be0ec6b7ef8bc7b7488a7927e232e38a997f4a453497e4a85171b7c082cc85",
+    "blackwater-software-recheck.tsv": "1ea508b488de0d043e0db42f6c2867133d69614464809909e908cfc0512006fc"
+  },
+  "blackwater_scope": "Software archive, 14 leaves in both states, actual descent, blackout, restoration, one live refuge and solo retreat",
+  "remaining": [
+    "Normal selection and installer acceptance",
+    "Hospital enclosure and finish",
+    "Other complete rites and authored encounter"
+  ]
+}

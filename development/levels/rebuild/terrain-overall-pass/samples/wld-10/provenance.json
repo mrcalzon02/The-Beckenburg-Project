@@ -1,0 +1,24 @@
+{
+  "id": "WLD-10",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    6
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Monastery occupies a broad cut bench with higher rock to the northwest; water exits east of the cloister.",
+  "construction_response": "Retain cloister identity and garden, construct bearing terrace and downhill retaining faces. Review the detached dormitory edge against the natural bench rather than a wide square pad.",
+  "source_layout": "development/levels/rebuild/wld-10/rough-layout.json",
+  "source_layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+  "spec_sha256": "e127a4b9104a543ff1e87220aa3c95a0e3d3869a1df185f9dbc417409ac8f04b",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.0156999048968431,
+    2.241054320720492
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

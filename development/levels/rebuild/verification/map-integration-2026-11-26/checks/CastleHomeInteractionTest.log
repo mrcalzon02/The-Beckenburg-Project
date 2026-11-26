@@ -1,0 +1,26 @@
+Exception in thread "main" java.lang.AssertionError: java.lang.IllegalStateException: Model unavailable: kenney_medieval_tower_base
+	at org.beckenburg.CastleHomeInteractionTest.main(CastleHomeInteractionTest.java:70)
+Caused by: java.lang.IllegalStateException: Model unavailable: kenney_medieval_tower_base
+	at org.beckenburg.GlbProps.model(GlbProps.java:365)
+	at org.beckenburg.SceneRenderer.imported(SceneRenderer.java:445)
+	at org.beckenburg.SceneRenderer.buildCastleStatic(SceneRenderer.java:3521)
+	at org.beckenburg.SceneRenderer.drawCastle(SceneRenderer.java:3606)
+	at org.beckenburg.SceneRenderer.drawCastle(SceneRenderer.java:3232)
+	at org.beckenburg.CastleHubPanel.<init>(CastleHubPanel.java:78)
+	at org.beckenburg.CastleHomeInteractionTest.lambda$main$0(CastleHomeInteractionTest.java:43)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:308)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: java.io.IOException: Missing packaged licensed mesh /org/beckenburg/models/kenney_medieval_tower_base.glb
+	at org.beckenburg.GlbProps.model(GlbProps.java:359)
+	... 19 more

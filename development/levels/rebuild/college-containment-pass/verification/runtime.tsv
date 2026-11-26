@@ -1,0 +1,344 @@
+SOURCE	92de55770a64288b2cf7a69933c3e5e58d4b583d8bd6e520650ae680dc1d66ac	51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5
+DOCK	32	0	96	-1.5707963267948966
+SPACE	teaching-hall	0	20	10	24	54	0	3.6	0	1
+SPACE	teaching-lobby	0	20	54	28	62	0	3.6	0	1
+SPACE	lecture	5	6	34	20	54	0	7.2	0	1
+SPACE	seminar	2	6	24	20	34	0	3.6	0	1
+SPACE	lab	3	6	10	16	22	0	3.6	0	1
+SPACE	lab-prep	3	16	10	20	16	0	3.6	0	0
+SPACE	lab-wash	3	16	16	20	22	0	3.6	0	0
+SPACE	lab-entry	3	6	22	20	24	0	3.6	0	1
+SPACE	teaching-stair	0	24	34	30	46	0	3.6	0	1
+SPACE	cleaner	0	24	46	28	50	0	3.6	0	0
+SPACE	public-wc	0	24	50	28	54	0	3.6	0	0
+SPACE	admin	1	28	46	36	54	0	3.6	0	1
+SPACE	meeting	1	28	54	36	58	0	3.6	0	1
+SPACE	records	1	28	58	36	62	0	3.6	0	0
+SPACE	library-stair	6	28	4	34	16	0	3.6	0	1
+SPACE	issue	6	28	16	34	20	0	3.6	0	1
+SPACE	library-hall	6	34	10	38	20	0	3.6	0	0
+SPACE	reading	6	38	10	54	20	0	3.6	0	0
+SPACE	open-stacks	6	34	4	42	10	0	3.6	0	0
+SPACE	library-office	6	42	4	48	10	0	3.6	0	0
+SPACE	reference	6	48	4	54	10	0	3.6	0	0
+SPACE	res-hall	0	50	26	54	70	0	3.6	0	1
+SPACE	res-lift	0	42	26	50	34	0	3.6	0	0
+SPACE	laundry	4	42	34	50	42	0	3.6	0	0
+SPACE	union-common	4	42	42	50	50	0	3.6	0	0
+SPACE	cafe	4	42	50	50	66	0	3.6	0	1
+SPACE	service-base	4	54	22	62	30	0	3.6	0	0
+SPACE	staff-cleaner	4	54	30	58	34	0	3.6	0	0
+SPACE	staff-wc	4	58	30	62	34	0	3.6	0	0
+SPACE	staff-rest	4	54	34	62	38	0	3.6	0	0
+SPACE	north-cross	0	54	38	62	42	0	3.6	0	1
+SPACE	food-store	4	54	42	58	50	0	3.6	0	0
+SPACE	receiving	4	58	42	62	50	0	3.6	0	0
+SPACE	kitchen	4	54	50	62	58	0	3.6	0	0
+SPACE	washup	4	54	58	62	66	0	3.6	0	0
+SPACE	south-cross	0	54	66	62	70	0	3.6	0	0
+SPACE	north-stair	0	62	30	68	42	0	3.6	0	1
+SPACE	south-stair	0	62	58	68	70	0	3.6	0	0
+SPACE	res-cellar-stair	0	42	66	50	78	0	3.6	0	1
+SPACE	rear-hall	0	50	70	54	78	0	3.6	0	1
+SPACE	upper-teaching	10	20	10	24	54	3.6	3.6	0	1
+SPACE	upper-teaching-stair	10	24	34	30	46	3.6	3.6	0	1
+SPACE	tutorial	10	24	46	36	54	3.6	3.6	0	0
+SPACE	project	10	6	10	20	24	3.6	3.6	0	0
+SPACE	upper-seminar	10	6	24	20	34	3.6	3.6	0	0
+SPACE	upper-library-stair	8	28	4	34	16	3.6	3.6	0	1
+SPACE	upper-library-landing	8	28	16	34	20	3.6	3.6	0	1
+SPACE	upper-stacks	8	34	4	46	16	3.6	3.6	0	0
+SPACE	upper-reading	8	46	4	54	16	3.6	3.6	0	0
+SPACE	bridge-lobby	7	34	16	54	20	3.6	3.6	0	1
+SPACE	bridge	7	50	20	54	24	3.6	3.6	0	1
+SPACE	bridge-return	7	50	24	54	26	3.6	3.6	0	1
+SPACE	upper-res-hall	9	50	34	54	70	3.6	3.6	0	1
+SPACE	upper-res-lift	9	42	26	50	34	3.6	3.6	0	0
+SPACE	bath-entry	9	54	26	62	30	3.6	3.6	0	0
+SPACE	res-wc	9	54	22	58	26	3.6	3.6	0	0
+SPACE	res-shower	9	58	22	62	26	3.6	3.6	0	0
+SPACE	upper-north-cross	9	54	38	62	42	3.6	3.6	0	1
+SPACE	upper-south-cross	9	54	66	62	70	3.6	3.6	0	0
+SPACE	upper-north-stair	9	62	30	68	42	3.6	3.6	0	1
+SPACE	upper-south-stair	9	62	58	68	70	3.6	3.6	0	0
+SPACE	res-west-1	9	42	34	50	42	3.6	3.6	0	1
+SPACE	res-west-2	9	42	42	50	50	3.6	3.6	0	0
+SPACE	res-west-3	9	42	50	50	58	3.6	3.6	0	0
+SPACE	res-west-4	9	42	58	50	66	3.6	3.6	0	0
+SPACE	res-east-1	9	54	30	62	38	3.6	3.6	0	1
+SPACE	res-east-2	9	54	42	62	50	3.6	3.6	0	0
+SPACE	res-east-3	9	54	50	62	58	3.6	3.6	0	0
+SPACE	res-east-4	9	54	58	62	66	3.6	3.6	0	0
+SPACE	west-tunnel	11	20	10	24	54	-3	3	0	1
+SPACE	plant	11	12	10	20	24	-3	3	0	0
+SPACE	maintenance	11	12	24	20	34	-3	3	0	1
+SPACE	west-cellar-stair	11	24	34	30	46	-3	3	0	1
+SPACE	cross-tunnel	11	30	38	46	42	-3	3	0	1
+SPACE	east-tunnel	11	42	42	46	66	-3	3	0	1
+SPACE	east-cellar-stair	11	42	66	50	78	-3	3	0	1
+SPACE	green	12	3	0	72	78	0	12	1	1
+SPACE	entry	13	3	78	72	90	0	12	1	1
+SPACE	stage	13	24	90	40	103	0	3	1	1
+SPACE	teaching-library-link	7	24	12	28	16	3.6	3.6	0	1
+SPACE	res-bridge-approach	7	50	26	54	34	3.6	3.6	0	1
+ANCHOR	0	Teaching block distribution	teaching-hall	22	0	32
+ANCHOR	1	Campus administration work room	admin	32	0	50
+ANCHOR	2	Sixteen-place discussion seminar	seminar	13	0	29
+ANCHOR	3	Sixteen-place practical teaching benches	lab	11	0	16
+ANCHOR	4	Twenty-place union cafe seating	cafe	46	0	58
+ANCHOR	5	Thirty-two-place clear-span lecture room	lecture	13	0	44
+ANCHOR	6	Library issue return and enquiry	issue	31	0	18
+ANCHOR	7	Public library bridge approach	bridge-lobby	44	3.6	18
+ANCHOR	8	Upper library stair approach	upper-library-landing	31	3.6	18
+ANCHOR	9	Private residence corridor	upper-res-hall	52	3.6	44
+ANCHOR	10	Upper teaching circulation	upper-teaching	22	3.6	32
+ANCHOR	11	Campus maintenance and parts	maintenance	16	-3	29
+ANCHOR	12	Shared campus green envelope	green	38	0	40
+ANCHOR	13	Public campus approach	entry	38	0	84
+RITUAL	banishment	5	13	0	44
+RITUAL	cleansing	11	16	-3	29
+RITUAL	absolution	12	35	0	30
+TREAD	629:L82 flight0 step1
+TREAD	630:L82 flight0 step2
+TREAD	631:L82 flight0 step3
+TREAD	632:L82 flight0 step4
+TREAD	633:L82 flight0 step5
+TREAD	634:L82 flight0 step6
+TREAD	635:L82 flight0 step7
+TREAD	636:L82 flight0 step8
+TREAD	637:L82 flight0 step9
+TREAD	638:L82 flight0 step10
+TREAD	639:L82 flight0 step11
+TREAD	640:L82 flight0 step12
+TREAD	641:L82 flight0 step13
+TREAD	642:L82 flight0 step14
+TREAD	643:L82 flight0 step15
+TREAD	644:L82 flight0 step16
+TREAD	645:L82 flight0 step17
+TREAD	646:L82 flight0 step18
+TREAD	647:L82 flight0 step19
+TREAD	648:L82 flight0 step20
+TREAD	668:L85 flight0 step1
+TREAD	669:L85 flight0 step2
+TREAD	670:L85 flight0 step3
+TREAD	671:L85 flight0 step4
+TREAD	672:L85 flight0 step5
+TREAD	673:L85 flight0 step6
+TREAD	674:L85 flight0 step7
+TREAD	675:L85 flight0 step8
+TREAD	676:L85 flight0 step9
+TREAD	677:L85 flight0 step10
+TREAD	678:L85 flight0 step11
+TREAD	679:L85 flight0 step12
+TREAD	680:L85 flight0 step13
+TREAD	681:L85 flight0 step14
+TREAD	682:L85 flight0 step15
+TREAD	683:L85 flight0 step16
+TREAD	684:L85 flight0 step17
+TREAD	COLLEGE bay L81 tread 1
+TREAD	COLLEGE bay L81 tread 2
+TREAD	COLLEGE bay L81 tread 3
+TREAD	COLLEGE bay L81 tread 4
+TREAD	COLLEGE bay L81 tread 5
+TREAD	COLLEGE bay L81 tread 6
+TREAD	COLLEGE bay L81 tread 7
+TREAD	COLLEGE bay L81 tread 8
+TREAD	COLLEGE bay L81 tread 9
+TREAD	COLLEGE bay L81 tread 10
+TREAD	COLLEGE bay L81 tread 11
+TREAD	COLLEGE bay L81 tread 12
+TREAD	COLLEGE bay L81 tread 13
+TREAD	COLLEGE bay L81 tread 14
+TREAD	COLLEGE bay L81 tread 15
+TREAD	COLLEGE bay L81 tread 16
+TREAD	COLLEGE bay L81 tread 17
+TREAD	COLLEGE bay L81 tread 18
+TREAD	COLLEGE bay L81 tread 19
+TREAD	COLLEGE bay L81 tread 20
+TREAD	COLLEGE bay L80 tread 1
+TREAD	COLLEGE bay L80 tread 2
+TREAD	COLLEGE bay L80 tread 3
+TREAD	COLLEGE bay L80 tread 4
+TREAD	COLLEGE bay L80 tread 5
+TREAD	COLLEGE bay L80 tread 6
+TREAD	COLLEGE bay L80 tread 7
+TREAD	COLLEGE bay L80 tread 8
+TREAD	COLLEGE bay L80 tread 9
+TREAD	COLLEGE bay L80 tread 10
+TREAD	COLLEGE bay L80 tread 11
+TREAD	COLLEGE bay L80 tread 12
+TREAD	COLLEGE bay L80 tread 13
+TREAD	COLLEGE bay L80 tread 14
+TREAD	COLLEGE bay L80 tread 15
+TREAD	COLLEGE bay L80 tread 16
+TREAD	COLLEGE bay L80 tread 17
+TREAD	COLLEGE bay L80 tread 18
+TREAD	COLLEGE bay L80 tread 19
+TREAD	COLLEGE bay L80 tread 20
+TREAD	COLLEGE bay L84 tread 1
+TREAD	COLLEGE bay L84 tread 2
+TREAD	COLLEGE bay L84 tread 3
+TREAD	COLLEGE bay L84 tread 4
+TREAD	COLLEGE bay L84 tread 5
+TREAD	COLLEGE bay L84 tread 6
+TREAD	COLLEGE bay L84 tread 7
+TREAD	COLLEGE bay L84 tread 8
+TREAD	COLLEGE bay L84 tread 9
+TREAD	COLLEGE bay L84 tread 10
+TREAD	COLLEGE bay L84 tread 11
+TREAD	COLLEGE bay L84 tread 12
+TREAD	COLLEGE bay L84 tread 13
+TREAD	COLLEGE bay L84 tread 14
+TREAD	COLLEGE bay L84 tread 15
+TREAD	COLLEGE bay L84 tread 16
+TREAD	COLLEGE bay L84 tread 17
+PORTAL	COLLEGE-COURT-teaching-lobby	teaching-lobby	green	24	0	62	1.6	z	door	61.88	62.12	2.3	2	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	COLLEGE-COURT-issue	issue	green	31	0	20	1.5	z	door	19.88	20.12	2.3	2	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	COLLEGE-COURT-cafe	cafe	green	42	0	58	1.8	x	door	41.88	42.12	2.3	2	1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	COLLEGE-COURT-rear-hall	rear-hall	entry	52	0	78	1.5	z	door	77.88	78.12	2.3	2	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L05	teaching-hall	lecture	20	0	44	1.4	x	door	19.92	20.08	2.22	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L06	teaching-hall	seminar	20	0	28	1.4	x	door	19.92	20.08	2.22	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L07	teaching-hall	lab-entry	20	0	23	1.4	x	door	19.92	20.08	2.22	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L14	teaching-lobby	meeting	28	0	56	1.4	x	door	27.92	28.08	2.22	1	1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L52	upper-library-landing	bridge-lobby	34	3.6	18	1.4	x	door	33.92	34.08	2.22	1	1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L86	upper-teaching	teaching-library-link	24	3.6	14	1.4	x	door	23.92	24.08	2.22	1	1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+PORTAL	L02	entry	green	38	0	78	1.4	z	trail
+PORTAL	L80	teaching-stair	upper-teaching-stair	26.95	0	44	1.5	z	stair
+PORTAL	L81	library-stair	upper-library-stair	29.4	0	10	1.5	z	stair
+PORTAL	L82	north-stair	upper-north-stair	65	0	32	1.5	z	stair
+PORTAL	L84	west-cellar-stair	teaching-stair	27	-3	40	1.4	z	stair
+LOCAL_DOOR	L67	west-tunnel	maintenance	20	-3	28	1.4	x	door	19.92	20.08	2.22	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 0	library-stair	issue	31	0	16	1.4	z	door	15.88	16.12	2.1	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 1	upper-library-stair	upper-library-landing	31	3.6	16	1.4	z	door	15.88	16.12	2.1	1	1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 2	teaching-library-link	upper-library-stair	28	3.6	14	1.4	x	door	27.88	28.12	2.1	1	-1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 3	west-tunnel	west-cellar-stair	24	-3	44	1.4	x	door	23.88	24.12	2.1	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 4	west-cellar-stair	cross-tunnel	30	-3	40	1.4	x	door	29.88	30.12	2.1	1	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 5	teaching-hall	teaching-stair	24	0	44	1.4	x	door	23.88	24.12	2.1	1	-1	1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+LOCAL_DOOR	COLLEGE bay indexed door 6	upper-teaching	upper-teaching-stair	24	3.6	44	1.4	x	door	23.88	24.12	2.1	1	1	-1	f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9
+ROUTE	L01	level	28.372	0	96	27	0	94	29	0	87	32	0	84	38	0	84
+ROUTE	L02	level	38	0	84	38	0	78	38	0	40
+ROUTE	L03	level	38	0	40	38	0	65	24	0	65	24	0	62	24	0	58
+ROUTE	L04	level	24	0	58	22	0	57	22	0	53	22	0	32
+ROUTE	L05	level	22.0	0	32.0	22.0	0	44	20	0	44	13.0	0	44
+ROUTE	L06	level	22	0	32	22	0	28	20	0	28	18.85	0	28	13	0	29
+ROUTE	L07	level	22.0	0	32.0	22.0	0	23	20	0	23	13.0	0	23
+ROUTE	L08	level	13	0	23	12	0	23	12	0	21	11	0	16
+ROUTE	L11	level	22	0	32	22	0	44	24	0	44	26.95	0	44
+ROUTE	L14	level	24	0	58	26	0	56	29	0	56	32	0	56
+ROUTE	L15	level	32.0	0	56.0	32	0	54	32.0	0	50.0
+ROUTE	L17	level	38	0	40	38	0	26	31	0	26	31	0	20	31	0	18
+ROUTE	L19	level	31	0	18	31	0	16	31	0	14.5	29.4	0	14.5	29.4	0	10
+ROUTE	L24	level	38	0	40	38	0	58	42	0	58	46	0	58	46.0	0	54	50	0	54	52.0	0	54	52.0	0	48.0
+ROUTE	L28	level	52.0	0	48.0	52.0	0	54	50	0	54	46.0	0	54	46.0	0	58.0
+ROUTE	L33	level	52.0	0	48.0	52.0	0	40	54	0	40	58.0	0	40
+ROUTE	L34	level	58.0	0.0	40.0	62.0	0.0	40.5	62.5	0.0	40.5	63.0	0.0	39.5	63.5	0.0	36.0
+ROUTE	L42	level	52.0	0	48.0	52	0	70	52.0	0	74.0
+ROUTE	L43	level	52.0	0.0	74.0	50.0	0.0	75.0	47.0	0.0	74.0	46.0	0.0	73.0
+ROUTE	L44	level	52	0	74	52	0	78	52	0	83	38	0	83	38	0	78	38	0	40
+ROUTE	L45	level	63.5	0.0	36.0	63.0	0.0	39.5	62.5	0.0	40.5	62.0	0.0	40.5	58.0	0.0	40.0	54	0	40	52.0	0	40	52.0	0	48.0	52.0	0	54	50	0	54	46.0	0	54	46	0	58	42	0	58	38	0	58	38	0	40
+ROUTE	L47	level	22	3.6	32	22	3.6	44	24	3.6	44	26.8	3.6	44
+ROUTE	L51	level	31	3.6	13	31	3.6	16	31	3.6	18
+ROUTE	L52	level	31.0	3.6	18.0	34	3.6	18	44.0	3.6	18.0
+ROUTE	L55	level	44.0	3.6	18.0	52	3.6	18.0	52	3.6	20	52	3.6	22.0
+ROUTE	L56	level	52.0	3.6	22.0	52	3.6	24	52.0	3.6	25.0
+ROUTE	L57	level	52.0	3.6	30.0	52	3.6	34	52.0	3.6	52.0
+ROUTE	L62	level	52.0	3.6	52.0	52.0	3.6	40	54	3.6	40	58.0	3.6	40
+ROUTE	L63	level	58.0	3.6	40.0	62.0	3.6	40.5	62.5	3.6	40.5	63.0	3.6	39.5	63.0	3.6	36.0
+ROUTE	L67	level	22	-3	32	22	-3	28	20	-3	28	18.85	-3	28	16	-3	29
+ROUTE	L68	level	22	-3	32	22	-3	44	24	-3	44	27	-3	44	27	-3	40
+ROUTE	L69	level	27	-3	40	30	-3	40	38	-3	40
+ROUTE	L70	level	38.0	-3	40.0	44	-3	40.0	44	-3	42	44	-3	54.0
+ROUTE	L71	level	44.0	-3.0	54.0	44.0	-3.0	66.0	44.5	-3.0	72.0
+ROUTE	L72	level	52.0	3.6	52.0	52.0	3.6	37	50	3.6	37	46.0	3.6	37	46.0	3.6	38.0
+ROUTE	L76	level	52	3.6	30	52	3.6	33	56	3.6	33	58	3.6	34
+ROUTE	L80	stairs	26.95	0	44	26.95	0	35.2	28.5	0	35.2	28.5	0	36.6	28.5	3.6	42.36	28.5	3.6	44	26.8	3.6	44
+ROUTE	L81	stairs	29.4	0	10	29.4	0	5.1	31	0	5.1	31	0	6	31	3.6	11.76	31	3.6	13
+ROUTE	L82	stairs	65	0	32	65	3.6	37.760000000000005
+ROUTE	L84	stairs	27	-3	40	27	-3	44	25.2	-3	44	25.2	-3	42	25.2	0	37.35	25.2	0	35.2	26.95	0	35.2	26.95	0	44
+ROUTE	L85	stairs	46	-3	68	46	0	72.8
+ROUTE	L86	level	22.0	3.6	32.0	22.0	3.6	14	24	3.6	14	26.0	3.6	14
+ROUTE	L87	level	26	3.6	14	28	3.6	14	29.4	3.6	14	31	3.6	14	31	3.6	13
+ROUTE	L88	level	52.0	3.6	25.0	52	3.6	26	52.0	3.6	30.0
+ARRIVAL	28.372	0	96	27	0	94	29	0	87	32	0	84	38	0	84	38	0	78	38	0	65	24	0	65	24	0	62	24	0	58
+SOCKET	college-switch-00	switch	0	27.919001	1.25	55.150002	-1.5707963267948966	EM-00
+SOCKET	college-switch-01	switch	1	28.080999	1.25	51.099998	1.5707963267948966	EM-01
+SOCKET	college-switch-02	switch	2	19.919001	1.25	26.799999	-1.5707963267948966	EM-02
+SOCKET	college-switch-03	switch	3	15.919	1.25	16.4	-1.5707963267948966	EM-03
+SOCKET	college-switch-04	switch	4	42.120998	1.25	56.099998	1.5707963267948966	EM-04
+SOCKET	college-switch-05	switch	5	19.919001	1.25	42.599998	-1.5707963267948966	EM-05
+SOCKET	college-switch-06	switch	6	32.599998	1.25	19.879	3.141592653589793	EM-06
+SOCKET	college-switch-07	switch	7	41.799999	4.85	16.080999	0.0	EM-07
+SOCKET	college-switch-08	switch	8	28.080999	4.85	17.5	1.5707963267948966	EM-08
+SOCKET	college-switch-09	switch	9	50.081001	4.85	46.599998	1.5707963267948966	EM-09
+SOCKET	college-switch-10	switch	10	23.919001	4.85	32.599998	-1.5707963267948966	EM-10
+SOCKET	college-switch-11	switch	11	18.200001	-1.75	33.918999	3.141592653589793	EM-11
+SOCKET	college-load-teaching-hall-1	light	0	22.0	3.256	21.0	0	native-string
+SOCKET	college-load-teaching-hall-2	light	0	22.0	3.256	32.0	0	native-string
+SOCKET	college-load-teaching-hall-3	light	0	22.0	3.256	43.0	0	native-string
+SOCKET	college-load-teaching-lobby-1	light	0	24.0	3.256	58.0	0	native-string
+SOCKET	college-load-lecture-wall-1	light	5	6.264	2.7	40.599998	0	native-string
+SOCKET	college-load-lecture-wall-2	light	5	6.264	2.7	47.200001	0	native-string
+SOCKET	college-load-seminar-1	light	2	10.62	3.256	29.0	0	native-string
+SOCKET	college-load-seminar-2	light	2	15.24	3.256	29.0	0	native-string
+SOCKET	college-load-lab-1	light	3	11.0	3.256	13.96	0	native-string
+SOCKET	college-load-lab-2	light	3	11.0	3.256	17.92	0	native-string
+SOCKET	college-load-lab-entry-1	light	3	10.62	3.256	23.0	0	native-string
+SOCKET	college-load-lab-entry-2	light	3	15.24	3.256	23.0	0	native-string
+SOCKET	college-load-teaching-stair-1	light	0	27.0	3.116	37.959999	0	native-string
+SOCKET	college-load-teaching-stair-2	light	0	27.0	3.116	41.919998	0	native-string
+SOCKET	college-load-admin-1	light	1	32.0	3.256	50.0	0	native-string
+SOCKET	college-load-meeting-1	light	1	32.0	3.256	56.0	0	native-string
+SOCKET	college-load-library-stair-wall-1	light	6	33.696003	2.85	7.96	0	native-string
+SOCKET	college-load-library-stair-wall-2	light	6	33.696003	2.85	11.92	0	native-string
+SOCKET	college-load-issue-1	light	6	31.0	3.256	18.0	0	native-string
+SOCKET	college-load-res-hall-1	light	0	52.0	3.256	37.0	0	native-string
+SOCKET	college-load-res-hall-2	light	0	52.0	3.256	48.0	0	native-string
+SOCKET	college-load-res-hall-3	light	0	52.0	3.256	59.0	0	native-string
+SOCKET	college-load-cafe-1	light	4	46.0	3.256	55.279999	0	native-string
+SOCKET	college-load-cafe-2	light	4	46.0	3.256	60.560001	0	native-string
+SOCKET	college-load-north-cross-1	light	0	58.0	3.256	40.0	0	native-string
+SOCKET	college-load-north-stair-wall-1	light	0	62.264	2.85	33.959999	0	native-string
+SOCKET	college-load-north-stair-wall-2	light	0	62.264	2.85	37.919998	0	native-string
+SOCKET	college-load-res-cellar-stair-1	light	0	46.0	3.256	69.959999	0	native-string
+SOCKET	college-load-res-cellar-stair-2	light	0	46.0	3.256	73.919998	0	native-string
+SOCKET	college-load-rear-hall-1	light	0	52.0	3.256	74.0	0	native-string
+SOCKET	college-load-upper-teaching-1	light	10	22.0	6.856	21.0	0	native-string
+SOCKET	college-load-upper-teaching-2	light	10	22.0	6.856	32.0	0	native-string
+SOCKET	college-load-upper-teaching-3	light	10	22.0	6.856	43.0	0	native-string
+SOCKET	college-load-upper-teaching-stair-1	light	10	27.0	6.716	37.959999	0	native-string
+SOCKET	college-load-upper-teaching-stair-2	light	10	27.0	6.716	41.919998	0	native-string
+SOCKET	college-load-upper-library-stair-1	light	8	31.0	6.716	7.96	0	native-string
+SOCKET	college-load-upper-library-stair-2	light	8	31.0	6.716	11.92	0	native-string
+SOCKET	college-load-upper-library-landing-1	light	8	31.0	6.856	18.0	0	native-string
+SOCKET	college-load-bridge-lobby-1	light	7	40.599998	6.856	18.0	0	native-string
+SOCKET	college-load-bridge-lobby-2	light	7	47.200001	6.856	18.0	0	native-string
+SOCKET	college-load-bridge-1	light	7	52.0	6.856	22.0	0	native-string
+SOCKET	college-load-bridge-return-1	light	7	52.0	6.856	25.0	0	native-string
+SOCKET	college-load-upper-res-hall-1	light	9	52.0	6.856	43.0	0	native-string
+SOCKET	college-load-upper-res-hall-2	light	9	52.0	6.856	52.0	0	native-string
+SOCKET	college-load-upper-res-hall-3	light	9	52.0	6.856	61.0	0	native-string
+SOCKET	college-load-upper-north-cross-1	light	9	58.0	6.856	40.0	0	native-string
+SOCKET	college-load-upper-north-stair-1	light	9	65.0	6.856	33.959999	0	native-string
+SOCKET	college-load-upper-north-stair-2	light	9	65.0	6.856	37.919998	0	native-string
+SOCKET	college-load-res-west-1-1	light	9	46.0	6.856	38.0	0	native-string
+SOCKET	college-load-res-east-1-1	light	9	58.0	6.856	34.0	0	native-string
+SOCKET	college-load-west-tunnel-1	light	11	22.0	-0.344	21.0	0	native-string
+SOCKET	college-load-west-tunnel-2	light	11	22.0	-0.344	32.0	0	native-string
+SOCKET	college-load-west-tunnel-3	light	11	22.0	-0.344	43.0	0	native-string
+SOCKET	college-load-maintenance-1	light	11	16.0	-0.344	29.0	0	native-string
+SOCKET	college-load-west-cellar-stair-1	light	11	27.0	-0.484	37.959999	0	native-string
+SOCKET	college-load-west-cellar-stair-2	light	11	27.0	-0.484	41.919998	0	native-string
+SOCKET	college-load-cross-tunnel-1	light	11	35.279999	-0.484	40.0	0	native-string
+SOCKET	college-load-cross-tunnel-2	light	11	40.560001	-0.484	40.0	0	native-string
+SOCKET	college-load-east-tunnel-1	light	11	44.0	-0.344	48.0	0	native-string
+SOCKET	college-load-east-tunnel-2	light	11	44.0	-0.344	54.0	0	native-string
+SOCKET	college-load-east-tunnel-3	light	11	44.0	-0.344	60.0	0	native-string
+SOCKET	college-load-east-cellar-stair-wall-1	light	11	42.283997	-0.4	69.959999	0	native-string
+SOCKET	college-load-east-cellar-stair-wall-2	light	11	42.283997	-0.4	73.919998	0	native-string
+SOCKET	college-load-green-wall-1	light	12	25.0	2.65	62.303997	0	native-string
+SOCKET	college-load-green-wall-2	light	12	41.696003	2.65	64.0	0	native-string
+SOCKET	college-load-teaching-library-link-1	light	7	26.0	6.856	14.0	0	native-string
+SOCKET	college-load-res-bridge-approach-1	light	7	52.0	6.856	30.0	0	native-string
+SOCKET	college-load-maintenance-board	light	11	16.4	-0.344	32.400002	0	native-string
+SOCKET	college-generator	generator	12	27.465	0.555	29.993	3.141592653589793	EMERGENCY-MAIN
+SOCKET	college-breaker	breaker	11	15.8	-2.1	33.53	0	EMERGENCY-MAIN

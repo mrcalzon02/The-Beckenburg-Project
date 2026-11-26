@@ -1,0 +1,121 @@
+{
+  "site": "WLD-07",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-07/rough-layout.json",
+  "source_layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+  "structure_glb_sha256": "406b7fd01cc49a0bb02b4998b5bcbead21f9cbc42ee54149470988e7228bcd46",
+  "furnished_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+  "native_sha256": "7aae227842d1ab930c20161e7f70ab53f0fe4e6e53f9886703e3a4d4fd7ba5fc",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-07:chapel:0:0",
+      "zone": "chapel",
+      "purpose": "Ruined chapel / Parish pew bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_pew",
+      "asset": "level_blockout_pew",
+      "source_sha256": "3626a9597743d7ea10670ec405a40e61a3d164d361b7cbf570fe3df37e050b25",
+      "bounds": [
+        9.35200023651123,
+        -38.72999954223633,
+        0.0,
+        11.071999549865723,
+        -38.15999984741211,
+        1.3049999475479126
+      ],
+      "rect": [
+        9.351999994277953,
+        38.16,
+        11.072000022888183,
+        38.73000002264976
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 48
+    },
+    {
+      "id": "WLD-07:tool:1:0",
+      "zone": "tool",
+      "purpose": "Caretaker tool store / Caretaker's shovel, rake and upkeep rack / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_grave_caretaker_tools",
+      "asset": "level_blockout_grave_caretaker_tools",
+      "source_sha256": "e1d2f220fd3e1fa6dbb31b59ae84c44275847baedca7aa7c4587c5989ae13751",
+      "bounds": [
+        47.31399917602539,
+        -42.790000915527344,
+        0.0,
+        49.224002838134766,
+        -42.15999984741211,
+        2.234999895095825
+      ],
+      "rect": [
+        47.31400000667572,
+        42.16,
+        49.22399997329712,
+        42.789999995231625
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 144
+    },
+    {
+      "id": "WLD-07:chamber:2:0",
+      "zone": "chamber",
+      "purpose": "Memorial record chamber / Plain closed medieval stone sarcophagus / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_sarcophagus_plain",
+      "asset": "level_blockout_sarcophagus_plain",
+      "source_sha256": "6c7f425488071b1563fed3fda111d8ffcd6b03d1ae792a7bc8d741d75e62c7ea",
+      "bounds": [
+        18.22800064086914,
+        -2.759999990463257,
+        -3.0,
+        19.56800079345703,
+        -0.15999986231327057,
+        -1.9424999952316284
+      ],
+      "rect": [
+        18.22799999332428,
+        0.15999999999999992,
+        19.56800002670288,
+        2.7599999046325685
+      ],
+      "floor_y": -3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 144
+    },
+    {
+      "id": "WLD-07:cottage:3:0",
+      "zone": "cottage",
+      "purpose": "Caretaker cottage / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_domestic_kitchen_range",
+      "asset": "level_blockout_domestic_kitchen_range",
+      "source_sha256": "9a024553c055d319ecbe298eaf4868045c7ed7ec3d6dfffd8912b452183ef396",
+      "bounds": [
+        34.70399856567383,
+        -38.90999984741211,
+        0.0,
+        35.663997650146484,
+        -38.15999984741211,
+        1.534999966621399
+      ],
+      "rect": [
+        34.70400000429153,
+        38.16,
+        35.66399998283386,
+        38.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 208
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "11fb4ad6f1274414866d29c4888d0f33dc6b71afa43c1deaaee2c7bf56c16fdc",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

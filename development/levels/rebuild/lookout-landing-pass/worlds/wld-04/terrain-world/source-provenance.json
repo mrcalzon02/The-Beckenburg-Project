@@ -1,0 +1,21 @@
+{
+  "source_world": "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world",
+  "writer": "tools/java/RebuildTieredEarthworks.java",
+  "writer_sha256": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+  "grade": {
+    "site": "WLD-04",
+    "changed_vertices": 66,
+    "raised_vertices": 66,
+    "lowered_vertices": 0,
+    "max_change_m": 0.043112993,
+    "source_height_sha256": "c34bc04fc96dfdf7ed70d5d9790e326aff76b3cc1674822a0bfd901689628fc9",
+    "saved_topology_sha256": "647b51bf25ac6074fc6e671f8a15fe85e889b6109db5916287e6d3838bba039d",
+    "saved_cuts_sha256": "bee8204ce47cc7815d08d0f6fea8c1d6e1a550c5dcdd53c3587d3cdef9d4d613",
+    "hole_controls": 1169,
+    "disk_reopen_verified": true,
+    "physics_sha256": "c3a3ed40a82b9813c0dc1997d0db04cf286ddb90525edcb9bdbb95e6dfebe047",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "preview_terrain_sha256": "c3a3ed40a82b9813c0dc1997d0db04cf286ddb90525edcb9bdbb95e6dfebe047",
+  "native_terrain_sha256": "c3a3ed40a82b9813c0dc1997d0db04cf286ddb90525edcb9bdbb95e6dfebe047"
+}

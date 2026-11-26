@@ -1,0 +1,282 @@
+{
+  "status": "MINE_SHAFT_HANDRAILS_AND_LOWER_STAIR_GUARDS_VERIFIED",
+  "previous_commit": "aa9f14277e6e0c2ccba1adca0d505a2081ffad54",
+  "prior_gallery": 45340794692,
+  "native_scene_revision": "dd628cf0a82efcf81b62cf470669d540f11d301abdbb6ca2b46a2c30b95ffcff",
+  "staged_case_revision": "dd628cf0a82efcf81b62cf470669d540f11d301abdbb6ca2b46a2c30b95ffcff-73c467d44652d7cb",
+  "retained_native_components": 275,
+  "new_native_components": 104,
+  "wall_brackets": 32,
+  "lower_tread_contacts": 72,
+  "collision_sections": 10,
+  "clear_shaft_width_at_brackets": 1.666,
+  "clear_lower_width_at_foot_plates": 1.268,
+  "physical_routes": 19,
+  "route_replays": 76,
+  "cargo_circuit_replays": 4,
+  "verification": {
+    "measure": "result",
+    "native_scene_revision": "dd628cf0a82efcf81b62cf470669d540f11d301abdbb6ca2b46a2c30b95ffcff",
+    "staged_case_revision": "dd628cf0a82efcf81b62cf470669d540f11d301abdbb6ca2b46a2c30b95ffcff-73c467d44652d7cb",
+    "supported_case_owners": "14 supported owners and actual cargo van",
+    "fitted_thresholds": "8 fitted sets, four standing/crouched body tests per state, sight, aim, sound and object behavior",
+    "physical_routes": "19 routes with exact native standing/crouched replay in both directions",
+    "joined_mine_loop": "Four complete walks from cargo through haul and vent stairs, then back to the cargo deck",
+    "mine_banishment": "5 11.0 -6.0 31.0",
+    "mine_cleansing": "11 47.0 0.0 38.0",
+    "mine_absolution": "1 47.0 0.0 54.0",
+    "shaft_landing_706": "15 level, standing capsule supports; former face has no level support at .96 m past the sill",
+    "shaft_landing_707": "15 level, standing capsule supports; former face has no level support at .96 m past the sill",
+    "staged_rail_collision": "10 actual grip cross-sections; lower guards block a sideways standing or crouched capsule while retaining the walking lane",
+    "mine-assay-cupboard_protected_floor_samples": "69",
+    "mine-shack-cupboard_protected_floor_samples": "69",
+    "mine-wash-cupboard_protected_floor_samples": "69",
+    "mine_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "staged_tcp_mine": "Four peers, real cargo ramp, both closed stair doors reject crossing, both aimed opens replicate, level receiving landings followed by descent and return",
+    "staged_tcp_mine_cover": "Actual assay office approach and live cupboard entry, protection, concealment and exit"
+  },
+  "still_open": [
+    "Remote power, containment, drainage, named packaged selection and full case/release."
+  ],
+  "files": [
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/arrival.tsv",
+      "bytes": 8034,
+      "sha256": "00f7816dc16bed113c607c0e9b87865f6db69362df8ccaac1b308b3ec677ada5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/construction.json",
+      "bytes": 11853,
+      "sha256": "c8e5740d8e0781484835290a982195086ebb2d5c95e52ca372218e5fcf8aba05"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/door-survey.tsv",
+      "bytes": 1214,
+      "sha256": "6d02d3c0edbc949f4b0210e62aa23547f4dd9696d0c63c5f6ba0ba695d58f0b0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/handrails.json",
+      "bytes": 525,
+      "sha256": "06d2a5188539d7055323e8e40a89c70848ad852d25039683b3ec11438958702c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/mine-handrails.blend",
+      "bytes": 1058366,
+      "sha256": "38186249093e18fd668d8ab983589652087d40841bc85728200ddb07df5de081"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/mine-handrails.glb",
+      "bytes": 4654880,
+      "sha256": "adff3ffcf5d33eb0e8ee63b7f585a900ffc72f99b7c484ff50cebef9dd0c39db"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/mine-handrails.hcs2",
+      "bytes": 896393,
+      "sha256": "c4e0b4751aa073d22c62ada731de471a50ed1b824f24034d6c0c29f4e17e40e8"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/mission.tsv",
+      "bytes": 697,
+      "sha256": "2356f2d43e1b2323114a2a9d9ee20705fee6d72bb8394b49cc3f9e24f0df8462"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/mounts.tsv",
+      "bytes": 9219,
+      "sha256": "982b1fb6f6aba6d63abc6ae3fa94e36844890d791ce761fb7aa09ddc728c22a0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/rail-probes.tsv",
+      "bytes": 438,
+      "sha256": "c07b826ca2dc2123db53a20ec95d88f6720c0efd5f8544ffdfec0e149bcabc02"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/roster.json",
+      "bytes": 30196,
+      "sha256": "43996daaac6e5a5aee03df9b89ec10599e4e294be36cd797e1478e16c8a28ec9"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/verification/native-review.tsv",
+      "bytes": 1619,
+      "sha256": "a28f49fa225db6eeed81ef95560ff1d0f8a8d43abcaeca45a3c242c9c2c07963"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/verification/opengl.tsv",
+      "bytes": 1340,
+      "sha256": "21bc31a1240fdc7b47a23a243ad57b1ae91d886931fa39863eca7c7d5b729980"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-706-open.png",
+      "bytes": 335522,
+      "sha256": "5bca4cd2f7fede7ee579d5e55ca4e40c25d8540873b614ab88776fd14b278a84"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-707-open.png",
+      "bytes": 334684,
+      "sha256": "23b580441f22c4a9c2ca79cbf851abc49705307bae939bc14e810da3a759e38f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-haul-wall-handrails.png",
+      "bytes": 297722,
+      "sha256": "0154c682ab2d87b8a7ac74c7bd596235139baf9d4a13c4de27fe732b0dfaecde"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-lower-guard-approach.png",
+      "bytes": 371337,
+      "sha256": "c7abf6d5518a445e602d82b3afe0d8cf6bbfc53a99b6a65461942e7e87b5baaa"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-lower-haul-stair.png",
+      "bytes": 298024,
+      "sha256": "400bc52b02dd5c4f2386811185345fc4f8f2fd9f1a5aaf99e0b450ea750e78fb"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/opengl/mine-706-open.png",
+      "bytes": 329771,
+      "sha256": "fa913b9275bac89bd7a3197b88ac707893d53d758f932b17d2c58d5890b7c34c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/opengl/mine-707-open.png",
+      "bytes": 324190,
+      "sha256": "730dcfde71703bc12080179b0717bfa58e762926905d47b26f6a45cb59f5933f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/opengl/mine-haul-wall-handrails.png",
+      "bytes": 292190,
+      "sha256": "cc4cba261baaace5afccab8c9347b7bfd628b52fe6201f274c923d0a36cff6b2"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/opengl/mine-lower-guard-approach.png",
+      "bytes": 369433,
+      "sha256": "c845a3f62a5112e5489da89b900b4282380514fe2d0d97cd3e613becfb45d145"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/opengl/mine-lower-haul-stair.png",
+      "bytes": 291978,
+      "sha256": "09acd0a95eb69879a490d2ebc6d0ae872729f949bdd1f88104e24878f8bee57b"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/structure/haul-bracket-cutaway.png",
+      "bytes": 1086511,
+      "sha256": "1b09666317f0bbc898703b8f34f3b4050bb480c598901e5ff2616ee6433a60c8"
+    },
+    {
+      "path": "development/levels/rebuild/mine-handrail-pass/captures/structure/lower-tread-guard-cutaway.png",
+      "bytes": 758207,
+      "sha256": "b59617e45286ef2f2e54b4d6aeb80f347327667f0d0279588bdd22f73a2d74f8"
+    }
+  ],
+  "identical_reference_frames": [
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-closed.png",
+      "bytes": 387469,
+      "sha256": "0eeb12577b47e928c88dcb2ae5c730ee03f9e670f485111ef8f2c0b9d5df949c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-open.png",
+      "bytes": 340675,
+      "sha256": "13227658189f638d87edc81e78f0a60cb67b773e2119245d1330dd4eeb45166d"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-706-closed.png",
+      "bytes": 387466,
+      "sha256": "db4797200d9b9dc7441bd78987cfea4b9be5f2ec298e848f9a13623a3f133277"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-707-closed.png",
+      "bytes": 388001,
+      "sha256": "6b18be4eb3a42984e4f74e015494415aaa85762791d757cb2ae8bd47d9c11f80"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-enter.png",
+      "bytes": 478140,
+      "sha256": "1417b24cf48891f23d1d9a3e293f18203669f9368af102e745611bcf455ab0ca"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-assay-cupboard-inside.png",
+      "bytes": 401965,
+      "sha256": "7675642ccac9f7f19facc17aef656ed98caba0398a638723c091854af1bec37c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-roadhead-and-van.png",
+      "bytes": 364647,
+      "sha256": "644c8088dc0ec9fb2d18f239475558dd397bb8ed570b1e32164868b23b4365a4"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-shack-cupboard-enter.png",
+      "bytes": 467638,
+      "sha256": "ae8af1c8eb56d8a0782ce319d92ddedd03f6e6b43c898fe39684c68746faead4"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-shack-cupboard-inside.png",
+      "bytes": 382926,
+      "sha256": "f44bbff795e7d330407083296d23e068cedddbe372d7f3b921f5845ccc4ed337"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-wash-cupboard-enter.png",
+      "bytes": 477268,
+      "sha256": "cd0d871e3d3ad123844dfeb06f2527725832e4ec01c43e007e4f48d3ea9a8912"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/mine-wash-cupboard-inside.png",
+      "bytes": 393378,
+      "sha256": "f9a49572783860e78c08569317efa38b2ce524a9cc8fd60bd11ec0bb5760d091"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-705-closed.png",
+      "bytes": 390026,
+      "sha256": "027d7a88eb5ffbffd2cde2bdb21fa9c3f6c3a1737b9a533fc56c6e884645d3f6"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-705-open.png",
+      "bytes": 337206,
+      "sha256": "48fbf5dc6e4f206af1137fe9da1ec7ecc40f16ece3f6c890fd90c5b0b9d8d3c5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-706-closed.png",
+      "bytes": 390012,
+      "sha256": "f3175ba6ed32d554ba0032a9d974ed1792c6cc0ed64ebfdcdf5eae7c7e392508"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-707-closed.png",
+      "bytes": 388494,
+      "sha256": "303905ac635c121f35b7eb0d9bf9084e0b42c05b2b6450aee94c3558ea150ee1"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-assay-cupboard-enter.png",
+      "bytes": 482774,
+      "sha256": "cee0bb10c9090f334fe90b475547bf89e39aa80216e996a4c5edc029b17ff7e7"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-assay-cupboard-inside.png",
+      "bytes": 400412,
+      "sha256": "b8ceda0700f6e435ae984e59225f10e60687a08ce251f9c863eb9ac34bef2755"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-roadhead-and-van.png",
+      "bytes": 362694,
+      "sha256": "790d308bd6480970f1c0c7bfb21fea0355122b8079891f4573b43dcc26b4563c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-shack-cupboard-enter.png",
+      "bytes": 473767,
+      "sha256": "e2a6f7a59d5f3c75a5742d89311d82e2fd46178d94e42f333f3a709fa7478313"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-shack-cupboard-inside.png",
+      "bytes": 382143,
+      "sha256": "36c7782c03406a82c48ae2b01f6e24d1dd18bee1462b2e2195009b2172b5d56c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-wash-cupboard-enter.png",
+      "bytes": 482739,
+      "sha256": "aa4fe70870c33896296cbbcebf2d12fbb01573813817f60e3ae52abd949ed86f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-cover-pass/captures/opengl/mine-wash-cupboard-inside.png",
+      "bytes": 392531,
+      "sha256": "abe134edd80a3dc919867c3ec84cf8c3f7ae962aea53377e966f8ae8b66a6cfa"
+    }
+  ]
+}

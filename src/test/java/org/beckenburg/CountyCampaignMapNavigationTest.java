@@ -120,6 +120,12 @@ public final class CountyCampaignMapNavigationTest {
             check(map.imageScreenBounds().width >= canvas.getWidth(),
                 "focus zoom fills widescreen viewport instead of retaining edge bands");
             coversViewportAtZoom(map, canvas);
+            picker.setSelectedItem(MissionSites.byId("WLD-07-MORTUARY"));
+            check(map.selected().id().equals("WLD-07-MORTUARY") && selections.get() == 3,
+                "Field-only annex can be selected with the county finder");
+            Point annex = map.nodeScreenPoint("WLD-07-MORTUARY");
+            check(new Rectangle(0, 0, canvas.getWidth(), canvas.getHeight()).contains(annex),
+                "Annex finder brings the actual pin into view");
         });
         System.out.println("PASS county navigation: selection, zoom, labels, pan, reset, castle safety, widescreen matte/focus");
     }

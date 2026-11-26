@@ -1,0 +1,3542 @@
+{
+  "status": "AUTHORED_LAYOUT_SOURCES_ON_BYTE_IDENTICAL_GEOMETRY",
+  "accepted": [
+    {
+      "site": "ASYLUM",
+      "link": "L32",
+      "rooms": [
+        "spine",
+        "main-stair"
+      ],
+      "before": [
+        [
+          27.5,
+          0,
+          31.0
+        ],
+        [
+          27.5,
+          0,
+          28
+        ],
+        [
+          29,
+          0,
+          28
+        ],
+        [
+          32.0,
+          0,
+          28
+        ],
+        [
+          32.0,
+          0,
+          25.0
+        ]
+      ],
+      "after": [
+        [
+          27.5,
+          0.0,
+          31.0
+        ],
+        [
+          28.0,
+          0.0,
+          28.0
+        ],
+        [
+          29.0,
+          0.0,
+          28.0
+        ],
+        [
+          29.5,
+          0.0,
+          28.0
+        ],
+        [
+          30.0,
+          0.0,
+          27.0
+        ],
+        [
+          30.5,
+          0.0,
+          25.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        29,
+        0,
+        28
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L53",
+      "rooms": [
+        "service",
+        "service-stair"
+      ],
+      "before": [
+        [
+          55.5,
+          0,
+          37.0
+        ],
+        [
+          55.5,
+          0,
+          24
+        ],
+        [
+          55.5,
+          0,
+          18.0
+        ],
+        [
+          57.0,
+          0,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          55.5,
+          0.0,
+          37.0
+        ],
+        [
+          55.5,
+          0.0,
+          24.0
+        ],
+        [
+          56.0,
+          0.0,
+          20.0
+        ],
+        [
+          57.0,
+          0.0,
+          19.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        55.5,
+        0,
+        24
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L54",
+      "rooms": [
+        "service-stair",
+        "service-link"
+      ],
+      "before": [
+        [
+          57.0,
+          0,
+          18.0
+        ],
+        [
+          54,
+          0,
+          18
+        ],
+        [
+          44.5,
+          0,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          57.0,
+          0.0,
+          19.0
+        ],
+        [
+          56.5,
+          0.0,
+          19.5
+        ],
+        [
+          55.0,
+          0.0,
+          19.5
+        ],
+        [
+          55.0,
+          0.0,
+          18.5
+        ],
+        [
+          54.5,
+          0.0,
+          18.0
+        ],
+        [
+          54.0,
+          0.0,
+          18.0
+        ],
+        [
+          44.5,
+          0.0,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        54,
+        0,
+        18
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L62",
+      "rooms": [
+        "upper-spine",
+        "upper-stair"
+      ],
+      "before": [
+        [
+          27.5,
+          3.4,
+          26.0
+        ],
+        [
+          27.5,
+          3.4,
+          28
+        ],
+        [
+          29,
+          3.4,
+          28
+        ],
+        [
+          32.0,
+          3.4,
+          28
+        ],
+        [
+          32.0,
+          3.4,
+          25.0
+        ]
+      ],
+      "after": [
+        [
+          27.5,
+          3.4,
+          26.0
+        ],
+        [
+          28.0,
+          3.4,
+          28.0
+        ],
+        [
+          29.0,
+          3.4,
+          28.0
+        ],
+        [
+          29.5,
+          3.4,
+          28.0
+        ],
+        [
+          30.0,
+          3.4,
+          27.0
+        ],
+        [
+          30.0,
+          3.4,
+          25.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        29,
+        3.4,
+        28
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L63",
+      "rooms": [
+        "cellar-stair",
+        "cellar-service"
+      ],
+      "before": [
+        [
+          57.0,
+          -3,
+          18.0
+        ],
+        [
+          55.5,
+          -3,
+          18.0
+        ],
+        [
+          55.5,
+          -3,
+          24
+        ],
+        [
+          55.5,
+          -3,
+          37.0
+        ]
+      ],
+      "after": [
+        [
+          55.5,
+          -3.0,
+          18.0
+        ],
+        [
+          55.5,
+          -3.0,
+          24.0
+        ],
+        [
+          55.5,
+          -3.0,
+          37.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        55.5,
+        -3,
+        24
+      ],
+      "source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L19",
+      "rooms": [
+        "issue",
+        "library-stair"
+      ],
+      "before": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          31,
+          0,
+          16
+        ],
+        [
+          31.0,
+          0,
+          10.0
+        ]
+      ],
+      "after": [
+        [
+          31.0,
+          0.0,
+          18.0
+        ],
+        [
+          31.0,
+          0.0,
+          16.0
+        ],
+        [
+          30.5,
+          0.0,
+          12.5
+        ],
+        [
+          30.0,
+          0.0,
+          12.5
+        ],
+        [
+          29.5,
+          0.0,
+          12.0
+        ],
+        [
+          29.5,
+          0.0,
+          10.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        0,
+        16
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L34",
+      "rooms": [
+        "north-cross",
+        "north-stair"
+      ],
+      "before": [
+        [
+          58.0,
+          0,
+          40.0
+        ],
+        [
+          58.0,
+          0,
+          40.5
+        ],
+        [
+          62,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          58.0,
+          0.0,
+          40.0
+        ],
+        [
+          62.0,
+          0.0,
+          40.5
+        ],
+        [
+          62.5,
+          0.0,
+          40.5
+        ],
+        [
+          63.0,
+          0.0,
+          39.5
+        ],
+        [
+          63.5,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        62,
+        0,
+        40.5
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L43",
+      "rooms": [
+        "rear-hall",
+        "res-cellar-stair"
+      ],
+      "before": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          52.0,
+          0,
+          75
+        ],
+        [
+          50,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          72.0
+        ]
+      ],
+      "after": [
+        [
+          52.0,
+          0.0,
+          74.0
+        ],
+        [
+          50.0,
+          0.0,
+          75.0
+        ],
+        [
+          47.0,
+          0.0,
+          74.0
+        ],
+        [
+          46.0,
+          0.0,
+          73.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        50,
+        0,
+        75
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L51",
+      "rooms": [
+        "upper-library-stair",
+        "upper-library-landing"
+      ],
+      "before": [
+        [
+          31.0,
+          3.6,
+          10.0
+        ],
+        [
+          31,
+          3.6,
+          16
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          31.0,
+          3.6,
+          12.0
+        ],
+        [
+          31.0,
+          3.6,
+          16.0
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        3.6,
+        16
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L63",
+      "rooms": [
+        "upper-north-cross",
+        "upper-north-stair"
+      ],
+      "before": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          58.0,
+          3.6,
+          40.5
+        ],
+        [
+          62,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          62.0,
+          3.6,
+          40.5
+        ],
+        [
+          62.5,
+          3.6,
+          40.5
+        ],
+        [
+          63.0,
+          3.6,
+          39.5
+        ],
+        [
+          63.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        62,
+        3.6,
+        40.5
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L71",
+      "rooms": [
+        "east-tunnel",
+        "east-cellar-stair"
+      ],
+      "before": [
+        [
+          44.0,
+          -3,
+          54.0
+        ],
+        [
+          44,
+          -3,
+          66
+        ],
+        [
+          44,
+          -3,
+          72.0
+        ],
+        [
+          46.0,
+          -3,
+          72.0
+        ]
+      ],
+      "after": [
+        [
+          44.0,
+          -3.0,
+          54.0
+        ],
+        [
+          44.0,
+          -3.0,
+          66.0
+        ],
+        [
+          44.5,
+          -3.0,
+          72.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        44,
+        -3,
+        66
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L87",
+      "rooms": [
+        "teaching-library-link",
+        "upper-library-stair"
+      ],
+      "before": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "after": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28.0,
+          3.6,
+          14.0
+        ],
+        [
+          28.5,
+          3.6,
+          14.0
+        ],
+        [
+          29.0,
+          3.6,
+          13.0
+        ],
+        [
+          29.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        28,
+        3.6,
+        14
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L13",
+      "rooms": [
+        "upper-hall",
+        "upper-stair"
+      ],
+      "before": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          21.5,
+          3,
+          21
+        ],
+        [
+          23,
+          3,
+          21
+        ],
+        [
+          24.5,
+          3,
+          21
+        ],
+        [
+          24.5,
+          3,
+          17.0
+        ]
+      ],
+      "after": [
+        [
+          21.5,
+          3.0,
+          19.0
+        ],
+        [
+          22.0,
+          3.0,
+          21.0
+        ],
+        [
+          23.0,
+          3.0,
+          21.0
+        ],
+        [
+          24.0,
+          3.0,
+          21.0
+        ],
+        [
+          24.5,
+          3.0,
+          18.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        23,
+        3,
+        21
+      ],
+      "source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L28",
+      "rooms": [
+        "barn-aisle",
+        "loft-stair"
+      ],
+      "before": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          37.0,
+          0,
+          17.5
+        ],
+        [
+          39,
+          0,
+          17.5
+        ],
+        [
+          41.0,
+          0,
+          17.5
+        ],
+        [
+          41.0,
+          0,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          37.0,
+          0.0,
+          16.5
+        ],
+        [
+          38.0,
+          0.0,
+          17.5
+        ],
+        [
+          39.0,
+          0.0,
+          17.5
+        ],
+        [
+          39.5,
+          0.0,
+          17.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        39,
+        0,
+        17.5
+      ],
+      "source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L29",
+      "rooms": [
+        "loft-landing",
+        "hayloft"
+      ],
+      "before": [
+        [
+          41.0,
+          3,
+          20.0
+        ],
+        [
+          41.0,
+          3,
+          23
+        ],
+        [
+          39,
+          3,
+          23
+        ],
+        [
+          35.0,
+          3,
+          23
+        ],
+        [
+          35.0,
+          3,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          41.0,
+          3.0,
+          22.5
+        ],
+        [
+          40.5,
+          3.0,
+          23.0
+        ],
+        [
+          39.0,
+          3.0,
+          23.0
+        ],
+        [
+          37.5,
+          3.0,
+          23.0
+        ],
+        [
+          35.0,
+          3.0,
+          20.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        39,
+        3,
+        23
+      ],
+      "source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L23",
+      "before": [
+        [
+          41.5,
+          0,
+          22.0
+        ],
+        [
+          41.5,
+          0,
+          14
+        ],
+        [
+          41.5,
+          0,
+          8.0
+        ],
+        [
+          43.0,
+          0,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          41.5,
+          0.0,
+          22.0
+        ],
+        [
+          41.5,
+          0.0,
+          14.0
+        ],
+        [
+          42.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          8.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        0,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L36",
+      "before": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          24.0,
+          3.6,
+          28.5
+        ],
+        [
+          20,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "after": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          21.5,
+          3.6,
+          29.5
+        ],
+        [
+          21.5,
+          3.6,
+          28.5
+        ],
+        [
+          20.0,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        20,
+        3.6,
+        28.5
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L50",
+      "before": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14
+        ],
+        [
+          41.5,
+          3.6,
+          8.0
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14.0
+        ],
+        [
+          41.5,
+          3.6,
+          12.0
+        ],
+        [
+          43.0,
+          3.6,
+          11.5
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        3.6,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L51",
+      "before": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          14
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "after": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          43.0,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          14.0
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        7.2,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L06",
+      "rooms": [
+        "hall",
+        "grand-stair"
+      ],
+      "before": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          24,
+          0,
+          36
+        ],
+        [
+          24.0,
+          0,
+          30.0
+        ]
+      ],
+      "after": [
+        [
+          24.0,
+          0.0,
+          40.0
+        ],
+        [
+          24.0,
+          0.0,
+          36.0
+        ],
+        [
+          23.5,
+          0.0,
+          32.5
+        ],
+        [
+          22.5,
+          0.0,
+          32.5
+        ],
+        [
+          22.5,
+          0.0,
+          30.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        24,
+        0,
+        36
+      ],
+      "source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.blend",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L08",
+      "rooms": [
+        "grand-stair",
+        "library"
+      ],
+      "before": [
+        [
+          24.0,
+          0,
+          30.0
+        ],
+        [
+          20,
+          0,
+          30
+        ],
+        [
+          14.0,
+          0,
+          30.0
+        ]
+      ],
+      "after": [
+        [
+          22.5,
+          0.0,
+          30.0
+        ],
+        [
+          20.0,
+          0.0,
+          30.0
+        ],
+        [
+          14.0,
+          0.0,
+          30.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        20,
+        0,
+        30
+      ],
+      "source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.blend",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L045",
+      "rooms": [
+        "a-stair",
+        "a-front-link"
+      ],
+      "before": [
+        [
+          18.0,
+          0,
+          52.0
+        ],
+        [
+          18.0,
+          0,
+          55
+        ],
+        [
+          16,
+          0,
+          55
+        ],
+        [
+          13.0,
+          0,
+          55
+        ]
+      ],
+      "after": [
+        [
+          18.0,
+          0.0,
+          54.5
+        ],
+        [
+          17.0,
+          0.0,
+          55.0
+        ],
+        [
+          16.0,
+          0.0,
+          55.0
+        ],
+        [
+          13.0,
+          0.0,
+          55.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        16,
+        0,
+        55
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L046",
+      "rooms": [
+        "a-upper-stair",
+        "a-upper-gallery"
+      ],
+      "before": [
+        [
+          18.0,
+          3.4,
+          52.0
+        ],
+        [
+          18.0,
+          3.4,
+          56
+        ],
+        [
+          16,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "after": [
+        [
+          18.0,
+          3.4,
+          54.0
+        ],
+        [
+          17.0,
+          3.4,
+          55.5
+        ],
+        [
+          16.5,
+          3.4,
+          56.0
+        ],
+        [
+          16.0,
+          3.4,
+          56.0
+        ],
+        [
+          15.5,
+          3.4,
+          56.0
+        ],
+        [
+          15.0,
+          3.4,
+          55.5
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        16,
+        3.4,
+        56
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L061",
+      "rooms": [
+        "b-stair",
+        "b-front-link"
+      ],
+      "before": [
+        [
+          50.0,
+          0,
+          52.0
+        ],
+        [
+          50.0,
+          0,
+          55
+        ],
+        [
+          52,
+          0,
+          55
+        ],
+        [
+          55.0,
+          0,
+          55
+        ]
+      ],
+      "after": [
+        [
+          50.0,
+          0.0,
+          54.5
+        ],
+        [
+          51.0,
+          0.0,
+          55.0
+        ],
+        [
+          52.0,
+          0.0,
+          55.0
+        ],
+        [
+          55.0,
+          0.0,
+          55.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        52,
+        0,
+        55
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L062",
+      "rooms": [
+        "b-upper-stair",
+        "b-upper-gallery"
+      ],
+      "before": [
+        [
+          50.0,
+          3.4,
+          52.0
+        ],
+        [
+          50.0,
+          3.4,
+          56
+        ],
+        [
+          52,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "after": [
+        [
+          50.0,
+          3.4,
+          54.0
+        ],
+        [
+          51.5,
+          3.4,
+          56.0
+        ],
+        [
+          52.0,
+          3.4,
+          56.0
+        ],
+        [
+          52.5,
+          3.4,
+          56.0
+        ],
+        [
+          53.0,
+          3.4,
+          55.5
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        52,
+        3.4,
+        56
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L105",
+      "rooms": [
+        "lower-stair",
+        "plant"
+      ],
+      "before": [
+        [
+          30.0,
+          -3,
+          28.0
+        ],
+        [
+          30.0,
+          -3,
+          31
+        ],
+        [
+          32,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          28.0
+        ]
+      ],
+      "after": [
+        [
+          30.0,
+          -3.0,
+          29.5
+        ],
+        [
+          31.0,
+          -3.0,
+          31.0
+        ],
+        [
+          32.0,
+          -3.0,
+          31.0
+        ],
+        [
+          37.5,
+          -3.0,
+          30.0
+        ],
+        [
+          39.0,
+          -3.0,
+          28.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        32,
+        -3,
+        31
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L08",
+      "rooms": [
+        "main-stair",
+        "service-stair"
+      ],
+      "before": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          20
+        ],
+        [
+          28.5,
+          0,
+          16.0
+        ],
+        [
+          28.6,
+          0,
+          16.0
+        ]
+      ],
+      "after": [
+        [
+          26.5,
+          0.0,
+          25.0
+        ],
+        [
+          28.5,
+          0.0,
+          20.0
+        ],
+        [
+          28.5,
+          0.0,
+          18.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28.5,
+        0,
+        20
+      ],
+      "source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/school/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.blend",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L09",
+      "rooms": [
+        "dwellings",
+        "gallery"
+      ],
+      "before": [
+        [
+          34.0,
+          8,
+          31.0
+        ],
+        [
+          48.0,
+          8,
+          31.0
+        ],
+        [
+          57.0,
+          8,
+          31.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          8.0,
+          31.0
+        ],
+        [
+          55.0,
+          8.0,
+          31.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L10",
+      "rooms": [
+        "gallery",
+        "fork"
+      ],
+      "before": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          66.0,
+          8,
+          31.0
+        ],
+        [
+          71.0,
+          8,
+          31.0
+        ]
+      ],
+      "after": [
+        [
+          55.0,
+          8.0,
+          31.0
+        ],
+        [
+          55.0,
+          8.0,
+          33.0
+        ],
+        [
+          55.5,
+          8.0,
+          34.5
+        ],
+        [
+          65.0,
+          8.0,
+          34.0
+        ],
+        [
+          65.0,
+          8.0,
+          31.5
+        ],
+        [
+          65.5,
+          8.0,
+          31.0
+        ],
+        [
+          71.0,
+          8.0,
+          31.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L14",
+      "rooms": [
+        "lower-cave",
+        "return"
+      ],
+      "before": [
+        [
+          57.0,
+          4,
+          31.0
+        ],
+        [
+          57.0,
+          4,
+          22.0
+        ],
+        [
+          57.0,
+          4,
+          13.0
+        ]
+      ],
+      "after": [
+        [
+          55.0,
+          4.0,
+          31.0
+        ],
+        [
+          55.0,
+          4.0,
+          23.5
+        ],
+        [
+          56.5,
+          4.0,
+          23.0
+        ],
+        [
+          57.0,
+          4.0,
+          22.5
+        ],
+        [
+          57.0,
+          4.0,
+          14.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L16",
+      "rooms": [
+        "gallery",
+        "alcove"
+      ],
+      "before": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          54.0,
+          8,
+          31.0
+        ],
+        [
+          54.0,
+          8,
+          40.0
+        ],
+        [
+          54.0,
+          8,
+          46.0
+        ]
+      ],
+      "after": [
+        [
+          55.0,
+          8.0,
+          31.0
+        ],
+        [
+          54.0,
+          8.0,
+          40.0
+        ],
+        [
+          54.0,
+          8.0,
+          46.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "rooms": [
+        "clearing",
+        "foot"
+      ],
+      "before": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          30.0,
+          6,
+          14.0
+        ],
+        [
+          30.0,
+          6,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          30.0,
+          6.0,
+          21.5
+        ],
+        [
+          30.0,
+          6.0,
+          9.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-04/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.blend",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L12",
+      "before": [
+        [
+          26.0,
+          0,
+          19.0
+        ],
+        [
+          20.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          17.0
+        ]
+      ],
+      "after": [
+        [
+          26.0,
+          0.0,
+          19.0
+        ],
+        [
+          13.0,
+          0.0,
+          19.0
+        ],
+        [
+          12.5,
+          0.0,
+          16.0
+        ],
+        [
+          11.0,
+          0.0,
+          16.0
+        ],
+        [
+          11.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    },
+    {
+      "site": "WLD-08",
+      "link": "L13",
+      "before": [
+        [
+          11.0,
+          0,
+          17.0
+        ],
+        [
+          11.0,
+          0,
+          26.0
+        ],
+        [
+          11.0,
+          0,
+          35.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          17.0
+        ],
+        [
+          11.0,
+          0.0,
+          16.5
+        ],
+        [
+          10.0,
+          0.0,
+          16.0
+        ],
+        [
+          9.5,
+          0.0,
+          16.5
+        ],
+        [
+          9.0,
+          0.0,
+          18.0
+        ],
+        [
+          9.5,
+          0.0,
+          25.0
+        ],
+        [
+          10.5,
+          0.0,
+          25.0
+        ],
+        [
+          11.0,
+          0.0,
+          25.5
+        ],
+        [
+          11.0,
+          0.0,
+          33.0
+        ],
+        [
+          10.0,
+          0.0,
+          33.5
+        ],
+        [
+          9.5,
+          0.0,
+          35.5
+        ],
+        [
+          11.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    },
+    {
+      "site": "WLD-08",
+      "link": "L16",
+      "rooms": [
+        "array",
+        "shelter"
+      ],
+      "before": [
+        [
+          53.0,
+          0,
+          10.0
+        ],
+        [
+          53.0,
+          0,
+          14.0
+        ],
+        [
+          62.0,
+          0,
+          14.0
+        ],
+        [
+          66.0,
+          0,
+          14.0
+        ]
+      ],
+      "after": [
+        [
+          53.0,
+          0.0,
+          11.0
+        ],
+        [
+          53.0,
+          0.0,
+          13.5
+        ],
+        [
+          53.5,
+          0.0,
+          14.0
+        ],
+        [
+          66.0,
+          0.0,
+          14.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L05",
+      "rooms": [
+        "west",
+        "north"
+      ],
+      "before": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          36.0
+        ],
+        [
+          11.0,
+          0.0,
+          21.5
+        ],
+        [
+          11.5,
+          0.0,
+          21.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          25.5,
+          0.0,
+          17.5
+        ],
+        [
+          27.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L06",
+      "rooms": [
+        "north",
+        "east"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          26.0,
+          0.0,
+          17.0
+        ],
+        [
+          25.5,
+          0.0,
+          18.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          28.0,
+          0.0,
+          21.0
+        ],
+        [
+          46.5,
+          0.0,
+          21.0
+        ],
+        [
+          47.0,
+          0.0,
+          21.5
+        ],
+        [
+          47.0,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L09",
+      "rooms": [
+        "garden",
+        "north"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          22.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          36.0
+        ],
+        [
+          29.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L11",
+      "rooms": [
+        "north",
+        "archive"
+      ],
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          18.5,
+          0.0,
+          17.0
+        ],
+        [
+          18.0,
+          0.0,
+          16.5
+        ],
+        [
+          18.0,
+          0.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L13",
+      "rooms": [
+        "vestry",
+        "north"
+      ],
+      "before": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          36.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          0.0,
+          9.0
+        ],
+        [
+          36.0,
+          0.0,
+          16.5
+        ],
+        [
+          35.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L15",
+      "rooms": [
+        "east",
+        "tower-base"
+      ],
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          26.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0.0,
+          36.0
+        ],
+        [
+          49.0,
+          0.0,
+          26.5
+        ],
+        [
+          49.5,
+          0.0,
+          26.0
+        ],
+        [
+          51.0,
+          0.0,
+          26.0
+        ],
+        [
+          53.5,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L17",
+      "rooms": [
+        "tower-base",
+        "rear"
+      ],
+      "before": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          60.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          53.0,
+          0.0,
+          23.0
+        ],
+        [
+          53.0,
+          0.0,
+          28.0
+        ],
+        [
+          54.0,
+          0.0,
+          28.5
+        ],
+        [
+          58.0,
+          0.0,
+          28.5
+        ],
+        [
+          59.0,
+          0.0,
+          23.5
+        ],
+        [
+          59.5,
+          0.0,
+          23.0
+        ],
+        [
+          63.0,
+          0.0,
+          23.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-10",
+      "link": "L20",
+      "rooms": [
+        "catacombs",
+        "chamber"
+      ],
+      "before": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          -3.0,
+          17.5
+        ],
+        [
+          18.5,
+          -3.0,
+          17.0
+        ],
+        [
+          18.0,
+          -3.0,
+          16.5
+        ],
+        [
+          18.0,
+          -3.0,
+          9.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-10",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-09",
+      "rooms": [
+        "store",
+        "stairs"
+      ],
+      "before": [
+        [
+          35.0,
+          0,
+          36.0
+        ],
+        [
+          45.0,
+          0,
+          42.0
+        ]
+      ],
+      "after": [
+        [
+          34.5,
+          0.0,
+          36.0
+        ],
+        [
+          43.5,
+          0.0,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-14/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.blend",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-15",
+      "rooms": [
+        "service-stair",
+        "workroom"
+      ],
+      "before": [
+        [
+          14.0,
+          0,
+          42.0
+        ],
+        [
+          22.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          15.5,
+          0.0,
+          40.5
+        ],
+        [
+          18.5,
+          0.0,
+          40.0
+        ],
+        [
+          22.0,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-14/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.blend",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb"
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-06",
+      "rooms": [
+        "aft",
+        "galley"
+      ],
+      "before": [
+        [
+          32.0,
+          0,
+          47.0
+        ],
+        [
+          28.0,
+          0,
+          35.0
+        ]
+      ],
+      "after": [
+        [
+          31.5,
+          0.0,
+          45.5
+        ],
+        [
+          28.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-15",
+        "construction": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+        "blend": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.blend",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+        "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b"
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-07",
+      "rooms": [
+        "aft",
+        "mess"
+      ],
+      "before": [
+        [
+          32.0,
+          0,
+          47.0
+        ],
+        [
+          36.0,
+          0,
+          35.0
+        ]
+      ],
+      "after": [
+        [
+          32.5,
+          0.0,
+          45.5
+        ],
+        [
+          36.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-15",
+        "construction": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+        "blend": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.blend",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+        "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b"
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-15",
+      "rooms": [
+        "pump",
+        "hold"
+      ],
+      "before": [
+        [
+          32.0,
+          -3,
+          1.0
+        ],
+        [
+          32.0,
+          -3,
+          14.0
+        ]
+      ],
+      "after": [
+        [
+          32.0,
+          -3.0,
+          -0.5
+        ],
+        [
+          35.0,
+          -3.0,
+          -0.5
+        ],
+        [
+          35.5,
+          -3.0,
+          0.0
+        ],
+        [
+          35.5,
+          -3.0,
+          3.0
+        ],
+        [
+          32.5,
+          -3.0,
+          3.0
+        ],
+        [
+          32.0,
+          -3.0,
+          3.5
+        ],
+        [
+          32.0,
+          -3.0,
+          14.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-15",
+        "construction": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+        "blend": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.blend",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+        "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b"
+      }
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-04",
+      "rooms": [
+        "yard",
+        "west"
+      ],
+      "before": [
+        [
+          34.0,
+          4,
+          44.0
+        ],
+        [
+          16.0,
+          4,
+          33.0
+        ]
+      ],
+      "after": [
+        [
+          31.5,
+          4.0,
+          42.5
+        ],
+        [
+          16.0,
+          4.0,
+          33.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-17",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-17/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.blend",
+        "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+        "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97"
+      }
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-05",
+      "rooms": [
+        "yard",
+        "east"
+      ],
+      "before": [
+        [
+          34.0,
+          4,
+          44.0
+        ],
+        [
+          52.0,
+          4,
+          33.0
+        ]
+      ],
+      "after": [
+        [
+          36.5,
+          4.0,
+          42.5
+        ],
+        [
+          52.0,
+          4.0,
+          33.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-17",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-17/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.blend",
+        "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+        "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97"
+      }
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-17",
+      "before": [
+        [
+          15.0,
+          -8,
+          32.0
+        ],
+        [
+          15.0,
+          -8,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          15.0,
+          -8.0,
+          32.0
+        ],
+        [
+          11.5,
+          -8.0,
+          30.5
+        ],
+        [
+          11.0,
+          -8.0,
+          29.5
+        ],
+        [
+          11.0,
+          -8.0,
+          27.0
+        ],
+        [
+          14.5,
+          -8.0,
+          27.0
+        ],
+        [
+          15.0,
+          -8.0,
+          26.5
+        ],
+        [
+          15.0,
+          -8.0,
+          20.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    }
+  ],
+  "rejected": [
+    {
+      "site": "WLD-08",
+      "link": "L15",
+      "reason": "PATH_LEAVES_INTENDED_ROOM_PAIR",
+      "outside_samples": 53,
+      "proposal": {
+        "site": "WLD-08",
+        "link": "L15",
+        "rooms": [
+          "array",
+          "dorm"
+        ],
+        "before": [
+          [
+            53.0,
+            0,
+            10.0
+          ],
+          [
+            53.0,
+            0,
+            35.0
+          ]
+        ],
+        "after": [
+          [
+            53.0,
+            0.0,
+            11.0
+          ],
+          [
+            53.0,
+            0.0,
+            33.0
+          ],
+          [
+            53.5,
+            0.0,
+            33.0
+          ],
+          [
+            54.5,
+            0.0,
+            34.0
+          ],
+          [
+            54.5,
+            0.0,
+            35.0
+          ],
+          [
+            53.5,
+            0.0,
+            35.0
+          ]
+        ],
+        "width": 2,
+        "threshold": null,
+        "source": {
+          "id": "WLD-08",
+          "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/construction.json",
+          "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/authored-layout.json",
+          "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb",
+          "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.hcs2",
+          "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.blend",
+          "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+          "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+        }
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-03",
+      "reason": "PATH_LEAVES_INTENDED_ROOM_PAIR",
+      "outside_samples": 93,
+      "proposal": {
+        "site": "WLD-15",
+        "link": "route-03",
+        "rooms": [
+          "quay",
+          "aft"
+        ],
+        "before": [
+          [
+            32,
+            0,
+            68
+          ],
+          [
+            32,
+            0,
+            48
+          ]
+        ],
+        "after": [
+          [
+            32.0,
+            0.0,
+            68.0
+          ],
+          [
+            32.0,
+            0.0,
+            49.0
+          ]
+        ],
+        "width": 1.5,
+        "threshold": null,
+        "source": {
+          "id": "WLD-15",
+          "construction": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+          "layout": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+          "glb": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb",
+          "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+          "blend": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.blend",
+          "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+          "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b"
+        }
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-03",
+      "reason": "PATH_LEAVES_INTENDED_ROOM_PAIR",
+      "outside_samples": 93,
+      "proposal": {
+        "site": "WLD-16",
+        "link": "route-03",
+        "rooms": [
+          "entry",
+          "court"
+        ],
+        "before": [
+          [
+            26.0,
+            0,
+            57.0
+          ],
+          [
+            26.0,
+            0,
+            31.0
+          ]
+        ],
+        "after": [
+          [
+            26.0,
+            0.0,
+            57.0
+          ],
+          [
+            26.0,
+            0.0,
+            32.0
+          ]
+        ],
+        "width": 1.5,
+        "threshold": null,
+        "source": {
+          "id": "WLD-16",
+          "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+          "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+          "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+          "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+          "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+          "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+          "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+        }
+      }
+    }
+  ],
+  "source_hashes": {
+    "development/levels/rebuild/circulation-layout-pass/verification/design-summary.json": "09aa85cd54b2a97333240af1fd9ed822b77a6879be6f70275c34b5aa9654b74c",
+    "development/levels/rebuild/room-access-pass/verification/summary.json": "2fc7b86b5077e99b0abf1049c5487c0b5f64ea34425a550d7df366946450a0f9",
+    "tools/author_access_routes.py": "65d85c858e1f4590aabc2dabd4aa24da2b885aa35954c610b5c9b57418f2d69c"
+  },
+  "scope": "Source changes are limited to stated link points. Domain sampled at <=0.1m against own two zones with0.3m wall/door tolerance. Not full graph, visual, runtime or map acceptance."
+}

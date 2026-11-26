@@ -1,0 +1,44 @@
+{
+  "site": "ASYLUM",
+  "plan_sha256": "756624d524b3619117ee145e2fdf9900bc7f0848f686137c075386b20f34a850",
+  "landform": {
+    "exterior_seam_edges": 971,
+    "preserved_interior_edges": [
+      186,
+      20,
+      16
+    ],
+    "exterior_area_m2": 23658.0,
+    "new_faces": 3881,
+    "road_boundary_constraints": 6
+  },
+  "prior_native_parts": 889,
+  "added_matching_parts": 83,
+  "closed_spans": 24,
+  "gate_width": 8,
+  "gate_station": 92.4,
+  "gate_axis": 32,
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.glb",
+    "native": "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.hcs2",
+    "blend": "development/levels/rebuild/asylum-enclosure-pass/asylum-stair.blend",
+    "glb_sha256": "81445871322f28b78ddda557c27dbb291ab08febc19ae87ea13ce980d70cb3d1",
+    "native_sha256": "7e3088c8b7f06d684ef277d05a222a9f48281b51bd0a38343e386ab52d07dc43",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-enclosure-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-flight-rails-pass/verification/staged-admission.tsv",
+    "staged_room_bindings": "development/levels/rebuild/asylum-enclosure-pass/mission.tsv",
+    "blend_sha256": "da45863099497efee20dbe24bf28603c705ac534212e8b2e5063c67cbb1de20b",
+    "staged_services": "development/levels/rebuild/asylum-enclosure-pass/services.tsv",
+    "staged_electrical_installation": "development/levels/rebuild/asylum-flight-rails-pass/electrical.json",
+    "aperture_measurements": "development/levels/rebuild/asylum-interior-door-pass/architectural-apertures.tsv",
+    "ground_spine_masonry": "development/levels/rebuild/asylum-spine-masonry-pass/masonry.json",
+    "upper_spine_masonry": "development/levels/rebuild/asylum-upper-spine-pass/masonry.json",
+    "main_stair_deck_guards": "development/levels/rebuild/asylum-upper-spine-pass/guards.json",
+    "main_stair_handrails": "development/levels/rebuild/asylum-flight-rails-pass/handrails.json",
+    "staged_case_actions": "development/levels/rebuild/asylum-flight-rails-pass/verification/case-actions.tsv"
+  }
+}

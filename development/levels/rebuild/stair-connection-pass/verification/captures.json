@@ -1,0 +1,274 @@
+[
+  {
+    "site": "WLD-04",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-clearing-hub-before.png",
+    "sha256": "7cea6516bf8e96d2d254c23204899d4652f24fd2d8a54341c3dc2fd50dbbc618",
+    "source_glb_sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+    "eye": [
+      30,
+      7.62,
+      21
+    ],
+    "target": [
+      30,
+      5,
+      29
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-hut-entry-before.png",
+    "sha256": "80d1152adc5ac8bcc01be015d9a515683aff3a8355d35af344bfb3abd72e3572",
+    "source_glb_sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+    "eye": [
+      12,
+      7.62,
+      23
+    ],
+    "target": [
+      12,
+      6.9,
+      28
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-clearing-hub-after.png",
+    "sha256": "d862ba839d0ca12e0578f384a864bb5e2484733867a25c58a6642ffc24cf9d11",
+    "source_glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+    "eye": [
+      30,
+      7.62,
+      21
+    ],
+    "target": [
+      30,
+      5,
+      29
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-hut-entry-after.png",
+    "sha256": "17ccd5ab2d6687407e4b4815668216df5da1a38836542a38e1d1fbf388e678bb",
+    "source_glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+    "eye": [
+      12,
+      7.62,
+      23
+    ],
+    "target": [
+      12,
+      6.9,
+      28
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-whole-site.png",
+    "sha256": "1ae5a7d887d6d9a3e268eb024ee217a8cef229a200eb5f1a8636e27cec92dd88",
+    "source_glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+    "type": "Native whole-site construction context; no canonical van arrival or landscape acceptance"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-isolated-stair-hub.png",
+    "sha256": "85fcd67838aafbbd4355b0402a7468aff00bcd97f9677b1f28def76e115a5ae3",
+    "source_glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+    "type": "Native isolated structural stair/landing topology; all other meshes hidden, not full support or map acceptance"
+  },
+  {
+    "site": "WLD-05",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-adit-hub-before.png",
+    "sha256": "c20cde57ca69120e7acca30a3ac609e644d384b14fc873a363ed9c5a52404f8d",
+    "source_glb_sha256": "1edde753b7934504ed9c373742160c4b12269bca435ff99bb79c43a820845186",
+    "eye": [
+      30,
+      1.62,
+      55
+    ],
+    "target": [
+      27,
+      -0.5,
+      49
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-05",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-adit-hub-after.png",
+    "sha256": "8eb5032b2184c9c566aad617b47b6e0e03ec58f01f054a8fa10892211761210c",
+    "source_glb_sha256": "cc60805247fc26bfc05669ebc51d0ab564c4ea62f26a22636ec700494c7b11dc",
+    "eye": [
+      30,
+      1.62,
+      55
+    ],
+    "target": [
+      27,
+      -0.5,
+      49
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-05",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-whole-site.png",
+    "sha256": "b67360cadea5b551fe07e8e5600e2b3692151a45bf1b20b22f58564926af76ea",
+    "source_glb_sha256": "cc60805247fc26bfc05669ebc51d0ab564c4ea62f26a22636ec700494c7b11dc",
+    "type": "Native whole-site construction context; no canonical van arrival or landscape acceptance"
+  },
+  {
+    "site": "WLD-05",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-isolated-stair-hub.png",
+    "sha256": "9499b14702cbe4dcc6c1fb7b31a2631e658fd6da82d813076e25f25b2b8a59b1",
+    "source_glb_sha256": "cc60805247fc26bfc05669ebc51d0ab564c4ea62f26a22636ec700494c7b11dc",
+    "type": "Native isolated structural stair/landing topology; all other meshes hidden, not full support or map acceptance"
+  },
+  {
+    "site": "WLD-15",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-15-crew-approach-before.png",
+    "sha256": "1cc3b9b3172f3f6799080e18279963158da27c356fc43a70ddb10c3849f6cc00",
+    "source_glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+    "eye": [
+      26,
+      1.62,
+      48
+    ],
+    "target": [
+      23,
+      1,
+      43
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-15",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-15-crew-approach-after.png",
+    "sha256": "1445fbf4f2b81f9ceaba215abbb7e07af186d013eff06a3edc2f5af5982a55ec",
+    "source_glb_sha256": "dfb08915bb4aca584cb6f3640441853b37256a3e7cc6d8c1c51ac00baa2fe6f6",
+    "eye": [
+      26,
+      1.62,
+      48
+    ],
+    "target": [
+      23,
+      1,
+      43
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-15",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-15-whole-site.png",
+    "sha256": "7728ea8d88bd829f720c5164c93730727f3bf0714f6e5a7e6de32a6c2ba37f4f",
+    "source_glb_sha256": "dfb08915bb4aca584cb6f3640441853b37256a3e7cc6d8c1c51ac00baa2fe6f6",
+    "type": "Native whole-site construction context; no canonical van arrival or landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-18-exhibit-threshold-before.png",
+    "sha256": "1730dd9a415d881b2e3929ae4211d6883b9a9e61a54f002d5ce683969cbecaa4",
+    "source_glb_sha256": "445ff0760d4ad3287214c4d99969b494a4d993415737aa10a1a94a7fe102a4bc",
+    "eye": [
+      48,
+      -2.38,
+      34
+    ],
+    "target": [
+      52,
+      -2.9,
+      34
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-18-exhibit-threshold-after.png",
+    "sha256": "0d52143cd724bcec1193f0c5101401aeaac7ecfd0051d28c1d2b4d0f9a8f7474",
+    "source_glb_sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
+    "eye": [
+      48,
+      -2.38,
+      34
+    ],
+    "target": [
+      52,
+      -2.9,
+      34
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-18-whole-site.png",
+    "sha256": "1c78adbc1b4ebd58d58d1a17c1f2fd8b1217aa5171b3dc777452ca91db0a96fc",
+    "source_glb_sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
+    "type": "Native whole-site construction context; no canonical van arrival or landscape acceptance"
+  },
+  {
+    "site": "WLD-17",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-battery-approach-before.png",
+    "sha256": "00f18013f0a3c396e5b898a0a8db909d75c8c3b5db9155dc80a76f21e82e54a8",
+    "source_glb_sha256": "8c578940984816d3109521f293431527874d9b1c2c9c97d461c8aa45acc5fbf1",
+    "eye": [
+      32,
+      3.62,
+      59
+    ],
+    "target": [
+      39,
+      3.2,
+      56
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-17",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-battery-approach-after.png",
+    "sha256": "d5609d22cd96665ebf8a7aa146c961da4ab1cdc5af5561bfb05e5e6a1d88af74",
+    "source_glb_sha256": "f78ae198db1ff17d7504bcce2f0fde3539c8e25b0931384f72f2a7e005177ac8",
+    "eye": [
+      32,
+      3.62,
+      59
+    ],
+    "target": [
+      39,
+      3.2,
+      56
+    ],
+    "type": "Native intact paired construction review, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-17",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-whole-site.png",
+    "sha256": "67d099c258278baf78362f3233ccda8d7cf0abd9f02fc0a989779b4be49091e2",
+    "source_glb_sha256": "f78ae198db1ff17d7504bcce2f0fde3539c8e25b0931384f72f2a7e005177ac8",
+    "type": "Native whole-site construction context; no canonical van arrival or landscape acceptance"
+  }
+]

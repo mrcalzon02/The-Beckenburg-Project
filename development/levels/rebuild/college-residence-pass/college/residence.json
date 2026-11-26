@@ -1,0 +1,2683 @@
+{
+  "source": {
+    "blend": "fc67fc65ad62dde693af43636d1f50cd9f7d4a9f4157b082cc9356a1b8a7bb04",
+    "glb": "75894ba104362afd296af116945d58b23099cf5c17a0994e531ba7ce93e8e5f8",
+    "hcs2": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa"
+  },
+  "outline": "authored-layout.json",
+  "assets": {
+    "bed_5": {
+      "path": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c"
+    },
+    "chair_mp_5": {
+      "path": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6"
+    },
+    "door_1_loose": {
+      "path": "assets/runtime/models/door_1_loose.glb",
+      "sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    "level_student_desk": {
+      "path": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1"
+    },
+    "wardrobe_mp_1": {
+      "path": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851"
+    }
+  },
+  "replaced_wall_meshes": [
+    "Flat route shell Wall upper-res-hall E",
+    "Flat route shell Wall upper-res-hall E.001",
+    "Header res-east-1 W",
+    "Header upper-res-hall W",
+    "Wall res-bridge-approach E",
+    "Wall res-bridge-approach E.001",
+    "Wall res-east-1 W",
+    "Wall res-east-1 W.001",
+    "Wall res-east-2 W",
+    "Wall res-east-3 W",
+    "Wall res-east-4 W",
+    "Wall res-west-1 E.001",
+    "Wall res-west-2 E",
+    "Wall res-west-3 E",
+    "Wall res-west-4 E",
+    "Wall upper-res-hall W",
+    "Wall upper-res-hall W.001"
+  ],
+  "retained_native_records": 1698,
+  "added_native_parts": 161,
+  "added_native_triangles": 53896,
+  "doors": [
+    {
+      "id": "res-west-1-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-west-1"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 50,
+      "along": 37,
+      "frame_span": [
+        49.92,
+        50.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "rebuilt_wall": "west residence partition",
+      "accessible": true
+    },
+    {
+      "id": "res-west-2-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-west-2"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 50,
+      "along": 45,
+      "frame_span": [
+        49.92,
+        50.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "rebuilt_wall": "west residence partition",
+      "accessible": false,
+      "static_closure": [
+        "College res-west-2-door fixed leaf 01",
+        "College res-west-2-door fixed leaf 02",
+        "Entrance rebuild College res-west-2-door continuous inner seal"
+      ]
+    },
+    {
+      "id": "res-west-3-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-west-3"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 50,
+      "along": 53,
+      "frame_span": [
+        49.92,
+        50.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "rebuilt_wall": "west residence partition",
+      "accessible": false,
+      "static_closure": [
+        "College res-west-3-door fixed leaf 01",
+        "College res-west-3-door fixed leaf 02",
+        "Entrance rebuild College res-west-3-door continuous inner seal"
+      ]
+    },
+    {
+      "id": "res-west-4-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-west-4"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 50,
+      "along": 61,
+      "frame_span": [
+        49.92,
+        50.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "rebuilt_wall": "west residence partition",
+      "accessible": false,
+      "static_closure": [
+        "College res-west-4-door fixed leaf 01",
+        "College res-west-4-door fixed leaf 02",
+        "Entrance rebuild College res-west-4-door continuous inner seal"
+      ]
+    },
+    {
+      "id": "res-east-1-door",
+      "rooms": [
+        "res-bridge-approach",
+        "res-east-1"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 54,
+      "along": 33,
+      "frame_span": [
+        53.92,
+        54.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "rebuilt_wall": "east residence bridge partition",
+      "accessible": true
+    },
+    {
+      "id": "res-east-2-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-east-2"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 54,
+      "along": 45,
+      "frame_span": [
+        53.92,
+        54.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "rebuilt_wall": "east residence south partition",
+      "accessible": false,
+      "static_closure": [
+        "College res-east-2-door fixed leaf 01",
+        "College res-east-2-door fixed leaf 02",
+        "Entrance rebuild College res-east-2-door continuous inner seal"
+      ]
+    },
+    {
+      "id": "res-east-3-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-east-3"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 54,
+      "along": 53,
+      "frame_span": [
+        53.92,
+        54.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "rebuilt_wall": "east residence south partition",
+      "accessible": false,
+      "static_closure": [
+        "College res-east-3-door fixed leaf 01",
+        "College res-east-3-door fixed leaf 02",
+        "Entrance rebuild College res-east-3-door continuous inner seal"
+      ]
+    },
+    {
+      "id": "res-east-4-door",
+      "rooms": [
+        "upper-res-hall",
+        "res-east-4"
+      ],
+      "axis": "x",
+      "sill_y": 3.6,
+      "boundary": 54,
+      "along": 61,
+      "frame_span": [
+        53.92,
+        54.08
+      ],
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "rebuilt_wall": "east residence south partition",
+      "accessible": false,
+      "static_closure": [
+        "College res-east-4-door fixed leaf 01",
+        "College res-east-4-door fixed leaf 02",
+        "Entrance rebuild College res-east-4-door continuous inner seal"
+      ]
+    }
+  ],
+  "furniture": [
+    {
+      "key": "res-west-1 bed-a",
+      "room": "res-west-1",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          34.77966
+        ],
+        [
+          47.12033,
+          4.56213,
+          36.27034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        35.52
+      ]
+    },
+    {
+      "key": "res-west-1 bed-b",
+      "room": "res-west-1",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          39.70966
+        ],
+        [
+          47.12033,
+          4.56213,
+          41.20034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        40.45
+      ]
+    },
+    {
+      "key": "res-west-1 desk-a",
+      "room": "res-west-1",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          34.185
+        ],
+        [
+          48.65,
+          4.34,
+          34.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.6,
+        34.51
+      ]
+    },
+    {
+      "key": "res-west-1 desk-b",
+      "room": "res-west-1",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          41.165
+        ],
+        [
+          48.65,
+          4.34,
+          41.815
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.6,
+        41.49
+      ]
+    },
+    {
+      "key": "res-west-1 chair-a",
+      "room": "res-west-1",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84283,
+          3.6,
+          35.29494
+        ],
+        [
+          48.35738,
+          4.60826,
+          35.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        35.54
+      ]
+    },
+    {
+      "key": "res-west-1 chair-b",
+      "room": "res-west-1",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84262,
+          3.6,
+          40.17965
+        ],
+        [
+          48.35717,
+          4.60826,
+          40.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        40.46
+      ]
+    },
+    {
+      "key": "res-west-1 wardrobe-a",
+      "room": "res-west-1",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          37.46999
+        ],
+        [
+          42.8,
+          5.7,
+          38.81001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 wardrobe-a 01",
+        "College res-west-1 wardrobe-a 02",
+        "College res-west-1 wardrobe-a 03",
+        "College res-west-1 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        38.14
+      ]
+    },
+    {
+      "key": "res-west-1 wardrobe-b",
+      "room": "res-west-1",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          40.00999
+        ],
+        [
+          42.8,
+          5.7,
+          41.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1",
+        "Floor res-west-1"
+      ],
+      "parts": [
+        "College res-west-1 wardrobe-b 01",
+        "College res-west-1 wardrobe-b 02",
+        "College res-west-1 wardrobe-b 03",
+        "College res-west-1 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        40.68
+      ]
+    },
+    {
+      "key": "res-west-2 bed-a",
+      "room": "res-west-2",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          42.77966
+        ],
+        [
+          47.12033,
+          4.56213,
+          44.27034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        43.52
+      ]
+    },
+    {
+      "key": "res-west-2 bed-b",
+      "room": "res-west-2",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          47.70966
+        ],
+        [
+          47.12033,
+          4.56213,
+          49.20034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        48.45
+      ]
+    },
+    {
+      "key": "res-west-2 desk-a",
+      "room": "res-west-2",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          42.185
+        ],
+        [
+          48.65,
+          4.34,
+          42.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.6,
+        42.51
+      ]
+    },
+    {
+      "key": "res-west-2 desk-b",
+      "room": "res-west-2",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          49.165
+        ],
+        [
+          48.65,
+          4.34,
+          49.815
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.6,
+        49.49
+      ]
+    },
+    {
+      "key": "res-west-2 chair-a",
+      "room": "res-west-2",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84283,
+          3.6,
+          43.29494
+        ],
+        [
+          48.35738,
+          4.60826,
+          43.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        43.54
+      ]
+    },
+    {
+      "key": "res-west-2 chair-b",
+      "room": "res-west-2",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84262,
+          3.6,
+          48.17965
+        ],
+        [
+          48.35717,
+          4.60826,
+          48.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        48.46
+      ]
+    },
+    {
+      "key": "res-west-2 wardrobe-a",
+      "room": "res-west-2",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          42.37
+        ],
+        [
+          42.8,
+          5.7,
+          43.71001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 wardrobe-a 01",
+        "College res-west-2 wardrobe-a 02",
+        "College res-west-2 wardrobe-a 03",
+        "College res-west-2 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        43.04
+      ]
+    },
+    {
+      "key": "res-west-2 wardrobe-b",
+      "room": "res-west-2",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          48.00999
+        ],
+        [
+          42.8,
+          5.7,
+          49.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2",
+        "Floor res-west-2"
+      ],
+      "parts": [
+        "College res-west-2 wardrobe-b 01",
+        "College res-west-2 wardrobe-b 02",
+        "College res-west-2 wardrobe-b 03",
+        "College res-west-2 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        48.68
+      ]
+    },
+    {
+      "key": "res-west-3 bed-a",
+      "room": "res-west-3",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          50.77966
+        ],
+        [
+          47.12033,
+          4.56213,
+          52.27034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        51.52
+      ]
+    },
+    {
+      "key": "res-west-3 bed-b",
+      "room": "res-west-3",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          55.70966
+        ],
+        [
+          47.12033,
+          4.56213,
+          57.20034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        56.45
+      ]
+    },
+    {
+      "key": "res-west-3 desk-a",
+      "room": "res-west-3",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          50.185
+        ],
+        [
+          48.65,
+          4.34,
+          50.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.6,
+        50.51
+      ]
+    },
+    {
+      "key": "res-west-3 desk-b",
+      "room": "res-west-3",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          57.165
+        ],
+        [
+          48.65,
+          4.34,
+          57.815
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.6,
+        57.49
+      ]
+    },
+    {
+      "key": "res-west-3 chair-a",
+      "room": "res-west-3",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84283,
+          3.6,
+          51.29494
+        ],
+        [
+          48.35738,
+          4.60826,
+          51.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        51.54
+      ]
+    },
+    {
+      "key": "res-west-3 chair-b",
+      "room": "res-west-3",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84262,
+          3.6,
+          56.17965
+        ],
+        [
+          48.35717,
+          4.60826,
+          56.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        56.46
+      ]
+    },
+    {
+      "key": "res-west-3 wardrobe-a",
+      "room": "res-west-3",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          50.37
+        ],
+        [
+          42.8,
+          5.7,
+          51.71001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 wardrobe-a 01",
+        "College res-west-3 wardrobe-a 02",
+        "College res-west-3 wardrobe-a 03",
+        "College res-west-3 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        51.04
+      ]
+    },
+    {
+      "key": "res-west-3 wardrobe-b",
+      "room": "res-west-3",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          56.00999
+        ],
+        [
+          42.8,
+          5.7,
+          57.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3",
+        "Floor res-west-3"
+      ],
+      "parts": [
+        "College res-west-3 wardrobe-b 01",
+        "College res-west-3 wardrobe-b 02",
+        "College res-west-3 wardrobe-b 03",
+        "College res-west-3 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        56.68
+      ]
+    },
+    {
+      "key": "res-west-4 bed-a",
+      "room": "res-west-4",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          58.77966
+        ],
+        [
+          47.12033,
+          4.56213,
+          60.27034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        59.52
+      ]
+    },
+    {
+      "key": "res-west-4 bed-b",
+      "room": "res-west-4",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          44.37966,
+          3.6,
+          63.70966
+        ],
+        [
+          47.12033,
+          4.56213,
+          65.20033
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        45.75,
+        3.5999999722991576,
+        64.45
+      ]
+    },
+    {
+      "key": "res-west-4 desk-a",
+      "room": "res-west-4",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          58.185
+        ],
+        [
+          48.65,
+          4.34,
+          58.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.6,
+        58.51
+      ]
+    },
+    {
+      "key": "res-west-4 desk-b",
+      "room": "res-west-4",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          47.55,
+          3.6,
+          65.165
+        ],
+        [
+          48.65,
+          4.34,
+          65.81499
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.6,
+        65.49
+      ]
+    },
+    {
+      "key": "res-west-4 chair-a",
+      "room": "res-west-4",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84283,
+          3.6,
+          59.29494
+        ],
+        [
+          48.35738,
+          4.60826,
+          59.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        59.54
+      ]
+    },
+    {
+      "key": "res-west-4 chair-b",
+      "room": "res-west-4",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          47.84262,
+          3.6,
+          64.17965
+        ],
+        [
+          48.35717,
+          4.60826,
+          64.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        48.1,
+        3.5999999921768917,
+        64.46
+      ]
+    },
+    {
+      "key": "res-west-4 wardrobe-a",
+      "room": "res-west-4",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          58.37
+        ],
+        [
+          42.8,
+          5.7,
+          59.71001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 wardrobe-a 01",
+        "College res-west-4 wardrobe-a 02",
+        "College res-west-4 wardrobe-a 03",
+        "College res-west-4 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        59.04
+      ]
+    },
+    {
+      "key": "res-west-4 wardrobe-b",
+      "room": "res-west-4",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          42.16,
+          3.6,
+          64.00999
+        ],
+        [
+          42.8,
+          5.7,
+          65.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4",
+        "Floor res-west-4"
+      ],
+      "parts": [
+        "College res-west-4 wardrobe-b 01",
+        "College res-west-4 wardrobe-b 02",
+        "College res-west-4 wardrobe-b 03",
+        "College res-west-4 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": -1.5707963267948966,
+      "pivot": [
+        42.48,
+        3.600000207702769,
+        64.68
+      ]
+    },
+    {
+      "key": "res-east-1 bed-a",
+      "room": "res-east-1",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          30.76966
+        ],
+        [
+          59.62034,
+          4.56213,
+          32.26034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        31.52
+      ]
+    },
+    {
+      "key": "res-east-1 bed-b",
+      "room": "res-east-1",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          35.69967
+        ],
+        [
+          59.62034,
+          4.56213,
+          37.19034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        36.45
+      ]
+    },
+    {
+      "key": "res-east-1 desk-a",
+      "room": "res-east-1",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          30.185
+        ],
+        [
+          56.45,
+          4.34,
+          30.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.6,
+        30.51
+      ]
+    },
+    {
+      "key": "res-east-1 desk-b",
+      "room": "res-east-1",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          37.165
+        ],
+        [
+          56.45,
+          4.34,
+          37.815
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.6,
+        37.49
+      ]
+    },
+    {
+      "key": "res-east-1 chair-a",
+      "room": "res-east-1",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64283,
+          3.6,
+          31.29494
+        ],
+        [
+          56.15738,
+          4.60826,
+          31.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        31.54
+      ]
+    },
+    {
+      "key": "res-east-1 chair-b",
+      "room": "res-east-1",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64262,
+          3.6,
+          36.17965
+        ],
+        [
+          56.15717,
+          4.60826,
+          36.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        36.46
+      ]
+    },
+    {
+      "key": "res-east-1 wardrobe-a",
+      "room": "res-east-1",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          30.37
+        ],
+        [
+          61.84,
+          5.7,
+          31.71
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 wardrobe-a 01",
+        "College res-east-1 wardrobe-a 02",
+        "College res-east-1 wardrobe-a 03",
+        "College res-east-1 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        31.04
+      ]
+    },
+    {
+      "key": "res-east-1 wardrobe-b",
+      "room": "res-east-1",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          36.00999
+        ],
+        [
+          61.84,
+          5.7,
+          37.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1",
+        "Floor res-east-1"
+      ],
+      "parts": [
+        "College res-east-1 wardrobe-b 01",
+        "College res-east-1 wardrobe-b 02",
+        "College res-east-1 wardrobe-b 03",
+        "College res-east-1 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        36.68
+      ]
+    },
+    {
+      "key": "res-east-2 bed-a",
+      "room": "res-east-2",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          42.76966
+        ],
+        [
+          59.62034,
+          4.56213,
+          44.26034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        43.52
+      ]
+    },
+    {
+      "key": "res-east-2 bed-b",
+      "room": "res-east-2",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          47.69967
+        ],
+        [
+          59.62034,
+          4.56213,
+          49.19034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        48.45
+      ]
+    },
+    {
+      "key": "res-east-2 desk-a",
+      "room": "res-east-2",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          42.185
+        ],
+        [
+          56.45,
+          4.34,
+          42.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.6,
+        42.51
+      ]
+    },
+    {
+      "key": "res-east-2 desk-b",
+      "room": "res-east-2",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          49.165
+        ],
+        [
+          56.45,
+          4.34,
+          49.815
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.6,
+        49.49
+      ]
+    },
+    {
+      "key": "res-east-2 chair-a",
+      "room": "res-east-2",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64283,
+          3.6,
+          43.29494
+        ],
+        [
+          56.15738,
+          4.60826,
+          43.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        43.54
+      ]
+    },
+    {
+      "key": "res-east-2 chair-b",
+      "room": "res-east-2",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64262,
+          3.6,
+          48.17965
+        ],
+        [
+          56.15717,
+          4.60826,
+          48.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        48.46
+      ]
+    },
+    {
+      "key": "res-east-2 wardrobe-a",
+      "room": "res-east-2",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          42.37
+        ],
+        [
+          61.84,
+          5.7,
+          43.71001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 wardrobe-a 01",
+        "College res-east-2 wardrobe-a 02",
+        "College res-east-2 wardrobe-a 03",
+        "College res-east-2 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        43.04
+      ]
+    },
+    {
+      "key": "res-east-2 wardrobe-b",
+      "room": "res-east-2",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          48.00999
+        ],
+        [
+          61.84,
+          5.7,
+          49.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2",
+        "Floor res-east-2"
+      ],
+      "parts": [
+        "College res-east-2 wardrobe-b 01",
+        "College res-east-2 wardrobe-b 02",
+        "College res-east-2 wardrobe-b 03",
+        "College res-east-2 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        48.68
+      ]
+    },
+    {
+      "key": "res-east-3 bed-a",
+      "room": "res-east-3",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          50.76966
+        ],
+        [
+          59.62034,
+          4.56213,
+          52.26034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        51.52
+      ]
+    },
+    {
+      "key": "res-east-3 bed-b",
+      "room": "res-east-3",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          55.69967
+        ],
+        [
+          59.62034,
+          4.56213,
+          57.19034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        56.45
+      ]
+    },
+    {
+      "key": "res-east-3 desk-a",
+      "room": "res-east-3",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          50.185
+        ],
+        [
+          56.45,
+          4.34,
+          50.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.6,
+        50.51
+      ]
+    },
+    {
+      "key": "res-east-3 desk-b",
+      "room": "res-east-3",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          57.165
+        ],
+        [
+          56.45,
+          4.34,
+          57.815
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.6,
+        57.49
+      ]
+    },
+    {
+      "key": "res-east-3 chair-a",
+      "room": "res-east-3",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64283,
+          3.6,
+          51.29494
+        ],
+        [
+          56.15738,
+          4.60826,
+          51.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        51.54
+      ]
+    },
+    {
+      "key": "res-east-3 chair-b",
+      "room": "res-east-3",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64262,
+          3.6,
+          56.17965
+        ],
+        [
+          56.15717,
+          4.60826,
+          56.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        56.46
+      ]
+    },
+    {
+      "key": "res-east-3 wardrobe-a",
+      "room": "res-east-3",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          51.48999
+        ],
+        [
+          61.84,
+          5.7,
+          52.83001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 wardrobe-a 01",
+        "College res-east-3 wardrobe-a 02",
+        "College res-east-3 wardrobe-a 03",
+        "College res-east-3 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        52.16
+      ]
+    },
+    {
+      "key": "res-east-3 wardrobe-b",
+      "room": "res-east-3",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          56.00999
+        ],
+        [
+          61.84,
+          5.7,
+          57.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3",
+        "Floor res-east-3"
+      ],
+      "parts": [
+        "College res-east-3 wardrobe-b 01",
+        "College res-east-3 wardrobe-b 02",
+        "College res-east-3 wardrobe-b 03",
+        "College res-east-3 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        56.68
+      ]
+    },
+    {
+      "key": "res-east-4 bed-a",
+      "room": "res-east-4",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          58.76966
+        ],
+        [
+          59.62034,
+          4.56213,
+          60.26034
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 bed-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        59.52
+      ]
+    },
+    {
+      "key": "res-east-4 bed-b",
+      "room": "res-east-4",
+      "asset": "bed_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "size": [
+        [
+          56.87967,
+          3.6,
+          63.69966
+        ],
+        [
+          59.62034,
+          4.56213,
+          65.19033
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 bed-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 16,
+      "rotation_radians": 0,
+      "pivot": [
+        58.25,
+        3.5999999722991576,
+        64.45
+      ]
+    },
+    {
+      "key": "res-east-4 desk-a",
+      "room": "res-east-4",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          58.185
+        ],
+        [
+          56.45,
+          4.34,
+          58.835
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 desk-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.6,
+        58.51
+      ]
+    },
+    {
+      "key": "res-east-4 desk-b",
+      "room": "res-east-4",
+      "asset": "level_student_desk",
+      "floor": 3.6,
+      "source": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "size": [
+        [
+          55.35,
+          3.6,
+          65.165
+        ],
+        [
+          56.45,
+          4.34,
+          65.81499
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 desk-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.6,
+        65.49
+      ]
+    },
+    {
+      "key": "res-east-4 chair-a",
+      "room": "res-east-4",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64283,
+          3.6,
+          59.29494
+        ],
+        [
+          56.15738,
+          4.60826,
+          59.82035
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 chair-a 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 3.141592653589793,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        59.54
+      ]
+    },
+    {
+      "key": "res-east-4 chair-b",
+      "room": "res-east-4",
+      "asset": "chair_mp_5",
+      "floor": 3.6,
+      "source": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "size": [
+        [
+          55.64262,
+          3.6,
+          64.17965
+        ],
+        [
+          56.15717,
+          4.60826,
+          64.70506
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 chair-b 01"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 32,
+      "rotation_radians": 0,
+      "pivot": [
+        55.9,
+        3.5999999921768917,
+        64.46
+      ]
+    },
+    {
+      "key": "res-east-4 wardrobe-a",
+      "room": "res-east-4",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          58.37
+        ],
+        [
+          61.84,
+          5.7,
+          59.71001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 wardrobe-a 01",
+        "College res-east-4 wardrobe-a 02",
+        "College res-east-4 wardrobe-a 03",
+        "College res-east-4 wardrobe-a 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        59.04
+      ]
+    },
+    {
+      "key": "res-east-4 wardrobe-b",
+      "room": "res-east-4",
+      "asset": "wardrobe_mp_1",
+      "floor": 3.6,
+      "source": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "size": [
+        [
+          61.2,
+          3.6,
+          64.00999
+        ],
+        [
+          61.84,
+          5.7,
+          65.35001
+        ]
+      ],
+      "original_floor_supports": [
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4",
+        "Floor res-east-4"
+      ],
+      "parts": [
+        "College res-east-4 wardrobe-b 01",
+        "College res-east-4 wardrobe-b 02",
+        "College res-east-4 wardrobe-b 03",
+        "College res-east-4 wardrobe-b 04"
+      ],
+      "plinth_m": 0,
+      "foot_contact_count": 4,
+      "rotation_radians": 1.5707963267948966,
+      "pivot": [
+        61.52,
+        3.600000207702769,
+        64.68
+      ]
+    }
+  ],
+  "exports": {
+    "blend": "0f4522d97595bf800292facf9aaa0ec6321d216f9bfef565ded72b8a9564818b",
+    "glb": "9b50981a344427fe5c5677f63d461e1b6eb35f4e1ce5efd648c44582690b8df9",
+    "hcs2": "26e528df3a85a452f87653585b139c1194c7dcb5686fd4921f6dbba9a9054f76"
+  }
+}

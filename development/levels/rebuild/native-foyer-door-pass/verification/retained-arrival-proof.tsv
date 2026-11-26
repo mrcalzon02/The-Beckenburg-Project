@@ -1,0 +1,50 @@
+measure	result
+decoded_render_triangles	18889
+scene_revision	e84cd70e8e28a9d91007eb823ac8831177b665805a9307d89228657b4547e69e
+staged_owner_sequence	14,13,0
+native_ground_receivers	5
+open_cargo_standing_roundtrip	PASS
+open_cargo_crouching_roundtrip	PASS
+spawn_to_hatch_approaches	6
+closed_cargo_hatch	BLOCKED_AT_HATCH
+open_hatch_after_close	PASS
+reached_space	entry|13|Vec[x=22.5, y=0.0, z=40.5]
+reached_space	foyer|0|Vec[x=22.5, y=0.0, z=33.0]
+reached_space	grounds|12|Vec[x=52.0, y=0.0, z=26.0]
+reached_space	interview|0|Vec[x=27.5, y=0.0, z=31.5]
+reached_space	visitor-wc|0|Vec[x=26.25, y=0.0, z=34.5]
+reached_space	corridor|1|Vec[x=21.5, y=0.0, z=21.0]
+reached_space	service-stair|1|Vec[x=28.6, y=0.0, z=19.2]
+reached_space	science|3|Vec[x=15.0, y=0.0, z=16.5]
+reached_space	class-a|2|Vec[x=15.0, y=0.0, z=29.0]
+reached_space	gym|6|Vec[x=44.0, y=0.0, z=16.0]
+reached_space	receiving|4|Vec[x=44.0, y=0.0, z=32.0]
+reached_space	office|0|Vec[x=28.75, y=0.0, z=34.5]
+reached_space	staff|1|Vec[x=25.1, y=0.0, z=17.5]
+reached_space	cleaner|1|Vec[x=24.0, y=0.0, z=13.5]
+reached_space	main-stair|1|Vec[x=26.5, y=0.0, z=25.0]
+reached_space	lower-stair|11|Vec[x=28.6, y=-3.0, z=12.75]
+reached_space	science-prep|3|Vec[x=15.0, y=0.0, z=22.5]
+reached_space	class-a-store|2|Vec[x=15.0, y=0.0, z=35.0]
+reached_space	gym-link|4|Vec[x=40.0, y=0.0, z=26.0]
+reached_space	kitchen|4|Vec[x=40.0, y=0.0, z=32.0]
+reached_space	staff-wc|1|Vec[x=26.1, y=0.0, z=13.5]
+reached_space	dining|4|Vec[x=34.0, y=0.0, z=30.0]
+reached_space	health-link|5|Vec[x=31.0, y=0.0, z=18.0]
+reached_space	upper-stair|7|Vec[x=26.5, y=3.5999999046325684, z=29.0]
+reached_space	plant|11|Vec[x=25.1, y=-3.0, z=16.0]
+reached_space	nurse|5|Vec[x=35.0, y=0.0, z=21.0]
+reached_space	change-a|5|Vec[x=34.0, y=0.0, z=13.5]
+reached_space	change-b|5|Vec[x=34.0, y=0.0, z=16.5]
+reached_space	upper-corridor|7|Vec[x=21.5, y=3.5999999046325684, z=24.0]
+reached_space	upper-lobby|7|Vec[x=26.5, y=3.5999999046325684, z=33.0]
+reached_space	plant-store|11|Vec[x=26.5, y=-3.0, z=25.0]
+reached_space	shower-a|5|Vec[x=37.0, y=0.0, z=13.5]
+reached_space	shower-b|5|Vec[x=37.0, y=0.0, z=16.5]
+reached_space	wash-a|7|Vec[x=26.5, y=3.5999999046325684, z=14.5]
+reached_space	wash-b|7|Vec[x=26.5, y=3.5999999046325684, z=19.5]
+reached_space	library|8|Vec[x=15.0, y=3.5999999046325684, z=30.0]
+reached_space	class-b|9|Vec[x=15.0, y=3.5999999046325684, z=17.0]
+reached_space	assembly|10|Vec[x=36.0, y=3.5999999046325684, z=30.0]
+reached_space	class-b-store|9|Vec[x=15.0, y=3.5999999046325684, z=23.0]
+reachable_authored_spaces	40

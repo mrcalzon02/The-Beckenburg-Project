@@ -1,0 +1,149 @@
+SOURCE	08aa018ec0e21a15cef390be8b6664902fafb4a44ba97d422d3c6f85d04d6a4e	13e8dcc3f44895f72f1461e76b6a4f16d8a28a836e153037b8ad64f101220a25
+DOCK	32.0	0	82.0	0
+ROOM	wash	0	8	44	24	56	0	3	false	Workers washroom	16	0	50
+ROOM	cold	1	48	26	64	44	0	3	false	Refrigerated stores	56	0	35
+ROOM	boiler	2	8	26	24	44	0	3	false	Boiler house	16	0	35
+ROOM	office	3	24	14	36	26	0	3	false	Managers office	30	0	20
+ROOM	processing	4	24	26	48	56	0	6	false	Fish-processing floor	36	0	41
+ROOM	stores	5	36	14	48	26	0	3	false	Packing / dry stores	42	0	20
+ROOM	dock	6	24	0	48	14	0	3	true	Shipping dock	36	0	7
+ROOM	bunk	7	-8	44	8	62	0	3	false	Workers bunkhouse	0	0	53
+ROOM	mess	8	-8	26	8	44	0	3	false	Workers mess	0	0	35
+ROOM	forest	9	-16	26	-8	62	0	3	true	Forest edge return	-11.8	0	44
+ROOM	side-yard	10	48	44	64	62	0	3	true	East service return	56	0	53
+ROOM	gallery	11	24	26	30	56	3	3	false	Inspection mezzanine	27	3	41
+ROOM	entry	12	24	62	44	76	0	3	true	Cannery gate / service yard	34	0	69
+ROOM	stage	13	24	76	40	88	0	3	true	Forest-road van apron	32	0	77
+SPACE	loading-yard	12	8	56	48	63	0	3	true
+SPACE	east-return-bend	12	44	55	61	71	0	3	true
+TREAD	Orthogonal stair WLD-13 L19 step3
+TREAD	Orthogonal stair WLD-13 L19 step4
+TREAD	Orthogonal stair WLD-13 L19 step5
+TREAD	Orthogonal stair WLD-13 L19 step6
+TREAD	Orthogonal stair WLD-13 L19 step7
+TREAD	Orthogonal stair WLD-13 L19 step8
+TREAD	Orthogonal stair WLD-13 L19 step9
+TREAD	Orthogonal stair WLD-13 L19 step10
+TREAD	Orthogonal stair WLD-13 L19 step11
+TREAD	Orthogonal stair WLD-13 L19 step12
+TREAD	Orthogonal stair WLD-13 L19 step13
+TREAD	Orthogonal stair WLD-13 L19 step14
+TREAD	Orthogonal stair WLD-13 L19 step15
+TREAD	Orthogonal stair WLD-13 L19 step16
+TREAD	Orthogonal stair WLD-13 L19 step17
+TREAD	Orthogonal stair WLD-13 L19 step18
+TREAD	Orthogonal stair WLD-13 L19 step19
+TREAD	Orthogonal stair WLD-13 L19 step20
+OPEN	950	13	12	32	0	76	2	z	trail
+OPEN	951	12	10	48	0	59	2	x	trail
+OPEN	952	4	11	27	1.5	47	1.4	z	stair
+RITUAL	banishment	4	36.0	0	41.0
+RITUAL	cleansing	0	16.0	0	50.0
+RITUAL	absolution	8	0.0	0	35.0
+SERVICE	greywater-generator	generator	2	12.4	0.56	28.420001	0	GW-MAIN
+SERVICE	greywater-breaker	breaker	2	19.799999	0.89	26.644999000000002	0	GW-MAIN
+SERVICE	greywater-boiler-switch	switch	2	22.1	1.25	26.240999	0.0	GW-BOILER
+SERVICE	greywater-boiler-light	light	2	18.0	2.35	26.424	0	native-string
+SERVICE	greywater-wash-switch	switch	0	23.759001	1.25	49.299999	-1.5707963267948966	GW-WASH
+SERVICE	greywater-wash-light-1	light	0	23.576	2.36	47.200001	0	native-string
+SERVICE	greywater-wash-light-2	light	0	23.576	2.36	52.0	0	native-string
+SERVICE	greywater-cold-switch	switch	1	63.758999	1.25	33.5	-1.5707963267948966	GW-COLD
+SERVICE	greywater-cold-light-1	light	1	63.576	2.36	29.1	0	native-string
+SERVICE	greywater-cold-light-2	light	1	63.576	2.36	35.799999	0	native-string
+SERVICE	greywater-office-switch	switch	3	24.240999	1.25	18.5	1.5707963267948966	GW-OFFICE
+SERVICE	greywater-office-light-1	light	3	24.424	2.36	21.4	0	native-string
+SERVICE	greywater-stores-switch	switch	5	47.758999	1.25	21.0	-1.5707963267948966	GW-STORES
+SERVICE	greywater-stores-light-1	light	5	47.576	2.36	23.1	0	native-string
+SERVICE	greywater-bunk-switch	switch	7	7.759	1.25	55.700001	-1.5707963267948966	GW-BUNK
+SERVICE	greywater-bunk-light-1	light	7	7.576	2.36	47.099998	0	native-string
+SERVICE	greywater-bunk-light-2	light	7	7.576	2.36	58.5	0	native-string
+SERVICE	greywater-mess-switch	switch	8	-7.879	1.25	31.6	1.5707963267948966	GW-MESS
+SERVICE	greywater-mess-light-1	light	8	-7.696	2.36	28.799999	0	native-string
+SERVICE	greywater-mess-light-2	light	8	-7.696	2.36	38.5	0	native-string
+SERVICE	greywater-processing-switch	switch	4	47.758999	1.25	31.1	-1.5707963267948966	GW-PROCESSING
+SERVICE	greywater-processing-light-1	light	4	47.576	2.36	29.0	0	native-string
+SERVICE	greywater-processing-light-2	light	4	47.576	2.36	39.099998	0	native-string
+SERVICE	greywater-processing-light-3	light	4	47.576	2.36	48.25	0	native-string
+SERVICE	greywater-processing-light-4	light	4	47.576	2.36	53.299999	0	native-string
+SERVICE	greywater-gallery-switch	switch	11	24.240999	4.25	33.0	1.5707963267948966	GW-GALLERY
+SERVICE	greywater-gallery-light-1	light	11	24.424	5.36	30.4	0	native-string
+SERVICE	greywater-gallery-light-2	light	11	24.424	5.36	38.450001	0	native-string
+SERVICE	Greywater dispatch log	native_story	3	27.15	0.81801	14.64	0	GREYWATER_DISPATCH_LOG
+SERVICE	Greywater workers washbasin	native-device	0	20.6	0.86	44.82	0	SINK_BATH
+COVER	greywater-wash-cupboard	0	10	0	53.5	-1.5707963267948966
+COVER	greywater-cold-cupboard	1	62.4	0	39	1.5707963267948966
+COVER	greywater-bunk-cupboard	7	-5.5	0	58	-1.5707963267948966
+POINT	L01	32.0	0	78.372
+POINT	L01	32	0	76
+POINT	L01	32	0	69
+POINT	L01	34	0	69
+POINT	L02	34	0	69
+POINT	L02	36	0	69
+POINT	L02	36	0	56
+POINT	L02	36	0	41
+POINT	L03	34	0	69
+POINT	L03	34	0	62
+POINT	L03	16	0	62
+POINT	L03	16	0	56
+POINT	L03	16	0	50
+POINT	L04	16.0	0	50.0
+POINT	L04	16.0	0	44.0
+POINT	L04	16.0	0	35.0
+POINT	L05	16.0	0	35.0
+POINT	L05	24.0	0	35.0
+POINT	L05	36.0	0	35.0
+POINT	L05	36.0	0	41.0
+POINT	L06	36	0	41
+POINT	L06	36	0	35
+POINT	L06	48	0	35
+POINT	L06	56	0	35
+POINT	L07	56.0	0	35.0
+POINT	L07	56.0	0	44.0
+POINT	L07	56.0	0	53.0
+POINT	L08	56.0	0	53.0
+POINT	L08	34.0	0	69.0
+POINT	L09	36	0	41
+POINT	L09	36	0	28
+POINT	L09	30	0	28
+POINT	L09	30	0	26
+POINT	L09	30	0	20
+POINT	L10	30.0	0	20.0
+POINT	L10	36.0	0	20.0
+POINT	L10	42.0	0	20.0
+POINT	L11	42	0	20
+POINT	L11	42	0	26
+POINT	L11	42	0	28
+POINT	L11	36	0	28
+POINT	L11	36	0	41
+POINT	L12	42.0	0	20.0
+POINT	L12	42.0	0	14.0
+POINT	L12	42.0	0	7.0
+POINT	L12	36.0	0	7.0
+POINT	L13	36.0	0	7.0
+POINT	L13	30.0	0	7.0
+POINT	L13	30.0	0	14.0
+POINT	L13	30.0	0	20.0
+POINT	L14	16	0	50
+POINT	L14	8	0	50
+POINT	L14	0	0	50
+POINT	L14	0	0	53
+POINT	L15	0.0	0	53.0
+POINT	L15	0.0	0	44.0
+POINT	L15	0.0	0	35.0
+POINT	L16	0.0	0	35.0
+POINT	L16	8.0	0	35.0
+POINT	L16	16.0	0	35.0
+POINT	L17	0	0	53
+POINT	L17	-8	0	53
+POINT	L17	-11.8	0	53
+POINT	L17	-11.8	0	44
+POINT	L18	-11.8	0	44
+POINT	L18	-11.8	0	35
+POINT	L18	-8	0	35
+POINT	L18	0	0	35
+POINT	L19	36	0	41
+POINT	L19	36	0	53
+POINT	L19	27	0	53
+POINT	L19	27	0	51.17
+POINT	L19	27	3	43
+POINT	L19	27	3	41

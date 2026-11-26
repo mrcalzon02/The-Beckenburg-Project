@@ -1,0 +1,308 @@
+{
+  "exports": {
+    "development/levels/rebuild/wharf-case-pass/wharf-case.blend": "052d1fa0269f960a4463111a8ff37f182ff1b69b1e471c8e97ce3adc22f97a23",
+    "development/levels/rebuild/wharf-case-pass/wharf-case.glb": "28fd1f0578233d204ea601389517383ce495d495fde1b7a2f455b95dc3e82a90",
+    "development/levels/rebuild/wharf-case-pass/wharf-case.hcs2": "f8373bc5fe2e07d9090581276ea330839ba600f2c30aeda80e8f6406cd39bffe"
+  },
+  "prior_exports": {
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.blend": "2cf9d45380fd7c3519f7a5169da326873a8c13102ea96fbc18b4472954666b23",
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.glb": "1becc3501a1dfe57dbbd2c61fb3e47f7c0cb9056dc77870e141647f2e2bd4c35",
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.hcs2": "a5ce4a2fc972c443db77f29262794b1098de2d2f6d5de29c821f7b3edf8f79a5"
+  },
+  "retained_parts": 904,
+  "added_parts": 10,
+  "supported_records": [
+    {
+      "document": "DEPARTURE_TALLY",
+      "owner": 2,
+      "zone": "boathouse",
+      "top_m": 0.9100000858306885,
+      "approach": [
+        7.825,
+        0,
+        11.9
+      ],
+      "aim": [
+        7.825,
+        0.92604,
+        10.577
+      ],
+      "asset": "level_trace_journal",
+      "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+      "bounds": [
+        [
+          7.70445,
+          0.9105,
+          10.497001
+        ],
+        [
+          7.89555,
+          0.92709,
+          10.623
+        ]
+      ],
+      "pivot": [
+        7.800000190734863,
+        0.9105001091957092,
+        10.5600004196167
+      ],
+      "yaw": 0,
+      "scale": 0.42,
+      "support": [
+        "level_blockout_workbench.001"
+      ]
+    },
+    {
+      "document": "CROSSING_SHEET",
+      "owner": 4,
+      "zone": "fish",
+      "top_m": 1.059999942779541,
+      "approach": [
+        37.94,
+        0,
+        13.577
+      ],
+      "aim": [
+        39.314999,
+        1.07184,
+        13.577
+      ],
+      "asset": "level_story_letters",
+      "sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "bounds": [
+        [
+          39.232479,
+          1.0605,
+          13.515451
+        ],
+        [
+          39.347523,
+          1.075289,
+          13.604549
+        ]
+      ],
+      "pivot": [
+        39.287445068359375,
+        1.0602898597717285,
+        13.560105323791504
+      ],
+      "yaw": 0,
+      "scale": 0.42,
+      "support": [
+        "level_blockout_fish_sorting_bench.001"
+      ]
+    }
+  ],
+  "cottage_furnishings": [
+    {
+      "zone": "cottage-a",
+      "table": {
+        "asset": "level_event_side_table_worn",
+        "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+        "bounds": [
+          [
+            9.17,
+            0.0,
+            44.0
+          ],
+          [
+            9.629999,
+            0.755,
+            44.400002
+          ]
+        ],
+        "pivot": [
+          9.399999618530273,
+          0.0,
+          44.20000076293945
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "device": {
+        "asset": "level_event_phone_worn",
+        "sha256": "fd208f1a804faa2f8ef7999eff59cfec5485d7e5d85fb07d006050b70d033cd6",
+        "bounds": [
+          [
+            9.257999,
+            0.756,
+            44.09
+          ],
+          [
+            9.542,
+            0.923119,
+            44.310001
+          ]
+        ],
+        "pivot": [
+          9.399999618530273,
+          0.7559999227523804,
+          44.20000076293945
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": [
+          "Mine case Fisherman telephone table 01"
+        ]
+      }
+    },
+    {
+      "zone": "cottage-b",
+      "table": {
+        "asset": "level_event_side_table_worn",
+        "sha256": "6a81b4430a905d8a261d63cba0b6c85cfe09a5d756222579b133d59a842a86f4",
+        "bounds": [
+          [
+            54.369999,
+            0.0,
+            44.0
+          ],
+          [
+            54.829998,
+            0.755,
+            44.400002
+          ]
+        ],
+        "pivot": [
+          54.599998474121094,
+          0.0,
+          44.20000076293945
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "device": {
+        "asset": "level_event_radio_worn",
+        "sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+        "bounds": [
+          [
+            54.440716,
+            0.756,
+            44.126003
+          ],
+          [
+            54.759281,
+            1.20641,
+            44.274002
+          ]
+        ],
+        "pivot": [
+          54.60927963256836,
+          0.7559999227523804,
+          44.191001892089844
+        ],
+        "yaw": 0,
+        "scale": 1,
+        "support": [
+          "Mine case Marine radio table 01"
+        ]
+      }
+    },
+    {
+      "zone": "cottage-a",
+      "label": "West cottage bunk",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          8.0375,
+          0.0,
+          48.177502
+        ],
+        [
+          8.9625,
+          0.82,
+          50.2225
+        ]
+      ],
+      "pivot": [
+        8.5,
+        0.0,
+        49.20000076293945
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "zone": "cottage-b",
+      "label": "East cottage bunk",
+      "asset": "level_trace_camp_bed",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "bounds": [
+        [
+          55.037498,
+          0.0,
+          48.177502
+        ],
+        [
+          55.962502,
+          0.82,
+          50.2225
+        ]
+      ],
+      "pivot": [
+        55.5,
+        0.0,
+        49.20000076293945
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "zone": "cottage-a",
+      "label": "West cottage seat",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          15.525,
+          0.0,
+          43.892696
+        ],
+        [
+          17.275,
+          0.88,
+          44.507309
+        ]
+      ],
+      "pivot": [
+        16.399999618530273,
+        0.0,
+        44.23230743408203
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "zone": "cottage-b",
+      "label": "East cottage seat",
+      "asset": "level_camp_bench",
+      "sha256": "b5e0c987b80c1b7d4ab71ce43996a439571608e46324aa9a77c45b4afe22b84f",
+      "bounds": [
+        [
+          46.724998,
+          0.0,
+          43.892696
+        ],
+        [
+          48.474998,
+          0.88,
+          44.507309
+        ]
+      ],
+      "pivot": [
+        47.599998474121094,
+        0.0,
+        44.23230743408203
+      ],
+      "yaw": 0,
+      "scale": 1,
+      "support": "measured existing slab"
+    }
+  ]
+}

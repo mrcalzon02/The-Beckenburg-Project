@@ -1,0 +1,398 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "CHURCH": {
+      "before": {
+        "flat_links": 28,
+        "pass_both_directions": 20
+      },
+      "after": {
+        "flat_links": 28,
+        "pass_both_directions": 23
+      },
+      "current_lanes": {
+        "samples": 4230,
+        "valid_standing": 3518,
+        "invalid_standing": 712,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "NO_FOOT_SUPPORT_0.0_0.22": 4,
+          "NO_CENTRE_SUPPORT": 557,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 26,
+          "PHYSICAL_COMPONENT": 106,
+          "FOOT_HEIGHT_SPREAD": 10
+        },
+        "physical_components": [
+          [
+            "360:level_blockout_confessional_screen.001",
+            15
+          ],
+          [
+            "88:Wall chancel E.001",
+            13
+          ],
+          [
+            "8:Wall nave W",
+            11
+          ],
+          [
+            "73:Wall confessional W",
+            9
+          ],
+          [
+            "3:Wall nave N.001",
+            8
+          ],
+          [
+            "62:Wall conversation-entry W.001",
+            6
+          ],
+          [
+            "61:Wall conversation-entry W",
+            6
+          ],
+          [
+            "CHURCH bay indexed door 3",
+            5
+          ],
+          [
+            "119:Wall vestry E.001",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 1",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 0",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 4",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 5",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 6",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 2",
+            4
+          ],
+          [
+            "11:Wall nave E",
+            3
+          ],
+          [
+            "CHURCH bay L35 floor rim 30.490000000000002 guard 1",
+            1
+          ],
+          [
+            "107:Wall vestry N",
+            1
+          ]
+        ]
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "flat_links": 33,
+        "pass_both_directions": 25
+      },
+      "after": {
+        "flat_links": 33,
+        "pass_both_directions": 26
+      },
+      "current_lanes": {
+        "samples": 4611,
+        "valid_standing": 4201,
+        "invalid_standing": 410,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 6,
+          "NO_FOOT_SUPPORT_0.22_0.0": 6,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 83,
+          "NO_CENTRE_SUPPORT": 126,
+          "FOOT_HEIGHT_SPREAD": 21,
+          "PHYSICAL_COMPONENT": 165,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3
+        },
+        "physical_components": [
+          [
+            "FARMHOUSE bay wall ('x', 26, 12, 22, 0, 3) end region0",
+            57
+          ],
+          [
+            "FARMHOUSE bay L34 continuous waist",
+            47
+          ],
+          [
+            "FARMHOUSE bay wall ('z', 22, 20, 26, 0, 3) end region0",
+            15
+          ],
+          [
+            "FARMHOUSE bay indexed door 2",
+            7
+          ],
+          [
+            "FARMHOUSE bay wall ('x', 20, 12, 22, 0, 3) pier0 region0",
+            6
+          ],
+          [
+            "FARMHOUSE bay indexed door 3",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 1",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 4",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 0",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 6",
+            4
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 22.509999999999998 guard 2",
+            3
+          ],
+          [
+            "FARMHOUSE bay wall ('z', 12, 20, 26, 0, 3) pier0 region0",
+            3
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 22.509999999999998 guard 0",
+            3
+          ],
+          [
+            "FARMHOUSE bay wall ('x', 39, 16, 24, 0, 3) pier0 region0",
+            2
+          ],
+          [
+            "FARMHOUSE bay L35 closed floor well end guard 0",
+            1
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 20.490000000000002 guard 0",
+            1
+          ]
+        ]
+      }
+    },
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 38
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 38
+      },
+      "current_lanes": {
+        "samples": 8535,
+        "valid_standing": 7255,
+        "invalid_standing": 1280,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 84,
+          "NO_CENTRE_SUPPORT": 935,
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "FOOT_HEIGHT_SPREAD": 24,
+          "PHYSICAL_COMPONENT": 181,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 44
+        },
+        "physical_components": [
+          [
+            "MANSION bay L58 continuous waist",
+            29
+          ],
+          [
+            "MANSION bay wall ('x', 40, 2, 14, 0, 3.6) end region0",
+            16
+          ],
+          [
+            "114:Wall pantry E",
+            15
+          ],
+          [
+            "98:Wall kitchen N",
+            9
+          ],
+          [
+            "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) pier0 region0",
+            9
+          ],
+          [
+            "140:Wall receiving E",
+            9
+          ],
+          [
+            "Flat route shell Wall scullery E",
+            8
+          ],
+          [
+            "116:Wall cold-store N",
+            8
+          ],
+          [
+            "MANSION bay L58 tread 2",
+            8
+          ],
+          [
+            "MANSION bay wall ('x', 28, 24, 36, 0, 3.6) end region0",
+            8
+          ],
+          [
+            "Flat route shell Wall kitchen E",
+            7
+          ],
+          [
+            "255:Wall staff-corridor N.001",
+            6
+          ],
+          [
+            "MANSION bay indexed door 4",
+            5
+          ],
+          [
+            "MANSION bay indexed door 1",
+            4
+          ],
+          [
+            "MANSION bay indexed door 5",
+            4
+          ],
+          [
+            "MANSION bay indexed door 6",
+            4
+          ],
+          [
+            "MANSION bay indexed door 2",
+            4
+          ],
+          [
+            "MANSION bay L59 floor rim 42.510000000000005 guard 2",
+            3
+          ],
+          [
+            "MANSION bay L59 floor rim 42.510000000000005 guard 0",
+            3
+          ],
+          [
+            "MANSION bay L58 flight side 1 guard 0",
+            3
+          ],
+          [
+            "145:Wall refuse E",
+            3
+          ],
+          [
+            "Flat route shell Wall staff-corridor S",
+            3
+          ],
+          [
+            "MANSION bay L60 floor rim 43.489999999999995 guard 2",
+            3
+          ],
+          [
+            "MANSION bay L59 flight side -1 guard 2",
+            2
+          ],
+          [
+            "MANSION bay L58 flight side -1 guard 0",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "CHURCH": {
+      "before": {
+        "contract": "development/levels/rebuild/secure-sacred-roof-pass/church/construction.json",
+        "contract_sha256": "8d0486976a274d1043db67ea03e96b561ed4aace73878bd69dcbe29e34bde6cb",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "layout_sha256": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430",
+        "native": "development/levels/rebuild/secure-sacred-roof-pass/church/enclosed-roofs.hcs2",
+        "native_sha256": "cd59f34898b1a431da79a35abb6943d1133b3654860b526defba0cf0bcc014bf"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/household-sacred-bay-pass/church/construction.json",
+        "contract_sha256": "413588eae6253e18653af97d3392c235f1d2c64d869678379ffa87ec95610ec4",
+        "layout": "development/levels/rebuild/household-sacred-bay-pass/church/authored-layout.json",
+        "layout_sha256": "204aba4ece95387fbb06798b81882762c5fc2932c664f204d85d480bbb31111a",
+        "native": "development/levels/rebuild/household-sacred-bay-pass/church/authored-bays.hcs2",
+        "native_sha256": "b09df6f48933680654c099c624f27e4dd7d1c5de4ad342b55973a1a717af3f39"
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "contract": "development/levels/rebuild/roof-construction-pass/farmhouse/construction.json",
+        "contract_sha256": "9071518606eb88be2934d58dc3d30bb4a2a3e9d33f745712a07e4b55196a3262",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "layout_sha256": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e",
+        "native": "development/levels/rebuild/roof-construction-pass/farmhouse/enclosed-roofs.hcs2",
+        "native_sha256": "901a74a9065d8eb3f7cc4f0004869f1210aab213ebfcae114b308d46c78041f9"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/construction.json",
+        "contract_sha256": "186b7e460fda3998a76d8641fadbf3efbdd12a0f5f49df35b3cee870b8eb5509",
+        "layout": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-layout.json",
+        "layout_sha256": "076a7ffe8b34923c9c17eec7921e79888f238f11a54b41ca30299007cdb8fa4d",
+        "native": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-bays.hcs2",
+        "native_sha256": "fcfe5fc44ab2764dabd544596567363c312bebbacfe83010a247a56fb5bbd707"
+      }
+    },
+    "MANSION": {
+      "before": {
+        "contract": "development/levels/rebuild/roof-construction-pass/mansion/construction.json",
+        "contract_sha256": "5c1e65fd969b27d5a3f37d8e3e70623da4012a1956f773c82c560f01cebffc29",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "layout_sha256": "75e016d3e318419dee89e3a2a98d63ad1eca32aa32af458ad8b958499eb75790",
+        "native": "development/levels/rebuild/roof-construction-pass/mansion/enclosed-roofs.hcs2",
+        "native_sha256": "853da0dafd5668449f886bbdbbbfc2cf218aa8355e00f8ab84aad1eb69be6d8a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/household-sacred-bay-pass/mansion/construction.json",
+        "contract_sha256": "554e541132fac3475ddd22360ecf6d46c822e4c23ad460059d007fee05912911",
+        "layout": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-layout.json",
+        "layout_sha256": "d0138056739b9275f771bbafa46a872881849f1c52e2969b37251a2df0d3fb3b",
+        "native": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-bays.hcs2",
+        "native_sha256": "bc2c380fb6ea20d9254833d74b3b24f1c8309f26668bb34da2fe2e17450cd494"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/architectural-restart-pass/roster.json": "aedb5a72db62a9f4021a2f4f4b57357f7930928f7d8f63b9b3bd9f603e89c77a"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-failure-contacts.tsv": "fd25797eee562f1ba3b110d7744dcae2d731240909cd32bf7d3fbbbf44b430d3",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-failure-input.tsv": "be4ed2f6072d0526e77263246746b5486674e6b738272ac94e64ad08e752b19f",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-lane-input.tsv": "075065a42240242ee36ed52e1c2793e5c2b1eacf2caca7e5945f14b3929083ba",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-lane-names.tsv": "cbf00fe7201f48e35b5761a9f1b9010b5e4ca29f9862f9d1738d38482cfd627c",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-lanes.tsv": "f91e6d055d10f5ffef4c34a36b96bb97be0bd60f273ee148ccbbdb8563dec0bf",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-links.tsv": "9c953a2b58c10007b99233407c62c86d4a2d4f40f9f2145cd3b4ff2261960fba",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-names.tsv": "d8c892e2ec73a2c73dc43cc86324accb66a086652e1ed6069b6e16cfe412fd87",
+    "development/levels/rebuild/household-sacred-bay-pass/verification/flat/current-flat-paths.tsv": "964c7cc99d8675934986232d2273aa074a668581f32460c7674d35750c40772b"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

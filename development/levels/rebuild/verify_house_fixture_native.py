@@ -10,8 +10,11 @@ story='--story' in sys.argv
 fitout='--fitout' in sys.argv
 functions='--functions' in sys.argv
 variant='furnishings' if furnishings else 'services' if services else 'story' if story else 'fitout' if fitout else 'functions' if functions else 'envelope' if envelope else 'landscape' if landscape else 'fit'
-source=ROOT/('build/level-verification/scenes/briar-rebuild-'+variant)
-native=ROOT/('development/levels/blender/briar-rebuild-'+variant+'-construction.blend')
+def option(flag, default):
+ return Path(sys.argv[sys.argv.index(flag)+1]).resolve() if flag in sys.argv else default
+
+source=option('--source-dir',ROOT/('build/level-verification/scenes/briar-rebuild-'+variant))
+native=option('--native-file',ROOT/('development/levels/blender/briar-rebuild-'+variant+'-construction.blend'))
 digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 before=digest(native)
 bpy.ops.wm.open_mainfile(filepath=str(native))
@@ -50,9 +53,9 @@ assert digest(native)==before
 report=dict(level=definition['id'],revision=definition['revision'],triangles=count,packed_images=len(images),props=len(definition['props']),spawns=15,
  native_sha256=before,definition_sha256=digest(source/'definition.json'),geometry_sha256=digest(source/'geometry.json'),
  result='PASS every source vertex/UV; packed images; original sockets; native file unchanged',acceptance='construction candidate only; terrain/boundary and complete map gates open')
-(ROOT/('development/levels/rebuild/house/'+('furnishings' if furnishings else 'services' if services else 'story' if story else 'fitout' if fitout else 'functions' if functions else 'envelope' if envelope else 'landscape' if landscape else 'fixture-fit')+'-native-verification.json')).write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
+option('--report',ROOT/('development/levels/rebuild/house/'+('furnishings' if furnishings else 'services' if services else 'story' if story else 'fitout' if fitout else 'functions' if functions else 'envelope' if envelope else 'landscape' if landscape else 'fixture-fit')+'-native-verification.json')).write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
 print('PASS House fitted native parity',count,'triangles',len(images),'packed images; no native resave')
-if landscape or envelope or functions or fitout or story or services or furnishings:
+if '--no-render' not in sys.argv and (landscape or envelope or functions or fitout or story or services or furnishings):
  from mathutils import Vector
  scene.world.node_tree.nodes.get('Background').inputs['Strength'].default_value=.8
  for o in scene.objects:

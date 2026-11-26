@@ -1,0 +1,5237 @@
+{
+  "status": "ACTUAL_CURRENT_UNFINISHED_FLAT_DESIGN_WORKLIST",
+  "complete_flat_links_remaining": 122,
+  "links": [
+    {
+      "site": "ACADEMY",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          74.5
+        ],
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          0,
+          61.5
+        ],
+        [
+          32.5,
+          0,
+          61.5
+        ]
+      ],
+      "width": 1.3,
+      "threshold": [
+        32,
+        0,
+        68
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_57_OF_65",
+      "reverse": "BLOCKED_SEGMENT_0_AT_1_OF_5",
+      "consume_source": {
+        "id": "ACADEMY",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+        "glb_sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+        "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+      }
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "grounds"
+      ],
+      "points": [
+        [
+          32.5,
+          0,
+          61.5
+        ],
+        [
+          60,
+          0,
+          61.5
+        ],
+        [
+          60,
+          0,
+          55
+        ],
+        [
+          60,
+          0,
+          27.5
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "width": 1.3,
+      "threshold": [
+        60,
+        0,
+        55
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_193_OF_275",
+      "reverse": "BLOCKED_SEGMENT_0_AT_203_OF_275",
+      "consume_source": {
+        "id": "ACADEMY",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+        "glb_sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+        "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+      }
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L03",
+      "rooms": [
+        "grounds",
+        "reception"
+      ],
+      "points": [
+        [
+          32.5,
+          0,
+          27.5
+        ],
+        [
+          27,
+          0,
+          53
+        ],
+        [
+          27.0,
+          0,
+          49.0
+        ]
+      ],
+      "width": 1.3,
+      "threshold": [
+        27,
+        0,
+        53
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_259_OF_261",
+      "reverse": "BLOCKED_SEGMENT_0_AT_38_OF_40",
+      "consume_source": {
+        "id": "ACADEMY",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+        "glb_sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+        "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+      }
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42",
+      "rooms": [
+        "east-stair",
+        "grounds"
+      ],
+      "points": [
+        [
+          51.0,
+          0,
+          50.0
+        ],
+        [
+          57,
+          0,
+          50
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "width": 1.3,
+      "threshold": [
+        57,
+        0,
+        50
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_21_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_300_OF_333",
+      "consume_source": {
+        "id": "ACADEMY",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+        "glb_sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+        "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+      }
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L43",
+      "rooms": [
+        "upper-west",
+        "upper-main-stair"
+      ],
+      "points": [
+        [
+          20.5,
+          3.6,
+          31.0
+        ],
+        [
+          20.5,
+          3.6,
+          51
+        ],
+        [
+          19,
+          3.6,
+          51
+        ],
+        [
+          13.0,
+          3.6,
+          51
+        ],
+        [
+          13.0,
+          3.6,
+          47.5
+        ]
+      ],
+      "width": 1.3,
+      "threshold": [
+        19,
+        3.6,
+        51
+      ],
+      "forward": "BLOCKED_SEGMENT_2_AT_21_OF_60",
+      "reverse": "BLOCKED_SEGMENT_1_AT_39_OF_60",
+      "consume_source": {
+        "id": "ACADEMY",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+        "glb_sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+        "native_sha256": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L19",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          76.5
+        ],
+        [
+          32,
+          0,
+          70
+        ],
+        [
+          32,
+          0,
+          64.0
+        ],
+        [
+          34.0,
+          0,
+          64.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        32,
+        0,
+        70
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_7_OF_20",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L20",
+      "rooms": [
+        "entry",
+        "admission"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          64.0
+        ],
+        [
+          30,
+          0,
+          64.0
+        ],
+        [
+          30,
+          0,
+          58
+        ],
+        [
+          30,
+          0,
+          54.0
+        ],
+        [
+          30.5,
+          0,
+          54.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        30,
+        0,
+        58
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_7_OF_40",
+      "reverse": "BLOCKED_SEGMENT_2_AT_1_OF_60",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L27",
+      "rooms": [
+        "ground-south-a",
+        "court"
+      ],
+      "points": [
+        [
+          13.0,
+          0,
+          25.5
+        ],
+        [
+          13,
+          0,
+          29
+        ],
+        [
+          13,
+          0,
+          34.5
+        ],
+        [
+          18.0,
+          0,
+          34.5
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        13,
+        0,
+        29
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_55",
+      "reverse": "BLOCKED_SEGMENT_1_AT_8_OF_55",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L71",
+      "rooms": [
+        "grounds",
+        "chapel"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          29.0
+        ],
+        [
+          16,
+          0,
+          10
+        ],
+        [
+          16.0,
+          0,
+          6.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        16,
+        0,
+        10
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_19_OF_262",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_262",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L72",
+      "rooms": [
+        "grounds",
+        "court"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          29.0
+        ],
+        [
+          10,
+          0,
+          35
+        ],
+        [
+          18.0,
+          0,
+          34.5
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        10,
+        0,
+        35
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_80_OF_248",
+      "reverse": "BLOCKED_SEGMENT_0_AT_79_OF_81",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L73",
+      "rooms": [
+        "grounds",
+        "entry"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          29.0
+        ],
+        [
+          60,
+          0,
+          29.0
+        ],
+        [
+          60,
+          0,
+          58
+        ],
+        [
+          60,
+          0,
+          64.0
+        ],
+        [
+          34.0,
+          0,
+          64.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        60,
+        0,
+        58
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_8_OF_260",
+      "reverse": "BLOCKED_SEGMENT_0_AT_22_OF_260",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L74",
+      "rooms": [
+        "grounds",
+        "service-stair"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          29.0
+        ],
+        [
+          57,
+          0,
+          12
+        ],
+        [
+          57.0,
+          0,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        57,
+        0,
+        12
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_9_OF_287",
+      "reverse": "START_UNSUPPORTED",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L76",
+      "rooms": [
+        "grounds",
+        "service"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          29.0
+        ],
+        [
+          57,
+          0,
+          48
+        ],
+        [
+          55.5,
+          0,
+          37.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        57,
+        0,
+        48
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_10_OF_299",
+      "reverse": "BLOCKED_SEGMENT_0_AT_90_OF_112",
+      "consume_source": {
+        "id": "ASYLUM",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/asylum/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.blend",
+        "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+        "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          22.0,
+          0,
+          51.5
+        ],
+        [
+          22,
+          0,
+          45
+        ],
+        [
+          22.5,
+          0,
+          48.7
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        22,
+        0,
+        45
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_38_OF_38",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "vestibule"
+      ],
+      "points": [
+        [
+          22.5,
+          0,
+          48.7
+        ],
+        [
+          22,
+          0,
+          48.7
+        ],
+        [
+          22,
+          0,
+          39
+        ],
+        [
+          22,
+          0,
+          36.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        22,
+        0,
+        39
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_2_AT_4_OF_5",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L04",
+      "rooms": [
+        "rear-nave",
+        "parish-lobby"
+      ],
+      "points": [
+        [
+          22.0,
+          0,
+          30.0
+        ],
+        [
+          22.0,
+          0,
+          32
+        ],
+        [
+          18,
+          0,
+          32
+        ],
+        [
+          15.5,
+          0,
+          32
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        18,
+        0,
+        32
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_17_OF_40",
+      "reverse": "BLOCKED_SEGMENT_1_AT_7_OF_40",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L17",
+      "rooms": [
+        "chapel",
+        "grounds"
+      ],
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          34,
+          0,
+          20
+        ],
+        [
+          22.0,
+          0,
+          19.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        34,
+        0,
+        20
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_39_OF_40",
+      "reverse": "BLOCKED_SEGMENT_0_AT_120_OF_121",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L18",
+      "rooms": [
+        "vestry",
+        "grounds"
+      ],
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          28.5,
+          0,
+          6
+        ],
+        [
+          22.0,
+          0,
+          19.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28.5,
+        0,
+        6
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_39_OF_40",
+      "reverse": "BLOCKED_SEGMENT_0_AT_81_OF_150",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L19",
+      "rooms": [
+        "choir-stair",
+        "choir"
+      ],
+      "points": [
+        [
+          19.5,
+          3,
+          30.0
+        ],
+        [
+          19.5,
+          3,
+          33
+        ],
+        [
+          21,
+          3,
+          33
+        ],
+        [
+          23.5,
+          3,
+          33
+        ],
+        [
+          23.5,
+          3,
+          30.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        21,
+        3,
+        33
+      ],
+      "forward": "START_UNSUPPORTED",
+      "reverse": "WRONG_END_ELEVATION",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L20",
+      "rooms": [
+        "choir-stair",
+        "tower-stair"
+      ],
+      "points": [
+        [
+          19.5,
+          3,
+          30.0
+        ],
+        [
+          19.5,
+          3,
+          33.25
+        ],
+        [
+          18,
+          3,
+          33.25
+        ],
+        [
+          14.0,
+          3,
+          33.25
+        ],
+        [
+          14.0,
+          3,
+          30.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        18,
+        3,
+        33.25
+      ],
+      "forward": "START_UNSUPPORTED",
+      "reverse": "WRONG_END_ELEVATION",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "CHURCH",
+      "link": "L30",
+      "rooms": [
+        "grounds",
+        "entry"
+      ],
+      "points": [
+        [
+          22.0,
+          0,
+          19.5
+        ],
+        [
+          6,
+          0,
+          19.5
+        ],
+        [
+          6,
+          0,
+          39
+        ],
+        [
+          6,
+          0,
+          48.7
+        ],
+        [
+          22.5,
+          0,
+          48.7
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        6,
+        0,
+        39
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_38_OF_160",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "CHURCH",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+        "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          96.5
+        ],
+        [
+          32,
+          0,
+          90
+        ],
+        [
+          32,
+          0,
+          84.0
+        ],
+        [
+          37.5,
+          0,
+          84.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        32,
+        0,
+        90
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_60",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "green"
+      ],
+      "points": [
+        [
+          37.5,
+          0,
+          84.0
+        ],
+        [
+          32,
+          0,
+          84.0
+        ],
+        [
+          32,
+          0,
+          78
+        ],
+        [
+          32,
+          0,
+          39.0
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        32,
+        0,
+        78
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_1_AT_29_OF_390",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L03",
+      "rooms": [
+        "green",
+        "teaching-lobby"
+      ],
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          24,
+          0,
+          62
+        ],
+        [
+          24.0,
+          0,
+          58.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        24,
+        0,
+        62
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_78_OF_267",
+      "reverse": "BLOCKED_SEGMENT_0_AT_38_OF_40",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L11",
+      "rooms": [
+        "teaching-hall",
+        "teaching-stair"
+      ],
+      "points": [
+        [
+          22.0,
+          0,
+          32.0
+        ],
+        [
+          22.0,
+          0,
+          44
+        ],
+        [
+          24,
+          0,
+          44
+        ],
+        [
+          27.0,
+          0,
+          44
+        ],
+        [
+          27.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        24,
+        0,
+        44
+      ],
+      "forward": "BLOCKED_SEGMENT_2_AT_9_OF_30",
+      "reverse": "BLOCKED_SEGMENT_1_AT_22_OF_30",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L17",
+      "rooms": [
+        "green",
+        "issue"
+      ],
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          31,
+          0,
+          20
+        ],
+        [
+          31.0,
+          0,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        0,
+        20
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_201_OF_201",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_201",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L24",
+      "rooms": [
+        "green",
+        "res-hall"
+      ],
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          52,
+          0,
+          70
+        ],
+        [
+          52.0,
+          0,
+          48.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        52,
+        0,
+        70
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_100_OF_343",
+      "reverse": "BLOCKED_SEGMENT_1_AT_219_OF_343",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L44",
+      "rooms": [
+        "rear-hall",
+        "green"
+      ],
+      "points": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          52,
+          0,
+          78
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        52,
+        0,
+        78
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_38_OF_40",
+      "reverse": "BLOCKED_SEGMENT_0_AT_121_OF_417",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L45",
+      "rooms": [
+        "north-stair",
+        "green"
+      ],
+      "points": [
+        [
+          65.0,
+          0,
+          36.0
+        ],
+        [
+          68,
+          0,
+          36
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        68,
+        0,
+        36
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_43_OF_307",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L68",
+      "rooms": [
+        "west-tunnel",
+        "west-cellar-stair"
+      ],
+      "points": [
+        [
+          22.0,
+          -3,
+          32.0
+        ],
+        [
+          22.0,
+          -3,
+          40
+        ],
+        [
+          24,
+          -3,
+          40
+        ],
+        [
+          27.0,
+          -3,
+          40
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        24,
+        -3,
+        40
+      ],
+      "forward": "BLOCKED_SEGMENT_2_AT_8_OF_30",
+      "reverse": "BLOCKED_SEGMENT_0_AT_4_OF_30",
+      "consume_source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/college/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.blend",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          26.0,
+          0,
+          44.0
+        ],
+        [
+          26,
+          0,
+          38
+        ],
+        [
+          26.5,
+          0,
+          42.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        26,
+        0,
+        38
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_58_OF_60",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "grounds"
+      ],
+      "points": [
+        [
+          26.5,
+          0,
+          42.0
+        ],
+        [
+          24,
+          0,
+          42.0
+        ],
+        [
+          24,
+          0,
+          34
+        ],
+        [
+          24,
+          0,
+          17.0
+        ],
+        [
+          25.5,
+          0,
+          17.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        24,
+        0,
+        34
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_2_OF_15",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L03",
+      "rooms": [
+        "grounds",
+        "mudroom"
+      ],
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          23,
+          0,
+          28
+        ],
+        [
+          23.0,
+          0,
+          25.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        23,
+        0,
+        28
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_9_OF_113",
+      "reverse": "BLOCKED_SEGMENT_0_AT_29_OF_30",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L08",
+      "rooms": [
+        "dining",
+        "stairs"
+      ],
+      "points": [
+        [
+          16.0,
+          0,
+          18.0
+        ],
+        [
+          20,
+          0,
+          18
+        ],
+        [
+          23.0,
+          0,
+          18
+        ],
+        [
+          23.0,
+          0,
+          17.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        20,
+        0,
+        18
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_6_OF_30",
+      "reverse": "BLOCKED_SEGMENT_1_AT_6_OF_30",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L11",
+      "rooms": [
+        "prep",
+        "grounds"
+      ],
+      "points": [
+        [
+          17.5,
+          0,
+          11.5
+        ],
+        [
+          17,
+          0,
+          10
+        ],
+        [
+          25.5,
+          0,
+          17.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        17,
+        0,
+        10
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_15_OF_16",
+      "reverse": "BLOCKED_SEGMENT_0_AT_3_OF_111",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L23",
+      "rooms": [
+        "grounds",
+        "barn-aisle"
+      ],
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          37,
+          0,
+          24
+        ],
+        [
+          37.0,
+          0,
+          16.5
+        ]
+      ],
+      "width": 2.4,
+      "threshold": [
+        37,
+        0,
+        24
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_134_OF_135",
+      "reverse": "BLOCKED_SEGMENT_0_AT_73_OF_75",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L30",
+      "rooms": [
+        "grounds",
+        "repair"
+      ],
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          33,
+          0,
+          26
+        ],
+        [
+          33.5,
+          0,
+          29.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        33,
+        0,
+        26
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_117_OF_118",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_118",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L33",
+      "rooms": [
+        "grounds",
+        "laundry"
+      ],
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          29,
+          0,
+          33
+        ],
+        [
+          29.0,
+          0,
+          29.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        29,
+        0,
+        33
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_162_OF_164",
+      "reverse": "BLOCKED_SEGMENT_0_AT_33_OF_35",
+      "consume_source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          28.0,
+          0,
+          71.5
+        ],
+        [
+          28,
+          0,
+          65
+        ],
+        [
+          28,
+          0,
+          57.5
+        ],
+        [
+          30.0,
+          0,
+          57.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28,
+        0,
+        65
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_75",
+      "reverse": "BLOCKED_SEGMENT_0_AT_7_OF_20",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "foyer"
+      ],
+      "points": [
+        [
+          30.0,
+          0,
+          57.5
+        ],
+        [
+          22,
+          0,
+          57.5
+        ],
+        [
+          22,
+          0,
+          50
+        ],
+        [
+          22,
+          0,
+          47.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        22,
+        0,
+        50
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_7_OF_80",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_75",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L26",
+      "rooms": [
+        "receiving",
+        "garden"
+      ],
+      "points": [
+        [
+          46.0,
+          0,
+          23.0
+        ],
+        [
+          46,
+          0,
+          20
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        46,
+        0,
+        20
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_28_OF_30",
+      "reverse": "BLOCKED_SEGMENT_0_AT_60_OF_168",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L28",
+      "rooms": [
+        "service-stair",
+        "garden"
+      ],
+      "points": [
+        [
+          43.0,
+          0,
+          8.0
+        ],
+        [
+          43,
+          0,
+          2
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        43,
+        0,
+        2
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_59_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_55_OF_265",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L29",
+      "rooms": [
+        "library",
+        "garden"
+      ],
+      "points": [
+        [
+          14.0,
+          0,
+          30.0
+        ],
+        [
+          8,
+          0,
+          30
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        8,
+        0,
+        30
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_58_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_51_OF_226",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L30",
+      "rooms": [
+        "ballroom",
+        "garden"
+      ],
+      "points": [
+        [
+          47.0,
+          0,
+          40.0
+        ],
+        [
+          54,
+          0,
+          40
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        54,
+        0,
+        40
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_68_OF_70",
+      "reverse": "BLOCKED_SEGMENT_0_AT_283_OF_284",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L31",
+      "rooms": [
+        "garden",
+        "entry"
+      ],
+      "points": [
+        [
+          30.0,
+          0,
+          25.0
+        ],
+        [
+          55,
+          0,
+          25.0
+        ],
+        [
+          55,
+          0,
+          50
+        ],
+        [
+          55,
+          0,
+          57.5
+        ],
+        [
+          30.0,
+          0,
+          57.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        55,
+        0,
+        50
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_188_OF_250",
+      "reverse": "BLOCKED_SEGMENT_0_AT_14_OF_250",
+      "consume_source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.blend",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L065",
+      "rooms": [
+        "entry",
+        "sally"
+      ],
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          34,
+          0,
+          81.0
+        ],
+        [
+          34,
+          0,
+          68
+        ],
+        [
+          34,
+          0,
+          63.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        34,
+        0,
+        68
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_130",
+      "consume_source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L066",
+      "rooms": [
+        "entry",
+        "reception"
+      ],
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          14,
+          0,
+          81.0
+        ],
+        [
+          14,
+          0,
+          68
+        ],
+        [
+          14,
+          0,
+          65.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        14,
+        0,
+        68
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_130",
+      "consume_source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L084",
+      "rooms": [
+        "yard",
+        "plant-stair"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          40.0
+        ],
+        [
+          28,
+          0,
+          28
+        ],
+        [
+          30.0,
+          0,
+          28.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28,
+        0,
+        28
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_129_OF_135",
+      "reverse": "START_UNSUPPORTED",
+      "consume_source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L085",
+      "rooms": [
+        "plant-stair",
+        "cross"
+      ],
+      "points": [
+        [
+          30.0,
+          0,
+          28.0
+        ],
+        [
+          30,
+          0,
+          22
+        ],
+        [
+          30,
+          0,
+          19.0
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        30,
+        0,
+        22
+      ],
+      "forward": "START_UNSUPPORTED",
+      "reverse": "BLOCKED_SEGMENT_2_AT_18_OF_60",
+      "consume_source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L111",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          34.0,
+          0,
+          85.0
+        ],
+        [
+          34,
+          0,
+          78
+        ],
+        [
+          38.0,
+          0,
+          81.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        34,
+        0,
+        78
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_68_OF_70",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.blend",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L27",
+      "rooms": [
+        "upper-corridor",
+        "upper-stair"
+      ],
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          21.5,
+          3.6,
+          29
+        ],
+        [
+          23,
+          3.6,
+          29
+        ],
+        [
+          26.5,
+          3.6,
+          29
+        ],
+        [
+          26.5,
+          3.6,
+          26.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        23,
+        3.6,
+        29
+      ],
+      "forward": "BLOCKED_SEGMENT_2_AT_11_OF_35",
+      "reverse": "BLOCKED_SEGMENT_1_AT_6_OF_35",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L33",
+      "rooms": [
+        "lower-stair",
+        "plant"
+      ],
+      "points": [
+        [
+          28.6,
+          -3,
+          16.0
+        ],
+        [
+          28.6,
+          -3,
+          18.8
+        ],
+        [
+          27.2,
+          -3,
+          18.8
+        ],
+        [
+          25.1,
+          -3,
+          18.8
+        ],
+        [
+          25.1,
+          -3,
+          16.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        27.2,
+        -3,
+        18.8
+      ],
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_3_AT_3_OF_29",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L35",
+      "rooms": [
+        "foyer",
+        "entry"
+      ],
+      "points": [
+        [
+          22.5,
+          0,
+          33.0
+        ],
+        [
+          22.5,
+          0,
+          36
+        ],
+        [
+          22.5,
+          0,
+          47.2
+        ],
+        [
+          28.0,
+          0,
+          47.2
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        22.5,
+        0,
+        36
+      ],
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_113",
+      "reverse": "BLOCKED_SEGMENT_0_AT_5_OF_55",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L36",
+      "rooms": [
+        "service-stair",
+        "grounds"
+      ],
+      "points": [
+        [
+          28.6,
+          0,
+          16.0
+        ],
+        [
+          28.5,
+          0,
+          12
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28.5,
+        0,
+        12
+      ],
+      "forward": "START_UNSUPPORTED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_19_OF_72",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L37",
+      "rooms": [
+        "science",
+        "grounds"
+      ],
+      "points": [
+        [
+          15.0,
+          0,
+          16.5
+        ],
+        [
+          10,
+          0,
+          16
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        10,
+        0,
+        16
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_49_OF_51",
+      "reverse": "BLOCKED_SEGMENT_0_AT_201_OF_203",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L38",
+      "rooms": [
+        "class-a",
+        "grounds"
+      ],
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          10,
+          0,
+          28
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        10,
+        0,
+        28
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_49_OF_51",
+      "reverse": "BLOCKED_SEGMENT_0_AT_218_OF_220",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L39",
+      "rooms": [
+        "gym",
+        "grounds"
+      ],
+      "points": [
+        [
+          44.0,
+          0,
+          16.0
+        ],
+        [
+          44,
+          0,
+          8
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        44,
+        0,
+        8
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_78_OF_80",
+      "reverse": "BLOCKED_SEGMENT_0_AT_178_OF_179",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L41",
+      "rooms": [
+        "grounds",
+        "entry"
+      ],
+      "points": [
+        [
+          30.0,
+          0,
+          19.0
+        ],
+        [
+          52,
+          0,
+          19.0
+        ],
+        [
+          52,
+          0,
+          36
+        ],
+        [
+          52,
+          0,
+          47.2
+        ],
+        [
+          28.0,
+          0,
+          47.2
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        52,
+        0,
+        36
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_198_OF_220",
+      "reverse": "BLOCKED_SEGMENT_0_AT_10_OF_240",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L42",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          28.0,
+          0,
+          51.5
+        ],
+        [
+          28,
+          0,
+          45
+        ],
+        [
+          28.0,
+          0,
+          47.2
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28,
+        0,
+        45
+      ],
+      "forward": "BLOCKED_SEGMENT_0_AT_63_OF_65",
+      "reverse": "BLOCKED_SEGMENT_0_AT_21_OF_23",
+      "consume_source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.blend",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L08",
+      "rooms": [
+        "upper-path",
+        "dwellings"
+      ],
+      "points": [
+        [
+          34.0,
+          8,
+          16.0
+        ],
+        [
+          34.0,
+          8,
+          22.0
+        ],
+        [
+          34.0,
+          8,
+          31.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_11_OF_60",
+      "reverse": "START_UNSUPPORTED",
+      "consume_source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.blend",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L15",
+      "rooms": [
+        "return",
+        "lower-path"
+      ],
+      "points": [
+        [
+          57.0,
+          4,
+          13.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_34_OF_497",
+      "consume_source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.blend",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d"
+      }
+    },
+    {
+      "site": "WLD-04",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          28.0,
+          0,
+          78.0
+        ],
+        [
+          28.0,
+          0,
+          72.0
+        ],
+        [
+          28.0,
+          0,
+          66.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_58_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_3_OF_60",
+      "consume_source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+      }
+    },
+    {
+      "site": "WLD-04",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "lower"
+      ],
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          14.0,
+          0,
+          51.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_12_OF_206",
+      "reverse": "BLOCKED_SEGMENT_0_AT_12_OF_206",
+      "consume_source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+      }
+    },
+    {
+      "site": "WLD-04",
+      "link": "L05",
+      "rooms": [
+        "clearing",
+        "hut"
+      ],
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          30.0,
+          6,
+          20.0
+        ],
+        [
+          20.0,
+          6,
+          20.0
+        ],
+        [
+          12.0,
+          6,
+          20.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_8_OF_100",
+      "reverse": "BLOCKED_SEGMENT_0_AT_78_OF_80",
+      "consume_source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+      }
+    },
+    {
+      "site": "WLD-04",
+      "link": "L07",
+      "rooms": [
+        "clearing",
+        "ruin"
+      ],
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          40.0,
+          6,
+          22.0
+        ],
+        [
+          47.0,
+          6,
+          22.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_9_OF_100",
+      "reverse": "BLOCKED_SEGMENT_1_AT_3_OF_100",
+      "consume_source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+      }
+    },
+    {
+      "site": "WLD-04",
+      "link": "L15",
+      "rooms": [
+        "cab",
+        "deck"
+      ],
+      "points": [
+        [
+          27.0,
+          15,
+          5.0
+        ],
+        [
+          30.0,
+          15,
+          5.0
+        ],
+        [
+          33.0,
+          15,
+          5.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_1_OF_30",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.blend",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+      }
+    },
+    {
+      "site": "WLD-05",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          28.0,
+          0,
+          82.0
+        ],
+        [
+          28.0,
+          0,
+          76.0
+        ],
+        [
+          28.0,
+          0,
+          69.0
+        ],
+        [
+          30.0,
+          0,
+          69.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_70",
+      "reverse": "BLOCKED_SEGMENT_0_AT_14_OF_20",
+      "consume_source": {
+        "id": "WLD-05",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+        "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+      }
+    },
+    {
+      "site": "WLD-05",
+      "link": "L05",
+      "rooms": [
+        "stores",
+        "adit"
+      ],
+      "points": [
+        [
+          8.0,
+          0,
+          38.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_222_OF_261",
+      "reverse": "BLOCKED_SEGMENT_0_AT_30_OF_261",
+      "consume_source": {
+        "id": "WLD-05",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+        "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+      }
+    },
+    {
+      "site": "WLD-05",
+      "link": "L06",
+      "rooms": [
+        "adit",
+        "entry"
+      ],
+      "points": [
+        [
+          30.0,
+          0,
+          52.0
+        ],
+        [
+          30.0,
+          0,
+          62.0
+        ],
+        [
+          30.0,
+          0,
+          69.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_11_OF_100",
+      "reverse": "BLOCKED_SEGMENT_1_AT_89_OF_100",
+      "consume_source": {
+        "id": "WLD-05",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+        "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+      }
+    },
+    {
+      "site": "WLD-05",
+      "link": "L08",
+      "rooms": [
+        "wash",
+        "adit"
+      ],
+      "points": [
+        [
+          47.0,
+          0,
+          38.0
+        ],
+        [
+          47.0,
+          0,
+          44.0
+        ],
+        [
+          40.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_2_AT_86_OF_100",
+      "reverse": "BLOCKED_SEGMENT_0_AT_18_OF_80",
+      "consume_source": {
+        "id": "WLD-05",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+        "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+      }
+    },
+    {
+      "site": "WLD-05",
+      "link": "L10",
+      "rooms": [
+        "haul",
+        "ore-west"
+      ],
+      "points": [
+        [
+          28.0,
+          -6,
+          31.0
+        ],
+        [
+          20.0,
+          -6,
+          31.0
+        ],
+        [
+          11.0,
+          -6,
+          31.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_10_OF_80",
+      "reverse": "BLOCKED_SEGMENT_1_AT_68_OF_80",
+      "consume_source": {
+        "id": "WLD-05",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+        "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
+      }
+    },
+    {
+      "site": "WLD-06",
+      "link": "L07",
+      "rooms": [
+        "quay",
+        "pier-w"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          45.0
+        ],
+        [
+          22.0,
+          0,
+          45.0
+        ],
+        [
+          22.0,
+          0,
+          36.0
+        ],
+        [
+          22.0,
+          0,
+          23.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_2_AT_17_OF_130",
+      "reverse": "BLOCKED_SEGMENT_0_AT_57_OF_130",
+      "consume_source": {
+        "id": "WLD-06",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+        "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+        "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+      }
+    },
+    {
+      "site": "WLD-06",
+      "link": "L10",
+      "rooms": [
+        "pier-e",
+        "quay"
+      ],
+      "points": [
+        [
+          42.0,
+          0,
+          23.0
+        ],
+        [
+          42.0,
+          0,
+          36.0
+        ],
+        [
+          42.0,
+          0,
+          45.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_57_OF_130",
+      "reverse": "BLOCKED_SEGMENT_2_AT_17_OF_130",
+      "consume_source": {
+        "id": "WLD-06",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+        "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+        "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+      }
+    },
+    {
+      "site": "WLD-06",
+      "link": "L14",
+      "rooms": [
+        "boathouse",
+        "west-stair"
+      ],
+      "points": [
+        [
+          12.0,
+          0,
+          19.0
+        ],
+        [
+          16.0,
+          0,
+          19.0
+        ],
+        [
+          16.0,
+          0,
+          28.0
+        ],
+        [
+          16.0,
+          0,
+          33.0
+        ],
+        [
+          18.0,
+          0,
+          33.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_2_AT_22_OF_50",
+      "reverse": "BLOCKED_SEGMENT_0_AT_9_OF_20",
+      "consume_source": {
+        "id": "WLD-06",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+        "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+        "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+      }
+    },
+    {
+      "site": "WLD-06",
+      "link": "L15",
+      "rooms": [
+        "west-stair",
+        "quay"
+      ],
+      "points": [
+        [
+          18.0,
+          0,
+          33.0
+        ],
+        [
+          22.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_10_OF_57",
+      "reverse": "BLOCKED_SEGMENT_1_AT_38_OF_57",
+      "consume_source": {
+        "id": "WLD-06",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+        "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+        "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+      }
+    },
+    {
+      "site": "WLD-06",
+      "link": "L18",
+      "rooms": [
+        "east-stair",
+        "quay"
+      ],
+      "points": [
+        [
+          46.0,
+          0,
+          33.0
+        ],
+        [
+          42.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_10_OF_57",
+      "reverse": "BLOCKED_SEGMENT_1_AT_38_OF_57",
+      "consume_source": {
+        "id": "WLD-06",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+        "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+        "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L03",
+      "rooms": [
+        "court",
+        "lab"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          41.0
+        ],
+        [
+          32.0,
+          0,
+          35.0
+        ],
+        [
+          20.0,
+          0,
+          35.0
+        ],
+        [
+          11.0,
+          0,
+          35.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_25_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_29_OF_90",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L04",
+      "rooms": [
+        "lab",
+        "store"
+      ],
+      "points": [
+        [
+          11.0,
+          0,
+          35.0
+        ],
+        [
+          11.0,
+          0,
+          44.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_8_OF_90",
+      "reverse": "BLOCKED_SEGMENT_1_AT_82_OF_90",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L06",
+      "rooms": [
+        "court",
+        "dorm"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          41.0
+        ],
+        [
+          32.0,
+          0,
+          35.0
+        ],
+        [
+          44.0,
+          0,
+          35.0
+        ],
+        [
+          53.0,
+          0,
+          35.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_25_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_29_OF_90",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L07",
+      "rooms": [
+        "dorm",
+        "mess"
+      ],
+      "points": [
+        [
+          53.0,
+          0,
+          35.0
+        ],
+        [
+          53.0,
+          0,
+          44.0
+        ],
+        [
+          53.0,
+          0,
+          50.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_8_OF_90",
+      "reverse": "BLOCKED_SEGMENT_1_AT_82_OF_90",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L09",
+      "rooms": [
+        "court",
+        "radio"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          41.0
+        ],
+        [
+          26.0,
+          0,
+          41.0
+        ],
+        [
+          26.0,
+          0,
+          26.0
+        ],
+        [
+          26.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_18_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_68_OF_70",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L11",
+      "rooms": [
+        "records",
+        "court"
+      ],
+      "points": [
+        [
+          38.0,
+          0,
+          19.0
+        ],
+        [
+          38.0,
+          0,
+          26.0
+        ],
+        [
+          38.0,
+          0,
+          41.0
+        ],
+        [
+          32.0,
+          0,
+          41.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_68_OF_70",
+      "reverse": "BLOCKED_SEGMENT_0_AT_18_OF_60",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L14",
+      "rooms": [
+        "records",
+        "array"
+      ],
+      "points": [
+        [
+          38.0,
+          0,
+          19.0
+        ],
+        [
+          38.0,
+          0,
+          16.0
+        ],
+        [
+          44.0,
+          0,
+          16.0
+        ],
+        [
+          53.0,
+          0,
+          16.0
+        ],
+        [
+          53.0,
+          0,
+          10.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_2_AT_2_OF_90",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-08",
+      "link": "L15",
+      "rooms": [
+        "array",
+        "dorm"
+      ],
+      "points": [
+        [
+          53.0,
+          0,
+          10.0
+        ],
+        [
+          53.0,
+          0,
+          35.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_6_OF_250",
+      "consume_source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
+      }
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02",
+      "rooms": [
+        "entry",
+        "crest"
+      ],
+      "points": [
+        [
+          36.0,
+          0,
+          69.0
+        ],
+        [
+          40.0,
+          0,
+          52.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_1_OF_175",
+      "reverse": "BLOCKED_SEGMENT_0_AT_175_OF_175",
+      "consume_source": {
+        "id": "WLD-09",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+        "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+        "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+      }
+    },
+    {
+      "site": "WLD-09",
+      "link": "L03",
+      "rooms": [
+        "crest",
+        "control"
+      ],
+      "points": [
+        [
+          40.0,
+          0,
+          52.0
+        ],
+        [
+          17.0,
+          0,
+          52.0
+        ],
+        [
+          17.0,
+          0,
+          48.0
+        ],
+        [
+          17.0,
+          0,
+          41.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_46_OF_230",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_40",
+      "consume_source": {
+        "id": "WLD-09",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+        "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+        "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+      }
+    },
+    {
+      "site": "WLD-09",
+      "link": "L06",
+      "rooms": [
+        "west-stair",
+        "crest"
+      ],
+      "points": [
+        [
+          31.0,
+          0,
+          35.0
+        ],
+        [
+          31.0,
+          0,
+          48.0
+        ],
+        [
+          31.0,
+          0,
+          52.0
+        ],
+        [
+          40.0,
+          0,
+          52.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_8_OF_130",
+      "reverse": "BLOCKED_SEGMENT_0_AT_46_OF_90",
+      "consume_source": {
+        "id": "WLD-09",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+        "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+        "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+      }
+    },
+    {
+      "site": "WLD-09",
+      "link": "L10",
+      "rooms": [
+        "east-stair",
+        "crest"
+      ],
+      "points": [
+        [
+          70.0,
+          0,
+          35.0
+        ],
+        [
+          68.0,
+          0,
+          35.0
+        ],
+        [
+          68.0,
+          0,
+          48.0
+        ],
+        [
+          68.0,
+          0,
+          52.0
+        ],
+        [
+          40.0,
+          0,
+          52.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_14_OF_20",
+      "reverse": "BLOCKED_SEGMENT_0_AT_41_OF_280",
+      "consume_source": {
+        "id": "WLD-09",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+        "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+        "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+      }
+    },
+    {
+      "site": "WLD-09",
+      "link": "L17",
+      "rooms": [
+        "return",
+        "gallery"
+      ],
+      "points": [
+        [
+          57.0,
+          -10,
+          40.0
+        ],
+        [
+          57.0,
+          -10,
+          32.0
+        ],
+        [
+          57.0,
+          -10,
+          27.0
+        ],
+        [
+          50.0,
+          -10,
+          27.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_2_AT_1_OF_70",
+      "reverse": "BLOCKED_SEGMENT_0_AT_51_OF_70",
+      "consume_source": {
+        "id": "WLD-09",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+        "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+        "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc"
+      }
+    },
+    {
+      "site": "WLD-11",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          82.0
+        ],
+        [
+          32.0,
+          0,
+          76.0
+        ],
+        [
+          32.0,
+          0,
+          69.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_68_OF_70",
+      "reverse": "BLOCKED_SEGMENT_0_AT_3_OF_70",
+      "consume_source": {
+        "id": "WLD-11",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.blend",
+        "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+        "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b"
+      }
+    },
+    {
+      "site": "WLD-11",
+      "link": "L03",
+      "rooms": [
+        "south-deck",
+        "main"
+      ],
+      "points": [
+        [
+          40.0,
+          1.2,
+          59.0
+        ],
+        [
+          30.0,
+          1.2,
+          59.0
+        ],
+        [
+          30.0,
+          1.2,
+          38.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_11_OF_100",
+      "reverse": "BLOCKED_SEGMENT_1_AT_9_OF_100",
+      "consume_source": {
+        "id": "WLD-11",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.blend",
+        "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+        "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L03",
+      "rooms": [
+        "signal",
+        "cutting"
+      ],
+      "points": [
+        [
+          20.0,
+          0,
+          69.0
+        ],
+        [
+          28.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          59.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_60",
+      "reverse": "BLOCKED_SEGMENT_0_AT_16_OF_100",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L04",
+      "rooms": [
+        "entry",
+        "siding"
+      ],
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_358_OF_359",
+      "reverse": "BLOCKED_SEGMENT_0_AT_1_OF_359",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L06",
+      "rooms": [
+        "coach-a",
+        "west-return"
+      ],
+      "points": [
+        [
+          20.0,
+          0,
+          54.0
+        ],
+        [
+          16.0,
+          0,
+          54.0
+        ],
+        [
+          11.0,
+          0,
+          54.0
+        ],
+        [
+          11.0,
+          0,
+          42.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_50",
+      "reverse": "BLOCKED_SEGMENT_0_AT_53_OF_120",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L07",
+      "rooms": [
+        "west-return",
+        "signal"
+      ],
+      "points": [
+        [
+          11.0,
+          0,
+          42.0
+        ],
+        [
+          14.0,
+          0,
+          42.0
+        ],
+        [
+          14.0,
+          0,
+          62.0
+        ],
+        [
+          14.0,
+          0,
+          69.0
+        ],
+        [
+          20.0,
+          0,
+          69.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_28_OF_30",
+      "reverse": "BLOCKED_SEGMENT_2_AT_53_OF_200",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L09",
+      "rooms": [
+        "coach-b",
+        "siding"
+      ],
+      "points": [
+        [
+          48.0,
+          0,
+          54.0
+        ],
+        [
+          52.0,
+          0,
+          54.0
+        ],
+        [
+          57.0,
+          0,
+          54.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_50",
+      "reverse": "BLOCKED_SEGMENT_0_AT_1_OF_10",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L13",
+      "rooms": [
+        "refuge",
+        "crossing"
+      ],
+      "points": [
+        [
+          46.0,
+          0,
+          6.0
+        ],
+        [
+          46.0,
+          0,
+          12.0
+        ],
+        [
+          46.0,
+          0,
+          17.0
+        ],
+        [
+          51.0,
+          0,
+          17.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_50",
+      "reverse": "BLOCKED_SEGMENT_0_AT_13_OF_50",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-12",
+      "link": "L14",
+      "rooms": [
+        "crossing",
+        "siding"
+      ],
+      "points": [
+        [
+          51.0,
+          0,
+          17.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_2_OF_365",
+      "reverse": "BLOCKED_SEGMENT_0_AT_363_OF_365",
+      "consume_source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+        "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+        "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+      }
+    },
+    {
+      "site": "WLD-13",
+      "link": "L01",
+      "rooms": [
+        "stage",
+        "entry"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          82.0
+        ],
+        [
+          32.0,
+          0,
+          76.0
+        ],
+        [
+          32.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_70",
+      "reverse": "BLOCKED_SEGMENT_0_AT_12_OF_20",
+      "consume_source": {
+        "id": "WLD-13",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+        "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+      }
+    },
+    {
+      "site": "WLD-13",
+      "link": "L08",
+      "rooms": [
+        "side-yard",
+        "entry"
+      ],
+      "points": [
+        [
+          56.0,
+          0,
+          53.0
+        ],
+        [
+          34.0,
+          0,
+          69.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_1_OF_273",
+      "reverse": "BLOCKED_SEGMENT_0_AT_272_OF_273",
+      "consume_source": {
+        "id": "WLD-13",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+        "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+      }
+    },
+    {
+      "site": "WLD-13",
+      "link": "L09",
+      "rooms": [
+        "processing",
+        "office"
+      ],
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          30.0,
+          0,
+          41.0
+        ],
+        [
+          30.0,
+          0,
+          26.0
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_6_OF_150",
+      "reverse": "BLOCKED_SEGMENT_1_AT_141_OF_150",
+      "consume_source": {
+        "id": "WLD-13",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+        "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+      }
+    },
+    {
+      "site": "WLD-13",
+      "link": "L12",
+      "rooms": [
+        "stores",
+        "dock"
+      ],
+      "points": [
+        [
+          42.0,
+          0,
+          20.0
+        ],
+        [
+          42.0,
+          0,
+          14.0
+        ],
+        [
+          42.0,
+          0,
+          7.0
+        ],
+        [
+          36.0,
+          0,
+          7.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_1_AT_1_OF_70",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-13",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+        "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+      }
+    },
+    {
+      "site": "WLD-13",
+      "link": "L13",
+      "rooms": [
+        "dock",
+        "office"
+      ],
+      "points": [
+        [
+          36.0,
+          0,
+          7.0
+        ],
+        [
+          30.0,
+          0,
+          7.0
+        ],
+        [
+          30.0,
+          0,
+          14.0
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_1_AT_1_OF_70",
+      "consume_source": {
+        "id": "WLD-13",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+        "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-11",
+      "rooms": [
+        "upperhall",
+        "study"
+      ],
+      "points": [
+        [
+          45.0,
+          3.2,
+          42.0
+        ],
+        [
+          35.0,
+          3.2,
+          48.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_UNSUPPORTED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_104_OF_117",
+      "consume_source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-13",
+      "rooms": [
+        "bed",
+        "service-upper"
+      ],
+      "points": [
+        [
+          22.0,
+          3.2,
+          48.0
+        ],
+        [
+          14.0,
+          3.2,
+          42.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_87_OF_100",
+      "reverse": "START_UNSUPPORTED",
+      "consume_source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-17",
+      "rooms": [
+        "passage",
+        "tower0"
+      ],
+      "points": [
+        [
+          32,
+          0,
+          22
+        ],
+        [
+          32,
+          0,
+          13
+        ],
+        [
+          34.8,
+          0,
+          10
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_83_OF_90",
+      "reverse": "BLOCKED_SEGMENT_0_AT_11_OF_42",
+      "consume_source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-18",
+      "rooms": [
+        "kitchen",
+        "yard"
+      ],
+      "points": [
+        [
+          37.0,
+          0,
+          48.0
+        ],
+        [
+          55.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_187_OF_187",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+      }
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-19",
+      "rooms": [
+        "yard",
+        "generator"
+      ],
+      "points": [
+        [
+          55.0,
+          0,
+          53.0
+        ],
+        [
+          53.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_131_OF_132",
+      "consume_source": {
+        "id": "WLD-14",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-14/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-14/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.blend",
+        "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+        "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51"
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-03",
+      "rooms": [
+        "quay",
+        "aft"
+      ],
+      "points": [
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          0,
+          48
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_198_OF_200",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-15",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+        "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-11",
+      "rooms": [
+        "fore",
+        "side"
+      ],
+      "points": [
+        [
+          32,
+          0,
+          3
+        ],
+        [
+          41,
+          0,
+          10
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_114_OF_115",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-15",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+        "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+      }
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-12",
+      "rooms": [
+        "side",
+        "aft"
+      ],
+      "points": [
+        [
+          41.0,
+          0,
+          24.0
+        ],
+        [
+          32.0,
+          0,
+          47.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-15",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+        "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+        "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-03",
+      "rooms": [
+        "entry",
+        "court"
+      ],
+      "points": [
+        [
+          26.0,
+          0,
+          57.0
+        ],
+        [
+          26.0,
+          0,
+          31.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_258_OF_260",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+        "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-08",
+      "rooms": [
+        "eastwalk",
+        "court"
+      ],
+      "points": [
+        [
+          37.5,
+          0,
+          34.0
+        ],
+        [
+          26.0,
+          0,
+          31.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_119_OF_119",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+        "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-09",
+      "rooms": [
+        "court",
+        "westwalk"
+      ],
+      "points": [
+        [
+          26.0,
+          0,
+          31.0
+        ],
+        [
+          14.5,
+          0,
+          34.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_119_OF_119",
+      "consume_source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+        "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-12",
+      "rooms": [
+        "plant",
+        "service"
+      ],
+      "points": [
+        [
+          42.5,
+          0,
+          49.0
+        ],
+        [
+          51.0,
+          0,
+          37.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_101_OF_148",
+      "reverse": "BLOCKED_SEGMENT_0_AT_41_OF_148",
+      "consume_source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+        "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-13",
+      "rooms": [
+        "service",
+        "entry"
+      ],
+      "points": [
+        [
+          50,
+          0,
+          50
+        ],
+        [
+          50,
+          0,
+          56
+        ],
+        [
+          26,
+          0,
+          56
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_1_AT_58_OF_60",
+      "consume_source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+        "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+      }
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-14",
+      "rooms": [
+        "service",
+        "northwalk"
+      ],
+      "points": [
+        [
+          50,
+          0,
+          22
+        ],
+        [
+          50,
+          0,
+          18
+        ],
+        [
+          26,
+          0,
+          18
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_1_AT_38_OF_40",
+      "consume_source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+        "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+      }
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-03",
+      "rooms": [
+        "entry",
+        "yard"
+      ],
+      "points": [
+        [
+          32.0,
+          0,
+          77.0
+        ],
+        [
+          40.0,
+          0,
+          62.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_169_OF_170",
+      "reverse": "BLOCKED_SEGMENT_0_AT_1_OF_170",
+      "consume_source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+        "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      }
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-11",
+      "rooms": [
+        "west",
+        "upperring"
+      ],
+      "points": [
+        [
+          18,
+          -4,
+          32
+        ],
+        [
+          23,
+          -4,
+          28
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_64_OF_65",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+        "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      }
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-12",
+      "rooms": [
+        "upperring",
+        "exhibit"
+      ],
+      "points": [
+        [
+          41,
+          -4,
+          28
+        ],
+        [
+          48,
+          -4,
+          28
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_31_OF_70",
+      "consume_source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+        "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      }
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-15",
+      "rooms": [
+        "east",
+        "lowring"
+      ],
+      "points": [
+        [
+          48,
+          -8,
+          28
+        ],
+        [
+          41,
+          -8,
+          28
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "BLOCKED_SEGMENT_0_AT_68_OF_70",
+      "reverse": "START_BLOCKED",
+      "consume_source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+        "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      }
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-16",
+      "rooms": [
+        "lowring",
+        "crew"
+      ],
+      "points": [
+        [
+          23,
+          -8,
+          28
+        ],
+        [
+          18,
+          -8,
+          32
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "forward": "START_BLOCKED",
+      "reverse": "BLOCKED_SEGMENT_0_AT_64_OF_65",
+      "consume_source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+        "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      }
+    }
+  ],
+  "room_connection_worklist": "development/levels/rebuild/access-route-pass/verification/room-socket-connectivity.json",
+  "scope": "Failed current flat links. Invalid flat approaches inside vertical routes and unresolved room socket joins are additional obligations; no route-ID-only global graph acceptance."
+}

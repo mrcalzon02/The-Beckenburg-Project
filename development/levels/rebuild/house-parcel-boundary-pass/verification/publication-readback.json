@@ -1,0 +1,55 @@
+{
+  "status": "VERIFIED_DRAFT_BRANCH_CAPTURE_BYTES_AND_GALLERY_INDEX",
+  "implementation": "0272c52828a87bd15fe5f785cc8f234a83aea6fe",
+  "git_tree": "cf1e08e748e5c35db0cad72ada48b22b1c504038",
+  "draft_capture_readback": {
+    "development/levels/rebuild/captures/house-parcel-boundary-batch/house-carriageway-south-return.png": {
+      "git_blob": "17c269d9f28b9d58e51d3ecedf332a39fd20a13f",
+      "sha256": "40d233f81ecb97774402a8dc5072ec115d51bcda39c2a1a5e99bbdae9ff79259"
+    },
+    "development/levels/rebuild/captures/house-parcel-boundary-batch/house-rear-service-return.png": {
+      "git_blob": "04ac9df7bbb215676126179c71112f8c8b19bdcf",
+      "sha256": "ebbd1f4e9ae1bb29140ae5098c6fbe54b1e9e65ea9afdde2b1f7a81c5decb4c8"
+    },
+    "development/levels/rebuild/captures/house-parcel-boundary-batch/house-van-and-south-boundary.png": {
+      "git_blob": "71f20e2ea811cca4d7d26b37c34758c5f4eb6e14",
+      "sha256": "a1b8daf5b3d089adfcdab2cee15f1cfc7666b3b076b2c4c0be0884fcc4c70e5d"
+    },
+    "development/levels/rebuild/captures/house-parcel-boundary-batch/house-west-bend.png": {
+      "git_blob": "c3fc19c72b14ce108b012342af07a52f2b0718b8",
+      "sha256": "b73cca7c266c4cd820b28abdc716c715c9f145173c0c3be0658e4487c275c6ae"
+    },
+    "development/levels/rebuild/captures/house-parcel-boundary-batch/house-parcel-plan.png": {
+      "git_blob": "24bc138173675aaf3c3d6813ae700c5e01bf715c",
+      "sha256": "c82654cd62e58e19c43c399559ed4f87f9b0efd657588afb1732240f1587c844"
+    }
+  },
+  "pull_request": {
+    "baseRefName": "map/house-default",
+    "baseRefOid": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "headRefName": "map/roster-structure-batch",
+    "headRefOid": "0272c52828a87bd15fe5f785cc8f234a83aea6fe",
+    "isDraft": true,
+    "state": "OPEN",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86"
+  },
+  "gallery": {
+    "conclusion": "success",
+    "databaseId": 44245570992,
+    "headSha": "0272c52828a87bd15fe5f785cc8f234a83aea6fe",
+    "status": "completed",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44245570992"
+  },
+  "public_pages": {
+    "html_url": "https://mrcalzon02.github.io/The-Beckenburg-Project/",
+    "source": {
+      "branch": "main",
+      "path": "/"
+    },
+    "status": "built",
+    "existing_gallery_http": 200,
+    "new_van_capture_latest_http": 404,
+    "new_parcel_plan_latest_http": 503,
+    "new_capture_deployment": "HELD_PENDING_ACCEPTED_INTEGRATION"
+  }
+}

@@ -1,0 +1,1579 @@
+{
+  "id": "SCHOOL",
+  "title": "Ravenshade School \u2014 revised function-first rough",
+  "source": "rebuild\\school\\rough-layout.json",
+  "source_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+  "zones": 40,
+  "routes": 44,
+  "shell_openings": [
+    {
+      "zone": "foyer",
+      "side": "N",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "N",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "S",
+      "link": "L35",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "S",
+      "link": "L35",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "E",
+      "link": "L01",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "E",
+      "link": "L01",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "E",
+      "link": "L02",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "E",
+      "link": "L02",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "interview",
+      "side": "S",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "interview",
+      "side": "S",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "interview",
+      "side": "W",
+      "link": "L01",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "interview",
+      "side": "W",
+      "link": "L01",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "visitor-wc",
+      "side": "W",
+      "link": "L02",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "visitor-wc",
+      "side": "W",
+      "link": "L02",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "N",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "N",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "S",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "S",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "W",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "W",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "W",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "W",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "E",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "E",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "E",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "E",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "E",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "corridor",
+      "side": "E",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "staff",
+      "side": "N",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "staff",
+      "side": "N",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "staff",
+      "side": "W",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "staff",
+      "side": "W",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "cleaner",
+      "side": "W",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "cleaner",
+      "side": "W",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "staff-wc",
+      "side": "S",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "staff-wc",
+      "side": "S",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "N",
+      "link": "L36",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "N",
+      "link": "L36",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "S",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "S",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "E",
+      "link": "L36",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "N",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "N",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "W",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "W",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "E",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "E",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "E",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "main-stair",
+      "side": "E",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "N",
+      "link": "L38",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "S",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "S",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "W",
+      "link": "L38",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "W",
+      "link": "L38",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "E",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a",
+      "side": "E",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a-store",
+      "side": "N",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-a-store",
+      "side": "N",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "S",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "S",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "W",
+      "link": "L37",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "W",
+      "link": "L37",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "E",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "E",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science",
+      "side": "E",
+      "link": "L37",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science-prep",
+      "side": "N",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "science-prep",
+      "side": "N",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "W",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "W",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "E",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "E",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "E",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "dining",
+      "side": "E",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "W",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "W",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "E",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "E",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "receiving",
+      "side": "W",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "receiving",
+      "side": "W",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "receiving",
+      "side": "W",
+      "link": "L40",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "receiving",
+      "side": "E",
+      "link": "L40",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "receiving",
+      "side": "E",
+      "link": "L40",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym-link",
+      "side": "N",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym-link",
+      "side": "N",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym-link",
+      "side": "W",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym-link",
+      "side": "W",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "W",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "W",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "E",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "E",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "E",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "E",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "E",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "health-link",
+      "side": "E",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "nurse",
+      "side": "W",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "nurse",
+      "side": "W",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-a",
+      "side": "W",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-a",
+      "side": "W",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-a",
+      "side": "E",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-a",
+      "side": "E",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "shower-a",
+      "side": "W",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "shower-a",
+      "side": "W",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-b",
+      "side": "W",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-b",
+      "side": "W",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-b",
+      "side": "E",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "change-b",
+      "side": "E",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "shower-b",
+      "side": "W",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "shower-b",
+      "side": "W",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym",
+      "side": "N",
+      "link": "L39",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym",
+      "side": "N",
+      "link": "L39",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym",
+      "side": "S",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym",
+      "side": "S",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "gym",
+      "side": "W",
+      "link": "L39",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "W",
+      "link": "L29",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "W",
+      "link": "L29",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "W",
+      "link": "L30",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "W",
+      "link": "L30",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L26",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L26",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L27",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L27",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L28",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-corridor",
+      "side": "E",
+      "link": "L28",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash-a",
+      "side": "W",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash-a",
+      "side": "W",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash-b",
+      "side": "W",
+      "link": "L26",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash-b",
+      "side": "W",
+      "link": "L26",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-stair",
+      "side": "W",
+      "link": "L27",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-stair",
+      "side": "W",
+      "link": "L27",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-lobby",
+      "side": "W",
+      "link": "L28",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-lobby",
+      "side": "W",
+      "link": "L28",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-lobby",
+      "side": "E",
+      "link": "L32",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "upper-lobby",
+      "side": "E",
+      "link": "L32",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "library",
+      "side": "E",
+      "link": "L29",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "library",
+      "side": "E",
+      "link": "L29",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-b",
+      "side": "S",
+      "link": "L31",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-b",
+      "side": "S",
+      "link": "L31",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-b",
+      "side": "E",
+      "link": "L30",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-b",
+      "side": "E",
+      "link": "L30",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-b-store",
+      "side": "N",
+      "link": "L31",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "class-b-store",
+      "side": "N",
+      "link": "L31",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "assembly",
+      "side": "W",
+      "link": "L32",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "assembly",
+      "side": "W",
+      "link": "L32",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "lower-stair",
+      "side": "W",
+      "link": "L33",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "lower-stair",
+      "side": "W",
+      "link": "L33",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "S",
+      "link": "L34",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "S",
+      "link": "L34",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "E",
+      "link": "L33",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "E",
+      "link": "L33",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "plant-store",
+      "side": "N",
+      "link": "L34",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "plant-store",
+      "side": "N",
+      "link": "L34",
+      "width": 1.2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 423,
+  "issues": [
+    {
+      "zone": "foyer",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "interview",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "visitor-wc",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "office",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "corridor",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "staff",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "cleaner",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "staff-wc",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "service-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "main-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "class-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "class-a-store",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "science",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "science-prep",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "dining",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "kitchen",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "receiving",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "gym-link",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "health-link",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "nurse",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "change-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "shower-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "change-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "shower-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "gym",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "upper-corridor",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "wash-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "wash-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "upper-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "upper-lobby",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "library",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "class-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "class-b-store",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "assembly",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.1,
+          22.0,
+          25.9,
+          27.76
+        ]
+      ]
+    },
+    {
+      "zone": "grounds",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.6,
+          13.5,
+          29.4,
+          18.3
+        ]
+      ]
+    },
+    {
+      "link": "L43",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L44",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [],
+  "native_reopened": true,
+  "blend_sha256": "4c97cf9db9aec35b36d20833dbe32bde4c432b430d57ca2b75ca70ebb416dafc",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "e2dc8c47873a5c920bd4f344dfe527a941e9f02f82b83ba2cc719ec2ed58b833",
+    "independently_reimported": true,
+    "meshes": 419,
+    "triangles": 5072,
+    "floor_parts": 48,
+    "ceiling_cap_parts": 17,
+    "stair_treads": 37,
+    "checked_closed_solids": 419,
+    "measured_depth_parts": 65,
+    "exported_cap_rays": 17,
+    "route_support_solids": 84,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/rebuild/school/rough-layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/rebuild/school/rough-layout.json": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

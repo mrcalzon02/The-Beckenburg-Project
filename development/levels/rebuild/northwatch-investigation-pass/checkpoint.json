@@ -1,0 +1,64 @@
+{
+  "site": "WLD-08",
+  "status": "NORTHWATCH_FULL_NAMED_CASE_VERIFIED_UNDER_REVIEW_GATE",
+  "prior_commit": "63bcece76f3de8988b1b9da696c08a12cf9b0706",
+  "native_source": "development/levels/rebuild/northwatch-named-pass/checkpoint.json",
+  "ordinary_archive": {
+    "name": "beckenburg-game.jar",
+    "sha256": "464b20d5ef72cf8c59d12a5df9826012c35e4cc5e05fdba80e7d7acb0f28c0da",
+    "packaged_resources_verified": 5
+  },
+  "opengl_archive": {
+    "name": "BeckenburgGPU.jar",
+    "sha256": "c2f7fd78c33252e54803ce761003eb736999fb28b7d10f417dbb44f21b3de6ce",
+    "northwatch": {
+      "packaged_native_scene": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e",
+      "named_network_revision": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e-453160a982f44a66",
+      "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+      "named_gate_catalog_campaign_and_exact_revision": "PASS"
+    },
+    "blackwater": {
+      "packaged_native_scene": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e",
+      "named_network_revision": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e-501c9f5565c03395",
+      "collision_sha256": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+      "water_revision": "d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f",
+      "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+      "review_gate_archive_campaign_stale_revision": "PASS",
+      "retained_fitted_doors_both_states": "14"
+    }
+  },
+  "case": {
+    "named_revision": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e-453160a982f44a66",
+    "collision_sha256": "0291baa5c2f17f2646ca80e90624fd228ead54c50d14f1c3e007fd52fcf8bdde",
+    "radio_and_archive": "PASS Cargo ramp, courtyard and two operating doors reached the archive evidence and ward",
+    "northwatch-shelter-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "northwatch-dorm-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "heated_service_tunnel": "PASS East dorm stair descended to -2.5 m; west stair ascended to the laboratory",
+    "northwatch-lab-cupboard": "PASS Walk-in protection at two interior depths standing and crouched; hide, reveal and exit verified",
+    "laboratory_rite": "PASS BANISHED reported to all three peers; 396 credits and 132 XP"
+  },
+  "coverage": {
+    "physical_door_crossings_with_state_replication": 5,
+    "physical_tunnel_stairs": 2,
+    "walk_in_refuges": 3,
+    "protection_depths_per_posture": 2,
+    "postures_per_refuge": 2
+  },
+  "publication": {
+    "verified_draft_head": "2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf",
+    "status": "local checkpoint, prior push declined by automated approval review"
+  },
+  "remaining": [
+    "Finish and atmosphere review",
+    "Campaign persistence and representative performance",
+    "Full release package and acceptance"
+  ],
+  "file_sha256": {
+    "development/levels/rebuild/northwatch-investigation-pass/blackwater-opengl.tsv": "60e9956ff97fa9050967916377df6ed4da7007234c0b2bbd1fa3991774902d41",
+    "development/levels/rebuild/northwatch-investigation-pass/case.tsv": "890dc3b3303c7ccfe014580b07676e50ad45386ec997848b2db27f244c8e5197",
+    "development/levels/rebuild/northwatch-investigation-pass/northwatch-opengl.tsv": "999474f7002c4bfc5f6a733d83b3e446325d8f4018a27dbd7c74941f8aff7bac",
+    "development/levels/rebuild/northwatch-investigation-pass/README.md": "6589bbc2ec70dcc8c4fb6da94b24617c0a0bcf6c1046c470b09bb57e50eef7ec",
+    "tools/java/NorthwatchInvestigationReview.java": "5faca99ff1fac9363b87fd0ce09128af8ff61dd287915e4cf16ec78404d6718a",
+    "tools/verify_northwatch_named.py": "7dba9463c552778f1a5bca2c3b55e0d4898c515a1ef43dca28a0bcd1e060067d"
+  }
+}

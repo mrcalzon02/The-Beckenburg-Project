@@ -1,0 +1,43 @@
+type	id	room	x_m	y_m	z_m	circuit
+light	blackpine-light-1-10	Mill office	43.00000	3.97782	41.00000	BPK-2
+light	blackpine-light-2-14	Mess hall	16.00000	3.82739	38.50000	BPK-3
+light	blackpine-light-2-15	Mess hall	16.00000	3.82739	43.50000	BPK-3
+light	blackpine-light-2-16	Mess hall	20.00000	3.82739	38.50000	BPK-3
+light	blackpine-light-2-17	Mess hall	20.00000	3.82739	43.50000	BPK-3
+light	blackpine-light-3-21	Mess kitchen	16.00000	3.82739	33.00000	BPK-4
+light	blackpine-light-3-22	Mess kitchen	20.00000	3.82739	33.00000	BPK-4
+light	blackpine-light-4-26	Workers bunkhouse	10.00000	4.27866	17.00000	BPK-5
+light	blackpine-light-4-27	Workers bunkhouse	10.00000	4.27866	23.00000	BPK-5
+light	blackpine-light-4-28	Workers bunkhouse	14.00000	4.27866	17.00000	BPK-5
+light	blackpine-light-4-29	Workers bunkhouse	14.00000	4.27866	23.00000	BPK-5
+light	blackpine-light-5-33	Washhouse	9.00000	3.80232	39.00000	BPK-6
+light	blackpine-light-6-37	Foreman cabin	27.00000	4.47923	10.00000	BPK-7
+light	blackpine-light-6-38	Foreman cabin	27.00000	4.47923	14.00000	BPK-7
+light	blackpine-light-7-42	Logging cabin	37.00000	4.57951	6.00000	BPK-8
+light	blackpine-light-7-43	Logging cabin	37.00000	4.57951	10.00000	BPK-8
+light	blackpine-light-8-47	Equipment repair shed	47.00000	3.52655	48.00000	BPK-9
+light	blackpine-light-8-48	Equipment repair shed	47.00000	3.52655	52.00000	BPK-9
+light	blackpine-light-9-52	Payroll and stores office	21.00000	4.57951	6.00000	BPK-10
+light	blackpine-light-9-53	Payroll and stores office	21.00000	4.57951	10.00000	BPK-10
+light	blackpine-light-10-57	Timber tool store	59.00000	4.20345	23.00000	BPK-11
+light	blackpine-light-11-61	Mill inspection loft	49.00000	6.97782	32.00000	BPK-12
+light	blackpine-light-11-62	Mill inspection loft	49.00000	6.97782	36.00000	BPK-12
+light	blackpine-light-13-69	Logging-road approach	35.50000	2.79708	60.15000	BPK-14
+switch	blackpine-switch-0-141	Sawmill floor	40.08500	2.20282	26.70000	BPK-1
+switch	blackpine-switch-1-142	Mill office	45.91500	2.20282	41.20000	BPK-2
+switch	blackpine-switch-2-143	Mess hall	14.08500	2.05239	41.20000	BPK-3
+switch	blackpine-switch-3-144	Mess kitchen	17.20000	2.05239	30.08500	BPK-4
+switch	blackpine-switch-4-145	Workers bunkhouse	15.91500	2.50366	20.20000	BPK-5
+switch	blackpine-switch-5-146	Washhouse	11.91500	2.02732	39.20000	BPK-6
+switch	blackpine-switch-6-147	Foreman cabin	24.08500	2.70423	12.20000	BPK-7
+switch	blackpine-switch-7-148	Logging cabin	34.08500	2.80451	7.20000	BPK-8
+switch	blackpine-switch-8-149	Equipment repair shed	49.91500	1.75155	50.20000	BPK-9
+switch	blackpine-switch-9-150	Payroll and stores office	23.91500	2.80451	8.20000	BPK-10
+switch	blackpine-switch-10-151	Timber tool store	59.20000	2.42845	20.08500	BPK-11
+switch	blackpine-switch-11-152	Mill inspection loft	46.08500	5.20282	35.20000	BPK-12
+breaker	blackpine-breaker-8-153	Equipment repair shed	44.08500	1.90155	48.00000	BPK-MAIN
+generator	blackpine-generator-starter	Equipment repair shed	45.35020	1.11510	47.94249	BPK-MAIN
+light	blackpine-mill-pendant-0	Sawmill floor	43.20000	5.56282	26.70000	BPK-1
+light	blackpine-mill-pendant-1	Sawmill floor	43.20000	5.56282	34.00000	BPK-1
+light	blackpine-mill-pendant-2	Sawmill floor	49.00000	5.56282	24.00000	BPK-1
+light	blackpine-mill-underloft	Sawmill floor	48.50000	3.84282	35.00000	BPK-1

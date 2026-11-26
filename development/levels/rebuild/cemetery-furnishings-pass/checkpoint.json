@@ -1,0 +1,110 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_STAGED_CASE_ROOMS_AND_RECORDS_VERIFIED",
+  "previous_commit": "39963cc5075b41027982abb3cb394ec000f7d78a",
+  "previous_gallery": 45381880440,
+  "sites": {
+    "WLD-07": {
+      "exports": {
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.blend": "5b2665a55307a9e3a788eb5718cf324f01acd1c14355d4239abab40d94a130a8",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.glb": "0c53e4168c7809a7122714808ad44426883923e52f1354b3ad9475641fe14478",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.hcs2": "c87f45da4bf51df3fd448b79a1397c20c36a0fea88b515385a7369a4de18083a"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/construction.json": "fea250d702e1ee447a0bc903b4bf403c0b0fcc046c6137f16063d9c888fe3977",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/room-layout.tsv": "019ca0eec00a9d4db0f19e85deebf8cff145dee0aa4327b003af064fad016193",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/door-schedule.tsv": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnishings-software.tsv": "47767f0858548bc5e0ab1966590172116c2e8a3beeaa09c00494e82af1570d7a",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnishings-opengl.tsv": "62542ca81cd0aba2ec431e1c7d9e8a7154b5cbbc4c7a58da7be54896a27e3a87",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/caretaker-power-supplied.png": "3aa7884f8efa50cb26817c42ec4fe79fa79051aea38d249a31648856273884b9",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/caretaker-power-tripped.png": "fc88d7647979c8f6c98834445dd55456bb7e0ac74422c44614d0c0cbe7630ea9",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-desk-MEMORIAL_REGISTER.png": "d72aa86cab3e64be28f025c71b2d96ab6ec1ee1de5c740f5cd7d73f15cc2f5b9",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chamber-off.png": "d24448e472c0258faa305b59b57f092b0c3d14364aa96ac1ff8d5053fcb5595a",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chamber-on.png": "6f512cb381148c780b7dd38531b56f0626e99d493f2cfed442de50bb2148926b",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chapel-off.png": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chapel-on.png": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/caretaker-power-supplied.png": "10629cc21a384486ee1a8ef0eaa5299992de0899599a40e81f6f63e47434e919",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/caretaker-power-tripped.png": "2f121823a93607dcc34186eb985da9c52c3336d9f154cbb39a6e4f2e01bc9159",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png": "579d659351cc9193cde31a1754507a97acff5d64f49879409d7d575c3000b24c",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png": "31cf0277d140618d270c5b4afa7b8e0b551a93e238b9d79d1385d8e1c3fbca53",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png": "72ee345af3d4e6db9fc7e1e989310af00748a7883297948fc519e46564a23701",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff"
+      },
+      "native_scene_revision": "7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07",
+      "staged_revision": "7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07-893e3ae9633bec4a",
+      "retained_parts": 434,
+      "added_parts": 2,
+      "supported_records": [
+        "MEMORIAL_REGISTER"
+      ],
+      "retained_routes": 17,
+      "fitted_doors": 7,
+      "ritual_clearance": "81 supported positions in both postures",
+      "mortuary_working_aisles": null,
+      "live_record_reading": {
+        "MEMORIAL_REGISTER": "PASS"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "exports": {
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.blend": "5ecad7192f500328a29f5185a2e1f69cd2f9d4cc58d4fd83ab116c3bb1675f4e",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.glb": "3a52ff674e6360c2ee8964c17ad162749dea2aec57dd21a48db3232554c10052",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.hcs2": "95dd97f96ef50c9e0df86feaa722ca414feded898e89f61fa6c5477ff9929d20"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/construction.json": "96bba34aa6bf3945684131c7070360b0a901c31401c9256469ed9a48ef394faa",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/room-layout.tsv": "625a75e3b9c76070ef98d43116e0028ca158e12057c07eba0fb67c58c10d06a3",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/door-schedule.tsv": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnishings-software.tsv": "89e6f52ef2c8aac28ea2ce200c24a3d9e03f375c13bf51f63569a6b0b6a28f5b",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnishings-opengl.tsv": "ae3c1177cedf6333cc730916ca2d6613d8c9e32f48956151a944436504af13aa",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/caretaker-power-supplied.png": "c1ba13c70530e7628e2c42b8658a7526000a75d0e4411195d687666505f224da",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/caretaker-power-tripped.png": "b86ec45e04337342a4ba43cbe694b14c7d8a84848af3242867463b31ed7a9a48",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-desk-MEMORIAL_REGISTER.png": "d72aa86cab3e64be28f025c71b2d96ab6ec1ee1de5c740f5cd7d73f15cc2f5b9",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-desk-VISITOR_REGISTER.png": "6a62a02691aa95294bb254ec1d1467e4fc0b4cdbcb4a4a23f143fb83d260f5e5",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png": "a746e7b0d9790016231c517fa0cbbc8cd43cd704d47413ebeaeebfccbfeb7fef",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png": "a1d37fd079f9b786dd0898874390d1cef8fc2229c89c11eda9078e36fa78a82a",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-record-VISITOR_REGISTER.png": "8bdef3d974c5d33725aca0b8b5e29acb8631cfa6624182cf035aebfa748f5e1e",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png": "628bddd7e701a9941df73b47f645a776aa8e06348b35c927aade881c73a0ba59",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png": "bb99f2e861ee4c80db67ba789116d4242c5455df58da85ad94001b50f84c7203",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png": "579d659351cc9193cde31a1754507a97acff5d64f49879409d7d575c3000b24c",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-desk-VISITOR_REGISTER.png": "efc562a31dee6488d0ed994ccbf3da43ea19a988185f6457a7638c63da107187",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png": "31ab70d2ede5bcd337ac86bc2197618ab6d3f45ecb771aa4b4b3f4b694a04154",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png": "d2e58bfc8fb96bb2cf6419089bc7c4ce578b907d2e71ee0316302b00c5a2acdc",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-record-VISITOR_REGISTER.png": "8bdef3d974c5d33725aca0b8b5e29acb8631cfa6624182cf035aebfa748f5e1e",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/cold-drawers.png": "097bfd4c1fe8a764f9d38f1aa16c97b45c0d908375693aea7e65cd2fd21e693d",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/preparation-table.png": "8de1177f1fad1d3e4eb58f41521e4e33992c943a84011550d93faa79f84949e1",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/receiving-trolley.png": "e8b59a5a85bc2c9ffd18c10da49d8a6e85660d715e6f4d41bd738c9d165fe8ec",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/viewing-and-bier.png": "f0f9007b6a986319d32e36fb87d0749e35b6993fe6dbbac172b74e42a07530c5"
+      },
+      "native_scene_revision": "440e537b0a1c755b1748a10ba688aff6ac9c43794014556b9ec39660262d86a2",
+      "staged_revision": "440e537b0a1c755b1748a10ba688aff6ac9c43794014556b9ec39660262d86a2-2fc0305f3bdb7ac6",
+      "retained_parts": 689,
+      "added_parts": 9,
+      "supported_records": [
+        "MEMORIAL_REGISTER",
+        "VISITOR_REGISTER"
+      ],
+      "retained_routes": 27,
+      "fitted_doors": 17,
+      "ritual_clearance": "81 supported positions in both postures",
+      "mortuary_working_aisles": "PASS viewing, preparation, cold storage and receiving",
+      "live_record_reading": {
+        "MEMORIAL_REGISTER": "PASS",
+        "VISITOR_REGISTER": "PASS"
+      }
+    }
+  },
+  "remaining_acceptance": [
+    "Normal named package selection and case actions",
+    "Further normal-use furnishings, material finish, and detailed architecture and services",
+    "Representative hardware and release acceptance"
+  ]
+}

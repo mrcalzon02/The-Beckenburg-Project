@@ -1,0 +1,52 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_FOUNDED_BOUNDARIES_VERIFIED",
+  "previous_commit": "a9169804fa1b99df2323a32161f4c2b23286e29f",
+  "verified_previous_gallery": 45370891387,
+  "sites": {
+    "WLD-07": {
+      "construction": "development/levels/rebuild/cemetery-boundary-pass/wld-07/construction.json",
+      "exports": {
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.blend": "032dd29b957f926582a3aae01c40fe160bfc4c32b5d78618baa7d60a88a48a55",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.glb": "ba66ad066c2781e775220d961850c40dca36e5469b845b33e43970754760d316",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.hcs2": "f0c45a79c99c72e30902c0580d6f9bce680f0c5e7b309c810db3eccc03aa729e"
+      },
+      "spans": 60,
+      "footing_samples": 3759,
+      "native_parts_preserved": 124,
+      "terrain_rim_edges": 471,
+      "gate_count": 1,
+      "renderer_evidence": [
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/boundary-software.tsv",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07/boundary-opengl.tsv"
+      ]
+    },
+    "WLD-07-MORTUARY": {
+      "construction": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/construction.json",
+      "exports": {
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.blend": "ad027a89adb48e2f4f6bdccd9067bc63e79ad811fd59e59124ab96948a2c8d5b",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.glb": "0d6b5130715c65987fd9e394e3088610d44a11637d0c3afcce41ae65ffeafa65",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.hcs2": "412e2e4b406a97aa3ece75c32a34141fe3a3a15b67ca7cc8eb202f45665d9b17"
+      },
+      "spans": 77,
+      "footing_samples": 4782,
+      "native_parts_preserved": 198,
+      "terrain_rim_edges": 826,
+      "gate_count": 2,
+      "renderer_evidence": [
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/boundary-software.tsv",
+        "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/boundary-opengl.tsv"
+      ]
+    }
+  },
+  "prior_open_edge_probes": "development/levels/rebuild/cemetery-boundary-pass/prior-open-edge-probes.tsv",
+  "flat_routes": "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-movement.json",
+  "stairs": "development/levels/rebuild/cemetery-boundary-pass/verification/stairs/stair-movement.json",
+  "archived_raw": "development/levels/rebuild/cemetery-boundary-pass/verification/archive-index.json",
+  "rejected_initial_annex_return": {
+    "finding": "Southern return crossed the actual service drive mort-25",
+    "invalid_lane_samples": 47,
+    "complete_direction_regressions": 2,
+    "correction": "Move the founded return to the outer bank south of the whole preexisting receiving lane."
+  },
+  "remaining": "Fit and verify operating building doors, accessible room ownership and acoustic portals, service and safe zones. Continue roof and soil transition review, rooted graves and interior task fittings, drainage, stands and skyline across both packets."
+}

@@ -1,0 +1,316 @@
+{
+  "status": "CEMETERY_AND_ANNEX_TERRAIN_STRUCTURE_RUNTIME_OPEN",
+  "baseline": "a423e0b797aabe941ba7586040cb8c01b2373c78",
+  "sites": {
+    "WLD-07": {
+      "source": {
+        "id": "WLD-07",
+        "construction": "development/levels/rebuild/cemetery-grounds-pass/wld-07/construction.json",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+        "glb": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.glb",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.hcs2",
+        "blend": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.blend",
+        "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+        "glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019"
+      },
+      "prior": {
+        "id": "WLD-07",
+        "construction": "development/levels/rebuild/flat-circulation-pass/wld-07/construction.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-07/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.glb",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.hcs2",
+        "blend": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.blend",
+        "native_sha256": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+        "glb_sha256": "c0835f2a8da1d2d5fb74397a5870087cbee1bf353e143c7a272a90d3f1ac2fc5"
+      },
+      "terrain": {
+        "site": "WLD-07",
+        "changed_vertices": 390,
+        "raised_vertices": 154,
+        "lowered_vertices": 236,
+        "max_change_m": 0.788351476,
+        "source_height_sha256": "5b71777b8278d446d2478aed7539f5b68a66ff98dfba9034b087e6e2a86a2d89",
+        "saved_topology_sha256": "e5c9eab234786c7974f143aec8ea4f720829f0d0f67012ce32fbc59f5fe8763b",
+        "saved_cuts_sha256": "00e1f5334b538168552e184ce9dc01edc6c34ff1afb90a0185af6f47f2bc6b44",
+        "hole_controls": 344,
+        "disk_reopen_verified": true,
+        "physics_sha256": "27c4187793674c0434823a1c430d5fdd327f80b8455d6fa00af85de8bc23883d",
+        "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+      },
+      "flat": {
+        "before": {
+          "flat_links": 14,
+          "pass_both_directions": 14
+        },
+        "after": {
+          "flat_links": 14,
+          "pass_both_directions": 14
+        },
+        "current_lanes": {
+          "samples": 3795,
+          "valid_standing": 3795,
+          "invalid_standing": 0,
+          "reasons": {},
+          "physical_components": []
+        }
+      },
+      "reviewed": {
+        "retained_native_records": 73,
+        "closed_parts": 50,
+        "door_profile_rays": 63,
+        "door_sill_rays": 84,
+        "cover_soffit_rays": 18,
+        "roof_cover_rays": 27,
+        "old_shortcuts_closed": 0,
+        "glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+        "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+        "saved_editor_terrain_exact": true,
+        "van_triangle_count": 2689,
+        "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+        "captures": [
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/overview.png",
+            "sha256": "9b555950a1aafc9bcdcfe78a66faf4904fbdc8ed62afb3675cbb1eb44c0b38b9",
+            "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/arrival.png",
+            "sha256": "94c34b298917494932efb8e64ab91d59b1880d44cbe46b160a8a3545b4bc65e9",
+            "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/chapel.png",
+            "sha256": "96e04a845e7c74223d03d6144b326f37accf9e99db80b21616cc6a60c8e3691b",
+            "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-entry.png",
+            "sha256": "55ce9ecb638afe2cb8e2c8578c77870791e3af5b5addeb7b60ada6273694b6b9",
+            "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/vault.png",
+            "sha256": "23640020113dd6e068b53e2c6b40744d48f0a30c2948331c9d74c2cbdd2da14c",
+            "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-cutaway.png",
+            "sha256": "33f60171a5c0fb3428adc46a593971fbfee079236683027a2050a62d22a91ac9",
+            "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+            "hidden": [
+              "Ceiling cap west-stair",
+              "Wall west-stair W",
+              "Wall ossuary S",
+              "Wall ossuary W",
+              "WLD-07 west-stair S pier 0 region0",
+              "WLD-07 west-stair S lintel 0 region0",
+              "WLD-07 west-stair S 1 frame",
+              "WLD-07 west-stair S return region0",
+              "WLD-07 ossuary full deck region0",
+              "WLD-07 west-stair south stair enclosure region0",
+              "WLD-07 west-stair west slope",
+              "WLD-07 west-stair east slope",
+              "WLD-07 west-stair north masonry gable",
+              "WLD-07 west-stair south masonry gable",
+              "WLD-07 saved ground"
+            ]
+          }
+        ]
+      },
+      "accessible_named_spaces": 13,
+      "plan": "development/levels/rebuild/cemetery-grounds-pass/wld-07/architectural-plan.svg",
+      "plan_sha256": "500aaff5b47c76b85806d135a67809225b7673dec92956dde9080337d377aed9",
+      "builder_sha256": "581bfb1175cb03259f63ce7369539cd6e975378ef3b88f09f3d885a1165c9f3d"
+    },
+    "WLD-07-MORTUARY": {
+      "source": {
+        "id": "WLD-07-MORTUARY",
+        "construction": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/construction.json",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-layout.json",
+        "glb": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.glb",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.hcs2",
+        "blend": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.blend",
+        "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695",
+        "glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4"
+      },
+      "prior": {
+        "id": "WLD-07-MORTUARY",
+        "construction": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.glb",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+        "blend": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.blend",
+        "native_sha256": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+        "glb_sha256": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9"
+      },
+      "terrain": {
+        "site": "WLD-07-MORTUARY",
+        "changed_vertices": 526,
+        "raised_vertices": 167,
+        "lowered_vertices": 359,
+        "max_change_m": 0.788351476,
+        "source_height_sha256": "5b71777b8278d446d2478aed7539f5b68a66ff98dfba9034b087e6e2a86a2d89",
+        "saved_topology_sha256": "06bcebeaf8adc2d5ec10d99a07c0523bd47c2ec8f6700bca480d71c696192a3a",
+        "saved_cuts_sha256": "fbb3b8c4a6b143dc28a6d4a4ddbbf79e0d013ad9bbb92b593bcbcf015eddacb6",
+        "hole_controls": 693,
+        "disk_reopen_verified": true,
+        "physics_sha256": "30635fbf37b251130ccc3badba431bbaa97f1a656b240b04ab976f045a1606e9",
+        "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+      },
+      "flat": {
+        "before": {
+          "flat_links": 23,
+          "pass_both_directions": 23
+        },
+        "after": {
+          "flat_links": 24,
+          "pass_both_directions": 24
+        },
+        "current_lanes": {
+          "samples": 6705,
+          "valid_standing": 6705,
+          "invalid_standing": 0,
+          "reasons": {},
+          "physical_components": []
+        }
+      },
+      "reviewed": {
+        "retained_native_records": 114,
+        "closed_parts": 83,
+        "door_profile_rays": 135,
+        "door_sill_rays": 180,
+        "cover_soffit_rays": 18,
+        "roof_cover_rays": 27,
+        "old_shortcuts_closed": 2,
+        "glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+        "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695",
+        "saved_editor_terrain_exact": true,
+        "van_triangle_count": 2689,
+        "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+        "captures": [
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/overview.png",
+            "sha256": "68300908f1e714af7910abc556af0162ccf821c983499b5930ea3f5792456230",
+            "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/public-entry.png",
+            "sha256": "f5aabb573a5cb5bdd211e01564604e903daa481d8a6a2d1ecbbff524af1c87b5",
+            "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/receiving-door.png",
+            "sha256": "55db7bd5ea9afaa310d9ce50a961dd1aed301faa8f667e86326b3b9f405b4391",
+            "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+            "hidden": []
+          },
+          {
+            "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/staff-transfer.png",
+            "sha256": "2732d0144651b6a1b17d5153e8047829c7603ecece014ebb11c9eea89b94479f",
+            "source_glb_sha256": "8cc03b3789f866a9dfa4d5681afd9b3ae7f13c4477d17170bced1a0a9fb52ea4",
+            "hidden": []
+          }
+        ]
+      },
+      "accessible_named_spaces": 22,
+      "plan": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/architectural-plan.svg",
+      "plan_sha256": "385195806a7e9cd09906bd732e7ba03c2f6404167da67f543ef631ecbb06533b",
+      "builder_sha256": "581bfb1175cb03259f63ce7369539cd6e975378ef3b88f09f3d885a1165c9f3d"
+    }
+  },
+  "other_roster_entries_preserved": 27,
+  "before_capture": [
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/before.png",
+      "sha256": "cd3c18013fe416c5e701a7c07f65ee295d31554c8b52124f06f6a3b79d97008b",
+      "source_glb_sha256": "c0835f2a8da1d2d5fb74397a5870087cbee1bf353e143c7a272a90d3f1ac2fc5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/before.png",
+      "sha256": "7e408c09bcb5ecbb57a4a409eb4f18968163dd88dd2da1a62598e18781cf094d",
+      "source_glb_sha256": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9"
+    }
+  ],
+  "old_physical_study_strips_removed": 46,
+  "coplanar_lower_landing_strips_removed": 4,
+  "flat_evidence": "development/levels/rebuild/cemetery-grounds-pass/verification/flat/current-flat-movement.json",
+  "stair_evidence": "development/levels/rebuild/cemetery-grounds-pass/verification/stairs/stair-movement.json",
+  "baseline_six_site_probe": {
+    "PRISON": {
+      "ordinary": {
+        "flat_links": 36,
+        "pass_both_directions": 36
+      },
+      "standing_samples": 7533,
+      "invalid_standing_samples": 19
+    },
+    "SCHOOL": {
+      "ordinary": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "standing_samples": 8469,
+      "invalid_standing_samples": 100
+    },
+    "WLD-05": {
+      "ordinary": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "standing_samples": 4410,
+      "invalid_standing_samples": 184
+    },
+    "WLD-07": {
+      "ordinary": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "standing_samples": 3579,
+      "invalid_standing_samples": 0
+    },
+    "WLD-10": {
+      "ordinary": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "standing_samples": 4611,
+      "invalid_standing_samples": 1
+    },
+    "WLD-07-MORTUARY": {
+      "ordinary": {
+        "flat_links": 23,
+        "pass_both_directions": 23
+      },
+      "standing_samples": 5058,
+      "invalid_standing_samples": 0
+    }
+  },
+  "prior_college_gallery": {
+    "run": 44190572291,
+    "conclusion": "success",
+    "revision": "7628e04be62bd2f6645828e4d03162a26a7fb09e"
+  },
+  "runtime_accepted": false,
+  "publication": {
+    "construction_commit": "02b1440cd09c8af23ae963b190dfff5444753b3a",
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "pr_base": "map/house-default",
+    "pr_draft": true,
+    "hashed_commit_blobs_verified": true,
+    "gallery_validation_run": 44194126849,
+    "gallery_validation_status_at_readback": "in_progress",
+    "gallery_validation_conclusion_at_readback": null,
+    "local_gallery_png_count": 11060,
+    "gallery_page_http": 200,
+    "receiving_door_http": 404,
+    "receiving_door_deployment_verified": false
+  }
+}

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900"><defs><pattern id="void" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#e9f5fa"/><path d="M0 10L10 0" stroke="#c3dde9"/></pattern><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#147fa2"/></marker></defs><style>text{font-family:Arial,sans-serif;fill:#233746}.title{font-size:31px;font-weight:bold}.sub{font-size:17px;fill:#526570}.label{font-size:17px}.small{font-size:14px}.note{font-size:15px;fill:#526570}.head{font-size:22px;font-weight:bold}.wall{stroke:#334b57;stroke-width:4;fill:none}.route{stroke:#147fa2;stroke-width:4;fill:none;marker-end:url(#arrow)}.dim{stroke:#68818c;stroke-width:1;fill:none}</style><rect width="1440" height="900" fill="#f4f6f3"/><text class="title" x="36" y="49">Dam: lower service bay and existing east hall</text><text class="sub" x="36" y="79">Authored floor plans precede circulation. Existing saved room excavation is retained byte-for-byte.</text>
+<text x="65" y="124" class="head">TURBINE FLOOR PLAN  Y −6</text>
+<rect x="65" y="154" width="616" height="572" fill="#dce3e0" stroke="#334b57" stroke-width="2"/>
+<rect x="681" y="154" width="143.0" height="572" fill="#e9ece7" stroke="#334b57" stroke-width="2"/>
+<rect x="373" y="374" width="308" height="352" fill="none" stroke="#758d98" stroke-width="2" stroke-dasharray="8 5"/>
+<rect x="480.79999999999995" y="182.60000000000002" width="48.40000000000009" height="158.39999999999998" fill="url(#void)" stroke="#334b57" stroke-width="2"/>
+<rect x="575.4000000000001" y="470.79999999999995" width="96.79999999999995" height="118.79999999999995" fill="url(#void)" stroke="#334b57" stroke-width="2"/>
+<rect x="722.8000000000002" y="220" width="48.399999999999636" height="440" fill="none" stroke="#8498a1" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="681" y1="420.20000000000005" x2="681" y2="459.79999999999995" stroke="#e9ece7" stroke-width="7"/>
+<text x="90" y="350" class="head">Turbine hall</text>
+<text x="330" y="757" class="label">Lower return room below: Y −10</text>
+<text x="65" y="789" class="note">Dashed room boundary shows lower level.</text>
+<text x="65" y="813" class="note">Dashed east well is in the Y 0 floor above.</text>
+<polyline points="648.0,440 795.4000000000001,440 795.4000000000001,187.0 747,187.0 747,220" class="route"/>
+<text x="680" y="479" class="small">Existing lower doorway</text>
+<text x="680" y="500" class="small">Y −6 → east main stair</text>
+<text x="453" y="186" class="small">Existing gallery</text>
+<text x="453" y="205" class="small">stair to −10</text>
+<text x="518" y="642" class="small">NEW U BAY</text>
+<text x="518" y="660" class="small">−10 / −8 / −6</text>
+<text x="690" y="240" class="small">Main east stair</text>
+<text x="690" y="259" class="small">−6 / −3 / 0</text>
+<text x="65" y="837" class="note">Existing crest / main stair continue north of this plan.</text>
+<text x="940" y="124" class="head">BAY PLAN / CUTAWAY</text>
+<text x="940" y="150" class="sub">Two straight lanes, one stairway</text>
+<rect x="980.0" y="175.0" width="352.0" height="467.9999999999998" fill="#dce3e0" stroke="#334b57" stroke-width="2"/>
+<rect x="980.0" y="291.99999999999983" width="352.0" height="350.99999999999994" fill="url(#void)" stroke="#334b57" stroke-width="2"/>
+<rect x="995.9999999999997" y="525.9999999999999" width="319.9999999999999" height="116.99999999999989" fill="#a7c6d1" stroke="#334b57" stroke-width="2"/>
+<rect x="995.9999999999997" y="291.99999999999983" width="144.00000000000034" height="234.00000000000006" fill="#b9ccd1" stroke="#334b57" stroke-width="2"/>
+<rect x="1172.0" y="291.99999999999983" width="143.99999999999955" height="234.00000000000006" fill="#86b5c5" stroke="#334b57" stroke-width="2"/>
+<rect x="1172.0" y="175.0" width="143.99999999999955" height="116.99999999999983" fill="#9fc6d0" stroke="#334b57" stroke-width="2"/>
+<polyline points="995.9999999999997,311.49999999999966 1140.0,311.49999999999966" class="dim"/>
+<polyline points="1172.0,311.49999999999966 1315.9999999999995,311.49999999999966" class="dim"/>
+<polyline points="995.9999999999997,330.9999999999999 1140.0,330.9999999999999" class="dim"/>
+<polyline points="1172.0,330.9999999999999 1315.9999999999995,330.9999999999999" class="dim"/>
+<polyline points="995.9999999999997,350.4999999999997 1140.0,350.4999999999997" class="dim"/>
+<polyline points="1172.0,350.4999999999997 1315.9999999999995,350.4999999999997" class="dim"/>
+<polyline points="995.9999999999997,370.0 1140.0,370.0" class="dim"/>
+<polyline points="1172.0,370.0 1315.9999999999995,370.0" class="dim"/>
+<polyline points="995.9999999999997,389.49999999999983 1140.0,389.49999999999983" class="dim"/>
+<polyline points="1172.0,389.49999999999983 1315.9999999999995,389.49999999999983" class="dim"/>
+<polyline points="995.9999999999997,408.99999999999966 1140.0,408.99999999999966" class="dim"/>
+<polyline points="1172.0,408.99999999999966 1315.9999999999995,408.99999999999966" class="dim"/>
+<polyline points="995.9999999999997,428.4999999999999 1140.0,428.4999999999999" class="dim"/>
+<polyline points="1172.0,428.4999999999999 1315.9999999999995,428.4999999999999" class="dim"/>
+<polyline points="995.9999999999997,447.9999999999997 1140.0,447.9999999999997" class="dim"/>
+<polyline points="1172.0,447.9999999999997 1315.9999999999995,447.9999999999997" class="dim"/>
+<polyline points="995.9999999999997,467.5 1140.0,467.5" class="dim"/>
+<polyline points="1172.0,467.5 1315.9999999999995,467.5" class="dim"/>
+<polyline points="995.9999999999997,486.99999999999983 1140.0,486.99999999999983" class="dim"/>
+<polyline points="1172.0,486.99999999999983 1315.9999999999995,486.99999999999983" class="dim"/>
+<polyline points="995.9999999999997,506.49999999999966 1140.0,506.49999999999966" class="dim"/>
+<polyline points="1172.0,506.49999999999966 1315.9999999999995,506.49999999999966" class="dim"/>
+<polyline points="1067.9999999999995,317.9999999999997 1067.9999999999995,500.0" class="route"/>
+<polyline points="1243.9999999999998,506.5000000000001 1243.9999999999998,240.0" class="route"/>
+<text x="1043.9999999999998" y="272.5" class="small">−10</text>
+<text x="1215.9999999999995" y="249.74999999999991" class="small">−6</text>
+<text x="1011.9999999999999" y="597.5" class="small">Middle landing  Y −8</text>
+<text x="1023.9999999999998" y="710" class="label">1.8 m</text>
+<text x="1200.0" y="710" class="label">1.8 m</text>
+<text x="940" y="749" class="note">12 risers × 0.167 m per flight</text>
+<text x="940" y="775" class="note">0.30 m tread depth; 1.8 m landing</text>
+<text x="940" y="801" class="note">Outer cheeks bear on lower room slab.</text>
+<text x="940" y="832" class="label" style="fill:#ae3f35">L12 spillway: UNRESOLVED</text>
+<text x="36" y="872" class="note">Native construction drawings • dimensions in metres • exported model 9ca45264727b42c4 • runtime acceptance OPEN</text>
+</svg>

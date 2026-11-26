@@ -1,0 +1,304 @@
+{
+  "status": "PARTIAL_27_OF_28_JAVA_HEAP_LIMIT",
+  "heap_megabytes": 768,
+  "source_log": "/dev/shm/beckenburg-map-validation/SiteSelectionTest-supported-cameras-final.log",
+  "sites": [
+    {
+      "site": "HOUSE",
+      "room": 0,
+      "feet": [
+        19.0,
+        0.0,
+        19.4
+      ],
+      "colours": 179,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "MANSION",
+      "room": 0,
+      "feet": [
+        23.0,
+        0.0,
+        30.0
+      ],
+      "colours": 51,
+      "physical_pixels": 63989
+    },
+    {
+      "site": "PRISON",
+      "room": 0,
+      "feet": [
+        23.0,
+        0.0,
+        32.0
+      ],
+      "colours": 61,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "ASYLUM",
+      "room": 0,
+      "feet": [
+        24.0,
+        0.0,
+        32.0
+      ],
+      "colours": 56,
+      "physical_pixels": 63989
+    },
+    {
+      "site": "SCHOOL",
+      "room": 0,
+      "feet": [
+        24.0,
+        0.0,
+        35.0
+      ],
+      "colours": 138,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "FARMHOUSE",
+      "room": 0,
+      "feet": [
+        23.0,
+        0.0,
+        24.5
+      ],
+      "colours": 94,
+      "physical_pixels": 63987
+    },
+    {
+      "site": "ACADEMY",
+      "room": 0,
+      "feet": [
+        24.0,
+        0.0,
+        32.0
+      ],
+      "colours": 39,
+      "physical_pixels": 63989
+    },
+    {
+      "site": "COLLEGE",
+      "room": 0,
+      "feet": [
+        25.0,
+        0.0,
+        36.0
+      ],
+      "colours": 57,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "CHURCH",
+      "room": 0,
+      "feet": [
+        23.0,
+        0.0,
+        30.0
+      ],
+      "colours": 100,
+      "physical_pixels": 63998
+    },
+    {
+      "site": "HOLLOW_CREEK",
+      "room": 0,
+      "feet": [
+        32.0,
+        0.999,
+        66.0
+      ],
+      "colours": 198,
+      "physical_pixels": 44719
+    },
+    {
+      "site": "SEACLIFF",
+      "room": 0,
+      "feet": [
+        34.0,
+        4.0,
+        30.0
+      ],
+      "colours": 70,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "BLACKPINE",
+      "room": 0,
+      "feet": [
+        43.0,
+        1.003,
+        25.0
+      ],
+      "colours": 53,
+      "physical_pixels": 63998
+    },
+    {
+      "site": "LOOKOUT",
+      "room": 3,
+      "feet": [
+        12.0,
+        6.0,
+        20.0
+      ],
+      "colours": 122,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "MINE",
+      "room": 0,
+      "feet": [
+        11.0,
+        0.0,
+        54.0
+      ],
+      "colours": 64,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "WHARF",
+      "room": 0,
+      "feet": [
+        12.0,
+        0.0,
+        48.0
+      ],
+      "colours": 61,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "CEMETERY",
+      "room": 0,
+      "feet": [
+        15.0,
+        0.0,
+        47.0
+      ],
+      "colours": 51,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "MORTUARY",
+      "room": 0,
+      "feet": [
+        15.0,
+        0.0,
+        47.0
+      ],
+      "colours": 51,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "NORTHWATCH",
+      "room": 0,
+      "feet": [
+        10.0,
+        0.0,
+        35.0
+      ],
+      "colours": 65,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "BLACKWATER",
+      "room": 0,
+      "feet": [
+        17.0,
+        0.0,
+        41.0
+      ],
+      "colours": 49,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "MONASTERY",
+      "room": 0,
+      "feet": [
+        32.0,
+        0.0,
+        59.0
+      ],
+      "colours": 65,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "RED_MESA",
+      "room": 0,
+      "feet": [
+        12.0,
+        0.0,
+        52.0
+      ],
+      "colours": 95,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "MOURNING_MARSH",
+      "room": 0,
+      "feet": [
+        20.0,
+        1.2,
+        46.0
+      ],
+      "colours": 93,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "GREYWATER",
+      "room": 0,
+      "feet": [
+        16.0,
+        0.0,
+        50.0
+      ],
+      "colours": 59,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "GALLOWS",
+      "room": 0,
+      "feet": [
+        34.0,
+        0.0,
+        7.0
+      ],
+      "colours": 54,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "MORROW",
+      "room": 0,
+      "feet": [
+        28.0,
+        0.0,
+        48.0
+      ],
+      "colours": 94,
+      "physical_pixels": 64000
+    },
+    {
+      "site": "ELARA",
+      "room": 1,
+      "feet": [
+        28.0,
+        0.0,
+        35.0
+      ],
+      "colours": 49,
+      "physical_pixels": 63867
+    },
+    {
+      "site": "PINES",
+      "room": 0,
+      "feet": [
+        10.8,
+        0.0,
+        22.5
+      ],
+      "colours": 62,
+      "physical_pixels": 64000
+    }
+  ]
+}

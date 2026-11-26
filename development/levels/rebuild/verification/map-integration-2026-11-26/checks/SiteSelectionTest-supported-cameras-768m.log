@@ -1,0 +1,5 @@
+2026-11-26T20:18:20.570756023Z [main] RENDER SLOW stage=idle faces=108930 visible_faces=35488 culled_faces=73442 target=320x200 build_ms=1351 lighting_raster_ms=1550
+SITE_RENDER HOUSE room=0 feet=(19.000,0.000,19.400) colours=179 physical_pixels=64000
+SITE_RENDER MANSION room=0 feet=(23.000,0.000,30.000) colours=51 physical_pixels=63989
+SITE_RENDER PRISON room=0 feet=(23.000,0.000,32.000) colours=61 physical_pixels=64000
+SITE_RENDER ASYLUM room=0 feet=(24.000,0.000,32.000) colours=56 physical_pixels=63989

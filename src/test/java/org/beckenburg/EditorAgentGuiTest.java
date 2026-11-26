@@ -235,7 +235,7 @@ public final class EditorAgentGuiTest {
                 pane.setValue(JOptionPane.OK_OPTION);
             }
         });
-        driver.start();try{button(editor,"DOOR SOCKETS…").doClick();}finally{driver.stop();tabs.setSelectedIndex(old);}
+        driver.start();try{button(editor,"DOOR SOCKETSâ€¦").doClick();}finally{driver.stop();tabs.setSelectedIndex(old);}
         check(CastleLevelEdits.current().doorType(slot)==CastleDoorSlots.Type.WOOD&&!map.traversable(37,22,-3),"Human door installation must block the game body");
         check(!FixtureLighting.castleRayClear(map,36,-1.6,22,38,-1.6,22),"Closed lower door must occlude the game ray");
         map.toggleDoor(slot);
@@ -435,11 +435,27 @@ public final class EditorAgentGuiTest {
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
                     var finish=DeveloperLevelEditor.class.getDeclaredMethod("finishSceneOpen");finish.setAccessible(true);finish.invoke(e);
                     verifyPalette(e,true);
+                    var fresh=e.agentService();
+                    check(fresh.inspect().state() instanceof LevelAuthoringSession.Snapshot snapshot
+                        &&UserLevelLibrary.HOUSE_REBUILD.equals(snapshot.architecture())
+                        &&snapshot.props().equals(HouseRebuildFurnishings.source().props()),
+                        "Actual fresh human editor opens furnished rebuilt architecture");
+                    check(!Files.exists(LevelAuthoringSession.path(HouseMap.Site.HOUSE)),
+                        "Opening fresh human editor does not implicitly save");
+                    fresh.capture(fresh.inspect().revision(),output.resolve("house-fresh-default.png"));
+                    fresh.save(fresh.inspect().revision());
+                    check(new HouseMap(HouseMap.Site.HOUSE).level().id().equals("briar-rebuild"),
+                        "Actual fresh human save loads in gameplay");
+                    // The next scenario explicitly exercises a historical
+                    // document's recovery and human rebuild/undo workflow.
+                    LevelAuthoringSession.saveProps(LevelAuthoringSession.path(HouseMap.Site.HOUSE),
+                        "beckenburg/house",LevelPlans.legacyHouseSource().props());
+                    open.invoke(e,HouseMap.Site.HOUSE);finish.invoke(e);
                     var service=e.agentService();var before=service.inspect();
                     var missionState=(LevelAuthoringSession.Snapshot)before.state();
                     var source=HouseSourceVersions.source(missionState.architecture());
-                    // After House promotion prop-0 is a real plumbed kitchen counter.
-                    // Edit a standalone chair, never bypass attached fixture locks.
+                    // Select a standalone chair by stable identity in either
+                    // generation; never bypass attached fixture locks.
                     int movable=-1;
                     for(int i=0;i<missionState.props().size();i++){
                         var prop=missionState.props().get(i);

@@ -1,0 +1,240 @@
+{
+  "source": {
+    "id": "WLD-04",
+    "construction": "development/levels/rebuild/architectural-restart-pass/wld-04/construction.json",
+    "layout": "development/levels/rebuild/architectural-restart-pass/wld-04/authored-layout.json",
+    "glb": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.glb",
+    "native": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.hcs2",
+    "blend": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.blend",
+    "glb_sha256": "c0e111a2ee08c4c8f8edc2a0e084c142e6819ecf2f5734b64272abc560d920d2",
+    "native_sha256": "784d56c55fb32f894cd07e35b73d0c92fb7a83040e336b959db62d661a40532a"
+  },
+  "source_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world",
+  "world": "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world",
+  "fields": [
+    [
+      "upper west hillside",
+      "DIRT",
+      2,
+      "plane:22.525:0:-0.552083333333",
+      [
+        [
+          21,
+          30.7
+        ],
+        [
+          34,
+          30.7
+        ],
+        [
+          35,
+          36.2
+        ],
+        [
+          20,
+          36.2
+        ]
+      ]
+    ],
+    [
+      "lower hillside",
+      "DIRT",
+      2,
+      "plane:36.15:0:-0.625",
+      [
+        [
+          7,
+          53.2
+        ],
+        [
+          51,
+          53.2
+        ],
+        [
+          54,
+          58
+        ],
+        [
+          6,
+          58
+        ]
+      ]
+    ],
+    [
+      "upper lookout clearing",
+      "DIRT",
+      4,
+      "plane:5.65:0:0",
+      [
+        [
+          2,
+          0
+        ],
+        [
+          38,
+          -1
+        ],
+        [
+          56,
+          8
+        ],
+        [
+          57,
+          29
+        ],
+        [
+          49,
+          32
+        ],
+        [
+          36,
+          30.7
+        ],
+        [
+          24,
+          30.7
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          2,
+          28
+        ]
+      ]
+    ],
+    [
+      "middle forest bench",
+      "DIRT",
+      3,
+      "plane:3:0:0",
+      [
+        [
+          10,
+          36
+        ],
+        [
+          30,
+          36
+        ],
+        [
+          37,
+          41
+        ],
+        [
+          51,
+          42
+        ],
+        [
+          52,
+          50
+        ],
+        [
+          48,
+          53.2
+        ],
+        [
+          13,
+          53.2
+        ],
+        [
+          9,
+          44
+        ]
+      ]
+    ],
+    [
+      "roadhead and lower clearing",
+      "GRAVEL",
+      4,
+      "plane:0:0:0",
+      [
+        [
+          7,
+          58
+        ],
+        [
+          15,
+          56
+        ],
+        [
+          47,
+          56
+        ],
+        [
+          53,
+          62
+        ],
+        [
+          43,
+          77
+        ],
+        [
+          38,
+          85
+        ],
+        [
+          18,
+          85
+        ],
+        [
+          12,
+          73
+        ],
+        [
+          6,
+          66
+        ]
+      ]
+    ]
+  ],
+  "protected_footprints": [
+    [
+      4,
+      14,
+      20,
+      26
+    ],
+    [
+      40,
+      14,
+      54,
+      30
+    ],
+    [
+      40,
+      30,
+      50,
+      40
+    ],
+    [
+      24,
+      2,
+      30,
+      8
+    ],
+    [
+      24,
+      2,
+      36,
+      16
+    ]
+  ],
+  "source_files_sha256": {
+    "adaptive-topology.bin": "647b51bf25ac6074fc6e671f8a15fe85e889b6109db5916287e6d3838bba039d",
+    "authored-cuts.tsv": "bee8204ce47cc7815d08d0f6fea8c1d6e1a550c5dcdd53c3587d3cdef9d4d613",
+    "authored-path-grading.sha256": "809b9e6ce4a04f8f646888c75825ad491f46f784522e06c22dd469fdb879d4f6",
+    "source-provenance.json": "bfe951ae277fe2639c52fe6f41b5ab448fe82f8b9cf624eded1fe278ac28acb2",
+    "terrain-physics.hcs2": "c0f899db1186f14d6b86879386f9b45c6fd2374deb30d9f82a981789588d06a3",
+    "tile_0_0.png": "c34bc04fc96dfdf7ed70d5d9790e326aff76b3cc1674822a0bfd901689628fc9",
+    "verification.json": "d790536fe1526bed619789ad9b375ae693f7d3bc5b5a92b13fcb08e664460eb3",
+    "world.properties": "8d2b0285398cd7bc3280911568f6f5ded0acb411941121991bc4e6c2b065c380",
+    "scene-package/.scene.bin.editor.previous": "fa6c3b8259d84d913c07f135b9f46036bb11b7ab4cefe1e417f4eef74bccc8c2",
+    "scene-package/scene.bin": "910dcaace2e08d3ea9e4a3820fd0ba8d92d89a1513c49283898c5e19142683da",
+    "terrain-layers/tile_0_0.bin": "998f573511cc39cf296f8bd31704151ac20966415d4624a17dc4bad859e98ef6",
+    "scene-package/meshes/site.obj": "308572bac82900991d9c1dddfaa63b9db9106119fe5e336a9b086a234286e235"
+  },
+  "author": "tools/prepare_lookout_terraces.py",
+  "architectural_reason": "Three connected geographic levels and two hillside stairs; buildings and saved room punches retained. No path data used by terrain authoring."
+}

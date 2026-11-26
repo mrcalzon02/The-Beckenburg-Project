@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: missing SOUND|TOY_WINDUP|
+	at org.beckenburg.AuthoredLevelNetworkTest$Peer.await(AuthoredLevelNetworkTest.java:9)
+	at org.beckenburg.HouseEncounterNetworkTest.scenario(HouseEncounterNetworkTest.java:74)
+	at org.beckenburg.HouseEncounterNetworkTest.main(HouseEncounterNetworkTest.java:90)

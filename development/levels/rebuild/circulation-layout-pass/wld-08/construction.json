@@ -1,0 +1,235 @@
+{
+  "id": "WLD-08",
+  "status": "EXISTING_NATIVE_FULL_WIDTH_ROUTE_DESIGN_CANDIDATE",
+  "source": {
+    "contract": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/construction.json",
+    "contract_sha256": "7a0b48e37bbaae464ee6fe261bca450223ecb1e177fa7b06e568096360ea0d5e",
+    "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/authored-layout.json",
+    "layout_sha256": "6de892b4bbd059d683eb2bf1e55f38e5e5729c2ec7f22a0ace2452c905ed59bf",
+    "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.hcs2",
+    "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2",
+    "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb",
+    "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1"
+  },
+  "layout": "development/levels/rebuild/circulation-layout-pass/wld-08/authored-layout.json",
+  "layout_sha256": "5f6d96315f4eefe14e733ced247733ae8646f903a0d48546254b5349d73d561d",
+  "changes": [
+    {
+      "link": "L12",
+      "before": [
+        [
+          26.0,
+          0,
+          19.0
+        ],
+        [
+          20.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          17.0
+        ]
+      ],
+      "after": [
+        [
+          26.0,
+          0.0,
+          19.0
+        ],
+        [
+          13.0,
+          0.0,
+          19.0
+        ],
+        [
+          12.5,
+          0.0,
+          16.0
+        ],
+        [
+          11.0,
+          0.0,
+          16.0
+        ],
+        [
+          11.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    },
+    {
+      "link": "L13",
+      "before": [
+        [
+          11.0,
+          0,
+          17.0
+        ],
+        [
+          11.0,
+          0,
+          26.0
+        ],
+        [
+          11.0,
+          0,
+          35.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          17.0
+        ],
+        [
+          11.0,
+          0.0,
+          16.5
+        ],
+        [
+          10.0,
+          0.0,
+          16.0
+        ],
+        [
+          9.5,
+          0.0,
+          16.5
+        ],
+        [
+          9.0,
+          0.0,
+          18.0
+        ],
+        [
+          9.5,
+          0.0,
+          25.0
+        ],
+        [
+          10.5,
+          0.0,
+          25.0
+        ],
+        [
+          11.0,
+          0.0,
+          25.5
+        ],
+        [
+          11.0,
+          0.0,
+          33.0
+        ],
+        [
+          10.0,
+          0.0,
+          33.5
+        ],
+        [
+          9.5,
+          0.0,
+          35.5
+        ],
+        [
+          11.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    }
+  ],
+  "decisions": [
+    {
+      "site": "WLD-08",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "135",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L04",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L06",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "135",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L09",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "146",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L11",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "737",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L12",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "567",
+      "points": "26.0,0.0,19.0;13.0,0.0,19.0;12.5,0.0,16.0;11.0,0.0,16.0;11.0,0.0,17.0"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L13",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "1160",
+      "points": "11.0,0.0,17.0;11.0,0.0,16.5;10.0,0.0,16.0;9.5,0.0,16.5;9.0,0.0,18.0;9.5,0.0,25.0;10.5,0.0,25.0;11.0,0.0,25.5;11.0,0.0,33.0;10.0,0.0,33.5;9.5,0.0,35.5;11.0,0.0,35.0"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L14",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L16",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    }
+  ]
+}

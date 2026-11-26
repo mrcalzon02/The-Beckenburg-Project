@@ -1,0 +1,570 @@
+{
+  "id": "WLD-03",
+  "source_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world",
+  "source_height_sha256": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+  "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "program": [
+    {
+      "link": "L04",
+      "points": [
+        [
+          12.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L07",
+      "points": [
+        [
+          12.0,
+          4,
+          34.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L01",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          86.0
+        ],
+        [
+          34.0,
+          0,
+          80.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L01",
+      "segment": 1,
+      "points": [
+        [
+          34.0,
+          0,
+          80.0
+        ],
+        [
+          34.0,
+          0,
+          73.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          73.0
+        ],
+        [
+          34.0,
+          0,
+          66.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L02",
+      "segment": 1,
+      "points": [
+        [
+          34.0,
+          0,
+          66.0
+        ],
+        [
+          34.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L03",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          53.0
+        ],
+        [
+          20.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L03",
+      "segment": 1,
+      "points": [
+        [
+          20.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L05",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          53.0
+        ],
+        [
+          48.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L05",
+      "segment": 1,
+      "points": [
+        [
+          48.0,
+          0,
+          52.0
+        ],
+        [
+          54.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L06",
+      "segment": 0,
+      "points": [
+        [
+          54.0,
+          0,
+          52.0
+        ],
+        [
+          48.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L06",
+      "segment": 1,
+      "points": [
+        [
+          48.0,
+          0,
+          52.0
+        ],
+        [
+          34.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L08",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          8,
+          16.0
+        ],
+        [
+          34.0,
+          8,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L08",
+      "segment": 1,
+      "points": [
+        [
+          34.0,
+          8,
+          22.0
+        ],
+        [
+          34.0,
+          8,
+          31.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          8,
+          31.0
+        ],
+        [
+          48.0,
+          8,
+          31.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L09",
+      "segment": 1,
+      "points": [
+        [
+          48.0,
+          8,
+          31.0
+        ],
+        [
+          57.0,
+          8,
+          31.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L10",
+      "segment": 0,
+      "points": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          66.0,
+          8,
+          31.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L10",
+      "segment": 1,
+      "points": [
+        [
+          66.0,
+          8,
+          31.0
+        ],
+        [
+          71.0,
+          8,
+          31.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "points": [
+        [
+          71.0,
+          8,
+          31.0
+        ],
+        [
+          71.0,
+          8,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L11",
+      "segment": 1,
+      "points": [
+        [
+          71.0,
+          8,
+          22.0
+        ],
+        [
+          74.0,
+          8,
+          13.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L12",
+      "segment": 0,
+      "points": [
+        [
+          74.0,
+          8,
+          13.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14",
+      "segment": 0,
+      "points": [
+        [
+          57.0,
+          4,
+          31.0
+        ],
+        [
+          57.0,
+          4,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14",
+      "segment": 1,
+      "points": [
+        [
+          57.0,
+          4,
+          22.0
+        ],
+        [
+          57.0,
+          4,
+          13.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L15",
+      "segment": 0,
+      "points": [
+        [
+          57.0,
+          4,
+          13.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 0,
+      "points": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          54.0,
+          8,
+          40.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 1,
+      "points": [
+        [
+          54.0,
+          8,
+          40.0
+        ],
+        [
+          54.0,
+          8,
+          46.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "new_basement_punches": [],
+  "method": "Actual editor non-destructive lower-only bench layers and persistent footprint topology punches; retain source landforms/source16bitPNG and previous holes; no room-pad snapping or render-only hole.",
+  "source_glb": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.glb",
+  "source_glb_sha256": "141dbe4da15d1ff10059478606c00a86519fd3aeca39843d3db492273c1fffda",
+  "source_physics": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.hcs2",
+  "source_physics_sha256": "3ceb5739144d5a805f070e225019fa5ad01b52eaa72b7ec7da44bfc8af4237e4",
+  "source_world_files_preserved": {
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/adaptive-topology.bin": "938923743ba10cacb029404add7e2d9eed377ec0dde9c5c77ff4bf2cb6e29b16",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/authored-cuts.tsv": "c8f831622e7c93a737f3360f32c3efd95fbf29bce921796cc2af4fb11817b862",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/source-provenance.json": "0e77c25320bac0bf09eba9ab756fb96f174d924b53e3abe5a4adf50f969d9505",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2": "5a4622414250f2e72922e6eba4dbbb6ba20b52270aaaccaef96fbf5a5c3c7240",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/tile_0_0.png": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/verification.json": "70a393b79b41cce04671153c47087bc58937359ba69f56c138fdefacdf3565b7",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous": "dca695119e6f8ca42b064117fa278042f3e5c9d0e2f7035f8c5a1207e5961cda",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/scene.bin": "b775f32932e646646fdda3cfeba2112b29277c4041b259e4a5f0362af40bfc3e",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj": "8be071fbd7ed7ebcfff0fd4b40db5faa67b52a64b8af2c411a392a6309be1e67",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj": "c5b1fa70f3fd3787de23b2a9e10899fe2eb0335630ebb3f927f716e56531deff",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj": "73a3dff0047ba11727281937b0c015ae9edda8ceeb60b32cf356a5782d902090",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj": "b17102bced21039fbd89c6b283657773f555af875e4e4171ed6bd016a2246618"
+  },
+  "world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/adaptive-topology.bin": "938923743ba10cacb029404add7e2d9eed377ec0dde9c5c77ff4bf2cb6e29b16",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/authored-cuts.tsv": "c8f831622e7c93a737f3360f32c3efd95fbf29bce921796cc2af4fb11817b862",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/authored-path-grading.sha256": "86f59e95dcf9f5bf5d040945537cc60ea00c8a8969ccf192e39acbe3f82dfeb6",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/source-provenance.json": "a42be0e8b7306c2c7f2571f7e537d8d103f716fe34f19e75a7e9d25ee9bf69d3",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2": "3abec142dfffaeac2874c0250cb526028800a301b2bc01a79b526422727fc1c7",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/tile_0_0.png": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/verification.json": "c5adc0a8e34c88dd3185aab727fcab76a9c840bc38c376055d2cc9d13cb2d325",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous": "a8393bae20b992c87a223f86f9973db2fd04ba5e99ec305a9e33555a011958a8",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/scene.bin": "1e79b3ee4b70eb2bcb5343cadafe0619f10ea952195825d3108b24e9de7df42c",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/terrain-layers/tile_0_0.bin": "5c0f3ea8dc50756cc7e41298a7b125a8fd9accc8ae9a612d53f72f5550d08ec2",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj": "444be4cade33c14b3703e0cfc9d7ad2a1f4ff37dfcb1e9b098aa0f165fd23472",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj": "a6deba95a76a41ceba78ee3d16afb3764d00c423d517b4a2c974f4355a4f5639",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj": "6965661c63abae50da00b0e8c3795e7183da4e295a8d0c591ef3e5b16a216ffb",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj": "b17102bced21039fbd89c6b283657773f555af875e4e4171ed6bd016a2246618"
+  },
+  "author_sha256": "fcb72cb807c8a6c116f3b43078318d0460ffcf432bc451b66eccb3932d6e6732",
+  "builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "SAVED_EDITOR_STAIR_BED_AND_BASEMENT_PUNCH_CANDIDATE_NOT_TERRAIN_ACCEPTANCE",
+  "remaining": "Actual composite/export/native regression and full-site landscape, retaining/cave/edge/arrival acceptance; no runtime integration or unlock."
+}

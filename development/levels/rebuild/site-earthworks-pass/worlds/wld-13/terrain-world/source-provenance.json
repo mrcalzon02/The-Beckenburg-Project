@@ -1,0 +1,104 @@
+{
+  "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "3611b9192f5854f597e0fffb28653f0ba277be549753f7655fdeca6c1d172ee7",
+    "authored-cuts.tsv": "aaa496fb9cb2232a4d3562644d7f9e9202f67ef12ffac1a01adb71988898b750",
+    "authored-path-grading.sha256": "55eec905cdceded029bb321a28d77ce8f380434f71a135a128dba16ce07ba818",
+    "source-provenance.json": "b4435dd4068bd948e66fc28f5fd5ef2036b52396bba706789712c8c322691205",
+    "terrain-physics.hcs2": "feac68cfb77d3128275eedae107a1d866bb724588f30dd451d9c442a3c5ec379",
+    "tile_0_0.png": "846f7bf4eca48accad59887a9385145c37e7b573d655b58f7e87dec085baafab",
+    "verification.json": "e6a0eabf03203f2f04b07b276db54c487c0add0d8b36afc8c1c8ce39a0c3310f",
+    "world.properties": "5f1431ab44c44a32c2e07c9cd2c6a82caf366c9baf1067e24807556e8bc085d7",
+    "scene-package/.scene.bin.editor.previous": "b4e7492b5b3cd7c52d18618f2f49a9a0836eb61347e7c644d6b497436a3706f0",
+    "scene-package/scene.bin": "e7221800c688e5d929adcfe19e7e695a7cfaa14b41b075fc1596c7d9b67a34ac",
+    "terrain-layers/tile_0_0.bin": "0ca1efa5845bacc4570f4b9a4db08b8378b9ee31460ecd7ddd27342ddbccb969",
+    "scene-package/meshes/site-0-0.obj": "b79ea6117de059080293dc0a7e947d70ca9d71ed99c585f1f671cd4e2af64dd6",
+    "scene-package/meshes/site-0-1.obj": "ed6e23cf4a860923793fbc6c9333b271ac764fc1b1fffbf10128a7aff664bb8f",
+    "scene-package/meshes/site-1-0.obj": "97dde12b47976b711f47e566c919fba1d15997c6c2a0824b1a4d08645456891c",
+    "scene-package/meshes/site-1-1.obj": "a5023fb6bc48f85623dce563dd00d9946e6e52608ec4cc8aa9e6a55e4c726ef3"
+  },
+  "earthworks_features": [
+    {
+      "name": "Cannery arrival clearing",
+      "material": "GRAVEL",
+      "feather": 5.0,
+      "profile": "arrival",
+      "polygon": [
+        [
+          26.0,
+          72.0
+        ],
+        [
+          42.0,
+          72.0
+        ],
+        [
+          46.0,
+          78.0
+        ],
+        [
+          44.0,
+          88.0
+        ],
+        [
+          38.0,
+          92.0
+        ],
+        [
+          26.0,
+          92.0
+        ],
+        [
+          22.0,
+          85.0
+        ],
+        [
+          22.0,
+          77.0
+        ]
+      ]
+    },
+    {
+      "name": "Workers woodland clearing",
+      "material": "DIRT",
+      "feather": 4.0,
+      "profile": "woodland",
+      "polygon": [
+        [
+          -15.0,
+          28.0
+        ],
+        [
+          -10.0,
+          25.0
+        ],
+        [
+          -8.0,
+          28.0
+        ],
+        [
+          -8.0,
+          60.0
+        ],
+        [
+          -12.0,
+          64.0
+        ],
+        [
+          -16.0,
+          58.0
+        ],
+        [
+          -18.0,
+          45.0
+        ],
+        [
+          -17.0,
+          34.0
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

@@ -1,0 +1,184 @@
+SPACE	cottage-a	0	4	42	20	54	0	3	false	West fisherman cottage
+ANCHOR	0	cottage-a	12	0	48
+SPACE	cottage-b	1	44	42	60	54	0	3	false	East fisherman cottage
+ANCHOR	1	cottage-b	52	0	48
+SPACE	boathouse	2	4	10	20	28	0	3	false	Boathouse
+ANCHOR	2	boathouse	12	0	19
+SPACE	net	3	44	10	56	24	0	3	false	Net shed
+ANCHOR	3	net	50	0	17
+SPACE	fish	4	24	10	40	24	0	3	false	Fish house
+ANCHOR	4	fish	32	0	17
+SPACE	undercroft	5	24	24	40	36	-2.5	2.5	false	Dry tidal undercroft
+ANCHOR	5	undercroft	32	-2.5	30
+SPACE	west-stair	6	12	28	24	38	0	3	true	West shore stair bay
+ANCHOR	6	west-stair	17	0	33
+SPACE	east-stair	7	40	28	52	38	0	3	true	East shore stair bay
+ANCHOR	7	east-stair	47.3	0	33
+SPACE	pier-w	8	20	10	24	36	0	3	true	West dock walkway
+ANCHOR	8	pier-w	22	0	23
+SPACE	pier-e	9	40	10	44	36	0	3	true	East dock walkway
+ANCHOR	9	pier-e	42	0	23
+SPACE	crossdock	10	20	6	44	10	0	3	true	Cross-dock
+ANCHOR	10	crossdock	32	0	8
+SPACE	quay	11	20	36	44	54	0	3	true	Quay apron
+ANCHOR	11	quay	32	0	45
+SPACE	entry	12	20	54	44	68	0	3	true	Shore street
+ANCHOR	12	entry	32	0	61
+SPACE	stage	13	24	68	40	80	0	3	true	Shore-road van apron
+ANCHOR	13	stage	32	0	69.5
+SPACE	west-cottage-street	12	6.7	54	20	62	0	3	true	West cottage street frontage
+SPACE	east-cottage-street	12	44	54	58	62	0	3	true	East cottage street frontage
+SPACE	west-boardwalk-return	6	13.1	38	20	39.9	0	3	true	Guarded shore boardwalk return
+SPACE	west-lower-flight	6	17.7	31.7	27.0	34.3	-2.5	2.48	false	West cast stair
+SPACE	east-lower-flight	7	37.0	31.7	46.3	34.3	-2.5	2.48	false	East cast stair
+TREAD	Wharf west full supported upper landing region0
+TREAD	Wharf rectangular L16 tread 0 region0
+TREAD	Wharf rectangular L16 tread 1 region0
+TREAD	Wharf rectangular L16 tread 2 region0
+TREAD	Wharf rectangular L16 tread 3 region0
+TREAD	Wharf rectangular L16 tread 4 region0
+TREAD	Wharf rectangular L16 tread 5 region0
+TREAD	Wharf rectangular L16 tread 6 region0
+TREAD	Wharf rectangular L16 tread 7 region0
+TREAD	Wharf rectangular L16 tread 8 region0
+TREAD	Wharf rectangular L16 tread 9 region0
+TREAD	Wharf rectangular L16 tread 10 region0
+TREAD	Wharf rectangular L16 tread 11 region0
+TREAD	Wharf rectangular L16 tread 12 region0
+TREAD	Wharf rectangular L16 tread 13 region0
+TREAD	Wharf rectangular L17 tread 0 region0
+TREAD	Wharf rectangular L17 tread 1 region0
+TREAD	Wharf rectangular L17 tread 2 region0
+TREAD	Wharf rectangular L17 tread 3 region0
+TREAD	Wharf rectangular L17 tread 4 region0
+TREAD	Wharf rectangular L17 tread 5 region0
+TREAD	Wharf rectangular L17 tread 6 region0
+TREAD	Wharf rectangular L17 tread 7 region0
+TREAD	Wharf rectangular L17 tread 8 region0
+TREAD	Wharf rectangular L17 tread 9 region0
+TREAD	Wharf rectangular L17 tread 10 region0
+TREAD	Wharf rectangular L17 tread 11 region0
+TREAD	Wharf rectangular L17 tread 12 region0
+TREAD	Wharf rectangular L17 tread 13 region0
+RITUAL	banishment	2	12.0	0	19.0
+RITUAL	cleansing	4	32.0	0	17.0
+RITUAL	absolution	0	12.0	0	48.0
+POINT	L01	32.0	0	70.372
+POINT	L01	32.0	0	61.0
+TRANSITION	841	L01	13	12	32	0	68	z	2	trail
+POINT	L02	32	0	61
+POINT	L02	12	0	61
+POINT	L02	12	0	54
+POINT	L02	12	0	48
+POINT	L03	32	0	61
+POINT	L03	52	0	61
+POINT	L03	52	0	54
+POINT	L03	52	0	48
+POINT	L04	32.0	0	61.0
+POINT	L04	32.0	0	54.0
+POINT	L04	32.0	0	45.0
+TRANSITION	844	L04	12	11	32	0	54	z	2	trail
+POINT	L05	12	0	48
+POINT	L05	20	0	48
+POINT	L05	32	0	48
+POINT	L05	32	0	45
+POINT	L06	52	0	48
+POINT	L06	44	0	48
+POINT	L06	32	0	48
+POINT	L06	32	0	45
+POINT	L07	32	0	45
+POINT	L07	22	0	45
+POINT	L07	22	0	39
+POINT	L07	14	0	39
+POINT	L07	14	0	29
+POINT	L07	22	0	29
+POINT	L07	22	0	23
+POINT	L08	22	0	23
+POINT	L08	22	0	8
+POINT	L08	32	0	8
+TRANSITION	848	L08	8	10	22	0	10	z	2	trail
+POINT	L09	32	0	8
+POINT	L09	42	0	8
+POINT	L09	42	0	23
+TRANSITION	849	L09	10	9	42	0	10	z	2	trail
+POINT	L10	42	0	23
+POINT	L10	42	0	29
+POINT	L10	48	0	29
+POINT	L10	48	0	37
+POINT	L10	42	0	37
+POINT	L10	42	0	45
+POINT	L10	32	0	45
+POINT	L11	22	0	23
+POINT	L11	22	0	19
+POINT	L11	20	0	19
+POINT	L11	12	0	19
+POINT	L12	42	0	23
+POINT	L12	42	0	17
+POINT	L12	44	0	17
+POINT	L12	50	0	17
+POINT	L13	32.0	0	8.0
+POINT	L13	32.0	0	10.0
+POINT	L13	32.0	0	17.0
+POINT	L14	12	0	19
+POINT	L14	16	0	19
+POINT	L14	16	0	28
+POINT	L14	16	0	29
+POINT	L14	14	0	29
+POINT	L14	14	0	33
+POINT	L14	18	0	33
+POINT	L15	18	0	33
+POINT	L15	14	0	33
+POINT	L15	14	0	39
+POINT	L15	22	0	39
+POINT	L15	22	0	45
+POINT	L15	32	0	45
+TRANSITION	855	L15	6	11	20	0	39	x	1.5	trail
+POINT	L16	18	0	33
+POINT	L16	26.35	-2.5	33
+POINT	L16	27.2	-2.5	33
+POINT	L16	27.2	-2.5	30
+POINT	L16	32	-2.5	30
+TRANSITION	856	L16	6	5	27	-2.5	33	x	2	stair
+POINT	L17	32	-2.5	30
+POINT	L17	36.8	-2.5	30
+POINT	L17	36.8	-2.5	33
+POINT	L17	37.65	-2.5	33
+POINT	L17	46	0	33
+TRANSITION	857	L17	5	7	37	-2.5	33	x	2	stair
+POINT	L18	46	0	33
+POINT	L18	48	0	33
+POINT	L18	48	0	37
+POINT	L18	42	0	37
+POINT	L18	32	0	45
+TRANSITION	858	L18	7	11	40.75	0	38	z	2	trail
+TRANSITION	864	west-pier-boardwalk	6	8	20	0	29	x	1.1	trail
+TRANSITION	865	east-pier-pierhead	9	7	44	0	29	x	1.5	trail
+COVER	wharf-cottage-a-cupboard	0	5.45	0.0	46	-1.5707963267948966
+COVER	wharf-cottage-b-cupboard	1	58.55	0.0	46	1.5707963267948966
+COVER	wharf-net-cupboard	3	54.5	0.0	21.5	1.5707963267948966
+SPACE	wharf-power-shed	12	34.7	54.65	40.3	58.25	0.018	2.7	false	Above-tide power shed
+SERVICE	wharf-generator	generator	12	38.985	0.475	55.741	0.0	WH-MAIN
+SERVICE	wharf-breaker	breaker	12	36.55	0.9	55.355	0.0	WH-MAIN
+SERVICE	wharf-service-light	light	12	37.619999	2.456	57.090001	0	native-string
+POINT	service-from-street	32	0	61
+POINT	service-from-street	37.5	0	61
+POINT	service-from-street	37.5	0	58.75
+POINT	service-from-street	37.5	0.018	57.65
+SERVICE	wharf-switch-00	switch	0	13.3	1.25	53.758999	3.141592653589793	WH-00
+SERVICE	wharf-load-cottage-a	light	0	12.0	2.656	47.099998	0	native-string
+SERVICE	wharf-switch-01	switch	1	53.299999	1.25	53.758999	3.141592653589793	WH-01
+SERVICE	wharf-load-cottage-b	light	1	52.0	2.656	47.099998	0	native-string
+SERVICE	wharf-switch-02	switch	2	19.759001	1.25	20.65	-1.5707963267948966	WH-02
+SERVICE	wharf-load-boathouse	light	2	12.0	2.656	18.0	0	native-string
+SERVICE	wharf-switch-03	switch	3	44.241001	1.25	18.48	1.5707963267948966	WH-03
+SERVICE	wharf-load-net	light	3	50.0	2.656	16.5	0	native-string
+SERVICE	wharf-switch-04	switch	4	33.650002	1.25	10.241	0.0	WH-04
+SERVICE	wharf-load-fish	light	4	32.0	2.656	16.5	0	native-string
+SERVICE	wharf-switch-05	switch	5	31.200001	-1.25	35.749001	3.141592653589793	WH-05
+SERVICE	wharf-load-undercroft	light	5	31.4	-0.484	30.9	0	native-string
+SWITCH_FEET	0	13.3	0.0	52.9
+SWITCH_FEET	1	53.3	0.0	52.9
+SWITCH_FEET	2	18.85	0.0	20.65
+SWITCH_FEET	3	45.12	0.0	18.48
+SWITCH_FEET	4	33.65	0.0	11.18
+SWITCH_FEET	5	31.2	-2.5	34.62

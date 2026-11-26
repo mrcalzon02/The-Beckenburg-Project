@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Photographing the actual turned toy cannot score apparition evidence
+	at org.beckenburg.HouseEncounterSessionTest.check(HouseEncounterSessionTest.java:7)
+	at org.beckenburg.HouseEncounterSessionTest.main(HouseEncounterSessionTest.java:32)

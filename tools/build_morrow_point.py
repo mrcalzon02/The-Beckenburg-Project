@@ -1,0 +1,434 @@
+"""Fit Morrow Point's safety rails, oil-house services and native investigation."""
+import json
+import math
+from pathlib import Path
+import sys
+
+import bmesh
+import bpy
+from mathutils import Matrix
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "development/levels/blockouts")]
+from append_static_glb import append
+from build_circulation_construction import native_write
+from build_college_electrical import bounds, point, world
+from build_lookout_native_arrival import table
+from build_mine_case import Case, DOWN
+from build_prison_sally_gate import export
+from build_school_electrical import cupboards
+from build_roster_foundations import material
+from review_roster_macroterrain import records, sha
+from verify_college_electrical import native_records
+from verify_college_services import bvh
+
+BASE = ROOT / "development/levels/rebuild"
+SOURCE = BASE / "coast-entrances-pass/wld-14"
+OUT = BASE / "morrow-point"
+ANCHORS = {
+    "foyer": (0, 28, 0, 48), "sitting": (1, 20, 0, 48), "kitchen": (2, 37, 0, 48),
+    "workroom": (3, 22, 0, 36), "store": (4, 34.5, 0, 36), "stairs": (5, 45, 0, 49),
+    "bed": (6, 22, 3.2, 48), "study": (7, 35, 3.2, 48), "tower0": (8, 34.8, 0, 10),
+    "tower3": (9, 34.8, 10.8, 10), "tower5": (10, 34.8, 18, 10.8),
+    "generator": (11, 53, 0, 40), "porch": (12, 32, 0, 60), "stage": (13, 32, 0, 80),
+}
+CHILDREN = {
+    "entry": 13, "upperhall": 5, "service-stair": 3, "service-upper": 5, "yard": 12,
+    "passage": 4, "tower1": 8, "tower2": 9, "tower4": 9,
+}
+COURTS = (
+    ("kitchen court", 12, (38.1, 54, 54.8, 57.4), 0, 3),
+    ("main stair flight", 5, (44.05, 39.9, 45.95, 48.1), 0, 3.24),
+    ("service stair flight", 3, (13.05, 35.9, 14.95, 44.1), 0, 3.24),
+)
+PASSAGES = (
+    (0, 1, 24, 0, 48, 1.7, "x", "trail"),
+    (1, 3, 21, 0, 42, 1.7, "z", "trail"),
+    (3, 4, 28, 0, 36, 1.7, "x", "trail"),
+    (4, 2, 36, 0, 42, 1.7, "z", "trail"),
+    (2, 0, 32, 0, 48, 1.7, "x", "trail"),
+    (4, 5, 42, 0, 40, 1.7, "x", "trail"),
+    (7, 6, 28, 3.2, 48, 1.7, "x", "trail"),
+    (12, 13, 32, 0, 66, 2.3, "z", "trail"),
+    (8, 9, 34.8, 7.2, 10, 1.5, "z", "stair"),
+    (9, 10, 34.8, 18, 10, 1.5, "z", "stair"),
+)
+SWINGS = (1, -1, 1, 1, -1, 1)
+POCKETS = (("sitting", 18.25, 51.4, -math.pi/2), ("study", 30.5, 50.4, -math.pi/2),
+           ("generator", 56.3, 42.4, math.pi/2))
+
+
+def power(assembly, zone):
+    for asset, kind, x, z, yaw, control_y in (
+        ("level_trace_generator_refined", "generator", 55.3, 35.2, math.pi, .56),
+        ("level_electrical_bank_worn", "breaker", 51.2, 44.35, 0, .89),
+    ):
+        parts = assembly.place(asset, Matrix.Translation(point(x, .06, z)) @ Matrix.Rotation(yaw, 4, "Z"),
+                               "Morrow " + kind, "oil-house electrical equipment", "generator")
+        low, high = bounds(parts)
+        assert abs(low[1] - .06) < .004
+        for px in (low[0], high[0]):
+            for pz in (low[2], high[2]):
+                hit, _, _ = assembly.measured(point(px, .18, pz), point(0, -1, 0), .30, kind + " slab")
+                assert abs(hit.z) < .006
+        assembly.box("Morrow " + kind + " plinth", (low[0]-.04, low[2]-.04, high[0]+.04, high[2]+.04),
+                     0, .06, assembly.concrete, "equipment foundation", "generator")
+        hit, _, _, _ = bvh(parts).ray_cast(point(x, control_y, high[2]+1), point(0, 0, -1), 2)
+        assert hit is not None, kind
+        px, py, pz = world(hit)
+        assembly.effect("morrow-" + kind, kind, zone["owner"], (px, py, pz+.016), 0, "MP-MAIN")
+    assembly.switch(zone, 53, 35.45, 0, -1)
+    assembly.sockets[-1].update(id="morrow-oil-house-switch", style="MP-OIL")
+    assembly.mounted_lamp(zone, "morrow-oil-house-light", point(53.9, 2.42, 35.4),
+                          point(0, 0, -1), 1.5, point(1, 0, 0))
+    assembly.raceway("Morrow oil-house branch", ((55.3, .62, 35.0), (55.3, .62, 34.31),
+        (55.3, 2.66, 34.31), (48.25, 2.66, 34.31), (48.25, 2.66, 44.35), (51.2, 2.66, 44.35), (51.2, 1.8, 44.35)), .016)
+
+
+def keeper_lights(assembly, zones):
+    branches=(
+        ("foyer",(31.1,51.6),(31.1,53.1),(1,0)),
+        ("sitting",(17.1,47.7),(17.1,45.9),(-1,0)),
+        ("kitchen",(40.9,51.9),(40.9,50.1),(1,0)),
+        ("workroom",(17.1,36.7),(17.1,34.9),(-1,0)),
+        ("store",(40.9,35.1),(40.9,36.8),(1,0)),
+        ("stairs",(45.85,52.9),(44.05,52.9),(0,1)),
+        ("bed",(26.9,48.9),(26.9,50.6),(1,0)),
+        ("study",(40.9,49.8),(40.9,51.5),(1,0)),
+    )
+    for room,switch,lamp,(dx,dz) in branches:
+        zone=zones[room]
+        assembly.switch(zone,*switch,dx,dz)
+        assembly.sockets[-1].update(id=f"morrow-{room}-switch",style=f"MP-{room.upper()}")
+        drop=assembly.routes[-1]["points"][-1]
+        assembly.mounted_lamp(zone,f"morrow-{room}-light",point(lamp[0],zone["y"]+2.35,lamp[1]),
+                              point(dx,0,dz),1.7,point(-dz,0,dx))
+        x,y,z=assembly.loads[-1]["mount"]
+        join=(x-.028*dx,drop[1],z-.028*dz)
+        assert abs((drop[0]-join[0])*dx+(drop[2]-join[2])*dz)<.012,room
+        assembly.raceway(f"Morrow {room} branch",(drop,join,(join[0],y+.12,join[2])),.012)
+    upper=zones["upperhall"]
+    assembly.mounted_lamp(upper,"morrow-upper-hall-light",point(44.05,upper["y"]+2.35,52.9),
+                          point(0,0,1),1.7,point(1,0,0))
+
+
+def tower_lights(assembly, zones):
+    # Work on the built cylindrical shell. Its inner and outer faces use
+    # the same winding on the retained source, so check both normal signs.
+    for level in range(5):
+        zone=zones[f"tower{level}"]
+        y=zone["y"]
+        for side in ("east","west"):
+            angle=.065+(math.pi if side=="west" else 0)
+            dx,dz=math.cos(angle),math.sin(angle)
+            direction=point(dx,0,dz)
+            vertical=point(0,1,0)
+            lateral=direction.cross(vertical)
+            radius=3.1
+            x,z=32+radius*dx,10+radius*dz
+            key=f"morrow-tower-{level}-{side}"
+            contact=assembly.contact(point(x,y+2.43,z),direction,1.88)
+            assert contact is not None and abs(contact[1].dot(direction))>.98,key
+            face,_,wall=contact
+            for h in (-.565,.565):
+                for w in (-.110,.110):
+                    corner=assembly.contact(face+vertical*h+lateral*w-direction*.18,direction,.26)
+                    assert corner is not None and abs((corner[0]-face).dot(direction))<.009,key
+            frame=Matrix.Translation(face-direction*.001) @ Matrix((vertical,lateral,direction)).transposed().to_4x4()
+            assembly.fixture(zone,key+"-light",face,wall.name,frame,-direction)
+            feeder=face-direction*.023
+            attachment=None
+            if level in (0,3) and side=="east":
+                hit=assembly.contact(point(x,y+1.25,z),direction,1.88)
+                assert hit is not None and hit[2]==wall,key
+                socket=hit[0]-direction*.002
+                yaw=math.atan2(-dx,-dz)
+                assembly.place("light_switch_1",Matrix.Translation(socket) @ Matrix.Rotation(yaw,4,"Z"),
+                               key+"-switch","supported tower control","tower")
+                assembly.effect(key+"-switch","switch",zone["owner"],world(socket),yaw,f"MP-TOWER-{zone['owner']}")
+                attachment=world(hit[0]-direction*.023+vertical*.054)
+            if attachment is not None:
+                assembly.raceway(key+" switch drop",(attachment,world(feeder)),.014)
+            start=world(feeder+vertical*.55)
+            end=world(feeder+vertical*1.11)
+            assembly.raceway(key+" wall feeder",(start,end),.013)
+
+
+def crown_segment(assembly, name, angles, height, radii, surface, role):
+    lo, hi = height
+    inner, outer = radii
+    a, b = angles
+    corners = [(radius, angle) for radius, angle in ((inner,a),(outer,a),(outer,b),(inner,b))]
+    vertices = [point(32+radius*math.cos(angle), y, 10+radius*math.sin(angle))
+                for y in (lo, hi) for radius, angle in corners]
+    faces = [(3,2,1,0),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
+    mesh = bpy.data.meshes.new(name)
+    mesh.from_pydata(vertices, [], faces)
+    bm = bmesh.new()
+    bm.from_mesh(mesh)
+    bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
+    bm.to_mesh(mesh)
+    bm.free()
+    mesh.materials.append(surface)
+    obj = bpy.data.objects.new(name, mesh)
+    assembly.scene.collection.objects.link(obj)
+    obj["role"] = role
+    obj["zone"] = "tower5"
+    assembly.built.append(obj)
+
+
+def lantern_crown(assembly, stone):
+    iron = material("Morrow painted iron lantern frames", (.11,.16,.16))
+    brass = material("Morrow antique brass optical housing", (.55,.34,.12))
+    optics = material("Morrow amber lens prisms", (.67,.42,.16))
+    glass = material("Morrow light blue weather glazing", (.48,.65,.71))
+    surface = glass.node_tree.nodes.get("Principled BSDF")
+    surface.inputs["Base Color"].default_value = (.48,.65,.71,1)
+    surface.inputs["Alpha"].default_value = .16
+    glass.surface_render_method = "BLENDED"
+    span = math.tau/24
+    thickness = (4.42,4.58)
+    for i in range(24):
+        a, b = (i-.5)*span, (i+.5)*span
+        crown_segment(assembly,f"Morrow lantern masonry sill {i:02}",(a,b),(18,19.02),
+                      thickness,stone,"lantern load-bearing sill")
+        crown_segment(assembly,f"Morrow lantern roof ring {i:02}",(a,b),(21.22,21.60),
+                      thickness,stone,"lantern roof bearing ring")
+        crown_segment(assembly,f"Morrow lantern mullion {i:02}",(a-.013,a+.013),(19.02,21.22),
+                      thickness,iron,"lantern roof support mullion")
+        crown_segment(assembly,f"Morrow lantern pane {i:02}",(a+.012,b-.012),(19.02,21.22),
+                      (4.48,4.51),glass,"lantern safety glazing")
+    x, y, z = 33.35, 18, 12.65
+    control_x, control_z = 31.55, 12.75
+    slab = bvh([obj for obj in assembly.scene.objects if obj.type=="MESH" and "floor tower5" in obj.name.lower()])
+    stands = ((x-.37,z-.36,x+.37,z+.36),
+              (control_x-.075,control_z-.14,control_x+.075,control_z+.14))
+    for x0,z0,x1,z1 in stands:
+        for px in (x0,x1):
+            for pz in (z0,z1):
+                hit,normal,_,_ = slab.ray_cast(point(px,y+.15,pz),point(0,-1,0),.25)
+                assert hit is not None and abs(hit.z-y)<.004 and normal.z>.98, (px,pz)
+    assembly.box("Morrow beacon bolted base",stands[0],y,y+.11,iron,
+                 "founded lantern equipment","tower5")
+    assembly.tube("Morrow beacon pedestal",(x,y+.11,z),(x,19.48,z),.14,iron)
+    assembly.tube("Morrow beacon lens drum",(x,19.78,z+.25),(x,19.78,z-.25),.30,brass)
+    for i,(offset,radius) in enumerate(((0,.30),(.035,.26),(.070,.21),(.105,.15),(.14,.09))):
+        assembly.tube(f"Morrow beacon optical prism {i}",(x,19.78,z-.24-offset),
+                      (x,19.78,z-.28-offset),radius,optics)
+    assembly.box("Morrow beacon control pedestal",stands[1],y,19.33,iron,
+                 "supported lantern control","tower5")
+    plate = (control_x,19.25,control_z+.141)
+    assembly.place("light_switch_1",Matrix.Translation(point(*plate)),
+                   "Morrow lantern switch","supported lantern switch","tower5")
+    assembly.raceway("Morrow lantern feeder",((control_x,19.25,control_z),(control_x,18.035,control_z),
+                        (x-.13,18.035,z),(x-.13,19.48,z)),.019)
+    assembly.effect("morrow-beacon-switch","switch",10,plate,0,"MP-BEACON")
+    assembly.effect("morrow-beacon","light",10,(x,19.78,z-.445),math.pi,"fixed-beacon")
+
+
+def crown_collision(obj):
+    faces = records(obj)
+    if obj.get("role") == "lantern safety glazing":
+        return [(points, 4) for points, _ in faces]  # Body only, optical rays pass through glass.
+    return faces
+
+
+def tower_guards(assembly, contract):
+    # Tread contacts set the baluster feet. The lower outside entrance and
+    # the top exit onto the lantern floor stay clear of the outside rail.
+    names = {name.split(":", 1)[-1] for name in contract["stair_components"]}
+    supports = [o for o in assembly.scene.objects if o.type == "MESH"
+                and o.name in names and any(f"route-{n} " in o.name for n in range(20, 25))]
+    assert supports, "No original tower treads"
+    stair = bvh(supports)
+    for label, radius, start, end in (("inside", 2.20, 0, 139), ("outside", 3.36, 4, 137)):
+        top, middle = [], []
+        for i in range(start, end+1):
+            theta = (i+.5)*math.tau/28
+            x, z = 32+radius*math.cos(theta), 10+radius*math.sin(theta)
+            nominal = 3.6*(i+1)/28
+            hit, normal, _, _ = stair.ray_cast(point(x, nominal+.22, z), point(0, -1, 0), .58)
+            assert hit is not None and normal.z > .98, (label, i, radius)
+            y = hit.z
+            top.append((x, y+1.035, z))
+            middle.append((x, y+.50, z))
+            if (i-start)%4 == 0 or i == end:
+                assembly.tube(f"Morrow tower {label} baluster {i}", (x,y-.022,z), (x,y+1.036,z), .034)
+        assembly.raceway(f"Morrow tower {label} handrail", top, .045)
+        assembly.raceway(f"Morrow tower {label} intermediate rail", middle, .028)
+    return stair
+
+
+def lantern_guard(assembly):
+    rim = bvh([obj for obj in assembly.scene.objects if obj.type == "MESH"
+               and "floor tower5" in obj.name.lower()])
+    radius = 1.12
+    plan = [(32+radius*math.cos(i*math.tau/16), 10+radius*math.sin(i*math.tau/16))
+            for i in range(17)]
+    for i, (x, z) in enumerate(plan[:-1]):
+        hit, normal, _, _ = rim.ray_cast(point(x, 18.20, z), point(0, -1, 0), .25)
+        assert hit is not None and abs(hit.z-18) < .01 and normal.z > .98, i
+        assembly.tube(f"Morrow lantern well baluster {i}", (x,17.98,z), (x,19.04,z), .035)
+    for name, height, thickness in (("handrail",19.04,.044), ("midrail",18.50,.028)):
+        assembly.raceway(f"Morrow lantern well {name}", [(x,height,z) for x,z in plan], thickness)
+
+
+def sampled_tread(stair, i):
+    angle = (i + .5)*math.tau/28
+    x, z = 32 + 2.8*math.cos(angle), 10 + 2.8*math.sin(angle)
+    nominal = 3.6*(i+1)/28
+    hit, normal, _, _ = stair.ray_cast(point(x, nominal+.18, z), point(0, -1, 0), .42)
+    assert hit is not None and normal.z > .98, i
+    return x, hit.z, z
+
+
+def points_at_lantern():
+    return [(34.8, 18, 10.8), (33.2, 18, 10.8)]
+
+
+def fit_keeper_rooms(case):
+    furnishings=[]
+    for asset,label,room,x,z in (
+        ("dinner_table_1","keeper kitchen table","kitchen",35.0,51.0),
+        ("level_camp_bench","keeper kitchen bench","kitchen",35.0,52.06),
+        ("shelf_mp_6","dry stores shelving","store",39.6,31.25),
+    ):
+        _,fit=case.fit(asset,label,room,x,0,z)
+        furnishings.append(dict(room=room,name=label,**fit))
+
+    x,y,z=38.85,3.2,51.65
+    desk,fit=case.fit("level_workbench_worn","signal records desk","study",x,y,z)
+    top,normal,_,_=bvh(desk).ray_cast(point(x,y+1.65,z),DOWN,1.6)
+    assert top is not None and normal.z>.98,"Signal radio needs a measured desk surface"
+    radio,device=case.fit("level_event_radio_worn","lightstation radio","study",x,top.z+.001,z,support=desk)
+    assert len(radio)==1
+    radio[0].name="Morrow lightstation radio"
+    low,high=bounds(radio)
+    hit,_,_,_=bvh(radio).ray_cast(point(x,low[1]+.065,high[2]+.8),point(0,0,-1),1.6)
+    assert hit is not None,"Signal radio needs an accessible casing"
+    rx,ry,rz=world(hit)
+    case.effect(radio[0].name,"native-device",7,(rx,ry,rz+.035),0,"RADIO")
+    furnishings.append(dict(room="study",name="lightstation radio",desk=fit,device=device))
+
+    x,z=39.45,42.81
+    basin=case.place("level_bath_basin",Matrix.Translation(point(x,0,z)),
+                     "Morrow keeper washbasin","floor-bearing keeper washbasin","kitchen")
+    assert len(basin)==1
+    for px in (x-.08,x+.08):
+        for pz in (z-.08,z+.08):
+            at,normal,_,_=case.support_surfaces.ray_cast(point(px,.16,pz),DOWN,.24)
+            assert at is not None and abs(at.z)<.004 and normal.z>.98,(px,pz)
+    face,_,_=case.measured(point(x,.65,z-.28),point(0,0,-1),.51,"Keeper plumbing wall")
+    _,_,back=world(face)
+    copper=material("Morrow oxidized kitchen copper",(.29,.16,.09))
+    iron=material("Morrow cast sink waste",(.17,.175,.17))
+    case.tube("Morrow kitchen water inlet",(x,.13,back+.035),(x,.97,back+.035),.017,copper)
+    case.tube("Morrow kitchen feed union",(x,.97,back+.035),(x,.97,z-.14),.017,copper)
+    case.tube("Morrow kitchen waste union",(x,.25,z-.09),(x,.25,back+.026),.027,iron)
+    name=basin[0].name.removeprefix("College ")
+    case.effect(name,"native-device",2,(x,.86,z),0,"SINK_BATH")
+    furnishings.append(dict(room="kitchen",name=name,wall=back,floor=0,bounds=bounds(basin)))
+    return furnishings
+
+
+def build():
+    OUT.mkdir(parents=True, exist_ok=True)
+    source = {ext: SOURCE / f"coast-entrances.{ext}" for ext in ("blend", "glb", "hcs2")}
+    contract = json.loads((SOURCE / "construction.json").read_bytes())
+    layout_path = SOURCE / "authored-layout.json"
+    for ext, key in (("blend", "blend_sha256"), ("glb", "glb_sha256"), ("hcs2", "physics_sha256")):
+        assert sha(source[ext]) == contract[key]
+    assert sha(layout_path) == contract["layout_sha256"]
+    layout = json.loads(layout_path.read_bytes())
+    ownership = {**CHILDREN, **{k: row[0] for k, row in ANCHORS.items()}}
+    zones = {z["id"]: {**z, "owner": ownership[z["id"]]} for z in layout["zones"]}
+    bpy.ops.wm.open_mainfile(filepath=str(source["blend"]))
+    bpy.context.preferences.filepaths.save_version = 0
+    rough_crown = "Round shell tower5"
+    old_crown = bpy.data.objects[rough_crown]
+    stone = old_crown.data.materials[0]
+    bpy.data.objects.remove(old_crown, do_unlink=True)
+    bpy.context.view_layer.update()
+    assembly = Case()
+    refuges = cupboards(assembly, zones, POCKETS, site="morrow", floor_roles=("floor",))
+    power(assembly, zones["generator"])
+    keeper_lights(assembly,zones)
+    tower_lights(assembly,zones)
+    stair = tower_guards(assembly, contract)
+    lantern_guard(assembly)
+    lantern_crown(assembly, stone)
+    furnishings=fit_keeper_rooms(assembly)
+    for obj in assembly.built:
+        obj.name = obj.name.removeprefix("College ").replace("Mine case ","Morrow ",1)
+    target = {ext: OUT / f"lightstation.{ext}" for ext in source}
+    addition = ROOT / "build/morrow-point-installation.glb"
+    export(addition, assembly.built)
+    append(source["glb"], addition, target["glb"], remove_mesh_names=[rough_crown], reuse_embedded_images=True)
+    native_write(source["hcs2"], target["hcs2"], {rough_crown}, assembly.built,
+                 open_components={p.name for p in assembly.built if p.get("source_asset")}, mesh_records=crown_collision)
+    before = native_records(source["hcs2"])
+    prior = [part for part in before if part[0].split(":",1)[-1] != rough_crown]
+    assert len(before)-len(prior)==1
+    assert native_records(target["hcs2"])[:len(prior)] == prior
+    bpy.ops.file.pack_all()
+    bpy.ops.wm.save_as_mainfile(filepath=str(target["blend"]), compress=True)
+    dock = layout["staging"]
+    rows = [("SOURCE", sha(target["glb"]), sha(target["hcs2"])), ("DOCK", *dock["point"], dock["yaw"])]
+    for key, z in zones.items():
+        floor = z["y"]
+        height = 3.6 if key.startswith("tower") else z["height"]
+        outside = str(z["kind"] in ("staging", "outside")).lower()
+        body = (key, z["owner"], *z["bounds"], floor, height, outside)
+        if key in ANCHORS:
+            rows.append(("ROOM", *body, z["name"], *ANCHORS[key][1:]))
+        else:
+            rows.append(("SPACE", *body))
+    rows.extend(("SPACE", key, owner, *area, datum, headroom, str(owner == 12).lower())
+                for key, owner, area, datum, headroom in COURTS)
+    rows.extend(("TREAD", key) for key in contract["stair_components"])
+    for i, connection in enumerate(PASSAGES, 940):
+        rows.append(("OPEN", i, *connection))
+    for rite in layout["rituals"]:
+        rows.append(("RITUAL", rite["rite"].lower(), ownership[rite["zone"]], *rite["point"]))
+    for socket in assembly.sockets:
+        if socket["type"] != "hide":
+            rows.append(("SERVICE", socket["id"], socket["type"], socket["room"],
+                         *socket["position"], socket["yaw"], socket["style"]))
+    for pocket in refuges:
+        rows.append(("COVER", pocket["id"], pocket["owner"], *pocket["position"], pocket["yaw"]))
+    for route in layout["links"]:
+        key = route["id"]
+        points = route["points"]
+        if key == "route-10":
+            points = [(45, 0, 48.30), points[-1]]
+        elif key == "route-14":
+            points = [points[0], (14, 0, 44.30)]
+        elif key == "route-17":
+            points = [*points[:-1], sampled_tread(stair, 0)]
+        elif int(key.split("-")[-1]) >= 20:
+            start = (int(key.split("-")[-1])-20)*28
+            points = [sampled_tread(stair, i) for i in range(start, start+28)]
+            if key == "route-24":
+                points.extend(points_at_lantern())
+        rows.extend(("POINT", key, *p) for p in points)
+    table(OUT / "runtime-input.tsv", rows)
+    leaf = sha(ROOT / "assets/runtime/models/door_1_loose.glb")
+    doors = []
+    for i, door in enumerate(layout["authored_doorways"]):
+        a, b = door["rooms"]
+        if door["id"] == "kitchen service door":
+            b = "kitchen court"
+        x, z = (door["along"], door["boundary"]) if door["axis"] == "z" else (door["boundary"], door["along"])
+        width = door["clear_width"]
+        doors.append((1200+i, door["id"], a, b, ownership[a], 12 if b == "kitchen court" else ownership[b], x, door["sill_y"], z,
+            width, door["axis"], door["boundary"]-.12, door["boundary"]+.12, door["clear_height"],
+            2 if width >= 1.7 else 1, 1, SWINGS[i], leaf))
+    table(OUT / "door-schedule.tsv", doors)
+    (OUT / "construction.json").write_text(json.dumps(dict(
+        source=layout_path.relative_to(ROOT).as_posix(), exports={k: sha(p) for k,p in target.items()},
+        retained_components=len(prior), replaced_component=rough_crown, refuges=refuges, services=assembly.sockets, keeper_furnishings=furnishings), indent=2)+"\n",
+        encoding="utf-8", newline="\n")
+
+
+if __name__ == "__main__":
+    build()

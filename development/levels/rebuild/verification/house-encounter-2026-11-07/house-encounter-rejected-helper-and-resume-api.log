@@ -1,0 +1,33 @@
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:12: error: cannot find symbol
+    private static Object field(Object object,String name)throws Exception{return LanSafeAreaBarrierTest.field(object,name);}
+                                                                                  ^
+  symbol:   variable LanSafeAreaBarrierTest
+  location: class HouseEncounterNetworkTest
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:23: error: cannot find symbol
+        synchronized(field(host,"mutex")){AuthoredTestSupport.place(map,(LanWorld)field(host,"world"),seat,new Vec(observer.x(),observer.y(),observer.z()));}
+                                          ^
+  symbol:   variable AuthoredTestSupport
+  location: class HouseEncounterNetworkTest
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:38: error: package AuthoredLevelNetworkTest does not exist
+            try(var a=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Cleric");var b=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Observer");
+                                                  ^
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:38: error: package AuthoredLevelNetworkTest does not exist
+            try(var a=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Cleric");var b=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Observer");
+                                                                                                                      ^
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:39: error: package AuthoredLevelNetworkTest does not exist
+                var c=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Scholar");var ghost=new AuthoredLevelNetworkTest.Peer(host.port(),true,"Spirit")){
+                                                  ^
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:39: error: package AuthoredLevelNetworkTest does not exist
+                var c=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Scholar");var ghost=new AuthoredLevelNetworkTest.Peer(host.port(),true,"Spirit")){
+                                                                                                                           ^
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:55: error: cannot find symbol
+                        resumed.confirmResumeTicket();await(inbox,"ACCEPT|RESUMEACK");resumed.view3D();await(inbox,"ACCEPT|VIEW3D");ticks(host,HouseEncounter.EMPTY_TICKS+2);
+                               ^
+  symbol:   method confirmResumeTicket()
+  location: variable resumed of type LanClient
+src\test\java\org\beckenburg\HouseEncounterNetworkTest.java:71: error: cannot find symbol
+                    resumed.confirmResumeTicket();await(inbox,"ACCEPT|RESUMEACK");resumed.view3D();await(inbox,"ACCEPT|VIEW3D");
+                           ^
+  symbol:   method confirmResumeTicket()
+  location: variable resumed of type LanClient
+8 errors

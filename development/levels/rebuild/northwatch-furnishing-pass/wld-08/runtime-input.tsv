@@ -1,0 +1,311 @@
+SPACE	stage	13	24	70	40	82	0	3	true	Prepared station van apron	35	0	74
+SPACE	entry	12	24	56	40	70	0	3	true	Flagged arrival lane	32.0	0	63.0
+SPACE	court	11	20	26	44	56	0	3	true	Station service court	32.0	0	41.0
+SPACE	lab	0	2	26	20	44	0	3	false	Observation laboratory	10	0	35
+SPACE	dorm	1	44	26	62	44	0	3	false	Dormitory	54	0	35
+SPACE	mess	2	44	44	62	56	0	3	false	Mess / galley	53	0	50
+SPACE	radio	3	20	12	32	26	0	3	false	Radio room	26.0	0	19.0
+SPACE	records	4	32	12	44	26	0	3	false	Log archive	38.0	0	19.0
+SPACE	generator	5	2	8	20	26	0	3	false	Generator / water shed	11	0	16
+SPACE	array	10	44	0	62	20	0	3	true	Exterior instrument array	53.0	0	10.0
+SPACE	store	6	2	44	20	56	0	3	false	Cold stores	11.0	0	50.0
+SPACE	tunnel	7	20	26	44	36	-2.5	2.5	false	Heated service tunnel	32	-2.5	31
+SPACE	tunnel-n	8	2	18	20	26	-2.5	2.5	false	Generator tunnel branch	11	-2.5	23.4
+SPACE	shelter	9	62	8	70	20	0	3	false	Array wind shelter	66.0	0.0	14.0
+SPACE	tunnel-elbow	7	20	21	24	26	-2.5	2.2	false	Enclosed service tunnel elbow	22	-2.5	24
+SPACE	station-exterior	12	-54	-41	114	135	-1.0	9.0	true	Station exterior	32.0	0	63.0
+TREAD	WLD-08 L17 constant tread 0 region0
+TREAD	WLD-08 L17 constant tread 1 region0
+TREAD	WLD-08 L17 constant tread 2 region0
+TREAD	WLD-08 L17 constant tread 3 region0
+TREAD	WLD-08 L17 constant tread 4 region0
+TREAD	WLD-08 L17 constant tread 5 region0
+TREAD	WLD-08 L17 constant tread 6 region0
+TREAD	WLD-08 L17 constant tread 7 region0
+TREAD	WLD-08 L17 constant tread 8 region0
+TREAD	WLD-08 L17 constant tread 9 region0
+TREAD	WLD-08 L17 constant tread 10 region0
+TREAD	WLD-08 L17 constant tread 11 region0
+TREAD	WLD-08 L17 constant tread 12 region0
+TREAD	WLD-08 L17 constant tread 13 region0
+TREAD	WLD-08 L18 constant tread 0 region0
+TREAD	WLD-08 L18 constant tread 1 region0
+TREAD	WLD-08 L18 constant tread 2 region0
+TREAD	WLD-08 L18 constant tread 3 region0
+TREAD	WLD-08 L18 constant tread 4 region0
+TREAD	WLD-08 L18 constant tread 5 region0
+TREAD	WLD-08 L18 constant tread 6 region0
+TREAD	WLD-08 L18 constant tread 7 region0
+TREAD	WLD-08 L18 constant tread 8 region0
+TREAD	WLD-08 L18 constant tread 9 region0
+TREAD	WLD-08 L18 constant tread 10 region0
+TREAD	WLD-08 L18 constant tread 11 region0
+TREAD	WLD-08 L18 constant tread 12 region0
+TREAD	WLD-08 L18 constant tread 13 region0
+TREAD	WLD-08 L20 constant tread 0 region0
+TREAD	WLD-08 L20 constant tread 1 region0
+TREAD	WLD-08 L20 constant tread 2 region0
+TREAD	WLD-08 L20 constant tread 3 region0
+TREAD	WLD-08 L20 constant tread 4 region0
+TREAD	WLD-08 L20 constant tread 5 region0
+TREAD	WLD-08 L20 constant tread 6 region0
+TREAD	WLD-08 L20 constant tread 7 region0
+TREAD	WLD-08 L20 constant tread 8 region0
+TREAD	WLD-08 L20 constant tread 9 region0
+TREAD	WLD-08 L20 constant tread 10 region0
+TREAD	WLD-08 L20 constant tread 11 region0
+TREAD	WLD-08 L20 constant tread 12 region0
+TREAD	WLD-08 L20 constant tread 13 region0
+RITUAL	banishment	0	11.0	0	35.0
+RITUAL	cleansing	2	53.0	0	50.0
+RITUAL	absolution	3	26.0	0	19.0
+RIM_CONTROL	32	0	89
+RIM_CONTROL	32	0	92
+RIM_CONTROL	53	0	-3
+RIM_CONTROL	53	0	-6
+RIM_CONTROL	-5	0	53
+RIM_CONTROL	-8	0	53
+ARRIVAL	32.0	0	72.372
+ARRIVAL	32.0	0	63.0
+POINT	L01	32.0	0	72.372
+POINT	L01	32.0	0	70.0
+POINT	L01	32.0	0	63.0
+POINT	L02	32.0	0	63.0
+POINT	L02	32.0	0	56.0
+POINT	L02	32.0	0	41.0
+POINT	L03	32	0	41
+POINT	L03	20	0	41
+POINT	L03	9	0	41
+POINT	L03	9	0	35
+POINT	L03	10	0	35
+POINT	L04	10	0	35
+POINT	L04	11.0	0	44.0
+POINT	L04	11.0	0	50.0
+POINT	L05	11	0	50
+POINT	L05	11	0	56
+POINT	L05	11	0	61
+POINT	L05	32	0	61
+POINT	L05	32	0	63
+POINT	L06	32	0	41
+POINT	L06	44	0	41
+POINT	L06	55	0	41
+POINT	L06	55	0	35
+POINT	L06	54	0	35
+POINT	L07	54	0	35
+POINT	L07	53	0	42.7
+POINT	L07	53	0	44
+POINT	L07	53	0	50
+POINT	L08	53	0	50
+POINT	L08	53	0	56
+POINT	L08	53	0	61
+POINT	L08	32	0	61
+POINT	L08	32	0	63
+POINT	L09	32.0	0	41.0
+POINT	L09	26.0	0	41.0
+POINT	L09	26.0	0	26.0
+POINT	L09	26.0	0	19.0
+POINT	L10	26.0	0	19.0
+POINT	L10	32.0	0	19.0
+POINT	L10	38.0	0	19.0
+POINT	L11	38.0	0	19.0
+POINT	L11	38.0	0	26.0
+POINT	L11	38.0	0	41.0
+POINT	L11	32.0	0	41.0
+POINT	L12	26	0	19
+POINT	L12	20	0	19
+POINT	L12	13.35	0	19
+POINT	L12	13.35	0	16.05
+POINT	L12	11	0	16
+POINT	L13	11	0	16
+POINT	L13	7	0	16
+POINT	L13	7	0	26
+POINT	L13	7	0	35
+POINT	L13	10	0	35
+POINT	L14	38.0	0	19.0
+POINT	L14	38.0	0	16.0
+POINT	L14	44.0	0	16.0
+POINT	L14	53.0	0	16.0
+POINT	L14	53.0	0	10.0
+POINT	L15	53	0	10
+POINT	L15	53	0	28
+POINT	L15	54	0	28
+POINT	L15	54	0	35
+POINT	L16	53	0	10
+POINT	L16	53.0	0.0	13.5
+POINT	L16	53.5	0.0	14.0
+POINT	L16	66.0	0.0	14.0
+POINT	L17	10	0	35
+POINT	L17	11	0	35
+POINT	L17	22	-2.5	35
+POINT	L17	23.5	-2.5	35
+POINT	L17	23.5	-2.5	31
+POINT	L17	32	-2.5	31
+POINT	L18	32	-2.5	31
+POINT	L18	40.5	-2.5	31
+POINT	L18	40.5	-2.5	35
+POINT	L18	42	-2.5	35
+POINT	L18	53	0	35
+POINT	L18	54	0	35
+POINT	L19	32	-2.5	31
+POINT	L19	22	-2.5	31
+POINT	L19	22	-2.5	23
+POINT	L19	11	-2.5	23
+POINT	L19	11	-2.5	22
+POINT	L20	11	-2.5	22
+POINT	L20	11	0	17
+POINT	L20	11	0	16
+POINT	J01	32.0	0	72.372
+POINT	J01	32.0	0	70.0
+POINT	J01	32.0	0	63.0
+POINT	J01	32.0	0	56.0
+POINT	J01	32.0	0	41.0
+POINT	J01	26.0	0	41.0
+POINT	J01	26.0	0	26.0
+POINT	J01	26.0	0	19.0
+POINT	J01	20	0	19
+POINT	J01	13.35	0	19
+POINT	J01	13.35	0	16.05
+POINT	J01	11	0	16
+POINT	J01	11	0	17
+POINT	J01	11	-2.5	22
+POINT	J01	11	-2.5	23
+POINT	J01	22	-2.5	23
+POINT	J01	22	-2.5	31
+POINT	J01	32	-2.5	31
+POINT	J01	23.5	-2.5	31
+POINT	J01	23.5	-2.5	35
+POINT	J01	22	-2.5	35
+POINT	J01	11	0	35
+POINT	J01	10	0	35
+POINT	J02	26.0	0	19.0
+POINT	J02	32.0	0	19.0
+POINT	J02	38.0	0	19.0
+POINT	J02	38.0	0	16.0
+POINT	J02	44.0	0	16.0
+POINT	J02	53.0	0	16.0
+POINT	J02	53.0	0	10.0
+POINT	J02	53.0	0.0	13.5
+POINT	J02	53.5	0.0	14.0
+POINT	J02	66.0	0.0	14.0
+POINT	J03	32	0	41
+POINT	J03	44	0	41
+POINT	J03	55	0	41
+POINT	J03	55	0	35
+POINT	J03	54	0	35
+POINT	J03	53	0	42.7
+POINT	J03	53	0	44
+POINT	J03	53	0	50
+POINT	J03	53	0	56
+POINT	J03	53	0	61
+POINT	J03	32	0	61
+POINT	J03	32	0	63
+POINT	J03	32.0	0	56.0
+POINT	J03	32.0	0	41.0
+SPACE	array-yard	10	44	20	62	26	0	3	true	Array service apron	53	0	24
+SPACE	lab-flight	0	11	34.15	22.05	35.85	-2.28	2.22	false	Laboratory stair bay	11	0	35
+SPACE	dorm-flight	1	41.95	34.15	53	35.85	-2.28	2.22	false	Dormitory stair bay	53	0	35
+SPACE	generator-flight	5	9.83	17	12.17	22.12	-2.28	2.22	false	Generator stair bay	11	0	17
+OPEN	900	12	13	32	0	70	z	3.5	trail
+OPEN	901	11	12	32	0	56	z	3.5	trail
+OPEN	902	0	7	22.13	-2.5	35	x	1.5	stair
+OPEN	903	7	1	41.87	-2.5	35	x	1.5	stair
+OPEN	904	5	8	11	-2.5	22.21	z	1.5	stair
+COVER	northwatch-lab-cupboard	0	3.45	0.0	40.7	-1.5707963267948966
+COVER	northwatch-dorm-cupboard	1	60.55	0.0	30.9	1.5707963267948966
+COVER	northwatch-shelter-cupboard	9	68.55	0.0	16.1	1.5707963267948966
+SERVICE	northwatch-generator	generator	5	9.085	0.457	9.450999999999999	0	NW-MAIN
+SERVICE	northwatch-breaker	breaker	5	5.55	0.882	8.774999999999999	0	NW-MAIN
+SERVICE	northwatch-switch-05	switch	5	11.9	1.25	8.241	0.0	NW-05
+SERVICE	northwatch-shed-task-light	light	5	7.65	2.656	10.6	0	native-string
+POINT	Northwatch-shed-controls	11	0	16
+POINT	Northwatch-shed-controls	11	0	13
+POINT	Northwatch-shed-controls	9.085	0	11.03
+POINT	Northwatch-shed-controls	5.55	0	11.03
+SERVICE	northwatch-switch-00	switch	0	8.8	1.25	26.240999	0.0	NW-00
+SERVICE	northwatch-lab-task-light	light	0	12.0	2.656	33.400002	0	native-string
+SERVICE	northwatch-switch-03	switch	3	20.240999	1.25	17.200001	1.5707963267948966	NW-03
+SERVICE	northwatch-radio-task-light	light	3	26.0	2.656	16.0	0	native-string
+SERVICE	northwatch-switch-04	switch	4	32.241001	1.25	17.200001	1.5707963267948966	NW-04
+SERVICE	northwatch-records-task-light	light	4	38.0	2.656	16.0	0	native-string
+POINT	Northwatch-switch-lab	7	0	27.28
+POINT	Northwatch-switch-lab	7	0	29.25
+POINT	Northwatch-switch-lab	8.8	0	29.25
+POINT	Northwatch-switch-lab	8.8	0	27.44
+POINT	Northwatch-switch-radio	21.1	0	19
+POINT	Northwatch-switch-radio	21.44	0	18.4
+POINT	Northwatch-switch-radio	21.44	0	17.2
+POINT	Northwatch-switch-records	33.1	0	19
+POINT	Northwatch-switch-records	33.44	0	18.4
+POINT	Northwatch-switch-records	33.44	0	17.2
+SERVICE	northwatch-switch-06	switch	6	13.05	1.25	44.241001	0.0	NW-06
+SERVICE	northwatch-store-task-light	light	6	10.5	2.656	50.200001	0	native-string
+SERVICE	northwatch-switch-01	switch	1	44.241001	1.25	38.900002	1.5707963267948966	NW-01
+SERVICE	northwatch-dorm-task-light	light	1	53.0	2.656	32.0	0	native-string
+SERVICE	northwatch-switch-02	switch	2	54.849998	1.25	44.241001	0.0	NW-02
+SERVICE	northwatch-mess-task-light	light	2	53.0	2.656	50.0	0	native-string
+SERVICE	northwatch-switch-09	switch	9	62.241001	1.25	12.44	1.5707963267948966	NW-09
+SERVICE	northwatch-shelter-task-light	light	9	66.0	2.656	16.200001	0	native-string
+POINT	Northwatch-switch-store	11	0	45.32
+POINT	Northwatch-switch-store	11	0	47
+POINT	Northwatch-switch-store	13.05	0	47
+POINT	Northwatch-switch-store	13.05	0	45.44
+POINT	Northwatch-switch-dorm	45.31	0	41
+POINT	Northwatch-switch-dorm	46.7	0	41
+POINT	Northwatch-switch-dorm	46.7	0	38.9
+POINT	Northwatch-switch-dorm	45.44	0	38.9
+POINT	Northwatch-switch-mess	53	0	45.31
+POINT	Northwatch-switch-mess	53	0	47
+POINT	Northwatch-switch-mess	54.85	0	47
+POINT	Northwatch-switch-mess	54.85	0	45.44
+POINT	Northwatch-switch-shelter	63.31	0	14
+POINT	Northwatch-switch-shelter	64.6	0	14
+POINT	Northwatch-switch-shelter	64.6	0	12.44
+POINT	Northwatch-switch-shelter	63.44	0	12.44
+SERVICE	northwatch-switch-07	switch	7	25.0	-1.25	26.240999	0.0	NW-07
+SERVICE	northwatch-switch-08	switch	8	13.55	-1.25	18.240999	0.0	NW-08
+SERVICE	northwatch-switch-10	switch	10	44.000999	1.25	12.76	1.5707963267948966	NW-10
+SERVICE	northwatch-switch-11	switch	11	24.6	1.25	26.000999	0.0	NW-11
+SERVICE	northwatch-array-service-light-01	light	10	44.183998	2.47	13.0	0	native-string
+SERVICE	northwatch-array-service-light-02	light	10	61.816002	2.47	10.55	0	native-string
+SERVICE	northwatch-court-service-light-03	light	11	23.4	2.47	26.184	0	native-string
+SERVICE	northwatch-court-service-light-04	light	11	34.700001	2.47	26.184	0	native-string
+SERVICE	northwatch-tunnel-service-light-05	light	7	25.0	-0.484	29.4	0	native-string
+SERVICE	northwatch-tunnel-service-light-06	light	7	32.0	-0.484	31.200001	0	native-string
+SERVICE	northwatch-tunnel-service-light-07	light	7	38.5	-0.484	31.200001	0	native-string
+SERVICE	northwatch-tunnel-service-light-08	light	7	22.0	-0.484	24.799999	0	native-string
+SERVICE	northwatch-tunnel-n-service-light-09	light	8	5.0	-0.484	23.6	0	native-string
+SERVICE	northwatch-tunnel-n-service-light-10	light	8	16.5	-0.484	23.0	0	native-string
+POINT	Northwatch-switch-tunnel	22	-2.5	27.35
+POINT	Northwatch-switch-tunnel	22	-2.5	29
+POINT	Northwatch-switch-tunnel	25	-2.5	29
+POINT	Northwatch-switch-tunnel	25	-2.5	27.44
+POINT	Northwatch-switch-tunnel-n	11	-2.5	23.4
+POINT	Northwatch-switch-tunnel-n	13.55	-2.5	23.4
+POINT	Northwatch-switch-tunnel-n	13.55	-2.5	19.44
+POINT	Northwatch-switch-array	45.08	0	16
+POINT	Northwatch-switch-array	46.2	0	16
+POINT	Northwatch-switch-array	46.2	0	12.76
+POINT	Northwatch-switch-array	45.25	0	12.76
+POINT	Northwatch-switch-court	26	0	26.85
+POINT	Northwatch-switch-court	26	0	28.4
+POINT	Northwatch-switch-court	24.6	0	28.4
+POINT	Northwatch-switch-court	24.6	0	27.25
+SERVICE	shed-wash-basin	water-basin	5	3.47	0.86	8.49	0	gravity-cistern
+SERVICE	lab-wash-basin	water-basin	0	2.49	0.86	31.65	-1.5707963267948966	gravity-cistern
+POINT	Northwatch-switch-shed-wash-basin	7	0	16
+POINT	Northwatch-switch-shed-wash-basin	5.6	0	15
+POINT	Northwatch-switch-shed-wash-basin	5.6	0	10.1
+POINT	Northwatch-switch-shed-wash-basin	3.47	0	9.68
+POINT	Northwatch-switch-lab-wash-basin	7	0	29.25
+POINT	Northwatch-switch-lab-wash-basin	7	0	31.65
+POINT	Northwatch-switch-lab-wash-basin	3.68	0	31.65
+POINT	Northwatch-switch-winter-relay-log	38	0	19
+POINT	Northwatch-switch-winter-relay-log	38	0	16.1
+POINT	Northwatch-switch-winter-relay-log	35.86	0	16.1
+POINT	Northwatch-switch-fuel-and-heat-worksheet	11	0	16
+POINT	Northwatch-switch-fuel-and-heat-worksheet	7	0	16
+POINT	Northwatch-switch-fuel-and-heat-worksheet	5.1	0	16
+POINT	Northwatch-switch-fuel-and-heat-worksheet	5.1	0	20.18
+SERVICE	Northwatch distribution Northwatch station relay radio	native-device	3	27.65	1.011	14.103138	0	RADIO
+STORY	northwatch-winter-relay-log	WINTER_RELAY_LOG	4	level_trace_journal	35.86000061035156	0.7409999966621399	14.819999694824219	0	0.62	35.86	0	16.1	35.877998	0.76394	14.832
+STORY	northwatch-fuel-and-heat-worksheet	FUEL_AND_HEAT_WORKSHEET	5	level_story_letters	3.546229124069214	0.9231899976730347	20.18015480041504	0	0.62	5.1	0	20.18	3.568	0.9421	20.191999

@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.IllegalArgumentException: House attachment conflict: prop-0: level_kitchen_counter has authored controls, services or supported objects; standalone edit refused
+	at org.beckenburg.HouseAuthoringAttachments.change(HouseAuthoringAttachments.java:23)
+	at org.beckenburg.LevelAuthoringSession.remove(LevelAuthoringSession.java:88)
+	at org.beckenburg.LevelAuthoringIdentityTest.main(LevelAuthoringIdentityTest.java:68)

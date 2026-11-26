@@ -1,0 +1,1728 @@
+{
+  "id": "MANSION",
+  "status": "INTERIOR_LANDINGS_AND_DOOR_APPROACHES_NATIVE_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+  "source_contract_sha256": "b1f894cd7435fc3fa7c4146815bcd3897c4dfdbc0a194197bd0a48aafbe3368f",
+  "source_glb": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.glb",
+  "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d",
+  "source_physics": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.hcs2",
+  "source_physics_sha256": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46",
+  "before_layout": "development/levels/rebuild/estate-parish-pass/mansion/authored-layout.json",
+  "before_layout_sha256": "efacc9cb27837f27ff9316c1b10b28f0ca381ae3dfef7492778b1b656901cbf8",
+  "layout": "development/levels/rebuild/interior-stair-landing-pass/mansion/authored-layout.json",
+  "layout_sha256": "941b29b1bfeabb850ad28bd96eb61d6f45fc618289c13542773239f01630b2e6",
+  "before_segment_map": {
+    "L60": {
+      "3": 0
+    },
+    "L58": {
+      "3": 0
+    },
+    "L59": {
+      "3": 0
+    },
+    "L61": {
+      "3": 0
+    }
+  },
+  "source_segment_map": {
+    "L60": {
+      "3": 0
+    },
+    "L58": {
+      "4": 0
+    },
+    "L59": {
+      "3": 0
+    },
+    "L61": {
+      "3": 0
+    }
+  },
+  "before_stair_components": [
+    "MANSION bay L58 tread 1",
+    "MANSION bay L58 tread 2",
+    "MANSION bay L58 tread 3",
+    "MANSION bay L58 tread 4",
+    "MANSION bay L58 tread 5",
+    "MANSION bay L58 tread 6",
+    "MANSION bay L58 tread 7",
+    "MANSION bay L58 tread 8",
+    "MANSION bay L58 tread 9",
+    "MANSION bay L58 tread 10",
+    "MANSION bay L58 tread 11",
+    "MANSION bay L58 tread 12",
+    "MANSION bay L58 tread 13",
+    "MANSION bay L58 tread 14",
+    "MANSION bay L58 tread 15",
+    "MANSION bay L58 tread 16",
+    "MANSION bay L58 tread 17",
+    "MANSION bay L58 tread 18",
+    "MANSION bay L58 tread 19",
+    "MANSION bay L58 tread 20",
+    "MANSION bay L59 tread 1",
+    "MANSION bay L59 tread 2",
+    "MANSION bay L59 tread 3",
+    "MANSION bay L59 tread 4",
+    "MANSION bay L59 tread 5",
+    "MANSION bay L59 tread 6",
+    "MANSION bay L59 tread 7",
+    "MANSION bay L59 tread 8",
+    "MANSION bay L59 tread 9",
+    "MANSION bay L59 tread 10",
+    "MANSION bay L59 tread 11",
+    "MANSION bay L59 tread 12",
+    "MANSION bay L59 tread 13",
+    "MANSION bay L59 tread 14",
+    "MANSION bay L59 tread 15",
+    "MANSION bay L59 tread 16",
+    "MANSION bay L59 tread 17",
+    "MANSION bay L60 tread 1",
+    "MANSION bay L60 tread 2",
+    "MANSION bay L60 tread 3",
+    "MANSION bay L60 tread 4",
+    "MANSION bay L60 tread 5",
+    "MANSION bay L60 tread 6",
+    "MANSION bay L60 tread 7",
+    "MANSION bay L60 tread 8",
+    "MANSION bay L60 tread 9",
+    "MANSION bay L60 tread 10",
+    "MANSION bay L60 tread 11",
+    "MANSION bay L60 tread 12",
+    "MANSION bay L60 tread 13",
+    "MANSION bay L60 tread 14",
+    "MANSION bay L60 tread 15",
+    "MANSION bay L60 tread 16",
+    "MANSION bay L60 tread 17",
+    "MANSION bay L60 tread 18",
+    "MANSION bay L60 tread 19",
+    "MANSION bay L60 tread 20",
+    "MANSION bay L61 tread 1",
+    "MANSION bay L61 tread 2",
+    "MANSION bay L61 tread 3",
+    "MANSION bay L61 tread 4",
+    "MANSION bay L61 tread 5",
+    "MANSION bay L61 tread 6",
+    "MANSION bay L61 tread 7",
+    "MANSION bay L61 tread 8",
+    "MANSION bay L61 tread 9",
+    "MANSION bay L61 tread 10",
+    "MANSION bay L61 tread 11",
+    "MANSION bay L61 tread 12",
+    "MANSION bay L61 tread 13",
+    "MANSION bay L61 tread 14",
+    "MANSION bay L61 tread 15",
+    "MANSION bay L61 tread 16",
+    "MANSION bay L61 tread 17",
+    "MANSION bay L61 tread 18",
+    "MANSION bay L61 tread 19",
+    "MANSION bay L61 tread 20"
+  ],
+  "stair_components": [
+    "MANSION bay L58 tread 1",
+    "MANSION bay L58 tread 2",
+    "MANSION bay L58 tread 3",
+    "MANSION bay L58 tread 4",
+    "MANSION bay L58 tread 5",
+    "MANSION bay L58 tread 6",
+    "MANSION bay L58 tread 7",
+    "MANSION bay L58 tread 8",
+    "MANSION bay L58 tread 9",
+    "MANSION bay L58 tread 10",
+    "MANSION bay L58 tread 11",
+    "MANSION bay L58 tread 12",
+    "MANSION bay L58 tread 13",
+    "MANSION bay L58 tread 14",
+    "MANSION bay L58 tread 15",
+    "MANSION bay L58 tread 16",
+    "MANSION bay L58 tread 17",
+    "MANSION bay L58 tread 18",
+    "MANSION bay L58 tread 19",
+    "MANSION bay L58 tread 20",
+    "MANSION bay L59 tread 1",
+    "MANSION bay L59 tread 2",
+    "MANSION bay L59 tread 3",
+    "MANSION bay L59 tread 4",
+    "MANSION bay L59 tread 5",
+    "MANSION bay L59 tread 6",
+    "MANSION bay L59 tread 7",
+    "MANSION bay L59 tread 8",
+    "MANSION bay L59 tread 9",
+    "MANSION bay L59 tread 10",
+    "MANSION bay L59 tread 11",
+    "MANSION bay L59 tread 12",
+    "MANSION bay L59 tread 13",
+    "MANSION bay L59 tread 14",
+    "MANSION bay L59 tread 15",
+    "MANSION bay L59 tread 16",
+    "MANSION bay L59 tread 17",
+    "MANSION bay L60 tread 1",
+    "MANSION bay L60 tread 2",
+    "MANSION bay L60 tread 3",
+    "MANSION bay L60 tread 4",
+    "MANSION bay L60 tread 5",
+    "MANSION bay L60 tread 6",
+    "MANSION bay L60 tread 7",
+    "MANSION bay L60 tread 8",
+    "MANSION bay L60 tread 9",
+    "MANSION bay L60 tread 10",
+    "MANSION bay L60 tread 11",
+    "MANSION bay L60 tread 12",
+    "MANSION bay L60 tread 13",
+    "MANSION bay L60 tread 14",
+    "MANSION bay L60 tread 15",
+    "MANSION bay L60 tread 16",
+    "MANSION bay L60 tread 17",
+    "MANSION bay L60 tread 18",
+    "MANSION bay L60 tread 19",
+    "MANSION bay L60 tread 20",
+    "MANSION bay L61 tread 1",
+    "MANSION bay L61 tread 2",
+    "MANSION bay L61 tread 3",
+    "MANSION bay L61 tread 4",
+    "MANSION bay L61 tread 5",
+    "MANSION bay L61 tread 6",
+    "MANSION bay L61 tread 7",
+    "MANSION bay L61 tread 8",
+    "MANSION bay L61 tread 9",
+    "MANSION bay L61 tread 10",
+    "MANSION bay L61 tread 11",
+    "MANSION bay L61 tread 12",
+    "MANSION bay L61 tread 13",
+    "MANSION bay L61 tread 14",
+    "MANSION bay L61 tread 15",
+    "MANSION bay L61 tread 16",
+    "MANSION bay L61 tread 17",
+    "MANSION bay L61 tread 18",
+    "MANSION bay L61 tread 19",
+    "MANSION bay L61 tread 20"
+  ],
+  "glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093",
+  "physics_sha256": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      28.0,
+      0,
+      71.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        27.4,
+        71.85
+      ],
+      [
+        27.4,
+        71.5
+      ],
+      [
+        28.6,
+        71.5
+      ],
+      [
+        28.6,
+        71.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          27.4,
+          71.85
+        ],
+        [
+          27.4,
+          71.5
+        ],
+        [
+          28.6,
+          71.5
+        ],
+        [
+          28.6,
+          71.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing MANSION 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 42,
+  "new_triangles": 12,
+  "removed_source_meshes": [
+    "MANSION bay indexed door 2",
+    "MANSION bay indexed door 4",
+    "MANSION bay indexed door 5",
+    "MANSION bay indexed door 6",
+    "MANSION bay wall ('z', 14, 40, 46, -3, 0) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, -3, 0) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, -3, 0) pier0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) pier0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) pier0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) pier0 region0"
+  ],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "1c3eb838591f61c6732fd45cf11a677f467c81ffecb6a58d2db24b4b9e5a0ae3",
+  "access_route_changes": [
+    {
+      "site": "MANSION",
+      "link": "L23",
+      "before": [
+        [
+          41.5,
+          0,
+          22.0
+        ],
+        [
+          41.5,
+          0,
+          14
+        ],
+        [
+          41.5,
+          0,
+          8.0
+        ],
+        [
+          43.0,
+          0,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          41.5,
+          0.0,
+          22.0
+        ],
+        [
+          41.5,
+          0.0,
+          14.0
+        ],
+        [
+          42.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          8.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        0,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L36",
+      "before": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          24.0,
+          3.6,
+          28.5
+        ],
+        [
+          20,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "after": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          21.5,
+          3.6,
+          29.5
+        ],
+        [
+          21.5,
+          3.6,
+          28.5
+        ],
+        [
+          20.0,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        20,
+        3.6,
+        28.5
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L50",
+      "before": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14
+        ],
+        [
+          41.5,
+          3.6,
+          8.0
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14.0
+        ],
+        [
+          41.5,
+          3.6,
+          12.0
+        ],
+        [
+          43.0,
+          3.6,
+          11.5
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        3.6,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L51",
+      "before": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          14
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "after": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          43.0,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          14.0
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        7.2,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L06",
+      "rooms": [
+        "hall",
+        "grand-stair"
+      ],
+      "before": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          24,
+          0,
+          36
+        ],
+        [
+          24.0,
+          0,
+          30.0
+        ]
+      ],
+      "after": [
+        [
+          24.0,
+          0.0,
+          40.0
+        ],
+        [
+          24.0,
+          0.0,
+          36.0
+        ],
+        [
+          23.5,
+          0.0,
+          32.5
+        ],
+        [
+          22.5,
+          0.0,
+          32.5
+        ],
+        [
+          22.5,
+          0.0,
+          30.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        24,
+        0,
+        36
+      ],
+      "source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.blend",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd"
+      }
+    },
+    {
+      "site": "MANSION",
+      "link": "L08",
+      "rooms": [
+        "grand-stair",
+        "library"
+      ],
+      "before": [
+        [
+          24.0,
+          0,
+          30.0
+        ],
+        [
+          20,
+          0,
+          30
+        ],
+        [
+          14.0,
+          0,
+          30.0
+        ]
+      ],
+      "after": [
+        [
+          22.5,
+          0.0,
+          30.0
+        ],
+        [
+          20.0,
+          0.0,
+          30.0
+        ],
+        [
+          14.0,
+          0.0,
+          30.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        20,
+        0,
+        30
+      ],
+      "source": {
+        "id": "MANSION",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/mansion/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.blend",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+        "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_wings": [
+    {
+      "wing": "main",
+      "bounds": [
+        8,
+        24,
+        28,
+        50
+      ],
+      "ceiling": 7.2,
+      "ridge": 10.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "attic",
+      "bounds": [
+        28,
+        14,
+        43,
+        28
+      ],
+      "ceiling": 10.2,
+      "ridge": 12.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "stair-tower",
+      "bounds": [
+        40,
+        2,
+        46,
+        14
+      ],
+      "ceiling": 10.2,
+      "ridge": 11.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "ballroom",
+      "bounds": [
+        40,
+        30,
+        54,
+        50
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.64,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "east-reception",
+      "bounds": [
+        28,
+        32,
+        40,
+        50
+      ],
+      "ceiling": 3.6,
+      "ridge": 5.4399999999999995,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "gallery-join",
+      "bounds": [
+        28,
+        28,
+        40,
+        32
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "receiving",
+      "bounds": [
+        43,
+        20,
+        53,
+        26
+      ],
+      "ceiling": 3.6,
+      "ridge": 4.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "roof_coverage_rays": 1406,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/mansion.png",
+      "sha256": "6cda8331904ec6bd6eca6c0ae19573a0a83b42f5b5b6964ef1bfbdf73af7fe87",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51",
+  "remaining": "Runtime map adapter/rooms/portals/acoustics/spawns/services and native scene rendering are not integrated. Detailed roof step flashing, drainage, gutters, standing-height join/optical review and terrain/foundation defects remain open. Existing candidate availability unchanged.",
+  "interface_added_flights": [],
+  "new_interface_parts": [
+    "Manor wing cellar-stair south structural wall MANSION bay indexed door 2 preceding pier region0",
+    "Manor wing cellar-stair south structural wall MANSION bay indexed door 2 lintel region0",
+    "Manor wing MANSION bay indexed door 2 fitted frame",
+    "Manor wing cellar-stair south structural wall end pier region0",
+    "Manor wing service-stair south structural wall MANSION bay indexed door 4 preceding pier region0",
+    "Manor wing service-stair south structural wall MANSION bay indexed door 4 lintel region0",
+    "Manor wing MANSION bay indexed door 4 fitted frame",
+    "Manor wing service-stair south structural wall end pier region0",
+    "Manor wing upper-service-stair south structural wall MANSION bay indexed door 5 preceding pier region0",
+    "Manor wing upper-service-stair south structural wall MANSION bay indexed door 5 lintel region0",
+    "Manor wing MANSION bay indexed door 5 fitted frame",
+    "Manor wing upper-service-stair south structural wall end pier region0",
+    "Manor wing attic-stair south structural wall MANSION bay indexed door 6 preceding pier region0",
+    "Manor wing attic-stair south structural wall MANSION bay indexed door 6 lintel region0",
+    "Manor wing MANSION bay indexed door 6 fitted frame",
+    "Manor wing attic-stair south structural wall end pier region0"
+  ],
+  "architectural_plan": {
+    "flights": [
+      [
+        "L58",
+        [
+          20,
+          24,
+          28,
+          36
+        ],
+        24,
+        26,
+        31.76,
+        0,
+        3.6,
+        2,
+        20
+      ],
+      [
+        "L59",
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        41.5,
+        10.4,
+        5.75,
+        -3,
+        0,
+        1.5,
+        17
+      ],
+      [
+        "L60",
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        44.5,
+        5,
+        10.25,
+        0,
+        3.6,
+        1.5,
+        20
+      ],
+      [
+        "L61",
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        41.5,
+        11,
+        5,
+        3.6,
+        7.2,
+        1.5,
+        20
+      ]
+    ],
+    "floors": [
+      [
+        [
+          20,
+          24,
+          28,
+          36
+        ],
+        0,
+        []
+      ],
+      [
+        [
+          20,
+          24,
+          28,
+          50
+        ],
+        3.6,
+        [
+          [
+            22.8,
+            25.75,
+            25.2,
+            31.76
+          ]
+        ]
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        -3,
+        []
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        0,
+        [
+          [
+            40.55,
+            5.75,
+            42.45,
+            10.65
+          ]
+        ]
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        3.6,
+        [
+          [
+            43.55,
+            4.75,
+            45.45,
+            10.25
+          ]
+        ]
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        7.2,
+        [
+          [
+            40.55,
+            5,
+            42.45,
+            11.25
+          ]
+        ]
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        10.2,
+        []
+      ]
+    ],
+    "rooms": [
+      [
+        [
+          20,
+          24,
+          28,
+          36
+        ],
+        0,
+        3.6,
+        {
+          "W": [
+            [
+              30,
+              1.05
+            ]
+          ],
+          "S": [
+            [
+              24,
+              2
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        -3,
+        0,
+        {
+          "S": [
+            [
+              41.5,
+              1.35
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        0,
+        3.6,
+        {
+          "N": [
+            [
+              43,
+              1.05
+            ]
+          ],
+          "S": [
+            [
+              41.5,
+              1.35
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        3.6,
+        7.2,
+        {
+          "S": [
+            [
+              41.5,
+              1.35
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          40,
+          2,
+          46,
+          14
+        ],
+        7.2,
+        10.2,
+        {
+          "S": [
+            [
+              41.5,
+              1.35
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "doorways": [
+    {
+      "id": "MANSION bay indexed door 0",
+      "axis": "z",
+      "boundary": 36,
+      "along": 24,
+      "sill_y": 0,
+      "clear_width": 2,
+      "clear_height": 2.1,
+      "frame_span": [
+        35.88,
+        36.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "MANSION bay indexed door 1",
+      "axis": "x",
+      "boundary": 20,
+      "along": 30,
+      "sill_y": 0,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        19.88,
+        20.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "MANSION bay indexed door 2",
+      "axis": "z",
+      "boundary": 14,
+      "along": 41.5,
+      "sill_y": -3,
+      "clear_width": 1.35,
+      "clear_height": 2.1,
+      "frame_span": [
+        13.88,
+        14.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "cellar-stair",
+        "cellar-pass"
+      ],
+      "link": "L54"
+    },
+    {
+      "id": "MANSION bay indexed door 3",
+      "axis": "z",
+      "boundary": 2,
+      "along": 43,
+      "sill_y": 0,
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "frame_span": [
+        1.88,
+        2.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "MANSION bay indexed door 4",
+      "axis": "z",
+      "boundary": 14,
+      "along": 41.5,
+      "sill_y": 0,
+      "clear_width": 1.35,
+      "clear_height": 2.1,
+      "frame_span": [
+        13.88,
+        14.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "service-stair",
+        "service"
+      ],
+      "link": "L23"
+    },
+    {
+      "id": "MANSION bay indexed door 5",
+      "axis": "z",
+      "boundary": 14,
+      "along": 41.5,
+      "sill_y": 3.6,
+      "clear_width": 1.35,
+      "clear_height": 2.1,
+      "frame_span": [
+        13.88,
+        14.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "upper-service-stair",
+        "upper-service"
+      ],
+      "link": "L50"
+    },
+    {
+      "id": "MANSION bay indexed door 6",
+      "axis": "z",
+      "boundary": 14,
+      "along": 41.5,
+      "sill_y": 7.2,
+      "clear_width": 1.35,
+      "clear_height": 2.1,
+      "frame_span": [
+        13.88,
+        14.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "attic-stair",
+        "attic-passage"
+      ],
+      "link": "L51"
+    }
+  ],
+  "bay_builder": "tools/build_household_sacred_bays.py",
+  "bay_builder_sha256": "d820e70eeb98238f66998c3613a6bfc73b2d11e4df58b3ce836e277c2a041831",
+  "retained_native_records": 435,
+  "source_terrain": "Exact original saved editor owner and holes retained; no excavations",
+  "removed_coplanar_route_solids": [
+    {
+      "name": "MANSION bay retained outside L29 support 1 region1",
+      "actual_floor_owners": [
+        "Floor kitchen"
+      ],
+      "top": 0.0,
+      "bottom": -0.11999999731779099,
+      "unowned_top_area": 0
+    },
+    {
+      "name": "MANSION bay retained outside L36 support 0 region0",
+      "actual_floor_owners": [
+        "Floor guest-a-entry"
+      ],
+      "top": 3.5999999046325684,
+      "bottom": 3.4800000190734863,
+      "unowned_top_area": 0
+    },
+    {
+      "name": "MANSION bay retained outside L42 support 0 region0",
+      "actual_floor_owners": [
+        "Floor upper-service-link"
+      ],
+      "top": 3.5999999046325684,
+      "bottom": 3.4800000190734863,
+      "unowned_top_area": 0
+    },
+    {
+      "name": "MANSION bay retained outside L23 support 1 region0",
+      "actual_floor_owners": [
+        "Floor service"
+      ],
+      "top": 0.0,
+      "bottom": -0.11999999731779099,
+      "unowned_top_area": 0
+    },
+    {
+      "name": "MANSION bay retained outside L51 support 0 region0",
+      "actual_floor_owners": [
+        "Floor attic-passage"
+      ],
+      "top": 7.199999809265137,
+      "bottom": 7.079999923706055,
+      "unowned_top_area": 0
+    }
+  ],
+  "wall_caps_seated_under_floors": [
+    {
+      "original": "Header foyer N",
+      "result": "MANSION seated wall cap 0",
+      "old_top": 3.6000001430511475,
+      "new_top": 3.4800001430511474
+    },
+    {
+      "original": "Header foyer S",
+      "result": "MANSION seated wall cap 1",
+      "old_top": 3.6000001430511475,
+      "new_top": 3.4800001430511474
+    },
+    {
+      "original": "Wall foyer W",
+      "result": "MANSION seated wall cap 2",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall foyer E",
+      "result": "MANSION seated wall cap 3",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall visitor-wc N",
+      "result": "MANSION seated wall cap 4",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall visitor-wc S",
+      "result": "MANSION seated wall cap 5",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall visitor-wc W",
+      "result": "MANSION seated wall cap 6",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall visitor-wc E",
+      "result": "MANSION seated wall cap 7",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall coats S",
+      "result": "MANSION seated wall cap 8",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall coats W",
+      "result": "MANSION seated wall cap 9",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Wall coats E",
+      "result": "MANSION seated wall cap 10",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Header hall W",
+      "result": "MANSION seated wall cap 11",
+      "old_top": 3.6000001430511475,
+      "new_top": 3.4800001430511474
+    },
+    {
+      "original": "Header hall E",
+      "result": "MANSION seated wall cap 12",
+      "old_top": 3.6000001430511475,
+      "new_top": 3.4800001430511474
+    },
+    {
+      "original": "Header hall E.002",
+      "result": "MANSION seated wall cap 13",
+      "old_top": 3.6000001430511475,
+      "new_top": 3.4800001430511474
+    },
+    {
+      "original": "Wall wine W",
+      "result": "MANSION seated wall cap 14",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "Flat route shell Wall foyer N",
+      "result": "MANSION seated wall cap 15",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall foyer N.001",
+      "result": "MANSION seated wall cap 16",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall foyer S",
+      "result": "MANSION seated wall cap 17",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall foyer S.001",
+      "result": "MANSION seated wall cap 18",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall hall S.001",
+      "result": "MANSION seated wall cap 19",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall hall W",
+      "result": "MANSION seated wall cap 20",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall hall W.001",
+      "result": "MANSION seated wall cap 21",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall hall E",
+      "result": "MANSION seated wall cap 22",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall hall E.001",
+      "result": "MANSION seated wall cap 23",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall hall E.002",
+      "result": "MANSION seated wall cap 24",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall drawing E.001",
+      "result": "MANSION seated wall cap 25",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall dining W.001",
+      "result": "MANSION seated wall cap 26",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall morning W",
+      "result": "MANSION seated wall cap 27",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "Flat route shell Wall morning W.001",
+      "result": "MANSION seated wall cap 28",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 24, 20, 28, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('z', 24, 20, 28, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 36, 20, 28, 0, 3.6) pier0 region0",
+      "result": "MANSION bay wall ('z', 36, 20, 28, 0, 3.6) pier0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 36, 20, 28, 0, 3.6) lintel0 region0",
+      "result": "MANSION bay wall ('z', 36, 20, 28, 0, 3.6) lintel0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 36, 20, 28, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('z', 36, 20, 28, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) pier0 region0",
+      "result": "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) pier0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) lintel0 region0",
+      "result": "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) lintel0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('x', 20, 24, 36, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION retained outside wall 0",
+      "result": "MANSION retained outside wall 0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('x', 28, 24, 36, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('x', 28, 24, 36, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 2, 40, 46, -3, 0) end region0",
+      "result": "MANSION bay wall ('z', 2, 40, 46, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, -3, 0) pier0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, -3, 0) pier0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, -3, 0) lintel0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, -3, 0) lintel0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, -3, 0) end region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "MANSION bay wall ('x', 40, 2, 14, -3, 0) end region0",
+      "result": "MANSION bay wall ('x', 40, 2, 14, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "MANSION bay wall ('x', 46, 2, 14, -3, 0) end region0",
+      "result": "MANSION bay wall ('x', 46, 2, 14, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) pier0 region0",
+      "result": "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) pier0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) lintel0 region0",
+      "result": "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) lintel0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) pier0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) pier0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) lintel0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) lintel0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('x', 40, 2, 14, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('x', 40, 2, 14, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('x', 46, 2, 14, 0, 3.6) end region0",
+      "result": "MANSION bay wall ('x', 46, 2, 14, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "MANSION bay wall ('z', 2, 40, 46, 3.6, 7.2) end region0",
+      "result": "MANSION bay wall ('z', 2, 40, 46, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) pier0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) pier0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) lintel0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) lintel0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) end region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "MANSION bay wall ('x', 40, 2, 14, 3.6, 7.2) end region0",
+      "result": "MANSION bay wall ('x', 40, 2, 14, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "MANSION bay wall ('x', 46, 2, 14, 3.6, 7.2) end region0",
+      "result": "MANSION bay wall ('x', 46, 2, 14, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "MANSION bay wall ('z', 2, 40, 46, 7.2, 10.2) end region0",
+      "result": "MANSION bay wall ('z', 2, 40, 46, 7.2, 10.2) end region0",
+      "old_top": 10.199999809265137,
+      "new_top": 10.079999809265138
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) pier0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) pier0 region0",
+      "old_top": 10.199999809265137,
+      "new_top": 10.079999809265138
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) lintel0 region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) lintel0 region0",
+      "old_top": 10.199999809265137,
+      "new_top": 10.079999809265138
+    },
+    {
+      "original": "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) end region0",
+      "result": "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) end region0",
+      "old_top": 10.199999809265137,
+      "new_top": 10.079999809265138
+    },
+    {
+      "original": "MANSION bay wall ('x', 40, 2, 14, 7.2, 10.2) end region0",
+      "result": "MANSION bay wall ('x', 40, 2, 14, 7.2, 10.2) end region0",
+      "old_top": 10.199999809265137,
+      "new_top": 10.079999809265138
+    },
+    {
+      "original": "MANSION bay wall ('x', 46, 2, 14, 7.2, 10.2) end region0",
+      "result": "MANSION bay wall ('x', 46, 2, 14, 7.2, 10.2) end region0",
+      "old_top": 10.199999809265137,
+      "new_top": 10.079999809265138
+    }
+  ],
+  "saved_world": "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/adaptive-topology.bin": "6b1302f7d481869b195f406930e386281d5cbc92260674c7dbb1043b3e6a4a88",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/authored-cuts.tsv": "2549acf8fb57f3085cdfe8de380fc589b188d35f3faf65561f28233c20769a9d",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/earthworks-verification.json": "82aad750c97e5a7157e4ecf578e472edbdeb54419ef40f2dc0a9cbedbfe0cc69",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/source-provenance.json": "e18d73d3d9320a91df9cc4c17e001f7ad788b71bbd5b62c0238ec17b308c84a9",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/terrain-physics.hcs2": "d42759275d24c55dfce762cf057f20c03b3b0a00a59bc5ecd441dca107a9cfc5",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/tile_0_0.png": "cd2b6e26b431ce3eef12b04d983823fea84168e0643c32574c8b3aa313ba7738",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/verification.json": "e18d73d3d9320a91df9cc4c17e001f7ad788b71bbd5b62c0238ec17b308c84a9",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/world.properties": "bde6105f86156aa33558244a2a666ee304c11947a61a91e8a1337e2acbdd9086",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/scene-package/.scene.bin.editor.previous": "0ef9c0e32c029988ab1ccca8385b368004bfac195fd70fc9326116f2cbf3dc42",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/scene-package/scene.bin": "a6a0d50f918f9fbeab1335c7eafe895b3ba2abb5637a0e75d6140d8f02f2b534",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/scene-package/meshes/site.obj": "180e8eeb30cb79c105525d8510476f1c2d9dad499143516a607a8929f8c6adff",
+    "development/levels/rebuild/estate-parish-pass/worlds/mansion/terrain-world/terrain-layers/tile_0_0.bin": "0d103e0f403ffb2030b0bf947b0aa31eae8f89ce88226c72758210be4d40cd18"
+  },
+  "terrain_mesh": "MANSION saved ground",
+  "retired_study_strips": [
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L26 support 1",
+    "L30 support 1",
+    "L31 support 0",
+    "L31 support 1",
+    "MANSION bay retained outside L28 support 1 region0",
+    "MANSION bay retained outside L28 support 1 region1",
+    "MANSION bay retained outside L29 support 1 region0"
+  ],
+  "new_portals": [
+    {
+      "id": "foyer s exterior doorway",
+      "axis": "z",
+      "boundary": 50,
+      "along": 22,
+      "sill_y": 0,
+      "clear_width": 1.52,
+      "clear_height": 2.2,
+      "rooms": [
+        "foyer",
+        "entry"
+      ],
+      "link": "L02"
+    },
+    {
+      "id": "receiving n exterior doorway",
+      "axis": "z",
+      "boundary": 20,
+      "along": 46,
+      "sill_y": 0,
+      "clear_width": 1.9,
+      "clear_height": 2.2,
+      "rooms": [
+        "receiving",
+        "garden"
+      ],
+      "link": "L26"
+    },
+    {
+      "id": "service-stair n exterior doorway",
+      "axis": "z",
+      "boundary": 2,
+      "along": 43,
+      "sill_y": 0,
+      "clear_width": 1.3,
+      "clear_height": 2.2,
+      "rooms": [
+        "service-stair",
+        "garden"
+      ],
+      "link": "L28"
+    },
+    {
+      "id": "library w exterior doorway",
+      "axis": "x",
+      "boundary": 8,
+      "along": 30,
+      "sill_y": 0,
+      "clear_width": 1.38,
+      "clear_height": 2.2,
+      "rooms": [
+        "library",
+        "garden"
+      ],
+      "link": "L29"
+    },
+    {
+      "id": "ballroom e exterior doorway",
+      "axis": "x",
+      "boundary": 54,
+      "along": 40,
+      "sill_y": 0,
+      "clear_width": 1.95,
+      "clear_height": 2.2,
+      "rooms": [
+        "ballroom",
+        "garden"
+      ],
+      "link": "L30"
+    }
+  ],
+  "builder": "tools/build_interior_stair_landings.py",
+  "builder_sha256": "cd6939ecae1f6b09a1ead1d7cc4ab814797b7ba7bfb8ee3a5e39457cc97ece78",
+  "interior_stair_landings": {
+    "ground_service_transfer": [
+      43.13,
+      0,
+      8
+    ],
+    "first_floor_service_transfer": [
+      42.87,
+      3.6,
+      8
+    ],
+    "attic_service_transfer": [
+      43.2,
+      7.2,
+      8
+    ],
+    "service_aisle_clear_width_m": 1.16,
+    "service_door_clear_width_m": 1.35,
+    "service_door_south_wall_z": 14,
+    "service_door_ids": [
+      "MANSION bay indexed door 2",
+      "MANSION bay indexed door 4",
+      "MANSION bay indexed door 5",
+      "MANSION bay indexed door 6"
+    ]
+  }
+}

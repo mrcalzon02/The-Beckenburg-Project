@@ -1,0 +1,3 @@
+2026-11-18T09:04:18.579954600Z [main] RENDER SLOW stage=idle faces=82402 visible_faces=10387 culled_faces=72015 target=320x200 build_ms=1095 lighting_raster_ms=617
+2026-11-18T09:04:20.745187800Z [main] RENDER SLOW stage=idle faces=96881 visible_faces=40978 culled_faces=55903 target=320x200 build_ms=3 lighting_raster_ms=259
+PASS: network first-person rendering includes 3D teammates, disclosed ghost and synced physical doors

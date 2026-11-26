@@ -1,0 +1,40 @@
+{
+  "status": "REAL_TCP_HOUSE_WINDOW_APPROACH_VERIFIED",
+  "prior_test": "48f364ec9a06e68b91d0f1b25067f1189e5b6990",
+  "packaged_game_sha256": "6b4e0393eb233846f0e74c5ae99e982922712f935dbd2f487812110190bed818",
+  "house_source_revision": "first-principles-functional-furnishings-v1-c788f7e17276da3e",
+  "house": {
+    "window_id": 23,
+    "window_center": [
+      15,
+      2.8,
+      20.5
+    ],
+    "prior_standing_position": [
+      14.25,
+      2.8,
+      17.1
+    ],
+    "verified_standing_position": [
+      15.8,
+      2.8,
+      18.96
+    ],
+    "prior_test": "prior-failure.txt",
+    "move_and_aim_measurements": "physical-approach.txt",
+    "independent_peer_received_open_and_closed": true
+  },
+  "regression": {
+    "upper_storey_targets": true,
+    "authorization_at_supported_distance": true,
+    "ghost_privacy": true,
+    "first": "network.txt",
+    "repeat": "network-repeat.txt",
+    "sites": [
+      "HOUSE",
+      "FARMHOUSE",
+      "SCHOOL"
+    ]
+  },
+  "scope": "The host and all site meshes use the same packaged source in the baseline and corrected walkthrough."
+}

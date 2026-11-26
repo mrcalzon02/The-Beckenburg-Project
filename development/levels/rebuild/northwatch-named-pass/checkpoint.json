@@ -1,0 +1,79 @@
+{
+  "id": "WLD-08",
+  "status": "NORTHWATCH_PACKAGED_NAMED_CASE_VERIFIED_UNDER_REVIEW_GATE",
+  "review_property": "beckenburg.review.northwatchNative",
+  "previous_commit": "5d73a47ddf5737075122a92c85a00589bc21d23a",
+  "previous_gallery": 45407855257,
+  "native_scene_revision": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e",
+  "named_network_revision": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e-453160a982f44a66",
+  "exports": {
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.blend": "d3c512ff9980b75093df33a5f9bf0042b5dddb231376afda5b67c49f35712e34",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb": "9eee9ba13ea80761b5e1f4dd79a6e91b77eaacfc3591883756aeac2cd2c6dbae",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2": "0291baa5c2f17f2646ca80e90624fd228ead54c50d14f1c3e007fd52fcf8bdde"
+  },
+  "packaged_resources": {
+    "org/beckenburg/sites/wld-08/station-with-furnishings.glb": {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb",
+      "sha256": "9eee9ba13ea80761b5e1f4dd79a6e91b77eaacfc3591883756aeac2cd2c6dbae"
+    },
+    "org/beckenburg/sites/wld-08/station-with-furnishings.hcs2": {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2",
+      "sha256": "0291baa5c2f17f2646ca80e90624fd228ead54c50d14f1c3e007fd52fcf8bdde"
+    },
+    "org/beckenburg/sites/wld-08/runtime-input.tsv": {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/runtime-input.tsv",
+      "sha256": "f08c4ce26886d15b7a73f0c73bf8deade73e9f4b0910326422e8cf11626484ec"
+    },
+    "org/beckenburg/sites/wld-08/door-schedule.tsv": {
+      "source": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/door-schedule.tsv",
+      "sha256": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d"
+    },
+    "org/beckenburg/sites/wld-08/source-hashes.tsv": {
+      "source": "development/levels/rebuild/northwatch-named-pass/source-hashes.tsv",
+      "sha256": "18762a49f3657a9ce10adf64587558563b6850e1e8a7a532af79990570a4e8f0"
+    }
+  },
+  "evidence": {
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.glb": "9eee9ba13ea80761b5e1f4dd79a6e91b77eaacfc3591883756aeac2cd2c6dbae",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2": "0291baa5c2f17f2646ca80e90624fd228ead54c50d14f1c3e007fd52fcf8bdde",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/runtime-input.tsv": "f08c4ce26886d15b7a73f0c73bf8deade73e9f4b0910326422e8cf11626484ec",
+    "development/levels/rebuild/northwatch-furnishing-pass/wld-08/door-schedule.tsv": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d",
+    "development/levels/rebuild/northwatch-named-pass/source-hashes.tsv": "18762a49f3657a9ce10adf64587558563b6850e1e8a7a532af79990570a4e8f0",
+    "development/levels/rebuild/northwatch-named-pass/captures/northwatch-named-arrival.png": "e49e9774a69c2a0545e507e76dd61d4a765aca959e9bdaa2897eeafd71afdb3b",
+    "development/levels/rebuild/northwatch-named-pass/captures/northwatch-named-forecourt.png": "a18ddf7edc65d5674f63a25c037079a499c6c5b979f3da93f3358ee70bab3634",
+    "development/levels/rebuild/northwatch-named-pass/captures/opengl/northwatch-named-arrival.png": "2625ae3450e711108a7cf5e738c5aca5d3902c0e1cc10cf5e8ec828298797021",
+    "development/levels/rebuild/northwatch-named-pass/captures/opengl/northwatch-named-forecourt.png": "6e63990624b81b581314582cd2ac444f3a12ed1d5afa601d41e89b5b6f73f1eb",
+    "development/levels/rebuild/northwatch-named-pass/named-software.tsv": "4087bbc198551a3bd20a5b820579098f4df06331406b05dd486cab1ddfbb3a44",
+    "development/levels/rebuild/northwatch-named-pass/named-opengl.tsv": "999474f7002c4bfc5f6a733d83b3e446325d8f4018a27dbd7c74941f8aff7bac"
+  },
+  "package_checks": [
+    "All production Java sources compile at release 17",
+    "Five exact resources verified in an isolated review JAR",
+    "Bash build script syntax"
+  ],
+  "retained_architecture_and_services": "16 doors, 12 circuits, 2 wash basins, 3 walk-in refuges (207 floor samples)",
+  "software": {
+    "packaged_native_scene": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e",
+    "named_network_revision": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e-453160a982f44a66",
+    "renderer": "Software",
+    "named_gate_catalog_campaign_and_exact_revision": "PASS",
+    "named_solo_ai_cargo_ramp_and_retreat": "PASS",
+    "named_records_camera_and_van_feed": "PASS real camera placement, wall occlusion and replicated feed",
+    "named_van_to_relay_log": "PASS actual ramp, two aimed doors, records desk and reading",
+    "named_array_emf_locality": "10/10 at array, 2/10 in van",
+    "named_rite_BANISHMENT": "PASS fitted installation, van refusal and four-peer result",
+    "named_rite_CLEANSING": "PASS fitted installation, van refusal and four-peer result",
+    "named_rite_ABSOLUTION": "PASS fitted installation, van refusal and four-peer result"
+  },
+  "opengl": {
+    "packaged_native_scene": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e",
+    "named_network_revision": "c637f9f4d78da4300af2defbe8758a6112157afa0f8f94c36b36b64e9c4cff6e-453160a982f44a66",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "named_gate_catalog_campaign_and_exact_revision": "PASS"
+  },
+  "remaining_acceptance": [
+    "Finish and atmosphere review",
+    "Campaign persistence and representative performance",
+    "Full release package and acceptance"
+  ]
+}

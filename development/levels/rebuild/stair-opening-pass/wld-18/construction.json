@@ -1,0 +1,663 @@
+{
+  "id": "WLD-18",
+  "status": "PHYSICAL_STAIR_SHELL_APERTURE_CANDIDATE_NOT_RUNTIME_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/stair-landing-pass/wld-18/supported-stairs.glb",
+  "source_glb_sha256": "79dc7d418075e5adeb105644df1aff7deeb4ecbd869c72a6bb0986fd490d1d1e",
+  "source_physics": "development/levels/rebuild/stair-landing-pass/wld-18/supported-stairs.hcs2",
+  "source_physics_sha256": "6bfeb31baaa60e1c122b9a6a0890af34b0fbc7c66beb961b9abc427fdea85b73",
+  "layout": "development/levels/rebuild/stair-landing-pass/wld-18/authored-layout.json",
+  "layout_sha256": "2be07d34fb392d67f649fa687d937f78105522c9363e2bd95f48694bd97bff68",
+  "source_layout": "development/levels/rebuild/wld-18/rough-layout.json",
+  "source_layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+  "source_segment_map": {
+    "route-01": {},
+    "route-02": {},
+    "route-03": {},
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {
+      "2": 1
+    },
+    "route-08": {
+      "1": 1
+    },
+    "route-09": {},
+    "route-10": {},
+    "route-11": {},
+    "route-12": {},
+    "route-13": {
+      "2": 1
+    },
+    "route-14": {
+      "2": 1,
+      "5": 3
+    },
+    "route-15": {},
+    "route-16": {},
+    "route-17": {},
+    "route-18": {
+      "0": 0
+    },
+    "route-19": {}
+  },
+  "stair_components": [
+    "171:route-07 landing0",
+    "195:route-08 landing0",
+    "196:route-08 flight0 step1",
+    "197:route-08 flight0 step2",
+    "198:route-08 flight0 step3",
+    "199:route-08 flight0 step4",
+    "200:route-08 flight0 step5",
+    "201:route-08 flight0 step6",
+    "202:route-08 flight0 step7",
+    "203:route-08 flight0 step8",
+    "204:route-08 flight0 step9",
+    "205:route-08 flight0 step10",
+    "206:route-08 flight0 step11",
+    "207:route-08 flight0 step12",
+    "208:route-08 flight0 step13",
+    "209:route-08 flight0 step14",
+    "210:route-08 flight0 step15",
+    "211:route-08 flight0 step16",
+    "212:route-08 flight0 step17",
+    "213:route-08 flight0 step18",
+    "214:route-08 flight0 step19",
+    "215:route-08 flight0 step20",
+    "216:route-08 flight0 step21",
+    "217:route-08 flight0 step22",
+    "218:route-08 flight0 step23",
+    "223:route-13 landing0",
+    "224:route-13 landing2",
+    "225:route-13 landing3",
+    "249:route-14 landing0",
+    "250:route-14 landing2",
+    "251:route-14 landing4",
+    "279:route-18 flight0 step1",
+    "280:route-18 flight0 step2",
+    "281:route-18 flight0 step3",
+    "282:route-18 flight0 step4",
+    "283:route-18 flight0 step5",
+    "284:route-18 flight0 step6",
+    "285:route-18 flight0 step7",
+    "286:route-18 flight0 step8",
+    "287:route-18 flight0 step9",
+    "288:route-18 flight0 step10",
+    "289:route-18 flight0 step11",
+    "290:route-18 flight0 step12",
+    "291:route-18 flight0 step13",
+    "292:route-18 flight0 step14",
+    "293:route-18 flight0 step15",
+    "294:route-18 flight0 step16",
+    "295:route-18 flight0 step17",
+    "296:route-18 flight0 step18",
+    "297:route-18 flight0 step19",
+    "298:route-18 flight0 step20",
+    "299:route-18 flight0 step21",
+    "300:route-18 flight0 step22",
+    "301:route-18 flight0 step23",
+    "Rebuilt stair WLD-18 route-07 flight0 part0",
+    "Rebuilt stair WLD-18 route-07 flight0 part1",
+    "Rebuilt stair WLD-18 route-07 flight0 part2",
+    "Rebuilt stair WLD-18 route-07 flight0 part3",
+    "Rebuilt stair WLD-18 route-07 flight0 part4",
+    "Rebuilt stair WLD-18 route-07 flight0 part5",
+    "Rebuilt stair WLD-18 route-07 flight0 part6",
+    "Rebuilt stair WLD-18 route-07 flight0 part7",
+    "Rebuilt stair WLD-18 route-07 flight0 part8",
+    "Rebuilt stair WLD-18 route-07 flight0 part9",
+    "Rebuilt stair WLD-18 route-07 flight0 part10",
+    "Rebuilt stair WLD-18 route-07 flight0 part11",
+    "Rebuilt stair WLD-18 route-07 flight0 part12",
+    "Rebuilt stair WLD-18 route-07 flight0 part13",
+    "Rebuilt stair WLD-18 route-07 flight0 part14",
+    "Rebuilt stair WLD-18 route-07 flight0 part15",
+    "Rebuilt stair WLD-18 route-07 flight0 part16",
+    "Rebuilt stair WLD-18 route-07 flight0 part17",
+    "Rebuilt stair WLD-18 route-07 flight0 part18",
+    "Rebuilt stair WLD-18 route-07 flight0 part19",
+    "Rebuilt stair WLD-18 route-07 flight0 part20",
+    "Rebuilt stair WLD-18 route-07 flight0 part21",
+    "Rebuilt stair WLD-18 route-07 flight0 part22",
+    "Rebuilt stair WLD-18 route-13 flight0 part0",
+    "Rebuilt stair WLD-18 route-13 flight0 part1",
+    "Rebuilt stair WLD-18 route-13 flight0 part2",
+    "Rebuilt stair WLD-18 route-13 flight0 part3",
+    "Rebuilt stair WLD-18 route-13 flight0 part4",
+    "Rebuilt stair WLD-18 route-13 flight0 part5",
+    "Rebuilt stair WLD-18 route-13 flight0 part6",
+    "Rebuilt stair WLD-18 route-13 flight0 part7",
+    "Rebuilt stair WLD-18 route-13 flight0 part8",
+    "Rebuilt stair WLD-18 route-13 flight0 part9",
+    "Rebuilt stair WLD-18 route-13 flight0 part10",
+    "Rebuilt stair WLD-18 route-13 flight0 part11",
+    "Rebuilt stair WLD-18 route-13 flight0 part12",
+    "Rebuilt stair WLD-18 route-13 flight0 part13",
+    "Rebuilt stair WLD-18 route-13 flight0 part14",
+    "Rebuilt stair WLD-18 route-13 flight0 part15",
+    "Rebuilt stair WLD-18 route-13 flight0 part16",
+    "Rebuilt stair WLD-18 route-13 flight0 part17",
+    "Rebuilt stair WLD-18 route-13 flight0 part18",
+    "Rebuilt stair WLD-18 route-13 flight0 part19",
+    "Rebuilt stair WLD-18 route-13 flight0 part20",
+    "Rebuilt stair WLD-18 route-13 flight0 part21",
+    "Rebuilt stair WLD-18 route-13 flight0 part22",
+    "Rebuilt stair WLD-18 route-14 flight0 part0",
+    "Rebuilt stair WLD-18 route-14 flight0 part1",
+    "Rebuilt stair WLD-18 route-14 flight0 part2",
+    "Rebuilt stair WLD-18 route-14 flight0 part3",
+    "Rebuilt stair WLD-18 route-14 flight0 part4",
+    "Rebuilt stair WLD-18 route-14 flight0 part5",
+    "Rebuilt stair WLD-18 route-14 flight0 part6",
+    "Rebuilt stair WLD-18 route-14 flight0 part7",
+    "Rebuilt stair WLD-18 route-14 flight0 part8",
+    "Rebuilt stair WLD-18 route-14 flight0 part9",
+    "Rebuilt stair WLD-18 route-14 flight0 part10",
+    "Rebuilt stair WLD-18 route-14 flight0 part11",
+    "Rebuilt stair WLD-18 route-14 flight1 part0",
+    "Rebuilt stair WLD-18 route-14 flight1 part1",
+    "Rebuilt stair WLD-18 route-14 flight1 part2",
+    "Rebuilt stair WLD-18 route-14 flight1 part3",
+    "Rebuilt stair WLD-18 route-14 flight1 part4",
+    "Rebuilt stair WLD-18 route-14 flight1 part5",
+    "Rebuilt stair WLD-18 route-14 flight1 part6",
+    "Rebuilt stair WLD-18 route-14 flight1 part7",
+    "Rebuilt stair WLD-18 route-14 flight1 part8",
+    "Rebuilt stair WLD-18 route-14 flight1 part9",
+    "Rebuilt stair WLD-18 route-14 flight1 part10",
+    "Rebuilt stair WLD-18 route-14 flight1 part11",
+    "Authored stair end WLD-18 route-07 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-08 1 low region0",
+    "Authored stair end WLD-18 route-13 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 low region0",
+    "Authored stair end WLD-18 route-14 3 corner-bridge region0"
+  ],
+  "removed_source_meshes": [
+    "Wall head W",
+    "Wall head W.001",
+    "Wall exit N",
+    "Wall west S.001",
+    "Wall west W",
+    "Wall west W.001",
+    "Floor exhibit.006",
+    "Floor exhibit.016",
+    "Ceiling cap east.006",
+    "Ceiling cap east.016",
+    "Wall crew W"
+  ],
+  "removed_native_parts": [
+    "18:Wall head W",
+    "19:Wall head W.001",
+    "41:Wall exit N",
+    "62:Wall west S.001",
+    "64:Wall west W",
+    "65:Wall west W.001",
+    "85:Floor exhibit.006",
+    "95:Floor exhibit.016",
+    "118:Ceiling cap east.006",
+    "128:Ceiling cap east.016",
+    "148:Wall crew W"
+  ],
+  "new_parts": 11,
+  "new_triangles": 368,
+  "changes": [
+    {
+      "source_mesh": "Wall head W",
+      "new_mesh": "Opened stair shell Wall head W",
+      "removed_volume_m3": 0.007040161128044176,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        28.0,
+        -44.625,
+        1.5
+      ],
+      "cutters": [
+        "Stair opening corridor route-07 segment0 wall"
+      ]
+    },
+    {
+      "source_mesh": "Wall head W.001",
+      "new_mesh": "Opened stair shell Wall head W.001",
+      "removed_volume_m3": 0.007040161128044176,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        28.0,
+        -51.375,
+        1.5
+      ],
+      "cutters": [
+        "Stair opening corridor route-07 segment0 wall"
+      ]
+    },
+    {
+      "source_mesh": "Wall exit N",
+      "new_mesh": "Opened stair shell Wall exit N",
+      "removed_volume_m3": 0.11968001660006333,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        7.0,
+        -42.0,
+        1.5
+      ],
+      "cutters": [
+        "Stair opening corridor route-08 segment1 wall"
+      ]
+    },
+    {
+      "source_mesh": "Wall west S.001",
+      "new_mesh": "Opened stair shell Wall west S.001",
+      "removed_volume_m3": 0.4117476231320958,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        18.875,
+        -38.0,
+        -2.5
+      ],
+      "cutters": [
+        "Stair opening corridor route-07 segment2 wall"
+      ]
+    },
+    {
+      "source_mesh": "Wall west W",
+      "new_mesh": "Opened stair shell Wall west W",
+      "removed_volume_m3": 0.007040161128044176,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        8.0,
+        -29.625,
+        -2.5
+      ],
+      "cutters": [
+        "Stair opening corridor route-08 segment0 wall"
+      ]
+    },
+    {
+      "source_mesh": "Wall west W.001",
+      "new_mesh": "Opened stair shell Wall west W.001",
+      "removed_volume_m3": 0.0070401611280437315,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        8.0,
+        -36.375,
+        -2.5
+      ],
+      "cutters": [
+        "Stair opening corridor route-08 segment0 wall"
+      ]
+    },
+    {
+      "source_mesh": "Floor exhibit.006",
+      "new_mesh": "Opened stair shell Floor exhibit.006",
+      "removed_volume_m3": 0.0666396537756823,
+      "source_role": "floor",
+      "source_origin": [
+        43.54999923706055,
+        -34.45000076293945,
+        -4.079999923706055
+      ],
+      "cutters": [
+        "Stair opening corridor route-14 segment3 end slab",
+        "Stair opening corridor route-14 segment4 start slab"
+      ]
+    },
+    {
+      "source_mesh": "Floor exhibit.016",
+      "new_mesh": "Opened stair shell Floor exhibit.016",
+      "removed_volume_m3": 0.06663965377568229,
+      "source_role": "floor",
+      "source_origin": [
+        54.45000076293945,
+        -34.45000076293945,
+        -4.079999923706055
+      ],
+      "cutters": [
+        "Stair opening corridor route-14 segment2 end slab",
+        "Stair opening corridor route-14 segment3 start slab"
+      ]
+    },
+    {
+      "source_mesh": "Ceiling cap east.006",
+      "new_mesh": "Opened stair shell Ceiling cap east.006",
+      "removed_volume_m3": 0.0666396537756823,
+      "source_role": "ceiling-cap",
+      "source_origin": [
+        43.54999923706055,
+        -34.45000076293945,
+        -5.079999923706055
+      ],
+      "cutters": [
+        "Stair opening corridor route-14 segment3 end slab",
+        "Stair opening corridor route-14 segment4 start slab"
+      ]
+    },
+    {
+      "source_mesh": "Ceiling cap east.016",
+      "new_mesh": "Opened stair shell Ceiling cap east.016",
+      "removed_volume_m3": 0.06663965377568229,
+      "source_role": "ceiling-cap",
+      "source_origin": [
+        54.45000076293945,
+        -34.45000076293945,
+        -5.079999923706055
+      ],
+      "cutters": [
+        "Stair opening corridor route-14 segment2 end slab",
+        "Stair opening corridor route-14 segment3 start slab"
+      ]
+    },
+    {
+      "source_mesh": "Wall crew W",
+      "new_mesh": "Opened stair shell Wall crew W",
+      "removed_volume_m3": 0.06160003524422564,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        8.0,
+        -32.0,
+        -6.0
+      ],
+      "cutters": [
+        "Stair opening corridor route-08 segment0 wall"
+      ]
+    }
+  ],
+  "corridors": [
+    {
+      "link": "route-07",
+      "source_segment": null,
+      "actual_segment": 0,
+      "points": [
+        [
+          32,
+          0,
+          48
+        ],
+        [
+          18,
+          0,
+          48
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-07 segment0"
+    },
+    {
+      "link": "route-07",
+      "source_segment": null,
+      "actual_segment": 1,
+      "points": [
+        [
+          18,
+          0,
+          48
+        ],
+        [
+          18.0,
+          0,
+          47.2
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-07 segment1"
+    },
+    {
+      "link": "route-07",
+      "source_segment": 1,
+      "actual_segment": 2,
+      "points": [
+        [
+          18.0,
+          0,
+          47.2
+        ],
+        [
+          18,
+          -4,
+          32
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-07 segment2"
+    },
+    {
+      "link": "route-08",
+      "source_segment": null,
+      "actual_segment": 0,
+      "points": [
+        [
+          14,
+          -4,
+          34
+        ],
+        [
+          6,
+          -4,
+          34
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-08 segment0"
+    },
+    {
+      "link": "route-08",
+      "source_segment": 1,
+      "actual_segment": 1,
+      "points": [
+        [
+          6,
+          -4,
+          34
+        ],
+        [
+          6,
+          0,
+          48
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-08 segment1"
+    },
+    {
+      "link": "route-14",
+      "source_segment": null,
+      "actual_segment": 0,
+      "points": [
+        [
+          48,
+          -4,
+          28
+        ],
+        [
+          54,
+          -4,
+          28
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment0"
+    },
+    {
+      "link": "route-14",
+      "source_segment": null,
+      "actual_segment": 1,
+      "points": [
+        [
+          54,
+          -4,
+          28
+        ],
+        [
+          54.0,
+          -4,
+          28.8
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment1"
+    },
+    {
+      "link": "route-14",
+      "source_segment": 1,
+      "actual_segment": 2,
+      "points": [
+        [
+          54.0,
+          -4,
+          28.8
+        ],
+        [
+          54,
+          -6,
+          34
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment2"
+    },
+    {
+      "link": "route-14",
+      "source_segment": null,
+      "actual_segment": 3,
+      "points": [
+        [
+          54,
+          -6,
+          34
+        ],
+        [
+          44,
+          -6,
+          34
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment3"
+    },
+    {
+      "link": "route-14",
+      "source_segment": null,
+      "actual_segment": 4,
+      "points": [
+        [
+          44,
+          -6,
+          34
+        ],
+        [
+          44.0,
+          -6,
+          33.2
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment4"
+    },
+    {
+      "link": "route-14",
+      "source_segment": 3,
+      "actual_segment": 5,
+      "points": [
+        [
+          44.0,
+          -6,
+          33.2
+        ],
+        [
+          44,
+          -8,
+          28
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment5"
+    },
+    {
+      "link": "route-14",
+      "source_segment": null,
+      "actual_segment": 6,
+      "points": [
+        [
+          44,
+          -8,
+          28
+        ],
+        [
+          48,
+          -8,
+          28
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor route-14 segment6"
+    }
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1344680,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      18,
+      19,
+      41,
+      62,
+      64,
+      65,
+      85,
+      95,
+      118,
+      128,
+      148
+    ]
+  },
+  "glb_sha256": "445ff0760d4ad3287214c4d99969b494a4d993415737aa10a1a94a7fe102a4bc",
+  "physics_sha256": "355ab82aa8c178d34c779c8b48be4b57c7e6e7f22d0e97d938fb871c703669b0",
+  "generator_sha256": "435d8c5853cb90832142438f9a78a515392a4ae7092d173a06871db47a13a63a",
+  "remaining": "Independent source/solid/native and all25flat/stair comparisons; terrain/crossed flights, framing/guards, finishes and runtime integration remain open."
+}

@@ -1,0 +1,30 @@
+{
+  "glb_sha256": "e9e22ea6e62ce429b2d54b58d5aa50f581d2e44b6aa27f2c8dafe1bc68890c9f",
+  "native_sha256": "ab88e0df4d6372932d10913d3695677d91e3e8353a1300c1792242fefb8acfbe",
+  "retained_native_records": 511,
+  "added_native_records": 107,
+  "shared_rim_vertices": 1159,
+  "canonical_van_triangles": 2689,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/blackwater-valley.png",
+      "sha256": "8530740330c39b55c4f33f5c17a8d4aa4e133e06d763511b8ce02bd978c0836a",
+      "source_glb_sha256": "e9e22ea6e62ce429b2d54b58d5aa50f581d2e44b6aa27f2c8dafe1bc68890c9f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/east-cut-and-tailrace.png",
+      "sha256": "1d453142a2442e95bebd35743229b6ad9f4cbce1d2b87e419938b589f0d61f59",
+      "source_glb_sha256": "e9e22ea6e62ce429b2d54b58d5aa50f581d2e44b6aa27f2c8dafe1bc68890c9f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/south-roadhead.png",
+      "sha256": "2ef47eca1d09a81071af7991b868b1020c5e518cd4213dea68e996bfd907377f",
+      "source_glb_sha256": "e9e22ea6e62ce429b2d54b58d5aa50f581d2e44b6aa27f2c8dafe1bc68890c9f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/arrival-standing.png",
+      "sha256": "382959428ed516b614533da7f65226962abea663a23aa74bd83805897ccdae0f",
+      "source_glb_sha256": "e9e22ea6e62ce429b2d54b58d5aa50f581d2e44b6aa27f2c8dafe1bc68890c9f"
+    }
+  ]
+}

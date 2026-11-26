@@ -1,0 +1,295 @@
+{
+  "status": "MEASURED_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "samples": 7908,
+      "baseline_valid": 7215,
+      "new_block": 174,
+      "baseline_sweep": 6853,
+      "new_sweep_block": 160,
+      "affected_segments": {
+        "L02:0": 121,
+        "L02:1": 47,
+        "L42:0": 3,
+        "L42:1": 4
+      }
+    },
+    "ASYLUM": {
+      "samples": 7956,
+      "baseline_valid": 7172,
+      "new_block": 0,
+      "baseline_sweep": 6731,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "CHURCH": {
+      "samples": 3420,
+      "baseline_valid": 3176,
+      "new_block": 0,
+      "baseline_sweep": 2922,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "COLLEGE": {
+      "samples": 8289,
+      "baseline_valid": 7607,
+      "new_block": 0,
+      "baseline_sweep": 7211,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "FARMHOUSE": {
+      "samples": 4101,
+      "baseline_valid": 3715,
+      "new_block": 8,
+      "baseline_sweep": 3373,
+      "new_sweep_block": 7,
+      "affected_segments": {
+        "L22:3": 9
+      }
+    },
+    "MANSION": {
+      "samples": 7311,
+      "baseline_valid": 6924,
+      "new_block": 0,
+      "baseline_sweep": 6492,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "PRISON": {
+      "samples": 6636,
+      "baseline_valid": 6034,
+      "new_block": 0,
+      "baseline_sweep": 5725,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "SCHOOL": {
+      "samples": 5811,
+      "baseline_valid": 5193,
+      "new_block": 0,
+      "baseline_sweep": 4759,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "WLD-03": {
+      "samples": 3549,
+      "baseline_valid": 3243,
+      "new_block": 395,
+      "baseline_sweep": 3076,
+      "new_sweep_block": 391,
+      "affected_segments": {
+        "L10:1": 4,
+        "L11:0": 106,
+        "L11:1": 117,
+        "L12:0": 171
+      }
+    },
+    "WLD-04": {
+      "samples": 1413,
+      "baseline_valid": 1054,
+      "new_block": 205,
+      "baseline_sweep": 948,
+      "new_sweep_block": 196,
+      "affected_segments": {
+        "L02:0": 88,
+        "L07:1": 50,
+        "L08:0": 70
+      }
+    },
+    "WLD-05": {
+      "samples": 3510,
+      "baseline_valid": 3114,
+      "new_block": 282,
+      "baseline_sweep": 2977,
+      "new_sweep_block": 272,
+      "affected_segments": {
+        "L05:0": 145,
+        "L08:0": 4,
+        "L08:1": 134
+      }
+    },
+    "WLD-06": {
+      "samples": 3744,
+      "baseline_valid": 3537,
+      "new_block": 0,
+      "baseline_sweep": 3365,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "WLD-08": {
+      "samples": 4062,
+      "baseline_valid": 3184,
+      "new_block": 73,
+      "baseline_sweep": 3037,
+      "new_sweep_block": 67,
+      "affected_segments": {
+        "L16:0": 71,
+        "L16:1": 5
+      }
+    },
+    "WLD-09": {
+      "samples": 3123,
+      "baseline_valid": 2564,
+      "new_block": 252,
+      "baseline_sweep": 2452,
+      "new_sweep_block": 241,
+      "affected_segments": {
+        "L01:0": 75,
+        "L01:1": 87,
+        "L02:0": 93
+      }
+    },
+    "WLD-10": {
+      "samples": 4152,
+      "baseline_valid": 3839,
+      "new_block": 144,
+      "baseline_sweep": 3682,
+      "new_sweep_block": 135,
+      "affected_segments": {
+        "L17:0": 3,
+        "L17:1": 51,
+        "L18:0": 87,
+        "L18:1": 4
+      }
+    },
+    "WLD-11": {
+      "samples": 3663,
+      "baseline_valid": 3447,
+      "new_block": 0,
+      "baseline_sweep": 3260,
+      "new_sweep_block": 0,
+      "affected_segments": {}
+    },
+    "WLD-12": {
+      "samples": 4173,
+      "baseline_valid": 4065,
+      "new_block": 688,
+      "baseline_sweep": 3930,
+      "new_sweep_block": 670,
+      "affected_segments": {
+        "L04:0": 5,
+        "L06:0": 3,
+        "L06:1": 83,
+        "L07:0": 149,
+        "L07:1": 5,
+        "L09:1": 6,
+        "L13:1": 63,
+        "L14:0": 154,
+        "L15:0": 123,
+        "L15:1": 7,
+        "L18:0": 104
+      }
+    },
+    "WLD-13": {
+      "samples": 4239,
+      "baseline_valid": 4152,
+      "new_block": 232,
+      "baseline_sweep": 4011,
+      "new_sweep_block": 216,
+      "affected_segments": {
+        "L17:0": 3,
+        "L17:1": 113,
+        "L18:0": 113,
+        "L18:1": 5
+      }
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": "de6a63a3ce505f1f886afd908a9f6ecc828c40904aa5216c1cd984cb5c51226e",
+      "after": "00460f6ec9ad31f22a2622f8237c542a7d5799bffa9484f9a60309187111fe37",
+      "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6"
+    },
+    "ASYLUM": {
+      "before": "288d0a0a826fc9eb7efb5af59db6ce852e00e9cdd429d974bb551ba9b86a8d8b",
+      "after": "c4d4d4615259f87fbc7c42f217caeaeca3d0939f9c302ca0d4844127e4d174e7",
+      "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30"
+    },
+    "CHURCH": {
+      "before": "5c9b89dc120a1396f4ff720b9d837585446246eaa0ac3b4946bc9a9fa614b8bf",
+      "after": "cfa3196639948db3b840d599e2babd621a2c587764f520fa3376576e28459542",
+      "layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05"
+    },
+    "COLLEGE": {
+      "before": "58db0298c04c0d2ed9e455df4001e3c6ad8eb1ab74f4f96ce305e6f3fa0ba5b3",
+      "after": "de596173706a54236e9a8016bc1958cf1d7c061ef07e034f68d33804693f5244",
+      "layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d"
+    },
+    "FARMHOUSE": {
+      "before": "1063508ccfb6205602764c756aa8c3e63eec8522316db60db481ac9c84648f27",
+      "after": "68536ba2f26199ad43e84097db945f4d3490e6fbc32635d1c4c4b0c02c915d4c",
+      "layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727"
+    },
+    "MANSION": {
+      "before": "5a82285f463ab96bf93f634d1db07e94c598e68ccc7efb7a0eecad08f38c58cb",
+      "after": "488831cab994a1ca58a7b59366c215c6ca70edcde06ece5a0f64d7fad03318f0",
+      "layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d"
+    },
+    "PRISON": {
+      "before": "e1b4969cc444aa98b756272504837230df9abbd2d7c7118e55b0e4e4ae19ec2f",
+      "after": "f1de0c41f99d0b6819b95ebd5c5f55971693f055e4e9f6fb2f07adca466be98e",
+      "layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c"
+    },
+    "SCHOOL": {
+      "before": "694d57bf67c6ae0c80b1dfb6eaaed16ca5e767148f402320e93df569349fc7d3",
+      "after": "b40fc4d2477be54ebdbb160d4ac9df5cfc8e58d5e50935457ca96e6122b2b308",
+      "layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e"
+    },
+    "WLD-03": {
+      "before": "c432db931b7884bd393df49d1fe4aee15b091195e1c36f74afc7a32a7536f9e7",
+      "after": "03f47c9a29d134c47956425caa6de4a3440b6e9d85f85def84cead21161084d5",
+      "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102"
+    },
+    "WLD-04": {
+      "before": "3ea9593088d54f639e125ef1057bb5665f18c7ccb1aaed9be987018680aa14ff",
+      "after": "567f28b17961141c0824ac8dba88050a7c6e0bbd47ee2c2ca5d1dcbf46b5ab42",
+      "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104"
+    },
+    "WLD-05": {
+      "before": "f89cf620a702943462c3d6d77bcec199a95662b4db09d9aeb3345c2b5441a557",
+      "after": "72ec0b3bd129b646f698946ac83198f5295a525d34d7164375097bdc73af6d8c",
+      "layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467"
+    },
+    "WLD-06": {
+      "before": "32b2d6d1869245e194b70d4d39624c098e83764d1fd664798aca63be06c0eeff",
+      "after": "614b860ee4b2598e5f46bed164c40bc5db8128c9ea38cc8397aab608f72bd586",
+      "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304"
+    },
+    "WLD-08": {
+      "before": "29f517c1d5399ea0f47cd9f960c0a452831770ffd657563ed6c989a858079a5c",
+      "after": "d7a9a6b89c8360e439840bfabbd8dd0485f69a1a3e9b7f75af474312d0149378",
+      "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b"
+    },
+    "WLD-09": {
+      "before": "ebb96b1927c941a6a6159b4404632d3ef1c0988a04493e15dfd2b6d526039a07",
+      "after": "8e7b85df1525a043728ff35bfbc33f8716b8aabb256a1bee454b6ea396315caa",
+      "layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4"
+    },
+    "WLD-10": {
+      "before": "93ec0a7cc0e60bbd0386acd647f7317ecb20b0dde3c0b212466fddc689489ca3",
+      "after": "c482e9816751428ca1499bc196aaff07818fc64de2777368bdb6d4a6000a8007",
+      "layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9"
+    },
+    "WLD-11": {
+      "before": "320087e410d0dbfc400bb92de0c00fae81d3db116affedb70b54ca1ca2af05c2",
+      "after": "fac3edeeeaa9f66b17024ae82e20707718f75ca3001cae60a921ac2a9794efbc",
+      "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf"
+    },
+    "WLD-12": {
+      "before": "d89b02c71781369c363e605a4e2fb4349da694e08e80ace23695e647c48aa15e",
+      "after": "8244f9e52e0360aa1aea456a109fe8727e2d1bf6c5cf6e4ebb7cdbe5cd11411a",
+      "layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8"
+    },
+    "WLD-13": {
+      "before": "ed9a5f51e1feef0e02cffdc47889bf3bcea8b42404249a2616a363bcafeba99d",
+      "after": "001a49b50d0fd2db66730eca612d6a02bd45fabe37a1b84ad89cda346f742998",
+      "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732"
+    }
+  },
+  "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "probe_sha256": "b37abfb192651a6857f9457ac117e8396d0ce08cdb51d64dd573f0de5d63ece9",
+  "auditor_sha256": "5bc60e134cc014d72ce08706a7c8e4a70077443e5b772d51dd7fe045eba9b4c5",
+  "scope": "All18new macroterrain composites; unchanged authored flat centre/side routes with production capsules and qualified sweeps. Vertical routes, moved blockouts, foundations, terrain edges and runtime remain open.",
+  "next_action": "Revise blockout/terrain relationships at actual failed contacts. Original route coordinates are review inputs, not fixed constraints. Do not bury failures by increasing tolerances or flattening land around reservation pads."
+}

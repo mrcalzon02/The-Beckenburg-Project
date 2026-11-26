@@ -1,0 +1,153 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_NAMED_PACKAGED_CASES_VERIFIED_UNDER_REVIEW_GATE",
+  "previous_commit": "ca5575a62da8c86fa49b1a76f91079ab1ff930e1",
+  "previous_gallery": 45384071028,
+  "review_property": "beckenburg.review.cemeteryNative",
+  "package_manifest": {
+    "path": "development/levels/rebuild/cemetery-named-pass/package-resources.json",
+    "sha256": "867532cb15fbe69529661c260c8a3570bcec2328da9b9bcbe8bac890a268d109"
+  },
+  "package_checks": [
+    "Windows full package and packaged audio audit",
+    "Bash syntax and actual resource copy rules",
+    "Eight JAR resources match reviewed sources byte for byte"
+  ],
+  "targeted_regressions": [
+    "MissionBoardIntegrationTest",
+    "SiteSelectionTest",
+    "HidingBudgetTest"
+  ],
+  "sites": {
+    "WLD-07": {
+      "selection": "CEMETERY",
+      "source": {
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.blend": "5b2665a55307a9e3a788eb5718cf324f01acd1c14355d4239abab40d94a130a8",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.glb": "0c53e4168c7809a7122714808ad44426883923e52f1354b3ad9475641fe14478",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.hcs2": "c87f45da4bf51df3fd448b79a1397c20c36a0fea88b515385a7369a4de18083a"
+      },
+      "native_scene_revision": "7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07",
+      "level_revision": "7558c778f6fcc3ae50ba027918c0d6c2c69c6ad9ef1357b48682e56f71e0aa07-893e3ae9633bec4a",
+      "routes": 17,
+      "doors": 7,
+      "refuge_floor_samples": 207,
+      "live_refuges": 3,
+      "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+      "matching_prior_furnished_captures": 16,
+      "named_actions": {
+        "solo_ai_named_van_retreat": "PASS",
+        "named_chapel_camera": "PASS physical placement, blocked exterior view, shared van feed",
+        "normal_named_van_to_archive": "PASS ramp, three aimed doors, west stair and reading",
+        "named_rite_BANISHMENT": "PASS actual installation, van refusal and result on all four peers",
+        "named_rite_CLEANSING": "PASS actual installation, van refusal and result on all four peers",
+        "named_rite_ABSOLUTION": "PASS actual installation, van refusal and result on all four peers",
+        "four_peer_caretaker_supply": "PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset",
+        "four_peer_independent_circuits": "PASS aimed cottage and archive toggles with independent restoration",
+        "named_pavilion_emf": "10/10 local, 2/10 in van"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-named-pass/wld-07/named-software.tsv": "c722da292166949eb6f2cb2d0120dc157ae04fb885163902a2d0b023c6b85f54",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/named-opengl.tsv": "55ecf422197eb6a0b1f68871b1784cdb43524fdd5b627ab8ecb99a0c3c4b9ab1",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/room-layout.tsv": "019ca0eec00a9d4db0f19e85deebf8cff145dee0aa4327b003af064fad016193",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/door-schedule.tsv": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/caretaker-power-supplied.png": "3aa7884f8efa50cb26817c42ec4fe79fa79051aea38d249a31648856273884b9",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/caretaker-power-tripped.png": "fc88d7647979c8f6c98834445dd55456bb7e0ac74422c44614d0c0cbe7630ea9",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/cemetery-desk-MEMORIAL_REGISTER.png": "d72aa86cab3e64be28f025c71b2d96ab6ec1ee1de5c740f5cd7d73f15cc2f5b9",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/cemetery-load-chamber-off.png": "d24448e472c0258faa305b59b57f092b0c3d14364aa96ac1ff8d5053fcb5595a",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/cemetery-load-chamber-on.png": "6f512cb381148c780b7dd38531b56f0626e99d493f2cfed442de50bb2148926b",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/cemetery-load-chapel-off.png": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/cemetery-load-chapel-on.png": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/caretaker-power-supplied.png": "10629cc21a384486ee1a8ef0eaa5299992de0899599a40e81f6f63e47434e919",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/caretaker-power-tripped.png": "2f121823a93607dcc34186eb985da9c52c3336d9f154cbb39a6e4f2e01bc9159",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png": "579d659351cc9193cde31a1754507a97acff5d64f49879409d7d575c3000b24c",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png": "31cf0277d140618d270c5b4afa7b8e0b551a93e238b9d79d1385d8e1c3fbca53",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png": "72ee345af3d4e6db9fc7e1e989310af00748a7883297948fc519e46564a23701",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/wld-07-chapel-cupboard-enter.png": "819f58ea00a11d82f4ba791dd74c7c3c34b312bb5baee3f6f23e336429dae093",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/wld-07-chapel-cupboard-inside.png": "1768843b4a8563c2a6267f716bd33e98b4447ef63d4a1dd9910796e25914eed5",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/wld-07-cottage-cupboard-enter.png": "a746fabb3c7ede420750fcdacff63e23907d663e68e4c669d516acbe0883032b",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/wld-07-cottage-cupboard-inside.png": "936f7acca8561dfaf93c60519a933deae41861345f3e98714f58e3f3a7f5e4ee",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/wld-07-tool-cupboard-enter.png": "27c1a0412e0e6556437dd58ad698a8a7ef20d758634efd4a9e5adb2f42825423",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/opengl/wld-07-tool-cupboard-inside.png": "159c3c2a0c58f54223b2ed48869899d9ab3be79a4aa0a4a8e29b764e426a5e73",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/wld-07-chapel-cupboard-enter.png": "1987bd94cc3a8344190bd2834207543fdde04c14305c91923629b44e28509b62",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/wld-07-chapel-cupboard-inside.png": "1f2e8220e94b9c6ba913ca6f85ec44bf8b6ae126fc343e0aecbf8c219e84b18d",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/wld-07-cottage-cupboard-enter.png": "80116be8110404792be31bace2354d0b2da1719c92fb64152926e636f36c3a77",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/wld-07-cottage-cupboard-inside.png": "50318eae6475753f59774049b12346b35cec4205f039c1ae0235e5ec39542b3c",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/wld-07-tool-cupboard-enter.png": "55e5c8731cc01261b4c022c5b96f7faeccdd635dca60934e31002b487b1dcb8a",
+        "development/levels/rebuild/cemetery-named-pass/wld-07/captures/wld-07-tool-cupboard-inside.png": "9716f6452a136e5eff8196399c5342d2524dcfd4074398ffb8faeb15aeedfab9"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "selection": "MORTUARY",
+      "source": {
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.blend": "5ecad7192f500328a29f5185a2e1f69cd2f9d4cc58d4fd83ab116c3bb1675f4e",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.glb": "3a52ff674e6360c2ee8964c17ad162749dea2aec57dd21a48db3232554c10052",
+        "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.hcs2": "95dd97f96ef50c9e0df86feaa722ca414feded898e89f61fa6c5477ff9929d20"
+      },
+      "native_scene_revision": "440e537b0a1c755b1748a10ba688aff6ac9c43794014556b9ec39660262d86a2",
+      "level_revision": "440e537b0a1c755b1748a10ba688aff6ac9c43794014556b9ec39660262d86a2-2fc0305f3bdb7ac6",
+      "routes": 27,
+      "doors": 17,
+      "refuge_floor_samples": 207,
+      "live_refuges": 3,
+      "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+      "matching_prior_furnished_captures": 20,
+      "named_actions": {
+        "solo_ai_named_van_retreat": "PASS",
+        "named_chapel_camera": "PASS physical placement, blocked exterior view, shared van feed",
+        "normal_named_van_to_archive": "PASS ramp, three aimed doors, west stair and reading",
+        "named_rite_BANISHMENT": "PASS actual installation, van refusal and result on all four peers",
+        "named_rite_CLEANSING": "PASS actual installation, van refusal and result on all four peers",
+        "named_rite_ABSOLUTION": "PASS actual installation, van refusal and result on all four peers",
+        "four_peer_caretaker_supply": "PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset",
+        "four_peer_independent_circuits": "PASS aimed cottage and archive toggles with independent restoration, also cold store and preparation",
+        "named_pavilion_emf": "10/10 local, 2/10 in van"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/named-software.tsv": "30ccc41a7123208639f7495f2ffe55d938fcdc00727368c8d77464b48f07950e",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/named-opengl.tsv": "53bd565952e989d63eaaad7b635984dad7dcfb3ef6a563d1767f36938f12e730",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/room-layout.tsv": "625a75e3b9c76070ef98d43116e0028ca158e12057c07eba0fb67c58c10d06a3",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/door-schedule.tsv": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/caretaker-power-supplied.png": "c1ba13c70530e7628e2c42b8658a7526000a75d0e4411195d687666505f224da",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/caretaker-power-tripped.png": "b86ec45e04337342a4ba43cbe694b14c7d8a84848af3242867463b31ed7a9a48",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-desk-MEMORIAL_REGISTER.png": "d72aa86cab3e64be28f025c71b2d96ab6ec1ee1de5c740f5cd7d73f15cc2f5b9",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-desk-VISITOR_REGISTER.png": "6a62a02691aa95294bb254ec1d1467e4fc0b4cdbcb4a4a23f143fb83d260f5e5",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png": "a746e7b0d9790016231c517fa0cbbc8cd43cd704d47413ebeaeebfccbfeb7fef",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png": "a1d37fd079f9b786dd0898874390d1cef8fc2229c89c11eda9078e36fa78a82a",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/cemetery-record-VISITOR_REGISTER.png": "8bdef3d974c5d33725aca0b8b5e29acb8631cfa6624182cf035aebfa748f5e1e",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png": "628bddd7e701a9941df73b47f645a776aa8e06348b35c927aade881c73a0ba59",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png": "bb99f2e861ee4c80db67ba789116d4242c5455df58da85ad94001b50f84c7203",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png": "579d659351cc9193cde31a1754507a97acff5d64f49879409d7d575c3000b24c",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-desk-VISITOR_REGISTER.png": "efc562a31dee6488d0ed994ccbf3da43ea19a988185f6457a7638c63da107187",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png": "31ab70d2ede5bcd337ac86bc2197618ab6d3f45ecb771aa4b4b3f4b694a04154",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png": "d2e58bfc8fb96bb2cf6419089bc7c4ce578b907d2e71ee0316302b00c5a2acdc",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/cemetery-record-VISITOR_REGISTER.png": "8bdef3d974c5d33725aca0b8b5e29acb8631cfa6624182cf035aebfa748f5e1e",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-enter.png": "a746fabb3c7ede420750fcdacff63e23907d663e68e4c669d516acbe0883032b",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-inside.png": "936f7acca8561dfaf93c60519a933deae41861345f3e98714f58e3f3a7f5e4ee",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-mort-office-cupboard-enter.png": "f5faae5cc8e550c555177f2796ff314556a6dfe9263d70a1717b51972966ff59",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-mort-office-cupboard-inside.png": "3fc4c97dea9f3ce03e1d6539d810507ab0339160e31324ebfaf95b2fe9579dcd",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-tool-cupboard-enter.png": "27c1a0412e0e6556437dd58ad698a8a7ef20d758634efd4a9e5adb2f42825423",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-tool-cupboard-inside.png": "159c3c2a0c58f54223b2ed48869899d9ab3be79a4aa0a4a8e29b764e426a5e73",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/wld-07-mortuary-cottage-cupboard-enter.png": "80116be8110404792be31bace2354d0b2da1719c92fb64152926e636f36c3a77",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/wld-07-mortuary-cottage-cupboard-inside.png": "50318eae6475753f59774049b12346b35cec4205f039c1ae0235e5ec39542b3c",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/wld-07-mortuary-mort-office-cupboard-enter.png": "be6bec561c1067c0b299eff424effc5a30825d2628c0b73bb319e4542d0bd5ca",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/wld-07-mortuary-mort-office-cupboard-inside.png": "64ac4e148253f569922c5a677b3280690582401b32cd7294b44a9488cbab40b7",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/wld-07-mortuary-tool-cupboard-enter.png": "55e5c8731cc01261b4c022c5b96f7faeccdd635dca60934e31002b487b1dcb8a",
+        "development/levels/rebuild/cemetery-named-pass/wld-07-mortuary/captures/wld-07-mortuary-tool-cupboard-inside.png": "683c2adc372141f9781e7d6f3229f273892482f262f60221b0236ce68b459ab6"
+      }
+    }
+  },
+  "remaining_acceptance": [
+    "Detailed normal-use furnishings, remaining site services, material and atmosphere acceptance",
+    "Campaign persistence and representative hardware performance",
+    "Release acceptance"
+  ]
+}

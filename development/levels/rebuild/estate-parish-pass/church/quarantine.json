@@ -1,0 +1,214 @@
+{
+  "source": {
+    "id": "CHURCH",
+    "construction": "development/levels/rebuild/household-sacred-bay-pass/church/construction.json",
+    "layout": "development/levels/rebuild/household-sacred-bay-pass/church/authored-layout.json",
+    "glb": "development/levels/rebuild/household-sacred-bay-pass/church/authored-bays.glb",
+    "native": "development/levels/rebuild/household-sacred-bay-pass/church/authored-bays.hcs2",
+    "blend": "development/levels/rebuild/household-sacred-bay-pass/church/authored-bays.blend",
+    "glb_sha256": "1c4da9a5d134fb1316286253fb61bd719f754a5766906dcfbe7d2d32d023bcfa",
+    "native_sha256": "b09df6f48933680654c099c624f27e4dd7d1c5de4ad342b55973a1a717af3f39"
+  },
+  "retired": [
+    "Arrival end bearing CHURCH 0",
+    "CHURCH bay retained outside L30 support 0 region0",
+    "Flat route shell Wall vestibule S",
+    "Flat route shell Wall vestibule S.001",
+    "Header chapel E",
+    "Header vestibule S",
+    "Header vestry N",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L17 support 1",
+    "L18 support 1",
+    "L30 support 1",
+    "Saved editor macroterrain CHURCH",
+    "Wall chapel E",
+    "Wall chapel E.001",
+    "Wall vestry N",
+    "Wall vestry N.001"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          51.5
+        ],
+        [
+          22,
+          0,
+          45
+        ],
+        [
+          22.5,
+          0,
+          48.7
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        45
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L02": {
+      "id": "L02",
+      "a": "entry",
+      "b": "vestibule",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0,
+          48.7
+        ],
+        [
+          22,
+          0,
+          48.7
+        ],
+        [
+          22,
+          0,
+          39
+        ],
+        [
+          22,
+          0,
+          36.5
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        39
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L17": {
+      "id": "L17",
+      "a": "chapel",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          34,
+          0,
+          20
+        ],
+        [
+          22.0,
+          0,
+          19.5
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L18": {
+      "id": "L18",
+      "a": "vestry",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          28.5,
+          0,
+          6
+        ],
+        [
+          22.0,
+          0,
+          19.5
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        6
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L30": {
+      "id": "L30",
+      "a": "grounds",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          19.5
+        ],
+        [
+          6,
+          0,
+          19.5
+        ],
+        [
+          6,
+          0,
+          39
+        ],
+        [
+          6,
+          0,
+          48.7
+        ],
+        [
+          22.5,
+          0,
+          48.7
+        ]
+      ],
+      "threshold": [
+        6,
+        0,
+        39
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    }
+  }
+}

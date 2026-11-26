@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 805 460" role="img" aria-labelledby="title">
+  <title id="title">Asylum plant service mounting and walk-in cupboard protection</title>
+  <rect width="805" height="460" fill="#f6f4ee"/>
+  <g font-family="sans-serif" fill="#172a35">
+    <text x="30" y="43" font-size="27" font-weight="bold">Asylum plant and cupboard threshold</text>
+    <text x="30" y="74" font-size="14">Plant level −3 m · Ground cupboards at the day room and records</text>
+    <text x="38" y="113" font-size="16" font-weight="bold">Plant north-wall mounting</text>
+    <text x="442" y="113" font-size="16" font-weight="bold">Canonical cupboard, viewed from above</text>
+    <path d="M45 145H345" stroke="#172a35" stroke-width="8"/>
+    <path d="M45 159V365M345 159V365" stroke="#879da5" stroke-dasharray="4 4"/>
+    <rect x="162" y="150" width="67" height="16" fill="#a76d38"/>
+    <rect x="279" y="153" width="48" height="34" fill="#3d8298"/>
+    <path d="M195 147V126" stroke="#a76d38" stroke-width="3"/>
+    <text x="58" y="200" font-size="14">Breaker bank · north masonry mount</text>
+    <text x="58" y="227" font-size="14">Three connected terminals</text>
+    <text x="58" y="254" font-size="14">Plant cupboard backed by the same wall</text>
+    <text x="58" y="281" font-size="14">12 controls · 26 loads</text>
+    <text x="58" y="345" font-size="13">Mounting detail only · north at top</text>
+    <rect x="516" y="150" width="190" height="137" fill="#aee0e9"/>
+    <path d="M516 287V150H706V287M516 287h43m104 0h43" fill="none" stroke="#172a35" stroke-width="6"/>
+    <path d="M559 287H663" stroke="#27869d" stroke-width="3" stroke-dasharray="7 4"/>
+    <path d="M611 338V273m-7 7 7-7 7 7" fill="none" stroke="#27869d" stroke-width="3"/>
+    <text x="611" y="195" text-anchor="middle" font-size="15">Protected interior</text>
+    <text x="611" y="221" text-anchor="middle" font-size="13">1.58 m × 1.14 m</text>
+    <text x="611" y="364" text-anchor="middle" font-size="14">Room side of the real entrance</text>
+    <text x="30" y="416" font-size="13">Routes are surveyed through fitted apertures on supported floors. See arrival.tsv and door-survey.tsv.</text>
+  </g>
+</svg>

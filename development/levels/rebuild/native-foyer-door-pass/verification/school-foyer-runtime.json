@@ -1,0 +1,92 @@
+{
+  "status": "VERIFIED_STAGED_FOYER_DOOR",
+  "source_packet": {
+    "id": "SCHOOL",
+    "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.json",
+    "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/school/authored-layout.json",
+    "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb",
+    "native": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2",
+    "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.blend",
+    "glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+    "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+  },
+  "actual_frame": {
+    "id": "SCHOOL-z-36-22.5",
+    "axis": "z",
+    "boundary": 36,
+    "along": 22.5,
+    "door_type": "service",
+    "clear_width": 1.8,
+    "clear_height": 2.3,
+    "sill_y": 0,
+    "frame_span": [
+      35.76,
+      36
+    ],
+    "rooms": [
+      "foyer"
+    ],
+    "side": "S",
+    "frame_depth": 0.240000000000002,
+    "frame_center": [
+      22.5,
+      0,
+      35.879999999999995
+    ],
+    "boundary_center": [
+      22.5,
+      0,
+      36
+    ]
+  },
+  "leaf_schedule": {
+    "frame_id": "SCHOOL-z-36-22.5",
+    "portal_id": 400,
+    "room_a": "foyer",
+    "room_b": "entry",
+    "leaves": 2,
+    "hinge_side": 1,
+    "swing_direction": 1,
+    "leaf_source": "assets/runtime/models/door_1_loose.glb",
+    "leaf_source_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+    "swing_description": "Both leaves swing south onto the full supported concrete entrance landing."
+  },
+  "source_hashes": {
+    "tools/verify_native_foyer.py": "f335638a5d7f1d961f23de2812ca7744b8b7da9dab453c0cd8088145ce250587",
+    "tools/java/NativeSchoolDoorReview.java": "e1d6855adfded0834cad615c45274eafc3e28f19fdc7a1becccf54c4b6fc0358",
+    "assets/runtime/models/door_1_loose.glb": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "5c13704ab659a7518088419616b23c2ffce34dbd72f3a707b0da3671418be453",
+    "src/main/java/org/beckenburg/NativeInvestigationDoor.java": "7556d2bfe4a2fd6b200ce672f1dfdcdfed254e5bb639a311388462fc5f0604cc",
+    "src/main/java/org/beckenburg/NativeInvestigationScene.java": "f95fb35c2be0170e96b53e48f746a8e73d54fe0efa2e4a5016b1ab8534c5fb80",
+    "src/main/java/org/beckenburg/HouseMap.java": "dbc0b3435600d4970ad5658f70b36b72531a0a169bac5b84eaf8dad048361878",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "26cce8419b99a13d62a6046a5ede725e2773998e8ef3a0974bbc286a13c11d0e",
+    "src/main/java/org/beckenburg/LanAcoustics.java": "c512233cd22b7ec57c5b7f466c653237196afeba8da6e7cb5db2d7a272d683e4",
+    "src/main/java/org/beckenburg/GlbProps.java": "e1278a7ae846647d74fbe2c56f8c7972ae4a23da2ea24e1060ab24c8c33f6284"
+  },
+  "runtime_dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "proof": {
+    "development/levels/rebuild/native-foyer-door-pass/verification/foyer-runtime-proof.tsv": "ac629779a15225a502bab1d9526b81ffc997fc8cd9a143521379262c6b4b5a65",
+    "development/levels/rebuild/native-foyer-door-pass/verification/frame-input.tsv": "26f410e129edf474de4a544919dbd3d34a7a64baba00ee258b942b9b00362a0d",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/ramp-runtime-input.tsv": "bc21cae564697b0cd4b5f8492737d55965a4bdad978a19791b4b8889517a5b4b",
+    "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-closed.png": "4e2c068d390903841cb42542244db8fc1574bf3c2f2771dc481808439fc60b2c",
+    "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-open.png": "f8930849fe8d9d44ab47da37860a70091b24f06bb0396ce1894af33e2d81ca8a"
+  },
+  "controls": {
+    "native_frame": "SCHOOL-z-36-22.5",
+    "portal_id": "400",
+    "scene_revision": "03a748c4b8a5c67966b0dd97e270e7e14420e8c5e12dee3f538c254df52bf41f",
+    "leaf_triangles_per_pose": "1424",
+    "open_and_closed_host_guest": "PASS",
+    "ingress_egress_stand_crouch": "PASS",
+    "closed_eye_and_object_rays": "PASS",
+    "open_swing_leaf_body_and_ray": "PASS",
+    "selected_leaf_interaction": "PASS",
+    "existing_jamb_occlusion": "PASS",
+    "paired_foyer_acoustics_open": "3",
+    "paired_foyer_acoustics_closed": "7",
+    "van_to_foyer_and_return": "PASS",
+    "reclosed_return": "BLOCKED",
+    "changed_foyer_pixels": "110500"
+  },
+  "scope": "Exact source School entrance on two staged HouseMap instances with host/guest snapshot round trips and CPU renderer captures. Network transport, other building leaves, services and full runtime promotion remain open."
+}

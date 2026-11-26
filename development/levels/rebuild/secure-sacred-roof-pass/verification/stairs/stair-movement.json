@@ -1,0 +1,142 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "CHURCH": {
+      "layout": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+      "variants": {
+        "before_bearing": {
+          "contract": "d8e8d42adba7f1e8c4cb1c34cef6ec526c76b7a06542316dba949d117bd35193",
+          "physics": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+          "glb": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7",
+          "layout": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430"
+        },
+        "after_bearing": {
+          "contract": "d8e8d42adba7f1e8c4cb1c34cef6ec526c76b7a06542316dba949d117bd35193",
+          "physics": "cd59f34898b1a431da79a35abb6943d1133b3654860b526defba0cf0bcc014bf",
+          "glb": "84ee88f60592122265f88493ea1398331f1199dfc5133285320d2af346ecf9c1",
+          "layout": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430"
+        }
+      }
+    },
+    "PRISON": {
+      "layout": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+      "variants": {
+        "before_bearing": {
+          "contract": "5074ee89651955b588564eaafdf2ea877fb345646671497affaaa299b788e76e",
+          "physics": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+          "glb": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+          "layout": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85"
+        },
+        "after_bearing": {
+          "contract": "5074ee89651955b588564eaafdf2ea877fb345646671497affaaa299b788e76e",
+          "physics": "df46effe467c327ab261ddc26a4b06d20c302b2b131248e11d9010376c7e4bc9",
+          "glb": "3087f39827be3aa7f815ad9a1c70d6b8c67dc972233b95a89b3a357d122ebe54",
+          "layout": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85"
+        }
+      }
+    },
+    "WLD-10": {
+      "layout": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+      "variants": {
+        "before_bearing": {
+          "contract": "fb84d3b78945c810dbf0d51ce6fb3c1376eb24f1a443b0dc0b56c147b8dd3722",
+          "physics": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a",
+          "glb": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+          "layout": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82"
+        },
+        "after_bearing": {
+          "contract": "fb84d3b78945c810dbf0d51ce6fb3c1376eb24f1a443b0dc0b56c147b8dd3722",
+          "physics": "b13a1c1216c585751423192eb4d7947b3c09af24bc66ac78afda0d86aef6897e",
+          "glb": "ba20299a6d3a738a1b36d0e2a9292db5d10291393fd8e9602adb72d87696ae22",
+          "layout": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "7fba3d56a0f27af8f8dca7db4921a30bdaba7ac26f00a9eb5c2cc0f2b3fa5dd0",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-roof-pass/roster.json": "57163526d494ce9f5e5f8a2155be4ed15b168bc56949ca04798eacf706afbfee",
+    "development/levels/rebuild/movement-chains.json": "36f6e9e7a913163fb457beee851a412b7584cff2be6ee55dbcd640ae662a6d4b"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-10": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      }
+    },
+    "after_bearing": {
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-10": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 9,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 9,
+      "authored_reverse": 9
+    },
+    "after_bearing": {
+      "routes": 9,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 9,
+      "authored_reverse": 9
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [],
+    "results": [],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

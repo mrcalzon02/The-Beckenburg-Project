@@ -1,0 +1,100 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-07": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3795,
+        "valid_standing": 3795,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "flat_links": 24,
+        "pass_both_directions": 24
+      },
+      "after": {
+        "flat_links": 24,
+        "pass_both_directions": 24
+      },
+      "current_lanes": {
+        "samples": 6705,
+        "valid_standing": 6705,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-07": {
+      "before": {
+        "contract": "development/levels/rebuild/cemetery-grounds-pass/wld-07/construction.json",
+        "contract_sha256": "0416fe2d3bd0674bcd3f7ead8deb71e5777b512626c7cc60e7c18720c3eb0a9c",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+        "layout_sha256": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.hcs2",
+        "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/cemetery-boundary-pass/wld-07/construction.json",
+        "contract_sha256": "ed63fa1ae0fafc8ba120b699a27c704a3b3fb801c739bf6bbf79028bc6f53200",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+        "layout_sha256": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1",
+        "native": "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.hcs2",
+        "native_sha256": "f0c45a79c99c72e30902c0580d6f9bce680f0c5e7b309c810db3eccc03aa729e"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "contract": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/construction.json",
+        "contract_sha256": "dd1c196d966c04feebd58a02d3da29dff4c849f48ddcf31d45869a86b41c98b1",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-layout.json",
+        "layout_sha256": "4a021c79f3fb595440bd53663d06f98000e4ef74f675df8dbc413e926501e404",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.hcs2",
+        "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/construction.json",
+        "contract_sha256": "e44b4caa81041c886c7f91cd98295ccef9c1090eacbc6eead850d962ff2673a9",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-layout.json",
+        "layout_sha256": "4a021c79f3fb595440bd53663d06f98000e4ef74f675df8dbc413e926501e404",
+        "native": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/bounded-grounds.hcs2",
+        "native_sha256": "412e2e4b406a97aa3ece75c32a34141fe3a3a15b67ca7cc8eb202f45665d9b17"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "4292ef0f20d33a73506f593e76d3cf6d12b15acb64ec9295c4f3d44dcc0710de",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/cemetery-grounds-pass/roster.json": "29def2e915f8d326bec8651d9ff744e82afc3e5f9a5147052836b7dc523f05b5"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-lane-input.tsv": "f5f355616e92a388005f26ec5484a6210bf7b2293bad8f86d39b7418c1665344",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-lane-names.tsv": "ceb465059dbc008a415025d3bd712b89a49a3f0c8b73cb97a3d978c7b56a492d",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-lanes.tsv": "9498696bb103d1d0cd1683d6dbe20eccb38c2e08d53df830501959d43e6ea210",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-links.tsv": "737ee515014a0bdec46870aa0d0b3d9d466d3dd8fa74a5e4881d5603c944479f",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-names.tsv": "ceb465059dbc008a415025d3bd712b89a49a3f0c8b73cb97a3d978c7b56a492d",
+    "development/levels/rebuild/cemetery-boundary-pass/verification/flat/current-flat-paths.tsv": "69b13986d0a8f9e1944bd05c18f40d4b59e6809bcd5cbcb6b6180c76bb6607f5"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

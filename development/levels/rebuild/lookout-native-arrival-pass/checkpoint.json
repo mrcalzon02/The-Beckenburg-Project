@@ -1,0 +1,179 @@
+{
+  "status": "LOOKOUT_NATIVE_ARRIVAL_OWNERS_AND_DOORS_STAGED",
+  "prior_commit": "8c36ac6db9195baef60dbfb056380cd680f979a2",
+  "native_scene_revision": "66f041239169d6df5b2c9bfec8ca3e326507dca9b7495dad0383a513f39bd7f4",
+  "staged_case_revision": "66f041239169d6df5b2c9bfec8ca3e326507dca9b7495dad0383a513f39bd7f4-1436ab61b0dad462",
+  "source_authority": {
+    "id": "WLD-04",
+    "construction": "development/levels/rebuild/lookout-landing-pass/wld-04/construction.json",
+    "layout": "development/levels/rebuild/lookout-landing-pass/wld-04/authored-layout.json",
+    "glb": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.glb",
+    "native": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.hcs2",
+    "blend": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.blend",
+    "glb_sha256": "22451b753c5b420ada7b30e79f655cddfa58a1e8e30518baca6a5b3c8c6be3fc",
+    "native_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be",
+    "blend_sha256": "f9cc2e030c7c9f59f4fd9c76f6e29575ac3cffc60713058385a6824aa8d78bdd",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/lookout-native-arrival-pass/lookout-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/lookout-native-arrival-pass/door-survey.tsv",
+    "staged_native_arrival": "development/levels/rebuild/lookout-native-arrival-pass/arrival.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/lookout-native-arrival-pass/verification/native-arrival.tsv",
+    "staged_room_bindings": "development/levels/rebuild/lookout-native-arrival-pass/mission.tsv",
+    "measured_hut_apertures": "development/levels/rebuild/lookout-native-arrival-pass/hut-apertures.tsv"
+  },
+  "supported_investigation_owners": 14,
+  "van_owner": 14,
+  "doors": 7,
+  "editor_poses": 14,
+  "matched_leaf_triangles": 17088,
+  "physical_routes": 17,
+  "direction_posture_checks": 68,
+  "joined_van_to_tower_checks": 4,
+  "lan_peers": 4,
+  "verified": [
+    "Seven actual fitted apertures with body, object, sight, interface aim and acoustic behavior.",
+    "Both hut porches lead through fitted doors. The south stair circuit follows the surviving terrain band alongside the hut.",
+    "Fourteen supported area spawns, canonical cargo floor and three separately owned supported ritual positions.",
+    "Standing and crouched traversals from cargo to the 15 m observation deck and back.",
+    "Four actual TCP peers used the cargo ramp, opened the cabin door and returned from the observation deck. A second peer opened the south hut door and descended and returned via the short stair.",
+    "Software and RTX 5070 OpenGL standing views from the exact staged source."
+  ],
+  "still_open": [
+    "Named packaged dispatch, fitted services and power, hiding candidates, full case and release acceptance."
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/arrival.tsv",
+      "bytes": 8905,
+      "sha256": "60e756d0698b035a9a677d2c61a5a652da0a86e8cba930c6dd86a38101444b2f"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/door-survey.tsv",
+      "bytes": 1070,
+      "sha256": "c2188663f2ec38340ad40c738ca5fc95a8bfb4dd5c92a399947830fd04f82198"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/hut-apertures.tsv",
+      "bytes": 288,
+      "sha256": "3622fe7b123988372a1eaba581b724d42edc0bd409e791cbb8f671874fb606ef"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/lookout-approaches-plan.svg",
+      "bytes": 7320,
+      "sha256": "7ea89994fb2ff62ae7dec1b65c65d5eae0188bc61b3f10b74fb378d53be84518"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/lookout-fitted.blend",
+      "bytes": 876891,
+      "sha256": "2b11c2eee8a3141f936b97937fb031d20dabd3b94f16bf382ed844f4aed613e3"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/mission.tsv",
+      "bytes": 726,
+      "sha256": "0ded5b04082c903a1bbcbcffaed8337066605dde7746475c8adcd3c9740a02cf"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/roster.json",
+      "bytes": 28846,
+      "sha256": "70a1ed9e4a28cfdaae1bf3eb254c2a77893c0fda5844f5d48a5446dfe62522b5"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/verification/editable-door-poses.tsv",
+      "bytes": 348,
+      "sha256": "4b0c8a022e9b26b4a202d7c62767bc03e9de43a1eb6779f55f7d91f8c50f31b7"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/verification/native-arrival.tsv",
+      "bytes": 745,
+      "sha256": "f60219bd5dac2b8df88bf596883b625d56c200e5c6861dc7b7972457caa4fd71"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/verification/opengl.tsv",
+      "bytes": 616,
+      "sha256": "4bcfcfe54f604f73249ab023764fc03467ec49eeede79d6473b0b51a0a1892a7"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-601-closed.png",
+      "bytes": 373423,
+      "sha256": "14e03db56017d74f1ac1887e7caee4081b875036393f6527b779988726773101"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-601-open.png",
+      "bytes": 320159,
+      "sha256": "818d73d75cb61cb51e69b9f2932cd56ea59360b5fcf84df9d711a5b643a6f48b"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-603-closed.png",
+      "bytes": 378309,
+      "sha256": "925bc6a83a9ff191a597bd7ce669d28583cc95f00dff28cedf8dcbe9f65d3f16"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-603-open.png",
+      "bytes": 305559,
+      "sha256": "f7abea2ab811bb3e4b3275739a8cc624f8130e9f6e1596c2160bb89d7aee7310"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-606-closed.png",
+      "bytes": 386771,
+      "sha256": "0c3ffd1cec3206932ab64df0bc56fedef561773c104365a96ba9d012fe6c136d"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-606-open.png",
+      "bytes": 327381,
+      "sha256": "67d51bc0456b7e1f317b1f9c793ae61d36687fd90410dca5be8d6fe7b95281a7"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-cargo-approach.png",
+      "bytes": 473502,
+      "sha256": "2bf20469b71a5a152786d4bbdf86c873ea0985c0a55a4aea232e1896b07e9ce6"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/lookout-deck-view.png",
+      "bytes": 225859,
+      "sha256": "408cec3005fbe669e616ad9f01275bad283afd551aff819c3f9d89109ce978d4"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-601-closed.png",
+      "bytes": 373575,
+      "sha256": "dbf44dc36bf4c4fc67a686bfb15e661e244ef7698243c50915382c0f74060a85"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-601-open.png",
+      "bytes": 321831,
+      "sha256": "9670b2bdd3e3b2eece633c4a9372ea3fa6c76e6c1f180f4a8aeca4df30a870c7"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-603-closed.png",
+      "bytes": 377967,
+      "sha256": "46dca770cb14ca987cbe742fecb90aabb1ea3e1ac9f7421d7a14ec2a8d15b695"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-603-open.png",
+      "bytes": 304220,
+      "sha256": "2ccff71749688a7a6c66cf7f0f652bfd8e2c9f86a19c586ff91836c76b3cc5cd"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-606-closed.png",
+      "bytes": 386209,
+      "sha256": "db82478a53fe7d72cb84f5b4d9c43a0c8e616610c1edee297fa86be47f8d5c76"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-606-open.png",
+      "bytes": 325660,
+      "sha256": "5fac4a8f7e5d35847608afed71bd1bba614c34390b9c62affee167a57e1ea681"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-cargo-approach.png",
+      "bytes": 476770,
+      "sha256": "56c0b5dd3d7d97df0fe9ee917d78246b5d365b0c31f847cda3c23f581acdff11"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-native-arrival-pass/captures/opengl/lookout-deck-view.png",
+      "bytes": 227386,
+      "sha256": "0479fed94c2ef3d33c9a036bfd60e7d26d4c6f192fa4952a5ab18f8580836aba"
+    }
+  ]
+}

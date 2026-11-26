@@ -1,0 +1,52 @@
+{
+  "status": "PASS_SCOPED_SAVED_WORLD_SOURCE_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-03",
+      "preserved_nonterrain_meshes": 208,
+      "preserved_nonterrain_native_parts": 208,
+      "actual_shared_terrain_triangles": 9462,
+      "common_saved_vertices": 5253,
+      "lowered_saved_vertices": 719,
+      "raised_saved_vertices": 0,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 12,
+      "blend_sha256": "4f49ae2e0b156671f8be9fdbb5eddd931fb012d7371c358bed489955a5831a9e",
+      "glb_sha256": "c8d7de3841892a75eb5daced79c74faecf33fd8a04a8e9e7c6acaa286f7c8c3e",
+      "physics_sha256": "fc4b409a8ef03a5326c73ea98d95acf4823f96b010db200255931c1ac8443ab0"
+    },
+    {
+      "id": "WLD-04",
+      "preserved_nonterrain_meshes": 275,
+      "preserved_nonterrain_native_parts": 275,
+      "actual_shared_terrain_triangles": 8375,
+      "common_saved_vertices": 4653,
+      "lowered_saved_vertices": 557,
+      "raised_saved_vertices": 0,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 6,
+      "blend_sha256": "98612fdbbcfd8be179a2e87e36f94ea2daf4da50e1612a7905fc7d6e8e3eafac",
+      "glb_sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+      "physics_sha256": "a19a272f6bdcd82b75f4288e29e18424329e0dffeb1f3e60fdb84b193b9682c7"
+    },
+    {
+      "id": "WLD-12",
+      "preserved_nonterrain_meshes": 194,
+      "preserved_nonterrain_native_parts": 194,
+      "actual_shared_terrain_triangles": 12702,
+      "common_saved_vertices": 7104,
+      "lowered_saved_vertices": 1085,
+      "raised_saved_vertices": 0,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 9,
+      "blend_sha256": "82712d4f9e43b8ace24191dcb5541dc9476a3a2584c8bab6c2c09b61d1b9d8b7",
+      "glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+      "physics_sha256": "f64a770b8d4f58f52bc3b62cdc9cc43994add98312271235eedf0589bd50aa6a"
+    }
+  ],
+  "checker_sha256": "495ab4b30b4536f0d01ce3b0931c7cff6d13a75967b57bfef262a4ddc4cfdfd6",
+  "limitations": "No terrain aesthetic/retaining/cave/physical edge/van arrival or actual runtime/hardware acceptance."
+}

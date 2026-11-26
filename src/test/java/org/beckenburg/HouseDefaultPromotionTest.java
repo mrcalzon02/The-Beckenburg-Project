@@ -46,6 +46,8 @@ public final class HouseDefaultPromotionTest {
             check(SiteCaseFiles.forSite(now.id()).reference().equals("BB / RES-017"),
                 "House lost its canonical case file");
             check(live.valid()&&RitualSites.valid(live),"Live House mission and ritual invalid");
+            check(new HouseEncounter(live).phase()==HouseEncounter.Phase.UNNOTICED,
+                "Fresh actual site enables its authored encounter");
             for(Room room:now.rooms()){
                 Vec spawn=room.spawn();
                 check(live.roomAt(spawn.x(),spawn.y(),spawn.z())==room.id()
@@ -60,11 +62,18 @@ public final class HouseDefaultPromotionTest {
             check(UserLevelLibrary.HOUSE_REBUILD.equals(editor.snapshot().architecture())
                 &&editor.level().revision().equals(now.revision()),
                 "Editor and game disagree on default built-in House");
+            check(!Files.exists(saved),"Opening fresh gameplay/editor must not implicitly save a native file");
             editor.save();
+            byte[] rebuiltBytes=Files.readAllBytes(saved);
+            check(new LevelAuthoringSession(HouseMap.Site.HOUSE).snapshot().equals(editor.snapshot()),
+                "Fresh saved metadata and stable prop identities reopen exactly");
             check("briar-rebuild".equals(new HouseMap().level().id())
                 &&UserLevelLibrary.HOUSE_REBUILD.equals(
                     HouseSourceVersions.generation(RuntimeSceneDocument.load(saved))),
                 "Fresh saved built-in House fails to reopen as rebuilt");
+            check(Arrays.equals(rebuiltBytes,Files.readAllBytes(saved)),
+                "Gameplay opening cannot mutate saved native bytes");
+            HouseRebuildPowerTest.main(new String[]{"SAVED_HOUSE"});
             // Versionless previous native files must never be silently migrated.
             LevelAuthoringSession.saveProps(saved,"beckenburg/house",
                 LevelPlans.legacyHouseSource().props());
@@ -78,6 +87,12 @@ public final class HouseDefaultPromotionTest {
                 new LevelAuthoringSession(HouseMap.Site.HOUSE).snapshot().architecture())
                 &&Arrays.equals(historical,Files.readAllBytes(saved)),
                 "Opening historical House altered native bytes or architecture");
+            UserLevelLibrary.create("FreshRebuiltHouse",HouseMap.Site.HOUSE);
+            var custom=new HouseMap(HouseMap.Site.USER);
+            check(custom.level().rooms().equals(source.rooms())&&custom.level().props().equals(source.props()),
+                "New House templates use the rebuilt furnished source");
+            check(new HouseEncounter(custom).phase()==HouseEncounter.Phase.DISABLED,
+                "Custom templates do not force the location-specific encounter");
             System.out.println("PASS rebuilt Briar House fresh default, full sourced geometry, "
                 +"navigation, power controls, rituals, lore, native editor and historical save isolation");
         }finally{

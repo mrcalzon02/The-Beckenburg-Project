@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 622" role="img">
+<title>Northwatch cistern, wash-water supply and capped drain branches</title>
+<style>
+text{fill:#293641;font:15px sans-serif}.title{font-size:26px;font-weight:700}.small{font-size:13px}
+.room{fill:#e3ebef;stroke:#607789;stroke-width:2}.well{fill:#aebdcb;stroke:#607789}
+.tank{fill:#879a9f;stroke:#45616d}.supply,.sleeve,.waste,.door{fill:none}
+.supply{stroke:#257f99;stroke-width:3}.sleeve{stroke:#216278;stroke-width:4}
+.waste{stroke:#775549;stroke-width:2.5;stroke-dasharray:5 3}.door{stroke:#345a8a;stroke-width:5}
+</style><rect width="740" height="622" fill="#fafcf9"/>
+<text class="title" x="38.00" y="41.00">Northwatch wash-water service</text>
+<text class="" x="39.00" y="67.00">Ground floor · north up</text>
+<rect class="room" x="90.00" y="108.00" width="324.00" height="234.00"/>
+<rect class="room" x="90.00" y="342.00" width="324.00" height="234.00"/>
+<rect class="well" x="229.95" y="225.00" width="44.10" height="70.20"/>
+<rect class="well" x="252.00" y="447.95" width="162.00" height="22.10"/>
+<text class="" x="277.20" y="154.80">Generator and water shed</text>
+<text class="" x="277.20" y="524.00">Laboratory</text>
+<rect class="tank" x="101.88" y="152.59" width="35.28" height="25.22"/>
+<text class="" x="150.30" y="169.10">Cistern</text>
+<rect class="tank" x="110.52" y="111.12" width="11.88" height="6.50"/>
+<text class="small" x="153.36" y="115.67">Wash basin</text>
+<rect class="tank" x="94.32" y="411.16" width="9.00" height="8.58"/>
+<text class="small" x="135.72" y="416.75">Wash basin</text>
+<polyline class="supply" points="104.00,165.20 95.40,165.20 95.40,165.20"/>
+<polyline class="supply" points="95.40,112.16 95.40,165.20 95.40,338.36"/>
+<polyline class="sleeve" points="95.40,338.36 95.40,345.64"/>
+<polyline class="supply" points="95.40,345.64 95.40,415.45"/>
+<polyline class="supply" points="95.40,112.16 116.46,112.16 116.46,111.34 116.46,111.34 116.46,111.60"/>
+<polyline class="waste" points="116.46,114.37 116.46,114.37 85.68,114.37"/>
+<polyline class="waste" points="85.68,114.37 82.44,114.37"/>
+<polyline class="supply" points="95.40,415.45 94.63,415.45 94.63,415.45 94.99,415.45"/>
+<polyline class="waste" points="98.82,415.45 98.82,415.45 85.68,415.45"/>
+<polyline class="waste" points="85.68,415.45 82.44,415.45"/>
+<polyline class="door" points="163.80,345.17 196.20,345.17"/>
+<polyline class="door" points="418.39,244.18 418.39,257.82"/>
+<polyline class="door" points="409.61,530.17 409.61,543.83"/>
+<path class="supply" d="M452 173h30"/>
+<text class="small" x="488.00" y="178.00">Gravity supply</text>
+<path class="sleeve" d="M452 199h30"/>
+<text class="small" x="488.00" y="204.00">Closed sleeve</text>
+<path class="waste" d="M452 225h30"/>
+<text class="small" x="488.00" y="230.00">Capped waste branch</text>
+<path class="door" d="M452 251h30"/>
+<text class="small" x="488.00" y="256.00">Existing door</text>
+</svg>

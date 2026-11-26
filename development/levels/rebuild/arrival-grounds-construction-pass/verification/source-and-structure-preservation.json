@@ -1,0 +1,71 @@
+{
+  "sites": [
+    {
+      "site": "WLD-08",
+      "source_nonterrain_retained": true,
+      "zones_and_contracts_unchanged": true,
+      "protected_grid_vertices_unchanged": 391,
+      "source_heights_and_punches_exact": true,
+      "original_world_unchanged": true
+    },
+    {
+      "site": "WLD-12",
+      "source_nonterrain_retained": true,
+      "zones_and_contracts_unchanged": true,
+      "protected_grid_vertices_unchanged": 253,
+      "source_heights_and_punches_exact": true,
+      "original_world_unchanged": true
+    },
+    {
+      "site": "WLD-18",
+      "source_nonterrain_retained": true,
+      "zones_and_contracts_unchanged": true,
+      "protected_grid_vertices_unchanged": 295,
+      "source_heights_and_punches_exact": true,
+      "original_world_unchanged": true
+    }
+  ],
+  "new_closed_positive_solids": [
+    {
+      "name": "WLD-12 maintenance platform south entry return 0",
+      "closed": true,
+      "volume": 0.035228742170622454
+    },
+    {
+      "name": "WLD-12 maintenance platform south entry return 1",
+      "closed": true,
+      "volume": 0.03522874217051467
+    },
+    {
+      "name": "WLD-12 east trestle founded approach abutment region0",
+      "closed": true,
+      "volume": 2.624999955296518
+    },
+    {
+      "name": "WLD-12 east trestle full-width approach deck region0",
+      "closed": true,
+      "volume": 3.7500001490116084
+    },
+    {
+      "name": "WLD-12 east trestle approach edge guard 30.14",
+      "closed": true,
+      "volume": 0.04735091119154915
+    },
+    {
+      "name": "WLD-12 east trestle approach edge guard 34.86",
+      "closed": true,
+      "volume": 0.04735091119154937
+    },
+    {
+      "name": "WLD-12 founded north trestle approach abutment region0",
+      "closed": true,
+      "volume": 10.416367560625076
+    },
+    {
+      "name": "WLD-12 north trestle approach deck edge region0",
+      "closed": true,
+      "volume": 6.300000250339515
+    }
+  ],
+  "full29roster_retained": true
+}

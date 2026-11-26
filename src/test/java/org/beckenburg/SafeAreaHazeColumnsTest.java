@@ -72,6 +72,36 @@ public final class SafeAreaHazeColumnsTest {
             }
         }
         ok(heldShaded>2_000,"Stop-and-go test must shade the real sanctuary");
+        // The native-map atmosphere must also reach the parallel scanline
+        // workers and every cached held frame. Vary fog without changing
+        // camera/clock to exercise an already valid opacity cache.
+        {
+        int width=640,height=400;
+        double focal=420;
+        var largeRegion=List.of(new SafeAreaBarrier.Volume(0,0,0,18,2,12));
+        var fogCache=new SafeAreaHaze.RayCache();
+        int[] clear=new int[width*height];
+        double[] fogDepth=new double[clear.length];
+        Arrays.fill(fogDepth,Double.POSITIVE_INFINITY);
+        Arrays.fill(clear,0x182838);
+        SafeAreaHaze.draw(clear,fogDepth,width,height,focal,0,1.62,0,0,0,.5,largeRegion);
+        for(int pass=0;pass<5;pass++){
+            int[] direct=new int[clear.length],cached=new int[clear.length];
+            Arrays.fill(direct,0x182838);Arrays.fill(cached,0x182838);
+            int fog=pass<2?0x183824:0x462218;
+            try(var atmosphere=LevelAtmosphere.enter(width,height,focal,pass<3?1:2,fog)){
+                int a=SafeAreaHaze.draw(direct,fogDepth,width,height,focal,
+                    0,1.62,0,0,0,.5,largeRegion);
+                int b=SafeAreaHaze.draw(cached,fogDepth,width,height,focal,
+                    0,1.62,0,0,0,.5,largeRegion,fogCache);
+                ok(a>96_000&&a==b,"Large sanctuary must exercise parallel lanes");
+                ok(Arrays.equals(direct,cached),"Parallel/cached atmosphere differs at pass "+pass);
+                ok(!Arrays.equals(clear,cached),"Atmosphere must shade the actual sanctuary");
+            }
+            ok(Arrays.stream(fogDepth).allMatch(Double::isInfinite),"Fogged sanctuary wrote scene depth");
+            ok(!LevelAtmosphere.active(),"Parallel sanctuary leaked atmosphere scope");
+        }
+        }
         for(int width:new int[]{1,83,320,321,960,1920}){
             for(double focal:new double[]{.25,42,210,840}){
                 var column=new SafeAreaHaze.RayCache().horizontal(width,focal);
@@ -82,6 +112,6 @@ public final class SafeAreaHazeColumnsTest {
                 }
             }
         }
-        System.out.println("PASS moving/held six-frame sanctuary RGB-depth parity, occlusion, clock, resize and exact columns");
+        System.out.println("PASS moving/held six-frame sanctuary RGB-depth parity, occlusion, clock, resize, exact columns and parallel atmosphere changes");
     }
 }

@@ -1,0 +1,6 @@
+PASS remote-door source incidence retention and adjacent-door eviction
+PHYSICAL PORTAL COVERAGE site=HOUSE authored_lamps=31 interior_doors=12 potential_source_door_pairs=51 incident_rays=22 cached_transfers=22 positive_receiver_samples=22 receiver_rays=12
+PHYSICAL PORTAL COVERAGE site=FARMHOUSE authored_lamps=31 interior_doors=8 potential_source_door_pairs=34 incident_rays=27 cached_transfers=26 positive_receiver_samples=26 receiver_rays=14
+PHYSICAL PORTAL COVERAGE site=SCHOOL authored_lamps=56 interior_doors=22 potential_source_door_pairs=163 incident_rays=13 cached_transfers=12 positive_receiver_samples=12 receiver_rays=7
+PASS real authored portal illumination coverage: transfers=60 positive_samples=60
+PASS cached real incident flux, receiver ray sharing, and door invalidation

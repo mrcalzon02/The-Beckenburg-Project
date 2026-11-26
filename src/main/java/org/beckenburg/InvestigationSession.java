@@ -13,6 +13,7 @@ public final class InvestigationSession {
     public enum Instrument { EMF, THERMOMETER, SPIRIT_BOX }
     public enum Outcome { ACTIVE, CLEANSED, RETREATED, LOST }
     private final HouseMap map;
+    private final HouseEncounter houseEncounter;
     private final Random random;
     private final Role role;
     private final HunterDiscipline classSkills=new HunterDiscipline(1);
@@ -56,7 +57,6 @@ public final class InvestigationSession {
     }
     private final String missionId=UUID.randomUUID().toString();
     private final int anchorRoom;
-    private final int[] spectralTrace=new int[HouseMap.ROOM_COUNT];
     private int saltRoom=-1,saltTick=-1;
     /** Actual placed solo salt model, at the accepted gameplay location and rotation. */
     public record PlacedSalt(int room,double x,double y,double z,double headingRadians){}
@@ -130,7 +130,8 @@ public final class InvestigationSession {
     private final FieldEquipment uvHardware=new FieldEquipment();
     public boolean uvPowered(){return uvHardware.powered("UV_LIGHT");}
     public java.util.List<UvEvidenceMarks.Mark> uvVisible(double x,double y,double z,double yaw){
-        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),EquipmentTiers.Tier.I,ticks,uvPowered());
+        return uvEvidence.visible(map,new LanWorld.Body(x,y,z,(int)Math.toDegrees(yaw),map.roomAt(x,y,z)),
+            EquipmentTiers.Tier.I,ticks,uvPowered(),crouched);
     }
     public void rechargeUvAtVan(double x,double y,double z){
         if(map.roomAt(x,y,z)!=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("UV service requires van rack");
@@ -179,7 +180,7 @@ public final class InvestigationSession {
         hunterLevel=level;
         maxHealth=HunterProgression.maxHealth(level);
         health=maxHealth;
-        this.map=map; this.role=role; this.random=new Random(seed);
+        this.map=map;this.houseEncounter=new HouseEncounter(map); this.role=role; this.random=new Random(seed);
         evidenceSeed=seed;
         thermalPolarity=GhostEvidenceProfile.thermal(assignedGhost);
         int month=java.time.LocalDate.now().getMonthValue();
@@ -191,7 +192,6 @@ public final class InvestigationSession {
         };
         missionWeather=new MissionWeather(season,MissionWeather.Mode.FIXED,
             EvidenceSignals.Weather.CLEAR,1,seed);
-        java.util.Arrays.fill(spectralTrace,-100000);
         this.wards=(role==Role.CLERIC?3:2)+HunterProgression.extraWards(level);
         this.anchorRoom=random.nextInt(map.interiorRoomCount());
         this.ghost=new GhostDomain(map,anchorRoom,assignedGhost);
@@ -307,6 +307,8 @@ public final class InvestigationSession {
         }
         var clutterObserver=new LooseClutter.Observer(0,playerX,playerY,playerZ,clutterYaw,clutterPitch,!hidden&&health>0,HunterPosture.eye(crouched));
         for(var hit:map.clutter().advance(List.of(clutterObserver))){health=Math.max(0,health-hit.damage());log("Struck by a flying object! -"+hit.damage()+" health.");if(health==0){finish(Outcome.LOST);return;}}
+        var locationSound=houseEncounter.advance(ticks,List.of(clutterObserver));
+        if(locationSound!=null)pendingSounds.add(new WorldCue(locationSound.room(),locationSound.x(),locationSound.y(),locationSound.z(),locationSound.cue(),ticks));
         if(hidden&&(hidingAt==null||Math.hypot(playerX-hidingAt.x(),playerZ-hidingAt.z())>.02
                 ||Math.abs(playerY-hidingAt.y())>.1||(shrubHidden?(!crouched||OutdoorHiding.containing(map.level(),playerX,playerY,playerZ,map.hidingDensity())==null||ghost.room()==playerRoom&&Math.hypot(playerX-map.centerX(playerRoom),playerZ-map.centerZ(playerRoom))<2.4):!LevelClosets.available(map.level(),playerRoom,map.hidingDensity()))))leaveHiding();
         ghost.advance(ticks,sheltered?-1:playerRoom,playerRoom==ghost.room()&&!hidden&&!sheltered?1:0);
@@ -321,11 +323,9 @@ public final class InvestigationSession {
             stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,feed));
             // Ambient fear is felt through stress and audio, never a repeating text hint.
         }
-        if(ghost.room()>=0&&ghost.room()<spectralTrace.length){
-            if(haunted&&GhostTraits.of(ghost.type()).leavesUv()){
-                spectralTrace[ghost.room()]=ticks;
-                uvEvidence.leave(map,new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),standingY(map.centerX(ghost.room()),map.centerZ(ghost.room())),map.centerZ(ghost.room()),0),ticks);
-            }
+        if(ghost.room()>=0&&ghost.room()<HouseMap.ROOM_COUNT){
+            if(haunted&&GhostTraits.of(ghost.type()).leavesUv())
+                uvEvidence.leaveAtSpawn(map,ghost.room(),ticks);
             uvHardware.advancePower(ticks);
             if(saltRoom==ghost.room()&&ticks>saltTick&&GhostTraits.saltAffects(ghost.type())){
                 ghost.reveal(30);ghost.slowFor(26);
@@ -594,6 +594,7 @@ public final class InvestigationSession {
     private void finish(Outcome result) {
         if(rewarded)return;
         outcome=result;rewarded=true;
+        houseEncounter.cancel();
         int base=switch(result){case CLEANSED->220 + measuredTools.size()*40 + health/2 + (photoClaimQualified?45:0);case RETREATED->measuredTools.size()*30 + (photoClaimQualified?25:0);case LOST->0;case ACTIVE->0;};
         payouts=CampaignPartyRules.hostCredits(base,partySize);
     }

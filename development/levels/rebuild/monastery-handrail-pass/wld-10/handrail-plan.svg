@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 740" role="img" aria-labelledby="title desc">
+<title id="title">Monastery stair handrail plan and sections</title>
+<desc id="desc">Four stair sections with fitted iron grips and a plan of the 180 degree bell tower landing.</desc>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#2e342e}.title{font-size:32px;font-weight:650}
+.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.rail{stroke:#235842;fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.floor{stroke:#746c59;fill:none;stroke-width:1.4}.panel{fill:#faf6ea;stroke:#cec1aa}
+</style>
+<rect width="1100" height="740" fill="#f2ecde"/>
+<text x="29" y="45" class="title">Monastery of Ashen Bells · Stair handrails</text>
+<text x="30" y="76" class="body">Patinated iron grips on measured stonework. Sections show one side of each paired installation.</text>
+<rect class="panel" x="26" y="100" width="516" height="182" rx="8"/>
+<text class="head" x="42" y="127">Bell tower lower flight</text>
+<path class="floor" d="M57 255.0H81.0V250.24H96.59V245.47H112.18V240.71H127.76V235.94H143.35V231.18H158.94V226.41H174.53V221.65H190.12V216.88H205.71V212.12H221.29V207.35H236.88V202.59H252.47V197.82H268.06V193.06H283.65V188.29H299.24V183.53H314.82V178.76H330.41V174.00H346.00H369"/>
+<path class="rail" d="M84.97 227.87L346.00 148.08"/>
+<text class="small" x="393" y="176">5.27 m run</text>
+<text class="small" x="393" y="199">+0 m to +3 m</text>
+<text class="small" x="393" y="221">17 existing risers</text>
+<rect class="panel" x="558" y="100" width="516" height="182" rx="8"/>
+<text class="head" x="574" y="127">Bell tower upper flight</text>
+<path class="floor" d="M589 255.0H613.0V250.24H628.59V245.47H644.18V240.71H659.76V235.94H675.35V231.18H690.94V226.41H706.53V221.65H722.12V216.88H737.71V212.12H753.29V207.35H768.88V202.59H784.47V197.82H800.06V193.06H815.65V188.29H831.24V183.53H846.82V178.76H862.41V174.00H878.00H901"/>
+<path class="rail" d="M613.00 229.08L874.03 149.30"/>
+<text class="small" x="925" y="176">5.27 m run</text>
+<text class="small" x="925" y="199">+3 m to +6 m</text>
+<text class="small" x="925" y="221">17 existing risers</text>
+<rect class="panel" x="26" y="298" width="516" height="182" rx="8"/>
+<text class="head" x="42" y="325">West catacomb stair</text>
+<path class="floor" d="M57 372.0H81.0H96.59V376.76H112.18V381.53H127.76V386.29H143.35V391.06H158.94V395.82H174.53V400.59H190.12V405.35H205.71V410.12H221.29V414.88H236.88V419.65H252.47V424.41H268.06V429.18H283.65V433.94H299.24V438.71H314.82V443.47H330.41V448.24H346.00V453.00H369"/>
+<path class="rail" d="M84.44 347.13L342.56 426.03"/>
+<text class="small" x="393" y="374">5.40 m run</text>
+<text class="small" x="393" y="397">+0 m to -3 m</text>
+<text class="small" x="393" y="419">17 existing risers</text>
+<rect class="panel" x="558" y="298" width="516" height="182" rx="8"/>
+<text class="head" x="574" y="325">East catacomb stair</text>
+<path class="floor" d="M589 372.0H613.0H628.59V376.76H644.18V381.53H659.76V386.29H675.35V391.06H690.94V395.82H706.53V400.59H722.12V405.35H737.71V410.12H753.29V414.88H768.88V419.65H784.47V424.41H800.06V429.18H815.65V433.94H831.24V438.71H846.82V443.47H862.41V448.24H878.00V453.00H901"/>
+<path class="rail" d="M616.44 347.13L874.56 426.03"/>
+<text class="small" x="925" y="374">5.40 m run</text>
+<text class="small" x="925" y="397">+0 m to -3 m</text>
+<text class="small" x="925" y="419">17 existing risers</text>
+<rect class="panel" x="26" y="501" width="1048" height="207" rx="8"/>
+<text class="head" x="43" y="530">Bell tower turning landing · Plan at +3 m</text>
+<rect x="73.0" y="603.0" width="168.95999999999998" height="85.8" fill="#eadfc5" stroke="#746c59"/>
+<rect x="73.0" y="551.52" width="79.2" height="51.48" fill="#dfd3b5" stroke="#746c59"/>
+<rect x="162.75999999999996" y="551.52" width="79.2" height="51.48" fill="#dfd3b5" stroke="#746c59"/>
+<path class="rail" d="M78.50 551.52L78.50 603.00"/>
+<path class="rail" d="M78.50 603.00L78.50 683.30"/>
+<path class="rail" d="M78.50 683.30L236.46 683.30"/>
+<path class="rail" d="M236.46 683.30L236.46 603.00"/>
+<path class="rail" d="M236.46 603.00L236.46 551.52"/>
+<text class="small" x="83" y="588">Lower</text><text class="small" x="176" y="588">Upper</text>
+<path class="rail" d="M322 575h28"/><text class="body" x="365" y="580">Continuous outer grip around the open turning space</text>
+<text class="body" x="322" y="613">Ø54 mm grip, set 0.96 m above the pitch line</text>
+<text class="body" x="322" y="639">58 supported brackets and end returns across the four flights and bell landing</text>
+<text class="body" x="322" y="665">The original treads, stone guards and floor openings are retained.</text>
+</svg>

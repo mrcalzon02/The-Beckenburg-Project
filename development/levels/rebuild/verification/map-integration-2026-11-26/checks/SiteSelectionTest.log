@@ -1,0 +1,9 @@
+2026-11-26T20:11:52.765490162Z [main] RENDER SLOW stage=idle faces=79052 visible_faces=35274 culled_faces=43778 target=320x200 build_ms=1274 lighting_raster_ms=545
+2026-11-26T20:11:54.930486402Z [main] RENDER SLOW stage=idle faces=221931 visible_faces=68853 culled_faces=153078 target=320x200 build_ms=551 lighting_raster_ms=294
+2026-11-26T20:11:59.093867541Z [main] RENDER SLOW stage=idle faces=253514 visible_faces=163491 culled_faces=90023 target=320x200 build_ms=1508 lighting_raster_ms=817
+2026-11-26T20:12:01.566916708Z [main] RENDER SLOW stage=idle faces=70413 visible_faces=29942 culled_faces=40471 target=320x200 build_ms=907 lighting_raster_ms=1033
+Exception in thread "main" java.nio.file.DirectoryNotEmptyException: /tmp/beckenburg-site-selection-9110478939449318001
+	at java.base/sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:246)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110)
+	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1191)
+	at org.beckenburg.SiteSelectionTest.main(SiteSelectionTest.java:15)

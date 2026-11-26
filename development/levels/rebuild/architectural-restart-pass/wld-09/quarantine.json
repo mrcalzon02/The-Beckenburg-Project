@@ -1,0 +1,225 @@
+{
+  "source": {
+    "id": "WLD-09",
+    "construction": "development/levels/rebuild/dam-contained-stair-pass/wld-09/construction.json",
+    "layout": "development/levels/rebuild/dam-contained-stair-pass/wld-09/authored-layout.json",
+    "glb": "development/levels/rebuild/dam-contained-stair-pass/wld-09/contained-hall.glb",
+    "native": "development/levels/rebuild/dam-contained-stair-pass/wld-09/contained-hall.hcs2",
+    "blend": "development/levels/rebuild/dam-contained-stair-pass/wld-09/contained-hall.blend",
+    "glb_sha256": "63f2c5e473a5e1bb7cb113b2b18f2a784e2f8fc830c9ab4b2d1601ce719799ea",
+    "native_sha256": "55fcff00baae6c3f933f911163f815f23b65a41e587f19f1ba2d0373a8231b49"
+  },
+  "reason": "Owner rejected generated architecture; original source preserved unchanged",
+  "meshes": [
+    {
+      "name": "Header turbine S",
+      "role": "rough opening header",
+      "zone": null,
+      "link": null,
+      "bounds": [
+        44.25,
+        47.91999816894531,
+        45.75,
+        48.08000183105469,
+        -3.5500001907348633,
+        2.0
+      ]
+    },
+    {
+      "name": "Ceiling cap workshop",
+      "role": "ceiling-cap",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        36.0,
+        48.0,
+        44.28160095214844,
+        55.89800262451172,
+        -3.1599998474121094,
+        -3.0
+      ]
+    },
+    {
+      "name": "Ceiling cap workshop.001",
+      "role": "ceiling-cap",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        36.0,
+        55.89800262451172,
+        44.28160095214844,
+        62.0,
+        -3.1599998474121094,
+        -3.0
+      ]
+    },
+    {
+      "name": "Ceiling cap workshop.002",
+      "role": "ceiling-cap",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        44.28160095214844,
+        55.89800262451172,
+        54.0,
+        62.0,
+        -3.1599998474121094,
+        -3.0
+      ]
+    },
+    {
+      "name": "Header workshop N",
+      "role": "rough opening header",
+      "zone": null,
+      "link": null,
+      "bounds": [
+        44.25,
+        47.91999816894531,
+        45.75,
+        48.08000183105469,
+        -3.5500001907348633,
+        -3.0
+      ]
+    },
+    {
+      "name": "Wall workshop S",
+      "role": "rough shell wall",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        36.0,
+        61.91999816894531,
+        54.0,
+        62.08000183105469,
+        -6.0,
+        -3.0
+      ]
+    },
+    {
+      "name": "Wall workshop W",
+      "role": "rough shell wall",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        35.91999816894531,
+        48.0,
+        36.08000183105469,
+        62.0,
+        -6.0,
+        -3.0
+      ]
+    },
+    {
+      "name": "Restored ceiling-cap workshop 2 region0",
+      "role": "ceiling-cap",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        44.28160095214844,
+        48.0,
+        51.90910339355469,
+        54.10200119018555,
+        -3.1600000858306885,
+        -3.0
+      ]
+    },
+    {
+      "name": "Restored ceiling-cap workshop 2 region1",
+      "role": "ceiling-cap",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        44.28160095214844,
+        54.10200119018555,
+        45.7183952331543,
+        55.89800262451172,
+        -3.1600000858306885,
+        -3.0
+      ]
+    },
+    {
+      "name": "Restored ceiling-cap workshop 2 region2",
+      "role": "ceiling-cap",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        45.7183952331543,
+        49.27272033691406,
+        54.0,
+        55.89800262451172,
+        -3.1600000858306885,
+        -3.0
+      ]
+    },
+    {
+      "name": "Opened stair shell Wall turbine S.001",
+      "role": "rough shell wall",
+      "zone": "turbine",
+      "link": null,
+      "bounds": [
+        45.75,
+        47.91999816894531,
+        64.0,
+        48.08000183105469,
+        -6.0,
+        2.0
+      ]
+    },
+    {
+      "name": "Opened stair shell Wall workshop N.001",
+      "role": "rough shell wall",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        45.75,
+        47.91999816894531,
+        54.0,
+        48.08000183105469,
+        -6.0,
+        -3.0
+      ]
+    },
+    {
+      "name": "Bayed shell Opened stair shell Wall workshop E",
+      "role": "rough shell wall",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        53.91999816894531,
+        48.0,
+        54.08000183105469,
+        62.0,
+        -6.0,
+        -3.0
+      ]
+    },
+    {
+      "name": "Flat route shell Bayed shell Wall turbine S",
+      "role": "rough shell wall",
+      "zone": "turbine",
+      "link": null,
+      "bounds": [
+        36.0,
+        47.91999816894531,
+        44.25,
+        48.08000183105469,
+        -6.0,
+        2.0
+      ]
+    },
+    {
+      "name": "Flat route shell Bayed shell Wall workshop N",
+      "role": "rough shell wall",
+      "zone": "workshop",
+      "link": null,
+      "bounds": [
+        36.0,
+        47.91999816894531,
+        44.25,
+        48.08000183105469,
+        -6.0,
+        -3.0
+      ]
+    }
+  ]
+}

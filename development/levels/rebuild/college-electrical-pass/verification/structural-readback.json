@@ -1,0 +1,23 @@
+{
+  "existing_glb_binary_bytes_retained": 3072628,
+  "existing_glb_nodes_retained": 1277,
+  "existing_hcs2_records_retained": 949,
+  "existing_hcs2_triangles_retained": 24611,
+  "shared_addition_records": 145,
+  "shared_addition_triangles": 19892,
+  "library_model_hashes_verified": 5,
+  "electric_loads": 68,
+  "switch_mounts": 12,
+  "conduit_runs": 21,
+  "reopened_editable_source": {
+    "triangles": 19892,
+    "parts": 145,
+    "coordinate_comparison_metres": 0.0001,
+    "packed_sources": 27
+  },
+  "reimported_runtime_mesh": {
+    "triangles": 19892,
+    "parts": 145,
+    "coordinate_comparison_metres": 0.0001
+  }
+}

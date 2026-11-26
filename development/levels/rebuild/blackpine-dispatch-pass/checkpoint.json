@@ -1,0 +1,99 @@
+{
+  "status": "BLACKPINE_PACKAGED_SOLO_AND_LAN_SERVICE_REVIEW_COMPLETE_CASE_OPEN",
+  "prior_commit": "497d94c1dacf7b4e4a406528cb462d9dc91a5016",
+  "site_id": "WLD-01",
+  "review_property": "-Dbeckenburg.review.blackpine=true",
+  "level_revision": "blackpine-graded-terrain-v1-525b8d237f87fc0c",
+  "roster": "development/levels/rebuild/blackpine-dispatch-pass/roster.json",
+  "measured_plan": {
+    "path": "development/levels/rebuild/blackpine-dispatch-pass/repair-shed-plan.svg",
+    "bytes": 2812,
+    "sha256": "e11589f41e220303e92b922563922f4a82b0a869958c3e271ad2993a1525e70f"
+  },
+  "construction": {
+    "generator_source": "assets/runtime/models/level_trace_generator.glb",
+    "skid_origin": [
+      45.1,
+      0.5515492957746478,
+      47.8
+    ],
+    "mount_wall_x_m": 44,
+    "physical_control_stance": [
+      45.45,
+      0.552,
+      49.07
+    ],
+    "west_door_center": [
+      44,
+      0.5515492957746478,
+      50
+    ],
+    "connected_room_circuits": 12,
+    "electrical_loads": 28
+  },
+  "verification": [
+    {
+      "path": "development/levels/rebuild/blackpine-dispatch-pass/verification/installed-circuits.tsv",
+      "bytes": 3324,
+      "sha256": "56e3beecf0cc7c8cb6cbb3bc763da20c17fc0113d185f295fe5c3c1754a42bed"
+    },
+    {
+      "path": "development/levels/rebuild/blackpine-dispatch-pass/verification/opengl-readback.txt",
+      "bytes": 436,
+      "sha256": "fb862164fb031552db2da63d5caf30c3a7ad5167a7dc1b01745baffa31a753ea"
+    },
+    {
+      "path": "development/levels/rebuild/blackpine-dispatch-pass/verification/packaged-dispatch.txt",
+      "bytes": 542,
+      "sha256": "5cdea0e546c326580e4de6f08676b1451788e93c4d8abe0f65765f992b112289"
+    }
+  ],
+  "standing_captures": [
+    {
+      "path": "development/levels/rebuild/captures/blackpine-dispatch-batch/blackpine-opengl-repair-shed-generator.png",
+      "bytes": 880665,
+      "sha256": "8734a77707f97aa6d49169a18de2c2e4e82c426cb596ca0f259db7caa0a9eb9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/blackpine-dispatch-batch/blackpine-repair-shed-generator.png",
+      "bytes": 993983,
+      "sha256": "0d25c9103bf0688879c78146074a6c87c39eb356918295933efebf5a1b2964b0"
+    }
+  ],
+  "case_checks": [
+    "ordinary solo startup",
+    "actual game solo launcher starts the correct world on the cargo deck",
+    "four-peer live TCP selection and van departure",
+    "closed west shed door stops host movement",
+    "aimed door interaction opens real yard boundary",
+    "graded shed exit and re-entry",
+    "generator stop and start, authorized ghost trip and source-independent breaker",
+    "seat reconnect retains blackout",
+    "physical panel reset",
+    "saved terrain mismatch is rejected",
+    "a running case retains its previously loaded terrain after a subsequent save"
+  ],
+  "retained_case_checks": [
+    "BlackpineGrayboxTest",
+    "BlackpineDeckDepthTest",
+    "BlackpineDressingTest",
+    "BlackpineLightingTest",
+    "BlackpineMillExpansionTest",
+    "BlackpineRitualAcceptanceTest",
+    "HidingBudgetTest",
+    "RoomAcousticPresetsTest",
+    "SafeAreaBarrierTest",
+    "MissionBoardIntegrationTest",
+    "SeacliffDispatchTest",
+    "HollowCreekDispatchTest",
+    "CollegeNativeDispatchTest",
+    "HouseRebuildFunctionsTest",
+    "SiteSelectionTest",
+    "LevelAuthoringIdentityTest"
+  ],
+  "remaining": [
+    "Complete location acceptance and held public dispatch",
+    "Individual evidence, boundary and dressed-space inspections",
+    "Full renderer performance and whole-case acceptance"
+  ]
+}

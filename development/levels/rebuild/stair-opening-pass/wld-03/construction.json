@@ -1,0 +1,172 @@
+{
+  "id": "WLD-03",
+  "status": "PHYSICAL_STAIR_SHELL_APERTURE_CANDIDATE_NOT_RUNTIME_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/stair-landing-pass/wld-03/supported-stairs.glb",
+  "source_glb_sha256": "fa34f2687069c684825019cf5770331ef6a5c41849253b7702bd92d379a47352",
+  "source_physics": "development/levels/rebuild/stair-landing-pass/wld-03/supported-stairs.hcs2",
+  "source_physics_sha256": "bcd8b6c71e05620aee2660bc38f14e74ebb889730d5c837095b132a6bf773e98",
+  "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "source_layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "source_layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {
+      "0": 0
+    },
+    "L05": {},
+    "L06": {},
+    "L07": {
+      "0": 0
+    },
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {
+      "0": 0
+    },
+    "L14": {},
+    "L15": {},
+    "L16": {}
+  },
+  "stair_components": [
+    "73:L04 flight0 step1",
+    "74:L04 flight0 step2",
+    "75:L04 flight0 step3",
+    "76:L04 flight0 step4",
+    "77:L04 flight0 step5",
+    "78:L04 flight0 step6",
+    "79:L04 flight0 step7",
+    "80:L04 flight0 step8",
+    "81:L04 flight0 step9",
+    "82:L04 flight0 step10",
+    "83:L04 flight0 step11",
+    "84:L04 flight0 step12",
+    "85:L04 flight0 step13",
+    "86:L04 flight0 step14",
+    "87:L04 flight0 step15",
+    "88:L04 flight0 step16",
+    "89:L04 flight0 step17",
+    "90:L04 flight0 step18",
+    "91:L04 flight0 step19",
+    "92:L04 flight0 step20",
+    "93:L04 flight0 step21",
+    "94:L04 flight0 step22",
+    "95:L04 flight0 step23",
+    "100:L07 flight0 step1",
+    "101:L07 flight0 step2",
+    "102:L07 flight0 step3",
+    "103:L07 flight0 step4",
+    "104:L07 flight0 step5",
+    "105:L07 flight0 step6",
+    "106:L07 flight0 step7",
+    "107:L07 flight0 step8",
+    "108:L07 flight0 step9",
+    "109:L07 flight0 step10",
+    "110:L07 flight0 step11",
+    "111:L07 flight0 step12",
+    "112:L07 flight0 step13",
+    "113:L07 flight0 step14",
+    "114:L07 flight0 step15",
+    "115:L07 flight0 step16",
+    "116:L07 flight0 step17",
+    "117:L07 flight0 step18",
+    "118:L07 flight0 step19",
+    "119:L07 flight0 step20",
+    "120:L07 flight0 step21",
+    "121:L07 flight0 step22",
+    "122:L07 flight0 step23",
+    "132:L13 flight0 step1",
+    "133:L13 flight0 step2",
+    "134:L13 flight0 step3",
+    "135:L13 flight0 step4",
+    "136:L13 flight0 step5",
+    "137:L13 flight0 step6",
+    "138:L13 flight0 step7",
+    "139:L13 flight0 step8",
+    "140:L13 flight0 step9",
+    "141:L13 flight0 step10",
+    "142:L13 flight0 step11",
+    "143:L13 flight0 step12",
+    "144:L13 flight0 step13",
+    "145:L13 flight0 step14",
+    "146:L13 flight0 step15",
+    "147:L13 flight0 step16",
+    "148:L13 flight0 step17",
+    "149:L13 flight0 step18",
+    "150:L13 flight0 step19",
+    "151:L13 flight0 step20",
+    "152:L13 flight0 step21",
+    "153:L13 flight0 step22",
+    "154:L13 flight0 step23",
+    "Authored stair end WLD-03 L04 0 high region0",
+    "Authored stair end WLD-03 L07 0 low region0",
+    "Authored stair end WLD-03 L07 0 low region1",
+    "Authored stair end WLD-03 L07 0 high region0",
+    "Authored stair end WLD-03 L07 0 high region1"
+  ],
+  "removed_source_meshes": [
+    "Wall shelter N"
+  ],
+  "removed_native_parts": [
+    "6:Wall shelter N"
+  ],
+  "new_parts": 1,
+  "new_triangles": 40,
+  "changes": [
+    {
+      "source_mesh": "Wall shelter N",
+      "new_mesh": "Opened stair shell Wall shelter N",
+      "removed_volume_m3": 0.6256002683997091,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        12.0,
+        -46.0,
+        1.5
+      ],
+      "cutters": [
+        "Stair opening corridor L04 segment0 wall"
+      ]
+    }
+  ],
+  "corridors": [
+    {
+      "link": "L04",
+      "source_segment": 0,
+      "actual_segment": 0,
+      "points": [
+        [
+          12.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "width": 2.04,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor L04 segment0"
+    }
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2223356,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      6
+    ]
+  },
+  "glb_sha256": "141dbe4da15d1ff10059478606c00a86519fd3aeca39843d3db492273c1fffda",
+  "physics_sha256": "3ceb5739144d5a805f070e225019fa5ad01b52eaa72b7ec7da44bfc8af4237e4",
+  "generator_sha256": "435d8c5853cb90832142438f9a78a515392a4ae7092d173a06871db47a13a63a",
+  "remaining": "Independent source/solid/native and all25flat/stair comparisons; terrain/crossed flights, framing/guards, finishes and runtime integration remain open."
+}

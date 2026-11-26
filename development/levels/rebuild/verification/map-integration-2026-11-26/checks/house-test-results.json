@@ -1,0 +1,65 @@
+[
+  {
+    "class": "HouseRebuildEnvelopeTest",
+    "status": "FAIL",
+    "exit_code": 1,
+    "seconds": 1.27,
+    "log": "/dev/shm/beckenburg-map-validation/HouseRebuildEnvelopeTest.log"
+  },
+  {
+    "class": "DevMatchNavigationTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 1.67,
+    "log": "/dev/shm/beckenburg-map-validation/DevMatchNavigationTest.log"
+  },
+  {
+    "class": "HouseTemplateCompatibilityTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 3.04,
+    "log": "/dev/shm/beckenburg-map-validation/HouseTemplateCompatibilityTest.log"
+  },
+  {
+    "class": "GroundRecoverySupportParityTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 2.38,
+    "log": "/dev/shm/beckenburg-map-validation/GroundRecoverySupportParityTest.log"
+  },
+  {
+    "class": "LevelAuthoringIdentityTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 2.54,
+    "log": "/dev/shm/beckenburg-map-validation/LevelAuthoringIdentityTest.log"
+  },
+  {
+    "class": "LevelAuthoringSessionTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 3.24,
+    "log": "/dev/shm/beckenburg-map-validation/LevelAuthoringSessionTest.log"
+  },
+  {
+    "class": "EditorAgentServiceTest",
+    "status": "FAIL",
+    "exit_code": 1,
+    "seconds": 4.04,
+    "log": "/dev/shm/beckenburg-map-validation/EditorAgentServiceTest.log"
+  },
+  {
+    "class": "HouseRebuildEnvelopeTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 22.96,
+    "log": "/dev/shm/beckenburg-map-validation/HouseRebuildEnvelopeTest-after-kenney.log"
+  },
+  {
+    "class": "EditorAgentServiceTest",
+    "status": "PASS",
+    "exit_code": 0,
+    "seconds": 6.37,
+    "log": "/dev/shm/beckenburg-map-validation/EditorAgentServiceTest-after-kenney.log"
+  }
+]

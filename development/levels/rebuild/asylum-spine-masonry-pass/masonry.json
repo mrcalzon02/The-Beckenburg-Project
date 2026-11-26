@@ -1,0 +1,174 @@
+{
+  "partitions": [
+    {
+      "component": "Entrance rebuild Asylum shared spine west 1",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 12,
+      "z1": 13.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall ground-observation E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine west 2",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 14.7,
+      "z1": 19.8,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine W.001",
+        "Flat route shell Wall ground-observation E.001",
+        "Wall ground-linen E",
+        "Flat route shell Wall ground-ward-link E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine west 3",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 21.2,
+      "z1": 23.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine W.002",
+        "Flat route shell Wall ground-ward-link E.001",
+        "Flat route shell Wall ground-wc E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine west 4",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 24.7,
+      "z1": 44.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine W.003",
+        "Flat route shell Wall day E",
+        "Flat route shell Wall ground-wc E.001",
+        "Wall ground-wash E",
+        "Wall lift E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine west 5",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 45.7,
+      "z1": 50,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine W.004"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine east 1",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 12,
+      "z1": 15.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine east 2",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 16.7,
+      "z1": 27.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine E.001",
+        "Flat route shell Wall main-stair W",
+        "Flat route shell Wall staff-office W.001"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine east 3",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 28.7,
+      "z1": 34.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine E.002",
+        "Flat route shell Wall clinical-link W",
+        "Flat route shell Wall main-stair W.001"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine east 4",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 35.7,
+      "z1": 44.3,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine E.003",
+        "Flat route shell Wall clinical-link W.001",
+        "Flat route shell Wall dining W"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared spine east 5",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 45.7,
+      "z1": 50,
+      "sill": 0,
+      "head": 3.4,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall spine E.004"
+      ]
+    }
+  ],
+  "removed": 25,
+  "assemblies": 10,
+  "retained_native_records": 862,
+  "transferred_mounts": {
+    "asylum-switch-00": {
+      "prior_support": "Flat route shell Wall spine W.003",
+      "new_support": "Entrance rebuild Asylum shared spine west 4",
+      "contact_x": 26.08
+    }
+  },
+  "exports": {
+    "blend": "a7f63d997060844ac12cc3a12ce724702f748a3f140b62d9fb4d854371a0c04a",
+    "glb": "a59e9aa466273899fc1547aff13ee34a09510f39d6d6d3f065974f5857ff5cad",
+    "hcs2": "7665c48575f72992cbc7d2499bd63e02f49cd9e3a292e12183a5a9d68d7b43f9"
+  }
+}

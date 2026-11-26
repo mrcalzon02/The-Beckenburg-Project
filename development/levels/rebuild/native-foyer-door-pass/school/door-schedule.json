@@ -1,0 +1,12 @@
+{
+  "frame_id": "SCHOOL-z-36-22.5",
+  "portal_id": 400,
+  "room_a": "foyer",
+  "room_b": "entry",
+  "leaves": 2,
+  "hinge_side": 1,
+  "swing_direction": 1,
+  "leaf_source": "assets/runtime/models/door_1_loose.glb",
+  "leaf_source_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9",
+  "swing_description": "Both leaves swing south onto the full supported concrete entrance landing."
+}

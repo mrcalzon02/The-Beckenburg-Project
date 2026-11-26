@@ -1,0 +1,197 @@
+{
+  "status": "INTERMEDIATE_CONSTRUCTION_POLICY_NOT_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "ASYLUM": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "CHURCH": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "COLLEGE": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "FARMHOUSE": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "MANSION": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "PRISON": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "SCHOOL": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-03": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-04": {
+      "supported_decks": [
+        "foot"
+      ],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-05": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-06": {
+      "supported_decks": [
+        "quay",
+        "pier-w",
+        "pier-e",
+        "crossdock"
+      ],
+      "pile_zones": [
+        "pier-w",
+        "pier-e",
+        "crossdock",
+        "boathouse",
+        "net",
+        "fish"
+      ],
+      "exclude_zones": [],
+      "intent": "Timber piles and actual short bearing beams beneath piers and waterside sheds; cottages/quay use measured shoreline footings. Preserve undercroft and its access."
+    },
+    "WLD-07": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-08": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-09": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-10": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-11": {
+      "supported_decks": [
+        "main",
+        "service",
+        "south-deck",
+        "north-deck",
+        "ferry"
+      ],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Stilt houses and raised boardwalks on timber piles embedded into actual marsh terrain, no earth-filled room pads.",
+      "all_piles": true
+    },
+    "WLD-12": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-13": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-14": {
+      "supported_decks": [
+        "porch"
+      ],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-15": {
+      "supported_decks": [
+        "quay",
+        "portpier"
+      ],
+      "pile_zones": [
+        "portpier"
+      ],
+      "exclude_zones": [
+        "processing",
+        "galley",
+        "mess",
+        "engine",
+        "hold",
+        "pump",
+        "crew",
+        "bridge",
+        "net"
+      ],
+      "intent": "Retained quay and pile-supported pier only. Static moored vessel is a floating hull, never a land building on new foundation piles."
+    },
+    "WLD-16": {
+      "supported_decks": [
+        "westwalk",
+        "eastwalk",
+        "northwalk"
+      ],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-17": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-18": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    },
+    "WLD-07-MORTUARY": {
+      "supported_decks": [],
+      "pile_zones": [],
+      "exclude_zones": [],
+      "intent": "Exposed perimeter of lowest authored construction only; use actual terrain contact and reserve low routes. Upper floors are excluded by overlapping lower footprints."
+    }
+  }
+}

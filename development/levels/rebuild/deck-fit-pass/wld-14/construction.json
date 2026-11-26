@@ -1,0 +1,1159 @@
+{
+  "id": "WLD-14",
+  "status": "PHYSICAL_DECK_CANDIDATE_NOT_RUNTIME_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-14/supported-terrain.glb",
+  "source_glb_sha256": "0f9eece750be3a71e096cc6dd20b9ad468a87b282c3ee8cb5ea25dfebbc23df9",
+  "source_physics": "development/levels/rebuild/terrain-fit-pass/wld-14/supported-terrain.hcs2",
+  "source_physics_sha256": "499d2ad96e75ced9cd4045cbe0db5e3f691617ac72f37e7f20424c1592dfb177",
+  "layout": "development/levels/rebuild/wld-14/rough-layout.json",
+  "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+  "zones": [
+    "porch"
+  ],
+  "decks": [
+    {
+      "name": "Floor exterior deck porch 0",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          30.790569661008703,
+          54.0
+        ],
+        [
+          31.25,
+          54.0
+        ],
+        [
+          31.25,
+          55.378290359753834
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 1",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          24,
+          54
+        ],
+        [
+          29.209431330362953,
+          54.0
+        ],
+        [
+          31.209431330362957,
+          60.0
+        ],
+        [
+          24.0,
+          60.0
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 2",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          31.25,
+          54.0
+        ],
+        [
+          40,
+          54
+        ],
+        [
+          40.0,
+          60.0
+        ],
+        [
+          32.82310673771619,
+          60.0
+        ],
+        [
+          32.71151351928711,
+          59.7628288269043
+        ],
+        [
+          31.25,
+          55.378290359753834
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 3",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.82310673771619,
+          60.0
+        ],
+        [
+          32.79057061468302,
+          60.0
+        ],
+        [
+          32.71151351928711,
+          59.7628288269043
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 4",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          32.79057061468302,
+          60.0
+        ],
+        [
+          32.000000953674316,
+          60.0
+        ],
+        [
+          32.71151351928711,
+          59.7628288269043
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 5",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          40.0,
+          60.0
+        ],
+        [
+          40,
+          66
+        ],
+        [
+          35.64621252175806,
+          66.0
+        ],
+        [
+          32.82310673771619,
+          60.0
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 6",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          35.64621252175806,
+          66.0
+        ],
+        [
+          34.790571568357336,
+          66.0
+        ],
+        [
+          32.79057061468302,
+          60.0
+        ],
+        [
+          32.82310673771619,
+          60.0
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 7",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          33.20943133036295,
+          66.0
+        ],
+        [
+          32.75,
+          66.0
+        ],
+        [
+          32.75,
+          64.62170600891113
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 8",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          34.790571568357336,
+          66.0
+        ],
+        [
+          33.20943133036295,
+          66.0
+        ],
+        [
+          32.75,
+          64.62170600891113
+        ],
+        [
+          32.75,
+          60.0
+        ],
+        [
+          32.79057061468302,
+          60.0
+        ]
+      ],
+      "apertures": []
+    },
+    {
+      "name": "Floor exterior deck porch 9",
+      "zone": "porch",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "footprint": [
+        [
+          31.25,
+          66.0
+        ],
+        [
+          24,
+          66
+        ],
+        [
+          24.0,
+          60.0
+        ],
+        [
+          31.209431330362953,
+          60.0
+        ],
+        [
+          31.25,
+          60.12170600891113
+        ]
+      ],
+      "apertures": []
+    }
+  ],
+  "coplanar_subtractions": [
+    {
+      "zone": "porch",
+      "coplanar_receivers": [
+        "route-02 support 0",
+        "route-03 support 0"
+      ],
+      "apertures": []
+    }
+  ],
+  "discarded_boundary_residues": [],
+  "supports": [
+    {
+      "name": "Deck bearing 0",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          24.0,
+          66.35
+        ],
+        [
+          26.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.6181983947753906,
+        -0.7226905822753906
+      ],
+      "bottom_y": [
+        -0.9681983947753906,
+        -1.0726905822753907,
+        -1.0726905822753907,
+        -0.9681983947753906
+      ],
+      "footprint": [
+        [
+          24.0,
+          65.9
+        ],
+        [
+          26.0,
+          65.9
+        ],
+        [
+          26.0,
+          66.35
+        ],
+        [
+          24.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        25.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 1",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          26.0,
+          66.35
+        ],
+        [
+          28.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.7226905822753906,
+        -0.7832374572753906
+      ],
+      "bottom_y": [
+        -1.0726905822753907,
+        -1.1332374572753907,
+        -1.1332374572753907,
+        -1.0726905822753907
+      ],
+      "footprint": [
+        [
+          26.0,
+          65.9
+        ],
+        [
+          28.0,
+          65.9
+        ],
+        [
+          28.0,
+          66.35
+        ],
+        [
+          26.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        27.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 2",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          28.0,
+          66.35
+        ],
+        [
+          30.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.7832374572753906,
+        -0.7724952697753906
+      ],
+      "bottom_y": [
+        -1.1332374572753907,
+        -1.1224952697753907,
+        -1.1224952697753907,
+        -1.1332374572753907
+      ],
+      "footprint": [
+        [
+          28.0,
+          65.9
+        ],
+        [
+          30.0,
+          65.9
+        ],
+        [
+          30.0,
+          66.35
+        ],
+        [
+          28.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        29.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 3",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          30.0,
+          66.35
+        ],
+        [
+          32.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.7724952697753906,
+        -0.10009765625
+      ],
+      "bottom_y": [
+        -1.1224952697753907,
+        -0.45009765625,
+        -0.45009765625,
+        -1.1224952697753907
+      ],
+      "footprint": [
+        [
+          30.0,
+          65.9
+        ],
+        [
+          32.0,
+          65.9
+        ],
+        [
+          32.0,
+          66.35
+        ],
+        [
+          30.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        31.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 4",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          32.0,
+          66.35
+        ],
+        [
+          34.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.10009765625,
+        -0.6522102355957031
+      ],
+      "bottom_y": [
+        -0.45009765625,
+        -1.0022102355957032,
+        -1.0022102355957032,
+        -0.45009765625
+      ],
+      "footprint": [
+        [
+          32.0,
+          65.9
+        ],
+        [
+          34.0,
+          65.9
+        ],
+        [
+          34.0,
+          66.35
+        ],
+        [
+          32.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 7",
+      "bearing_point": [
+        33.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 5",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          34.0,
+          66.35
+        ],
+        [
+          36.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.6522102355957031,
+        -0.546905517578125
+      ],
+      "bottom_y": [
+        -1.0022102355957032,
+        -0.896905517578125,
+        -0.896905517578125,
+        -1.0022102355957032
+      ],
+      "footprint": [
+        [
+          34.0,
+          65.9
+        ],
+        [
+          36.0,
+          65.9
+        ],
+        [
+          36.0,
+          66.35
+        ],
+        [
+          34.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 6",
+      "bearing_point": [
+        35.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 6",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          36.0,
+          66.35
+        ],
+        [
+          38.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.546905517578125,
+        -0.3983001708984375
+      ],
+      "bottom_y": [
+        -0.896905517578125,
+        -0.7483001708984375,
+        -0.7483001708984375,
+        -0.896905517578125
+      ],
+      "footprint": [
+        [
+          36.0,
+          65.9
+        ],
+        [
+          38.0,
+          65.9
+        ],
+        [
+          38.0,
+          66.35
+        ],
+        [
+          36.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 5",
+      "bearing_point": [
+        37.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 7",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          38.0,
+          66.35
+        ],
+        [
+          40.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.3983001708984375,
+        -0.23911285400390625
+      ],
+      "bottom_y": [
+        -0.7483001708984375,
+        -0.5891128540039062,
+        -0.5891128540039062,
+        -0.7483001708984375
+      ],
+      "footprint": [
+        [
+          38.0,
+          65.9
+        ],
+        [
+          40.0,
+          65.9
+        ],
+        [
+          40.0,
+          66.35
+        ],
+        [
+          38.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor exterior deck porch 5",
+      "bearing_point": [
+        39.0,
+        65.96
+      ]
+    },
+    {
+      "name": "Deck bearing 8",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          23.65,
+          56.0
+        ],
+        [
+          23.65,
+          58.0
+        ]
+      ],
+      "ground_y": [
+        -0.2697792053222656,
+        -0.43360137939453125
+      ],
+      "bottom_y": [
+        -0.6197792053222656,
+        -0.7836013793945312,
+        -0.7836013793945312,
+        -0.6197792053222656
+      ],
+      "footprint": [
+        [
+          24.1,
+          56.0
+        ],
+        [
+          24.1,
+          58.0
+        ],
+        [
+          23.65,
+          58.0
+        ],
+        [
+          23.65,
+          56.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 1",
+      "bearing_point": [
+        24.04,
+        57.0
+      ]
+    },
+    {
+      "name": "Deck bearing 9",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          23.65,
+          58.0
+        ],
+        [
+          23.65,
+          60.0
+        ]
+      ],
+      "ground_y": [
+        -0.43360137939453125,
+        -0.49512481689453125
+      ],
+      "bottom_y": [
+        -0.7836013793945312,
+        -0.8451248168945312,
+        -0.8451248168945312,
+        -0.7836013793945312
+      ],
+      "footprint": [
+        [
+          24.1,
+          58.0
+        ],
+        [
+          24.1,
+          60.0
+        ],
+        [
+          23.65,
+          60.0
+        ],
+        [
+          23.65,
+          58.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 1",
+      "bearing_point": [
+        24.04,
+        59.0
+      ]
+    },
+    {
+      "name": "Deck bearing 10",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.65,
+          60.0
+        ],
+        [
+          23.65,
+          62.0
+        ]
+      ],
+      "ground_y": [
+        -0.49512481689453125,
+        -0.5429763793945312
+      ],
+      "bottom_y": [
+        -0.8451248168945312,
+        -0.8929763793945312,
+        -0.8929763793945312,
+        -0.8451248168945312
+      ],
+      "footprint": [
+        [
+          24.1,
+          60.0
+        ],
+        [
+          24.1,
+          62.0
+        ],
+        [
+          23.65,
+          62.0
+        ],
+        [
+          23.65,
+          60.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        24.04,
+        61.0
+      ]
+    },
+    {
+      "name": "Deck bearing 11",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.65,
+          62.0
+        ],
+        [
+          23.65,
+          64.0
+        ]
+      ],
+      "ground_y": [
+        -0.5429763793945312,
+        -0.5761795043945312
+      ],
+      "bottom_y": [
+        -0.8929763793945312,
+        -0.9261795043945312,
+        -0.9261795043945312,
+        -0.8929763793945312
+      ],
+      "footprint": [
+        [
+          24.1,
+          62.0
+        ],
+        [
+          24.1,
+          64.0
+        ],
+        [
+          23.65,
+          64.0
+        ],
+        [
+          23.65,
+          62.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        24.04,
+        63.0
+      ]
+    },
+    {
+      "name": "Deck bearing 12",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.65,
+          64.0
+        ],
+        [
+          23.65,
+          66.0
+        ]
+      ],
+      "ground_y": [
+        -0.5761795043945312,
+        -0.5937576293945312
+      ],
+      "bottom_y": [
+        -0.9261795043945312,
+        -0.9437576293945312,
+        -0.9437576293945312,
+        -0.9261795043945312
+      ],
+      "footprint": [
+        [
+          24.1,
+          64.0
+        ],
+        [
+          24.1,
+          66.0
+        ],
+        [
+          23.65,
+          66.0
+        ],
+        [
+          23.65,
+          64.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 9",
+      "bearing_point": [
+        24.04,
+        65.0
+      ]
+    },
+    {
+      "name": "Deck bearing 13",
+      "kind": "skirt",
+      "top_y": -0.1600000113248825,
+      "terrain_probe_points": [
+        [
+          40.35,
+          62.0
+        ],
+        [
+          40.35,
+          64.0
+        ]
+      ],
+      "ground_y": [
+        -0.160186767578125,
+        -0.19338607788085938
+      ],
+      "bottom_y": [
+        -0.510186767578125,
+        -0.5433860778808594,
+        -0.5433860778808594,
+        -0.510186767578125
+      ],
+      "footprint": [
+        [
+          39.9,
+          62.0
+        ],
+        [
+          39.9,
+          64.0
+        ],
+        [
+          40.35,
+          64.0
+        ],
+        [
+          40.35,
+          62.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 5",
+      "bearing_point": [
+        39.96,
+        63.0
+      ]
+    },
+    {
+      "name": "Deck bearing 14",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          40.35,
+          64.0
+        ],
+        [
+          40.35,
+          66.0
+        ]
+      ],
+      "ground_y": [
+        -0.19338607788085938,
+        -0.21194076538085938
+      ],
+      "bottom_y": [
+        -0.5433860778808594,
+        -0.5619407653808594,
+        -0.5619407653808594,
+        -0.5433860778808594
+      ],
+      "footprint": [
+        [
+          39.9,
+          64.0
+        ],
+        [
+          39.9,
+          66.0
+        ],
+        [
+          40.35,
+          66.0
+        ],
+        [
+          40.35,
+          64.0
+        ]
+      ],
+      "supports": "Floor exterior deck porch 5",
+      "bearing_point": [
+        39.96,
+        65.0
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          24.0,
+          54.0
+        ],
+        [
+          26.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          26.0,
+          54.0
+        ],
+        [
+          28.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          28.0,
+          54.0
+        ],
+        [
+          30.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          30.0,
+          54.0
+        ],
+        [
+          32.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          32.0,
+          54.0
+        ],
+        [
+          34.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          34.0,
+          54.0
+        ],
+        [
+          36.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          36.0,
+          54.0
+        ],
+        [
+          38.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          38.0,
+          54.0
+        ],
+        [
+          40.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          24.0,
+          54.0
+        ],
+        [
+          24.0,
+          56.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          54.0
+        ],
+        [
+          40.0,
+          56.0
+        ]
+      ],
+      "elevation": 0
+    }
+  ],
+  "new_deck_parts": 10,
+  "new_support_parts": 15,
+  "new_triangles": 300,
+  "glb_sha256": "c0e3bade34567c01a69c809ccf6e0e6d0857946a23d9084c8935fc37e5fcd12e",
+  "physics_sha256": "b81d1853e0a21cbd33a52673a1df5583148c68973c7a4538b88cf92bfdc2d1f4",
+  "generator_sha256": "786d4e3517abbe2eadad9f6634a9621174464713606fe9d679ef0fecb8668752",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-14-overview.png",
+      "sha256": "14442eaf20610f8645981ccfe2240281a4ac5dc7d8f8955efca5145223cec23c",
+      "type": "native exported physical deck candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-14-deck-side.png",
+      "sha256": "1f9422cfa01e0a8f71281d33b9769f91daab06f828a5a457ea9c7638c7a598b7",
+      "type": "native exported physical deck candidate"
+    }
+  ],
+  "limitations": "Rough closed slabs and bearing candidates. Guards, intermediate framing, terrain conflicts, all-site boundaries, canonical van, runtime integration and gameplay/network/performance remain open. Prior source bytes, model pivots/materials and saved terrain holes must be independently verified."
+}

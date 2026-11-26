@@ -1,0 +1,160 @@
+{
+  "status": "PASS_SCOPED_EXPORT_PRESERVATION",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "meshes": 542,
+      "source_glb_sha256": "40041785cb3d50011787453ead42e886aa67fc8773532c1060951f2a4f865103",
+      "candidate_glb_sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff"
+    },
+    {
+      "id": "ASYLUM",
+      "meshes": 574,
+      "source_glb_sha256": "9c7d86f9c7466ca8e70554546f69f68413e7c95286705437c0879dee7e4bfa4d",
+      "candidate_glb_sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7"
+    },
+    {
+      "id": "CHURCH",
+      "meshes": 362,
+      "source_glb_sha256": "6db2a8158974f0d856a1a51533cfde05318b0b872e53e1089e6462c763ac6a6d",
+      "candidate_glb_sha256": "a468b86717a032c9f394f96cd2c36de36cd1572c63d18d77a30afd7a441f25cf"
+    },
+    {
+      "id": "COLLEGE",
+      "meshes": 696,
+      "source_glb_sha256": "cbb3837d134466951d6d429afc61bf029fca0cc3e5cb5f78627df3120a2146d5",
+      "candidate_glb_sha256": "d40df9082b1410c7b632b8536d2d7ceaf9253ddf175d26277da12234f8b39555"
+    },
+    {
+      "id": "FARMHOUSE",
+      "meshes": 379,
+      "source_glb_sha256": "e35dcb0244f096e90f8749a279f14dd5bf271c876b1d4efda074ab56644d54b5",
+      "candidate_glb_sha256": "39f262d69a872623f9027e66fbd0c50f219f37c595d2e60ddf3ca3484256527e"
+    },
+    {
+      "id": "MANSION",
+      "meshes": 554,
+      "source_glb_sha256": "e4bdfb90f0f70dc2be0569c576470a4e9bcefc5662ce12d819ed37d3f0614d29",
+      "candidate_glb_sha256": "621ce73eeed2b3153b2a6a9e04e7f1446729610dcb220e3910556ab994e97d91"
+    },
+    {
+      "id": "PRISON",
+      "meshes": 744,
+      "source_glb_sha256": "ea1c37bdc0e67d9ee381fe20117761f35da76c9423e82884ccb5043415d0b93e",
+      "candidate_glb_sha256": "e1d27f13672b2a33181decf5dfd0f1bd1a7927fe77c0a6a075aa8f5b3cc1b825"
+    },
+    {
+      "id": "SCHOOL",
+      "meshes": 425,
+      "source_glb_sha256": "5beec408f46e42f698748206cbca5d472e22c9ce98e0dd0c8bf356866664e371",
+      "candidate_glb_sha256": "ca3d75d73422c3e509b554cf508376f7c2f13d07307ef1f013d7be67ef5a4a53"
+    },
+    {
+      "id": "WLD-03",
+      "meshes": 163,
+      "source_glb_sha256": "4af4b8197782f9871642b13878d4ceeccbbac4d409374c322e500648c3ff06af",
+      "candidate_glb_sha256": "91e60eb11422e0016149a41f8c65de7d87773d1151dded050d0066a278ac9fec"
+    },
+    {
+      "id": "WLD-04",
+      "meshes": 213,
+      "source_glb_sha256": "728538d07da9bf2b16f01fb4d8cf20ce6c02d93bdffb931ed79b438e8977bccc",
+      "candidate_glb_sha256": "4398c1b2fa117ba6bc649cdbb187daa29c8c93f6b09e46200e07500bba990221"
+    },
+    {
+      "id": "WLD-05",
+      "meshes": 252,
+      "source_glb_sha256": "1f77a64bd75756ebca7e9a5eeb1fd50c1f8f26c4706ebe18fbd0d016ad150da5",
+      "candidate_glb_sha256": "9b98b5bc0cfa50b37a638981442b08e5ca646a5827573ca137e8323842bd6aa8"
+    },
+    {
+      "id": "WLD-06",
+      "meshes": 119,
+      "source_glb_sha256": "7f0be1ab2356925548cc124bf8c151cceb176cfe2a95e1b5f7e1f3e24fdb2418",
+      "candidate_glb_sha256": "d9c7674bb7de9c6be49c5f7f0f5cc8fc93c1d4cee4ccd4e132a6faf0b41f4d20"
+    },
+    {
+      "id": "WLD-07",
+      "meshes": 145,
+      "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+      "candidate_glb_sha256": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7"
+    },
+    {
+      "id": "WLD-08",
+      "meshes": 189,
+      "source_glb_sha256": "dd97cd1e3a45b4a073c88841828c6fc898357a8f16c1141826dc6e2393613d1d",
+      "candidate_glb_sha256": "bad9c0d45da64c46f4c38ad63c84d50f47af6d02b4cb218801a7b08682c9edff"
+    },
+    {
+      "id": "WLD-09",
+      "meshes": 354,
+      "source_glb_sha256": "380f960d639f0ae2261015ccba9ad1b01d880fbe5c0c6727ff972a5d0dae6525",
+      "candidate_glb_sha256": "e450c8c848aaa207f8f49c8400823bd6643d47c6eb1947c5e4209ace86fab02e"
+    },
+    {
+      "id": "WLD-10",
+      "meshes": 240,
+      "source_glb_sha256": "bca00f7ebbcd384177ec6968c5280c9c126af7f632a662322f9b8c3b10c3ed0e",
+      "candidate_glb_sha256": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b"
+    },
+    {
+      "id": "WLD-11",
+      "meshes": 87,
+      "source_glb_sha256": "f511a97254d8ba745ed10fb05093d5c7d55555f8cd11425e8afe6c2ccd2619c5",
+      "candidate_glb_sha256": "446e2536020be93dc783f692c7ec7833ee579f15f3be5a3b8c54b27b0a11b2e1"
+    },
+    {
+      "id": "WLD-12",
+      "meshes": 133,
+      "source_glb_sha256": "7ce85d815d17716b4e5fc39584b55f8b9c37fc382c89b936f03b1d066724af90",
+      "candidate_glb_sha256": "37aebdfa43c4390c867edceb3a20773e87cd7d221d771d0ade2c20d61bc4b617"
+    },
+    {
+      "id": "WLD-13",
+      "meshes": 149,
+      "source_glb_sha256": "c3805de98cd57925b572caa6479d2860f79ef5016c63dcf37385a0199038b388",
+      "candidate_glb_sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1"
+    },
+    {
+      "id": "WLD-14",
+      "meshes": 335,
+      "source_glb_sha256": "9b7d8ea6dc90b73f1bee8b06802986c5c77424bec121ec72a027dfb78ffbaab0",
+      "candidate_glb_sha256": "0f9eece750be3a71e096cc6dd20b9ad468a87b282c3ee8cb5ea25dfebbc23df9"
+    },
+    {
+      "id": "WLD-15",
+      "meshes": 179,
+      "source_glb_sha256": "dbba6887c3731f22af0c8cd55b809b53f4238228d56643467575bd25b7332bad",
+      "candidate_glb_sha256": "731cde313c6ec175529340e3f82cf4cc3a82bcd6fafc9c286420a765eb7e78fb"
+    },
+    {
+      "id": "WLD-16",
+      "meshes": 128,
+      "source_glb_sha256": "1e3341905eedc10272186cc845893acb244840c31ffecba58837f4b8e26d23fc",
+      "candidate_glb_sha256": "6ce78d1089cdabc0c63036e907a7011dfd3fbdd336146dacc0d41088c07eea7c"
+    },
+    {
+      "id": "WLD-17",
+      "meshes": 238,
+      "source_glb_sha256": "7bfc9ab10908cc97d8ec5a563cb051923d788fc7003b9783230cf842499ad6b5",
+      "candidate_glb_sha256": "97100a0687858160d30629dcae1cc942de3871ace38e52af5602f56158cab5c7"
+    },
+    {
+      "id": "WLD-18",
+      "meshes": 308,
+      "source_glb_sha256": "a19b539b5712add8136ce780993b8322e3b38143590c364d6aa0ed4008802f95",
+      "candidate_glb_sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "meshes": 214,
+      "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+      "candidate_glb_sha256": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101"
+    }
+  ],
+  "position_quantization_metres": 0.0001,
+  "uv_quantization": 1e-05,
+  "pose_tolerance": 1e-05,
+  "checker_sha256": "8a775f3f005808cd1bb4a1239bcda5f057af5aad3440a6888b4ba17a42bcdad5",
+  "scope": "Every original mesh except newly appended bearing construction and separately verified macroterrain; transformed triangle corner/UV layer, image name/dimensions and world transform in all25actual candidate GLBs; no visual or gameplay acceptance inferred."
+}

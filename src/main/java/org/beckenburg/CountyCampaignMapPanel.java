@@ -30,6 +30,9 @@ public final class CountyCampaignMapPanel extends JPanel {
 
     private final BufferedImage background;
     private final List<MissionSites.Entry> chapters = MissionSites.campaign();
+    private final List<MissionSites.Entry> fieldSites = java.util.stream.Stream.concat(
+        chapters.stream(), MissionSites.all().stream().filter(site -> !site.headquarters() && !chapters.contains(site))
+    ).toList();
     private final List<Marker> markers;
     private final IntPredicate unlocked;
     private final Map<String, Integer> chapterIndex = new HashMap<>();
@@ -37,11 +40,11 @@ public final class CountyCampaignMapPanel extends JPanel {
     private final JTextArea details = new JTextArea();
     private final MapCanvas canvas = new MapCanvas();
     private final JComboBox<MissionSites.Entry> siteFinder =
-        new JComboBox<>(chapters.toArray(MissionSites.Entry[]::new));
+        new JComboBox<>(fieldSites.toArray(MissionSites.Entry[]::new));
     private final JCheckBox showNames = new JCheckBox("SITE NAMES");
     private boolean syncingFinder;
     private Consumer<MissionSites.Entry> selectionListener = entry -> { };
-    private int selected = 0;
+    private MissionSites.Entry selected = chapters.get(0);
 
     public CountyCampaignMapPanel(IntPredicate chapterUnlocked) {
         super(new BorderLayout(8, 8));
@@ -86,7 +89,7 @@ public final class CountyCampaignMapPanel extends JPanel {
         minus.addActionListener(e -> canvas.zoomAt(1 / 1.25, canvas.getWidth() / 2.0, canvas.getHeight() / 2.0));
         plus.addActionListener(e -> canvas.zoomAt(1.25, canvas.getWidth() / 2.0, canvas.getHeight() / 2.0));
         reset.addActionListener(e -> canvas.reset());
-        focus.addActionListener(e -> canvas.focus(chapters.get(selected).id()));
+        focus.addActionListener(e -> canvas.focus(selected.id()));
         for (JButton button : new JButton[]{minus, plus, reset, focus}) zoom.add(button);
         JPanel find = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
         find.setOpaque(false);
@@ -132,6 +135,8 @@ public final class CountyCampaignMapPanel extends JPanel {
     private List<Marker> loadMarkers() {
         List<Marker> result = new ArrayList<>();
         Set<String> ids = new HashSet<>();
+        Set<String> siteIds = new HashSet<>();
+        for (MissionSites.Entry site : MissionSites.all()) siteIds.add(site.id());
         try (InputStream in = CountyCampaignMapPanel.class.getResourceAsStream(LOCATIONS)) {
             if (in == null) throw new IOException("Missing packaged node manifest: " + LOCATIONS);
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
@@ -141,8 +146,7 @@ public final class CountyCampaignMapPanel extends JPanel {
                     String[] cols = line.split("\\t", -1);
                     if (cols.length != 3) throw new IOException("Bad county node entry: " + line);
                     String id = cols[0];
-                    if (!id.equals("CASTLE") && !chapterIndex.containsKey(id))
-                        throw new IOException("County node is not a campaign site: " + id);
+                    if (!siteIds.contains(id)) throw new IOException("Unknown county location: " + id);
                     double x = Double.parseDouble(cols[1]);
                     double y = Double.parseDouble(cols[2]);
                     if (!Double.isFinite(x) || !Double.isFinite(y) || x < 0 || x > 1 || y < 0 || y > 1)
@@ -154,14 +158,14 @@ public final class CountyCampaignMapPanel extends JPanel {
         } catch (IOException | NumberFormatException problem) {
             throw new IllegalStateException("Invalid county map node registry", problem);
         }
-        if (result.size() != chapters.size() + 1 || !ids.contains("CASTLE") || !ids.containsAll(chapterIndex.keySet()))
-            throw new IllegalStateException("County map must contain the castle and every existing campaign site");
+        if (!ids.equals(siteIds))
+            throw new IllegalStateException("County map must contain headquarters and every field site");
         return List.copyOf(result);
     }
 
     public int chapterNodeCount() { return chapters.size(); }
     public double zoomFactor() { return canvas.zoom; }
-    public MissionSites.Entry selected() { return chapters.get(selected); }
+    public MissionSites.Entry selected() { return selected; }
     /** Current image-space marker position after pan/zoom; for UI diagnostics and click tests. */
     Point nodeScreenPoint(String id) {
         for (Marker marker : markers) if (marker.id.equals(id)) return canvas.position(marker);
@@ -173,23 +177,26 @@ public final class CountyCampaignMapPanel extends JPanel {
     public void onSelection(Consumer<MissionSites.Entry> listener) {
         selectionListener = java.util.Objects.requireNonNull(listener);
     }
-    /** Synchronizes map, chapter list and dossier without changing save-game chapter order. */
+    /** Synchronizes the marker and dossier without changing save-game chapter order. */
     public void select(String siteId) {
-        Integer index = chapterIndex.get(siteId);
-        if (index == null) throw new IllegalArgumentException("No selectable chapter node: " + siteId);
-        if (selected == index) { refreshState(); return; }
-        selected = index;
+        MissionSites.Entry site = MissionSites.byId(siteId);
+        if (site.headquarters()) throw new IllegalArgumentException("Headquarters is a focus-only node");
+        if (selected.equals(site)) { refreshState(); return; }
+        selected = site;
         syncingFinder = true;
-        try { siteFinder.setSelectedIndex(index); }
+        try { siteFinder.setSelectedItem(site); }
         finally { syncingFinder = false; }
         refreshState();
-        selectionListener.accept(chapters.get(index));
+        selectionListener.accept(site);
     }
     private void refreshDetails() {
         MissionSites.Entry site = selected();
+        Integer chapter = chapterIndex.get(site.id());
         title.setText(site.title());
-        String gate = !unlocked.test(selected) ? "LOCKED — finish earlier chapters" :
-            !site.playable() ? "IN DEVELOPMENT — cannot deploy" : "CHAPTER AVAILABLE";
+        String gate;
+        if (chapter != null && !unlocked.test(chapter)) gate = "LOCKED — finish earlier chapters";
+        else if (!site.playable()) gate = "IN DEVELOPMENT — cannot deploy";
+        else gate = chapter == null ? "SOLO AND LAN" : "CHAPTER AVAILABLE";
         details.setText(site.region() + "  •  " + gate + "\n" + site.description());
         details.setCaretPosition(0);
     }
@@ -350,8 +357,10 @@ public final class CountyCampaignMapPanel extends JPanel {
                 return "Several locations here — click to zoom in and choose";
             if (marker.id.equals("CASTLE")) return "Castle Beckenburg — headquarters";
             MissionSites.Entry site = MissionSites.byId(marker.id);
-            int index = chapterIndex.get(marker.id);
-            return site.title() + (!unlocked.test(index) ? " (locked)" : !site.playable() ? " (in development)" : " (available)");
+            Integer chapter = chapterIndex.get(marker.id);
+            if (chapter != null && !unlocked.test(chapter)) return site.title() + " (locked)";
+            if (!site.playable()) return site.title() + " (in development)";
+            return site.title() + (chapter == null ? " (Solo and LAN)" : " (available)");
         }
         /** Text and overlays are generated at draw time; the JPEG never changes. */
         private void drawName(Graphics2D g, Marker marker, List<Rectangle> occupied) {
@@ -401,10 +410,10 @@ public final class CountyCampaignMapPanel extends JPanel {
                     Point p = position(marker);
                     if (p.x < -24 || p.y < -24 || p.x > getWidth() + 24 || p.y > getHeight() + 24) continue;
                     boolean castle = marker.id.equals("CASTLE");
-                    int index = castle ? -1 : chapterIndex.get(marker.id);
-                    boolean active = !castle && index == selected;
-                    boolean accessible = !castle && unlocked.test(index);
-                    boolean playable = accessible && chapters.get(index).playable();
+                    Integer chapter = chapterIndex.get(marker.id);
+                    boolean active = marker.id.equals(selected.id());
+                    boolean accessible = !castle && (chapter == null || unlocked.test(chapter));
+                    boolean playable = accessible && MissionSites.byId(marker.id).playable();
                     Color fill = castle ? new Color(190, 115, 56) : playable ? new Color(108, 181, 138) :
                         accessible ? new Color(160, 146, 112) : new Color(89, 94, 97);
                     int r = active ? 10 : castle ? 9 : 7;

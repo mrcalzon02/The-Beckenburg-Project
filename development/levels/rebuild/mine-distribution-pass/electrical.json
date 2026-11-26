@@ -1,0 +1,2404 @@
+{
+  "exports": {
+    "blend": "b842c5a6ac1bb8f0abe42f94201e6ab1cae9f6442b0ca7c1a2c8821698162503",
+    "glb": "e0bde74a3480ffc2d9ed40be1a1dae1acdd70270045d32823b14e2f2c7b797d4",
+    "hcs2": "f7ea6bf7ccf01b844a09f0f5071afb33127e70f64d7fcdd5e8aa9805430d691f"
+  },
+  "retained_components": 437,
+  "added_components": 556,
+  "buried_checks": [
+    [
+      "yard service exit",
+      12,
+      1.2
+    ],
+    [
+      "crew house branch",
+      84,
+      0.852
+    ],
+    [
+      "stores west branch",
+      112,
+      0.825
+    ],
+    [
+      "east yard branch to assay",
+      124,
+      0.775
+    ],
+    [
+      "east yard branch to wash",
+      50,
+      0.997
+    ],
+    [
+      "headhouse branch",
+      52,
+      1.2
+    ]
+  ],
+  "sealed_sleeves": [
+    [
+      "MC-00 sealed surface wall entry",
+      [
+        12,
+        2.775,
+        62.28
+      ],
+      [
+        12,
+        2.775,
+        61.86
+      ]
+    ],
+    [
+      "MC-01 sealed surface wall entry",
+      [
+        54.3,
+        2.775,
+        52
+      ],
+      [
+        53.875,
+        2.775,
+        52
+      ]
+    ],
+    [
+      "MC-02 sealed surface wall entry",
+      [
+        1.72,
+        2.775,
+        44.65
+      ],
+      [
+        2.125,
+        2.775,
+        44.65
+      ]
+    ],
+    [
+      "MC-03 sealed surface wall entry",
+      [
+        31.58,
+        2.935,
+        52.85
+      ],
+      [
+        31.075,
+        2.935,
+        52.85
+      ]
+    ],
+    [
+      "MC-11 sealed surface wall entry",
+      [
+        54.3,
+        2.775,
+        39
+      ],
+      [
+        53.875,
+        2.775,
+        39
+      ]
+    ],
+    [
+      "headhouse shaft-lintel sleeve",
+      [
+        29.29,
+        2.51,
+        49.17
+      ],
+      [
+        29.29,
+        2.51,
+        48.85
+      ]
+    ],
+    [
+      "lower inter-storey slab sleeve",
+      [
+        10,
+        -5.99,
+        41.855
+      ],
+      [
+        10,
+        -6.19,
+        41.855
+      ]
+    ]
+  ],
+  "loads": [
+    {
+      "id": "mine-shack-light",
+      "room": 0,
+      "space": "shack",
+      "circuit": "MC-00",
+      "mount": [
+        12.0,
+        2.84,
+        53.0
+      ],
+      "emitter": [
+        12.0,
+        2.656,
+        53.0
+      ],
+      "support": "Ceiling cap shack"
+    },
+    {
+      "id": "mine-assay-light",
+      "room": 1,
+      "space": "assay",
+      "circuit": "MC-01",
+      "mount": [
+        47.0,
+        2.84,
+        52.0
+      ],
+      "emitter": [
+        47.0,
+        2.656,
+        52.0
+      ],
+      "support": "Ceiling cap assay"
+    },
+    {
+      "id": "mine-stores-light",
+      "room": 2,
+      "space": "stores",
+      "circuit": "MC-02",
+      "mount": [
+        8.0,
+        2.84,
+        39.0
+      ],
+      "emitter": [
+        8.0,
+        2.656,
+        39.0
+      ],
+      "support": "Ceiling cap stores"
+    },
+    {
+      "id": "mine-adit-light",
+      "room": 3,
+      "space": "adit",
+      "circuit": "MC-03",
+      "mount": [
+        29.0,
+        3.0,
+        52.0
+      ],
+      "emitter": [
+        29.0,
+        2.816,
+        52.0
+      ],
+      "support": "Mine headhouse roof region0"
+    },
+    {
+      "id": "mine-haul-light",
+      "room": 4,
+      "space": "haul",
+      "circuit": "MC-04",
+      "mount": [
+        29.85,
+        -3.26,
+        30.0
+      ],
+      "emitter": [
+        29.85,
+        -3.444,
+        30.0
+      ],
+      "support": "Mine haul cover with rectangular shaft mouth region0"
+    },
+    {
+      "id": "mine-ore-west-light",
+      "room": 5,
+      "space": "ore-west",
+      "circuit": "MC-05",
+      "mount": [
+        12.0,
+        -3.16,
+        32.0
+      ],
+      "emitter": [
+        12.0,
+        -3.344,
+        32.0
+      ],
+      "support": "Ceiling cap ore-west"
+    },
+    {
+      "id": "mine-ore-east-light",
+      "room": 6,
+      "space": "ore-east",
+      "circuit": "MC-06",
+      "mount": [
+        45.0,
+        -3.16,
+        31.0
+      ],
+      "emitter": [
+        45.0,
+        -3.344,
+        31.0
+      ],
+      "support": "Ceiling cap ore-east"
+    },
+    {
+      "id": "mine-cross-light",
+      "room": 7,
+      "space": "cross",
+      "circuit": "MC-07",
+      "mount": [
+        28.0,
+        -3.16,
+        15.0
+      ],
+      "emitter": [
+        28.0,
+        -3.344,
+        15.0
+      ],
+      "support": "Ceiling cap cross"
+    },
+    {
+      "id": "mine-lift-light",
+      "room": 8,
+      "space": "lift",
+      "circuit": "MC-08",
+      "mount": [
+        48.0,
+        -3.16,
+        16.0
+      ],
+      "emitter": [
+        48.0,
+        -3.344,
+        16.0
+      ],
+      "support": "Ceiling cap lift"
+    },
+    {
+      "id": "mine-lower-light",
+      "room": 9,
+      "space": "lower",
+      "circuit": "MC-09",
+      "mount": [
+        11.0,
+        -6.16,
+        31.0
+      ],
+      "emitter": [
+        11.0,
+        -6.344,
+        31.0
+      ],
+      "support": "Restored bay WLD-05 ore-west floor region0"
+    },
+    {
+      "id": "mine-vent-light",
+      "room": 10,
+      "space": "vent",
+      "circuit": "MC-10",
+      "mount": [
+        11.0,
+        -3.26,
+        52.0
+      ],
+      "emitter": [
+        11.0,
+        -3.444,
+        52.0
+      ],
+      "support": "Mine vent cover with rectangular shaft mouth region0"
+    },
+    {
+      "id": "mine-wash-light",
+      "room": 11,
+      "space": "wash",
+      "circuit": "MC-11",
+      "mount": [
+        47.0,
+        2.84,
+        39.0
+      ],
+      "emitter": [
+        47.0,
+        2.656,
+        39.0
+      ],
+      "support": "Ceiling cap wash"
+    }
+  ],
+  "exposed_segments": 119,
+  "connected_endpoints": 24,
+  "controllers": [
+    {
+      "id": "mine-switch-00",
+      "circuit": "MC-00",
+      "space": "shack",
+      "room": 0,
+      "at": [
+        19.879,
+        1.25,
+        55.25
+      ],
+      "support": "Mine crew house yard door west or north pier region0",
+      "feet": [
+        18.65,
+        0,
+        55.25
+      ]
+    },
+    {
+      "id": "mine-switch-01",
+      "circuit": "MC-01",
+      "space": "assay",
+      "room": 1,
+      "at": [
+        40.120998,
+        1.25,
+        55.200001
+      ],
+      "support": "Mine assay yard door west or north pier region0",
+      "feet": [
+        41.25,
+        0,
+        55.2
+      ]
+    },
+    {
+      "id": "mine-switch-02",
+      "circuit": "MC-02",
+      "space": "stores",
+      "room": 2,
+      "at": [
+        13.879,
+        1.25,
+        40.200001
+      ],
+      "support": "Mine stores working door west or north pier region0",
+      "feet": [
+        12.6,
+        0,
+        40.2
+      ]
+    },
+    {
+      "id": "mine-switch-03",
+      "circuit": "MC-03",
+      "space": "adit",
+      "room": 3,
+      "at": [
+        31.129,
+        1.25,
+        52.849998
+      ],
+      "support": "Mine headhouse east elevation solid region0",
+      "feet": [
+        30.1,
+        0,
+        52.85
+      ]
+    },
+    {
+      "id": "mine-switch-04",
+      "circuit": "MC-04",
+      "space": "haul",
+      "room": 4,
+      "at": [
+        22.0,
+        -4.75,
+        41.918999
+      ],
+      "support": "Wall haul S",
+      "feet": [
+        22,
+        -6,
+        40.3
+      ]
+    },
+    {
+      "id": "mine-switch-05",
+      "circuit": "MC-05",
+      "space": "ore-west",
+      "room": 5,
+      "at": [
+        2.081,
+        -4.75,
+        28.200001
+      ],
+      "support": "Wall ore-west W",
+      "feet": [
+        3.4,
+        -6,
+        28.2
+      ]
+    },
+    {
+      "id": "mine-switch-06",
+      "circuit": "MC-06",
+      "space": "ore-east",
+      "room": 6,
+      "at": [
+        53.918999,
+        -4.75,
+        30.200001
+      ],
+      "support": "Wall ore-east E",
+      "feet": [
+        52.7,
+        -6,
+        30.2
+      ]
+    },
+    {
+      "id": "mine-switch-07",
+      "circuit": "MC-07",
+      "space": "cross",
+      "room": 7,
+      "at": [
+        28.0,
+        -4.75,
+        8.081
+      ],
+      "support": "Wall cross N",
+      "feet": [
+        28,
+        -6,
+        9.0
+      ]
+    },
+    {
+      "id": "mine-switch-08",
+      "circuit": "MC-08",
+      "space": "lift",
+      "room": 8,
+      "at": [
+        53.918999,
+        -4.75,
+        14.2
+      ],
+      "support": "Wall lift E",
+      "feet": [
+        52.6,
+        -6,
+        14.2
+      ]
+    },
+    {
+      "id": "mine-switch-09",
+      "circuit": "MC-09",
+      "space": "lower",
+      "room": 9,
+      "at": [
+        11.0,
+        -8.75,
+        41.918999
+      ],
+      "support": "Bayed shell Wall lower S",
+      "feet": [
+        11,
+        -10,
+        40.8
+      ]
+    },
+    {
+      "id": "mine-switch-10",
+      "circuit": "MC-10",
+      "space": "vent",
+      "room": 10,
+      "at": [
+        2.081,
+        -4.75,
+        50.799999
+      ],
+      "support": "Wall vent W",
+      "feet": [
+        3.26,
+        -6,
+        50.8
+      ]
+    },
+    {
+      "id": "mine-switch-11",
+      "circuit": "MC-11",
+      "space": "wash",
+      "room": 11,
+      "at": [
+        40.120998,
+        1.25,
+        41.0
+      ],
+      "support": "Mine wash house yard door west or north pier region0",
+      "feet": [
+        41.22,
+        0,
+        41.0
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "MC-00 switch drop",
+      "points": [
+        [
+          19.851,
+          1.302,
+          55.25
+        ],
+        [
+          19.851,
+          2.770000152587891,
+          55.25
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-01 switch drop",
+      "points": [
+        [
+          40.148998,
+          1.302,
+          55.200001
+        ],
+        [
+          40.148998,
+          2.770000152587891,
+          55.200001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-02 switch drop",
+      "points": [
+        [
+          13.851,
+          1.302,
+          40.200001
+        ],
+        [
+          13.851,
+          2.770000152587891,
+          40.200001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-03 switch drop",
+      "points": [
+        [
+          31.101,
+          1.302,
+          52.849998
+        ],
+        [
+          31.101,
+          2.93,
+          52.849998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-04 switch drop",
+      "points": [
+        [
+          22.0,
+          -4.698,
+          41.890999
+        ],
+        [
+          22.0,
+          -3.3299999904632567,
+          41.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-05 switch drop",
+      "points": [
+        [
+          2.109,
+          -4.698,
+          28.200001
+        ],
+        [
+          2.109,
+          -3.229999847412109,
+          28.200001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-06 switch drop",
+      "points": [
+        [
+          53.890999,
+          -4.698,
+          30.200001
+        ],
+        [
+          53.890999,
+          -3.229999847412109,
+          30.200001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-07 switch drop",
+      "points": [
+        [
+          28.0,
+          -4.698,
+          8.109
+        ],
+        [
+          28.0,
+          -3.22999960899353,
+          8.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-08 switch drop",
+      "points": [
+        [
+          53.890999,
+          -4.698,
+          14.2
+        ],
+        [
+          53.890999,
+          -3.229999847412109,
+          14.2
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-09 switch drop",
+      "points": [
+        [
+          11.0,
+          -8.698,
+          41.890999
+        ],
+        [
+          11.0,
+          -6.8,
+          41.890999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-10 switch drop",
+      "points": [
+        [
+          2.109,
+          -4.698,
+          50.799999
+        ],
+        [
+          2.109,
+          -3.3299999904632567,
+          50.799999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "MC-11 switch drop",
+      "points": [
+        [
+          40.148998,
+          1.302,
+          41.0
+        ],
+        [
+          40.148998,
+          2.770000152587891,
+          41.0
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "yard service exit",
+      "points": [
+        [
+          33.76,
+          -0.37,
+          67.57
+        ],
+        [
+          33.76,
+          -1.2,
+          67.57
+        ],
+        [
+          33.65,
+          -1.2,
+          67.57
+        ],
+        [
+          33.65,
+          -1.2,
+          64.9
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "crew house branch",
+      "points": [
+        [
+          33.65,
+          -1.2,
+          64.9
+        ],
+        [
+          12.0,
+          -1.2,
+          64.9
+        ],
+        [
+          12.0,
+          -1.2,
+          62.28
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "stores west branch",
+      "points": [
+        [
+          12.0,
+          -1.2,
+          64.9
+        ],
+        [
+          0.85,
+          -1.2,
+          64.9
+        ],
+        [
+          0.85,
+          -1.2,
+          44.65
+        ],
+        [
+          1.72,
+          -1.2,
+          44.65
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "east yard branch to assay",
+      "points": [
+        [
+          33.65,
+          -1.2,
+          64.9
+        ],
+        [
+          33.65,
+          -1.2,
+          62.65
+        ],
+        [
+          55.2,
+          -1.2,
+          62.65
+        ],
+        [
+          55.2,
+          -1.2,
+          52.0
+        ],
+        [
+          54.3,
+          -1.2,
+          52.0
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "east yard branch to wash",
+      "points": [
+        [
+          55.2,
+          -1.2,
+          52.0
+        ],
+        [
+          55.2,
+          -1.2,
+          39.0
+        ],
+        [
+          54.3,
+          -1.2,
+          39.0
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "headhouse branch",
+      "points": [
+        [
+          33.65,
+          -1.2,
+          64.9
+        ],
+        [
+          32.1,
+          -1.2,
+          64.9
+        ],
+        [
+          32.1,
+          -1.2,
+          52.85
+        ],
+        [
+          31.58,
+          -1.2,
+          52.85
+        ]
+      ],
+      "radius": 0.032,
+      "visible": false
+    },
+    {
+      "id": "MC-00 buried riser foot",
+      "points": [
+        [
+          12,
+          -1.2,
+          62.28
+        ],
+        [
+          12,
+          -0.12500032424926757,
+          62.28
+        ]
+      ],
+      "radius": 0.027,
+      "visible": false
+    },
+    {
+      "id": "MC-00 outside riser",
+      "points": [
+        [
+          12,
+          -0.12500032424926757,
+          62.28
+        ],
+        [
+          12,
+          2.775,
+          62.28
+        ]
+      ],
+      "radius": 0.027,
+      "visible": true
+    },
+    {
+      "id": "MC-00 sealed surface wall entry",
+      "points": [
+        [
+          12,
+          2.775,
+          62.28
+        ],
+        [
+          12,
+          2.775,
+          61.86
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "MC-01 buried riser foot",
+      "points": [
+        [
+          54.3,
+          -1.2,
+          52
+        ],
+        [
+          54.3,
+          -0.12500032424926757,
+          52
+        ]
+      ],
+      "radius": 0.027,
+      "visible": false
+    },
+    {
+      "id": "MC-01 outside riser",
+      "points": [
+        [
+          54.3,
+          -0.12500032424926757,
+          52
+        ],
+        [
+          54.3,
+          2.775,
+          52
+        ]
+      ],
+      "radius": 0.027,
+      "visible": true
+    },
+    {
+      "id": "MC-01 sealed surface wall entry",
+      "points": [
+        [
+          54.3,
+          2.775,
+          52
+        ],
+        [
+          53.875,
+          2.775,
+          52
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "MC-02 buried riser foot",
+      "points": [
+        [
+          1.72,
+          -1.2,
+          44.65
+        ],
+        [
+          1.72,
+          1.6382171249389648,
+          44.65
+        ]
+      ],
+      "radius": 0.027,
+      "visible": false
+    },
+    {
+      "id": "MC-02 outside riser",
+      "points": [
+        [
+          1.72,
+          1.6382171249389648,
+          44.65
+        ],
+        [
+          1.72,
+          2.775,
+          44.65
+        ]
+      ],
+      "radius": 0.027,
+      "visible": true
+    },
+    {
+      "id": "MC-02 sealed surface wall entry",
+      "points": [
+        [
+          1.72,
+          2.775,
+          44.65
+        ],
+        [
+          2.125,
+          2.775,
+          44.65
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "MC-03 buried riser foot",
+      "points": [
+        [
+          31.58,
+          -1.2,
+          52.85
+        ],
+        [
+          31.58,
+          0.035,
+          52.85
+        ]
+      ],
+      "radius": 0.027,
+      "visible": false
+    },
+    {
+      "id": "MC-03 outside riser",
+      "points": [
+        [
+          31.58,
+          0.035,
+          52.85
+        ],
+        [
+          31.58,
+          2.935,
+          52.85
+        ]
+      ],
+      "radius": 0.027,
+      "visible": true
+    },
+    {
+      "id": "MC-03 sealed surface wall entry",
+      "points": [
+        [
+          31.58,
+          2.935,
+          52.85
+        ],
+        [
+          31.075,
+          2.935,
+          52.85
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "MC-11 buried riser foot",
+      "points": [
+        [
+          54.3,
+          -1.2,
+          39
+        ],
+        [
+          54.3,
+          1.7920090293884277,
+          39
+        ]
+      ],
+      "radius": 0.027,
+      "visible": false
+    },
+    {
+      "id": "MC-11 outside riser",
+      "points": [
+        [
+          54.3,
+          1.7920090293884277,
+          39
+        ],
+        [
+          54.3,
+          2.775,
+          39
+        ]
+      ],
+      "radius": 0.027,
+      "visible": true
+    },
+    {
+      "id": "MC-11 sealed surface wall entry",
+      "points": [
+        [
+          54.3,
+          2.775,
+          39
+        ],
+        [
+          53.875,
+          2.775,
+          39
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "haul shaft wall raceway",
+      "points": [
+        [
+          29.29,
+          2.51,
+          48.85
+        ],
+        [
+          29.29,
+          2.18,
+          48.32
+        ],
+        [
+          29.29,
+          2.09,
+          47.9
+        ],
+        [
+          29.29,
+          -0.74,
+          41.4
+        ],
+        [
+          29.29,
+          -0.92,
+          39.8
+        ],
+        [
+          29.29,
+          -3.36,
+          33.65
+        ],
+        [
+          29.29,
+          -3.36,
+          32.55
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "headhouse shaft-lintel sleeve",
+      "points": [
+        [
+          29.29,
+          2.51,
+          49.17
+        ],
+        [
+          29.29,
+          2.51,
+          48.85
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "headhouse ceiling to shaft tap",
+      "points": [
+        [
+          29.29,
+          2.935,
+          52.85
+        ],
+        [
+          29.29,
+          2.935,
+          49.24
+        ],
+        [
+          29.29,
+          2.51,
+          49.24
+        ],
+        [
+          29.29,
+          2.51,
+          49.17
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul shaft foot wall return",
+      "points": [
+        [
+          29.29,
+          -3.36,
+          32.55
+        ],
+        [
+          29.29,
+          -3.36,
+          32.38
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul shaft foot soffit",
+      "points": [
+        [
+          29.29,
+          -3.36,
+          32.38
+        ],
+        [
+          29.29,
+          -3.36,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul west ceiling feeder",
+      "points": [
+        [
+          29.29,
+          -3.36,
+          31
+        ],
+        [
+          20.22,
+          -3.36,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul ore-west opening",
+      "points": [
+        [
+          20.22,
+          -3.605,
+          31
+        ],
+        [
+          19.78,
+          -3.605,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul ore-west opening end",
+      "points": [
+        [
+          20.22,
+          -3.36,
+          31
+        ],
+        [
+          20.22,
+          -3.605,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul ore-west opening end",
+      "points": [
+        [
+          19.78,
+          -3.36,
+          31
+        ],
+        [
+          19.78,
+          -3.605,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul east ceiling feeder",
+      "points": [
+        [
+          29.29,
+          -3.36,
+          31
+        ],
+        [
+          35.78,
+          -3.36,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul ore-east opening",
+      "points": [
+        [
+          35.78,
+          -3.605,
+          31
+        ],
+        [
+          36.22,
+          -3.605,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul ore-east opening end",
+      "points": [
+        [
+          35.78,
+          -3.36,
+          31
+        ],
+        [
+          35.78,
+          -3.605,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "haul ore-east opening end",
+      "points": [
+        [
+          36.22,
+          -3.36,
+          31
+        ],
+        [
+          36.22,
+          -3.605,
+          31
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "west ore branch and vent transfer",
+      "points": [
+        [
+          19.78,
+          -3.36,
+          31
+        ],
+        [
+          11,
+          -3.36,
+          31
+        ],
+        [
+          11,
+          -3.36,
+          41.77
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "ore-to-vent opening",
+      "points": [
+        [
+          11,
+          -3.605,
+          41.77
+        ],
+        [
+          11,
+          -3.605,
+          42.23
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "ore-to-vent opening end",
+      "points": [
+        [
+          11,
+          -3.36,
+          41.77
+        ],
+        [
+          11,
+          -3.605,
+          41.77
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "ore-to-vent opening end",
+      "points": [
+        [
+          11,
+          -3.36,
+          42.23
+        ],
+        [
+          11,
+          -3.605,
+          42.23
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "lower chamber takeoff",
+      "points": [
+        [
+          11,
+          -3.36,
+          39.4
+        ],
+        [
+          10,
+          -3.36,
+          39.4
+        ],
+        [
+          10,
+          -3.36,
+          41.855
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "lower upper wall drop",
+      "points": [
+        [
+          10,
+          -3.36,
+          41.855
+        ],
+        [
+          10,
+          -5.99,
+          41.855
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "lower inter-storey slab sleeve",
+      "points": [
+        [
+          10,
+          -5.99,
+          41.855
+        ],
+        [
+          10,
+          -6.19,
+          41.855
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "lower ceiling junction",
+      "points": [
+        [
+          10,
+          -6.19,
+          41.855
+        ],
+        [
+          10,
+          -6.225,
+          41.855
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "west ore to cross passage",
+      "points": [
+        [
+          19.78,
+          -3.36,
+          31
+        ],
+        [
+          16,
+          -3.36,
+          31
+        ],
+        [
+          16,
+          -3.36,
+          20.23
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "cross passage west opening",
+      "points": [
+        [
+          16,
+          -3.605,
+          20.23
+        ],
+        [
+          16,
+          -3.605,
+          19.77
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "cross passage west opening end",
+      "points": [
+        [
+          16,
+          -3.36,
+          20.23
+        ],
+        [
+          16,
+          -3.605,
+          20.23
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "cross passage west opening end",
+      "points": [
+        [
+          16,
+          -3.36,
+          19.77
+        ],
+        [
+          16,
+          -3.605,
+          19.77
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "cross passage to lift feeder",
+      "points": [
+        [
+          16,
+          -3.36,
+          19.77
+        ],
+        [
+          16,
+          -3.36,
+          14
+        ],
+        [
+          43.77,
+          -3.36,
+          14
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "lift opening",
+      "points": [
+        [
+          43.77,
+          -3.605,
+          14
+        ],
+        [
+          44.23,
+          -3.605,
+          14
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "lift opening end",
+      "points": [
+        [
+          43.77,
+          -3.36,
+          14
+        ],
+        [
+          43.77,
+          -3.605,
+          14
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "lift opening end",
+      "points": [
+        [
+          44.23,
+          -3.36,
+          14
+        ],
+        [
+          44.23,
+          -3.605,
+          14
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "headhouse circuit and shaft takeoff",
+      "points": [
+        [
+          31.075,
+          2.935,
+          52.85
+        ],
+        [
+          29.29,
+          2.935,
+          52.85
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-00 switched feeder",
+      "points": [
+        [
+          12,
+          2.775,
+          61.86
+        ],
+        [
+          19.851,
+          2.775,
+          61.86
+        ],
+        [
+          19.851,
+          2.775,
+          55.25
+        ],
+        [
+          19.851,
+          2.770000152587891,
+          55.25
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-00 fixture return",
+      "points": [
+        [
+          19.851,
+          2.775,
+          55.25
+        ],
+        [
+          12.0,
+          2.775,
+          55.25
+        ],
+        [
+          12.0,
+          2.775,
+          53.0
+        ],
+        [
+          12.0,
+          2.828,
+          53.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-01 switched feeder",
+      "points": [
+        [
+          53.875,
+          2.775,
+          52
+        ],
+        [
+          40.148998,
+          2.775,
+          52
+        ],
+        [
+          40.148998,
+          2.775,
+          55.200001
+        ],
+        [
+          40.148998,
+          2.770000152587891,
+          55.200001
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-01 fixture return",
+      "points": [
+        [
+          40.148998,
+          2.775,
+          55.200001
+        ],
+        [
+          47.0,
+          2.775,
+          55.200001
+        ],
+        [
+          47.0,
+          2.775,
+          52.0
+        ],
+        [
+          47.0,
+          2.828,
+          52.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-02 switched feeder",
+      "points": [
+        [
+          2.125,
+          2.775,
+          44.65
+        ],
+        [
+          13.851,
+          2.775,
+          44.65
+        ],
+        [
+          13.851,
+          2.775,
+          40.200001
+        ],
+        [
+          13.851,
+          2.770000152587891,
+          40.200001
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-02 fixture return",
+      "points": [
+        [
+          13.851,
+          2.775,
+          40.200001
+        ],
+        [
+          8.0,
+          2.775,
+          40.200001
+        ],
+        [
+          8.0,
+          2.775,
+          39.0
+        ],
+        [
+          8.0,
+          2.828,
+          39.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-03 switched feeder",
+      "points": [
+        [
+          31.075,
+          2.935,
+          52.85
+        ],
+        [
+          31.101,
+          2.935,
+          52.85
+        ],
+        [
+          31.101,
+          2.935,
+          52.849998
+        ],
+        [
+          31.101,
+          2.93,
+          52.849998
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-03 fixture return",
+      "points": [
+        [
+          31.101,
+          2.935,
+          52.849998
+        ],
+        [
+          29.0,
+          2.935,
+          52.849998
+        ],
+        [
+          29.0,
+          2.935,
+          52.0
+        ],
+        [
+          29.0,
+          2.988,
+          52.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-04 switched feeder",
+      "points": [
+        [
+          29.29,
+          -3.36,
+          31
+        ],
+        [
+          29.29,
+          -3.3249999999999997,
+          31
+        ],
+        [
+          22.0,
+          -3.3249999999999997,
+          31
+        ],
+        [
+          22.0,
+          -3.3249999999999997,
+          41.890999
+        ],
+        [
+          22.0,
+          -3.3299999904632567,
+          41.890999
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-04 fixture return",
+      "points": [
+        [
+          22.0,
+          -3.3249999999999997,
+          41.890999
+        ],
+        [
+          22.0,
+          -3.3249999999999997,
+          30.0
+        ],
+        [
+          29.85,
+          -3.3249999999999997,
+          30.0
+        ],
+        [
+          29.85,
+          -3.272,
+          30.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-05 switched feeder",
+      "points": [
+        [
+          11,
+          -3.36,
+          31
+        ],
+        [
+          11,
+          -3.225,
+          31
+        ],
+        [
+          2.109,
+          -3.225,
+          31
+        ],
+        [
+          2.109,
+          -3.225,
+          28.200001
+        ],
+        [
+          2.109,
+          -3.229999847412109,
+          28.200001
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-05 fixture return",
+      "points": [
+        [
+          2.109,
+          -3.225,
+          28.200001
+        ],
+        [
+          12.0,
+          -3.225,
+          28.200001
+        ],
+        [
+          12.0,
+          -3.225,
+          32.0
+        ],
+        [
+          12.0,
+          -3.172,
+          32.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-06 switched feeder",
+      "points": [
+        [
+          36.22,
+          -3.36,
+          31
+        ],
+        [
+          36.22,
+          -3.225,
+          31
+        ],
+        [
+          53.890999,
+          -3.225,
+          31
+        ],
+        [
+          53.890999,
+          -3.225,
+          30.200001
+        ],
+        [
+          53.890999,
+          -3.229999847412109,
+          30.200001
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-06 fixture return",
+      "points": [
+        [
+          53.890999,
+          -3.225,
+          30.200001
+        ],
+        [
+          45.0,
+          -3.225,
+          30.200001
+        ],
+        [
+          45.0,
+          -3.225,
+          31.0
+        ],
+        [
+          45.0,
+          -3.172,
+          31.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-07 switched feeder",
+      "points": [
+        [
+          16,
+          -3.36,
+          14
+        ],
+        [
+          16,
+          -3.225,
+          14
+        ],
+        [
+          28.0,
+          -3.225,
+          14
+        ],
+        [
+          28.0,
+          -3.225,
+          8.109
+        ],
+        [
+          28.0,
+          -3.22999960899353,
+          8.109
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-07 fixture return",
+      "points": [
+        [
+          28.0,
+          -3.225,
+          8.109
+        ],
+        [
+          28.0,
+          -3.225,
+          15.0
+        ],
+        [
+          28.0,
+          -3.172,
+          15.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-08 switched feeder",
+      "points": [
+        [
+          44.23,
+          -3.36,
+          14
+        ],
+        [
+          44.23,
+          -3.225,
+          14
+        ],
+        [
+          53.890999,
+          -3.225,
+          14
+        ],
+        [
+          53.890999,
+          -3.225,
+          14.2
+        ],
+        [
+          53.890999,
+          -3.229999847412109,
+          14.2
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-08 fixture return",
+      "points": [
+        [
+          53.890999,
+          -3.225,
+          14.2
+        ],
+        [
+          48.0,
+          -3.225,
+          14.2
+        ],
+        [
+          48.0,
+          -3.225,
+          16.0
+        ],
+        [
+          48.0,
+          -3.172,
+          16.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-09 switched feeder",
+      "points": [
+        [
+          10,
+          -6.225,
+          41.855
+        ],
+        [
+          10,
+          -6.2250000000000005,
+          41.855
+        ],
+        [
+          11.0,
+          -6.2250000000000005,
+          41.855
+        ],
+        [
+          11.0,
+          -6.2250000000000005,
+          41.890999
+        ],
+        [
+          11.0,
+          -6.8,
+          41.890999
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-09 fixture return",
+      "points": [
+        [
+          11.0,
+          -6.2250000000000005,
+          41.890999
+        ],
+        [
+          11.0,
+          -6.2250000000000005,
+          31.0
+        ],
+        [
+          11.0,
+          -6.172,
+          31.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-10 switched feeder",
+      "points": [
+        [
+          11,
+          -3.36,
+          42.23
+        ],
+        [
+          11,
+          -3.3249999999999997,
+          42.23
+        ],
+        [
+          2.109,
+          -3.3249999999999997,
+          42.23
+        ],
+        [
+          2.109,
+          -3.3249999999999997,
+          50.799999
+        ],
+        [
+          2.109,
+          -3.3299999904632567,
+          50.799999
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-10 fixture return",
+      "points": [
+        [
+          2.109,
+          -3.3249999999999997,
+          50.799999
+        ],
+        [
+          11.0,
+          -3.3249999999999997,
+          50.799999
+        ],
+        [
+          11.0,
+          -3.3249999999999997,
+          52.0
+        ],
+        [
+          11.0,
+          -3.272,
+          52.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-11 switched feeder",
+      "points": [
+        [
+          53.875,
+          2.775,
+          39
+        ],
+        [
+          40.148998,
+          2.775,
+          39
+        ],
+        [
+          40.148998,
+          2.775,
+          41.0
+        ],
+        [
+          40.148998,
+          2.770000152587891,
+          41.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "MC-11 fixture return",
+      "points": [
+        [
+          40.148998,
+          2.775,
+          41.0
+        ],
+        [
+          47.0,
+          2.775,
+          41.0
+        ],
+        [
+          47.0,
+          2.775,
+          39.0
+        ],
+        [
+          47.0,
+          2.828,
+          39.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    }
+  ]
+}

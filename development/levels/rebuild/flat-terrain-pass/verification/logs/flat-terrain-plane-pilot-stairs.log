@@ -1,0 +1,12 @@
+Diagnosed 0 failed directional flights in after_bearing without altering physics
+{'before_bearing': {'flights': 16, 'legacy_up': 0, 'legacy_down': 0, 'authored_up': 16, 'authored_down': 16}, 'after_bearing': {'flights': 16, 'legacy_up': 0, 'legacy_down': 0, 'authored_up': 16, 'authored_down': 16}}
+{'before_bearing': {'routes': 14, 'legacy_forward': 0, 'legacy_reverse': 0, 'authored_forward': 14, 'authored_reverse': 14}, 'after_bearing': {'routes': 14, 'legacy_forward': 0, 'legacy_reverse': 0, 'authored_forward': 14, 'authored_reverse': 14}}
+[]
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_roster_stairs.py", line 201, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_roster_stairs.py", line 198, in main
+    if args.require_authored_chains:assert report['authored_routes'] and all(r['authored_forward']=='PASS' and r['authored_reverse']=='PASS' for r in report['authored_routes']),'Declared circulation route is not physically complete'
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Declared circulation route is not physically complete

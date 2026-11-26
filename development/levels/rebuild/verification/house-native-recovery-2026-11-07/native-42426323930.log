@@ -1,0 +1,367 @@
+native-editor-service	Set up job	﻿2026-11-07T23:42:35.3298228Z Current runner version: '2.338.2'
+native-editor-service	Set up job	2026-11-07T23:42:35.3349607Z ##[group]Runner Image Provisioner
+native-editor-service	Set up job	2026-11-07T23:42:35.3350748Z Hosted Compute Agent
+native-editor-service	Set up job	2026-11-07T23:42:35.3351617Z Version: 20261103.629
+native-editor-service	Set up job	2026-11-07T23:42:35.3352528Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+native-editor-service	Set up job	2026-11-07T23:42:35.3353617Z Build Date: 2026-11-03T17:26:59Z
+native-editor-service	Set up job	2026-11-07T23:42:35.3354705Z Worker ID: {1e1630ed-0c68-430a-a188-1369596c096c}
+native-editor-service	Set up job	2026-11-07T23:42:35.3355765Z Region: eastus
+native-editor-service	Set up job	2026-11-07T23:42:35.3356530Z Cloud: Azure
+native-editor-service	Set up job	2026-11-07T23:42:35.3357258Z ##[endgroup]
+native-editor-service	Set up job	2026-11-07T23:42:35.3359144Z ##[group]Operating System
+native-editor-service	Set up job	2026-11-07T23:42:35.3360078Z Microsoft Windows Server 2025
+native-editor-service	Set up job	2026-11-07T23:42:35.3360946Z 10.0.26100
+native-editor-service	Set up job	2026-11-07T23:42:35.3361678Z Datacenter
+native-editor-service	Set up job	2026-11-07T23:42:35.3362396Z ##[endgroup]
+native-editor-service	Set up job	2026-11-07T23:42:35.3363123Z ##[group]Runner Image
+native-editor-service	Set up job	2026-11-07T23:42:35.3363982Z Image: windows-2025-vs2026
+native-editor-service	Set up job	2026-11-07T23:42:35.3364854Z Version: 20261103.298.1
+native-editor-service	Set up job	2026-11-07T23:42:35.3367015Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261103.298/images/windows/Windows2025-VS2026-Readme.md
+native-editor-service	Set up job	2026-11-07T23:42:35.3370234Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261103.298
+native-editor-service	Set up job	2026-11-07T23:42:35.3371843Z ##[endgroup]
+native-editor-service	Set up job	2026-11-07T23:42:35.3373480Z ##[group]GITHUB_TOKEN Permissions
+native-editor-service	Set up job	2026-11-07T23:42:35.3376172Z Contents: read
+native-editor-service	Set up job	2026-11-07T23:42:35.3377000Z Metadata: read
+native-editor-service	Set up job	2026-11-07T23:42:35.3377845Z ##[endgroup]
+native-editor-service	Set up job	2026-11-07T23:42:35.3380468Z Secret source: Actions
+native-editor-service	Set up job	2026-11-07T23:42:35.3381937Z Cache mode: write
+native-editor-service	Set up job	2026-11-07T23:42:35.3382924Z Prepare workflow directory
+native-editor-service	Set up job	2026-11-07T23:42:35.3840301Z Prepare all required actions
+native-editor-service	Set up job	2026-11-07T23:42:35.3912630Z Getting action download info
+native-editor-service	Set up job	2026-11-07T23:42:35.5405212Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+native-editor-service	Set up job	2026-11-07T23:42:35.6807483Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+native-editor-service	Set up job	2026-11-07T23:42:36.0291846Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+native-editor-service	Set up job	2026-11-07T23:42:36.4474713Z Complete job name: native-editor-service
+native-editor-service	Run actions/checkout@v4	﻿2026-11-07T23:42:36.6102596Z ##[group]Run actions/checkout@v4
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6103617Z with:
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6104089Z   repository: mrcalzon02/The-Beckenburg-Project
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6108171Z   token: ***
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6108564Z   ssh-strict: true
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6108978Z   ssh-user: git
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6109391Z   persist-credentials: true
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6109838Z   clean: true
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6110243Z   sparse-checkout-cone-mode: true
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6110734Z   fetch-depth: 1
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6111233Z   fetch-tags: false
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6111802Z   show-progress: true
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6112227Z   lfs: false
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6112606Z   submodules: false
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6113458Z   set-safe-directory: true
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6113943Z   allow-unsafe-pr-checkout: false
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.6114735Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.7531571Z Syncing repository: mrcalzon02/The-Beckenburg-Project
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.7533408Z ##[group]Getting Git version info
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.7534427Z Working directory is 'D:\a\The-Beckenburg-Project\The-Beckenburg-Project'
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:36.8490544Z [command]"C:\Program Files\Git\bin\git.exe" version
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.1705320Z git version 2.56.0.windows.4
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.1761420Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.1782915Z Temporarily overriding HOME='D:\a\_temp\28b6ba95-f0c6-4cf7-87c4-4bc68b588014' before making global git config changes
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.1784967Z Adding repository directory to the temporary git global config as a safe directory
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.1795145Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\The-Beckenburg-Project\The-Beckenburg-Project
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.2454675Z Deleting the contents of 'D:\a\The-Beckenburg-Project\The-Beckenburg-Project'
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.2461786Z ##[group]Initializing the repository
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.2470703Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\The-Beckenburg-Project\The-Beckenburg-Project
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.3285612Z Initialized empty Git repository in D:/a/The-Beckenburg-Project/The-Beckenburg-Project/.git/
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.3352526Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/mrcalzon02/The-Beckenburg-Project
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4170339Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4172272Z ##[group]Disabling automatic garbage collection
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4174144Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4564939Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4566739Z ##[group]Setting up auth
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4576521Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:37.4971251Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:38.9221847Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:38.9617118Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:39.5560876Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:39.5949873Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:40.1814377Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:40.2220700Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:40.2221993Z ##[group]Fetching the repository
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:42:40.2235073Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c93d141d1d9fa0e9fa1bef55485d182553f70ff0:refs/remotes/origin/fix/house-source-recovery
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1083075Z From https://github.com/mrcalzon02/The-Beckenburg-Project
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1084742Z  * [new ref]         c93d141d1d9fa0e9fa1bef55485d182553f70ff0 -> origin/fix/house-source-recovery
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1121854Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1124878Z ##[group]Determining the checkout info
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1125786Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1137038Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.1665857Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.2047718Z ##[group]Checking out the ref
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:25.2057550Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B fix/house-source-recovery refs/remotes/origin/fix/house-source-recovery
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:26.8668638Z Updating files:   1% (165/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:27.2747892Z Updating files:   2% (315/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:27.2860825Z Updating files:   3% (472/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:27.6024725Z Updating files:   3% (485/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:27.9391111Z Updating files:   4% (630/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:28.1170981Z Updating files:   5% (787/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:28.3194998Z Updating files:   6% (944/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:28.8195668Z Updating files:   6% (1007/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:29.2442392Z Updating files:   7% (1102/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:29.3009064Z Updating files:   8% (1259/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:29.3233953Z Updating files:   8% (1341/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:29.5400077Z Updating files:   9% (1416/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:29.7940491Z Updating files:  10% (1574/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:30.0875293Z Updating files:  11% (1731/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:30.2980385Z Updating files:  12% (1888/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:30.3119468Z Updating files:  13% (2046/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:30.7605966Z Updating files:  13% (2055/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:31.2026304Z Updating files:  14% (2203/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:31.3153468Z Updating files:  15% (2360/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:31.4612251Z Updating files:  15% (2470/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:31.9433769Z Updating files:  16% (2517/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:32.2212684Z Updating files:  17% (2675/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:32.3153752Z Updating files:  18% (2832/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:32.3832460Z Updating files:  18% (2923/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:33.3707452Z Updating files:  19% (2989/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:34.3859321Z Updating files:  19% (3035/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:34.6961775Z Updating files:  19% (3099/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:35.1362831Z Updating files:  20% (3147/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:35.3928262Z Updating files:  21% (3304/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:35.5219252Z Updating files:  21% (3361/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:35.7259466Z Updating files:  22% (3461/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:36.4096125Z Updating files:  23% (3619/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:37.3597877Z Updating files:  23% (3748/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:38.3017555Z Updating files:  23% (3756/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:38.3512942Z Updating files:  24% (3776/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:38.3857124Z Updating files:  24% (3854/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:38.5485459Z Updating files:  25% (3933/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:38.9270864Z Updating files:  26% (4091/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:39.3729988Z Updating files:  27% (4248/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:39.3982293Z Updating files:  27% (4401/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:40.3431458Z Updating files:  28% (4405/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:40.3663642Z Updating files:  29% (4562/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:41.0971779Z Updating files:  29% (4567/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:41.2857253Z Updating files:  30% (4720/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:41.3718187Z Updating files:  31% (4877/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:41.5919376Z Updating files:  31% (4921/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:41.8536040Z Updating files:  32% (5034/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:42.1093592Z Updating files:  33% (5192/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:42.3508605Z Updating files:  34% (5349/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:42.3839148Z Updating files:  35% (5506/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:42.5869635Z Updating files:  35% (5528/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:42.8071153Z Updating files:  36% (5664/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:43.0298355Z Updating files:  37% (5821/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:43.2531301Z Updating files:  38% (5978/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:43.3967365Z Updating files:  39% (6136/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:43.5029480Z Updating files:  39% (6217/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:43.7250153Z Updating files:  40% (6293/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:43.9474923Z Updating files:  41% (6450/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:44.1677865Z Updating files:  42% (6608/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:44.3886912Z Updating files:  43% (6765/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:44.3975498Z Updating files:  44% (6922/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:44.6870789Z Updating files:  44% (6928/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:44.9192271Z Updating files:  45% (7079/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:45.1590580Z Updating files:  46% (7237/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:45.3953718Z Updating files:  47% (7394/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:45.4081611Z Updating files:  48% (7551/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:45.6314264Z Updating files:  48% (7557/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:45.8728634Z Updating files:  49% (7709/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:46.1885239Z Updating files:  50% (7866/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:46.4228448Z Updating files:  51% (8023/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:46.4238845Z Updating files:  51% (8180/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:46.6602250Z Updating files:  52% (8181/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:46.8997148Z Updating files:  53% (8338/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:47.1344274Z Updating files:  54% (8495/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:47.3795234Z Updating files:  55% (8653/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:47.4243907Z Updating files:  56% (8810/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:47.7626895Z Updating files:  56% (8837/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:48.0152562Z Updating files:  57% (8967/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:48.4204508Z Updating files:  58% (9124/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:48.4233997Z Updating files:  59% (9282/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:48.6695557Z Updating files:  59% (9285/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:48.8094512Z Updating files:  60% (9439/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.1859120Z Updating files:  61% (9596/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.2486480Z Updating files:  62% (9754/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.3525527Z Updating files:  63% (9911/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.4248560Z Updating files:  64% (10068/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.4285744Z Updating files:  65% (10226/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.4935398Z Updating files:  65% (10234/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.5631647Z Updating files:  66% (10383/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.6352634Z Updating files:  67% (10540/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.7020218Z Updating files:  68% (10698/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.7720085Z Updating files:  69% (10855/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.8381831Z Updating files:  70% (11012/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:49.9021434Z Updating files:  71% (11170/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.1221616Z Updating files:  72% (11327/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.1928311Z Updating files:  73% (11484/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.5394967Z Updating files:  74% (11641/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.8194165Z Updating files:  74% (11670/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.8591289Z Updating files:  75% (11799/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.8948722Z Updating files:  76% (11956/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.9290187Z Updating files:  77% (12113/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:50.9636843Z Updating files:  78% (12271/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.0003536Z Updating files:  79% (12428/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.0447040Z Updating files:  80% (12585/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.0833828Z Updating files:  81% (12743/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.1203047Z Updating files:  82% (12900/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.4152177Z Updating files:  83% (13057/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.4448051Z Updating files:  84% (13215/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.4927262Z Updating files:  84% (13322/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.5476919Z Updating files:  85% (13372/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.7177700Z Updating files:  86% (13529/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:51.9785387Z Updating files:  87% (13686/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.1515814Z Updating files:  88% (13844/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.2409039Z Updating files:  89% (14001/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.3537140Z Updating files:  90% (14158/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.4291246Z Updating files:  91% (14316/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.4540500Z Updating files:  92% (14473/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.5009269Z Updating files:  92% (14521/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.5416981Z Updating files:  93% (14630/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.5870287Z Updating files:  94% (14788/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.6301136Z Updating files:  95% (14945/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.6690440Z Updating files:  96% (15102/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.7053121Z Updating files:  97% (15260/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.7407779Z Updating files:  98% (15417/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.7806906Z Updating files:  99% (15574/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.7807679Z Updating files: 100% (15731/15731)
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.7808157Z Updating files: 100% (15731/15731), done.
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.8132361Z Switched to a new branch 'fix/house-source-recovery'
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:52.8149668Z branch 'fix/house-source-recovery' set up to track 'origin/fix/house-source-recovery'.
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:53.0834494Z ##[endgroup]
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:53.1241272Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+native-editor-service	Run actions/checkout@v4	2026-11-07T23:43:53.1578286Z c93d141d1d9fa0e9fa1bef55485d182553f70ff0
+native-editor-service	Run actions/setup-java@v4	﻿2026-11-07T23:43:53.2105587Z ##[group]Run actions/setup-java@v4
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2105929Z with:
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2106121Z   distribution: temurin
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2106340Z   java-version: 17
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2106544Z   java-package: jdk
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2106737Z   check-latest: false
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2106936Z   server-id: github
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2107131Z   server-username: GITHUB_ACTOR
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2107374Z   server-password: GITHUB_TOKEN
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2107812Z   overwrite-settings: true
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2108023Z   job-status: success
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2110893Z   token: ***
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.2111139Z ##[endgroup]
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4131563Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4139311Z ##[group]Installed distributions
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4357949Z Resolved Java 17.0.21+9 from tool-cache
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4358493Z Setting Java 17.0.21+9 as the default
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4382409Z (node:4140) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4383405Z (Use `node --trace-deprecation ...` to show where the warning was created)
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4387175Z Creating toolchains.xml for JDK version 17 from temurin
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4500442Z Writing to C:\Users\runneradmin\.m2\toolchains.xml
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4504440Z 
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4504766Z Java configuration:
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4505092Z   Distribution: temurin
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4505399Z   Version: 17.0.21+9
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4506161Z   Path: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4506931Z 
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4507357Z ##[endgroup]
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4524991Z Creating settings.xml with server-id: github
+native-editor-service	Run actions/setup-java@v4	2026-11-07T23:43:53.4530353Z Writing to C:\Users\runneradmin\.m2\settings.xml
+native-editor-service	Build actual host and resources	﻿2026-11-07T23:43:53.4833149Z ##[group]Run call build.cmd package
+native-editor-service	Build actual host and resources	2026-11-07T23:43:53.4833803Z ^[[36;1mcall build.cmd package^[[0m
+native-editor-service	Build actual host and resources	2026-11-07T23:43:53.4878176Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+native-editor-service	Build actual host and resources	2026-11-07T23:43:53.4878766Z env:
+native-editor-service	Build actual host and resources	2026-11-07T23:43:53.4879219Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Build actual host and resources	2026-11-07T23:43:53.4880054Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Build actual host and resources	2026-11-07T23:43:53.4880628Z ##[endgroup]
+native-editor-service	Build actual host and resources	2026-11-07T23:44:14.8287941Z Note: src\main\java\org\beckenburg\LanLobbyPanel.java uses or overrides a deprecated API.
+native-editor-service	Build actual host and resources	2026-11-07T23:44:14.8289442Z Note: Recompile with -Xlint:deprecation for details.
+native-editor-service	Build actual host and resources	2026-11-07T23:44:18.5331962Z Baked 200 approved model-render UI icons, Castle splash and native desktop icon
+native-editor-service	Build actual host and resources	2026-11-07T23:44:21.5635097Z PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+native-editor-service	Build actual host and resources	2026-11-07T23:44:21.7368964Z Prepared 15 CC0 medieval castle meshes
+native-editor-service	Build actual host and resources	2026-11-07T23:44:38.6871834Z PASS JAR audio: 19 WAVs, six scores, 13 sound zones, 11 weather bundles
+native-editor-service	Verify native service, actual Windows editor and headless protocol	﻿2026-11-07T23:44:38.7416011Z ##[group]Run call tools\verify_editor_agent_host.cmd
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:38.7416479Z ^[[36;1mcall tools\verify_editor_agent_host.cmd^[[0m
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:38.7450532Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:38.7450900Z env:
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:38.7451233Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:38.7451782Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:38.7452184Z ##[endgroup]
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:43.5070060Z PASS native support parity: accepted host moves survive next tick, stair overlap preserves lower support, round trip and real penetration recovery
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:49.6516508Z 2026-11-07T23:44:49.649228300Z [main] RENDER SLOW stage=idle faces=137829 visible_faces=81157 culled_faces=56672 target=320x200 build_ms=2833 lighting_raster_ms=1526
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:51.1761383Z PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:53.8508046Z PASS native editor changes: commit-only events, batch/rollback/cancel, stable IDs, owner/revision fingerprints, rotated collider bounds, human delete/undo/redo/reopen and conservative Castle fallback
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:44:59.4454334Z PASS native disk revisions: competing mission/Castle saves, active singleton and game readback, preserve unsaved edits, observe/undo/save, deletion/recovery and pinned USER ownership
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:45:05.4129685Z PASS Castle snapshot contract: owned collections/arrays, immutable accessors, structural equality/hash and exact native restore/save/reopen and isolated default-profile ownership
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:45:10.2466007Z PASS native schema compatibility: unknown component properties, custom labels/layers and contradictory yaw refused without loss; legacy yaw retained; all six future Castle layout versions protected
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:45:12.6110552Z PASS G1 native identity: legacy BSCN, deletion, shared undo/redo, stable-ID edit, deterministic save/reopen, unsupported transform rejection and USER ownership
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:45:16.5223633Z PASS pinned House architectural generations: native legacy edits/identity/bytes, actual rebuilt USER geometry/sockets/colliders/network revision, isolated saves and unknown-version rejection
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:45:43.9938998Z PASS actual supported source/panel aim; connected light energy 4.800000000000001 -> 0.187;4TCP peers source/breaker independence,view-resync,ghost/distance rejection. Ghost-specific trip-event audit remains open.
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:45:44.9032699Z PASS 52species/controller accepted electrical arcs; ordinary source/breaker independence,non-electrical/off/stale/rejected negatives;4TCP ghost trip,view-resync and physical reset
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:23.9130746Z PASS House native three-way upgrade, actual saved default dispatch, source/ID undo-redo, exact original backup, personal cellar support, authored deltas, conflict rollback and future-version rejection
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:24.9866125Z PASS shared immutable source PNGs, distinct material IDs/tint/wrap/alpha modes, exact full atlas RGBA/resolution and independent live surfaces
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:30.2528021Z PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, game load, foreign isolation and corrupt-primary legacy/rebuilt CLI bootstrap
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:34.5145431Z PASS Castle native recovery: deterministic saves, distinct backups, full codec roundtrip, same singleton recovery, shared undo, invalid backup refusal and legacy migrations
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:37.3824585Z PASS OBJ > generated GLB > game decode > registry > authored prop > reload
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:39.9994263Z PASS wall/floor/roof editing, paint, undo, migration, game collision and shadows
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:43.8351853Z PASS rebuilt real fittings, switch-off, shadow occlusion, existing-scene migration and grounded props
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:46:59.7689541Z 2026-11-07T23:46:59.766546400Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=88211 visible_faces=23305 culled_faces=64906 target=560x350 build_ms=1536 lighting_raster_ms=530
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:25.1308255Z 2026-11-07T23:47:25.130275500Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=90393 visible_faces=43749 culled_faces=46644 target=560x350 build_ms=1169 lighting_raster_ms=1951
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:25.6560773Z PASS real Windows editor: mission/Castle service and recovery, human House architecture rebuild/undo/redo/save/reopen, actual recovery menu, runtime parity, native rebuilt capture and stale/closed scene rejection
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:34.3861000Z PASS actual human OBJ source identities: six native vertices, independent coincident edit, exact source/native archives and every real runtime GLB corner
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:34.3862416Z PASS real human primitives, native roundtrip, triangle selection, vertex/edge/face axis drag/grid/undo/redo, Escape cancellation, stale revision refusal, UI PNG and every runtime GLB corner
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:34.3863932Z PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:38.0570782Z PASS actual human visible/X-ray boxes and lassos, canceled/stale asynchronous selection, immutable native state, multi-vertex axis drag, one-step undo/redo and every real game-decoder corner
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:42.9589738Z PASS real human extrude/inset: native preview/cancel/parameter and stale guards, exact apply, one-step history, save/reopen, source/native archives and every actual runtime corner
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:45.8392649Z PASS actual native publication revision: stale review refuses all writes, explicit human re-review refreshes live state, coherent native/runtime publication
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:51.7584638Z PASS actual human native weld/repair/cleanup/OBJ chooser: real selection/preview/apply, stable IDs/UVs, undo/redo/native persistence and every runtime corner
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:55.9678937Z PASS actual human snapped rotation and centroid scale: real selection/buttons, preview/cancel/apply/history, native archive and every runtime corner
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:47:59.2863788Z PASS actual topological mesh workspace: contextual tools, menus/shortcuts, viewport allocation, diagnostics/focus restoration, small-window layouts and unchanged native authority
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:07.7602039Z 2026-11-07T23:48:07.756472300Z [main] RENDER SLOW stage=idle faces=224510 visible_faces=216410 culled_faces=8100 target=320x200 build_ms=2626 lighting_raster_ms=1019
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:07.9920340Z PASS actual human authored normals: source/corner seams, overlay, snapped rotation/inverse scale, preview/history/native archive, every GLB corner and production renderer/subdivision
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:35.2807641Z PASS headless public protocol: mission/Castle JSON edit/save/recovery, renderer capture, native parity, process reopen, corrupt-start bootstrap recovery and stale rejection
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:38.2533180Z PASS real human PNG materials: face picking, captured preview/cancel/apply, exact shared undo/redo/save/fresh open/publication, runtime face bindings/origin/RGBA/tint/wrap and production screenshot
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:42.3279103Z PASS human native UV editing: independent material window, real OBJ/MTL source, face/island preview/cancel/apply/parameter guards, shared history/native save/archive, every actual runtime UV/color and OBJ bundle
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:55.5194427Z 2026-11-07T23:48:55.516709500Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=1356 lighting_raster_ms=2071
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:57.5672684Z 2026-11-07T23:48:57.566779500Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=152 lighting_raster_ms=1413
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:48:57.5732381Z PASS actual Castle/House scene retirement, destination preload reuse, rebuilt return and exact runtime pixel parity
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:00.3263054Z PASS human source-backed GLB: actual matrix/ancestor mesh, independent instance vertex/UV controls, shared history/native v4, exact no-edit/source metadata and original PNG, real GLB export/publication/archive/game UVs and screenshots
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:02.1712086Z PASS actual runtime original matrix/ancestor pivot and external GLB upper-left PNG
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:04.0501495Z PASS human perspective: real camera orbit/pan/zoom/fit, visible picking/box, exact snapped axis drag, native history/save/fresh reopen, actual runtime publication and screenshot
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:08.0026935Z PASS human surface-normal transforms: native face anchor, snapped normal rotation/preview/cancel/apply, oblique perspective gizmo move, shared history/save/fresh reopen, exact UV/normals/game publication and actual screenshots
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:12.4535652Z PASS human local frames: real world rotation/local scaling, preview/cancel/apply, local-unit perspective gizmo, geometry/frame shared history, native v5 reopen, OBJ/GLB copies, actual game publication and screenshots
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:16.1279271Z PASS native edge/corner bevel: closed actual cut/cap, stable original IDs/attributes, atomic history, refusal guards, native/OBJ/GLB and original source-backed runtime geometry
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:19.4168253Z PASS actual human bevel: visible native edge/corner picking, separate tool card, preview/cancel/parameter/apply, shared undo/redo/save/reopen and every real game corner/source archive
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:31.4998211Z PASS actual original/pre-furnishing automatic rebuilds + exact backups; custom props/deletions/lights/geometry/paint/navigation/stations/spawn; shared native transaction/undo/redo/explicit save; conflict rollback; current deletion retention; authored-v1 and future-version preservation
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:31.5385740Z PASS native editor service, real human model/material UV editors, recovery and headless protocol
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:49:51.5131882Z PASS six actual exhibit records: accessible native mesh aim, nearer-object and actual masonry occlusion, deletion, actual E-key/UI/return, orientation protection and zero profile/case/scene writes
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:50:13.0259620Z PASS6 authored native loose bodies: exact mesh support, all reachable pickup views, stable rest, deleted parent, local ownership, +X throw, safe gravity/collision, actual cellar aperture and zero native scene writes
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:50:13.0267958Z PASS real native F5 / ] / F12 input with orientation protection and no campaign/profile actions
+native-editor-service	Verify native service, actual Windows editor and headless protocol	2026-11-07T23:50:13.0283118Z Retained source loose-object triangles=1508; stationary poses reuse6 meshes; one pickup rebuilds1
+native-editor-service	Run actions/upload-artifact@v4	﻿2026-11-07T23:50:14.6044091Z ##[group]Run actions/upload-artifact@v4
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6044541Z with:
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6044802Z   name: editor-agent-evidence
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6045148Z   path: build/editor-agent-evidence
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6045473Z   if-no-files-found: warn
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6045756Z   compression-level: 6
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6046012Z   overwrite: false
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6046271Z   include-hidden-files: false
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6046542Z env:
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6046907Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6047485Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.6047934Z ##[endgroup]
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.8063697Z (node:3160) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.8065268Z (Use `node --trace-deprecation ...` to show where the warning was created)
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.8477060Z With the provided path, there will be 97 files uploaded
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.8483726Z Artifact name is valid!
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:14.8485358Z Root directory input is valid!
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:15.0641027Z Beginning upload of artifact content to blob storage
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:15.4178191Z (node:3160) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:15.6595426Z Uploaded bytes 6218392
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:15.6794614Z Finished uploading artifact content to blob storage!
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:15.6796466Z SHA256 digest of uploaded artifact zip is 6659630efe00e8f5175a334641f48d66908421b9eff4f82d7b982404664b4086
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:15.6799096Z Finalizing artifact upload
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:16.0282675Z Artifact editor-agent-evidence.zip successfully finalized. Artifact ID 13595434714
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:16.0284828Z Artifact editor-agent-evidence has been successfully uploaded! Final size is 6218392 bytes. Artifact ID is 13595434714
+native-editor-service	Run actions/upload-artifact@v4	2026-11-07T23:50:16.0298593Z Artifact download URL: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42426323930/artifacts/13595434714
+native-editor-service	Post Run actions/setup-java@v4	﻿2026-11-07T23:50:16.0718612Z Post job cleanup.
+native-editor-service	Post Run actions/setup-java@v4	2026-11-07T23:50:16.2497012Z (node:7668) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+native-editor-service	Post Run actions/setup-java@v4	2026-11-07T23:50:16.2498474Z (Use `node --trace-deprecation ...` to show where the warning was created)
+native-editor-service	Post Run actions/checkout@v4	﻿2026-11-07T23:50:16.2877671Z Post job cleanup.
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.4840868Z [command]"C:\Program Files\Git\bin\git.exe" version
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.5210196Z git version 2.56.0.windows.4
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.5301552Z Temporarily overriding HOME='D:\a\_temp\9c99ebdc-cecb-45eb-8955-dbefbaa14903' before making global git config changes
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.5303020Z Adding repository directory to the temporary git global config as a safe directory
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.5311645Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\The-Beckenburg-Project\The-Beckenburg-Project
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.5723326Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:16.6139866Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:17.2253792Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:17.2607127Z http.https://github.com/.extraheader
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:17.2658794Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:17.3055664Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:17.8803858Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+native-editor-service	Post Run actions/checkout@v4	2026-11-07T23:50:17.9192081Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+native-editor-service	Complete job	﻿2026-11-07T23:50:18.5216581Z Cleaning up orphan processes
+native-editor-service	Complete job	2026-11-07T23:50:18.5375869Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

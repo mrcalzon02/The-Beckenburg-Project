@@ -1,0 +1,24 @@
+{
+  "status": "PASS_STAGED_GENERATION_AND_CHECK",
+  "execution_owner": "root",
+  "png_entries": 15311,
+  "historical_png_entries": 15302,
+  "new_diagnostic_pngs": 9,
+  "asset_provenance_including_animations": {
+    "working_bytes": 81,
+    "git_blob_bytes": 85,
+    "verified_blob_reuse": 85,
+    "parent_metadata": 15092
+  },
+  "commands": [
+    "python tools/build_development_gallery.py --tracked-only",
+    "python tools/build_development_gallery.py --tracked-only --check"
+  ],
+  "inputs": {
+    "HEAD": "9f1cf5e2b5535b2ded46eba07d55c78f61211775",
+    "MERGE_HEAD": "d9f706f44984aaf05cadaf0911eb058880056bb2"
+  },
+  "scope": "Image evidence-index integrity after final settled porch captures were staged. Parent metadata continuity is not a fresh visual or gameplay review.",
+  "index_sha256": "306e9b2faea7e30e26f3efb7bc732e86d8dd122faddceb6689dbbb0d8f84ec81",
+  "html_sha256": "d40f49838d14a27de23fcdf53cd9040e5ce6982d7dcd43fa14f8be13dda41b7f"
+}

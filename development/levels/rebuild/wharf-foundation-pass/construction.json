@@ -1,0 +1,2715 @@
+{
+  "site": "WLD-06",
+  "source_hashes": {
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.blend": "bfcd62d5b236edf2ea13970f56633ad2d09e8605ec0019da119fad5b10fe8363",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.glb": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.hcs2": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/authored-layout.json": "7b9030890de464421b6c957cd888a157d20b87936868523808b4b08a8ae2d719",
+    "development/levels/rebuild/terrain-fit-pass/wld-06/construction.json": "39b4967a4550dabc8fefd7baedf858bec66f664a3d0e71b3ab27c628309ee752"
+  },
+  "builder_sha256": "89cad8015c0560c9b69f708c7d66e87eeb234c7b06a7d51c94bcdbac4516617a",
+  "removed_guide_supports": {
+    "Bearing pile 0069": "route-L07",
+    "Bearing pile 0070": "route-L07",
+    "Bearing pile 0071": "route-L07",
+    "Bearing pile 0072": "route-L07",
+    "Bearing pile 0073": "route-L07",
+    "Bearing pile 0074": "route-L07",
+    "Bearing pile 0075": "route-L07",
+    "Bearing pile 0076": "route-L08",
+    "Bearing pile 0077": "route-L08",
+    "Bearing pile 0078": "route-L08",
+    "Bearing pile 0079": "route-L08",
+    "Bearing pile 0080": "route-L08",
+    "Bearing pile 0081": "route-L08",
+    "Bearing pile 0082": "route-L08",
+    "Bearing pile 0083": "route-L09",
+    "Bearing pile 0084": "route-L09",
+    "Bearing pile 0085": "route-L09",
+    "Bearing pile 0086": "route-L09",
+    "Bearing pile 0087": "route-L09",
+    "Bearing pile 0088": "route-L09",
+    "Bearing pile 0089": "route-L09",
+    "Bearing pile 0090": "route-L10",
+    "Bearing pile 0091": "route-L10",
+    "Bearing pile 0092": "route-L10",
+    "Bearing pile 0093": "route-L10",
+    "Bearing pile 0094": "route-L10",
+    "Bearing pile 0095": "route-L11",
+    "Bearing pile 0096": "route-L12",
+    "Bearing pile 0097": "route-L14",
+    "Pile bearing beam 0098": "route-L14"
+  },
+  "retained_grid_piles": [
+    {
+      "part": "WLD-06 cross dock driven pile 0",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 0 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 1",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 0 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 10",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 3 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 11",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 3 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 12",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 4 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 13",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 4 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 14",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 4 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 15",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 5 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 16",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 5 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 17",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 5 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 18",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 6 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 19",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 6 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 2",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 0 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 20",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 6 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 21",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 7 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 22",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 7 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 23",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 7 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 24",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 8 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 25",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 8 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 26",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 8 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 3",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 1 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 4",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 1 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 5",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 1 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 6",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 2 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 7",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 2 region0",
+        "WLD-06 cross dock bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 8",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 2 region0",
+        "WLD-06 cross dock bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 cross dock driven pile 9",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 cross dock bearing 0 3 region0",
+        "WLD-06 cross dock bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 0",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 1",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 10",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 11",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 12",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 13",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 14",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 15",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 16",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 17",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 18",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 19",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 2",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 20",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 2 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 3",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 4",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 5",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 6",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 0 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 7",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 8",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east jetty and stair-head platform driven pile 9",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east jetty and stair-head platform bearing 0 1 region0",
+        "WLD-06 east jetty and stair-head platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 0",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 1",
+      "pile_bottom_y": -3.9879,
+      "measured_native_ground_y": [
+        -3.63759,
+        -3.5719,
+        -3.63759,
+        -3.5719,
+        -3.60488
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 4 region0",
+        "WLD-06 quay platform bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 0 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 10",
+      "pile_bottom_y": -4.6943,
+      "measured_native_ground_y": [
+        -4.34426,
+        -4.3413,
+        -4.34426,
+        -4.3413,
+        -4.34278
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 3 region0",
+        "WLD-06 east pier-head landing bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 11",
+      "pile_bottom_y": -4.6105,
+      "measured_native_ground_y": [
+        -4.26037,
+        -4.23855,
+        -4.26037,
+        -4.23855,
+        -4.24946
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 3 region0",
+        "WLD-06 east pier-head landing bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 12",
+      "pile_bottom_y": -4.3665,
+      "measured_native_ground_y": [
+        -4.01628,
+        -3.97592,
+        -4.01628,
+        -3.97592,
+        -3.9961
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 3 region0",
+        "WLD-06 east pier-head landing bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 13",
+      "pile_bottom_y": -3.9874,
+      "measured_native_ground_y": [
+        -3.63704,
+        -3.57135,
+        -3.63687,
+        -3.57118,
+        -3.60424
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 3 region0",
+        "WLD-06 east pier-head landing bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 14",
+      "pile_bottom_y": -3.4987,
+      "measured_native_ground_y": [
+        -3.14822,
+        -3.07472,
+        -3.14822,
+        -3.07472,
+        -3.11147
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 3 region0",
+        "WLD-06 east pier-head landing bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 15",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 4 region0",
+        "WLD-06 east pier-head landing bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 16",
+      "pile_bottom_y": -4.6943,
+      "measured_native_ground_y": [
+        -4.34426,
+        -4.3413,
+        -4.34426,
+        -4.3413,
+        -4.34278
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 4 region0",
+        "WLD-06 east pier-head landing bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 17",
+      "pile_bottom_y": -4.6105,
+      "measured_native_ground_y": [
+        -4.26037,
+        -4.23855,
+        -4.26037,
+        -4.23855,
+        -4.24946
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 4 region0",
+        "WLD-06 east pier-head landing bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 18",
+      "pile_bottom_y": -4.3665,
+      "measured_native_ground_y": [
+        -4.01628,
+        -3.97592,
+        -4.01628,
+        -3.97592,
+        -3.9961
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 4 region0",
+        "WLD-06 east pier-head landing bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 19",
+      "pile_bottom_y": -3.9869,
+      "measured_native_ground_y": [
+        -3.63662,
+        -3.57076,
+        -3.63662,
+        -3.57076,
+        -3.60382
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 4 region0",
+        "WLD-06 east pier-head landing bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 2",
+      "pile_bottom_y": -3.4999,
+      "measured_native_ground_y": [
+        -3.14941,
+        -3.07607,
+        -3.14941,
+        -3.07607,
+        -3.11274
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 5 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 0 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 20",
+      "pile_bottom_y": -3.498,
+      "measured_native_ground_y": [
+        -3.14752,
+        -3.07402,
+        -3.14736,
+        -3.07386,
+        -3.11069
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 4 region0",
+        "WLD-06 east pier-head landing bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 3",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 4",
+      "pile_bottom_y": -3.9879,
+      "measured_native_ground_y": [
+        -3.63759,
+        -3.5719,
+        -3.63759,
+        -3.5719,
+        -3.60488
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 4 region0",
+        "WLD-06 quay platform bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 1 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 5",
+      "pile_bottom_y": -3.4999,
+      "measured_native_ground_y": [
+        -3.14941,
+        -3.07607,
+        -3.14941,
+        -3.07607,
+        -3.11274
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 5 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 1 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 6",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 7",
+      "pile_bottom_y": -3.9879,
+      "measured_native_ground_y": [
+        -3.63759,
+        -3.57174,
+        -3.63759,
+        -3.57174,
+        -3.6048
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 4 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 2 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 8",
+      "pile_bottom_y": -3.4994,
+      "measured_native_ground_y": [
+        -3.14901,
+        -3.07567,
+        -3.14884,
+        -3.0755,
+        -3.11225
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 5 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 2 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 east pier-head landing driven pile 9",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 0 3 region0",
+        "WLD-06 east pier-head landing bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 0",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 1",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 10",
+      "pile_bottom_y": -2.061,
+      "measured_native_ground_y": [
+        -1.71052,
+        -1.63719,
+        -1.71052,
+        -1.63719,
+        -1.67385
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 11",
+      "pile_bottom_y": -1.4734,
+      "measured_native_ground_y": [
+        -1.12298,
+        -1.05705,
+        -1.12298,
+        -1.05705,
+        -1.09009
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 12",
+      "pile_bottom_y": -1.0194,
+      "measured_native_ground_y": [
+        -0.5334,
+        -0.45557,
+        -0.5334,
+        -0.45557,
+        -0.49448
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 13",
+      "pile_bottom_y": -0.7547,
+      "measured_native_ground_y": [
+        -0.0571,
+        -0.02332,
+        -0.0571,
+        -0.02332,
+        -0.04021
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 14",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 15",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 16",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28113,
+        -2.35807,
+        -2.28113,
+        -2.3196
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 17",
+      "pile_bottom_y": -2.061,
+      "measured_native_ground_y": [
+        -1.71052,
+        -1.63719,
+        -1.71052,
+        -1.63719,
+        -1.67385
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 18",
+      "pile_bottom_y": -1.4734,
+      "measured_native_ground_y": [
+        -1.12298,
+        -1.05705,
+        -1.12298,
+        -1.05705,
+        -1.09009
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 19",
+      "pile_bottom_y": -1.0194,
+      "measured_native_ground_y": [
+        -0.5334,
+        -0.45557,
+        -0.5334,
+        -0.45557,
+        -0.49448
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 2",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28113,
+        -2.35807,
+        -2.28113,
+        -2.3196
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 20",
+      "pile_bottom_y": -0.7547,
+      "measured_native_ground_y": [
+        -0.0571,
+        -0.02332,
+        -0.0571,
+        -0.02332,
+        -0.04021
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 2 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 21",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 22",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 23",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28113,
+        -2.35807,
+        -2.28113,
+        -2.3196
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 24",
+      "pile_bottom_y": -2.061,
+      "measured_native_ground_y": [
+        -1.71052,
+        -1.63719,
+        -1.71052,
+        -1.63719,
+        -1.67385
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 25",
+      "pile_bottom_y": -1.4734,
+      "measured_native_ground_y": [
+        -1.12298,
+        -1.05705,
+        -1.12298,
+        -1.05705,
+        -1.09009
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 26",
+      "pile_bottom_y": -1.0194,
+      "measured_native_ground_y": [
+        -0.5334,
+        -0.45557,
+        -0.5334,
+        -0.45557,
+        -0.49448
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 27",
+      "pile_bottom_y": -0.7542,
+      "measured_native_ground_y": [
+        -0.0571,
+        -0.02332,
+        -0.0571,
+        -0.02332,
+        -0.04021
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 3 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 28",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 29",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 3",
+      "pile_bottom_y": -2.061,
+      "measured_native_ground_y": [
+        -1.71052,
+        -1.63719,
+        -1.71052,
+        -1.63719,
+        -1.67385
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 30",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28113,
+        -2.35807,
+        -2.28113,
+        -2.3196
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 31",
+      "pile_bottom_y": -2.061,
+      "measured_native_ground_y": [
+        -1.71052,
+        -1.63719,
+        -1.71052,
+        -1.63719,
+        -1.67385
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 32",
+      "pile_bottom_y": -1.4734,
+      "measured_native_ground_y": [
+        -1.12298,
+        -1.05705,
+        -1.1229,
+        -1.05699,
+        -1.09009
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 33",
+      "pile_bottom_y": -1.0194,
+      "measured_native_ground_y": [
+        -0.5334,
+        -0.45557,
+        -0.53337,
+        -0.45554,
+        -0.49448
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 34",
+      "pile_bottom_y": -0.754,
+      "measured_native_ground_y": [
+        -0.0571,
+        -0.02332,
+        -0.0571,
+        -0.02332,
+        -0.04021
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 4 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 35",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 36",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 37",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28113,
+        -2.35807,
+        -2.28113,
+        -2.3196
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 38",
+      "pile_bottom_y": -2.061,
+      "measured_native_ground_y": [
+        -1.71052,
+        -1.63719,
+        -1.71052,
+        -1.63719,
+        -1.67385
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 39",
+      "pile_bottom_y": -1.4726,
+      "measured_native_ground_y": [
+        -1.12215,
+        -1.05608,
+        -1.12215,
+        -1.05608,
+        -1.08918
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 4",
+      "pile_bottom_y": -1.4734,
+      "measured_native_ground_y": [
+        -1.12298,
+        -1.05705,
+        -1.12298,
+        -1.05705,
+        -1.09009
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 40",
+      "pile_bottom_y": -1.0188,
+      "measured_native_ground_y": [
+        -0.53313,
+        -0.45529,
+        -0.53299,
+        -0.45518,
+        -0.49416
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 41",
+      "pile_bottom_y": -0.753,
+      "measured_native_ground_y": [
+        -0.057,
+        -0.02328,
+        -0.057,
+        -0.02328,
+        -0.04014
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 5 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 42",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 43",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 44",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28098,
+        -2.35807,
+        -2.28098,
+        -2.31953
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 45",
+      "pile_bottom_y": -2.0602,
+      "measured_native_ground_y": [
+        -1.70973,
+        -1.63639,
+        -1.70956,
+        -1.63622,
+        -1.67297
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 46",
+      "pile_bottom_y": -1.4718,
+      "measured_native_ground_y": [
+        -1.12136,
+        -1.05527,
+        -1.12119,
+        -1.0551,
+        -1.0883
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 47",
+      "pile_bottom_y": -1.0166,
+      "measured_native_ground_y": [
+        -0.53145,
+        -0.45383,
+        -0.53116,
+        -0.45353,
+        -0.49249
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 48",
+      "pile_bottom_y": -0.7498,
+      "measured_native_ground_y": [
+        -0.05684,
+        -0.02324,
+        -0.05672,
+        -0.02317,
+        -0.04001
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 6 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 49",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 4 region0",
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 5",
+      "pile_bottom_y": -1.0194,
+      "measured_native_ground_y": [
+        -0.5334,
+        -0.45557,
+        -0.5334,
+        -0.45557,
+        -0.49448
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 50",
+      "pile_bottom_y": -3.3543,
+      "measured_native_ground_y": [
+        -3.0039,
+        -2.93056,
+        -3.0039,
+        -2.93056,
+        -2.96723
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 51",
+      "pile_bottom_y": -2.7076,
+      "measured_native_ground_y": [
+        -2.3571,
+        -2.28,
+        -2.3571,
+        -2.28,
+        -2.31856
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 52",
+      "pile_bottom_y": -2.0591,
+      "measured_native_ground_y": [
+        -1.70862,
+        -1.63512,
+        -1.70831,
+        -1.63479,
+        -1.67171
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 53",
+      "pile_bottom_y": -1.469,
+      "measured_native_ground_y": [
+        -1.11859,
+        -1.05232,
+        -1.1181,
+        -1.05183,
+        -1.08529
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 54",
+      "pile_bottom_y": -1.011,
+      "measured_native_ground_y": [
+        -0.52813,
+        -0.45071,
+        -0.52742,
+        -0.45025,
+        -0.48919
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 55",
+      "pile_bottom_y": -0.7412,
+      "measured_native_ground_y": [
+        -0.05632,
+        -0.023,
+        -0.05632,
+        -0.023,
+        -0.03966
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 7 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 56",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 east pier-head landing bearing 1 4 region0",
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 57",
+      "pile_bottom_y": -3.3543,
+      "measured_native_ground_y": [
+        -3.0039,
+        -2.93056,
+        -3.0039,
+        -2.93056,
+        -2.96723
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 58",
+      "pile_bottom_y": -2.7069,
+      "measured_native_ground_y": [
+        -2.3564,
+        -2.27916,
+        -2.35623,
+        -2.27899,
+        -2.31771
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 59",
+      "pile_bottom_y": -2.0564,
+      "measured_native_ground_y": [
+        -1.70595,
+        -1.63212,
+        -1.70562,
+        -1.63179,
+        -1.66887
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 3 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 6",
+      "pile_bottom_y": -0.7547,
+      "measured_native_ground_y": [
+        -0.0571,
+        -0.02332,
+        -0.0571,
+        -0.02332,
+        -0.04021
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 0 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 60",
+      "pile_bottom_y": -1.4628,
+      "measured_native_ground_y": [
+        -1.11239,
+        -1.04595,
+        -1.11151,
+        -1.04497,
+        -1.07876
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 4 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 61",
+      "pile_bottom_y": -1.0006,
+      "measured_native_ground_y": [
+        -0.52074,
+        -0.44408,
+        -0.51957,
+        -0.44291,
+        -0.48183
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 5 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 62",
+      "pile_bottom_y": -0.7223,
+      "measured_native_ground_y": [
+        -0.05554,
+        -0.02269,
+        -0.05485,
+        -0.02269,
+        -0.03911
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 8 region0",
+        "WLD-06 quay platform bearing 1 6 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 7",
+      "pile_bottom_y": -3.9411,
+      "measured_native_ground_y": [
+        -3.59075,
+        -3.52479,
+        -3.59075,
+        -3.52479,
+        -3.55777
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 8",
+      "pile_bottom_y": -3.3549,
+      "measured_native_ground_y": [
+        -3.00444,
+        -2.93126,
+        -3.00444,
+        -2.93126,
+        -2.96785
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 quay platform driven pile 9",
+      "pile_bottom_y": -2.7085,
+      "measured_native_ground_y": [
+        -2.35807,
+        -2.28113,
+        -2.35807,
+        -2.28113,
+        -2.3196
+      ],
+      "contacts": [
+        "WLD-06 quay platform bearing 0 1 region0",
+        "WLD-06 quay platform bearing 1 2 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 0",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 1",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 1 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 10",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 2 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 11",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 3 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 12",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 4 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 13",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 5 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 14",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 6 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 15",
+      "pile_bottom_y": -4.0795,
+      "measured_native_ground_y": [
+        -3.7292,
+        -3.67424,
+        -3.7292,
+        -3.67424,
+        -3.70172
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 9 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 16",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 17",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 1 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 18",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 2 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 19",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 3 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 2",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 2 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 20",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 4 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 21",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 5 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 22",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 6 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 23",
+      "pile_bottom_y": -4.0795,
+      "measured_native_ground_y": [
+        -3.7292,
+        -3.67424,
+        -3.7292,
+        -3.67424,
+        -3.70172
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 9 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 3",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 3 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 4",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 4 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 5",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 5 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 6",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 6 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 7",
+      "pile_bottom_y": -4.0795,
+      "measured_native_ground_y": [
+        -3.7292,
+        -3.67424,
+        -3.7292,
+        -3.67424,
+        -3.70172
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 9 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region1 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 8",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 0 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    },
+    {
+      "part": "WLD-06 west jetty driven pile 9",
+      "pile_bottom_y": -4.7002,
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "contacts": [
+        "WLD-06 west jetty bearing 1 1 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "part": "Wharf undercroft north transverse grade beam pile 1",
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "bottom_y": -4.90016
+    },
+    {
+      "part": "Wharf undercroft north transverse grade beam pile 2",
+      "measured_native_ground_y": [
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016,
+        -4.35016
+      ],
+      "bottom_y": -4.90016
+    },
+    {
+      "part": "Wharf undercroft north transverse grade beam",
+      "carried": [
+        "Wharf undercroft continuous base region0"
+      ],
+      "supported_by": [
+        "Wharf undercroft north transverse grade beam pile 1",
+        "Wharf undercroft north transverse grade beam pile 2"
+      ]
+    },
+    {
+      "part": "Wharf undercroft south transverse grade beam pile 1",
+      "measured_native_ground_y": [
+        -3.80968,
+        -3.80968,
+        -3.74098,
+        -3.74098,
+        -3.77533
+      ],
+      "bottom_y": -4.42
+    },
+    {
+      "part": "Wharf undercroft south transverse grade beam pile 2",
+      "measured_native_ground_y": [
+        -3.80968,
+        -3.80968,
+        -3.74098,
+        -3.74098,
+        -3.77533
+      ],
+      "bottom_y": -4.42
+    },
+    {
+      "part": "Wharf undercroft south transverse grade beam",
+      "carried": [
+        "Wharf undercroft continuous base region0"
+      ],
+      "supported_by": [
+        "Wharf undercroft south transverse grade beam pile 1",
+        "Wharf undercroft south transverse grade beam pile 2"
+      ]
+    },
+    {
+      "part": "Wharf west stair longitudinal grade beam 1 pile 1",
+      "measured_native_ground_y": [
+        -4.37259,
+        -4.35844,
+        -4.3691,
+        -4.38325,
+        -4.37084
+      ],
+      "bottom_y": -4.93325
+    },
+    {
+      "part": "Wharf west stair longitudinal grade beam 1 pile 2",
+      "measured_native_ground_y": [
+        -3.88815,
+        -3.8098,
+        -3.73659,
+        -3.81035,
+        -3.81237
+      ],
+      "bottom_y": -4.43815
+    },
+    {
+      "part": "Wharf west stair longitudinal grade beam 1",
+      "carried": [
+        "Wharf west stair-cell foundation region0"
+      ],
+      "supported_by": [
+        "Wharf west stair longitudinal grade beam 1 pile 1",
+        "Wharf west stair longitudinal grade beam 1 pile 2"
+      ]
+    },
+    {
+      "part": "Wharf west stair longitudinal grade beam 2 pile 1",
+      "measured_native_ground_y": [
+        -4.34893,
+        -4.34893,
+        -4.34524,
+        -4.34524,
+        -4.34709
+      ],
+      "bottom_y": -4.89893
+    },
+    {
+      "part": "Wharf west stair longitudinal grade beam 2 pile 2",
+      "measured_native_ground_y": [
+        -3.77369,
+        -3.77369,
+        -3.70499,
+        -3.70499,
+        -3.73934
+      ],
+      "bottom_y": -4.42
+    },
+    {
+      "part": "Wharf west stair longitudinal grade beam 2",
+      "carried": [
+        "Wharf west stair-cell foundation region0"
+      ],
+      "supported_by": [
+        "Wharf west stair longitudinal grade beam 2 pile 1",
+        "Wharf west stair longitudinal grade beam 2 pile 2"
+      ]
+    },
+    {
+      "part": "Wharf east stair longitudinal grade beam 1 pile 1",
+      "measured_native_ground_y": [
+        -4.34893,
+        -4.34893,
+        -4.34524,
+        -4.34524,
+        -4.34709
+      ],
+      "bottom_y": -4.89893
+    },
+    {
+      "part": "Wharf east stair longitudinal grade beam 1 pile 2",
+      "measured_native_ground_y": [
+        -3.77369,
+        -3.77369,
+        -3.70499,
+        -3.70499,
+        -3.73934
+      ],
+      "bottom_y": -4.42
+    },
+    {
+      "part": "Wharf east stair longitudinal grade beam 1",
+      "carried": [
+        "Wharf east stair-cell foundation region0"
+      ],
+      "supported_by": [
+        "Wharf east stair longitudinal grade beam 1 pile 1",
+        "Wharf east stair longitudinal grade beam 1 pile 2"
+      ]
+    },
+    {
+      "part": "Wharf east stair longitudinal grade beam 2 pile 1",
+      "measured_native_ground_y": [
+        -4.34893,
+        -4.34893,
+        -4.34524,
+        -4.34524,
+        -4.34709
+      ],
+      "bottom_y": -4.89893
+    },
+    {
+      "part": "Wharf east stair longitudinal grade beam 2 pile 2",
+      "measured_native_ground_y": [
+        -3.7728,
+        -3.77271,
+        -3.70409,
+        -3.7043,
+        -3.73845
+      ],
+      "bottom_y": -4.42
+    },
+    {
+      "part": "Wharf east stair longitudinal grade beam 2",
+      "carried": [
+        "Wharf east stair-cell foundation region0"
+      ],
+      "supported_by": [
+        "Wharf east stair longitudinal grade beam 2 pile 1",
+        "Wharf east stair longitudinal grade beam 2 pile 2"
+      ]
+    },
+    {
+      "part": "Wharf west north stair approach transfer girder at X20.4",
+      "carried": [
+        "WLD-06 west jetty bearing 1 6 region0",
+        "WLD-06 west jetty bearing 1 7 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region0 region0"
+      ],
+      "supported_by": [
+        "WLD-06 west jetty driven pile 6",
+        "Wharf west stair retaining wall 31.45 region0"
+      ]
+    },
+    {
+      "part": "Wharf west north stair approach transfer girder at X22.0",
+      "carried": [
+        "WLD-06 west jetty bearing 1 6 region0",
+        "WLD-06 west jetty bearing 1 7 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region0 region0"
+      ],
+      "supported_by": [
+        "WLD-06 west jetty driven pile 14",
+        "Wharf west stair retaining wall 31.45 region0"
+      ]
+    },
+    {
+      "part": "Wharf west north stair approach transfer girder at X23.6",
+      "carried": [
+        "WLD-06 west jetty bearing 1 6 region0",
+        "WLD-06 west jetty bearing 1 7 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region0 region0"
+      ],
+      "supported_by": [
+        "WLD-06 west jetty driven pile 22",
+        "Wharf west stair retaining wall 31.45 region0"
+      ]
+    },
+    {
+      "part": "Wharf west south stair approach transfer girder at X20.4",
+      "carried": [
+        "WLD-06 west jetty bearing 1 9 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 0 region1 region0"
+      ],
+      "supported_by": [
+        "WLD-06 west jetty driven pile 7",
+        "Wharf west stair retaining wall 34.3 region0"
+      ]
+    },
+    {
+      "part": "Wharf west south stair approach transfer girder at X22.0",
+      "carried": [
+        "WLD-06 west jetty bearing 1 9 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 1 region1 region0"
+      ],
+      "supported_by": [
+        "WLD-06 west jetty driven pile 15",
+        "Wharf west stair retaining wall 34.3 region0"
+      ]
+    },
+    {
+      "part": "Wharf west south stair approach transfer girder at X23.6",
+      "carried": [
+        "WLD-06 west jetty bearing 1 9 region0",
+        "Wharf bearing framed to rectangular well WLD-06 west jetty bearing 0 2 region1 region0"
+      ],
+      "supported_by": [
+        "WLD-06 west jetty driven pile 23",
+        "Wharf west stair retaining wall 34.3 region0"
+      ]
+    },
+    {
+      "part": "Wharf east north stair approach transfer girder at X40.4",
+      "carried": [
+        "WLD-06 east pier-head landing bearing 1 0 region0",
+        "WLD-06 east pier-head landing bearing 1 1 region0",
+        "WLD-06 east pier-head landing bearing 1 2 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 0 region0 region0"
+      ],
+      "supported_by": [
+        "WLD-06 east pier-head landing driven pile 0",
+        "Wharf east stair retaining wall 31.45 region0"
+      ]
+    },
+    {
+      "part": "Wharf east north stair approach transfer girder at X42.7",
+      "carried": [
+        "WLD-06 east pier-head landing bearing 1 0 region0",
+        "WLD-06 east pier-head landing bearing 1 1 region0",
+        "WLD-06 east pier-head landing bearing 1 2 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 1 region0 region0"
+      ],
+      "supported_by": [
+        "WLD-06 east pier-head landing driven pile 3",
+        "Wharf east stair retaining wall 31.45 region0"
+      ]
+    },
+    {
+      "part": "Wharf east north stair approach transfer girder at X45.0",
+      "carried": [
+        "WLD-06 east pier-head landing bearing 1 0 region0",
+        "WLD-06 east pier-head landing bearing 1 1 region0",
+        "WLD-06 east pier-head landing bearing 1 2 region0",
+        "Wharf bearing framed to rectangular well WLD-06 east pier-head landing bearing 0 2 region0 region0"
+      ],
+      "supported_by": [
+        "WLD-06 east pier-head landing driven pile 6",
+        "Wharf east stair retaining wall 31.45 region0"
+      ]
+    }
+  ],
+  "kept_collision_parts": 633,
+  "new_render_collision_parts": 27,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-deck-and-shore.png",
+      "sha256": "1acecf8fa546562e7a90e0539def9570b74586a67268e285cb673b3d4545b04c",
+      "type": "Native export site overview"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-pier-pile-bays.png",
+      "sha256": "90c37b99a57f947c0a613cd47b90da3721ba861ed4d7f69ad388e74235aea112",
+      "type": "Native export site overview"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-founded-undercroft.png",
+      "sha256": "487f286adda3d275be6e22d48c9fefb77876f8b28b5d684629746a3a1f22536e",
+      "type": "Native export underside, terrain hidden"
+    }
+  ],
+  "exports": {
+    "development/levels/rebuild/wharf-foundation-pass/supported-wharf.glb": "1b2ff6d2f047b3a6b99f5d990f086e875708316e9b8347d55183840dcfd691f7",
+    "development/levels/rebuild/wharf-foundation-pass/supported-wharf.blend": "d56d51fb1dcc9bfb55dea0753a5c39e3e076eafb0d2d160e671f8166afdad846",
+    "development/levels/rebuild/wharf-foundation-pass/supported-wharf.hcs2": "819643f05534e0433dabb36373437f60367a70a30aa7cf6568705817b37341f8"
+  }
+}

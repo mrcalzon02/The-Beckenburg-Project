@@ -1,0 +1,139 @@
+{
+  "id": "WLD-11",
+  "status": "PHYSICAL_ARRIVAL_END_BEARING_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/flat-circulation-pass/wld-11/construction.json",
+  "source_contract_sha256": "c38af6cb80cb3a22e162ebbc3b6d1aaa54ee12e7a72eb5fe04eb5c36be03552b",
+  "source_glb": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.glb",
+  "source_glb_sha256": "a8467a6e0c5b59c4b3ae18d4289e08d455b7e3f58f646b9e56b8d9ac2226a851",
+  "source_physics": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.hcs2",
+  "source_physics_sha256": "4eb95de0b8e6f4251d01b3455939c0747bbe8cdc6fa833ec9f6b3b9b564366e6",
+  "before_layout": "development/levels/rebuild/flat-circulation-pass/wld-11/authored-layout.json",
+  "before_layout_sha256": "3fde7248675385c404ff07eff16f56b03d4f663acf991f0919dedc1d8d8c2929",
+  "layout": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+  "layout_sha256": "71287aa9fbad58cfe1e216b0e647cd7f4d442940ac70dd1f05579fc0782a48ed",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {
+      "0": 0
+    },
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {
+      "0": 0
+    },
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {}
+  },
+  "before_stair_components": [
+    "52:L02 flight0 step1",
+    "53:L02 flight0 step2",
+    "54:L02 flight0 step3",
+    "55:L02 flight0 step4",
+    "56:L02 flight0 step5",
+    "57:L02 flight0 step6",
+    "58:L02 flight0 step7",
+    "Authored stair end WLD-11 L02 0 low region0",
+    "Authored stair end WLD-11 L02 0 high region0"
+  ],
+  "stair_components": [
+    "52:L02 flight0 step1",
+    "53:L02 flight0 step2",
+    "54:L02 flight0 step3",
+    "55:L02 flight0 step4",
+    "56:L02 flight0 step5",
+    "57:L02 flight0 step6",
+    "58:L02 flight0 step7",
+    "Authored stair end WLD-11 L02 0 low region0",
+    "Authored stair end WLD-11 L02 0 high region0"
+  ],
+  "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b",
+  "physics_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      32.0,
+      0,
+      82.0
+    ],
+    "route_width": 2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.0,
+        82.35
+      ],
+      [
+        31.0,
+        82.0
+      ],
+      [
+        33.0,
+        82.0
+      ],
+      [
+        33.0,
+        82.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.0,
+          82.35
+        ],
+        [
+          31.0,
+          82.0
+        ],
+        [
+          33.0,
+          82.0
+        ],
+        [
+          33.0,
+          82.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-11 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-11 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f"
+}

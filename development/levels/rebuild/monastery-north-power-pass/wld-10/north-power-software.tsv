@@ -1,0 +1,31 @@
+check	result
+native_scene_revision	ba6685623112907e54ec4d1e72637fbbd0b1ae50c73318e85853302d2e2eefee
+collision_sha256	2cef222a218ffc0aa1e90fa4fe1b73fa2bf06f843d7c583227e05dd0a054801a
+level_revision	ba6685623112907e54ec4d1e72637fbbd0b1ae50c73318e85853302d2e2eefee-544ebce8b0f8ebfb
+renderer	Software
+original_route_replays	84
+retained_doors	13
+monastery-service-court-light-1	3.8098806543374484 supplied / 0.9000000000000001 isolated
+monastery-service-court-light-2	3.809880654337448 supplied / 0.9000000000000001 isolated
+monastery-tower-base-light-1	2.5570656189284464 supplied / 0.187 isolated
+monastery-tower-base-light-2	2.5570656189284464 supplied / 0.187 isolated
+monastery-refectory-light-1	2.929037599907744 supplied / 0.187 isolated
+monastery-refectory-light-2	2.929037599907744 supplied / 0.187 isolated
+monastery-refectory-light-3	2.929037599907744 supplied / 0.187 isolated
+monastery-refectory-light-4	2.929037599907744 supplied / 0.187 isolated
+monastery-east-cloister-light-1	2.5570656189284464 supplied / 0.187 isolated
+monastery-east-cloister-light-2	2.7439783778177715 supplied / 0.187 isolated
+monastery-east-cloister-light-3	2.7439783778177715 supplied / 0.187 isolated
+monastery-east-cloister-light-4	2.5570656189284464 supplied / 0.187 isolated
+monastery-archive-light-1	2.929037599907744 supplied / 0.187 isolated
+monastery-archive-light-2	2.929037599907744 supplied / 0.187 isolated
+monastery-archive-light-3	2.929037599907744 supplied / 0.187 isolated
+monastery-vestry-light-1	2.9368782872723065 supplied / 0.187 isolated
+monastery-vestry-light-2	2.9368782872723065 supplied / 0.187 isolated
+monastery-vestry-light-3	2.929037599907744 supplied / 0.187 isolated
+archive_visible_light_response	277915 changed pixels
+vestry_visible_light_response	297602 changed pixels
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+live_east_range_independent_switches	PASS
+live_north_range_independent_switches	PASS
+live_four_player_blackout	PASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches

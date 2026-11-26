@@ -1,0 +1,158 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "WLD-14": {
+      "layout": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+      "variants": {
+        "before_bearing": {
+          "contract": "6d06ad81545bd51166a32085fc71c037b5a9ce1a9bfbd27c4d5086af77f8fd68",
+          "physics": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+          "glb": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+          "layout": "c803f91192ede6b739fdf6a50bf7a3c9676c96f9fd93d0da8903078dd22b2cec"
+        },
+        "after_bearing": {
+          "contract": "6d06ad81545bd51166a32085fc71c037b5a9ce1a9bfbd27c4d5086af77f8fd68",
+          "physics": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0",
+          "glb": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781",
+          "layout": "3e004cf4ac5b6f4a0efc6b82a3aa4c6465a8536fd44a32a0c411b8efef5980e9"
+        }
+      }
+    },
+    "WLD-15": {
+      "layout": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+      "variants": {
+        "before_bearing": {
+          "contract": "08863124fc1e145446435beca5dfac5fd22784525cb04ee2308cb6791682e59a",
+          "physics": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+          "glb": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+          "layout": "ce8a9511d5fd2d96c6ec45c414fa71d08ff0ced8c98d5d8a409246c187951958"
+        },
+        "after_bearing": {
+          "contract": "08863124fc1e145446435beca5dfac5fd22784525cb04ee2308cb6791682e59a",
+          "physics": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e",
+          "glb": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5",
+          "layout": "d389c14e47618257dfe6a890dc0541cb3cb2e4e24fc2af80f05f13f2873c1d18"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "c75cb09beb0b444247fd78d427bbfc6dbce76ac238caa28eec32463717575d3d",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/monastery-cloister-pass/roster.json": "ab7df804f7c3ac478de1c298e01084556d0c77f4397a474e561ca984efcbe70c",
+    "development/levels/rebuild/movement-chains.json": "2350f45af21848b60df378913d0cfbae165de15bc97bd0eb2710c5e8cf53c162"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "WLD-14": {
+        "flights": 142,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 142,
+        "authored_down": 142
+      },
+      "WLD-15": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      }
+    },
+    "after_bearing": {
+      "WLD-14": {
+        "flights": 142,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 142,
+        "authored_down": 142
+      },
+      "WLD-15": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 11,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 11,
+      "authored_reverse": 11
+    },
+    "after_bearing": {
+      "routes": 11,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 11,
+      "authored_reverse": 11
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "declared_new_vertical_routes": [],
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [
+      {
+        "site": "WLD-14",
+        "variant": "before_bearing",
+        "id": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "links": [
+          "route-20",
+          "route-21",
+          "route-22",
+          "route-23",
+          "route-24"
+        ]
+      },
+      {
+        "site": "WLD-14",
+        "variant": "after_bearing",
+        "id": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "links": [
+          "route-20",
+          "route-21",
+          "route-22",
+          "route-23",
+          "route-24"
+        ]
+      }
+    ],
+    "results": [
+      {
+        "site": "WLD-14",
+        "variant": "before_bearing",
+        "link": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "segments": "142",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_5_OF_7",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-14",
+        "variant": "after_bearing",
+        "link": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "segments": "142",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_5_OF_7",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

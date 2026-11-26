@@ -1,0 +1,20 @@
+{
+  "main": "cc65453cdd33a8804405fb538f773ee20d82b43e",
+  "source": "fad6c7a92b3025f62159f5ac7d53618a569adfe8",
+  "re_read_runs": [
+    {
+      "id": 42431982917,
+      "conclusion": "success"
+    },
+    {
+      "id": 42431982951,
+      "conclusion": "success"
+    },
+    {
+      "id": 42431982920,
+      "conclusion": "success"
+    }
+  ],
+  "raw_full_regression": "Previously verified unchanged source:365passed,0failed,0skipped,365manifest; retained earlier raw evidence",
+  "limitation": "Separate main evidence; no exact candidate CI, hardware or deployed-gallery acceptance inferred."
+}

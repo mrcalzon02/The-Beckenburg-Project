@@ -1,0 +1,30 @@
+{
+  "source_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world",
+  "grade": {
+    "site": "WLD-03",
+    "changed_vertices": 847,
+    "raised_vertices": 747,
+    "lowered_vertices": 100,
+    "max_change_m": 4.350000381,
+    "source_height_sha256": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "saved_topology_sha256": "938923743ba10cacb029404add7e2d9eed377ec0dde9c5c77ff4bf2cb6e29b16",
+    "saved_cuts_sha256": "c8f831622e7c93a737f3360f32c3efd95fbf29bce921796cc2af4fb11817b862",
+    "hole_controls": 1444,
+    "disk_reopen_verified": true,
+    "physics_sha256": "46d1d925caedf5aa505cbc3ca69b459d194e4cbab5322278d8a096f6c0b11553",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "builder_sha256": {
+    "RebuildTieredEarthworks.java": "ca10d4cab8a3ea7d3744c2c0f1373a8f80642f6e47abb4db618b47c3a8d5b63f",
+    "RebuildStairCellPunches.java": "57288fc8976428f996f625bcfe2b44e0b7777e115eefe8848b1b72ca088b6455"
+  },
+  "foundation": {
+    "source_height_and_layers_unchanged": true,
+    "disk_reopen_verified": true,
+    "prior_and_new_hole_controls": 1447,
+    "cutouts_before": 1720,
+    "cutouts_after": 1949,
+    "physics_sha256": "83290b5be58bcafb8bc8d139eaf8c17803b01d7fc83bf08e45e11f338e66f9b5"
+  },
+  "terrain_sha256": "83290b5be58bcafb8bc8d139eaf8c17803b01d7fc83bf08e45e11f338e66f9b5"
+}

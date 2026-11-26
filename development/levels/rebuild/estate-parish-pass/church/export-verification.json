@@ -1,0 +1,33 @@
+{
+  "glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+  "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82",
+  "retained_native_records": 431,
+  "new_closed_parts": 16,
+  "aperture_rays": 27,
+  "sill_controls": 18,
+  "independent_standing": 5,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-overview.png",
+      "sha256": "8a0cbf5bfe99151bf874202921565ace3a14e543c46926be49c77a7f01062f17",
+      "source_glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-forecourt.png",
+      "sha256": "7a7bceb2f56b0414adcf24d908fd20f1310cd2a4c2a694e46d6ad5b900dedb31",
+      "source_glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-vestry-court.png",
+      "sha256": "318cece2682c763570a6cc1f37e4c630e49c3a04232d83d9114298d9192afb40",
+      "source_glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-chapel-terrace.png",
+      "sha256": "cc1ab2ee4a1305a8cb2c52513c77f5407482c27ca9ca2a07e0f01b743efaf991",
+      "source_glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f"
+    }
+  ]
+}

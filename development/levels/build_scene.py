@@ -8,7 +8,10 @@ from pathlib import Path
 from mathutils import Vector
 ROOT=Path(__file__).resolve().parents[2]
 name=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'house'
-SRC=ROOT/'build/level-verification/scenes'/name
+def option(flag, default):
+    return sys.argv[sys.argv.index(flag)+1] if flag in sys.argv else default
+
+SRC=Path(option('--source-dir',ROOT/'build/level-verification/scenes'/name)).resolve()
 definition=json.loads((SRC/'definition.json').read_text());faces=json.loads((SRC/'geometry.json').read_text())
 bpy.ops.wm.read_factory_settings(use_empty=True);bpy.context.preferences.filepaths.save_version=0
 
@@ -163,7 +166,7 @@ if name=='briar-rebuild-functions':
     scene['source_of_truth']='HouseRebuildFunctions.java / HouseRebuildEnvelope.java / editor landscape-world; regenerate after layout edits'
     scene['production_status']='functional construction candidate; full services/detail/mission acceptance pending; analytic sanctuary haze is runtime postprocessing'
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
-out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
+out=Path(option('--output-dir',ROOT/'development/levels/blender')).resolve();out.mkdir(parents=True,exist_ok=True)
 suffix='-dressed' if name=='blackpine' else ''
 if '--output-suffix' in sys.argv:suffix=sys.argv[sys.argv.index('--output-suffix')+1]
 filename_suffix=suffix if name=='blackpine' or '--output-suffix' in sys.argv else '-complete'
