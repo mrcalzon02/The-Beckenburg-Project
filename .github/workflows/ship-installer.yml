@@ -133,7 +133,7 @@ jobs:
           # The required game/desktop/multiplayer checks run above. This
           # packaging step must not compile optional GPU capture harnesses,
           # whose shared test fixtures are outside this Maven module.
-          mvn -B -ntp -f gpu-client/pom.xml -Dmaven.test.skip=true package
+          mvn -B -ntp -f gpu-client/pom.xml '-Dmaven.test.skip=true' package
           if ($LASTEXITCODE -ne 0) { throw 'GPU client dependency packaging failed' }
           $gpu='gpu-client/target/BeckenburgGPU.jar'
           if (!(Test-Path $gpu)) { throw 'OpenGL GPU application JAR missing' }
