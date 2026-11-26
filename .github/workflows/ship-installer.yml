@@ -343,7 +343,7 @@ jobs:
               # Exact source already checked. If no tag exists, release
               # creation atomically establishes it at this immutable SHA.
               # Never fall back to a shallow-checkout git push or retag.
-              & gh release create $env:BECKENBURG_TAG @assets --target $checkedOut --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes $notes
+              & gh release create $env:BECKENBURG_TAG @assets --target $checkedOut --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION Beta" --notes $notes --prerelease
             }
             if($LASTEXITCODE -eq 0){$uploaded=$true;break}
             Write-Warning "Release attempt $attempt failed; GitHub API may be unavailable or this token may lack permission"

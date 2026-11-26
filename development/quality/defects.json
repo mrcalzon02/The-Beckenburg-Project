@@ -707,6 +707,28 @@
   },
   "issues": [
     {
+      "id": "DEV-805",
+      "title": "A verified Windows installer could not publish its immutable release after workflow changes",
+      "status": "PUBLICATION_BLOCKED; corrected-source run requested",
+      "affected": "GitHub Releases publication and in-game updater availability",
+      "symptom": "Installer run 45892939610 passed the required functional checks and preserved version 0.1.408, but three release-create attempts returned HTTP 403 Resource not accessible by integration. The updater could only see previously published versions.",
+      "cause": "The job reported Contents: write and used github.token without a job-level downgrade. The tested b8dbc2e source differs from later main 235e5cd4 in .github/workflows/gpu-renderer.yml, consistent with the documented GitHub token restriction on tagging a noncurrent workflow revision. This is not a failed gameplay test.",
+      "action": "Run the corrected current source through the existing serialized pipeline, freeze workflow edits during that run, and verify the exact immutable tag and all installer assets after publication. Never retarget an older tested tag or substitute newer untested bytes.",
+      "evidence": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45892939610 ; preserved artifact 15151854946, ZIP SHA256 d1cd2485cf47e7a71787d9f7488c87ed92684b00fb22626044a6e37cbcd3a32b ; development/releases/DEMO_BETA_2026-11-26.md. Publication remains pending.",
+      "older_maps": "Publishing a binary certifies only its stated functional checks; retain each older map acceptance boundary."
+    },
+    {
+      "id": "DEV-804",
+      "title": "Optional GPU capture test compilation removed the GPU runtime from the demo installer",
+      "status": "PACKAGING_FIX_PUSHED; exact corrected installer verification pending",
+      "affected": "Ship Beckenburg Windows Installer GPU bundling step",
+      "symptom": "Map integration installer 45892939610 fell back to a software-only recovery package even though the production GPU sources compiled.",
+      "cause": "Maven -DskipTests suppresses test execution but still compiles test sources. LevelAtmosphereGpuCapture references AllLevelAtmosphereCapture outside the gpu-client test source roots, causing optional packaging to fail.",
+      "action": "Use -Dmaven.test.skip=true only for the release packaging invocation. Preserve required packaged multiplayer, actual desktop, installed Windows EXE and updater gates unchanged. Confirm the resulting package contains and selects the GPU runtime.",
+      "evidence": "Fix f9d674800cbc276bfc0d0042611a820e3de767a5; static YAML comparison confirms only the GPU packaging invocation changed and all required gates were retained; corrected run 45894998855 queued before the beta metadata checkpoint. Existing updater test passed on OpenJDK21 with source/target17. Full corrected Windows run still required.",
+      "older_maps": "No map or rendering source changed; this packaging repair does not establish physical GPU performance or individual map acceptance."
+    },
+    {
       "id": "DEV-803",
       "title": "GPU workflow omits canonical packaging and shared atmosphere inputs from push triggers",
       "status": "FIXED_TRIGGER_COVERAGE_VERIFIED; exact follow-up GPU workflow run pending",
