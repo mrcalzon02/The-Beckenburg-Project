@@ -16,31 +16,59 @@ The identity reconciliation preserves both pinned source histories and their ori
 
 ## Recorded defects
 
+### DEV-807 — Duplicate build inputs made the GPU installer invisible to existing updaters
+
+**Status:** FIXED_INSTALLED_PAYLOAD_AND_EXISTING_CLIENT_SELECTION_VERIFIED · **Affected:** Windows jpackage input and Beckenburg updater release eligibility
+
+Published GPU beta 0.1.409 had an 886,076,827-byte EXE. The unchanged 750 MiB production updater correctly skipped it and offered the earlier software-recovery beta 408.
+
+Cause / uncertainty: jpackage --input build copied raw classes/resources/tests and both complete game JARs into the native application. This duplicated runtime content and exceeded the existing 786,432,000-byte download cap.
+
+Fix / next action: Stage only the selected complete runtime fat JAR; retain its game, assets, native dependencies, internal recovery entrypoint and separately copied editor kit. Verify staged/installed JAR SHA-256 identity, and reject an oversized installer before publication. Keep the old client limit unchanged.
+
+Evidence and verification: Fix 23af4977e780f442e666c858277ceae1e30f837e independently reviewed; run 45899303884 SUCCESS. Final beta 410 EXE 346,221,859 bytes; SHA256 f8bf0067c62380afc0d04480a45efea0166b742ddf7dedf308aaf092511f5ce2. The exact released407 selector source blob 64a5cf4b6dd0d5f2666a9fdc04a074cadd9ea79d passes live 407/408/409 → 410 and410 → no update. Downloaded checksum mappings match both release-asset digests. See evidence/demo-release-2026-11-26/receipt.json.
+
+Older-map obligation: Packaging removes duplicate build material only. It grants no new map, full-campaign or physical GPU/FPS acceptance.
+
+### DEV-806 — PowerShell split the dotted Maven test-skip property in the initial packaging repair
+
+**Status:** FIXED_QUOTED_ARGUMENT_AND_GPU_BUILD_VERIFIED · **Affected:** Optional GPU bundle invocation in the Windows installer workflow
+
+Beta408 remained software-only because Maven reported Unknown lifecycle phase .test.skip=true, despite the preceding intended test-compile skip repair.
+
+Cause / uncertainty: The new dotted -Dmaven.test.skip=true property was unquoted in the PowerShell command. This quoting defect was introduced by the packaging repair and was caught by reading the actual log, rather than trusting the optional-step success label.
+
+Fix / next action: Pass '-Dmaven.test.skip=true' as a literal PowerShell argument. Preserve the original failing evidence and all required runtime gates, then build and publish new immutable versions instead of replacing408.
+
+Evidence and verification: Corrected in 1648e82ab99103b002b0aeddb5d4f85b919d0eeb. Runs45897382104(beta 409) and45899303884(beta 410) log Maven BUILD SUCCESS and actual GPU-first packaging. Final410 also verifies the installed GPU JAR digest and Castle/updater execution. Failure remains documented at development/releases/DEMO_BETA_2026-11-26.md.
+
+Older-map obligation: No gameplay, model or renderer source changed. Independent physical GPU and per-map checks retain their original scope.
+
 ### DEV-805 — A verified Windows installer could not publish its immutable release after workflow changes
 
-**Status:** PUBLICATION_BLOCKED; corrected-source run requested · **Affected:** GitHub Releases publication and in-game updater availability
+**Status:** SCOPED_PUBLICATION_RECOVERED_AND_IMMUTABLE_BETA_VERIFIED · **Affected:** GitHub Releases publication and in-game updater availability
 
 Installer run 45892939610 passed the required functional checks and preserved version 0.1.408, but three release-create attempts returned HTTP 403 Resource not accessible by integration. The updater could only see previously published versions.
 
 Cause / uncertainty: The job reported Contents: write and used github.token without a job-level downgrade. The tested b8dbc2e source differs from later main 235e5cd4 in .github/workflows/gpu-renderer.yml, consistent with the documented GitHub token restriction on tagging a noncurrent workflow revision. This is not a failed gameplay test.
 
-Fix / next action: Run the corrected current source through the existing serialized pipeline, freeze workflow edits during that run, and verify the exact immutable tag and all installer assets after publication. Never retarget an older tested tag or substitute newer untested bytes.
+Fix / next action: Kept workflow source stable during the tested release run; no credentials, repository permissions, old tags or old assets changed. Published fresh numeric beta 410 from its exact tested source and read back the tag, assets, sizes, checksums and existing-client updater selection.
 
-Evidence and verification: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45892939610 ; preserved artifact 15151854946, ZIP SHA256 d1cd2485cf47e7a71787d9f7488c87ed92684b00fb22626044a6e37cbcd3a32b ; development/releases/DEMO_BETA_2026-11-26.md. Publication remains pending.
+Evidence and verification: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45892939610 ; preserved artifact 15151854946, ZIP SHA256 d1cd2485cf47e7a71787d9f7488c87ed92684b00fb22626044a6e37cbcd3a32b ; development/releases/DEMO_BETA_2026-11-26.md. Publication remains pending. Recovered publication is confirmed for beta 408, GPU beta 409 and final size-compatible GPU beta 410. Final tag beckenburg-v0.1.410 resolves exactly to 23af4977e780f442e666c858277ceae1e30f837e; run 45899303884 SUCCESS. Final receipt: development/quality/evidence/demo-release-2026-11-26/receipt.json.
 
 Older-map obligation: Publishing a binary certifies only its stated functional checks; retain each older map acceptance boundary.
 
 ### DEV-804 — Optional GPU capture test compilation removed the GPU runtime from the demo installer
 
-**Status:** PACKAGING_FIX_PUSHED; exact corrected installer verification pending · **Affected:** Ship Beckenburg Windows Installer GPU bundling step
+**Status:** RELEASE_GPU_PACKAGING_VERIFIED; independent capture-test source wiring remains separate · **Affected:** Ship Beckenburg Windows Installer GPU bundling step
 
 Map integration installer 45892939610 fell back to a software-only recovery package even though the production GPU sources compiled.
 
 Cause / uncertainty: Maven -DskipTests suppresses test execution but still compiles test sources. LevelAtmosphereGpuCapture references AllLevelAtmosphereCapture outside the gpu-client test source roots, causing optional packaging to fail.
 
-Fix / next action: Use -Dmaven.test.skip=true only for the release packaging invocation. Preserve required packaged multiplayer, actual desktop, installed Windows EXE and updater gates unchanged. Confirm the resulting package contains and selects the GPU runtime.
+Fix / next action: Release-only Maven packaging skips optional capture-test compilation using a quoted literal property. Required packaged multiplayer, actual desktop, installed Windows EXE and updater gates remain. The final GPU fat JAR is staged alone and its SHA-256 is verified again after installation. Independent GPU diagnostic test-source wiring is outside this release repair.
 
-Evidence and verification: Fix f9d674800cbc276bfc0d0042611a820e3de767a5; static YAML comparison confirms only the GPU packaging invocation changed and all required gates were retained; corrected run 45894998855 queued before the beta metadata checkpoint. Existing updater test passed on OpenJDK21 with source/target17. Full corrected Windows run still required.
+Evidence and verification: Fix f9d674800cbc276bfc0d0042611a820e3de767a5; static YAML comparison confirms only the GPU packaging invocation changed and all required gates were retained; corrected run 45894998855 queued before the beta metadata checkpoint. Existing updater test passed on OpenJDK21 with source/target17. Full corrected Windows run still required. Final 0.1.410 source 23af4977e780f442e666c858277ceae1e30f837e, installer run 45899303884/job 140180863774 SUCCESS: Maven BUILD SUCCESS; GPU-first package; staged and installed BeckenburgGPU.jar SHA256 4dd87bb637871378a2414bd276fd8f592362736ae5e20df6692aa382d7dcb630; required installed Castle/updater checks PASS. Receipt: development/quality/evidence/demo-release-2026-11-26/receipt.json.
 
 Older-map obligation: No map or rendering source changed; this packaging repair does not establish physical GPU performance or individual map acceptance.
 

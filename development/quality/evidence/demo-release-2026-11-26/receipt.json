@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "project": "The Beckenburg Project",
+  "verified_at_utc": "2026-11-26T21:50:47Z",
+  "release": {
+    "tag": "beckenburg-v0.1.410",
+    "title": "Beckenburg 0.1.410 Beta",
+    "prerelease": true,
+    "draft": false,
+    "published_at": "2026-11-26T21:45:38Z",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.410",
+    "source_sha": "23af4977e780f442e666c858277ceae1e30f837e",
+    "tag_target_verified": true
+  },
+  "workflow": {
+    "run_id": 45899303884,
+    "job_id": 140180863774,
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45899303884",
+    "conclusion": "success",
+    "required_functional_steps": [
+      {
+        "name": "Build playable Java 17 game and its required runtime assets",
+        "conclusion": "success"
+      },
+      {
+        "name": "Compile only functional release-smoke harnesses",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove packaged multiplayer investigation actually completes",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove Castle startup, playable solo round and multiplayer interface",
+        "conclusion": "success"
+      },
+      {
+        "name": "Bundle working Windows app with GPU-first and software fallback",
+        "conclusion": "success"
+      },
+      {
+        "name": "Package Windows installer",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify installed EXE starts the actual Castle and updater stays external",
+        "conclusion": "success"
+      },
+      {
+        "name": "Generate download checksums",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify immutable tested source and reserved release tags",
+        "conclusion": "success"
+      },
+      {
+        "name": "Publish packaged installer on GitHub Releases",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "runtime_payload": {
+    "jar": "BeckenburgGPU.jar",
+    "sha256": "4dd87bb637871378a2414bd276fd8f592362736ae5e20df6692aa382d7dcb630",
+    "maven_build_success": true,
+    "required_gpu_classes_verified": true,
+    "package_mode": "GPU-first with automatic software recovery",
+    "installed_jar_hash_matches_staged_payload": true,
+    "installed_launcher_smoke_mode": "--software; the GPU fat JAR's contained recovery entrypoint reaches Castle"
+  },
+  "assets": [
+    {
+      "name": "Beckenburg-0.1.410-Windows-x64.exe",
+      "size_bytes": 346221859,
+      "digest": "sha256:f8bf0067c62380afc0d04480a45efea0166b742ddf7dedf308aaf092511f5ce2",
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/releases/download/beckenburg-v0.1.410/Beckenburg-0.1.410-Windows-x64.exe"
+    },
+    {
+      "name": "LevelEditorKit-Java17.jar",
+      "size_bytes": 938060,
+      "digest": "sha256:92791c4d8283ce9cd95677b9e6255f60a7ae3c109561f9521709af001a9bd5da",
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/releases/download/beckenburg-v0.1.410/LevelEditorKit-Java17.jar"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size_bytes": 195,
+      "digest": "sha256:c5a79f99f1a76bf6e9376dcb97cd1cb33e597002116f0be9560fc0cc0e2deb3f",
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/releases/download/beckenburg-v0.1.410/SHA256SUMS.txt"
+    }
+  ],
+  "updater": {
+    "existing_limit_bytes": 786432000,
+    "installer_bytes": 346221859,
+    "installer_within_existing_limit": true,
+    "selector_source_git_blob": "64a5cf4b6dd0d5f2666a9fdc04a074cadd9ea79d",
+    "released_407_source_sha": "c238cff07d73d4e326b220521974aca5494078ed",
+    "released_407_and_candidate_selector_sources_identical": true,
+    "live_feed_results": {
+      "0.1.407": "beckenburg-v0.1.410",
+      "0.1.408": "beckenburg-v0.1.410",
+      "0.1.409": "beckenburg-v0.1.410",
+      "0.1.410": null
+    },
+    "local_selector_test_runtime": "OpenJDK21 compiler module with source/target17; actual Windows CI uses Java17",
+    "checksum_file_downloaded": true,
+    "checksum_file_digest_matches_github": true,
+    "installer_and_editor_checksum_mappings_match_release_digests": true
+  },
+  "scope": {
+    "verified_routes": [
+      "Packaged complete TCP investigation",
+      "Actual desktop Castle, playable solo round and multiplayer interface",
+      "Windows installer and installed Castle launch",
+      "External updater helper",
+      "GPU runtime bundling and installed payload identity"
+    ],
+    "physical_gpu_fps_measured": false,
+    "all_maps_certified": false,
+    "note": "Incomplete and review-gated maps retain their existing limitations. This packaging release changes no gameplay or performance implementation."
+  }
+}
