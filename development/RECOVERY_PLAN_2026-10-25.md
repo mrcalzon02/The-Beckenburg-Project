@@ -1,5 +1,9 @@
 # Beckenburg recovery program â€” authoritative active development contract
 
+## 2026-11-26 — demonstration release packaging repair
+
+The owner requested a current demonstration beta without forward performance changes. [Demo checkpoint](releases/DEMO_BETA_2026-11-26.md) records the exact passing functional steps from installer run `45892939610` on `b8dbc2e984335622cadafef05d6af7a997f1115e`, the preserved 0.1.408 installer artifact and the HTTP 403 publication blocker. Optional GPU capture-test compilation incorrectly discarded the production GPU package; the installer packaging command now skips that optional Maven test compilation while preserving every required runtime, multiplayer, desktop, installed-EXE and updater gate. No gameplay or renderer source changed. **Next:** inspect the corrected enclosing-source installer run, confirm GPU-first packaging, resolve authenticated publication, then read back the immutable tag and updater assets. No release or physical FPS is claimed by this checkpoint.
+
 ## 2026-11-26 — published integration CI continuity
 
 The integration was published as `b8dbc2e984335622cadafef05d6af7a997f1115e`. [Gallery CI 45892939726](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/45892939726) passes from a full checkout: all 15,311 PNGs and 32 animation attachments were read from actual working bytes, with no parent metadata reuse. The subsequent `github-actions[bot]` commit `3d20c147a2c27fa2d852d31e9527bb61196e0811` adds 85 NPC capture PNGs and two CSVs only; it is preserved. Its new captures still require the next gallery reindex and deployed-byte verification.
