@@ -1,0 +1,2845 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-26",
+  "timezone": "America/Anchorage",
+  "repository": "mrcalzon02/The-Beckenburg-Project",
+  "main_sha": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+  "candidate_branch": "map/roster-structure-batch",
+  "candidate_sha": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+  "scope": {
+    "base_locations_including_hq": 28,
+    "annexes": 1,
+    "packets": 29
+  },
+  "method": "Read-only source, branch ancestry, recorded-checkpoint and actual HCS2 digest audit. No fresh runtime, visual, GPU or multiplayer acceptance performed.",
+  "fully_completed_maps_certified_by_this_audit": 0,
+  "stage_registers": {
+    "main": {
+      "date": "2026-11-07",
+      "scope": {
+        "base_locations": 28,
+        "annexes": 1,
+        "packets": 29
+      },
+      "stats": {
+        "S00": {
+          "IN_PROGRESS": 29
+        },
+        "S01": {
+          "IN_PROGRESS": 29
+        },
+        "S02": {
+          "IN_PROGRESS": 10,
+          "NOT_AUDITED": 19
+        },
+        "S03": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S04": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S05": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S06": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S07": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S08": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S09": {
+          "NOT_AUDITED": 28,
+          "IN_PROGRESS": 1
+        },
+        "S10": {
+          "NOT_AUDITED": 29
+        },
+        "S11": {
+          "NOT_AUDITED": 29
+        }
+      },
+      "fully_accepted_packets": 0,
+      "caveat": "Register is stale against newer source/checkpoints; no accepted status does not mean implementation absent."
+    },
+    "candidate": {
+      "date": "2026-11-14",
+      "scope": {
+        "base_locations": 28,
+        "annexes": 1,
+        "packets": 29
+      },
+      "stats": {
+        "S00": {
+          "IN_PROGRESS": 29
+        },
+        "S01": {
+          "IN_PROGRESS": 29
+        },
+        "S02": {
+          "IN_PROGRESS": 25,
+          "NOT_AUDITED": 4
+        },
+        "S03": {
+          "IN_PROGRESS": 27,
+          "NOT_AUDITED": 2
+        },
+        "S04": {
+          "IN_PROGRESS": 27,
+          "NOT_AUDITED": 2
+        },
+        "S05": {
+          "NOT_AUDITED": 12,
+          "IN_PROGRESS": 17
+        },
+        "S06": {
+          "NOT_AUDITED": 18,
+          "IN_PROGRESS": 10,
+          "REVISE": 1
+        },
+        "S07": {
+          "IN_PROGRESS": 27,
+          "NOT_AUDITED": 2
+        },
+        "S08": {
+          "NOT_AUDITED": 27,
+          "IN_PROGRESS": 2
+        },
+        "S09": {
+          "NOT_AUDITED": 26,
+          "IN_PROGRESS": 3
+        },
+        "S10": {
+          "NOT_AUDITED": 28,
+          "IN_PROGRESS": 1
+        },
+        "S11": {
+          "NOT_AUDITED": 22,
+          "IN_PROGRESS": 7
+        }
+      },
+      "fully_accepted_packets": 0,
+      "caveat": "Register is stale against newer source/checkpoints; no accepted status does not mean implementation absent."
+    }
+  },
+  "branch_inventory": {
+    "main": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+    "branchCount": 76,
+    "mapBranches": [
+      {
+        "name": "map/blackpine-mill-refinement",
+        "sha": "b2ce1cba83d468e1f6d2bc8f4f75eefa00220ebe",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 2722
+      },
+      {
+        "name": "map/castle-closeout-review",
+        "sha": "f5b4ecc1d93b4934ad13c248eae0b751c012e090",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 529
+      },
+      {
+        "name": "map/castle-heraldic",
+        "sha": "3c13726963a395f398c5b1a1ae0784994153f0e7",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 552
+      },
+      {
+        "name": "map/castle-loose-props",
+        "sha": "f4e5eb7c282e847a944313976778ffac4faadf77",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 507
+      },
+      {
+        "name": "map/castle-native-upgrade",
+        "sha": "bc2079c671d7cc7ba816f3003dcf6ce8f867e7a3",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 523
+      },
+      {
+        "name": "map/castle-plant",
+        "sha": "db25427348d1c859fae9ec45c7aa7247b31b2cc2",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 547
+      },
+      {
+        "name": "map/castle-production-audit",
+        "sha": "f886afbf52ea643912bafe90c8dd59f428dbcfd4",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 2176
+      },
+      {
+        "name": "map/castle-story-runtime",
+        "sha": "9643af076a059b9ea033f9cf4f316a53dc9abfcf",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 517
+      },
+      {
+        "name": "map/castle-textiles",
+        "sha": "1170e909b71852cd4b9c8a2f9044538355d8e93e",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 554
+      },
+      {
+        "name": "map/castle-training",
+        "sha": "5ba51a1e5074ae2129cf485fbfc5bd219d01314c",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 536
+      },
+      {
+        "name": "map/first-principles-rebuild-plan",
+        "sha": "7674c3ea7b305a33d43a1c1d63ca6623f5dc48ed",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 775
+      },
+      {
+        "name": "map/house-default",
+        "sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+        "status": "diverged",
+        "ahead": 7,
+        "behind": 443
+      },
+      {
+        "name": "map/house-encounter",
+        "sha": "4afae307efe7b4903e14aca2d51d545ebcb0a21a",
+        "status": "diverged",
+        "ahead": 4,
+        "behind": 444
+      },
+      {
+        "name": "map/house-envelope",
+        "sha": "601e4955ab48a149e77528cba803f34214e4e97f",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 493
+      },
+      {
+        "name": "map/house-final-review",
+        "sha": "02f83c858acb9d4f99a01d4c907591e965fd912f",
+        "status": "diverged",
+        "ahead": 5,
+        "behind": 444
+      },
+      {
+        "name": "map/house-functional",
+        "sha": "59737f73e779c1961214c6c878211adc583259ed",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 488
+      },
+      {
+        "name": "map/house-heating-water",
+        "sha": "a2c880128c1165e2bfb8c33dfff1db966c9e1f95",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 467
+      },
+      {
+        "name": "map/house-integration",
+        "sha": "c1fe6f534b2fe33f5fc577417ec0f59bb9e00088",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 451
+      },
+      {
+        "name": "map/house-migration",
+        "sha": "21d20b29a893266f46776b8d50c4a187c0ab790b",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 443
+      },
+      {
+        "name": "map/house-rebuild-fit",
+        "sha": "f2da14af1abbe34f5155289786fb5ca2824ee3e0",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 498
+      },
+      {
+        "name": "map/house-room-review",
+        "sha": "3a44a6634149bc8e22e1470c348854725896e687",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 457
+      },
+      {
+        "name": "map/house-service-fitout",
+        "sha": "d7d6ccdebe13b047eedb72f5643dd80c2c5eeae4",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 478
+      },
+      {
+        "name": "map/house-services",
+        "sha": "52188e75b5da7af48b8f4ccf2ae0e208fe051956",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 484
+      },
+      {
+        "name": "map/house-story-power",
+        "sha": "75f1571b7ff70df95f9669ab31323630fb64d055",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 472
+      },
+      {
+        "name": "map/remaining-level-rough-blockouts",
+        "sha": "6ac421492e5eb5a6784966848131c30f502f5fba",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 2718
+      },
+      {
+        "name": "map/roster-structure-batch",
+        "sha": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+        "status": "diverged",
+        "ahead": 335,
+        "behind": 228
+      },
+      {
+        "name": "map/workbench-materials",
+        "sha": "41d150e0398c7d59c88405d9f5f521b7303611eb",
+        "status": "behind",
+        "ahead": 0,
+        "behind": 542
+      }
+    ],
+    "otherChecks": [
+      {
+        "name": "checkpoint/local-map-2026-10-26",
+        "repository_full_name": "mrcalzon02/The-Beckenburg-Project",
+        "base": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+        "head": "checkpoint/local-map-2026-10-26",
+        "status": "behind",
+        "ahead_by": 0,
+        "behind_by": 2717,
+        "total_commits": 0,
+        "too_large": null,
+        "base_commit": {
+          "sha": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "url": "https://api.github.com/repos/mrcalzon02/The-Beckenburg-Project/commits/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "html_url": "https://github.com/mrcalzon02/The-Beckenburg-Project/commit/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c"
+        },
+        "merge_base_commit": {
+          "sha": "d07d7450fb232ae233f72b386a9c6f33d53ea8ac",
+          "url": "https://api.github.com/repos/mrcalzon02/The-Beckenburg-Project/commits/d07d7450fb232ae233f72b386a9c6f33d53ea8ac",
+          "html_url": "https://github.com/mrcalzon02/The-Beckenburg-Project/commit/d07d7450fb232ae233f72b386a9c6f33d53ea8ac"
+        }
+      },
+      {
+        "name": "integration/unified-map-engine",
+        "repository_full_name": "mrcalzon02/The-Beckenburg-Project",
+        "base": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+        "head": "integration/unified-map-engine",
+        "status": "behind",
+        "ahead_by": 0,
+        "behind_by": 2224,
+        "total_commits": 0,
+        "too_large": null,
+        "base_commit": {
+          "sha": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "url": "https://api.github.com/repos/mrcalzon02/The-Beckenburg-Project/commits/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "html_url": "https://github.com/mrcalzon02/The-Beckenburg-Project/commit/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c"
+        },
+        "merge_base_commit": {
+          "sha": "17a8594fd1c172d77436c637ef5b62aff36246e0",
+          "url": "https://api.github.com/repos/mrcalzon02/The-Beckenburg-Project/commits/17a8594fd1c172d77436c637ef5b62aff36246e0",
+          "html_url": "https://github.com/mrcalzon02/The-Beckenburg-Project/commit/17a8594fd1c172d77436c637ef5b62aff36246e0"
+        }
+      },
+      {
+        "name": "recovery/castle-loose-stash-20261107",
+        "repository_full_name": "mrcalzon02/The-Beckenburg-Project",
+        "base": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+        "head": "recovery/castle-loose-stash-20261107",
+        "status": "diverged",
+        "ahead_by": 3,
+        "behind_by": 519,
+        "total_commits": 3,
+        "too_large": null,
+        "base_commit": {
+          "sha": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "url": "https://api.github.com/repos/mrcalzon02/The-Beckenburg-Project/commits/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "html_url": "https://github.com/mrcalzon02/The-Beckenburg-Project/commit/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c"
+        },
+        "merge_base_commit": {
+          "sha": "e802c7eb7bd79e977cec1d6ff77a135c5c208748",
+          "url": "https://api.github.com/repos/mrcalzon02/The-Beckenburg-Project/commits/e802c7eb7bd79e977cec1d6ff77a135c5c208748",
+          "html_url": "https://github.com/mrcalzon02/The-Beckenburg-Project/commit/e802c7eb7bd79e977cec1d6ff77a135c5c208748"
+        }
+      }
+    ]
+  },
+  "candidate_final_50_commits": [
+    {
+      "sha": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "date": "2026-11-25T08:10:23Z",
+      "message": "Checkpoint: halt map rebuild at user request"
+    },
+    {
+      "sha": "25b7e46509be63193c5187290ed71b5b27a34766",
+      "date": "2026-11-25T08:09:04Z",
+      "message": "Close the Cinder-6 staging road with a founded security gate"
+    },
+    {
+      "sha": "a59fc3e5faed2ff71993a02683bdc7e7d554d164",
+      "date": "2026-11-25T08:05:25Z",
+      "message": "Keep airborne bounds aligned with signed native map geometry"
+    },
+    {
+      "sha": "2f757594985d8db13b7e216df277399c89f763d4",
+      "date": "2026-11-25T08:02:16Z",
+      "message": "Fit Gallows tunnel refuge and add the readable signal register"
+    },
+    {
+      "sha": "f11da7ae756d6aca9e95f827ecfedd7fcf9f9e85",
+      "date": "2026-11-25T07:56:19Z",
+      "message": "Fit Seacliff director telephone and casemate sump pump"
+    },
+    {
+      "sha": "957a654e14bfb2c628359c8be41445c2d56ad491",
+      "date": "2026-11-25T07:53:26Z",
+      "message": "Fit Morrow Point keeper rooms and wire the radio and washbasin"
+    },
+    {
+      "sha": "6d6465e257cc04b6248736743b04a984f5edd9fa",
+      "date": "2026-11-25T07:49:22Z",
+      "message": "Outfit Saint Elara workrooms and wire the bilge pump"
+    },
+    {
+      "sha": "90ce88983174fe17fe0b63379ac8a7f48930e321",
+      "date": "2026-11-25T07:46:08Z",
+      "message": "Furnish Red Mesa expedition shelters and install the working base radio"
+    },
+    {
+      "sha": "164da8e67049a185a4d9a102651357a3069de162",
+      "date": "2026-11-25T07:44:16Z",
+      "message": "Equip Cinder-6 occupied rooms and fit the underground emergency phone"
+    },
+    {
+      "sha": "f65ebf8b28f4ec474d56d277bb8ff06b46fdcc98",
+      "date": "2026-11-25T07:41:50Z",
+      "message": "Furnish Greywater crew rooms and fit the working washbasin"
+    },
+    {
+      "sha": "01b8f6ac923342ae69d1ff965413d78c2f529013",
+      "date": "2026-11-25T07:40:49Z",
+      "message": "Keep authored positions outside the legacy map origin visible"
+    },
+    {
+      "sha": "78b403e0cb258dced8ddef22dbd0d6e4fb29c7c6",
+      "date": "2026-11-25T07:34:27Z",
+      "message": "Use delivered generator power across both investigation views"
+    },
+    {
+      "sha": "c4771e56667b237550ca602174a2ee5814b1d148",
+      "date": "2026-11-25T07:30:17Z",
+      "message": "Muffle arrival sounds through the closed expedition van shutter"
+    },
+    {
+      "sha": "ac181fd58b0abb4272d82ddfbb40ee087455129e",
+      "date": "2026-11-25T07:25:27Z",
+      "message": "Respect stair elevations and hunter posture for UV residue"
+    },
+    {
+      "sha": "b73776a1937bae0b24019e95922e1b342769e7f4",
+      "date": "2026-11-25T07:08:31Z",
+      "message": "Install a working washbasin in the Monastery vestry"
+    },
+    {
+      "sha": "1665031419e777c4732b37ed9bccf702f9be0da2",
+      "date": "2026-11-25T07:03:33Z",
+      "message": "Fit Northwatch crew quarters and power the station relay radio"
+    },
+    {
+      "sha": "cb040e9f5e8020289f0eab646e339a0e42a1484f",
+      "date": "2026-11-25T07:01:09Z",
+      "message": "Furnish Lookout workrooms and wire the hut backup radio"
+    },
+    {
+      "sha": "795532952cbe05f017a59624521b7ad2cfaf1429",
+      "date": "2026-11-25T06:51:47Z",
+      "message": "Install the Mine dispatch shack emergency telephone"
+    },
+    {
+      "sha": "48a63b1e33c85db922e0cde241971c8b526de2be",
+      "date": "2026-11-25T06:49:58Z",
+      "message": "Furnish Wharf cottages and install working communications"
+    },
+    {
+      "sha": "087d97a2a250bea85120e0cf543e9ed63a0f54d1",
+      "date": "2026-11-25T06:45:33Z",
+      "message": "Furnish Blackwater workrooms and wire the dispatch radio"
+    },
+    {
+      "sha": "4a7bcaadb56b8f5191490fc3fba056a40675410c",
+      "date": "2026-11-25T06:39:09Z",
+      "message": "Keep ghost arrivals on supported footing outside safe zones"
+    },
+    {
+      "sha": "f49fde4c73ae90e9f8f18a19291096ec7cd78f88",
+      "date": "2026-11-25T06:31:42Z",
+      "message": "Fit Cemetery caretaker phones and the Vale preparation basin"
+    },
+    {
+      "sha": "c4e42e2eaffefb36b669b1ca008c047afda50cba",
+      "date": "2026-11-25T06:25:05Z",
+      "message": "Fit Mourning Marsh pump, room lighting and south boardwalk guards"
+    },
+    {
+      "sha": "a84e8ba121102a2160e08dc8af438345cf956f58",
+      "date": "2026-11-25T06:19:38Z",
+      "message": "Guard Red Mesa lower landing and wire expedition lighting"
+    },
+    {
+      "sha": "0dd74892e23b74281dfbc927c0146e1a1dc781ae",
+      "date": "2026-11-25T06:14:45Z",
+      "message": "Wire the Morrow Point keeper rooms and tower landings"
+    },
+    {
+      "sha": "374916d5461ded7b4a1d6ae287aa12911f07ed37",
+      "date": "2026-11-25T06:10:02Z",
+      "message": "Finish native ship steel and industrial map surfaces"
+    },
+    {
+      "sha": "d0c12d82cfd3193e6e0853f19e3d5f65d07431bf",
+      "date": "2026-11-25T06:02:06Z",
+      "message": "Install the working Monastery tower bell"
+    },
+    {
+      "sha": "4d392d01c0580d36acec75b2a9a39584530b3028",
+      "date": "2026-11-25T05:55:18Z",
+      "message": "Wire Greywater workrooms and the inspection mezzanine"
+    },
+    {
+      "sha": "c3c5ff7aa6ed8963c55efe06a376a8be4f573138",
+      "date": "2026-11-25T05:52:20Z",
+      "message": "Light the Cinder-6 shaft galleries and emergency exit"
+    },
+    {
+      "sha": "8ae4ac3fc92380811f0aace0224bb5592f04505d",
+      "date": "2026-11-25T05:48:25Z",
+      "message": "Finish Seacliff stair circuit and fit occupied rooms"
+    },
+    {
+      "sha": "44896333cce6b14a2830f088d3adeabfa47b19eb",
+      "date": "2026-11-25T05:43:51Z",
+      "message": "Wire Gallows Pass rooms and signal desk radio"
+    },
+    {
+      "sha": "57c47cb999857f1a1f3b395f3297c41188566335",
+      "date": "2026-11-25T05:40:41Z",
+      "message": "Ground UV evidence and wire the Eight Pines washer"
+    },
+    {
+      "sha": "8ab79c558f3ffd70f450bab3b4298945dd4dd0e0",
+      "date": "2026-11-25T05:32:25Z",
+      "message": "Glaze Morrow Point crown and wire its lantern"
+    },
+    {
+      "sha": "9747d73352b354a9543054d22640718b75f15813",
+      "date": "2026-11-25T05:25:04Z",
+      "message": "Wire Saint Elara compartment lighting"
+    },
+    {
+      "sha": "6f88431b98535dc7c7d1a043fbf0b45db66088cc",
+      "date": "2026-11-25T05:20:38Z",
+      "message": "Fit out Eight Pines guest rooms and reception"
+    },
+    {
+      "sha": "f3ba923465361cee798e3d346e1dd9fb7cc3a829",
+      "date": "2026-11-25T05:13:32Z",
+      "message": "Make authored outdoor refuges walk-in safe areas"
+    },
+    {
+      "sha": "365782a05dbb1d2a53ec3f965877fc343fb80d46",
+      "date": "2026-11-25T05:09:07Z",
+      "message": "Use native Castle cellar treads for standing and object support"
+    },
+    {
+      "sha": "ab1763f08479986f96684f36d06773f5b81949b3",
+      "date": "2026-11-25T05:03:57Z",
+      "message": "Connect the full roster to Castle's county board"
+    },
+    {
+      "sha": "66d6e4f5bdacce9d3e42a329c15125197a0d873b",
+      "date": "2026-11-25T04:58:11Z",
+      "message": "Open the complete Beckenburg investigation roster"
+    },
+    {
+      "sha": "328d1df1f1296aa68f04d423b74f33defdfde591",
+      "date": "2026-11-25T04:54:19Z",
+      "message": "Connect Site Cinder-6 and wire its underground plant"
+    },
+    {
+      "sha": "7950a24835539514c6202f7ad59501500bb0b6cf",
+      "date": "2026-11-25T04:50:36Z",
+      "message": "Wire Eight Pines Motor Lodge into the regular game"
+    },
+    {
+      "sha": "58ec1796cbe0faf7da0e399e785289740c3c57e9",
+      "date": "2026-11-25T04:46:59Z",
+      "message": "Connect and guard the Saint Elara ship decks"
+    },
+    {
+      "sha": "e1be28f6656b943a173dd06fb232d1c2635be526",
+      "date": "2026-11-25T04:41:39Z",
+      "message": "Connect Morrow Point and guard the lighthouse stairs"
+    },
+    {
+      "sha": "4a75b0b78cd4d0cb1bf5bf0e9a8294b4155624f2",
+      "date": "2026-11-25T04:32:06Z",
+      "message": "Build and connect the Gallows Pass Railway mission"
+    },
+    {
+      "sha": "5e87c033ca08a778abf8e6be69578a2db28eb1c2",
+      "date": "2026-11-25T04:17:40Z",
+      "message": "Wire Seacliff rooms and restore its stair landing"
+    },
+    {
+      "sha": "0794b5918d41fdbe4ca465eea4c320586a802ef1",
+      "date": "2026-11-25T04:10:48Z",
+      "message": "Connect Lookout, Wharf and Vale maps to normal play"
+    },
+    {
+      "sha": "e7abd7125aff883459cfd1db8817275667c0d746",
+      "date": "2026-11-25T04:06:11Z",
+      "message": "Make Greywater Cannery and verified rebuilds playable"
+    },
+    {
+      "sha": "c0856ce7e32c526ac1b1e048715288ac919dbd17",
+      "date": "2026-11-25T03:48:09Z",
+      "message": "Apply shared wall floor ceiling and stair finishes"
+    },
+    {
+      "sha": "d0b8d4cacb3584ab53a0b6f7bbfa2a19198e0b99",
+      "date": "2026-11-25T03:40:21Z",
+      "message": "Preserve existing gallery and defect text in UTF-8"
+    },
+    {
+      "sha": "aec0e52ee511ac05a26eabf924d3fc99cc02373a",
+      "date": "2026-11-25T03:39:20Z",
+      "message": "Make Mourning Marsh playable from its built boardwalks"
+    }
+  ],
+  "defect_id_conflicts": [
+    {
+      "id": "DEV-356",
+      "main_titles": [
+        "Hunter and human ghost world draws limited by the network command timer"
+      ],
+      "candidate_titles": [
+        "Fresh House promotion exposes editor fixtures that mutate the first attached assembly",
+        "Search-envelope annotations leave context doors and exterior service mouths open"
+      ]
+    },
+    {
+      "id": "DEV-357",
+      "main_titles": [
+        "House van misses the steady-state frame budget on software renderers"
+      ],
+      "candidate_titles": [
+        "Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes",
+        "Reusing an intermediate circular deck core can leave a top cap open"
+      ]
+    },
+    {
+      "id": "DEV-358",
+      "main_titles": [
+        "Full-round acceptance can inspect hunter payout before its delivery"
+      ],
+      "candidate_titles": [
+        "Native batch review assumes Pillow is installed in the active Python",
+        "Planning text and diagram stand-ins enter structural GLB exports"
+      ]
+    },
+    {
+      "id": "DEV-359",
+      "main_titles": [
+        "Newly exported glTF BLEND materials include a mask-only alpha cutoff"
+      ],
+      "candidate_titles": [
+        "Eight remote elevation links have zero or insufficient physical stair run"
+      ]
+    },
+    {
+      "id": "DEV-360",
+      "main_titles": [
+        "Material Editor rebuilds every face row for a one-face UV preview"
+      ],
+      "candidate_titles": [
+        "Level route reservation strips refill stair openings and obstruct heads"
+      ]
+    },
+    {
+      "id": "DEV-361",
+      "main_titles": [
+        "Healthy joining hunter can lose its connection before entering the 3D view"
+      ],
+      "candidate_titles": [
+        "Native stepped candidates fail current body and traversability queries"
+      ]
+    },
+    {
+      "id": "DEV-362",
+      "main_titles": [
+        "Full UV canvas repaint remains slow on a 120,000-face editable mesh"
+      ],
+      "candidate_titles": [
+        "Expanded stair apertures create collapsed ceiling sliver cells"
+      ]
+    },
+    {
+      "id": "DEV-363",
+      "main_titles": [
+        "Prepared GPU lighting can reverse which side of House door 2 receives light"
+      ],
+      "candidate_titles": [
+        "Roster collision probe exposes crossing stairs and terrain covering authored flights"
+      ]
+    },
+    {
+      "id": "DEV-364",
+      "main_titles": [
+        "House sanctuary crossings and stops exceed the GTX frame budget"
+      ],
+      "candidate_titles": [
+        "Hydroelectric return stair still needs authored shaft enclosure and foundations"
+      ]
+    },
+    {
+      "id": "DEV-365",
+      "main_titles": [
+        "Hired investigators did not independently search, retool or complete the physical investigation"
+      ],
+      "candidate_titles": [
+        "Offline terrain sampler resolves seed inputs using newly created working paths and can swallow Blender errors"
+      ]
+    },
+    {
+      "id": "DEV-366",
+      "main_titles": [
+        "Starting instruments could be bypassed when guessing species or invoking legacy equipment actions"
+      ],
+      "candidate_titles": [
+        "Saved terrain seeds retain rough proposal perimeters and unfinished aperture rims"
+      ]
+    },
+    {
+      "id": "DEV-367",
+      "main_titles": [
+        "Round duration varies with crew, evidence access and ghost feeding conditions"
+      ],
+      "candidate_titles": [
+        "Asset discovery overlooks staged site kits and treats a small runtime sample as the working library"
+      ]
+    },
+    {
+      "id": "DEV-368",
+      "main_titles": [
+        "Campaign auto-extraction test pressed the shutter while a hired investigator crossed the doorway"
+      ],
+      "candidate_titles": [
+        "Furnishing export guard reads deleted Blender objects after independent reset"
+      ]
+    },
+    {
+      "id": "DEV-369",
+      "main_titles": [
+        "Tier I UV expiry check uses the prior trace duration"
+      ],
+      "candidate_titles": [
+        "Furnishing fit double-counts route buffers and overextends endpoint clearance"
+      ]
+    },
+    {
+      "id": "DEV-370",
+      "main_titles": [
+        "Full regression watchdog ends a valid four-seat banishment before settlement"
+      ],
+      "candidate_titles": [
+        "Props can obstruct physical routes that cross rooms without naming those rooms"
+      ]
+    },
+    {
+      "id": "DEV-371",
+      "main_titles": [
+        "An occupied room could expose a figure that requires different witnesses"
+      ],
+      "candidate_titles": [
+        "Many authored flat route samples fail baseline native support or body checks"
+      ]
+    },
+    {
+      "id": "DEV-372",
+      "main_titles": [
+        "Unattended cameras could disclose optical evidence or award sighting credit"
+      ],
+      "candidate_titles": [
+        "Asset index regeneration encounters Windows invalid-argument error on direct overwrite"
+      ]
+    },
+    {
+      "id": "DEV-373",
+      "main_titles": [
+        "Returning to the Castle lobby left a closed camera panel subscribed"
+      ],
+      "candidate_titles": [
+        "Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps"
+      ]
+    },
+    {
+      "id": "DEV-374",
+      "main_titles": [
+        "Queued camera light patterns could reach the field view after the operator stopped watching"
+      ],
+      "candidate_titles": [
+        "Float32 shared stair joins can report unsupported micrometre seams"
+      ]
+    },
+    {
+      "id": "DEV-375",
+      "main_titles": [
+        "A hired investigator repeatedly requested van service while their camera was still in the field"
+      ],
+      "candidate_titles": [
+        "Turn landings overhang the incoming stair flight and block standing movement"
+      ]
+    },
+    {
+      "id": "DEV-376",
+      "main_titles": [
+        "An empty video camera battery prevented physical pickup"
+      ],
+      "candidate_titles": [
+        "Cyclic stair end boundaries and missing final landing interrupt lighthouse ascent"
+      ]
+    },
+    {
+      "id": "DEV-377",
+      "main_titles": [
+        "An ordinary hired video-camera assignment waited for a retired casefile message"
+      ],
+      "candidate_titles": [
+        "Flight-only chain audit omits flat landing segments and resets at link boundaries"
+      ]
+    },
+    {
+      "id": "DEV-378",
+      "main_titles": [
+        "Stair approach and departure could trap investigators on the House flights"
+      ],
+      "candidate_titles": [
+        "Regenerated native scaffold next-step notes retain superseded sloped-mass instructions"
+      ]
+    },
+    {
+      "id": "DEV-379",
+      "main_titles": [
+        "A completed investigation sweep could turn back toward an old or disqualified room"
+      ],
+      "candidate_titles": [
+        "Legacy advisory stair run/riser fields lag the actual authored coordinate revision"
+      ]
+    },
+    {
+      "id": "DEV-380",
+      "main_titles": [
+        "Equal-length room routes sent the dining-room investigator into an exterior dead end"
+      ],
+      "candidate_titles": [
+        "Terrain sampling uses immutable seed-layout cuts instead of current authored basement entries"
+      ]
+    },
+    {
+      "id": "DEV-381",
+      "main_titles": [
+        "The shortest room count sent a Family kitchen assignment around the outside of the House"
+      ],
+      "candidate_titles": [
+        "Base cemetery lacks a terrain source and profile for saved-world integration"
+      ]
+    },
+    {
+      "id": "DEV-382",
+      "main_titles": [
+        "The Farmhouse mudroom door approach could target the far side of its own closed door"
+      ],
+      "candidate_titles": [
+        "Cemetery ossuary stairs cross vestibule walls before reaching the basement floor"
+      ]
+    },
+    {
+      "id": "DEV-383",
+      "main_titles": [
+        "The hired hunter could repeatedly operate the wrong Farmhouse kitchen door"
+      ],
+      "candidate_titles": [
+        "Native collision exporter overwrites its previous payload before terrain validation rejects a candidate"
+      ]
+    },
+    {
+      "id": "DEV-384",
+      "main_titles": [
+        "A correctly identified Spirit could strand the investigator on the porch on the way to Absolution"
+      ],
+      "candidate_titles": [
+        "Moving cemetery stair openings invalidates old approach endpoints and room-centre anchors"
+      ]
+    },
+    {
+      "id": "DEV-385",
+      "main_titles": [
+        "Focused Castle test rejects a legal empty-room Shade manifestation"
+      ],
+      "candidate_titles": [
+        "Uncut route slabs expose inward top faces and mark undersides as walking supports"
+      ]
+    },
+    {
+      "id": "DEV-386",
+      "main_titles": [
+        "Normal case opening has no call to the documented gameplay-renderer prewarm helper"
+      ],
+      "candidate_titles": [
+        "Local path grading can disturb adjoining route shoulders when overall terrain is unsettled"
+      ]
+    },
+    {
+      "id": "DEV-387",
+      "main_titles": [
+        "Van's wall information monitors display chunky, unreadable lettering"
+      ],
+      "candidate_titles": [
+        "Before/after route comparator reuses old feet Y after valid terrain support changes"
+      ]
+    },
+    {
+      "id": "DEV-388",
+      "main_titles": [
+        "Handheld camera rear LCD displays front atlas and overlays its controls"
+      ],
+      "candidate_titles": [
+        "Prison blocking overview shows isolated unsupported boundary panels"
+      ]
+    },
+    {
+      "id": "DEV-389",
+      "main_titles": [
+        "Castle gate exit accepts unsupported or blocked native apron poses"
+      ],
+      "candidate_titles": [
+        "Route reservation surfaces overlap real floor planes in rough native assemblies"
+      ]
+    },
+    {
+      "id": "DEV-390",
+      "main_titles": [
+        "Mesa GPU School return-to-van WASD smoke intermittently misses a valid input reversal"
+      ],
+      "candidate_titles": [
+        "Thin outside-cut strips exhaust editor topology budget without adding footprint fidelity"
+      ]
+    },
+    {
+      "id": "DEV-391",
+      "main_titles": [
+        "Physical benchmark's lateral motion assertion used opposite-handed screen direction"
+      ],
+      "candidate_titles": [
+        "Prison construction footprint does not align with editable terrain leaves"
+      ]
+    },
+    {
+      "id": "DEV-392",
+      "main_titles": [
+        "Walking-frame p95/p99 tail remains in post-geometry effects despite 60 FPS presentation"
+      ],
+      "candidate_titles": [
+        "New site terrain exposes old flat-route and blockout elevation conflicts"
+      ]
+    },
+    {
+      "id": "DEV-393",
+      "main_titles": [
+        "House door stationary-shadow retention diagnostic reports an unexpected same-side ray"
+      ],
+      "candidate_titles": [
+        "Larger macroterrain sites exceed the single editor mesh export area"
+      ]
+    }
+  ],
+  "ambiguous_shared_defect_ids": [
+    {
+      "id": "DEV-263",
+      "main_titles": [
+        "Character boots visibly float above the Castle floor despite earlier alpha-pad correction",
+        "Crouch and stand snap the local camera between eye heights"
+      ],
+      "candidate_titles": [
+        "Character boots visibly float above the Castle floor despite earlier alpha-pad correction",
+        "Crouch and stand snap the local camera between eye heights"
+      ]
+    },
+    {
+      "id": "DEV-264",
+      "main_titles": [
+        "Castle light-switch source GLB gains an enormous stretched sconce backplate",
+        "Rear van departure button cannot be used from front desk"
+      ],
+      "candidate_titles": [
+        "Castle light-switch source GLB gains an enormous stretched sconce backplate",
+        "Rear van departure button cannot be used from front desk"
+      ]
+    },
+    {
+      "id": "DEV-265",
+      "main_titles": [
+        "Door state refresh discards unrelated stationary shadow visibility and causes frame stalls",
+        "Routine controls require function keys and solo uses a different equipment/runtime path"
+      ],
+      "candidate_titles": [
+        "Door state refresh discards unrelated stationary shadow visibility and causes frame stalls",
+        "Routine controls require function keys and solo uses a different equipment/runtime path"
+      ]
+    },
+    {
+      "id": "DEV-266",
+      "main_titles": [
+        "Castle tabletop decorative models ignore edited supporting furniture rotation",
+        "Default player lacks jumping and portable airborne crouch capability"
+      ],
+      "candidate_titles": [
+        "Castle tabletop decorative models ignore edited supporting furniture rotation",
+        "Default player lacks jumping and portable airborne crouch capability"
+      ]
+    },
+    {
+      "id": "DEV-267",
+      "main_titles": [
+        "Camera-selected directional art still moves stationary NPC world-space geometry",
+        "Hunters stay upright after damage and incapacitation"
+      ],
+      "candidate_titles": [
+        "Camera-selected directional art still moves stationary NPC world-space geometry",
+        "Hunters stay upright after damage and incapacitation"
+      ]
+    },
+    {
+      "id": "DEV-268",
+      "main_titles": [
+        "Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view",
+        "Committed Markdown development logs contain non-UTF8 Windows punctuation bytes"
+      ],
+      "candidate_titles": [
+        "Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view",
+        "Committed Markdown development logs contain non-UTF8 Windows punctuation bytes"
+      ]
+    },
+    {
+      "id": "DEV-269",
+      "main_titles": [
+        "Mission editor retained Castle assets after switching scenes",
+        "Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit"
+      ],
+      "candidate_titles": [
+        "Mission editor retained Castle assets after switching scenes",
+        "Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit"
+      ]
+    },
+    {
+      "id": "DEV-270",
+      "main_titles": [
+        "Screenshot pushes leave development gallery index stale",
+        "Spectral practice camera ignored the current room elevation"
+      ],
+      "candidate_titles": [
+        "Screenshot pushes leave development gallery index stale",
+        "Spectral practice camera ignored the current room elevation"
+      ]
+    },
+    {
+      "id": "DEV-356",
+      "main_titles": [
+        "Hunter and human ghost world draws limited by the network command timer"
+      ],
+      "candidate_titles": [
+        "Fresh House promotion exposes editor fixtures that mutate the first attached assembly",
+        "Search-envelope annotations leave context doors and exterior service mouths open"
+      ]
+    },
+    {
+      "id": "DEV-357",
+      "main_titles": [
+        "House van misses the steady-state frame budget on software renderers"
+      ],
+      "candidate_titles": [
+        "Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes",
+        "Reusing an intermediate circular deck core can leave a top cap open"
+      ]
+    },
+    {
+      "id": "DEV-358",
+      "main_titles": [
+        "Full-round acceptance can inspect hunter payout before its delivery"
+      ],
+      "candidate_titles": [
+        "Native batch review assumes Pillow is installed in the active Python",
+        "Planning text and diagram stand-ins enter structural GLB exports"
+      ]
+    },
+    {
+      "id": "DEV-359",
+      "main_titles": [
+        "Newly exported glTF BLEND materials include a mask-only alpha cutoff"
+      ],
+      "candidate_titles": [
+        "Eight remote elevation links have zero or insufficient physical stair run"
+      ]
+    },
+    {
+      "id": "DEV-360",
+      "main_titles": [
+        "Material Editor rebuilds every face row for a one-face UV preview"
+      ],
+      "candidate_titles": [
+        "Level route reservation strips refill stair openings and obstruct heads"
+      ]
+    },
+    {
+      "id": "DEV-361",
+      "main_titles": [
+        "Healthy joining hunter can lose its connection before entering the 3D view"
+      ],
+      "candidate_titles": [
+        "Native stepped candidates fail current body and traversability queries"
+      ]
+    },
+    {
+      "id": "DEV-362",
+      "main_titles": [
+        "Full UV canvas repaint remains slow on a 120,000-face editable mesh"
+      ],
+      "candidate_titles": [
+        "Expanded stair apertures create collapsed ceiling sliver cells"
+      ]
+    },
+    {
+      "id": "DEV-363",
+      "main_titles": [
+        "Prepared GPU lighting can reverse which side of House door 2 receives light"
+      ],
+      "candidate_titles": [
+        "Roster collision probe exposes crossing stairs and terrain covering authored flights"
+      ]
+    },
+    {
+      "id": "DEV-364",
+      "main_titles": [
+        "House sanctuary crossings and stops exceed the GTX frame budget"
+      ],
+      "candidate_titles": [
+        "Hydroelectric return stair still needs authored shaft enclosure and foundations"
+      ]
+    },
+    {
+      "id": "DEV-365",
+      "main_titles": [
+        "Hired investigators did not independently search, retool or complete the physical investigation"
+      ],
+      "candidate_titles": [
+        "Offline terrain sampler resolves seed inputs using newly created working paths and can swallow Blender errors"
+      ]
+    },
+    {
+      "id": "DEV-366",
+      "main_titles": [
+        "Starting instruments could be bypassed when guessing species or invoking legacy equipment actions"
+      ],
+      "candidate_titles": [
+        "Saved terrain seeds retain rough proposal perimeters and unfinished aperture rims"
+      ]
+    },
+    {
+      "id": "DEV-367",
+      "main_titles": [
+        "Round duration varies with crew, evidence access and ghost feeding conditions"
+      ],
+      "candidate_titles": [
+        "Asset discovery overlooks staged site kits and treats a small runtime sample as the working library"
+      ]
+    },
+    {
+      "id": "DEV-368",
+      "main_titles": [
+        "Campaign auto-extraction test pressed the shutter while a hired investigator crossed the doorway"
+      ],
+      "candidate_titles": [
+        "Furnishing export guard reads deleted Blender objects after independent reset"
+      ]
+    },
+    {
+      "id": "DEV-369",
+      "main_titles": [
+        "Tier I UV expiry check uses the prior trace duration"
+      ],
+      "candidate_titles": [
+        "Furnishing fit double-counts route buffers and overextends endpoint clearance"
+      ]
+    },
+    {
+      "id": "DEV-370",
+      "main_titles": [
+        "Full regression watchdog ends a valid four-seat banishment before settlement"
+      ],
+      "candidate_titles": [
+        "Props can obstruct physical routes that cross rooms without naming those rooms"
+      ]
+    },
+    {
+      "id": "DEV-371",
+      "main_titles": [
+        "An occupied room could expose a figure that requires different witnesses"
+      ],
+      "candidate_titles": [
+        "Many authored flat route samples fail baseline native support or body checks"
+      ]
+    },
+    {
+      "id": "DEV-372",
+      "main_titles": [
+        "Unattended cameras could disclose optical evidence or award sighting credit"
+      ],
+      "candidate_titles": [
+        "Asset index regeneration encounters Windows invalid-argument error on direct overwrite"
+      ]
+    },
+    {
+      "id": "DEV-373",
+      "main_titles": [
+        "Returning to the Castle lobby left a closed camera panel subscribed"
+      ],
+      "candidate_titles": [
+        "Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps"
+      ]
+    },
+    {
+      "id": "DEV-374",
+      "main_titles": [
+        "Queued camera light patterns could reach the field view after the operator stopped watching"
+      ],
+      "candidate_titles": [
+        "Float32 shared stair joins can report unsupported micrometre seams"
+      ]
+    },
+    {
+      "id": "DEV-375",
+      "main_titles": [
+        "A hired investigator repeatedly requested van service while their camera was still in the field"
+      ],
+      "candidate_titles": [
+        "Turn landings overhang the incoming stair flight and block standing movement"
+      ]
+    },
+    {
+      "id": "DEV-376",
+      "main_titles": [
+        "An empty video camera battery prevented physical pickup"
+      ],
+      "candidate_titles": [
+        "Cyclic stair end boundaries and missing final landing interrupt lighthouse ascent"
+      ]
+    },
+    {
+      "id": "DEV-377",
+      "main_titles": [
+        "An ordinary hired video-camera assignment waited for a retired casefile message"
+      ],
+      "candidate_titles": [
+        "Flight-only chain audit omits flat landing segments and resets at link boundaries"
+      ]
+    },
+    {
+      "id": "DEV-378",
+      "main_titles": [
+        "Stair approach and departure could trap investigators on the House flights"
+      ],
+      "candidate_titles": [
+        "Regenerated native scaffold next-step notes retain superseded sloped-mass instructions"
+      ]
+    },
+    {
+      "id": "DEV-379",
+      "main_titles": [
+        "A completed investigation sweep could turn back toward an old or disqualified room"
+      ],
+      "candidate_titles": [
+        "Legacy advisory stair run/riser fields lag the actual authored coordinate revision"
+      ]
+    },
+    {
+      "id": "DEV-380",
+      "main_titles": [
+        "Equal-length room routes sent the dining-room investigator into an exterior dead end"
+      ],
+      "candidate_titles": [
+        "Terrain sampling uses immutable seed-layout cuts instead of current authored basement entries"
+      ]
+    },
+    {
+      "id": "DEV-381",
+      "main_titles": [
+        "The shortest room count sent a Family kitchen assignment around the outside of the House"
+      ],
+      "candidate_titles": [
+        "Base cemetery lacks a terrain source and profile for saved-world integration"
+      ]
+    },
+    {
+      "id": "DEV-382",
+      "main_titles": [
+        "The Farmhouse mudroom door approach could target the far side of its own closed door"
+      ],
+      "candidate_titles": [
+        "Cemetery ossuary stairs cross vestibule walls before reaching the basement floor"
+      ]
+    },
+    {
+      "id": "DEV-383",
+      "main_titles": [
+        "The hired hunter could repeatedly operate the wrong Farmhouse kitchen door"
+      ],
+      "candidate_titles": [
+        "Native collision exporter overwrites its previous payload before terrain validation rejects a candidate"
+      ]
+    },
+    {
+      "id": "DEV-384",
+      "main_titles": [
+        "A correctly identified Spirit could strand the investigator on the porch on the way to Absolution"
+      ],
+      "candidate_titles": [
+        "Moving cemetery stair openings invalidates old approach endpoints and room-centre anchors"
+      ]
+    },
+    {
+      "id": "DEV-385",
+      "main_titles": [
+        "Focused Castle test rejects a legal empty-room Shade manifestation"
+      ],
+      "candidate_titles": [
+        "Uncut route slabs expose inward top faces and mark undersides as walking supports"
+      ]
+    },
+    {
+      "id": "DEV-386",
+      "main_titles": [
+        "Normal case opening has no call to the documented gameplay-renderer prewarm helper"
+      ],
+      "candidate_titles": [
+        "Local path grading can disturb adjoining route shoulders when overall terrain is unsettled"
+      ]
+    },
+    {
+      "id": "DEV-387",
+      "main_titles": [
+        "Van's wall information monitors display chunky, unreadable lettering"
+      ],
+      "candidate_titles": [
+        "Before/after route comparator reuses old feet Y after valid terrain support changes"
+      ]
+    },
+    {
+      "id": "DEV-388",
+      "main_titles": [
+        "Handheld camera rear LCD displays front atlas and overlays its controls"
+      ],
+      "candidate_titles": [
+        "Prison blocking overview shows isolated unsupported boundary panels"
+      ]
+    },
+    {
+      "id": "DEV-389",
+      "main_titles": [
+        "Castle gate exit accepts unsupported or blocked native apron poses"
+      ],
+      "candidate_titles": [
+        "Route reservation surfaces overlap real floor planes in rough native assemblies"
+      ]
+    },
+    {
+      "id": "DEV-390",
+      "main_titles": [
+        "Mesa GPU School return-to-van WASD smoke intermittently misses a valid input reversal"
+      ],
+      "candidate_titles": [
+        "Thin outside-cut strips exhaust editor topology budget without adding footprint fidelity"
+      ]
+    },
+    {
+      "id": "DEV-391",
+      "main_titles": [
+        "Physical benchmark's lateral motion assertion used opposite-handed screen direction"
+      ],
+      "candidate_titles": [
+        "Prison construction footprint does not align with editable terrain leaves"
+      ]
+    },
+    {
+      "id": "DEV-392",
+      "main_titles": [
+        "Walking-frame p95/p99 tail remains in post-geometry effects despite 60 FPS presentation"
+      ],
+      "candidate_titles": [
+        "New site terrain exposes old flat-route and blockout elevation conflicts"
+      ]
+    },
+    {
+      "id": "DEV-393",
+      "main_titles": [
+        "House door stationary-shadow retention diagnostic reports an unexpected same-side ray"
+      ],
+      "candidate_titles": [
+        "Larger macroterrain sites exceed the single editor mesh export area"
+      ]
+    }
+  ],
+  "main_duplicate_defect_ids": [
+    {
+      "id": "DEV-270",
+      "records": 2,
+      "titles": [
+        "Screenshot pushes leave development gallery index stale",
+        "Spectral practice camera ignored the current room elevation"
+      ]
+    },
+    {
+      "id": "DEV-269",
+      "records": 2,
+      "titles": [
+        "Mission editor retained Castle assets after switching scenes",
+        "Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit"
+      ]
+    },
+    {
+      "id": "DEV-268",
+      "records": 2,
+      "titles": [
+        "Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view",
+        "Committed Markdown development logs contain non-UTF8 Windows punctuation bytes"
+      ]
+    },
+    {
+      "id": "DEV-267",
+      "records": 2,
+      "titles": [
+        "Camera-selected directional art still moves stationary NPC world-space geometry",
+        "Hunters stay upright after damage and incapacitation"
+      ]
+    },
+    {
+      "id": "DEV-266",
+      "records": 2,
+      "titles": [
+        "Castle tabletop decorative models ignore edited supporting furniture rotation",
+        "Default player lacks jumping and portable airborne crouch capability"
+      ]
+    },
+    {
+      "id": "DEV-265",
+      "records": 2,
+      "titles": [
+        "Door state refresh discards unrelated stationary shadow visibility and causes frame stalls",
+        "Routine controls require function keys and solo uses a different equipment/runtime path"
+      ]
+    },
+    {
+      "id": "DEV-264",
+      "records": 2,
+      "titles": [
+        "Castle light-switch source GLB gains an enormous stretched sconce backplate",
+        "Rear van departure button cannot be used from front desk"
+      ]
+    },
+    {
+      "id": "DEV-263",
+      "records": 2,
+      "titles": [
+        "Character boots visibly float above the Castle floor despite earlier alpha-pad correction",
+        "Crouch and stand snap the local camera between eye heights"
+      ]
+    },
+    {
+      "id": "DEV-254",
+      "records": 2,
+      "titles": [
+        "Safe areas lack a shared animated energy boundary matching ghost exclusion"
+      ]
+    },
+    {
+      "id": "DEV-255",
+      "records": 2,
+      "titles": [
+        "Ward ground seals remain at world Y zero and appear before landing"
+      ]
+    }
+  ],
+  "candidate_duplicate_defect_ids": [
+    {
+      "id": "DEV-270",
+      "records": 2,
+      "titles": [
+        "Screenshot pushes leave development gallery index stale",
+        "Spectral practice camera ignored the current room elevation"
+      ]
+    },
+    {
+      "id": "DEV-269",
+      "records": 2,
+      "titles": [
+        "Mission editor retained Castle assets after switching scenes",
+        "Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit"
+      ]
+    },
+    {
+      "id": "DEV-268",
+      "records": 2,
+      "titles": [
+        "Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view",
+        "Committed Markdown development logs contain non-UTF8 Windows punctuation bytes"
+      ]
+    },
+    {
+      "id": "DEV-267",
+      "records": 2,
+      "titles": [
+        "Camera-selected directional art still moves stationary NPC world-space geometry",
+        "Hunters stay upright after damage and incapacitation"
+      ]
+    },
+    {
+      "id": "DEV-266",
+      "records": 2,
+      "titles": [
+        "Castle tabletop decorative models ignore edited supporting furniture rotation",
+        "Default player lacks jumping and portable airborne crouch capability"
+      ]
+    },
+    {
+      "id": "DEV-265",
+      "records": 2,
+      "titles": [
+        "Door state refresh discards unrelated stationary shadow visibility and causes frame stalls",
+        "Routine controls require function keys and solo uses a different equipment/runtime path"
+      ]
+    },
+    {
+      "id": "DEV-264",
+      "records": 2,
+      "titles": [
+        "Castle light-switch source GLB gains an enormous stretched sconce backplate",
+        "Rear van departure button cannot be used from front desk"
+      ]
+    },
+    {
+      "id": "DEV-263",
+      "records": 2,
+      "titles": [
+        "Character boots visibly float above the Castle floor despite earlier alpha-pad correction",
+        "Crouch and stand snap the local camera between eye heights"
+      ]
+    },
+    {
+      "id": "DEV-254",
+      "records": 2,
+      "titles": [
+        "Safe areas lack a shared animated energy boundary matching ghost exclusion"
+      ]
+    },
+    {
+      "id": "DEV-255",
+      "records": 2,
+      "titles": [
+        "Ward ground seals remain at world Y zero and appear before landing"
+      ]
+    },
+    {
+      "id": "DEV-356",
+      "records": 2,
+      "titles": [
+        "Fresh House promotion exposes editor fixtures that mutate the first attached assembly",
+        "Search-envelope annotations leave context doors and exterior service mouths open"
+      ]
+    },
+    {
+      "id": "DEV-357",
+      "records": 2,
+      "titles": [
+        "Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes",
+        "Reusing an intermediate circular deck core can leave a top cap open"
+      ]
+    },
+    {
+      "id": "DEV-358",
+      "records": 2,
+      "titles": [
+        "Native batch review assumes Pillow is installed in the active Python",
+        "Planning text and diagram stand-ins enter structural GLB exports"
+      ]
+    }
+  ],
+  "case_source_checks": [
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "source_file": "development/levels/rebuild/gallows-pass/railway.hcs2",
+      "source_bytes": 1577593,
+      "actual_source_sha256": "7985938b07ea8512b6b80c6503c395bfb228f06e92a97ae48e7ce75c9f6307ea",
+      "manifest_path": "development/levels/rebuild/gallows-pass/runtime-input.tsv",
+      "manifest_source_sha256": "7985938b07ea8512b6b80c6503c395bfb228f06e92a97ae48e7ce75c9f6307ea",
+      "manifest_matches_actual": true,
+      "receipt_path": "development/levels/rebuild/gallows-pass/case.tsv",
+      "receipt_collision_sha256": "f0e0659079aaa246b7ebe382b11698847e908d349c036c77d5e1d5506c252f1e",
+      "receipt_matches_actual": false,
+      "git_exit": 0
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "source_file": "development/levels/rebuild/greywater-native-pass/greywater-review.hcs2",
+      "source_bytes": 1492054,
+      "actual_source_sha256": "13e8dcc3f44895f72f1461e76b6a4f16d8a28a836e153037b8ad64f101220a25",
+      "manifest_path": "development/levels/rebuild/greywater-native-pass/runtime-input.tsv",
+      "manifest_source_sha256": "13e8dcc3f44895f72f1461e76b6a4f16d8a28a836e153037b8ad64f101220a25",
+      "manifest_matches_actual": true,
+      "receipt_path": "development/levels/rebuild/greywater-native-pass/case.tsv",
+      "receipt_collision_sha256": "d398a515907a3da1b244ca784c0569a7f65a4741f4ebae153bf4cdacbad3c9ae",
+      "receipt_matches_actual": false,
+      "git_exit": 0
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "source_file": "development/levels/rebuild/mourning-marsh-native-pass/marsh-review.hcs2",
+      "source_bytes": 1164027,
+      "actual_source_sha256": "3035bfc8ac1c63184df5c910959f2e3a21523cb81d57cc91b3c91307581032fa",
+      "manifest_path": "development/levels/rebuild/mourning-marsh-native-pass/runtime-input.tsv",
+      "manifest_source_sha256": "3035bfc8ac1c63184df5c910959f2e3a21523cb81d57cc91b3c91307581032fa",
+      "manifest_matches_actual": true,
+      "receipt_path": "development/levels/rebuild/mourning-marsh-native-pass/case.tsv",
+      "receipt_collision_sha256": "7ca187ccfae9e668203696986c18e22ed08d41bc437eea1119270dc781f9de71",
+      "receipt_matches_actual": false,
+      "git_exit": 0
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa",
+      "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "source_file": "development/levels/rebuild/red-mesa-native-pass/red-mesa-review.hcs2",
+      "source_bytes": 1246012,
+      "actual_source_sha256": "a0efc3684305df4e21536f13d682ce4a12a5f74a845dd6f132943025fa802c48",
+      "manifest_path": "development/levels/rebuild/red-mesa-native-pass/runtime-input.tsv",
+      "manifest_source_sha256": "a0efc3684305df4e21536f13d682ce4a12a5f74a845dd6f132943025fa802c48",
+      "manifest_matches_actual": true,
+      "receipt_path": "development/levels/rebuild/red-mesa-native-pass/case.tsv",
+      "receipt_collision_sha256": "9e4fada9b3b0dedd949fbbdbdaa3085fc9336e03afe52144e769ffa899972fef",
+      "receipt_matches_actual": false,
+      "git_exit": 0
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch",
+      "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "source_file": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/station-with-furnishings.hcs2",
+      "source_bytes": 2686389,
+      "actual_source_sha256": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909",
+      "manifest_path": "development/levels/rebuild/northwatch-named-pass/source-hashes.tsv",
+      "manifest_source_sha256": "13c838555e063dccbfb22f07431d864ef42e05a16e1d179939ca767a0427d909",
+      "manifest_matches_actual": true,
+      "receipt_path": "development/levels/rebuild/northwatch-investigation-pass/case.tsv",
+      "receipt_collision_sha256": "0291baa5c2f17f2646ca80e90624fd228ead54c50d14f1c3e007fd52fcf8bdde",
+      "receipt_matches_actual": false,
+      "git_exit": 0
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Dam",
+      "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+      "source_file": "development/levels/rebuild/dam-ventilation-pass/wld-09/dam-with-ventilation.hcs2",
+      "source_bytes": 2730855,
+      "actual_source_sha256": "2718d62de0cb6a17cbe62fbdd0fd097ca47cb6dbb50f379ccfcde3f576602cf7",
+      "manifest_path": "development/levels/rebuild/dam-named-pass/source-hashes.tsv",
+      "manifest_source_sha256": "2718d62de0cb6a17cbe62fbdd0fd097ca47cb6dbb50f379ccfcde3f576602cf7",
+      "manifest_matches_actual": true,
+      "receipt_path": "development/levels/rebuild/dam-investigation-pass/case.tsv",
+      "receipt_collision_sha256": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+      "receipt_matches_actual": false,
+      "git_exit": 0
+    }
+  ],
+  "sites": [
+    {
+      "id": "CASTLE",
+      "title": "Castle Beckenburg",
+      "priority": "P1",
+      "group": "Headquarters and reference house",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Rebuilt headquarters on main",
+      "candidate_state": "Rebuilt headquarters; divergent scene/editor changes",
+      "implemented_to_preserve": "42 authored spaces; 39 accessible and three sealed; stations, residents, cellar, native migration, story and loose objects exist. Main has the newer supported-ground exit guard.",
+      "remaining": [
+        "Current physical inspection of all 39 reachable spaces, three permanent seals, stairs and guard openings.",
+        "Save/reopen/undo and custom-source migration; all nine stations and five residents; complete solo and multiplayer Castle → case → results → same Castle persistence.",
+        "Installed gate crossing/return and remaining ordinary-view lighting, fixture, sprite/UV, material and movement review."
+      ],
+      "next_action": "Use the existing main Castle acceptance sequence to close one exact-source headquarters milestone; preserve the newer main gate and lighting behavior during branch reconciliation.",
+      "evidence": [
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "development/levels/rebuild/castle/acceptance.md",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/development/levels/rebuild/castle/acceptance.md"
+        },
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "src/main/java/org/beckenburg/CastleRebuildValidation.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/src/main/java/org/beckenburg/CastleRebuildValidation.java"
+        },
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "src/main/java/org/beckenburg/CastleGateExit.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/src/main/java/org/beckenburg/CastleGateExit.java"
+        }
+      ]
+    },
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "priority": "P1",
+      "group": "Headquarters and reference house",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Fresh installations already use the rebuilt furnished house; old versionless saves retain their historical source",
+      "candidate_state": "Adds the authored train encounter, corrected porch, measured parcel boundary and window-host replay",
+      "implemented_to_preserve": "Default promotion and generation-aware saved-source behavior are already on main. Candidate adds HouseEncounter and its host/TCP integration, 66 physical parcel panels, 396 blocked boundary approaches and a recorded window-host correction.",
+      "remaining": [
+        "Reconcile candidate encounter, porch and parcel work with current main lighting/movement changes.",
+        "Verify fresh, historical and custom saved houses, including encounter eligibility and migration retention.",
+        "Whole-location doors/windows/circuits/portable-light, supported props, evidence/privacy, solo/LAN return and installed movement/visual closeout."
+      ],
+      "next_action": "Integrate the existing candidate House improvements with current main; rerun the affected saved-source and complete-case checks rather than rebuilding the house or repeating default promotion.",
+      "evidence": [
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "src/main/java/org/beckenburg/HouseSourceVersions.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/src/main/java/org/beckenburg/HouseSourceVersions.java"
+        },
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "src/main/java/org/beckenburg/UserLevelLibrary.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/src/main/java/org/beckenburg/UserLevelLibrary.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/HouseEncounter.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/HouseEncounter.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/house-parcel-boundary-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/house-parcel-boundary-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/verification/house-window-network-2026-11-18/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/verification/house-window-network-2026-11-18/checkpoint.json"
+        }
+      ]
+    },
+    {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Legacy shared wing runtime",
+      "candidate_state": "New construction source exists; no Academy native mission adapter",
+      "implemented_to_preserve": "Authored campus/terrain/structural and stair work is committed in the native construction roster. Later aggregate route checks supersede the old off-landform/122-link snapshot.",
+      "remaining": [
+        "Finish roof flashing/drainage and structural joins; inspect actual terrain/foundation and standing-height optical finish. Existing first-pass furnishings do not establish complete room capacity.",
+        "Bind the authored campus to real runtime room ownership, portals, acoustics, spawns, utilities and canonical van.",
+        "Complete functional room fit, services, evidence/hiding/ritual and location-specific encounter work on that source.",
+        "Native editor save/reopen and full location acceptance."
+      ],
+      "next_action": "Inventory the final authored campus packet and implement its native mission/authoring adapter, then inspect actual gaps on the loaded geometry.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/LevelPlans.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/LevelPlans.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/flush-porch-and-threshold-pass/academy/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/roster.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/roster.json"
+        }
+      ]
+    },
+    {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "priority": "P1",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Legacy shared wing runtime",
+      "candidate_state": "Native hospital behind beckenburg.review.asylumNative",
+      "implemented_to_preserve": "Fitted admission/interior doors, two stair systems, three refuges, power, founded enclosure and a retained continuous TCP ABSOLVED case.",
+      "remaining": [
+        "Final garden planting/materials and directional skyline.",
+        "Other rite-specific full cases and authored encounter.",
+        "Native default promotion, saved editor migration and installed acceptance."
+      ],
+      "next_action": "Finish the small remaining environment/encounter scope and verify the reconciled native case before promoting it from the review property.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/AsylumNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/AsylumNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/asylum-enclosure-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/asylum-enclosure-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/asylum-enclosure-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/asylum-enclosure-pass/case.tsv"
+        }
+      ]
+    },
+    {
+      "id": "CHURCH",
+      "title": "St. Brigid Parish",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Existing church runtime",
+      "candidate_state": "Rebuilt architectural source remains separate from ordinary runtime",
+      "implemented_to_preserve": "Household/parish structural bays, roof enclosure, stair routes and terrain are committed; the established church runtime remains available.",
+      "remaining": [
+        "Finish roof flashing/drainage and structural joins; inspect actual terrain/foundation and standing-height optical finish. Existing first-pass furnishings do not establish complete room capacity.",
+        "Connect the rebuilt parish to shared native gameplay and ordinary editor persistence.",
+        "Audit the final tower/crypt/upper-floor geometry, functional service/prop placement and optical containment in the actual map.",
+        "Working evidence, rites, encounters and full location acceptance."
+      ],
+      "next_action": "Bring the preserved rebuilt church source into a native mission adapter; assess remaining construction from the final packet instead of old rough-route failures.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/LevelPlans.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/LevelPlans.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/native-foyer-door-pass/church/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/native-foyer-door-pass/church/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/roster.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/roster.json"
+        }
+      ]
+    },
+    {
+      "id": "COLLEGE",
+      "title": "Beckenburg College",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Legacy shared wing runtime",
+      "candidate_state": "Native college behind beckenburg.review.collegeNative",
+      "implemented_to_preserve": "Doors, perimeter and well guards, fitted power, plumbing/heating/ventilation, plus sixteen residence beds/study stations/wardrobes are recorded.",
+      "remaining": [
+        "Finish teaching, library, café and other ordinary-use workrooms; usable evidence/hiding arrangements and final surfaces.",
+        "Resolve/recheck the furnishing-specific regression recorded by the dispatch review.",
+        "Continuous complete case, native promotion, saved-editor migration and installed acceptance."
+      ],
+      "next_action": "Inspect the dispatch checkpoint and furnish the remaining functional rooms while preserving the already fitted services; then complete a continuous case.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/CollegeNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/CollegeNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/college-services-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/college-services-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/college-dispatch-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/college-dispatch-pass/checkpoint.json"
+        }
+      ]
+    },
+    {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Existing farm runtime",
+      "candidate_state": "New authored farm construction is not the runtime default",
+      "implemented_to_preserve": "Rebuilt domestic structural bays, roof/terrain and circulation packets exist alongside the established farm implementation.",
+      "remaining": [
+        "Finish roof flashing/drainage and structural joins; inspect actual terrain/foundation and standing-height optical finish. Existing first-pass furnishings do not establish complete room capacity.",
+        "Runtime/editor binding for the new structure, with coherent room/portal/circuit/spawn/van coordinates.",
+        "Inspect room purpose, physical supports, upper/basement openings, boundaries, utilities and prop fill on the final geometry.",
+        "Evidence/rites/encounters and complete saved solo/LAN location acceptance."
+      ],
+      "next_action": "Implement the native adapter from the current construction packet and compare it with the established playable farm before replacing any source.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/LevelPlans.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/LevelPlans.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/roster.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/roster.json"
+        }
+      ]
+    },
+    {
+      "id": "MANSION",
+      "title": "Blackthorn Manor",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Legacy shared wing runtime",
+      "candidate_state": "New manor construction exists; no native Mansion mission adapter",
+      "implemented_to_preserve": "Estate rooms, structural/roof/terrain and circulation construction exist in the branch; normal dispatch still uses the generic wing.",
+      "remaining": [
+        "Finish roof flashing/drainage and structural joins; inspect actual terrain/foundation and standing-height optical finish. Existing first-pass furnishings do not establish complete room capacity.",
+        "Bind the manor construction to the actual mission and native authoring/save path.",
+        "Finish and review room services, supported functional furnishing, privacy/optics and site story/encounter.",
+        "Prove full arrival, vertical routes, investigation and return on the integrated source."
+      ],
+      "next_action": "Create the manor native mission/authoring integration from the existing construction rather than iterating the shared placeholder wing.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/LevelPlans.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/LevelPlans.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/roster.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/roster.json"
+        }
+      ]
+    },
+    {
+      "id": "PRISON",
+      "title": "Beckenburg Penitentiary",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Legacy shared wing runtime",
+      "candidate_state": "Native prison behind beckenburg.review.prisonNative",
+      "implemented_to_preserve": "Vehicle/yard sally gates, plant and circuits, supported three-cupboard hiding, packaged solo/four-peer service and route checks.",
+      "remaining": [
+        "Remaining intake and west-cellhouse custody closures/security routes.",
+        "Complete evidence, ritual, rescue, extraction and progression; room containment and story.",
+        "Native promotion/save-editor parity and current installed operating review."
+      ],
+      "next_action": "Finish the actual custody doors and security path, then run a continuous native investigation through the existing plant and refuge installation.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/PrisonNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/PrisonNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/prison-hiding-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/prison-hiding-pass/checkpoint.json"
+        }
+      ]
+    },
+    {
+      "id": "SCHOOL",
+      "title": "Ravenshade School",
+      "priority": "P2",
+      "group": "Existing institutions and estates",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Established school runtime",
+      "candidate_state": "Native school behind beckenburg.review.schoolNative",
+      "implemented_to_preserve": "Forty authored spaces map onto fifteen stable gameplay owners; twenty fitted doors, twelve circuits, 26 loads, twelve alarm sockets and three cupboards are recorded.",
+      "remaining": [
+        "Room-by-room optical containment and remaining services/functional fit.",
+        "Continuous evidence/ritual/rescue/progression case and ordinary dispatch promotion.",
+        "Native editor/save parity and representative/worst-case installed operating review."
+      ],
+      "next_action": "Run the entire rebuilt school case after closing room-level service/optical gaps; retain the measured doors, assembly partition and electrical work.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/SchoolNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/SchoolNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/school-electrical-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/school-electrical-pass/checkpoint.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-01",
+      "title": "Blackpine Logging Camp",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Substantial developer runtime source, not publicly dispatchable",
+      "candidate_state": "Regular Solo/LAN choice using the existing camp and mill source",
+      "implemented_to_preserve": "Mill/loft and authored camp; founded generator/start and independent breaker; twelve room circuits/28 loads and packaged service review. Main already contains the scoped loft rail fix.",
+      "remaining": [
+        "Individual evidence, boundary, dressed-space and mill editor save/reopen inspection.",
+        "Full uninterrupted investigation and current physical renderer/performance review.",
+        "Reconcile public dispatch and final location publication evidence."
+      ],
+      "next_action": "Retain the built camp and power work; complete a normal full case and recheck the mill source/editor parity rather than redoing fixed railings.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/BlackpineLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/BlackpineLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json"
+        },
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "development/quality/defects.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/development/quality/defects.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-02",
+      "title": "Camp Hollow Creek",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Native terrain/physics/runtime prototype, catalog-locked",
+      "candidate_state": "Regular Solo/LAN choice using the native camp",
+      "implemented_to_preserve": "Authored terrain, elevated canonical van, shoreline/water and supported camp assemblies; source/breaker controls and native runtime bridge exist.",
+      "remaining": [
+        "Host ghost-breaker disturbance and source/breaker independence during a complete case.",
+        "Water/shore containment, source editing/persistence, final normal-view camp/amenity review.",
+        "Current native GPU operation and installed solo/LAN case acceptance."
+      ],
+      "next_action": "Verify the branch public dispatch and play a complete case through the actual shoreline, ramp, source and breaker interactions.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/hollow-creek-dispatch-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/hollow-creek-dispatch-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/HollowCreekLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/HollowCreekLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/SiteCatalog.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/SiteCatalog.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/WORKFLOW.md",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/WORKFLOW.md"
+        },
+        {
+          "ref": "main",
+          "commit": "771b55ae652c12a43aeacfbe65d55c3ffc1bc57c",
+          "path": "development/levels/DEVELOPMENT_HANDOFF_2026-10-25_WATER_RUNTIME.md",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/771b55ae652c12a43aeacfbe65d55c3ffc1bc57c/development/levels/DEVELOPMENT_HANDOFF_2026-10-25_WATER_RUNTIME.md"
+        }
+      ]
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa Ancestral Caves",
+      "priority": "P3",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Saved canyon landform, +4/+8 m stairs and bridge, four operating frames, three refuges and a retained ABSOLVED case. Final source adds a generator, independent breaker, seven switches/nine lights, supported shelter furnishings and an expedition radio.",
+      "remaining": [
+        "Finish reachable perimeter and drainage; verify the already installed source, distribution and room services operationally.",
+        "Archaeology, room use, sound/story and encounters.",
+        "Replay final geometry: retained case collision hash predates current HCS2; remaining rites and installed acceptance."
+      ],
+      "next_action": "Finish canyon edge/drainage and verify the existing utilities/radio, then replay the full case against the final resource hashes.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/RedMesaNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/RedMesaNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/red-mesa-native-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/red-mesa-native-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/red-mesa-native-pass/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/red-mesa-native-pass/runtime-input.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/red-mesa-native-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/red-mesa-native-pass/case.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/red-mesa-native-pass/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/red-mesa-native-pass/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-04",
+      "title": "Widow's Peak Fire Lookout",
+      "priority": "P1",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Built arrival/tower/landings, source/breaker, three refuges and records; named package checks cover camera/van feed/reconnect, rites and retreat. Later workroom furnishings and radio are also committed.",
+      "remaining": [
+        "Site-specific event and loose-object physics.",
+        "Final environmental/containment/presentation review and current full package acceptance.",
+        "Reconcile source and capture publication with main."
+      ],
+      "next_action": "Finish the authored event/loose-physics scope and close the existing named-case acceptance on the reconciled build.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/LookoutNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/LookoutNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/lookout-case-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/lookout-case-pass/checkpoint.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-05",
+      "title": "Dead Man's Claim",
+      "priority": "P1",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Working circuits, shaft loop, receiving slabs, handholds, runoff and guarded underground sump; named camera/rites/retreat evidence exists. A later mine phone is fitted; an additional continuous cleansing transcript is preserved.",
+      "remaining": [
+        "Dedicated atmosphere and location encounter review.",
+        "Final independent map fitness, saved progression and installed acceptance.",
+        "Retain the current service/shaft/water work during integration."
+      ],
+      "next_action": "Complete atmosphere/encounter refinement and verify the whole mine case on the reconciled package.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/MineNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/MineNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/mine-case-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/mine-case-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/mine-investigation-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/mine-investigation-pass/case.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-06",
+      "title": "Drowned Fisherman's Wharf",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Founded shore/quay, rebuilt regular stair cells, landward tide source, fitted doors, room power and named packaged case. Final source additionally furnishes the cottages and fits communications.",
+      "remaining": [
+        "Verify the newly furnished cottage functions; finish or demonstrate fish-house wet/cold tasks and net-drying fit.",
+        "Loose-object physics, location encounters, material wear and final shore/containment inspection.",
+        "Final solo, multiplayer and hardware acceptance on current source."
+      ],
+      "next_action": "Finish ordinary work/living functions within the already built wharf, then run the full case through tide/shore and stair routes.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/WharfNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/WharfNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/wharf-case-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/wharf-case-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/wharf-case-pass/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/wharf-case-pass/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Named native cemetery mission in regular Solo/LAN",
+      "implemented_to_preserve": "Physical cemetery/ossuary routes, fitted doors, room power, supported archive records and named camera/EMF/rite/refuge checks. A later caretaker telephone is fitted.",
+      "remaining": [
+        "Detailed ordinary-use furnishings and remaining room/service functions.",
+        "Final material, atmosphere, lore/encounter and perimeter review.",
+        "Current progression, hardware and complete-map acceptance independently from the annex."
+      ],
+      "next_action": "Audit and finish actual cemetery/ossuary room use, retaining the existing named source and records.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/CemeteryNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/CemeteryNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/cemetery-named-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/cemetery-named-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/cemetery-furnishings-pass/wld-07/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "title": "Saint Bartholomew’s Cemetery & Vale Mortuary annex",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "No separate mission-catalog entry",
+      "candidate_state": "Separate MORTUARY native choice and Castle board entry",
+      "implemented_to_preserve": "Separate source identity, fitted doors/power and supported records/furnishings; named package and rite/refuge evidence for the annex. Later basin and telephone installations are committed.",
+      "remaining": [
+        "Verify complete body-preparation, cold, receiving and visitor workflows against the already fitted basin, phones and furnishings; finish the remaining functions.",
+        "Material/atmosphere/encounter and boundary review, with independent case and save identity.",
+        "Current full package/installed acceptance; preserve intentional Solo/LAN availability."
+      ],
+      "next_action": "Finish the mortuary workflow and its own full-case acceptance rather than treating cemetery checks as automatic annex acceptance.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/CemeteryNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/CemeteryNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/cemetery-named-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/cemetery-named-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch Research Station",
+      "priority": "P1",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Founded perimeter, sixteen operating frames, complete surface/tunnel/yard power, wash-water, records and furnishings; retained BANISHED continuous case. Later crew-quarter furnishings and radio are committed after that case.",
+      "remaining": [
+        "Final finish, atmosphere and remaining location-specific encounter review.",
+        "Campaign persistence and representative installed operation.",
+        "Replay final geometry: current HCS2 differs from the retained continuous-case collision hash; full current package acceptance."
+      ],
+      "next_action": "Run the archive→array→dormitory→heated-tunnel→laboratory case on the final resources, then close the limited finish/persistence backlog.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/NorthwatchNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/NorthwatchNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/northwatch-investigation-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/northwatch-investigation-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/northwatch-investigation-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/northwatch-investigation-pass/case.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/northwatch-named-pass/source-hashes.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/northwatch-named-pass/source-hashes.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/northwatch-furnishing-pass/wld-08/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Rebuilt vertical route, water/headpond/carrier, perimeter, fourteen doors, refuges and ventilated power plant; retained continuous CLEANSED case to the −10 m valve gallery. Later electrical and workroom/radio additions are committed after that case.",
+      "remaining": [
+        "Verify the expanded final electrical distribution and fitted workrooms; finish or demonstrate remaining water/mechanical service operation.",
+        "Final furnishing function, site sound, surfaces and narrative/encounter review, preserving the later room/radio installation.",
+        "Other rites and final-source continuous replay: the retained case predates current collision bytes; installed acceptance."
+      ],
+      "next_action": "Audit final electrical/mechanical operation and remaining site functions, then replay the complete van-to-valve case at the current resource revision.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/BlackwaterNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/BlackwaterNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/dam-investigation-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/dam-investigation-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/dam-investigation-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/dam-investigation-pass/case.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/dam-named-pass/source-hashes.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/dam-named-pass/source-hashes.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/dam-ventilation-pass/wld-09/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/dam-ventilation-pass/wld-09/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/dam-ventilation-pass/wld-09/electrical-schedule.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/dam-ventilation-pass/wld-09/electrical-schedule.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-10",
+      "title": "Monastery of Ashen Bells",
+      "priority": "P1",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Fitted doors/perimeter, grounded drainage, distribution through all ranges, furnishings/loose belongings and three refuges; retained complete TCP BANISHED case. Later bell and washbasin fittings are present.",
+      "remaining": [
+        "Other two rite-specific complete cases.",
+        "Remaining authored encounter, wall/landscape/material finish and directional scenery.",
+        "Current installed/package and publication acceptance."
+      ],
+      "next_action": "Close the other rites and final encounter/finish review, preserving the already verified physical case and estate installation.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/MonasteryNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/MonasteryNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/monastery-investigation-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/monastery-investigation-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/monastery-investigation-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/monastery-investigation-pass/case.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "priority": "P3",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Levee, seven-riser approach, continuous piled boardwalk, seven operating leaves and three refuges; retained chapel ABSOLVED case. Final source adds the working pump, generator, independent breaker, six switched lighting groups and south-boardwalk guards.",
+      "remaining": [
+        "Shared water behavior and complete physical perimeter.",
+        "Verify current pump/electrical operation and complete room function, sound/story and encounter; do not rebuild utilities already present.",
+        "Replay final collision source and other rites, then installed acceptance."
+      ],
+      "next_action": "Complete shared-water behavior and whole perimeter review, verify existing utilities, then rerun the full boardwalk-to-chapel case on current bytes.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/MourningMarshNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/MourningMarshNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/mourning-marsh-native-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/mourning-marsh-native-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/mourning-marsh-native-pass/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/mourning-marsh-native-pass/runtime-input.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/mourning-marsh-native-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/mourning-marsh-native-pass/case.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/mourning-marsh-native-pass/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/mourning-marsh-native-pass/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Station/siding/tunnel/trestle, eleven leaves, two trestle flights and three refuges. Final construction already has six switched lighting groups plus radio, telephone and signal register.",
+      "remaining": [
+        "Complete physical perimeter and final railway-specific encounter/atmosphere review.",
+        "Verify all final room services/furnishings operationally; do not re-add already installed circuits.",
+        "Replay the current complete case: retained ABSOLVED case uses an older collision digest."
+      ],
+      "next_action": "Re-run the final railway source through its actual signal/tunnel/coach/store/refuge services and containment before certifying the earlier successful case.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/GallowsNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/GallowsNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/gallows-pass/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/gallows-pass/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/gallows-pass/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/gallows-pass/runtime-input.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/gallows-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/gallows-pass/case.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "Catalog plan only; no dispatch",
+      "candidate_state": "Native mission in regular Solo/LAN",
+      "implemented_to_preserve": "Surveyed cannery, sixteen fitted doors, supported loading/gallery routes, boiler controls and three refuges; retained UV observation and ABSOLVED case. Later source expands to nine switches/17 lights, crew/workroom furnishings, a readable record and basin.",
+      "remaining": [
+        "Verify final complete case against current geometry; retained transcript uses earlier collision bytes.",
+        "Survey final containment, services, production-room function, story and atmosphere against the map checklist; latest checkpoint has no exhaustive remaining-item list.",
+        "Other rite coverage, saved progression and installed acceptance."
+      ],
+      "next_action": "Establish an exact-final-source case and enumerate the remaining room/service/finish findings in-game; do not invent an unobserved specific geometry defect.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/GreywaterNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/GreywaterNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/runtime-input.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/case.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/case.tsv"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/greywater-native-pass/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/greywater-native-pass/construction.json"
+        }
+      ]
+    },
+    {
+      "id": "WLD-14",
+      "title": "Morrow Point Lightstation",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "No mission-catalog entry",
+      "candidate_state": "Native Solo/LAN choice; nonchapter Castle board entry",
+      "implemented_to_preserve": "Keeper house, coast, six doors, +18 m tower climb and fitted rails/shaft guard. Final packet includes twelve switch entries, 21 lights including beacon, radio and washbasin.",
+      "remaining": [
+        "Verify operational beacon/tower and keeper-house services on final source; old “missing lantern fit-out” prose is incomplete.",
+        "Complete coast/perimeter and whole-site use/encounter review.",
+        "End-to-end current-source case, native editor/save parity and installed acceptance."
+      ],
+      "next_action": "Inspect and operate the existing beacon and keeper installation, then prove the final van-to-lantern case and coastal containment.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/MorrowNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/MorrowNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/morrow-point/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/morrow-point/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/morrow-point/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/morrow-point/runtime-input.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-15",
+      "title": "MV Saint Elara",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "No mission-catalog entry",
+      "candidate_state": "Native Solo/LAN choice; nonchapter Castle board entry",
+      "implemented_to_preserve": "Shore shelf, gangway/decks, seven doors, four railed flights, hatch guards and three refuges; final packet has nine switched lighting groups and a bilge pump.",
+      "remaining": [
+        "Complete hull/deck/shore containment and wet-area operational review.",
+        "Verify installed compartment circuits, bilge pump and functional furnishings; do not list these as absent.",
+        "Full final-source investigation, encounter and installed acceptance."
+      ],
+      "next_action": "Play the complete vessel case across all decks and the pump installation, checking hull limits and final electrical interactions.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/ElaraNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/ElaraNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/saint-elara/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/saint-elara/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/saint-elara/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/saint-elara/runtime-input.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-16",
+      "title": "Eight Pines Motor Lodge",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "No mission-catalog entry",
+      "candidate_state": "Native Solo/LAN choice; nonchapter Castle board entry",
+      "implemented_to_preserve": "Parking court, covered walks, fourteen doors, eight guest rooms and services; twelve switched lighting groups, three refuges, 22 furniture records, guest register and washer.",
+      "remaining": [
+        "Final physical perimeter and room-by-room functional/optical inspection.",
+        "Location-specific encounter and complete current-source case.",
+        "Native editing/persistence and installed acceptance."
+      ],
+      "next_action": "Audit the lodging loop and actual guest/manager/laundry functions, then finish its distinctive encounter and complete-case proof.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/PinesNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/PinesNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/eight-pines/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/eight-pines/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/eight-pines/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/eight-pines/runtime-input.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-17",
+      "title": "Seacliff Battery (older roster: Battery Brackenhead)",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "No mission-catalog entry",
+      "candidate_state": "Native Solo/LAN choice; nonchapter Castle board entry",
+      "implemented_to_preserve": "Founded receiving stairs, twelve door sets, plant/upper-service power, three cupboards and packaged solo/LAN service review. Both names refer to WLD-17. Final room-service additions, telephone and sump pump supersede the earlier two-room power limitation.",
+      "remaining": [
+        "Verify final expanded room circuits, telephone and sump pump; identify remaining actual service/evidence functions rather than repeating the superseded two-room limitation.",
+        "Individual evidence installation, complete perimeter/sealed-context and architectural finish.",
+        "Full investigation and installed acceptance; preserve one stable map identity."
+      ],
+      "next_action": "Verify the final battery service/evidence installation and complete boundaries, then prove one uninterrupted case through its vertical layout.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/SeacliffNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/SeacliffNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/seacliff-dispatch-pass/checkpoint.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/seacliff-dispatch-pass/checkpoint.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/MissionSites.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/MissionSites.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/seacliff-room-services/runtime.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/seacliff-room-services/runtime.tsv"
+        }
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "title": "Site Cinder-6",
+      "priority": "P2",
+      "group": "Remote and additional investigations",
+      "completion": "OPEN — no complete-map acceptance established",
+      "main_state": "No mission-catalog entry",
+      "candidate_state": "Native Solo/LAN choice; nonchapter Castle board entry",
+      "implemented_to_preserve": "Surface/escape stair and two guarded underground galleries, eleven doors and three refuges. Final packet has twelve switches/26 lights, workrooms, emergency telephone and a staging gate/fence enclosure.",
+      "remaining": [
+        "Whole-site perimeter/escape containment, including the partial staging enclosure.",
+        "Operational verification of the final gallery and workroom installation.",
+        "Full current-source case, authored encounter, native editor/save parity and installed acceptance."
+      ],
+      "next_action": "Verify the finished gallery circuits and all surface/escape boundaries, then run the complete investigation; do not report the final lighting or staging fence as unbuilt.",
+      "evidence": [
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "src/main/java/org/beckenburg/CinderNativeLevel.java",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/src/main/java/org/beckenburg/CinderNativeLevel.java"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/cinder-6/construction.json",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/cinder-6/construction.json"
+        },
+        {
+          "ref": "candidate",
+          "commit": "d9f706f44984aaf05cadaf0911eb058880056bb2",
+          "path": "development/levels/rebuild/cinder-6/runtime-input.tsv",
+          "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/blob/d9f706f44984aaf05cadaf0911eb058880056bb2/development/levels/rebuild/cinder-6/runtime-input.tsv"
+        }
+      ]
+    }
+  ],
+  "common_resume_gates": [
+    "Reconcile existing candidate commits and assets with newer main; preserve newer portal lighting, gate guard, movement and saved-source fixes.",
+    "Bind each map to one current construction/runtime/editor resource identity; retain historical evidence separately.",
+    "Keep architecture, terrain holes, floors/stairs, collision, room ownership, portals, acoustics, services, spawns and canonical van coordinates coherent.",
+    "Complete supported room functions, utilities, shared hiding budget including zero-cover difficulty, evidence/ritual/encounter behavior and ordinary-view visual review.",
+    "Validate native save/reopen and custom document migration, complete solo and real multiplayer cases, and installed operating behavior on the exact integrated revision.",
+    "Update the existing per-map stage register with scoped evidence and remaining work; complete captures/publication for actual implementation milestones."
+  ]
+}

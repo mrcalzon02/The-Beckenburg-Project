@@ -10,6 +10,34 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-746 — Map completion tracking and defect identities diverge across main and the held roster candidate
+
+**Status:** Open documentation/integration diagnostic; existing implementation and historical evidence preserved; no map acceptance state changed · **Affected:** All 29 map packets; main stage register dated 2026-11-07, candidate stage register dated 2026-11-14; cross-branch defect references
+
+The registers record no accepted map stages while later committed sources contain native missions and completed case transcripts. Thirty-eight shared DEV identifiers have different title sets across main and candidate. Main contains 10 duplicated IDs and the candidate 13; eight conflicting title pairs are already identically duplicated in both (46 shared IDs have conflicting associations overall). Reading only main or an older checkpoint hides substantial saved work and can incorrectly resurrect completed tasks.
+
+Cause / uncertainty: The held map candidate and main developed independently; stage status, PR body and workflow prose do not consistently track later source changes. Reused IDs and duplicated issue records make unqualified DEV references ambiguous. This is an audit finding, not an assertion that the maps fail at runtime.
+
+Fix / next action: Use the pinned 29-map diagnostic to reconcile construction, runtime/editing integration and final acceptance separately. During authorized integration preserve all newer main fixes and candidate assets, establish an explicit old-ref-to-current-ID mapping, consolidate duplicate issue identities without deleting historical evidence, and update per-map stages only with source-bound proof. Do not mark untested maps accepted or merge the held branch as part of this documentation audit.
+
+Evidence and verification: Audit main 771b55ae652c12a43aeacfbe65d55c3ffc1bc57c; candidate d9f706f44984aaf05cadaf0911eb058880056bb2. development/levels/MAP_DEVELOPMENT_DIAGNOSTIC_2026-11-26.json contains every conflicting title, duplicate identity, branch comparison and 29-map source list. Pinned candidate: https://github.com/mrcalzon02/The-Beckenburg-Project/tree/d9f706f44984aaf05cadaf0911eb058880056bb2. Draft PR86 is unmerged; candidate is 335 commits ahead and 228 behind audited main. Both stage registers retain 348 unaccepted records; later native checkpoints supersede old failure counts. File/reference and JSON checks performed; no fresh runtime test.
+
+Older-map obligation: Review all 29 packets individually. Preserve main Castle and House implementations, older-source case successes and intentional saved-source behavior; one corrected map or a PLAYABLE catalog flag does not certify the rest.
+
+### DEV-747 — Six saved map case receipts refer to superseded collision resources
+
+**Status:** Open verification gap only; actual final resources match their current manifests; no current gameplay failure reproduced · **Affected:** WLD-03 Red Mesa; WLD-08 Northwatch; WLD-09 Blackwater Dam; WLD-11 Mourning Marsh; WLD-12 Gallows Pass; WLD-13 Greywater Cannery on the held map candidate
+
+Each retained case.tsv collision_sha256 differs from the actual final committed HCS2 SHA-256. Each final manifest matches its current binary. The retained successful cases therefore do not certify the later resource bytes.
+
+Cause / uncertainty: Geometry and fittings changed after the preserved case reviews. AuthoredSitePhysics hashes the literal HCS2 input, and the case review tools record that accessor. Hash comparison verifies evidence provenance; it does not demonstrate a new movement, interaction or gameplay regression.
+
+Fix / next action: Keep the historical successful transcripts. After source reconciliation, replay complete actual arrival, routes, doors, refuges, utilities, evidence/ward/rite, settlement and saved return on the final packaged resources. Bind new case receipts to the precise code and model/collision hashes. Do not rewrite an old receipt or infer final acceptance from the current manifest alone.
+
+Evidence and verification: At d9f706f44984aaf05cadaf0911eb058880056bb2, six HCS2 blobs were streamed from Git and SHA-256 checked; all six match their final source manifests and differ from the retained case receipts. Full binary paths, byte lengths and actual/manifest/receipt digests: development/levels/MAP_DEVELOPMENT_DIAGNOSTIC_2026-11-26.json case_source_checks. Example Gallows final 7985938b07ea8512b6b80c6503c395bfb228f06e92a97ae48e7ce75c9f6307ea versus case f0e0659079aaa246b7ebe382b11698847e908d349c036c77d5e1d5506c252f1e. No game/GPU/multiplayer acceptance rerun in this diagnostic.
+
+Older-map obligation: Check exact resource provenance independently for the remaining map receipts. These six were positively identified; maps without a receipt or without a hash comparison are not automatically failed or accepted.
+
 ### DEV-393 — House door stationary-shadow retention diagnostic reports an unexpected same-side ray
 
 **Status:** Open advisory diagnostic only: source 4c0aa803 door-opening profiler failed StationaryDoorShadowRetentionTest on Windows after prior door geometry/shadow parity checks passed; no runtime lighting regression or source-level cause verified · **Affected:** House interior stationary light/door shadow retention around fixture 0; exact test StationaryDoorShadowRetentionTest; other doors and lighting maps not automatically implicated
