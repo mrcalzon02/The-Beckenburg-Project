@@ -156,7 +156,18 @@ jobs:
           New-Item -ItemType Directory -Force dist | Out-Null
           $jar=if(Test-Path 'build/BeckenburgGPU.jar'){'BeckenburgGPU.jar'}else{'beckenburg-game.jar'}
           $renderer=if($jar -eq 'BeckenburgGPU.jar'){'GPU-first with automatic software recovery'}else{'software-only recovery'}
-          & jpackage --type app-image --name Beckenburg --input build --main-jar $jar --dest dist --icon build/Beckenburg.ico --java-options '-Dfile.encoding=UTF-8'
+          # The selected fat JAR contains the game, runtime assets, libraries
+          # and software recovery entrypoint. Raw classes, test output and the
+          # duplicate game JAR made the installer exceed older updater limits.
+          $payload=Join-Path $env:RUNNER_TEMP 'beckenburg-runtime-payload'
+          New-Item -ItemType Directory -Force $payload | Out-Null
+          $stagedJar=Join-Path $payload $jar
+          Copy-Item -LiteralPath (Join-Path 'build' $jar) -Destination $stagedJar -Force
+          $runtimeHash=(Get-FileHash -Algorithm SHA256 -LiteralPath $stagedJar).Hash.ToLowerInvariant()
+          "BECKENBURG_RUNTIME_JAR=$jar" >> $env:GITHUB_ENV
+          "BECKENBURG_RUNTIME_JAR_SHA256=$runtimeHash" >> $env:GITHUB_ENV
+          Write-Host "RUNTIME_PAYLOAD $jar SHA256=$runtimeHash"
+          & jpackage --type app-image --name Beckenburg --input $payload --main-jar $jar --dest dist --icon build/Beckenburg.ico --java-options '-Dfile.encoding=UTF-8'
           if ($LASTEXITCODE -ne 0) { throw 'Windows game executable packaging failed' }
           if(-not (Test-Path 'dist/Beckenburg/Beckenburg.exe')) { throw 'Packaged Windows game executable absent' }
           "BECKENBURG_RENDERER_MODE=$renderer" >> $env:GITHUB_ENV
@@ -215,6 +226,9 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Inno Setup packaging failed' }
           $exe = "dist\installer\Beckenburg-$env:BECKENBURG_RELEASE_VERSION-Windows-x64.exe"
           if (!(Test-Path $exe)) { throw "Installer missing: $exe" }
+          if ((Get-Item -LiteralPath $exe).Length -gt 750MB) {
+            throw 'Installer exceeds the existing updater 750 MiB limit'
+          }
 
       - name: Verify installed EXE starts the actual Castle and updater stays external
         shell: pwsh
@@ -240,6 +254,12 @@ jobs:
              -not (Test-Path (Join-Path $jar 'BeckenburgGPU.jar') -PathType Leaf)) {
             throw 'Windows setup did not install a playable game runtime'
           }
+          $installedJar=Join-Path $jar $env:BECKENBURG_RUNTIME_JAR
+          if(-not (Test-Path -LiteralPath $installedJar -PathType Leaf) -or
+             (Get-FileHash -Algorithm SHA256 -LiteralPath $installedJar).Hash.ToLowerInvariant() -ne $env:BECKENBURG_RUNTIME_JAR_SHA256) {
+            throw 'Installed runtime JAR differs from the verified packaged payload'
+          }
+          Write-Host "VERIFIED_INSTALLED_RUNTIME $env:BECKENBURG_RUNTIME_JAR SHA256=$env:BECKENBURG_RUNTIME_JAR_SHA256"
           # Installed executable MUST open the current Castle-first game,
           # not merely launch a splash or satisfy an obsolete menu string.
           $started=Get-Date
