@@ -1,0 +1,57 @@
+name: Native map case receipt refresh
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/native-map-case-refresh.yml'
+      - 'src/test/map-cases/**'
+      - 'tools/java/*InvestigationReview.java'
+      - 'development/levels/rebuild/red-mesa-native-pass/**'
+      - 'development/levels/rebuild/northwatch-furnishing-pass/**'
+      - 'development/levels/rebuild/dam-ventilation-pass/**'
+      - 'development/levels/rebuild/mourning-marsh-native-pass/**'
+      - 'development/levels/rebuild/gallows-pass/**'
+      - 'development/levels/rebuild/greywater-native-pass/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-map-case-refresh
+  cancel-in-progress: false
+
+jobs:
+  cases:
+    name: Six exact packaged TCP cases (development diagnostic)
+    runs-on: windows-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Package actual game
+        shell: cmd
+        run: call build.cmd package
+      - name: Replay and verify collision provenance
+        shell: pwsh
+        run: python src/test/map-cases/refresh_cases.py --output build/map-case-refresh
+      - name: Preserve new receipts, provenance and failure logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-map-case-refresh
+          path: |
+            build/map-case-refresh/summary.json
+            build/map-case-refresh/WLD-*/case.tsv
+            build/map-case-refresh/WLD-*/case.log
+            build/map-case-refresh/WLD-*/compile.log
+          if-no-files-found: warn
+          retention-days: 21
